@@ -1,0 +1,308 @@
+body {
+	margin:0;
+	padding:0;
+	background-color:#ffffce;
+	font-family: 'Poiret One', cursive;
+	font-size:16px;
+	color:#474747;
+}
+
+.row {
+	display:flex;
+	height:100vh;
+	padding:0;
+}
+.postcard {
+	width:100%;
+	text-align:center;
+	margin:auto;
+	display:flex;
+	-ms-align-items: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+	.postcard__header {
+		max-width:400px;
+		margin:0 0 50px 0;padding:0 0 15px 0;
+		border-bottom:0.5px solid #666;
+	}
+	.postcard__header p {
+		width:100%;
+		font-size:4rem;
+		font-family: 'Poiret One', cursive;
+		padding:0;
+		margin:0;
+		line-height:1;
+		text-transform: uppercase;
+		display:flex;
+		align-items: center;
+		white-space: nowrap;
+	}
+	.postcard__header p::before, .postcard__header p::after {
+		content: '';
+		height:1px;
+		width:100%;
+		line-height:1;
+		position:relative;
+		background-color:#666;
+	}
+	.postcard__header p span {
+		margin:0 20px;
+	}
+	.postcard__header h1 {
+		text-transform: uppercase;
+		font-weight:100;
+		font-size: 2rem;
+		margin:0;
+		padding:0;
+		line-height: 1;
+	}
+
+.postcard .fas {
+	color:red;
+	font-size:50px;
+	margin-bottom:-10px;
+	animation: fas 5s infinite alternate;
+}
+
+.elka__one {
+	width: 0;
+	height: 0;
+	display:block;
+	border-left: 40px solid transparent;
+	border-right: 40px solid transparent;
+	border-bottom: 50px solid #77b800;
+	position:relative;
+}
+	.elka__one::before {
+	    content:'';
+	    margin-top:40px;
+	    margin-left:-30px;
+	    position:absolute;
+	    width: 20px;
+	    height: 20px;
+	    background: #FF1493;
+	    border-radius: 60px;
+	    animation: shadow__one 3s infinite alternate;
+	}
+	.elka__one::after {
+	    content:'';
+	    margin-top:55px;
+	    margin-left:5px;
+	 	position:absolute;
+	    width: 25px;
+	    height: 25px;
+	    background: #00FF7F;
+	    border-radius: 60px;
+	    animation: shadow__two 2s infinite alternate;
+	}
+.elka__two {
+	width: 50px;
+	height: 0;
+	border-left: 60px solid transparent;
+	border-right: 60px solid transparent;
+	border-bottom: 50px solid #77b800;
+}
+	.elka__two::before {
+	    content:'';
+	    margin-top:30px;
+	    margin-left:-50px;
+	    position:absolute;
+	    width: 35px;
+	    height: 35px;
+	    background: #00CED1;
+	    border-radius: 60px;
+	    animation: shadow__three 5s infinite alternate;
+	}
+	.elka__two::after {
+	    content:'';
+	    margin-top:50px;
+	    margin-left:15px;
+	 	position:absolute;
+	    width: 30px;
+	    height: 30px;
+	    background: #6A5ACD;
+	    border-radius: 60px;
+	    animation: shadow__four 2s infinite alternate;
+	}
+.elka__three {
+	width: 100px;
+	height: 0;
+	border-left: 60px solid transparent;
+	border-right: 60px solid transparent;
+	border-bottom: 50px solid #77b800;
+}
+	.elka__three::before {
+	    content:'';
+	    margin-top:60px;
+	    margin-left:-80px;
+	    position:absolute;
+	    width: 35px;
+	    height: 35px;
+	    background: #F4A460;
+	    border-radius: 60px;
+	    animation: shadow__five 4s infinite alternate;
+	}
+	.elka__three::after {
+	    content:'';
+	    margin-top:40px;
+	    margin-left:-15px;
+	 	position:absolute;
+	    width: 30px;
+	    height: 30px;
+	    background: #FFFF00;
+	    border-radius: 60px;
+	    animation: shadow__six 1s infinite alternate;
+	}
+.elka__four {
+	width: 150px;
+	height: 0;
+	border-left: 100px solid transparent;
+	border-right: 100px solid transparent;
+	border-bottom: 70px solid #77b800;
+}
+	.elka__four::before {
+	    content:'';
+	    margin-top:70px;
+	    margin-left:-30px;
+	    position:absolute;
+	    width: 45px;
+	    height: 45px;
+	    background: #FF00FF;
+	    border-radius: 60px;
+	    animation: shadow__seven 3s infinite alternate;
+	}
+	.elka__four::after {
+	    content:'';
+	    margin-top:30px;
+	    margin-left:50px;
+	    position:absolute;
+	    width: 32px;
+	    height: 32px;
+	    background: #ADFF2F;
+	    border-radius: 60px;
+	    animation: shadow__eight 4s infinite alternate;
+	}
+.elka__five {
+	width: 270px;
+	height: 0;
+	border-left: 110px solid transparent;
+	border-right: 110px solid transparent;
+	border-bottom: 70px solid #77b800;
+}
+	.elka__five::before {
+	    content:'';
+	    margin-top:0px;
+	    margin-left:-130px;
+	    position:absolute;
+	    width: 40px;
+	    height: 40px;
+	    background: #FF0000;
+	    border-radius: 60px;
+	    animation: shadow__nine 2s infinite alternate;
+	}
+	.elka__five::after {
+	    content:'';
+	    margin-top:20px;
+	    margin-left:90px;
+	    position:absolute;
+	    width: 35px;
+	    height: 35px;
+	    background: #1E90FF;
+	    border-radius: 60px;
+	    animation: shadow__ten 2s infinite alternate;
+	}
+
+
+
+@keyframes shadow__one {
+  from {
+    box-shadow: 0 0 5px 5px #FF1493;
+  }
+  to {
+    box-shadow: 0 0 10px 10px #FF1493;
+  }
+}
+@keyframes shadow__two {
+ from {
+    box-shadow: 0 0 5px 5px #00FF7F;
+  }
+  to {
+    box-shadow: 0 0 10px 10px #00FF7F;
+  }
+}
+
+@keyframes shadow__three {
+  from {
+    box-shadow: 0 0 5px 5px #00CED1;
+  }
+  to {
+    box-shadow: 0 0 10px 10px #00CED1;
+  }
+}
+@keyframes shadow__four {
+  from {
+    box-shadow: 0 0 5px 5px #6A5ACD;
+  }
+  to {
+    box-shadow: 0 0 10px 10px #6A5ACD;
+  }
+}
+
+
+
+
+
+@keyframes shadow__five {
+  from {
+    box-shadow: 0 0 5px 5px #F4A460;
+  }
+  to {
+    box-shadow: 0 0 10px 10px #F4A460;
+  }
+}
+@keyframes shadow__six {
+ from {
+    box-shadow: 0 0 5px 5px #FFFF00;
+  }
+  to {
+    box-shadow: 0 0 10px 10px #FFFF00;
+  }
+}
+
+@keyframes shadow__seven {
+  from {
+    box-shadow: 0 0 5px 5px #FF00FF;
+  }
+  to {
+    box-shadow: 0 0 10px 10px #FF00FF;
+  }
+}
+@keyframes shadow__eight {
+  from {
+    box-shadow: 0 0 5px 5px #ADFF2F;
+  }
+  to {
+    box-shadow: 0 0 10px 10px #ADFF2F;
+  }
+}
+
+@keyframes shadow__nine {
+  from {
+    box-shadow: 0 0 5px 5px #FF0000;
+  }
+  to {
+    box-shadow: 0 0 10px 10px #FF0000;
+  }
+}
+@keyframes shadow__ten {
+  from {
+    box-shadow: 0 0 5px 5px #1E90FF;
+  }
+  to {
+    box-shadow: 0 0 10px 10px #1E90FF;
+  }
+}
+
+
