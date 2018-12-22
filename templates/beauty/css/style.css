@@ -28,7 +28,9 @@ section {
 		background-color:#142332;
 		min-height: 300px;
 		height:100vh;
+		background-image:url('../img/top_bg.jpg');
 		background-position: top center;
+		background-size: cover;
 	}
 	/* TOP-LINE */
 		.top-line {
@@ -50,11 +52,11 @@ section {
 			margin-right: 85px;
 			padding-top: 20px;
 			text-align:right;
-			font-size: 22px;
+			font-size: 20px;
 			white-space: nowrap;
 		}
 		.top-line .phone .fa {
-			color: #555;
+			color: #666;
 			font-size: 16px;
 			margin-right: 5px;
 		}
@@ -101,7 +103,7 @@ section {
 			text-align:center;
 		}
 		.header-composition p {
-			margin-top:40px;
+			margin-top:30px;
 		}
 			.welcome p {
 				font-size:14px;
@@ -125,8 +127,8 @@ section {
 			.welcome .h1 {
 				text-transform: uppercase;
 				font-weight:100;
-				font-size: 4.2rem;
-				margin:10px 0;
+				font-size: 4rem;
+				margin:0;
 				padding:0;
 				white-space: nowrap;
 			}
