@@ -29,9 +29,12 @@ section {
 		min-height: 300px;
 		height:100vh;
 		background-position: top center;
-		;
 	}
 	/* TOP-LINE */
+		.top-line {
+
+		}
+
 		.top-line .logo {
 			position:absolute;
 		}
@@ -58,8 +61,9 @@ section {
 		/* END TOP-LINE */	
 
 		/* MENU */
-		.menu {
+		.menu_right {
 			position: absolute;
+			z-index:4;
 			top:0;
 			right:0;
 			padding-top:30px;

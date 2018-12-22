@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
 	<title>Салон Красоты</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
@@ -18,11 +18,11 @@
 	<style> body { opacity:0; overflow-x: hidden; } html { background-color: #1a1a1a;  } </style>
 </head>
 <body class="home">
-
-<header class="site-header" style="background-image:url('img/top_bg.jpg');">
-	
-	<div class="top-line">
+<div class="page">
+	<header class="site-header" style="background-image:url('img/top_bg.jpg');">
 		
+		<div class="top-line">
+			
 			<div class="logo">
 				<a href="#">
 					<img src="img/logo.svg" alt="Салон Красоты BeautySpa">
@@ -33,93 +33,127 @@
 			</div>
 		
 
-		<div class="menu">
-			<div class="hamburger hamburger-emphatic" aria-controls="navbar">
-			  <div class="hamburger-box">
-			    <a href="#" class="hamburger-inner"></a>
-			  </div>
+			<div class="menu_right">
+				<a href="#my-menu" class="hamburger hamburger--emphatic">
+				  <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+				</a>
 			</div>
+			
+			
 
-			<nav class="navbar">
+		</div>
+		
+		
+		
+
+		<div class="header-flex">
+			<div class="flex-center">
 				
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6 col-8">
+							
+							<div class="header-composition">
+								<div class="welcome">
+									<p><span>Добро пожаловать в профессиональный</span></p>
+									<h1 class="h1">Салон красоты</h1>
+									<strong><i class="fa fa-star"></i> в москве <i class="fa fa-star"></i></strong>
+								</div>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium non quisquam iusto accusantium exercitationem iste tenetur repudiandae consequatur commodi nisi.
+								</p>
+								<a href="" class="btn btn-warning mt-4">О салоне</a>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		
+		<div class="header-social">
+			<nav class="social">
+				<ul>
+					<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+					<li><a href="#"><i class="fab fa-vk"></i></a></li>
+					<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+				</ul>
 			</nav>
 		</div>
-	</div>
-	
-	
-	
 
-	<div class="header-flex">
-		<div class="flex-center">
-			
+		<div class="header-contact">
 			<div class="container">
-				<div class="row">
-					<div class="col-lg-6 col-8">
-						
-						<div class="header-composition">
-							<div class="welcome">
-								<p><span>Добро пожаловать в профессиональный</span></p>
-								<h1 class="h1">Салон красоты</h1>
-								<strong><i class="fa fa-star"></i> в москве <i class="fa fa-star"></i></strong>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium non quisquam iusto accusantium exercitationem iste tenetur repudiandae consequatur commodi nisi.
-							</p>
-							<a href="" class="btn btn-warning mt-4">О салоне</a>
-						</div>
-
+				<div class="row align-items-center">
+					<div class="col-md-4">
+						<i class="fas fa-location-arrow"></i> г. Москва, ул. Ивана Бабушкина, 123
+					</div>
+					<div class="col-md-4 phone">
+						<i class="fas fa-mobile-alt"></i> +7 (495) 111-22-33
+					</div>
+					<div class="col-md-4 time">
+						<i class="far fa-clock"></i> Время работы: ежедневно: 10:00 - 22:00
 					</div>
 				</div>
 			</div>
-
 		</div>
-	</div>
+
+	</header>
+</div>
+<div class="content">
 	
-	<div class="header-social">
-		<nav class="social">
+</div>
+
+
+	<nav id="my-menu">
 			<ul>
-				<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-				<li><a href="#"><i class="fab fa-vk"></i></a></li>
-				<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+				<li><a href="#">Парикмахерский сервис</a></li>
+				<li class="active"><a href="#">Косметологический сервис</a></li>
+				<li><a href="#">Маникюрный сервис</a></li>
+				<li><a href="#">Массаж и SPA</a></li>
+				<li><a href="#">Солярий</a></li>
+				<li><a href="#">Наши специалисты</a></li>
+				<li><a href="#">Новости</a></li>
+				<li><a href="#">Прайс-лист</a></li>
+				<li><a href="#">Наши сертификаты</a></li>
+				<li><a href="#">О салоне</a></li>
+				<li><a href="#">Контакты</a></li>
 			</ul>
 		</nav>
-	</div>
-
-	<div class="header-contact">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-md-4">
-					<i class="fas fa-location-arrow"></i> г. Москва, ул. Ивана Бабушкина, 123
-				</div>
-				<div class="col-md-4 phone">
-					<i class="fas fa-mobile-alt"></i> +7 (495) 111-22-33
-				</div>
-				<div class="col-md-4 time">
-					<i class="far fa-clock"></i> Время работы: ежедневно: 10:00 - 22:00
-				</div>
-			</div>
-		</div>
-	</div>
-
-</header>
-
-
-	
 	
 
 	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/mmenu/dist/jquery.mmenu.all.js"></script>
 	<link href="js/mmenu/dist/jquery.mmenu.all.css" rel="stylesheet">
 	<link href="css/mdb.min.css" rel="stylesheet">
 	<link href="css/hamburgers.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	
-
+	
 	<script>
-		$(document).ready(function() {
-			$('.menu a').mmenu();
-		});
+		$(function() {
+			$("#my-menu").mmenu({
+				extensions: [ 'theme-black', 'pagedim-black', 'position-right' ],
+				navbar: {
+					title: '<img src="img/logo.svg" alt="Салон красоты BeautySpa">'
+				}
+			});
+			
+			var api = $('#my-menu').data('mmenu');
+
+			api.bind('openPanel:finish', function() {
+				$('.hamburger').addClass('is-active');
+			});
+				
+
+			api.bind('closePanel:after', function() {
+				$('.hamburger').removeClass('is-active');
+			});
+   		});
 	</script>
+
+	
 </div>
 </body>
 </html>
