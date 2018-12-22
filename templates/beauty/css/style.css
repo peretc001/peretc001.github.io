@@ -65,7 +65,7 @@ section {
 		/* MENU */
 		.menu_right {
 			position: absolute;
-			z-index:4;
+			z-index:2;
 			top:0;
 			right:0;
 			padding-top:30px;
@@ -171,6 +171,7 @@ section {
 		}
 		.social {
 			margin:auto;
+			z-index:1;
 		}
 		.social ul, .social ul li {
 			margin:0;
