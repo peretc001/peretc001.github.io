@@ -6,18 +6,54 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Exo+2:100,200,300,400,600,800&amp;subset=cyrillic" rel="stylesheet">
-	<link href="css/mdb.min.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-</head>
-<body>
-<div class="page" style="">
 	
+	<!-- Chrome, Firefox, Opera -->
+	<meta name="theme-color" content="#1a1a1a">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#1a1a1a">
+	<!-- IOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#1a1a1a">
+
+	<style> body { opacity:0; overflow-x: hidden; } html { background-color: #1a1a1a;  } </style>
+</head>
+<body class="home">
+
+<header class="site-header" style="background-image:url('img/top_bg.jpg');">
+	
+	<div class="top-line">
+		
+			<div class="logo">
+				<a href="#">
+					<img src="img/logo.svg" alt="Салон Красоты BeautySpa">
+				</a>
+			</div>
+			<div class="phone">
+				<i class="fa fa-mobile-alt"></i> +7 (495) 111-22-33
+			</div>
+		
+
+		<div class="menu">
+			<div class="hamburger hamburger-emphatic" aria-controls="navbar">
+			  <div class="hamburger-box">
+			    <a href="#" class="hamburger-inner"></a>
+			  </div>
+			</div>
+
+			<nav class="navbar">
+				
+			</nav>
+		</div>
+	</div>
+	
+	
+	
+
 	<div class="header-flex">
 		<div class="flex-center">
 			
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-lg-6 col-9">
 						
 						<div class="header-composition">
 							<div class="welcome">
@@ -37,7 +73,7 @@
 
 		</div>
 	</div>
-
+	
 	<div class="header-social">
 		<nav class="social">
 			<ul>
@@ -50,7 +86,7 @@
 
 	<div class="header-contact">
 		<div class="container">
-			<div class="row">
+			<div class="row align-items-center">
 				<div class="col-md-4">
 					<i class="fas fa-location-arrow"></i> г. Москва, ул. Ивана Бабушкина, 123
 				</div>
@@ -64,6 +100,25 @@
 		</div>
 	</div>
 
+</header>
+
+
+	
+	
+
+	
+	<script type="text/javascript" src="js/mmenu/dist/jquery.mmenu.all.js"></script>
+	<link href="js/mmenu/dist/jquery.mmenu.all.css" rel="stylesheet">
+	<link href="css/mdb.min.css" rel="stylesheet">
+	<link href="css/hamburgers.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	
+
+	<script>
+		$(document).ready(function() {
+			$('.menu a').mmenu();
+		});
+	</script>
 </div>
 </body>
 </html>
