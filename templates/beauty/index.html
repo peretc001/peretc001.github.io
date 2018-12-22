@@ -142,12 +142,12 @@
 			
 			var api = $('#my-menu').data('mmenu');
 
-			api.bind('openPanel:finish', function() {
+			api.bind('open:finish', function() {
 				$('.hamburger').addClass('is-active');
 			});
 				
 
-			api.bind('closePanel:after', function() {
+			api.bind('close:finish', function() {
 				$('.hamburger').removeClass('is-active');
 			});
    		});
