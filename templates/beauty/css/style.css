@@ -99,10 +99,6 @@ section {
 		.header-composition p {
 			margin-top:40px;
 		}
-			.welcome {
-				margin-top:140px;
-			
-			}
 			.welcome p {
 				font-size:14px;
 				text-transform: uppercase;
@@ -200,8 +196,8 @@ section {
 			position: absolute;
 			bottom:0;
 			left:0;
+			padding:12px 0;
 			border-top:rgba(255, 255, 255, .15) 1px solid;
-			padding:0;
 			background-color: rgba(21, 21, 21, .5);
 		}
 		.header-contact .phone  {
