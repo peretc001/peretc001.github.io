@@ -228,6 +228,7 @@ section {
 		.mm-listitem {
 			border-color:transparent;
 			padding-left:40px;
+			margin-left:30px;
 			transition: color .1s ease;
 		}
 		.mm-listitem:hover, .mm-listitem.active, .mm-listitem_selected {
