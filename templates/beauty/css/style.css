@@ -214,3 +214,33 @@ section {
 			color:#555;
 			font-size: 12px;
 		}
+
+		.mm-panel_has-navbar .mm-navbar {
+			padding-top:0;
+			border:none;
+		}
+		.mm-navbar__title img {
+			width:14rem;
+		}
+		.mm-panels>.mm-panel>.mm-listview:first-child, .mm-panels>.mm-panel>.mm-navbar+.mm-listview {
+			padding-top:60px;
+		}
+		.mm-listitem {
+			border-color:transparent;
+			padding-left:40px;
+			transition: color .1s ease;
+		}
+		.mm-listitem:hover, .mm-listitem.active, .mm-listitem_selected {
+			color:#fb3;
+		}
+		.mm-listitem::before {
+			content: "\f3a5";
+			font-family: "Font Awesome 5 Free";
+    		font-size: 14px;
+    		display:flex;	
+    		align-items:center;
+    		transition: color .1s ease;
+		}
+		.mm-listitem_selected>.mm-listitem__text {
+			background:transparent;
+		}
