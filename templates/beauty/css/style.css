@@ -254,6 +254,9 @@ section {
 		}
 
 @media screen and (max-width: 1200px) {
+	.header-flex .h1 {
+		font-size:3rem;
+	}
 	.header-contact span {
 		display:none;
 	}
@@ -268,7 +271,7 @@ section {
 }
 @media screen and (max-width: 992px) {
 	.header-flex .h1 {
-		font-size:2.7rem;
+		font-size:2.2rem;
 	}
 	.header-flex p span {
 		font-size:0.6rem;
