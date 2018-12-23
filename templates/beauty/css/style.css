@@ -9,6 +9,9 @@ body {
 	opacity:1;
 	line-height: 1.75;
 }
+a {
+	text-decoration:none;
+}
 p {
 	padding: 0;
 	margin:0;
@@ -31,6 +34,9 @@ section {
 		background-image:url('../img/top_bg.jpg');
 		background-position: top center;
 		background-size: cover;
+	}
+	.site-header a {
+		color:#fff;
 	}
 	/* TOP-LINE */
 		.top-line {
@@ -124,7 +130,7 @@ section {
 			.welcome .h1 {
 				text-transform: uppercase;
 				font-weight:100;
-				font-size: 3.5rem;
+				font-size: 3.6rem;
 				margin:0;
 				padding:0;
 				white-space: nowrap;
@@ -248,9 +254,6 @@ section {
 		}
 
 @media screen and (max-width: 1200px) {
-	.site-header a {
-		color:#fff;
-	}
 	.header-contact span {
 		display:none;
 	}
@@ -265,17 +268,19 @@ section {
 }
 @media screen and (max-width: 992px) {
 	.header-flex .h1 {
-		font-size:2.5rem;
+		font-size:2.7rem;
 	}
 	.header-flex p span {
 		font-size:0.6rem;
 	}
 }
 @media screen and (max-width: 768px) {
-	.header-contact .time {
-		display:none
+	.header-flex .h1 {
+		font-size:2.7rem;
 	}
-	
+	.header-contact .phone {
+		display:none;
+	}
 }
 @media screen and (max-width: 576px) {
 	.dark {
@@ -297,16 +302,22 @@ section {
 	}
 	.header-contact {
 		font-size:13px;
-	}	
+	}
+	.header-contact .time {
+		display:none;
+	}
+	.header-contact .adres {
+		text-align:center;
+	}
 }
 @media screen and (max-width: 450px) {
 	.header-flex .h1 {
 		font-size:2.5rem;
 	}
-	.header-contact {
-		font-size:11px;
+	.header-flex p {
+		font-size:1rem;
+		line-height:1.5;
 	}
-	
 }
 @media screen and (max-width: 400px) {
 	.top-line .logo a img {
@@ -318,9 +329,6 @@ section {
 	.header-flex p span {
 		font-size:0.5rem;
 	}
-	.header-contact {
-		font-size:10px;
-	}
 	.mm-listitem {
 		padding-left:10px;
 		margin-left:10px;
@@ -329,9 +337,6 @@ section {
 @media screen and (max-width: 380px) {
 	.header-flex .h1 {
 		font-size:2rem;
-	}
-	.header-contact {
-		font-size:10px;
 	}
 }
 @media screen and (max-width: 319px) {
@@ -344,12 +349,5 @@ section {
 	.header-flex p span {
 		font-size:0.5rem;
 	}
-	.header-flex p {
-		font-size:1rem;
-		line-height:1.5;
-	}
-	.header-contact {
-		font-size:7px;
-	}
-	
+		
 }
