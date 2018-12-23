@@ -246,3 +246,20 @@ section {
 		.mm-listitem_selected>.mm-listitem__text {
 			background:transparent;
 		}
+
+@media screen and (max-width: 1024px) {
+	.header-contact {
+		font-size:14px;
+	}
+	.header-contact span {
+		display:none;
+	}
+}
+@media screen and (max-width: 992px) {
+	.header-flex .h1 {
+		font-size:2.5rem;
+	}
+	.header-flex p span {
+		font-size:0.6rem;
+	}
+}
