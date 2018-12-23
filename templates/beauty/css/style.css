@@ -275,8 +275,12 @@ section {
 	.header-contact .time {
 		display:none
 	}
+	
 }
 @media screen and (max-width: 576px) {
+	.dark {
+		box-shadow:0 0 0 9999px rgba(0, 0, 0, 0.5) inset;
+	}
 	.site-header {
 		height:100%;
 	}
@@ -318,11 +322,9 @@ section {
 		font-size:10px;
 	}
 	.mm-listitem {
-			border-color:transparent;
-			padding-left:10px;
-			margin-left:10px;
-			transition: color .1s ease;
-		}
+		padding-left:10px;
+		margin-left:10px;
+	}
 }
 @media screen and (max-width: 380px) {
 	.header-flex .h1 {
