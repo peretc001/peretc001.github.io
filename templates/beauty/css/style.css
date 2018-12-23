@@ -26,7 +26,7 @@ section {
 	.site-header {
 		position: relative;
 		background-color:#1e1f24;
-		min-height: 300px;
+		min-height: 450px;
 		height:100vh;
 		background-image:url('../img/top_bg.jpg');
 		background-position: top center;
@@ -261,5 +261,27 @@ section {
 	}
 	.header-flex p span {
 		font-size:0.6rem;
+	}
+}
+@media screen and (max-width: 576px) {
+	.site-header {
+		min-height: 350px;
+	}
+	.top-line .logo, .top-line .phone {
+		position:relative;
+		display:block;
+		width:100%;
+		text-align:center;
+		margin:0 auto;
+		padding:0;
+	}
+	.top-line .logo a img {
+		margin:0;
+	}
+	.header-contact {
+		font-size:12px;
+	}
+	.header-contact .time {
+		display:none
 	}
 }
