@@ -292,15 +292,15 @@ section {
 		margin:0;
 	}
 	.header-contact {
-		font-size:12px;
+		font-size:13px;
 	}	
 }
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 450px) {
 	.header-flex .h1 {
 		font-size:2.5rem;
 	}
 	.header-contact {
-		font-size:10px;
+		font-size:11px;
 	}
 	
 }
@@ -309,13 +309,13 @@ section {
 		width:10rem;
 	}
 	.header-flex .h1 {
-		font-size:1.8rem;
+		font-size:2.3rem;
 	}
 	.header-flex p span {
 		font-size:0.5rem;
 	}
 	.header-contact {
-		font-size:9px;
+		font-size:10px;
 	}
 	.mm-listitem {
 			border-color:transparent;
@@ -323,7 +323,14 @@ section {
 			margin-left:10px;
 			transition: color .1s ease;
 		}
-	
+}
+@media screen and (max-width: 380px) {
+	.header-flex .h1 {
+		font-size:2rem;
+	}
+	.header-contact {
+		font-size:8px;
+	}
 }
 @media screen and (max-width: 320px) {
 	.top-line .phone {
