@@ -7,12 +7,12 @@
 	<li>PHP</li>
 	<li>MySQL (SafeMySQL)</li>
 </ul>
-<div style="align:center;">
-<h1>Мои работы</h1>
+<div style="text-align:center;">
+<h1  style="text-align:center;">Текущая работа</h1>
 <a href="https://peretc001.github.io/templates/beauty/"><img src="https://peretc001.github.io/templates/beauty/img/prev.jpg" style="display:block;width:100%;max-width:600px;border:none;"></a>
 <p><strong>Верстка макет "Салон Красоты" | <a href="https://peretc001.github.io/templates/beauty/">https://peretc001.github.io/templates/beauty/</a></strong></p>
 <br><br>
-<h1>Мои работы</h1>
+<h1  style="text-align:center;">Мои работы</h1>
 <a href="http://partadami.ru"><img src="https://peretc001.github.io/email/img/partadami_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a>
 <p><strong>Интернет-магазин «Парты ДЭМИ» | <a href="http://partadami.ru">partadami.ru</a></strong></p>
 <ul type="none">
