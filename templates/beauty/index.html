@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
 	<title>Салон Красоты BeautySpa</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+	 crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Exo+2:100,200,300,400,600,800&amp;subset=cyrillic" rel="stylesheet">
-	
+
 	<!-- Chrome, Firefox, Opera -->
 	<meta name="theme-color" content="#1a1a1a">
 	<!-- Windows Phone -->
@@ -17,13 +19,14 @@
 
 	<style> body { opacity:0; overflow-x: hidden; } html { background-color: #1a1a1a;  } </style>
 </head>
+
 <body class="home">
-	
+
 	<div class="page">
 		<header class="site-header dark">
-			
+
 			<div class="top-line">
-				
+
 				<div class="logo">
 					<a href="#">
 						<img src="img/logo.svg" alt="Салон Красоты BeautySpa">
@@ -32,23 +35,23 @@
 				<div class="phone">
 					<i class="fa fa-mobile-alt"></i> +7 (495) 111-22-33
 				</div>
-			
+
 
 				<div class="menu_right">
 					<a href="#my-menu" class="hamburger hamburger--emphatic">
-					  <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+						<span class="hamburger-box"><span class="hamburger-inner"></span></span>
 					</a>
 				</div>
-				
+
 			</div>
-			
+
 			<div class="header-flex">
 				<div class="flex-center">
-					
+
 					<div class="container">
 						<div class="row">
 							<div class="col-xl-5 col-md-5 col-sm-8 col-10">
-								
+
 								<div class="header-composition">
 									<div class="welcome">
 										<p><span>Добро пожаловать в профессиональный</span></p>
@@ -56,7 +59,8 @@
 										<strong><i class="fa fa-star"></i> в москве <i class="fa fa-star"></i></strong>
 									</div>
 									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium non quisquam iusto accusantium exercitationem iste tenetur repudiandae consequatur commodi nisi.
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium non quisquam iusto accusantium
+										exercitationem iste tenetur repudiandae consequatur commodi nisi.
 									</p>
 									<a href="" class="btn btn-warning mt-4">О салоне</a>
 								</div>
@@ -67,7 +71,7 @@
 
 				</div>
 			</div>
-			
+
 			<div class="right-panel-soc">
 				<div class="soc">
 					<ul>
@@ -97,14 +101,14 @@
 		</header>
 
 
-	<section class="content">
-		<div class="container">
-			<div class="row">
-				
-				<p style="color:#222;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio voluptate quo quis quisquam. Illo iure unde aspernatur illum corrupti quam soluta rem, quos atque. Nobis provident numquam voluptate quidem, amet accusamus nemo veniam iure doloribus libero blanditiis sunt minima dolore soluta in exercitationem optio laboriosam. Nesciunt natus minus magnam consequatur aliquid cum, non ratione eos atque! Eligendi necessitatibus, aliquam vitae facere, enim explicabo sapiente iure dicta laborum iusto aspernatur beatae placeat perspiciatis, praesentium totam nobis adipisci. Aspernatur veniam sit sint harum rerum incidunt atque est voluptas necessitatibus beatae iste molestiae non veritatis, id qui impedit nobis ducimus, praesentium quaerat repellendus.</p>
+		<section class="services">
+			<div class="owl-carousel carousel-services">
+				<div class="carousel-services__item">Далеко-далеко за словесными горами в стране.</div>
+				<div class="carousel-services__item">Далеко-далеко за словесными горами в стране.</div>
+				<div class="carousel-services__item">Далеко-далеко за словесными горами в стране.</div>
+				<div class="carousel-services__item">Далеко-далеко за словесными горами в стране.</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
 	</div><!-- END PAGE AND START MMENU -->
 	<nav id="my-menu">
@@ -123,7 +127,7 @@
 		</ul>
 	</nav>
 	<!-- END MMENU -->
-	
+
 
 	<!-- SCRIPT -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -131,33 +135,41 @@
 	<script type="text/javascript" src="js/owlCarousel/owl.carousel.min.js"></script>
 	<!-- STYLE -->
 	<link href="js/mmenu/dist/jquery.mmenu.all.css" rel="stylesheet">
-	<link href="js/owlCarousel/owl.carousel.min.css" rel="stylesheet">
-	<link href="js/owlCarousel/owl.theme.default.min.css" rel="stylesheet">
+	<link href="js/owlCarousel/css/owl.carousel.min.css" rel="stylesheet">
+	<link href="js/owlCarousel/css/owl.theme.default.min.css" rel="stylesheet">
 	<link href="css/hamburgers.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<!-- MY SCRIPT -->
 	<script>
-		$(function() {
+		$(function () {
 			$("#my-menu").mmenu({
-				extensions: [ 'theme-black', 'pagedim-black', 'position-right' ],
+				extensions: ['theme-black', 'pagedim-black', 'position-right'],
 				navbar: {
 					title: '<img src="img/logo.svg" alt="Салон красоты BeautySpa">'
 				}
 			});
-			
+
 			var api = $('#my-menu').data('mmenu');
 
-			api.bind('open:finish', function() {
+			api.bind('open:finish', function () {
 				$('.hamburger').addClass('is-active');
 			});
-				
 
-			api.bind('close:finish', function() {
+
+			api.bind('close:finish', function () {
 				$('.hamburger').removeClass('is-active');
 			});
-   		});
+
+			$('.carousel-services').owlCarousel({
+				loop: true,
+				nav: true,
+				smartSpeed: 700,
+				navText: ['<i class="fa fa-angle-double-left"></i>', ' <i class="fa fa-angle-double-right"></i>']
+			});
+		});
 	</script>
 
 
 </body>
+
 </html>
