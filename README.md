@@ -11,7 +11,7 @@
 <h1>Мои работы</h1>
 <a href="http://partadami.ru"><img src="https://peretc001.github.io/email/img/partadami_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a>
 <p><strong>Интернет-магазин «Парты ДЭМИ» | <a href="http://partadami.ru">partadami.ru</a></strong></p>
-<ul type="square" style="margin:0;font-size:14px">
+<ul type="none">
 	<li>Адаптивный дизайн (Skeleton)</li>
 	<li>Корзина покупателя</li>
 	<li>Список товаров из БД MySql</li>
@@ -23,7 +23,7 @@
 
 <a href="http://avtonakidki.net"><img src="https://peretc001.github.io/email/img/avtonakidki_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a>
 <p><strong style="font-size:18px;font-weight:700;">Интернет-магазин «Автонакидки.НЕТ» | <a href="http://avtonakidki.net">avtonakidki.net</a></strong></p>
-<ul type="square" style="margin:0;font-size:14px">
+<ul type="none">
 	<li>Адаптивный дизайн (Skeleton)</li>
 	<li>Корзина покупателя</li>
 	<li>Список товаров из БД MySql</li>
@@ -35,7 +35,7 @@
  
  <a href="http://autoprkt.ru"><img src="https://peretc001.github.io/email/img/autoprkt_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a>
 <p><strong style="font-size:18px;font-weight:700;">Сайт проката «АВТОПРКТ» | <a style="color: #0000EE;" href="http://autoprkt.ru">autoprkt.ru</a></strong></p>
-<ul type="square" style="margin:0;font-size:14px">
+<ul type="none">
 	<li>Адаптивный дизайн (Skeleton)</li>
 	<li>Список авто из БД MySql</li>
 	<li>Скрипт бронирования</li>
@@ -44,7 +44,7 @@
 
 <img src="https://peretc001.github.io/email/img/crm_macbook.png" style="display:block;width:100%;max-width:600px;border:none;">
 <p><strong style="font-size:18px;font-weight:700;">CRM для проката «АВТОПРКТ»</strong></p>
-<ul type="square" style="margin:0;font-size:14px;text-align:center;">
+<ul type="none">
 	<li>Учет клиентов</li>
 	<li>Учет брони</li>
 	<li>Учет платежей</li>
