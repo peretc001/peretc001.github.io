@@ -38,7 +38,7 @@
 
 <img src="https://peretc001.github.io/email/img/crm_macbook.png" style="display:block;width:100%;max-width:600px;border:none;">
 <p><strong style="font-size:18px;font-weight:700;">CRM для проката «АВТОПРКТ»</strong></p>
-<ul type="square" style="margin:0;font-size:14px">
+<ul type="square" style="margin:0;font-size:14px;text-align:center;">
 	<li>Учет клиентов</li>
 	<li>Учет брони</li>
 	<li>Учет платежей</li>
@@ -47,15 +47,11 @@
 	<li>Сводный Баланс по клиентам и автомобилям</li>
 </ul>
 <br>
-<table>
+<table align="center">
 	<tbody>
 		<tr>
-			<td width="40px" text-align="center"><img src="https://peretc001.github.io/email/img/contact/mobile.png" style="display:block;width:14px;margin:0 auto;text-align:center;"></td>
-			<td style="padding:5px 10px;font-size:14px"><a href="tel:+79180982859" style="color:#222;text-decoration:none;">8-918-098-28-59</td>
-		</tr>
-		<tr>
 			<td width="40px" text-align="center"><img src="https://peretc001.github.io/email/img/contact/email.png" style="display:block;width:20px;margin:0 auto;text-align:center;"></td>
-			<td style="padding:5px 10px;font-size:14px"><a style="color:#222;text-decoration:none;" href="mailto:i.krasovsky@yandex.ru">i.krasovsky@yandex.ru</a></td>
+			<td style="padding:5px 10px;font-size:14px"><a style="color:#222;text-decoration:none;" href="mailto:peretc001@mail.ru">peretc001@mail.ru</a></td>
 		</tr>
 		<tr>
 			<td width="40px" text-align="center"><img src="https://peretc001.github.io/email/img/contact/facebook.png" style="display:block;width:10px;margin:0 auto;text-align:center;"></td>
