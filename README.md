@@ -1,4 +1,4 @@
-<p><strong style="font-size:18px;font-weight:700;">Меня зовут Красовский Игорь</strong>,<br>Я web разработчик начального уровня, владею навыками верстки 
+<p><strong style="font-size:18px;font-weight:700;">Меня зовут Игорь</strong>,<br>Я web разработчик начального уровня, владею навыками верстки 
 <ul>
 	<li>HTML5</li>
 	<li>CSS3</li>
