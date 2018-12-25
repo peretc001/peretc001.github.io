@@ -1,7 +1,13 @@
-<p><strong style="font-size:18px;font-weight:700;">Меня зовут Красовский Игорь</strong>,<br>Я web разработчик начального уровня, владею навыками верстки HTML5, CSS3, JS, JQuery, Bootstrap 4, а также PHP + MySQL (SafeMySQL).<br>В работе использую Photoshop, Illustrator, Avacode, Sublime Text, Git
-</p>
-<p style="text-align:center;margin:0;">Вот несколько из моих работ, их не много, но все под ключ.</p>
-
+<p><strong style="font-size:18px;font-weight:700;">Меня зовут Красовский Игорь</strong>,<br>Я web разработчик начального уровня, владею навыками верстки 
+<ul>
+	<li>HTML5</li>
+	<li>CSS3</li>
+	<li>JS, JQuery (самый базовый уровень)</li>
+	<li>Bootstrap 4</li>
+	<li>PHP</li>
+	<li>MySQL (SafeMySQL)</li>
+</ul>
+<div align="center">
 <h1>Мои работы</h1>
 <a href="http://partadami.ru"><img src="https://peretc001.github.io/email/img/partadami_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a>
 <p><strong>Интернет-магазин «Парты ДЭМИ» | <a href="http://partadami.ru">partadami.ru</a></strong></p>
@@ -59,3 +65,4 @@
 		</tr>
 	</tbody>
 </table>
+</div>
