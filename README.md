@@ -44,6 +44,7 @@
 	<li>Список авто из БД MySql</li>
 	<li>Скрипт бронирования</li>
 	<li>Календарь pickmeup</li>
+	<li>UIkit меню в мобильной версии</li>
 </ul>
 
 <img src="https://peretc001.github.io/email/img/crm_macbook.png" style="display:block;width:100%;max-width:600px;border:none;">
