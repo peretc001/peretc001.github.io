@@ -9,6 +9,10 @@
 </ul>
 <div style="align:center;">
 <h1>Мои работы</h1>
+<a href="https://peretc001.github.io/templates/beauty/"><img src="https://peretc001.github.io/templates/beauty/img/prev.jpg" style="display:block;width:100%;max-width:600px;border:none;"></a>
+<p><strong>Верстка макет "Салон Красоты" | <a href="https://peretc001.github.io/templates/beauty/">https://peretc001.github.io/templates/beauty/</a></strong></p>
+<br><br>
+<h1>Мои работы</h1>
 <a href="http://partadami.ru"><img src="https://peretc001.github.io/email/img/partadami_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a>
 <p><strong>Интернет-магазин «Парты ДЭМИ» | <a href="http://partadami.ru">partadami.ru</a></strong></p>
 <ul type="none">
@@ -16,7 +20,7 @@
 	<li>Корзина покупателя</li>
 	<li>Список товаров из БД MySql</li>
 	<li>Отправка форм посетителю</li>
-	<li>Смене характеристик без перезагрузки в карточке товара</li>
+	<li>Смена характеристик без перезагрузки в карточке товара</li>
 	<li>Онлайн консультант</li>
 	<li>UIkit меню в мобильной версии</li>
 </ul>
@@ -28,7 +32,7 @@
 	<li>Корзина покупателя</li>
 	<li>Список товаров из БД MySql</li>
 	<li>Отправка форм посетителю</li>
-	<li>Смене характеристик без перезагрузки в карточке товара</li>
+	<li>Смена характеристик без перезагрузки в карточке товара</li>
 	<li>Онлайн консультант</li>
 	<li>UIkit меню в мобильной версии</li>
 </ul>
