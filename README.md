@@ -58,7 +58,7 @@
 	<li>Сводный Баланс по клиентам и автомобилям</li>
 </ul>
 <br>
-<table align="center">
+<table style="text-align:center">
 	<tbody>
 		<tr>
 			<td width="40px" text-align="center"><img src="https://peretc001.github.io/email/img/contact/email.png" style="display:block;width:20px;margin:0 auto;text-align:center;"></td>
