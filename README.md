@@ -7,7 +7,7 @@
 	<li>PHP</li>
 	<li>MySQL (SafeMySQL)</li>
 </ul>
-<div align="center">
+<div style="align:center;">
 <h1>Мои работы</h1>
 <a href="http://partadami.ru"><img src="https://peretc001.github.io/email/img/partadami_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a>
 <p><strong>Интернет-магазин «Парты ДЭМИ» | <a href="http://partadami.ru">partadami.ru</a></strong></p>
