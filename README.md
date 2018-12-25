@@ -1,45 +1,210 @@
-<h1><strong>OptimizedHTML 4:</strong> <br>Startup HTML template based on Gulp & Bootstrap 4</h1>
+<table width="100%" bgcolor="#f4fafa" cellpadding="0" cellspacing="0" border="0">
+    <tbody>
+        <tr>
+            <td style="padding:40px;">
+                <!-- begin main block -->
+                <table cellpadding="0" cellspacing="0" width="608" border="0" align="center">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p style="padding:0 0 0 40px;margin:20px auto;">
+                                    <strong style="font-size:18px;font-weight:700">ЗДРАВСТВУЙТЕ</strong>,<br>меня заинтересовала ваша вакансия Web-программист.
+                                </p>
+                                <p style="padding:0 0 0 40px;margin:20px auto;">
+                                   Подскажите, рассматриваете ли вы удаленного сотрудника по данной вакансии?
+                                </p>
+                                <p style="text-align:right;margin-right:20px;"><a href="https://peretc001.github.io/email/" style="color:#a3b7b7;text-decoration:none;font-size:12px;">|&nbsp;&nbsp;&nbsp;web версия письма</a></p>
+                                <br>
+                                
 
-<p>
-	<img src="https://raw.githubusercontent.com/agragregra/OptimizedHTML-4/master/app/img/preview.jpg" alt="Start HTML Template">
-</p>
+                                <table cellpadding="0" cellspacing="0" border="0" width="97%">
+                                    <tbody>
+                                        <tr>
+                                            <td bgcolor="#FFFFFF" style="border-radius:6px;padding:20px;margin:0;">
+                                                <!-- begin content -->
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><img src="https://peretc001.github.io/email/img/logo.png" width="180" height:"200" alt="krasovsky" style="display:block; border:0;"></td>
+                                                            <td>
+                                                                <p style="padding:0 10px 0 20px;margin:20px auto;text-align:justify;">
+                                                                    <strong style="font-size:18px;font-weight:700;">Меня зовут Красовский Игорь</strong>,<br>Я web разработчик начального уровня, владею навыками верстки HTML5, CSS3, JS, JQuery, Bootstrap 4, а также PHP + MySQL (SafeMySQL).<br>В работе использую Photoshop, Illustrator, Avacode, Sublime Text, Git
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <p style="border-bottom:0.5px solid #f2f2f2;padding:0 40px;"></p>
+                                                <p style="text-align:center;margin:0;">Вот несколько из моих работ, их не много, но все под ключ.</p>
+                                                <!-- end content --> 
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <h1 style="display:block;margin:40px auto; text-align:center; font-size:24px; font-weight:bold;">Мои работы</h1>
+                                <a href="http://partadami.ru" style="border:none;"><img src="https://peretc001.github.io/email/img/partadami_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a>
+                                <p style="padding:0;margin:20px auto; text-align:center;">
+                                    <strong style="font-size:18px;font-weight:700;">Интернет-магазин «Парты ДЭМИ» | <a style="color: #0000EE;" href="http://partadami.ru">partadami.ru</a></strong>
+                                </p>
+                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td bgcolor="#FFFFFF" style="border-radius:6px;padding:20px;margin:0;">
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="50%"> 
+                                                                <ul type="square" style="margin:0;font-size:14px">
+                                                                    <li>Адаптивный дизайн (Skeleton)</li>
+                                                                    <li>Корзина покупателя</li>
+                                                                    <li>Список товаров из БД MySql</li>
+                                                                    <li>Отправка форм посетителю</li>
+                                                                </ul>
+                                                            </td>
+                                                            <td>
+                                                                <ul type="square" style="margin:0;font-size:14px">
+                                                                    <li>Смене характеристик без перезагрузки в карточке товара</li>
+                                                                    <li>Онлайн консультант</li>
+                                                                    <li>UIkit меню в мобильной версии</li>
+                                                                </ul>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table> 
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br><br><p style="border-bottom:0.5px solid #d1e0e0;margin:0 100px;"></p><br>
+                                <a href="http://avtonakidki.net" style="border:none;"><img src="https://peretc001.github.io/email/img/avtonakidki_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a>
+                                <p style="padding:0;margin:20px auto; text-align:center;">
+                                    <strong style="font-size:18px;font-weight:700;">Интернет-магазин «Автонакидки.НЕТ» | <a style="color: #0000EE;" href="http://avtonakidki.net">avtonakidki.net</a></strong>
+                                </p>
+                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td bgcolor="#FFFFFF" style="border-radius:6px;padding:20px;margin:0;">
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="50%"> 
+                                                                <ul type="square" style="margin:0;font-size:14px">
+                                                                    <li>Адаптивный дизайн (Skeleton)</li>
+                                                                    <li>Корзина покупателя</li>
+                                                                    <li>Список товаров из БД MySql</li>
+                                                                    <li>Отправка форм посетителю</li>
+                                                                </ul>
+                                                            </td>
+                                                            <td>
+                                                                <ul type="square" style="margin:0;font-size:14px">
+                                                                    <li>Смене характеристик без перезагрузки в карточке товара</li>
+                                                                    <li>Онлайн консультант</li>
+                                                                    <li>UIkit меню в мобильной версии</li>
+                                                                </ul>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table> 
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br><br><p style="border-bottom:0.5px solid #d1e0e0;margin:0 100px;"></p><br>
+                                <a href="http://autoprkt.ru" style="border:none;"><img src="https://peretc001.github.io/email/img/autoprkt_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a>
+                                <p style="padding:0;margin:20px auto; text-align:center;">
+                                    <strong style="font-size:18px;font-weight:700;">Сайт проката «АВТОПРКТ» | <a style="color: #0000EE;" href="http://autoprkt.ru">autoprkt.ru</a></strong>
+                                </p>
+                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td bgcolor="#FFFFFF" style="border-radius:6px;padding:20px;margin:0;">
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="25%">&nbsp;</td>
+                                                            <td width="50%"> 
+                                                                <ul type="square" style="margin:0;font-size:14px">
+                                                                    <li>Адаптивный дизайн (Skeleton)</li>
+                                                                    <li>Список авто из БД MySql</li>
+                                                                    <li>Скрипт бронирования</li>
+                                                                    <li>Календарь pickmeup</li>
+                                                                </ul>
+                                                            </td>
+                                                            <td width="25%">&nbsp;</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table> 
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br><br><p style="border-bottom:0.5px solid #d1e0e0;margin:0 100px;"></p><br>
+                                <img src="https://peretc001.github.io/email/img/crm_macbook.png" style="display:block;width:100%;max-width:600px;border:none;">
+                                <p style="padding:0;margin:20px auto; text-align:center;">
+                                    <strong style="font-size:18px;font-weight:700;">CRM для проката «АВТОПРКТ»</strong>
+                                </p>
+                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td bgcolor="#FFFFFF" style="border-radius:6px;padding:20px;margin:0;">
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="20%">&nbsp;</td>
+                                                            <td width="80%"> 
+                                                                <ul type="square" style="margin:0;font-size:14px">
+                                                                    <li>Учет клиентов</li>
+                                                                    <li>Учет брони</li>
+                                                                    <li>Учет платежей</li>
+                                                                    <li>Загрузка документов клиента</li>
+                                                                    <li>Печать договоров и актов из CRM</li>
+                                                                    <li>Сводный Баланс по клиентам и автомобилям</li>
+                                                                </ul>
+                                                            </td>
+                                                         </tr>
+                                                    </tbody>
+                                                </table> 
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br><br>
+<p style="border-bottom:0.5px solid #d1e0e0;margin:0 100px;"></p>
+<br>
+                                <table cellpadding="0" cellspacing="0" width="608" border="0" align="center">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width:50%;padding-right:30px;border-right:0.5px solid #d1e0e0;">
+                                                <p style="text-align:right;font-size:14px">Контакты для связи</p>
+                                            </td>
+                                            <td style="padding-left:30px;">
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="40px" text-align="center"><img src="https://peretc001.github.io/email/img/contact/mobile.png" style="display:block;width:14px;margin:0 auto;text-align:center;"></td>
+                                                            <td style="padding:5px 10px;font-size:14px"><a href="tel:+79180982859" style="color:#222;text-decoration:none;">8-918-098-28-59</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="40px" text-align="center"><img src="https://peretc001.github.io/email/img/contact/email.png" style="display:block;width:20px;margin:0 auto;text-align:center;"></td>
+                                                            <td style="padding:5px 10px;font-size:14px"><a style="color:#222;text-decoration:none;" href="mailto:i.krasovsky@yandex.ru">i.krasovsky@yandex.ru</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="40px" text-align="center"><img src="https://peretc001.github.io/email/img/contact/facebook.png" style="display:block;width:10px;margin:0 auto;text-align:center;"></td>
+                                                            <td style="padding:5px 10px;font-size:14px"><a style="color:#222;text-decoration:none;" href="https://www.facebook.com/i.krasovsky123">facebook.com/i.krasovsky123</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
 
-<p>Author: <a href="http://webdesign-master.ru" target="_blank">WebDesign Master</a></p>
-
-<p>OptimizedHTML is all-inclusive start HTML5 template with Bootstrap 4 (grid & reboot), Gulp, Sass, Browsersync, Autoprefixer, Clean-CSS, Uglify, Rsync and Bower (libs path) support. The template contains a <strong>.htaccess</strong> file with caching rules for web server.</p>
-
-<p><strong>OptimizedHTML 4</strong> Start Template uses the best practices of web development.</p>
-
-<p>Cross-browser compatibility: IE9+.</p>
-
-<p>The template uses a Sass with <strong>Sass</strong> or <strong>Scss</strong> syntax (optional).</p>
-
-<h2>How to use OptimizedHTML</h2>
-
-<ol>
-	<li><a href="https://github.com/agragregra/OptimizedHTML-4/archive/master.zip">Download</a> <strong>OptimizedHTML 4</strong> from GitHub;</li>
-	<li>Install Node Modules: <strong>npm i</strong>;</li>
-	<li>Run the template: <strong>gulp</strong>.</li>
-</ol>
-
-<h2>Gulp tasks:</h2>
-
-<ul>
-	<li><strong>gulp</strong>: run default gulp task (sass, js, watch, browserSync) for web development;</li>
-	<li><strong>rsync</strong>: project deployment on the server from <strong>dist</strong> folder via <strong>RSYNC</strong>;</li>
-</ul>
-
-<h2>Rules for working with the starting HTML template</h2>
-
-<ol>
-	<li>All HTML files should have similar initial content as in <strong>app/index.html</strong>;</li>
-	<li><strong>Template Basic Images Start</strong> comment in app/index.html - all your custom template basic images (og:image for social networking, favicons for a variety of devices);</li>
-	<li><strong>Custom Browsers Color Start</strong> comment in app/index.html: set the color of the browser head on a variety of devices;</li>
-	<li><strong>Custom HTML</strong> comment in app/index.html - all your custom HTML;</li>
-	<li>For installing new jQuery library, just run the command "<strong>bower i plugin-name</strong>" in the terminal. Libraries are automatically placed in the folder <strong>app/libs</strong>. Bower must be installed in the system (npm i -g bower). Then place all jQuery libraries paths in the <strong>'libs'</strong> task (gulpfile.js);</li>
-	<li>All custom JS located in <strong>app/js/common.js</strong>;</li>
-	<li>All Sass vars placed in <strong>app/sass/_vars.sass | app/scss/_vars.scss</strong>;</li>
-	<li>All Bootstrap media queries placed in <strong>app/sass/_media.sass | app/scss/_media.scss</strong>;</li>
-	<li>All libraries CSS styles placed in <strong>app/sass/_libs.sass | app/scss/_libs.scss</strong>;</li>
-	<li>Rename <strong>ht.access</strong> to <strong>.htaccess</strong> before place it in your web server. This file contain rules for files caching on web server.</li>
-</ol>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- end main block -->
+            </td>
+        </tr>
+    </tbody>
+</table>
