@@ -1,3 +1,9 @@
+:root {
+	--accent: #F9C869;
+	--blue: #66C7CD;
+	--red: #F86868;
+	--dark: #1a1a1a;
+}
 body {
 	margin:0;
 	padding:0;
@@ -163,6 +169,10 @@ section {
 			.welcome strong .fa:last-child {
 				margin-right:0px;
 				margin-left:10px;
+			}
+			.btn.btn-accent {
+				background-color: var(--accent);
+				padding:10px 20px;
 			}
 		/* END HEADER-FLEX */
 
