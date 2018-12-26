@@ -49,9 +49,10 @@ section {
 }
 
 .site-header .top-line a img {
-  width: 14rem;
+  width: 20rem;
   height: auto;
-  margin-left: 40px;
+  margin-left: 60px;
+  margin-top: 20px;
 }
 
 .site-header .top-line .phone {
@@ -259,6 +260,18 @@ section {
   margin-right: 5px;
   color: #555;
   font-size: 12px;
+}
+
+.carousel-services .owl-item:nth-child(3n+1) {
+  background-color: #66C7CD;
+}
+
+.carousel-services .owl-item:nth-child(3n+2) {
+  background-color: #F86868;
+}
+
+.carousel-services .owl-item:nth-child(3n+3) {
+  background-color: #F9C869;
 }
 
 .mm-panel_has-navbar .mm-navbar {

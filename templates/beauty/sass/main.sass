@@ -4,7 +4,6 @@ $red: #F86868
 $dark: #1a1a1a
 $top: #1e1f24
 
-
 body
 	margin: 0
 	padding: 0
@@ -45,9 +44,10 @@ section
 			position: absolute
 		a 
 			img 
-				width: 14rem
+				width: 20rem
 				height: auto
-				margin-left: 40px
+				margin-left: 60px
+				margin-top: 20px
 		.phone 
 			position: absolute
 			top: 0
@@ -196,6 +196,15 @@ section
 			margin-right: 5px
 			color: #555
 			font-size: 12px
+
+
+$colors: $blue, $red, $accent
+@for $i from 1 through length($colors)
+	.carousel-services .owl-item:nth-child(#{length($colors)}n+#{$i})
+		background-color: nth($colors, $i)
+
+
+
 
 .mm-panel_has-navbar .mm-navbar
 	padding-top: 0
