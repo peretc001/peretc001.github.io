@@ -5,14 +5,14 @@
 		"/app/**",
 		"/templates/beauty/js/**"
 	],
-	"liveSassCompile.settings.excludeList": [
-		"/templates/beauty/*[!(file1|file2)].sass"
-	],
 	"liveSassCompile.settings.formats": [
 		{
 		"format": "compressed",
 		"extensionName": ".css",
 		"savePath": "/templates/beauty/css"
 		}
+	],
+	"liveSassCompile.settings.excludeList": [
+		"/templates/beauty/*[!(file1|file2)].sass"
 	]
 }
