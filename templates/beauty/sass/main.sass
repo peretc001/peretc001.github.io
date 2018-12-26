@@ -1,0 +1,13 @@
+body
+	font-size: 12px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	overflow-x: hidden
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
