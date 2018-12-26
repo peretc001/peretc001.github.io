@@ -7,12 +7,12 @@
 	],
 	"liveSassCompile.settings.formats": [
 		{
-		"format": "compressed",
+		"format": "expanded",
 		"extensionName": ".css",
 		"savePath": "/templates/beauty/css"
 		}
 	],
-	"liveSassCompile.settings.excludeList": [
-		"/templates/beauty/*[!(file1|file2)].sass"
+	"liveSassCompile.settings.includeItems": [
+		"templates/beauty/main.scss"
 	]
 }
