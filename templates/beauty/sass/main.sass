@@ -32,7 +32,7 @@ section
 	position: relative
 	background-color: $top
 	height: 100vh
-	min-height: 550px
+	min-height: 600px
 	background-image: url(../img/top_bg.jpg)
 	background-position: top center
 	background-size: cover
@@ -258,7 +258,12 @@ $colors: $blue, $red, $accent
 
 @media screen and (max-width: 992px)
 	.site-header 
-		.header-flex 
+		.top-line 
+			.logo
+				a 
+					img
+						width: 15rem
+	.header-flex 
 			.flex-center 
 				.header-composition 
 					.welcome 
@@ -281,28 +286,48 @@ $colors: $blue, $red, $accent
 			display: none
 
 @media screen and (max-width: 576px)
-	.dark
-		box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5) inset
-	.site-header
+	.site-header 
 		height: 100%
-	.top-line 
-		.logo, .phone
-			position: relative
-			display: block
-			width: 100%
-			text-align: center
-			margin: 0 auto
-			padding: 0 10% 0 0
-		.logo
-			a 
-				img
-					margin: 0
+		.top-line 
+			.logo, .phone
+				position: relative
+				display: block
+				width: 100%
+				text-align: center
+				margin: 0 auto
+				padding: 20px 10% 0 0
+			.logo
+				a 
+					img
+						width: 15rem
+						margin: 0
+		.header-flex 
+			.flex-center 
+				.header-composition 
+					.welcome 
+						.h1
+							font-size: 3rem
+					p
+						font-size: 13px 
+		.top-line 
+			.logo, .phone
+				padding: 10px 10% 0 0
+				a 
+					img
+						width: 10rem
+						margin: 0
+	.dark
+		box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5) inset	
 	.header-contact
-		font-size: 13px
+		font-size: 14px
 		.time
 			display: none
 		.adres
 			text-align: center
+	
+	.mm-navbar__title 
+		img
+			width: 10rem
 
 @media screen and (max-width: 450px)
 	.site-header 

@@ -34,7 +34,7 @@ section {
   position: relative;
   background-color: #1e1f24;
   height: 100vh;
-  min-height: 550px;
+  min-height: 600px;
   background-image: url(../img/top_bg.jpg);
   background-position: top center;
   background-size: cover;
@@ -337,10 +337,13 @@ section {
 }
 
 @media screen and (max-width: 992px) {
-  .site-header .header-flex .flex-center .header-composition .welcome .h1 {
+  .site-header .top-line .logo a img {
+    width: 15rem;
+  }
+  .header-flex .flex-center .header-composition .welcome .h1 {
     font-size: 2.2rem;
   }
-  .site-header .header-flex .flex-center .header-composition .welcome p span {
+  .header-flex .flex-center .header-composition .welcome p span {
     font-size: 0.6rem;
   }
 }
@@ -355,32 +358,49 @@ section {
 }
 
 @media screen and (max-width: 576px) {
-  .dark {
-    -webkit-box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5) inset;
-            box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5) inset;
-  }
   .site-header {
     height: 100%;
   }
-  .top-line .logo, .top-line .phone {
+  .site-header .top-line .logo, .site-header .top-line .phone {
     position: relative;
     display: block;
     width: 100%;
     text-align: center;
     margin: 0 auto;
-    padding: 0 10% 0 0;
+    padding: 20px 10% 0 0;
   }
-  .top-line .logo a img {
+  .site-header .top-line .logo a img {
+    width: 15rem;
     margin: 0;
   }
-  .header-contact {
+  .site-header .header-flex .flex-center .header-composition .welcome .h1 {
+    font-size: 3rem;
+  }
+  .site-header .header-flex .flex-center .header-composition p {
     font-size: 13px;
+  }
+  .site-header .top-line .logo, .site-header .top-line .phone {
+    padding: 10px 10% 0 0;
+  }
+  .site-header .top-line .logo a img, .site-header .top-line .phone a img {
+    width: 10rem;
+    margin: 0;
+  }
+  .dark {
+    -webkit-box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5) inset;
+            box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5) inset;
+  }
+  .header-contact {
+    font-size: 14px;
   }
   .header-contact .time {
     display: none;
   }
   .header-contact .adres {
     text-align: center;
+  }
+  .mm-navbar__title img {
+    width: 10rem;
   }
 }
 
