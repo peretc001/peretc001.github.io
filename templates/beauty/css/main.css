@@ -34,7 +34,7 @@ section {
   position: relative;
   background-color: #1e1f24;
   height: 100vh;
-  min-height: 600px;
+  min-height: 560px;
   background-image: url(../img/top_bg.jpg);
   background-position: top center;
   background-size: cover;
@@ -377,12 +377,16 @@ section {
     font-size: 3rem;
   }
   .site-header .header-flex .flex-center .header-composition p {
+    margin-top: 20px;
     font-size: 13px;
   }
   .site-header .top-line .logo, .site-header .top-line .phone {
     padding: 10px 10% 0 0;
   }
-  .site-header .top-line .logo a img, .site-header .top-line .phone a img {
+  .site-header .top-line .phone {
+    font-style: 18px;
+  }
+  .site-header .top-line .logo a img {
     width: 10rem;
     margin: 0;
   }
