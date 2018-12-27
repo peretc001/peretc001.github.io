@@ -203,6 +203,85 @@ $colors: $blue, $red, $accent
 	.carousel-services .owl-item:nth-child(#{length($colors)}n+#{$i})
 		background-color: nth($colors, $i)
 
+.carousel-services
+	background-color: $dark
+	.carousel-services__item
+		color: #ffffff
+		font-style: 18px
+		font-weight: 300
+		position: relative
+		display: flex
+		flex-direction: column-reverse
+		&__content
+			position: relative
+			padding: 60px 10%
+			&__composition
+				margin: auto
+				text-align: center
+				width: 100%
+				&__h3
+					text-transform: uppercase
+					font-weight: 900
+					font-size: 1.6rem
+					margin: 10px 0
+					span
+						font-weight: 200
+						font-size: 1.2rem
+						display: block
+				&__logo
+					text-align: center
+					img
+						max-width: 8rem
+						height: auto
+						display: inline-block
+				&__lists
+					margin: 0
+					padding: 0
+					list-style-type: none
+					margin-bottom: 25px
+					li
+						border-bottom: 1px solid rgba(#000, .12)
+						padding: 9px
+						&:last-child
+							border-bottom: none
+						strong
+							font-weight: 600
+							font-size: 18px
+							color: #4a4a4a
+						.fas
+							font-size: 14px
+							color: #4a4a4a
+				.btn.btn-white
+					background-color: #fff
+					color: #444444
+					padding: 10px 30px
+					position: relative
+					border: none
+					transition: background-color .2s ease
+					&:hover
+						background: #444444
+						color: #fff
+					
+	
+					
+		&__image
+			background-size: cover
+			background-position: center
+			opacity: 0.7
+			transition: opacity 0.5s ease
+		&:hover
+			.carousel-services__item__image
+				opacity: 1
+		&__content 
+			display:flex
+
+.carousel-services
+	.owl-item
+		backface-visibility: inherit
+		&:nth-child(2n+2)
+			.carousel-services__item
+				flex-direction: column
+			
 
 
 
@@ -249,6 +328,10 @@ $colors: $blue, $red, $accent
 	.header-contact 
 		span
 			display: none
+
+	.carousel-services
+		.carousel-services__item
+			flex-direction: column
 
 @media screen and (max-width: 1024px)
 	.header-contact

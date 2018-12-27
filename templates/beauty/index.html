@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
 	 crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Exo+2:100,200,300,400,600,800&amp;subset=cyrillic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Exo+2:100,200,300,400,600,800,900&amp;subset=cyrillic" rel="stylesheet">
 
 	<!-- Chrome, Firefox, Opera -->
 	<meta name="theme-color" content="#1a1a1a">
@@ -102,22 +102,57 @@
 
 		<section class="services">
 			<div class="owl-carousel carousel-services">
+				
 				<div class="carousel-services__item">
-					<div class="carousev-service__item__content"></div>
-					<div class="carousel-service__item__image"></div>
-				<div>
-				<div class="carousel-services__item">
-					<div class="carousev-service__item__content"></div>
-					<div class="carousel-service__item__image"></div>
+					<div class="carousel-services__item__content">
+						<div class="carousel-services__item__content__composition">
+							<div class="carousel-services__item__content__composition__logo"><img src="img/logo2.svg" alt="Салон красоты"></div>
+							<h3 class="carousel-services__item__content__composition__h3">Косметологический сервис</h3>
+							<ul class="carousel-services__item__content__composition__lists">
+								<li>Ключевая услуга #1 - <strong>8500</strong> <i class="fas fa-ruble-sign"></i></li>
+								<li>Ключевая услуга #2 - <strong>6200</strong> <i class="fas fa-ruble-sign"></i></li>
+								<li>Ключевая услуга #3 - <strong>4400</strong> <i class="fas fa-ruble-sign"></i></li>
+							</ul>
+							<a href="" class="btn btn-white">Все услуги</a>
+						</div>
+					</div>
+					<div class="carousel-services__item__image" style="background-image:url(img/service.jpg)"></div>
 				</div>
+				
 				<div class="carousel-services__item">
-					<div class="carousev-service__item__content"></div>
-					<div class="carousel-service__item__image"></div>
+					<div class="carousel-services__item__content">
+						<div class="carousel-services__item__content__composition">
+							<div class="carousel-services__item__content__composition__logo"><img src="img/logo2.svg" alt="Салон красоты"></div>
+							<h3 class="carousel-services__item__content__composition__h3">Парикмахерский сервис</h3>
+							<ul class="carousel-services__item__content__composition__lists">
+								<li>Ключевая услуга #1 - <strong>2500</strong> <i class="fas fa-ruble-sign"></i></li>
+								<li>Ключевая услуга #2 - <strong>9500</strong> <i class="fas fa-ruble-sign"></i></li>
+								<li>Ключевая услуга #3 - <strong>7200</strong> <i class="fas fa-ruble-sign"></i></li>
+							</ul>
+							<a href="" class="btn btn-white">Все услуги</a>
+						</div>
+					</div>
+					<div class="carousel-services__item__image" style="background-image:url(img/service2.jpg)"></div>
 				</div>
+
 				<div class="carousel-services__item">
-					<div class="carousev-service__item__content"></div>
-					<div class="carousel-service__item__image"></div>
+					<div class="carousel-services__item__content">
+						<div class="carousel-services__item__content__composition">
+							<div class="carousel-services__item__content__composition__logo"><img src="img/logo2.svg" alt="Салон красоты"></div>
+							<h3 class="carousel-services__item__content__composition__h3">Маникюрный сервис</h3>
+							<ul class="carousel-services__item__content__composition__lists">
+								<li>Ключевая услуга #1 - <strong>1500</strong> <i class="fas fa-ruble-sign"></i></li>
+								<li>Ключевая услуга #2 - <strong>3300</strong> <i class="fas fa-ruble-sign"></i></li>
+								<li>Ключевая услуга #3 - <strong>6200</strong> <i class="fas fa-ruble-sign"></i></li>
+							</ul>
+							<a href="" class="btn btn-white">Все услуги</a>
+						</div>
+					</div>
+					<div class="carousel-services__item__image" style="background-image:url(img/service3.jpg)"></div>
 				</div>
+
+				
+
 			</div>
 		</section>
 
@@ -144,6 +179,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script type="text/javascript" src="js/mmenu/dist/jquery.mmenu.all.js"></script>
 	<script type="text/javascript" src="js/owlCarousel/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="js/equalHeights/jquery.equalheights.min.js"></script>
 	<!-- STYLE -->
 	<link href="js/mmenu/dist/jquery.mmenu.all.css" rel="stylesheet">
 	<link href="js/owlCarousel/css/owl.carousel.min.css" rel="stylesheet">
@@ -170,9 +206,16 @@
 			api.bind('close:finish', function () {
 				$('.hamburger').removeClass('is-active');
 			});
-
+			
+			//Инициализируем карусель с задержкой
+			$('.carousel-services').on('initialized.owl.carousel', function() {
+				setTimeout(function(){
+					carouselServices();
+				}, 100);
+			})
+			//Базовые параметры карусели
 			$('.carousel-services').owlCarousel({
-				loop: true,
+				// loop: true,
 				nav: true,
 				smartSpeed: 700,
 				navText: ['<i class="fa fa-angle-double-left"></i>', ' <i class="fa fa-angle-double-right"></i>'],
@@ -189,6 +232,28 @@
 					}
 				}
 			});
+			// Определяем высоту блока и задаем эту высоту для img
+			function carouselServices() {
+				$('.carousel-services__item').each(function() {
+					var	ths = $(this),
+							thsh = ths.find('.carousel-services__item__content').outerHeight();
+							ths.find('.carousel-services__item__image').css('min-height', thsh);
+				});
+			} carouselServices();
+			//Вычисляем размер блока при разной высоте блока или при смене размера окна
+			function onResize() {
+				$('.carousel-services__item__content').equalHeights();
+			} onResize();
+			window.onresize = function () {
+				onResize();
+			}
+
+			//Вставляем тег span в название услуги h3
+			$('.carousel-services__item__content__composition__h3').each(function(){
+				var ths = $(this);
+				ths.html(ths.html().replace(/(\S+)\s*$/, '<span>$1</span>'))
+			});
+			
 		});
 	</script>
 
