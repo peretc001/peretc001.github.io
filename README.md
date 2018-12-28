@@ -12,6 +12,12 @@
 
 <a href="https://peretc001.github.io/templates/beauty/"><img src="https://peretc001.github.io/templates/beauty/img/screen.jpg" style="display:block;width:100%;max-width:600px;border:none;"></a>
 <p><strong>Верстка макета "Салон Красоты" | <a href="https://peretc001.github.io/templates/beauty/">https://peretc001.github.io/templates/beauty/</a></strong></p>
+<ul type="none">
+	<li>Адаптивный дизайн (Bootstrap4)</li>
+	<li>Живое меню (Mmenu)</li>
+	<li>Карусель услуг (owl.Carousel)</li>
+	<li>Фотогаллерея (fotoRama)</li>
+</ul>
 <br><br>
 <h1  style="text-align:center;">Мои работы</h1>
 <a href="http://partadami.ru"><img src="https://peretc001.github.io/email/img/partadami_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a>

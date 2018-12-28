@@ -3,6 +3,7 @@ $blue: #66C7CD
 $red: #F86868
 $dark: #1a1a1a
 $top: #1e1f24
+$green: #6adc78
 
 body
 	margin: 0
@@ -198,7 +199,7 @@ section
 			font-size: 12px
 
 
-$colors: $blue, $red, $accent
+$colors: $blue, $red, $accent, $green
 @for $i from 1 through length($colors)
 	.carousel-services .owl-item:nth-child(#{length($colors)}n+#{$i})
 		background-color: nth($colors, $i)
@@ -281,10 +282,32 @@ $colors: $blue, $red, $accent
 		&:nth-child(2n+2)
 			.carousel-services__item
 				flex-direction: column
+
+.owl-carousel
+	.owl-nav
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		button.owl-prev, button.owl-next
+			width: 64px
+			height: 64px
+			background-color: #ffffff
+			color: $dark
+			position: absolute
+			text-align: center
+			line-height: 64px
+			font-size: 26px
+			border: none
+		button.owl-prev
+			left: 0
+		button.owl-next
+			right: 0
 			
+		
 
 
-
+// Mmenu right
 .mm-panel_has-navbar .mm-navbar
 	padding-top: 0
 	border: none
@@ -367,6 +390,8 @@ $colors: $blue, $red, $accent
 	.header-contact 
 		.phone		
 			display: none
+	.carousel-services .carousel-services__item__content__composition__h3
+		font-size: 1.4rem
 
 @media screen and (max-width: 576px)
 	.site-header 

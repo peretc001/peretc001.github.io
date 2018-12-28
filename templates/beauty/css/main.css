@@ -262,16 +262,20 @@ section {
   font-size: 12px;
 }
 
-.carousel-services .owl-item:nth-child(3n+1) {
+.carousel-services .owl-item:nth-child(4n+1) {
   background-color: #66C7CD;
 }
 
-.carousel-services .owl-item:nth-child(3n+2) {
+.carousel-services .owl-item:nth-child(4n+2) {
   background-color: #F86868;
 }
 
-.carousel-services .owl-item:nth-child(3n+3) {
+.carousel-services .owl-item:nth-child(4n+3) {
   background-color: #F9C869;
+}
+
+.carousel-services .owl-item:nth-child(4n+4) {
+  background-color: #6adc78;
 }
 
 .carousel-services {
@@ -392,6 +396,33 @@ section {
           flex-direction: column;
 }
 
+.owl-carousel .owl-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next {
+  width: 64px;
+  height: 64px;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  position: absolute;
+  text-align: center;
+  line-height: 64px;
+  font-size: 26px;
+  border: none;
+}
+
+.owl-carousel .owl-nav button.owl-prev {
+  left: 0;
+}
+
+.owl-carousel .owl-nav button.owl-next {
+  right: 0;
+}
+
 .mm-panel_has-navbar .mm-navbar {
   padding-top: 0;
   border: none;
@@ -478,6 +509,9 @@ section {
   }
   .header-contact .phone {
     display: none;
+  }
+  .carousel-services .carousel-services__item__content__composition__h3 {
+    font-size: 1.4rem;
   }
 }
 

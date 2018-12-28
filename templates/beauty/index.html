@@ -151,6 +151,70 @@
 					<div class="carousel-services__item__image" style="background-image:url(img/service3.jpg)"></div>
 				</div>
 
+				<div class="carousel-services__item">
+					<div class="carousel-services__item__content">
+						<div class="carousel-services__item__content__composition">
+							<div class="carousel-services__item__content__composition__logo"><img src="img/logo2.svg" alt="Салон красоты"></div>
+							<h3 class="carousel-services__item__content__composition__h3">Массаж и SPA</h3>
+							<ul class="carousel-services__item__content__composition__lists">
+								<li>Ключевая услуга #1 - <strong>2500</strong> <i class="fas fa-ruble-sign"></i></li>
+								<li>Ключевая услуга #2 - <strong>4200</strong> <i class="fas fa-ruble-sign"></i></li>
+								<li>Ключевая услуга #3 - <strong>7000</strong> <i class="fas fa-ruble-sign"></i></li>
+							</ul>
+							<a href="" class="btn btn-white">Все услуги</a>
+						</div>
+					</div>
+					<div class="carousel-services__item__image" style="background-image:url(img/service4.jpg)"></div>
+				</div>
+
+				<div class="carousel-services__item">
+					<div class="carousel-services__item__content">
+						<div class="carousel-services__item__content__composition">
+							<div class="carousel-services__item__content__composition__logo"><img src="img/logo2.svg" alt="Салон красоты"></div>
+							<h3 class="carousel-services__item__content__composition__h3">Косметологический сервис</h3>
+							<ul class="carousel-services__item__content__composition__lists">
+								<li>Ключевая услуга #1 - <strong>8500</strong> <i class="fas fa-ruble-sign"></i></li>
+								<li>Ключевая услуга #2 - <strong>6200</strong> <i class="fas fa-ruble-sign"></i></li>
+								<li>Ключевая услуга #3 - <strong>4400</strong> <i class="fas fa-ruble-sign"></i></li>
+							</ul>
+							<a href="" class="btn btn-white">Все услуги</a>
+						</div>
+					</div>
+					<div class="carousel-services__item__image" style="background-image:url(img/service.jpg)"></div>
+				</div>
+				
+				<div class="carousel-services__item">
+					<div class="carousel-services__item__content">
+						<div class="carousel-services__item__content__composition">
+							<div class="carousel-services__item__content__composition__logo"><img src="img/logo2.svg" alt="Салон красоты"></div>
+							<h3 class="carousel-services__item__content__composition__h3">Парикмахерский сервис</h3>
+							<ul class="carousel-services__item__content__composition__lists">
+								<li>Ключевая услуга #1 - <strong>2500</strong> <i class="fas fa-ruble-sign"></i></li>
+								<li>Ключевая услуга #2 - <strong>9500</strong> <i class="fas fa-ruble-sign"></i></li>
+								<li>Ключевая услуга #3 - <strong>7200</strong> <i class="fas fa-ruble-sign"></i></li>
+							</ul>
+							<a href="" class="btn btn-white">Все услуги</a>
+						</div>
+					</div>
+					<div class="carousel-services__item__image" style="background-image:url(img/service2.jpg)"></div>
+				</div>
+				
+				<div class="carousel-services__item">
+					<div class="carousel-services__item__content">
+						<div class="carousel-services__item__content__composition">
+							<div class="carousel-services__item__content__composition__logo"><img src="img/logo2.svg" alt="Салон красоты"></div>
+							<h3 class="carousel-services__item__content__composition__h3">Маникюрный сервис</h3>
+							<ul class="carousel-services__item__content__composition__lists">
+								<li>Ключевая услуга #1 - <strong>1500</strong> <i class="fas fa-ruble-sign"></i></li>
+								<li>Ключевая услуга #2 - <strong>3300</strong> <i class="fas fa-ruble-sign"></i></li>
+								<li>Ключевая услуга #3 - <strong>6200</strong> <i class="fas fa-ruble-sign"></i></li>
+							</ul>
+							<a href="" class="btn btn-white">Все услуги</a>
+						</div>
+					</div>
+					<div class="carousel-services__item__image" style="background-image:url(img/service3.jpg)"></div>
+				</div>
+
 				
 
 			</div>
@@ -215,20 +279,24 @@
 			})
 			//Базовые параметры карусели
 			$('.carousel-services').owlCarousel({
-				// loop: true,
+				loop: false,
 				nav: true,
 				smartSpeed: 700,
 				navText: ['<i class="fa fa-angle-double-left"></i>', ' <i class="fa fa-angle-double-right"></i>'],
 				responsiveClass: true,
+				dots: false,
 				responsive: {
 					0: {
 						items: 1
 					},
-					800: {
+					650: {
 						items: 2
 					},
-					1100: {
+					1200: {
 						items: 3
+					},
+					1920: {
+					items: 4
 					}
 				}
 			});
