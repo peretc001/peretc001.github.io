@@ -4,6 +4,7 @@ $red: #F86868
 $dark: #1a1a1a
 $top: #1e1f24
 $green: #6adc78
+$overlay: #3D3C3C
 
 body
 	margin: 0
@@ -19,9 +20,7 @@ body
 		text-decoration:none
 p 
 	padding: 0
-	margin: 0
-header 
-	color: #ffffff
+	margin: 0	
 section, header 
 	position: relative
 	background-size: cover
@@ -29,12 +28,26 @@ section, header
 section 
 	background-color: #fff
 
-.site-header 
-	position: relative
+.inverse
+	color: #ffffff
 	background-color: $top
+
+.overlay:before
+	content: ''
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-color: $overlay
+	opacity: .85
+
+//TOP
+.site-header 
+	// display: none
+	position: relative
 	height: 100vh
 	min-height: 560px
-	background-image: url(../img/top_bg.jpg)
 	background-position: top center
 	background-size: cover
 	a 
@@ -199,6 +212,10 @@ section
 			font-size: 12px
 
 
+// Carousel
+.services
+	// display: none
+	
 $colors: $blue, $red, $accent, $green
 @for $i from 1 through length($colors)
 	.carousel-services .owl-item:nth-child(#{length($colors)}n+#{$i})
@@ -305,6 +322,27 @@ $colors: $blue, $red, $accent, $green
 			right: 0
 			
 		
+//Gallary
+.gallary
+	padding: 5% 0
+	p
+		margin: 30px 0
+	&__h2
+		text-transform: uppercase
+		font-weight: 900
+		font-size: 2rem
+		margin: 10px 0
+		color: $accent
+		span
+			color: #ffffff
+.fotorama
+	background-color: rgba($dark, .4)
+	&__nav
+		&-wrap
+			position: absolute
+			bottom: 15px
+			padding: 0 30px
+			width: 100%
 
 
 // Mmenu right

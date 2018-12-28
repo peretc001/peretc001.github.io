@@ -16,14 +16,21 @@
 	<meta name="msapplication-navbutton-color" content="#1a1a1a">
 	<!-- IOS Safari -->
 	<meta name="apple-mobile-web-app-status-bar-style" content="#1a1a1a">
-
-	<style> body { opacity:0; overflow-x: hidden; } html { background-color: #1a1a1a;  } </style>
+	<style>
+		body {
+			opacity: 0;
+			overflow-x: hidden;
+		}
+		html {
+			background-color: #1e1f24;
+		}
+	</style>
 </head>
 
 <body class="home">
 
 	<div class="page">
-		<header class="site-header dark">
+		<header class="site-header dark inverse" style="background-image:url('img/top_bg.jpg')">
 
 			<div class="top-line">
 
@@ -116,7 +123,7 @@
 							<a href="" class="btn btn-white">Все услуги</a>
 						</div>
 					</div>
-					<div class="carousel-services__item__image" style="background-image:url(img/service.jpg)"></div>
+					<div class="carousel-services__item__image" style="background-image:url('img/services/service.jpg')"></div>
 				</div>
 				
 				<div class="carousel-services__item">
@@ -132,7 +139,7 @@
 							<a href="" class="btn btn-white">Все услуги</a>
 						</div>
 					</div>
-					<div class="carousel-services__item__image" style="background-image:url(img/service2.jpg)"></div>
+					<div class="carousel-services__item__image" style="background-image:url('img/services/service2.jpg')"></div>
 				</div>
 
 				<div class="carousel-services__item">
@@ -148,7 +155,7 @@
 							<a href="" class="btn btn-white">Все услуги</a>
 						</div>
 					</div>
-					<div class="carousel-services__item__image" style="background-image:url(img/service3.jpg)"></div>
+					<div class="carousel-services__item__image" style="background-image:url('img/services/service3.jpg')"></div>
 				</div>
 
 				<div class="carousel-services__item">
@@ -164,7 +171,7 @@
 							<a href="" class="btn btn-white">Все услуги</a>
 						</div>
 					</div>
-					<div class="carousel-services__item__image" style="background-image:url(img/service4.jpg)"></div>
+					<div class="carousel-services__item__image" style="background-image:url('img/services/service4.jpg')"></div>
 				</div>
 
 				<div class="carousel-services__item">
@@ -180,7 +187,7 @@
 							<a href="" class="btn btn-white">Все услуги</a>
 						</div>
 					</div>
-					<div class="carousel-services__item__image" style="background-image:url(img/service.jpg)"></div>
+					<div class="carousel-services__item__image" style="background-image:url('img/services/service.jpg')"></div>
 				</div>
 				
 				<div class="carousel-services__item">
@@ -196,7 +203,7 @@
 							<a href="" class="btn btn-white">Все услуги</a>
 						</div>
 					</div>
-					<div class="carousel-services__item__image" style="background-image:url(img/service2.jpg)"></div>
+					<div class="carousel-services__item__image" style="background-image:url('img/services/service2.jpg')"></div>
 				</div>
 				
 				<div class="carousel-services__item">
@@ -212,11 +219,31 @@
 							<a href="" class="btn btn-white">Все услуги</a>
 						</div>
 					</div>
-					<div class="carousel-services__item__image" style="background-image:url(img/service3.jpg)"></div>
+					<div class="carousel-services__item__image" style="background-image:url('img/services/service3.jpg')"></div>
 				</div>
+			
+			</div>
+		</section>
 
-				
-
+		<section class="gallary inverse overlay" style="background-image:url('img/gallary/bg.jpg')">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5">
+						<h2 class="gallary__h2">Королевский салон</h2>
+						<p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Правилами возвращайся маленькая снова? Страна, но! Все вопрос толку большого образ если, что это живет повстречался знаках языком снова своих.</p>
+						<p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Правилами возвращайся маленькая снова? Страна, но! Все вопрос толку большого образ если, что это живет повстречался знаках языком снова своих.</p>
+					</div>
+					<div class="col-md-7">
+						<div class="fotorama" data-nav="thumbs" data-thumbwidth="110" data-thumbheight="70">
+							<img src="img/gallary/1.jpg" alt="Салон красоты">
+							<img src="img/gallary/2.jpg" alt="Салон красоты">
+							<img src="img/gallary/3.jpg" alt="Салон красоты">
+							<img src="img/gallary/4.jpg" alt="Салон красоты">
+							<img src="img/gallary/5.jpg" alt="Салон красоты">
+							<img src="img/gallary/6.jpg" alt="Салон красоты">
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 
@@ -244,10 +271,12 @@
 	<script type="text/javascript" src="js/mmenu/dist/jquery.mmenu.all.js"></script>
 	<script type="text/javascript" src="js/owlCarousel/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="js/equalHeights/jquery.equalheights.min.js"></script>
+	<script src="js/fotorama/fotorama.js"></script>
 	<!-- STYLE -->
 	<link href="js/mmenu/dist/jquery.mmenu.all.css" rel="stylesheet">
 	<link href="js/owlCarousel/css/owl.carousel.min.css" rel="stylesheet">
 	<link href="js/owlCarousel/css/owl.theme.default.min.css" rel="stylesheet">
+	<link href="js/fotorama/fotorama.css" rel="stylesheet">
 	<link href="css/hamburgers.min.css" rel="stylesheet">
 	<link href="css/main.css" rel="stylesheet">
 	<!-- MY SCRIPT -->
@@ -319,7 +348,12 @@
 			//Вставляем тег span в название услуги h3
 			$('.carousel-services__item__content__composition__h3').each(function(){
 				var ths = $(this);
-				ths.html(ths.html().replace(/(\S+)\s*$/, '<span>$1</span>'))
+				ths.html(ths.html().replace(/(\S+)\s*$/, '<span>$1</span>'));
+			});
+			//Вставляем тег span в название услуги h2 gallary
+			$('.gallary__h2').each(function () {
+				var ths = $(this);
+				ths.html(ths.html().replace(/^(\S+)/, '<span>$1</span>'));
 			});
 			
 		});
