@@ -439,6 +439,7 @@ section {
 
 .gallary p {
   margin: 30px 0;
+  font-weight: 300;
 }
 
 .gallary__h2 {
@@ -457,11 +458,43 @@ section {
   background-color: rgba(26, 26, 26, 0.4);
 }
 
+.fotorama .fotorama__active {
+  border-color: #1a1a1a;
+}
+
 .fotorama__nav-wrap {
   position: absolute;
-  bottom: 15px;
-  padding: 0 30px;
+  bottom: 5px;
+  padding: 0 10px;
+  margin: 0 auto;
   width: 100%;
+}
+
+.fotorama__thumb {
+  border: 5px solid #ffffff;
+  -webkit-transition: border-color .5s ease;
+  transition: border-color .5s ease;
+  width: 100%;
+}
+
+.fotorama__thumb-border {
+  border-color: #1a1a1a;
+}
+
+.fotorama__arr--prev::before, .fotorama__arr--next::before {
+  font-family: "Font Awesome 5 Free";
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.fotorama__arr--prev::before {
+  content: '\f053';
+  margin-left: 10px;
+}
+
+.fotorama__arr--next::before {
+  content: '\f054';
+  margin-right: 10px;
 }
 
 .mm-panel_has-navbar .mm-navbar {
@@ -521,6 +554,14 @@ section {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .gallary p {
+    margin: 20px 0;
+    font-weight: 300;
+    font-size: 14px;
+  }
+  .gallary__h2 {
+    font-size: 1.8rem;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -553,6 +594,19 @@ section {
   }
   .carousel-services .carousel-services__item__content__composition__h3 {
     font-size: 1.4rem;
+  }
+  .fotorama {
+    background: none;
+  }
+  .fotorama__nav {
+    margin: 5px 0;
+  }
+  .fotorama__nav-wrap {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    botoom: 0;
+    width: 100%;
   }
 }
 
@@ -605,6 +659,9 @@ section {
   .header-contact .adres {
     text-align: center;
   }
+  .gallary .container {
+    padding: 0 10%;
+  }
   .mm-navbar__title img {
     width: 10rem;
   }
@@ -617,6 +674,9 @@ section {
   .site-header .header-flex .flex-center .header-composition .welcome p {
     font-size: 1rem;
     line-height: 1.5;
+  }
+  .gallary__h2 {
+    font-size: 1.4rem;
   }
 }
 
@@ -651,6 +711,9 @@ section {
   }
   .site-header .header-flex .flex-center .header-composition .welcome p span {
     font-size: 0.5rem;
+  }
+  .gallary__h2 {
+    font-size: 1.2rem;
   }
 }
 /*# sourceMappingURL=main.css.map */

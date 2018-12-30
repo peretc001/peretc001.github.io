@@ -44,7 +44,7 @@ section
 
 //TOP
 .site-header 
-	// display: none
+	//display: none
 	position: relative
 	height: 100vh
 	min-height: 560px
@@ -214,7 +214,7 @@ section
 
 // Carousel
 .services
-	// display: none
+	//display: none
 	
 $colors: $blue, $red, $accent, $green
 @for $i from 1 through length($colors)
@@ -327,6 +327,7 @@ $colors: $blue, $red, $accent, $green
 	padding: 5% 0
 	p
 		margin: 30px 0
+		font-weight: 300
 	&__h2
 		text-transform: uppercase
 		font-weight: 900
@@ -337,13 +338,34 @@ $colors: $blue, $red, $accent, $green
 			color: #ffffff
 .fotorama
 	background-color: rgba($dark, .4)
+	.fotorama__active
+		border-color: $dark
 	&__nav
 		&-wrap
 			position: absolute
-			bottom: 15px
-			padding: 0 30px
+			bottom: 5px
+			padding: 0 10px
+			margin: 0 auto
 			width: 100%
-
+	&__thumb
+		border: 5px solid #ffffff
+		transition: border-color .5s ease
+		width: 100%
+		&-border
+			border-color: $dark
+	&__arr-
+		&-prev, &-next
+			&::before
+				font-family: "Font Awesome 5 Free"
+				font-size: 32px
+				font-weight: 600
+		&-prev::before
+			content: '\f053'
+			margin-left: 10px
+		&-next::before
+			content: '\f054'
+			margin-right: 10px
+		
 
 // Mmenu right
 .mm-panel_has-navbar .mm-navbar
@@ -393,6 +415,16 @@ $colors: $blue, $red, $accent, $green
 	.carousel-services
 		.carousel-services__item
 			flex-direction: column
+	
+	//Gallary
+	.gallary
+		p
+			margin: 20px 0
+			font-weight: 300
+			font-size: 14px
+		&__h2
+			font-size: 1.8rem
+		
 
 @media screen and (max-width: 1024px)
 	.header-contact
@@ -430,6 +462,18 @@ $colors: $blue, $red, $accent, $green
 			display: none
 	.carousel-services .carousel-services__item__content__composition__h3
 		font-size: 1.4rem
+
+	//Gallary
+	.fotorama
+		background: none
+		&__nav
+			margin: 5px 0
+			&-wrap
+				position: relative
+				margin: 0
+				padding: 0
+				botoom: 0
+				width: 100%
 
 @media screen and (max-width: 576px)
 	.site-header 
@@ -475,7 +519,12 @@ $colors: $blue, $red, $accent, $green
 			display: none
 		.adres
 			text-align: center
-	
+		
+	//Gallary
+	.gallary
+		.container
+			padding: 0 10% 
+	//Mmenu
 	.mm-navbar__title 
 		img
 			width: 10rem
@@ -491,6 +540,10 @@ $colors: $blue, $red, $accent, $green
 						p
 							font-size: 1rem
 							line-height: 1.5
+	//Gallary
+	.gallary
+		&__h2
+			font-size: 1.4rem
 
 @media screen and (max-width: 400px)
 	.top-line 
@@ -535,3 +588,7 @@ $colors: $blue, $red, $accent, $green
 						p 
 							span 
 								font-size: 0.5rem
+	//Gallary
+	.gallary
+		&__h2
+			font-size: 1.2rem
