@@ -42,7 +42,18 @@ section {
   opacity: .85;
 }
 
+.btn.btn-white {
+  background-color: #fff;
+  color: #444444;
+  padding: 10px 30px;
+  position: relative;
+  border: none;
+  -webkit-transition: background-color .2s ease;
+  transition: background-color .2s ease;
+}
+
 .site-header {
+  display: none;
   position: relative;
   height: 100vh;
   min-height: 560px;
@@ -272,6 +283,10 @@ section {
   font-size: 12px;
 }
 
+.services {
+  display: none;
+}
+
 .carousel-services .owl-item:nth-child(4n+1) {
   background-color: #66C7CD;
 }
@@ -367,16 +382,6 @@ section {
   color: #4a4a4a;
 }
 
-.carousel-services .carousel-services__item__content__composition .btn.btn-white {
-  background-color: #fff;
-  color: #444444;
-  padding: 10px 30px;
-  position: relative;
-  border: none;
-  -webkit-transition: background-color .2s ease;
-  transition: background-color .2s ease;
-}
-
 .carousel-services .carousel-services__item__content__composition .btn.btn-white:hover {
   background: #444444;
   color: #fff;
@@ -434,6 +439,7 @@ section {
 }
 
 .gallary {
+  display: none;
   padding: 5% 0;
 }
 
@@ -495,6 +501,10 @@ section {
 .fotorama__arr--next::before {
   content: '\f054';
   margin-right: 10px;
+}
+
+.request .request__block {
+  background-color: #F9C869;
 }
 
 .mm-panel_has-navbar .mm-navbar {

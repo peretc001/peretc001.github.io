@@ -41,10 +41,18 @@ section
 	height: 100%
 	background-color: $overlay
 	opacity: .85
+.btn.btn-white
+	background-color: #fff
+	color: #444444
+	padding: 10px 30px
+	position: relative
+	border: none
+	transition: background-color .2s ease
+
 
 //TOP
 .site-header 
-	//display: none
+	display: none
 	position: relative
 	height: 100vh
 	min-height: 560px
@@ -214,7 +222,7 @@ section
 
 // Carousel
 .services
-	//display: none
+	display: none
 	
 $colors: $blue, $red, $accent, $green
 @for $i from 1 through length($colors)
@@ -269,14 +277,7 @@ $colors: $blue, $red, $accent, $green
 						.fas
 							font-size: 14px
 							color: #4a4a4a
-				.btn.btn-white
-					background-color: #fff
-					color: #444444
-					padding: 10px 30px
-					position: relative
-					border: none
-					transition: background-color .2s ease
-					&:hover
+				.btn.btn-white:hover
 						background: #444444
 						color: #fff
 					
@@ -324,6 +325,7 @@ $colors: $blue, $red, $accent, $green
 		
 //Gallary
 .gallary
+	display: none
 	padding: 5% 0
 	p
 		margin: 30px 0
@@ -366,6 +368,10 @@ $colors: $blue, $red, $accent, $green
 			content: '\f054'
 			margin-right: 10px
 		
+.request
+	& &__block
+		background-color: $accent
+
 
 // Mmenu right
 .mm-panel_has-navbar .mm-navbar
