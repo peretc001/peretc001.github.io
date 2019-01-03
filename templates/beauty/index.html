@@ -263,7 +263,7 @@
 						<h4 class="request__block__h4">Оставить заявку</h4>
 						<p class="request__block__text">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
 					
-						<form action="">
+						<form action="" class="request__block__form">
 							<!-- Hidden Required Fields -->
 							<input type="hidden" name="project_name" value="Site Name">
 							<input type="hidden" name="admin_email" value="admin@mail.com">
@@ -402,6 +402,22 @@
 				create: true,
 				sortField: 'text'
 
+			});
+
+			//E-mail Ajax Send
+			$("form.request__block__form").submit(function () { //Change
+				var th = $(this);
+				$.ajax({
+					type: "POST",
+					url: "mail.php", //Change
+					data: th.serialize()
+				}).done(function () {
+					$(th).find('.request__succsess').addClass('active').css('display', 'flex').hide().fadeIn();
+					setTimeout(function () {
+						th.trigger("reset");
+					}, 3000);
+				});
+				return false;
 			});
 			
 		});
