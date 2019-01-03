@@ -573,7 +573,7 @@ section {
   margin: 1rem 0;
 }
 
-.request .request__block input, .request .request__block select {
+.request .request__block input, .request .request__block select, .request .request__block .selectize-input, .request .request__block .selectize-input input, .request .request__block .selectize-input.input-active {
   color: #ffffff;
   background: transparent;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -583,6 +583,37 @@ section {
   padding: 0.8rem 1rem;
   width: 100%;
   outline: none;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.request .request__block .selectize-input input {
+  margin: 0;
+  margin-top: 0.5rem;
+}
+
+.request .request__block .selectize-dropdown {
+  color: #ffffff;
+  background: #F9C869;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  margin: -1px 0 0 0;
+}
+
+.request .request__block .selectize-dropdown {
+  font-size: inherit;
+  font-weight: 300;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+.request .request__block .selectize-dropdown .active {
+  background-color: #F9C869;
 }
 
 .request .request__block input::-webkit-input-placeholder {
