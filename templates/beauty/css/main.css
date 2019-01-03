@@ -53,7 +53,6 @@ section {
 }
 
 .site-header {
-  display: none;
   position: relative;
   height: 100vh;
   min-height: 560px;
@@ -283,10 +282,6 @@ section {
   font-size: 12px;
 }
 
-.services {
-  display: none;
-}
-
 .carousel-services .owl-item:nth-child(4n+1) {
   background-color: #66C7CD;
 }
@@ -439,7 +434,6 @@ section {
 }
 
 .gallary {
-  display: none;
   padding: 5% 0;
 }
 
@@ -573,7 +567,7 @@ section {
   margin: 1rem 0;
 }
 
-.request .request__block input, .request .request__block select, .request .request__block .selectize-input, .request .request__block .selectize-input input, .request .request__block .selectize-input.input-active {
+.request .request__block input, .request .request__block select, .request .request__block .selectize-input {
   color: #ffffff;
   background: transparent;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -590,22 +584,29 @@ section {
           box-shadow: none;
 }
 
-.request .request__block .selectize-input input {
-  margin: 0;
-  margin-top: 0.5rem;
+.request .request__block input.dropdown-active, .request .request__block select.dropdown-active, .request .request__block .selectize-input.dropdown-active {
+  background: transparent;
+}
+
+.request .request__block input.item, .request .request__block select.item, .request .request__block .selectize-input.item {
+  line-height: inherit;
+  font-size: inherit;
+}
+
+.request .request__block .selectize-input::after {
+  border-color: #fff transparent transparent transparent;
+}
+
+.request .request__block .selectize-input.dropdown-active::after {
+  border-color: transparent transparent #fff transparent;
 }
 
 .request .request__block .selectize-dropdown {
   color: #ffffff;
   background: #F9C869;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-top: none;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
-  margin: -1px 0 0 0;
-}
-
-.request .request__block .selectize-dropdown {
+  border: none;
+  margin: -8px 0 0 0;
   font-size: inherit;
   font-weight: 300;
   line-height: inherit;
@@ -721,6 +722,12 @@ section {
   }
   .header-flex .flex-center .header-composition .welcome p span {
     font-size: 0.6rem;
+  }
+  .request {
+    background-size: cover;
+  }
+  .request::before {
+    width: 100%;
   }
 }
 
