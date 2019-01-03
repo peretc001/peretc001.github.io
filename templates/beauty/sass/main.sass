@@ -41,13 +41,18 @@ section
 	height: 100%
 	background-color: $overlay
 	opacity: .85
-.btn.btn-white
-	background-color: #fff
-	color: #444444
-	padding: 10px 30px
-	position: relative
+.btn
 	border: none
-	transition: background-color .2s ease
+	border-bottom: 2px solid rgba(#000, .1)
+	&.btn-accent 
+		background-color: $accent
+		padding: 10px 30px
+	&.btn-white
+		background-color: #fff
+		color: #444444
+		padding: 10px 30px
+		position: relative
+		transition: background-color .2s ease
 
 
 //TOP
@@ -161,12 +166,6 @@ section
 							&:last-child
 								margin-right: 0px
 								margin-left: 10px
-					
-				.btn.btn-accent 
-					background-color: $accent
-					padding: 10px 30px
-
-
 
 	.right-panel-soc
 		position: absolute
@@ -301,7 +300,7 @@ $colors: $blue, $red, $accent, $green
 			.carousel-services__item
 				flex-direction: column
 
-.owl-carousel
+.owl-carousel.carousel-services
 	.owl-nav
 		position: absolute
 		top: 0
@@ -317,6 +316,7 @@ $colors: $blue, $red, $accent, $green
 			line-height: 64px
 			font-size: 26px
 			border: none
+			outline: none
 		button.owl-prev
 			left: 0
 		button.owl-next
@@ -369,6 +369,7 @@ $colors: $blue, $red, $accent, $green
 			margin-right: 10px
 
 .request
+	//display: none
 	background-size: contain
 	background-repeat: no-repeat
 	background-position: 30%
@@ -466,11 +467,67 @@ $colors: $blue, $red, $accent, $green
 			color: #fff
 		input:-ms-input-placeholder
 			color: #fff
-			          
-		.btn.btn-white
-			border-bottom: 2px solid rgba(#000, .1)
-			
 
+.review
+	padding: 3% 0
+	&__h2
+		text-transform: uppercase
+		font-weight: 900
+		font-size: 2rem
+		margin: 10px 0
+		color: $accent
+		span
+			color: #ffffff
+
+	&__carousel
+		text-align: center
+		margin: 10% 0
+		&__item
+			&__date
+				color: $dark
+				font-size: 1rem
+				font-weight: 300
+			&__rating
+				.fas
+					color: $accent
+			&__text
+				padding: 20px 40px
+				line-height: 1.4
+				font-weight: 200 
+
+.owl-carousel.review__carousel
+	.owl-nav
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		button.owl-prev, button.owl-next
+			color: $accent
+			position: absolute
+			text-align: center
+			line-height: 64px
+			font-size: 26px
+			border: none
+			outline: none
+		button.owl-prev
+			left: 0
+		button.owl-next
+			right: 0
+	.owl-dots
+		width: 100%
+		text-align: center
+		display: inline-block
+		.owl-dot
+			width: 8px
+			height: 8px
+			background-color: #fff
+			border-radius: 10px
+			display: inline-block
+			margin: 4px
+			outline: none
+			&.active
+				background-color: $accent
+			
 
 
 
