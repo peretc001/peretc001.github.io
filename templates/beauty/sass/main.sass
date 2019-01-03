@@ -52,7 +52,7 @@ section
 
 //TOP
 .site-header 
-	display: none
+	// display: none
 	position: relative
 	height: 100vh
 	min-height: 560px
@@ -222,7 +222,7 @@ section
 
 // Carousel
 .services
-	display: none
+	// display: none
 	
 $colors: $blue, $red, $accent, $green
 @for $i from 1 through length($colors)
@@ -325,7 +325,7 @@ $colors: $blue, $red, $accent, $green
 		
 //Gallary
 .gallary
-	display: none
+	// display: none
 	padding: 5% 0
 	p
 		margin: 30px 0
@@ -367,10 +367,67 @@ $colors: $blue, $red, $accent, $green
 		&-next::before
 			content: '\f054'
 			margin-right: 10px
-		
+
 .request
-	& &__block
-		background-color: $accent
+	background-size: contain
+	background-repeat: no-repeat
+	background-position: 30%
+	&:before
+		content: ''
+		position: absolute 
+		top: 0 
+		right: 0
+		width: 50%
+		height: 100%
+		background-color: rgba($accent, .92)
+	&__success
+		display: none
+	&.inverse
+		background-color: #ffffff
+	.request__block
+		padding: 10% 0
+		position: relative
+		&__logo
+			img
+				width: 8rem
+				height: auto
+		&__h4
+			margin: 0
+			font-size: 2rem
+			text-transform: uppercase
+			font-weight: 800
+		&__text
+			line-height: 1
+			font-weight: 300
+			margin: 1rem 0
+
+
+		
+		
+		input, select
+			color: #ffffff
+			background: transparent
+			border: 1px solid rgba(#000, .1)
+			border-bottom: 2px solid rgba(#000, .1)
+			border-radius: 2px
+			margin: 0.5rem 0
+			padding: 0.8rem 1rem
+			width: 100%
+			outline: none
+
+		input::-webkit-input-placeholder
+			color: #fff
+		input::-moz-placeholder
+			color: #fff
+		input:-moz-placeholder
+			color: #fff
+		input:-ms-input-placeholder
+			color: #fff
+			          
+		
+			
+
+
 
 
 // Mmenu right
