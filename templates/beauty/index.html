@@ -398,6 +398,48 @@
 			</div>
 		</section>
 
+		<section class="partners">
+			<div class="container">
+				<div class="row">
+					<div class="col-10 offset-1">
+						
+						<h3 class="partners__h3 text-center">Наши партнеры</h3>
+						<div class="owl-carousel partners__carousel">
+							
+							<div class="partners__carousel__item">
+								<img src="img/partners/1.jpg" alt="Партнер">
+							</div>
+							<div class="partners__carousel__item">
+								<img src="img/partners/2.jpg" alt="Партнер">
+							</div>
+							<div class="partners__carousel__item">
+								<img src="img/partners/3.jpg" alt="Партнер">
+							</div>
+							<div class="partners__carousel__item">
+								<img src="img/partners/4.jpg" alt="Партнер">
+							</div>
+
+							<div class="partners__carousel__item">
+								<img src="img/partners/1.jpg" alt="Партнер">
+							</div>
+							<div class="partners__carousel__item">
+								<img src="img/partners/2.jpg" alt="Партнер">
+							</div>
+							<div class="partners__carousel__item">
+								<img src="img/partners/3.jpg" alt="Партнер">
+							</div>
+							<div class="partners__carousel__item">
+								<img src="img/partners/4.jpg" alt="Партнер">
+							</div>
+							
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</section>
+
 	</div><!-- END PAGE AND START MMENU -->
 	<nav id="my-menu">
 		<ul>
@@ -543,6 +585,15 @@
 				nav: true,
 				navText: ['<i class="fas fa-quote-left"></i>', ' <i class="fas fa-quote-right"></i>'],
 				dots: true
+			});
+
+			$('.partners__carousel').owlCarousel({
+				loop: true,
+				items: 4,
+				smartSpeed: 700,
+				nav: true,
+				navText: ['<i class="fa fa-angle-left"></i>', ' <i class="fa fa-angle-right"></i>'],
+				dots: false
 			});
 			
 		});
