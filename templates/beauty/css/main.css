@@ -686,7 +686,7 @@ section {
 
 .owl-carousel.review__carousel .owl-nav {
   position: absolute;
-  top: 0;
+  top: 25%;
   left: 0;
   width: 100%;
 }
@@ -852,6 +852,9 @@ section {
     botoom: 0;
     width: 100%;
   }
+  .owl-carousel.review__carousel .owl-nav {
+    top: 20%;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -926,6 +929,9 @@ section {
   .gallary__h2 {
     font-size: 1.4rem;
   }
+  .owl-carousel.review__carousel .owl-nav {
+    top: 15%;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -946,7 +952,7 @@ section {
 
 @media screen and (max-width: 380px) {
   .site-header .header-flex .flex-center .header-composition .welcome .h1 {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 }
 
