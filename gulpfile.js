@@ -5,6 +5,7 @@ var syntax        = 'sass', // Syntax: sass or scss;
 var gulp          = require('gulp'),
 		gutil         = require('gulp-util' ),
 		sass          = require('gulp-sass'),
+		uglify 		  = require('gulp-uglify');
 		browserSync   = require('browser-sync'),
 		concat        = require('gulp-concat'),
 		uglify        = require('gulp-uglify'),
@@ -13,6 +14,42 @@ var gulp          = require('gulp'),
 		autoprefixer  = require('gulp-autoprefixer'),
 		notify        = require('gulp-notify'),
 		rsync         = require('gulp-rsync');
+		imagemin 	  = require('gulp-imagemin');
+		pump          = require('pump');
+ 
+gulp.task('imagemin', () =>
+    gulp.src('app/img/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/img'))
+);
+gulp.task('removedist',function(){ return del.sync('dist'); });
+
+gulp.task('js', function (cb) {
+  pump([
+        gulp.src('app/*.js'),
+        uglify(),
+        gulp.dest('dist')
+    ],
+    cb
+  );
+});
+
+gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
+	
+	var buildFiles = gulp.src([
+		'app/*.html',
+		'app/.htaccess',
+		]).pipe(gulp.dest('dist'));
+
+	var buildCss = gulp.src([
+		'app/css/main.min.css',
+		]).pipe(gulp.dest('dist/css'));
+
+	var buildJs = gulp.src([
+		'app/js/scripts.min.js',
+		]).pipe(gulp.dest('dist/js'));
+
+	});
 
 gulp.task('browser-sync', function() {
 	browserSync({
@@ -25,6 +62,22 @@ gulp.task('browser-sync', function() {
 		// tunnel: true, tunnel: "projectname", // Demonstration page: http://projectname.localtunnel.me
 	})
 });
+
+gulp.task('deploy', function(){
+	var conn = ftp.create({
+		host:		'37.140.192.223',
+		user:		'u0572740',
+		password:	'GFDgd39021',
+		parallel:	10,
+		log: gutil.log
+		});
+	var globs = [
+	'dist/**',
+	'dist/.htaccess',
+	];
+	return gulp.src(globs, {buffer: false})
+	.pipe(conn.dest('/zerno.avtonakidki.net/templates/123/'));
+	});
 
 gulp.task('styles', function() {
 	return gulp.src('app/'+syntax+'/**/*.'+syntax+'')
