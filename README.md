@@ -11,7 +11,7 @@ web разработкой, владею навыками верстки
 <div style="text-align:center;">
 <h1  style="text-align:center;">Текущая работа</h1>
 
-<p style="text-align:center"><a style="text-align:center" href="https://peretc001.github.io/app/"><img src="https://peretc001.github.io/templates/beauty/img/screen.jpg" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
+<p align="center"><a style="text-align:center" href="https://peretc001.github.io/app/"><img src="https://peretc001.github.io/templates/beauty/img/screen.jpg" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
 <p><strong>Верстка макета "Салон Красоты" | <a href="https://peretc001.github.io/app/">https://peretc001.github.io/app/</a></strong></p>
 <ul type="none">
 	<li>Адаптивный дизайн (Bootstrap4)</li>
@@ -22,7 +22,7 @@ web разработкой, владею навыками верстки
 	<li>Карусель отзывов (owl.Carousel)</li>
 </ul>
 <br><br>
-<h1  style="text-align:center;">Мои работы</h1>
+<h1  align="center;">Мои работы</h1>
 <p style="text-align:center"><a href="http://partadami.ru"><img src="https://peretc001.github.io/email/img/partadami_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
 <p><strong>Интернет-магазин «Парты ДЭМИ» | <a href="http://partadami.ru">partadami.ru</a></strong></p>
 <ul type="none">
@@ -35,7 +35,7 @@ web разработкой, владею навыками верстки
 	<li>UIkit меню в мобильной версии</li>
 </ul>
 
-<p style="text-align:center"><a href="http://avtonakidki.net"><img src="https://peretc001.github.io/email/img/avtonakidki_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
+<p align="center"><a href="http://avtonakidki.net"><img src="https://peretc001.github.io/email/img/avtonakidki_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
 <p><strong style="font-size:18px;font-weight:700;">Интернет-магазин «Автонакидки.НЕТ» | <a href="http://avtonakidki.net">avtonakidki.net</a></strong></p>
 <ul type="none">
 	<li>Адаптивный дизайн (Skeleton)</li>
@@ -47,7 +47,7 @@ web разработкой, владею навыками верстки
 	<li>UIkit меню в мобильной версии</li>
 </ul>
  
-<p style="text-align:center"><a href="http://autoprkt.ru"><img src="https://peretc001.github.io/email/img/autoprkt_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
+<p align="center"><a href="http://autoprkt.ru"><img src="https://peretc001.github.io/email/img/autoprkt_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
 <p><strong style="font-size:18px;font-weight:700;">Сайт проката «АВТОПРКТ» | <a style="color: #0000EE;" href="http://autoprkt.ru">autoprkt.ru</a></strong></p>
 <ul type="none">
 	<li>Адаптивный дизайн (Skeleton)</li>
@@ -57,7 +57,7 @@ web разработкой, владею навыками верстки
 	<li>UIkit меню в мобильной версии</li>
 </ul>
 
-<p style="text-align:center"><img src="https://peretc001.github.io/email/img/crm_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></p>
+<p align="center"><img src="https://peretc001.github.io/email/img/crm_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></p>
 <p><strong style="font-size:18px;font-weight:700;">CRM для проката «АВТОПРКТ»</strong></p>
 <ul type="none">
 	<li>Учет клиентов</li>
