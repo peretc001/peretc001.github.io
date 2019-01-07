@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <title>Купить парты ДЭМИ | Официальный сайт ДЭМИ Краснодар</title> 
 	<meta name="Keywords" content="парта деми, парта деми купить, парты деми, парты деми купить, парта трансформер, парта трансформер купить, официальный дилер деми" /> 
@@ -13,7 +13,7 @@
 <div id="partadami">
 	<div class="row">
 		<h1>Детская парта и стул "ДЭМИ"</h1>
-		<img src="/img/cyt17.svg" class="home_img">
+		<img src="/img/cyt17.svg" alt="Детская парта и стул ДЭМИ" class="home_img">
 	</div>
 </div>
 <div id="why_dami">
@@ -47,24 +47,24 @@
 	</div>	
 	<div class="row">
 		<div class="six columns">
-			<a href="/shop/parta_bez_risunka/cyt14/bez_stula/parta_cyt14-01.php?color=pink"><img src="/img/home/3.jpg"></a>
+			<a href="/shop/parta_bez_risunka/cyt14/bez_stula/parta_cyt14-01.php?color=pink"><img src="/img/home/3.jpg" alt="Парта ДЭМИ СУТ.14-01 розовая"></a>
 		</div>
 		<div class="six columns">
-			<a href="/shop/white/cyt24/bez_stula/parta_cyt24.php?color=white_blue"><img src="/img/home/2.jpg"></a>
+			<a href="/shop/white/cyt24/bez_stula/parta_cyt24.php?color=white_blue"><img src="/img/home/2.jpg" alt="Парта ДЭМИ СУТ.24-01 синяя"></a>
 		</div>
 	</div>
 	<div class="row">
 		<div class="six columns">
-			<a href="/shop/parta_bez_risunka/cyt17/bez_stula/parta_cyt17-04-d1.php?color=grey"><img src="/img/home/4.jpg"></a>
+			<a href="/shop/parta_bez_risunka/cyt17/bez_stula/parta_cyt17-04-d1.php?color=grey"><img src="/img/home/4.jpg" alt="Парта ДЭМИ СУТ.17-04 серая"></a>
 		</div>
 		<div class="six columns">
-			<a href="/shop/white/cyt25/bez_stula/parta_cyt25-03.php?color=white_blue"><img src="/img/home/5.jpg"></a>
+			<a href="/shop/white/cyt25/bez_stula/parta_cyt25-03.php?color=white_blue"><img src="/img/home/5.jpg" alt="Парта ДЭМИ СУТ.24-03 синяя"></a>
 		</div>
 	</div>
 	<div class="row">
 		<div class="twelve columns box desk">
 			<ul>
-				<li><img src="img/desk.svg"></li>
+				<li><img src="img/desk.svg" alt="Акиця"></li>
 				<li>скидка на стул «ДЭМИ»<br><small>при покупке с партой</small></li>
 				<li><span class="sale">-25%</span></li>
 			</ul>
@@ -90,7 +90,7 @@
 		</div>
 	</div>
 	<div class="row center">
-		<a class="button button-primary" href="/shop/"><i class="fa fa-bars" aria-hidden="true"></i> Каталог товаров</a></a>
+		<a class="button button-primary" href="/shop/"><i class="fa fa-bars" aria-hidden="true"></i> Каталог товаров</a>
 	</div>
 </div>
 <?php include $_SERVER['DOCUMENT_ROOT'] .'/inc/footer.php'; ?>

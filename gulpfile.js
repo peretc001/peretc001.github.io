@@ -5,7 +5,6 @@ var syntax        = 'sass', // Syntax: sass or scss;
 var gulp          = require('gulp'),
 		gutil         = require('gulp-util' ),
 		sass          = require('gulp-sass'),
-		uglify 		  = require('gulp-uglify');
 		browserSync   = require('browser-sync'),
 		concat        = require('gulp-concat'),
 		uglify        = require('gulp-uglify'),
@@ -13,43 +12,10 @@ var gulp          = require('gulp'),
 		rename        = require('gulp-rename'),
 		autoprefixer  = require('gulp-autoprefixer'),
 		notify        = require('gulp-notify'),
+		del            = require('del'),
+		cache          = require('gulp-cache'),
+		imagemin       = require('gulp-imagemin'),
 		rsync         = require('gulp-rsync');
-		imagemin 	  = require('gulp-imagemin');
-		pump          = require('pump');
- 
-gulp.task('imagemin', () =>
-    gulp.src('app/img/*')
-        .pipe(imagemin())
-        .pipe(gulp.dest('dist/img'))
-);
-gulp.task('removedist',function(){ return del.sync('dist'); });
-
-gulp.task('js', function (cb) {
-  pump([
-        gulp.src('app/*.js'),
-        uglify(),
-        gulp.dest('dist')
-    ],
-    cb
-  );
-});
-
-gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
-	
-	var buildFiles = gulp.src([
-		'app/*.html',
-		'app/.htaccess',
-		]).pipe(gulp.dest('dist'));
-
-	var buildCss = gulp.src([
-		'app/css/main.min.css',
-		]).pipe(gulp.dest('dist/css'));
-
-	var buildJs = gulp.src([
-		'app/js/scripts.min.js',
-		]).pipe(gulp.dest('dist/js'));
-
-	});
 
 gulp.task('browser-sync', function() {
 	browserSync({
@@ -63,22 +29,6 @@ gulp.task('browser-sync', function() {
 	})
 });
 
-gulp.task('deploy', function(){
-	var conn = ftp.create({
-		host:		'37.140.192.223',
-		user:		'u0572740',
-		password:	'GFDgd39021',
-		parallel:	10,
-		log: gutil.log
-		});
-	var globs = [
-	'dist/**',
-	'dist/.htaccess',
-	];
-	return gulp.src(globs, {buffer: false})
-	.pipe(conn.dest('/zerno.avtonakidki.net/templates/123/'));
-	});
-
 gulp.task('styles', function() {
 	return gulp.src('app/'+syntax+'/**/*.'+syntax+'')
 	.pipe(sass({ outputStyle: 'expanded' }).on("error", notify.onError()))
@@ -91,11 +41,9 @@ gulp.task('styles', function() {
 
 gulp.task('scripts', function() {
 	return gulp.src([
-		'app/libs/jquery/dist/jquery.min.js',
 		'app/js/common.js', // Always at the end
 		])
-	.pipe(concat('scripts.min.js'))
-	// .pipe(uglify()) // Mifify js (opt.)
+	.pipe(uglify()) // Mifify js (opt.)
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({ stream: true }))
 });
@@ -103,6 +51,12 @@ gulp.task('scripts', function() {
 gulp.task('code', function() {
 	return gulp.src('app/*.html')
 	.pipe(browserSync.reload({ stream: true }))
+});
+
+gulp.task('imagemin', function() {
+	return gulp.src('app/img/**/*')
+	.pipe(cache(imagemin())) // Cache Images
+	.pipe(gulp.dest('dist/img')); 
 });
 
 gulp.task('rsync', function() {
@@ -120,8 +74,31 @@ gulp.task('rsync', function() {
 	}))
 });
 
+gulp.task('removedist', function() { return del.sync('dist'); });
+
+gulp.task('build', function() {
+
+		var buildFiles = gulp.src([
+			'app/*.html',
+			'app/.htaccess',
+			]).pipe(gulp.dest('dist'));
+
+		var buildCss = gulp.src([
+			'app/css/**',
+			]).pipe(gulp.dest('dist/css'));
+
+		var buildJs = gulp.src([
+			'app/js/**',
+			]).pipe(gulp.dest('dist/js'));
+
+		var buildFonts = gulp.src([
+			'app/fonts/**/*',
+			]).pipe(gulp.dest('dist/fonts'));
+
+	});
+
 if (gulpversion == 3) {
-	gulp.task('watch', ['styles', 'scripts', 'browser-sync'], function() {
+	gulp.task('watch', ['browser-sync'], function() {
 		gulp.watch('app/'+syntax+'/**/*.'+syntax+'', ['styles']);
 		gulp.watch(['libs/**/*.js', 'app/js/common.js'], ['scripts']);
 		gulp.watch('app/*.html', ['code'])
@@ -135,5 +112,6 @@ if (gulpversion == 4) {
 		gulp.watch(['libs/**/*.js', 'app/js/common.js'], gulp.parallel('scripts'));
 		gulp.watch('app/*.html', gulp.parallel('code'))
 	});
-	gulp.task('default', gulp.parallel('watch', 'styles', 'scripts', 'browser-sync'));
+	gulp.task('default', gulp.parallel('watch', 'browser-sync'));
+	gulp.task('bild', gulp.parallel('build', 'removedist', 'imagemin', 'styles', 'scripts'));
 }
