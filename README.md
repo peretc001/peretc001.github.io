@@ -1,8 +1,9 @@
-<p><strong style="font-size:18px;font-weight:700;">Меня зовут Игорь</strong>,<br>Я web разработчик начального уровня, владею навыками верстки 
+<p><strong style="font-size:18px;font-weight:700;">Меня зовут Игорь</strong>,<br>Я занимаюсь версткой и 
+web разработкой, владею навыками верстки 
 <ul>
 	<li>HTML5</li>
-	<li>CSS3</li>
-	<li>JS, JQuery (самый базовый уровень)</li>
+	<li>SASS, CSS3</li>
+	<li>JS, JQuery (базовый уровень)</li>
 	<li>Bootstrap 4</li>
 	<li>PHP</li>
 	<li>MySQL (SafeMySQL)</li>
@@ -10,7 +11,7 @@
 <div style="text-align:center;">
 <h1  style="text-align:center;">Текущая работа</h1>
 
-<a href="https://peretc001.github.io/app/"><img src="https://peretc001.github.io/templates/beauty/img/screen.jpg" style="display:block;width:100%;max-width:600px;border:none;"></a>
+<p style="text-align:center"><a href="https://peretc001.github.io/app/"><img src="https://peretc001.github.io/templates/beauty/img/screen.jpg" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
 <p><strong>Верстка макета "Салон Красоты" | <a href="https://peretc001.github.io/app/">https://peretc001.github.io/app/</a></strong></p>
 <ul type="none">
 	<li>Адаптивный дизайн (Bootstrap4)</li>
@@ -22,7 +23,7 @@
 </ul>
 <br><br>
 <h1  style="text-align:center;">Мои работы</h1>
-<a href="http://partadami.ru"><img src="https://peretc001.github.io/email/img/partadami_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a>
+<p style="text-align:center"><a href="http://partadami.ru"><img src="https://peretc001.github.io/email/img/partadami_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
 <p><strong>Интернет-магазин «Парты ДЭМИ» | <a href="http://partadami.ru">partadami.ru</a></strong></p>
 <ul type="none">
 	<li>Адаптивный дизайн (Skeleton)</li>
@@ -34,7 +35,7 @@
 	<li>UIkit меню в мобильной версии</li>
 </ul>
 
-<a href="http://avtonakidki.net"><img src="https://peretc001.github.io/email/img/avtonakidki_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a>
+<p style="text-align:center"><a href="http://avtonakidki.net"><img src="https://peretc001.github.io/email/img/avtonakidki_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
 <p><strong style="font-size:18px;font-weight:700;">Интернет-магазин «Автонакидки.НЕТ» | <a href="http://avtonakidki.net">avtonakidki.net</a></strong></p>
 <ul type="none">
 	<li>Адаптивный дизайн (Skeleton)</li>
@@ -46,7 +47,7 @@
 	<li>UIkit меню в мобильной версии</li>
 </ul>
  
- <a href="http://autoprkt.ru"><img src="https://peretc001.github.io/email/img/autoprkt_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a>
+<p style="text-align:center"><a href="http://autoprkt.ru"><img src="https://peretc001.github.io/email/img/autoprkt_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
 <p><strong style="font-size:18px;font-weight:700;">Сайт проката «АВТОПРКТ» | <a style="color: #0000EE;" href="http://autoprkt.ru">autoprkt.ru</a></strong></p>
 <ul type="none">
 	<li>Адаптивный дизайн (Skeleton)</li>
@@ -56,7 +57,7 @@
 	<li>UIkit меню в мобильной версии</li>
 </ul>
 
-<img src="https://peretc001.github.io/email/img/crm_macbook.png" style="display:block;width:100%;max-width:600px;border:none;">
+<p style="text-align:center"><img src="https://peretc001.github.io/email/img/crm_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></p>
 <p><strong style="font-size:18px;font-weight:700;">CRM для проката «АВТОПРКТ»</strong></p>
 <ul type="none">
 	<li>Учет клиентов</li>
