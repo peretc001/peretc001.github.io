@@ -3,6 +3,8 @@ include $_SERVER['DOCUMENT_ROOT'] .'/user/inc/config.php';
 include $_SERVER['DOCUMENT_ROOT'] .'/inc/safemysql.class.php';
 
 $date = htmlspecialchars(trim($_GET['date'])); # определяем статус
+$start_date = htmlspecialchars(trim($_GET['start_date'])); # определяем статус
+$last_date = htmlspecialchars(trim($_GET['last_date'])); # определяем статус
 $mashina = htmlspecialchars(trim($_GET['mashina'])); # определяем статус
 
 $link = mysqli_connect($hostname_db, $username_db, $password_db, $dbName_db);
@@ -12,6 +14,13 @@ mysqli_set_charset( $link, 'utf8');
 function rdate($param, $time=0) {
 	if(intval($time)==0)$time=time();
 	$MonthNames=array('янв' , 'фев' , 'мар' , 'апр' , 'мая' , 'июн' , 'июл' , 'авг' , 'сен' , 'окт' , 'ноя' , 'дек');
+	if(strpos($param,'M')===false) return date($param, $time);
+	else return date(str_replace('M',$MonthNames[date('n',$time)-1],$param), $time);
+}
+#Функция вывода ПОЛНОГО НАЗВАНИЯ русского месяца для поиска
+function fdate($param, $time=0) {
+	if(intval($time)==0)$time=time();
+	$MonthNames=array('Январь' , 'Февраль' , 'Март' , 'Апрель' , 'Май' , 'Июнь' , 'Июль' , 'Август' , 'Сентябрь' , 'Октябрь' , 'Ноябрь' , 'Декабрь');
 	if(strpos($param,'M')===false) return date($param, $time);
 	else return date(str_replace('M',$MonthNames[date('n',$time)-1],$param), $time);
 }
@@ -37,31 +46,18 @@ function rdate($param, $time=0) {
 			<span class="add"><a href="/user/booking_add.php"><i class="fa fa-plus-circle" aria-hidden="true"></i> Добавить</a></span> 
 			
 		</div>
-		<div class="eight columns filter_button">
-			<b>Фильтр:</b>
-			<span <?php if ($date == 'today') { echo 'class="active"'; } ?>><a href="/user/booking.php?date=today">Сегодня</a></span> 
-			<span <?php if ($date == 'yestarday') { echo 'class="active"'; } ?> ><a href="/user/booking.php?date=yestarday">Вчера</a></span> 
-			<span <?php if ($date == 'week') { echo 'class="active"'; } ?> ><a href="/user/booking.php?date=week">Неделя</a></span> 
-			<span <?php if ($date == 'mounth') { echo 'class="active"'; } ?>><a href="/user/booking.php?date=mounth">Месяц</a></span> 
-			<?php if ($date != '') { ?><a href="/user/booking.php"><i class="fa fa-trash-o" aria-hidden="true"></i></a><?php } ?>
-			<?php if ($mashina != '') { ?><a href="/user/booking.php"><i class="fa fa-trash-o" aria-hidden="true"></i></a><?php } ?>
-		</div>
 	</div>
 	<div class="filter">
 		<div class="twelve columns filter_button">
-			<span <?php if ($date == 'm0') { echo 'class="active"'; } ?>><a href="/user/booking.php?date=m0">Декабрь 17</a></span> 
-			<span <?php if ($date == 'm1') { echo 'class="active"'; } ?>><a href="/user/booking.php?date=m1">Январь</a></span> 
-			<span <?php if ($date == 'm2') { echo 'class="active"'; } ?>><a href="/user/booking.php?date=m2">Февраль</a></span> 
-			<span <?php if ($date == 'm3') { echo 'class="active"'; } ?>><a href="/user/booking.php?date=m3">Март</a></span> 
-			<span <?php if ($date == 'm4') { echo 'class="active"'; } ?>><a href="/user/booking.php?date=m4">Апрель</a></span>
-			<span <?php if ($date == 'm5') { echo 'class="active"'; } ?>><a href="/user/booking.php?date=m5">Май</a></span>	
-			<span <?php if ($date == 'm6') { echo 'class="active"'; } ?>><a href="/user/booking.php?date=m6">Июнь</a></span> 
-			<span <?php if ($date == 'm7') { echo 'class="active"'; } ?>><a href="/user/booking.php?date=m7">Июль</a></span> 
-			<span <?php if ($date == 'm8') { echo 'class="active"'; } ?>><a href="/user/booking.php?date=m8">Август</a></span> 
-			<span <?php if ($date == 'm9') { echo 'class="active"'; } ?>><a href="/user/booking.php?date=m9">Сентябрь</a></span>
-			<span <?php if ($date == 'm10') { echo 'class="active"'; } ?>><a href="/user/booking.php?date=m10">Октябрь</a></span>				
-			<span <?php if ($date == 'm11') { echo 'class="active"'; } ?>><a href="/user/booking.php?date=m11">Ноябрь</a></span>				
-			<span <?php if ($date == 'm12') { echo 'class="active"'; } ?>><a href="/user/booking.php?date=m12">Декабрь</a></span>				
+		<?php 
+			for ($mnt = strtotime("2017-12-01"); $mnt < strtotime(date('Y-m-d')); $mnt = strtotime("+1 month", $mnt)) { ?>
+
+				<span class="<?php if ($start_date == date('Y-m-01', $mnt)) { echo 'active'; } ?>">
+				<?php 
+				 echo '<a href="/user/booking.php?date=mun&start_date='. date('Y-m-01', $mnt) .'&last_date='. date('Y-m-t', $mnt) .'">'. fdate("M", $mnt).' '. fdate("Y", $mnt) .'</a>';
+				?></span><?php
+			}
+		?>
 			<?php if ($date != '') { ?><a href="/user/booking.php"><i class="fa fa-trash-o" aria-hidden="true"></i></a><?php } ?>
 		</div>
 	</div>
@@ -97,32 +93,16 @@ function rdate($param, $time=0) {
 		</div>
 	</div>
 	<?php 
-		$today = date('Y-m-d');
-		$week = date('Y-m-d', strtotime('Monday this week'));
-		$mounth = date('Y-m-01');
-		if ($date == '') { $booking = $db->getAll('SELECT * FROM booking ORDER by date desc' ); }
-		elseif ($date == 'today') { $booking = $db->getAll('SELECT * FROM booking WHERE date2 >= ?s ORDER by date desc', date('Y-m-d') ); }
-		elseif ($date == 'yestarday') { $booking = $db->getAll('SELECT * FROM booking WHERE date2 >= ?s ORDER by date desc', date('Y-m-d', strtotime('yesterday')) ); }
-		elseif ($date == 'week') { $booking = $db->getAll('SELECT * FROM booking WHERE date2 >= ?s ORDER by date desc', $week ); }
-		elseif ($date == 'mounth') { $booking = $db->getAll('SELECT * FROM booking WHERE date2 >= ?s ORDER by date desc', $mounth ); }
-		
-		elseif ($date == 'm0') { $booking = $db->getAll('SELECT * FROM booking WHERE date >= "2017-12-01" and date <= "2017-12-31" ORDER by date desc' ); }
-		elseif ($date == 'm1') { $booking = $db->getAll('SELECT * FROM booking WHERE date >= "2018-01-01" and date <= "2018-01-31" ORDER by date desc' ); }
-		elseif ($date == 'm2') { $booking = $db->getAll('SELECT * FROM booking WHERE date >= "2018-02-01" and date <= "2018-02-28" ORDER by date desc' ); }
-		elseif ($date == 'm3') { $booking = $db->getAll('SELECT * FROM booking WHERE date >= "2018-03-01" and date <= "2018-03-31" ORDER by date desc' ); }
-		elseif ($date == 'm4') { $booking = $db->getAll('SELECT * FROM booking WHERE date >= "2018-04-01" and date <= "2018-04-30" ORDER by date desc' ); }
-		elseif ($date == 'm5') { $booking = $db->getAll('SELECT * FROM booking WHERE date >= "2018-05-01" and date <= "2018-05-31" ORDER by date desc' ); }
-		elseif ($date == 'm6') { $booking = $db->getAll('SELECT * FROM booking WHERE date >= "2018-06-01" and date <= "2018-06-30" ORDER by date desc' ); }
-		elseif ($date == 'm7') { $booking = $db->getAll('SELECT * FROM booking WHERE date >= "2018-07-01" and date <= "2018-07-31" ORDER by date desc' ); }
-		elseif ($date == 'm8') { $booking = $db->getAll('SELECT * FROM booking WHERE date >= "2018-08-01" and date <= "2018-08-31" ORDER by date desc' ); }
-		elseif ($date == 'm9') { $booking = $db->getAll('SELECT * FROM booking WHERE date >= "2018-09-01" and date <= "2018-09-31" ORDER by date desc' ); }
-		elseif ($date == 'm10') { $booking = $db->getAll('SELECT * FROM booking WHERE date >= "2018-10-01" and date <= "2018-10-31" ORDER by date desc' ); }
-		elseif ($date == 'm11') { $booking = $db->getAll('SELECT * FROM booking WHERE date >= "2018-11-01" and date <= "2018-11-31" ORDER by date desc' ); }
-		elseif ($date == 'm12') { $booking = $db->getAll('SELECT * FROM booking WHERE date >= "2018-12-01" and date <= "2018-12-31" ORDER by date desc' ); }
-		
-		if ($mashina != '') { $booking = $db->getAll('SELECT * FROM booking WHERE auto = ?s ORDER by date desc', $mashina ); }
-		
-		foreach ($booking as $row) {   ?>
+		$i = 1;
+		$w = array();
+		$where = '';
+			
+			if ($date) 			$w[] = $db->parse('date >= ?s and date <= ?s', $start_date, $last_date);
+			if ($mashina)		$w[] = $db->parse('auto = ?s', $mashina);
+			if (count($w)) 	$where = "WHERE ". implode(' AND ', $w);
+			$booking = $db->getAll("SELECT * FROM booking ?p ORDER by date desc", $where);
+			
+			foreach ($booking as $row) { ?>
 	
 		<a href="/user/booking_page.php?id=<?php echo $row['id']; ?>">
 	
@@ -165,30 +145,16 @@ function rdate($param, $time=0) {
 		</a>
 	<?php } 
 	
+	$i = 1;
+	$w = array();
+	$where = '';
 		
-		if ($date == '') { $sum = $db->getAll('SELECT SUM(total) as sum_total, SUM(count) as sum_count FROM booking');  }
-		elseif ($date == 'today') { $sum = $db->getAll('SELECT SUM(total) as sum_total, SUM(count) as sum_count FROM booking WHERE date = ?s', date('Y-m-d') ); }
-		elseif ($date == 'yestarday') { $sum = $db->getAll('SELECT SUM(total) as sum_total, SUM(count) as sum_count FROM booking WHERE date = ?s', date('Y-m-d', strtotime('yesterday')) ); }
-		elseif ($date == 'week') { $sum = $db->getAll('SELECT SUM(total) as sum_total, SUM(count) as sum_count FROM booking WHERE date >= ?s', $week ); }
-		elseif ($date == 'mounth') { $sum = $db->getAll('SELECT SUM(total) as sum_total, SUM(count) as sum_count FROM booking WHERE date >= ?s', $mounth ); }
+		if ($date) 			$w[] = $db->parse('date >= ?s and date <= ?s', $start_date, $last_date);
+		if ($mashina)		$w[] = $db->parse('auto = ?s', $mashina);
+		if (count($w)) 	$where = "WHERE ". implode(' AND ', $w);
+		$sum = $db->getAll("SELECT SUM(total) as sum_total, SUM(count) as sum_count FROM booking ?p ORDER by date desc", $where);
 		
-		elseif ($date == 'm0') { $sum = $db->getAll('SELECT SUM(total) as sum_total, SUM(count) as sum_count FROM booking WHERE date >= "2017-12-01" and date <= "2017-12-31"' ); }
-		elseif ($date == 'm1') { $sum = $db->getAll('SELECT SUM(total) as sum_total, SUM(count) as sum_count FROM booking WHERE date >= "2018-01-01" and date <= "2018-01-31"' ); }
-		elseif ($date == 'm2') { $sum = $db->getAll('SELECT SUM(total) as sum_total, SUM(count) as sum_count FROM booking WHERE date >= "2018-02-01" and date <= "2018-02-28"' ); }
-		elseif ($date == 'm3') { $sum = $db->getAll('SELECT SUM(total) as sum_total, SUM(count) as sum_count FROM booking WHERE date >= "2018-03-01" and date <= "2018-03-31"' ); }
-		elseif ($date == 'm4') { $sum = $db->getAll('SELECT SUM(total) as sum_total, SUM(count) as sum_count FROM booking WHERE date >= "2018-04-01" and date <= "2018-04-30"' ); }
-		elseif ($date == 'm5') { $sum = $db->getAll('SELECT SUM(total) as sum_total, SUM(count) as sum_count FROM booking WHERE date >= "2018-05-01" and date <= "2018-05-31"' ); }
-		elseif ($date == 'm6') { $sum = $db->getAll('SELECT SUM(total) as sum_total, SUM(count) as sum_count FROM booking WHERE date >= "2018-06-01" and date <= "2018-06-30"' ); }
-		elseif ($date == 'm7') { $sum = $db->getAll('SELECT SUM(total) as sum_total, SUM(count) as sum_count FROM booking WHERE date >= "2018-07-01" and date <= "2018-07-31"' ); }
-		elseif ($date == 'm8') { $sum = $db->getAll('SELECT SUM(total) as sum_total, SUM(count) as sum_count FROM booking WHERE date >= "2018-08-01" and date <= "2018-08-31"' ); }
-		elseif ($date == 'm9') { $sum = $db->getAll('SELECT SUM(total) as sum_total, SUM(count) as sum_count FROM booking WHERE date >= "2018-09-01" and date <= "2018-09-31"' ); }
-		elseif ($date == 'm10') { $sum = $db->getAll('SELECT SUM(total) as sum_total, SUM(count) as sum_count FROM booking WHERE date >= "2018-10-01" and date <= "2018-10-31"' ); }
-		elseif ($date == 'm11') { $sum = $db->getAll('SELECT SUM(total) as sum_total, SUM(count) as sum_count FROM booking WHERE date >= "2018-11-01" and date <= "2018-11-31"' ); }
-		elseif ($date == 'm12') { $sum = $db->getAll('SELECT SUM(total) as sum_total, SUM(count) as sum_count FROM booking WHERE date >= "2018-12-01" and date <= "2018-12-31"' ); }
-		
-		if ($mashina != '') { $sum = $db->getAll('SELECT SUM(total) as sum_total, SUM(count) as sum_count FROM booking WHERE auto = ?s', $mashina ); }
-		
-		foreach ($sum as $row) {   ?>
+		foreach ($sum as $row) { ?>
 	
 	<div class="row bottom">
 			<div class="col usernumber">&nbsp;</div>
