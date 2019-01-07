@@ -10,8 +10,8 @@
 <div style="text-align:center;">
 <h1  style="text-align:center;">Текущая работа</h1>
 
-<a href="https://peretc001.github.io/templates/beauty/"><img src="https://peretc001.github.io/templates/beauty/img/screen.jpg" style="display:block;width:100%;max-width:600px;border:none;"></a>
-<p><strong>Верстка макета "Салон Красоты" | <a href="https://peretc001.github.io/templates/beauty/">https://peretc001.github.io/templates/beauty/</a></strong></p>
+<a href="https://peretc001.github.io/app/"><img src="https://peretc001.github.io/templates/beauty/img/screen.jpg" style="display:block;width:100%;max-width:600px;border:none;"></a>
+<p><strong>Верстка макета "Салон Красоты" | <a href="https://peretc001.github.io/app/">https://peretc001.github.io/app/</a></strong></p>
 <ul type="none">
 	<li>Адаптивный дизайн (Bootstrap4)</li>
 	<li>Живое меню (Mmenu)</li>
