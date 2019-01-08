@@ -514,6 +514,8 @@
 	<script type="text/javascript" src="js/equalHeights/jquery.equalheights.min.js"></script>
 	<script type="text/javascript" src="js/fotorama/fotorama.js"></script>
 	<script type="text/javascript" src="js/selectize/js/standalone/selectize.min.js"></script>
+	<!-- MY SCRIPT -->
+	<script type="text/javascript" src="js/common.js"></script>
 	<!-- STYLE -->
 	<link href="js/mmenu/dist/jquery.mmenu.all.css" rel="stylesheet">
 	<link href="js/owlCarousel/css/owl.carousel.min.css" rel="stylesheet">
@@ -521,142 +523,7 @@
 	<link href="js/fotorama/fotorama.css" rel="stylesheet">
 	<link href="js/selectize/css/selectize.css" rel="stylesheet">
 	<link href="css/hamburgers.min.css" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet">
-	<!-- MY SCRIPT -->
-	<script>
-		$(function () {
-			$("#my-menu").mmenu({
-				extensions: ['theme-black', 'pagedim-black', 'position-right'],
-				navbar: {
-					title: '<img src="img/logo.svg" alt="Салон красоты BeautySpa">'
-				}
-			});
-
-			var api = $('#my-menu').data('mmenu');
-
-			api.bind('open:finish', function () {
-				$('.hamburger').addClass('is-active');
-			});
-
-
-			api.bind('close:finish', function () {
-				$('.hamburger').removeClass('is-active');
-			});
-			
-			//Инициализируем карусель с задержкой
-			$('.carousel-services').on('initialized.owl.carousel', function() {
-				setTimeout(function(){
-					carouselServices();
-				}, 100);
-			})
-			//Базовые параметры карусели
-			$('.carousel-services').owlCarousel({
-				loop: false,
-				nav: true,
-				smartSpeed: 700,
-				navText: ['<i class="fa fa-angle-double-left"></i>', ' <i class="fa fa-angle-double-right"></i>'],
-				dots: false,
-				responsiveClass: true,
-				responsive: {
-					0: {
-						items: 1
-					},
-					650: {
-						items: 2
-					},
-					1200: {
-						items: 3
-					},
-					1920: {
-					items: 4
-					}
-				}
-			});
-			// Определяем высоту блока и задаем эту высоту для img
-			function carouselServices() {
-				$('.carousel-services__item').each(function() {
-					var	ths = $(this),
-							thsh = ths.find('.carousel-services__item__content').outerHeight();
-							ths.find('.carousel-services__item__image').css('min-height', thsh);
-				});
-			} carouselServices();
-			//Вычисляем размер блока при разной высоте блока или при смене размера окна
-			function onResize() {
-				$('.carousel-services__item__content').equalHeights();
-			} onResize();
-			window.onresize = function () {
-				onResize();
-			}
-
-			//Вставляем тег span в название услуги h3
-			$('.carousel-services__item__content__composition__h3').each(function(){
-				var ths = $(this);
-				ths.html(ths.html().replace(/(\S+)\s*$/, '<span>$1</span>'));
-			});
-			//Вставляем тег span в название услуги h2 gallary
-			$('.gallary__h2').each(function () {
-				var ths = $(this);
-				ths.html(ths.html().replace(/^(\S+)/, '<span>$1</span>'));
-			});
-			$('.review__h2').each(function () {
-			var ths = $(this);
-			ths.html(ths.html().replace(/^(\S+)/, '<span>$1</span>'));
-			});
-
-			$('select').selectize({
-				create: true,
-				sortField: 'text'
-
-			});
-
-			//E-mail Ajax Send
-			$("form.request__block").submit(function () { //Change
-				var th = $(this);
-				$.ajax({
-					type: "POST",
-					url: "mail.php", //Change
-					data: th.serialize()
-				}).done(function () {
-					$(th).find('.request__success').addClass('active').css('display', 'flex').hide().fadeIn();
-					setTimeout(function () {
-						$(th).find('.request__success').removeClass('active').fadeOut();
-						th.trigger("reset");
-					}, 3000);
-				});
-				return false;
-			});
-
-			$('.review__carousel').owlCarousel({
-				loop: true,
-				items: 1,
-				smartSpeed: 700,
-				nav: true,
-				navText: ['<i class="fas fa-quote-left"></i>', ' <i class="fas fa-quote-right"></i>'],
-				dots: true
-			});
-
-			$('.partners__carousel').owlCarousel({
-				loop: true,
-				items: 4,
-				smartSpeed: 700,
-				nav: true,
-				navText: ['<i class="fa fa-angle-left"></i>', ' <i class="fa fa-angle-right"></i>'],
-				dots: false,
-				responsiveClass: true,
-				responsive: {
-					0: 	{items: 1},
-					550: 	{items: 2},
-					768: 	{items: 3},
-					992: 	{items: 4}
-				}
-			});
-			
-		});
-
-		$(window).on('load', function() {
-			$('.preloader').delay(100).fadeOut('slow');
-		})
-	</script>
+	<link href="css/main.min.css" rel="stylesheet">
 
 
 </body>
