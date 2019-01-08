@@ -86,7 +86,7 @@ function rdate($param, $time=0) {
 		elseif ($date == 'today') { $booking = $db->getAll('SELECT * FROM booking WHERE date2 >= ?s ORDER by date desc', date('Y-m-d') ); }
 		elseif ($date == 'yestarday') { $booking = $db->getAll('SELECT * FROM booking WHERE date2 >= ?s ORDER by date desc', date('Y-m-d', strtotime('yesterday')) ); }
 		elseif ($date == 'week') { $booking = $db->getAll('SELECT * FROM booking WHERE date2 >= ?s ORDER by date desc', $week ); }
-		elseif ($date == 'mounth') { $booking = $db->getAll('SELECT * FROM booking WHERE date2 >= ?s ORDER by date desc', $mounth ); }
+		elseif ($date == 'mounth') { $booking = $db->getAll('SELECT * FROM booking WHERE date >= ?s ORDER by date desc', $mounth ); }
 		foreach ($booking as $row) {   ?>
 	
 		<a href="/user/booking_page.php?id=<?php echo $row['id']; ?>">
@@ -135,7 +135,7 @@ function rdate($param, $time=0) {
 		elseif ($date == 'today') { $sum = $db->getAll('SELECT SUM(total) as sum_total, SUM(count) as sum_count FROM booking WHERE date2 >= ?s ORDER by date desc', date('Y-m-d') ); }
 		elseif ($date == 'yestarday') { $sum = $db->getAll('SELECT SUM(total) as sum_total, SUM(count) as sum_count FROM booking WHERE date2 >= ?s ORDER by date desc', date('Y-m-d', strtotime('yesterday')) ); }
 		elseif ($date == 'week') { $sum = $db->getAll('SELECT SUM(total) as sum_total, SUM(count) as sum_count FROM booking WHERE date2 >= ?s', $week ); }
-		elseif ($date == 'mounth') { $sum = $db->getAll('SELECT SUM(total) as sum_total, SUM(count) as sum_count  FROM booking WHERE date2 >= ?s', $mounth ); }
+		elseif ($date == 'mounth') { $sum = $db->getAll('SELECT SUM(total) as sum_total, SUM(count) as sum_count  FROM booking WHERE date >= ?s', $mounth ); }
 		foreach ($sum as $row) {   ?>
 	
 	<div class="row bottom">

@@ -3,13 +3,28 @@
 	include $_SERVER['DOCUMENT_ROOT'] .'/inc/safemysql.class.php';
 	
 	$date = htmlspecialchars(trim($_GET['date'])); # определяем статус
+	$start_date = htmlspecialchars(trim($_GET['start_date'])); # определяем статус
+	$last_date = htmlspecialchars(trim($_GET['last_date'])); # определяем статус
+	$car = htmlspecialchars(trim($_GET['car'])); # определяем статус
 
+	if($start_date == '') {
+		$date = 'mun';
+		$start_date = date('Y-m-01');
+		$last_date = date('Y-m-t');
+	}
 	$db = new SafeMySQL();
 
 	#Функция вывода русского месяца
 	function rdate($param, $time=0) {
 		if(intval($time)==0)$time=time();
 		$MonthNames=array('янв' , 'фев' , 'мар' , 'апр' , 'мая' , 'июн' , 'июл' , 'авг' , 'сен' , 'окт' , 'ноя' , 'дек');
+		if(strpos($param,'M')===false) return date($param, $time);
+		else return date(str_replace('M',$MonthNames[date('n',$time)-1],$param), $time);
+	}
+	#Функция вывода ПОЛНОГО НАЗВАНИЯ русского месяца для поиска
+	function fdate($param, $time=0) {
+		if(intval($time)==0)$time=time();
+		$MonthNames=array('Январь' , 'Февраль' , 'Март' , 'Апрель' , 'Май' , 'Июнь' , 'Июль' , 'Август' , 'Сентябрь' , 'Октябрь' , 'Ноябрь' , 'Декабрь');
 		if(strpos($param,'M')===false) return date($param, $time);
 		else return date(str_replace('M',$MonthNames[date('n',$time)-1],$param), $time);
 	}
@@ -44,21 +59,32 @@
 		<div class="introHolder">
 			<h3>Платежи</h3>
 		</div>
-		<div class="twelve columns filter_button">
-			<span <?php if ($date == 'm0') { echo 'class="active"'; } ?>><a href="/user/pay.php?date=m0">Декабрь 17</a></span> 
-			<span <?php if ($date == 'm1') { echo 'class="active"'; } ?>><a href="/user/pay.php?date=m1">Январь</a></span> 
-			<span <?php if ($date == 'm2') { echo 'class="active"'; } ?>><a href="/user/pay.php?date=m2">Февраль</a></span> 
-			<span <?php if ($date == 'm3') { echo 'class="active"'; } ?>><a href="/user/pay.php?date=m3">Март</a></span> 
-			<span <?php if ($date == 'm4') { echo 'class="active"'; } ?>><a href="/user/pay.php?date=m4">Апрель</a></span>
-			<span <?php if ($date == 'm5') { echo 'class="active"'; } ?>><a href="/user/pay.php?date=m5">Май</a></span>	
-			<span <?php if ($date == 'm6') { echo 'class="active"'; } ?>><a href="/user/pay.php?date=m6">Июнь</a></span> 
-			<span <?php if ($date == 'm7') { echo 'class="active"'; } ?>><a href="/user/pay.php?date=m7">Июль</a></span> 
-			<span <?php if ($date == 'm8') { echo 'class="active"'; } ?>><a href="/user/pay.php?date=m8">Август</a></span> 
-			<span <?php if ($date == 'm9') { echo 'class="active"'; } ?>><a href="/user/pay.php?date=m9">Сентябрь</a></span>
-			<span <?php if ($date == 'm10') { echo 'class="active"'; } ?>><a href="/user/pay.php?date=m10">Октябрь</a></span>				
-			<span <?php if ($date == 'm11') { echo 'class="active"'; } ?>><a href="/user/pay.php?date=m11">Ноябрь</a></span>				
-			<span <?php if ($date == 'm12') { echo 'class="active"'; } ?>><a href="/user/pay.php?date=m12">Декабрь</a></span>				
-			<?php if ($date != '') { ?><a href="/user/pay.php"><i class="fa fa-trash-o" aria-hidden="true"></i></a><?php } ?>
+		<div class="row">
+			<div class="twelve columns filter_button">
+				<b>Авто:</b>
+					<?php
+						$auto = $db->getAll('SELECT * FROM car WHERE id <= 2');
+						foreach ($auto as $row) {
+					?>
+					<span <?php if ($car == $row['id']) { echo 'class="active"'; } ?>>
+						<a href="/user/pay.php?<?php if ($date) { echo 'date=mun&start_date='. $start_date .'&last_date='. $last_date .'&'; } ?>car=<?php echo $row['id']; ?>"><?php echo $row['name']; ?></a></span> 
+					<?php } ?>
+					<?php if ($car != '') { ?><a href="/user/pay.php"><i class="fa fa-trash-o" aria-hidden="true"></i></a><?php } ?>
+			</div>
+		</div>
+		<div class="row">
+			<div class="twelve columns filter_button">
+				<?php 
+					for ($mnt = strtotime("2017-12-01"); $mnt < strtotime(date('Y-m-d')); $mnt = strtotime("+1 month", $mnt)) { ?>
+
+						<span class="<?php if ($date == 'mun' and $start_date == date('Y-m-01', $mnt)) { echo 'active'; } ?>">
+							<a href="/user/pay.php?date=mun&start_date=<?php echo date('Y-m-01', $mnt); ?>&last_date=<?php echo date('Y-m-t', $mnt); ?><?php if($car) { echo '&car='. $car; } ?>"><?php echo fdate("M", $mnt).' '. fdate("Y", $mnt); ?></a>
+						</span><?php
+					}
+				?>
+				<span class="<?php if ($date == 'all') { echo 'active'; } ?>"><a href="/user/pay.php?date=all&start_date=2017-12-01&last_date=<?php echo date('Y-m-t'); ?>">За весь период</a></span>
+				<?php if ($date != '') { ?><a href="/user/pay.php"><i class="fa fa-trash-o" aria-hidden="true"></i></a><?php } ?>
+			</div>
 		</div>
 	</div>
 	<article class="prihod mounth">
@@ -70,30 +96,17 @@
 				<li class="col msg">Комментарий</li>
 			</ul>
 			<?php 
-
-
-			$each_mounth = date('Y-m-01');
-			$w = array();
-			$where = '';
+				$i = 1;
+				$w = array();
+				$where = '';
 					
-				if ($date == 'mounth') 	$w[] = $db->parse('date >= ?s', $each_mounth);
-				if ($date == 'm0') 		$w[] = $db->parse('date >= "2017-12-01" and date <= "2017-12-31"');
-				if ($date == 'm1') 		$w[] = $db->parse('date >= "2018-01-01" and date <= "2018-01-31"');
-				if ($date == 'm2') 		$w[] = $db->parse('date >= "2018-02-01" and date <= "2018-02-30"');
-				if ($date == 'm3') 		$w[] = $db->parse('date >= "2018-03-01" and date <= "2018-03-31"');
-				if ($date == 'm4') 		$w[] = $db->parse('date >= "2018-04-01" and date <= "2018-04-30"');
-				if ($date == 'm5') 		$w[] = $db->parse('date >= "2018-05-01" and date <= "2018-05-30"');
-				if ($date == 'm6') 		$w[] = $db->parse('date >= "2018-06-01" and date <= "2018-06-30"');
-				if ($date == 'm7') 		$w[] = $db->parse('date >= "2018-07-01" and date <= "2018-07-31"');
-				if ($date == 'm8') 		$w[] = $db->parse('date >= "2018-08-01" and date <= "2018-08-31"');
-				if ($date == 'm9') 		$w[] = $db->parse('date >= "2018-09-01" and date <= "2018-09-30"');
-				if ($date == 'm10') 	$w[] = $db->parse('date >= "2018-10-01" and date <= "2018-10-31"');
-				if ($date == 'm11') 	$w[] = $db->parse('date >= "2018-11-01" and date <= "2018-11-30"');
-				if ($date == 'm12') 	$w[] = $db->parse('date >= "2018-12-01" and date <= "2018-12-31"');
-				
-				if (count($w)) 	$where = "WHERE ". implode(' AND ', $w);
-				$select_prihod = $db->getAll("SELECT * FROM `prihod` ?p UNION SELECT * FROM rashod ?p ORDER by date desc", $where, $where);
-				foreach ($select_prihod as $row) {   ?>
+					if ($date) 			$w[] = $db->parse('date >= ?s and date <= ?s', $start_date, $last_date);
+					if ($car)			$w[] = $db->parse('auto_id = ?s', $car);
+					if (count($w)) 	$where = "WHERE ". implode(' AND ', $w);
+					$select_prihod = $db->getAll("SELECT * FROM `prihod` ?p UNION SELECT * FROM rashod ?p ORDER by date desc", $where, $where);
+					
+					foreach ($select_prihod as $row) { ?>
+			
 
 			<ul>
 					<li class="col date"><?php if($row['user_id'] != '') { ?><a href="/user/user_page.php?id=<?php echo $row['user_id']; ?>"><?php } ?><?php echo date("d.m.Y", strtotime($row['date'])); ?><?php if($row['user_id'] != '') { ?></a><?php } ?></li>

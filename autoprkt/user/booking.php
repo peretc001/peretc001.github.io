@@ -5,8 +5,14 @@ include $_SERVER['DOCUMENT_ROOT'] .'/inc/safemysql.class.php';
 $date = htmlspecialchars(trim($_GET['date'])); # определяем статус
 $start_date = htmlspecialchars(trim($_GET['start_date'])); # определяем статус
 $last_date = htmlspecialchars(trim($_GET['last_date'])); # определяем статус
-$mashina = htmlspecialchars(trim($_GET['mashina'])); # определяем статус
+$car = htmlspecialchars(trim($_GET['car'])); # определяем статус
 
+	if($start_date == '') {
+		$date = 'mun';
+		$start_date = date('Y-m-01');
+		$last_date = date('Y-m-t');
+	}
+	
 $link = mysqli_connect($hostname_db, $username_db, $password_db, $dbName_db);
 mysqli_set_charset( $link, 'utf8');  
 
@@ -44,7 +50,17 @@ function fdate($param, $time=0) {
 	<div class="filter">
 		<div class="four columns spec_button">
 			<span class="add"><a href="/user/booking_add.php"><i class="fa fa-plus-circle" aria-hidden="true"></i> Добавить</a></span> 
-			
+		</div>
+		<div class="eight columns filter_button">
+			<b>Авто:</b>
+			<?php
+				$auto = $db->getAll('SELECT * FROM car WHERE id <= 2');
+				foreach ($auto as $row) {
+			?>
+			<span <?php if ($car == $row['name']) { echo 'class="active"'; } ?>>
+				<a href="/user/booking.php?<?php if ($date) { echo 'date=mun&start_date='. $start_date .'&last_date='. $last_date .'&'; } ?>car=<?php echo $row['name']; ?>"><?php echo $row['name']; ?></a></span> 
+			<?php } ?>
+			<?php if ($car != '') { ?><a href="/user/booking.php"><i class="fa fa-trash-o" aria-hidden="true"></i></a><?php } ?>
 		</div>
 	</div>
 	<div class="filter">
@@ -52,12 +68,12 @@ function fdate($param, $time=0) {
 		<?php 
 			for ($mnt = strtotime("2017-12-01"); $mnt < strtotime(date('Y-m-d')); $mnt = strtotime("+1 month", $mnt)) { ?>
 
-				<span class="<?php if ($start_date == date('Y-m-01', $mnt)) { echo 'active'; } ?>">
-				<?php 
-				 echo '<a href="/user/booking.php?date=mun&start_date='. date('Y-m-01', $mnt) .'&last_date='. date('Y-m-t', $mnt) .'">'. fdate("M", $mnt).' '. fdate("Y", $mnt) .'</a>';
-				?></span><?php
+				<span class="<?php if ($date == 'mun' and $start_date == date('Y-m-01', $mnt)) { echo 'active'; } ?>">
+					<a href="/user/booking.php?date=mun&start_date=<?php echo date('Y-m-01', $mnt); ?>&last_date=<?php echo date('Y-m-t', $mnt); ?><?php if($car) { echo '&car='. $car; } ?>"><?php echo fdate("M", $mnt).' '. fdate("Y", $mnt); ?></a>
+				</span><?php
 			}
 		?>
+			<span class="<?php if ($date == 'all') { echo 'active'; } ?>"><a href="/user/booking.php?date=all&start_date=2017-12-01&last_date=<?php echo date('Y-m-t'); ?>">За весь период</a></span>
 			<?php if ($date != '') { ?><a href="/user/booking.php"><i class="fa fa-trash-o" aria-hidden="true"></i></a><?php } ?>
 		</div>
 	</div>
@@ -98,7 +114,7 @@ function fdate($param, $time=0) {
 		$where = '';
 			
 			if ($date) 			$w[] = $db->parse('date >= ?s and date <= ?s', $start_date, $last_date);
-			if ($mashina)		$w[] = $db->parse('auto = ?s', $mashina);
+			if ($car)			$w[] = $db->parse('auto = ?s', $car);
 			if (count($w)) 	$where = "WHERE ". implode(' AND ', $w);
 			$booking = $db->getAll("SELECT * FROM booking ?p ORDER by date desc", $where);
 			
@@ -150,7 +166,7 @@ function fdate($param, $time=0) {
 	$where = '';
 		
 		if ($date) 			$w[] = $db->parse('date >= ?s and date <= ?s', $start_date, $last_date);
-		if ($mashina)		$w[] = $db->parse('auto = ?s', $mashina);
+		if ($car)			$w[] = $db->parse('auto = ?s', $car);
 		if (count($w)) 	$where = "WHERE ". implode(' AND ', $w);
 		$sum = $db->getAll("SELECT SUM(total) as sum_total, SUM(count) as sum_count FROM booking ?p ORDER by date desc", $where);
 		

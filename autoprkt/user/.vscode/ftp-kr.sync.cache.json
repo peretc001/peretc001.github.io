@@ -1,0 +1,38 @@
+{
+  "ftp://autoprkt.ru@u0382359": {
+    ".bash_history": {
+      "type": "-",
+      "size": 469,
+      "lmtime": 0,
+      "modified": false
+    },
+    ".bashrc": {
+      "type": "-",
+      "size": 18,
+      "lmtime": 0,
+      "modified": false
+    },
+    ".composer": {},
+    ".pki": {},
+    ".profile": {
+      "type": "-",
+      "size": 260,
+      "lmtime": 0,
+      "modified": false
+    },
+    ".ssh": {},
+    "bin": {},
+    "doc.autoprkt.ru": {},
+    "error_docs": {},
+    "etc": {},
+    "httpdocs": {},
+    "logs": {},
+    "statistics": {
+      "type": "l",
+      "size": 50,
+      "lmtime": 0,
+      "modified": false
+    }
+  },
+  "$version": 1
+}
