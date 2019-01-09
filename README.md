@@ -36,7 +36,7 @@ web разработкой, владею навыками
 	<li>Карусель отзывов (owl.Carousel)</li>
 </ul>
 <br><br>
-<h1 style="text-align:center">Мои работы</h1>
+<h1 style="text-align:center">Мои работы под ключ</h1>
 <p align="center"><a href="http://partadami.ru"><img src="https://peretc001.github.io/email/img/partadami_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
 <p><strong>Интернет-магазин «Парты ДЭМИ» | <a href="http://partadami.ru">partadami.ru</a></strong></p>
 <ul type="none">
