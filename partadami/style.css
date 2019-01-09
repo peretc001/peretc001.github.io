@@ -2263,6 +2263,30 @@ textarea {
 	margin: 1rem 0;
 	font-style: italic;
 }
+#product .brand .uk-hidden {
+	display: inline !important;
+	visibility: visible !important;
+}
+
+#product .brand .more .uk-button {
+	display: none !important;
+	visibility: hidden !important;
+}
+
+@media screen and (max-width:900px) {
+	#product .brand .uk-hidden {
+		display: none !important;
+		visibility: hidden !important;
+	}
+	#product .brand .more {
+		text-align: center;
+	}
+	#product .brand .more .uk-button {
+		display: inline !important;
+		visibility: visible !important;
+	}
+
+}
 
 #product .shop {
 	padding: 1rem 0;
