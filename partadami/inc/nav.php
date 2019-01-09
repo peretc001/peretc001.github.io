@@ -67,48 +67,7 @@
 <div id="leftmenu_nav">
 	<div class="row">
 		<ul>
-			<li class="catalog_name"><a><i class="fa fa-bars" aria-hidden="true"></i> Каталог товаров <i class="fa fa-caret-down" aria-hidden="true"></i></a>
-				<div class="nav_menu_hide">
-					<div class="row">
-					<ul>
-						<li><a href="/shop/parta_bez_risunka/">
-							<img src="/img/nav_menu/1.png" alt="ПАРТЫ без РИСУНКА «ДЭМИ»"><br>
-							ПАРТЫ ДЭМИ</a>
-						</li>
-						<li><a href="/shop/white.php">
-							<img src="/img/nav_menu/4.png" alt="БЕЛЫЕ ПАРТЫ"><br>
-							БЕЛЫЕ ПАРТЫ</a>
-						</li>
-						<li><a href="/shop/ergonomichnyj_stul/">
-							<img src="/img/nav_menu/7.png" alt="Эргономичные стулья «ДЭМИ»"><br>
-							Стулья и кресла</a>
-						</li>
-						<li><a href="/shop/dopolnitelnye_elementy/">
-							<img src="/img/nav_menu/9.png" alt="Дополнительные элементы"><br>
-							Аксессуары</a>
-						</li>
-						
-					</ul>
-					</div>
-					<div class="row">
-					<ul>
-						<li><a href="/shop/tumby_i_stellazhi/">
-							<img src="/img/nav_menu/6.png" alt="ТУМБЫ и СТЕЛЛАЖИ «ДЭМИ»"><br>
-							ТУМБЫ и СТЕЛЛАЖИ «ДЭМИ»</a>
-						</li>
-						<li><a href="/shop/parta_s_risunkom/">
-							<img src="/img/nav_menu/2.png" alt="ПАРТЫ с РИСУНКОМ «ДЭМИ»"><br>
-							ПАРТЫ с РИСУНКОМ</a>
-						</li>
-						<li><a href="/shop/parta_iz_massiva/">
-							<img src="/img/nav_menu/3.png" alt="ПАРТЫ из МАССИВА «ДЭМИ»"><br>
-							ПАРТЫ и ТУМБЫ из БЕРЕЗЫ</a>
-						</li>
-						<li class="none">&nbsp;</li>
-					</ul>
-					</div>
-				</div>
-			</li>
+			<li class="catalog_name"><a href="/shop/"><i class="fa fa-bars" aria-hidden="true"></i> Каталог товаров</a></li>
 			<li><a href="/shop/parta_bez_risunka/">Парты ДЭМИ</a></li>
 			<li><a href="/shop/white.php">Белые парты</a></li>
 			<li><a href="/shop/ergonomichnyj_stul/">Стулья и кресла</a></li>
@@ -117,4 +76,3 @@
 		</ul>
 	</div>
 </div>
-<script src="/js/catalog/nav_menu.js"></script>

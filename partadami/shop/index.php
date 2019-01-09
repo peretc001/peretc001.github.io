@@ -30,15 +30,9 @@
 		<div class="row">
 			<div class="one-third column shop">
 				<p><a href="/shop/parta_bez_risunka/"><img class="shop-img" src="/shop/img/im1.png" alt="ПАРТЫ без РИСУНКА «ДЭМИ»"></a></p>
-				<p class="shop-header"><a href="/shop/parta_bez_risunka/"><b>ПАРТЫ без РИСУНКА</b></a></p>
+				<p class="shop-header"><a href="/shop/parta_bez_risunka/"><b>ПАРТЫ ДЭМИ</b></a></p>
 				<p><small>Модели:</small></p>
 				<table class="shop-model">
-					<tr>
-						<td class="left">
-							<a href="/shop/parta_bez_risunka/index.php?art=13&package=parta_0_stul">СУТ13</a>
-						</td>
-						<td class="right">(столешница 60х50см)</td>
-					</tr>
 					<tr>
 						<td class="left">
 							<a href="/shop/parta_bez_risunka/index.php?art=14&package=parta_0_stul">СУТ14</a>
@@ -52,16 +46,25 @@
 						<td class="right">(столешница 75х55см и 45х55см)</td>
 					</tr>
 					<tr>
-						<td class="left">
-							<a href="/shop/parta_bez_risunka/index.php?art=28&package=parta_0_stul">СУТ28</a>
+						<td colspan="2">&nbsp;</td>
+					</tr>
+					<tr class="old_models">
+						<td class="left old">
+							<a href="/shop/parta_bez_risunka/index.php?art=13&package=parta_0_stul">СУТ13</a>
 						</td>
-						<td class="right">(столешница 90х50см)</td>
+						<td class="right old">(столешница 60х50см)</td>
 					</tr>
 					<tr>
-						<td class="left">
+						<td class="left old">
+							<a href="/shop/parta_bez_risunka/index.php?art=28&package=parta_0_stul">СУТ28</a>
+						</td>
+						<td class="right old">(столешница 90х50см)</td>
+					</tr>
+					<tr>
+						<td class="left old">
 							<a href="/shop/parta_bez_risunka/index.php?art=29&package=parta_0_stul">СУТ29</a>
 						</td>
-						<td class="right">(столешница 110х50см)</td>
+						<td class="right old">(столешница 110х50см)</td>
 					</tr>
 				</table>
 			</div>

@@ -2334,6 +2334,15 @@ textarea {
 #product .shop table.shop-model td.right {
 	width: 60%;
 }
+#product .shop table.shop-model td.left.old,
+#product .shop table.shop-model td.left.old a,
+#product .shop table.shop-model td.right.old {
+	color: #ccc
+}
+
+#product .shop table.shop-model tr.old_models {
+	border-top: 0.5px solid #ccc;
+}
 
 @media (max-width: 700px) {
 	#product .shop {
