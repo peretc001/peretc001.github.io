@@ -8,7 +8,7 @@ web разработкой, владею навыками
 	<li>PHP</li>
 	<li>MySQL (SafeMySQL)</li>
 </ul>
-<br>
+<p>Контакты:</p>
 <table style="text-align:center">
 	<tbody>
 		<tr>
@@ -37,7 +37,7 @@ web разработкой, владею навыками
 </ul>
 <br><br>
 <h1 style="text-align:center">Мои работы</h1>
-<p align="center;"><a href="http://partadami.ru"><img src="https://peretc001.github.io/email/img/partadami_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
+<p align="center"><a href="http://partadami.ru"><img src="https://peretc001.github.io/email/img/partadami_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
 <p><strong>Интернет-магазин «Парты ДЭМИ» | <a href="http://partadami.ru">partadami.ru</a></strong></p>
 <ul type="none">
 	<li>Адаптивный дизайн (Skeleton)</li>
