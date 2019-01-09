@@ -2450,7 +2450,14 @@ textarea {
 #filter_mobile .filter ul li i {
 	margin: 0 0.5rem 0 0;
 }
+#filter_mobile .filter ul li.old_models {
+	border-top: 0.5px solid #ccc;
+}
 
+#filter_mobile .filter ul.model li.old a,
+#filter_mobile .filter ul.model li.old span {
+	color: #b3b1b1
+}
 #filter_mobile .filter ul li span.active {
 	color: #222;
 	font-weight: bold;
@@ -2522,12 +2529,18 @@ textarea {
 #product .filter ul li i {
 	margin: 0 0.5rem 0 0;
 }
+#product .filter ul.model li.old a,
+#product .filter ul.model li.old span {
+	color: #b3b1b1
+}
 
+#product .filter ul li.old_models {
+	border-top: 0.5px solid #ccc;
+}
 #product .filter ul li span.active {
 	color: #222;
 	font-weight: bold;
 }
-
 #product .filter ul li font {
 	margin-left: 10%;
 	font-size: 1.2rem;
