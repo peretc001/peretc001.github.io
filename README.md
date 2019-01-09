@@ -1,5 +1,5 @@
 <p><strong style="font-size:18px;font-weight:700;">Меня зовут Игорь</strong>,<br>Я занимаюсь версткой и 
-web разработкой, владею навыками верстки 
+web разработкой, владею навыками
 <ul>
 	<li>HTML5</li>
 	<li>SASS, CSS3</li>
@@ -8,6 +8,23 @@ web разработкой, владею навыками верстки
 	<li>PHP</li>
 	<li>MySQL (SafeMySQL)</li>
 </ul>
+<br>
+<table style="text-align:center">
+	<tbody>
+		<tr>
+			<td width="40px" text-align="center"><img src="https://peretc001.github.io/email/img/contact/email.png" style="display:block;width:20px;margin:0 auto;text-align:center;"></td>
+			<td style="padding:5px 10px;font-size:14px"><a style="color:#222;text-decoration:none;" href="mailto:peretc001@mail.ru">peretc001@mail.ru</a></td>
+		</tr>
+		<tr>
+			<td width="40px" text-align="center"><img src="https://peretc001.github.io/email/img/contact/facebook.png" style="display:block;width:10px;margin:0 auto;text-align:center;"></td>
+			<td style="padding:5px 10px;font-size:14px"><a style="color:#222;text-decoration:none;" href="https://www.facebook.com/i.krasovsky123">facebook.com/i.krasovsky123</a></td>
+		</tr>
+	</tbody>
+</table>
+<br>
+Attempt | #1 | #2 | #3 | #4 | #5 | #6 | #7 | #8 | #9 | #10 | #11
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
+Seconds | 301 | 283 | 290 | 286 | 289 | 285 | 287 | 287 | 272 | 276 | 269
 <div style="text-align:center;">
 <h1  style="text-align:center;">Текущая работа</h1>
 
@@ -22,8 +39,8 @@ web разработкой, владею навыками верстки
 	<li>Карусель отзывов (owl.Carousel)</li>
 </ul>
 <br><br>
-<h1  align="center;">Мои работы</h1>
-<p style="text-align:center"><a href="http://partadami.ru"><img src="https://peretc001.github.io/email/img/partadami_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
+<h1 style="text-align:center">Мои работы</h1>
+<p align="center;"><a href="http://partadami.ru"><img src="https://peretc001.github.io/email/img/partadami_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
 <p><strong>Интернет-магазин «Парты ДЭМИ» | <a href="http://partadami.ru">partadami.ru</a></strong></p>
 <ul type="none">
 	<li>Адаптивный дизайн (Skeleton)</li>
@@ -67,17 +84,4 @@ web разработкой, владею навыками верстки
 	<li>Печать договоров и актов из CRM</li>
 	<li>Сводный Баланс по клиентам и автомобилям</li>
 </ul>
-<br>
-<table style="text-align:center">
-	<tbody>
-		<tr>
-			<td width="40px" text-align="center"><img src="https://peretc001.github.io/email/img/contact/email.png" style="display:block;width:20px;margin:0 auto;text-align:center;"></td>
-			<td style="padding:5px 10px;font-size:14px"><a style="color:#222;text-decoration:none;" href="mailto:peretc001@mail.ru">peretc001@mail.ru</a></td>
-		</tr>
-		<tr>
-			<td width="40px" text-align="center"><img src="https://peretc001.github.io/email/img/contact/facebook.png" style="display:block;width:10px;margin:0 auto;text-align:center;"></td>
-			<td style="padding:5px 10px;font-size:14px"><a style="color:#222;text-decoration:none;" href="https://www.facebook.com/i.krasovsky123">facebook.com/i.krasovsky123</a></td>
-		</tr>
-	</tbody>
-</table>
 </div>
