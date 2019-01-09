@@ -7,37 +7,36 @@
 	<meta name="Description" content="Официальный сайт ДЭМИ по Краснодарскому краю. Описание, цены, отзывы. Доставка. Сборка. Гарантия. Кредит." /> 
     <?php include $_SERVER['DOCUMENT_ROOT'] .'/inc/header.php'; ?>
     <?php include $_SERVER['DOCUMENT_ROOT'] .'/inc/config.php'; ?>
+	 <link rel="stylesheet" href="css/animate.css">
 </head>
 <body>
 <?php include $_SERVER['DOCUMENT_ROOT'] .'/inc/nav.php'; ?>
-<div id="partadami">
-	<div class="row">
-		<h1>Детская парта и стул "ДЭМИ"</h1>
-		<img src="/img/cyt17.svg" alt="Детская парта и стул ДЭМИ" class="home_img">
-	</div>
-</div>
-<div id="why_dami">
-	<div class="introHolder black">
-		<h2>Зачем вашему ребенку #партадэми</h2>
-	</div>
-	<div class="row">
-		<div class="six columns">
-			<p class="h1"><span>Растет вместе с ребенком</span><br>
-			Парта растет вместе с ребенком с 5-ти лет и до университета (рост от 120 до 198 см)</p>
+<div class="main_desk">
+	<div class="container">
+		<div class="introHolder">
+			<h1>Детская парта и стул "ДЭМИ"</h1>
+			<p>растет вместе с вашим ребенком с 5 лет до университета</p>
 		</div>
-		<div class="six columns">
-			<p class="h2"><span>Наклоняется к ребенку</span><br>
-			Изменение угла наклона столешницы позволяет снять нагрузку с позвоночника школьника</p>
-		</div>
-	</div>
-	<div class="row">
-		<div class="six columns">
-			<p class="h3"><span>Заботится об осанке</span><br>
-			Парта и стул заботятся о том, чтобы ребенок сидел правильно и не сутулился</p>
-		</div>
-		<div class="six columns">
-			<p class="h4"><span>Стул тоже хорош</span><br>
-			Стул регулируется не только по высоте но и по глубине, снижая нагрузку на позвоночник</p>
+		<div class="row">
+				
+				<div class="three columns school animated fadeInUp delay-1s">
+					<p class="name"><b>Высота стола</b>, <small>см</small></p>
+					<p class="point"><span>53</span> - 81</p>
+				</div>
+				<div class="three columns school animated fadeInUp delay-2s">
+					<p class="name"><b>Высота стула</b>, <small>см</small></p>
+					<p class="point">34 - 44</p>
+				</div>
+				<div class="three columns school animated fadeInUp delay-3s">
+					<p class="name"><b>Рост ребенка</b>, <small>см</small></p>
+					<p class="point">115 - 198</p>
+				</div>
+				<div class="three columns school animated fadeInUp delay-4s">
+					<p class="name"><b>Возраст</b></p>
+					<p class="point">5+</p>
+				</div>
+				
+
 		</div>
 	</div>
 </div>
@@ -68,6 +67,31 @@
 				<li>скидка на стул «ДЭМИ»<br><small>при покупке с партой</small></li>
 				<li><span class="sale">-25%</span></li>
 			</ul>
+		</div>
+	</div>
+</div>
+<div id="why_dami">
+	<div class="introHolder black">
+		<h2>Зачем вашему ребенку #партадэми</h2>
+	</div>
+	<div class="row">
+		<div class="six columns">
+			<p class="h1"><span>Растет вместе с ребенком</span><br>
+			Парта растет вместе с ребенком с 5-ти лет и до университета (рост от 120 до 198 см)</p>
+		</div>
+		<div class="six columns">
+			<p class="h2"><span>Наклоняется к ребенку</span><br>
+			Изменение угла наклона столешницы позволяет снять нагрузку с позвоночника школьника</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="six columns">
+			<p class="h3"><span>Заботится об осанке</span><br>
+			Парта и стул заботятся о том, чтобы ребенок сидел правильно и не сутулился</p>
+		</div>
+		<div class="six columns">
+			<p class="h4"><span>Стул тоже хорош</span><br>
+			Стул регулируется не только по высоте но и по глубине, снижая нагрузку на позвоночник</p>
 		</div>
 	</div>
 </div>

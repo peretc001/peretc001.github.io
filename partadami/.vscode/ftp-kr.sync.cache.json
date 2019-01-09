@@ -1,0 +1,171 @@
+{
+  "ftp://partadami.ru@u1730440": {
+    "httpdocs": {
+      "partadami.ru": {
+        ".DS_Store": {
+          "type": "-",
+          "size": 8195,
+          "lmtime": 0,
+          "modified": false
+        },
+        ".htaccess": {
+          "type": "-",
+          "size": 31640,
+          "lmtime": 0,
+          "modified": false
+        },
+        "404.php": {
+          "type": "-",
+          "size": 881,
+          "lmtime": 0,
+          "modified": false
+        },
+        "akcia": {},
+        "certificate.php": {
+          "type": "-",
+          "size": 3265,
+          "lmtime": 0,
+          "modified": false
+        },
+        "css": {},
+        "delivery.php": {
+          "type": "-",
+          "size": 4234,
+          "lmtime": 0,
+          "modified": false
+        },
+        "detskij_stol.php": {
+          "type": "-",
+          "size": 7214,
+          "lmtime": 0,
+          "modified": false
+        },
+        "doc": {},
+        "exchange.php": {
+          "type": "-",
+          "size": 2691,
+          "lmtime": 0,
+          "modified": false
+        },
+        "garanty.php": {
+          "type": "-",
+          "size": 3780,
+          "lmtime": 0,
+          "modified": false
+        },
+        "gde_kupit": {},
+        "geo": {},
+        "googlee48268881f4dbfa1.html": {
+          "type": "-",
+          "size": 53,
+          "lmtime": 0,
+          "modified": false
+        },
+        "img": {},
+        "inc": {},
+        "index.php": {
+          "type": "-",
+          "size": 7485,
+          "lmtime": 1547041259840,
+          "modified": false
+        },
+        "index2.php": {
+          "type": "-",
+          "size": 7485,
+          "lmtime": 1547040450426,
+          "modified": false
+        },
+        "js": {},
+        "kompyuterniy-stol.php": {
+          "type": "-",
+          "size": 8124,
+          "lmtime": 0,
+          "modified": false
+        },
+        "mail": {},
+        "notes": {},
+        "oplata.php": {
+          "type": "-",
+          "size": 2157,
+          "lmtime": 0,
+          "modified": false
+        },
+        "opt.php": {
+          "type": "-",
+          "size": 9971,
+          "lmtime": 0,
+          "modified": false
+        },
+        "otziv.php": {
+          "type": "-",
+          "size": 7418,
+          "lmtime": 0,
+          "modified": false
+        },
+        "pismenny_stol.php": {
+          "type": "-",
+          "size": 6557,
+          "lmtime": 0,
+          "modified": false
+        },
+        "policy.php": {
+          "type": "-",
+          "size": 4532,
+          "lmtime": 0,
+          "modified": false
+        },
+        "ps1C0B.tmp": {
+          "type": "-",
+          "size": 54,
+          "lmtime": 1547032252301,
+          "modified": true
+        },
+        "robots.txt": {
+          "type": "-",
+          "size": 296,
+          "lmtime": 0,
+          "modified": false
+        },
+        "settingup.php": {
+          "type": "-",
+          "size": 4617,
+          "lmtime": 0,
+          "modified": false
+        },
+        "shkolnaya-mebel.php": {
+          "type": "-",
+          "size": 13717,
+          "lmtime": 0,
+          "modified": false
+        },
+        "shop": {},
+        "stol-dly-shkolnika.php": {
+          "type": "-",
+          "size": 8284,
+          "lmtime": 0,
+          "modified": false
+        },
+        "style.css": {
+          "type": "-",
+          "size": 95464,
+          "lmtime": 1547041029569,
+          "modified": false
+        },
+        "style.min.css": {
+          "type": "-",
+          "size": 72657,
+          "lmtime": 1547041159039,
+          "modified": true
+        },
+        "upload": {},
+        "yml.xml": {
+          "type": "-",
+          "size": 17805,
+          "lmtime": 0,
+          "modified": false
+        }
+      }
+    }
+  },
+  "$version": 1
+}
