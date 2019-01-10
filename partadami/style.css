@@ -4485,6 +4485,56 @@ textarea {
 	font-size: 1.2rem;
 	margin-right: 0.3rem;
 }
+.add_otziv .add_your_otziv {
+	margin: 5px auto;
+	width: 80%;
+	max-width: 500px;
+	background: #FFB300;
+	padding: 1rem;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	position: relative;
+	animation: shake 6s cubic-bezier(.36, .07, .19, .97) both infinite;
+	transform: translate3d(0, 0, 0);
+	backface-visibility: hidden;
+}
+
+.add_otziv .add_your_otziv::before {
+	content: '\f0d8';
+	font-family: FontAwesome;
+	font-size: 3rem;
+	position: absolute;
+	top: -2.9rem;
+	right: 30%;
+	color: #FFB300;
+}
+
+@media (max-width: 550px) {
+	.add_otziv .add_your_otziv::before {
+		right: 49%;
+	}
+}
+
+@keyframes shake {
+	1%,
+	9% {
+		transform: translate3d(-1px, 0, 0);
+	}
+	2%,
+	8% {
+		transform: translate3d(2px, 0, 0);
+	}
+	3%,
+	5%,
+	7% {
+		transform: translate3d(-4px, 0, 0);
+	}
+	4%,
+	6% {
+		transform: translate3d(4px, 0, 0);
+	}
+}
 
 #product_otziv .otziv_form {
 	width: 100%;

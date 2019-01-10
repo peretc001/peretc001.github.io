@@ -90,9 +90,23 @@ function rdate($param, $time=0) {
 	
 		<div class="row edit_menu">
 			<ul>
-				<li class="edit"><a data-uk-toggle="{target:'#elem1'}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Редактировать</a></li>
-				<li><a class="plus" data-uk-toggle="{target:'#elem2'}" ><i class="fa fa-plus-circle" aria-hidden="true"></i> Приход</a></li>
-				<li><a class="minus" data-uk-toggle="{target:'#elem3'}" ><i class="fa fa-plus-circle" aria-hidden="true"></i> Расход</a></li>
+				<li><a class="button btn_edit" data-uk-toggle="{target:'#elem1'}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Редактировать</a></li>
+				<li>
+					<form action="/user/inc/form/edit_booking.php" method="post" class="form_add_one_day">
+						<input type="hidden" name="id" 		value="<?php echo $id; ?>">
+						<input type="hidden" name="user_id" value="<?php echo $row['user_id']; ?>">
+						<input type="hidden" name="date" 	value="<?php echo $row['date']; ?>">
+						<input type="hidden" name="auto" 	value="<?php echo $row['auto']; ?>">
+						<input type="hidden" name="date1" 	value="<?php echo $row['date1']; ?>">				
+						<input type="hidden" name="date2" 	value="<?php echo date('Y-m-d', strtotime($row['date2']. '+1 days')); ?>">				
+						<input type="hidden" name="price" 	value="<?php echo $row['price']; ?>">
+						<input type="hidden" name="total" 	value="">
+						<textarea hidden 		name="msg"><?php echo $row['msg']; ?></textarea>
+						<button class="button btn_add_one_day">+ 1 сутки</button>
+					</form>
+				</li>
+				<li><a class="button btn_plus" data-uk-toggle="{target:'#elem2'}" ><i class="fa fa-caret-down" aria-hidden="true"></i> Приход</a></li>
+				<li><a class="button btn_minus" data-uk-toggle="{target:'#elem3'}" ><i class="fa fa-caret-up" aria-hidden="true"></i> Расход</a></li>
 			</ul>
 		</div>
 		
