@@ -30,17 +30,6 @@ function rdate($param, $time=0) {
 <body>
 	<?php include $_SERVER['DOCUMENT_ROOT'] .'/user/inc/nav.php'; ?>
 	<div class="booking_page">
-		<div class="row">
-			<div class="u-pull-right">
-				<?php 
-					if($row['general'] == '') { 
-						echo '<a href="/user/inc/form/edit_booking_make_general.php?id='. $id .'&type=gen" class="button button-warning">сделать главной</a>';
-					} elseif($row['general'] == 'yes') {
-						echo '<a href="/user/inc/form/edit_booking_make_general.php?id='. $id .'&type=ungen" class="button button-danger">главная</a>';
-					}
-				?>
-			</div>
-		</div>
 		<div class="introHolder">
 			<h1>Аренда N <?php echo $row['id']; ?></h1>
 		</div>
@@ -109,7 +98,15 @@ function rdate($param, $time=0) {
 			<?php } ?>
 			<a href="http://doc.autoprkt.ru/MPDF56/act.php?id=<?php echo $id; ?>&user_id=<?php echo $row['user_id']; ?>" target="blank"><i class="fa fa-file-text" aria-hidden="true"></i> Акт</a>
 		</div>
-	
+		<div class="row center">
+				<?php 
+					if($row['general'] == '') { 
+						echo '<a href="/user/inc/form/edit_booking_make_general.php?id='. $id .'&type=gen" class="button button-warning">Дополнительный договор</a>';
+					} elseif($row['general'] == 'yes') {
+						echo '<a href="/user/inc/form/edit_booking_make_general.php?id='. $id .'&type=ungen" class="button button-danger">Основной договор</a>';
+					}
+				?>
+		</div>
 		<div class="row edit_menu">
 			<ul>
 				<li><a class="button btn_edit" data-uk-toggle="{target:'#elem1'}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Редактировать</a></li>
