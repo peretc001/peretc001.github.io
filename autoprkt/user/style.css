@@ -186,7 +186,23 @@ body.disabled_page {
 a {
 	text-decoration: none;
 }
+.button.button-warning {
+	background: #fdd845;
+	border-color: #ebc429;
+	color: #222;
+}
+.button.button-warning:hover {
+	background: #f9cd1a;
+}
+.button.button-danger {
+	background: #d83b3b;
+	border-color: #da2525;
+	color: #fff;
+}
 
+.button.button-danger:hover {
+	background: #c40c0c;
+}
 @media (max-width: 1024px) {
 
 	input,
@@ -1342,7 +1358,7 @@ a {
 	}
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 690px) {
 	.edit_user .row.edit_menu .button {
 		padding: 1rem 1.8rem;
 		margin: 0 0.2rem;

@@ -30,6 +30,17 @@ function rdate($param, $time=0) {
 <body>
 	<?php include $_SERVER['DOCUMENT_ROOT'] .'/user/inc/nav.php'; ?>
 	<div class="booking_page">
+		<div class="row">
+			<div class="u-pull-right">
+				<?php 
+					if($row['general'] == '') { 
+						echo '<a href="/user/inc/form/edit_booking_make_general.php?id='. $id .'&type=gen" class="button button-warning">сделать главной</a>';
+					} elseif($row['general'] == 'yes') {
+						echo '<a href="/user/inc/form/edit_booking_make_general.php?id='. $id .'&type=ungen" class="button button-danger">главная</a>';
+					}
+				?>
+			</div>
+		</div>
 		<div class="introHolder">
 			<h1>Аренда N <?php echo $row['id']; ?></h1>
 		</div>
@@ -61,7 +72,7 @@ function rdate($param, $time=0) {
 				
 			</div>
 		</div>
-		<div class="row msg">
+		<div class="row msg<?php if($row['msg'] == '') { echo 'uk-hidden'; } ?>">
 			<p><?php echo $row['msg']; ?></p>
 		</div>
 	</div>
@@ -76,14 +87,25 @@ function rdate($param, $time=0) {
 			#Итог
 			$balance = $plus - $minus - $row['total'];
 
-			$select_count = $db->getCol("SELECT COUNT(id) FROM `booking` WHERE user_id = ?s", $row['user_id']);
-			$dop_soglashenie =  $select_count[0];
+			#Определяем Номер ДОП соглашения			
+			$ll = $db->getCol('SELECT * FROM `booking` WHERE user_id = ?s and general = "yes"', $row['user_id']);
+			foreach ($ll as $list) {
+				if($id > $list) {
+					$general = $list;
+				}
+			}
+			$counter = 0;
+			for ($i = $general; $i < $id; $i++) {
+						$i;
+						$counter++;     
+					}
+			$dop_number = $counter;
 	?>
 	<div class="edit_user">
 		<div class="row">
 			<a href="http://doc.autoprkt.ru/MPDF56/index.php?id=<?php echo $row['id']; ?>&user_id=<?php echo $row['user_id']; ?>" target="blank"><i class="fa fa-file-text" aria-hidden="true"></i> Договор</a>
-			<?php if($dop_soglashenie > '1') { ?>
-				<a href="http://doc.autoprkt.ru/MPDF56/dop.php?id=<?php echo $row['id']; ?>&user_id=<?php echo $row['user_id']; ?>" target="blank"><i class="fa fa-file-text" aria-hidden="true"></i> ДС</a>
+			<?php if($row['general'] == '') { ?>
+				<a href="http://doc.autoprkt.ru/MPDF56/dop.php?id=<?php echo $row['id']; ?>&user_id=<?php echo $row['user_id']; ?>&general=<?php echo $general; ?>&dop_number=<?php echo $dop_number; ?>" target="blank"><i class="fa fa-file-text" aria-hidden="true"></i> ДС <?php echo $dop_number; ?></a>
 			<?php } ?>
 			<a href="http://doc.autoprkt.ru/MPDF56/act.php?id=<?php echo $id; ?>&user_id=<?php echo $row['user_id']; ?>" target="blank"><i class="fa fa-file-text" aria-hidden="true"></i> Акт</a>
 		</div>
@@ -102,7 +124,7 @@ function rdate($param, $time=0) {
 						<input type="hidden" name="price" 	value="<?php echo $row['price']; ?>">
 						<input type="hidden" name="total" 	value="">
 						<textarea hidden 		name="msg"><?php echo $row['msg']; ?></textarea>
-						<button class="button btn_add_one_day">+ 1 сутки</button>
+						<button class="button btn_add_one_day">Добавить 1 сутки</button>
 					</form>
 				</li>
 				<li><a class="button btn_plus" data-uk-toggle="{target:'#elem2'}" ><i class="fa fa-caret-down" aria-hidden="true"></i> Приход</a></li>
