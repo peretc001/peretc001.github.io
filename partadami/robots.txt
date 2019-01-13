@@ -1,0 +1,15 @@
+User-agent: *
+Disallow: *?color*
+Disallow: *?art*
+Disallow: *?picture*
+Disallow: *?package*
+Disallow: /admin/
+Disallow: /back/
+Disallow: /doc/
+Disallow: /geo/
+Disallow: /kompyuterniy-stol.php
+Disallow: /shop/index.php?id=*
+Disallow: /shop/confirm.php*
+Disallow: /shop/oplata.php*
+Disallow: /gde_kupit/map.php
+Host: www.partadami.ru

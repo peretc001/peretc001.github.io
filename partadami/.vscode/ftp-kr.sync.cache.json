@@ -20,6 +20,70 @@
           "lmtime": 0,
           "modified": false
         },
+        "admin": {
+          "admin.css": {
+            "type": "-",
+            "size": 3268,
+            "lmtime": 1547308052245,
+            "modified": false
+          },
+          "home.php": {
+            "type": "-",
+            "size": 2522,
+            "lmtime": 1547308395604,
+            "modified": false
+          },
+          "inc": {
+            "conf.php": {
+              "type": "-",
+              "size": 477,
+              "lmtime": 1547277641110,
+              "modified": false
+            },
+            "edit.php": {
+              "type": "-",
+              "size": 597,
+              "lmtime": 1547301785861,
+              "modified": false
+            },
+            "header.php": {
+              "type": "-",
+              "size": 1512,
+              "lmtime": 1547277949741,
+              "modified": false
+            },
+            "logout.php": {
+              "type": "-",
+              "size": 252,
+              "lmtime": 0,
+              "modified": false
+            },
+            "safemysql.class.php": {
+              "type": "-",
+              "size": 18261,
+              "lmtime": 1547277830565,
+              "modified": false
+            },
+            "valid.php": {
+              "type": "-",
+              "size": 3829,
+              "lmtime": 1547277815069,
+              "modified": false
+            }
+          },
+          "index.php": {
+            "type": "-",
+            "size": 1635,
+            "lmtime": 1547277987803,
+            "modified": false
+          },
+          "style.css": {
+            "type": "-",
+            "size": 97437,
+            "lmtime": 1547113755423,
+            "modified": false
+          }
+        },
         "akcia": {},
         "certificate.php": {
           "type": "-",

@@ -45,27 +45,6 @@
 						</td>
 						<td class="right">(столешница 75х55см и 45х55см)</td>
 					</tr>
-					<tr>
-						<td colspan="2">&nbsp;</td>
-					</tr>
-					<tr class="old_models">
-						<td class="left old">
-							<a href="/shop/parta_bez_risunka/index.php?art=13&package=parta_0_stul">СУТ13</a>
-						</td>
-						<td class="right old">(столешница 60х50см)</td>
-					</tr>
-					<tr>
-						<td class="left old">
-							<a href="/shop/parta_bez_risunka/index.php?art=28&package=parta_0_stul">СУТ28</a>
-						</td>
-						<td class="right old">(столешница 90х50см)</td>
-					</tr>
-					<tr>
-						<td class="left old">
-							<a href="/shop/parta_bez_risunka/index.php?art=29&package=parta_0_stul">СУТ29</a>
-						</td>
-						<td class="right old">(столешница 110х50см)</td>
-					</tr>
 				</table>
 			</div>
 			<div class="one-third column shop">

@@ -1,0 +1,204 @@
+/* ------ LOGIN ------ */
+.login {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.login .row {
+	width: 100%;
+	max-width: 300px;
+	margin: 5rem auto;
+	padding: 2rem 0;
+	border: 0.5px solid #ccc;
+	text-align: center;
+}
+
+.login .row input {
+	text-align: center;
+}
+
+.login .row p {
+	padding: 0;
+	margin: 0.5rem 0;
+}
+
+
+/* ------ ERROR ------ */
+.error {
+	width: 50%;
+	padding: 0;
+	margin: 5rem auto;
+	text-align: center;
+}
+
+.error p {
+	padding: 1rem 0;
+	margin: 0;
+	font-weight: 300;
+}
+
+.error .fa-hand-stop-o:before {
+	font-size: 10rem;
+}
+
+.error .fa-thumbs-o-up:before {
+	font-size: 10rem;
+}
+
+.error .fa-question-circle-o:before {
+	font-size: 10rem;
+}
+
+
+/* ------ LOGOUT ------ */
+.logout {
+	width: 100%;
+	padding: 0;
+	margin: 0 0 2rem 0;
+	background: #222;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.logout ul {
+	padding: 0;
+	margin: 0;
+}
+
+.logout ul li {
+	display: inline-block;
+	font-size: 1.6rem;
+	margin: 0;
+	margin-left: -5px;
+	text-align: left;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.logout ul li.menu {
+	width: 50%;
+	padding: 1rem 0 1rem 4rem;
+}
+
+.logout ul li.menu a {
+	margin: 0 1rem;
+}
+
+.logout ul li.exit {
+	width: 50%;
+	text-align: right;
+	padding: 1rem 4rem 1rem 0;
+}
+
+.logout ul li a {
+	cursor: pointer;
+	color: #fff;
+	text-decoration: none;
+}
+
+@media only screen and (max-width : 550px) {
+	.logout ul li {
+		font-size: 1.5rem;
+	}
+
+	.logout ul li.menu {
+		width: 60%;
+		padding: 1rem 0 1rem 3rem;
+	}
+
+	.logout ul li.menu a {
+		margin: 0 0.5rem;
+	}
+
+	.logout ul li.exit {
+		width: 40%;
+		padding: 1rem 3rem 1rem 0;
+	}
+}
+
+.admin_product_filter {}
+
+.admin_product_filter .row a {
+	display: inline-block;
+	background: #f2f2f2;
+	color: #222;
+	padding: 0.2rem 1rem;
+	border-radius: 6px;
+	font-size: 1rem;
+	transition: background-color .3s ease;
+}
+
+.admin_product_filter .row a:hover {
+	background: #dedede;
+}
+
+.admin_product_filter .row a.active {
+	background: #33C3F0;
+	color: #fff;
+}
+
+.admin_product_page form {
+	margin: 0;
+}
+
+.admin_product_page .row {
+	padding: 0;
+	margin: 0 auto;
+	display: flex;
+	width: 100%;
+}
+
+.admin_product_page .row .columns {
+	margin: auto;
+	vertical-align: center;
+}
+
+.admin_product_page .row .grey {
+	background-color: #f2f2f2;
+}
+
+.admin_product_page .row .img img {
+	width: 100%;
+	max-width: 300px;
+	margin: 0;
+}
+
+.admin_product_page .row .name {
+	padding: 1rem 0 1rem 1rem;
+	font-size: 1rem;
+}
+
+.admin_product_page .row input {
+	display: inline-block;
+	font-weight: 300;
+	border: 0.5px solid #ccc;
+	padding: 0.5rem 1rem;
+	border-radius: 4px;
+	transition: background-color .3s ease;
+	height: auto;
+	line-height: 1;
+	text-transform: none;
+	font-size: 1.3rem;
+	letter-spacing: 0;
+	margin: 0 0.3rem;
+	width: 100%;
+	max-width: 200px;
+}
+
+.admin_product_page .row .button {
+	display: inline-block;
+	font-weight: 300;
+	border: 0.5px solid #ccc;
+	padding: 0.5rem 2rem;
+	border-radius: 4px;
+	transition: background-color .3s ease;
+	height: auto;
+	line-height: 1;
+	text-transform: none;
+	font-size: 1.3rem;
+	letter-spacing: 0;
+	margin: 0;
+}
