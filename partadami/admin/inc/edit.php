@@ -17,6 +17,6 @@
 	$db->query('UPDATE ?n SET ?u WHERE id = ?s', $package, $data, $id );
 
 echo '<script language="JavaScript">
-		window.location.href = "/admin/home.php"
+		window.location.href = "/admin/home.php?art='. $_POST['art'] .'#'. ($id-1) .'"
 		</script>';
 ?>
