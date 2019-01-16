@@ -45,8 +45,8 @@
 	#Создаем безопасносе соединение
 	$db = new SafeMySQL();
 
-	// $data = array('top' => 'ergonomichnyj_stul');
-	// $db->query("UPDATE ergonomichnyj_stul SET ?u", $data );
+	// $data = array('top' => 'tumby_i_stellazhi_with_picture');
+	// $db->query("UPDATE tumby_i_stellazhi_with_picture SET ?u", $data );
 ?>
 <!DOCTYPE html>
 <html>
