@@ -1,0 +1,117 @@
+{
+  "ftp://avtonakidki.net@u0572740": {
+    "httpdocs": {
+      "avtonakidki.net": {
+        ".htaccess": {
+          "type": "-",
+          "size": 5820,
+          "lmtime": 0,
+          "modified": false
+        },
+        "404.php": {
+          "type": "-",
+          "size": 3868,
+          "lmtime": 0,
+          "modified": false
+        },
+        "YM.php": {
+          "type": "-",
+          "size": 6229,
+          "lmtime": 0,
+          "modified": false
+        },
+        "adm": {},
+        "catalog": {},
+        "contact.php": {
+          "type": "-",
+          "size": 2796,
+          "lmtime": 0,
+          "modified": false
+        },
+        "css": {},
+        "delivery.php": {
+          "type": "-",
+          "size": 4133,
+          "lmtime": 0,
+          "modified": false
+        },
+        "df692f125f49.html": {
+          "type": "-",
+          "size": 12,
+          "lmtime": 0,
+          "modified": false
+        },
+        "img": {},
+        "inc": {},
+        "index â ÐºÐ¾Ð¿Ð¸Ñ.php": {
+          "type": "-",
+          "size": 6662,
+          "lmtime": 0,
+          "modified": false
+        },
+        "index.php": {
+          "type": "-",
+          "size": 6662,
+          "lmtime": 1547988100987,
+          "modified": false
+        },
+        "index2.php": {
+          "type": "-",
+          "size": 7372,
+          "lmtime": 1548010115901,
+          "modified": false
+        },
+        "js": {},
+        "policy.php": {
+          "type": "-",
+          "size": 4810,
+          "lmtime": 0,
+          "modified": false
+        },
+        "robots.txt": {
+          "type": "-",
+          "size": 111,
+          "lmtime": 0,
+          "modified": false
+        },
+        "sertificat.php": {
+          "type": "-",
+          "size": 2009,
+          "lmtime": 0,
+          "modified": false
+        },
+        "sitemap.xml": {
+          "type": "-",
+          "size": 8587,
+          "lmtime": 0,
+          "modified": false
+        },
+        "style.css": {
+          "type": "-",
+          "size": 31317,
+          "lmtime": 1548007192146,
+          "modified": false
+        },
+        "style.min.css": {
+          "type": "-",
+          "size": 26281,
+          "lmtime": 1548011872625,
+          "modified": false
+        },
+        "yandex.xml": {
+          "type": "-",
+          "size": 10193,
+          "lmtime": 0,
+          "modified": false
+        },
+        "yandex.xml_back": {
+          "type": "-",
+          "size": 26546,
+          "lmtime": 0,
+          "modified": false
+        }
+      }
+    }
+  },
+  "$version": 1
+}

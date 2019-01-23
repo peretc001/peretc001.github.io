@@ -90,6 +90,9 @@ gulp.task('build', function() {
 		var buildJs = gulp.src([
 			'app/js/**',
 			]).pipe(gulp.dest('dist/js'));
+		var buildJs = gulp.src([
+			'app/img/**',
+			]).pipe(cache(imagemin())).pipe(gulp.dest('dist/img'));
 
 		var buildFonts = gulp.src([
 			'app/fonts/**/*',

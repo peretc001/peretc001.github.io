@@ -23,7 +23,7 @@ web разработкой, владею навыками
 </table>
 <br>
 <div style="text-align:center;">
-<h1  style="text-align:center;">Текущая работа</h1>
+<h1  style="text-align:center;">Верстка</h1>
 
 <p align="center"><a style="text-align:center" href="https://peretc001.github.io/templates/beauty/"><img src="https://peretc001.github.io/templates/beauty/img/screen.jpg" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
 <p><strong>Верстка макета "Салон Красоты" | <a href="https://peretc001.github.io/templates/beauty/">https://peretc001.github.io/templates/beauty/</a></strong></p>
