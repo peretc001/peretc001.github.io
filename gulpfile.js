@@ -43,7 +43,7 @@ gulp.task('scripts', function() {
 	return gulp.src([
 		'app/js/common.js', // Always at the end
 		])
-	.pipe(uglify()) // Mifify js (opt.)
+	//.pipe(uglify()) // Mifify js (opt.)
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({ stream: true }))
 });
@@ -112,7 +112,7 @@ if (gulpversion == 3) {
 if (gulpversion == 4) {
 	gulp.task('watch', function() {
 		gulp.watch('app/'+syntax+'/**/*.'+syntax+'', gulp.parallel('styles'));
-		gulp.watch(['libs/**/*.js', 'app/js/common.js'], gulp.parallel('scripts'));
+		gulp.watch('app/js/common.js', gulp.parallel('scripts'));
 		gulp.watch('app/*.html', gulp.parallel('code'))
 	});
 	gulp.task('default', gulp.parallel('watch', 'browser-sync'));

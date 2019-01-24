@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<!-- <base href="/"> -->
 
-	<title>LaRestaurante</title>
+	<title>WOODER</title>
 	<meta name="description" content="">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,51 +21,82 @@
 	<!-- Custom Browsers Color Start -->
 	<meta name="theme-color" content="#000">
 	<!-- Custom Browsers Color End -->
-
-	<link rel="stylesheet" href="css/main.min.css">
+	<style>
+		body {
+			opacity: 0;
+			overflow-x: hidden;
+		}
+	
+		html {
+			background-color: #000000;
+		}
+	</style>
 
 </head>
 
 <body>
-	
 	<header class="header">
 		<div class="container-fluid">
-			<div class="row header__block">
-				<div class="col-md-4 header__block__column first" style="background-image:url('img/header/top1.png')">
-					<div class="logo"><img src="img/logo.png" alt="LaRestaurant"></div>
-					<div class="header__block__column__group">
-						<div class="header__block__column__group__text">
-							Любителям мяса
-							<a href="" class="btn btn-accent">Мясное меню</a>
-						</div>
-					</div>
+			<div class="row align-items-center">
+				<div class="col-md-2">
 					
+					<div class="header__menu">
+						<a href="#my-menu" class="hamburger hamburger--emphatic">
+							<span class="hamburger-box"><span class="hamburger-inner"></span></span> menu
+						</a>
+					</div>
+
 				</div>
-				<div class="col-md-4 header__block__column second">
-					<div class="transform" style="background-image:url('img/header/top2.png')">
-						<nav class="navmenu">
-							<ul>
-								<li><a href="#">Меню</a></li>
-								<li><a href="#">Наша сеть</a></li>
-								<li><a href="#">Работа у нас</a></li>
-								<li><a href="#">Контакты</a></li>
-							</ul>
-						</nav>
-						<div class="header__block__column__group">
-							<div class="header__block__column__group__text">
-								Вегетарианцам
-								<a href="" class="btn btn-accent">Меню</a>
-							</div>
-						</div>
-					</div>
-				</div> 
+				<div class="col-md-8">
 					
-				<div class="col-md-4 header__block__column third" style="background-image:url('img/header/top3.png')"></div>
+					<nav class="header__nav">
+						<div class="header__nav__logo">WOODER</div>
+						<ul>
+							<li>home</li>
+							<li>products</li>
+							<li>about</li>
+						</ul>
+					</nav>
+
+				</div>
+				<div class="col-md-2">
+					<i class="fas fa-info-circle"></i>
+				</div>
 			</div>
 		</div>
 	</header>
+	
+	<section>
+		Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat rem tenetur eaque ducimus magnam pariatur adipisci, fugit nulla! Magni quidem nostrum, tempore quasi inventore incidunt soluta minus earum perspiciatis accusantium?
+		Delectus quae mollitia qui assumenda consequatur, eos itaque quos rem quidem nesciunt molestias nobis. Reiciendis placeat id quas, rerum, ut perspiciatis esse vitae iste consequatur sed ullam. At, id perferendis?
+		Facere, exercitationem necessitatibus. Soluta facilis ipsum quod est iure eveniet. Possimus, quo aliquam necessitatibus qui optio cum ad vero totam ex! Possimus veniam quasi soluta velit aliquam dolorem. Ab, natus?
+		Dolorem, consectetur perferendis et laboriosam labore rerum veniam ea esse eos minima ullam, provident quidem fugit ut eius illum asperiores quis nobis at fuga facilis sequi optio dicta. Exercitationem, voluptatibus.
+		Asperiores tenetur in consequatur veritatis dolor fugiat esse quaerat, provident illo? Saepe quo aliquam ratione dignissimos temporibus veritatis soluta, id corporis explicabo. Nesciunt vitae repellat perspiciatis tenetur odit non adipisci.
+		Beatae, nostrum quae corporis error harum quaerat ab dignissimos nihil! Non exercitationem rerum laboriosam natus, eaque tenetur a doloribus et recusandae maxime esse dicta sed dolores odit voluptatibus ab deserunt?
+		Quaerat molestiae modi corporis unde dolorem neque doloremque laboriosam qui numquam, laborum doloribus voluptatem ea vel provident dolores saepe deleniti est, ex cum facilis nihil, aliquam obcaecati. Quae, porro odit?
+		Necessitatibus repellat repellendus perspiciatis vel reprehenderit nisi iure culpa animi nam, doloremque id aut alias porro vitae quidem autem eaque deleniti aperiam ex ipsum impedit iste deserunt optio illo! Voluptas!
+		Non dicta dolorum, dignissimos temporibus quia incidunt a eum modi, quos aspernatur recusandae ex? Impedit perferendis aliquid doloremque sunt laudantium possimus beatae recusandae aspernatur nulla eius, soluta unde, ut praesentium!
+		Neque consequatur mollitia error quam illo quasi, accusantium expedita aspernatur explicabo veniam, ut at iure sapiente natus eos ea deleniti magni facere fugit. Voluptate officia impedit tenetur quas, ullam consequatur?
+	</section>
 
-	<script src="js/scripts.min.js"></script>
+	
+	<!----- SCRIPT ----->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js/mmenu/jquery.mmenu.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	 crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	 crossorigin="anonymous"></script>
+	
+	<!----- STYLE ----->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" href="js/mmenu/jquery.mmenu.css">
+	<link rel="stylesheet" href="css/main.min.css">
 
 </body>
 </html>

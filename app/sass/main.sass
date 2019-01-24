@@ -1,6 +1,5 @@
 @import "vars"
 @import "fonts"
-@import "libs"
 
 ::placeholder
 	color: #666
@@ -38,153 +37,72 @@ body
 b, strong
 	font-weight: bold
 
-
 .header
-	width: 100%
-	height: 100vh
 	position: relative
-	display: flex
-	margin: 0
-	padding: 0
-	.container-fluid, .row
+	background: #000
+	color: #fff
+	height: 100vh
+	&::before
+		content: ''
+		position: absolute
+		left: 0
+		top: 0
+		width: 50%
+		height: 100%
+		background-image: url('../img/header/header_bg_left.jpg')
+		background-position: center
+		background-size: cover
+		opacity: .1
+	&::after
+		content: ''
+		position: absolute
+		right: 0
+		top: 0
+		width: 50%
+		height: 100%
+		background-image: url('../img/header/header_bg_right.jpg')
+		background-position: center
+		background-size: container
+		opacity: .1
+	
+	&__nav
 		margin: 0
 		padding: 0
-		width: 100%
-	.header__block
-		margin: auto
-		height: 100%
-		&__column
-			color: #fff
-			text-align: center
-			background-size: cover
-			background-position: center
-			position: relative
-			padding: 3rem 0
-			height: 100%
-			&::before
-				content: ''
-				position: absolute
-				top: 0
-				left: 0
-				z-index: 2
-				width: 100%
-				height: 100%
-				background-color: #000
-				opacity: .5
-				transition: opacity .3s ease
-			&:hover::before
-				opacity: .3
-			&.first
-				background-size: 150%
-				background-position: left top
-				text-align: left
-				.logo 
-					padding-left: 3rem
-					position: relative
-					z-index: 10
-					img
-						max-width: 14rem
-			&.second .transform
-				position: absolute
-				left: 50%
-				top: 0
-				z-index: 10
-				width: 100%
-				height: 100%
-				transform: skew(-15deg, 0) translateX(-50%)
-				border-left: 3px solid $accent
-				border-right: 3px solid$accent
-			&.third
-				background-position: right center
-				text-align: right
-			&__group
-				position: relative
+		display: flex
+		align-items: center
+		justify-content: center
+		ul
+			margin: 0
+			padding: 0
+			display: inline
+			li
+				margin: 0
 				padding: 0
-				margin: 20% 0
-				width: 372px
-				height: 206px
-				&::before
-					content: ''
-					position: absolute
-					left: 0
-					top: 0
-					right: 0
-					bottom: 0
-					z-index: 20
-					background-image: url('../img/header/top_text_bg.png')
-					background-size: containere
-					background-position: center
-					transition: opacity .3s ease
-					opacity: .6
-				&__text
-					position: relative
-					padding: 3rem 0
-					margin: 0
-					font-size: 30px
-					font-weight: 700
-					text-transform: uppercase
-					text-align: center
-					color: #2b2b2b
-					z-index: 20
-					.btn.btn-accent
-						display: block
-						max-width: 14rem
-						margin: 1rem auto
-						background: $accent
-						padding: 0.5rem
-						font-size: 1rem
-						font-weight: 400
-						text-transform: uppercase
-						letter-spacing: 0.05em
-						color: #2b2b2b
-						text-decoration: none
-						border-radius: 6px
-							
-			.navmenu
-				position: relative
-				z-index: 20
-				ul
-					display: block
-					margin: 0
-					padding: 0
-					list-style-type: none
-					li
-						margin: 0 1rem
-						padding: 1rem 0
-						display: inline-block
-						a
-							color: #fff
-							text-decoration: none
-							font-size: 1.2rem
-							text-transform: uppercase
-							position: relative
-							transition: color 0.3s ease-in-out 0s
-							&::before
-								content: ''
-								position: absolute
-								width: 100%
-								height: 4px
-								bottom: -4px
-								left: 0
-								background-color: $accent
-								visibility: hidden
-								transform: scaleX(0)
-								transition: all 0.3s ease-in-out 0s
-							&:hover
-								color: $accent
-							&:hover::before
-								visibility: visible
-								transform: scaleX(1)
+				display: inline
+				opacity: 0.5
+				font-size: 15px
+				line-height: 27px
+				font-weight: 700
+				text-transform: uppercase
+				letter-spacing: 0.025em
+				color: #ffffff
+				margin: 0 50px
+		&__logo
+			font-size: 36px
+			font-weight: 700
+			text-transform: uppercase
+			letter-spacing: 0.3em
+			color: #ffffff
+			position: relative
+			margin-right: 50px
+			&::before
+				contetn: ''
+				position: absolute
+				left: 0
+				top: 0
+				width: 64px
+				height: 4px
+				background-color: #222
+body
+	opacity: 1
 
-
-
-
-	// .header__block__col:hover
-	// 	-webkit-transform: scale(1.07)
-	// 	-moz-transform: scale(1.07)
-	// 	-o-transform: scale(1.07)
-	// 	overflow: hidden
-		
-
-
-@import "media" // Always at the end
