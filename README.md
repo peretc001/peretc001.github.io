@@ -48,7 +48,7 @@ web разработкой, владею навыками
 	<li>Онлайн консультант</li>
 	<li>UIkit меню в мобильной версии</li>
 </ul>
-
+<br><br>
 <p align="center"><a href="http://avtonakidki.net"><img src="https://peretc001.github.io/templates/email/img/avtonakidki_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
 <p><strong style="font-size:18px;font-weight:700;">Интернет-магазин «Автонакидки.НЕТ» | <a href="http://avtonakidki.net">avtonakidki.net</a></strong></p>
 <ul type="none">
@@ -60,7 +60,7 @@ web разработкой, владею навыками
 	<li>Онлайн консультант</li>
 	<li>UIkit меню в мобильной версии</li>
 </ul>
- 
+<br><br>
 <p align="center"><a href="http://autoprkt.ru"><img src="https://peretc001.github.io/templates/email/img/autoprkt_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
 <p><strong style="font-size:18px;font-weight:700;">Сайт проката «АВТОПРКТ» | <a style="color: #0000EE;" href="http://autoprkt.ru">autoprkt.ru</a></strong></p>
 <ul type="none">
@@ -70,7 +70,7 @@ web разработкой, владею навыками
 	<li>Календарь pickmeup</li>
 	<li>UIkit меню в мобильной версии</li>
 </ul>
-
+<br><br>
 <p align="center"><img src="https://peretc001.github.io/templates/email/img/crm_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></p>
 <p><strong style="font-size:18px;font-weight:700;">CRM для проката «АВТОПРКТ»</strong></p>
 <ul type="none">
