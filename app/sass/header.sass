@@ -1,0 +1,326 @@
+@import "vars"
+
+
+.header
+	position: relative
+	background: #000
+	color: #fff
+	height: 100vh
+	padding: 10px 0
+	display: flex
+	flex-direction: column
+	&::before
+		content: ''
+		position: absolute
+		left: 0
+		top: 0
+		width: 50%
+		height: 100%
+		background-image: url('../img/header/header_bg_left.jpg')
+		background-position: center
+		background-size: cover
+		opacity: .1
+	&::after
+		content: ''
+		position: absolute
+		right: 0
+		top: 0
+		width: 50%
+		height: 100%
+		background-image: url('../img/header/header_bg_right.jpg')
+		background-position: center
+		background-size: cover
+		opacity: .1
+	.row
+		position: relative
+		z-index: 2
+	&__menu
+		a
+			opacity: 0.5
+			font-size: 15px
+			line-height: 27px
+			font-weight: 700
+			letter-spacing: 0.025em
+			color: #ffffff
+			display: flex
+			align-items: center
+			margin: 0 0 0 25px
+			max-width: 100px
+			text-transform: uppercase
+			u
+				text-decoration: none
+				margin-left: 5px
+	&__nav
+		margin: 0
+		padding: 0
+		display: flex
+		align-items: center
+		justify-content: center
+		&__logo
+			font-size: 36px
+			font-weight: 700
+			text-transform: uppercase
+			letter-spacing: 0.3em
+			color: #ffffff
+			position: relative
+			margin: 0 10px
+			span
+				position: relative	
+				&::after
+					content: ''
+					position: absolute
+					left: 1px
+					top: 46%
+					width: 64px
+					height: 4px
+					background-color: $accent
+		ul
+			margin: 0
+			padding: 0
+			display: inline
+			li
+				padding: 0
+				margin-left: 100px
+				position: relative
+				display: inline
+			&:first-child
+				margin-left: 0
+			& a
+					opacity: 0.5
+					font-size: 15px
+					font-weight: 700
+					text-transform: uppercase
+					letter-spacing: 0.025em
+					color: #ffffff
+					position: relative
+					transition: opacity .3s ease
+					&:hover
+						opacity: 1
+					&::after
+						content: ''
+						position: absolute
+						left: 0
+						bottom: -10px
+						width: 100%
+						height: 2px
+						background-color: $accent
+						transform: scale(0)
+						transition: all .3s ease
+					&:hover::after
+						content: ''
+						position: absolute
+						left: 0
+						bottom: -10px
+						width: 100%
+						height: 2px
+						background-color: $accent
+						transform: scale(1)
+	&__lang
+		margin: 0
+		padding: 0
+		display: flex
+		align-items: center
+		justify-content: flex-end
+		margin-right: 25px
+		&__info
+			color: #ffffff
+			margin: 0 50px 0 0
+			opacity: .5
+			transition: opacity .3s ease
+			&:hover
+				color: #ffffff
+				opacity: 1
+		a.btn
+			color: #fff
+			opacity: .5
+			transition: opacity .3s ease
+			&:hover
+				color: #ffffff
+				opacity: 1
+		.dropdown-menu
+			max-width: 50px
+			min-width: 40px
+			.dropdown-item
+				padding: 0
+				text-align: center
+		.dropdown-menu.animated
+			top: initial!important
+		.dropdown-menu-right.animated 
+			left: initial!important 
+			right: 0
+		.dropdown
+			display: inline-block
+
+	//HEADER CONTENT
+	.header__content
+		margin: auto
+		padding: 60px 0
+		.container
+			min-width: 1500px
+		&__left
+			display: flex
+			align-items: center
+			transform: rotate(90deg)
+			padding: 50px 0
+			position: relative
+			&__number
+				font-size: 40px
+				font-weight: 700
+				text-transform: uppercase
+				letter-spacing: 0.1em
+				color: #bea67c
+				.line
+					margin: 0
+					padding: 0 30px
+					position: relative
+					.arrow
+						position: absolute
+						top: 45%
+						left: 0
+						width: 50px
+						height: 4px
+						background-color: #c0af91
+
+			&__dots
+				position: relative
+				margin: 0 0 0 30px
+				line-height: 0
+				.fas
+					color: #c0af91
+					font-size: 10px
+					margin: 0 10px
+					font-weight: 200
+					opacity: .5
+					&:first-child
+						opacity: 1
+						font-weight: 600		
+		&__center
+			margin: auto
+			h1
+				font-size: 100px
+				line-height: 1
+				font-weight: 700
+				text-transform: uppercase
+				letter-spacing: 0.2em
+				color: $accent
+				margin: 0
+				padding: 0
+			a.btn.btn-more
+				border: 0.5px solid #ffffff
+				padding: 10px 40px
+				border-radius: 0
+				font-size: 1.2rem
+				opacity: .7
+				transition: opacity .3s ease
+				font-size: 14px
+				font-weight: 700
+				text-transform: uppercase
+				letter-spacing: 0.2em
+				color: #ffffff
+				position: relative
+				margin-top: 40px
+				&:hover
+					opacity: 1
+				.line
+					margin: 0
+					padding: 0 20px 0 40px
+					position: relative
+					.arrow
+						position: absolute
+						top: 8px
+						left: 0
+						width: 50px
+						height: 1px
+						background-color: #ffffff	
+					.arrow:before
+						content: ''
+						display: block
+						position: absolute
+						top: 0
+						right: 0
+						width: 10px
+						height: 1px
+						background-color: #ffffff
+						transform: rotate(-45deg)
+						transform-origin: 100% 0%
+					.arrow:after 
+						content: ''
+						display: block
+						position: absolute
+						top: 0
+						right: 0
+						width: 10px
+						height: 1px
+						background-color: #ffffff
+						transform: rotate(45deg)
+						transform-origin: 100% 0%
+			.mouse
+				margin: 70px 0 0 0
+				position: relative
+				padding: 0
+				a
+					display: block
+					width: 2rem
+					height: 15rem
+					opacity: .5
+					transition: opacity .3s ease
+					&:hover
+						opacity: 1
+					img
+						width: 2rem
+						height: auto
+						margin: 0
+					.scroll__line
+						display: block
+						margin-top: 50px
+						position: relative
+						transform: rotate(90deg)
+						.arrow
+							position: absolute
+							bottom: 0
+							left: 0
+							width: 75px
+							height: 1px
+							background-color: #ffffff
+						.arrow:before
+							content: ''
+							display: block
+							position: absolute
+							bottom: 0
+							right: 0
+							width: 8px
+							height: 1px
+							background-color: #ffffff
+							transform: rotate(-45deg)
+							transform-origin: 100% 0%
+						.arrow:after 
+							content: ''
+							display: block
+							position: absolute
+							top: 0
+							right: 0
+							width: 8px
+							height: 1px
+							background-color: #ffffff
+							transform: rotate(45deg)
+							transform-origin: 100% 0%
+						.scroll__text
+							color: #ffffff
+							position: absolute
+							left: 100px
+							top: 0
+							line-height: 0
+							opacity: .2
+							font-size: 14px
+							text-transform: uppercase
+		&__right
+			padding: 50px 0
+			transform: rotate(90deg)
+			font-size: 14px
+			opacity: .2
+			font-weight: 700
+			text-transform: uppercase
+			letter-spacing: 0.2em
+			color: #a9946e
+			span
+				margin: 0 20px
