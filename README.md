@@ -22,16 +22,7 @@ web разработкой, владею навыками
 	</tbody>
 </table>
 <br>
-<div style="text-align:center;">
-<h1  style="text-align:center;">Текущая работа</h1>
 
-<p align="center"><a style="text-align:center" href="https://peretc001.github.io/app/"><img src="https://peretc001.github.io/app/img/screen.jpg" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
-<p><strong>Верстка макета "Wooder" | <a href="https://peretc001.github.io/app/">https://peretc001.github.io/app/</a></strong></p>
-<ul type="none">
-	<li>Адаптивный дизайн (Bootstrap4)</li>
-	<li>Живое меню (Mmenu)</li>
-</ul>
-<br><br>
 <div style="text-align:center;">
 <h1  style="text-align:center;">Верстка</h1>
 
