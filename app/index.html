@@ -43,8 +43,11 @@
 						<div class="col-md-2">
 							
 							<div class="header__menu">
-								<a href="#my-menu" class="hamburger hamburger--emphatic">
-									<span class="hamburger-box"><span class="hamburger-inner"></span></span> <u>menu</u>
+								<a href="#my-menu">
+									<div class="hamburger hamburger--emphatic">
+										<span class="hamburger-box"><span class="hamburger-inner"></span></span>
+									</div>
+									<u>menu</u>
 								</a>
 							</div>
 
@@ -79,25 +82,16 @@
 
 						</div>
 					</div>
-				</div>
 				
-				<div class="header__content">
-					<div class="container">
-						<div class="row justify-content-between">
+						<div class="row header__content">
 							
-							<div class="col-auto header__content__left align-self-start">
+							<div class="col-md-1 offset-md-1 left align-self-center">
 								
-								<div class="header__content__left__number"><span class="line"><span class="arrow"></span></span> 01</div>
-								<div class="header__content__left__dots">
-									<i class="fas fa-circle"></i>
-									<i class="fas fa-circle"></i>
-									<i class="fas fa-circle"></i>
-									<i class="fas fa-circle"></i>
-								</div>
-
+								<div class="left__number"><span class="line"></span> 01</div>
+							
 							</div>
 							
-							<div class="col-auto ml-auto mr-auto header__content__center">
+							<div class="col-auto header__content__center align-self-start">
 								<h1>WOODER</h1>
 								
 								<a href="" class="btn btn-more">
@@ -106,7 +100,7 @@
 								</a>
 
 								<div class="mouse">
-									<a href="">
+									<a onclick="$.scrollify.next();">
 										<img src="img/header/mouse.svg" alt="">
 										<span class="scroll__line"><span class="arrow"></span></span>
 										<span class="scroll__line"><span class="scroll__text">scroll</span></span>
@@ -114,8 +108,10 @@
 								</div>
 							</div>
 							
-							<div class="col-auto header__content__right align-self-start">
-								Furniture <span>&</span> decor
+							<div class="col-md-3 header__content__right align-self-center">
+								
+								<div class="header__content__right__text">Furniture <span>&</span> decor</div>
+								
 							</div>
 							
 						</div>
@@ -123,15 +119,22 @@
 					<div class="share">
 						<a href="#"><i class="fas fa-share-alt"></i></a>
 					</div>
-				</div>
+				
 		</section>
 
 		<main class="content">
 			<section class="scroll second" data-section-name="second">
 				
-				<div class="container">
+				<div class="container-fluid">
 					<div class="row align-items-center">
-						<div class="col-md-4 offset-md-2 wow fadeInLeft">
+
+						<div class="col-md-1 offset-md-1 left align-self-end">
+						
+							<div class="left__number">02</div>
+						
+						</div>
+
+						<div class="col-md-4 offset-md-1 wow fadeInLeft">
 
 							<h2>
 								Furniture
@@ -146,7 +149,7 @@
 							</a>
 							
 						</div>
-						<div class="col-md-6 second__img wow fadeInRight">
+						<div class="col-md-4 second__img wow fadeInRight">
 							
 							<img class="" src="img/furniture/furniture.jpg" alt="FURNITURE">
 							<span>FURNITURE</span>
@@ -158,10 +161,23 @@
 			</section>
 			<section class="scroll second" data-section-name="third">
 			
-				<div class="container">
+				<div class="container-fluid">
 					<div class="row align-items-center">
-						<div class="col-md-4 offset-md-2 wow fadeInLeft">
-			
+				
+						<div class="col-md-1 offset-md-1 left align-self-end">
+				
+							<div class="left__number">03</div>
+				
+						</div>
+				
+						<div class="col-md-4 second__img wow fadeInLeft">
+							
+							<img class="" src="img/furniture/furniture.jpg" alt="FURNITURE">
+							<span>FURNITURE</span>
+						
+						</div>
+						<div class="col-md-4 offset-md-1 wow fadeInRight">
+				
 							<h2>
 								Furniture
 							</h2>
@@ -174,13 +190,7 @@
 								Learn more
 								<span class="line"><span class="arrow"></span></span>
 							</a>
-			
-						</div>
-						<div class="col-md-6 second__img wow fadeInRight">
-			
-							<img class="" src="img/furniture/furniture.jpg" alt="FURNITURE">
-							<span>FURNITURE</span>
-			
+				
 						</div>
 					</div>
 				</div>
