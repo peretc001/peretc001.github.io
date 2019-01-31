@@ -76,7 +76,6 @@ include ($_SERVER['DOCUMENT_ROOT'] .'/inc/safemysql.class.php');
 
 					<ul class="tech">
 						<li class="left">Основа:</li><li><?php if ($id < '203') { echo 'Ткань'; } else { echo 'Шкура'; } ?></li>
-						<li class="left">Производитель:</li><li>Овчинникофф</li>
 						<li class="left">Подкладка:</li><li>Антискользящая</li>
 						<li class="left">Тип креплений:</li><li>Универсальный</li>
 					</ul>

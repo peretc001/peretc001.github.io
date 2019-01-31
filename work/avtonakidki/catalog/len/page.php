@@ -44,28 +44,15 @@ include ($_SERVER['DOCUMENT_ROOT'] .'/inc/safemysql.class.php');
 				<h1>Накидка на сиденья из льна <?php echo $row['color']; ?></h1>
 			</div>
 			<div class="row">
-				<div class="one-half column page_left">
+				<div class="one-half column page_left product_img">
 					
-					<script src="/js/uikit/js/components/slider.min.js"></script>
-					
-						
-							<div class="uk-slidenav-position" data-uk-slider>
-								<div class="uk-slider-container">
-									<div id="links">
-										<ul class="uk-slider  uk-grid-width-medium-1-2">
-											<?php if ($id == '401') { ?>
-												<li>
-													<a href="/img/catalog/<?php echo $row['category']; ?>/1.jpg"><img src="/img/catalog/<?php echo $row['category']; ?>/1.jpg"/></a>
-												</li>
-											<?php } ?>
-										</ul>
-									</div>
-								</div>
-								<a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slider-item="previous"></a>
-								<a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slider-item="next"></a>
-
-							</div>
-							
+					<div id="links">
+						<?php 	
+							$select_img = $db->getAll('SELECT * FROM products WHERE category = ?s', $category);
+								foreach($select_img as $list) { ?>
+						<a <?php if($id != $list['id']) { echo 'data-gallery'; echo ' data-set="none"'; }  ?> href="/img/catalog/<?php echo $list['category']; ?>/<?php echo $list['img']; ?>"><img src="/img/catalog/<?php echo $list['category']; ?>/<?php echo $list['img']; ?>"/></a>
+						<?php } ?>
+					</div>
 					
 					<script>
 						document.getElementById('links').onclick = function (event) {
@@ -83,7 +70,6 @@ include ($_SERVER['DOCUMENT_ROOT'] .'/inc/safemysql.class.php');
 						<li><a href="/catalog/<?php echo $row['category']; ?>/nakidka_dly_avto_iz_lna_ceraya/"><i class="fa <?php if ($id == '401') { echo 'fa-check-circle'; } else { echo 'fa-circle'; }?> grey" aria-hidden="true" title="Серый"></i></a></li>
 					</ul>
 					<ul class="tech">
-						<li class="left">Производитель:</li><li>Овчинникофф</li>
 						<li class="left">Подкладка:</li><li>Антискользящая</li>
 						<li class="left">Тип креплений:</li><li>Универсальный</li>
 					</ul>
