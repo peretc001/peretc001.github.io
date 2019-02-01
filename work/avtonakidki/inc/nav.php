@@ -2,7 +2,7 @@
 	<div class="row">
 		<ul>
 			<li class="logo"><a href="/"><img src="/img/logo.svg" alt="АВТОНАКИДКИ.НЕТ"></a></li>
-			<li class="phone"><img src="/img/iphone.svg" alt="Телефон"><img src="/img/whatsapp.svg" alt="Whatsapp"> <span class="phone">8 (918) 636-27-09</span></li>
+			<li class="phone"><img src="/img/iphone.svg" alt="Телефон"><a href="https://wa.me/7-918-636-27-09" target="_blank"><img src="/img/whatsapp.svg" alt="Whatsapp"></a> <span class="phone">8 (918) 636-27-09</span></li>
 			<li class="location"><i class="fa fa-address-card" aria-hidden="true"></i> <a href="/contact.php">Контакты</a></li>
 			<li class="cart"><?php	
 			
@@ -67,6 +67,9 @@
 					<li><a href="/delivery.php">Доставка</a></li>
 					<li><a href="/sertificat.php">Сертификаты</a></li>
 					<li><a class="contact" href="/contact.php">Контакты</a></li>
+					<li>&nbsp;</li>
+					<li><a href="https://wa.me/7-918-636-27-09" target="_blank"><img src="/img/whatsapp.svg" alt="Whatsapp"> Whatsapp</a></li>
+
 				</ul>
 			</div>
 		</div>

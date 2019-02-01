@@ -23,7 +23,7 @@ include ($_SERVER['DOCUMENT_ROOT'] .'/inc/safemysql.class.php');
 			<div class="one-half column">
 				<p><span>Название:</span> ИП Красовская А.В</p>
 				<p><span>Реквизиты:</span> ИНН 010519930452, ОГРН 318237500371777</p>
-				<p><span>Телефон:</span> 8 (918) 636-27-09</p>
+				<p><span>Телефон:</span> 8 (918) 636-27-09 <a href="https://wa.me/7-918-636-27-09" target="_blank"><img src="/img/whatsapp.svg" alt="Whatsapp"> WhatsApp</a></p>
 			</div>
 			<div class="one-half column">
 				<p><span>Адрес:</span> Краснодар, ул. Тургенева, 56</p>
