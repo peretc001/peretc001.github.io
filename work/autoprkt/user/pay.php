@@ -75,7 +75,7 @@
 		<div class="row">
 			<div class="twelve columns filter_button">
 				<?php 
-					for ($mnt = strtotime("2017-12-01"); $mnt < strtotime(date('Y-m-d')); $mnt = strtotime("+1 month", $mnt)) { ?>
+					for ($mnt = strtotime("2017-12-01"); $mnt <= strtotime(date('Y-m-d')); $mnt = strtotime("+1 month", $mnt)) { ?>
 
 						<span class="<?php if ($date == 'mun' and $start_date == date('Y-m-01', $mnt)) { echo 'active'; } ?>">
 							<a href="/user/pay.php?date=mun&start_date=<?php echo date('Y-m-01', $mnt); ?>&last_date=<?php echo date('Y-m-t', $mnt); ?><?php if($car) { echo '&car='. $car; } ?>"><?php echo fdate("M", $mnt).' '. fdate("Y", $mnt); ?></a>
