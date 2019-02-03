@@ -43,7 +43,7 @@ gulp.task('scripts', function() {
 	return gulp.src([
 		'app/js/common.js', // Always at the end
 		])
-	//.pipe(uglify()) // Mifify js (opt.)
+	.pipe(uglify()) // Mifify js (opt.)
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({ stream: true }))
 });
@@ -59,20 +59,20 @@ gulp.task('imagemin', function() {
 	.pipe(gulp.dest('dist/img')); 
 });
 
-gulp.task('rsync', function() {
-	return gulp.src('app/**')
-	.pipe(rsync({
-		root: 'app/',
-		hostname: 'username@yousite.com',
-		destination: 'yousite/public_html/',
-		// include: ['*.htaccess'], // Includes files to deploy
-		exclude: ['**/Thumbs.db', '**/*.DS_Store'], // Excludes files from deploy
-		recursive: true,
-		archive: true,
-		silent: false,
-		compress: true
-	}))
-});
+// gulp.task('rsync', function() {
+// 	return gulp.src('app/**')
+// 	.pipe(rsync({
+// 		root: 'app/',
+// 		hostname: 'username@yousite.com',
+// 		destination: 'yousite/public_html/',
+// 		// include: ['*.htaccess'], // Includes files to deploy
+// 		exclude: ['**/Thumbs.db', '**/*.DS_Store'], // Excludes files from deploy
+// 		recursive: true,
+// 		archive: true,
+// 		silent: false,
+// 		compress: true
+// 	}))
+// });
 
 gulp.task('removedist', function() { return del.sync('dist'); });
 
