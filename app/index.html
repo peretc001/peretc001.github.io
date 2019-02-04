@@ -34,7 +34,7 @@
 			
 			<div class="header__menu">
 				<div class="row justify-content-between align-items-center">
-					<div class="col-4">
+					<div class="col-5">
 						<div class="header__menu__left">
 							<div class="header__menu__left__logo">
 								<img src="img/logo.png" alt="OK-Hall">
@@ -55,11 +55,11 @@
 								<a href=""><i class="fab fa-instagram"></i></a>
 							</div>
 							<div class="col-6 phone">
-								<p><a href="">+7 (495) <span>404-04-67</span></a></p>
+								<p class="main_phone">+7 (495) <b>404-04-67</b></p>
 								<p>
-									<a href="https://wa.me/7-925-344-25-77" target="_blank"><img src="img/header/viber.svg" alt="Viber"></a>
+									<a href="viber://chat?number=7-925-344-25-77" target="_blank"><img src="img/header/viber.svg" alt="Viber"></a>
 									<a href="https://wa.me/7-925-344-25-77" target="_blank"><img src="img/header/whatsapp.svg" alt="Whatsapp"></a>
-									<a href="">+7 (925) <span>344-25-77</span></a>
+									+7 (925) <b>344-25-77</b>
 								</p>
 							</div>
 						</div>
@@ -93,6 +93,7 @@
 				</div>
 			</div>
 
+			
 
 			<div class="header__block">
 
@@ -118,10 +119,10 @@
 					
 					<div class="col-4">
 						<div class="row">
-							<div class="col-4">
-								<img src="img/header/calendar.svg" alt="Календарь">
+							<div class="col-3">
+								<img src="img/header/calendar.svg" alt="">
 							</div>
-							<div class="col-8">
+							<div class="col-9">
 								<p>
 									<b>От 14 дней до готового дизайн проекта</b>
 									который создан точно по вашим желаниям
@@ -132,10 +133,10 @@
 
 					<div class="col-4">
 						<div class="row">
-							<div class="col-4">
-								<img src="img/header/organize.svg" alt="">
+							<div class="col-3">
+								<img src="img/header/pencil.svg" alt="">
 							</div>
-							<div class="col-8">
+							<div class="col-9">
 								<p>
 									<b>Берем 5 дизайн-проектов в месяц</b>
 									вы платите за работу мастеров, и получаете работу мастеров, а не дизайнеров учеников
@@ -146,10 +147,10 @@
 
 					<div class="col-4">
 						<div class="row">
-							<div class="col-4">
-								<img src="" alt=""><i class="fas fa-clipboard-list"></i>
+							<div class="col-3">
+								<img src="img/header/organize.svg" alt="">
 							</div>
-							<div class="col-8">
+							<div class="col-9">
 								<p>
 									<b>У вас будет четкий план ремонта</b>
 									чтобы завершить его быстрее и без переплат
@@ -168,5 +169,20 @@
 
 	<script src="js/scripts.min.js"></script>
 
+	<script>
+		$(function () {
+
+
+			$(".main_phone").each(function () { 
+				var e = $(this); 
+				var d = $(this).length; 
+				console.log(d);
+				e.html(e.html().replace(/^(\S+)/, "<span>$1</span>")) 
+			
+			})
+
+
+		})
+	</script>
 </body>
 </html>
