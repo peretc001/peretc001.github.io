@@ -23,6 +23,7 @@
 	<!-- Custom Browsers Color End -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
 	 crossorigin="anonymous">
+	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/main.min.css">
 
 </head>
@@ -39,7 +40,35 @@
 					<div class="col-5">
 						<div class="header__menu__left">
 							<div class="header__menu__left__logo">
-								<img src="img/logo.png" alt="OK-Hall">
+								<a href="/">
+									<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 		viewBox="134.3 -0.9 31.5 30.9" enable-background="new 134.3 -0.9 31.5 30.9" xml:space="preserve">
+										<g>
+											<g>
+												<ellipse fill="none" stroke="#000000" cx="145.6" cy="10.6" rx="9.9" ry="9.5" />
+												<polyline fill="none" stroke="#000000" points="152.2,2.1 152.2,1.1 155.6,1.1 155.6,20.1 152.2,20.1 152.2,19 		" />
+												<line fill="none" stroke="#000000" x1="152.2" y1="5.2" x2="152.2" y2="16.1" />
+												<line fill="none" stroke="#000000" x1="161.8" y1="1.1" x2="155.6" y2="12.9" />
+												<line fill="none" stroke="#000000" x1="164.6" y1="20.1" x2="156.8" y2="10.6" />
+											</g>
+											<g enable-background="new    ">
+												<path d="M140.3,27.2c0.2,0,0.3,0.1,0.3,0.3s-0.2,0.3-0.3,0.3s-0.3-0.1-0.3-0.3S140.1,27.2,140.3,27.2z" />
+												<path d="M141.1,27.5c0-0.9,0.8-1.5,1.8-1.5s1.8,0.6,1.8,1.5c0,0.9-0.8,1.5-1.8,1.5S141.1,28.4,141.1,27.5z M141.5,27.5
+												c0,0.7,0.6,1.2,1.4,1.2c0.8,0,1.4-0.5,1.4-1.2s-0.6-1.2-1.4-1.2C142.1,26.3,141.5,26.8,141.5,27.5z" />
+												<path d="M145.8,27.3l1.5-1.3h0.5l-1.6,1.4l1.7,1.6h-0.5l-1.4-1.4l-0.1,0.1V29h-0.4v-3h0.4V27.3z" />
+												<path d="M148.5,27.2c0.2,0,0.3,0.1,0.3,0.3s-0.2,0.3-0.3,0.3s-0.3-0.1-0.3-0.3S148.3,27.2,148.5,27.2z" />
+												<path d="M149.9,27.2h1.8V26h0.4v3h-0.4v-1.4h-1.8V29h-0.4v-3h0.4V27.2z" />
+												<path d="M154.9,28.2h-1.5L153,29h-0.4l1.6-3.1l1.6,3.1h-0.4L154.9,28.2z M154.7,27.9l-0.6-1.2l-0.6,1.2H154.7z" />
+												<path d="M156.6,26v2.7h1V29h-1.4v-3H156.6z" />
+												<path d="M158.5,26v2.7h1V29h-1.4v-3H158.5z" />
+												<path d="M160.1,27.2c0.2,0,0.3,0.1,0.3,0.3s-0.2,0.3-0.3,0.3c-0.2,0-0.3-0.1-0.3-0.3S159.9,27.2,160.1,27.2z" />
+											</g>
+										</g>
+										<g id="Слой_2">
+										</g>
+									</svg>
+								</a>
+
 							</div>
 							<div class="header__menu__left__text">
 								<p>
@@ -143,7 +172,7 @@
 					<div class="col-4">
 						<div class="row">
 							<div class="col-3">
-								<img src="img/header/pencil.svg" alt="">
+								<img src="img/header/pencil.svg" class="svg" alt="">
 							</div>
 							<div class="col-9">
 								<p>
@@ -197,18 +226,49 @@
 		Dicta suscipit aliquid obcaecati nesciunt, est laborum iste similique provident harum? Incidunt, itaque illum rem suscipit maxime maiores ea voluptatum quo quas sequi, asperiores voluptatem dignissimos numquam placeat aliquid cumque.
 	</section>
 
+
 	<script src="js/scripts.min.js"></script>
 
 	<script>
 		$(function () {
+			// jQuery('.svg').each(function () {
+			// 	var $img = jQuery(this);
+			// 	var imgID = $img.attr('id');
+			// 	var imgClass = $img.attr('class');
+			// 	var imgURL = $img.attr('src');
+
+			// 	jQuery.get(imgURL, function (data) {
+			// 		// Get the SVG tag, ignore the rest
+			// 		var $svg = jQuery(data).find('svg');
+
+			// 		// Add replaced image ID to the new SVG
+			// 		if (typeof imgID !== 'undefined') {
+			// 			$svg = $svg.attr('id', imgID);
+			// 		}
+			// 		// Add replaced image classes to the new SVG
+			// 		if (typeof imgClass !== 'undefined') {
+			// 			$svg = $svg.attr('class', imgClass + ' replaced-svg');
+			// 		}
+
+			// 		// Remove any invalid XML tags as per http://validator.w3.org
+			// 		$svg = $svg.removeAttr('xmlns:a');
+
+			// 		// Replace image with new SVG
+			// 		$img.replaceWith($svg);
+
+			// 	}, 'xml');
+
+			// });
 
 			//Sticky header menu
 			$(document).scroll(function () {
 				if ($(document).scrollTop() > 50) {
-					$('.header__menu').addClass('sticky');
+					$('.header__menu').addClass('sticky animated fadeIn faster');
+					$('.svg').addClass('white');
 					console.log('sticky');
 				} else {
-					$('.header__menu').removeClass('sticky');
+					$('.svg').removeClass('white');
+					$('.header__menu').removeClass('sticky animated fadeIn faster');
 					console.clear();
 				}
 			});
@@ -223,7 +283,6 @@
 				var firstText = boldText.substr(0, firstNine);
 
 				boldPhone[i].innerHTML = `${firstText} <b>${lastNine}</b>`;
-
 			}
 			
 			

@@ -73,8 +73,12 @@ a, a:hover
 			justify-content: space-between
 			&__logo
 				padding: 0 2rem 0 0
-				img
+				.svg 
 					width: 5rem
+					stroke: #fff
+				.svg path
+					fill: #fff
+					
 			&__text
 				p
 					line-height: 1
@@ -167,16 +171,31 @@ a, a:hover
 							transform: scale(1)
 
 	.header__menu.sticky
-		position: sticky
+		position: fixed
 		top: 0
+		left: 0
+		width: 100%
 		min-height: 2em
 		background: #ffffff
 		z-index: 100
 		a
 			color: $text
-		&__left
+		.header__menu__left
+			.svg.white  path
+				stroke: #fff
 			&__text
 				display: none
+		.social
+			display: none
+		.navmenu
+			ul
+				.nav-item
+					.nav-link
+						color: $text
+						&:hover
+							color: $accent
+							transform: scale(1)
+						
 
 
 	.header__block
