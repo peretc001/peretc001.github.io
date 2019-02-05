@@ -55,11 +55,11 @@
 								<a href=""><i class="fab fa-instagram"></i></a>
 							</div>
 							<div class="col-6 phone">
-								<p class="main_phone">+7 (495) <b>404-04-67</b></p>
+								<p><span class="main_phone">+7 (495) 404-04-67</span></p>
 								<p>
 									<a href="viber://chat?number=7-925-344-25-77" target="_blank"><img src="img/header/viber.svg" alt="Viber"></a>
 									<a href="https://wa.me/7-925-344-25-77" target="_blank"><img src="img/header/whatsapp.svg" alt="Whatsapp"></a>
-									+7 (925) <b>344-25-77</b>
+									<span class="main_phone">+7 (925) 344-25-77</span>
 								</p>
 							</div>
 						</div>
@@ -173,14 +173,28 @@
 		$(function () {
 
 
-			$(".main_phone").each(function () { 
-				var e = $(this); 
-				var d = $(this).length; 
-				console.log(d);
-				e.html(e.html().replace(/^(\S+)/, "<span>$1</span>")) 
+			// $(".main_phone").each(function () { 
+			// 	var e = $(this); 
+			// 	var d = $(this).length; 
+			// 	console.log(d);
+			// 	e.html(e.html().replace(/^(\S+)/, "<span>$1</span>")) 
 			
-			})
+			// })
 
+
+			var boldPhone = document.querySelectorAll(".main_phone");
+			for(var i = 0; i < boldPhone.length; i++) {
+				var boldText = boldPhone[i].innerHTML;
+				var boldPhoneWith = boldText.length;
+				var lastNine = boldText.slice(-9);
+				var firstNine = boldPhoneWith - lastNine.length;
+				var firstText = boldText.substr(0, firstNine);
+
+				boldPhone[i].innerHTML = `${firstText} <b>${lastNine}</b>`;
+
+			}
+			
+			
 
 		})
 	</script>
