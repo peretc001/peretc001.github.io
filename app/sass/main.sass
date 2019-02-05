@@ -73,11 +73,14 @@ a, a:hover
 			justify-content: space-between
 			&__logo
 				padding: 0 2rem 0 0
-				.svg 
+				#svg 
 					width: 5rem
-					stroke: #fff
-				.svg path
-					fill: #fff
+					path
+						fill: #fff
+					ellipse, polyline, line
+						stroke: #fff
+					
+					
 					
 			&__text
 				p
@@ -181,8 +184,11 @@ a, a:hover
 		a
 			color: $text
 		.header__menu__left
-			.svg.white  path
-				stroke: #fff
+			#svg 
+				path
+					fill: #000
+				ellipse, polyline, line
+					stroke: #000
 			&__text
 				display: none
 		.social

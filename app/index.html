@@ -41,8 +41,8 @@
 						<div class="header__menu__left">
 							<div class="header__menu__left__logo">
 								<a href="/">
-									<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-								 		viewBox="134.3 -0.9 31.5 30.9" enable-background="new 134.3 -0.9 31.5 30.9" xml:space="preserve">
+									<svg version="1.1" id="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+									 viewBox="134.3 -0.9 31.5 30.9" enable-background="new 134.3 -0.9 31.5 30.9" xml:space="preserve">
 										<g>
 											<g>
 												<ellipse fill="none" stroke="#000000" cx="145.6" cy="10.6" rx="9.9" ry="9.5" />
@@ -231,43 +231,15 @@
 
 	<script>
 		$(function () {
-			// jQuery('.svg').each(function () {
-			// 	var $img = jQuery(this);
-			// 	var imgID = $img.attr('id');
-			// 	var imgClass = $img.attr('class');
-			// 	var imgURL = $img.attr('src');
-
-			// 	jQuery.get(imgURL, function (data) {
-			// 		// Get the SVG tag, ignore the rest
-			// 		var $svg = jQuery(data).find('svg');
-
-			// 		// Add replaced image ID to the new SVG
-			// 		if (typeof imgID !== 'undefined') {
-			// 			$svg = $svg.attr('id', imgID);
-			// 		}
-			// 		// Add replaced image classes to the new SVG
-			// 		if (typeof imgClass !== 'undefined') {
-			// 			$svg = $svg.attr('class', imgClass + ' replaced-svg');
-			// 		}
-
-			// 		// Remove any invalid XML tags as per http://validator.w3.org
-			// 		$svg = $svg.removeAttr('xmlns:a');
-
-			// 		// Replace image with new SVG
-			// 		$img.replaceWith($svg);
-
-			// 	}, 'xml');
-
-			// });
 
 			//Sticky header menu
 			$(document).scroll(function () {
 				if ($(document).scrollTop() > 50) {
 					$('.header__menu').addClass('sticky animated fadeIn faster');
-					$('.svg').addClass('white');
+					$('#svg').addClass('black');
 					console.log('sticky');
 				} else {
-					$('.svg').removeClass('white');
+					$('#svg').removeClass('black');
 					$('.header__menu').removeClass('sticky animated fadeIn faster');
 					console.clear();
 				}
