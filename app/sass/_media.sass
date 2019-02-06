@@ -118,7 +118,7 @@
 +media-breakpoint-down(sm)
 	
 	.header
-		min-height: 800px
+		min-height: 900px
 		.header__nav
 			padding: $gutter/2 0
 			.row
@@ -174,34 +174,6 @@
 		
 			
 		.header__block
-			&__h1
-				font-size: 1.6rem
-			&__text
-				font-size: .9rem
-			&__price
-				padding: 1rem 0 1rem 2rem
-				.old
-					font-size: 1rem
-				.price
-					font-size: 1.3rem
-				.date
-					font-size: 1rem
-				
-			&__column
-				.row
-					margin-bottom: 2rem
-					&:last-child
-						margin: 0
-				
-
-// ≥576px
-+media-breakpoint-down(xs)
-	
-	.header
-		min-height: 900px
-		.header__nav
-			padding: $gutter/2 0
-		.header__block
 			text-align: center
 			&__h1
 				font-size: 1.8rem
@@ -227,6 +199,11 @@
 					margin-bottom: 2rem
 					&:last-child
 						margin: 0
+				
+
+// ≥576px
++media-breakpoint-down(xs)
+		
 
 /*==========  Mobile First  ==========*/
 
