@@ -32,17 +32,17 @@
 
 	<header class="header" style="background-image: url('img/Img_1_Header.jpg')">
 		
-		<nav  class="header__menu">
+		<nav class="navbar navbar-expand-lg header__nav">
 			<div class="container">
-				
-				<div class="row justify-content-between align-items-center">
+				<div class="row border_bottom">
+
 					
-					<div class="col-5">
-						<div class="header__menu__left">
-							<div class="header__menu__left__logo">
+						<div class="header__nav__left">
+
+							<p class="header__nav__left__logo">
 								<a href="/">
 									<svg version="1.1" id="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-									 viewBox="134.3 -0.9 31.5 30.9" enable-background="new 134.3 -0.9 31.5 30.9" xml:space="preserve">
+										viewBox="134.3 -0.9 31.5 30.9" enable-background="new 134.3 -0.9 31.5 30.9" xml:space="preserve">
 										<g>
 											<g>
 												<ellipse fill="none" stroke="#000000" cx="145.6" cy="10.6" rx="9.9" ry="9.5" />
@@ -64,69 +64,73 @@
 												<path d="M160.1,27.2c0.2,0,0.3,0.1,0.3,0.3s-0.2,0.3-0.3,0.3c-0.2,0-0.3-0.1-0.3-0.3S159.9,27.2,160.1,27.2z" />
 											</g>
 										</g>
-										<g id="Слой_2">
-										</g>
+										
 									</svg>
 								</a>
-
-							</div>
-							<div class="header__menu__left__text">
-								<p>
-									<b>Яркие дизайн-проекты квартир</b>
-									<span>в модных стилях: лофт, скандинавский, современный и неоклассика</span>
-								</p>
-							</div>
+							</p>
+							<p class="header__nav__left__text">
+								<b>Яркие дизайн-проекты квартир</b>
+								<span>в модных стилях: лофт, скандинавский, современный и неоклассика</span>
+							</p>
 						</div>
-					</div>
+					
 
-					<div class="col-7">
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+						aria-expanded="false" aria-label="Toggle navigation">
+							<i class="fas fa-bars"></i>
+						</button>
+				
+				
+						<div class="header__nav__right">
 						
-						<div class="row justify-content-between">
-							<div class="col-6 social align-self-end">
-								<a href=""><i class="fab fa-vk"></i></a>
-								<a href=""><i class="fab fa-facebook-f"></i></a>
-								<a href=""><i class="fab fa-instagram"></i></a>
+							<div class="collapse navbar-collapse" id="navbarNav">
+								<ul class="navbar-nav">
+									<li class="nav-item active">
+										<a class="nav-link" href="#">Главная / Цены<span class="sr-only">(current)</span></a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#">Портфолио</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#">Услуги</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#">О нас</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#">Блог</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#">Контакты</a>
+									</li>
+								</ul>
 							</div>
-							<div class="col-6 phone">
-								<p><span class="main_phone">+7 (495) 404-04-67</span></p>
-								<p>
-									<a href="viber://chat?number=7-925-344-25-77" target="_blank"><img src="img/header/viber.svg" alt="Viber"></a>
-									<a href="https://wa.me/7-925-344-25-77" target="_blank"><img src="img/header/whatsapp.svg" alt="Whatsapp"></a>
-									<span class="main_phone">+7 (925) 344-25-77</span>
-								</p>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col">
-								<div class="navmenu">
-									<ul>
-										<li class="nav-item active">
-											<a class="nav-link" href="#">Главная / Цены<span class="sr-only">(current)</span></a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="#">Портфолио</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="#">Услуги</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="#">О нас</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="#">Блог</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="#">Контакты</a>
-										</li>
-									</ul>
+							
+							<div class="header__nav__right__items">
+								<div class="social">
+									<p>
+										<a href=""><i class="fab fa-vk"></i></a>
+										<a href=""><i class="fab fa-facebook-f"></i></a>
+										<a href=""><i class="fab fa-instagram"></i></a>
+									</p>
+								</div>
+								<div class="phone">
+									<p><span class="main_phone">+7 (495) 404-04-67</span></p>
+									<p>
+										<a href="viber://chat?number=7-925-344-25-77" target="_blank"><img src="img/header/viber.svg" alt="Viber"></a>
+										<a href="https://wa.me/7-925-344-25-77" target="_blank"><img src="img/header/whatsapp.svg" alt="Whatsapp"></a>
+										<span class="main_phone">+7 (925) 344-25-77</span>
+									</p>
 								</div>
 							</div>
+
 						</div>
-
-					</div>
+						
+						
+					
+					
+					
 				</div>
-
 			</div>
 		</nav>
 
@@ -146,9 +150,9 @@
 					</div>
 					<div class="col header__block__price">
 						
-						<div class="old">2 500 р.</div>
-						<div class="price">1 990 р./м<sup>2</sup></div>
-						<div class="date">до 25 декабря!</div>
+						<p class="old">2 500 р.</p>
+						<p class="price">1 990 р./м<sup>2</sup></p>
+						<p class="date">до 25 декабря!</p>
 
 					</div>
 				</div>
@@ -224,9 +228,14 @@
 		Tempora nisi soluta magnam illum quas rerum quos suscipit asperiores? Mollitia a fugiat voluptas, ipsam alias placeat nobis architecto repellat commodi nisi unde dolores vel error nam impedit! Corrupti, quos?
 		Animi dicta molestiae non quia dignissimos modi corrupti! Quo est quae modi enim rem voluptatum eligendi nulla inventore harum quam, expedita vitae quaerat, ad placeat pariatur facilis minima vel recusandae.
 		Dicta suscipit aliquid obcaecati nesciunt, est laborum iste similique provident harum? Incidunt, itaque illum rem suscipit maxime maiores ea voluptatum quo quas sequi, asperiores voluptatem dignissimos numquam placeat aliquid cumque.
-	</section>
+	</section -->
 
-
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+ crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+ crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+ crossorigin="anonymous"></script>
 	<script src="js/scripts.min.js"></script>
 
 	<script>
@@ -235,12 +244,12 @@
 			//Sticky header menu
 			$(document).scroll(function () {
 				if ($(document).scrollTop() > 50) {
-					$('.header__menu').addClass('sticky animated fadeIn faster');
+					$('.header__nav').addClass('sticky animated fadeIn faster');
 					$('#svg').addClass('black');
 					console.log('sticky');
 				} else {
 					$('#svg').removeClass('black');
-					$('.header__menu').removeClass('sticky animated fadeIn faster');
+					$('.header__nav').removeClass('sticky animated fadeIn faster');
 					console.clear();
 				}
 			});

@@ -18,6 +18,8 @@ body
 	overflow-x: hidden
 	color: $text
 	box-sizing: border-box
+	margin: 0
+	padding: 0
 	input, textarea
 		border: #666 1px solid
 		outline: none
@@ -32,10 +34,6 @@ body
 	height: auto
 	&.img-width
 		width: 100%
-
-.text-center
-	text-align: center
-
 b, strong
 	font-weight: bold
 a, a:hover
@@ -50,7 +48,7 @@ a, a:hover
 	background-position: center
 	color: #ffffff
 	position: relative
-	padding: $gutter 0
+	box-sizing: border-box
 	&::before
 		content: ''
 		position: absolute
@@ -62,118 +60,131 @@ a, a:hover
 		opacity: .7
 	.container
 		position: relative
-		height: 100%
-		display: flex
-		flex-direction: column
-	.header__menu
-		border-bottom: .5px solid #f5f5f5
+		.row.border_bottom
+			border-bottom: 1px solid #fff
+			width: 100%
+			padding: 0
+			margin: 0
+	.header__nav 
+		padding: $gutter 0
+		margin: 0
+		box-sizing: border-box
 		&__left
 			display: flex
 			flex-direction: row
 			justify-content: space-between
+			align-items: center
+			width: 42%
 			&__logo
-				padding: 0 2rem 0 0
+				margin: 0
+				padding: 0
+				box-sizing: border-box
 				#svg 
 					width: 5rem
 					path
 						fill: #fff
 					ellipse, polyline, line
 						stroke: #fff
-					
-					
-					
 			&__text
-				p
-					line-height: 1
-					b
-						display: block
-						font-weight: 500
-						padding-bottom: 1rem
-						font-size: 22px
-					span
-						color: #a5a5a5
-						font-size: 1.1rem
+				margin-left: 1.5rem
+				line-height: 1
+				b
+					display: block
+					font-weight: 500
+					padding-bottom: 1rem
+					font-size: 22px
+				span
+					color: #a5a5a5
+					font-size: 1.1rem
 					
-
-		.social
-			a
-				color: #ffffff
-				border: 0.5px solid #ffffff
-				padding: .5rem
-				margin: 0 .3rem
-				display: inline-block
-				width: 3rem
-				text-align: center
-				transition: all .3s ease
-				&:hover
-					color: $accent
-					border-color: $accent
-					transform: scale(1)
-				&:first-child
-					margin: 0 .3rem 0 0
-		.phone
-			text-align: right
-			p
-				padding: 0
-				margin: 0
-				color: #ffffff
-				font-size: 22px
-			a
-				color: #ffffff
-				img
-					width: 1.5rem
-					height: auto
-					margin-right: .5rem
-		.navmenu
-			margin: 0
-			padding: .5rem 0 0 0
-			ul
-				margin: 0
-				padding: 0
-				width: 100%
-				display: flex
-				flex-direction: row
-				justify-content: space-between
-				.nav-item
-					list-style-type: none
-					padding: 0
+	.header__nav__right
+		display: flex
+		flex-direction: column-reverse
+		width: 58%
+		&__items
+			display: flex
+			flex-direction: row
+			align-items: flex-end
+			justify-content: space-between
+			.social
+				a
+					color: #ffffff
+					border: 0.5px solid #ffffff
+					padding: .5rem
+					margin: 0 .3rem
+					display: inline-block
+					width: 3rem
+					text-align: center
+					transition: all .3s ease
+					&:hover
+						color: $accent
+						border-color: $accent
+						transform: scale(1)
 					&:first-child
-						margin: 0
-					.nav-link
-						color: #ffffff
-						padding: 0
-						text-transform: uppercase
-						font-size: 1rem
-						font-weight: 500
-						position: relative
-						padding: 1rem 0
-						transition: color .3s ease
-						&:hover
-							color: $accent
-							transform: scale(1)
-						&::after
-							content: ''
-							position: absolute
-							left: 0
-							bottom: -2px
-							width: 100%
-							height: 3px
-							border-radius: 6px
-							background-color: $accent
-							transform: scale(0)
-							transition: all .3s ease
-						&:hover::after
-							content: ''
-							position: absolute
-							left: 0
-							bottom: -2px
-							width: 100%
-							height: 3px
-							border-radius: 6px
-							background-color: $accent
-							transform: scale(1)
+						margin: 0 .3rem 0 0
+			.phone
+				text-align: right
+				p
+					padding: 0
+					margin: 0
+					color: #ffffff
+					font-size: 22px
+				a
+					color: #ffffff
+					img
+						display: inline-block
+						width: 1.5rem
+						height: auto
+						margin-right: .5rem
+		
+		.navbar-nav
+			margin: 0
+			padding: 0
+			width: 100%
+			display: flex
+			flex-direction: row
+			justify-content: space-between
+			width: 100%
+			.nav-item
+				list-style-type: none
+				padding: 0
+				&:first-child
+					margin: 0
+				.nav-link
+					color: #ffffff
+					padding: 0
+					text-transform: uppercase
+					font-size: 1rem
+					font-weight: 500
+					position: relative
+					padding: 1rem 0
+					transition: color .3s ease
+					&:hover
+						color: $accent
+						transform: scale(1)
+					&::after
+						content: ''
+						position: absolute
+						left: 0
+						bottom: -2px
+						width: 100%
+						height: 3px
+						border-radius: 6px
+						background-color: $accent
+						transform: scale(0)
+						transition: all .3s ease
+					&:hover::after
+						content: ''
+						position: absolute
+						left: 0
+						bottom: -2px
+						width: 100%
+						height: 3px
+						border-radius: 6px
+						background-color: $accent
+						transform: scale(1)
 
-	.header__menu.sticky
+	.header__nav.sticky
 		position: fixed
 		top: 0
 		left: 0
@@ -181,31 +192,54 @@ a, a:hover
 		min-height: 2em
 		background: #ffffff
 		z-index: 100
-		a
-			color: $text
-		.header__menu__left
-			#svg 
-				path
-					fill: #000
-				ellipse, polyline, line
-					stroke: #000
+		padding: 0
+		.header__nav__left
+			width: 10%
+			&__logo
+				#svg 
+					path
+						fill: #000
+					ellipse, polyline, line
+						stroke: #000
 			&__text
 				display: none
-		.social
-			display: none
-		.navmenu
-			ul
+
+		.header__nav__right
+			display: flex
+			flex-direction: row
+			justify-content: flex-start
+			align-items: center
+			width: 90%
+			
+			margin: 0
+			&__items
+				.social
+					display: none
+			.navbar-nav
+				margin: 0 5% 0 0
 				.nav-item
 					.nav-link
 						color: $text
+						padding: 2rem 0
 						&:hover
 							color: $accent
 							transform: scale(1)
+			.phone
+				display: flex
+				flex-direction: column
+				justify-content: flex-end
+				p
+					color: $text
+				a
+					color: $text
 						
 
 
 	.header__block
 		margin: auto
+		.row
+			width: 100%
+
 		&__h1
 			font-size: 3.8rem
 			font-weight: bold
@@ -219,6 +253,9 @@ a, a:hover
 			border-left: 2px solid $accent
 			padding: 2rem 0 2rem 2rem
 			margin: auto
+			p
+				padding: 0
+				margin: 0
 			&::before
 				content: ''
 				position: absolute
@@ -261,7 +298,9 @@ a, a:hover
 					margin-bottom: .5rem
 			
 				
-		
+section
+	padding: 5% 20%
+	text-align: justify
 		
 
 
