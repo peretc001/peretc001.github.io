@@ -24,6 +24,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
 	 crossorigin="anonymous">
 	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/hamburgers.min.css">
 	<link rel="stylesheet" href="css/main.min.css">
 
 </head>
@@ -32,11 +33,20 @@
 
 	<header class="header" style="background-image: url('img/Img_1_Header.jpg')">
 		
-		<nav class="navbar navbar-expand-lg header__nav">
+		<nav class="navbar navbar-expand-md header__nav">
 			<div class="container">
 				<div class="row border_bottom">
-
-					
+						
+						<div class="mobile__menu">
+							<a href="#my-menu">
+								<div class="hamburger hamburger--emphatic">
+									<span class="hamburger-box"><span class="hamburger-inner"></span></span>
+								</div>
+							</a>
+						</div>
+							
+						
+						<!-- left -->
 						<div class="header__nav__left">
 
 							<p class="header__nav__left__logo">
@@ -73,14 +83,8 @@
 								<span>в модных стилях: лофт, скандинавский, современный и неоклассика</span>
 							</p>
 						</div>
-					
-
-						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-						aria-expanded="false" aria-label="Toggle navigation">
-							<i class="fas fa-bars"></i>
-						</button>
-				
-				
+						<!-- End Left -->
+						<!-- Right -->
 						<div class="header__nav__right">
 						
 							<div class="collapse navbar-collapse" id="navbarNav">
@@ -121,11 +125,12 @@
 										<a href="https://wa.me/7-925-344-25-77" target="_blank"><img src="img/header/whatsapp.svg" alt="Whatsapp"></a>
 										<span class="main_phone">+7 (925) 344-25-77</span>
 									</p>
+									<p class="d-lg-none"><a href="tel:+7-925-344-25-77"><i class="fas fa-mobile-alt"></i></a></p>
 								</div>
 							</div>
 
 						</div>
-						
+						<!-- End Right -->
 						
 					
 					
@@ -139,9 +144,9 @@
 		<div class="header__block">
 			<div class="container">
 				
-				<div class="row align-items-start">
+				<div class="row align-items-center no-gutters">
 					<div class="col-8">
-						<h1 class="header__block__h1 ">
+						<h1 class="header__block__h1">
 							Начните ремонт<br> с дизайн-проектом
 						</h1>
 						<p class="header__block__text">
@@ -157,14 +162,14 @@
 					</div>
 				</div>
 
-				<div class="row header__block__column">
+				<div class="row no-gutters header__block__column">
 					
-					<div class="col-4">
+					<div class="col-md-4">
 						<div class="row">
-							<div class="col-3">
+							<div class="col-lg-3">
 								<img src="img/header/calendar.svg" alt="">
 							</div>
-							<div class="col-9">
+							<div class="col-lg-9">
 								<p>
 									<b>От 14 дней до готового дизайн проекта</b>
 									который создан точно по вашим желаниям
@@ -173,12 +178,12 @@
 						</div>
 					</div>
 
-					<div class="col-4">
+					<div class="col-md-4">
 						<div class="row">
-							<div class="col-3">
+							<div class="col-lg-3">
 								<img src="img/header/pencil.svg" class="svg" alt="">
 							</div>
-							<div class="col-9">
+							<div class="col-lg-9">
 								<p>
 									<b>Берем 5 дизайн-проектов в месяц</b>
 									вы платите за работу мастеров, и получаете работу мастеров, а не дизайнеров учеников
@@ -187,12 +192,12 @@
 						</div>
 					</div>
 
-					<div class="col-4">
+					<div class="col-md-4">
 						<div class="row">
-							<div class="col-3">
+							<div class="col-lg-3">
 								<img src="img/header/organize.svg" alt="">
 							</div>
-							<div class="col-9">
+							<div class="col-lg-9">
 								<p>
 									<b>У вас будет четкий план ремонта</b>
 									чтобы завершить его быстрее и без переплат
@@ -243,7 +248,7 @@
 
 			//Sticky header menu
 			$(document).scroll(function () {
-				if ($(document).scrollTop() > 50) {
+				if ($(document).scrollTop() > 100) {
 					$('.header__nav').addClass('sticky animated fadeIn faster');
 					$('#svg').addClass('black');
 					console.log('sticky');

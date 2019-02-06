@@ -5,12 +5,160 @@
 
 // ≥1200px
 +media-breakpoint-down(lg)
-
+	.header 
+		min-height: 600px
+		.header__nav 
+			&__left
+				&__text
+					b
+						font-size: 18px
+					span
+						font-size: 1rem
+		.header__block
+			&__h1
+				font-size: 3rem
+			&__text
+				font-size: 1.8rem
+			&__price
+				.old
+					font-size: 1.8rem
+				.price
+					font-size: 2.8rem
+			&__column
+				p
+					font-size: 1.1rem
+					b
+						font-size: 1.2rem
+						
 // ≥992px
 +media-breakpoint-down(md)
+	.header
+		min-height: 600px
+		.header__nav 
+			&__left
+				width: 10%
+				&__text
+					position: absolute
+					left: 50%
+					top: 0
+					transform: translateX(-50%)
+					text-transform: uppercase
+					color: #888
+					span
+						display: none
+		
+			&__right
+				display: flex
+				flex-direction: row
+				justify-content: flex-start
+				align-items: center
+				width: 90%
+				margin: auto
+				.navbar-nav
+					margin: 0 5%
+					.nav-item
+						.nav-link
+							font-size: .9rem
+							margin-top: 2rem
+							padding: 0 0 2rem 0
+				&__items
+					.social
+						display: none
+					.phone
+						p
+							display: none
+						p.d-lg-none
+							display: inline-block
+							a
+								font-size: 2rem
 
+		.header__nav.sticky
+			.header__nav__right
+				.navbar-nav
+					margin: 0 5%
+					.nav-item
+						.nav-link
+							font-size: .9rem
+							margin-top: 0
+							padding: 2rem 0
+		
+			
+		.header__block
+			&__h1
+				font-size: 2.2rem
+			&__text
+				font-size: 1.3rem
+			&__price
+				padding: 1rem 0 1rem 2rem
+				.old
+					font-size: 1.3rem
+				.price
+					font-size: 2rem
+					
+				
+			&__column
+				text-align: center
+				padding: 0
+				.row
+					width: 100%
+					margin: 0
+					padding: 0
+				img
+					padding: 0 0 1rem 0
+				p
+					font-size: 1.1rem
+					padding: 0
+					margin: 0
+					b
+						font-size: 1.2rem
 // ≥768px
 +media-breakpoint-down(sm)
+	
+	.header
+		min-height: 800px
+		.header__nav 
+			display: flex
+			flex-direction: row
+			justify-content: space-between
+			padding: 10px 0
+			.mobile__menu
+				display: flex
+				white: 20%
+				
+			&__left
+				white: 60%
+				justify-content: center
+				&__logo
+					#svg
+						width: 3rem
+				&__text
+					display: none
+			&__right
+				width: 20%
+				padding-right: 5px
+				
+
+		
+		
+			
+		.header__block
+			&__h1
+				font-size: 1.6rem
+			&__text
+				font-size: .9rem
+			&__price
+				padding: 1rem 0 1rem 2rem
+				.old
+					font-size: 1rem
+				.price
+					font-size: 1.3rem
+				.date
+					font-size: 1rem
+				
+			&__column
+				.row
+					margin-bottom: 2rem
+				
 
 // ≥576px
 +media-breakpoint-down(xs)

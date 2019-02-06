@@ -69,6 +69,8 @@ a, a:hover
 		padding: $gutter 0
 		margin: 0
 		box-sizing: border-box
+		.mobile__menu
+			display: none
 		&__left
 			display: flex
 			flex-direction: row
@@ -96,94 +98,93 @@ a, a:hover
 				span
 					color: #a5a5a5
 					font-size: 1.1rem
-					
-	.header__nav__right
-		display: flex
-		flex-direction: column-reverse
-		width: 58%
-		&__items
+		&__right
 			display: flex
-			flex-direction: row
-			align-items: flex-end
-			justify-content: space-between
-			.social
-				a
-					color: #ffffff
-					border: 0.5px solid #ffffff
-					padding: .5rem
-					margin: 0 .3rem
-					display: inline-block
-					width: 3rem
-					text-align: center
-					transition: all .3s ease
-					&:hover
-						color: $accent
-						border-color: $accent
-						transform: scale(1)
-					&:first-child
-						margin: 0 .3rem 0 0
-			.phone
-				text-align: right
-				p
-					padding: 0
-					margin: 0
-					color: #ffffff
-					font-size: 22px
-				a
-					color: #ffffff
-					img
-						display: inline-block
-						width: 1.5rem
-						height: auto
-						margin-right: .5rem
-		
-		.navbar-nav
-			margin: 0
-			padding: 0
-			width: 100%
-			display: flex
-			flex-direction: row
-			justify-content: space-between
-			width: 100%
-			.nav-item
-				list-style-type: none
+			flex-direction: column-reverse
+			width: 58%
+			.navbar-nav
+				margin: 0
 				padding: 0
-				&:first-child
-					margin: 0
-				.nav-link
-					color: #ffffff
+				width: 100%
+				display: flex
+				flex-direction: row
+				justify-content: space-between
+				width: 100%
+				.nav-item
+					list-style-type: none
 					padding: 0
-					text-transform: uppercase
-					font-size: 1rem
-					font-weight: 500
-					position: relative
-					padding: 1rem 0
-					transition: color .3s ease
-					&:hover
-						color: $accent
-						transform: scale(1)
-					&::after
-						content: ''
-						position: absolute
-						left: 0
-						bottom: -2px
-						width: 100%
-						height: 3px
-						border-radius: 6px
-						background-color: $accent
-						transform: scale(0)
-						transition: all .3s ease
-					&:hover::after
-						content: ''
-						position: absolute
-						left: 0
-						bottom: -2px
-						width: 100%
-						height: 3px
-						border-radius: 6px
-						background-color: $accent
-						transform: scale(1)
+					&:first-child
+						margin: 0
+					.nav-link
+						color: #ffffff
+						padding: 0
+						text-transform: uppercase
+						font-size: 1rem
+						font-weight: 500
+						position: relative
+						padding: 1rem 0
+						transition: color .3s ease
+						&:hover
+							color: $accent
+						&::after
+							content: ''
+							position: absolute
+							left: 0
+							bottom: -2px
+							width: 100%
+							height: 3px
+							border-radius: 6px
+							background-color: $accent
+							transform: scale(0)
+							transition: all .3s ease
+						&:hover::after
+							content: ''
+							position: absolute
+							left: 0
+							bottom: -2px
+							width: 100%
+							height: 3px
+							border-radius: 6px
+							background-color: $accent
+							transform: scale(1)
 
+			&__items
+				display: flex
+				flex-direction: row
+				align-items: flex-end
+				justify-content: space-between
+				.social
+					a
+						color: #ffffff
+						border: 0.5px solid #ffffff
+						padding: .5rem
+						margin: 0 .3rem
+						display: inline-block
+						width: 3rem
+						text-align: center
+						transition: all .3s ease
+						&:hover
+							color: $accent
+							border-color: $accent
+							transform: scale(1)
+						&:first-child
+							margin: 0 .3rem 0 0
+				.phone
+					text-align: right
+					p
+						padding: 0
+						margin: 0
+						color: #ffffff
+						font-size: 1.5rem
+					a
+						color: #ffffff
+						img
+							display: inline-block
+							width: 1.5rem
+							height: auto
+							margin-right: .5rem
+
+						
 	.header__nav.sticky
 		position: fixed
 		top: 0
@@ -196,7 +197,8 @@ a, a:hover
 		.header__nav__left
 			width: 10%
 			&__logo
-				#svg 
+				#svg
+					width: 4rem
 					path
 						fill: #000
 					ellipse, polyline, line
@@ -207,31 +209,27 @@ a, a:hover
 		.header__nav__right
 			display: flex
 			flex-direction: row
-			justify-content: flex-start
+			justify-content: flex-beetwen
 			align-items: center
 			width: 90%
-			
-			margin: 0
-			&__items
-				.social
-					display: none
+			margin: auto
 			.navbar-nav
-				margin: 0 5% 0 0
+				margin: 0 5%
 				.nav-item
 					.nav-link
 						color: $text
 						padding: 2rem 0
 						&:hover
 							color: $accent
-							transform: scale(1)
-			.phone
-				display: flex
-				flex-direction: column
-				justify-content: flex-end
-				p
-					color: $text
-				a
-					color: $text
+			&__items
+				.social
+					display: none
+				.phone
+					p
+						font-size: 1.1rem
+						color: $text
+					a
+						color: $text
 						
 
 
@@ -248,6 +246,8 @@ a, a:hover
 			font-size: 2.1rem
 			font-weight: bold
 			line-height: 1
+			padding: 0
+			margin: 0
 		&__price
 			position: relative
 			border-left: 2px solid $accent
@@ -283,7 +283,7 @@ a, a:hover
 				line-height: 1
 
 		&__column
-			margin-top: 3rem
+			margin-top: 5rem
 			img
 				width: 3rem
 			p
