@@ -249,11 +249,13 @@
 			$(document).scroll(function () {
 				if ($(document).scrollTop() > 100) {
 					$('.header__nav').addClass('sticky animated fadeIn faster');
+					$('.header').addClass('gutter');
 					$('#svg').addClass('black');
 					console.log('sticky');
 				} else {
 					$('#svg').removeClass('black');
 					$('.header__nav').removeClass('sticky animated fadeIn faster');
+					$('.header').removeClass('gutter');
 					console.clear();
 				}
 			});
