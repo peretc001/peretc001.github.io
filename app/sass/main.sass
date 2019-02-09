@@ -331,27 +331,31 @@ a, a:hover
 		background-size: cover
 		background-position: center
 		text-align: center
-		padding: 8rem 0 0 0
+		padding: 0
+		height: 310px
 		margin: 3rem 0
 		position: relative
+		display: flex
+		align-items: flex-end
+		justify-content: center
 		&::before
 			content: ''
 			position: absolute
 			left: 0
 			bottom: 0
 			width: 100%
-			height: 30%
+			height: 32%
 			background: #ffffff
 		&::after
 			content: ''
 			position: absolute
 			left: 0
-			bottom: 30%
+			bottom: 32%
 			width: 100%
-			height: 50%
+			height: 100px
 			background: linear-gradient(to top, #ffffff, transparent)
 		.col, > [class*="col-"]
-			margin: 0 auto
+			padding: 0
 		h3
 			font-size: 22px
 			line-height: 26px
@@ -368,16 +372,17 @@ a, a:hover
 			position: relative
 			z-index: 2
 		&__img
-			width: 3rem
 			position: relative
-			&::after
-				content: ''
-				position: absolute
-				left: 0
-				top: 0
-				width: 100%
-				height: 100%
-				background: #ffffff
+			border: 1px solid #fff
+			display: inline-block
+			background: #ffffff
+			border-radius: 30rem
+			padding: 1rem
+			margin-bottom: 2rem
+			img
+				width: 2.5rem
+				
+				
 				
 			
 			
