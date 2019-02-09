@@ -12,9 +12,10 @@ var gulp          = require('gulp'),
 		rename        = require('gulp-rename'),
 		autoprefixer  = require('gulp-autoprefixer'),
 		notify        = require('gulp-notify'),
-		del            = require('del'),
-		cache          = require('gulp-cache'),
-		imagemin       = require('gulp-imagemin'),
+		del           = require('del'),
+		cache         = require('gulp-cache'),
+		imagemin      = require('gulp-imagemin'),
+		connect 	  = require('gulp-connect-php'),
 		rsync         = require('gulp-rsync');
 
 gulp.task('browser-sync', function() {
@@ -110,11 +111,24 @@ if (gulpversion == 3) {
 }
 
 if (gulpversion == 4) {
+
+	gulp.task('connect-sync', function() {
+	  connect.server();
+	 
+	  gulp.watch('**/*.php').on('change', function () {
+	    browserSync.reload();
+	  });
+	});
+
+
 	gulp.task('watch', function() {
 		gulp.watch('app/'+syntax+'/**/*.'+syntax+'', gulp.parallel('styles'));
-		gulp.watch('app/js/common.js', gulp.parallel('scripts'));
-		gulp.watch('app/*.html', gulp.parallel('code'))
+		//gulp.watch('app/js/common.js', gulp.parallel('scripts'));
+		gulp.watch('app/*.html', gulp.parallel('code'));
+		gulp.watch('app/*.php', gulp.parallel('code'))
 	});
-	gulp.task('default', gulp.parallel('watch', 'browser-sync'));
+	gulp.task('default', gulp.parallel('watch', 'browser-sync', 'connect-sync'));
 	gulp.task('bild', gulp.parallel('build', 'removedist', 'imagemin', 'styles', 'scripts'));
+
+	
 }
