@@ -29,6 +29,33 @@
 					font-size: 1.1rem
 					b
 						font-size: 1.2rem
+
+	.macbook
+		height: 600px
+		&::before
+			background-size: 960px
+		.macbook__block
+			h2
+				font-size: 36px
+			.button-play
+				a
+					margin-top: 90px
+					width: 90px
+					height: 90px
+					border-radius: 90px
+					&::before
+						width: 200px
+						height: 200px
+					&::after
+						width: 300px
+						height: 300px
+				a:hover
+					width: 90px
+					height: 90px
+					&::before
+						width: 300px
+						height: 300px
+					
 						
 // ≥992px
 +media-breakpoint-down(md)
@@ -114,6 +141,36 @@
 					margin: 0
 					b
 						font-size: 1.2rem
+
+	.macbook
+		height: 430px
+		&::before
+			background-size: 720px
+		.macbook__block
+			h2
+				font-size: 26px
+				line-height: 1
+			p
+				font-size: 24px
+			.button-play
+				a
+					margin-top: 70px
+					width: 60px
+					height: 60px
+					&::before
+						width: 140px
+						height: 140px
+					&::after
+						width: 200px
+						height: 200px
+					img
+						width: 20px
+				a:hover
+					width: 60px
+					height: 60px
+					&::before
+						width: 200px
+						height: 200px
 // ≥768px
 +media-breakpoint-down(sm)
 	
@@ -212,7 +269,33 @@
 			&__text
 				height: 60px
 				overflow: hidden
+
+	.macbook
+		height: 400px
+		padding: 0 0 3rem 0
+		&::before
+			left: 0
+			top:  0
+			width: 100%
+			height: 100%
+			background-position: top
+			background-size: cover
+			background-repeat: no-repeat		
+			background-image:url('../img/macbook/screen.jpg')
+		.container
+			height: 100%
+			margin: auto
+			.row
+				margin: auto
+				height: 100%
 				
+		.macbook__block
+			margin: auto
+			h2
+				font-size: 26px
+				line-height: 1
+			p
+				font-size: 20px
 
 // ≥576px
 +media-breakpoint-down(xs)
