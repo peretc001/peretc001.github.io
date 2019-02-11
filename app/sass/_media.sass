@@ -200,12 +200,37 @@
 				margin-top: 3rem
 				.col, > [class*="col-"]
    				margin-bottom: 2rem
+
+	.advantages
+		.advantages__post
+			align-items: center
+			h3
+				font-size: 18px
+				white-space: nowrap
+				overflow: hidden
+				text-overflow: ellipsis
+			&__text
+				height: 60px
+				overflow: hidden
 				
 
 // ≥576px
 +media-breakpoint-down(xs)
 	.header
 		min-height: 970px
+
+	
+	.advantages
+		.advantages__post
+			h3
+				font-size: 18px
+				white-space: normal
+				overflow: visible
+			&__text
+				display: none
+    			
+
+				
 
 /*==========  Mobile First  ==========*/
 
