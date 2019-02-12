@@ -5,6 +5,12 @@
 
 // ≥1200px
 +media-breakpoint-down(lg)
+
+	.introHolder
+		h2
+			font-size: 36px
+			line-height: 1
+
 	.header 
 		min-height: 600px
 		.header__nav 
@@ -29,36 +35,43 @@
 					font-size: 1.1rem
 					b
 						font-size: 1.2rem
-
+	.advantages
+		.container
+			padding: 3rem 0 6rem 0
 	.macbook
 		height: 600px
 		&::before
+			top: -7vh
 			background-size: 960px
-		.macbook__block
-			h2
-				font-size: 36px
-			.button-play
-				a
-					margin-top: 90px
-					width: 90px
-					height: 90px
-					border-radius: 90px
-					&::before
-						width: 200px
-						height: 200px
-					&::after
-						width: 300px
-						height: 300px
-				a:hover
-					width: 90px
-					height: 90px
-					&::before
-						width: 300px
-						height: 300px
+		.button-play
+			a
+				margin-top: $gutter*2
+				width: 90px
+				height: 90px
+				border-radius: 90px
+				&::before
+					width: 200px
+					height: 200px
+				&::after
+					width: 300px
+					height: 300px
+			a:hover
+				width: 90px
+				height: 90px
+				&::before
+					width: 300px
+					height: 300px
 					
 						
 // ≥992px
 +media-breakpoint-down(md)
+
+	.introHolder
+		h2
+			font-size: 26px
+		p
+			font-size: 24px
+
 	.header
 		min-height: 600px
 		.header__nav 
@@ -138,39 +151,54 @@
 					margin: 0
 					b
 						font-size: 1.2rem
+	.advantages
+		.container
+			padding: 3rem 0 4rem 0
 
 	.macbook
 		height: 430px
 		&::before
+			top: -5vh
 			background-size: 720px
-		.macbook__block
-			h2
-				font-size: 26px
-				line-height: 1
+		.button-play
+			a
+				margin-top: $gutter*1.5
+				width: 60px
+				height: 60px
+				&::before
+					width: 140px
+					height: 140px
+				&::after
+					width: 200px
+					height: 200px
+				img
+					width: 20px
+			a:hover
+				width: 60px
+				height: 60px
+				&::before
+					width: 200px
+					height: 200px
+	
+	.calculator
+		padding: $gutter 0
+		&__block
+			img
+				width: 4rem	
 			p
-				font-size: 24px
-			.button-play
-				a
-					margin-top: 70px
-					width: 60px
-					height: 60px
-					&::before
-						width: 140px
-						height: 140px
-					&::after
-						width: 200px
-						height: 200px
-					img
-						width: 20px
-				a:hover
-					width: 60px
-					height: 60px
-					&::before
-						width: 200px
-						height: 200px
+				font-size: 1.2rem
+				margin-left: 0
+
+
 // ≥768px
 +media-breakpoint-down(sm)
-	
+	.introHolder
+		h2
+			font-size: 26px
+			line-height: 1
+		p
+			font-size: 20px
+
 	.header
 		min-height: 900px
 		.header__nav
@@ -249,7 +277,8 @@
    				margin-bottom: 2rem
 
 	.advantages
-		padding: 3rem 0 3rem 0
+		.container
+			padding: 3rem 0
 		.advantages__post
 			align-items: center
 			h3
@@ -262,8 +291,11 @@
 				overflow: hidden
 
 	.macbook
-		height: 400px
-		padding: 0 0 3rem 0
+		padding: $gutter*2 0 $gutter*4 0
+		height: auto
+		.container
+			height: 100%
+			margin: auto
 		&::before
 			left: 0
 			top:  0
@@ -273,20 +305,22 @@
 			background-size: cover
 			background-repeat: no-repeat		
 			background-image:url('../img/macbook/screen.jpg')
-		.container
-			height: 100%
-			margin: auto
-			.row
-				margin: auto
-				height: 100%
-				
-		.macbook__block
-			margin: auto
-			h2
-				font-size: 26px
-				line-height: 1
+
+	.calculator
+		padding: $gutter*2 0
+		&__block
+			text-align: center
+			.col-md-4
+				margin-bottom: $gutter
+			.col-md-4:last-child
+				margin-bottom: 0
+			img
+				width: 3rem
 			p
-				font-size: 20px
+				font-size: 1.2rem
+				text-align: center
+				margin: 1rem 0
+		
 
 // ≥576px
 +media-breakpoint-down(xs)
