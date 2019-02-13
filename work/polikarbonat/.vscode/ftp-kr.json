@@ -1,0 +1,16 @@
+{
+    "host": "polikarbonata.net",
+    "username": "u0082581",
+    "password": "GFDgd39021",
+    "remotePath": "httpdocs/polikarbonata.net",
+    "protocol": "ftp",
+    "port": 0,
+    "fileNameEncoding": "utf8",
+    "autoUpload": true,
+    "autoDelete": false,
+    "autoDownload": false,
+    "ignore": [
+        ".git",
+        "/.vscode"
+    ]
+}

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE yml_catalog SYSTEM "shops.dtd"><yml_catalog date="2015-07-12 22:56"><shop><name>ПОЛИКАРБОНАТА.НЕТ</name><company>ПОЛИКАРБОНАТА.НЕТ</company><url>http://polikarbonata.net/</url><phone>+7 (918) 636-27-09</phone><currencies><currency id="RUR" /></currencies>
+<categories>
+<category id="1002">Сотовый поликарбонат</category>
+<category id="2002">Монолитный поликарбонат</category>
+</categories>
+<offers>
+<offer id="1" available="true">
+	<name>Сотовый поликарбонат Royalplast 4мм Прозрачный</name>
+	<description>Сотовый поликарбонат 2,1х6м. Толщина 4 мм.</description>
+	<vendor>Royalplast</vendor>
+	<url>http://polikarbonata.net/catalog/sotovy_polikarbonat/4mm/sotovy_polikarbonat_4mm_Royalplast_transparent/</url>
+	<price>1750.00</price>
+	<currencyId>RUR</currencyId>
+	<categoryId>1002</categoryId>
+	<picture>http://polikarbonata.net/img/catalog/polikarbonat/1.png</picture>
+	<param name="Цвет">Прозрачный</param>
+	<delivery>false</delivery>
+	<country_of_origin>Россия</country_of_origin>
+	<market_category>Дом и дача/Дача, сад и огород/Садоводство и озеленение/Теплицы и парники</market_category>
+</offer>
+<offer id="2" available="true">
+	<name>Сотовый поликарбонат Lexan 4мм Бирюза</name>
+	<description>Сотовый поликарбонат 2,1х6м. Толщина 4 мм.</description>
+	<vendor>Lexan</vendor>
+	<url>http://polikarbonata.net/catalog/sotovy_polikarbonat/4mm/sotovy_polikarbonat_4mm_Lexan_turquoise/</url>
+	<price>2127.00</price>
+	<currencyId>RUR</currencyId>
+	<categoryId>1002</categoryId>
+	<picture>http://polikarbonata.net/img/catalog/polikarbonat/2.png</picture>
+	<param name="Цвет">Бирюза</param>
+	<delivery>false</delivery>
+	<country_of_origin>Россия</country_of_origin>
+	<market_category>Дом и дача/Дача, сад и огород/Садоводство и озеленение/Теплицы и парники</market_category>
+</offer>
+<offer id="3" available="true">
+	<name>Сотовый поликарбонат Polygal 4мм Бронза</name>
+	<description>Сотовый поликарбонат 2,1х6м. Толщина 4 мм.</description>
+	<vendor>Polygal</vendor>
+	<url>http://polikarbonata.net/catalog/sotovy_polikarbonat/4mm/sotovy_polikarbonat_4mm_Polygal_bronze/</url>
+	<price>2822.00</price>
+	<currencyId>RUR</currencyId>
+	<categoryId>1002</categoryId>
+	<picture>http://polikarbonata.net/img/catalog/polikarbonat/3.png</picture>
+	<param name="Цвет">Бронза</param>
+	<delivery>false</delivery>
+	<country_of_origin>Израиль</country_of_origin>
+	<market_category>Дом и дача/Дача, сад и огород/Садоводство и озеленение/Теплицы и парники</market_category>
+</offer>
+<offer id="4" available="true">
+	<name>Монолитный поликарбонат Royalplast 2мм Прозрачный</name>
+	<description>Монолитный поликарбонат 2,05х3,05м. Толщина 2 мм.</description>
+	<vendor>Royalplast</vendor>
+	<url>http://polikarbonata.net/catalog/monolitny_polikarbonat/2mm/monolitny_polikarbonat_2mm_Royalplast_transparent/</url>
+	<price>3556.00</price>
+	<currencyId>RUR</currencyId>
+	<categoryId>2002</categoryId>
+	<picture>http://polikarbonata.net/img/catalog/monolitny_polikarbonat/1.png</picture>
+	<param name="Цвет">Зеленый</param>
+	<delivery>false</delivery>
+	<country_of_origin>Россия</country_of_origin>
+	<market_category>Дом и дача/Дача, сад и огород/Садоводство и озеленение/Теплицы и парники</market_category>
+</offer>
+<offer id="5" available="true">
+	<name>Монолитный поликарбонат Polygal 8мм Бронза</name>
+	<description>Монолитный поликарбонат 2,05х3,05м. Толщина 8 мм.</description>
+	<vendor>Polygal</vendor>
+	<url>http://polikarbonata.net/catalog/monolitny_polikarbonat/8mm/monolitny_polikarbonat_8mm_Polygal_bronze/</url>
+	<price>16324.00</price>
+	<currencyId>RUR</currencyId>
+	<categoryId>2002</categoryId>
+	<picture>http://polikarbonata.net/img/catalog/monolitny_polikarbonat/3.png</picture>
+	<param name="Цвет">Прозрачный</param>
+	<delivery>false</delivery>
+	<country_of_origin>Израиль</country_of_origin>
+	<market_category>Дом и дача/Дача, сад и огород/Садоводство и озеленение/Теплицы и парники</market_category>
+</offer>
+</offers>
+</shop></yml_catalog>
