@@ -425,8 +425,8 @@ a, a:hover
 		.advantages__post__img
 			opacity: 1
 
-.header, .advantages
-	display: none
+// .header, .advantages
+// 	display: none
 .macbook
 	position: relative
 	background-color: $bg
@@ -546,6 +546,127 @@ a, a:hover
 		font-size: 22px
 		margin-top: 1rem
 			
+.design_project
+	position: relative
+	padding: $gutter*2 0
+	background: #000
+	&::before
+		content: ''
+		position: absolute
+		left: 0
+		top: 0
+		width: 50%
+		height: 100%
+		background-image: url('../img/design_project/Img_3_Design_project_1.jpg')
+		background-size: cover
+		background-position: left top
+		background-repeat: no-repeat
+		opacity: .2
+	&::after
+		content: ''
+		position: absolute
+		left: 50%
+		top: 0
+		width: 50%
+		height: 100%
+		background-image: url('../img/design_project/Img_3_Design_project_2.jpg')
+		background-size: cover
+		background-position: left top
+		background-repeat: no-repeat
+		opacity: .2
+	.container, .row
+		position: relative
+		z-index: 2
+	&__header
+		p
+			color: #ffffff
+			font-size: 1.8rem
+			font-weight: 700
+			text-transform: uppercase
+			padding: $gutter 0
+			span
+				background: #ffffff
+				padding: 10px 20px
+				margin-right: 1rem
+				.far
+					color: $text
+				.far.fa-thumbs-down
+					transform: scale(-1, 1)
+					filter: FlipV
+	.right
+		.design_project__header
+			p
+				span
+					background: $blue
+					.far
+						color: #ffffff
+	&__center
+		p
+			color: #ffffff
+			font-size: 18px
+			padding: $gutter 0
+			position: relative
+			&::before
+				content: ''
+				position: absolute
+				left: 0
+				top: 0
+				width: 100%
+				height: 1px
+				background: #eeeeee
+				opacity: .14
+			&:last-child
+				display: block
+				height: 100%
+				min-height: 160px
+			span
+				font-size: 24px
+				color: #da3232
+				font-weight: 700
+	.right
+		.design_project__center
+			p
+				span
+					color: $blue
+	
+	&__bottom
+		margin: $gutter 0
+		display: flex
+		padding: $gutter 0
+		height: 180px
+		p
+			background: #ffffff
+			color: $text
+			font-weight: 700
+			height: 100%
+			vertical-align: center
+			display: flex
+			align-items: center
+			padding: 10px 10px 10px 80px
+			position: relative
+			&::before
+				content: '\f00d'
+				font-family: 'Font Awesome 5 Free'
+				font-weight: solid
+				font-size: 30px
+				color: #da3232
+				position: absolute
+				left: 5% 
+				top: 50%
+				transform: translateY(-50%)
+
+	.right
+		.design_project__bottom
+			p
+				background: $blue
+				color: #ffffff
+				&::before
+					content: '\f00c'
+					color: #ffffff
+					
+			
+			
+
 
 	
 

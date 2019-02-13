@@ -61,6 +61,12 @@
 				&::before
 					width: 300px
 					height: 300px
+
+	.design_project
+		&__header
+			p
+				color: #ffffff
+				font-size: 1.7rem
 					
 						
 // ≥992px
@@ -188,6 +194,36 @@
 			p
 				font-size: 1.2rem
 				margin-left: 0
+				
+	.design_project
+		.container
+			max-width: 780px
+		&__header
+			p
+				color: #ffffff
+				font-size: 1.2rem
+		.right
+			.design_project__header
+				p
+					padding: $gutter
+		&__center
+			p
+				font-size: 1rem
+				height: 140px
+				padding: $gutter
+				span
+					font-size: 1.2rem
+				&:last-child
+					min-height: 200px
+		&__bottom
+			height: 220px
+			p
+				margin-right: 20px
+		.right
+			.design_project__bottom
+				p
+					margin-left: 20px
+
 
 
 // ≥768px
@@ -323,6 +359,40 @@
 	.photos
 		p
 			font-size: 1rem
+	
+	.design_project
+		.container
+			max-width: 100%
+		&__header
+			p
+				color: #ffffff
+				font-size: 1.3rem
+				text-align: center
+		.right
+			.design_project__header
+				p
+					padding: $gutter
+					height: auto
+		&__center
+			p
+				font-size: 1rem
+				height: auto
+				padding: $gutter/2
+				span
+					font-size: 1.2rem
+				&:last-child
+					min-height: auto
+					padding-bottom: 0
+		&__bottom
+			margin: 0
+			height: auto
+			padding: $gutter $gutter*2
+			p
+				margin-right: 0
+		.right
+			.design_project__bottom
+				p
+					margin-left: 0
 
 // ≥576px
 +media-breakpoint-down(xs)
@@ -349,6 +419,27 @@
 			p
 				padding: 0 1rem
 				line-height: 1
+	
+	.design_project
+		&__header
+			p
+				font-size: 1rem
+				padding: $gutter 0
+				span
+					padding: 10px 10px
+					margin-right: .3rem
+		&__center
+			p
+				text-align: center
+		&__bottom
+			padding: $gutter $gutter
+			height: auto
+			p
+				margin-right: 0
+		.right
+			.design_project__bottom
+				p
+					margin-left: 0
 				
 
 /*==========  Mobile First  ==========*/
