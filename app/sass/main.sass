@@ -748,10 +748,6 @@ a, a:hover
 						height: 0
 
 
-// .header, .advantages, .macbook, .calculator, .photos, .design_project, .recomendation
-// 	display: none
-
-
 .acquaintance
 	position: relative
 	padding: $gutter*2 0 0 0
@@ -829,18 +825,124 @@ a, a:hover
 		margin: 0 2rem 0 0
 		p
 			font-size: 20px
-		
 
-.next
-	padding: 100px
-	position: relative
-	z-index: 4
-	background: #fff
+			
+.price
+	padding: $gutter*2 0
+	background: $bg
+	&__header
+		position: relative
+		background: #111111
+		padding: 10px
+		color: #ffffff
+		text-align: center
+		p
+			margin: .3rem 0
+			b
+				font-size: 26px
+		p.name
+			opacity: .7
+		&__sum
+			margin: 1rem 0
+			font-size: 33px
+			color: $accent
+			font-weight: bold
+			span
+				font-size: 25px
+			.old
+				color: #ffffff
+				opacity: .4
+				font-weight: normal
+				text-decoration: line-through
+		&.top
+			position: relative
+			&::before
+				content: '\f7e4'
+				position: absolute
+				right: 5%
+				top: 5%
+				font-family: 'Font Awesome 5 Free'
+				font-weight: bold
+				font-size: 30px
+				color: $accent
+	&__center
+		background: #f2f3f5
+		padding: 10px
+		border-left: 1px solid #eeeeee
+		border-right: 1px solid #eeeeee
+		ul
+			margin: 0 0 0 60px
+			padding: 0
+			list-style-type: none
+			li
+				font-size: 1.1rem
+				padding: 20px 10px 20px 0
+				position: relative
+				line-height: 1.1
+				&::before
+					content: '\f14a'
+					position: absolute
+					left: -45px
+					top: 50%
+					transform: translateY(-50%)
+					font-family: 'Font Awesome 5 Free'
+					font-weight: bold
+					font-size: 30px
+					color: $blue
+	&__bottom
+		background: #fff
+		padding: 10px
+		border: 1px solid #eeeeee
+		border-top: none
+		ul
+			margin: 0 10px 0 60px
+			padding: 0
+			list-style-type: none
+			li
+				font-size: 1.1rem
+				padding: 20px 0 20px 0
+				position: relative
+				line-height: 1.1
+				border-bottom: 1px solid #eeeeee
+				&::before
+					content: '\f14a'
+					position: absolute
+					left: -45px
+					top: 50%
+					transform: translateY(-50%)
+					font-family: 'Font Awesome 5 Free'
+					font-weight: bold
+					font-size: 30px
+					color: $blue
+		.introHolder
+			.btn
+				border-radius: 0
+				outline: none
+			.btn.btn-accent
+				outline: none
+			p
+				margin: 1rem 0
+				a
+					font-size: 1.2rem
+					text-decoration: none
+					position: relative
+					color: $blue
+					&::before
+						content: ''
+						position: absolute
+						left: 0
+						bottom: -2px
+						width: 100%
+						height: 1px
+						background: $blue
+						transition: background-color .3s ease
+					&:hover
+						color: $blue
+						&::before
+							height: 0
 
-
-				
-				
-				
+// .header, .advantages, .macbook, .calculator, .photos, .design_project, .recomendation, .acquaintance, .price
+// 	display: none			
 			
 			
 
