@@ -68,7 +68,34 @@
 				color: #ffffff
 				font-size: 1.7rem
 					
-						
+		
+	.recomendation
+		&__carousel
+			.owl-nav
+				button.owl-prev
+					left: -1%
+				button.owl-next
+					right: -1%	
+			&__item
+				margin: 0 $gutter
+
+	.acquaintance
+		&__block
+			&__about
+				.manager
+					position: absolute
+					left: -90%
+					top: 55%
+					width: 90%
+					opacity: 1
+					&.right
+						left: auto
+						right: -85%
+						top: 48%
+		&__img
+			p
+				font-size: 1rem
+
 // ≥992px
 +media-breakpoint-down(md)
 
@@ -224,7 +251,49 @@
 				p
 					margin-left: 20px
 
+			
+	.recomendation
+		&__carousel
+			padding: 0
+			&__item
+				padding: 0
 
+	
+	.acquaintance
+		&__block
+			text-align: center
+			padding: $gutter*1.5 $gutter
+			&__about
+				.manager
+					position: relative
+					width: 50%
+					left: auto
+					top: auto
+					&.right
+						left: auto
+						right: auto
+						top: auto
+				h3
+					margin: 1rem 0
+					color: $blue
+					text-transform: uppercase
+					font-size: 20px
+					font-weight: bold
+				p
+					color: #fff
+					font-size: 1rem
+		&__img
+			.col-lg-4
+				padding: $gutter/2 0
+		&__text
+			background: #fff
+			color: $text
+			padding: $gutter/2 $gutter
+			margin: 0
+				
+					
+				
+	
 
 // ≥768px
 +media-breakpoint-down(sm)
@@ -363,6 +432,13 @@
 	.design_project
 		.container
 			max-width: 100%
+		.introHolder
+			h2
+				font-size: 26px
+				span
+					display: block
+			p
+				font-size: 20px
 		&__header
 			p
 				color: #ffffff
@@ -393,6 +469,32 @@
 			.design_project__bottom
 				p
 					margin-left: 0
+	
+	.recomendation
+		&__carousel
+			.owl-nav
+				button.owl-prev
+					left: -3%
+				button.owl-next
+					right: -3%	
+			&__item
+				margin: 0
+				&::before
+					content: ''
+					position: absolute
+					left: 0
+					top: 200px
+					width: 100%
+					height: 100%
+					background: #ffffff
+				p
+					font-size: 1rem
+
+	.acquaintance
+		&__block
+			margin: 1rem 0
+			height: auto
+				
 
 // ≥576px
 +media-breakpoint-down(xs)
@@ -423,11 +525,15 @@
 	.design_project
 		&__header
 			p
-				font-size: 1rem
+				font-size: 1.3rem
 				padding: $gutter 0
 				span
 					padding: 10px 10px
 					margin-right: .3rem
+		.right
+			.design_project__header
+				p
+					padding: $gutter 0
 		&__center
 			p
 				text-align: center
@@ -436,10 +542,28 @@
 			height: auto
 			p
 				margin-right: 0
+				padding: 10px 10px 10px 50px
+				&::before
+					left: 4% 
 		.right
 			.design_project__bottom
 				p
 					margin-left: 0
+
+	.recomendation
+		&__carousel
+			&__item
+				margin: 0
+				p
+					font-size: .8rem
+					padding: $gutter/6 $gutter/2
+					b
+						font-size: .8rem
+
+	.acquaintance
+		&__img
+			padding: $gutter*1.5 $gutter
+		
 				
 
 /*==========  Mobile First  ==========*/

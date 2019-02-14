@@ -75,6 +75,11 @@ a, a:hover
 .introHolder.inverse
 	h2, p
 		color: $text
+.introHolder.blue
+	h2, p
+		color: $text
+		span
+			color: $blue
 
 		
 .header
@@ -425,8 +430,6 @@ a, a:hover
 		.advantages__post__img
 			opacity: 1
 
-// .header, .advantages
-// 	display: none
 .macbook
 	position: relative
 	background-color: $bg
@@ -664,11 +667,175 @@ a, a:hover
 					content: '\f00c'
 					color: #ffffff
 					
-			
-			
+.recomendation
+	position: relative
+	padding: $gutter*2 0
+	&__carousel
+		padding: $gutter 0
+		.owl-item 
+			padding: 0 $gutter
+			img
+				width: 100%
+		.owl-nav
+			position: absolute
+			left: 0
+			top: 50%
+			transform: translateY(-50%)
+			width: 100%
+			button.owl-next, button.owl-prev
+				width: 60px
+				height: 60px
+				border-radius: 60px
+				background-color: #111111
+				color: #ffffff
+				position: absolute
+				text-align: center
+				font-size: 30px
+				border: none
+				outline: 0
+				&:hover
+					background-color: $accent
+			button.owl-prev
+				left: -4%
+			button.owl-next
+				right: -4%
 
 
-	
+		&__item
+			padding: $gutter*2 0
+			position: relative
+			&::before
+				content: ''
+				position: absolute
+				left: 18%
+				top: 0
+				width: 80%
+				height: 100%
+				background: #ffffff
+			p
+				font-size: 17px
+				padding: $gutter/4 $gutter
+				b
+					font-size: 20px
+					font-weight: 700
+			a
+				text-decoration: none
+				position: relative
+				color: $blue
+				margin-left: 30px
+				&::before
+					content: ''
+					position: absolute
+					left: 0
+					bottom: -2px
+					width: 100%
+					height: 1px
+					background: $blue
+					transition: background-color .3s ease
+				&::after
+					position: absolute
+					left: -30px
+					top: 50%
+					transform: translateY(-50%)
+					content: '\f0c1'
+					font-family: 'Font Awesome 5 Free'
+					font-weight: bold
+					font-size: 20px
+					color: $blue
+				&:hover
+					color: $blue
+					&::before
+						height: 0
+
+
+// .header, .advantages, .macbook, .calculator, .photos, .design_project, .recomendation
+// 	display: none
+
+
+.acquaintance
+	position: relative
+	padding: $gutter*2 0 0 0
+	background-size: cover
+	background-position: left top
+	background-repeat: no-repeat
+	overflow: hidden
+	&::before
+		content: ''
+		position: absolute
+		left: 0
+		bottom: 0
+		width: 100%
+		height: 100%
+		background: #000000
+		opacity: .4
+	.container
+		position: relative
+		padding-bottom: 100px
+		
+		
+	&__block
+		position: relative
+		padding: $gutter*1.5
+		height: 100%
+		&::before
+			content: ''
+			position: absolute
+			left: 0
+			top: 0
+			width: 100%
+			height: 100%
+			background: #111111
+			opacity: .7
+		
+		&__about
+			position: relative
+			.manager
+				position: absolute
+				left: -90%
+				top: 0
+				width: 90%
+				opacity: 1
+				&.right
+					left: auto
+					right: -85%
+			h3
+				color: $blue
+				text-transform: uppercase
+				font-size: 20px
+				font-weight: bold
+			p
+				color: #fff
+				font-size: 1rem
+	&__img
+		padding: $gutter*1.5 $gutter*2
+		&__item
+			display: flex
+			justify-content: flex-start
+			align-items: center
+			margin: 0
+			padding: 0
+			img
+				width: 4rem
+				margin: 0 0 0 .5rem
+			p
+				color: #ffffff
+				font-size: 20px
+				font-weight: bold
+				margin: 0 0 0 2rem
+	&__text
+		background: #fff
+		color: $text
+		padding: $gutter/2 $gutter*1.5 $gutter/2 $gutter*1.5
+		margin: 0 2rem 0 0
+		p
+			font-size: 20px
+		
+
+.next
+	padding: 100px
+	position: relative
+	z-index: 4
+	background: #fff
 
 
 				
