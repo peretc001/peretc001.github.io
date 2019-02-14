@@ -310,19 +310,19 @@ a, a:hover
 				height: 100%
 				background-color: #222222
 				opacity: .7
-			.old
+			&__old
 				position: relative
 				font-size: 1.8rem
 				color: #a5a5a5
 				line-height: 1
 				text-decoration: line-through
-			.price
+			&__total
 				position: relative
 				font-size: 3.5rem
 				color: #ffffff
 				font-weight: bold
 				line-height: 1.5
-			.date
+			&__date
 				position: relative
 				font-size: 1.2rem
 				line-height: 1
@@ -849,7 +849,7 @@ a, a:hover
 			font-weight: bold
 			span
 				font-size: 25px
-			.old
+			&__old
 				color: #ffffff
 				opacity: .4
 				font-weight: normal
@@ -905,15 +905,42 @@ a, a:hover
 				line-height: 1.1
 				border-bottom: 1px solid #eeeeee
 				&::before
-					content: '\f14a'
+					content: ''
 					position: absolute
 					left: -45px
 					top: 50%
 					transform: translateY(-50%)
-					font-family: 'Font Awesome 5 Free'
-					font-weight: bold
-					font-size: 30px
-					color: $blue
+					width: 30px
+					height: 30px
+					
+			li.num1::before
+				background: url('../img/price/1.svg')
+			li.num2::before
+				background: url('../img/price/2.svg')
+			li.num3::before
+				background: url('../img/price/3.svg')
+			li.num4::before
+				background: url('../img/price/4.svg')
+			li.num5::before
+				background: url('../img/price/5.svg')
+			li.num6::before
+				background: url('../img/price/6.svg')
+			li.num7::before
+				background: url('../img/price/7.svg')
+			li.num8::before
+				background: url('../img/price/8.svg')
+			li.num9::before
+				background: url('../img/price/9.svg')
+			li.num10::before
+				background: url('../img/price/10.svg')
+			li.num11::before
+				background: url('../img/price/11.svg')
+			li.num12::before
+				background: url('../img/price/12.svg')
+			li.num13::before
+				background: url('../img/price/13.svg')
+					
+
 		.introHolder
 			.btn
 				border-radius: 0
