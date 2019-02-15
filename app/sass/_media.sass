@@ -11,6 +11,19 @@
 			font-size: 36px
 			line-height: 1
 
+	.yellowHolder
+		&__left
+			h1
+				font-size: 3rem
+			h2
+				margin-top: 1.5rem
+			p
+				font-size: 1.8rem
+		&__right
+			padding-left: 2rem
+			.yellowHolder__right__old
+				font-size: 1.4rem
+
 	.header 
 		min-height: 600px
 		.header__nav 
@@ -21,23 +34,19 @@
 					span
 						font-size: 1rem
 		.header__block
-			&__h1
-				font-size: 3rem
-			&__text
-				font-size: 1.8rem
-			&__price
-				&__old
-					font-size: 1.8rem
-				&__total
-					font-size: 2.8rem
 			&__column
-				p
-					font-size: 1.1rem
-					b
+				&__item
+					img
+						width: 3rem
+					p
 						font-size: 1.2rem
+						b
+							font-size: 1.1rem
+	
 	.advantages
 		.container
 			padding: 3rem 0 6rem 0
+	
 	.macbook
 		height: 600px
 		&::before
@@ -68,7 +77,6 @@
 				color: #ffffff
 				font-size: 1.7rem
 					
-		
 	.recomendation
 		&__carousel
 			.owl-nav
@@ -95,15 +103,32 @@
 		&__img
 			p
 				font-size: 1rem
+	
 	.price
 		.introHolder
 			.btn.btn-accent
 				font-size: 1rem
 
-
-
-
-
+	.banner
+		&__list
+			ul
+				margin: 0 0 0 30px
+				li
+					font-size: 1rem
+					&::before
+						left: -30px
+						width: 25px
+						height: 25px
+		&__click
+			p
+				font-size: 1.6rem
+			.introHolder
+				.btn-accent
+					margin: 0 1rem 0 0
+					font-size: .9rem
+					padding: .5rem 1rem
+				.download
+					font-size: .9rem
 
 // ≥992px
 +media-breakpoint-down(md)
@@ -113,6 +138,27 @@
 			font-size: 26px
 		p
 			font-size: 24px
+
+	.yellowHolder
+		&__left
+			h1
+				font-size: 2.5rem
+				margin-bottom: 1rem
+			h2
+				font-size: 2.7rem
+				margin-top: 1rem
+			p
+				font-size: 1.4rem
+		&__right
+			padding-left: 2rem
+			.yellowHolder__right__old
+				font-size: 1.3rem
+			.yellowHolder__right__total
+				font-size: 2.5rem
+				span
+					font-size: 1.4rem
+			.yellowHolder__right__text
+				font-size: 1rem
 
 	.header
 		min-height: 600px
@@ -166,33 +212,22 @@
 				&__items
 					width: 10%
 					
-		.header__block
-			&__h1
-				font-size: 2.2rem
-			&__text
-				font-size: 1.3rem
-			&__price
-				padding: 1rem 0 1rem 2rem
-				&__old
-					font-size: 1.3rem
-				&__total
-					font-size: 2rem
-					
+		.header__block				
 			&__column
-				text-align: center
-				padding: 0
-				.row
-					width: 100%
-					margin: 0
-					padding: 0
-				img
-					padding: 0 0 1rem 0
-				p
-					font-size: 1.1rem
-					padding: 0
-					margin: 0
-					b
-						font-size: 1.2rem
+				margin-top: 3rem
+				&__item
+					flex-direction: column
+					padding: 1rem 0.5rem
+					img
+						width: 3rem
+						margin: 1rem auto
+					p
+						font-size: 1.1rem
+						margin: 0 auto
+						text-align: center
+						b
+							font-size: 1.2rem
+
 	.advantages
 		.container
 			padding: 3rem 0 4rem 0
@@ -260,14 +295,12 @@
 				p
 					margin-left: 20px
 
-			
 	.recomendation
 		&__carousel
 			padding: 0
 			&__item
 				padding: 0
 
-	
 	.acquaintance
 		&__block
 			text-align: center
@@ -305,10 +338,28 @@
 			.row
 				.col, > [class*="col-"]
 					margin-bottom: 2rem
-						
-					
-				
-	
+
+	.banner
+		&__list
+			ul
+				margin: 0 0 0 25px
+				li
+					font-size: .8rem
+					&::before
+						left: -25px
+						width: 20px
+						height: 20px
+		&__click
+			p
+				font-size: 1.6rem
+			.introHolder
+				text-align: center
+				.btn-accent
+					margin: 0 auto
+					font-size: 1rem
+					display: block
+				.download
+					font-size: 1rem		
 
 // ≥768px
 +media-breakpoint-down(sm)
@@ -318,9 +369,26 @@
 			line-height: 1.3
 		p
 			font-size: 20px
-
+			
+	.yellowHolder
+		&__left
+			text-align: center
+		&__right
+			margin: 0 auto
+			margin-top: 2rem
+			padding: 2rem
+			max-width: 300px
+			border-left: none
+			border-top: 2px solid $accent
+			p
+				text-align: center
+			.yellowHolder__right__total
+				font-size: 3rem
+				span
+					font-size: 1.4rem
+	
 	.header
-		min-height: 900px
+		min-height: 1000px
 		.header__nav
 			padding: $gutter/2 0
 			.row
@@ -371,30 +439,12 @@
 				.navbar-nav
 					display: none
 		
-		.header__block
-			text-align: center
-			&__h1
-				font-size: 1.8rem
-			&__text
-				font-size: 1rem
-			&__price
-				margin-top: 2rem
-				padding: 1rem 0 1rem 2rem
-				max-width: 300px
-				border-left: none
-				border-top: 2px solid $accent
-			
-				&__old
-					font-size: 1.3rem
-				&__total
-					font-size: 2.3rem
-				&__date
-					font-size: 1.2rem
-				
+		.header__block				
 			&__column
-				margin-top: 3rem
-				.col, > [class*="col-"]
-   				margin-bottom: 2rem
+				margin-top: 2rem
+				&__item
+					padding: 0.5rem 5%
+					
 
 	.advantages
 		.container
@@ -440,6 +490,7 @@
 				font-size: 1.2rem
 				text-align: center
 				margin: 1rem 0
+	
 	.photos
 		p
 			font-size: 1rem
@@ -509,7 +560,36 @@
 		&__block
 			margin: 1rem 0
 			height: auto
-				
+
+	.banner
+		&__list
+			ul
+				margin: 0 0 0 30%
+				padding: 0
+				width: 380px
+				li
+					font-size: 1.2rem
+					height: auto
+					padding: 0 0 $gutter 0
+					&::before
+						left: -40px
+						width: 30px
+						height: 30px	
+					span
+						display: block	
+		&__click
+			p
+				font-size: 1.6rem
+				line-height: 1.2
+				.line
+					display: none
+			.introHolder
+				text-align: center
+				padding: 1rem 0
+				.btn-accent
+					margin: 0 2rem 0 0
+					display: inline-block
+					padding: .5rem 2rem
 
 // ≥576px
 +media-breakpoint-down(xs)
@@ -518,10 +598,28 @@
 		.btn.btn-accent
 			font-size: .9rem
 			padding: .5rem 1rem
-			
-	.header
-		min-height: 1000px
+	
+	.yellowHolder
+		&__left
+			h1, h2
+				font-size: 1.8rem
+			p
+				font-size: 1.1rem
 
+	.header
+		min-height: 1050px
+		.header__block				
+			&__column
+				margin-top: 1rem
+				&__item
+					padding: 1rem 4%
+					img
+						
+					p
+						font-size: 1rem
+						b
+							font-size: 1.1rem
+	
 	.advantages
 		.advantages__post
 			h3
@@ -530,6 +628,7 @@
 				overflow: visible
 			&__text
 				display: none
+	
 	.photos
 		.col-12
 			text-align: center
@@ -578,6 +677,29 @@
 	.acquaintance
 		&__img
 			padding: $gutter*1.5 $gutter
+		
+	.banner
+		&__list
+			ul
+				margin: 0 0 0 15%
+				width: 280px
+				li
+					font-size: 1rem
+					&::before
+						left: -35px
+						width: 25px
+						height: 25px	
+					span
+						display: block
+		&__click
+			padding: 0 5%
+			text-align: center
+			.introHolder
+				text-align: center
+				.btn-accent
+					margin: 1rem 15%
+					display: block
+					padding: .5rem 2rem
 		
 				
 
