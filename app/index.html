@@ -747,6 +747,36 @@
 		</div>
 	</section>
 
+	<section class="partners">
+		<div class="container">
+
+			<div class="introHolder blue">
+				<h2>
+					ЖК Москвы, в которых <span class="nxt"></span>реализованы <span>наши проекты</span>
+				</h2>
+			</div>
+			
+			<div class="owl-carousel partners__carousel">
+				<articles class="block">
+					<img src="img/partners/p1.png" alt="">
+				</articles>
+				<articles class="block">
+					<img src="img/partners/p2.png" alt="">
+				</articles>
+				<articles class="block">
+					<img src="img/partners/p3.png" alt="">
+				</articles>
+				<articles class="block">
+					<img src="img/partners/p4.png" alt="">
+				</articles>
+				<articles class="block">
+					<img src="img/partners/p1.png" alt="">
+				</articles>
+			</div>
+
+		</div>
+	</section>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
  crossorigin="anonymous"></script>
@@ -755,6 +785,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
  crossorigin="anonymous"></script>
 <script src="js/owlCarousel/owl.carousel.min.js"></script>
+<script src="js/equalHeights/jquery.equalheights.min.js"></script>
 
 
 	<script>
@@ -773,11 +804,6 @@
 				}
 			});
 
-			// $(".recomendation").on("initialized.owl.carousel", function () { 
-			// 	setTimeout(function () { 
-			// 		s() 
-			// 	}, 100) 
-			// }),
 			$(".recomendation__carousel").owlCarousel({ 
 				loop: true, 
 				nav: true, 
@@ -785,9 +811,35 @@
 				navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'], 
 				dots: false, 
 				items: 1
-			 
 			});
-				
+
+			
+			
+			$(".partners__carousel").owlCarousel({ 
+				loop: true, 
+				nav: true, 
+				smartSpeed: 700, 
+				navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'], 
+				dots: false, 
+				responsive: { 0: { items: 1 }, 576: { items: 2 }, 768: { items: 3 }, 992: { items: 4 } }
+			});
+			$(".partners__carousel .owl-item").equalHeights();
+			function s() {
+				$(".partners__carousel").each(function () {
+					var e = $(this);
+
+					// var findHeight = e.find(".partners__carousel .owl-stage-outer").outerHeight();
+					var findHeight = e.find(".partners__carousel .owl-stage-outer").outerHeight();
+					e.find(".partners__carousel .owl-item").css("min-height", findHeight);
+					console.log(findHeight);		
+				})
+			};
+			
+			$(".partners__carousel").on("initialized.owl.carousel", function () { 
+				setTimeout(
+					function s() { s() }, 100
+				) 
+				});
 		
 			
 			
