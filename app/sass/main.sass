@@ -608,6 +608,22 @@ a, a:hover
 			line-height: 1
 			b
 				color: $accent
+
+.calculator.inverse::before
+	content: ''
+	position: absolute
+	left: 0
+	top: 0
+	width: 0
+	height: 0
+	background: transparent
+	opacity: 1
+.calculator__block
+	.inverse
+		p
+			color: $text
+			b
+				color: $blue
 	
 .photos
 	position: relative
@@ -1206,9 +1222,9 @@ a, a:hover
 		font-weight: bold
 		padding-bottom: 1rem
 	
-	
 
-// .header, .advantages, .macbook, .calculator, .photos, .design_project, .recomendation, .acquaintance, .price, .banner, .partners
-// 	display: none
+
+.header, .advantages, .macbook, .photos, .design_project, .recomendation, .acquaintance, .price, .banner, .partners, .staps
+	display: none
 
 @import "media" // Always at the end
