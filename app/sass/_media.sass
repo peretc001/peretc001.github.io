@@ -360,7 +360,8 @@
 					display: block
 				.download
 					font-size: 1rem		
-
+	
+			
 // ≥768px
 +media-breakpoint-down(sm)
 	.introHolder
@@ -562,6 +563,7 @@
 			height: auto
 
 	.banner
+		min-height: 1200px
 		&__list
 			ul
 				margin: 0 0 0 30%
@@ -591,7 +593,8 @@
 					display: inline-block
 					padding: .5rem 2rem
 
-// ≥576px
+
+	// ≥576px
 +media-breakpoint-down(xs)
 
 	.introHolder
@@ -700,7 +703,7 @@
 					margin: 1rem 15%
 					display: block
 					padding: .5rem 2rem
-		
+	
 				
 
 /*==========  Mobile First  ==========*/
@@ -716,10 +719,3 @@
 
 // ≤1200px
 +media-breakpoint-up(xl)
-	
-	.partners
-		.owl-nav
-			button.owl-prev
-				left: -10%
-			button.owl-next
-				right: -10%

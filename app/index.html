@@ -25,6 +25,7 @@
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/hamburgers.min.css">
 	<link rel="stylesheet" href="js/owlCarousel/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
 	<link rel="stylesheet" href="css/main.min.css">
 
 </head>
@@ -757,25 +758,39 @@
 			</div>
 			
 			<div class="owl-carousel partners__carousel">
-				<articles class="block">
+				
+				<div class="partners__carousel__content">
 					<img src="img/partners/p1.png" alt="">
-				</articles>
-				<articles class="block">
+				</div>
+				<div class="partners__carousel__content">
 					<img src="img/partners/p2.png" alt="">
-				</articles>
-				<articles class="block">
+				</div>
+				<div class="partners__carousel__content">
 					<img src="img/partners/p3.png" alt="">
-				</articles>
-				<articles class="block">
+				</div>
+				<div class="partners__carousel__content">
 					<img src="img/partners/p4.png" alt="">
-				</articles>
-				<articles class="block">
+				</div>
+				<div class="partners__carousel__content">
 					<img src="img/partners/p1.png" alt="">
-				</articles>
+				</div>
+				<div class="partners__carousel__content">
+					<img src="img/partners/p2.png" alt="">
+				</div>
+				<div class="partners__carousel__content">
+					<img src="img/partners/p3.png" alt="">
+				</div>
+				<div class="partners__carousel__content">
+					<img src="img/partners/p4.png" alt="">
+				</div>
+
 			</div>
 
 		</div>
 	</section>
+	
+	
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -814,7 +829,11 @@
 			});
 
 			
-			
+			$(".partners__carousel").on("initialized.owl.carousel", function () {
+				setTimeout(function() { 
+					partnersServices() 
+					}, 100);
+			});
 			$(".partners__carousel").owlCarousel({ 
 				loop: true, 
 				nav: true, 
@@ -823,25 +842,19 @@
 				dots: false, 
 				responsive: { 0: { items: 1 }, 576: { items: 2 }, 768: { items: 3 }, 992: { items: 4 } }
 			});
-			$(".partners__carousel .owl-item").equalHeights();
-			function s() {
+			function partnersServices() {
 				$(".partners__carousel").each(function () {
-					var e = $(this);
-
-					// var findHeight = e.find(".partners__carousel .owl-stage-outer").outerHeight();
-					var findHeight = e.find(".partners__carousel .owl-stage-outer").outerHeight();
-					e.find(".partners__carousel .owl-item").css("min-height", findHeight);
-					console.log(findHeight);		
-				})
-			};
-			
-			$(".partners__carousel").on("initialized.owl.carousel", function () { 
-				setTimeout(
-					function s() { s() }, 100
-				) 
-				});
-		
-			
+					var 	ths = $(this),
+							thsh = ths.find(".partners__carousel .owl-item img").outerHeight();
+							ths.find(".partners__carousel .owl-item").css("min-height", thsh);					
+							
+				});		
+			}partnersServices();
+			//Resize windows
+			function onResize() {
+				$('.partners__carousel__content').equalHeights();
+			}onResize();
+			window.onresize = function() {onResize()};
 			
 
 		})
