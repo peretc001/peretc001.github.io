@@ -1007,7 +1007,7 @@
 					<div class="col-sm-12 col-md-10 offset-md-2 col-lg-7 offset-lg-0">
 						<div class="row">
 							<div class="col-12 col-sm-2 footer__logo">
-									<a href="/"><img src="img/logo_footer.svg" alt=""></a>
+								<a href="/"><img src="img/logo_footer.svg" alt=""></a>
 							</div>
 							
 							<div class="col-12 col-sm-8 col-md-7 footer__text">
@@ -1064,72 +1064,16 @@
 		</div>
 	</footer>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
- crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
- crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
- crossorigin="anonymous"></script>
-<script src="js/owlCarousel/owl.carousel.min.js"></script>
-<script src="js/equalHeights/jquery.equalheights.min.js"></script>
-
-
-	<script>
-		$(function () {
-
-			//Sticky header menu
-			$(document).scroll(function () {
-				if ($(document).scrollTop() > 100) {
-					$('.header__nav').addClass('sticky animated fadeIn faster');
-					$('.header').addClass('gutter');
-					$('#svg').addClass('black');
-				} else {
-					$('#svg').removeClass('black');
-					$('.header__nav').removeClass('sticky animated fadeIn faster');
-					$('.header').removeClass('gutter');
-				}
-			});
-
-			$(".recomendation__carousel").owlCarousel({ 
-				loop: true, 
-				nav: true, 
-				smartSpeed: 700, 
-				navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'], 
-				dots: false, 
-				items: 1
-			});
-
-			
-			$(".partners__carousel").on("initialized.owl.carousel", function () {
-				setTimeout(function() { 
-					partnersServices() 
-					}, 100);
-			});
-			$(".partners__carousel").owlCarousel({ 
-				loop: true, 
-				nav: true, 
-				smartSpeed: 700, 
-				navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'], 
-				dots: false, 
-				responsive: { 0: { items: 1 }, 576: { items: 2 }, 768: { items: 3 }, 992: { items: 4 } }
-			});
-			function partnersServices() {
-				$(".partners__carousel").each(function () {
-					var 	ths = $(this),
-							thsh = ths.find(".partners__carousel .owl-item img").outerHeight();
-							ths.find(".partners__carousel .owl-item").css("min-height", thsh);					
-							
-				});		
-			}partnersServices();
-			//Resize windows
-			function onResize() {
-				$('.partners__carousel__content').equalHeights();
-			}onResize();
-			window.onresize = function() {onResize()};
-			
-
-		})
-	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+	crossorigin="anonymous"></script>
+	<script src="js/owlCarousel/owl.carousel.min.js"></script>
+	<script src="js/equalHeights/jquery.equalheights.min.js"></script>
+	<script src="js/scripts.min.js"></script>
+		
 </body>
 </html>
