@@ -1121,14 +1121,20 @@
 
 		$("#my-menu").mmenu({ 
 			"extensions": ["theme-black", "pagedim-black", "position-left"], 
-			navbar: 
-			{
-					title: '<img src="img/logo_footer.svg" alt="Ok-Hall">'
-				} 
-	
+			"navbar": { "title": '<img src="img/logo_footer.svg" alt="Ok-Hall">' }
 		}); 
+		
 		var openMenu = $("#my-menu").data("mmenu"); 
-		openMenu.bind("open:finish", function () { $(".hamburger").addClass("is-active") }), openMenu.bind("close:finish", function () { $(".hamburger").removeClass("is-active") });
+		openMenu.bind("open:finish", function () { 
+			$(".hamburger").addClass("is-active");
+			
+		}), openMenu.bind("close:finish", function () { 
+			$(".hamburger").removeClass("is-active") 
+		});
+		$('.mm-menu').bind('touchmove', function (e) { 
+			e.preventDefault() 
+		});
+
 
 		$(".recomendation__carousel").owlCarousel({
 			loop: true,
