@@ -1352,10 +1352,109 @@ a, a:hover
 			font-size: 20px
 			span
 				font-size: 24px
+		img
+			width: 100%
+
+.footer
+	padding: 0
+	position: relative
+	.map
+		width: 100%
+		height: 100%
+		position: absolute
+		left: 0
+		top: 0
+		&::before
+			content: ''
+			position: absolute
+			left: 0
+			top: 0
+			width: 55%
+			height: 100%
+			background: $text
+			opacity: .93
+			z-index: 2
+		
+
+	.container-fluid
+		position: relative
+		height: 100%
+		.row
+			position: relative
+			height: 100%
+
+	.container
+		padding: $gutter*3 0 $gutter*2 0
+		margin: auto
+	.right
+		position: relative
+		z-index: -1
+	p
+		color: #a5a5a5
+		margin-top: 2rem
+		position: relative
+		z-index: 6
+	.footer__logo
+		position: relative
+		text-align: left
+		z-index: 6
+		#svg 
+			margin: 0
+			padding: 0
+			width: 5rem
+			path
+				fill: #fff
+			ellipse, polyline, line
+				stroke: #fff
+	&__text
+		margin: 0 0 0 1rem
+		line-height: 1
+		color: #fff
+		z-index: 6
+		b
+			display: block
+			font-weight: 500
+			padding-bottom: 1rem
+			font-size: 22px
+		span
+			color: #a5a5a5
+			font-size: 1.1rem
+	&__phone
+		text-align: left
+		z-index: 6
+		p
+			padding: 0
+			margin: 0
+			color: #ffffff
+			font-size: 1.5rem
+		a
+			color: #ffffff
+			img
+				display: inline-block
+				width: 1.5rem
+				height: auto
+				margin-right: .5rem
+	&__social
+		z-index: 6
+		a
+			color: #ffffff
+			border: 0.5px solid #ffffff
+			padding: .5rem
+			margin: 0 .3rem
+			display: inline-block
+			width: 3rem
+			text-align: center
+			transition: all .3s ease
+			&:hover
+				color: $accent
+				border-color: $accent
+				transform: scale(1)
+			&:first-child
+				margin: 0 .3rem 0 0
+	
 
 
-
-.header, .advantages, .macbook, .calculator, .photos, .design_project, .recomendation, .acquaintance, .price, .banner, .partners, .staps
-	display: none
+// .header, .advantages, .macbook, .calculator, .photos, .design_project, .recomendation, .acquaintance, .price, .banner, .partners, .staps, .after
+// 	display: none
 
 @import "media" // Always at the end
