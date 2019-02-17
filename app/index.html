@@ -1076,8 +1076,13 @@
 			<li><a href="#">О нас</a></li>
 			<li><a href="#">Блог</a></li>
 			<li><a href="#">Контакты</a></li>
+			<li class="phone">
+				<a href="">+7 (495) <b>404-04-67</b></a>
+			</li>
+			<li class="phone bottom">
+				<a href="">+7 (925) <b>344-25-77</b></a>
+			</li>
 		</ul>
-
 	</nav>
 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
@@ -1114,7 +1119,14 @@
 			}
 		});
 
-		$("#my-menu").mmenu({ extensions: ["theme-black", "pagedim-black", "position-left"], navbar: { title: '<img src="img/logo_footer.svg" alt="OK-Hall">' } }); 
+		$("#my-menu").mmenu({ 
+			"extensions": ["theme-black", "pagedim-black", "position-left"], 
+			navbar: 
+			{
+					title: '<img src="img/logo_footer.svg" alt="Ok-Hall">'
+				} 
+	
+		}); 
 		var openMenu = $("#my-menu").data("mmenu"); 
 		openMenu.bind("open:finish", function () { $(".hamburger").addClass("is-active") }), openMenu.bind("close:finish", function () { $(".hamburger").removeClass("is-active") });
 
