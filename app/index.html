@@ -35,7 +35,7 @@
 </head>
 
 <body>
-
+<div class="page">
 	<header class="header" style="background-image: url('img/Img_1_Header.jpg')">
 
 		<nav class="header__nav">
@@ -91,7 +91,6 @@
 					<!-- End Left -->
 					<!-- Right -->
 					<div class="header__nav__right">
-
 						<ul class="navbar-nav">
 							<li class="nav-item active">
 								<a class="nav-link" href="#">Главная / Цены<span class="sr-only">(current)</span></a>
@@ -1067,11 +1066,25 @@
 			</div>
 		</div>
 	</footer>
-		
+	
+	</div>
+	<nav id="my-menu">
+		<ul>
+			<li class="active"><a href="#">Главная</a></li>
+			<li><a href="#">Портфолио</a></li>
+			<li><a href="#">Услуги</a></li>
+			<li><a href="#">О нас</a></li>
+			<li><a href="#">Блог</a></li>
+			<li><a href="#">Контакты</a></li>
+		</ul>
+
+	</nav>
+
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
 	crossorigin="anonymous">
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/hamburgers.min.css">
+	<link rel="stylesheet" href="css/jquery.mmenu.all.css">
 	<link rel="stylesheet" href="js/owlCarousel/css/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/main.min.css">
 	
@@ -1081,6 +1094,7 @@
 	crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
 	crossorigin="anonymous"></script>
+	<script src="js/mmenu/jquery.mmenu.all.js"></script>
 	<script src="js/owlCarousel/owl.carousel.min.js"></script>
 	<script src="js/equalHeights/jquery.equalheights.min.js"></script>
 	<script>
@@ -1099,6 +1113,10 @@
 				$('.header').removeClass('gutter');
 			}
 		});
+
+		$("#my-menu").mmenu({ extensions: ["theme-black", "pagedim-black", "position-left"], navbar: { title: '<img src="img/logo_footer.svg" alt="OK-Hall">' } }); 
+		var openMenu = $("#my-menu").data("mmenu"); 
+		openMenu.bind("open:finish", function () { $(".hamburger").addClass("is-active") }), openMenu.bind("close:finish", function () { $(".hamburger").removeClass("is-active") });
 
 		$(".recomendation__carousel").owlCarousel({
 			loop: true,

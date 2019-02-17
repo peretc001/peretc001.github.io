@@ -216,10 +216,10 @@ a, a:hover
 		position: absolute
 		left: 0
 		top: 0
-		right: 0
-		bottom: 0
-		background: linear-gradient(to bottom, #000000, #222222)
-		opacity: .75
+		width: 100%
+		height: 190%
+		background: linear-gradient(to bottom, #000000, transparent)
+		opacity: .8
 	.container
 		position: relative
 		.row.border_bottom
@@ -1449,7 +1449,38 @@ a, a:hover
 				transform: scale(1)
 			&:first-child
 				margin: 0 .3rem 0 0
+
 	
+	
+	
+.mm-panel_has-navbar .mm-navbar
+	padding-top: 0
+	border: none
+.mm-navbar__title img
+	width: 4rem
+	margin: 1rem auto
+.mm-panels>.mm-panel>.mm-listview:first-child,.mm-panels>.mm-panel>.mm-navbar+.mm-listview
+	padding-top: 60px
+.mm-listitem
+	border-color: transparent
+	padding-left: 40px
+	margin-left: 30px
+	font-size: 20px
+	transition: color .3s ease
+
+.mm-listitem.active,.mm-listitem:hover,.mm-listitem_selected
+	color: $accent
+.mm-listitem::before
+	content: "\f3a5"
+	font-family: "Font Awesome 5 Free"
+	font-size: 14px
+	display: flex
+	align-items: center
+	transition: color .3s ease
+.mm-listitem_selected>.mm-listitem__text
+	background: 0 0
+	
+
 body
 	opacity: 1
 
