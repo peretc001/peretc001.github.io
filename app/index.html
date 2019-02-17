@@ -5,28 +5,32 @@
 
 	<meta charset="utf-8">
 
-	<title>OptimizedHTML 4</title>
+	<title>OK-Hall - яркие дизайн-проекты квартир</title>
 	<meta name="description" content="">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	
 	<!-- Template Basic Images Start -->
-	<meta property="og:image" content="path/to/image.jpg">
-	<link rel="icon" href="img/favicon/favicon.ico">
-	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+	<link rel="shortcut icon" href="http://ok-hall.ru/wp-content/uploads/2018/04/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="http://ok-hall.ru/wp-content/uploads/2018/04/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="http://ok-hall.ru/wp-content/uploads/2018/04/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="http://ok-hall.ru/wp-content/uploads/2018/04/apple-touch-icon.png">
 	<!-- Template Basic Images End -->
 	
 	<!-- Custom Browsers Color Start -->
 	<meta name="theme-color" content="#000">
 	<!-- Custom Browsers Color End -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-	 crossorigin="anonymous">
-	<link rel="stylesheet" href="css/animate.css">
-	<link rel="stylesheet" href="css/hamburgers.min.css">
-	<link rel="stylesheet" href="js/owlCarousel/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/swiper.min.css">
-	<link rel="stylesheet" href="css/main.min.css">
+	<style>
+		body {
+			opacity: 0;
+			overflow-x: hidden;
+		}
+
+		html {
+			background-color: #111111;
+		}
+	</style>
 
 </head>
 
@@ -1063,17 +1067,99 @@
 			</div>
 		</div>
 	</footer>
+		
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+	crossorigin="anonymous">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/hamburgers.min.css">
+	<link rel="stylesheet" href="js/owlCarousel/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/main.min.css">
+	
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-	crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
 	crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
 	crossorigin="anonymous"></script>
 	<script src="js/owlCarousel/owl.carousel.min.js"></script>
 	<script src="js/equalHeights/jquery.equalheights.min.js"></script>
-	<script src="js/scripts.min.js"></script>
+	<script>
+		$(function() {
+
+
+		//Sticky header menu
+		$(document).scroll(function () {
+			if ($(document).scrollTop() > 100) {
+				$('.header__nav').addClass('sticky animated fadeIn faster');
+				$('.header').addClass('gutter');
+				$('#svg').addClass('black');
+			} else {
+				$('#svg').removeClass('black');
+				$('.header__nav').removeClass('sticky animated fadeIn faster');
+				$('.header').removeClass('gutter');
+			}
+		});
+
+		$(".recomendation__carousel").owlCarousel({
+			loop: true,
+			nav: true,
+			smartSpeed: 700,
+			navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+			dots: false,
+			items: 1
+		});
+
+
+		$(".partners__carousel").on("initialized.owl.carousel", function () {
+			setTimeout(function () {
+				partnersServices()
+			}, 100);
+		});
+		$(".partners__carousel").owlCarousel({
+			loop: true,
+			nav: true,
+			smartSpeed: 700,
+			navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+			dots: false,
+			responsive: {
+				0: {
+					items: 1
+				},
+				576: {
+					items: 2
+				},
+				768: {
+					items: 3
+				},
+				992: {
+					items: 4
+				}
+			}
+		});
+
+		function partnersServices() {
+			$(".partners__carousel").each(function () {
+				var ths = $(this),
+					thsh = ths.find(".partners__carousel .owl-item img").outerHeight();
+				ths.find(".partners__carousel .owl-item").css("min-height", thsh);
+
+			});
+		}
+		partnersServices();
+		//Resize windows
+		function onResize() {
+			$('.partners__carousel__content').equalHeights();
+		}
+		onResize();
+		window.onresize = function () {
+			onResize()
+		};
+
+
+
+
+});
+	</script>
 		
 </body>
 </html>
