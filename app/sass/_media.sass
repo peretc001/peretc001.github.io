@@ -424,6 +424,9 @@
 				height: 100%
 				background: transparent
 				opacity: 0
+		[class*=col-]
+			padding-left: 0
+			padding-right: 0
 			
 // ≥768px
 +media-breakpoint-down(sm)
@@ -684,7 +687,9 @@
 			img
 				display: none
 	
-				
+	.footer
+		[class*=col-]
+			padding-left: 15px		
 
 	// ≥576px
 +media-breakpoint-down(xs)
@@ -804,6 +809,25 @@
 				li
 					font-size: 1rem
 		
+	.footer
+		&__logo
+			text-align: center
+			margin: 0 auto
+		&__text
+			text-align: center
+			font-size: 1rem
+			b
+				font-size: 1.2rem
+		&__phone
+			.block
+				display: block
+		&__social
+			margin-bottom: 1rem
+		.footer__grey__text.bottom
+			margin: 0
+		[class*=col-]
+			padding: 0 $gutter
+			text-align: center
 
 /*==========  Mobile First  ==========*/
 
