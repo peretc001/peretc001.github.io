@@ -1,0 +1,32 @@
+
+@media screen and (max-width: 992px) {
+	.okhall .modal-body p {text-align: center;}
+	.okhall .modal-body p a {color: #111;}
+}
+#send_ok{
+	width:50%;
+	padding:0;
+	margin:5rem auto;
+	text-align:center
+}
+#send_ok p{
+	padding:1rem 0;
+	margin:0;
+	font-weight:300
+}
+#send_ok .far:before{
+	font-size:10rem
+}
+#send_ok .far:before{
+	font-size:10rem
+}
+
+
+.photos .photos__block {padding-bottom:30px;border-bottom: 1px solid #e7e7e7;margin-bottom: 60px;}
+.photos .btn {margin-top: 0;}
+.flickity-button { width: 60px;height: 60px;border-radius: 60px;background-color: #111;}
+.flickity-button-icon path {fill: #fff;}
+.flickity-button.flickity-prev-next-button:hover {background: #ffae04;}
+
+.previous.flickity-prev-next-button {left: -8%;}
+.next.flickity-prev-next-button {right: -8%;}
