@@ -621,7 +621,7 @@
 							<li class="num12">Авторский надзор</li>
 						</ul>
 						<div class="introHolder">
-							<a class="btn btn-accent" href="">Рассчитать стоимость</a>
+							<a href="#" class="btn btn-accent" data-toggle="modal" data-target="#priceModalCenter">Рассчитать стоимость</a>
 							<p><a class="download" href="">Скачать пример</a></p>
 						</div>
 					</div>
@@ -654,7 +654,7 @@
 							<li class="num9">100 рекомендаций по началу ремонта</li>
 						</ul>
 						<div class="introHolder">
-							<a class="btn btn-accent" href="">Рассчитать стоимость</a>
+							<a href="#" class="btn btn-accent" data-toggle="modal" data-target="#priceModalCenter">Рассчитать стоимость</a>
 							<p><a class="download" href="">Скачать пример</a></p>
 						</div>
 					</div>
@@ -687,7 +687,7 @@
 							<li class="num9">100 рекомендаций по началу ремонта</li>
 						</ul>
 						<div class="introHolder">
-							<a class="btn btn-accent" href="">Рассчитать стоимость</a>
+							<a href="#" class="btn btn-accent" data-toggle="modal" data-target="#priceModalCenter">Рассчитать стоимость</a>
 							<p><a class="download" href="">Скачать пример</a></p>
 						</div>
 					</div>
@@ -696,6 +696,86 @@
 
 		</div>
 	</section>
+
+
+
+	<div class="modal fade" id="priceModalCenter" tabindex="-1" role="dialog" aria-labelledby="priceModalCenterTitle"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+			<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.3/css/mdb.min.css" rel="stylesheet">
+			<div class="modal-content okhall">
+				<div class="modal-header">
+					<p><b>Для расчета нам нужно знать:</b></p>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="">
+						<div class="row form__one">
+							<div class="col-6">
+								<p><b>Какой у вас тип жилья?</b></p>
+							</div>
+							<div class="col-2">
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio1" name="home" class="custom-control-input">
+									<label class="custom-control-label" for="customRadio1">квартира</label>
+								</div>
+							</div>
+							<div class="col-2">
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio2" name="home" class="custom-control-input">
+									<label class="custom-control-label" for="customRadio2">таунхайс</label>
+								</div>
+							</div>
+							<div class="col-2">
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio3" name="home" class="custom-control-input">
+									<label class="custom-control-label" for="customRadio3">коттедж</label>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-6">
+								<p><b>Какой у вас тип жилья?</b></p>
+							</div>
+							<div class="col-1">
+								м<sup>2</sup>
+							</div>
+							<div class="col-5">
+								<input type="text" value="">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-6">
+								<p><b>Когда планируете приступить к ремонту?</b></p>
+							</div>
+							<div class="col-2">
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio4" name="when" class="custom-control-input">
+									<label class="custom-control-label" for="customRadio4">в ближайшее время</label>
+								</div>
+							</div>
+							<div class="col-2">
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio5" name="when" class="custom-control-input">
+									<label class="custom-control-label" for="customRadio5">ждем сдачи дома</label>
+								</div>
+							</div>
+							<div class="col-2">
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio6" name="when" class="custom-control-input">
+									<label class="custom-control-label" for="customRadio6">не срочно</label>
+								</div>
+							</div>
+						</div>
+					</form>
+
+				</div>
+			</div>
+	
+		</div>
+	</div>
 
 	<section class="banner" style="background-image:url('img/banner/Img_5_Banner.jpg')">
 		<div class="container">

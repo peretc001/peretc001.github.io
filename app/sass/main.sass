@@ -1604,10 +1604,24 @@ a, a:hover
 			.btn.btn-success
 				margin: 10px auto
 
+	
+
+			.custom-control-input,
+			.custom-control-label
+				cursor: pointer
+			.custom-radio .custom-control-label::before
+				background-color: transparent
+				border: 1px solid #ffae04
+				border-radius: 0
+			.custom-radio .custom-control-input:checked~.custom-control-label::before,
+			.custom-radio .custom-control-input:checked~.custom-control-label::after 
+				background: #ffae04
+				border-radius: 0
+
 body
 	opacity: 1
 
-// .header, .advantages, .macbook, .calculator, .photos, .design_project, .recomendation, .acquaintance, .price, .banner, .partners, .staps, .after, .operator
-// 	display: none
+.header, .advantages, .macbook, .calculator, .photos, .design_project, .recomendation, .acquaintance, .banner, .partners, .staps, .after, .operator
+	display: none
 
 @import "media" // Always at the end
