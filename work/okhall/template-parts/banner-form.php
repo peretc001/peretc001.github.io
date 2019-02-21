@@ -5,7 +5,7 @@
 ?>	
 	<div class="modal-content okhall">
     	<div class="modal-header">
-    		<p><b><?php echo $options['photos__modal__p__intro']; ?></b></p>
+    		<p><b><?php echo $options['banner__modal__p__intro']; ?></b></p>
     		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	          <span aria-hidden="true">&times;</span>
 	        </button>
@@ -24,7 +24,7 @@
 					</form>
 				</div>
 				<div class="col-lg-8">
-					<?php echo $options['photos__modal__text']; ?>
+					<?php echo $options['banner__modal__text']; ?>
 				</div>
 			</div>
 

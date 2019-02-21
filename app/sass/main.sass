@@ -97,6 +97,18 @@ a, a:hover
 		transform: rotate(45deg)
 		transform-origin: 100% 0%
 
+#send_ok
+	width: 50%
+	padding: 0
+	margin: 5rem auto
+	text-align:center
+	p
+		padding: 1rem 0
+		margin: 0
+		font-weight: 300
+	.far:before
+		font-size: 10rem
+
 .introHolder
 	text-align: center
 	margin: 0 auto
@@ -629,18 +641,33 @@ a, a:hover
 	position: relative
 	padding: $gutter*2 0
 	background: $bg
-	.row
-		.col-12
-			padding: $gutter*2 0 $gutter 0
-			border-bottom: 1px solid #e7e7e7
-			margin: 0
-		.col-12:first-child
-			padding: $gutter 0 $gutter 0
-	img
-		width: 100%
-	p
-		font-size: 22px
-		margin-top: 1rem
+	&__block
+		padding-bottom: 30px
+		border-bottom: 1px solid #e7e7e7
+		margin-bottom: 60px
+		img
+			width: 100%
+		p
+			font-size: 22px
+			margin-top: 1rem
+	.btn 
+		margin-top: 0
+
+
+.flickity-button
+	width: 60px
+	height: 60px
+	border-radius: 60px
+	background-color: #111
+.flickity-button-icon path 
+	fill: #fff
+.flickity-button.flickity-prev-next-button:hover
+	background: #ffae04
+.previous.flickity-prev-next-button
+	left: 30px
+.next.flickity-prev-next-button
+	right: 30px
+
 			
 .design_project
 	position: relative
@@ -763,46 +790,22 @@ a, a:hover
 .recomendation
 	position: relative
 	padding: $gutter*2 0
-	&__carousel
+	.container
+		padding: 0
+		.row, .carousel, .carousel-inner, .carousel-item
+			padding: 0
+	.slide
 		padding: $gutter 0
-		.owl-item 
-			padding: 0 $gutter
-			img
-				width: 100%
-		.owl-nav
-			position: absolute
-			left: 0
-			top: 50%
-			transform: translateY(-50%)
-			width: 100%
-			button.owl-next, button.owl-prev
-				width: 60px
-				height: 60px
-				border-radius: 60px
-				background-color: #111111
-				color: #ffffff
-				position: absolute
-				text-align: center
-				font-size: 30px
-				border: none
-				outline: 0
-				&:hover
-					background-color: $accent
-			button.owl-prev
-				left: -4%
-			button.owl-next
-				right: -4%
 
-
-		&__item
-			padding: $gutter*2 0
+		.recomendation__carousel__item
+			padding: $gutter 0
 			position: relative
 			&::before
 				content: ''
 				position: absolute
 				left: 18%
 				top: 0
-				width: 80%
+				right: 0
 				height: 100%
 				background: #ffffff
 			p
@@ -811,9 +814,23 @@ a, a:hover
 				b
 					font-size: 20px
 					font-weight: 700
-			.download
+			a
 				position: relative
 				margin-left: 30px
+				padding: 4px 0
+				&::before
+					content: ''
+					position: absolute
+					left: 0
+					bottom: 2px
+					width: 100%
+					height: 1px
+					background: $blue
+					transition: background-color .3s ease
+				&:hover
+					color: $blue
+					&::before
+						height: 0
 				&::after
 					position: absolute
 					left: -30px
@@ -824,7 +841,44 @@ a, a:hover
 					font-weight: bold
 					font-size: 20px
 					color: $blue
-				
+	.carousel
+		//BOOTSTRAP CAROUSEL
+		.carousel-control-prev, 
+		.carousel-control-next
+			opacity: 1
+			width: 60px
+			height: 60px
+			top: 50%
+			transform: translateY(-50%)
+		.carousel-control-prev
+			left: 30px
+		.carousel-control-next
+			right: 30px
+		.carousel-control-prev-icon,
+		.carousel-control-next-icon
+			background: $text
+			width: 60px
+			height: 60px
+			border-radius: 60px
+			position: relative
+		.carousel-control-prev-icon:hover,
+		.carousel-control-next-icon:hover
+			background: $accent
+		.carousel-control-prev-icon::before,
+		.carousel-control-next-icon::before
+			content: ''
+			position: absolute
+			left: 50%
+			top: 50%
+			transform: translateX(-50%) translateY(-50%)
+			width: 30px
+			height: 30px
+			background-repeat: no-repeat
+		.carousel-control-prev-icon::before
+			background: url(../img/arrow-left.svg)
+		.carousel-control-next-icon::before
+			background: url(../img/arrow-right.svg)
+
 .acquaintance
 	position: relative
 	padding: $gutter*2 0 0 0
@@ -1272,7 +1326,7 @@ a, a:hover
 			margin-right: 30px
 		p
 			font-size: 20px
-			span
+			a
 				color: $accent
 				font-size: 24px
 				font-weight: bold
@@ -1487,6 +1541,68 @@ a, a:hover
 		font-weight: bold
 .phone.bottom.mm-listitem
 	padding-top: 0
+
+//Modal	
+.modal-content
+	padding: 5px 30px 60px 30px
+	border-top: 3px solid #ffae04
+	.modal-header
+		border: none
+		text-align: center
+		justify-content: center
+		p
+			color: #111
+			font-size: 1rem
+			text-align: center
+			b
+				font-size: 1.6rem
+		.close
+			position: absolute
+			right: 20px
+			top: 20px
+
+	.modal-body
+		padding: 0
+		p
+			color: $text
+			font-size: 1.1rem
+			text-align: left
+			padding: 0
+			margin: 5px 0
+			b
+				font-size: 1.4rem
+		form
+			text-align: center
+			.form-control
+				line-height: 1
+				font-size: 20px
+				width: 100%
+				text-align: center
+				color: $text
+				border: .5px solid #ccc
+				font-weight: bold
+			input::-webkit-input-placeholder
+				font-size: 16px
+				color: $text
+				padding: .375rem .75rem
+				line-height: 1
+			input::-moz-placeholder
+				font-size: 16px
+				color: $text
+				padding: .375rem .75rem
+				line-height: 1
+			input:-moz-placeholder
+				font-size: 16px
+				color: $text
+				padding: .375rem .75rem
+				line-height: 1
+			input:-ms-input-placeholder
+				font-size: 16px
+				color: $text
+				padding: .375rem .75rem
+				line-height: 1
+			.btn.btn-success
+				margin: 10px auto
 
 body
 	opacity: 1

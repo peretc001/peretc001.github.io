@@ -21,6 +21,20 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 ?>
 
 <div class="page">
+	<!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+	<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+		<div class="slides"></div>
+		<div class="control_prev">
+			<a class="prev"><img src="/wp-content/themes/okhall/img/arrow-left.svg"></a>
+		</div>
+		<div class="control_next">
+			<a class="next"><img src="/wp-content/themes/okhall/img/arrow-right.svg"></a>
+		</div>
+			<a class="close">×</a>
+		
+		<ol class="indicator"></ol>
+	</div>
+
 	<header class="header" style="background-image:url('<?php echo $options['header__bg__img']; ?>')">
 		
 		<nav class="header__nav">
@@ -174,7 +188,7 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 		<div class="container">
 			
 		<?php 
-			$args = array('post_type' => 'post', 'category__not_in' => array(3));
+			$args = array('post_type' => 'post', 'category__not_in' => array(3,4));
 			$query = new WP_Query($args); 
 
 				if ( $query->have_posts() ) : 
@@ -187,11 +201,11 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 				$image_url = $media->guid;
 
 				$thumbs = get_the_post_thumbnail_url( $post->ID, 'thumbnail' );
-				if ($thumbs) { $thumb = '<p class="advantages__post__img"><a href="'. get_permalink() .'"><img src="'. $thumbs .'" alt=""></p>'; } else {  $thumb = ''; }
+				if ($thumbs) { $thumb = '<p class="advantages__post__img"><a href="'. get_permalink() .'"><img src="'. $thumbs .'" alt=""></a></p>'; } else {  $thumb = ''; }
 			?> 			
 			<div class="row advantages__post" style="background-image: url('<?php echo $image_url; ?>')">
 				<div class="col-8">
-					<?php echo $thumb; ?></a>
+					<?php echo $thumb; ?>
 					<h3><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h3>
 					<p class="advantages__post__text">
 						<?php 
@@ -289,23 +303,12 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 
 
 			<div class="introHolder">
-				<a href="<?php echo $options['photos__btn__href']; ?>" class="btn btn-accent" data-toggle="modal" data-target="#exampleModalCenter"><?php echo $options['photos__btn']; ?></a>
-				<!-- Modal -->
-				<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-				  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-				      
-				    <?php include 'wp-content/themes/okhall/template-parts/catalog-form.php'; ?>
-				      
-				  </div>
-				</div>
+				<a href="#" class="btn btn-accent" data-toggle="modal" data-target="#catalogModalCenter"><?php echo $options['photos__btn']; ?></a>
 			</div>
 
-
-			
 		</div>
 	</section>
 	
-
 	<section class="design_project">
 		<div class="container">
 			<div class="introHolder">
@@ -378,6 +381,69 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 		</div>
 	</section>
 
+	<section class="recomendation" style="background-image:url('<?php echo $options['recomendation__bg__img']; ?>')">
+		<div class="container">
+			<div class="introHolder blue">
+				<h2>
+					<?php echo $options['recomendation__h2__intro']; ?>
+				</h2>
+				<p>
+					<?php echo $options['recomendation__p__intro']; ?>
+				</p>
+			</div>
+			
+			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner">
+					
+				
+				<?php 
+					$args = array('post_type' => 'post', 'category__in' => array(4));
+					$query = new WP_Query($args); 
+						$i = 0;
+						if ( $query->have_posts() ) : 
+
+						while ( $query->have_posts() ) : $query->the_post(); 
+
+						$thumbs = get_the_post_thumbnail_url( $post->ID );
+						if ($thumbs) { $thumb = '<img src="'. $thumbs .'" alt="">'; } else {  $thumb = ''; }
+						$i++;
+					?> 			
+					<div class="carousel-item<?php if($i == '1') { echo ' active'; } ?>">
+						<div class="row no-gutters align-items-center recomendation__carousel__item">
+							<div class="col-md-4">
+								<?php echo $thumb; ?>
+							</div>
+							<div class="col-md-8">
+								<p><b><?php the_title(); ?></b></p>
+								<?php the_content(); ?>
+							</div>
+						</div>
+					</div><!-- end item-->
+
+				<?php endwhile; 
+
+					else : ?>
+					<p><?php esc_html_e( 'Нет постов по вашим критериям.' ); ?></p>
+				<?php endif; ?>
+
+				</div>
+
+				<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		
+					
+
+			
+		</div>
+	</section>
+
 	<section class="acquaintance" style="background-image:url('<?php echo $options['acquaintance__img']; ?>')">
 		<div class="container">
 			<div class="introHolder">
@@ -418,7 +484,6 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 
 		</div>
 	</section>
-
 
 	<section class="price" style="background-image:url('<?php echo $options['price__bg__img']; ?>')">
 		<div class="container">
@@ -641,7 +706,7 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 					<p><?php echo $options['banner__banner__click']; ?> <span class="line"><span class="arrow"></span></span></p>
 				</div>
 				<div class="col-md-4 introHolder">
-					<a href="<?php echo $options['banner__btn__1']; ?>" class="btn btn-accent">Оставить заявку</a>
+					<a href="#" class="btn btn-accent" data-toggle="modal" data-target="#bannerModalCenter">Оставить заявку</a>
 					<a href="<?php echo $options['banner__btn__2']; ?>" class="download">Скачать пример</a>
 				</div>
 			</div>
@@ -772,7 +837,31 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 			<div class="row after__block">
 				<div class="col-12 col-md-6">
 					<img src="<?php echo $options['after__block__img1']; ?>" alt="">
-					<p><?php echo $options['after__block__t1']; ?></p>
+					<div id="links">
+						<p><?php echo $options['after__block__t1']; ?></p>
+						<?php 
+							$gallary = $options['after__gallary'];
+							$gallary_img = explode(";", $gallary);
+							$gallaryCount = count($gallary_img);
+
+							if ($gallary) {
+								echo 	'<script>document.getElementById("foto3d").href = "'. $gallary_img[0] .'"</script>';
+							}
+							for($i = 1; $i < $gallaryCount; $i++) {
+								echo '<div style="display:none;"><a href="'. $gallary_img[$i] .'" data-gallery><img src="'. $gallary_img[$i] .'" alt=""></a></div>';
+							}
+						?>
+					</div>
+					<script>
+						document.getElementById('links').onclick = function (event) {
+								event = event || window.event;
+							var target = event.target || event.srcElement,
+				    		link = target.src ? target.parentNode : target,
+				    		options = {index: link, event: event, toggleControlsOnSlideClick: false},
+							links = this.getElementsByTagName('a');
+							blueimp.Gallery(links, options);
+						};
+					</script>
 				</div>
 				<div class="col-12 col-md-6">
 					<img src="<?php echo $options['after__block__img2']; ?>" alt="">
@@ -790,3 +879,94 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 		</div>
 	</section>
 
+	<link rel="stylesheet" href="/wp-content/themes/okhall/css/blueimp-gallery.css">
+	<script src="/wp-content/themes/okhall/js/blueimp/blueimp-gallery.min.js"></script>
+	
+	<section class="operator" style="background-image: url('<?php echo $options['operator__bg__img']; ?>')">
+		
+		<div class="operator__blur">
+			<div class="container">
+
+				<div class="row align-items-center">
+					<div class="col-md-6">
+						<h2>
+							<?php echo $options['operator__h2__intro']; ?>
+						</h2>
+					</div>
+					<div class="col-md-6">
+						<ul>
+							<?php echo $options['operator__ul_intro']; ?>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="operator__text">
+			<div class="container">
+
+				<div class="row">
+					<div class="col-md-6">
+						<h4>
+							<?php echo $options['operator__text__h4']; ?>
+						</h4>
+						<p class="phone">
+							<?php echo $options['operator__text__phone']; ?>
+						</p>
+						<p>
+							<?php echo $options['operator__text__p']; ?>
+						</p>
+						<div class="introHolder">
+							<a href="#" class="btn btn-accent" data-toggle="modal" data-target="#bannerModalCenter">Оставить заявку</a>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<img src="<?php echo $options['operator__text__img']; ?>" alt="">
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	
+
+<!-- Modal -->
+<div class="modal fade" id="catalogModalCenter" tabindex="-1" role="dialog" aria-labelledby="catalogModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      
+    <?php include 'wp-content/themes/okhall/template-parts/catalog-form.php'; ?>
+      
+  </div>
+</div>
+
+<div class="modal fade" id="bannerModalCenter" tabindex="-1" role="dialog" aria-labelledby="bannerModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      
+    <?php include 'wp-content/themes/okhall/template-parts/banner-form.php'; ?>
+      
+  </div>
+</div>
+
+<!--
+
+<div class="modal fade" id="visualModalCenter" tabindex="-1" role="dialog" aria-labelledby="visualModalCenterTitle" aria-hidden="true">
+  	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+     
+		<div class="modal-content okhall">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+
+			</div>
+		</div>
+	
+	</div>
+</div>
+
+-->
+<!-- End Modal -->

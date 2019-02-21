@@ -78,15 +78,9 @@
 				font-size: 1.7rem
 					
 	.recomendation
-		&__carousel
-			.owl-nav
-				button.owl-prev
-					left: -1%
-				button.owl-next
-					right: -1%	
-			&__item
-				margin: 0 $gutter
-
+		.recomendation__carousel__item
+			min-height: 400px
+		
 	.acquaintance
 		&__block
 			&__about
@@ -281,7 +275,9 @@
 			p
 				font-size: 1.2rem
 				margin-left: 0
-				
+
+	.photos
+							
 	.design_project
 		.container
 			max-width: 780px
@@ -310,12 +306,6 @@
 			.design_project__bottom
 				p
 					margin-left: 20px
-
-	.recomendation
-		&__carousel
-			padding: 0
-			&__item
-				padding: 0
 
 	.acquaintance
 		&__block
@@ -382,7 +372,7 @@
 			padding: 0
 			p
 				font-size: 1rem
-				span,
+				a,
 				b
 					font-size: 1.2rem
 			[class*=col-]
@@ -427,7 +417,14 @@
 		[class*=col-]
 			padding-left: 0
 			padding-right: 0
-			
+
+	.modal-content	
+		.modal-body
+			p
+				text-align: center
+				a
+					color: #111
+
 // ≥768px
 +media-breakpoint-down(sm)
 	.introHolder
@@ -604,25 +601,7 @@
 					margin-left: 0
 	
 	.recomendation
-		&__carousel
-			.owl-nav
-				button.owl-prev
-					left: -3%
-				button.owl-next
-					right: -3%	
-			&__item
-				margin: 0
-				&::before
-					content: ''
-					position: absolute
-					left: 0
-					top: 200px
-					width: 100%
-					height: 100%
-					background: #ffffff
-				p
-					font-size: 1rem
-
+		
 	.acquaintance
 		&__block
 			margin: 1rem 0
@@ -664,7 +643,7 @@
 			padding: 0
 			p
 				font-size: 20px
-				span,
+				a,
 				b
 					font-size: 24px
 
@@ -834,18 +813,33 @@
 
 	.mm-listitem
 		margin-left: 0
-/*==========  Mobile First  ==========*/
+	
+	.flickity-button
+		width: 40px
+		height: 40px
 
+@media screen and (max-width: 350px)
+	.introHolder
+		.btn.btn-accent
+			font-size: .8rem
+	.header
+		min-height: 1200px
+	.banner__list ul
+		width: 260px
+
+
+// /*==========  Mobile First  ==========*/
 // ≤576px
 +media-breakpoint-up(sm)
-
+    
 // ≤768px
 +media-breakpoint-up(md)
-
+    
 // ≤992px
 +media-breakpoint-up(lg)
-	
+    
 
 // ≤1200px
 +media-breakpoint-up(xl)
-	
+
+

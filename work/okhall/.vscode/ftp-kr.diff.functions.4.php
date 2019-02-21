@@ -186,7 +186,6 @@ function okHall_page() { ?>
     	.transp, input.transp { background: Transparent; border: 0.5px dashed #fff; }
     	.white, input.white { color:#fff; }
     	.blc, input.blc { border: 0.5px dashed #000; }
-    	.fwnorm {font-weight: normal;}
     	.row1 {min-height: 100px;}
     	.row2 {min-height: 200px;}
     	.row3 {min-height: 300px;}
@@ -201,7 +200,6 @@ function okHall_page() { ?>
 	   	.admin_top .row .adm_menu p {font-size:1.3rem;font-weight: bold;}
     	.admin_top .row .adm_menu ul {margon:0;padding:0;}
     	.admin_top .row .adm_menu ul li {display:inline-block;margin: 0 10px;font-size: 1.3rem;}
-    	.banner {height: 100%;}
 
     	#submit.button.button-primary { max-width: 130px; font-size: 18px;height:45px;line-height:45px;font-weight: bold; text-shadow: none; position: fixed; top: 50px; right: 50px; z-index: 100;}
     </style>
@@ -264,13 +262,11 @@ function okHall_page() { ?>
 		   				<li><a href="#calc">Калькулятор</a></li>
 		   				<li><a href="#foto">Фото</a></li>
 		   				<li><a href="#dp">Дизайн-проект</a></li>
-		   				<li><a href="#rew">Отзывы</a></li>
 		   				<li><a href="#wm">Красотки</a></li>
 		   				<li><a href="#price">Цены</a></li>
 		   				<li><a href="#ban">Баннер</a></li>
 		   				<li><a href="#stp">Шаги</a></li>
 		   				<li><a href="#aft">Итог</a></li>
-		   				<li><a href="#oper">Оператор</a></li>
 		   			</ul>
 	   			</div>
 	   		</div>
@@ -427,7 +423,7 @@ function okHall_page() { ?>
 				<p style="padding: 50px 0 10px 0">
 					<b>Данный блок редактируется путем добавления или изменения Записей.</b>
 				</p>
-				<p style="padding: 20px 0;background: repeating-linear-gradient(45deg, rgba(255, 105, 180, .4), rgba(255, 105, 180, .4) 10px, transparent 10px, transparent 20px);" class="blc">
+				<p style="padding: 20px 0;" class="blc">
 					Обязательно указывайте Рубрику - <b>Галерея<b>.
 				</p>
 				<p style="padding: 10px 0 10px 0">
@@ -447,10 +443,12 @@ function okHall_page() { ?>
 
 					<div class="modal-content okhall">
 						
-						<p><b><input type='text' class="form-control blc text-center"  name='okHall_settings[photos__modal__p__intro]' value='<?php echo $options['photos__modal__p__intro']; ?>'></b></p>
-						<textarea class="form-control blc fwnorm row2"  name='okHall_settings[photos__modal__text]'><?php echo $options['photos__modal__text']; ?></textarea>
+							<p><b><input type='text' class="form-control blc text-center"  name='okHall_settings[photos__modal__p__intro]' value='<?php echo $options['photos__modal__p__intro']; ?>'></b></p>
+							
+						
+							<textarea class="form-control blc row3"  name='okHall_settings[photos__modal__text]'><?php echo $options['photos__modal__text']; ?></textarea>
+						
 
-					</div>
 				</div>
 			</div>
 	
@@ -525,32 +523,6 @@ function okHall_page() { ?>
 
 		</div>
 	</section>
-
-	<section id="rew" class="recomendation" style="background-image:url('<?php echo $options['recomendation__bg__img']; ?>')">
-		<div class="container">
-			<p>Ссылка на ФОНОВОЕ ИЗОБРАЖЕНИЕ:<br> <input type='text' class="form-control blc" name='okHall_settings[recomendation__bg__img]' value='<?php echo $options['recomendation__bg__img']; ?>'></p>
-			<div class="introHolder blue">
-				<h2>
-					<input type='text' class="text-center form-control blc" name='okHall_settings[recomendation__h2__intro]' value='<?php echo $options['recomendation__h2__intro']; ?>'>
-				</h2>
-				<p>
-					<input type='text' class="text-center form-control blc" name='okHall_settings[recomendation__p__intro]' value='<?php echo $options['recomendation__p__intro']; ?>'>
-				</p>
-
-				<p style="padding: 50px 0 10px 0">
-					<b>Данный блок редактируется путем добавления или изменения Записей.</b>
-				</p>
-				<p style="padding: 20px 0;background: repeating-linear-gradient(45deg, rgba(255, 105, 180, .4), rgba(255, 105, 180, .4) 10px, transparent 10px, transparent 20px);" class="blc">
-					Обязательно указывайте Рубрику - <b>Отзыв<b>.
-				</p>
-				<p style="padding: 10px 0 10px 0">
-					<b>Перейти в <a href="/wp-admin/edit.php">ЗАПИСИ</a></b>
-				</p>
-			</div>
-			
-		</div>
-	</section>
-
 
 	<section id="wm" class="acquaintance" style="background-image:url('<?php echo $options['acquaintance__img']; ?>')">
 
@@ -875,10 +847,12 @@ function okHall_page() { ?>
 				<div class="col-12">
 					<p><input type='text' class="text-center form-control transp white" name='okHall_settings[banner__banner__click]' value='<?php echo $options['banner__banner__click']; ?>'></p>
 				</div>
-				<br><br>
 				<div class="col-12 introHolder  text-center">
 					<div class="row">
 						<div class="col-4 offset-4"><a href="" class="btn btn-accent">Оставить заявку</a></div>
+					</div>
+					<div class="row">
+						<div class="col-4 offset-4"><input type='text' class="text-center form-control transp white" name='okHall_settings[banner__btn__1]' value='<?php echo $options['banner__btn__1']; ?>' placeholder="Адрес ссылки"></p></div>
 					</div>
 					<div class="row">
 						<div class="col-4 offset-4"><a href="" class="download">Скачать пример</a></div>
@@ -888,19 +862,7 @@ function okHall_page() { ?>
 					</div>
 				</div>
 			</div>
-			<br>
-			<div class="row">
-				<div class="col-10 offset-1 col-lg-6 offset-lg-3 text-center">
-
-					<div class="modal-content okhall">
-						
-						<p><b><input type='text' class="form-control blc text-center"  name='okHall_settings[banner__modal__p__intro]' value='<?php echo $options['banner__modal__p__intro']; ?>'></b></p>
-						<textarea class="form-control blc fwnorm row2"  name='okHall_settings[banner__modal__text]'><?php echo $options['banner__modal__text']; ?></textarea>
-
-					</div>
-				</div>
-			</div>
-			<br><br>
+				
 		</div>
 	</section>
 	
@@ -1026,69 +988,6 @@ function okHall_page() { ?>
 					<p><span style="color:#fff">Ссылка на картинку</span><input type='text' class="form-control text-center transp white" name='okHall_settings[after__block__img4]' value='<?php echo $options['after__block__img4']; ?>'></p>
 					<p><textarea class="form-control transp white" name='okHall_settings[after__block__t4]'><?php echo $options['after__block__t4']; ?></textarea></p>
 				</div>
-			</div>
-			<br>
-			<p class="text-center white" style="font-size: 18px;">Ссылки на фотографии 3D визуализации</p>
-			<p class="text-center white" style="font-size: 18px;">Разделитель <span style="font-size: 22px;color: #ffae04">;</span> в конце</p>
-			<div class="row">
-				<div class="col-12 col-md-6 offset-md-3">
-					<textarea class="form-control transp white row3" name='okHall_settings[after__gallary]'><?php echo $options['after__gallary']; ?></textarea>
-				</div>
-			</div>
-
-
-		</div>
-	</section>
-
-	<section id="oper" class="operator" style="background-image: url('<?php echo $options['operator__bg__img']; ?>')">
-		
-			
-		<div class="operator__blur">
-			<div class="container">
-
-				
-				<div class="row align-items-center">
-					<p>Ссылка на ФОНОВОЕ ИЗОБРАЖЕНИЕ:</p>
-					<input type='text' class="form-control blc" name='okHall_settings[operator__bg__img]' value='<?php echo $options['operator__bg__img']; ?>'>
-				
-					<div class="col-md-6">
-						<h2>
-							<input type='text' class="form-control text-center blc" name='okHall_settings[operator__h2__intro]' value='<?php echo $options['operator__h2__intro']; ?>'>
-						</h2>
-					</div>
-					<div class="col-md-6">
-						<ul>
-							<textarea class="form-control blc fwnorm row1" name='okHall_settings[operator__ul_intro]'><?php echo $options['operator__ul_intro']; ?></textarea>
-						</ul>
-					</div>
-				</div>
-
-			</div>
-		</div>
-
-		<div class="operator__text">
-			<div class="container">
-
-				<div class="row">
-					<div class="col-md-6">
-						<h4>
-							<input type='text' class="form-control text-center blc" name='okHall_settings[operator__text__h4]' value='<?php echo $options['operator__text__h4']; ?>'>
-						</h4>
-						<p class="phone">
-							<input type='text' class="form-control text-center blc" name='okHall_settings[operator__text__phone]' value='<?php echo $options['operator__text__phone']; ?>'>
-						</p>
-						<p>
-							<input type='text' class="form-control text-center blc" name='okHall_settings[operator__text__p]' value='<?php echo $options['operator__text__p']; ?>'>
-						</p>
-						<div class="introHolder">
-							<a class="btn btn-accent">Оставить заявку</a>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<input type='text' class="form-control text-center blc" name='okHall_settings[operator__text__img]' value='<?php echo $options['operator__text__img']; ?>' placeholder="ссылка на изображение">
-					</div>
-				</div>
-
 			</div>
 		</div>
 	</section>
