@@ -24,7 +24,7 @@
 		}
 
 		html {
-			background-color: #111111;
+			/* background-color: #111111; */
 		}
 	</style>
 
@@ -702,8 +702,7 @@
 	<div class="modal fade" id="priceModalCenter" tabindex="-1" role="dialog" aria-labelledby="priceModalCenterTitle"
 		aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-			<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.3/css/mdb.min.css" rel="stylesheet">
-			<div class="modal-content okhall">
+			<div class="modal-content price__form">
 				<div class="modal-header">
 					<p><b>Для расчета нам нужно знать:</b></p>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -711,39 +710,39 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form action="">
-						<div class="row form__one">
+					<form action="http://web.autoprkt.ru/send_price.php">
+						<div class="row">
 							<div class="col-6">
 								<p><b>Какой у вас тип жилья?</b></p>
 							</div>
 							<div class="col-2">
-								<div class="custom-control custom-radio">
-									<input type="radio" id="customRadio1" name="home" class="custom-control-input">
-									<label class="custom-control-label" for="customRadio1">квартира</label>
+								<div class="radio">
+									<input id="home" type="radio" name="home" value="квартира">
+									<label for="home">квартира</label>
 								</div>
 							</div>
 							<div class="col-2">
-								<div class="custom-control custom-radio">
-									<input type="radio" id="customRadio2" name="home" class="custom-control-input">
-									<label class="custom-control-label" for="customRadio2">таунхайс</label>
+								<div class="radio">
+									<input id="home2" type="radio" name="home" value="таунхайс">
+									<label for="home2">таунхайс</label>
 								</div>
 							</div>
 							<div class="col-2">
-								<div class="custom-control custom-radio">
-									<input type="radio" id="customRadio3" name="home" class="custom-control-input">
-									<label class="custom-control-label" for="customRadio3">коттедж</label>
+								<div class="radio">
+									<input id="home3" type="radio" name="home" value="коттедж">
+									<label for="home3">коттедж</label>
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-6">
-								<p><b>Какой у вас тип жилья?</b></p>
+								<p><b>Примерная площадь?</b></p>
 							</div>
 							<div class="col-1">
-								м<sup>2</sup>
+								<p class="text-right">м<sup>2</sup></p>
 							</div>
-							<div class="col-5">
-								<input type="text" value="">
+							<div class="col-2 text-left">
+								<input type="text" class="form-control form__one__metr" value="" required>
 							</div>
 						</div>
 						<div class="row">
@@ -751,31 +750,100 @@
 								<p><b>Когда планируете приступить к ремонту?</b></p>
 							</div>
 							<div class="col-2">
-								<div class="custom-control custom-radio">
-									<input type="radio" id="customRadio4" name="when" class="custom-control-input">
-									<label class="custom-control-label" for="customRadio4">в ближайшее время</label>
+								<div class="radio">
+									<input id="time" type="radio" name="time" value="в ближайшее время">
+									<label for="time">в ближайшее время</label>
 								</div>
 							</div>
 							<div class="col-2">
-								<div class="custom-control custom-radio">
-									<input type="radio" id="customRadio5" name="when" class="custom-control-input">
-									<label class="custom-control-label" for="customRadio5">ждем сдачи дома</label>
+								<div class="radio">
+									<input id="time2" type="radio" name="time" value="ждем сдачи дома">
+									<label for="time2">ждем сдачи дома</label>
 								</div>
 							</div>
 							<div class="col-2">
-								<div class="custom-control custom-radio">
-									<input type="radio" id="customRadio6" name="when" class="custom-control-input">
-									<label class="custom-control-label" for="customRadio6">не срочно</label>
+								<div class="radio">
+									<input id="time3" type="radio" name="time" value="не срочно">
+									<label for="time3">не срочно</label>
 								</div>
 							</div>
 						</div>
-					</form>
 
+						<div class="row no-padding">
+							<div class="col-6">
+								<input type="text" class="form-control" value="" placeholder="Ваше имя" required>
+								<input type="tel" class="form-control" value="" placeholder="Телефон" required>
+							</div>
+							<div class="col-6">
+								<button type="submit" class="form__one__button">Отправить</button>
+							</div>
+						</div>
+						<p class="form__one__bottom text-center">
+							В рабочее время (с 10:00 до 20:00) перезвоним в течение 30 минут. В выходные в течение 1 часа
+						</p> 
+					</form>
 				</div>
 			</div>
-	
+			
+			<!-- <div class="modal-content price__form">
+				<div class="modal-header">
+					<div class="form__two__header">
+						<h2>Получите <span>в подарок</span> путеводитель по ремонту</h2>
+						<p>В нем мы собрали 100 СОВЕТОВ для начинающих ремонт</p>
+					</div>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="">
+						<div class="row no-border">
+							<div class="col-6">
+								<input type="email" class="form-control" value="" placeholder="e-mail">
+								<p class="form__two__grey">Оставьте e-mail, чтобы получить советы.<br>Мы не будем доставать рекламой.</p>
+							</div>
+							<div class="col-6">
+								<button type="submit" class="form__one__button">Отправить</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div> -->
+
+			<!-- <div class="modal-content price__form">
+				<div class="modal-header">
+					<div class="form__three__header">
+						<h2>Ваш запрос <span>принят</span>!</h2>
+					</div>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="row no-border no-padding">
+						<div class="col-12">
+							<p class="form__three__text text-center">
+								В рабочее время (с 10:00 до 20:00) перезвоним в течение 30 минут.<br> В выходные в течение 1 часа
+							</p>
+							<p class="form__three__text text-center">
+								Если сейчас нерабочее время, то позвоним завтра с 10:00 до 12:00,<br> предварительно написав в Whatsapp или Viber
+							</p>
+							
+							<p class="form__three__bottom text-center">
+								<span>Не хотите ждать?</span>
+								<br>
+								Звоните или пишите:
+								<br>
+								<b>+7 (925) 344-25-77</b> - Юлия
+							</p>
+						</div>
+					</div>
+				</div>
+			</div> -->
+
+			
 		</div>
-	</div>
+	<!-- </div> -->
 
 	<section class="banner" style="background-image:url('img/banner/Img_5_Banner.jpg')">
 		<div class="container">

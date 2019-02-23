@@ -348,8 +348,8 @@ a, a:hover
 						margin: 0
 						color: #ffffff
 						font-size: 1.5rem
-					a
-						color: #ffffff
+						a
+							color: #ffffff
 						img
 							display: inline-block
 							width: 1.5rem
@@ -1046,41 +1046,14 @@ a, a:hover
 				position: relative
 				line-height: 1.1
 				border-bottom: 1px solid #eeeeee
-				&::before
-					content: ''
+				img
 					position: absolute
 					left: -45px
 					top: 50%
 					transform: translateY(-50%)
 					width: 30px
 					height: 30px
-					
-			li.num1::before
-				background: url('../img/price/1.svg')
-			li.num2::before
-				background: url('../img/price/2.svg')
-			li.num3::before
-				background: url('../img/price/3.svg')
-			li.num4::before
-				background: url('../img/price/4.svg')
-			li.num5::before
-				background: url('../img/price/5.svg')
-			li.num6::before
-				background: url('../img/price/6.svg')
-			li.num7::before
-				background: url('../img/price/7.svg')
-			li.num8::before
-				background: url('../img/price/8.svg')
-			li.num9::before
-				background: url('../img/price/9.svg')
-			li.num10::before
-				background: url('../img/price/10.svg')
-			li.num11::before
-				background: url('../img/price/11.svg')
-			li.num12::before
-				background: url('../img/price/12.svg')
-			li.num13::before
-				background: url('../img/price/13.svg')
+					display: block
 					
 
 		.introHolder
@@ -1450,6 +1423,8 @@ a, a:hover
 		position: relative
 		z-index: 6
 		font-size: 1rem
+		a
+			color: #a5a5a5
 	&__logo
 		position: relative
 		text-align: left
@@ -1479,6 +1454,8 @@ a, a:hover
 			margin: 0
 			color: #ffffff
 			font-size: 1.5rem
+			a
+				color: #ffffff
 		a
 			color: #ffffff
 			img
@@ -1543,7 +1520,7 @@ a, a:hover
 	padding-top: 0
 
 //Modal	
-.modal-content
+.modal-content.okhall-modal
 	padding: 5px 30px 60px 30px
 	border-top: 3px solid #ffae04
 	.modal-header
@@ -1605,23 +1582,191 @@ a, a:hover
 				margin: 10px auto
 
 	
-
-			.custom-control-input,
-			.custom-control-label
+.modal-content.price__form
+	padding: 5px 30px 60px 30px
+	border-top: 3px solid #ffae04
+	width: 100%
+	.modal-header
+		border: none
+		text-align: center
+		justify-content: center
+		padding-bottom: 0
+		p
+			color: #111
+			font-size: 1rem
+			text-align: center
+			b
+				font-size: 1.6rem
+		.close
+			position: absolute
+			right: 20px
+			top: 20px
+		.form__two__header
+			h2
+				font-size: 30px
+				font-weight: bold
+				text-transform: uppercase
+				span
+					color: $accent
+					position: relative
+				span::after
+					content: ''
+					width: 100%
+					clear: both
+					display: block
+			p
+				color: #2faec5
+		.form__three__header
+			h2
+				font-size: 30px
+				font-weight: bold
+				text-transform: uppercase
+				span
+					color: $accent
+					position: relative
+	.modal-body
+		.row
+			border-top: .5px solid #e7e6e6
+			text-align: center
+			padding: $gutter 0
+			p
+				padding: 0
+				margin: 0
+				text-align: left
+				padding: 0 $gutter/2
+				b
+					color: #2faec5
+					font-weight: bold
+					font-size: 1.4rem
+			p.form__one__bottom
+				padding: 0
+			label
+				display: block
 				cursor: pointer
-			.custom-radio .custom-control-label::before
+				position: relative
+				padding: 1.5rem 0 0 0
+				font-size: 1rem
+				line-height: 1
+			input[type=radio] 
+				display: none
+			label:before 
+				content: ""
+				display: inline-block
+				width: 16px
+				height: 16px
+				position: absolute
+				left: 50%
+				transform: translateX(-50%)
+				top: 5px
 				background-color: transparent
 				border: 1px solid #ffae04
 				border-radius: 0
-			.custom-radio .custom-control-input:checked~.custom-control-label::before,
-			.custom-radio .custom-control-input:checked~.custom-control-label::after 
-				background: #ffae04
+			input[type=radio]:checked + label:before
+				background: $accent
+			.form-control
+				line-height: 1
+				font-size: 20px
+				width: 100%
+				text-align: center
+				color: $text
+				border: .5px solid $accent
+				font-weight: normal
 				border-radius: 0
+				margin: 2px 0
+				padding: .3rem .5rem
+				text-align: left
+			input::-webkit-input-placeholder
+				font-size: 20px
+				color: #ccccce
+				padding: .3rem
+				line-height: 1
+			input::-moz-placeholder
+				font-size: 20px
+				color: #ccccce
+				padding: .3rem
+				line-height: 1
+			input:-moz-placeholder
+				font-size: 20px
+				color: #ccccce
+				padding: .3rem
+				line-height: 1
+			input:-ms-input-placeholder
+				font-size: 20px
+				color: #ccccce
+				padding: .3rem
+				line-height: 1
+			.form__one__metr
+				border: none
+				border-bottom: .5px solid #111
+				border-radius: 0
+				text-align: left
+				font-weight: normal
+				font-size: 1rem
+			.form__one__button
+				width: 100%
+				height: 100%
+				background: $accent
+				color: #fff
+				font-size: 1.6rem
+				text-align: center
+				border: none
+				border-radius: 0
+				cursor: pointer
+			.form__two__grey
+				color: #ccccce
+				text-align: center
+				line-height: 1
+				font-weight: normal
+				margin: 5px 0
+			.form__three__text
+				color: #ccccce
+				font-size: 1rem
+				text-align: center
+				line-height: 1.3
+				font-weight: normal
+				margin: 40px 0
+				position: relative
+				&::after
+					content: ''
+					position: absolute
+					width: 50px
+					height: 1px
+					background: #2faec5
+					bottom: -20px
+					left: 50%
+					transform: translateX(-50%)
+					display: block
+				&:first-child
+					margin-top: 0
+				b
+					color: $accent
+			.form__three__bottom
+				color: #ccccce
+				font-size: 1rem
+				text-align: center
+				line-height: 1.5
+				font-weight: normal
+				margin: 40px 0 0 0
+				position: relative
+				span
+					color: $accent
+					font-weight: bold
+					font-size: 1.4rem
+
+		.no-padding
+			padding-bottom: 0
+		.no-border
+			border: none
+			
+
+
+
+			
 
 body
 	opacity: 1
 
-.header, .advantages, .macbook, .calculator, .photos, .design_project, .recomendation, .acquaintance, .banner, .partners, .staps, .after, .operator
-	display: none
+// .header, .advantages, .macbook, .calculator, .photos, .design_project, .recomendation, .acquaintance, .banner, .partners, .staps, .after, .operator, .footer, .price
+// 	display: none
 
 @import "media" // Always at the end

@@ -64,8 +64,28 @@
 		// $('.mm-menu').bind('touchmove', function (e) { 
 		// 	e.preventDefault() 
 		// });
+		$('.step__two').hide();
+		$('.step__three').hide();
 
-		
+		$('#step1').submit(function(e){
+			e.preventDefault();
+			var m_method=$(this).attr('method');
+			var m_action=$(this).attr('action');
+			var m_data=$(this).serialize();
+			$.ajax({
+				type: m_method,
+				url: m_action,
+				data: m_data,
+				success: function(result){
+					$('#step1').hide();
+					$('.price__form').append(result).addClass('animated fadeInDown');
+					setTimeout(function() { 
+						$('.price__form').removeClass('fadeInDown');
+					}, 6000);
+					
+				}
+			});
+		});
 
 		$(".partners__carousel").on("initialized.owl.carousel", function () {
 			setTimeout(function () {

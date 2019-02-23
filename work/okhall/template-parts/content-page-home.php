@@ -6,8 +6,6 @@
  * @since 1.0.0
  */
 
-
-
 $options = get_option( 'okHall_settings' );
 
 $company_desc = $options['description'];
@@ -274,8 +272,9 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 		</div>
 	</section>
 
-	<script type="text/javascript" src="http://web.autoprkt.ru/wp-content/plugins/block-gallery/dist/js/vendors/flickity.min.js?ver=1.1.6"></script>
 	<section class="photos">
+		<script type="text/javascript" src="http://web.autoprkt.ru/wp-content/plugins/block-gallery/dist/js/vendors/flickity.min.js?ver=1.1.6"></script>
+	
 		<div class="container">
 			
 			<div class="introHolder inverse">
@@ -498,7 +497,7 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 
 			<div class="row">
 				<div class="col-lg-4">
-					<div class="price__header">
+					<div class="price__header<?php if ($options['price__block__active'] == '1') { echo ' top'; } ?>">
 						<p class="name"><?php echo $options['price__b1__h1']; ?></p>
 						<p><b><?php echo $options['price__b1__h2']; ?></b></p>
 						<p class="price__header__sum"><?php echo $options['price__b1__h3']; ?></p>
@@ -515,51 +514,51 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 
 					<div class="price__bottom">
 						<ul>
-							<li class="num<?php echo $options['price__b1__n1']; ?>">
-								<?php echo $options['price__b1__b1']; ?>
+							<li>
+								<img src="<?php echo $options['price__b1__n1']; ?>" alt=""> <?php echo $options['price__b1__b1']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b1__n2']; ?>">
-								<?php echo $options['price__b1__b2']; ?>
+							<li>
+								<img src="<?php echo $options['price__b1__n2']; ?>" alt=""> <?php echo $options['price__b1__b2']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b1__n3']; ?>">
-								<?php echo $options['price__b1__b3']; ?>
+							<li>
+								<img src="<?php echo $options['price__b1__n3']; ?>" alt=""> <?php echo $options['price__b1__b3']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b1__n4']; ?>">
-								<?php echo $options['price__b1__b4']; ?>
+							<li>
+								<img src="<?php echo $options['price__b1__n4']; ?>" alt=""> <?php echo $options['price__b1__b4']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b1__n5']; ?>">
-								<?php echo $options['price__b1__b5']; ?>
+							<li>
+								<img src="<?php echo $options['price__b1__n5']; ?>" alt=""> <?php echo $options['price__b1__b5']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b1__n6']; ?>">
-								<?php echo $options['price__b1__b6']; ?>
+							<li>
+								<img src="<?php echo $options['price__b1__n6']; ?>" alt=""> <?php echo $options['price__b1__b6']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b1__n7']; ?>">
-								<?php echo $options['price__b1__b7']; ?>
+							<li>
+								<img src="<?php echo $options['price__b1__n7']; ?>" alt=""> <?php echo $options['price__b1__b7']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b1__n8']; ?>">
-								<?php echo $options['price__b1__b8']; ?>
+							<li>
+								<img src="<?php echo $options['price__b1__n8']; ?>" alt=""> <?php echo $options['price__b1__b8']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b1__n9']; ?>">
-								<?php echo $options['price__b1__b9']; ?>
+							<li>
+								<img src="<?php echo $options['price__b1__n9']; ?>" alt=""> <?php echo $options['price__b1__b9']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b1__n10']; ?>">
-								<?php echo $options['price__b1__b10']; ?>
+							<li>
+								<img src="<?php echo $options['price__b1__n10']; ?>" alt=""> <?php echo $options['price__b1__b10']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b1__n11']; ?>">
-								<?php echo $options['price__b1__b11']; ?>
+							<li>
+								<img src="<?php echo $options['price__b1__n11']; ?>" alt=""> <?php echo $options['price__b1__b11']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b1__n12']; ?>">
-								<?php echo $options['price__b1__b12']; ?>
+							<li>
+								<img src="<?php echo $options['price__b1__n12']; ?>" alt=""> <?php echo $options['price__b1__b12']; ?>
 							</li>
 						</ul>
 						<div class="introHolder">
-							<a class="btn btn-accent" href="<?php echo $options['price__b1__btn__1']; ?>">Рассчитать стоимость</a>
-							<p><a class="download" href="<?php echo $options['price__b1__btn__2']; ?>">Скачать пример</a></p>
+							<a href="#" class="btn btn-accent" data-toggle="modal" data-target="#priceModalCenter">Рассчитать стоимость</a>
+							<p><a class="download" href="<?php echo $options['price__b1__btn__2']; ?>" target="_blank">Скачать пример</a></p>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-4">
-					<div class="price__header top">
+					<div class="price__header<?php if ($options['price__block__active'] == '2') { echo ' top'; } ?>">
 						<p class="name"><?php echo $options['price__b2__h1']; ?></p>
 						<p><b><?php echo $options['price__b2__h2']; ?></b></p>
 						<p class="price__header__sum"><?php echo $options['price__b2__h3']; ?></p>
@@ -575,42 +574,42 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 
 					<div class="price__bottom">
 						<ul>
-							<li class="num<?php echo $options['price__b2__n1']; ?>">
-								<?php echo $options['price__b2__b1']; ?>
+							<li>
+								<img src="<?php echo $options['price__b2__n1']; ?>" alt=""> <?php echo $options['price__b2__b1']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b2__n2']; ?>">
-								<?php echo $options['price__b2__b2']; ?>
+							<li>
+								<img src="<?php echo $options['price__b2__n2']; ?>" alt=""> <?php echo $options['price__b2__b2']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b2__n3']; ?>">
-								<?php echo $options['price__b2__b3']; ?>
+							<li>
+								<img src="<?php echo $options['price__b2__n3']; ?>" alt=""> <?php echo $options['price__b2__b3']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b2__n4']; ?>">
-								<?php echo $options['price__b2__b4']; ?>
+							<li>
+								<img src="<?php echo $options['price__b2__n4']; ?>" alt=""> <?php echo $options['price__b2__b4']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b2__n5']; ?>">
-								<?php echo $options['price__b2__b5']; ?>
+							<li>
+								<img src="<?php echo $options['price__b2__n5']; ?>" alt=""> <?php echo $options['price__b2__b5']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b2__n6']; ?>">
-								<?php echo $options['price__b2__b6']; ?>
+							<li>
+								<img src="<?php echo $options['price__b2__n6']; ?>" alt=""> <?php echo $options['price__b2__b6']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b2__n7']; ?>">
-								<?php echo $options['price__b2__b7']; ?>
+							<li>
+								<img src="<?php echo $options['price__b2__n7']; ?>" alt=""> <?php echo $options['price__b2__b7']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b2__n8']; ?>">
-								<?php echo $options['price__b2__b8']; ?>
+							<li>
+								<img src="<?php echo $options['price__b2__n8']; ?>" alt=""> <?php echo $options['price__b2__b8']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b2__n9']; ?>">
-								<?php echo $options['price__b2__b9']; ?>
+							<li>
+								<img src="<?php echo $options['price__b2__n9']; ?>" alt=""> <?php echo $options['price__b2__b9']; ?>
 							</li>
 						</ul>
 						<div class="introHolder">
-							<a class="btn btn-accent" href="<?php echo $options['price__b2__btn__1']; ?>">Рассчитать стоимость</a>
-							<p><a class="download" href="<?php echo $options['price__b2__btn__2']; ?>">Скачать пример</a></p>
+							<a href="#" class="btn btn-accent" data-toggle="modal" data-target="#priceModalCenter">Рассчитать стоимость</a>
+							<p><a class="download" href="<?php echo $options['price__b2__btn__2']; ?>" target="_blank">Скачать пример</a></p>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-4">
-					<div class="price__header">
+					<div class="price__header<?php if ($options['price__block__active'] == '3') { echo ' top'; } ?>">
 						<p class="name"><?php echo $options['price__b3__h1']; ?></p>
 						<p><b><?php echo $options['price__b3__h2']; ?></b></p>
 						<p class="price__header__sum"><?php echo $options['price__b3__h3']; ?></p>
@@ -627,34 +626,34 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 
 					<div class="price__bottom">
 						<ul>
-							<li class="num<?php echo $options['price__b3__n1']; ?>">
-								<?php echo $options['price__b3__b1']; ?>
+							<li>
+								<img src="<?php echo $options['price__b3__n1']; ?>" alt=""> <?php echo $options['price__b3__b1']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b3__n2']; ?>">
-								<?php echo $options['price__b3__b2']; ?>
+							<li>
+								<img src="<?php echo $options['price__b3__n2']; ?>" alt=""> <?php echo $options['price__b3__b2']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b3__n3']; ?>">
-								<?php echo $options['price__b3__b3']; ?>
+							<li>
+								<img src="<?php echo $options['price__b3__n3']; ?>" alt=""> <?php echo $options['price__b3__b3']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b3__n4']; ?>">
-								<?php echo $options['price__b3__b4']; ?>
+							<li>
+								<img src="<?php echo $options['price__b3__n4']; ?>" alt=""> <?php echo $options['price__b3__b4']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b3__n5']; ?>">
-								<?php echo $options['price__b3__b5']; ?>
+							<li>
+								<img src="<?php echo $options['price__b3__n5']; ?>" alt=""> <?php echo $options['price__b3__b5']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b3__n6']; ?>">
-								<?php echo $options['price__b3__b6']; ?>
+							<li>
+								<img src="<?php echo $options['price__b3__n6']; ?>" alt=""> <?php echo $options['price__b3__b6']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b3__n7']; ?>">
-								<?php echo $options['price__b3__b7']; ?>
+							<li>
+								<img src="<?php echo $options['price__b3__n7']; ?>" alt=""> <?php echo $options['price__b3__b7']; ?>
 							</li>
-							<li class="num<?php echo $options['price__b3__n8']; ?>">
-								<?php echo $options['price__b3__b8']; ?>
+							<li>
+								<img src="<?php echo $options['price__b3__n8']; ?>" alt=""> <?php echo $options['price__b3__b8']; ?>
 							</li>
 						</ul>
 						<div class="introHolder">
-							<a class="btn btn-accent" href="<?php echo $options['price__b3__btn__1']; ?>">Рассчитать стоимость</a>
-							<p><a class="download" href="<?php echo $options['price__b3__btn__2']; ?>">Скачать пример</a></p>
+							<a href="#" class="btn btn-accent" data-toggle="modal" data-target="#priceModalCenter">Рассчитать стоимость</a>
+							<p><a class="download" href="<?php echo $options['price__b3__btn__2']; ?>" target="_blank">Скачать пример</a></p>
 						</div>
 					</div>
 				</div>
@@ -707,7 +706,7 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 				</div>
 				<div class="col-md-4 introHolder">
 					<a href="#" class="btn btn-accent" data-toggle="modal" data-target="#bannerModalCenter">Оставить заявку</a>
-					<a href="<?php echo $options['banner__btn__2']; ?>" class="download">Скачать пример</a>
+					<a href="<?php echo $options['banner__btn__2']; ?>" class="download" target="_blank">Скачать пример</a>
 				</div>
 			</div>
 				
@@ -879,10 +878,9 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 		</div>
 	</section>
 
-	<link rel="stylesheet" href="/wp-content/themes/okhall/css/blueimp-gallery.css">
-	<script src="/wp-content/themes/okhall/js/blueimp/blueimp-gallery.min.js"></script>
-	
 	<section class="operator" style="background-image: url('<?php echo $options['operator__bg__img']; ?>')">
+		<link rel="stylesheet" href="/wp-content/themes/okhall/css/blueimp-gallery.css">
+		<script src="/wp-content/themes/okhall/js/blueimp/blueimp-gallery.min.js"></script>
 		
 		<div class="operator__blur">
 			<div class="container">
@@ -929,14 +927,100 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 			</div>
 		</div>
 	</section>
+	
+	<footer class="footer">
+		<div class="container-fluid">
+			<div class="row">
 
+				<div class="map">
+					<iframe src="https://www.google.com/maps/d/embed?mid=1yamYVGYk9byDIjCbv9hg-F93PS_PBLnk&hl=ru" width="100%" height="100%"></iframe>
+				</div>
+
+				<div class="container">
+					<div class="col-sm-12 offset-0 col-md-10 offset-md-2 col-lg-7 offset-lg-0">
+						<div class="row">
+							<div class="col-12 col-sm-2 footer__logo">
+								<a href="/"><img src="/wp-content/uploads/2019/02/logo_footer.svg" alt="<?php echo bloginfo('name'); ?>"></a>
+							</div>
+							
+							<div class="col-12 col-sm-8 col-md-7 footer__text">
+								<b><?php bloginfo('description'); ?></b>
+								<span><?php echo $options['description']; ?></span>
+							</div>
+							
+						</div>
+				
+						<div class="row">
+							<div class="col-12 col-sm-7 col-md-6 footer__phone">
+								<p class="footer__grey__text">
+									Свяжитесь с нами:
+								</p>
+								<p><?php echo $number_public; ?></p>
+								<p>
+									<?php echo $mobile_public; ?></b>
+									<span class="block">
+									<a href="viber://chat?number=<?php echo $mobile_in; ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/img/header/viber.svg" alt="Viber"></a>
+									<a href="https://wa.me/<?php echo $mobile_in; ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/img/header/whatsapp.svg" alt="Whatsapp"></a>
+									</span>
+								</p>
+							</div>
+							<div class="col-12 col-sm-5 footer__social">
+								<p class="footer__grey__text">
+									Мы в соц сетях:
+								</p>
+								<p>
+									<a href="<?php echo $options['ok_vk']; ?>"><i class="fab fa-vk"></i></a>
+									<a href="<?php echo $options['ok_facebook']; ?>"><i class="fab fa-facebook-f"></i></a>
+									<a href="<?php echo $options['ok_instagramm']; ?>"><i class="fab fa-instagram"></i></a>
+								</p>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-12 col-sm-7 col-md-6">
+								<p class="footer__grey__text bottom">
+									<?php bloginfo('name'); ?> © <?php echo date('Y'); ?> Все права защищены
+								</p>
+							</div>
+							<div class="col-12 col-sm-5">
+								<p class="footer__grey__text bottom">
+									<a href="">Политика конфидициальности</a>
+								</p>
+							</div>
+						</div>
+					</div>
+
+				
+					
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+</div>
+<nav id="my-menu">
+	<ul>
+		<li class="active"><a href="#">Главная</a></li>
+		<li><a href="#">Портфолио</a></li>
+		<li><a href="#">Услуги</a></li>
+		<li><a href="#">О нас</a></li>
+		<li><a href="#">Блог</a></li>
+		<li><a href="#">Контакты</a></li>
+		<li class="phone">
+			<a href="<?php echo $number_in; ?>"><?php echo $number_public; ?></a>
+		</li>
+		<li class="phone bottom">
+			<a href="<?php echo $mobile_in; ?>"><?php echo $mobile_public; ?></b></a>
+		</li>
+	</ul>
+</nav>
 	
 
 <!-- Modal -->
 <div class="modal fade" id="catalogModalCenter" tabindex="-1" role="dialog" aria-labelledby="catalogModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       
-    <?php include 'wp-content/themes/okhall/template-parts/catalog-form.php'; ?>
+    <?php include 'wp-content/themes/okhall/template-parts/modal-catalog.php'; ?>
       
   </div>
 </div>
@@ -944,29 +1028,15 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 <div class="modal fade" id="bannerModalCenter" tabindex="-1" role="dialog" aria-labelledby="bannerModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       
-    <?php include 'wp-content/themes/okhall/template-parts/banner-form.php'; ?>
+    <?php include 'wp-content/themes/okhall/template-parts/modal-banner.php'; ?>
       
   </div>
 </div>
 
-<!--
-
-<div class="modal fade" id="visualModalCenter" tabindex="-1" role="dialog" aria-labelledby="visualModalCenterTitle" aria-hidden="true">
-  	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-     
-		<div class="modal-content okhall">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-
-			</div>
-		</div>
-	
+<div class="modal fade" id="priceModalCenter" tabindex="-1" role="dialog" aria-labelledby="priceModalCenterTitle"
+		aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<?php include 'wp-content/themes/okhall/template-parts/modal-price.php'; ?>
 	</div>
 </div>
-
--->
 <!-- End Modal -->
