@@ -61,16 +61,16 @@ function my_theme_register_required_plugins() {
 
 		// This is an example of how to include a plugin bundled with a theme.
 		array(
-			'name'               => 'Unyson', // The plugin name.
-			'slug'               => 'unysin', // The plugin slug (typically the folder name).
-			'source'             => get_stylesheet_directory() . '/lib/plugins/unyson.2.7.21.zip', // The plugin source.
+			'name'               => 'Block-Gallary', // The plugin name.
+			'slug'               => 'block-gallery', // The plugin slug (typically the folder name).
+			'source'             => get_stylesheet_directory() . '/lib/plugins/block-gallery.zip', // The plugin source.
 			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-			'version'            => '2.7.21', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
+			'version'            => '1.1.6', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
 			'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 			'external_url'       => '', // If set, overrides default API URL and points to an external URL.
-			'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
-		),
+			'is_callable'        => true, // If set, this callable will be be checked for availability to determine if a plugin is active.
+		)
 	);
 
 	/*

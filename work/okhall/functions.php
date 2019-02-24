@@ -103,38 +103,106 @@ add_action( 'after_setup_theme', 'okhall_content_width', 0 );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function okhall_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'okhall' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'okhall' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'okhall_widgets_init' );
+// function okhall_widgets_init() {
+// 	register_sidebar( array(
+// 		'name'          => esc_html__( 'Sidebar', 'okhall' ),
+// 		'id'            => 'sidebar-1',
+// 		'description'   => esc_html__( 'Add widgets here.', 'okhall' ),
+// 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+// 		'after_widget'  => '</section>',
+// 		'before_title'  => '<h2 class="widget-title">',
+// 		'after_title'   => '</h2>',
+// 	) );
+// }
+// add_action( 'widgets_init', 'okhall_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
+
+remove_action('wp_head','feed_links_extra', 3); // убирает ссылки на rss категорий
+remove_action('wp_head','feed_links', 2); // минус ссылки на основной rss и комментарии
+remove_action('wp_head','rsd_link');  // сервис Really Simple Discovery
+remove_action('wp_head','wlwmanifest_link'); // Windows Live Writer
+remove_action('wp_head','wp_generator');  // скрыть версию wordpress
+
+remove_action('wp_head','start_post_rel_link',10,0);
+remove_action('wp_head','index_rel_link');
+remove_action('wp_head','adjacent_posts_rel_link_wp_head', 10, 0 );
+remove_action('wp_head','wp_shortlink_wp_head', 10, 0 );
+
+remove_action( 'wp_head', 'rest_output_link_wp_head');
+remove_action( 'wp_head', 'wp_oembed_add_discovery_links');
+remove_action( 'template_redirect', 'rest_output_link_header', 11, 0 );
+
+
+
 function okhall_scripts() {
-	wp_enqueue_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.7.1/css/all.css');
-	wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css' );
-	wp_enqueue_style( 'hamburger', get_template_directory_uri() . '/css/hamburgers.min.css' );
-	wp_enqueue_style( 'main', get_template_directory_uri() . '/css/main.min.css' );
+	wp_register_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.7.1/css/all.css');
+	wp_register_style( 'animate', get_template_directory_uri() . '/css/animate.css');
+	wp_register_style( 'hamburger', get_template_directory_uri() . '/css/hamburgers.min.css');
+	wp_register_style( 'mmenu', 'https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/7.3.2/jquery.mmenu.all.css');
+	wp_register_style( 'main', get_template_directory_uri() . '/css/main.min.css');
+	wp_register_style( 'insert', get_template_directory_uri() . '/css/insert.css');
 
-	wp_enqueue_script( 'okhall-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'okhall-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_style( 'font-awesome');
+	wp_enqueue_style( 'animate');
+	wp_enqueue_style( 'hamburger');
+	wp_enqueue_style( 'mmenu');
+	wp_enqueue_style( 'main');
+	wp_enqueue_style( 'insert');
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
+	
+	// wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js');
+	// wp_register_script( 'mmenu', 'https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/7.3.2/jquery.mmenu.js');
+	// wp_register_script( 'poper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js');
+	// wp_register_script( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js');
+	// wp_register_script( 'equalHeights', get_template_directory_uri() . '/js/equalHeights/jquery.equalheights.min.js');
+	// wp_register_script( 'flick', get_site_url() . '/wp-content/plugins/block-gallery/dist/js/vendors/flickity.min.js');
+	// wp_register_script( 'marquiz', 'https://script.marquiz.ru/v1.js');
+	// wp_register_script( 'yandex', 'https://api-maps.yandex.ru/2.1/?lang=ru_RU');
+	// wp_register_script( 'myscripts', get_template_directory_uri() . '/js/scripts.min.js');
+
+	// wp_enqueue_script( 'jquery');
+	// wp_enqueue_script( 'mmenu');
+	// wp_enqueue_script( 'poper');
+	// wp_enqueue_script( 'bootstrap');
+	// wp_enqueue_script( 'equalHeights');
+	// wp_enqueue_script( 'flick');
+	// wp_enqueue_script( 'marquiz');
+	// wp_enqueue_script( 'yandex');
+	// wp_enqueue_script( 'myscripts');
+
+	// wp_enqueue_script( 'okhall-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+
+	// wp_enqueue_script( 'okhall-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	// if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+	// 	wp_enqueue_script( 'comment-reply' );
+	// }
+}
+add_action( 'wp_enqueue_scripts', 'okhall_scripts' );
+
+function footer_enqueue_scripts(){
+  remove_action('wp_head','wp_print_scripts');
+  remove_action('wp_head','wp_print_head_scripts',9);
+  remove_action('wp_head','wp_enqueue_scripts',1);
+  add_action('wp_footer','wp_print_scripts',5);
+  add_action('wp_footer','wp_enqueue_scripts',5);
+  add_action('wp_footer','wp_print_head_scripts',5);
+}
+add_action('after_setup_theme','footer_enqueue_scripts');
+
+wp_deregister_script('jquery'); 
+function remove_jq_migrate( $scripts ) {
+if ( ! is_admin() && isset( $scripts->registered['jquery'] ) ) {
+	$script = $scripts->registered['jquery'];
+	if ( $script->deps ) {
+		$script->deps = array_diff( $script->deps, array( 'jquery-migrate' ) );
+	}
 	}
 }
-// add_action( 'wp_enqueue_scripts', 'okhall_scripts' );
-
+add_action( 'wp_default_scripts', 'remove_jq_migrate' );
 /**
  * Implement the Custom Header feature.
  */
@@ -169,7 +237,7 @@ require get_template_directory() . '/tgm/okhall.php';
 //Script upload img from WP Media
 function true_include_okhall_admin() {
 	// у вас в админке уже должен быть подключен jQuery, если нет - раскомментируйте следующую строку:
-	// wp_enqueue_script('jquery');
+	// 
 	// дальше у нас идут скрипты и стили загрузчика изображений WordPress
 	if ( ! did_action( 'wp_enqueue_media' ) ) {
 		wp_enqueue_media();
@@ -321,6 +389,7 @@ function okHall_page() {
 		   				<li><a href="#stp">Шаги</a></li>
 		   				<li><a href="#aft">Итог</a></li>
 		   				<li><a href="#oper">Оператор</a></li>
+		   				<li><a href="#footer">Карта</a></li>
 		   			</ul>
 	   			</div>
 	   		</div>
@@ -1141,6 +1210,91 @@ function okHall_page() {
 			</div>
 		</div>
 	</section>
+
+	<footer id="footer">
+		<div class="container">
+
+			<div class="row">
+
+				<div class="col-md-6 offset-md-3">
+
+					<div class="row">
+						<div class="col-12 text-center">
+							<br><br>
+							<p style="font-size:22px;">Координаты Объектов на карте</p>
+							<p>Определить координаты новой метки можно по <a href="http://webmap-blog.ru/tools/getlonglat-ymap2.html" target="_blank">ссылке</a></p>
+							<?php
+								for ($i = 1; $i < $options['map__point__count']; $i++) {
+									
+								} 
+
+								$num = $i + 1;
+								$list = 'okHall_settings[map__point__'. $num .']';
+
+							
+								
+
+								for ($i = 1; $i < $options['map__point__count']; $i++) {
+									echo '<div class="row">';
+									echo '<div class="col-1"><p>'. $i .'</p></div><div class="col-11"><p><input type="text" class="form-control text-center blc" name="okHall_settings[map__point__'. $i .']" value="'. $options['map__point__'. $i] .'"></p></div>';
+									echo '</div>';
+								} 
+								echo '<div class="row">';
+								echo '<div class="col-1"><p>'. $i .'</p></div><div class="col-11"><p><input type="text" class="form-control text-center blc" name="okHall_settings[map__point__'. $i .']" value="'. $options['map__point__'. $i] .'"></p></div>';
+								echo '</div>';
+							?>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 text-center">
+							<p class="text-center">
+							  <a class="btn btn-primary map_toggle_href">Добавить точку</a>
+							</p>
+						
+						
+							<div id="map_toggle">
+							  
+							    <p class="text-center">Координаты точки:</p>
+							    <p class="text-center">
+									<?php echo '<input type="text" class="form-control text-center blc" name="'. $list .'" value="'. $options['map__point__'. $num] .'">'; ?>
+							    </p>
+							    <p class="text-center">Нужно вручную исправить номер на <span style="font-size: 22px;color: #ffae04"><?php echo $num; ?></span></p>
+							    <p class="text-center"><input type='text' class="form-control text-center blc" name='okHall_settings[map__point__count]' value='<?php echo $options['map__point__count']; ?>'></p>
+							 
+							</div>
+						</div>
+					</div>
+
+							
+
+							  <script>
+							  	$('#map_toggle').hide();
+							  	
+
+									$('.map_toggle_href').click(function() {
+										
+										
+											var $choices = $('#map_toggle');
+											if ($choices.css("display") == "none") {
+											    $choices.slideDown();
+											}
+											else {
+											    $choices.slideUp(); }
+											
+
+									});
+									
+									
+								
+
+							  </script>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+	</footer>
 
 	    <?php
 	        settings_fields( 'okHallCustom' );

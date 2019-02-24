@@ -33,7 +33,7 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 		<ol class="indicator"></ol>
 	</div>
 
-	<header class="header" style="background-image:url('<?php echo $options['header__bg__img']; ?>')">
+	<header class="header" id="header" style="background-image:url('<?php echo $options['header__bg__img']; ?>')">
 		
 		<nav class="header__nav">
 			<div class="container">
@@ -91,19 +91,25 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 							
 							<ul class="navbar-nav">
 								<? 
-									echo preg_replace( '#<li[^>]+><a href="#',  '<li class="nav-item"><a class="nav-link" href="',
-							            wp_nav_menu(
-							                    array(
-													'menu' 				=> 'top-menu', 
-													'container' 		=> 'ul',
-													'container_class'		=> 'navbar-nav',
-													'items_wrap'        => '%3$s',
-													'depth'             => 1,
-													'echo'              => false
-							                         )
-							                    )
-							            );
+									#echo preg_replace( '#<li[^>]+><a href="#',  '<li class="nav-item"><a class="nav-link" href="',
+							            #wp_nav_menu(
+							                   # array(
+													#'menu' 				=> 'top-menu', 
+													#'container' 		=> 'ul',
+													#'container_class'		=> 'navbar-nav',
+													#'items_wrap'        => '%3$s',
+													#'depth'             => 1,
+													#'echo'              => false
+							                        # )
+							                    #)
+							           # );
 								?>
+								<li class="nav-item"><a class="nav-link go_to" href="#header">Главная/Цены</a></li>
+								<li class="nav-item"><a class="nav-link go_to" href="#portfolio">Портфолио</a></li>
+								<li class="nav-item"><a class="nav-link" href="/services/">Услуги</a></li>
+								<li class="nav-item"><a class="nav-link go_to" href="#about">О нас</a></li>
+								<li class="nav-item"><a class="nav-link go_to" href="/blog/">Блог</a></li>
+								<li class="nav-item"><a class="nav-link go_to" href="#footer">Контакты</a></li>
 							</ul>	
 
 							
@@ -230,8 +236,8 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 	
 	<section class="macbook">
 		<div class="container">
-			
 			<div class="introHolder">
+				
 				<h2>
 					<?php echo $options['macbook__h2__intro']; ?>
 				</h2>
@@ -240,9 +246,10 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 				</p>
 			</div>
 			
-			<div class="button-play"><a href="<?php echo $options['macbook__video__href']; ?>"><img src="/wp-content/uploads/2019/02/play.svg" alt=""></a></div>
+				<div class="button-play">
+					<a href="<?php echo $options['macbook__video__href']; ?>"><img src="/wp-content/uploads/2019/02/play.svg" alt=""></a>
+				</div>
 			
-
 		</div>
 	</section>
 	
@@ -272,8 +279,8 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 		</div>
 	</section>
 
-	<section class="photos">
-		<script type="text/javascript" src="http://web.autoprkt.ru/wp-content/plugins/block-gallery/dist/js/vendors/flickity.min.js?ver=1.1.6"></script>
+	<section class="photos" id="portfolio">
+		<script type="text/javascript" src="/wp-content/plugins/block-gallery/dist/js/vendors/flickity.min.js?ver=1.1.6"></script>
 	
 		<div class="container">
 			
@@ -443,7 +450,7 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 		</div>
 	</section>
 
-	<section class="acquaintance" style="background-image:url('<?php echo $options['acquaintance__img']; ?>')">
+	<section class="acquaintance" id="about" style="background-image:url('<?php echo $options['acquaintance__img']; ?>')">
 		<div class="container">
 			<div class="introHolder">
 				<h2><?php echo $options['acquaintance__h2__intro']; ?></h2>
@@ -928,13 +935,11 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 		</div>
 	</section>
 	
-	<footer class="footer">
+	<footer class="footer" id="footer">
 		<div class="container-fluid">
 			<div class="row">
 
-				<div class="map">
-					<iframe src="https://www.google.com/maps/d/embed?mid=1yamYVGYk9byDIjCbv9hg-F93PS_PBLnk&hl=ru" width="100%" height="100%"></iframe>
-				</div>
+				<div id="map_page"></div>
 
 				<div class="container">
 					<div class="col-sm-12 offset-0 col-md-10 offset-md-2 col-lg-7 offset-lg-0">
@@ -1000,12 +1005,12 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 </div>
 <nav id="my-menu">
 	<ul>
-		<li class="active"><a href="#">Главная</a></li>
-		<li><a href="#">Портфолио</a></li>
+		<li class="active"><a class="go_to" href="#header">Главная</a></li>
+		<li><a class="go_to" href="#portfolio" >Портфолио</a></li>
 		<li><a href="#">Услуги</a></li>
-		<li><a href="#">О нас</a></li>
-		<li><a href="#">Блог</a></li>
-		<li><a href="#">Контакты</a></li>
+		<li><a class="go_to" href="#about">О нас</a></li>
+		<li><a href="/blog/">Блог</a></li>
+		<li><a class="go_to" href="#footer">Контакты</a></li>
 		<li class="phone">
 			<a href="<?php echo $number_in; ?>"><?php echo $number_public; ?></a>
 		</li>
