@@ -386,6 +386,7 @@ function okHall_page() {
 		   				<li><a href="#wm">Красотки</a></li>
 		   				<li><a href="#price">Цены</a></li>
 		   				<li><a href="#ban">Баннер</a></li>
+		   				<li><a href="#partners">Партнеры</a></li>
 		   				<li><a href="#stp">Шаги</a></li>
 		   				<li><a href="#aft">Итог</a></li>
 		   				<li><a href="#oper">Оператор</a></li>
@@ -462,7 +463,13 @@ function okHall_page() {
 	<section id="video" class="macbook">
 		<div class="container">
 			
+			
+
 			<div class="introHolder">
+				<div class="radio">
+					<input id="home" type="checkbox" name="okHall_settings[macbook__active]" value="1" <?php if ($options['macbook__active'] == '1') { echo 'checked'; } ?> />
+					<label for="home" style="color: #fff;"><?php if ($options['macbook__active'] == '1') { echo 'Скрыть с главной'; } else { echo 'Показать на главной'; } ?></label>
+				</div>
 				<h2>
 					<input type='text' class="text-center form-control transp white" name='okHall_settings[macbook__h2__intro]' value='<?php echo $options['macbook__h2__intro']; ?>'>
 				</h2>
@@ -1026,6 +1033,52 @@ function okHall_page() {
 		</div>
 	</section>
 	
+	<section id="partners" class="partners">
+		<div class="container">
+
+			<div class="introHolder blue">
+				<h2>
+					ЖК Москвы, в которых <span class="nxt"></span>реализованы <span>наши проекты</span>
+				</h2>
+			</div>
+			
+			<!-- UIkit CSS -->
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css" />
+
+			<!-- UIkit JS -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
+			<div uk-slider="infinite: true">
+				<div class="uk-position-relative">
+					<div class="uk-slider-container">
+						<ul class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-4@m uk-grid">
+		        			 <?php
+								$partners = $options['partners__gallary'];
+								$partners_img = explode(";", $partners);
+								$partnersCount = count($partners_img);
+
+								for($i = 0; $i < $partnersCount; $i++) {
+									echo 	'<li><img src="'. $partners_img[$i] .'"></li>';
+								}
+							?>
+					    </ul>
+					</div>
+
+				    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+	    			<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+				</div>
+			</div>
+
+			<p class="text-center white" style="font-size: 18px;color:#000;">Ссылки на фотографии партнеров<br>
+			<span class="fwnorm" style="color:#000;">(Разделитель <span style="font-size: 22px;color: #ffae04">;</span> между ссылками)</span></p>
+			<div class="row">
+				<div class="col-12 col-md-6 offset-md-3">
+					<textarea class="form-control blc row3" name='okHall_settings[partners__gallary]'><?php echo $options['partners__gallary']; ?></textarea>
+				</div>
+			</div>
+
+		</div>
+	</section>
 
 	<section id="stp" class="staps" style="background-image:url('<?php echo $options['staps__bg__img']; ?>')">
 		<div class="container">
@@ -1302,6 +1355,19 @@ function okHall_page() {
 	        submit_button('Сохранить');
 	    ?>
     </form>
-
+	<div id="toTop"><img src="/wp-content/themes/okhall/img/arrow-top.svg"></div>
+	<script>
+		//to TOP
+		$(window).scroll(function() {
+		 	if($(this).scrollTop() != 0) {
+				$('#toTop').fadeIn();
+			} else {
+				$('#toTop').fadeOut();
+			}
+		});
+		$('#toTop').click(function() {
+			$('body,html').animate({scrollTop:0},800);
+		});
+	</script>
 
 <?php }

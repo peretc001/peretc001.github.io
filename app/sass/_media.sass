@@ -139,7 +139,15 @@
 		&__phone
 			p
 				font-size: 1.2rem
-			
+		.right__title
+			p
+				font-size: 22px
+
+	.recomendation .carousel .recomendation__carousel__item
+		min-height: 380px 
+		padding-right: 70px
+
+
 // ≥992px
 +media-breakpoint-down(md)
 
@@ -417,6 +425,8 @@
 		[class*=col-]
 			padding-left: 0
 			padding-right: 0
+		.right__title
+			left: 0
 
 	.modal-content.okhall-modal
 		.modal-body
@@ -457,7 +467,11 @@
 			padding-bottom: 1rem
 			.col-lg-6
 				padding: 0
-				
+
+	.recomendation .carousel .recomendation__carousel__item
+		min-height: 320px 
+		padding-right: 70px
+		
 // ≥768px
 +media-breakpoint-down(sm)
 	.introHolder
@@ -703,7 +717,21 @@
 		&__text
 			margin: 0 0 0 3rem
 		[class*=col-]
-			padding-left: 15px		
+			padding-left: 15px	
+
+	.recomendation .carousel .recomendation__carousel__item
+		min-height: 800px
+		padding-right: 0px
+	.recomendation .carousel .recomendation__carousel__item
+		margin: 0 auto
+			text-align: center
+	.recomendation .carousel .recomendation__carousel__item::before
+			content: ''
+			position: absolute
+			left: 0
+			top: 200px
+			width: 100%
+			height: 100%
 
 	// ≥576px
 +media-breakpoint-down(xs)
@@ -815,6 +843,12 @@
 					display: block
 					padding: .5rem 2rem
 	
+	.partners
+		.uk-slidenav
+			width: 40px
+			height: 40px
+			line-height: 26px
+	
 	.operator
 		&__blur
 			h2
@@ -843,6 +877,14 @@
 		[class*=col-]
 			padding: 0 $gutter
 			text-align: center
+		.right__title
+			position: relative
+			width: 100%
+			max-width: 100%
+			text-align: center
+			padding: 20px
+			p
+				font-size: 20px
 
 	.mm-listitem
 		margin-left: 0
@@ -850,6 +892,21 @@
 	.flickity-button
 		width: 40px
 		height: 40px
+
+
+	.recomendation .carousel .carousel-control-prev-icon,
+	.recomendation .carousel .carousel-control-next-icon
+		width: 40px
+		height: 40px
+	.recomendation .carousel .carousel-control-prev-icon::before,
+	.recomendation .carousel .carousel-control-next-icon::before
+		width: 20px
+		height: 20px
+	.recomendation .carousel .carousel-control-prev-icon
+		left: -30px
+	.recomendation .carousel .carousel-control-next-icon
+		right: -30px
+
 
 @media screen and (max-width: 350px)
 	.introHolder
@@ -859,7 +916,9 @@
 		min-height: 1200px
 	.banner__list ul
 		width: 260px
-
+	.footer
+		.right__title
+			padding: 20px 10px
 
 // /*==========  Mobile First  ==========*/
 // ≤576px
@@ -875,4 +934,19 @@
 // ≤1200px
 +media-breakpoint-up(xl)
 
-
+@media screen and (min-width: 1300px) 
+	.previous.flickity-prev-next-button
+		left: -8%
+	.next.flickity-prev-next-button
+		right: -8%
+	.recomendation .carousel .carousel-control-prev
+		left: -7%
+	.recomendation .carousel .carousel-control-next
+		right: -7%
+	.recomendation .carousel .recomendation__carousel__item
+		min-height: 450px 
+		padding-right: 0px
+	.uk-slidenav-previous
+		left: -8%
+	.uk-slidenav-next
+		right: -8%

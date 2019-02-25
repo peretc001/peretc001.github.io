@@ -106,8 +106,8 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 								?>
 								<li class="nav-item"><a class="nav-link go_to" href="#header">Главная/Цены</a></li>
 								<li class="nav-item"><a class="nav-link go_to" href="#portfolio">Портфолио</a></li>
-								<li class="nav-item"><a class="nav-link" href="/services/">Услуги</a></li>
-								<li class="nav-item"><a class="nav-link go_to" href="#about">О нас</a></li>
+								<li class="nav-item"><a class="nav-link go_to" href="#services">Услуги</a></li>
+								<li class="nav-item"><a class="nav-link" href="/about/">О нас</a></li>
 								<li class="nav-item"><a class="nav-link go_to" href="/blog/">Блог</a></li>
 								<li class="nav-item"><a class="nav-link go_to" href="#footer">Контакты</a></li>
 							</ul>	
@@ -117,9 +117,9 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 							<div class="header__nav__right__items">
 								<div class="social">
 									<p>
-										<a href="<?php echo $options['ok_vk']; ?>"><i class="fab fa-vk"></i></a>
-										<a href="<?php echo $options['ok_facebook']; ?>"><i class="fab fa-facebook-f"></i></a>
-										<a href="<?php echo $options['ok_instagramm']; ?>"><i class="fab fa-instagram"></i></a>
+										<a href="<?php echo $options['ok_vk']; ?>" target="_blank"><i class="fab fa-vk"></i></a>
+										<a href="<?php echo $options['ok_facebook']; ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
+										<a href="<?php echo $options['ok_instagramm']; ?>" target="_blank"><i class="fab fa-instagram"></i></a>
 									</p>
 								</div>
 								<div class="phone">
@@ -234,7 +234,7 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 		</div>
 	</section>
 	
-	<section class="macbook">
+	<section class="macbook<?php if ($options['macbook__active'] == '') { echo ' d-none'; } ?>">
 		<div class="container">
 			<div class="introHolder">
 				
@@ -280,7 +280,7 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 	</section>
 
 	<section class="photos" id="portfolio">
-		<script type="text/javascript" src="/wp-content/plugins/block-gallery/dist/js/vendors/flickity.min.js?ver=1.1.6"></script>
+		<script src="/wp-content/plugins/block-gallery/dist/js/vendors/flickity.min.js?ver=1.1.6"></script>
 	
 		<div class="container">
 			
@@ -491,7 +491,7 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 		</div>
 	</section>
 
-	<section class="price" style="background-image:url('<?php echo $options['price__bg__img']; ?>')">
+	<section class="price" style="background-image:url('<?php echo $options['price__bg__img']; ?>')" id="services">
 		<div class="container">
 			<div class="introHolder blue">
 				<h2>
@@ -720,6 +720,45 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 		</div>
 	</section>
 
+	<section class="partners">
+		<div class="container">
+
+			<div class="introHolder blue">
+				<h2>
+					ЖК Москвы, в которых <span class="nxt"></span>реализованы <span>наши проекты</span>
+				</h2>
+			</div>
+			<!-- UIkit CSS -->
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css" />
+
+			<!-- UIkit JS -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
+			<div uk-slider="infinite: true">
+				<div class="uk-position-relative">
+					<div class="uk-slider-container">
+						<ul class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-4@m uk-grid">
+		        			 <?php
+								$partners = $options['partners__gallary'];
+								$partners_img = explode(";", $partners);
+								$partnersCount = count($partners_img);
+
+								for($i = 0; $i < $partnersCount; $i++) {
+									echo 	'<li><img src="'. $partners_img[$i] .'"></li>';
+								}
+							?>
+					    </ul>
+					</div>
+
+				    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+	    			<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+				</div>
+			</div>
+			
+		
+		</div>
+	</section>
+
 	<section class="staps" style="background-image:url('<?php echo $options['staps__bg__img']; ?>')">
 		<div class="container">
 			<div class="introHolder">
@@ -887,7 +926,7 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 
 	<section class="operator" style="background-image: url('<?php echo $options['operator__bg__img']; ?>')">
 		<link rel="stylesheet" href="/wp-content/themes/okhall/css/blueimp-gallery.css">
-		<script src="/wp-content/themes/okhall/js/blueimp/blueimp-gallery.min.js"></script>
+		<script async src="/wp-content/themes/okhall/js/blueimp/blueimp-gallery.min.js"></script>
 		
 		<div class="operator__blur">
 			<div class="container">
@@ -939,6 +978,10 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 		<div class="container-fluid">
 			<div class="row">
 
+				<div class="right__title">
+					<p>Дома в которых сделаны наши интерьеры</p>
+				</div>
+
 				<div id="map_page"></div>
 
 				<div class="container">
@@ -974,9 +1017,9 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 									Мы в соц сетях:
 								</p>
 								<p>
-									<a href="<?php echo $options['ok_vk']; ?>"><i class="fab fa-vk"></i></a>
-									<a href="<?php echo $options['ok_facebook']; ?>"><i class="fab fa-facebook-f"></i></a>
-									<a href="<?php echo $options['ok_instagramm']; ?>"><i class="fab fa-instagram"></i></a>
+									<a href="<?php echo $options['ok_vk']; ?>" target="_blank"><i class="fab fa-vk"></i></a>
+									<a href="<?php echo $options['ok_facebook']; ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
+									<a href="<?php echo $options['ok_instagramm']; ?>" target="_blank"><i class="fab fa-instagram"></i></a>
 								</p>
 							</div>
 						</div>
@@ -994,10 +1037,8 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 							</div>
 						</div>
 					</div>
-
-				
-					
 				</div>
+
 			</div>
 		</div>
 	</footer>
@@ -1007,8 +1048,8 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 	<ul>
 		<li class="active"><a class="go_to" href="#header">Главная</a></li>
 		<li><a class="go_to" href="#portfolio" >Портфолио</a></li>
-		<li><a href="#">Услуги</a></li>
-		<li><a class="go_to" href="#about">О нас</a></li>
+		<li><a class="go_to" href="#services">Услуги</a></li>
+		<li><a href="/about/">О нас</a></li>
 		<li><a href="/blog/">Блог</a></li>
 		<li><a class="go_to" href="#footer">Контакты</a></li>
 		<li class="phone">
