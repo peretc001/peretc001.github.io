@@ -25,7 +25,7 @@ web разработкой, владею навыками
 
 <div style="text-align:center;">
 <h1  style="text-align:center;">Верстка</h1>
-<p align="center"><a style="text-align:center" href="http://web.autoprkt.ru"><img src="https://peretc001.github.io/work/okhall/img/screen.jpg" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
+<p align="center"><a style="text-align:center" href="http://web.autoprkt.ru"><img src="https://peretc001.github.io/work/okhall/screen.jpg" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
 <p><strong>Верстка и натяжка на Wordpress | <a href="http://web.autoprkt.ru">http://web.autoprkt.ru/</a></strong></p>
 <ul type="none">
 	<li>99% информации можно поменять в админке</li>
