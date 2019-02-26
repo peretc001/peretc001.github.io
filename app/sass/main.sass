@@ -730,7 +730,7 @@ a, a:hover
 		height: 100%
 		background-image: url('../img/design_project/Img_3_Design_project_1.jpg')
 		background-size: cover
-		background-position: left top
+		background-position: center top
 		background-repeat: no-repeat
 		opacity: .2
 	&::after
@@ -742,7 +742,7 @@ a, a:hover
 		height: 100%
 		background-image: url('../img/design_project/Img_3_Design_project_2.jpg')
 		background-size: cover
-		background-position: left top
+		background-position: center top
 		background-repeat: no-repeat
 		opacity: .2
 	.container, .row
@@ -1850,10 +1850,46 @@ a, a:hover
 	height: 30px
 	border: none
 	position: fixed
-	bottom: 20px
-	right: 20px
+	bottom: 40px
+	right: 40px
 	cursor: pointer
 	display: none
+	p 
+		position: relative
+		padding: 0
+		margin: 0
+		width: 50px
+		height: 50px
+		text-align: center
+		z-index: 2
+		display: block
+		&::before
+			content: ''
+			position: absolute
+			left: 0
+			top: 0
+			background: #fff
+			width: 50px
+			height: 50px
+			border-radius: 50%
+			opacity: .4
+			transition: opacity .3s ease
+		&::after
+			content: ''
+			position: absolute
+			left: 50%
+			top: 50%
+			transform: translateX(-50%) translateY(-50%)
+			background-image: url('../img/arrow-top.svg')
+			background-position: center
+			background-repeat: no-repeat
+			background-size: 25px
+			width: 25px
+			height: 25px
+			opacity: 1
+
+		&:hover::before
+    		opacity: .8
 
 
 
