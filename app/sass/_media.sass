@@ -1,6 +1,5 @@
 @import "vars"
 
-
 /*==========  Desktop First  ==========*/
 
 // ≥1200px
@@ -24,15 +23,16 @@
 			.yellowHolder__right__old
 				font-size: 1.4rem
 
-	.header 
-		min-height: 600px
-		.header__nav 
+	.nav_menu
 			&__left
 				&__text
 					b
 						font-size: 18px
 					span
 						font-size: 1rem
+	
+	.header 
+		min-height: 600px
 		.header__block
 			&__column
 				&__item
@@ -178,59 +178,72 @@
 			.yellowHolder__right__text
 				font-size: 1rem
 
-	.header
-		min-height: 600px
-		.header__nav 
-			&__left
-				width: 10%
-				&__text
-					position: absolute
-					left: 50%
-					top: 0
-					transform: translateX(-50%)
-					text-transform: uppercase
-					color: $accent
-					span
-						display: none
-		
-			&__right
-				display: flex
-				flex-direction: row
-				justify-content: flex-start
-				align-items: center
-				width: 90%
+	.nav_menu
+		padding: $gutter/2 0 0 0
+		min-height: 100px
+		&__left
+			width: 10%
+			&__logo
+				#svg
+					width: 4rem
+			&__text
+				display: none
+	
+		&__right
+			flex-direction: row
+			justify-content: center
+			align-items: center
+			width: 90%
+			.navbar-nav
+				width: 100%
 				margin: auto
-				.navbar-nav
-					margin: 0 5%
-					.nav-item
-						.nav-link
-							font-size: .9rem
-							margin-top: 2rem
-							padding: 0 0 2rem 0
-				&__items
-					.social
+				padding: 0 5%
+				
+				.nav-item
+					.nav-link
+						font-size: .9rem
+						padding: 1.5rem 0
+			&__items
+				width: 10%
+				justify-content: center
+				.social
+					display: none
+				.phone
+					p
 						display: none
-					.phone
-						p
-							display: none
-						p.d-lg-none
-							display: inline-block
-							a
-								font-size: 2rem
+					p.d-lg-none
+						display: block
+						justify-content: center
+						transition: all .5s ease
+						a
+							font-size: 2rem
+							margin: 0
 
-		.header__nav.sticky
-			.header__nav__right
-				.navbar-nav
-					margin: 0 5%
-					.nav-item
-						.nav-link
-							font-size: .9rem
-							margin-top: 0
-							padding: 2rem 0
-				&__items
-					width: 10%
-					
-		.header__block				
+	.nav_menu.is-sticky
+		.nav_menu__left
+			width: 10%
+		.nav_menu__right
+			width: 90%
+			.nav_menu__right__items
+				width: 10%
+				justify-content: center
+				.social
+					display: none
+				p
+					display: none
+				p.d-lg-none
+					display: block
+					justify-content: center
+					transform: scale(.8)
+					text-align: center
+	
+	.clearfix
+		padding-top: 95px			
+		
+	.header
+		min-height: 800px					
+		.header__block	
+			padding-top: 60px			
 			&__column
 				margin-top: 3rem
 				&__item
@@ -498,70 +511,53 @@
 				span
 					font-size: 1.4rem
 	
-	.header
-		min-height: 1000px
-		.header__nav
-			padding: $gutter/2 0
-			.row
-				display: flex
-				flex-direction: row
-				justify-content: space-between
-			.mobile__menu
-				display: flex
-				width: 20%
-			&__left
-				width: 20%
-				justify-content: center
-				&__logo
-					a
-						display: flex
-						align-items: center
-						text-align: center
-					#svg
-						width: 3rem
-				&__text
-					display: none
-			&__right
-				width: 20%
-				margin: 0
-				justify-content: center
-				.navbar-nav
-					display: none
-				
-		.header__nav.sticky
-			.row
-				display: flex
-				flex-direction: row
-				justify-content: space-between
-			.mobile__menu
-				width: 20%
-				.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
-					background-color: $text
-			.header__nav__left
-				width: 20%
-				justify-content: center
-				&__logo
-					#svg
-						width: 3rem
-			.header__nav__right
-				width: 20%
-				margin: 0
-				justify-content: center
-				.navbar-nav
-					display: none
+	.nav_menu
+		padding: 0
+		.row
+			padding: $gutter/6 0
+		.mobile__menu
+			display: flex
+			align-items: center
+			width: 15%
+		.nav_menu__left
+			width: 70%
+			justify-content: center
+		.nav_menu__right
+			width: 15%
+			.navbar-nav
+				display: none
+			
+	.nav_menu.is-sticky
+		padding: 0
+		min-height: 30px
+		.row
+			padding: $gutter/6 0
+		.mobile__menu
+			display: flex
+			width: 15%
+		.nav_menu__left
+			width: 70%
+			justify-content: center
+		.nav_menu__right
+			width: 15%
+
+	.clearfix
+		padding-top: 95px			
 		
-		.header__block				
+	.header
+		min-height: 1100px
+		.header__block	
+			padding-top: 10px			
 			&__column
 				margin-top: 2rem
 				&__item
 					padding: 0.5rem 5%
-					
-
+	
 	.advantages
 		.container
-			padding: 3rem 0
+			padding: 1rem 0
 		.advantages__post
-			align-items: center
+			align-items: flex-end
 			h3
 				font-size: 18px
 				white-space: nowrap
@@ -759,7 +755,7 @@
 				font-size: 1.1rem
 
 	.header
-		min-height: 1050px
+		min-height: 1150px
 		.header__block				
 			&__column
 				margin-top: 1rem
@@ -774,12 +770,20 @@
 	
 	.advantages
 		.advantages__post
+			height: auto
+			padding: 3rem 0 .5rem 0
+			align-items: center
+			background-position: left center
 			h3
 				font-size: 18px
 				white-space: normal
 				overflow: visible
+			p
+				font-size: 1rem
+				line-height: 1
 			&__text
-				display: none
+				height: auto
+				overflow: hidden
 	
 	.photos
 		.col-12
@@ -923,7 +927,7 @@
 		.btn.btn-accent
 			font-size: .8rem
 	.header
-		min-height: 1200px
+		min-height: 1250px
 	.banner__list ul
 		width: 260px
 	.footer

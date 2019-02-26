@@ -11,12 +11,11 @@
  *
  * @package okhall
  */
-
-get_header();
+@include 'header-page-home.php';
 ?>
 	
 
-		<?php
+		<?php 
 		while ( have_posts() ) :
 			the_post();
 

@@ -14,10 +14,9 @@
 
 get_header();
 ?>
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<p class="text-center"><b>Блог</b></p>
 
-		<?php
+	<?php
 		if ( have_posts() ) : 
 
 			if ( is_home() && ! is_front_page() ) : get_template_part( 'template-parts/content', 'blog' ); endif;
@@ -27,10 +26,7 @@ get_header();
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	?>
 
 <?php
 get_sidebar();

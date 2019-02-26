@@ -18,9 +18,9 @@
 							<input type="text" name="name" class="form-control" placeholder="Имя" />
 						</div>
 						<div class="form-group">
-							<input type="email" name="email" class="form-control" required="true" placeholder="Email *" />
+							<input type="email" name="email" class="form-control" required placeholder="Email *" />
 						</div>
-						<button type="sumbit" class="btn btn-success">Отправить</button>
+						<button type="submit" class="btn btn-success">Отправить</button>
 					</form>
 				</div>
 				<div class="col-lg-8">

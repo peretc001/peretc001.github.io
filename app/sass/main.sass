@@ -213,6 +213,254 @@ a, a:hover
 		.yellowHolder__right__text
 			font-size: 1.2rem
 
+.nav_menu 
+	padding: $gutter 0 0 0
+	box-sizing: border-box
+	position: fixed
+	z-index: 999
+	margin: 0 auto
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	min-height: 160px
+	&::before
+		content: ''
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 0
+		background: #fff
+		transition: all .3s linear
+	.row
+		border-bottom: 1px solid #fff
+	.mobile__menu
+		display: none
+	&__left
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+		align-items: center
+		width: 42%
+		&__logo
+			margin: 0
+			padding: 0
+			#svg
+				margin: 0
+				padding: 0
+				width: 5rem
+				transition: all .5s ease
+				path
+					fill: #fff
+					transition: all .3s ease
+				ellipse, polyline, line
+					stroke: #fff
+					transition: all .3s ease
+		&__text
+			width: 85%
+			margin: 0
+			padding: 0 2rem
+			line-height: 1
+			box-sizing: border-box
+			b
+				display: block
+				font-weight: 500
+				padding-bottom: 1rem
+				font-size: 22px
+				color: #fff
+			span
+				color: #a5a5a5
+				font-size: 1.1rem
+	&__right
+		display: flex
+		flex-direction: column-reverse
+		width: 58%
+		.navbar-nav
+			margin: 0
+			padding: 0
+			display: flex
+			flex-direction: row
+			justify-content: space-between
+			width: 100%
+			.nav-item
+				list-style-type: none
+				padding: 0
+				&:first-child
+					margin: 0
+				.nav-link
+					color: #ffffff
+					padding: 0
+					text-transform: uppercase
+					font-size: 1rem
+					font-weight: 500
+					position: relative
+					padding: 1rem 0
+					transition: color .3s ease
+					&:hover
+						color: $accent
+					&::after
+						content: ''
+						position: absolute
+						left: 0
+						bottom: -2px
+						width: 100%
+						height: 3px
+						border-radius: 6px
+						background-color: $accent
+						transform: scale(0)
+						transition: all .3s ease
+					&:hover::after
+						content: ''
+						position: absolute
+						left: 0
+						bottom: -2px
+						width: 100%
+						height: 3px
+						border-radius: 6px
+						background-color: $accent
+						transform: scale(1)
+
+		&__items
+			display: flex
+			flex-direction: row
+			align-items: flex-end
+			justify-content: space-between
+			.social
+				transition: all .2s ease
+				a
+					color: #ffffff
+					border: 0.5px solid #ffffff
+					padding: .5rem
+					margin: 0 .3rem
+					display: inline-block
+					width: 3rem
+					text-align: center
+					transition: all .3s ease
+					&:hover
+						color: $accent
+						border-color: $accent
+						transform: scale(1)
+					&:first-child
+						margin: 0 .3rem 0 0
+			.phone
+				text-align: right
+				transition: all .4s ease
+				p
+					padding: 0
+					margin: 0
+					color: #ffffff
+					font-size: 1.5rem
+					line-height: 1.3
+					a
+						color: #ffffff
+					img
+						display: inline-block
+						width: 1.5rem
+						height: auto
+						margin-right: .5rem
+
+.is-sticky
+	line-height: 1
+	padding: 0
+	transition: all .4s linear
+.nav_menu.is-sticky
+	min-height: 80px
+	&::before
+		height: 100%
+	.row
+		border-bottom: none
+	.mobile__menu
+		.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
+			transition: background-color .3s ease
+			background-color: #000
+	.nav_menu__left
+		width: 15%
+		&__logo
+			#svg
+				transform: scale(.8)
+				path
+					fill: #000
+				ellipse, polyline, line
+					stroke: #000
+		&__text
+			display: none
+
+	.nav_menu__right
+		display: flex
+		flex-direction: row
+		justify-content: center
+		align-items: center
+		width: 85%
+		margin: auto
+		.navbar-nav
+			margin: 0
+			position: relative
+			.nav-item
+				.nav-link
+					color: $text
+					padding: 2rem 0
+					&:hover
+						color: $accent
+		.nav_menu__right__items
+			position: relative
+			width: 50%
+			justify-content: flex-end
+			.social
+				display: none
+			.phone
+				p
+					font-size: 1.1rem
+					color: $text
+					transition: color .5s ease
+				a
+					color: $text
+					transition: color .5s ease
+
+.nav_menu.inverse
+	background: #fff
+	.row
+		border-bottom: 1px solid #000
+	.mobile__menu
+		.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
+			transition: background-color .3s ease
+			background-color: #000
+	.nav_menu__left
+		&__logo
+			#svg
+				path
+					fill: #000
+				ellipse, polyline, line
+					stroke: #000
+		&__text
+			b
+				color: #000
+			span
+				color: #888
+	.nav_menu__right
+		.navbar-nav
+			.nav-item
+				.nav-link
+					color: #000
+					&:hover
+						color: $accent
+		&__items
+			.social
+				a
+					color: #000
+					border: 0.5px solid #000
+					&:hover
+						color: $accent
+						border-color: $accent
+			.phone
+				p
+					color: #000
+					a
+						color: #000
+
+.clearfix
+	padding-top: 160px			
+
 .header
 	display: flex
 	flex-direction: column
@@ -234,182 +482,9 @@ a, a:hover
 		opacity: .8
 	.container
 		position: relative
-		.row.border_bottom
-			border-bottom: 1px solid #fff
-	.header__nav 
-		padding: $gutter 0
-		margin: 0
-		box-sizing: border-box
-		.mobile__menu
-			display: none
-		&__left
-			display: flex
-			flex-direction: row
-			justify-content: space-between
-			align-items: center
-			width: 42%
-			&__logo
-				margin: 0
-				padding: 0
-				box-sizing: border-box
-				#svg 
-					margin: 0
-					padding: 0
-					width: 5rem
-					path
-						fill: #fff
-					ellipse, polyline, line
-						stroke: #fff
-			&__text
-				margin-left: 1.5rem
-				margin-right: 1rem
-				line-height: 1
-				
-				b
-					display: block
-					font-weight: 500
-					padding-bottom: 1rem
-					font-size: 22px
-				span
-					color: #a5a5a5
-					font-size: 1.1rem
-		&__right
-			display: flex
-			flex-direction: column-reverse
-			width: 58%
-			.navbar-nav
-				margin: 0
-				padding: 0
-				display: flex
-				flex-direction: row
-				justify-content: space-between
-				width: 100%
-				.nav-item
-					list-style-type: none
-					padding: 0
-					&:first-child
-						margin: 0
-					.nav-link
-						color: #ffffff
-						padding: 0
-						text-transform: uppercase
-						font-size: 1rem
-						font-weight: 500
-						position: relative
-						padding: 1rem 0
-						transition: color .3s ease
-						&:hover
-							color: $accent
-						&::after
-							content: ''
-							position: absolute
-							left: 0
-							bottom: -2px
-							width: 100%
-							height: 3px
-							border-radius: 6px
-							background-color: $accent
-							transform: scale(0)
-							transition: all .3s ease
-						&:hover::after
-							content: ''
-							position: absolute
-							left: 0
-							bottom: -2px
-							width: 100%
-							height: 3px
-							border-radius: 6px
-							background-color: $accent
-							transform: scale(1)
-
-			&__items
-				display: flex
-				flex-direction: row
-				align-items: flex-end
-				justify-content: space-between
-				.social
-					a
-						color: #ffffff
-						border: 0.5px solid #ffffff
-						padding: .5rem
-						margin: 0 .3rem
-						display: inline-block
-						width: 3rem
-						text-align: center
-						transition: all .3s ease
-						&:hover
-							color: $accent
-							border-color: $accent
-							transform: scale(1)
-						&:first-child
-							margin: 0 .3rem 0 0
-				.phone
-					text-align: right
-					p
-						padding: 0
-						margin: 0
-						color: #ffffff
-						font-size: 1.5rem
-						a
-							color: #ffffff
-						img
-							display: inline-block
-							width: 1.5rem
-							height: auto
-							margin-right: .5rem
-
-						
-	.header__nav.sticky
-		position: fixed
-		top: 0
-		left: 0
-		width: 100%
-		min-height: 2em
-		background: #ffffff
-		z-index: 100
-		padding: 0
-		.header__nav__left
-			width: 10%
-			&__logo
-				#svg
-					width: 4rem
-					path
-						fill: #000
-					ellipse, polyline, line
-						stroke: #000
-			&__text
-				display: none
-
-		.header__nav__right
-			display: flex
-			flex-direction: row
-			justify-content: flex-beetwen
-			align-items: center
-			width: 90%
-			margin: auto
-			.navbar-nav
-				margin: 0 5%
-				.nav-item
-					.nav-link
-						color: $text
-						padding: 2rem 0
-						&:hover
-							color: $accent
-			&__items
-				width: 50%
-				.social
-					display: none
-				.phone
-					p
-						font-size: 1.1rem
-						color: $text
-					a
-						color: $text
-						
-
-
 	.header__block
 		margin: auto
+		padding: 200px 0 50px 0
 		&__column
 			margin-top: 5rem
 			&__item
@@ -433,71 +508,6 @@ a, a:hover
 						display: block
 						margin-bottom: .5rem
 			
-.header.gutter
-	padding-top: 100px
-
-//Header on other pages
-.header.second
-	display: block
-	height: 100%
-	min-height: auto
-	color: $text
-	position: relative
-	box-sizing: border-box
-	&::before
-		content: ''
-		position: absolute
-		left: 0
-		top: 0
-		width: 0
-		height: 0
-		background: none
-		opacity: 1
-	&::after
-		content: '.'
-		font-size: 40px
-		display: block
-	.container
-		.row.border_bottom
-			border-bottom: 1px solid $text
-	.mobile__menu
-		.hamburger-inner, 
-		.hamburger-inner:after, 
-		.hamburger-inner:before
-			background-color: $text
-	.header__nav 
-		&__left
-			&__logo
-				#svg 
-					path
-						fill: $text
-					ellipse, polyline, line
-						stroke: $text
-			&__text
-				span
-					color: #a5a5a5
-		&__right
-			.navbar-nav
-				.nav-item
-					.nav-link
-						color: $text
-						&:hover
-							color: $accent
-
-			&__items
-				.social
-					a
-						color: $text
-						border: 0.5px solid $text
-						&:hover
-							color: $accent
-							border: 0.5px solid $accent
-				.phone
-					p
-						color: $text
-						a
-							color: $text
-
 .advantages
 	position: relative
 	padding: 0
@@ -545,9 +555,9 @@ a, a:hover
 			left: 0
 			top: 0
 			width: 100%
-			height: 100%
-			background: #000000
-			opacity: .6
+			height: 101%
+			background: linear-gradient(to bottom, transparent, #ffffff 182px)
+			opacity: 1
 		.col, > [class*="col-"]
 			padding: 0
 		h3
@@ -555,16 +565,16 @@ a, a:hover
 			line-height: 26px
 			font-weight: 700
 			text-transform: uppercase
-			color: $accent
+			color: $text
 			position: relative
 			z-index: 2
 			a
-				color: $accent
+				color: $text
 		p
 			font-size: 20px
 			line-height: 28px
 			font-weight: 400
-			color: #cccccc
+			color: #text
 			position: relative
 			z-index: 2
 		&__img
@@ -572,16 +582,12 @@ a, a:hover
 			border: 1px solid #fff
 			display: inline-block
 			background: #ffffff
-			opacity: .5
 			border-radius: 30rem
 			padding: 1rem
 			margin-bottom: 2rem
 			transition: opacity .3s ease
 			img
 				width: 2.5rem
-	.advantages__post:hover
-		.advantages__post__img
-			opacity: 1
 
 .macbook
 	position: relative
@@ -1891,7 +1897,13 @@ a, a:hover
 		&:hover::before
     		opacity: .8
 
-
+.header .phone a
+	text-decoration: none
+.header .is-sticky .phone a
+	color: $text
+.footer .footer__phone a
+	color: #fff
+	text-decoration: none
 
 @import "media" // Always at the end
 
