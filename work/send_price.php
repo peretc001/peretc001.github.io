@@ -8,7 +8,7 @@ $options = get_option( 'okHall_settings' );
 if ($_POST['step'] == '1') {
 
 	$to  = $options['ok_email']; 
-	$subject = 'Заявка на рассчет стоимости'; 
+	$subject = 'OKHALL: Заявка на рассчет стоимости'; 
 	$headers[]  = "Content-type: text/html; charset=utf-8 \r\n"; 
 	$headers[] = "From: OKHALL <". $options['ok_email'] .">\r\n"; 
 	$message = 'Имя: <b>'. $_POST['name'] .'</b><br>Телефон  <b>'. $_POST['phone'] .'</b><br>Тип жилья:  <b>'. $_POST['home'] .'</b><br>Примерная площадь:  <b>'. $_POST['square'] .'</b><br>Планирую приступить к ремонту:  <b>'. $_POST['time'] .'</b>';
@@ -72,7 +72,7 @@ if ($_POST['step'] == '1') {
 	$to  = $_POST['email']; 
 	$subject = 'OKHALL - ПУТЕВОДИТЕЛЬ ПО РЕМОНТУ'; 
 	$headers[]  = "Content-type: text/html; charset=utf-8 \r\n"; 
-	$headers[] = "From: www.partadami.ru <info@partadami.ru>\r\n"; 
+	$headers[] = "From: OKHALL <". $options['ok_email'] .">\r\n";
 	$message = '
 	<!doctype html>
 	<html>
@@ -103,9 +103,9 @@ if ($_POST['step'] == '1') {
 		                                        <tr>
 		                                            <td style="border-radius:6px;padding:150px 20px 120px 20px;margin:0;text-align: center;">
 		                                                <!-- begin content -->
-		                                                <p style="text-align:center;font-size:14px;color:#fff"><strong style="font-size:18px;font-weight:700;">ПУТЕВОДИТЕЛЬ <span style="color:#ffae04">ПО РЕМОНТУ</span></strong><br>
-		                                                    <span style="color:#888;">В нем мы собрали 100 СОВЕТОВ для начинающих ремонт</span></p>
-		                                                <p style="display:inline-block;vertical-align: middle;"><a href="'. $options["price__100"] .'" style="color:#fff;font-weight: bold;font-size: 18px;text-decoration: none;"><img src="'. $url .'/wp-content/themes/okhall/img/email/pdf.png" style="display:inline-block;width: 24px; height: 24px; margin: 0 5px 0 0;"> <span style="display:inline-block; margin: 0;">Скачать</span></a></p>
+		                                                <p style="text-align:center;font-size:14px;color:#fff"><strong style="font-size:36px;font-weight:700;">ПУТЕВОДИТЕЛЬ <span style="color:#ffae04">ПО РЕМОНТУ</span></strong><br>
+		                                                    <span style="color:#888;font-size:26px;">В нем мы собрали 100 СОВЕТОВ для начинающих ремонт</span></p>
+		                                                <p style="display:inline-block;vertical-align: middle;"><a href="'. $options["price__100"] .'" style="color:#fff;font-weight: bold;font-size: 18px;text-decoration: none;"><img src="'. $url .'/wp-content/themes/okhall/img/email/pdf.png" style="display:inline-block;width: 24px; height: 24px; margin: 0 5px 0 0;"> <span style="display:inline-block; margin: 0;font-size:26px;">Скачать</span></a></p>
 		                                                
 		                                               
 		                                                <!-- end content --> 
@@ -119,16 +119,15 @@ if ($_POST['step'] == '1') {
 		                                    <tbody>
 		                                        <tr>
 		                                            <td>
-		                                                <p style="text-align:center;font-size:14px">© OKHALL</p>
-		                                                <p style="text-align:center;font-size:14px">Телефон: <b>+7 (925) 344-25-77</b></p>
+		                                                <p style="text-align:center;font-size:26px">© OKHALL</p>
+		                                                <p style="text-align:center;font-size:26px">Телефон: <b>+7 (925) 344-25-77</b></p>
 		                                                <p style="text-align:center;max-width:30%;border-bottom: 1px solid #ccc;margin: 0 auto;">&nbsp;</p>
 		                                            </td>
 		                                        </tr>
 		                                       <tr>
 		                                            <td>
-		                                                <p style="text-align:center;font-size:14px"><a href="https://vk.com/id244931621"><img src="'. $url .'/wp-content/themes/okhall/img/email/vk.png" style="width: 24px; height: 24px; margin: 0 5px 0 0;"></a> <a href="https://www.facebook.com/missulixy"><img src="'. $url .'/wp-content/themes/okhall/img/email/facebook.png" style="width: 24px; height: 24px; margin: 0 5px 0 0;"></a>
-		                                               <a href="https://www.instagram.com/uliyakurbanniyazova/"><img src="'. $url .'/wp-content/themes/okhall/img/email/instagram.png" style="width: 24px; height: 24px; margin: 0;"></a></p>
-		                                                     
+		                                                <p style="text-align:center;font-size:14px"><a href="https://vk.com/id244931621"><img src="'. $url .'/wp-content/themes/okhall/img/email/vk.png" style="width: 30px; height: 30px; margin: 0 5px 0 0;"></a> <a href="https://www.facebook.com/missulixy"><img src="'. $url .'/wp-content/themes/okhall/img/email/facebook.png" style="width: 30px; height: 30px; margin: 0 5px 0 0;"></a>
+		                                               <a href="https://www.instagram.com/uliyakurbanniyazova/"><img src="'. $url .'/wp-content/themes/okhall/img/email/instagram.png" style="width: 30px; height: 30px; margin: 0;"></a></p>
 		                                            </td>
 		                                        </tr>
 		                                    </tbody>
@@ -148,7 +147,7 @@ if ($_POST['step'] == '1') {
 	wp_mail($to, $subject, $message, $headers); 
 
 	$to  = $options['ok_email']; 
-	$subject = 'Заявка на рассчет стоимости'; 
+	$subject = 'OKHALL: Заявка на рассчет стоимости'; 
 	$headers[]  = "Content-type: text/html; charset=utf-8 \r\n"; 
 	$headers[] = "From: OKHALL <". $options['ok_email'] .">\r\n"; 
 	$message = 'Посетитель <b>'. $_POST['name'] .'</b> указал email и скачал путеводитель.<br>Email  <b>'. $_POST['email'] .'</b>';

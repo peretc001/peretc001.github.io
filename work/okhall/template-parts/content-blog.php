@@ -7,7 +7,7 @@
  */
 
 ?>
-	<section class="advantages">	
+	<section class="advantages blog">	
 		<div class="container">
 			
 			<?php 
@@ -49,3 +49,4 @@
 			
 		</div>
 	</section>
+	<br><br>

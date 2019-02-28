@@ -241,7 +241,7 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 			</div>
 			
 				<div class="button-play">
-					<a href="<?php echo $options['macbook__video__href']; ?>"><img src="/wp-content/uploads/2019/02/play.svg" alt=""></a>
+					<a class="video-btn" data-toggle="modal" data-src="<?php echo $options['macbook__video__href']; ?>" data-target="#videoModal"><img src="/wp-content/uploads/2019/02/play.svg" alt=""></a>
 				</div>
 			
 		</div>
@@ -956,7 +956,7 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 							<?php echo $options['operator__text__p']; ?>
 						</p>
 						<div class="introHolder">
-							<a href="#" class="btn btn-accent" data-toggle="modal" data-target="#bannerModalCenter">Оставить заявку</a>
+							<a href="#" class="btn btn-accent" data-toggle="modal" data-target="#operatorModalCenter">Оставить заявку</a>
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -967,3 +967,53 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 			</div>
 		</div>
 	</section>
+
+	<!-- Modal -->
+	<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg modal-video" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true"><i class="far fa-times-circle"></i></span>
+					</button>        
+					<!-- 16:9 aspect ratio -->
+					<div class="embed-responsive embed-responsive-16by9">
+						<iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> 
+
+
+	<div class="modal fade" id="catalogModalCenter" tabindex="-1" role="dialog" aria-labelledby="catalogModalCenterTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+	      
+	    <?php include 'wp-content/themes/okhall/template-parts/modal-catalog.php'; ?>
+	      
+	  </div>
+	</div>
+
+	<div class="modal fade" id="priceModalCenter" tabindex="-1" role="dialog" aria-labelledby="priceModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+			<?php include 'wp-content/themes/okhall/template-parts/modal-price.php'; ?>
+		</div>
+	</div>
+
+	<div class="modal fade" id="bannerModalCenter" tabindex="-1" role="dialog" aria-labelledby="bannerModalCenterTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+	      
+	    <?php include 'wp-content/themes/okhall/template-parts/modal-banner.php'; ?>
+	      
+	  </div>
+	</div>
+
+	<div class="modal fade" id="operatorModalCenter" tabindex="-1" role="dialog" aria-labelledby="operatorModalCenterTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+	      
+	    <?php include 'wp-content/themes/okhall/template-parts/modal-operator.php'; ?>
+	      
+	  </div>
+	</div>
+	<!-- End Modal -->
+	

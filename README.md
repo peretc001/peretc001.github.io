@@ -24,12 +24,11 @@ web разработкой, владею навыками
 <br>
 
 <div style="text-align:center;">
-<h1  style="text-align:center;">Верстка</h1>
+<h1  style="text-align:center;">Верстка и натяжка на WP</h1>
 <p align="center"><a style="text-align:center" href="http://web.autoprkt.ru"><img src="https://peretc001.github.io/work/okhall/screen.jpg" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
 <p><strong>Верстка и натяжка на Wordpress | <a href="http://web.autoprkt.ru">http://web.autoprkt.ru/</a></strong></p>
 <ul type="none">
-	<li>99% информации можно поменять в админке</li>
-	<li>Визуальный редактор темы</li>
+	<li>Визуальный редактор Landing-page из админки</li>
 	<li>Адаптивный дизайн (Bootstrap4)</li>
 	<li>Живое меню (Mmenu)</li>
 	<li>Галерея фото из записе (WP Block-Gallary)</li>
@@ -37,10 +36,10 @@ web разработкой, владею навыками
 	<li>Marquiz</li>
 	<li>Bootstrap Modal</li>
 	<li>Формы обратной связи</li>
-	<li>Яндекс Api  с возможностью добавления точек</li>
+	<li>Яндекс Api с возможностью добавления точек из админки</li>
 </ul>
-<p><a href="http://web.autoprkt.ru/wp-content/themes/okhall/img/video.mov">Видео (вид на смартфоне)</a></p>
-<br><br>
+<br>
+<h1  style="text-align:center;">Верстка</h1>
 <p align="center"><a style="text-align:center" href="https://peretc001.github.io/templates/beauty/"><img src="https://peretc001.github.io/templates/beauty/img/screen.jpg" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
 <p><strong>Верстка макета "Салон Красоты" | <a href="https://peretc001.github.io/templates/beauty/">https://peretc001.github.io/templates/beauty/</a></strong></p>
 <ul type="none">

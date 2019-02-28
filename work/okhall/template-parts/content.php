@@ -7,14 +7,6 @@
  * @package okhall
  */
 
-?>
-
-
-2223
-	
-		<?php the_content( ); ?>
-	
-
-	
-		<?php wp_footer(); ?>
-	
+?>	
+	<?php the_content( ); ?>
+	<br><br>

@@ -589,6 +589,11 @@ a, a:hover
 			img
 				width: 2.5rem
 
+.advantages.blog
+	.container
+		padding: 0
+
+
 .macbook
 	position: relative
 	background-color: $bg
@@ -1611,8 +1616,25 @@ a, a:hover
 .next.flickity-prev-next-button
 	right: 30px
 
-//Modal	
-.modal-content.okhall-modal
+//Modal
+
+.modal-video
+	max-width: 1100px
+	.modal-body 
+		position: relative
+		padding: 0
+	.close 
+		position: absolute
+		right: -60px
+		top: 0
+		z-index: 999
+		font-size: 2rem
+		font-weight: normal
+		color: #fff
+		opacity: 1
+
+
+.modal-content.catalog_form
 	padding: 5px 30px 60px 30px
 	border-top: 3px solid #ffae04
 	.modal-header
@@ -1672,6 +1694,141 @@ a, a:hover
 				line-height: 1
 			.btn.btn-success
 				margin: 10px auto
+
+.modal-content.catalog__form
+	padding: 5px 30px 60px 30px
+	border-top: 3px solid #ffae04
+	.modal-header
+		border: none
+		text-align: center
+		justify-content: center
+		p
+			color: #111
+			font-size: 1rem
+			text-align: center
+			b
+				font-size: 1.6rem
+		.close
+			position: absolute
+			right: 20px
+			top: 20px
+
+	.modal-body
+		padding: 0
+		p
+			color: $text
+			font-size: 1.1rem
+			text-align: left
+			padding: 0
+			margin: 5px 0
+			b
+				font-size: 1.4rem
+		.check_ok
+			font-size: 100px
+			color: #ffae04
+		.check_stop
+			font-size: 100px
+			color: $text
+		form
+			text-align: center
+		.form-control
+			line-height: 1
+			font-size: 20px
+			width: 100%
+			text-align: center
+			color: $text
+			border: .5px solid #ccc
+			font-weight: bold
+		input::-webkit-input-placeholder
+			font-size: 16px
+			color: $text
+			padding: .375rem .75rem
+			line-height: 1
+		input::-moz-placeholder
+			font-size: 16px
+			color: $text
+			padding: .375rem .75rem
+			line-height: 1
+		input:-moz-placeholder
+			font-size: 16px
+			color: $text
+			padding: .375rem .75rem
+			line-height: 1
+		input:-ms-input-placeholder
+			font-size: 16px
+			color: $text
+			padding: .375rem .75rem
+			line-height: 1
+		.btn.btn-success
+			margin: 10px auto
+
+		
+.modal-content.okhall-modal
+	padding: 5px 30px 60px 30px
+	border-top: 3px solid #ffae04
+	.modal-header
+		border: none
+		text-align: center
+		justify-content: center
+		p
+			color: #111
+			font-size: 1rem
+			text-align: center
+			b
+				font-size: 1.6rem
+		.close
+			position: absolute
+			right: 20px
+			top: 20px
+
+	.modal-body
+		padding: 0
+		p
+			color: $text
+			font-size: 1.1rem
+			text-align: left
+			padding: 0
+			margin: 5px 0
+			b
+				font-size: 1.4rem
+		.check_ok
+			font-size: 100px
+			color: #ffae04
+		.check_stop
+			font-size: 100px
+			color: $text
+		form
+			text-align: center
+		.form-control
+			line-height: 1
+			font-size: 20px
+			width: 100%
+			text-align: center
+			color: $text
+			border: .5px solid #ccc
+			font-weight: bold
+		input::-webkit-input-placeholder
+			font-size: 16px
+			color: $text
+			padding: .375rem .75rem
+			line-height: 1
+		input::-moz-placeholder
+			font-size: 16px
+			color: $text
+			padding: .375rem .75rem
+			line-height: 1
+		input:-moz-placeholder
+			font-size: 16px
+			color: $text
+			padding: .375rem .75rem
+			line-height: 1
+		input:-ms-input-placeholder
+			font-size: 16px
+			color: $text
+			padding: .375rem .75rem
+			line-height: 1
+		.btn.btn-success
+			margin: 10px auto
 
 	
 .modal-content.price__form

@@ -1,14 +1,58 @@
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-	crossorigin="anonymous">
-<link rel="stylesheet" href="/wp-content/themes/okhall/css/main.min.css">
-<link rel="stylesheet" href="/wp-content/themes/okhall/css/insert.css">
 <?php
-// подключаем WP, можно конечно обойтись без этого, но зачем?
 require( dirname(__FILE__) . '/wp-load.php');
-
-echo $_POST['name'];
 
 $url = site_url();
 $options = get_option( 'okHall_settings' );
+// print_r($_POST);
 
-?>
+if ($_POST['email'] != '') {
+
+	$to  = $options['ok_email']; 
+	$subject = 'OKHALL: Заявка с сайта'; 
+	$headers[]  = "Content-type: text/html; charset=utf-8 \r\n"; 
+	$headers[] = "From: OKHALL <". $options['ok_email'] .">\r\n"; 
+	$message = 'Имя: <b>'. $_POST['name'] .'</b><br>Email  <b>'. $_POST['email'] .'</b><br>--- Раздел: '. $_POST['block'];
+		wp_mail($to, $subject, $message, $headers);
+
+	?>
+		
+		<div class="modal-header">
+			<div class="introHolder inverse">
+				<h2>Запрос <span>принят</span>!</h2>
+			</div>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="modal-body">
+			<div class="row">
+				<div class="col-12 wow animated bounceIn">
+					<p class="text-center">
+						<i class="fas fa-check check_ok"></i>
+					</p>
+				</div>
+			</div>
+		</div>
+
+<?php } else { ?>
+
+	<div class="modal-header">
+			<div class="introHolder inverse">
+				<h2>Запрос <span>НЕ принят</span>!</h2>
+			</div>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="modal-body">
+			<div class="row">
+				<div class="col-12 wow animated bounceIn">
+					<p class="text-center">
+						<i class="fas fa-hand-middle-finger check_stop"></i>
+					</p>
+					<p class="text-center">Не указан email</p>
+				</div>
+			</div>
+		</div>
+		
+<?php } ?>

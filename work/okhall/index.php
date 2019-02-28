@@ -14,7 +14,7 @@
 
 get_header();
 ?>
-<p class="text-center"><b>Блог</b></p>
+<h1 class="text-center">Блог</h1>
 
 	<?php
 		if ( have_posts() ) : 

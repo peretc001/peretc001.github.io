@@ -6,7 +6,7 @@
 	<div class="modal-content okhall-modal">
 
 		<form action="/send.php" method="POST" class="okhall-form">
-			<input type="hidden" name="block" value="Перепланировка">
+			<input type="hidden" name="block" value="Оператор">
 	    	<div class="modal-header">
 	    		<p><b><?php echo $options['banner__modal__p__intro']; ?></b></p>
 	    		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
