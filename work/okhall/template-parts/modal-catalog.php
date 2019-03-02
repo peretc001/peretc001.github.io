@@ -14,7 +14,7 @@
 	      	</div>
 			<div class="modal-body">
 				<div class="row align-items-center">
-					<div class="col-lg-4">
+					<div class="col-lg-4 text-center">
 						
 							<div class="form-group">
 								<input type="text" name="name" class="form-control" placeholder="Имя" />

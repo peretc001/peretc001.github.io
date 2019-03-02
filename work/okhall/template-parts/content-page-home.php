@@ -185,45 +185,105 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 	
 		<div class="container">
 			
-		<?php 
-			$args = array('post_type' => 'post', 'category__not_in' => array(3,4));
-			$query = new WP_Query($args); 
-
-				if ( $query->have_posts() ) : 
-
-				while ( $query->have_posts() ) : $query->the_post(); 
-				
-
-				$media = get_attached_media( 'image', $post->ID );
-				$media = array_shift( $media );
-				$image_url = $media->guid;
-
-				$thumbs = get_the_post_thumbnail_url( $post->ID, 'thumbnail' );
-				if ($thumbs) { $thumb = '<p class="advantages__post__img"><a href="'. get_permalink() .'"><img src="'. $thumbs .'" alt=""></a></p>'; } else {  $thumb = ''; }
-			?> 			
-			<div class="row advantages__post" style="background-image: url('<?php echo $image_url; ?>')">
-				<div class="col-8">
-					<?php echo $thumb; ?>
-					<h3><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h3>
-					<p class="advantages__post__text">
-						<?php 
-							$content = get_the_content();
-							$trimmed_content = wp_trim_words( $content, 16 );
-							echo $trimmed_content; 
-						?>
+			<div class="row advantages__post" style="background-image: url('<?php echo $options['advantages__post__bg1']; ?>')">
+				<div class="col-11 col-md-8">
+					<p class="advantages__post__img">
+						<img src="<?php echo $options['advantages__post__img1']; ?>" alt="<?php echo $options['advantages__post__header1']; ?>">
 					</p>
-					
+					<h3>
+						<?php echo $options['advantages__post__header1']; ?>
+					</h3>
+					<p class="advantages__post__text">
+						<?php echo $options['advantages__post__intro1']; ?>
+						<a class="btn_more collapsed" data-toggle="collapse" href="#more1" aria-expanded="false" aria-controls="more1">
+							<i class="fas fa-caret-up"></i>
+						</a>
+						<span class="show_more" id="more1">
+							<?php echo $options['advantages__post__text1']; ?>
+						</span>
+					</p>
 				</div>
-		</div><!-- end row-->
+			</div><!-- end row-->
 
-		<?php endwhile; 
+			<div class="row advantages__post" style="background-image: url('<?php echo $options['advantages__post__bg2']; ?>')">
+				<div class="col-11 col-md-8">
+					<p class="advantages__post__img">
+						<img src="<?php echo $options['advantages__post__img2']; ?>" alt="<?php echo $options['advantages__post__header2']; ?>">
+					</p>
+					<h3>
+						<?php echo $options['advantages__post__header2']; ?>
+					</h3>
+					<p class="advantages__post__text">
+						<?php echo $options['advantages__post__intro2']; ?>
+						<a class="btn_more collapsed" data-toggle="collapse" href="#more2" aria-expanded="false" aria-controls="more2">
+							<i class="fas fa-caret-up"></i>
+						</a>
+						<span class="show_more" id="more2">
+							<?php echo $options['advantages__post__text2']; ?>
+						</span>
+					</p>
+				</div>
+			</div><!-- end row-->
 
-			else : ?>
-			<p><?php esc_html_e( 'Нет постов по вашим критериям.' ); ?></p>
-		<?php endif; ?>
-			
-					
-				
+			<div class="row advantages__post" style="background-image: url('<?php echo $options['advantages__post__bg3']; ?>')">
+				<div class="col-11 col-md-8">
+					<p class="advantages__post__img">
+						<img src="<?php echo $options['advantages__post__img3']; ?>" alt="<?php echo $options['advantages__post__header3']; ?>">
+					</p>
+					<h3>
+						<?php echo $options['advantages__post__header3']; ?>
+					</h3>
+					<p class="advantages__post__text">
+						<?php echo $options['advantages__post__intro3']; ?>
+						<a class="btn_more collapsed" data-toggle="collapse" href="#more3" aria-expanded="false" aria-controls="more3">
+							<i class="fas fa-caret-up"></i>
+						</a>
+						<span class="show_more" id="more3">
+							<?php echo $options['advantages__post__text3']; ?>
+						</span>
+					</p>
+				</div>
+			</div><!-- end row-->
+
+			<div class="row advantages__post" style="background-image: url('<?php echo $options['advantages__post__bg4']; ?>')">
+				<div class="col-11 col-md-8">
+					<p class="advantages__post__img">
+						<img src="<?php echo $options['advantages__post__img4']; ?>" alt="<?php echo $options['advantages__post__header4']; ?>">
+					</p>
+					<h3>
+						<?php echo $options['advantages__post__header4']; ?>
+					</h3>
+					<p class="advantages__post__text">
+						<?php echo $options['advantages__post__intro4']; ?>
+						<a class="btn_more collapsed" data-toggle="collapse" href="#more4" aria-expanded="false" aria-controls="more4">
+							<i class="fas fa-caret-up"></i>
+						</a>
+						<span class="show_more" id="more4">
+							<?php echo $options['advantages__post__text4']; ?>
+						</span>
+					</p>
+				</div>
+			</div><!-- end row-->
+
+			<div class="row advantages__post" style="background-image: url('<?php echo $options['advantages__post__bg5']; ?>')">
+				<div class="col-11 col-md-8">
+					<p class="advantages__post__img">
+						<img src="<?php echo $options['advantages__post__img5']; ?>" alt="<?php echo $options['advantages__post__header5']; ?>">
+					</p>
+					<h3>
+						<?php echo $options['advantages__post__header5']; ?>
+					</h3>
+					<p class="advantages__post__text">
+						<?php echo $options['advantages__post__intro5']; ?>
+						<a class="btn_more collapsed" data-toggle="collapse" href="#more5" aria-expanded="false" aria-controls="more5">
+							<i class="fas fa-caret-up"></i>
+						</a>
+						<span class="show_more" id="more5">
+							<?php echo $options['advantages__post__text5']; ?>
+						</span>
+					</p>
+				</div>
+			</div><!-- end row-->				
 
 		</div>
 	</section>
@@ -274,7 +334,7 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 	</section>
 
 	<section class="photos" id="portfolio">
-		<script src="/wp-content/plugins/block-gallery/dist/js/vendors/flickity.min.js?ver=1.1.6"></script>
+		
 	
 		<div class="container">
 			
@@ -293,9 +353,10 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 
 					if ( $query->have_posts() ) : 
 					while ( $query->have_posts() ) : $query->the_post(); ?>
-				<div class="photos__block">
-					<?php the_content(); ?>
-				</div>
+					<div class="photos__block">
+						<?php the_content(); ?>
+					</div>
+			
 				<?php endwhile; 
 
 				else : endif; 
@@ -722,12 +783,6 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 					ЖК Москвы, в которых <span class="nxt"></span>реализованы <span>наши проекты</span>
 				</h2>
 			</div>
-			<!-- UIkit CSS -->
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css" />
-
-			<!-- UIkit JS -->
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
 			<div uk-slider="infinite: true">
 				<div class="uk-position-relative">
 					<div class="uk-slider-container">

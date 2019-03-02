@@ -7,32 +7,32 @@
 
 	.introHolder
 		h2
-			font-size: 36px
+			font-size: 2.2em
 			line-height: 1
 
 	.yellowHolder
 		&__left
 			h1
-				font-size: 3rem
+				font-size: 3em
 			h2
 				margin-top: 1.5rem
 			p
-				font-size: 1.8rem
+				font-size: 1.7em
 		&__right
-			padding-left: 2rem
-			.yellowHolder__right__old
-				font-size: 1.4rem
+			padding-left: 2em
+			.yellowHolder__right__total
+				font-size: 3em
 
 	.nav_menu
 			&__left
 				&__text
 					b
-						font-size: 18px
+						font-size: 1.2em
 					span
-						font-size: 1rem
+						font-size: 1em
 	
 	.header 
-		min-height: 600px
+		padding: 150px 0 50px 0
 		.header__block
 			&__column
 				&__item
@@ -50,11 +50,11 @@
 	.macbook
 		height: 600px
 		&::before
-			top: -7vh
+			top: -5vh
 			background-size: 960px
 		.button-play
 			a
-				margin-top: $gutter*2
+				margin-top: 70px
 				width: 90px
 				height: 90px
 				border-radius: 90px
@@ -70,6 +70,16 @@
 				&::before
 					width: 300px
 					height: 300px
+
+	.photos
+		.owl-dots 
+			&::after
+				font-size: 1.1em
+			.owl-dot.active
+				span::before
+					font-size: 1.3em
+		figcaption
+			font-size: 1.3em
 
 	.design_project
 		&__header
@@ -160,23 +170,20 @@
 	.yellowHolder
 		&__left
 			h1
-				font-size: 2.5rem
-				margin-bottom: 1rem
+				font-size: 2em
 			h2
-				font-size: 2.7rem
-				margin-top: 1rem
+				font-size: 2em
 			p
-				font-size: 1.4rem
+				font-size: 1.15em
 		&__right
-			padding-left: 2rem
 			.yellowHolder__right__old
-				font-size: 1.3rem
+				font-size: 1em
 			.yellowHolder__right__total
-				font-size: 2.5rem
+				font-size: 2.5em
 				span
-					font-size: 1.4rem
+					font-size: .6em
 			.yellowHolder__right__text
-				font-size: 1rem
+				font-size: 1em
 
 	.nav_menu
 		padding: $gutter/2 0 0 0
@@ -185,7 +192,7 @@
 			width: 10%
 			&__logo
 				#svg
-					width: 4rem
+					width: 4em
 			&__text
 				display: none
 	
@@ -201,8 +208,8 @@
 				
 				.nav-item
 					.nav-link
-						font-size: .9rem
-						padding: 1.5rem 0
+						
+						padding: 1.3em 0
 			&__items
 				width: 10%
 				justify-content: center
@@ -216,7 +223,7 @@
 						justify-content: center
 						transition: all .5s ease
 						a
-							font-size: 2rem
+							font-size: 1.5em
 							margin: 0
 
 	.nav_menu.is-sticky
@@ -234,35 +241,35 @@
 				p.d-lg-none
 					display: block
 					justify-content: center
-					transform: scale(.8)
+					transform: scale(.9)
 					text-align: center
 	
 	.clearfix
 		padding-top: 95px			
 		
 	.header
-		min-height: 800px					
+		padding: 50px 0 50px 0
+		min-height: 700px					
 		.header__block	
-			padding-top: 60px			
 			&__column
-				margin-top: 3rem
+				margin-top: 3em
 				&__item
 					flex-direction: column
-					padding: 1rem 0.5rem
+					padding: 1em .5em
 					img
-						width: 3rem
-						margin: 1rem auto
+						width: 3em
+						margin: 1em auto
 					p
-						font-size: 1.1rem
+						font-size: 1.1em
 						margin: 0 auto
 						text-align: center
 						b
-							font-size: 1.2rem
+							font-size: 1.2em
 
 	.advantages
 		.container
 			padding: 3rem 0 4rem 0
-
+			
 	.macbook
 		height: 430px
 		&::before
@@ -298,6 +305,14 @@
 				margin-left: 0
 
 	.photos
+		.owl-dots 
+			&::after
+				font-size: 1em
+			.owl-dot.active
+				span::before
+					font-size: 1.1em
+		figcaption
+			font-size: 1.1em
 							
 	.design_project
 		.container
@@ -488,12 +503,12 @@
 			.col-lg-6
 				padding: 0
 
-	.recomendation .carousel .recomendation__carousel__item
-		min-height: 320px 
-		padding-right: 70px
 		
 // ≥768px
 +media-breakpoint-down(sm)
+	.download
+		font-size: .8em
+	
 	.introHolder
 		h2
 			font-size: 26px
@@ -552,9 +567,9 @@
 		padding-top: 95px			
 		
 	.header
-		min-height: 1100px
+		padding: 50px 0 0 0
+		min-height: 1000px
 		.header__block	
-			padding-top: 10px			
 			&__column
 				margin-top: 2rem
 				&__item
@@ -564,15 +579,19 @@
 		.container
 			padding: 1rem 0
 		.advantages__post
-			align-items: flex-end
+			height: auto
+			padding: 3rem 0 .5rem 0
+			align-items: center
+			background-position: left top
 			h3
-				font-size: 18px
-				white-space: nowrap
-				overflow: hidden
-				text-overflow: ellipsis
-			&__text
-				height: 60px
-				overflow: hidden
+				font-size: 1.2em
+			.btn_more
+				color: $text
+				display: inline
+			.show_more
+				display: none
+			.show_more.collapse.show
+				display: block
 
 	.macbook
 		padding: $gutter*2 0 $gutter*4 0
@@ -590,7 +609,6 @@
 			background-repeat: no-repeat		
 			background-image:url('../img/macbook/screen.jpg')
 
-
 	.calculator
 		padding: $gutter*2 0
 		&__block
@@ -607,8 +625,23 @@
 				margin: 1rem 0
 	
 	.photos
-		p
-			font-size: 1rem
+		&__block
+			padding-bottom: 15px
+			border-bottom: 1px solid #e7e7e7
+			margin-bottom: 30px
+			p
+				font-size: 1rem
+		
+		.owl-nav 
+			position: absolute
+			top: 40%
+			left: 0
+			transform: translateY(-50%)
+			button.owl-next, 
+			button.owl-prev
+				width: 40px
+				height: 40px
+				font-size: 20px
 	
 	.design_project
 		&::before
@@ -662,7 +695,24 @@
 					margin-left: 0
 	
 	.recomendation
-		
+		.slide
+			.recomendation__carousel__item
+				margin: 0
+				text-align: center
+				padding-right: 0
+				&::before
+					content: ''
+					position: absolute
+					left: 0
+					top: 200px
+					width: 100%
+					height: 100%
+				img
+					max-width: 300px
+				p
+					margin: 1em 0
+					padding: 0
+
 	.acquaintance
 		&__block
 			margin: 1rem 0
@@ -731,25 +781,11 @@
 		&__text
 			margin: 0 0 0 3rem
 		[class*=col-]
-			padding-left: 15px	
-
-	.recomendation .carousel .recomendation__carousel__item
-		min-height: 800px
-		padding-right: 0px
-	.recomendation .carousel .recomendation__carousel__item
-		margin: 0 auto
-			text-align: center
-	.recomendation .carousel .recomendation__carousel__item::before
-			content: ''
-			position: absolute
-			left: 0
-			top: 200px
-			width: 100%
-			height: 100%
+			padding-left: 15px
 
 	// ≥576px
 +media-breakpoint-down(xs)
-
+	
 	.introHolder
 		.btn.btn-accent
 			font-size: .9rem
@@ -758,12 +794,12 @@
 	.yellowHolder
 		&__left
 			h1, h2
-				font-size: 1.8rem
+				font-size: 1.6em
 			p
-				font-size: 1.1rem
+				font-size: 1.1em
 
 	.header
-		min-height: 1150px
+		min-height: 1000px
 		.header__block				
 			&__column
 				margin-top: 1rem
@@ -781,24 +817,24 @@
 			height: auto
 			padding: 3rem 0 .5rem 0
 			align-items: center
-			background-position: left center
-			h3
-				font-size: 18px
-				white-space: normal
-				overflow: visible
 			p
 				font-size: 1rem
 				line-height: 1
-			&__text
-				height: auto
-				overflow: hidden
 	
 	.photos
-		.col-12
+		&__block
 			text-align: center
 			p
 				padding: 0 1rem
 				line-height: 1
+		.owl-dots 
+			&::after
+				font-size: .7em
+			.owl-dot.active
+				span::before
+					font-size: .7em
+		figcaption
+			font-size: .8em
 	
 	.design_project
 		&__header
@@ -829,14 +865,25 @@
 					margin-left: 0
 
 	.recomendation
-		&__carousel
-			&__item
-				margin: 0
+		.slide
+			.recomendation__carousel__item
+				img
+					max-width: 250px
 				p
-					font-size: .8rem
-					padding: $gutter/6 $gutter/2
-					b
-						font-size: .8rem
+					margin: 1em .5em
+		.carousel
+			.carousel-control-prev-icon,
+			.carousel-control-next-icon
+				width: 40px
+				height: 40px
+			.carousel-control-prev-icon::before,
+			.carousel-control-next-icon::before
+				width: 20px
+				height: 20px
+			.carousel-control-prev-icon
+				left: -30px
+			.carousel-control-next-icon
+				right: -30px
 
 	.acquaintance
 		&__img
@@ -871,6 +918,17 @@
 			height: 40px
 			line-height: 26px
 	
+	.after
+		[class*=col-]
+			padding: $gutter
+			flex-direction: column
+			justify-content: center
+		img
+			width: 50px
+			margin: 30px auto
+		p
+			text-align: center
+
 	.operator
 		&__blur
 			h2
@@ -910,32 +968,74 @@
 
 	.mm-listitem
 		margin-left: 0
-	
-	.flickity-button
-		width: 40px
-		height: 40px
 
+@media screen and (max-width: 400px)
+	.modal-content.catalog__form
+		.modal-header
+			p
+				b
+					font-size: 1.2em
+					line-height: 1.1
+		.modal-body
+			p
+				font-size: 1em
+				line-height: 1.1
+				a
+					color: #111
 
-	.recomendation .carousel .carousel-control-prev-icon,
-	.recomendation .carousel .carousel-control-next-icon
-		width: 40px
-		height: 40px
-	.recomendation .carousel .carousel-control-prev-icon::before,
-	.recomendation .carousel .carousel-control-next-icon::before
-		width: 20px
-		height: 20px
-	.recomendation .carousel .carousel-control-prev-icon
-		left: -30px
-	.recomendation .carousel .carousel-control-next-icon
-		right: -30px
+	.modal-content.okhall-modal
+		.modal-body
+			p
+				font-size: 1em
+				line-height: 1.1
+				a
+					color: #111
+
+	.modal-content.price__form
+		.modal-header
+			padding: 0
+			margin: 0 auto
+			p
+				b
+					font-size: 1.2em
+					line-height: 1.1
+			.form__two__header,
+			.form__three__header
+				padding: 1em 0
+				margin: 0 auto
+				h2
+					font-size: 1.2em
+				p
+					line-height: 1
+		.modal-body
+			padding: 0
+			margin: 0 auto
+			.row
+				padding: 0
+				margin: 0 auto
+				p
+					b
+						font-size: 1.2em
+						line-height: 1.1
+				label
+					padding: 2em 0 0 0
+				label:before 
+					top: 10px
+				.form__two__grey
+					font-size: 0.9em
+					margin: 1em 0
+				
+		.no-padding
+			padding-bottom: .5em
+			.col-lg-6
+				padding: 0
 
 
 @media screen and (max-width: 350px)
 	.introHolder
 		.btn.btn-accent
 			font-size: .8rem
-	.header
-		min-height: 1250px
+
 	.banner__list ul
 		width: 260px
 	.footer
@@ -971,4 +1071,8 @@
 	.uk-slidenav-previous
 		left: -8%
 	.uk-slidenav-next
+		right: -8%
+	.photos .owl-nav button.owl-prev
+		left: -8%
+	.photos .owl-nav button.owl-next
 		right: -8%

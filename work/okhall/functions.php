@@ -9,6 +9,7 @@
 /**
  * Enqueue scripts and styles.
  */
+if ( function_exists( 'add_theme_support' ) ) add_theme_support( 'post-thumbnails' );
 
 remove_action('wp_head','feed_links_extra', 3); // убирает ссылки на rss категорий
 remove_action('wp_head','feed_links', 2); // минус ссылки на основной rss и комментарии
@@ -32,6 +33,8 @@ function okhall_scripts() {
 	wp_register_style( 'animate', get_template_directory_uri() . '/css/animate.css');
 	wp_register_style( 'hamburger', get_template_directory_uri() . '/css/hamburgers.min.css');
 	wp_register_style( 'mmenu', 'https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/7.3.2/jquery.mmenu.all.css');
+	wp_register_style( 'owl', get_template_directory_uri() . '/js/owlCarousel/css/owl.carousel.min.css');
+	wp_register_style( 'owl-default', get_template_directory_uri() . '/js/owlCarousel/css/owl.theme.default.css');
 	wp_register_style( 'main', get_template_directory_uri() . '/css/main.min.css');
 
 
@@ -39,6 +42,8 @@ function okhall_scripts() {
 	wp_enqueue_style( 'animate');
 	wp_enqueue_style( 'hamburger');
 	wp_enqueue_style( 'mmenu');
+	wp_enqueue_style( 'owl');
+	wp_enqueue_style( 'owl-default');
 	wp_enqueue_style( 'main');
 
 	
@@ -73,12 +78,18 @@ function footer_enqueue_scripts(){
 	remove_action('wp_head', 'wp_oembed_add_discovery_links' );
 	remove_action('wp_head', 'wp_oembed_add_host_js' );
 	remove_action('wp_print_styles', 'print_emoji_styles');
+	remove_action('wp-block-library-css', 'print_block_styles');
 	
 	add_action('wp_footer','wp_print_scripts',5);
 	add_action('wp_footer','wp_enqueue_scripts',5);
 	add_action('wp_footer','wp_print_head_scripts',5);
 }
 add_action('after_setup_theme','footer_enqueue_scripts');
+
+function custom_theme_assets() {
+wp_dequeue_style( 'wp-block-library' );
+}
+add_action( 'wp_enqueue_scripts', 'custom_theme_assets', 100 );
 
 wp_deregister_script('jquery'); 
 function remove_jq_migrate( $scripts ) {
@@ -264,7 +275,7 @@ function okHall_page() {
 	   			<div class="col-12 text-center adm_menu">
 	   				<p>Быстрый переход вниз к разделу:</p>
 	   				<ul>
-		   				<li><a href="#blog">Блог</a></li>
+		   				<li><a href="#advantages">Преимущества</a></li>
 		   				<li><a href="#video">Видео</a></li>
 		   				<li><a href="#calc">Калькулятор</a></li>
 		   				<li><a href="#foto">Фото</a></li>
@@ -332,17 +343,89 @@ function okHall_page() {
 		</div>
 	</header>
 
-	<section id="blog" class="advantages" style="background-image:url('/wp-content/uploads/2019/02/pattern.jpg')">
+	<section id="advantages" class="advantages" style="background-image:url('/wp-content/uploads/2019/02/pattern.jpg')">
 		<img class="mouse" src="/wp-content/themes/okhall/img/header/mouse.svg" alt="">
 
-		<div class="container style="padding: 50px 0">
-	
-			<div class="introHolder inverse">
-				<h2>Блог</h2>
-				<p>
-					Данный блок редактируется путем добавления или изменения Записей.<br>Перейти в <a href="/wp-admin/edit.php">ЗАПИСИ</a>
-				</p>
+		<div class="container">
+			<div class="row align-items-end style="padding:0;margin:0">
+				<div class="col-6 text-center"><?php arthur_image_uploader( 'advantages__post__bg1', $width =60, $height = 60 ); ?></div>
+				<div class="col-6 text-center"><?php arthur_image_uploader( 'advantages__post__img1', $width =60, $height = 60 ); ?></div>
 			</div>
+			<div class="row advantages__post" style="background-image: url('<?php echo $options['advantages__post__bg1']; ?>');padding:0;margin:0">
+				<div class="col-11 col-md-8">
+					<h3>
+						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__header1]' value='<?php echo $options['advantages__post__header1']; ?>'>
+					</h3>
+					<p class="advantages__post__text">
+						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__intro1]' value='<?php echo $options['advantages__post__intro1']; ?>'>
+						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__text1]' value='<?php echo $options['advantages__post__text1']; ?>'>
+					</p>
+				</div>
+			</div><!-- end row-->
+
+			<div class="row align-items-end style="padding:0;margin:0">
+				<div class="col-6 text-center"><?php arthur_image_uploader( 'advantages__post__bg2', $width =60, $height = 60 ); ?></div>
+				<div class="col-6 text-center"><?php arthur_image_uploader( 'advantages__post__img2', $width =60, $height = 60 ); ?></div>
+			</div>
+			<div class="row advantages__post" style="background-image: url('<?php echo $options['advantages__post__bg2']; ?>');padding:0;margin:0">
+				<div class="col-11 col-md-8">
+					<h3>
+						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__header2]' value='<?php echo $options['advantages__post__header2']; ?>'>
+					</h3>
+					<p class="advantages__post__text">
+						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__intro2]' value='<?php echo $options['advantages__post__intro2']; ?>'>
+						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__text2]' value='<?php echo $options['advantages__post__text2']; ?>'>
+					</p>
+				</div>
+			</div><!-- end row-->
+
+			<div class="row align-items-end style="padding:0;margin:0">
+				<div class="col-6 text-center"><?php arthur_image_uploader( 'advantages__post__bg3', $width =60, $height = 60 ); ?></div>
+				<div class="col-6 text-center"><?php arthur_image_uploader( 'advantages__post__img3', $width =60, $height = 60 ); ?></div>
+			</div>
+			<div class="row advantages__post" style="background-image: url('<?php echo $options['advantages__post__bg3']; ?>');padding:0;margin:0">
+				<div class="col-11 col-md-8">
+					<h3>
+						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__header3]' value='<?php echo $options['advantages__post__header3']; ?>'>
+					</h3>
+					<p class="advantages__post__text">
+						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__intro3]' value='<?php echo $options['advantages__post__intro3']; ?>'>
+						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__text3]' value='<?php echo $options['advantages__post__text3']; ?>'>
+					</p>
+				</div>
+			</div><!-- end row-->
+
+			<div class="row align-items-end style="padding:0;margin:0">
+				<div class="col-6 text-center"><?php arthur_image_uploader( 'advantages__post__bg4', $width =60, $height = 60 ); ?></div>
+				<div class="col-6 text-center"><?php arthur_image_uploader( 'advantages__post__img4', $width =60, $height = 60 ); ?></div>
+			</div>
+			<div class="row advantages__post" style="background-image: url('<?php echo $options['advantages__post__bg4']; ?>');padding:0;margin:0">
+				<div class="col-11 col-md-8">
+					<h3>
+						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__header4]' value='<?php echo $options['advantages__post__header4']; ?>'>
+					</h3>
+					<p class="advantages__post__text">
+						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__intro4]' value='<?php echo $options['advantages__post__intro4']; ?>'>
+						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__text4]' value='<?php echo $options['advantages__post__text4']; ?>'>
+					</p>
+				</div>
+			</div><!-- end row-->
+
+			<div class="row align-items-end style="padding:0;margin:0">
+				<div class="col-6 text-center"><?php arthur_image_uploader( 'advantages__post__bg5', $width =60, $height = 60 ); ?></div>
+				<div class="col-6 text-center"><?php arthur_image_uploader( 'advantages__post__img5', $width =60, $height = 60 ); ?></div>
+			</div>
+			<div class="row advantages__post" style="background-image: url('<?php echo $options['advantages__post__bg5']; ?>');padding:0;margin:0">
+				<div class="col-11 col-md-8">
+					<h3>
+						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__header5]' value='<?php echo $options['advantages__post__header5']; ?>'>
+					</h3>
+					<p class="advantages__post__text">
+						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__intro5]' value='<?php echo $options['advantages__post__intro5']; ?>'>
+						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__text5]' value='<?php echo $options['advantages__post__text5']; ?>'>
+					</p>
+				</div>
+			</div><!-- end row-->
 		
 		</div>
 	</section>
