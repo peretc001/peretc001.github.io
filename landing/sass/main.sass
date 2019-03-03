@@ -32,6 +32,7 @@ b, strong
 	font-weight: bold
 
 .btn
+	position: relative
 	width: 100%
 	max-width: 260px
 	border: 1px solid $accent
@@ -41,10 +42,43 @@ b, strong
 	text-transform: uppercase
 	font-weight: bold
 	margin: 1em auto
-.btn-accent
-	background: $bg
-	color: #ffffff
+	overflow: hidden
+   backface-visibility: hidden
+	background: transparent
+	transform: translateZ(0)
+	transition: all .3s ease-out
+	&::before
+		content: ''
+		position: absolute
+		left: 0 
+		top: 0
+		bottom: 0
+		right: 0
+		border-radius: $gutter
+		z-index: -1
+		background: $bg
+		overflow: visible
+  		backface-visibility: visible
+		transform: scale(0)
+		transition-property: transform
+		transition: 200ms ease-out
+	&:hover
+		color: #ffffff
+		&::before
+			background: $bg
+			transform: scale(2)
 
+.btn-accent
+	color: #ffffff
+	&::before
+		transform: scale(2)
+		background: $bg
+	&:hover
+		color: $text
+		&::before
+			transform: scale(0)
+
+	
 .introHolder
 	text-align: center
 	h2
