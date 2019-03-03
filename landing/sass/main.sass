@@ -6,7 +6,8 @@
 ::selection
 	background-color: $accent
 	color: #fff
-
+*
+	transition: all .3s ease
 body
 	font-size: 16px
 	min-width: 320px
@@ -15,6 +16,7 @@ body
 	font-family: $default-font
 	overflow-x: hidden
 	color: $text
+	
 	input, textarea
 		border: #666 1px solid
 		outline: none
@@ -28,6 +30,20 @@ body
 
 b, strong
 	font-weight: bold
+
+.btn
+	width: 100%
+	max-width: 260px
+	border: 1px solid $accent
+	border-radius: $gutter
+	padding: $gutter/2
+	color: $text
+	text-transform: uppercase
+	font-weight: bold
+	margin: 1em auto
+.btn-accent
+	background: $bg
+	color: #ffffff
 
 .introHolder
 	text-align: center
@@ -69,11 +85,9 @@ b, strong
 			line-height: 1
 			opacity: .4
 
-	
-	@for $i from 1 through 9
-		.row [class*=col-]:nth-child(#{$i})::before
+		@for $i from 1 through 9
+			&:nth-child(#{$i})::before
 				content: '0#{$i}'
-
 		img
 			width: 4em
 			margin: 1em 0
@@ -103,6 +117,32 @@ b, strong
 					height: 1px
 					background: $accent
 					display: block
+
+.price
+	padding: $gutter 0
+	background: #f2f2f2
+	img
+		width: 100%
+	.right
+		padding: 0 $gutter*2
+		justify-content: center
+	&__block
+		padding: $gutter/2 $gutter
+		background: #ffffff
+		border-radius: $gutter/5
+		p
+			margin: $gutter/2 0 
+			padding: 0 0 $gutter/2 0
+			border-bottom: 1px solid #f2f2f2
+			font-size: 1.2em
+			b
+				font-size: 1.3em
+				margin-left: .5em
+				color: $accent
+			&:last-child
+				border-bottom: none
+	.btn:last-child
+		margin-top: 0
 
 body
 	opacity: 1
