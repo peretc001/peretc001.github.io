@@ -35,7 +35,50 @@
 </head>
 
 <body>
+	<nav>
+		<div class="navbar">
+			<div class="burger-container">
+				<div id="burger">
+					<div class="bar topBar"></div>
+					<div class="bar btmBar"></div>
+				</div>
+			</div>
+		<div class="icon icon-apple"></div>
+		<ul class="menu">
+			<li class="menu-item"><a href="#">Mac</a></li>
+			<li class="menu-item"><a href="#">iPad</a></li>
+			<li class="menu-item"><a href="#">iPhone</a></li>
+			<li class="menu-item"><a href="#">Watch</a></li>
+			<li class="menu-item"><a href="#">TV</a></li>
+			<li class="menu-item"><a href="#">Music</a></li>
+			<li class="menu-item"><a href="#">Support</a></li>
+		</ul>
+		<div class="shop icon icon-bag"></div>
+		</div>
 	
+		<header class="header">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-5">
+						<div class="introHolder wow slideInLeft">
+							<h1>Создание лендингов под ключ</h1>
+						</div>
+					</div>
+					<div class="col-lg-7 header__examples">
+						<div class="layout-1 wow fadeInUp">
+							<img src="img/imac.png" alt="">
+						</div>
+						<div class="layout-2">
+							<img src="img/layout-1.png" alt="">
+						</div>
+						<div class="layout-3">
+							<img src="img/layout-2.png" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+	</nav>
 	<section class="steps">
 		<div class="container">
 			<div class="introHolder wow bounceIn">
@@ -149,8 +192,8 @@
 							Окупаемость: <b>1 месяц</b>
 						</p>
 					</div>
-					<a href="#" class="btn btn-accent">Заказать сайт</a>
-					<a href="#" class="btn">Сайт в рассрочку</a>
+					<a href="#" class="btn btn-accent">Заказать лендинг</a>
+					<a href="#" class="btn">Лендинг в рассрочку</a>
 				</div>
 			</div>
 		</div>
@@ -170,14 +213,20 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="js/wow/wow.js"></script>
 	<script>
-		
-				if ($(window).width() < '550') {
-					var classesOfInterest = '';
-					for (var i = 1; i <= 10; i++)
-						classesOfInterest += ' ' + 'ddelay-' + i + 's';
-					$('.steps .bounceIn').removeClass(classesOfInterest);
-					$('.steps .fadeInUp').removeClass('ddelay-10s');
-				}
+		var burger = document.querySelector('.burger-container'),
+			header = document.querySelector('.nav');
+
+		burger.onclick = function () {
+			header.classList.toggle('menu-opened');
+		}
+
+		if ($(window).width() < '550') {
+			var classesOfInterest = '';
+			for (var i = 1; i <= 10; i++)
+				classesOfInterest += ' ' + 'ddelay-' + i + 's';
+			$('.steps .bounceIn').removeClass(classesOfInterest);
+			$('.steps .fadeInUp').removeClass('ddelay-10s');
+		}
 			
 			
 			new WOW().init();

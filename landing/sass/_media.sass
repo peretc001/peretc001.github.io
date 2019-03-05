@@ -3,15 +3,27 @@
 
 /*==========  Desktop First  ==========*/
 
-// // ≥1200px
-// @media screen and (max-width: 1199.98px)
-
+// ≥1200px
+@media screen and (max-width: 1199.98px)
+	.header
+		
+		
 // // ≥992px
 // @media screen and (max-width: 991.98px)
 
-// // ≥768px
-// @media screen and (max-width: 767.98px)
-
+// ≥768px
+@media screen and (max-width: 767.98px)
+	.header
+		&__examples
+		.layout-1
+			img
+				width: 85%
+		.layout-2
+			img
+				width: 55%
+		.layout-3
+			img
+				width: 55%
 // // ≥576px
 @media screen and (max-width: 575.98px)
 	.introHolder
@@ -20,14 +32,64 @@
 		h2.liner
 			padding-bottom: $gutter/1.5
 
+	.header
+		@keyframes layout-2-move
+			from
+				left: 20px
+				top: 10px
+			to
+				left: 100px
+				top: 40px
+				opacity: 1
+
+		@keyframes layout-3-move
+			from
+				left: 20px
+				top: 10px
+			to
+				left: 200px
+				top: 80px
+				opacity: 1
+				
 	.steps
 		[class*=col-]
 			padding: $gutter 0 $gutter $gutter*2
 			position: relative
 
+// ≥460
+@media screen and (max-width: 460px)
+	.header
+		@keyframes layout-2-move
+			to
+				left: 80px
+				top: 35px
+				opacity: 1
+
+		@keyframes layout-3-move
+			to
+				left: 160px
+				top: 70px
+				opacity: 1
 // ≥400
-//@media screen and (max-width: 399.98px)
-	
+@media screen and (max-width: 399.98px)
+	.header
+		@keyframes layout-2-move
+			from
+				left: 45px
+				top: 0px
+			to
+				left: 80px
+				top: 30px
+				opacity: 1
+
+		@keyframes layout-3-move
+			from
+				left: 45px
+				top: 0px
+			to
+				left: 120px
+				top: 60px
+				opacity: 1
 	
 
 /*==========  Mobile First  ==========*/

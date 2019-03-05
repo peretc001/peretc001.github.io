@@ -3619,43 +3619,43 @@
 }
 
 .animated.ddelay-2s {
-  -webkit-animation-delay: 1.5s;
-  animation-delay: 1.5s;
+  -webkit-animation-delay: 1.2s;
+  animation-delay: 1.2s;
 }
 
 .animated.ddelay-3s {
-  -webkit-animation-delay: 2s;
-  animation-delay: 2s;
+  -webkit-animation-delay: 1.4s;
+  animation-delay: 1.4s;
 }
 
 .animated.ddelay-4s {
-  -webkit-animation-delay: 2.5s;
-  animation-delay: 2.5s;
+  -webkit-animation-delay: 1.6s;
+  animation-delay: 1.6s;
 }
 
 .animated.ddelay-5s {
-  -webkit-animation-delay: 3s;
-  animation-delay: 3s;
+  -webkit-animation-delay: 1.8s;
+  animation-delay: 1.8s;
 }
 .animated.ddelay-6s {
-  -webkit-animation-delay: 3.5s;
-  animation-delay: 3.5s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
 }
 .animated.ddelay-7s {
-  -webkit-animation-delay: 4s;
-  animation-delay: 4s;
+  -webkit-animation-delay: 2.2s;
+  animation-delay: 2.2s;
 }
 .animated.ddelay-8s {
-  -webkit-animation-delay: 4.5s;
-  animation-delay: 4.5s;
+  -webkit-animation-delay: 2.4s;
+  animation-delay: 2.4s;
 }
 .animated.ddelay-9s {
-  -webkit-animation-delay: 5s;
-  animation-delay: 5s;
+  -webkit-animation-delay: 2.6s;
+  animation-delay: 2.6s;
 }
 .animated.ddelay-10s {
-  -webkit-animation-delay: 5.5s;
-  animation-delay: 5.5s;
+  -webkit-animation-delay: 2.8s;
+  animation-delay: 2.8s;
 }
 
 .animated.fast {
