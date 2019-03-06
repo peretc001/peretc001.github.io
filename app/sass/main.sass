@@ -20,6 +20,8 @@ body
 	box-sizing: border-box
 	margin: 0
 	padding: 0
+	-ms-text-size-adjust: 100%
+	-webkit-text-size-adjust: 100%
 	input, textarea
 		border: #666 1px solid
 		outline: none
@@ -97,6 +99,19 @@ a, a:hover
 		transform: rotate(45deg)
 		transform-origin: 100% 0%
 
+.btn
+	margin: 0
+	position: relative
+	padding: .375em 1em
+	text-transform: uppercase
+	font-weight: bold
+	font-size: 1.2em
+	border-radius: 0
+	outline: none
+	&.btn-accent
+		background: $accent
+		color: #ffffff
+
 .introHolder
 	text-align: center
 	margin: 0 auto
@@ -120,16 +135,6 @@ a, a:hover
 		line-height: 1
 	.btn
 		margin-top: $gutter
-		position: relative
-		padding: .375em 1em
-		text-transform: uppercase
-		font-weight: bold
-		font-size: 1.2em
-		border-radius: 0
-		outline: none
-		&.btn-accent
-			background: $accent
-			color: #ffffff
 
 .introHolder.inverse
 	h2, p
@@ -211,7 +216,7 @@ a, a:hover
 	top: 0
 	left: 0
 	width: 100%
-	min-height: 160px
+	min-height: 9.5em
 	&::before
 		content: ''
 		position: absolute
@@ -353,7 +358,7 @@ a, a:hover
 	padding: 0
 	transition: all .4s linear
 .nav_menu.is-sticky
-	min-height: 80px
+	min-height: 5em
 	&::before
 		height: 100%
 	.row
@@ -407,8 +412,6 @@ a, a:hover
 
 .nav_menu.inverse
 	background: #fff
-	.row
-		border-bottom: 1px solid #000
 	.mobile__menu
 		.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
 			transition: background-color .3s ease
@@ -447,14 +450,14 @@ a, a:hover
 						color: #000
 
 .clearfix
-	padding-top: 160px			
+	padding-top: 9.5em
 
 .header
 	display: flex
 	flex-direction: column
 	height: 100vh
-	min-height: 700px
-	padding: 200px 0 50px 0
+	min-height: 550px
+	padding: 10em 0 0 0
 	background-color: $text
 	background-size: cover
 	background-position: center
@@ -505,8 +508,7 @@ a, a:hover
 		padding: 0
 		margin: 0 auto
 		position: relative
-	.container
-		padding: 3em 0 10em 0
+		padding: 3em 0 8em 0
 	&::before
 		content: ''
 		position: absolute
@@ -550,8 +552,7 @@ a, a:hover
 		.col, > [class*="col-"]
 			padding: 0
 		h3
-			font-size: 22px
-			line-height: 26px
+			font-size: 1.3em
 			font-weight: 700
 			text-transform: uppercase
 			color: $text
@@ -560,9 +561,7 @@ a, a:hover
 			a
 				color: $text
 		p
-			font-size: 20px
-			line-height: 28px
-			font-weight: 400
+			font-size: 1.1em
 			color: #text
 			position: relative
 			z-index: 2
@@ -571,6 +570,7 @@ a, a:hover
 			border: 1px solid #fff
 			display: inline-block
 			background: #ffffff
+			box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2)
 			border-radius: 30em
 			padding: 1em
 			margin-bottom: 2em
@@ -600,7 +600,7 @@ a, a:hover
 	position: relative
 	background-color: $bg
 	width: 100%
-	height: 800px
+	height: 49em
 	&::before
 		content: ''
 		position: absolute
@@ -609,7 +609,7 @@ a, a:hover
 		width: 100%
 		height: 100%
 		background-position: top
-		background-size: 1400px
+		background-size: 80em
 		background-repeat: no-repeat		
 		background-image:url('../img/macbook/macbook.png')
 	.button-play
@@ -617,11 +617,11 @@ a, a:hover
 		justify-content: center
 		align-items: center		
 		a
-			margin-top: 140px
-			width: 100px
-			height: 100px
+			margin-top: 7em
+			width: 6.25em
+			height: 6.25em
 			background-color: #3dafc4
-			border-radius: 100px
+			border-radius: 50%
 			display: flex
 			justify-content: center
 			align-items: center
@@ -632,10 +632,10 @@ a, a:hover
 				left: 50%
 				top: 50%
 				transform: translateX(-50%) translateY(-50%)
-				width: 250px
-				height: 250px
+				width: 15em
+				height: 15em
 				background-color: #ffffff
-				border-radius: 250px
+				border-radius: 50%
 				opacity: .07
 				transition: all .3s ease
 			&::after
@@ -644,28 +644,28 @@ a, a:hover
 				left: 50%
 				top: 50%
 				transform: translateX(-50%) translateY(-50%)
-				width: 360px
-				height: 360px
+				width: 22em
+				height: 22em
 				border: 1px solid #ffffff
-				border-radius: 360px
+				border-radius: 50%
 				opacity: .2
 			img
-				width: 30px
+				width: 2em
 				height: auto
 				position: relative
 		a:hover
-			width: 100px
-			height: 100px
+			width: 6.25em
+			height: 6.25em
 			background-color: #3dafc4
-			border-radius: 100px
+			border-radius: 50%
 			&::before
 				content: ''	
 				position: absolute
 				left: 50%
 				top: 50%
 				transform: translateX(-50%) translateY(-50%)
-				width: 360px
-				height: 360px
+				width: 22em
+				height: 22em
 				background-color: #ffffff
 				border-radius: 360px
 				opacity: .2
@@ -719,61 +719,29 @@ a, a:hover
 	padding: $gutter*2 0
 	background: $bg
 	&__block
-		padding-bottom: 30px
+		padding-bottom: 15px
 		border-bottom: 1px solid #e7e7e7
-		margin-bottom: 60px
+		margin-bottom: 30px
 		img
 			width: 100%
 		p
-			font-size: 22px
-			margin-top: 1em
-	.btn 
-		margin-top: 0
-
-	ul
-		margin: 0
-		padding: 0
-		list-style: none
-		li
+			font-size: 1.1em
+			margin: 1em 0 0 0
+		ul
 			margin: 0
 			padding: 0
 			list-style: none
-
-	.owl-carousel 
-		.owl-item
-			padding: 0
-			margin: 0
-			img
-				width: 100%
+			li
 				margin: 0
 				padding: 0
+				list-style: none
 
-	.owl-nav 
-		position: absolute
-		top: 50%
-		left: 0
-		transform: translateY(-50%)
-		width: 100%
-		button.owl-next, 
-		button.owl-prev
-			width: 64px
-			height: 64px
-			background-color: $text
-			border-radius: 50%
-			color: #fff
-			position: absolute
-			text-align: center
-			line-height: 1
-			font-size: 26px
-			border: none
-			outline: 0
-			&:hover
-				background-color: $accent
-		button.owl-prev
-			left: 30px
-		button.owl-next
-			right: 30px
-
+	.introHolder.bottom
+		margin: 0
+		padding: $gutter/2 0
+		.btn.btn-accent
+			margin: 0
+	
 	.owl-dots 
 		position: absolute
 		bottom: 0
@@ -803,7 +771,7 @@ a, a:hover
 				font-weight: bold
 	.owl-dots.disabled
 		display: block
-
+	
 	figcaption
 		position: absolute
 		left: 100px
@@ -878,7 +846,7 @@ a, a:hover
 	&__center
 		p
 			color: #ffffff
-			font-size: 18px
+			font-size: 1.15em
 			padding: $gutter 0
 			position: relative
 			&::before
@@ -893,9 +861,9 @@ a, a:hover
 			&:last-child
 				display: block
 				height: 100%
-				min-height: 160px
+				min-height: 10em
 			span
-				font-size: 24px
+				font-size: 1.5em
 				color: #da3232
 				font-weight: 700
 	.right
@@ -908,7 +876,7 @@ a, a:hover
 		margin: $gutter 0
 		display: flex
 		padding: $gutter 0
-		height: 180px
+		height: 11em
 		p
 			background: #ffffff
 			color: $text
@@ -923,7 +891,7 @@ a, a:hover
 				content: '\f00d'
 				font-family: 'Font Awesome 5 Free'
 				font-weight: solid
-				font-size: 30px
+				font-size: 1.8em
 				color: #da3232
 				position: absolute
 				left: 5% 
@@ -941,7 +909,7 @@ a, a:hover
 					
 .recomendation
 	position: relative
-	padding: $gutter*2 0
+	padding: $gutter*1.5 0 $gutter*3 0
 	.container
 		padding: 0
 		.row, .carousel
@@ -1002,8 +970,8 @@ a, a:hover
 		.carousel-control-prev, 
 		.carousel-control-next
 			opacity: 1
-			width: 60px
-			height: 60px
+			width: 3em
+			height: 3em
 			top: 50%
 			transform: translateY(-50%)
 		.carousel-control-prev
@@ -1013,9 +981,9 @@ a, a:hover
 		.carousel-control-prev-icon,
 		.carousel-control-next-icon
 			background: $text
-			width: 60px
-			height: 60px
-			border-radius: 60px
+			width: 3em
+			height: 3em
+			border-radius: 50%
 			position: relative
 		.carousel-control-prev-icon:hover,
 		.carousel-control-next-icon:hover
@@ -1027,8 +995,8 @@ a, a:hover
 			left: 50%
 			top: 50%
 			transform: translateX(-50%) translateY(-50%)
-			width: 30px
-			height: 30px
+			width: 1.5em
+			height: 1.5em
 			background-repeat: no-repeat
 		.carousel-control-prev-icon::before
 			background: url(../img/arrow-left.svg)
@@ -1084,7 +1052,7 @@ a, a:hover
 			h3
 				color: $blue
 				text-transform: uppercase
-				font-size: 20px
+				font-size: 1.2em
 				font-weight: bold
 			p
 				color: #fff
@@ -1102,7 +1070,7 @@ a, a:hover
 				margin: 0 0 0 .5em
 			p
 				color: #ffffff
-				font-size: 20px
+				font-size: 1.2em
 				font-weight: bold
 				margin: 0 0 0 2em
 	&__text
@@ -1111,7 +1079,7 @@ a, a:hover
 		padding: $gutter/2 $gutter*1.5 $gutter/2 $gutter*1.5
 		margin: 0 2em 0 0
 		p
-			font-size: 20px
+			font-size: 1.2em
 			
 .price
 	padding: $gutter*2 0
@@ -1137,21 +1105,22 @@ a, a:hover
 		p
 			margin: .3em 0
 			b
-				font-size: 26px
+				font-size: 1.4em
 		p.name
 			opacity: .7
 		&__sum
 			margin: 1em 0
-			font-size: 33px
+			font-size: 2.3em
 			color: $accent
 			font-weight: bold
 			span
-				font-size: 25px
+				font-size: .9em
 			&__old
 				color: #ffffff
 				opacity: .4
 				font-weight: normal
 				text-decoration: line-through
+				font-size: 1em
 		&.top
 			position: relative
 			&::before
@@ -1184,7 +1153,7 @@ a, a:hover
 					transform: translateY(-50%)
 					font-family: 'Font Awesome 5 Free'
 					font-weight: bold
-					font-size: 30px
+					font-size: 2em
 					color: $blue
 	&__bottom
 		background: #fff
@@ -1289,48 +1258,11 @@ a, a:hover
 		padding: $gutter $gutter*2
 	.introHolder
 		margin-bottom: 2em
-	
-	.uk-slider-items
-		width: 100%
-		padding: 0
-		margin: 0
-		height: 100%
-		li
-			padding: 40px
-			border: 1px solid #eeeeee
-			height: 100%
-			min-height: 300px
-			display: flex
-			align-items: center	
-			img
-				width: 100%
-				margin: auto
-	.uk-slidenav
-		width: 60px
-		height: 60px
-		line-height: 50px
-		border-radius: 50%
-		background-color: #111111
-		text-align: center
-		vertical-align: center
-		opacity: 1
-	.uk-slidenav:hover
-		background: $accent
-	.uk-position-small
-		margin: 0
-		opacity: 1
-		
-	.uk-icon
-		opacity: 1
-
-.uk-position-small.uk-hidden-hover.uk-icon.uk-slidenav
-	color: #fff
-	opacity: 1
-.uk-slidenav-previous
-	left: 10px
-.uk-slidenav-next
-	right: 10px
-
+	&__carousel
+		border-right: 1px solid #cccccc
+		img
+			border: 1px solid #cccccc
+			border-right: none
 
 .staps
 	padding: $gutter*2 0
@@ -1354,14 +1286,14 @@ a, a:hover
 			[class*=col-]
 				padding: $gutter
 	p
-		font-size: 20px
+		font-size: 1.3em
 	.staps__num
 		display: flex
 		justify-content: space-between
 		align-items: center
 		padding-right: $gutter
 		p
-			font-size: 60px
+			font-size: 4em
 			line-height: 1.5
 			font-weight: bold
 			text-transform: uppercase
@@ -1454,14 +1386,14 @@ a, a:hover
 			width: 50px
 			margin-right: 30px
 		p
-			font-size: 20px
+			font-size: 1.3em
 			a
 				color: $accent
-				font-size: 24px
+				font-size: 1.4em
 				font-weight: bold
 			b
 				color: $blue
-				font-size: 24px
+				font-size: 1.4em
 				font-weight: bold
 				text-decoration: underline
 
@@ -1498,8 +1430,8 @@ a, a:hover
 			position: relative
 		
 		h2
-			font-size: 64px
-			line-height: 70px
+			font-size: 3em
+			
 			font-weight: bold
 			text-transform: uppercase
 		ul
@@ -1507,8 +1439,8 @@ a, a:hover
 			padding: 0
 			list-style-type: none
 			li
-				font-size: 20px
-				padding: 20px 10px 20px 0
+				font-size: 1.1em
+				padding: .8em 1em .8em 0
 				position: relative
 				line-height: 1.1
 				font-weight: bold
@@ -1520,21 +1452,21 @@ a, a:hover
 					transform: translateY(-50%)
 					font-family: 'Font Awesome 5 Free'
 					font-weight: bold
-					font-size: 30px
+					font-size: 2em
 					color: $blue
 	&__text
 		margin: $gutter*2 auto
 		h4
-			font-size: 24px
+			font-size: 1.5em
 			font-weight: bold
 			text-transform: uppercase
 		p
-			font-size: 18px
+			font-size: 1.2em
 			margin: 2em 0
 		p.phone
-			font-size: 20px
+			font-size: 1.15em
 			span
-				font-size: 24px
+				font-size: 1.4em
 		img
 			width: 100%
 			padding-left: $gutter*2
@@ -1545,7 +1477,7 @@ a, a:hover
 	#map_page
 		width: 100%
 		height: 100%
-		min-height: 500px
+		min-height: 31em
 		position: absolute
 		left: 0
 		top: 0
@@ -1599,7 +1531,7 @@ a, a:hover
 			display: block
 			font-weight: 500
 			padding-bottom: 1em
-			font-size: 22px
+			font-size: 1.4em
 		span
 			color: #a5a5a5
 			font-size: 1.1em
@@ -1647,12 +1579,45 @@ a, a:hover
 		background: #fff
 		padding: 20px 60px
 		p
-			font-size: 24px
+			font-size: 1.4em
 			line-height: 1.3
 			margin: 0
 			font-weight: bold
 		
+.owl-carousel 
+	.owl-item
+		padding: 0
+		margin: 0
+		img
+			width: 100%
+			margin: 0
+			padding: 0
 
+	.owl-nav 
+		position: absolute
+		top: 40%
+		left: 0
+		transform: translateY(-50%)
+		width: 100%
+		button.owl-next, 
+		button.owl-prev
+			width: 2.5em
+			height: 2.5em
+			background-color: $text
+			border-radius: 50%
+			color: #fff
+			position: absolute
+			text-align: center
+			line-height: 1
+			font-size: 1.5em
+			border: none
+			outline: 0
+			&:hover
+				background-color: $accent
+		button.owl-prev
+			left: 30px
+		button.owl-next
+			right: 30px
 
 //Mmenu
 .mm-menu 
@@ -1670,7 +1635,7 @@ a, a:hover
 	border-color: transparent
 	padding-left: 40px
 	margin-left: 30px
-	font-size: 20px
+	font-size: 1.2em
 	transition: color .3s ease
 
 .mm-listitem.active,.mm-listitem:hover,.mm-listitem_selected
@@ -1678,7 +1643,7 @@ a, a:hover
 .mm-listitem::before
 	content: "\f3a5"
 	font-family: "Font Awesome 5 Free"
-	font-size: 14px
+	font-size: .9em
 	display: flex
 	align-items: center
 	transition: color .3s ease
@@ -1692,27 +1657,16 @@ a, a:hover
 .phone.bottom.mm-listitem
 	padding-top: 0
 
+// .nav_menu, .header, .advantages, .macbook, .calculator, .design_project, .recomendation, .acquaintance, .staps, .after, .footer
+// 	display: none
 
 //Modal
-.modal-video
-	max-width: 1100px
-	.modal-body 
-		position: relative
-		padding: 0
-	.close 
-		position: absolute
-		right: -60px
-		top: 0
-		z-index: 999
-		font-size: 2em
-		font-weight: normal
-		color: #fff
-		opacity: 1
-
-.modal-content.catalog__form
-	padding: 5px 30px 60px 30px
+.modal-content
+	padding: $gutter/2 $gutter $gutter $gutter
 	border-top: 3px solid #ffae04
+	width: 100%
 	.modal-header
+		padding: 0
 		border: none
 		text-align: center
 		justify-content: center
@@ -1727,59 +1681,99 @@ a, a:hover
 			right: 20px
 			top: 20px
 
+.modal-video
+	max-width: 1100px
+	.modal-content
+		padding: 0
+		border-top: none
+		width: 100%
+	.modal-body 
+		position: relative
+		padding: 0
+	.close 
+		position: absolute
+		right: -60px
+		top: 0
+		z-index: 999
+		font-size: 2em
+		font-weight: normal
+		color: #fff
+		opacity: 1
+
+	
+.modal-content.catalog__form
+	.modal-header
+		h3
+			color: $text
+			font-size: 2em
+			text-align: center
+			padding: 0
+			margin: 0
 	.modal-body
 		padding: 0
 		p
-			color: $text
-			font-size: 1.1em
-			text-align: left
-			padding: 0
-			margin: 5px 0
+			text-align: center
+			font-size: 1.3em
+			margin: .8em 0
+			line-height: 1
+			span
+				color: $accent
+				font-size: 1.3em
 			b
-				font-size: 1.4em
+				font-size: 1.3em
+				color: $blue
+		p.blue
+			color: $blue
+			font-size: 1.7em
+		p.right
+			font-size: 1.5em
+			text-align: left
+		p.grey
+			color: #888		
+		.form-control
+			line-height: 1
+			font-size: 1.3em
+			width: 100%
+			max-width: 300px
+			text-align: center
+			color: $text
+			border: .5px solid $accent
+			font-weight: normal
+			border-radius: 0
+			margin: 2px auto
+			padding: .3em .5em
+			text-align: left
+		input::-webkit-input-placeholder
+			font-size: 1em
+			color: #ccccce
+			padding: .3em
+			line-height: 1
+		input::-moz-placeholder
+			font-size: 1em
+			color: #ccccce
+			padding: .3em
+			line-height: 1
+		input:-moz-placeholder
+			font-size: 1em
+			color: #ccccce
+			padding: .3em
+			line-height: 1
+		input:-ms-input-placeholder
+			font-size: 1em
+			color: #ccccce
+			padding: .3em
+			line-height: 1
+
 		.check_ok
 			font-size: 100px
 			color: #ffae04
 		.check_stop
 			font-size: 100px
 			color: $text
-		form
-			text-align: center
-		.form-control
-			line-height: 1
-			font-size: 20px
-			width: 100%
-			text-align: center
-			color: $text
-			border: .5px solid #ccc
-			font-weight: bold
-		input::-webkit-input-placeholder
-			font-size: 16px
-			color: $text
-			padding: .375em .75em
-			line-height: 1
-		input::-moz-placeholder
-			font-size: 16px
-			color: $text
-			padding: .375em .75em
-			line-height: 1
-		input:-moz-placeholder
-			font-size: 16px
-			color: $text
-			padding: .375em .75em
-			line-height: 1
-		input:-ms-input-placeholder
-			font-size: 16px
-			color: $text
-			padding: .375em .75em
-			line-height: 1
-		.btn.btn-success
-			margin: 10px auto
+		
 
 		
 .modal-content.okhall-modal
-	padding: 5px 30px 60px 30px
-	border-top: 3px solid #ffae04
 	.modal-header
 		border: none
 		text-align: center
@@ -1846,24 +1840,7 @@ a, a:hover
 
 	
 .modal-content.price__form
-	padding: 5px 30px 60px 30px
-	border-top: 3px solid #ffae04
-	width: 100%
 	.modal-header
-		border: none
-		text-align: center
-		justify-content: center
-		padding-bottom: 0
-		p
-			color: #111
-			font-size: 1em
-			text-align: center
-			b
-				font-size: 1.6em
-		.close
-			position: absolute
-			right: 20px
-			top: 20px
 		.form__two__header
 			h2
 				font-size: 30px
@@ -1891,7 +1868,7 @@ a, a:hover
 		.row
 			border-top: .5px solid #e7e6e6
 			text-align: center
-			padding: $gutter 0
+			padding: $gutter/2 0
 			p
 				padding: 0
 				margin: 0
@@ -1920,7 +1897,7 @@ a, a:hover
 				position: absolute
 				left: 50%
 				transform: translateX(-50%)
-				top: 5px
+				top: 0px
 				background-color: transparent
 				border: 1px solid #ffae04
 				border-radius: 0
@@ -2020,7 +1997,6 @@ a, a:hover
 			padding-bottom: 0
 		.no-border
 			border: none
-			
 
 #toTop
 	width: 30px
