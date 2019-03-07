@@ -24,7 +24,16 @@ web разработкой, владею навыками
 <br>
 
 <div style="text-align:center;">
-<h1  style="text-align:center;">Верстка и натяжка на WP</h1>
+<h1  style="text-align:center;">Верстка новой главной страницы</h1>
+<p align="center"><a style="text-align:center" href="http://s-bani.ru"><img src="https://peretc001.github.io/work/s-bani/screen.jpg" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
+<p><strong>Верстка новой главной страницы | <a href="http://s-bani.ru">http://s-bani.ru/</a></strong></p>
+<ul type="none">
+	<li>Адаптивный дизайн (Skeleton)</li>
+	<li>Мобильное меню (UiKit)</li>
+	<li>Карусель фото и видео  (UiKit)</li>
+</ul>
+<br>
+<h2  style="text-align:center;">Верстка и натяжка на WP</h2>
 <p align="center"><a style="text-align:center" href="http://web.autoprkt.ru"><img src="https://peretc001.github.io/work/okhall/screen.jpg" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
 <p><strong>Верстка и натяжка на Wordpress | <a href="http://web.autoprkt.ru">http://web.autoprkt.ru/</a></strong></p>
 <ul type="none">
@@ -39,7 +48,7 @@ web разработкой, владею навыками
 	<li>Яндекс Api с возможностью добавления точек из админки</li>
 </ul>
 <br>
-<h1  style="text-align:center;">Верстка</h1>
+<h2  style="text-align:center;">Верстка</h2>
 <p align="center"><a style="text-align:center" href="https://peretc001.github.io/templates/beauty/"><img src="https://peretc001.github.io/templates/beauty/img/screen.jpg" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
 <p><strong>Верстка макета "Салон Красоты" | <a href="https://peretc001.github.io/templates/beauty/">https://peretc001.github.io/templates/beauty/</a></strong></p>
 <ul type="none">
@@ -51,7 +60,7 @@ web разработкой, владею навыками
 	<li>Карусель отзывов (owl.Carousel)</li>
 </ul>
 <br><br>
-<h1 style="text-align:center">Мои работы под ключ</h1>
+<h2 style="text-align:center">Мои работы под ключ</h2>
 <p align="center"><a href="http://partadami.ru"><img src="https://peretc001.github.io/templates/email/img/partadami_macbook.png" style="display:block;width:100%;max-width:600px;border:none;"></a></p>
 <p><strong>Интернет-магазин «Парты ДЭМИ» | <a href="http://partadami.ru">partadami.ru</a></strong></p>
 <ul type="none">
