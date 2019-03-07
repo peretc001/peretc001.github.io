@@ -15,7 +15,7 @@ web разработкой, владею навыками
 			<td width="40px" text-align="center"><img src="https://peretc001.github.io/templates/email/img/contact/facebook.png" style="display:block;width:10px;margin:0 auto;text-align:center;"></td>
 			<td style="padding:5px 10px;font-size:14px"><a style="color:#222;text-decoration:none;" href="https://www.facebook.com/i.krasovsky123">i.krasovsky123</a></td>
 			<td width="40px" text-align="center"><img src="https://peretc001.github.io/templates/email/img/contact/telegram.png" style="display:block;width:10px;margin:0 auto;text-align:center;"></td>
-			<td style="padding:5px 10px;font-size:14px"><a style="color:#222;text-decoration:none;" href="https://t.me/peretc001">@peretc001</a></td>
+			<td style="padding:5px 10px;font-size:14px"><a style="color:#222;text-decoration:none;" href="https://t-do.ru/peretc001">@peretc001</a></td>
 			<td width="40px" text-align="center"><img src="https://peretc001.github.io/templates/email/img/contact/letter.png" style="display:block;width:20px;margin:0 auto;text-align:center;"></td>
 			<td style="padding:5px 10px;font-size:14px"><a style="color:#222;text-decoration:none;" href="mailto:peretc001@mail.ru">peretc001@mail.ru</a></td>
 		</tr>
