@@ -5,17 +5,20 @@ $url = site_url();
 $options = get_option( 'okHall_settings' );
 // print_r($_POST);
 
-if ($_POST['step'] == '1') {
 
-	$to  = $options['ok_email']; 
-	$subject = 'OKHALL: Заявка на рассчет стоимости'; 
-	$headers[]  = "Content-type: text/html; charset=utf-8 \r\n"; 
-	$headers[] = "From: OKHALL <". $options['ok_email'] .">\r\n"; 
-	$message = 'Имя: <b>'. $_POST['name'] .'</b><br>Телефон  <b>'. $_POST['phone'] .'</b><br>Тип жилья:  <b>'. $_POST['home'] .'</b><br>Примерная площадь:  <b>'. $_POST['square'] .'</b><br>Планирую приступить к ремонту:  <b>'. $_POST['time'] .'</b>';
-		wp_mail($to, $subject, $message, $headers); 
-?>
+if ($_POST['email'] != '') {
 
-<form action="/send_price.php" method="post" id="step2">
+	if ($_POST['step'] == '1') {
+
+		$to  = $options['ok_email']; 
+		$subject = 'OKHALL: Заявка на рассчет стоимости'; 
+		$headers[]  = "Content-type: text/html; charset=utf-8 \r\n"; 
+		$headers[] = "From: OKHALL <". $options['ok_email'] .">\r\n"; 
+		$message = 'Имя: <b>'. $_POST['name'] .'</b><br>Телефон  <b>'. $_POST['phone'] .'</b><br>Тип жилья:  <b>'. $_POST['home'] .'</b><br>Примерная площадь:  <b>'. $_POST['square'] .'</b><br>Планирую приступить к ремонту:  <b>'. $_POST['time'] .'</b>';
+			wp_mail($to, $subject, $message, $headers); 
+	?>
+
+			<form action="/send_price.php" method="post" id="step2">
 				<input type="hidden" name="step" value="2">
 				<input type="hidden" name="name" value="<?php echo $_POST['name']; ?>">
 				<div class="modal-header">
@@ -185,3 +188,26 @@ if ($_POST['step'] == '1') {
 		</div>
 
 	<? }	
+
+} else { ?>
+
+	<div class="modal-header">
+			<div class="introHolder inverse">
+				<h2>Запрос <span>НЕ принят</span>!</h2>
+			</div>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="modal-body">
+			<div class="row">
+				<div class="col-12 wow animated bounceIn">
+					<p class="text-center">
+						<i class="fas fa-hand-middle-finger check_stop"></i>
+					</p>
+					<p class="text-center">Не указан email</p>
+				</div>
+			</div>
+		</div>
+		
+<?php } ?>

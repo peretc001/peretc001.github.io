@@ -162,15 +162,15 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 				<div class="row header__block__column">
 					<div class="col-md-4 header__block__column__item">
 						<img src="<?php echo $options['header__block__img1']; ?>" alt="">
-						<p><?php echo $options['header__block__item1']; ?></p>
+						<p><b><?php echo $options['header__block__item1b']; ?></b> <?php echo $options['header__block__item1']; ?></p>
 					</div>
 					<div class="col-md-4 header__block__column__item">
 						<img src="<?php echo $options['header__block__img2']; ?>" alt="">
-						<p><?php echo $options['header__block__item2']; ?></p>
+						<p><b><?php echo $options['header__block__item2b']; ?></b> <?php echo $options['header__block__item2']; ?></p>
 					</div>
 					<div class="col-md-4 header__block__column__item">
 						<img src="<?php echo $options['header__block__img3']; ?>" alt="">
-						<p><?php echo $options['header__block__item3']; ?></p>
+						<p><b><?php echo $options['header__block__item3b']; ?></b> <?php echo $options['header__block__item3']; ?></p>
 					</div>
 				</div>
 
@@ -783,29 +783,19 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 					ЖК Москвы, в которых <span class="nxt"></span>реализованы <span>наши проекты</span>
 				</h2>
 			</div>
-			<div uk-slider="infinite: true">
-				<div class="uk-position-relative">
-					<div class="uk-slider-container">
-						<ul class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-4@m uk-grid">
-		        			 <?php
-								$partners = $options['partners__gallary'];
-								$partners_img = explode(";", $partners);
-								$partnersCount = count($partners_img);
+			<div class="partners__carousel owl-carousel">
+				<?php
+					$partners = $options['partners__gallary'];
+					$partners_img = explode(";", $partners);
+					$partnersCount = count($partners_img);
 
-								for($i = 0; $i < $partnersCount; $i++) {
-									echo 	'<li><img src="'. $partners_img[$i] .'" alt=""></li>';
-								}
-							?>
-					    </ul>
-					</div>
-
-				    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-	    			<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
-				</div>
+					for($i = 0; $i < $partnersCount; $i++) {
+						echo 	'<img src="'. $partners_img[$i] .'" alt="">';
+					}
+				?>
 			</div>
-			
-		
-		</div>
+		 
+		 </div>
 	</section>
 
 	<section class="staps" style="background-image:url('<?php echo $options['staps__bg__img']; ?>')">

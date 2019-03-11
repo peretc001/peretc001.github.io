@@ -13,9 +13,10 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
+	<meta name="author" lang="ru" content="Верстка и натяжка на WP: Красовский Игорь => peretc001.github.io" />
 	<title><?php bloginfo('name'); ?> - <?php bloginfo('description'); ?></title>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	
 	<!-- Template Basic Images Start -->
