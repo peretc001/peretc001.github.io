@@ -10,9 +10,9 @@
         },
         ".htaccess": {
           "type": "-",
-          "size": 32315,
+          "size": 32014,
           "lmtime": 1547393063219,
-          "modified": false
+          "modified": true
         },
         "404.php": {
           "type": "-",
@@ -120,11 +120,74 @@
           "modified": false
         },
         "img": {},
-        "inc": {},
+        "inc": {
+          "config.php": {
+            "type": "-",
+            "size": 721,
+            "lmtime": 1552069959864,
+            "modified": false
+          },
+          "cron": {},
+          "footer — копия.php": {
+            "type": "-",
+            "size": 10773,
+            "lmtime": 1552069959994,
+            "modified": false
+          },
+          "footer.php": {
+            "type": "-",
+            "size": 10773,
+            "lmtime": 1552069959994,
+            "modified": false
+          },
+          "footer2.php": {
+            "type": "-",
+            "size": 10773,
+            "lmtime": 1552069959994,
+            "modified": false
+          },
+          "form": {},
+          "header — копия.php": {
+            "type": "-",
+            "size": 1458,
+            "lmtime": 1552069960223,
+            "modified": false
+          },
+          "header.php": {
+            "type": "-",
+            "size": 1458,
+            "lmtime": 1552069960223,
+            "modified": false
+          },
+          "header2.php": {
+            "type": "-",
+            "size": 1454,
+            "lmtime": 1552070075223,
+            "modified": false
+          },
+          "nav.php": {
+            "type": "-",
+            "size": 3819,
+            "lmtime": 1552069962353,
+            "modified": false
+          },
+          "popular.php": {
+            "type": "-",
+            "size": 8698,
+            "lmtime": 1552069961039,
+            "modified": false
+          }
+        },
         "index.php": {
           "type": "-",
-          "size": 7440,
-          "lmtime": 1547042139897,
+          "size": 8334,
+          "lmtime": 1552078652545,
+          "modified": false
+        },
+        "index2.php": {
+          "type": "-",
+          "size": 8321,
+          "lmtime": 1552078506959,
           "modified": false
         },
         "js": {},
@@ -665,20 +728,14 @@
         },
         "style.css": {
           "type": "-",
-          "size": 90784,
-          "lmtime": 1547054590054,
-          "modified": true
+          "size": 96473,
+          "lmtime": 1552079292774,
+          "modified": false
         },
         "style.min.css": {
           "type": "-",
-          "size": 74269,
-          "lmtime": 1547041159039,
-          "modified": true
-        },
-        "style.min_back.css": {
-          "type": "-",
-          "size": 72657,
-          "lmtime": 0,
+          "size": 73359,
+          "lmtime": 1552079324812,
           "modified": false
         },
         "upload": {},

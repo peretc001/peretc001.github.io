@@ -40,24 +40,38 @@
 		</div>
 	</div>
 </div>
-<div id="home_img">
+<div class="top_products">
 	<div class="introHolder">
 		<h3>Самые популярные товары</h3>
-	</div>	
-	<div class="row">
-		<div class="six columns">
-			<a href="/shop/parta_bez_risunka/cyt14/bez_stula/parta_cyt14-01.php?color=pink"><img src="/img/home/3.jpg" alt="Парта ДЭМИ СУТ.14-01 розовая"></a>
-		</div>
-		<div class="six columns">
-			<a href="/shop/white/cyt24/bez_stula/parta_cyt24.php?color=white_blue"><img src="/img/home/2.jpg" alt="Парта ДЭМИ СУТ.24-01 синяя"></a>
-		</div>
 	</div>
-	<div class="row">
-		<div class="six columns">
-			<a href="/shop/parta_bez_risunka/cyt17/bez_stula/parta_cyt17-04-d1.php?color=grey"><img src="/img/home/4.jpg" alt="Парта ДЭМИ СУТ.17-04 серая"></a>
+	<div class="container">
+		<div class="row">
+			<div class="six columns">
+				<a class="top_products__href has-overlay" href="/shop/parta_bez_risunka/cyt14/bez_stula/parta_cyt14-01.php?color=pink" style="background-image: url('/img/home/3.jpg')">
+					<div class="top_products__text">Парта ДЭМИ СУТ.14-01</div>
+					<span class="more-link"><i class="fa fa-angle-right flipInY" aria-hidden="true"></i> Подробнее</span>
+				</a>
+			</div>
+			<div class="six columns">
+				<a class="top_products__href has-overlay" href="/shop/white/cyt24/bez_stula/parta_cyt24.php?color=white_blue" style="background-image: url('/img/home/2.jpg')">
+					<div class="top_products__text">Парта ДЭМИ СУТ.24</div>
+					<span class="more-link"><i class="fa fa-angle-right flipInY" aria-hidden="true"></i> Подробнее</span>
+				</a>
+			</div>
 		</div>
-		<div class="six columns">
-			<a href="/shop/white/cyt25/bez_stula/parta_cyt25-03.php?color=white_blue"><img src="/img/home/5.jpg" alt="Парта ДЭМИ СУТ.24-03 синяя"></a>
+		<div class="row">
+			<div class="six columns">
+				<a class="top_products__href has-overlay" href="/shop/parta_bez_risunka/cyt17/bez_stula/parta_cyt17-04-d1.php?color=grey" style="background-image: url('/img/home/4.jpg')">
+					<div class="top_products__text">Парта ДЭМИ СУТ.17-04</div>
+					<span class="more-link"><i class="fa fa-angle-right flipInY" aria-hidden="true"></i> Подробнее</span>
+				</a>
+			</div>
+			<div class="six columns">
+				<a class="top_products__href has-overlay" href="/shop/white/cyt25/bez_stula/parta_cyt25-03.php?color=white_blue" style="background-image: url('/img/home/5.jpg')">
+					<div class="top_products__text">Парта ДЭМИ СУТ.25-03</div>
+					<span class="more-link"><i class="fa fa-angle-right flipInY" aria-hidden="true"></i> Подробнее</span>
+				</a>
+			</div>
 		</div>
 	</div>
 	<div class="row">

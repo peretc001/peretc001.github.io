@@ -2,7 +2,7 @@
     "host": "partadami.ru",
     "username": "u1730440",
     "password": "GFDgd39021",
-    "remotePath": "/httpdocs/partadami.ru",
+    "remotePath": "httpdocs/partadami.ru",
     "protocol": "ftp",
     "port": 0,
     "fileNameEncoding": "utf8",
