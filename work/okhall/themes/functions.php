@@ -11,6 +11,8 @@
  */
 if ( function_exists( 'add_theme_support' ) ) add_theme_support( 'post-thumbnails' );
 
+
+//Delete всякую хрень
 remove_action('wp_head','feed_links_extra', 3); // убирает ссылки на rss категорий
 remove_action('wp_head','feed_links', 2); // минус ссылки на основной rss и комментарии
 remove_action('wp_head','rsd_link');  // сервис Really Simple Discovery
@@ -26,38 +28,43 @@ remove_action( 'wp_head', 'rest_output_link_wp_head');
 remove_action( 'wp_head', 'wp_oembed_add_discovery_links');
 remove_action( 'template_redirect', 'rest_output_link_header', 11, 0 );
 
+remove_action( 'wp_head', 'wp_resource_hints', 2);
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_head', 'wp_oembed_add_discovery_links' );
+remove_action('wp_head', 'wp_oembed_add_host_js' );
+remove_action('wp_print_styles', 'print_emoji_styles');
+remove_action('wp-block-library-css', 'print_block_styles');
+
+function custom_theme_assets() {
+	wp_dequeue_style( 'wp-block-library' );	
+}
+add_action( 'wp_enqueue_scripts', 'custom_theme_assets', 100 );
 
 
 function okhall_scripts() {
-	wp_register_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.7.1/css/all.css');
-	wp_register_style( 'animate', get_template_directory_uri() . '/css/animate.css');
-	wp_register_style( 'hamburger', get_template_directory_uri() . '/css/hamburgers.min.css');
-	wp_register_style( 'mmenu', 'https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/7.3.2/jquery.mmenu.all.css');
-	wp_register_style( 'owl', get_template_directory_uri() . '/js/owlCarousel/css/owl.carousel.min.css');
-	wp_register_style( 'owl-default', get_template_directory_uri() . '/js/owlCarousel/css/owl.theme.default.css');
-	wp_register_style( 'main', get_template_directory_uri() . '/css/main.min.css');
+	wp_enqueue_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.7.1/css/all.css', false, null, all);
+	wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css', false, null, all);
+	wp_enqueue_style( 'hamburger', get_template_directory_uri() . '/css/hamburgers.min.css',false, null, all);
+	wp_enqueue_style( 'mmenu', 'https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/7.3.2/jquery.mmenu.all.css', false, null, all);
+	wp_enqueue_style( 'owl', get_template_directory_uri() . '/js/owlCarousel/css/owl.carousel.min.css', false, null, all);
+	wp_enqueue_style( 'owl-default', get_template_directory_uri() . '/js/owlCarousel/css/owl.theme.default.css', false, null, all);
+	wp_enqueue_style( 'my-main-css', get_template_directory_uri() . '/css/main.min.css', false, null, all);
 
 
-	wp_enqueue_style( 'font-awesome');
-	wp_enqueue_style( 'animate');
-	wp_enqueue_style( 'hamburger');
-	wp_enqueue_style( 'mmenu');
-	wp_enqueue_style( 'owl');
-	wp_enqueue_style( 'owl-default');
-	wp_enqueue_style( 'main');
+	wp_deregister_script('jquery');
+	wp_deregister_script('jquery-migrate');
+	wp_register_script( 'jquery', includes_url( 'js/jquery/jquery.js' ), false, null, true );
+	
+
+	wp_register_script( 'owl', get_template_directory_uri() . '/js/owlCarousel/owl.carousel.min.js', 'jquery', null, true);
+	wp_register_script( 'mmenu', 'https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/7.3.2/jquery.mmenu.js', 'jquery', null, true);
+	wp_register_script( 'poper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js', 'jquery', null, true);
+	wp_register_script( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js', 'jquery', null, true);
+	wp_register_script( 'marquiz', 'https://script.marquiz.ru/v1.js', 'jquery', null, true);
+	wp_register_script( 'yandex', 'https://api-maps.yandex.ru/2.1/?lang=ru_RU', false, null, true);
+	wp_register_script( 'myscripts', get_template_directory_uri() . '/js/scripts.min.js', 'jquery', null, true);
 
 	
-	wp_register_script( 'myjquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js');
-	wp_register_script( 'owl', get_template_directory_uri() . '/js/owlCarousel/owl.carousel.min.js');
-	wp_register_script( 'mmenu', 'https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/7.3.2/jquery.mmenu.js');
-	wp_register_script( 'poper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js');
-	wp_register_script( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js');
-	wp_register_script( 'marquiz', 'https://script.marquiz.ru/v1.js');
-	wp_register_script( 'yandex', 'https://api-maps.yandex.ru/2.1/?lang=ru_RU');
-	wp_register_script( 'myscripts', get_template_directory_uri() . '/js/scripts.min.js');
-
-	wp_enqueue_script( 'myjquery');
-	wp_enqueue_script( 'flick');
 	wp_enqueue_script( 'owl');
 	wp_enqueue_script( 'mmenu');
 	wp_enqueue_script( 'poper');
@@ -67,67 +74,7 @@ function okhall_scripts() {
 	wp_enqueue_script( 'myscripts');
 
 }
-add_action( 'wp_enqueue_scripts', 'okhall_scripts' );
-
-function footer_enqueue_scripts(){
-	remove_action( 'wp_head', 'wp_resource_hints', 2);
-	remove_action('wp_head', 'print_emoji_detection_script', 7);
-	remove_action('wp_head','wp_print_scripts');
-	remove_action('wp_head','wp_print_head_scripts',9);
-	remove_action('wp_head','wp_enqueue_scripts',1);
-	remove_action('wp_head', 'wp_oembed_add_discovery_links' );
-	remove_action('wp_head', 'wp_oembed_add_host_js' );
-	remove_action('wp_print_styles', 'print_emoji_styles');
-	remove_action('wp-block-library-css', 'print_block_styles');
-	
-	add_action('wp_footer','wp_print_scripts',5);
-	add_action('wp_footer','wp_enqueue_scripts',5);
-	add_action('wp_footer','wp_print_head_scripts',5);
-}
-add_action('after_setup_theme','footer_enqueue_scripts');
-
-function custom_theme_assets() {
-wp_dequeue_style( 'wp-block-library' );
-}
-add_action( 'wp_enqueue_scripts', 'custom_theme_assets', 100 );
-
-wp_deregister_script('jquery'); 
-function remove_jq_migrate( $scripts ) {
-if ( ! is_admin() && isset( $scripts->registered['jquery'] ) ) {
-	$script = $scripts->registered['jquery'];
-	if ( $script->deps ) {
-		$script->deps = array_diff( $script->deps, array( 'jquery-migrate' ) );
-	}
-	}
-}
-add_action( 'wp_default_scripts', 'remove_jq_migrate' );
-/**
- * Implement the Custom Header feature.
- */
-#require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-#require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
-  */
-#require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
-#require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-#if ( defined( 'JETPACK__VERSION' ) ) {
-	#require get_template_directory() . '/inc/jetpack.php';
-#}
-
+add_action( 'get_footer', 'okhall_scripts' );
 
 //TGM Load plugins
 require get_template_directory() . '/tgm/okhall.php';
@@ -231,6 +178,7 @@ function okHall_page() {
    <style type="text/css">
    		#wpcontent, #wpfooter {margin-left: 140px;}
    		body {padding: 0; margin: 0;}
+   		#footer-thankyou, #footer-upgrade {display: none;}
     	.transp, input.transp { background: Transparent; border: 0.5px dashed #fff; }
     	.white, input.white { color:#fff; }
     	.blc, input.blc { border: 0.5px dashed #000; }
@@ -449,86 +397,131 @@ function okHall_page() {
 		<img class="mouse" src="/wp-content/themes/okhall/img/header/mouse.svg" alt="">
 
 		<div class="container">
-			<div class="row align-items-end style="padding:0;margin:0">
-				<div class="col-6 text-center"><?php arthur_image_uploader( 'advantages__post__bg1', $width =60, $height = 60 ); ?></div>
-				<div class="col-6 text-center"><?php arthur_image_uploader( 'advantages__post__img1', $width =60, $height = 60 ); ?></div>
-			</div>
+			<p class="text-center"><?php arthur_image_uploader( 'advantages__post__bg1', $width =60, $height = 60 ); ?></p>
 			<div class="row advantages__post" style="background-image: url('<?php echo $options['advantages__post__bg1']; ?>');padding:0;margin:0">
 				<div class="col-11 col-md-8">
-					<h3>
-						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__header1]' value='<?php echo $options['advantages__post__header1']; ?>'>
-					</h3>
-					<p class="advantages__post__text">
-						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__intro1]' value='<?php echo $options['advantages__post__intro1']; ?>'>
-						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__text1]' value='<?php echo $options['advantages__post__text1']; ?>'>
-					</p>
+					<p><?php arthur_image_uploader( 'advantages__post__img1', $width =60, $height = 60 ); ?></p>
+					<h3 class="edit_text fs15" 
+						data-okhall="okHall_settings[advantages__post__header1]" 
+						contenteditable="true"><?php echo $options['advantages__post__header1']; ?></h3>
+						<input type='hidden' 
+							name='okHall_settings[advantages__post__header1]' 
+							value='<?php echo $options['advantages__post__header1']; ?>'>
+					<p class="edit_text fs15" 
+						data-okhall="okHall_settings[advantages__post__intro1]" 
+						contenteditable="true"><?php echo $options['advantages__post__intro1']; ?></p>
+						<input type='hidden' 
+							name='okHall_settings[advantages__post__intro1]' 
+							value='<?php echo $options['advantages__post__intro1']; ?>'>
+					<p class="edit_text fs15" 
+						data-okhall="okHall_settings[advantages__post__text1]" 
+						contenteditable="true"><?php echo $options['advantages__post__text1']; ?></p>
+						<input type='hidden' 
+							name='okHall_settings[advantages__post__text1]' 
+							value='<?php echo $options['advantages__post__text1']; ?>'>
 				</div>
 			</div><!-- end row-->
 
-			<div class="row align-items-end style="padding:0;margin:0">
-				<div class="col-6 text-center"><?php arthur_image_uploader( 'advantages__post__bg2', $width =60, $height = 60 ); ?></div>
-				<div class="col-6 text-center"><?php arthur_image_uploader( 'advantages__post__img2', $width =60, $height = 60 ); ?></div>
-			</div>
+			<p class="text-center"><?php arthur_image_uploader( 'advantages__post__bg2', $width =60, $height = 60 ); ?></p>
 			<div class="row advantages__post" style="background-image: url('<?php echo $options['advantages__post__bg2']; ?>');padding:0;margin:0">
 				<div class="col-11 col-md-8">
-					<h3>
-						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__header2]' value='<?php echo $options['advantages__post__header2']; ?>'>
-					</h3>
-					<p class="advantages__post__text">
-						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__intro2]' value='<?php echo $options['advantages__post__intro2']; ?>'>
-						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__text2]' value='<?php echo $options['advantages__post__text2']; ?>'>
-					</p>
+					<p><?php arthur_image_uploader( 'advantages__post__img2', $width =60, $height = 60 ); ?></p>
+					<h3 class="edit_text fs15" 
+						data-okhall="okHall_settings[advantages__post__header2]" 
+						contenteditable="true"><?php echo $options['advantages__post__header2']; ?></h3>
+						<input type='hidden' 
+							name='okHall_settings[advantages__post__header2]' 
+							value='<?php echo $options['advantages__post__header2']; ?>'>
+					<p class="edit_text fs15" 
+						data-okhall="okHall_settings[advantages__post__intro2]" 
+						contenteditable="true"><?php echo $options['advantages__post__intro2']; ?></p>
+						<input type='hidden' 
+							name='okHall_settings[advantages__post__intro2]' 
+							value='<?php echo $options['advantages__post__intro2']; ?>'>
+					<p class="edit_text fs15" 
+						data-okhall="okHall_settings[advantages__post__text2]" 
+						contenteditable="true"><?php echo $options['advantages__post__text2']; ?></p>
+						<input type='hidden' 
+							name='okHall_settings[advantages__post__text2]' 
+							value='<?php echo $options['advantages__post__text2']; ?>'>
 				</div>
 			</div><!-- end row-->
 
-			<div class="row align-items-end style="padding:0;margin:0">
-				<div class="col-6 text-center"><?php arthur_image_uploader( 'advantages__post__bg3', $width =60, $height = 60 ); ?></div>
-				<div class="col-6 text-center"><?php arthur_image_uploader( 'advantages__post__img3', $width =60, $height = 60 ); ?></div>
-			</div>
+			<p class="text-center"><?php arthur_image_uploader( 'advantages__post__bg3', $width =60, $height = 60 ); ?></p>
 			<div class="row advantages__post" style="background-image: url('<?php echo $options['advantages__post__bg3']; ?>');padding:0;margin:0">
 				<div class="col-11 col-md-8">
-					<h3>
-						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__header3]' value='<?php echo $options['advantages__post__header3']; ?>'>
-					</h3>
-					<p class="advantages__post__text">
-						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__intro3]' value='<?php echo $options['advantages__post__intro3']; ?>'>
-						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__text3]' value='<?php echo $options['advantages__post__text3']; ?>'>
-					</p>
+					<p><?php arthur_image_uploader( 'advantages__post__img3', $width =60, $height = 60 ); ?></p>
+					<h3 class="edit_text fs15" 
+						data-okhall="okHall_settings[advantages__post__header3]" 
+						contenteditable="true"><?php echo $options['advantages__post__header3']; ?></h3>
+						<input type='hidden' 
+							name='okHall_settings[advantages__post__header3]' 
+							value='<?php echo $options['advantages__post__header3']; ?>'>
+					<p class="edit_text fs15" 
+						data-okhall="okHall_settings[advantages__post__intro3]" 
+						contenteditable="true"><?php echo $options['advantages__post__intro3']; ?></p>
+						<input type='hidden' 
+							name='okHall_settings[advantages__post__intro3]' 
+							value='<?php echo $options['advantages__post__intro3']; ?>'>
+					<p class="edit_text fs15" 
+						data-okhall="okHall_settings[advantages__post__text3]" 
+						contenteditable="true"><?php echo $options['advantages__post__text3']; ?></p>
+						<input type='hidden' 
+							name='okHall_settings[advantages__post__text3]' 
+							value='<?php echo $options['advantages__post__text3']; ?>'>
 				</div>
 			</div><!-- end row-->
 
-			<div class="row align-items-end style="padding:0;margin:0">
-				<div class="col-6 text-center"><?php arthur_image_uploader( 'advantages__post__bg4', $width =60, $height = 60 ); ?></div>
-				<div class="col-6 text-center"><?php arthur_image_uploader( 'advantages__post__img4', $width =60, $height = 60 ); ?></div>
-			</div>
+			<p class="text-center"><?php arthur_image_uploader( 'advantages__post__bg4', $width =60, $height = 60 ); ?></p>
 			<div class="row advantages__post" style="background-image: url('<?php echo $options['advantages__post__bg4']; ?>');padding:0;margin:0">
 				<div class="col-11 col-md-8">
-					<h3>
-						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__header4]' value='<?php echo $options['advantages__post__header4']; ?>'>
-					</h3>
-					<p class="advantages__post__text">
-						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__intro4]' value='<?php echo $options['advantages__post__intro4']; ?>'>
-						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__text4]' value='<?php echo $options['advantages__post__text4']; ?>'>
-					</p>
+					<p><?php arthur_image_uploader( 'advantages__post__img4', $width =60, $height = 60 ); ?></p>
+					<h3 class="edit_text fs15" 
+						data-okhall="okHall_settings[advantages__post__header4]" 
+						contenteditable="true"><?php echo $options['advantages__post__header4']; ?></h3>
+						<input type='hidden' 
+							name='okHall_settings[advantages__post__header4]' 
+							value='<?php echo $options['advantages__post__header4']; ?>'>
+					<p class="edit_text fs15" 
+						data-okhall="okHall_settings[advantages__post__intro4]" 
+						contenteditable="true"><?php echo $options['advantages__post__intro4']; ?></p>
+						<input type='hidden' 
+							name='okHall_settings[advantages__post__intro4]' 
+							value='<?php echo $options['advantages__post__intro4']; ?>'>
+					<p class="edit_text fs15" 
+						data-okhall="okHall_settings[advantages__post__text4]" 
+						contenteditable="true"><?php echo $options['advantages__post__text4']; ?></p>
+						<input type='hidden' 
+							name='okHall_settings[advantages__post__text4]' 
+							value='<?php echo $options['advantages__post__text4']; ?>'>
 				</div>
 			</div><!-- end row-->
 
-			<div class="row align-items-end style="padding:0;margin:0">
-				<div class="col-6 text-center"><?php arthur_image_uploader( 'advantages__post__bg5', $width =60, $height = 60 ); ?></div>
-				<div class="col-6 text-center"><?php arthur_image_uploader( 'advantages__post__img5', $width =60, $height = 60 ); ?></div>
-			</div>
+			<p class="text-center"><?php arthur_image_uploader( 'advantages__post__bg5', $width =60, $height = 60 ); ?></p>
 			<div class="row advantages__post" style="background-image: url('<?php echo $options['advantages__post__bg5']; ?>');padding:0;margin:0">
 				<div class="col-11 col-md-8">
-					<h3>
-						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__header5]' value='<?php echo $options['advantages__post__header5']; ?>'>
-					</h3>
-					<p class="advantages__post__text">
-						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__intro5]' value='<?php echo $options['advantages__post__intro5']; ?>'>
-						<input type='text' class="text-center form-control blc" name='okHall_settings[advantages__post__text5]' value='<?php echo $options['advantages__post__text5']; ?>'>
-					</p>
+					<p><?php arthur_image_uploader( 'advantages__post__img5', $width =60, $height = 60 ); ?></p>
+					<h3 class="edit_text fs15" 
+						data-okhall="okHall_settings[advantages__post__header5]" 
+						contenteditable="true"><?php echo $options['advantages__post__header5']; ?></h3>
+						<input type='hidden' 
+							name='okHall_settings[advantages__post__header5]' 
+							value='<?php echo $options['advantages__post__header5']; ?>'>
+					<p class="edit_text fs15" 
+						data-okhall="okHall_settings[advantages__post__intro5]" 
+						contenteditable="true"><?php echo $options['advantages__post__intro5']; ?></p>
+						<input type='hidden' 
+							name='okHall_settings[advantages__post__intro5]' 
+							value='<?php echo $options['advantages__post__intro5']; ?>'>
+					<p class="edit_text fs15" 
+						data-okhall="okHall_settings[advantages__post__text5]" 
+						contenteditable="true"><?php echo $options['advantages__post__text5']; ?></p>
+						<input type='hidden' 
+							name='okHall_settings[advantages__post__text5]' 
+							value='<?php echo $options['advantages__post__text5']; ?>'>
 				</div>
 			</div><!-- end row-->
-		
+
 		</div>
 	</section>
 
@@ -542,18 +535,32 @@ function okHall_page() {
 					<input id="home" type="checkbox" name="okHall_settings[macbook__active]" value="1" <?php if ($options['macbook__active'] == '1') { echo 'checked'; } ?> />
 					<label for="home" style="color: #fff;">Показать на главной</label>
 				</div>
-				<h2>
-					<input type='text' class="text-center form-control transp white" name='okHall_settings[macbook__h2__intro]' value='<?php echo $options['macbook__h2__intro']; ?>'>
-				</h2>
-				<p>
-					<input type='text' class="text-center form-control transp white" name='okHall_settings[macbook__p__intro]' value='<?php echo $options['macbook__p__intro']; ?>'>
+					<h2 class="edit_text" 
+						data-okhall="okHall_settings[macbook__h2__intro]" 
+						contenteditable="true"><?php echo $options['macbook__h2__intro']; ?></h2>
+						<input type='hidden' 
+							name='okHall_settings[macbook__h2__intro]' 
+							value='<?php echo $options['macbook__h2__intro']; ?>'>
+					<p class="edit_text" 
+						data-okhall="okHall_settings[macbook__p__intro]" 
+						contenteditable="true"><?php echo $options['macbook__p__intro']; ?></p>
+						<input type='hidden' 
+							name='okHall_settings[macbook__p__intro]' 
+							value='<?php echo $options['macbook__p__intro']; ?>'>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+					<p class="text-center fs13" style="color: #fff">
+						Ссылка на видео с Yotube
+					</p>
+					<p>
+						<input type='text' class="text-center form-control transp white" name='okHall_settings[macbook__video__href]' value='<?php echo $options['macbook__video__href']; ?>' placeholder="https://www.youtube.com/embed/ ...">
+					</p>
+				<p class="text-center fs13" style="color: #fff">
+					нужно заменить <u>"watch?v="</u> на <u style="color:#ffae04">"embed/"</u>
 				</p>
-				<p>
-					<input type='text' class="text-center form-control transp white" name='okHall_settings[macbook__video__href]' value='<?php echo $options['macbook__video__href']; ?>' placeholder="https://www.youtube.com/embed/ ...">
-				</p>
-				<p class="text-center" style="font-size: 18px;">
-					Ссылка на видео с Yotube, нужно заменить <u>"watch?v="</u> на <u style="color:#ffae04">"embed/"</u>
-				</p>
+				</div>
 			</div>
 			
 
@@ -625,7 +632,7 @@ function okHall_page() {
 
 	<section id="foto" class="photos">
 		<div class="container">
-
+			
 			<div class="introHolder inverse">
 				<h2 class="edit_text" 
 					data-okhall="okHall_settings[photos__h2__intro]" 
@@ -838,12 +845,17 @@ function okHall_page() {
 
 
 	<section id="wm" class="acquaintance" style="background-image:url('<?php echo $options['acquaintance__img']; ?>')">
-
 		<div class="container">
-			<p><span style="color: #fff">Ссылка на ФОНОВОЕ ИЗОБРАЖЕНИЕ:</span><br> <input type='text' class="form-control transp white" name='okHall_settings[acquaintance__img]' value='<?php echo $options['acquaintance__img']; ?>'></p>
+			<p style="position: relative;"><span style="color: #fff;">ФОНОВОЕ ИЗОБРАЖЕНИЕ:</span><br>
+			<?php arthur_image_uploader( 'acquaintance__img', $width = 60, $height = 60 ); ?></p>	
 			
 			<div class="introHolder">
-				<h2><input type='text' class="form-control transp white text-center" name='okHall_settings[acquaintance__h2__intro]' value='<?php echo $options['acquaintance__h2__intro']; ?>'></h2>
+				<h2 class="edit_text" 
+					data-okhall="okHall_settings[acquaintance__h2__intro]" 
+					contenteditable="true"><?php echo $options['acquaintance__h2__intro']; ?></h2>
+					<input type='hidden' 
+						name='okHall_settings[acquaintance__h2__intro]' 
+						value='<?php echo $options['acquaintance__h2__intro']; ?>'>
 			</div>
 
 
@@ -853,8 +865,24 @@ function okHall_page() {
 						<div class="acquaintance__block__about">
 							<div class="text-center pb-3"><?php arthur_image_uploader( 'acquaintance__img__left', $width =40, $height = 60 ); ?></div>
 							<img class="manager" src="<?php echo $options['acquaintance__img__left']; ?>" alt="Оборонева Мария">
-							<h3><input type='text' class="form-control transp white text-center" name='okHall_settings[acquaintance__h3]' value='<?php echo $options['acquaintance__h3']; ?>'></h3>
-							<textarea class="form-control transp white row3" name='okHall_settings[acquaintance__text]'><?php echo $options['acquaintance__text']; ?></textarea>
+							<h3 class="edit_text text-center" 
+								data-okhall="okHall_settings[acquaintance__h3]" 
+								contenteditable="true"><?php echo $options['acquaintance__h3']; ?></h3>
+								<input type='hidden' 
+									name='okHall_settings[acquaintance__h3]' 
+									value='<?php echo $options['acquaintance__h3']; ?>'>
+							<p class="edit_text" 
+								data-okhall="okHall_settings[acquaintance__text1]" 
+								contenteditable="true"><?php echo $options['acquaintance__text1']; ?><p>
+								<input type='hidden' 
+									name='okHall_settings[acquaintance__text1]' 
+									value='<?php echo $options['acquaintance__text1']; ?>'>
+							<p class="edit_text" 
+								data-okhall="okHall_settings[acquaintance__text2]" 
+								contenteditable="true"><?php echo $options['acquaintance__text2']; ?><p>
+								<input type='hidden' 
+									name='okHall_settings[acquaintance__text2]' 
+									value='<?php echo $options['acquaintance__text2']; ?>'>
 						</div>
 					</div>
 				</div>
@@ -863,8 +891,24 @@ function okHall_page() {
 						<div class="acquaintance__block__about">
 							<div class="text-center pb-3"><?php arthur_image_uploader( 'acquaintance__img__right', $width =40, $height = 60 ); ?></div>
 							<img class="manager right" src="<?php echo $options['acquaintance__img__right']; ?>" alt="Курбанниязова Юлия">
-							<h3><input type='text' class="form-control transp white text-center" name='okHall_settings[acquaintance__h3__right]' value='<?php echo $options['acquaintance__h3__right']; ?>'></h3>
-							<textarea class="form-control transp white row3" name='okHall_settings[acquaintance__text__right]'><?php echo $options['acquaintance__text__right']; ?></textarea>
+							<h3 class="edit_text text-center" 
+								data-okhall="okHall_settings[acquaintance__h3__right]" 
+								contenteditable="true"><?php echo $options['acquaintance__h3__right']; ?></h3>
+								<input type='hidden' 
+									name='okHall_settings[acquaintance__h3__right]' 
+									value='<?php echo $options['acquaintance__h3__right']; ?>'>
+							<p class="edit_text" 
+								data-okhall="okHall_settings[acquaintance__text__right1]" 
+								contenteditable="true"><?php echo $options['acquaintance__text__right1']; ?><p>
+								<input type='hidden' 
+									name='okHall_settings[acquaintance__text__right1]' 
+									value='<?php echo $options['acquaintance__text__right1']; ?>'>
+							<p class="edit_text" 
+								data-okhall="okHall_settings[acquaintance__text__right2]" 
+								contenteditable="true"><?php echo $options['acquaintance__text__right2']; ?><p>
+								<input type='hidden' 
+									name='okHall_settings[acquaintance__text__right2]' 
+									value='<?php echo $options['acquaintance__text__right2']; ?>'>
 						</div>
 					</div>
 				</div>
@@ -873,20 +917,40 @@ function okHall_page() {
 			<div class="row acquaintance__img">
 				<div class="col-lg-4 text-center">
 					<p class="text-center pb-3"><?php arthur_image_uploader( 'acquaintance__img__url__1', $width =60, $height = 60 ); ?></p>
-					<p><input type='text' class="text-center form-control transp white" name='okHall_settings[acquaintance__img__item__1]' value='<?php echo $options['acquaintance__img__item__1']; ?>'></p>
+					<p class="edit_text fs13" style="color: #fff"
+						data-okhall="okHall_settings[acquaintance__img__item__1]" 
+						contenteditable="true"><?php echo $options['acquaintance__img__item__1']; ?><p>
+						<input type='hidden' 
+							name='okHall_settings[acquaintance__img__item__1]' 
+							value='<?php echo $options['acquaintance__img__item__1']; ?>'>
 				</div>
 				<div class="col-lg-4 text-center">
 					<p class="text-center pb-3"><?php arthur_image_uploader( 'acquaintance__img__url__2', $width =60, $height = 60 ); ?></p>
-					<p><input type='text' class="text-center form-control transp white" name='okHall_settings[acquaintance__img__item__2]' value='<?php echo $options['acquaintance__img__item__2']; ?>'></p>
+					<p class="edit_text fs13" style="color: #fff"
+						data-okhall="okHall_settings[acquaintance__img__item__2]" 
+						contenteditable="true"><?php echo $options['acquaintance__img__item__2']; ?><p>
+						<input type='hidden' 
+							name='okHall_settings[acquaintance__img__item__2]' 
+							value='<?php echo $options['acquaintance__img__item__2']; ?>'>
 				</div>
 				<div class="col-lg-4 text-center">
 					<p class="text-center pb-3"><?php arthur_image_uploader( 'acquaintance__img__url__3', $width =60, $height = 60 ); ?></p>
-					<p><input type='text' class="text-center form-control transp white" name='okHall_settings[acquaintance__img__item__3]' value='<?php echo $options['acquaintance__img__item__3']; ?>'></p>
+					<p class="edit_text fs13" style="color: #fff"
+						data-okhall="okHall_settings[acquaintance__img__item__3]" 
+						contenteditable="true"><?php echo $options['acquaintance__img__item__3']; ?><p>
+						<input type='hidden' 
+							name='okHall_settings[acquaintance__img__item__3]' 
+							value='<?php echo $options['acquaintance__img__item__3']; ?>'>
 				</div>
 			</div>
 
 			<div class="row acquaintance__text">
-				<div class="col"><input type='text' class="form-control blc text-center" name='okHall_settings[acquaintance__text__bottom]' value='<?php echo $options['acquaintance__text__bottom']; ?>'></div>
+				<span class="edit_text" 
+						data-okhall="okHall_settings[acquaintance__text__bottom]" 
+						contenteditable="true"><?php echo $options['acquaintance__text__bottom']; ?><span>
+						<input type='hidden' 
+							name='okHall_settings[acquaintance__text__bottom]' 
+							value='<?php echo $options['acquaintance__text__bottom']; ?>'>
 			</div>
 
 		</div>
@@ -894,16 +958,22 @@ function okHall_page() {
 	
 	<section id="price" class="price" style="background-image:url('<?php echo $options['price__bg__img']; ?>')">
 		<div class="container">
-			<p style="position: relative;">Ссылка на ФОНОВОЕ ИЗОБРАЖЕНИЕ:<br>
-			<input type='text' class="form-control blc" name='okHall_settings[price__bg__img]' value='<?php echo $options['price__bg__img']; ?>'></p>
+			<p style="position: relative;">ФОНОВОЕ ИЗОБРАЖЕНИЕ:<br>
+			<?php arthur_image_uploader( 'price__bg__img', $width = 60, $height = 60 ); ?></p>	
 			
 			<div class="introHolder blue">
-				<h2>
-					<input type='text' class="text-center form-control blc" name='okHall_settings[price__h2__intro]' value='<?php echo $options['price__h2__intro']; ?>'>
-				</h2>
-				<p>
-					<input type='text' class="text-center form-control blc" name='okHall_settings[price__p__intro]' value='<?php echo $options['price__p__intro']; ?>'>
-				</p>
+				<h2 class="edit_text text-center" 
+					data-okhall="okHall_settings[price__h2__intro]" 
+					contenteditable="true"><?php echo $options['price__h2__intro']; ?></h2>
+					<input type='hidden' 
+						name='okHall_settings[price__h2__intro]' 
+						value='<?php echo $options['price__h2__intro']; ?>'>
+				<p class="edit_text" 
+					data-okhall="okHall_settings[price__p__intro]" 
+					contenteditable="true"><?php echo $options['price__p__intro']; ?></p>
+					<input type='hidden' 
+						name='okHall_settings[price__p__intro]' 
+						value='<?php echo $options['price__p__intro']; ?>'>
 			</div>
 			<div class="row">
 					<div class="col-lg-4">
@@ -915,73 +985,66 @@ function okHall_page() {
 							</div>
 						</div>
 					<div class="price__header<?php if ($options['price__block__active'] == '1') { echo ' top'; } ?>">
-						<input type='text' class="text-center form-control transp white" name='okHall_settings[price__b1__h1]' value='<?php echo $options['price__b1__h1']; ?>'>
-						<input type='text' class="text-center form-control transp white" name='okHall_settings[price__b1__h2]' value='<?php echo $options['price__b1__h2']; ?>'>
-						<input type='text' class="text-center form-control transp white" name='okHall_settings[price__b1__h3]' value='<?php echo $options['price__b1__h3']; ?>'>
+						<p class="edit_text name" 
+							data-okhall="okHall_settings[price__b1__h1]" 
+							contenteditable="true"><?php echo $options['price__b1__h1']; ?></p>
+							<input type='hidden' 
+								name='okHall_settings[price__b1__h1]' 
+								value='<?php echo $options['price__b1__h1']; ?>'>
+						<p class="edit_text" 
+							data-okhall="okHall_settings[price__b1__h2]" 
+							contenteditable="true"><b><?php echo $options['price__b1__h2']; ?></b></p>
+							<input type='hidden' 
+								name='okHall_settings[price__b1__h2]' 
+								value='<?php echo $options['price__b1__h2']; ?>'>
+						<p class="edit_text price__header__sum" 
+							data-okhall="okHall_settings[price__b1__h3]" 
+							contenteditable="true"><?php echo $options['price__b1__h3']; ?></p>
+							<input type='hidden' 
+								name='okHall_settings[price__b1__h3]' 
+								value='<?php echo $options['price__b1__h3']; ?>'>
 					</div>
 
 					<div class="price__center">
 						<ul>
-							<li><input type='text' class="form-control blc" name='okHall_settings[price__b1__c1]' value='<?php echo $options['price__b1__c1']; ?>'></li>
-							<li><input type='text' class="form-control blc" name='okHall_settings[price__b1__c2]' value='<?php echo $options['price__b1__c2']; ?>'></li>
-							<li><input type='text' class="form-control blc" name='okHall_settings[price__b1__c3]' value='<?php echo $options['price__b1__c3']; ?>'></li>
-							<li><input type='text' class="form-control blc" name='okHall_settings[price__b1__c4]' value='<?php echo $options['price__b1__c4']; ?>'></li>
+							<?php 
+								for ($i = 1; $i < 5; $i++) {
+							?>
+							<li>
+								<span class="edit_text fs1"
+									data-okhall="okHall_settings[price__b1__c<?php echo $i; ?>]" 
+									contenteditable="true"><?php echo $options['price__b1__c'. $i]; ?></span>
+									<input type='hidden' 
+										name='okHall_settings[price__b1__c<?php echo $i; ?>]' 
+										value='<?php echo $options['price__b1__c'. $i]; ?>'>
+							</li>
+							<?php } ?>
 						</ul>
 					</div>
 
 					<div class="price__bottom">
 						<ul>
+							<?php 
+								for ($i = 1; $i < 13; $i++) {
+							?>
 							<li>
-								<?php arthur_image_uploader( 'price__b1__n1', $width = 30, $height = 30 ); ?>
-								<input type='text'  class="form-control blc" name='okHall_settings[price__b1__b1]' value='<?php echo $options['price__b1__b1']; ?>'>
+								<?php arthur_image_uploader( 'price__b1__n'. $i, $width = 30, $height = 30 ); ?>
+								<span class="edit_text fs1"
+									data-okhall="okHall_settings[price__b1__b<?php echo $i; ?>]" 
+									contenteditable="true"><?php echo $options['price__b1__b'. $i]; ?></span>
+									<input type='hidden' 
+										name='okHall_settings[price__b1__b<?php echo $i; ?>]' 
+										value='<?php echo $options['price__b1__b'. $i]; ?>'>
 							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b1__n2', $width = 30, $height = 30 ); ?>
-								<input type='text'  class="form-control blc" name='okHall_settings[price__b1__b2]' value='<?php echo $options['price__b1__b2']; ?>'>
-							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b1__n3', $width = 30, $height = 30 ); ?>
-								<input type='text'  class="form-control blc" name='okHall_settings[price__b1__b3]' value='<?php echo $options['price__b1__b3']; ?>'>
-							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b1__n4', $width = 30, $height = 30 ); ?>
-								<input type='text'  class="form-control blc" name='okHall_settings[price__b1__b4]' value='<?php echo $options['price__b1__b4']; ?>'>
-							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b1__n5', $width = 30, $height = 30 ); ?>
-								<input type='text'  class="form-control blc" name='okHall_settings[price__b1__b5]' value='<?php echo $options['price__b1__b5']; ?>'>
-							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b1__n6', $width = 30, $height = 30 ); ?>
-								<input type='text'  class="form-control blc" name='okHall_settings[price__b1__b6]' value='<?php echo $options['price__b1__b6']; ?>'>
-							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b1__n7', $width = 30, $height = 30 ); ?>
-								<input type='text'  class="form-control blc" name='okHall_settings[price__b1__b7]' value='<?php echo $options['price__b1__b7']; ?>'>
-							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b1__n8', $width = 30, $height = 30 ); ?>
-								<input type='text'  class="form-control blc" name='okHall_settings[price__b1__b8]' value='<?php echo $options['price__b1__b8']; ?>'>
-							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b1__n9', $width = 30, $height = 30 ); ?>
-								<input type='text'  class="form-control blc" name='okHall_settings[price__b1__b9]' value='<?php echo $options['price__b1__b9']; ?>'>
-							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b1__n10', $width = 30, $height = 30 ); ?>
-								<input type='text'  class="form-control blc" name='okHall_settings[price__b1__b10]' value='<?php echo $options['price__b1__b10']; ?>'>
-							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b1__n11', $width = 30, $height = 30 ); ?>
-								<input type='text'  class="form-control blc" name='okHall_settings[price__b1__b11]' value='<?php echo $options['price__b1__b11']; ?>'>
-							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b1__n12', $width = 30, $height = 30 ); ?>
-								<input type='text'  class="form-control blc" name='okHall_settings[price__b1__b12]' value='<?php echo $options['price__b1__b12']; ?>'>
-							</li>
+							<?php } ?>
 						</ul>
 						<div class="introHolder">
-							<a class="btn btn-accent">Рассчитать стоимость</a>
+							<span class="edit_text btn btn-accent fs1" 
+								data-okhall="okHall_settings[price__b1__btn__1]" 
+								contenteditable="true"><?php echo $options['price__b1__btn__1']; ?></span>
+								<input type='hidden' 
+									name='okHall_settings[price__b1__btn__1]' 
+									value='<?php echo $options['price__b1__btn__1']; ?>'>
 							<p><a class="download" href="<?php echo $options['price__b1__btn__2']; ?>">Скачать пример</a></p>
 							<input type='text' class="text-center form-control blc" name='okHall_settings[price__b1__btn__2]' value='<?php echo $options['price__b1__btn__2']; ?>' placeholder="Адрес ссылки">
 						</div>
@@ -996,60 +1059,67 @@ function okHall_page() {
 						</div>
 					</div>
 					<div class="price__header<?php if ($options['price__block__active'] == '2') { echo ' top'; } ?>">
-						<input type='text' class="text-center form-control transp white" name='okHall_settings[price__b2__h1]' value='<?php echo $options['price__b2__h1']; ?>'>
-						<input type='text' class="text-center form-control transp white" name='okHall_settings[price__b2__h2]' value='<?php echo $options['price__b2__h2']; ?>'>
-						<input type='text' class="text-center form-control transp white" name='okHall_settings[price__b2__h3]' value='<?php echo $options['price__b2__h3']; ?>'>
+						<p class="edit_text name" 
+							data-okhall="okHall_settings[price__b2__h1]" 
+							contenteditable="true"><?php echo $options['price__b2__h1']; ?></p>
+							<input type='hidden' 
+								name='okHall_settings[price__b2__h1]' 
+								value='<?php echo $options['price__b2__h1']; ?>'>
+						<p class="edit_text" 
+							data-okhall="okHall_settings[price__b2__h2]" 
+							contenteditable="true"><b><?php echo $options['price__b2__h2']; ?></b></p>
+							<input type='hidden' 
+								name='okHall_settings[price__b2__h2]' 
+								value='<?php echo $options['price__b2__h2']; ?>'>
+						<p class="edit_text price__header__sum" 
+							data-okhall="okHall_settings[price__b2__h3]" 
+							contenteditable="true"><?php echo $options['price__b2__h3']; ?></p>
+							<input type='hidden' 
+								name='okHall_settings[price__b2__h3]' 
+								value='<?php echo $options['price__b2__h3']; ?>'>
 					</div>
 
 					<div class="price__center">
 						<ul>
-							<li><input type='text' class="form-control blc" name='okHall_settings[price__b2__c1]' value='<?php echo $options['price__b2__c1']; ?>'></li>
-							<li><input type='text' class="form-control blc" name='okHall_settings[price__b2__c2]' value='<?php echo $options['price__b2__c2']; ?>'></li>
-							<li><input type='text' class="form-control blc" name='okHall_settings[price__b2__c3]' value='<?php echo $options['price__b2__c3']; ?>'></li>
+							<?php 
+								for ($i = 1; $i < 4; $i++) {
+							?>
+							<li>
+								<span class="edit_text fs1"
+									data-okhall="okHall_settings[price__b2__c<?php echo $i; ?>]" 
+									contenteditable="true"><?php echo $options['price__b2__c'. $i]; ?></span>
+									<input type='hidden' 
+										name='okHall_settings[price__b2__c<?php echo $i; ?>]' 
+										value='<?php echo $options['price__b2__c'. $i]; ?>'>
+							</li>
+							<?php } ?>
 						</ul>
 					</div>
 
 					<div class="price__bottom">
 						<ul>
+							<?php 
+								for ($i = 1; $i < 10; $i++) {
+							?>
 							<li>
-								<?php arthur_image_uploader( 'price__b2__n1', $width = 30, $height = 30 ); ?>
-								<input type='text' class="form-control blc" name='okHall_settings[price__b2__b1]' value='<?php echo $options['price__b2__b1']; ?>'>
+								<?php arthur_image_uploader( 'price__b2__n'. $i, $width = 30, $height = 30 ); ?>
+								<span class="edit_text fs1"
+									data-okhall="okHall_settings[price__b2__b<?php echo $i; ?>]" 
+									contenteditable="true"><?php echo $options['price__b2__b'. $i]; ?></span>
+									<input type='hidden' 
+										name='okHall_settings[price__b2__b<?php echo $i; ?>]' 
+										value='<?php echo $options['price__b2__b'. $i]; ?>'>
 							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b2__n2', $width = 30, $height = 30 ); ?>
-								<input type='text' class="form-control blc" name='okHall_settings[price__b2__b2]' value='<?php echo $options['price__b2__b2']; ?>'>
-							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b2__n3', $width = 30, $height = 30 ); ?>
-								<input type='text' class="form-control blc" name='okHall_settings[price__b2__b3]' value='<?php echo $options['price__b2__b3']; ?>'>
-							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b2__n4', $width = 30, $height = 30 ); ?>
-								<input type='text' class="form-control blc" name='okHall_settings[price__b2__b4]' value='<?php echo $options['price__b2__b4']; ?>'>
-							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b2__n5', $width = 30, $height = 30 ); ?>
-								<input type='text' class="form-control blc" name='okHall_settings[price__b2__b5]' value='<?php echo $options['price__b2__b5']; ?>'>
-							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b2__n6', $width = 30, $height = 30 ); ?>
-								<input type='text' class="form-control blc" name='okHall_settings[price__b2__b6]' value='<?php echo $options['price__b2__b6']; ?>'>
-							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b2__n7', $width = 30, $height = 30 ); ?>
-								<input type='text' class="form-control blc" name='okHall_settings[price__b2__b7]' value='<?php echo $options['price__b2__b7']; ?>'>
-							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b2__n8', $width = 30, $height = 30 ); ?>
-								<input type='text' class="form-control blc" name='okHall_settings[price__b2__b8]' value='<?php echo $options['price__b2__b8']; ?>'>
-							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b2__n9', $width = 30, $height = 30 ); ?>
-								<input type='text' class="form-control blc" name='okHall_settings[price__b2__b9]' value='<?php echo $options['price__b2__b9']; ?>'>
-							</li>
+							<?php } ?>
 						</ul>
 						<div class="introHolder">
-							<a class="btn btn-accent">Рассчитать стоимость</a>
+							<span class="edit_text btn btn-accent fs1" 
+								data-okhall="okHall_settings[price__b2__btn__1]" 
+								contenteditable="true"><?php echo $options['price__b2__btn__1']; ?></span>
+								<input type='hidden' 
+									name='okHall_settings[price__b2__btn__1]' 
+									value='<?php echo $options['price__b2__btn__1']; ?>'>
+
 							<p><a class="download" href="<?php echo $options['price__b2__btn__2']; ?>">Скачать пример</a></p>
 							<input type='text' class="text-center form-control blc" name='okHall_settings[price__b2__btn__2]' value='<?php echo $options['price__b2__btn__2']; ?>' placeholder="Адрес ссылки">
 						</div>
@@ -1068,57 +1138,66 @@ function okHall_page() {
 						</div>
 					</div>
 					<div class="price__header<?php if ($options['price__block__active'] == '3') { echo ' top'; } ?>">
-						<input type='text' class="text-center form-control transp white" name='okHall_settings[price__b3__h1]' value='<?php echo $options['price__b3__h1']; ?>'>
-						<input type='text' class="text-center form-control transp white" name='okHall_settings[price__b3__h2]' value='<?php echo $options['price__b3__h2']; ?>'>
-						<input type='text' class="text-center form-control transp white" name='okHall_settings[price__b3__h3]' value='<?php echo $options['price__b3__h3']; ?>'>
+						<p class="edit_text name" 
+							data-okhall="okHall_settings[price__b3__h1]" 
+							contenteditable="true"><?php echo $options['price__b3__h1']; ?></p>
+							<input type='hidden' 
+								name='okHall_settings[price__b3__h1]' 
+								value='<?php echo $options['price__b3__h1']; ?>'>
+						<p class="edit_text" 
+							data-okhall="okHall_settings[price__b3__h2]" 
+							contenteditable="true"><b><?php echo $options['price__b3__h2']; ?></b></p>
+							<input type='hidden' 
+								name='okHall_settings[price__b3__h2]' 
+								value='<?php echo $options['price__b3__h2']; ?>'>
+						<p class="edit_text price__header__sum" 
+							data-okhall="okHall_settings[price__b3__h3]" 
+							contenteditable="true"><?php echo $options['price__b3__h3']; ?><p>
+							<input type='hidden' 
+								name='okHall_settings[price__b3__h3]' 
+								value='<?php echo $options['price__b3__h3']; ?>'>
 					</div>
 
 					<div class="price__center">
 						<ul>
-							<li><input type='text' class="form-control blc" name='okHall_settings[price__b3__c1]' value='<?php echo $options['price__b3__c1']; ?>'></li>
-							<li><input type='text' class="form-control blc" name='okHall_settings[price__b3__c2]' value='<?php echo $options['price__b3__c2']; ?>'></li>
-							<li><input type='text' class="form-control blc" name='okHall_settings[price__b3__c3]' value='<?php echo $options['price__b3__c3']; ?>'></li>
-							<li><input type='text' class="form-control blc" name='okHall_settings[price__b3__c4]' value='<?php echo $options['price__b3__c4']; ?>'></li>
+							<?php 
+								for ($i = 1; $i < 5; $i++) {
+							?>
+							<li>
+								<span class="edit_text fs1"
+									data-okhall="okHall_settings[price__b3__c<?php echo $i; ?>]" 
+									contenteditable="true"><?php echo $options['price__b3__c'. $i]; ?><span>
+									<input type='hidden' 
+										name='okHall_settings[price__b3__c<?php echo $i; ?>]' 
+										value='<?php echo $options['price__b3__c'. $i]; ?>'>
+							</li>
+							<?php } ?>
 						</ul>
 					</div>
 
 					<div class="price__bottom">
 						<ul>
+							<?php 
+								for ($i = 1; $i < 9; $i++) {
+							?>
 							<li>
-								<?php arthur_image_uploader( 'price__b3__n1', $width = 30, $height = 30 ); ?>
-								<input type='text' class="form-control blc" name='okHall_settings[price__b3__b1]' value='<?php echo $options['price__b3__b1']; ?>'>
+								<?php arthur_image_uploader( 'price__b3__n'. $i, $width = 30, $height = 30 ); ?>
+								<span class="edit_text fs1"
+									data-okhall="okHall_settings[price__b3__b<?php echo $i; ?>]" 
+									contenteditable="true"><?php echo $options['price__b2__b'. $i]; ?><span>
+									<input type='hidden' 
+										name='okHall_settings[price__b3__b<?php echo $i; ?>]' 
+										value='<?php echo $options['price__b3__b'. $i]; ?>'>
 							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b3__n2', $width = 30, $height = 30 ); ?>
-								<input type='text' class="form-control blc" name='okHall_settings[price__b3__b2]' value='<?php echo $options['price__b3__b2']; ?>'>
-							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b3__n3', $width = 30, $height = 30 ); ?>
-								<input type='text' class="form-control blc" name='okHall_settings[price__b3__b3]' value='<?php echo $options['price__b3__b3']; ?>'>
-							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b3__n4', $width = 30, $height = 30 ); ?>
-								<input type='text' class="form-control blc" name='okHall_settings[price__b3__b4]' value='<?php echo $options['price__b3__b4']; ?>'>
-							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b3__n5', $width = 30, $height = 30 ); ?>
-								<input type='text' class="form-control blc" name='okHall_settings[price__b3__b5]' value='<?php echo $options['price__b3__b5']; ?>'>
-							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b3__n6', $width = 30, $height = 30 ); ?>
-								<input type='text' class="form-control blc" name='okHall_settings[price__b3__b6]' value='<?php echo $options['price__b3__b6']; ?>'>
-							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b3__n7', $width = 30, $height = 30 ); ?>
-								<input type='text' class="form-control blc" name='okHall_settings[price__b3__b7]' value='<?php echo $options['price__b3__b7']; ?>'>
-							</li>
-							<li>
-								<?php arthur_image_uploader( 'price__b3__n8', $width = 30, $height = 30 ); ?>
-								<input type='text' class="form-control blc" name='okHall_settings[price__b3__b8]' value='<?php echo $options['price__b3__b8']; ?>'>
-							</li>
+							<?php } ?>
 						</ul>
 						<div class="introHolder">
-							<a class="btn btn-accent">Рассчитать стоимость</a>
+							<span class="edit_text btn btn-accent fs1" 
+								data-okhall="okHall_settings[price__b3__btn__1]" 
+								contenteditable="true"><?php echo $options['price__b3__btn__1']; ?></span>
+								<input type='hidden' 
+									name='okHall_settings[price__b3__btn__1]' 
+									value='<?php echo $options['price__b3__btn__1']; ?>'>
 							<p><a class="download" href="<?php echo $options['price__b3__btn__2']; ?>">Скачать пример</a></p>
 							<input type='text' class="text-center form-control blc" name='okHall_settings[price__b3__btn__2]' value='<?php echo $options['price__b3__btn__2']; ?>' placeholder="Адрес ссылки">
 						</div>
@@ -1131,62 +1210,113 @@ function okHall_page() {
 	
 	<section id="ban" class="banner" style="background-image:url('<?php echo $options['banner__bg__img']; ?>')">
 		<div class="container">
-			<p style="color:#fff">Ссылка на ФОНОВОЕ ИЗОБРАЖЕНИЕ:</p>
-			<input type='text' class="form-control transp white" name='okHall_settings[banner__bg__img]' value='<?php echo $options['banner__bg__img']; ?>'>
-			<br><br>
+			<p style="position: relative;">ФОНОВОЕ ИЗОБРАЖЕНИЕ:<br>
+			<?php arthur_image_uploader( 'banner__bg__img', $width = 60, $height = 60 ); ?></p>	
+			
 			<div class="row yellowHolder">
 				<div class="col-md-8 yellowHolder__left">
-					<p>
-						<span><input type='text' class="text-center form-control transp white" name='okHall_settings[banner__p__intro]' value='<?php echo $options['banner__p__intro']; ?>'></span>
-					</p>
-					<h2>
-						<input type='text' class="text-center form-control transp white" name='okHall_settings[banner__h2__intro]' value='<?php echo $options['banner__h2__intro']; ?>'>
-					</h2>
+					<p class="edit_text" 
+						data-okhall="okHall_settings[banner__p__intro]" 
+						contenteditable="true"><span><?php echo $options['banner__p__intro']; ?></span></p>
+						<input type='hidden' 
+							name='okHall_settings[banner__p__intro]' 
+							value='<?php echo $options['banner__p__intro']; ?>'>
+					<h2 class="edit_text" 
+						data-okhall="okHall_settings[banner__h2__intro]" 
+						contenteditable="true"><?php echo $options['banner__h2__intro']; ?></h2>
+						<input type='hidden' 
+							name='okHall_settings[banner__h2__intro]' 
+							value='<?php echo $options['banner__h2__intro']; ?>'>
+				
 				</div>
 				<div class="col yellowHolder__right">
-					<p class="yellowHolder__right__text"><input type='text' class="text-center form-control transp white" name='okHall_settings[banner__right__text]' value='<?php echo $options['banner__right__text']; ?>'></p>
-					<p class="yellowHolder__right__total"><input type='text' class="text-center form-control transp white" name='okHall_settings[banner__right__text__price]' value='<?php echo $options['banner__right__text__price']; ?>'></p>
+					<p class="edit_text yellowHolder__right__text" 
+						data-okhall="okHall_settings[banner__right__text]" 
+						contenteditable="true"><?php echo $options['banner__right__text']; ?></p>
+						<input type='hidden' 
+							name='okHall_settings[banner__right__text]' 
+							value='<?php echo $options['banner__right__text']; ?>'>
+					<p class="edit_text yellowHolder__right__total" 
+						data-okhall="okHall_settings[banner__right__text__price]" 
+						contenteditable="true"><?php echo $options['banner__right__text__price']; ?></p>
+						<input type='hidden' 
+							name='okHall_settings[banner__right__text__price]' 
+							value='<?php echo $options['banner__right__text__price']; ?>'>
 				</div>
 			</div>
 
 			<div class="row no-gutters banner__list">
 				<div class="col-md-4">
 					<ul>
-						<li><input type='text' class="text-center form-control transp white" name='okHall_settings[banner__banner__list__1]' value='<?php echo $options['banner__banner__list__1']; ?>'></li>
-						<li><input type='text' class="text-center form-control transp white" name='okHall_settings[banner__banner__list__2]' value='<?php echo $options['banner__banner__list__2']; ?>'></li>
+						<li><span class="edit_text" 
+							data-okhall="okHall_settings[banner__banner__list__1]" 
+							contenteditable="true"><?php echo $options['banner__banner__list__1']; ?></span>
+							<input type='hidden' 
+								name='okHall_settings[banner__banner__list__1]' 
+								value='<?php echo $options['banner__banner__list__1']; ?>'></li>
+						<li><span class="edit_text" 
+							data-okhall="okHall_settings[banner__banner__list__2]" 
+							contenteditable="true"><?php echo $options['banner__banner__list__2']; ?></span>
+							<input type='hidden' 
+								name='okHall_settings[banner__banner__list__2]' 
+								value='<?php echo $options['banner__banner__list__2']; ?>'></li>
 					</ul>
 				</div>
 				<div class="col-md-4">
 					<ul>
-						<li><input type='text' class="text-center form-control transp white" name='okHall_settings[banner__banner__list__3]' value='<?php echo $options['banner__banner__list__3']; ?>'></li>
-						<li><input type='text' class="text-center form-control transp white" name='okHall_settings[banner__banner__list__4]' value='<?php echo $options['banner__banner__list__4']; ?>'></li>
+						<li><span class="edit_text" 
+							data-okhall="okHall_settings[banner__banner__list__3]" 
+							contenteditable="true"><?php echo $options['banner__banner__list__3']; ?></span>
+							<input type='hidden' 
+								name='okHall_settings[banner__banner__list__3]' 
+								value='<?php echo $options['banner__banner__list__3']; ?>'></li>
+						<li><span class="edit_text" 
+							data-okhall="okHall_settings[banner__banner__list__4]" 
+							contenteditable="true"><?php echo $options['banner__banner__list__4']; ?></span>
+							<input type='hidden' 
+								name='okHall_settings[banner__banner__list__4]' 
+								value='<?php echo $options['banner__banner__list__4']; ?>'></li>
 					</ul>
 				</div>
 				<div class="col-md-4">
 					<ul>
-						<li><input type='text' class="text-center form-control transp white" name='okHall_settings[banner__banner__list__5]' value='<?php echo $options['banner__banner__list__5']; ?>'></li>
-						<li><input type='text' class="text-center form-control transp white" name='okHall_settings[banner__banner__list__6]' value='<?php echo $options['banner__banner__list__6']; ?>'></li>
+						<li><span class="edit_text" 
+							data-okhall="okHall_settings[banner__banner__list__5]" 
+							contenteditable="true"><?php echo $options['banner__banner__list__5']; ?></span>
+							<input type='hidden' 
+								name='okHall_settings[banner__banner__list__5]' 
+								value='<?php echo $options['banner__banner__list__5']; ?>'></li>
+						<li><span class="edit_text" 
+							data-okhall="okHall_settings[banner__banner__list__6]" 
+							contenteditable="true"><?php echo $options['banner__banner__list__6']; ?></span>
+							<input type='hidden' 
+								name='okHall_settings[banner__banner__list__6]' 
+								value='<?php echo $options['banner__banner__list__6']; ?>'></li>
 					</ul>
+				</div>
+			</div>
+			
+			<div class="row no-gutters banner__click">
+				<div class="col-md-8">
+					<p class="edit_text" 
+						data-okhall="okHall_settings[banner__banner__click]" 
+						contenteditable="true"><?php echo $options['banner__banner__click']; ?></p>
+						<input type='hidden' 
+							name='okHall_settings[banner__banner__click]' 
+							value='<?php echo $options['banner__banner__click']; ?>'>
+				</div>
+				<div class="col-md-4 introHolder">
+					<p class="btn btn-accent"><span class="edit_text fs1" 
+						data-okhall="okHall_settings[banner__btn__1]" 
+						contenteditable="true"><?php echo $options['banner__btn__1']; ?></span></p>
+						<input type='hidden' 
+							name='okHall_settings[banner__btn__1]' 
+							value='<?php echo $options['banner__btn__1']; ?>'>
+					<p><a class="text-center" href="<?php echo $options['banner__btn__2']; ?>" class="download" target="_blank">Скачать пример</a></p>
+					<p><input type='text' class="text-center form-control transp white" name='okHall_settings[banner__btn__2]' value='<?php echo $options['banner__btn__2']; ?>' placeholder="Адрес ссылки"></p>
 				</div>
 			</div>
 
-			<div class="row no-gutters banner__click">
-				<div class="col-12">
-					<p><input type='text' class="text-center form-control transp white" name='okHall_settings[banner__banner__click]' value='<?php echo $options['banner__banner__click']; ?>'></p>
-				</div>
-				<br><br>
-				<div class="col-12 introHolder  text-center">
-					<div class="row">
-						<div class="col col-md-4 offset-md-4"><a href="" class="btn btn-accent">Оставить заявку</a></div>
-					</div>
-					<div class="row">
-						<div class="col col-md-4 offset-md-4"><a href="" class="download">Скачать пример</a></div>
-					</div>
-					<div class="row">
-						<div class="col col-md-4 offset-md-4"><input type='text' class="text-center form-control transp white" name='okHall_settings[banner__btn__2]' value='<?php echo $options['banner__btn__2']; ?>' placeholder="Адрес ссылки"></p></div>
-					</div>
-				</div>
-			</div>
 			<br>
 			<div class="row">
 				<div class="col-10 offset-1 col-lg-6 offset-lg-3 text-center">
@@ -1252,88 +1382,43 @@ function okHall_page() {
 
 	<section id="stp" class="staps" style="background-image:url('<?php echo $options['staps__bg__img']; ?>')">
 		<div class="container">
-			<p style="color:#fff">Ссылка на ФОНОВОЕ ИЗОБРАЖЕНИЕ:</p>
-			<input type='text' class="form-control transp white" name='okHall_settings[staps__bg__img]' value='<?php echo $options['staps__bg__img']; ?>'>
-			<br><br>
+			<p style="position: relative;"><span style="color: #fff">ФОНОВОЕ ИЗОБРАЖЕНИЕ:</span><br>
+			<?php arthur_image_uploader( 'staps__bg__img', $width = 60, $height = 60 ); ?></p>	
 			<div class="introHolder">
-				<h2>
-					<input type='text' class="text-center form-control transp white" name='okHall_settings[staps__h2__intro]' value='<?php echo $options['staps__h2__intro']; ?>'>
-				</h2>
+				<h2 class="edit_text" 
+					data-okhall="okHall_settings[staps__h2__intro]" 
+					contenteditable="true"><?php echo $options['staps__h2__intro']; ?></h2>
+					<input type='hidden' 
+						name='okHall_settings[staps__h2__intro]' 
+						value='<?php echo $options['staps__h2__intro']; ?>'>
 			</div>
 
 			<div class="row">
+				<?php for( $i = 1; $i < 7; $i++ ) { ?>
 				<div class="col-md-6 col-lg-4">
 					<div class="staps__num">
-						<p><input type='text' class="text-center form-control transp white" name='okHall_settings[staps__01__num]' value='<?php echo $options['staps__01__num']; ?>'></p>
+						<p class="edit_text" 
+							data-okhall="okHall_settings[staps__0<?php echo $i; ?>__num]" 
+							contenteditable="true"><?php echo $options['staps__0'. $i .'__num']; ?></span>
+							<input type='hidden' 
+								name='okHall_settings[staps__0<?php echo $i; ?>__num]' 
+								value='<?php echo $options['staps__0'. $i .'__num']; ?>'>
 						<hr>
 					</div>
-					<p class="staps__name">
-						<input type='text' class="text-center form-control transp white" name='okHall_settings[staps__01__name]' value='<?php echo $options['staps__01__name']; ?>'>
-					</p>
-					<p>
-						<textarea class="form-control transp white row2" name='okHall_settings[staps__01__text]'><?php echo $options['staps__01__text']; ?></textarea>
-					</p>
+					<p class="edit_text staps__name" 
+						data-okhall="okHall_settings[staps__0<?php echo $i; ?>__name]" 
+						contenteditable="true"><?php echo $options['staps__0'. $i .'__name']; ?></p>
+						<input type='hidden' 
+							name='okHall_settings[staps__0<?php echo $i; ?>__name]' 
+							value='<?php echo $options['staps__0'. $i .'__name']; ?>'>
+					<p class="edit_text" 
+							data-okhall="okHall_settings[staps__0<?php echo $i; ?>__text]" 
+							contenteditable="true"><?php echo $options['staps__0'. $i .'__text']; ?></p>
+							<input type='hidden' 
+								name='okHall_settings[staps__0<?php echo $i; ?>__text]' 
+								value='<?php echo $options['staps__0'. $i .'__text']; ?>'>
 				</div>
-				<div class="col-md-6 col-lg-4">
-					<div class="staps__num">
-						<p><input type='text' class="text-center form-control transp white" name='okHall_settings[staps__02__num]' value='<?php echo $options['staps__02__num']; ?>'></p>
-						<hr>
-					</div>
-					<p class="staps__name">
-						<input type='text' class="text-center form-control transp white" name='okHall_settings[staps__02__name]' value='<?php echo $options['staps__02__name']; ?>'>
-					</p>
-					<p>
-						<textarea class="form-control transp white row2" name='okHall_settings[staps__02__text]'><?php echo $options['staps__02__text']; ?></textarea>
-					</p>
-				</div>
-				<div class="col-md-6 col-lg-4">
-					<div class="staps__num">
-						<p><input type='text' class="text-center form-control transp white" name='okHall_settings[staps__03__num]' value='<?php echo $options['staps__03__num']; ?>'></p>
-						<hr>
-					</div>
-					<p class="staps__name">
-						<input type='text' class="text-center form-control transp white" name='okHall_settings[staps__03__name]' value='<?php echo $options['staps__03__name']; ?>'>
-					</p>
-					<p>
-						<textarea class="form-control transp white row2" name='okHall_settings[staps__03__text]'><?php echo $options['staps__03__text']; ?></textarea>
-					</p>
-				</div>
-			
-				<div class="col-md-6 col-lg-4">
-					<div class="staps__num">
-						<p><input type='text' class="text-center form-control transp white" name='okHall_settings[staps__04__num]' value='<?php echo $options['staps__04__num']; ?>'></p>
-						<hr>
-					</div>
-					<p class="staps__name">
-						<input type='text' class="text-center form-control transp white" name='okHall_settings[staps__04__name]' value='<?php echo $options['staps__04__name']; ?>'>
-					</p>
-					<p>
-						<textarea class="form-control transp white row2" name='okHall_settings[staps__04__text]'><?php echo $options['staps__04__text']; ?></textarea>
-					</p>
-				</div>
-				<div class="col-md-6 col-lg-4">
-					<div class="staps__num">
-						<p><input type='text' class="text-center form-control transp white" name='okHall_settings[staps__05__num]' value='<?php echo $options['staps__05__num']; ?>'></p>
-						<hr>
-					</div>
-					<p class="staps__name">
-						<input type='text' class="text-center form-control transp white" name='okHall_settings[staps__05__name]' value='<?php echo $options['staps__05__name']; ?>'>
-					</p>
-					<p>
-						<textarea class="form-control transp white row2" name='okHall_settings[staps__05__text]'><?php echo $options['staps__05__text']; ?></textarea>
-					</p>
-				</div>
-				<div class="col-md-6 col-lg-4">
-					<div class="staps__num">
-						<p><input type='text' class="text-center form-control transp white" name='okHall_settings[staps__06__num]' value='<?php echo $options['staps__06__num']; ?>'></p>
-					</div>
-					<p class="staps__name">
-						<input type='text' class="text-center form-control transp white" name='okHall_settings[staps__06__name]' value='<?php echo $options['staps__06__name']; ?>'>
-					</p>
-					<p>
-						<textarea class="form-control transp white row2" name='okHall_settings[staps__06__text]'><?php echo $options['staps__06__text']; ?></textarea>
-					</p>
-				</div>
+				<?php } ?>
 			</div>
 
 		</div>
@@ -1341,13 +1426,16 @@ function okHall_page() {
 
 	<section id="aft" class="after" style="background-image:url('<?php echo $options['after__bg__img']; ?>')">
 		<div class="container">
-			<p style="color:#fff">Ссылка на ФОНОВОЕ ИЗОБРАЖЕНИЕ:</p>
-			<input type='text' class="form-control transp white" name='okHall_settings[after__bg__img]' value='<?php echo $options['after__bg__img']; ?>'>
-			<br><br>
+			<p style="position: relative;"><span style="color: #fff">ФОНОВОЕ ИЗОБРАЖЕНИЕ:</span><br>
+			<?php arthur_image_uploader( 'after__bg__img', $width = 60, $height = 60 ); ?></p>	
+			
 			<div class="introHolder">
-				<h2>
-					<input type='text' class="form-control text-center transp white" name='okHall_settings[after__h2__intro]' value='<?php echo $options['after__h2__intro']; ?>'>
-				</h2>
+				<h2 class="edit_text" 
+					data-okhall="okHall_settings[after__h2__intro]" 
+					contenteditable="true"><?php echo $options['after__h2__intro']; ?></h2>
+					<input type='hidden' 
+						name='okHall_settings[after__h2__intro]' 
+						value='<?php echo $options['after__h2__intro']; ?>'>
 			</div>
 
 			<div class="row">
@@ -1382,24 +1470,42 @@ function okHall_page() {
 	</section>
 
 	<section id="oper" class="operator" style="background-image: url('<?php echo $options['operator__bg__img']; ?>')">
-		
-			
 		<div class="operator__blur">
 			<div class="container">
 
-				
+				<p style="position: relative;">ФОНОВОЕ ИЗОБРАЖЕНИЕ:<br>
+				<?php arthur_image_uploader( 'operator__bg__img', $width = 60, $height = 60 ); ?></p>	
+			
 				<div class="row align-items-center">
-					<p>Ссылка на ФОНОВОЕ ИЗОБРАЖЕНИЕ:</p>
-					<input type='text' class="form-control blc" name='okHall_settings[operator__bg__img]' value='<?php echo $options['operator__bg__img']; ?>'>
-				
 					<div class="col-md-6">
-						<h2>
-							<input type='text' class="form-control text-center blc" name='okHall_settings[operator__h2__intro]' value='<?php echo $options['operator__h2__intro']; ?>'>
-						</h2>
+						<h2 class="edit_text" 
+							data-okhall="okHall_settings[operator__h2__intro]" 
+							contenteditable="true"><?php echo $options['operator__h2__intro']; ?></h2>
+							<input type='hidden' 
+								name='okHall_settings[operator__h2__intro]' 
+								value='<?php echo $options['operator__h2__intro']; ?>'>
 					</div>
 					<div class="col-md-6">
 						<ul>
-							<textarea class="form-control blc fwnorm row1" name='okHall_settings[operator__ul_intro]'><?php echo $options['operator__ul_intro']; ?></textarea>
+							<li class="edit_text" 
+								data-okhall="okHall_settings[operator__ul__1]" 
+								contenteditable="true"><?php echo $options['operator__ul__1']; ?></li>
+								<input type='hidden' 
+									name='okHall_settings[operator__ul__1]' 
+									value='<?php echo $options['operator__ul__1']; ?>'>
+							<li class="edit_text" 
+								data-okhall="okHall_settings[operator__ul__2]" 
+								contenteditable="true"><?php echo $options['operator__ul__2']; ?></li>
+								<input type='hidden' 
+									name='okHall_settings[operator__ul__2]' 
+									value='<?php echo $options['operator__ul__2']; ?>'>
+							<li class="edit_text" 
+								data-okhall="okHall_settings[operator__ul__3]" 
+								contenteditable="true"><?php echo $options['operator__ul__3']; ?></li>
+								<input type='hidden' 
+									name='okHall_settings[operator__ul__3]' 
+									value='<?php echo $options['operator__ul__3']; ?>'>
+
 						</ul>
 					</div>
 				</div>
@@ -1412,15 +1518,25 @@ function okHall_page() {
 
 				<div class="row">
 					<div class="col-md-6">
-						<h4>
-							<input type='text' class="form-control text-center blc" name='okHall_settings[operator__text__h4]' value='<?php echo $options['operator__text__h4']; ?>'>
-						</h4>
-						<p class="phone">
-							<input type='text' class="form-control text-center blc" name='okHall_settings[operator__text__phone]' value='<?php echo $options['operator__text__phone']; ?>'>
-						</p>
-						<p>
-							<input type='text' class="form-control text-center blc" name='okHall_settings[operator__text__p]' value='<?php echo $options['operator__text__p']; ?>'>
-						</p>
+						<h4 class="edit_text" 
+							data-okhall="okHall_settings[operator__text__h4]" 
+							contenteditable="true"><?php echo $options['operator__text__h4']; ?></h4>
+							<input type='hidden' 
+								name='okHall_settings[operator__text__h4]' 
+								value='<?php echo $options['operator__text__h4']; ?>'>
+						<p class="edit_text phone" 
+							data-okhall="okHall_settings[operator__text__phone]" 
+							contenteditable="true"><?php echo $options['operator__text__phone']; ?></p>
+							<input type='hidden' 
+								name='okHall_settings[operator__text__phone]' 
+								value='<?php echo $options['operator__text__phone']; ?>'>
+						<p class="edit_text" 
+							data-okhall="okHall_settings[operator__text__p]" 
+							contenteditable="true"><?php echo $options['operator__text__p']; ?></p>
+							<input type='hidden' 
+								name='okHall_settings[operator__text__p]' 
+								value='<?php echo $options['operator__text__p']; ?>'>
+
 						<div class="introHolder">
 							<a class="btn btn-accent">Оставить заявку</a>
 						</div>

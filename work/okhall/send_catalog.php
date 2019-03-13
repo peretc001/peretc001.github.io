@@ -7,12 +7,12 @@ $options = get_option( 'okHall_settings' );
 
 if ($_POST['email'] != '') {
 
-	$to  = $options['ok_email']; 
-	$subject = 'OKHALL: Каталог наших работ'; 
-	$headers[]  = "Content-type: text/html; charset=utf-8 \r\n"; 
-	$headers[] = "From: OKHALL <". $options['ok_email'] .">\r\n"; 
-	$message = 'Имя: <b>'. $_POST['name'] .'</b><br>Email  <b>'. $_POST['email'] .'</b><br>--- Скачал каталог';
-		wp_mail($to, $subject, $message, $headers); 
+	$to_adm  = $options['ok_email']; 
+	$subject_adm = 'OKHALL: Каталог наших работ'; 
+	$headers_adm[]  = "Content-type: text/html; charset=utf-8 \r\n"; 
+	$headers_adm[] = "From: OKHALL <". $options['ok_email'] .">\r\n"; 
+	$message_adm = 'Имя: <b>'. $_POST['name'] .'</b><br>Email  <b>'. $_POST['email'] .'</b><br>--- Скачал каталог';
+		wp_mail($to_adm, $subject_adm, $message_adm, $headers_adm); 
 
 	$to  = $_POST['email']; 
 	$subject = 'OKHALL: Каталог наших работ'; 
@@ -50,7 +50,7 @@ if ($_POST['email'] != '') {
 		                                                <!-- begin content -->
 		                                                <p style="text-align:center;font-size:14px;color:#fff"><strong style="font-size:36px;font-weight:700;">КАТАЛОГ <span style="color:#ffae04">НАШИХ РАБОТ</span></strong><br>
 		                                                    <span style="color:#888;font-size:26px;">В нем мы собрали наши лучшие проекты</span></p>
-		                                                <p style="display:inline-block;vertical-align: middle;font-size:28px;"><a href="'. $options["photos__btn__href"] .'" style="color:#fff;font-weight: bold;font-size: 18px;text-decoration: none;"><img src="'. $url .'/wp-content/themes/okhall/img/email/pdf.png" style="display:inline-block;width: 24px; height: 24px; margin: 0 5px 0 0;"> <span style="display:inline-block; margin: 0;">Скачать</span></a></p>
+		                                                <p style="display:inline-block;vertical-align: middle;font-size:28px;"><a href="'. $url .'/'. $options['photos__btn__href'] .'" style="color:#fff;font-weight: bold;font-size: 18px;text-decoration: none;"><img src="'. $url .'/wp-content/themes/okhall/img/email/pdf.png" style="display:inline-block;width: 24px; height: 24px; margin: 0 5px 0 0;"> <span style="display:inline-block; margin: 0;">Скачать</span></a></p>
 		                                                
 		                                               
 		                                                <!-- end content --> 
@@ -95,7 +95,7 @@ if ($_POST['email'] != '') {
 		
 		<div class="modal-header">
 			<div class="introHolder inverse">
-				<h2>Запрос <span>принят</span>!</h2>
+				<h3>Запрос <span>принят</span>!</h3>
 			</div>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
@@ -118,7 +118,7 @@ if ($_POST['email'] != '') {
 
 	<div class="modal-header">
 			<div class="introHolder inverse">
-				<h2>Запрос <span>НЕ принят</span>!</h2>
+				<h3>Запрос <span>НЕ принят</span>!</h3>
 			</div>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
@@ -128,7 +128,7 @@ if ($_POST['email'] != '') {
 			<div class="row">
 				<div class="col-12 wow animated bounceIn">
 					<p class="text-center">
-						<i class="fas fa-hand-middle-finger check_stop"></i>
+						<i class="far fa-surprise"></i>
 					</p>
 					<p class="text-center">Не указан email</p>
 				</div>

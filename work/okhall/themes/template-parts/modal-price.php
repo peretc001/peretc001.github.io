@@ -7,7 +7,7 @@
 	<form action="/send_price.php" method="post" id="step1">
 		<input type="hidden" name="step" value="1">
 		<div class="modal-header">
-			<p><b>Для расчета нам нужно знать:</b></p>
+			<h3>Для расчета нам нужно знать:</h3>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 			</button>

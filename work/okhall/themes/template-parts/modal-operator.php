@@ -8,7 +8,7 @@
 		<form action="/send.php" method="POST" class="okhall-form">
 			<input type="hidden" name="block" value="Оператор">
 	    	<div class="modal-header">
-	    		<p><b><?php echo $options['banner__modal__p__intro']; ?></b></p>
+	    		<h3><?php echo $options['banner__modal__p__intro']; ?></h3>
 	    		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		          <span aria-hidden="true">&times;</span>
 		        </button>
@@ -23,7 +23,7 @@
 							<div class="form-group">
 								<input type="email" name="email" class="form-control" required placeholder="Email *" />
 							</div>
-							<button type="submit" class="btn btn-success">Отправить</button>
+							<button type="submit" class="btn btn-accent">Отправить</button>
 						
 					</div>
 					<div class="col-lg-8">

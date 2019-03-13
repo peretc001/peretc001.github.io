@@ -207,6 +207,7 @@
   font-size: 30px;
   text-decoration: none;
   cursor: pointer;
+  color: #fff;
 }
 .blueimp-gallery > .play-pause {
   position: absolute;
@@ -282,4 +283,9 @@ body:last-child .blueimp-gallery-playing > .play-pause {
 }
 *+html .blueimp-gallery > .slides > .slide > .slide-content {
   position: relative;
+}
+
+.blueimp-gallery.blueimp-gallery-controls .close, .blueimp-gallery.blueimp-gallery-controls .close:hover {
+	color: #fff;
+	opacity: 1;
 }

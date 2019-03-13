@@ -18,7 +18,7 @@ if ($_POST['email'] != '') {
 		
 		<div class="modal-header">
 			<div class="introHolder inverse">
-				<h2>Запрос <span>принят</span>!</h2>
+				<h3>Запрос <span>принят</span>!</h3>
 			</div>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
@@ -38,7 +38,7 @@ if ($_POST['email'] != '') {
 
 	<div class="modal-header">
 			<div class="introHolder inverse">
-				<h2>Запрос <span>НЕ принят</span>!</h2>
+				<h3>Запрос <span>НЕ принят</span>!</h3>
 			</div>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
@@ -48,7 +48,7 @@ if ($_POST['email'] != '') {
 			<div class="row">
 				<div class="col-12 wow animated bounceIn">
 					<p class="text-center">
-						<i class="fas fa-hand-middle-finger check_stop"></i>
+						<i class="far fa-surprise"></i>
 					</p>
 					<p class="text-center">Не указан email</p>
 				</div>

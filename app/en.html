@@ -76,30 +76,30 @@
 					</a>
 				</p>
 				<p class="nav_menu__left__text">
-					<b>Яркие дизайн-проекты квартир</b>
-					<span>в модных стилях: лофт, скандинавский, современный и неоклассика</span>
+					<b>Bright design projects of apartments</b>
+					<span>in fashionable styles: loft, scandinavian, modern and neoclassic</span>
 				</p>
 			</div>
 			
 			<div class="nav_menu__right">
 				<ul class="navbar-nav">
 					<li class="nav-item active">
-						<a class="nav-link" href="#">Главная / Цены<span class="sr-only">(current)</span></a>
+						<a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Портфолио</a>
+						<a class="nav-link" href="#">Portfolio</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Услуги</a>
+						<a class="nav-link" href="#">Services</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">О нас</a>
+						<a class="nav-link" href="#">About</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Блог</a>
+						<a class="nav-link" href="#">Blog</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Контакты</a>
+						<a class="nav-link" href="#">Contact</a>
 					</li>
 				</ul>
 
@@ -113,7 +113,8 @@
 						</p>
 					</div>
 					<div class="phone">
-						<p> <span class="work">+7 (495) <b>404-04-67</b></span>
+						<p>+7 (495) <b>404-04-67</b></p>
+						<p>
 							<a href="viber://chat?number=7-925-344-25-77" target="_blank"><img src="img/header/viber.svg" alt="Viber"></a>
 							<a href="https://wa.me/7-925-344-25-77" target="_blank"><img src="img/header/whatsapp.svg" alt="Whatsapp"></a>
 							+7 (925) <b>344-25-77</b>
@@ -136,10 +137,10 @@
 					<div class="col-md-8 yellowHolder__left">
 						
 						<h1>
-							Начните ремонт<br> с дизайн-проектом
+							Start repair<br> with design-project
 						</h1>
 						<p>
-							чтобы быстрее въехать в свою квартиру
+							to quickly enter your apartament
 						</p>
 					</div>
 					<div class="col yellowHolder__right">
@@ -1236,7 +1237,7 @@
 			<form action="/send.php" method="POST" class="okhall-form">
 				<input type="hidden" name="block" value="Перепланировка">
 				<div class="modal-header">
-					<h3>Оставьте заявку</h3>
+					<p><b>Оставьте заявку</b></p>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -1279,7 +1280,7 @@
 			<form action="/send.php" method="POST" class="okhall-form">
 				<input type="hidden" name="block" value="Оператор">
 				<div class="modal-header">
-					<h3>Оставьте заявку</h3>
+					<p><b>Оставьте заявку</b></p>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -1341,18 +1342,18 @@
 				console.log(window.screen.availWidth- (window.screen.availWidth - window.innerWidth));
 			};
 
-			function stickyHeader() {
-					var st = $(window).scrollTop();
-					if (st > 0) {
-						$(".nav_menu").addClass("is-sticky");
-					} else {
-						$(".nav_menu").removeClass("is-sticky");
-					}
-				}
-				stickyHeader();
-				$(window).scroll(function () {
-					stickyHeader();
-			});
+			// function stickyHeader() {
+			// 		var st = $(window).scrollTop();
+			// 		if (st > 0) {
+			// 			$(".nav_menu").addClass("is-sticky");
+			// 		} else {
+			// 			$(".nav_menu").removeClass("is-sticky");
+			// 		}
+			// 	}
+			// 	stickyHeader();
+			// 	$(window).scroll(function () {
+			// 		stickyHeader();
+			// });
 
 			$("#my-menu").mmenu({ 
 				"extensions": ["theme-black", "pagedim-black", "position-left"], 
@@ -1524,10 +1525,7 @@
 					m16: new ymaps.Placemark([55.7990,37.6475], {}, s),
 					m17: new ymaps.Placemark([55.7855,37.6279], {}, s),
 					m18: new ymaps.Placemark([55.8151,37.6485], {}, s)				};
-				//myMap.behaviors.disable('scrollZoom');
-				//на мобильных устройствах... (проверяем по userAgent браузера)
 				if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-					//... отключаем перетаскивание карты
 					myMap.behaviors.disable('drag');
 				}
 				myMap.geoObjects

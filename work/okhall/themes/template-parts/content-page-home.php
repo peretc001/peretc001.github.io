@@ -101,11 +101,10 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 								</p>
 							</div>
 							<div class="phone">
-								<p><?php echo $number_public; ?></p>
-								<p>
+								<p><span class="work"><a href="tel:<?php echo $number_in; ?>"><?php echo $number_public; ?></a></span>
 									<a href="viber://chat?number=<?php echo $mobile_in; ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/img/header/viber.svg" alt="Viber"></a>
 									<a href="https://wa.me/<?php echo $mobile_in; ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/img/header/whatsapp.svg" alt="Whatsapp"></a>
-									<?php echo $mobile_public; ?>
+									<a href="tel:<?php echo $mobile_in; ?>"><?php echo $mobile_public; ?></a>
 								</p>
 								<p class="d-lg-none"><a href="tel:<?php echo $mobile_in; ?>"><i class="fas fa-phone"></i></a></p>
 							</div>
@@ -154,11 +153,11 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 					</div>
 					<div class="col yellowHolder__right">
 						<p class="yellowHolder__right__old"><?php echo $options['header__right__old']; ?></p>
-						<p class="yellowHolder__right__total"><?php echo $options['header__right__total']; ?></p>
+						<p class="yellowHolder__right__total"><?php echo str_replace('р./м2','<span>р./м<sup>2</sup></span>', $options['header__right__total']); ?></p>
 						<p class="yellowHolder__right__date"><?php echo $options['header__right__date']; ?></p>
 					</div>
 				</div>
-
+		
 				<div class="row header__block__column">
 					<div class="col-md-4 header__block__column__item">
 						<img src="<?php echo $options['header__block__img1']; ?>" alt="">
@@ -518,7 +517,8 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 						<div class="acquaintance__block__about">
 							<img class="manager" src="<?php echo $options['acquaintance__img__left']; ?>" alt="<?php echo $options['acquaintance__h3']; ?>">
 							<h3><?php echo $options['acquaintance__h3']; ?></h3>
-							<?php echo $options['acquaintance__text']; ?>
+							<p><?php echo $options['acquaintance__text1']; ?></p>
+							<p><?php echo $options['acquaintance__text2']; ?></p>
 						</div>
 					</div>
 				</div>
@@ -527,7 +527,8 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 						<div class="acquaintance__block__about">
 							<img class="manager right" src="<?php echo $options['acquaintance__img__right']; ?>" alt="<?php echo $options['acquaintance__h3__right']; ?>">
 							<h3><?php echo $options['acquaintance__h3__right']; ?></h3>
-							<?php echo $options['acquaintance__text__right']; ?>
+							<p><?php echo $options['acquaintance__text__right1']; ?></p>
+							<p><?php echo $options['acquaintance__text__right2']; ?></p>
 						</div>
 					</div>
 				</div>
@@ -614,7 +615,7 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 							</li>
 						</ul>
 						<div class="introHolder">
-							<a href="#" class="btn btn-accent" data-toggle="modal" data-target="#priceModalCenter">Рассчитать стоимость</a>
+							<a href="#" class="btn btn-accent" data-toggle="modal" data-target="#priceModalCenter"><?php echo $options['price__b1__btn__1']; ?></a>
 							<p><a class="download" href="<?php echo $options['price__b1__btn__2']; ?>" target="_blank">Скачать пример</a></p>
 						</div>
 					</div>
@@ -665,7 +666,7 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 							</li>
 						</ul>
 						<div class="introHolder">
-							<a href="#" class="btn btn-accent" data-toggle="modal" data-target="#priceModalCenter">Рассчитать стоимость</a>
+							<a href="#" class="btn btn-accent" data-toggle="modal" data-target="#priceModalCenter"><?php echo $options['price__b2__btn__1']; ?></a>
 							<p><a class="download" href="<?php echo $options['price__b2__btn__2']; ?>" target="_blank">Скачать пример</a></p>
 						</div>
 					</div>
@@ -714,7 +715,7 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 							</li>
 						</ul>
 						<div class="introHolder">
-							<a href="#" class="btn btn-accent" data-toggle="modal" data-target="#priceModalCenter">Рассчитать стоимость</a>
+							<a href="#" class="btn btn-accent" data-toggle="modal" data-target="#priceModalCenter"><?php echo $options['price__b3__btn__1']; ?></a>
 							<p><a class="download" href="<?php echo $options['price__b3__btn__2']; ?>" target="_blank">Скачать пример</a></p>
 						</div>
 					</div>
@@ -737,7 +738,7 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 				</div>
 				<div class="col yellowHolder__right">
 					<p class="yellowHolder__right__text"><?php echo $options['banner__right__text']; ?></p>
-					<p class="yellowHolder__right__total"><?php echo $options['banner__right__text__price']; ?></p>
+					<p class="yellowHolder__right__total"><?php echo str_replace('р.','<span>р.</span>', $options['banner__right__text__price']); ?></p>
 				</div>
 			</div>
 
@@ -767,7 +768,7 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 					<p><?php echo $options['banner__banner__click']; ?> <span class="line"><span class="arrow"></span></span></p>
 				</div>
 				<div class="col-md-4 introHolder">
-					<a href="#" class="btn btn-accent" data-toggle="modal" data-target="#bannerModalCenter">Оставить заявку</a>
+					<a href="#" class="btn btn-accent" data-toggle="modal" data-target="#bannerModalCenter"><?php echo $options['banner__btn__1']; ?></a>
 					<a href="<?php echo $options['banner__btn__2']; ?>" class="download" target="_blank">Скачать пример</a>
 				</div>
 			</div>
@@ -962,7 +963,6 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 			</div>
 		</div>
 	</section>
-
 	<section class="operator" style="background-image: url('<?php echo $options['operator__bg__img']; ?>')">
 		<link rel="stylesheet" href="/wp-content/themes/okhall/css/blueimp-gallery.css">
 		<script async src="/wp-content/themes/okhall/js/blueimp/blueimp-gallery.min.js"></script>
@@ -978,7 +978,9 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 					</div>
 					<div class="col-md-6">
 						<ul>
-							<?php echo $options['operator__ul_intro']; ?>
+							<li><?php echo $options['operator__ul__1']; ?></li>
+							<li><?php echo $options['operator__ul__2']; ?></li>
+							<li><?php echo $options['operator__ul__3']; ?></li>
 						</ul>
 					</div>
 				</div>

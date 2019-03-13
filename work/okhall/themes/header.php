@@ -126,8 +126,7 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 									</p>
 								</div>
 								<div class="phone">
-									<p><a href="tel:<?php echo $number_in; ?>"><?php echo $number_public; ?></a></p>
-									<p>
+									<p><span class="work"><a href="tel:<?php echo $number_in; ?>"><?php echo $number_public; ?></a></span>
 										<a href="viber://chat?number=<?php echo $mobile_in; ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/img/header/viber.svg" alt="Viber"></a>
 										<a href="https://wa.me/<?php echo $mobile_in; ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/img/header/whatsapp.svg" alt="Whatsapp"></a>
 										<a href="tel:<?php echo $mobile_in; ?>"><?php echo $mobile_public; ?></a>

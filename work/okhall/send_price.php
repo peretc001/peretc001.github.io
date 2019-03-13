@@ -6,8 +6,6 @@ $options = get_option( 'okHall_settings' );
 // print_r($_POST);
 
 
-if ($_POST['email'] != '') {
-
 	if ($_POST['step'] == '1') {
 
 		$to  = $options['ok_email']; 
@@ -23,7 +21,7 @@ if ($_POST['email'] != '') {
 				<input type="hidden" name="name" value="<?php echo $_POST['name']; ?>">
 				<div class="modal-header">
 					<div class="form__two__header">
-						<h2>Получите <span>в подарок</span> путеводитель по ремонту</h2>
+						<h3>Получите <span>в подарок</span> путеводитель по ремонту</h3>
 						<p>В нем мы собрали 100 СОВЕТОВ для начинающих ремонт</p>
 					</div>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -108,7 +106,7 @@ if ($_POST['email'] != '') {
 		                                                <!-- begin content -->
 		                                                <p style="text-align:center;font-size:14px;color:#fff"><strong style="font-size:36px;font-weight:700;">ПУТЕВОДИТЕЛЬ <span style="color:#ffae04">ПО РЕМОНТУ</span></strong><br>
 		                                                    <span style="color:#888;font-size:26px;">В нем мы собрали 100 СОВЕТОВ для начинающих ремонт</span></p>
-		                                                <p style="display:inline-block;vertical-align: middle;"><a href="'. $options["price__100"] .'" style="color:#fff;font-weight: bold;font-size: 18px;text-decoration: none;"><img src="'. $url .'/wp-content/themes/okhall/img/email/pdf.png" style="display:inline-block;width: 24px; height: 24px; margin: 0 5px 0 0;"> <span style="display:inline-block; margin: 0;font-size:26px;">Скачать</span></a></p>
+		                                                <p style="display:inline-block;vertical-align: middle;"><a href="'. $url .'/'. $options["price__100"] .'" style="color:#fff;font-weight: bold;font-size: 18px;text-decoration: none;"><img src="'. $url .'/wp-content/themes/okhall/img/email/pdf.png" style="display:inline-block;width: 24px; height: 24px; margin: 0 5px 0 0;"> <span style="display:inline-block; margin: 0;font-size:26px;">Скачать</span></a></p>
 		                                                
 		                                               
 		                                                <!-- end content --> 
@@ -149,18 +147,18 @@ if ($_POST['email'] != '') {
 		
 	wp_mail($to, $subject, $message, $headers); 
 
-	$to  = $options['ok_email']; 
-	$subject = 'OKHALL: Заявка на рассчет стоимости'; 
-	$headers[]  = "Content-type: text/html; charset=utf-8 \r\n"; 
-	$headers[] = "From: OKHALL <". $options['ok_email'] .">\r\n"; 
-	$message = 'Посетитель <b>'. $_POST['name'] .'</b> указал email и скачал путеводитель.<br>Email  <b>'. $_POST['email'] .'</b>';
-		wp_mail($to, $subject, $message, $headers); 
+	$to_adm  = $options['ok_email']; 
+	$subject_adm = 'OKHALL: Заявка на рассчет стоимости'; 
+	$headers_adm[]  = "Content-type: text/html; charset=utf-8 \r\n"; 
+	$headers_adm[] = "From: OKHALL <". $options['ok_email'] .">\r\n"; 
+	$message_adm = 'Посетитель <b>'. $_POST['name'] .'</b> указал email и скачал путеводитель.<br>Email  <b>'. $_POST['email'] .'</b>';
+		wp_mail($to_adm, $subject_adm, $message_adm, $headers_adm); 
 
 	?>
 		
 		<div class="modal-header">
 			<div class="form__three__header">
-				<h2>Ваш запрос <span>принят</span>!</h2>
+				<h3>Ваш запрос <span>принят</span>!</h3>
 			</div>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
@@ -187,27 +185,4 @@ if ($_POST['email'] != '') {
 			</div>
 		</div>
 
-	<? }	
-
-} else { ?>
-
-	<div class="modal-header">
-			<div class="introHolder inverse">
-				<h2>Запрос <span>НЕ принят</span>!</h2>
-			</div>
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			</button>
-		</div>
-		<div class="modal-body">
-			<div class="row">
-				<div class="col-12 wow animated bounceIn">
-					<p class="text-center">
-						<i class="fas fa-hand-middle-finger check_stop"></i>
-					</p>
-					<p class="text-center">Не указан email</p>
-				</div>
-			</div>
-		</div>
-		
-<?php } ?>
+	<? } ?>
