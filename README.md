@@ -36,7 +36,7 @@ web разработкой, владею навыками
 <h2  style="text-align:center;">Верстка и натяжка на WP</h2>
 <p align="center"><a style="text-align:center" href="http://web.autoprkt.ru"><img src="https://peretc001.github.io/work/okhall/themes/screen.jpg" style="display:block;width:100%;max-width:900px;border:none;"></a></p>
 <p><strong>Верстка и натяжка на Wordpress | <a href="http://web.autoprkt.ru">http://web.autoprkt.ru/</a></strong></p>
-<iframe width="560" height="315" align="center" src="https://www.youtube.com/embed/2p9TNUCg35Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="315" align="center" src="https://www.youtube.com/embed/2p9TNUCg35Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <ul type="none">
 	<li>Визуальный редактор Landing-page из админки</li>
 	<li>Адаптивный дизайн (Bootstrap4)</li>
