@@ -7,7 +7,7 @@
 	<form action="/send_price.php" method="post" id="step1">
 		<input type="hidden" name="step" value="1">
 		<div class="modal-header">
-			<h3>Для расчета нам нужно знать:</h3>
+			<h3><?php echo $options['price__modal__p__intro']; ?></h3>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 			</button>
@@ -16,30 +16,30 @@
 			
 				<div class="row">
 					<div class="col-12 col-lg-6">
-						<p><b>Какой у вас тип жилья?</b></p>
+						<p><b><?php echo $options['price__modal__left1']; ?></b></p>
 					</div>
 					<div class="col-4 col-lg-2">
 						<div class="radio">
-							<input id="home" type="radio" name="home" value="квартира">
-							<label for="home">квартира</label>
+							<input id="home" type="radio" name="home" value="<?php echo $options['price__modal__right1']; ?>">
+							<label for="home"><?php echo $options['price__modal__right1']; ?></label>
 						</div>
 					</div>
 					<div class="col-4 col-lg-2">
 						<div class="radio">
-							<input id="home2" type="radio" name="home" value="таунхайс">
-							<label for="home2">таунхайс</label>
+							<input id="home2" type="radio" name="home" value="<?php echo $options['price__modal__right2']; ?>">
+							<label for="home2"><?php echo $options['price__modal__right2']; ?></label>
 						</div>
 					</div>
 					<div class="col-4 col-lg-2">
 						<div class="radio">
-							<input id="home3" type="radio" name="home" value="коттедж">
-							<label for="home3">коттедж</label>
+							<input id="home3" type="radio" name="home" value="<?php echo $options['price__modal__right3']; ?>">
+							<label for="home3"><?php echo $options['price__modal__right3']; ?></label>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-12 col-lg-6">
-						<p><b>Примерная площадь?</b></p>
+						<p><b><?php echo $options['price__modal__left2']; ?></b></p>
 					</div>
 					<div class="col-2 col-lg-1">
 						<p class="text-right">м<sup>2</sup></p>
@@ -50,24 +50,24 @@
 				</div>
 				<div class="row">
 					<div class="col-12 col-lg-6">
-						<p><b>Когда планируете приступить к ремонту?</b></p>
+						<p><b><?php echo $options['price__modal__left3']; ?></b></p>
 					</div>
 					<div class="col-4 col-lg-2">
 						<div class="radio">
-							<input id="time" type="radio" name="time" value="в ближайшее время">
-							<label for="time">в ближайшее время</label>
+							<input id="time" type="radio" name="time" value="<?php echo $options['price__modal__right4']; ?>">
+							<label for="time"><?php echo $options['price__modal__right4']; ?></label>
 						</div>
 					</div>
 					<div class="col-4 col-lg-2">
 						<div class="radio">
-							<input id="time2" type="radio" name="time" value="ждем сдачи дома">
-							<label for="time2">ждем сдачи дома</label>
+							<input id="time2" type="radio" name="time" value="<?php echo $options['price__modal__right5']; ?>">
+							<label for="time2"><?php echo $options['price__modal__right5']; ?></label>
 						</div>
 					</div>
 					<div class="col-4 col-lg-2">
 						<div class="radio">
-							<input id="time3" type="radio" name="time" value="не срочно">
-							<label for="time3">не срочно</label>
+							<input id="time3" type="radio" name="time" value="<?php echo $options['price__modal__right6']; ?>">
+							<label for="time3"><?php echo $options['price__modal__right6']; ?></label>
 						</div>
 					</div>
 				</div>
@@ -81,9 +81,7 @@
 						<button type="submit" class="form__one__button">Отправить</button>
 					</div>
 				</div>
-				<p class="form__one__bottom text-center">
-					В рабочее время (с 10:00 до 20:00) перезвоним в течение 30 минут. В выходные в течение 1 часа
-				</p> 
+				<p class="form__one__bottom text-center"><?php echo $options['price__modal__bottom']; ?></p> 
 			
 		</div>
 	</form>

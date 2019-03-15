@@ -9,9 +9,9 @@ $options = get_option( 'okHall_settings' );
 	if ($_POST['step'] == '1') {
 
 		$to  = $options['ok_email']; 
-		$subject = 'OKHALL: Заявка на рассчет стоимости'; 
+		$subject = $options['price__modal__subject__let2'];
 		$headers[]  = "Content-type: text/html; charset=utf-8 \r\n"; 
-		$headers[] = "From: OKHALL <". $options['ok_email'] .">\r\n"; 
+		$headers[] = "From: ". $options['price__modal__from__let2'] ." <". $options['ok_email'] .">\r\n"; 
 		$message = 'Имя: <b>'. $_POST['name'] .'</b><br>Телефон  <b>'. $_POST['phone'] .'</b><br>Тип жилья:  <b>'. $_POST['home'] .'</b><br>Примерная площадь:  <b>'. $_POST['square'] .'</b><br>Планирую приступить к ремонту:  <b>'. $_POST['time'] .'</b>';
 			wp_mail($to, $subject, $message, $headers); 
 	?>
@@ -20,26 +20,22 @@ $options = get_option( 'okHall_settings' );
 				<input type="hidden" name="step" value="2">
 				<input type="hidden" name="name" value="<?php echo $_POST['name']; ?>">
 				<div class="modal-header">
-					<div class="form__two__header">
-						<h3>Получите <span>в подарок</span> путеводитель по ремонту</h3>
-						<p>В нем мы собрали 100 СОВЕТОВ для начинающих ремонт</p>
-					</div>
+					<h3><?php echo $options['price__modal__p__intro__let2']; ?></h3>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body">
-					
-						<div class="row no-border">
-							<div class="col-12 col-lg-6">
-								<input type="email" name="email" class="form-control" value="" placeholder="e-mail">
-								<p class="form__two__grey">Оставьте e-mail, чтобы получить советы.<br>Мы не будем доставать рекламой.</p>
-							</div>
-							<div class="col-12 col-lg-6">
-								<button type="submit" class="form__one__button">Отправить</button>
-							</div>
+				<div class="modal-body text-center">
+					<p class="blue"><?php echo $options['price__modal__let2__text1']; ?></p>
+					<div class="row no-border">
+						<div class="col-12 col-lg-6">
+							<input type="email" name="email" class="form-control" value="" placeholder="e-mail" required>
+							<p class="form__two__grey"><?php echo $options['price__modal__let2__text2']; ?></p>
 						</div>
-					
+						<div class="col-12 col-lg-6">
+							<button type="submit" class="form__one__button">Отправить</button>
+						</div>
+					</div>
 				</div>
 			</form>
 			<script>
@@ -71,16 +67,16 @@ $options = get_option( 'okHall_settings' );
 	else { 
 
 	$to  = $_POST['email']; 
-	$subject = 'OKHALL - ПУТЕВОДИТЕЛЬ ПО РЕМОНТУ'; 
+	$subject = $options['price__modal__subject__let2'];
 	$headers[]  = "Content-type: text/html; charset=utf-8 \r\n"; 
-	$headers[] = "From: OKHALL <". $options['ok_email'] .">\r\n";
+	$headers[] = "From: ". $options['price__modal__from__let2'] ." <". $options['ok_email'] .">\r\n";
 	$message = '
 	<!doctype html>
 	<html>
 	<head>
 		<meta charset="utf-8">
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700|Roboto:300,400,500,700" rel="stylesheet">
-		<title>OKHALL - ПУТЕВОДИТЕЛЬ ПО РЕМОНТУ</title>
+		<title>OK.HALL - ПУТЕВОДИТЕЛЬ ПО РЕМОНТУ</title>
 	</head>
 	<body style="font-family:Roboto, Helvetica, Arial, sans-serif; background-color:#f4fafa; margin:0; padding:0; color:#222; font-size:16px; font-weight:300; line-height:20px; box-sizing: border-box; text-size-adjust:none; -webkit-text-size-adjust:none; -ms-text-size-adjust:none;">
 
@@ -148,9 +144,9 @@ $options = get_option( 'okHall_settings' );
 	wp_mail($to, $subject, $message, $headers); 
 
 	$to_adm  = $options['ok_email']; 
-	$subject_adm = 'OKHALL: Заявка на рассчет стоимости'; 
+	$subject_adm = 'OK.HALL: Скачан путеводитель'; 
 	$headers_adm[]  = "Content-type: text/html; charset=utf-8 \r\n"; 
-	$headers_adm[] = "From: OKHALL <". $options['ok_email'] .">\r\n"; 
+	$headers_adm[] = "From: ". $options['price__modal__from'] ." <". $options['ok_email'] .">\r\n"; 
 	$message_adm = 'Посетитель <b>'. $_POST['name'] .'</b> указал email и скачал путеводитель.<br>Email  <b>'. $_POST['email'] .'</b>';
 		wp_mail($to_adm, $subject_adm, $message_adm, $headers_adm); 
 
@@ -158,7 +154,7 @@ $options = get_option( 'okHall_settings' );
 		
 		<div class="modal-header">
 			<div class="form__three__header">
-				<h3>Ваш запрос <span>принят</span>!</h3>
+				<h3>Путеводитель <span>отправлен!</span></h3>
 			</div>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<span aria-hidden="true">&times;</span>

@@ -5,20 +5,20 @@ $url = site_url();
 $options = get_option( 'okHall_settings' );
 // print_r($_POST);
 
-if ($_POST['email'] != '') {
+if ($_POST['phone'] != '') {
 
 	$to  = $options['ok_email']; 
-	$subject = 'OKHALL: Заявка с сайта'; 
+	$subject = $options['banner__modal__subject']; 
 	$headers[]  = "Content-type: text/html; charset=utf-8 \r\n"; 
-	$headers[] = "From: OKHALL <". $options['ok_email'] .">\r\n"; 
-	$message = 'Имя: <b>'. $_POST['name'] .'</b><br>Email  <b>'. $_POST['email'] .'</b><br>--- Раздел: '. $_POST['block'];
+	$headers[] = "From: ". $options['banner__modal__from'] ." <". $options['ok_email'] .">\r\n"; 
+	$message = 'Имя: <b>'. $_POST['name'] .'</b><br>Телефон:  <b>'. $_POST['phone'] .'</b><br>--- Раздел: '. $_POST['block'];
 		wp_mail($to, $subject, $message, $headers);
 
 	?>
 		
 		<div class="modal-header">
 			<div class="introHolder inverse">
-				<h3>Запрос <span>принят</span>!</h3>
+				<h3>Заявка <span>принята!</span></h3>
 			</div>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
@@ -38,7 +38,7 @@ if ($_POST['email'] != '') {
 
 	<div class="modal-header">
 			<div class="introHolder inverse">
-				<h3>Запрос <span>НЕ принят</span>!</h3>
+				<h3>Заявка <span>НЕ принята!</span></h3>
 			</div>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
@@ -50,7 +50,7 @@ if ($_POST['email'] != '') {
 					<p class="text-center">
 						<i class="far fa-surprise"></i>
 					</p>
-					<p class="text-center">Не указан email</p>
+					<p class="text-center">Не указан телефон</p>
 				</div>
 			</div>
 		</div>

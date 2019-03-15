@@ -274,6 +274,7 @@ function okHall_page() {
 		   				<li><a href="#aft">Итог</a></li>
 		   				<li><a href="#oper">Оператор</a></li>
 		   				<li><a href="#footer">Карта</a></li>
+		   				<li><a href="#letters">Письма</a></li>
 		   			</ul>
 	   			</div>
 	   		</div>
@@ -671,24 +672,7 @@ function okHall_page() {
 				<p class="text-center"><span class="tsilver fs1">Ссылка на каталог</span></p>
 				<p><input type='text' style="max-width: 300px;margin: 0 auto;" class="form-control blc text-center"  name='okHall_settings[photos__btn__href]' value='<?php echo $options['photos__btn__href']; ?>' placeholder="Ссылка на каталог"></p>
 			</div>
-	
-	
-	
-			<div class="row">
-				<div class="col-10 offset-1 col-lg-6 offset-lg-3 text-center">
 
-					<div class="modal-content okhall">
-						
-						<p><b><input type='text' class="form-control blc text-center"  name='okHall_settings[photos__modal__p__intro]' value='<?php echo $options['photos__modal__p__intro']; ?>'></b></p>
-						<p><b><input type='text' class="form-control blc text-center"  name='okHall_settings[photos__modal__text1]' value='<?php echo $options['photos__modal__text1']; ?>'></b></p>
-						<p><b><input type='text' class="form-control blc text-center"  name='okHall_settings[photos__modal__text2]' value='<?php echo $options['photos__modal__text2']; ?>'></b></p>
-						<p><b><input type='text' class="form-control blc text-center"  name='okHall_settings[photos__modal__text3]' value='<?php echo $options['photos__modal__text3']; ?>'></b></p>
-						<p><b><input type='text' class="form-control blc text-center"  name='okHall_settings[photos__modal__text4]' value='<?php echo $options['photos__modal__text4']; ?>'></b></p>
-
-					</div>
-				</div>
-			</div>
-	
 		</div>
 	</section>
 
@@ -1316,20 +1300,6 @@ function okHall_page() {
 					<p><input type='text' class="text-center form-control transp white" name='okHall_settings[banner__btn__2]' value='<?php echo $options['banner__btn__2']; ?>' placeholder="Адрес ссылки"></p>
 				</div>
 			</div>
-
-			<br>
-			<div class="row">
-				<div class="col-10 offset-1 col-lg-6 offset-lg-3 text-center">
-
-					<div class="modal-content okhall">
-						
-						<p><b><input type='text' class="form-control blc text-center"  name='okHall_settings[banner__modal__p__intro]' value='<?php echo $options['banner__modal__p__intro']; ?>'></b></p>
-						<textarea class="form-control blc fwnorm row2"  name='okHall_settings[banner__modal__text]'><?php echo $options['banner__modal__text']; ?></textarea>
-
-					</div>
-				</div>
-			</div>
-			<br><br>
 		</div>
 	</section>
 	
@@ -1632,8 +1602,366 @@ function okHall_page() {
 					</div>
 				</div>
 			</div>
-	
 	</footer>
+	
+	<div class="clearfix"></div>
+
+	<section id="letters" style="background-image:url('/wp-content/uploads/2019/02/pattern.jpg')">
+		<div class="container">
+
+			<div class="introHolder inverse">
+				<h2>Скачать каталог</h2>
+			</div>
+			
+			<div class="row">
+				<div class="col-10 offset-1 text-center">
+
+					<div class="row">
+						<div class="col-md-6 text-center">
+							<p class="fs1">Тема письма:</p> 
+							<input type='text' class="form-control blc text-center" name='okHall_settings[photos__modal__subject]' value='<?php echo $options['photos__modal__subject']; ?>'>
+						</div>
+						<div class="col-md-6 text-center">
+							<p class="fs1">Название отправителя</p> 
+							<input type='text' class="form-control blc text-center" name='okHall_settings[photos__modal__from]' value='<?php echo $options['photos__modal__from']; ?>'>
+						</div>
+					</div>
+					<br>
+					<div class="modal-content catalog__form">
+    					<div class="modal-header">
+
+				    		<h3 class="edit_text" 
+								data-okhall="okHall_settings[photos__modal__p__intro]" 
+								contenteditable="true"><?php echo $options['photos__modal__p__intro']; ?></h3>
+								<input type='hidden' 
+									name='okHall_settings[photos__modal__p__intro]' 
+									value='<?php echo $options['photos__modal__p__intro']; ?>'>
+				      	</div>
+				      	<div class="modal-body">
+							<p class="edit_text blue" 
+								data-okhall="okHall_settings[photos__modal__text1]" 
+								contenteditable="true"><?php echo $options['photos__modal__text1']; ?></p>
+								<input type='hidden' 
+									name='okHall_settings[photos__modal__text1]' 
+									value='<?php echo $options['photos__modal__text1']; ?>'>
+
+							<div class="row align-items-center">
+								<div class="col-lg-6 text-center">
+
+									<input type="text" name="name" class="form-control" placeholder="Имя" disabled/>
+									<input type="email" name="email" class="form-control" placeholder="Email *" disabled/>
+								</div>
+								<div class="col-lg-6">
+									<p class="edit_text right" 
+										data-okhall="okHall_settings[photos__modal__text2]" 
+										contenteditable="true"><?php echo $options['photos__modal__text2']; ?></p>
+										<input type='hidden' 
+											name='okHall_settings[photos__modal__text2]' 
+											value='<?php echo $options['photos__modal__text2']; ?>'>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-6 text-center">
+									<p class="edit_text grey" 
+										data-okhall="okHall_settings[photos__modal__text3]" 
+										contenteditable="true"><?php echo $options['photos__modal__text3']; ?></p>
+										<input type='hidden' 
+											name='okHall_settings[photos__modal__text3]' 
+											value='<?php echo $options['photos__modal__text3']; ?>'>
+									<span class="btn btn-accent">Отправить</span>
+								</div>
+							</div>
+							<div class="row pt-2 justify-content-center">
+								<p class="edit_text grey" 
+									data-okhall="okHall_settings[photos__modal__text4]" 
+									contenteditable="true"><?php echo $options['photos__modal__text4']; ?></p>
+									<input type='hidden' 
+										name='okHall_settings[photos__modal__text4]' 
+										value='<?php echo $options['photos__modal__text4']; ?>'>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		<br><br>
+		<div class="container">
+
+			<div class="introHolder inverse">
+				<h2>Рассчитать стоимость</h2>
+			</div>
+			
+			<div class="row">
+				<div class="col-10 offset-1 text-center">
+
+					<div class="row">
+						<div class="col-md-6 text-center">
+							<p class="fs1">Тема письма:</p> 
+							<input type='text' class="form-control blc text-center" name='okHall_settings[price__modal__subject]' value='<?php echo $options['price__modal__subject']; ?>'>
+						</div>
+						<div class="col-md-6 text-center">
+							<p class="fs1">Название отправителя</p> 
+							<input type='text' class="form-control blc text-center" name='okHall_settings[price__modal__from]' value='<?php echo $options['price__modal__from']; ?>'>
+						</div>
+					</div>
+					<br>
+					<div class="modal-content price__form">
+						<div class="modal-header">
+							<h3 class="edit_text" 
+								data-okhall="okHall_settings[price__modal__p__intro]" 
+								contenteditable="true"><?php echo $options['price__modal__p__intro']; ?></h3>
+								<input type='hidden' 
+									name='okHall_settings[price__modal__p__intro]' 
+									value='<?php echo $options['price__modal__p__intro']; ?>'>
+						</div>
+						<div class="modal-body">
+							
+								<div class="row">
+									<div class="col-12 col-lg-6">
+										<p class="edit_text" 
+											data-okhall="okHall_settings[price__modal__left1]" 
+											contenteditable="true"><b><?php echo $options['price__modal__left1']; ?></b></p>
+											<input type='hidden' 
+												name='okHall_settings[price__modal__left1]' 
+												value='<?php echo $options['price__modal__left1']; ?>'>
+									</div>
+									<div class="col-4 col-lg-2">
+										<div class="radio">
+											<input id="home" type="radio" name="home">
+											<label for="home" class="edit_text" 
+												data-okhall="okHall_settings[price__modal__right1]" 
+												contenteditable="true"><?php echo $options['price__modal__right1']; ?></label>
+												<input type='hidden' 
+													name='okHall_settings[price__modal__right1]' 
+													value='<?php echo $options['price__modal__right1']; ?>'>
+										</div>
+									</div>
+									<div class="col-4 col-lg-2">
+										<div class="radio">
+											<input id="home2" type="radio" name="home">
+											<label for="home2" class="edit_text" 
+												data-okhall="okHall_settings[price__modal__right2]" 
+												contenteditable="true"><?php echo $options['price__modal__right2']; ?></label>
+												<input type='hidden' 
+													name='okHall_settings[price__modal__right2]' 
+													value='<?php echo $options['price__modal__right2']; ?>'>
+										</div>
+									</div>
+									<div class="col-4 col-lg-2">
+										<div class="radio">
+											<input id="home3" type="radio" name="home">
+											<label for="home3" class="edit_text" 
+												data-okhall="okHall_settings[price__modal__right3]" 
+												contenteditable="true"><?php echo $options['price__modal__right3']; ?></label>
+												<input type='hidden' 
+													name='okHall_settings[price__modal__right3]' 
+													value='<?php echo $options['price__modal__right3']; ?>'>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-12 col-lg-6">
+										<p class="edit_text" 
+											data-okhall="okHall_settings[price__modal__left2]" 
+											contenteditable="true"><b><?php echo $options['price__modal__left2']; ?></b></p>
+											<input type='hidden' 
+												name='okHall_settings[price__modal__left2]' 
+												value='<?php echo $options['price__modal__left2']; ?>'>
+									</div>
+									<div class="col-2 col-lg-1">
+										<p class="text-right">м<sup>2</sup></p>
+									</div>
+									<div class="col-10 col-lg-2 text-left">
+										<input type="tel" name="square" class="form-control form__one__metr" value="" disabled/>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-12 col-lg-6">
+										<p class="edit_text" 
+											data-okhall="okHall_settings[price__modal__left3]" 
+											contenteditable="true"><b><?php echo $options['price__modal__left3']; ?></b></p>
+											<input type='hidden' 
+												name='okHall_settings[price__modal__left3]' 
+												value='<?php echo $options['price__modal__left3']; ?>'>
+									</div>
+									<div class="col-4 col-lg-2">
+										<div class="radio">
+											<input id="time" type="radio" name="time">
+											<label for="time" class="edit_text" 
+												data-okhall="okHall_settings[price__modal__right4]" 
+												contenteditable="true"><?php echo $options['price__modal__right4']; ?></label>
+												<input type='hidden' 
+													name='okHall_settings[price__modal__right4]' 
+													value='<?php echo $options['price__modal__right4']; ?>'>
+										</div>
+									</div>
+									<div class="col-4 col-lg-2">
+										<div class="radio">
+											<input id="time2" type="radio" name="time">
+											<label for="time2" class="edit_text" 
+												data-okhall="okHall_settings[price__modal__right5]" 
+												contenteditable="true"><?php echo $options['price__modal__right5']; ?></label>
+												<input type='hidden' 
+													name='okHall_settings[price__modal__right5]' 
+													value='<?php echo $options['price__modal__right5']; ?>'>
+										</div>
+									</div>
+									<div class="col-4 col-lg-2">
+										<div class="radio">
+											<input id="time3" type="radio" name="time">
+											<label for="time3" class="edit_text" 
+												data-okhall="okHall_settings[price__modal__right6]" 
+												contenteditable="true"><?php echo $options['price__modal__right6']; ?></label>
+												<input type='hidden' 
+													name='okHall_settings[price__modal__right6]' 
+													value='<?php echo $options['price__modal__right6']; ?>'>
+										</div>
+									</div>
+								</div>
+
+								<div class="row no-padding">
+									<div class="col-lg-6">
+										<input type="text" name="name" class="form-control" value="" placeholder="Ваше имя" disabled>
+										<input type="tel" name="phone" class="form-control" value="" placeholder="Телефон" disabled>
+									</div>
+									<div class="col-lg-6">
+										<span class="form__one__button">Отправить</span>
+									</div>
+								</div>
+								<p class="form__one__bottom text-center">
+									<p class="edit_text" 
+										data-okhall="okHall_settings[price__modal__bottom]" 
+										contenteditable="true"><?php echo $options['price__modal__bottom']; ?></p>
+										<input type='hidden' 
+											name='okHall_settings[price__modal__bottom]' 
+											value='<?php echo $options['price__modal__bottom']; ?>'>
+								</p> 
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-md-6 text-center">
+							<p class="fs1">Тема письма:</p> 
+							<input type='text' class="form-control blc text-center" name='okHall_settings[price__modal__subject__let2]' value='<?php echo $options['price__modal__subject__let2']; ?>'>
+						</div>
+						<div class="col-md-6 text-center">
+							<p class="fs1">Название отправителя</p> 
+							<input type='text' class="form-control blc text-center" name='okHall_settings[price__modal__from__let2]' value='<?php echo $options['price__modal__from__let2']; ?>'>
+						</div>
+					</div>
+					<br>
+					<div class="modal-content price__form">
+						<div class="modal-header">
+							<h3 class="edit_text" 
+								data-okhall="okHall_settings[price__modal__p__intro__let2]" 
+								contenteditable="true"><?php echo $options['price__modal__p__intro__let2']; ?></h3>
+								<input type="hidden"
+									name='okHall_settings[price__modal__p__intro__let2]' 
+									value='<?php echo $options['price__modal__p__intro__let2']; ?>'>
+						</div>
+						<div class="modal-body">
+							<p class="edit_text blue" 
+								data-okhall="okHall_settings[price__modal__let2__text1]" 
+								contenteditable="true"><?php echo $options['price__modal__let2__text1']; ?></p>
+								<input type="hidden"
+									name='okHall_settings[price__modal__let2__text1]' 
+									value='<?php echo $options['price__modal__let2__text1']; ?>'>
+							<div class="row no-border">
+								<div class="col-12 col-lg-6">
+									<input type="email" name="email" class="form-control" value="" placeholder="e-mail" disabled>
+									<p class="edit_text form__two__grey" 
+										data-okhall="okHall_settings[price__modal__let2__text2]" 
+										contenteditable="true"><?php echo $options['price__modal__let2__text2']; ?></p>
+										<input type="hidden"
+											name='okHall_settings[price__modal__let2__text2]' 
+											value='<?php echo $options['price__modal__let2__text2']; ?>'>
+								</div>
+								<div class="col-12 col-lg-6">
+									<span class="form__one__button">Отправить</span>
+								</div>
+							</div>							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="container">
+
+			<div class="introHolder inverse">
+				<h2>Оставьте заявку</h2>
+			</div>
+			
+			<div class="row">
+				<div class="col-10 offset-1 text-center">
+
+					<div class="row">
+						<div class="col-md-6 text-center">
+							<p class="fs1">Тема письма:</p> 
+							<input type='text' class="form-control blc text-center" name='okHall_settings[banner__modal__subject]' value='<?php echo $options['banner__modal__subject']; ?>'>
+						</div>
+						<div class="col-md-6 text-center">
+							<p class="fs1">Название отправителя</p> 
+							<input type='text' class="form-control blc text-center" name='okHall_settings[banner__modal__from]' value='<?php echo $options['banner__modal__from']; ?>'>
+						</div>
+					</div>
+					<br>
+					<div class="modal-content okhall-modal">
+
+						<div class="modal-header">
+							<h3 class="edit_text" 
+								data-okhall="okHall_settings[banner__modal__p__intro]" 
+								contenteditable="true"><?php echo $options['banner__modal__p__intro']; ?></h3>
+								<input type='hidden' 
+									name='okHall_settings[banner__modal__p__intro]' 
+									value='<?php echo $options['banner__modal__p__intro']; ?>'>
+						</div>
+						<div class="modal-body">
+							<div class="row align-items-center">
+								<div class="col-lg-4 text-center">
+									
+									<div class="form-group">
+										<input type="text" name="name" class="form-control" placeholder="Имя" disabled/>
+									</div>
+									<div class="form-group">
+										<input type="tel" name="phone" class="form-control" required placeholder="Телефон *" disabled/>
+									</div>
+									<span class="btn btn-accent">Отправить</span>
+									
+								</div>
+								<div class="col-lg-8">
+									<p class="edit_text rigth" 
+										data-okhall="okHall_settings[banner__modal__text1]" 
+										contenteditable="true"><?php echo $options['banner__modal__text1']; ?></p>
+										<input type='hidden' 
+											name='okHall_settings[banner__modal__text1]' 
+											value='<?php echo $options['banner__modal__text1']; ?>'>
+									<p class="edit_text rigth" 
+										data-okhall="okHall_settings[banner__modal__text2]" 
+										contenteditable="true"><?php echo $options['banner__modal__text2']; ?></p>
+										<input type='hidden' 
+											name='okHall_settings[banner__modal__text2]' 
+											value='<?php echo $options['banner__modal__text2']; ?>'>
+									<p class="edit_text rigth" 
+										data-okhall="okHall_settings[banner__modal__text3]" 
+										contenteditable="true"><?php echo $options['banner__modal__text3']; ?></p>
+										<input type='hidden' 
+											name='okHall_settings[banner__modal__text3]' 
+											value='<?php echo $options['banner__modal__text3']; ?>'>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		<br><br><br><br>
+	</section>
+	
 
 	    <?php
 	        settings_fields( 'okHallCustom' );

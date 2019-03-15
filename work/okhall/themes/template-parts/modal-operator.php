@@ -21,13 +21,16 @@
 								<input type="text" name="name" class="form-control" placeholder="Имя" />
 							</div>
 							<div class="form-group">
-								<input type="email" name="email" class="form-control" required placeholder="Email *" />
+								<input type="tel" name="phone" class="form-control" required placeholder="Телефон *" />
 							</div>
 							<button type="submit" class="btn btn-accent">Отправить</button>
 						
 					</div>
 					<div class="col-lg-8">
-						<?php echo $options['banner__modal__text']; ?>
+						<p class="right">
+							<?php echo $options['banner__modal__text1']; ?><br>
+							<?php echo $options['banner__modal__text2']; ?><br>
+							<?php echo $options['banner__modal__text3']; ?></p>
 					</div>
 				</div>
 			</div>

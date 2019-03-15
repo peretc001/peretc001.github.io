@@ -8,23 +8,23 @@ $options = get_option( 'okHall_settings' );
 if ($_POST['email'] != '') {
 
 	$to_adm  = $options['ok_email']; 
-	$subject_adm = 'OKHALL: Каталог наших работ'; 
+	$subject_adm = $options['photos__modal__subject'];
 	$headers_adm[]  = "Content-type: text/html; charset=utf-8 \r\n"; 
-	$headers_adm[] = "From: OKHALL <". $options['ok_email'] .">\r\n"; 
+	$headers_adm[] = "From: ". $options['photos__modal__from'] ." <". $options['ok_email'] .">\r\n"; 
 	$message_adm = 'Имя: <b>'. $_POST['name'] .'</b><br>Email  <b>'. $_POST['email'] .'</b><br>--- Скачал каталог';
 		wp_mail($to_adm, $subject_adm, $message_adm, $headers_adm); 
 
 	$to  = $_POST['email']; 
-	$subject = 'OKHALL: Каталог наших работ'; 
+	$subject = $options['photos__modal__subject'];
 	$headers[]  = "Content-type: text/html; charset=utf-8 \r\n"; 
-	$headers[] = "From: OKHALL <". $options['ok_email'] .">\r\n";
+	$headers[] = "From: ". $options['photos__modal__from'] ." <". $options['ok_email'] .">\r\n";
 	$message = '
 	<!doctype html>
 	<html>
 	<head>
 		<meta charset="utf-8">
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700|Roboto:300,400,500,700" rel="stylesheet">
-		<title>OKHALL: Каталог наших работ</title>
+		<title>'. $options['photos__modal__subject'] .'</title>
 	</head>
 	<body style="font-family:Roboto, Helvetica, Arial, sans-serif; background-color:#f4fafa; margin:0; padding:0; color:#222; font-size:16px; font-weight:300; line-height:20px; box-sizing: border-box; text-size-adjust:none; -webkit-text-size-adjust:none; -ms-text-size-adjust:none;">
 
@@ -95,7 +95,7 @@ if ($_POST['email'] != '') {
 		
 		<div class="modal-header">
 			<div class="introHolder inverse">
-				<h3>Запрос <span>принят</span>!</h3>
+				<h3>Каталог <span>отправлен!</span></h3>
 			</div>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
