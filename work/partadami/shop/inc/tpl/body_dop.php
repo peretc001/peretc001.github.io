@@ -1,13 +1,3 @@
-	<!-- The Gallery as lightbox dialog, should be a child element of the document body -->
-	<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
-		<div class="slides"></div>
-		<h3 class="title"></h3>
-		<a class="prev">‹</a>
-		<a class="next">›</a>
-		<a class="close">×</a>
-		<ol class="indicator"></ol>
-	</div>
-	
 	<div id="nav_menuid" class="product">
 		<div class="row">
 			<a href="/">Главная</a> <i class="fa fa-angle-right" aria-hidden="true"></i> <a href="/shop/">Каталог товаров</a> <i class="fa fa-angle-right" aria-hidden="true"></i> <?php $menuid = mysql_query("SELECT * FROM ". $package ." WHERE url = '$url' ");
@@ -64,206 +54,196 @@
 				</div>
 				<div class="row">
 					<div class="one-half column">
-						<div id="links" class="center">
+						<div class="center product_img gallery">
 							<p>
 							<?php #Тумбы из массива
 								if ($category == 'tumby_i_stellazhi' and $package == 'tumby_i_stellazhi_with_picture') { ?>
 									<?php if ($url == 'cmd03-02r' or $url == 'cmd04-01r' or $url == 'cmd04-02r' or $url == 'cmd05r' or $url == 'cmd06r') { ?>	
-										<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'tyv_greyf') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'tyv_greyf') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/1.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/2.jpg" <?php if ($color == 'tyv_greyc') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/2.jpg" <?php if ($color == 'tyv_greyc') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/2.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/3.jpg" <?php if ($color == 'tyv_brownf') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/3.jpg" <?php if ($color == 'tyv_brownf') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/3.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
 									<?php } elseif ($url == 'tyv01r' or $url == 'tyv02r' or $url == 'tcn01r') { ?>	
-										<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'tyv_greyf') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'tyv_greyf') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/1.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/2.jpg" <?php if ($color == 'tyv_greyc') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/2.jpg" <?php if ($color == 'tyv_greyc') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/2.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/3.jpg" <?php if ($color == 'tyv_brownf') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/3.jpg" <?php if ($color == 'tyv_brownf') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/3.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
 									<?php } ?>
 								<?php } #Тумбы и стеллажи с рисунком
 								elseif ($category == 'tumby_i_stellazhi' and $package == 'tumby_i_stellazhi') { ?>
 									<?php if ($url == 'cmd03-01' or $url == 'cmd03-02' or $url == 'cmd04-01' or $url == 'cmd04-02' or $url == 'cmd05' or $url == 'cmd06') { ?>	
-										<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'tyv_grey') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'tyv_grey') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/1.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/2.jpg" <?php if ($color == 'tyv_brown') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/2.jpg" <?php if ($color == 'tyv_brown') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/2.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
 									<?php } elseif ($url == 'tyv01' or $url == 'tyv02' or $url == 'tcn01') { ?>	
-										<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'tyv_grey') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'tyv_grey') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/1.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/2.jpg" <?php if ($color == 'tyv_brown') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/2.jpg" <?php if ($color == 'tyv_brown') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/2.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/3.jpg" <?php if ($color == 'tyv_beige') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/3.jpg" <?php if ($color == 'tyv_beige') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/3.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/4.jpg" <?php if ($color == 'tyv_white_grey') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/4.jpg" <?php if ($color == 'tyv_white_grey') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/4.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
 									<?php } ?>
 								<?php } #Чехлы
 								elseif ($category == 'ergonomichnyj_stul' and $url == 'cyt03') { ?>
-									<a href="/shop/img/cyt04/1.jpg" <?php if ($color == 'cyt_beige') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+									<a href="/shop/img/cyt04/1.jpg" <?php if ($color == 'cyt_beige') {} else { ?> class="hidden_item"  <?php } ?>>
 										<img src="/shop/img/cyt04/1.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 									</a>
-									<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'cyt_grey') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+									<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'cyt_grey') {} else { ?> class="hidden_item"  <?php } ?>>
 										<img src="/shop/img/<?php echo $row['url']; ?>/1.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 									</a>
-									<a href="/shop/img/<?php echo $row['url']; ?>/2.jpg" <?php if ($color == 'cyt_pink') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+									<a href="/shop/img/<?php echo $row['url']; ?>/2.jpg" <?php if ($color == 'cyt_pink') {} else { ?> class="hidden_item"  <?php } ?>>
 										<img src="/shop/img/<?php echo $row['url']; ?>/2.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 									</a>
-									<a href="/shop/img/<?php echo $row['url']; ?>/6.jpg" <?php if ($color == 'cyt_red') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+									<a href="/shop/img/<?php echo $row['url']; ?>/6.jpg" <?php if ($color == 'cyt_red') {} else { ?> class="hidden_item"  <?php } ?>>
 										<img src="/shop/img/<?php echo $row['url']; ?>/6.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 									</a>
-									<a href="/shop/img/<?php echo $row['url']; ?>/3.jpg" <?php if ($color == 'cyt_blue') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+									<a href="/shop/img/<?php echo $row['url']; ?>/3.jpg" <?php if ($color == 'cyt_blue') {} else { ?> class="hidden_item"  <?php } ?>>
 										<img src="/shop/img/<?php echo $row['url']; ?>/3.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 									</a>
-									<a href="/shop/img/<?php echo $row['url']; ?>/4.jpg" <?php if ($color == 'cyt_green') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+									<a href="/shop/img/<?php echo $row['url']; ?>/4.jpg" <?php if ($color == 'cyt_green') {} else { ?> class="hidden_item"  <?php } ?>>
 										<img src="/shop/img/<?php echo $row['url']; ?>/4.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 									</a>
-									<a href="/shop/img/<?php echo $row['url']; ?>/5.jpg" <?php if ($color == 'cyt_orange') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+									<a href="/shop/img/<?php echo $row['url']; ?>/5.jpg" <?php if ($color == 'cyt_orange') {} else { ?> class="hidden_item"  <?php } ?>>
 										<img src="/shop/img/<?php echo $row['url']; ?>/5.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 									</a>
 								<?php } elseif ($category == 'ergonomichnyj_stul' and $url == 'cyt04') { ?>
-									<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'cyt_beige') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+									<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'cyt_beige') {} else { ?> class="hidden_item"  <?php } ?>>
 										<img src="/shop/img/<?php echo $row['url']; ?>/1.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 									</a>
-									<a href="/shop/img/<?php echo $row['url']; ?>/2.jpg" <?php if ($color == 'cyt_pink') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+									<a href="/shop/img/<?php echo $row['url']; ?>/2.jpg" <?php if ($color == 'cyt_pink') {} else { ?> class="hidden_item"  <?php } ?>>
 										<img src="/shop/img/<?php echo $row['url']; ?>/2.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 									</a>
-									<a href="/shop/img/<?php echo $row['url']; ?>/3.jpg" <?php if ($color == 'cyt_blue') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+									<a href="/shop/img/<?php echo $row['url']; ?>/3.jpg" <?php if ($color == 'cyt_blue') {} else { ?> class="hidden_item"  <?php } ?>>
 										<img src="/shop/img/<?php echo $row['url']; ?>/3.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 									</a>
-									<a href="/shop/img/<?php echo $row['url']; ?>/4.jpg" <?php if ($color == 'cyt_green') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+									<a href="/shop/img/<?php echo $row['url']; ?>/4.jpg" <?php if ($color == 'cyt_green') {} else { ?> class="hidden_item"  <?php } ?>>
 										<img src="/shop/img/<?php echo $row['url']; ?>/4.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 									</a>
-									<a href="/shop/img/<?php echo $row['url']; ?>/5.jpg" <?php if ($color == 'cyt_orange') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+									<a href="/shop/img/<?php echo $row['url']; ?>/5.jpg" <?php if ($color == 'cyt_orange') {} else { ?> class="hidden_item"  <?php } ?>>
 										<img src="/shop/img/<?php echo $row['url']; ?>/5.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 									</a>
 								<?php } #Дополнительные элементы
 									elseif ($category == 'dopolnitelnye_elementy') { ?>
 									<?php if ($url == 'dop10' or $url == 'dop11') { ?>	
-										<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'dop_grey') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'dop_grey') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/1.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
 									<?php } elseif ($url == 'dop4' or $url == 'dop5' or $url == 'dop6' or $url == 'dop7' or $url == 'dop8' or $url == 'dop9') { ?>	
-										<a href="/shop/img/<?php echo $row['url']; ?>/0.jpg" <?php if ($color == 'beige') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/0.jpg" <?php if ($color == 'beige') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/0.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'grey') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'grey') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/1.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/2.jpg" <?php if ($color == 'pink') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/2.jpg" <?php if ($color == 'pink') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/2.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/3.jpg" <?php if ($color == 'blue') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/3.jpg" <?php if ($color == 'blue') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/3.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/4.jpg" <?php if ($color == 'green') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/4.jpg" <?php if ($color == 'green') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/4.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/5.jpg" <?php if ($color == 'orange') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/5.jpg" <?php if ($color == 'orange') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/5.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/6.jpg" <?php if ($color == 'brown') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/6.jpg" <?php if ($color == 'brown') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/6.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
 									<?php } elseif ($url == 'dop3') { ?>	
-										<a href="/shop/img/<?php echo $row['url']; ?>/6.jpg" <?php if ($color == 'dop_beige') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/6.jpg" <?php if ($color == 'dop_beige') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/6.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'dop_grey') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'dop_grey') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/1.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/2.jpg" <?php if ($color == 'dop_red') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/2.jpg" <?php if ($color == 'dop_red') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/2.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/3.jpg" <?php if ($color == 'dop_blue') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/3.jpg" <?php if ($color == 'dop_blue') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/3.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/4.jpg" <?php if ($color == 'dop_green') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/4.jpg" <?php if ($color == 'dop_green') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/4.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/5.jpg" <?php if ($color == 'dop_orange') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/5.jpg" <?php if ($color == 'dop_orange') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/5.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
 									<?php } elseif ($url == 'dop2') { ?>	
-										<a href="/shop/img/<?php echo $row['url']; ?>/6.jpg" <?php if ($color == 'dop_beige') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/6.jpg" <?php if ($color == 'dop_beige') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/6.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'dop_grey') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'dop_grey') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/1.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/2.jpg" <?php if ($color == 'dop_pink') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/2.jpg" <?php if ($color == 'dop_pink') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/2.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/3.jpg" <?php if ($color == 'dop_blue') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/3.jpg" <?php if ($color == 'dop_blue') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/3.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/4.jpg" <?php if ($color == 'dop_green') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/4.jpg" <?php if ($color == 'dop_green') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/4.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/5.jpg" <?php if ($color == 'dop_orange') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/5.jpg" <?php if ($color == 'dop_orange') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/5.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
 									<?php } elseif ($url == 'dop1') { ?>	
-										<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'dop_nnc') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'dop_nnc') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/1.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
 									<?php } elseif ($url == 'l3') { ?>	
-										<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'white') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'white') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/1.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/2.jpg" class="gallary"  data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/2.jpg" class="hidden_item">
 											<img src="/shop/img/<?php echo $row['url']; ?>/2.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/3.jpg" class="gallary"  data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/3.jpg" class="hidden_item">
 											<img src="/shop/img/<?php echo $row['url']; ?>/3.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
 									<?php } elseif ($url == 'dop12') { ?>	
-										<a href="/shop/img/<?php echo $row['url']; ?>/6.jpg" <?php if ($color == 'dop_beige') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/6.jpg" <?php if ($color == 'dop_beige') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/6.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'dop_grey') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'dop_grey') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/1.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/2.jpg" <?php if ($color == 'dop_red') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/2.jpg" <?php if ($color == 'dop_red') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/2.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/3.jpg" <?php if ($color == 'dop_blue') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/3.jpg" <?php if ($color == 'dop_blue') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/3.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/4.jpg" <?php if ($color == 'dop_green') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/4.jpg" <?php if ($color == 'dop_green') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/4.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
-										<a href="/shop/img/<?php echo $row['url']; ?>/5.jpg" <?php if ($color == 'dop_orange') {} else { ?> class="gallary"  <?php } ?> data-gallery >
+										<a href="/shop/img/<?php echo $row['url']; ?>/5.jpg" <?php if ($color == 'dop_orange') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/5.png"  alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
 									<?php } ?>									
 								<?php } ?>								
 							</p>
 						</div>
-						<script>
-							document.getElementById('links').onclick = function (event) {
-							event = event || window.event;
-							var target = event.target || event.srcElement,
-							link = target.src ? target.parentNode : target,
-							options = {index: link, event: event, toggleControlsOnSlideClick: false},
-							links = this.getElementsByTagName('a');
-							blueimp.Gallery(links, options);
-							};
-						</script>
 					</div>
 
 					<div class="one-half column pack">
@@ -396,15 +376,6 @@
 							?>">
 							<input class="button addtocar" <?php if ($url == 'dop10' or $url == 'dop11') { ?>disabled<?php } ?> name="button" type="submit" onclick="yaCounter15357751.reachGoal('CARTORDER'); return true;" value="В корзину">
 						</form>
-						<script>
-						jQuery(document).ready(function ($) {
-							$('.addtocar').click(function($){
-							target: '#cartajax', 
-							$("html, body").animate({scrollTop: 0});
-							$('#menu li.cart').hide();
-							});		
-						})
-						</script>
 						<div class="delivery">
 							<?php if ($url == 'dop10' or $url == 'dop11') { ?>
 								<p>Доставка - нет</p>

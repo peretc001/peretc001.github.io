@@ -1,0 +1,130 @@
+BODY {
+	margin:0;
+	padding:0;
+	font-size:10pt;
+	color:#000;
+}
+table.top {
+ width:100%;
+ border-bottom:1px solid #000;
+ }
+table.top td {
+ width:50%;
+ }
+table.recvizit {
+ width:90%;
+margin:0 auto;
+border-collapse: collapse;
+border:none;
+ }
+ table.recvizit td{
+ padding:10px 5px;
+  border-left:1px solid #000;
+  border-top:1px solid #000;
+ }
+  table.recvizit td.top{
+ width:50%;
+ }
+   table.recvizit td.top_right{
+ width:50%;
+  border-right:1px solid #000;
+ }
+ table.recvizit td.left{
+ width:10%;
+  }
+ table.recvizit td.left1{
+ width:30%;
+  }
+   table.recvizit td.right{
+ width:10%;
+  }
+ table.recvizit td.right1{
+ width:50%;
+ border-right:1px solid #000;
+  }
+  table.recvizit td.bottom{
+width:10%;
+background-color:#fcffcf;  border-right:1px solid #000;
+  border-bottom:1px solid #000;
+  }
+ table.theme {
+ width:100%;
+margin:0 auto;
+border-collapse: collapse;
+border:none;
+ }
+  table.theme td {
+ padding:5px 10px;
+ }
+   table.theme td.line {
+ border-bottom:1px solid #000;
+ }
+ 
+  table.product {
+ width:100%;
+margin:0 auto;
+border-collapse: collapse;
+border:none;
+ }
+  table.product td {
+  padding:10px 5px;
+  }
+  table.product td.n {
+  width:5%;
+  text-align:center;
+  border-left:1px solid #000;
+  border-top:1px solid #000;
+  border-bottom:1px solid #000;
+  }
+	table.product td.name {
+  width:65%;
+  text-align:left;
+  border-left:1px solid #000;
+  border-top:1px solid #000;
+  border-bottom:1px solid #000;
+  }
+  table.product td.price {
+  width:15%;
+  text-align:center;
+  border-left:1px solid #000;
+  border-top:1px solid #000;
+  border-bottom:1px solid #000;
+  }
+  table.product td.total {
+  width:15%;
+  text-align:center;
+  border-left:1px solid #000;
+  border-top:1px solid #000;
+  border-right:1px solid #000;
+  border-bottom:1px solid #000;
+  }
+  
+  table.product td.n_bottom {
+  border:none;
+  }
+	table.product td.name_bottom {
+  text-align:right;
+  border:none;
+  }
+  table.product td.total_bottom {
+  width:15%;
+  text-align:center;
+  border:none;
+  }
+  
+   table.stamp {
+ width:70%;
+margin:0 auto;
+border-collapse: collapse;
+border:none;
+ }
+     table.stamp td.dir{
+ width:20%;
+ }
+
+    table.stamp td.line {
+	width:40%;
+ }
+       table.stamp td.fio{
+ width:40%;
+ }

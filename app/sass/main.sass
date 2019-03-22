@@ -1399,14 +1399,11 @@ a, a:hover
 		p
 			font-size: 1.3em
 			a
-				color: $accent
-				font-size: 1.4em
-				font-weight: bold
-			b
 				color: $blue
 				font-size: 1.4em
 				font-weight: bold
-				text-decoration: underline
+			a:hover
+				color: $accent
 
 .operator
 	padding: 0 0 $gutter 0
@@ -1733,6 +1730,83 @@ a, a:hover
 			font-size: 20px
 			color: #ccccce
 			line-height: 1
+		p.form__one__bottom
+			padding: 0
+		.form__one__metr
+			border: none
+			border-bottom: .5px solid #111
+			border-radius: 0
+			text-align: left
+			font-weight: normal
+			font-size: 1em
+		.form__one__button
+			width: 100%
+			height: 100%
+			background: $accent
+			color: #fff
+			font-size: 1.6em
+			text-align: center
+			border: none
+			border-radius: 0
+			cursor: pointer
+		.form__two__grey
+			color: #ccccce
+			text-align: center
+			line-height: 1
+			font-weight: normal
+			margin: 5px 0 !important
+		.form__three__text
+			color: #ccccce
+			font-size: 1em
+			text-align: center
+			line-height: 1.3
+			font-weight: normal
+			margin: 40px 0 !important
+			position: relative
+			&::after
+				content: ''
+				position: absolute
+				width: 50px
+				height: 1px
+				background: #2faec5
+				bottom: -20px
+				left: 50%
+				transform: translateX(-50%)
+				display: block
+			&:first-child
+				margin-top: 0
+			b
+				color: $accent
+		.form__three__bottom
+			color: #ccccce
+			font-size: 1em
+			text-align: center
+			line-height: 1.5
+			font-weight: normal
+			margin: 40px 0 0 0
+			position: relative
+			span
+				color: $accent
+				font-weight: bold
+				font-size: 1.4em
+			b
+				color: $blue
+				font-weight: bold
+				font-size: 1.4em
+
+
+		.check_ok
+			font-size: 100px
+			color: #ffae04
+		.check_stop
+			font-size: 100px
+			color: $text
+
+	.no-padding
+		padding-bottom: 0
+	.no-border
+		border: none
+
 
 .modal-video
 	max-width: 1100px
@@ -1752,96 +1826,8 @@ a, a:hover
 		font-weight: normal
 		color: #fff
 		opacity: 1
-	
-.modal-content.catalog__form
-	.modal-header
-		h3
-			color: $text
-			font-size: 2em
-			text-align: center
-			padding: 0
-			margin: 0
-	.modal-body
-		padding: 0
-		p
-			text-align: center
-			font-size: 1.1em
-			margin: .8em 0
-			line-height: 1
-			span
-				color: $accent
-				font-size: 1.3em
-			b
-				font-size: 1.3em
-				color: $blue
-
-		.check_ok
-			font-size: 100px
-			color: #ffae04
-		.check_stop
-			font-size: 100px
-			color: $text
-			
-.modal-content.okhall-modal
-	.modal-header
-		border: none
-		text-align: center
-		justify-content: center
-		p
-			color: #111
-			font-size: 1em
-			text-align: center
-			b
-				font-size: 1.6em
-		.close
-			position: absolute
-			right: 20px
-			top: 20px
-
-	.modal-body
-		padding: 0
-		p
-			color: $text
-			font-size: 1.1em
-			text-align: left
-			padding: 0
-			margin: 5px 0
-			b
-				font-size: 1.4em
-		.check_ok
-			font-size: 100px
-			color: #ffae04
-		.check_stop
-			font-size: 100px
-			color: $text
-		form
-			text-align: center
-
+				
 .modal-content.price__form
-	.modal-header
-		.form__two__header
-			h2
-				font-size: 30px
-				font-weight: bold
-				text-transform: uppercase
-				span
-					color: $accent
-					position: relative
-				span::after
-					content: ''
-					width: 100%
-					clear: both
-					display: block
-			p
-				color: #2faec5
-		.form__three__header
-			h2
-				font-size: 30px
-				font-weight: bold
-				text-transform: uppercase
-				span
-					color: $accent
-					position: relative
 	.modal-body
 		.row
 			border-top: .5px solid #e7e6e6
@@ -1856,8 +1842,6 @@ a, a:hover
 					color: #2faec5
 					font-weight: bold
 					font-size: 1.4em
-			p.form__one__bottom
-				padding: 0
 			label
 				display: block
 				cursor: pointer
@@ -1881,69 +1865,7 @@ a, a:hover
 				border-radius: 0
 			input[type=radio]:checked + label:before
 				background: $accent
-			.form__one__metr
-				border: none
-				border-bottom: .5px solid #111
-				border-radius: 0
-				text-align: left
-				font-weight: normal
-				font-size: 1em
-			.form__one__button
-				width: 100%
-				height: 100%
-				background: $accent
-				color: #fff
-				font-size: 1.6em
-				text-align: center
-				border: none
-				border-radius: 0
-				cursor: pointer
-			.form__two__grey
-				color: #ccccce
-				text-align: center
-				line-height: 1
-				font-weight: normal
-				margin: 5px 0
-			.form__three__text
-				color: #ccccce
-				font-size: 1em
-				text-align: center
-				line-height: 1.3
-				font-weight: normal
-				margin: 40px 0
-				position: relative
-				&::after
-					content: ''
-					position: absolute
-					width: 50px
-					height: 1px
-					background: #2faec5
-					bottom: -20px
-					left: 50%
-					transform: translateX(-50%)
-					display: block
-				&:first-child
-					margin-top: 0
-				b
-					color: $accent
-			.form__three__bottom
-				color: #ccccce
-				font-size: 1em
-				text-align: center
-				line-height: 1.5
-				font-weight: normal
-				margin: 40px 0 0 0
-				position: relative
-				span
-					color: $accent
-					font-weight: bold
-					font-size: 1.4em
-
-		.no-padding
-			padding-bottom: 0
-		.no-border
-			border: none
-
+			
 #toTop
 	width: 30px
 	height: 30px

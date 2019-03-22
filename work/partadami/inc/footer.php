@@ -59,7 +59,7 @@
 		<div class="one-third column social">
 			<p>Конаткты:</p>
 			<h3>8 (861) 242-81-05</h3>
-			<h6><small><a href="https://yandex.ru/maps/-/CBa2vOwO-B" target="_blank">Краснодар, ул. Тургенева, 56</a></small></h6>
+			<h6><small><a href="https://yandex.ru/maps/-/CCevz-oG" target="_blank">Краснодар, ул. Тургенева, 56</a></small></h6>
 			<h6 class="insta"><a href="https://www.instagram.com/partadami/" target="_blank"><img src="/img/social/instagram.svg" alt="Наш instagram">@partadami</a></h6>
 		</div>
 	</div>
@@ -135,16 +135,41 @@
 			</div>
 		</div>
 	</div>
-	<script>
-		$('.close a.close_bar').click(function() {
-			UIkit.offcanvas.hide([force = false]);
-		});
-	</script>
 </div>
+
+<!-- FONT
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&subset=latin,cyrillic,cyrillic-ext" rel="stylesheet" type="text/css">	
+	<link rel="stylesheet" href="/css/normalize.css">
+	<link rel="stylesheet" href="/css/skeleton.css">
+	<link rel="stylesheet" href="/js/uikit/css/uikit.css" />
+    <link rel="stylesheet" href="/css/blueimp-gallery.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/style.min.css">
+	<!-- Scripts
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="/js/uikit/js/uikit.min.js"></script>
+	<?php if ($enable_otziv == 'yes') { ?>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<?php } ?>
+	<?php if ($enable_acessories == 'yes') { ?>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+	<script src="/js/uikit/js/components/slider.min.js"></script>
+	<?php } ?>
+	<link rel="stylesheet" href="/js/simplelightbox/simplelightbox.min.css">
+	<script src="/js/simplelightbox/simple-lightbox.min.js"></script>
+	<script src="/js/scripts.js"></script>
+	<!--[if lt IE 9]>
+	  	<script src="/js/support/html5shiv.js"></script>
+	   	<script src="/js/support/css3-mediaqueries.js"></script>
+	   	<script src="/js/support/respond.min.js"></script>
+	 <![endif]--> 
 
 	
 <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
+<script>
 (function (d, w, c) {
     (w[c] = w[c] || []).push(function() {
         try {
@@ -171,7 +196,7 @@
 <noscript><div><img src="//mc.yandex.ru/watch/15357751" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 <!-- Google Analytics counter -->
-<script type="text/javascript">
+<script>
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-37283478-1']);
@@ -185,24 +210,8 @@
 
 </script>
 <!-- / Google Analytics counter -->
-<!-- Поместите этот тег туда, где должна отображаться виджет. -->
-<a style="display:none;" href="//plus.google.com/u/0/103334893010493536295" data-rel="publisher" rel="nofollow" target="_blank">Автор: Парты ДЭМИ</a>
-<!-- Rating@Mail.ru counter -->
-<script type="text/javascript">
-var _tmr = _tmr || [];
-_tmr.push({id: "2310557", type: "pageView", start: (new Date()).getTime()});
-(function (d, w) {
-   var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
-   ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
-   var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
-   if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
-})(document, window);
-</script><noscript><div style="display:none;position:absolute;left:-10000px;">
-<img src="//top-fwz1.mail.ru/counter?id=2310557;js=na" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
-</div></noscript>
-<!-- //Rating@Mail.ru counter -->
 <!-- BEGIN JIVOSITE CODE {literal} -->
-<script type='text/javascript'>
+<script>
 (function(){ var widget_id = 'vHRq2Ai740';var d=document;var w=window;function l(){var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
 </script>
 <!-- {/literal} END JIVOSITE CODE -->

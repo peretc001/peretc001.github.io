@@ -6,6 +6,7 @@
 	<div class="modal-content okhall-modal">
 
 		<form action="/send.php" method="POST" class="okhall-form">
+			<input type="hidden" name="step" value="1">
 			<input type="hidden" name="block" value="Перепланировка">
 	    	<div class="modal-header">
 	    		<h3><?php echo $options['banner__modal__p__intro']; ?></h3>

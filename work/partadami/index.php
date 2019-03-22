@@ -7,7 +7,6 @@
 	<meta name="Description" content="Официальный сайт ДЭМИ по Краснодарскому краю. Описание, цены, отзывы. Доставка. Сборка. Гарантия. Кредит." /> 
     <?php include $_SERVER['DOCUMENT_ROOT'] .'/inc/header.php'; ?>
     <?php include $_SERVER['DOCUMENT_ROOT'] .'/inc/config.php'; ?>
-	 <link rel="stylesheet" href="css/animate.css">
 </head>
 <body>
 <?php include $_SERVER['DOCUMENT_ROOT'] .'/inc/nav.php'; ?>

@@ -16,6 +16,6 @@
 	include $_SERVER['DOCUMENT_ROOT'] .'/shop/inc/tpl/spec.php'; 
 	include $_SERVER['DOCUMENT_ROOT'] .'/shop/inc/tpl/accessories.php'; 
 	include $_SERVER['DOCUMENT_ROOT'] .'/shop/inc/tpl/product_otziv.php'; 
-	include $_SERVER['DOCUMENT_ROOT'] .'/inc/footer.php'; 
+	include $_SERVER['DOCUMENT_ROOT'] .'/inc/footer2.php'; 
 	?>
 </body>

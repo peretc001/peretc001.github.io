@@ -30,12 +30,6 @@
 			</div>
 		</div>
 	</div>
-	<script src="/js/valid/jquery.maskedinput.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		jQuery(function($){
-		   $("#phone").mask("8-999-999-99-99");
-		});
-	</script>
 	<div id="check_delivery">
 		<h2>Заявка на рассчет стоимости доставки</h2>
 		<form action="/inc/form/check_delivery.php" method="post" enctype="multipart/form-data" role="form" data-togg="validator">
@@ -43,25 +37,25 @@
 			<div class="row">
 				<div class="four columns">
 					<label for="city" class="control-label">Город доставки <span>*</span></label>
-					<input class="u-full-width" type="text" id="city" name="city" placeholder="Ваш город" class="form-control" value="" required>
+					<input class="u-full-width form-control" type="text" id="city" name="city" placeholder="Ваш город" value="" required>
 				</div>
 				<div class="four columns">
 					<label for="name" class="control-label">Ваше имя <span>*</span></label>
-					<input class="u-full-width" type="text" id="name" name="name" placeholder="Ваше Имя" class="form-control" value="" required>
+					<input class="u-full-width form-control" type="text" id="name" name="name" placeholder="Ваше Имя" value="" required>
 				</div>
 				<div class="four columns">
 					<label for="phone" class="control-label">Телефон <span>*</span></label>
-					<input class="u-full-width" type="tel" id="phone" name="phone" placeholder="Номер телефона" class="form-control" value="" required>
+					<input class="u-full-width form-control phone_mask" type="tel" id="phone" name="phone" placeholder="Номер телефона" value="" required>
 				</div>
 			</div>
 			<div class="row">
 				<div class="four columns">
 					<label for="email" class="control-label">E-mail <span>*</span></label>
-					<input class="u-full-width" type="email" id="email" name="email" placeholder="E-mail" class="form-control" value="" required>
+					<input class="u-full-width form-control" type="email" id="email" name="email" placeholder="E-mail" value="" required>
 				</div>
 				<div class="eight columns">
 					<label for="comment">Комментарий</label>
-					<textarea class="u-full-width" id="comment" name="msg" placeholder="Интересующая модель"></textarea>
+					<textarea class="u-full-width form-control" id="comment" name="msg" placeholder="Интересующая модель"></textarea>
 				</div>
 			<div class="policy"><input type="checkbox" name="policy" id="policy" class="check" checked/> <span>Ознакомлен и согласен с условиями <a href="/policy.php" target="_blank">политики конфиденциальности.</a></span></div>
 			</div>

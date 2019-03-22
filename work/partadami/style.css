@@ -186,8 +186,33 @@
 .fa-meh-o:before {
 	content: "\f11a";
 }
-
-
+.fa-spinner:before {
+  content: "\f110";
+}
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear;
+}
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
 
 /* ------ General ------ */
 body {
@@ -599,26 +624,21 @@ textarea {
 	color: #222;
 }
 
-#menu .row ul li.cart {
+#menu .row ul li.cart,
+#menu .row ul li.cartajax {
 	line-height: 1.4rem;
 }
 
 #menu .row ul li.cart small {
 	padding-left: 10%;
 }
-
-#menu .row ul li.cartajax {
-	display: none;
+@media (max-width: 1100px) {
+	#menu .row {
+		width: 95%;
+		padding: 0;
+		margin: 0 auto;
+	}
 }
-
-#menu .row ul li.cartajax {
-	line-height: 1.4rem;
-}
-
-#menu .row ul li.cartajax small {
-	padding-left: 2.5rem;
-}
-
 @media (max-width: 1100px) {
 	#menu .row {
 		width: 95%;
@@ -844,18 +864,22 @@ textarea {
 	}
 }
 
-@media (min-width: 999px) {
-	#nav_phone {
+@media (min-width: 1001px) {
+	#nav_phone, .cart_mobile {
 		display: none;
 	}
 }
 
-@media (max-width: 999px) {
+@media (max-width: 1000px) {
 
 	#top,
 	#menu,
-	#leftmenu_nav {
+	#leftmenu_nav,
+	.cart_desctop {
 		display: none;
+	}
+	.cart_mobile {
+		display: inline-block;
 	}
 }
 
@@ -3379,10 +3403,9 @@ textarea {
 	padding: 0;
 }
 
-#product_page .row .left .gallary {
+#product_page .row .left .hidden_item {
 	display: none;
 }
-
 
 #product_page .row .left .option {
 	width: 100%;
@@ -4584,26 +4607,13 @@ textarea {
 	text-align: left;
 }
 
-.otziv_form .collapse,
-.all_otziv .collapse {
-	display: none
-}
-
-.otziv_form .collapse.in,
-.all_otziv .collapse.in {
-	display: block
-}
-
-.otziv_form .collapsing,
-.all_otziv .collapsing {
-	position: relative;
-	height: 0;
-	overflow: hidden;
-	transition: height .35s ease;
-	margin: 0;
-	padding: 0;
-}
-
+.fade{opacity:0;-webkit-transition:opacity .15s linear;-o-transition:opacity .15s linear;transition:opacity .15s linear}
+.fade.show{opacity:1}
+.collapse{display:none}
+.collapse.show{display:block}
+tr.collapse.show{display:table-row}
+tbody.collapse.show{display:table-row-group}
+.collapsing{position:relative;height:0;overflow:hidden;-webkit-transition:height .35s ease;-o-transition:height .35s ease;transition:height .35s ease}
 
 .otziv_form input {
 	font-weight: 300;
@@ -5850,3 +5860,9 @@ dl.star-rating li.stars {
 		margin: 0 auto;
 	}
 }
+.swal2-title {
+    font-family: OrpheusRegular;
+    font-weight: 400 !important;
+    color: #151515 !important;
+}
+body{opacity:1;}

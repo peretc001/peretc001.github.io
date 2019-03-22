@@ -1,0 +1,53 @@
+BODY {
+	margin:0;
+	padding:0;
+	font-size:8pt;
+	color:#000;
+}
+code { white-space: pre; }
+.nowr { white-space: nowrap; }
+td { padding: 0; border: 0;}
+table { border: none; }
+img { border: none; }
+form { margin: 0px; padding: 0px; }
+sup { font-size: 66%; line-height: .5; }
+li { list-style: square outside; padding: 0px; margin: 0px; }
+ul { list-style: square outside; padding: 0em 0em 0em 0em; margin: 0em 0em 0em 1.5em; }
+.fakelink { cursor: pointer; }
+.centered { margin-left: auto; margin-right: auto; }
+.zerosize { font-size: 1px; }
+.underlined { text-decoration: underline; }
+.bolded { font-weight: bold; }
+.vbottom { vertical-align: bottom; }
+.vsub { vertical-align: sub; }
+.h_left { text-align: left; }
+.h_right { text-align: right; }
+.h_center { text-align: center; }
+.v_top { vertical-align: top; }
+.v_bottom { vertical-align: bottom; }
+.v_middle { vertical-align: middle; }
+.w100, .full_w, .full { width: 100%; }
+.h100, .full_h, .full { height: 100%; }
+.cramp, .cramp_w { width: 1px; }
+.cramp, .cramp_h { height: 1px; }
+.ucfirst:first-letter { text-transform: uppercase; }
+.clean { clear: both; }
+
+body { background-color: white; margin: 0px; text-align: center; }
+.ramka { border-top:1px dashed #000; border-bottom:1px dashed #000; border-left:1px dashed #000; border-right:1px dashed #000; margin: 0 auto 12mm auto; height: 145mm; }
+.kassir { font-weight: bold; font-size: 10pt; padding: 7mm 0 7mm 0; text-align: center; }
+.cell { border-left:1px solid #000; border-bottom:1px solid #000; border-top:1px solid #000; font-weight: bold; font-size: 8pt; vertical-align: bottom; text-align: center; padding: 3px 5px;}
+.cells { border-right:1px solid #000; width: 100%; }
+.subscript { font-size: 6pt; line-height: 1; vertical-align: top; text-align: center; }
+.string, .dstring { font-weight: bold; font-size: 8pt; border-bottom:1px solid #000; text-align: center; vertical-align: bottom; }
+.dstring { font-size: 9pt; letter-spacing: 1pt; }
+.floor { vertical-align: bottom; padding-top: 0.5mm; }
+.stext { font-size: 8.5pt; vertical-align: bottom; }
+.stext7 { font-size: 7.5pt; vertical-align: bottom; }
+
+input { font-size: 9pt; color: black; background-color: white; border:1px solid #333; margin: 8pt 8pt 8pt 0; }
+a { text-decoration: none; color: #555; }
+a:hover { text-decoration: underline; }
+#toolbox { font-size: 9pt; border-bottom:1px solid #000; margin-bottom: 0; padding: 2mm 0 0 0; text-align: justify; }
+p { margin: 2pt 0 2pt 0; }
+

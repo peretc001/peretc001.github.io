@@ -456,6 +456,15 @@
 		.modal-header
 			h3
 				font-size: 1.8em
+		.modal-body
+			.form-control,
+			.form__one__button
+				margin: .5rem auto
+			.form__one__button
+				margin: 0 auto
+				box-sizing: border-box
+			.form__one__bottom
+				margin-top: 1rem
 
 	.modal-content.catalog__form
 		.modal-body
@@ -482,13 +491,6 @@
 					color: #111
 
 	.modal-content.price__form
-		.modal-header
-			.form__two__header
-				h2
-					font-size: 22px
-			.form__three__header
-				h2
-					font-size: 22px
 		.modal-body
 			.row
 				p
@@ -500,14 +502,6 @@
 					padding: 2rem 0 0 0
 				label:before 
 					top: 10px
-				.form-control,
-				.form__one__button
-					margin: .5rem auto
-				.form__one__button
-					margin: 0 auto
-					box-sizing: border-box
-				.form__one__bottom
-					margin-top: 1rem
 				
 		.no-padding
 			padding-bottom: 1rem
@@ -994,6 +988,15 @@
 
 @media screen and (max-width: 400px)
 	
+	.modal-content
+		.modal-body
+			p
+				line-height: 1
+			.form__two__grey
+				font-size: 0.9em
+				margin: 1em 0
+			.right
+				margin: 5px 0 !important
 
 	.modal-content.okhall-modal
 		.modal-body
@@ -1004,21 +1007,6 @@
 					color: #111
 
 	.modal-content.price__form
-		.modal-header
-			padding: 0
-			margin: 0 auto
-			p
-				b
-					font-size: 1.2em
-					line-height: 1.1
-			.form__two__header,
-			.form__three__header
-				padding: 1em 0
-				margin: 0 auto
-				h2
-					font-size: 1.2em
-				p
-					line-height: 1
 		.modal-body
 			padding: 0
 			margin: 0 auto
@@ -1033,9 +1021,7 @@
 					padding: 2em 0 0 0
 				label:before 
 					top: 10px
-				.form__two__grey
-					font-size: 0.9em
-					margin: 1em 0
+
 				
 		.no-padding
 			padding-bottom: .5em
@@ -1082,16 +1068,40 @@
 						font-size: 1.1em
 	.acquaintance
 		.container
-			max-width: 910px
+			max-width: 800px
+		&__block
+			&__about
+				.manager
+					left: -90%
+					top: 66%
+					&.right
+						top: 44%
+						right: -80%
+		&__img
+			&__item
+				p
+					font-size: 1em
 
-@media screen and (min-width: 1200px) and (max-width: 1440px)
+@media screen and (min-width: 1200px) and (max-width: 1560px)
 	body
 		font-size: 13px
 	.container
 		max-width: 960px
 	.acquaintance
 		.container
-			max-width: 910px
+			max-width: 800px
+		&__block
+			&__about
+				.manager
+					left: -90%
+					top: 66%
+					&.right
+						top: 44%
+						right: -80%
+		&__img
+			&__item
+				p
+					font-size: 1em
 	.after
 		&__block
 			padding: $gutter 0

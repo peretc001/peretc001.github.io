@@ -346,5 +346,7 @@ RewriteRule ^gde_kupit/volgskyi.php						http://www.partadami.ru/gde_kupit/ [L,R
  deny from  2.92.198.208
  deny from  23.95.191.126
  deny from  5.188.210.18
+ deny from 195.91.231.92
+ deny from 195.9.64.82
  allow from all
 </Limit>

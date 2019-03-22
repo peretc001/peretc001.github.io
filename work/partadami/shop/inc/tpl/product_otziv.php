@@ -25,9 +25,9 @@
 				
 				$review_id = $row['id'];
 		?>
-		<div class="row">
+		<div class="row gallery_otziv">
 			<div class="one-third column">
-				<?php 	if($row['img'] != '') { ?><div class="wrap"><a href="/upload/<?php echo $row['img']; ?>"><img src="/upload/<?php echo $row['img']; ?>"></a></div><?php 
+				<?php 	if($row['img'] != '') { ?><div class="wrap"><a class="gallery_item" href="/upload/<?php echo $row['img']; ?>"><img src="/upload/<?php echo $row['img']; ?>"></a></div><?php 
 						} else { echo '<i class="fa fa-picture-o" aria-hidden="true"></i>'; } ?>
 			</div>
 			<div class="two-thirds column justify">
@@ -61,14 +61,14 @@
 				</div>
 			<?php } ?>
 		</div>
-		<div class="all_otziv">
+		<div class="all_otziv  gallery_otziv">
 			<div class="collapse" id="all_review">
 				<?php 	$ot = mysql_query("SELECT * FROM `gb` WHERE url = '$url' and id != '$review_id' ORDER by dt DESC");	
 						while( $row = mysql_fetch_array($ot) ) { 
 				?>
 				<div class="row">
 					<div class="one-third column">
-						<?php 	if($row['img'] != '') { ?><div class="wrap"><a href="/upload/<?php echo $row['img']; ?>"><img src="/upload/<?php echo $row['img']; ?>"></a></div><?php 
+						<?php 	if($row['img'] != '') { ?><div class="wrap"><a class="gallery_item" href="/upload/<?php echo $row['img']; ?>"><img src="/upload/<?php echo $row['img']; ?>" alt=""></a></div><?php 
 								} else { echo '<i class="fa fa-picture-o" aria-hidden="true"></i>'; } ?>
 					</div>
 					<div class="two-thirds column justify">
@@ -144,16 +144,6 @@
 								</label>
 							</div>
 							<input type="text" id="filename" class="filename" disabled>
-							<script>
-								$(document).ready( function() {
-									$(".file-upload input[type=file]").change(function(){
-										 var filename = $(this).val().replace(/.*\\/, "");
-										 $("#filename").val(filename);
-										 $(".file-upload span").hide();
-									});
-								});
-							</script>
-							<!--p><input type="file" class="file" name="userfile" class="form-control" required/></p-->
 						</div>
 					</div>
 					<div class="row">
@@ -163,8 +153,5 @@
 				</form>
 			</div>
 		</div>
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
 
 </div>
