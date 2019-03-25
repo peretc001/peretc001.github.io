@@ -64,6 +64,19 @@ web разработкой, владею навыками
 	<li>Форма обратной связи</li>
 	<li>Карусель отзывов (owl.Carousel)</li>
 </ul>
+<br>
+<h2  style="text-align:center;">Доработка сайта на Tilda</h2>
+<p align="center"><a style="text-align:center" href="http://www.resursplus64.ru/"><img src="https://st.weblancer.net/download/3779310_935xp.jpg" style="display:block;width:100%;max-width:900px;border:none;"></a></p>
+<p><strong>Доработка сайта на Tilda | <a href="http://www.resursplus64.ru/">http://www.resursplus64.ru/</a></strong></p>
+<ul type="none">
+	<li>Блок - Скажите сколько</li>
+	<li>Блок - Видео VK</li>
+	<li>Блок - Почему это выгодно?</li>
+	<li>Блок - Наши партнеры</li>
+	<li>Блок - Наши услуги и работники</li>
+	<li>Блок - Галерея</li>
+	<li>Блок - Отзывы наших клиентов</li>
+</ul>
 <br><br>
 <h2 style="text-align:center">Мои работы под ключ</h2>
 <p align="center"><a href="http://partadami.ru"><img src="https://peretc001.github.io/templates/email/img/partadami_macbook.png" style="display:block;width:100%;max-width:900px;border:none;"></a></p>
