@@ -24,21 +24,12 @@ web разработкой, владею навыками
 <br>
 
 <div style="text-align:center;">
-<h1  style="text-align:center;">Верстка новой главной страницы</h1>
-<p align="center"><a style="text-align:center" href="http://s-bani.ru"><img src="https://peretc001.github.io/work/sbani/screen.jpg" style="display:block;width:100%;max-width:900px;border:none;"></a></p>
-<p><strong>Верстка новой главной страницы | <a href="http://s-bani.ru">http://s-bani.ru/</a></strong></p>
-<ul type="none">
-	<li>Адаптивный дизайн (Skeleton)</li>
-	<li>Мобильное меню (UiKit)</li>
-	<li>Карусель фото и видео  (UiKit)</li>
-</ul>
-<br>
-<h2  style="text-align:center;">Верстка и натяжка на WP</h2>
+<h1  style="text-align:center;">Верстка и натяжка на WP</h1>
 <p align="center"><a style="text-align:center" href="http://ok-hall.ru"><img src="https://peretc001.github.io/work/okhall/themes/screen.jpg" style="display:block;width:100%;max-width:900px;border:none;"></a></p>
 <p><strong>Верстка <a href="https://peretc001.github.io/templates/okhall/">https://peretc001.github.io/templates/okhall/</a> и натяжка на Wordpress <a href="http://ok-hall.ru">http://ok-hall.ru/</a></strong></p>
 <br><br>
 <iframe width="50%" height="315" align="center" src="https://www.youtube.com/embed/2p9TNUCg35Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<br>
+<br><br>
 <iframe width="50%" height="315" align="center" src="https://www.youtube.com/embed/Ue4xmbo4Muo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br><br>
 <ul type="none">
@@ -51,6 +42,15 @@ web разработкой, владею навыками
 	<li>Bootstrap Modal</li>
 	<li>Формы обратной связи</li>
 	<li>Яндекс Api с возможностью добавления точек из админки</li>
+</ul>
+<br>
+<h2  style="text-align:center;">Верстка новой главной страницы</h2>
+<p align="center"><a style="text-align:center" href="http://s-bani.ru"><img src="https://peretc001.github.io/work/sbani/screen.jpg" style="display:block;width:100%;max-width:900px;border:none;"></a></p>
+<p><strong>Верстка новой главной страницы | <a href="http://s-bani.ru">http://s-bani.ru/</a></strong></p>
+<ul type="none">
+	<li>Адаптивный дизайн (Skeleton)</li>
+	<li>Мобильное меню (UiKit)</li>
+	<li>Карусель фото и видео  (UiKit)</li>
 </ul>
 <br>
 <h2  style="text-align:center;">Верстка</h2>
