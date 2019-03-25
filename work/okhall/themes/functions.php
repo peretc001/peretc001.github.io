@@ -11,6 +11,10 @@
  */
 if ( function_exists( 'add_theme_support' ) ) add_theme_support( 'post-thumbnails' );
 
+register_nav_menus(array(
+			'main_menu' => 'top_menu',
+		)
+	);
 
 //Delete всякую хрень
 remove_action('wp_head','feed_links_extra', 3); // убирает ссылки на rss категорий
@@ -51,17 +55,18 @@ function okhall_scripts() {
 	wp_enqueue_style( 'my-main-css', get_template_directory_uri() . '/css/main.min.css', false, null, all);
 
 
-	wp_deregister_script('jquery');
 	wp_deregister_script('jquery-migrate');
+	wp_deregister_script('jquery');
 	wp_register_script( 'jquery', includes_url( 'js/jquery/jquery.js' ), false, null, true );
-	
 
+	wp_enqueue_script( 'jquery' );
+	
 	wp_register_script( 'owl', get_template_directory_uri() . '/js/owlCarousel/owl.carousel.min.js', 'jquery', null, true);
 	wp_register_script( 'mmenu', 'https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/7.3.2/jquery.mmenu.js', 'jquery', null, true);
 	wp_register_script( 'poper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js', 'jquery', null, true);
 	wp_register_script( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js', 'jquery', null, true);
 	wp_register_script( 'marquiz', 'https://script.marquiz.ru/v1.js', 'jquery', null, true);
-	wp_register_script( 'yandex', 'https://api-maps.yandex.ru/2.1/?lang=ru_RU', false, null, true);
+	wp_register_script( 'yandex', 'https://api-maps.yandex.ru/2.1/?lang=ru_RU', 'jquery', null, true);
 	wp_register_script( 'myscripts', get_template_directory_uri() . '/js/scripts.min.js', 'jquery', null, true);
 
 	

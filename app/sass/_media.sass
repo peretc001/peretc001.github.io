@@ -457,19 +457,9 @@
 			h3
 				font-size: 1.8em
 		.modal-body
-			.form-control,
-			.form__one__button
-				margin: .5rem auto
-			.form__one__button
-				margin: 0 auto
-				box-sizing: border-box
-			.form__one__bottom
-				margin-top: 1rem
-
-	.modal-content.catalog__form
-		.modal-body
 			padding: 0
 			p
+				line-height: 1
 				text-align: center
 				font-size: 1em
 				span
@@ -477,19 +467,28 @@
 				b
 					font-size: 1.3em
 					display: block
-			p.blue
-				font-size: 1.3em
-			p.right
-				font-size: 1.3em
+			.blue
+				font-size: 1.2em
+			.right
+				font-size: 1em !important
 				text-align: center
+				margin: 20px 0 !important
+			.bottom
+				margin: 10px 0
+				span
+					display: block
+					text-align: center
+			.form-control,
+			.form__one__button
+				margin: .5rem auto
+			.form__one__button
+				margin: 0 auto
+				box-sizing: border-box
+			.form__one__bottom
+				margin-top: 1rem			
+			
 
-	.modal-content.okhall-modal
-		.modal-body
-			p
-				text-align: center
-				a
-					color: #111
-
+	
 	.modal-content.price__form
 		.modal-body
 			.row
@@ -501,7 +500,7 @@
 				label
 					padding: 2rem 0 0 0
 				label:before 
-					top: 10px
+					top: 15px
 				
 		.no-padding
 			padding-bottom: 1rem
@@ -967,6 +966,15 @@
 		.modal-header
 			h3
 				font-size: 1.6em
+		.moda-body
+			.blue
+				font-size: .9em
+				margin: 20px 0
+			.right
+				font-size: 1em !important
+			.form__two__grey
+				font-size: 0.9em
+				margin: 1em 0
 
 	.modal-content.price__form
 		.modal-body
@@ -987,24 +995,6 @@
 
 
 @media screen and (max-width: 400px)
-	
-	.modal-content
-		.modal-body
-			p
-				line-height: 1
-			.form__two__grey
-				font-size: 0.9em
-				margin: 1em 0
-			.right
-				margin: 5px 0 !important
-
-	.modal-content.okhall-modal
-		.modal-body
-			p
-				font-size: 1em
-				line-height: 1.1
-				a
-					color: #111
 
 	.modal-content.price__form
 		.modal-body
@@ -1013,10 +1003,6 @@
 			.row
 				padding: 0
 				margin: 0 auto
-				p
-					b
-						font-size: 1.2em
-						line-height: 1.1
 				label
 					padding: 2em 0 0 0
 				label:before 

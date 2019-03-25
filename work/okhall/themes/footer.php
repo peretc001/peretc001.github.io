@@ -114,69 +114,68 @@ $mobile_public = substr($mobile_in_valid, 0, -9) .'<b>' . substr($mobile_in_vali
 
 
 	<div id="toTop"><p></p></div>
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 			
 	<?php wp_footer(); ?>
 	<script>document.addEventListener("DOMContentLoaded", function() {Marquiz.init({ id: '5b76ef0d051fef0042b1fc8b' });});</script>
+
 	<script>
-		$(function() {
+		
+jQuery(document).ready(function($) {
 
-			ymaps.ready(init);
+					ymaps.ready(init);
 
-			function init() {
-				myMap = new ymaps.Map('map_page', {
-					center: [55.7900,37.6000],
-					zoom: 11
-				});
-				s = {
-					iconLayout: 'default#image',
-					iconImageHref: '/wp-content/themes/okhall/img/logo-map.svg',
-					iconImageSize: [87, 74],
-					iconImageOffset: [-43, -56]
-				};
-				m = {
-					<?php $i = 1;
-						for ($i = 1; $i < $options['map__point__count']; $i++) {
-							echo 'm'. $i .': new ymaps.Placemark([' .$options['map__point__'. $i] .'], {}, s),'. PHP_EOL;
+					function init() {
+						myMap = new ymaps.Map('map_page', {
+							center: [55.7900,37.6000],
+							zoom: 11
+						});
+						s = {
+							iconLayout: 'default#image',
+							iconImageHref: '/wp-content/themes/okhall/img/logo-map.svg',
+							iconImageSize: [87, 74],
+							iconImageOffset: [-43, -56]
+						};
+						m = {
+							<?php $i = 1;
+								for ($i = 1; $i < $options['map__point__count']; $i++) {
+									echo 'm'. $i .': new ymaps.Placemark([' .$options['map__point__'. $i] .'], {}, s),'. PHP_EOL;
+								}
+								echo 'm'. $i .': new ymaps.Placemark([' .$options['map__point__'. $i] .'], {}, s)';
+							?>
+						};
+						if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+							myMap.behaviors.disable('drag');
 						}
-						echo 'm'. $i .': new ymaps.Placemark([' .$options['map__point__'. $i] .'], {}, s)';
-					?>
-				};
-				//myMap.behaviors.disable('scrollZoom');
-				//на мобильных устройствах... (проверяем по userAgent браузера)
-				if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-					//... отключаем перетаскивание карты
-					myMap.behaviors.disable('drag');
-				}
-				myMap.geoObjects
-					<?php $i = 1;
-						for ($i = 1; $i < $options['map__point__count']; $i++) {
-							echo '.add(m["m'. $i .'"])'. PHP_EOL;
+						myMap.geoObjects
+							<?php $i = 1;
+								for ($i = 1; $i < $options['map__point__count']; $i++) {
+									echo '.add(m["m'. $i .'"])'. PHP_EOL;
+									
+								}
+								echo '.add(m["m'. $i .'"]);';
+							?>
+						function onResizeMap() {
 							
-						}
-						echo '.add(m["m'. $i .'"]);';
-					?>
-				function onResizeMap() {
-					
-					
-					if ($(window).width() > '992') { 
-						myMap.setCenter([55.7900,37.4000]);
-					}
-					if ($(window).width() > '1200') { 
-						myMap.setCenter([55.7900,37.3000]);
-					} 
-					if ($(window).width() < '576') { 
-						myMap.setCenter([55.7750,37.6000]);
-					} 
+							
+							if ($(window).width() > '992') { 
+								myMap.setCenter([55.7900,37.4000]);
+							}
+							if ($(window).width() > '1200') { 
+								myMap.setCenter([55.7900,37.3000]);
+							} 
+							if ($(window).width() < '576') { 
+								myMap.setCenter([55.7750,37.6000]);
+							} 
 
-				} onResizeMap();
+						} onResizeMap();
 
-				window.onresize = function () {
-					onResizeMap();
-				};
-			};
-		});
+						window.onresize = function () {
+							onResizeMap();
+						};
+					};
+		
+ 		});
+
 	</script>
 </body>
 </html>
