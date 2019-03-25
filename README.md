@@ -35,7 +35,7 @@ web разработкой, владею навыками
 <br>
 <h2  style="text-align:center;">Верстка и натяжка на WP</h2>
 <p align="center"><a style="text-align:center" href="http://ok-hall.ru"><img src="https://peretc001.github.io/work/okhall/themes/screen.jpg" style="display:block;width:100%;max-width:900px;border:none;"></a></p>
-<p><strong>Верстка и натяжка на Wordpress | <a href="http://ok-hall.ru">http://ok-hall.ru/</a></strong></p>
+<p><strong>Верстка <a href="https://peretc001.github.io/templates/okhall/">https://peretc001.github.io/templates/okhall/</a> и натяжка на Wordpress <a href="http://ok-hall.ru">http://ok-hall.ru/</a></strong></p>
 <iframe width="100%" height="315" align="center" src="https://www.youtube.com/embed/2p9TNUCg35Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br>
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/Ue4xmbo4Muo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
