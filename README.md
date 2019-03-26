@@ -44,6 +44,21 @@ web разработкой, владею навыками
 	<li>Яндекс Api с возможностью добавления точек из админки</li>
 </ul>
 <br>
+<h2  style="text-align:center;">Доработка сайта на ModX</h2>
+<p align="center"><a style="text-align:center" href="https://st.weblancer.net/download/3779888_935xp.jpg"><img src="https://st.weblancer.net/download/3779888_935xp.jpg" style="display:block;width:100%;max-width:900px;border:none;"></a></p>
+<p align="center"><a style="text-align:center" href="https://st.weblancer.net/download/3779889_935xp.jpg"><img src="https://st.weblancer.net/download/3779889_935xp.jpg" style="display:block;width:100%;max-width:900px;border:none;"></a></p>
+<p><strong>Доработка сайта на ModX | <a href="http://sarhimmash.ru/">http://sarhimmash.ru/</a></strong></p>
+<ul type="none">
+	<li>Fixed меню</li>
+	<li>Modal bootstrap</li>
+	<li>Формы Обратного звонка и Обсудить условия</li>
+	<li>Блок Слайдер на главной</li>
+	<li>Блок Наши преимущества</li>
+	<li>Блок Партнеры</li>
+	<li>Страница Наши Объекты</li>
+</ul>
+<br>
+<br>
 <h2  style="text-align:center;">Верстка новой главной страницы</h2>
 <p align="center"><a style="text-align:center" href="http://s-bani.ru"><img src="https://peretc001.github.io/work/sbani/screen.jpg" style="display:block;width:100%;max-width:900px;border:none;"></a></p>
 <p><strong>Верстка новой главной страницы | <a href="http://s-bani.ru">http://s-bani.ru/</a></strong></p>
