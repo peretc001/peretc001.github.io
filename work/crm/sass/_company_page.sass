@@ -1,0 +1,412 @@
+.company_page
+	padding: 0 $gutter
+	font-size: 0.8em
+	color: $text
+	position: relative
+	form
+		margin: 0
+		padding: 0
+		position: relative
+	label
+		font-weight: bold
+		display: inline-block
+	.btn
+		font-size: 1em
+		position: relative
+	.company_page_menu
+		padding: $gutter
+		align-items: center
+		width: 100%
+		box-sizing: border-box
+		margin: 0
+		button
+			margin-right: .5em
+		.block_on_mobile
+			display: flex
+			align-items: center
+		&__date,
+		&__time
+			position: relative
+			padding: 0 0 0 2em
+			label
+				padding-right: .5em
+			.btn
+				max-width: 140px
+				color: $text
+				border: 1px solid #ced4da
+				&.btn-danger,
+				&.btn-dark
+					color: #fff
+			.clear_input_date,
+			.clear_input_time
+				cursor: pointer
+				position: absolute
+				right: 0
+				bottom: 0
+				margin-bottom: 11px
+				margin-right: 12px
+				background: transparent
+				font-size: 1em
+				color: #999
+				z-index: 10
+		&__date.danger,
+		&__time.danger
+			.clear_input_date,
+			.clear_input_time
+				color: #ffffff
+		
+		&__manager
+			padding: 0 0 0 2em
+			label
+				padding-right: .5em
+			.custom-select
+				width: 150px
+				margin: 0
+				font-style: 1em
+				color: $text
+		
+
+	&_card
+		> [class*="col-"]
+			margin: 0 0 $gutter 0
+			height: 100%
+		.region_list
+			position: relative
+			.autocomplete
+				position: relative
+				display: inline-block
+			.autocomplete-items
+				position: absolute
+				z-index: 99
+				top: 100%
+				left: 0
+				right: 0
+				padding: 0 15px !important
+				cursor: pointer
+
+	&_block
+		background: #ffffff
+		border: .5px solid $border-light
+		border-radius: .25em
+		padding: $gutter
+		position: relative
+		.show_company_info
+			display: none
+		a:hover
+			background: $bg-hover
+		.form-control
+			font-size: 1em
+		.form-control:disabled, .form-control[readonly]
+			border: none
+			background: none
+	
+	&_event
+		border-right: .5px solid $border-light
+		padding: $gutter
+		color: $text
+		&__header
+			display: flex
+			align-items: center
+			justify-content: space-between
+			padding: 0 0 $gutter/2 0
+			border-bottom: 1px solid $border-light
+			span
+				font-weight: bold
+				text-transform: uppercase
+				color: $text-color
+		&__add
+			padding: $gutter/2 0
+			label
+				padding-right: .5em
+			.btn
+				max-width: 140px
+				color: $text
+			.form-control
+				font-size: 1em
+			.btn.btn-success
+				color: #ffffff
+		&_block
+			&_card
+				border-bottom: 1px dashed $border-light
+				padding: $gutter/2 0
+				position: relative
+				p
+					margin: 0
+				&__date
+					color: #fff
+					background: $text
+					display: inline-block
+					padding: .3em .7em
+					margin-bottom: .5em !important
+			&_card.empty
+				border-bottom: none
+				padding: $gutter/2 0
+				position: relative
+				text-align: center
+				p
+					margin: 0
+					color: #cccccc
+	
+	&_contact
+		border-right: .5px solid $border-light
+		padding: $gutter
+		color: $text
+		&__header
+			display: flex
+			align-items: center
+			justify-content: space-between
+			padding: 0 0 $gutter/2 0
+			border-bottom: 1px solid $border-light
+			span
+				font-weight: bold
+				text-transform: uppercase
+				color: $text-color
+		&__add
+			padding: $gutter/2 0
+			label
+				padding-right: .5em
+			.form-control
+				font-size: 1em
+			.btn.btn-success
+				color: #ffffff
+		&_block
+			&_card
+				border-bottom: 1px dashed $border-light
+				padding: $gutter/2 0
+				position: relative
+				p
+					margin: 0
+			&_card.empty
+				border-bottom: none
+				padding: $gutter/2 0
+				position: relative
+				text-align: center
+				p
+					margin: 0
+					color: #cccccc
+
+	.dropdown
+		position: absolute
+		right: 0
+		top: 1em
+		color: #aaa
+		button
+			background: transparent
+			border: none
+			cursor: pointer
+			color: #cccccc
+			font-size: 1em
+			outline: none
+			&:hover
+				color: $text
+		.dropdown-menu
+			padding: 0
+			min-width: 3em
+			.dropdown-item
+				font-size: .8em !important
+				color: $text
+				padding: .5em 1em
+				font-family: $default-font
+				&:hover
+					background: $bg-hover
+				.far
+					padding-right: .5em
+					font-weight: normal
+	
+
+.uk-dropdown.uk-datepicker
+	font-size: .8em
+	border: 1px solid #ebebeb
+	.uk-datepicker-previous::after,
+	.uk-datepicker-next::after
+		font-family: 'Font Awesome 5 Free'
+		font-weight: 700
+
+
+.uk-autocomplete, .uk-autocomplete.uk-open
+	display: inline-block
+.uk-nav.uk-nav-autocomplete.uk-autocomplete-results
+	margin: 0
+	padding: 0
+.uk-nav.uk-nav-autocomplete.uk-autocomplete-results > li
+	list-style: none
+	font-size: .8em
+	text-align: center
+.uk-nav.uk-nav-autocomplete.uk-autocomplete-results > li > a
+	cursor: pointer
+
+.is-company .uk-dropdown-small
+	min-width: auto !important
+	width: 140px  !important
+	border: 1px solid #ebebeb
+
+.delete_company
+	margin: 0 0 $gutter $gutter*1.5
+	display: inline-block
+	padding: .5em 1em
+	font-size: .8em
+	background: $border-light
+	&:hover
+		background: #ced4da
+
+
+@media screen and (max-width: 1199.98px)
+	.company_page
+		.company_page_menu
+			&__date,
+			&__time
+				.clear_input_date,
+				.clear_input_time
+					margin-bottom: 10px
+					margin-right: 10px
+
+	.is-company .uk-dropdown-small
+		min-width: auto !important
+		width: 134px !important
+
+@media screen and (max-width: 991.98px)
+	.company_page
+		.company_page_menu
+			&__date,
+			&__time
+				padding: 0 0 0 1em
+				.btn
+					max-width: 90px
+				.clear_input_date,
+				.clear_input_time
+					margin-bottom: 9px
+					margin-right: 5px
+			&__manager
+				padding: 0 0 0 1em
+				.custom-select
+					width: 100px
+		&_contact
+			border-right: none
+
+	.is-company .uk-dropdown-small
+		min-width: auto !important
+		width: 90px !important
+
+@media screen and (max-width: 767.98px)
+	.company_page
+		padding: 0
+		width: 100%
+		.company_page_menu
+			padding: $gutter 0	
+			justify-content: center
+			.block_on_mobile
+				flex-basis: 100% !important
+				justify-content: center
+				padding: 1em 0
+				width: 100%
+			&__date
+				.btn.btn-date
+					padding-left: 0
+					padding-right: .8em
+					font-size: 16px !important
+					max-width: 110px
+			&__time
+				.btn.btn-time
+					padding-left: 0
+					padding-right: .8em
+					font-size: 16px !important
+					max-width: 70px
+			&__date,
+			&__time
+				.clear_input_date,
+				.clear_input_time
+					margin-bottom: 15px
+					margin-right: 5px
+					font-size: 0.8em
+			&__manager
+				.custom-select
+					font-size: 16px !important
+					width: 150px
+					option
+						font-size: 16px !important
+			&__date,
+			&__time,
+			&__manager
+				label
+					font-size: .8em
+
+		&_block
+			.show_company_info
+				display: inline
+				background: $border-light
+				border-radius: 0 .25em 0 0
+				border: none
+				position: absolute
+				right: 0
+				top: 0
+				font-size: 1.5em
+				font-weight: bold
+				cursor: pointer
+				.fas
+					transition: all .3s ease-in-out
+				&:focus
+					outline: none
+				&.collapsed
+					.fas
+						transform: rotate(180deg)
+		&_event
+			border-right: none
+			&__add
+				padding: $gutter/2 0
+				.btn.btn-date
+					font-size: 16px !important
+		
+	
+	.uk-nav.uk-nav-autocomplete.uk-autocomplete-results > li
+		font-size: 16px !important
+	.is-company .uk-dropdown-small
+		min-width: auto !important
+		width: 70px !important
+
+@media screen and (max-width: 669.98px)
+	.company_page
+		.company_page_menu
+			padding: $gutter/2 0
+			&__date,
+			&__time
+				padding: 0 0 0 .5em
+				.btn.btn-date,
+				.btn.btn-time
+					width: 100%
+			&__manager
+				padding: 0 0 0 .5em
+				.custom-select
+					width: auto
+					max-width: 100%
+
+@media screen and (max-width: 599.98px)
+	.company_page
+		.company_page_menu
+			.block_on_mobile
+				padding: 1em 0
+				justify-content: center
+			&__date,
+			&__time,
+			&__manager
+				text-align: center
+			&__manager
+				.custom-select
+					width: auto
+					max-width: 120px
+				
+@media screen and (max-width: 549.98px)
+	.company_page
+		.company_page_menu
+			&__date
+				.btn.btn-date
+					padding-left: .1em
+					padding-right: .1em
+			&__time
+				.btn.btn-time
+					padding-left: 0
+					padding-right: 0
+			&__date,
+			&__time
+				.clear_input_date,
+				.clear_input_time
+					display: none

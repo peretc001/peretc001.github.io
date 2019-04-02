@@ -1,0 +1,145 @@
+.navbar
+	background: #fff
+	display: flex
+	flex-direction: row
+	justify-content: flex-start
+	align-items: center
+	.navbar-brand
+		display: flex
+		align-items: center
+		padding: 0 1rem
+		font-size: 1em
+		&:hover, &:focus
+			text-decoration: none
+		img
+			padding-right: .5em
+			width: 2em
+			height: 2em
+	.btn
+		font-size: 0.8em
+		margin-right: 1em
+		.fas
+			margin-right: .3em
+	.form-control
+		width: auto !important
+		min-width: auto !important
+
+	.show_filter
+		cursor: pointer
+		.fa-caret-up
+			margin-right: 0
+			margin-left: .3em
+			color: #ffffff
+			transition: all .3s ease-in-out
+		&:focus
+			outline: none
+		&.collapsed
+			.fa-caret-up
+				transform: rotate(180deg)
+
+	.user-menu
+		padding: 0
+		margin: 0
+		.dropdown
+			list-style: none
+			padding: 0
+			margin: 0 20px
+			button
+				border: 0
+				background: transparent
+				padding: 0
+				margin: 0
+				line-height: 1
+				height: auto
+				outline: none
+				cursor: pointer
+				position: relative
+				color: $text-color
+				&:hover
+					color: $text-hover
+				img
+					width: 50px
+					height: 50px
+					margin-right: 10px
+					border-radius: .25em
+			.dropdown-menu
+				border-radius: .25em
+				background-color: #fff
+				border: 1px solid $border-light
+				padding-bottom: 1em
+				padding: 0
+				color: $text-color
+				font-size: 1em
+				&-right
+					left: auto
+					right: 0
+				.user-image
+					width: 40px
+					border-radius: .25em
+				.dropdown-toggle
+					border: none
+					background: transparent
+				.dropdown-header
+					border-bottom: 1px solid $border-light
+					img
+						width: 50px
+						vertical-align: top
+						border-radius: .25em
+						margin-right: 0.5em
+					small
+						font-size: 0.8em
+						display: block
+						color: #text-color
+				&>li
+					a
+						display: block
+						color: $text-color
+						font-size: 0.8em
+						padding: 0.8em 0.7em 0.8em 2.25em
+						&:hover
+							background-color: $bg-hover
+				.dropdown-footer
+					border-top: 1px solid $border-light
+					border-radius: 0 0 .25em .25em
+
+
+
+
+@media screen and (max-width: 767.98px)
+	.navbar
+		.btn
+			margin-right: .5em
+			.fas
+				margin-right: 0
+		
+
+@media screen and (max-width: 576.98px)
+	.navbar
+		.btn
+			padding-left: .8em
+			padding-right: .8em
+		.user-menu
+			.dropdown
+				margin: 0 10px
+				button
+					img
+						width: 40px
+						margin-right: 0
+
+@media screen and (max-width: 479.98px)
+	.navbar
+		.form-control
+			max-width: 120px !important
+
+
+@media screen and (max-width: 374.98px)
+	.navbar
+		.form-control
+			max-width: 65px !important
+
+
+
+@media screen and (min-width: 1200px)
+	.navbar
+		.form-control
+			min-width: 320px !important

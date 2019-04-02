@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	<title>Templates</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+	<!-- Template Basic Images End -->
+
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#000">
+	<!-- Custom Browsers Color End -->
+	<style>
+		body {
+			opacity: 0;
+			overflow-x: hidden;
+		}
+
+		html {
+			background-color: #fff;
+		}
+	</style>
+	
+
+</head>
+
+<body class="is-company">
+
+	<header class="main-header" id="header">
+		<nav class="navbar navbar-expand-lg">
+			<a class="navbar-brand" href="#">
+				<img src="https://getbootstrap.com/docs/4.1/assets/brand/bootstrap-solid.svg"
+					class="d-inline-block align-top" alt="">
+				Bootstrap
+			</a>
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+				</ul>
+			</div>
+
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form>
+			<!-- User Account -->
+			<ul class="user-menu">
+				<li class="dropdown">
+					<button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true"
+						aria-expanded="false">
+						<img src="img/user/user.png" alt="User Image" />
+						<span class="d-none d-lg-inline-block">Иванов Сергей</span>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-right">
+						<li class="dropdown-header">
+							<img src="img/user/user.png" class="img-circle" alt="User Image" />
+							<div class="d-inline-block">
+								Иванов Сергей <small class="pt-1">mail@mail.ru</small>
+							</div>
+						</li>
+						<li>
+							<a href="#">
+								<i class="mdi mdi-account"></i> Мой профиль
+							</a>
+						</li>
+						<li>
+							<a href="#"> <i class="mdi mdi-diamond-stone"></i> Мои компании </a>
+						</li>
+						<li>
+							<a href="#"> <i class="mdi mdi-settings"></i> Мои заметки </a>
+						</li>
+						<li class="dropdown-footer">
+							<a href="signin.html"> <i class="mdi mdi-logout"></i> Выход </a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+
+		</nav>
+	</header>
+
+	<section class="company_page">
+		<div class="container-fluid">
+			<form action="" method="post">
+				
+				<div class="row company_page_menu">
+					<button class="btn btn-success" >Сохранить</button>
+					<a href="/" class="btn btn-outline-secondary">Закрыть</a>
+					<span class="block_on_mobile">
+						<div class="company_page_menu__date">
+							<label for="date_format">Дата</label>
+							<input type="text" id="date_format" name="date" class="btn btn-date"
+										data-uk-datepicker="{format:'DD.MM.YYYY', i18n:{months:['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'], weekdays: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб']}}"
+										value="28.03.2019" >
+						</div>					
+						<div class="company_page_menu__time">
+							<label for="form-time">Время</label>
+							<input type="text" id="form-time" class="btn btn-time" 
+								value="09:00" data-uk-timepicker="{start:8, end:21}" >
+						</div>
+						<div class="company_page_menu__manager">
+							<label for="company_manager">Менеджер</label>
+							<select class="custom-select" id="company_manager">
+								<option selected>Караберашвилли</option>
+								<option value="2">Петров</option>
+								<option value="3">Сидоров</option>
+							</select>
+						</div>
+					</span>
+				</div>
+
+				<div class="row company_page_card">
+
+					<div class="col-lg-4">
+						<div class="company_page_block">
+							<div class="form-group row">
+								<label for="company_name" class="col-sm-3 col-form-label">Название</label>
+								<div class="col-sm-9">
+									<input id="company_name" type="text" name="company" class="form-control" value="Yfpdfybt rjvgfybb" placeholder="Название">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="company_code" class="col-sm-3 col-form-label">ИНН</label>
+								<div class="col-sm-9">
+									<input id="company_code" type="text" name="company_code" class="form-control" value="2308185598" placeholder="ИНН">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="company_region" class="col-sm-3 col-form-label">Регион</label>
+								<div class="col-sm-9 region_list">
+									<input id="company_region" type="text" name="company_refion" class="form-control" value="Воронежская область" placeholder="Регион">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="company_adres" class="col-sm-3 col-form-label">Адрес</label>
+								<div class="col-sm-9">
+									<input id="company_adres" type="text" name="company_adres" class="form-control" value="Воронеж, ул. Северная, 234" placeholder="Адрес">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="company_phone" class="col-sm-3 col-form-label">Телефон</label>
+								<div class="col-sm-9">
+									<input id="company_phone" type="tel" name="company_phone" class="form-control" value="8-918-123-45-67" placeholder="Телефон">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="company_email" class="col-sm-3 col-form-label">E-mail</label>
+								<div class="col-sm-9">
+									<input id="company_email" type="tel" name="company_email" class="form-control" value="mail@mail.ru" placeholder="E-mail">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="company_about">Описание</label>
+								<textarea id="company_about" type="text" name="company_about" class="form-control" rows="10" placeholder="Описание">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus architecto dolore, perspiciatis obcaecati porro quam beatae ratione, non mollitia pariatur tempora impedit corrupti voluptate delectus error voluptatum labore consequuntur quos magni reprehenderit dolorem deserunt nam nihil. Reiciendis, maxime quidem nisi eos nemo odit aliquam laboriosam magni ad deserunt porro voluptatibus perspiciatis pariatur. Quidem velit nemo expedita quas commodi excepturi sit molestiae ipsa ut! Nostrum dolores, et itaque vel veritatis saepe.</textarea>
+							</div>
+						</div>	
+					</div>
+			</form>
+				<div class="col-md-6 col-lg-4">
+					<div class="company_page_event">
+						<div class="company_page_event__header">
+							<span>Переговоры:</span>
+							<button class="btn btn-warning btn-sm" type="button" data-toggle="collapse" data-target="#event"
+								aria-expanded="false" aria-controls="event">Добавить</button>
+						</div>
+						<div class="company_page_event__add collapse" id="event">
+							<p><label for="date_format_event">Дата</label>
+								<input type="text" id="date_format_msg" name="event_date" class="btn btn-date"
+									data-uk-datepicker="{format:'DD.MM.YYYY', i18n:{months:['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'], weekdays: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб']}}"
+									value="">
+							</p>
+							<p class="form-group">
+								<label for="event_about">Описание</label>
+								<textarea id="event_about" type="text" name="event" class="form-control" rows="5" placeholder="Описание"></textarea>
+							</p>
+							<p>
+								<a href="" class="btn btn-success btn-sm">Сохранить</a>
+							</p>
+						</div>
+						<div class="company_page_event_block">
+							<div class="company_page_event_block_card">
+								<p class="company_page_event_block_card__date">27.02.2019</p>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem illo voluptatum sint, ut ipsam molestiae soluta magnam eligendi totam quaerat soluta magnam eligendi totam quaerat eligendi totam ghjhj.</p>
+								<div class="dropdown">
+									<button class="fas fa-ellipsis-v" type="button" data-toggle="dropdown"
+										aria-haspopup="true" aria-expanded="false">
+										
+									</button>
+									<div class="dropdown-menu dropdown-menu-right">
+										<a class="dropdown-item" href="#"><i class="far fa-edit"></i> Редактировать</a>
+										<a class="dropdown-item" href="#"><i class="far fa-trash-alt"></i> Удалить</a>
+									</div>
+								</div>
+							</div>
+							<div class="company_page_event_block_card">
+								<p class="company_page_event_block_card__date">27.02.2019</p>
+								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati praesentium doloremque esse alias, nemo sint beatae animi vel, dolorem minus natus quasi, qui nobis ab quod commodi iusto debitis officiis.</p>
+								<div class="dropdown">
+									<button class="fas fa-ellipsis-v" type="button" data-toggle="dropdown" aria-haspopup="true"
+										aria-expanded="false">
+
+									</button>
+									<div class="dropdown-menu dropdown-menu-right">
+										<a class="dropdown-item" href="#"><i class="far fa-edit"></i> Редактировать</a>
+										<a class="dropdown-item" href="#"><i class="far fa-trash-alt"></i> Удалить</a>
+									</div>
+								</div>
+							</div>
+							<div class="company_page_event_block_card">
+								<p class="company_page_event_block_card__date">27.02.2019</p>
+								<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero natus iusto incidunt.</p>
+								<div class="dropdown">
+									<button class="fas fa-ellipsis-v" type="button" data-toggle="dropdown" aria-haspopup="true"
+										aria-expanded="false">
+
+									</button>
+									<div class="dropdown-menu dropdown-menu-right">
+										<a class="dropdown-item" href="#"><i class="far fa-edit"></i> Редактировать</a>
+										<a class="dropdown-item" href="#"><i class="far fa-trash-alt"></i> Удалить</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6 col-lg-4">
+					<div class="company_page_contact">
+						<div class="company_page_contact__header">
+							<span>Контакты:</span>
+							<button class="btn btn-warning btn-sm" type="button" data-toggle="collapse" data-target="#contact"
+								aria-expanded="false" aria-controls="contact">Добавить</button>
+						</div>
+						<div class="company_page_contact__add collapse" id="contact">
+							<p>
+								<label for="contact_name" class="col-sm-3 col-form-label">ФИО</label>
+								<input id="contact_name" type="text" name="contact_name" class="form-control" value="" placeholder="ФИО">
+							</p>
+							<p>
+								<label for="contact_job" class="col-sm-3 col-form-label">Должность</label>
+								<input id="contact_job" type="text" name="contact_job" class="form-control" value="" placeholder="Должность">
+							</p>
+							<p>
+								<label for="contact_phone" class="col-sm-3 col-form-label">Телефон</label>
+								<input id="contact_phone" type="tel" name="contact_phone" class="form-control" value=""
+									placeholder="Телефон">
+							</p>
+							<p>
+								<a href="" class="btn btn-success btn-sm">Сохранить</a>
+							</p>
+						</div>
+						<div class="company_page_contact_block">
+							<div class="company_page_contact_block_card empty">
+								<p>пока тут пусто...</p>
+							</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+
+	<a class="delete_company" href="/inc/action/delete_company.php?id=<?php echo $id; ?>">Удалить компанию</a>
+
+<!----- SCRIPT ----->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	 crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	 crossorigin="anonymous"></script>
+	<script src="js/wow/wow.js"></script>
+
+	<script src="/js/uikit/js/uikit.min.js"></script>
+	<script src="/js/uikit/js/components/autocomplete.min.js"></script>
+	<script src="/js/uikit/js/components/datepicker.js"></script>
+	<script src="/js/uikit/js/components/timepicker.js"></script>
+
+	<link rel="stylesheet" href="/js/uikit/css/uikit.css" />
+	<link rel="stylesheet" href="/js/uikit/css/components/datepicker.almost-flat.min.css" />
+	<!----- STYLE ----->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" href="css/main.min.css">
+
+</body>
+</html>
