@@ -129,8 +129,9 @@
 								<option <?php if($company_manager == $list['name']) { echo 'selected'; } ?>><?php echo $list['name']; ?></option>
 							<?php 
 									$manager_list = $db->getAll('SELECT * FROM `manager` ORDER by name desc'); 
-										foreach ($manager_list as $list) { ?>
-									<option <?php if($company_manager == $list['name']) { echo 'selected'; } ?>><?php echo $list['name']; ?></option>
+										foreach ($manager_list as $list) { 
+							?>
+							<option <?php if($company_manager == $list['name']) { echo 'selected'; } ?>><?php echo $list['name']; ?></option>
 							<?php } ?>
 						</select>
 					</div>
@@ -193,19 +194,22 @@
 							<div class="col-5">Регион</div>
 							<div class="col-3">Телефон</div>
 						</div>	
-					<?php if ($company_list) {
+						<?php if ($company_list) {
 
-						foreach ($company_list as $row) {   ?>	
-
+						foreach ($company_list as $row) {   
+						?>	
 						<a href="/company_page.php?id=<?php echo $row['id']?>" class="row company_items">
 							<div class="col-6 col-sm-4"><b><?php echo $row['company_name']?></b></div>
 							<div class="col-6 col-sm-5"><?php echo $row['company_region']?></div>
 							<div class="col-12 col-sm-3"><?php echo $row['company_phone']?></div>
-							<?php $event = $db->getRow('SELECT * FROM `event` WHERE company_id = ?s ORDER by event_date desc', $row['id']); ?>
-							<div class="col-12 col-sm-8 company_list_block__desc"><?php if($event) { echo '<u>'. date('d.m.Y', strtotime($event['event_date'])) .'</u> '. $event['event_msg']; } ?></div>
+							<?php $event = $db->getRow('SELECT * FROM `event` WHERE company_id = ?s ORDER by event_date desc', $row['id']); 
+							?><div class="col-12 col-sm-8 company_list_block__desc"><?php if($event) { echo '<u>'. date('d.m.Y', strtotime($event['event_date'])) .'</u> '. $event['event_msg']; } ?></div>
 							<div class="col-6 col-sm-2 company_list_block__time"><?php if($row['company_time'] and $row['company_time'] != '00:00:00') { ?><span class="btn btn-outline-secondary"><?php echo date('H:i', strtotime($row['company_time'])); ?></span><?php } ?></div>
 							<div class="col-6 col-sm-2 company_list_block__date"><?php if($row['company_date'] and $row['company_date'] != '0000-00-00') { ?><span class="btn btn-outline-secondary"><?php echo date('d.m.Y', strtotime($row['company_date'])); ?></span><?php } ?></div>
-						</a><?php } }  else { echo	'<div class="no_find"><i class="far fa-meh"></i><br>ничего не найдено...</div>'; } ?>	
+						</a>	
+					<?php } }  else { ?>	
+						<div class="no_find"><i class="far fa-meh"></i><br>ничего не найдено...</div>	
+					<?php } ?>	
 					</div>
 				</div>
 				
@@ -237,11 +241,12 @@
 
 					if (count($w)) 	$where = "WHERE ". implode(' AND ', $w);
 							
-
-					$company_list_control = $db->getAll("SELECT * FROM `company` ?p ORDER by company_date desc, company_time desc", $where); ?>
+					$sort = 'desc';
+					$company_list_control = $db->getAll("SELECT * FROM `company` ?p ORDER by company_date ". $sort .", company_time ". $sort, $where); ?>
 
 					
-				<div class="col-md-6 order-1 order-md-12">
+				<div class="col-md-6 order-1 order-md-12" id="sort_block">
+					<a class="sort" data-sort="date_item"><i class="fas fa-sort"></i> <span>По дате</span></a>
 					<p class="company_list_name">
 						На контроле: с <?php echo date('d.m.Y', strtotime($start_date)); ?> по <?php echo date('d.m.Y', strtotime($end_date)); ?> 
 					</p>
@@ -251,18 +256,29 @@
 							<div class="col-5">Регион</div>
 							<div class="col-3">Телефон</div>
 						</div>
-					<?php if ($company_list_control) {
+
+						<?php if ($company_list_control) { ?><ul class="list"><?php
 						
-						foreach ($company_list_control as $row) {   ?>	
-						<a href="/company_page.php?id=<?php echo $row['id']?>" class="row company_items">
-							<div class="col-6 col-sm-4"><b><?php echo $row['company_name']?></b></div>
-							<div class="col-6 col-sm-5"><?php echo $row['company_region']?></div>
-							<div class="col-12 col-sm-3"><?php echo $row['company_phone']?></div>
-							<?php $event = $db->getRow('SELECT * FROM `event` WHERE company_id = ?s ORDER by event_date desc', $row['id']); ?>
-							<div class="col-12 col-sm-8 company_list_block__desc"><?php if($event) { echo '<u>'. date('d.m.Y', strtotime($event['event_date'])) .'</u> '. $event['event_msg']; } ?></div>
-							<div class="col-6 col-sm-2 company_list_block__time"><?php if($row['company_time'] and $row['company_time'] != '00:00:00') { ?><span class="btn btn-dark"><?php echo date('H:i', strtotime($row['company_time'])); ?></span><?php } ?></div>
-							<div class="col-6 col-sm-2 company_list_block__date"><?php if($row['company_date'] and $row['company_date'] != '0000-00-00') { ?><span class="btn btn-danger"><?php echo date('d.m.Y', strtotime($row['company_date'])); ?></span><?php  } ?></div>
-						</a><?php } } else { echo	'<div class="no_find"><i class="far fa-meh"></i><br>ничего не найдено...</div>'; } ?>	
+							foreach ($company_list_control as $row) {   
+							?>	
+							<li>
+								<a href="/company_page.php?id=<?php echo $row['id']?>" class="row company_items date_item" data-timestamp="<?php 
+									$date_item = new DateTime($row['company_date'] . $row['company_time']);
+									echo $date_item->getTimestamp();
+									?>">
+									<div class="col-6 col-sm-4"><b><?php echo $row['company_name']?></b></div>
+									<div class="col-6 col-sm-5"><?php echo $row['company_region']?></div>
+									<div class="col-12 col-sm-3"><?php echo $row['company_phone']?></div>
+									<?php $event = $db->getRow('SELECT * FROM `event` WHERE company_id = ?s ORDER by event_date desc', $row['id']); 
+									?><div class="col-12 col-sm-8 company_list_block__desc"><?php if($event) { echo '<u>'. date('d.m.Y', strtotime($event['event_date'])) .'</u> '. $event['event_msg']; } ?></div>
+									<div class="col-6 col-sm-2 company_list_block__time"><?php if($row['company_time'] and $row['company_time'] != '00:00:00') { ?><span class="btn btn-dark"><?php echo date('H:i', strtotime($row['company_time'])); ?></span><?php } ?></div>
+									<div class="col-6 col-sm-2 company_list_block__date"><?php if($row['company_date'] and $row['company_date'] != '0000-00-00') { ?><span class="btn btn-danger"><?php echo date('d.m.Y', strtotime($row['company_date'])); ?></span><?php  } ?></div>
+								</a>
+							</li>	
+						<?php } ?></ul>	
+					<?php } else { ?>	
+						<div class="no_find"><i class="far fa-meh"></i><br>ничего не найдено...</div>
+					<?php } ?>	
 					</div>
 				</div>
 
@@ -270,11 +286,12 @@
 
 		</div>
 	</section>
-	<script>
-		
-			
-		
-	</script>
 
 	<?php include ($_SERVER['DOCUMENT_ROOT'] .'/inc/footer.php'); ?>
-					
+	<script>
+		var options = {
+			valueNames: [{ name: 'date_item', attr: 'data-timestamp' }]
+		};
+
+		var sortList = new List('sort_block', options);
+	</script>
