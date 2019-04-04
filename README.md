@@ -24,7 +24,13 @@ web разработкой, владею навыками
 <br>
 
 <div style="text-align:center;">
-<h1  style="text-align:center;">Верстка и натяжка на WP</h1>
+<h1  style="text-align:center;">CRM учета клиентов</h1>
+<p align="center"><a style="text-align:center" href="http://base.autoprkt.ru"><img src="https://peretc001.github.io/work/crm/base.jpg" style="display:block;width:100%;max-width:900px;border:none;"></a></p>
+<p><strong>Demo <a href="http://base.autoprkt.ru">http://base.autoprkt.ru</a></strong></p>
+<p>Login <b>admin</b> pas <b>1</b> (admin), login <b>petr</b> pas <b>2</b> (manager), login <b>guest</b> pas <b>4</b> (guest)</p>
+<p>PHP + SafeMySQL + Bootstrap 4 _ ListJS</p>
+<br><br>
+<h2  style="text-align:center;">Верстка и натяжка на WP</h2>
 <p align="center"><a style="text-align:center" href="http://ok-hall.ru"><img src="https://peretc001.github.io/work/okhall/themes/screen.jpg" style="display:block;width:100%;max-width:900px;border:none;"></a></p>
 <p><strong>Верстка <a href="https://peretc001.github.io/templates/okhall/">https://peretc001.github.io/templates/okhall/</a> и натяжка на Wordpress <a href="http://ok-hall.ru">http://ok-hall.ru/</a></strong></p>
 <br><br>

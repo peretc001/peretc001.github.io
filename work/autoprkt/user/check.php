@@ -22,6 +22,13 @@
 			<p><a href="https://dkbm-web.autoins.ru/dkbm-web-1.0/kbm.htm" target="_blank">Проверить КБМ</a></p>
 			<p><a href="https://money.yandex.ru/taxes-debts" target="_blank">Проверить налоги</a></p>
 		</div>
+		<br>
+		<div class="row">
+			<form action="https://api.whatsapp.com/send?phone=" id="form1">
+				<input id="phone" type="text" name="phone" value="">
+				<button type="submit">WhatsApp</button>
+			</form>
+		</div>
 	</article>
 </body>
 </html>

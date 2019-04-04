@@ -8,7 +8,8 @@
 	<script src="/js/uikit/js/components/datepicker.js"></script>
 	<script src="/js/uikit/js/components/timepicker.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-	<script src="js/script.js"></script>
+	<script src="js/list.min.js"></script>
+	<script src="js/script.js?ver=2"></script>
 
 	<link rel="stylesheet" href="/js/uikit/css/uikit.css" />
 	<link rel="stylesheet" href="/js/uikit/css/components/datepicker.almost-flat.min.css" />
@@ -17,7 +18,7 @@
 	 crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	 crossorigin="anonymous">
-	<link rel="stylesheet" href="css/main.min.css">
+	<link rel="stylesheet" href="css/main.min.css?ver=2">
 
 </body>
 </html>
