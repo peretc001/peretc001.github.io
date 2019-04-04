@@ -4,7 +4,7 @@ web разработкой, владею навыками
 	<li>HTML5</li>
 	<li>SASS, CSS3</li>
 	<li>JS, JQuery (базовый уровень)</li>
-	<li>Bootstrap 4</li>
+	<li>Bootstrap 4, Skeleton, Uikit</li>
 	<li>PHP</li>
 	<li>MySQL (SafeMySQL)</li>
 </ul>
