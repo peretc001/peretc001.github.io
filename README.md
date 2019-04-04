@@ -13,7 +13,7 @@ web разработкой, владею навыками
 	<tbody>
 		<tr>
 			<td width="40px" text-align="center"><img src="https://peretc001.github.io/templates/email/img/contact/whatsapp.png" style="display:block;width:10px;margin:0 auto;text-align:center;"></td>
-			<td style="padding:5px 10px;font-size:14px"><a style="color:#222;text-decoration:none;" href="https://api.whatsapp.com/send?phone=79282102335&text=Добрый%20день.%20Я%20с%20weblancer.net.%20Мне%20нужна%20разработка.%20Свяжитесь%20со%20мной&&lr=39">Whatsapp</a></td>
+			<td style="padding:5px 10px;font-size:14px"><a style="color:#222;text-decoration:none;" href="https://api.whatsapp.com/send?phone=79282102335&text=Добрый%20день.%20Я%20с%20weblancer.net.%20Мне%20нужна%20разработка.%20Свяжитесь%20со%20мной&&lr=39">Написать в Whatsapp</a></td>
 			<td width="40px" text-align="center"><img src="https://peretc001.github.io/templates/email/img/contact/telegram.png" style="display:block;width:10px;margin:0 auto;text-align:center;"></td>
 			<td style="padding:5px 10px;font-size:14px"><a style="color:#222;text-decoration:none;" href="https://t-do.ru/peretc001">@peretc001</a></td>
 			<td width="40px" text-align="center"><img src="https://peretc001.github.io/templates/email/img/contact/letter.png" style="display:block;width:20px;margin:0 auto;text-align:center;"></td>
