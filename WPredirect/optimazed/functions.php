@@ -9,10 +9,6 @@
 		wp_register_script( 'jquery', includes_url( 'js/jquery/jquery.js' ), false, null, true );
 
 		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'scrolly', get_stylesheet_directory_uri() . '/assets/js/jquery.scrolly.min.js', 'jquery', null, true );
-		wp_enqueue_script( 'scrollex', get_stylesheet_directory_uri() . '/assets/js/jquery.scrollex.min.js', array('jquery', 'scrolly'), null, true );
-		wp_enqueue_script( 'skel', get_stylesheet_directory_uri() . '/assets/js/skel.min.js', 'jquery', null, true );
-		wp_enqueue_script( 'util', get_stylesheet_directory_uri() . '/assets/js/util.js', 'jquery', null, true );
 		wp_enqueue_script( 'main', get_stylesheet_directory_uri() . '/assets/js/main.js', 'jquery', time(), true );
 	}
 
