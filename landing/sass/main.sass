@@ -1,0 +1,118 @@
+@import "vars"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.2
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	opacity: 0
+	
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+// .btn
+// 	position: relative
+// 	width: 100%
+// 	max-width: 260px
+// 	border: 1px solid $accent
+// 	border-radius: $gutter
+// 	padding: $gutter/2
+// 	color: #f84792
+// 	text-transform: uppercase
+// 	font-weight: bold
+// 	margin: 1em auto
+// 	overflow: hidden
+//    backface-visibility: hidden
+// 	background: transparent
+// 	transform: translateZ(0)
+// 	transition: all .3s ease-out
+// 	&::before
+// 		content: ''
+// 		position: absolute
+// 		left: 0 
+// 		top: 0
+// 		bottom: 0
+// 		right: 0
+// 		border-radius: $gutter
+// 		z-index: -1
+// 		background: $bg
+// 		overflow: visible
+//   		backface-visibility: visible
+// 		transform: scale(0)
+// 		transition-property: transform
+// 		transition: 200ms ease-out
+// 	&:hover
+// 		color: #ffffff
+// 		&::before
+// 			background: $bg
+// 			transform: scale(2)
+
+// .btn-accent
+// 	color: #ffffff
+// 	&::before
+// 		transform: scale(2)
+// 		background: $bg
+// 	&:hover
+// 		color: $text
+// 		&::before
+// 			transform: scale(0)
+
+	
+.introHolder
+	text-align: center
+	h2
+		font-size: 2.4em
+		margin: $gutter auto
+		padding: 0
+		font-weight: 800
+		font-family: 'Open Sans', sans-serif
+		position: relative
+	h2.liner
+		padding-bottom: $gutter
+		&::after
+			content: ''
+			position: absolute
+			left: 50%
+			bottom: 2px
+			transform: translateX(-50%)
+			width: 100px
+			height: 1px
+			background: $accent
+			display: block
+
+$cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
+$mukta: 'Ek Mukta', sans-serif;;
+
+$menuItems: 7;
+
+@import "nav"
+@import "header"
+@import "steps"
+@import "price"
+
+
+body
+	opacity: 1
+
+@import "media"

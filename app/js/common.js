@@ -1,1 +1,0 @@
-$(function(){$("#my-menu").mmenu({extensions:["theme-black","pagedim-black","position-left"],navbar:{title:'<img src="img/logo.svg" alt="Салон красоты BeautySpa">'}}),$("#my-menu").data("mmenu")});

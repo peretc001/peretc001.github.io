@@ -1,0 +1,53 @@
+@import "vars"
+@import "fonts"
+
+::placeholder
+	color: $text
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text-color
+	background: $bg-main
+	width: 100%
+	min-height: 100vh
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+a
+	color: $text-color
+	text-decoration: none
+	&:hover
+		color: $text-hover
+		text-decoration: none
+
+@import "login"
+@import "navbar"
+@import "home"
+@import "company_page"
+@import "manager_page"
+
+				
+@media screen and (max-width: 1199.98px)
+	body
+		font-size: 14px
+
+@media screen and (max-width: 767.98px)
+	body
+		font-size: 16px !important
+	.form-control
+		font-size: 16px !important
+
+body
+	opacity: 1
+

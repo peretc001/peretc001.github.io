@@ -10,3 +10,5 @@
 [0225/105644.358:ERROR:process_info.cc(359)] UncheckedAllocate
 [0225/124233.456:ERROR:process_info.cc(359)] UncheckedAllocate
 [0226/102125.882:ERROR:process_info.cc(359)] UncheckedAllocate
+[0411/203502.226:ERROR:process_info.cc(359)] UncheckedAllocate
+[0411/203506.200:ERROR:process_info.cc(359)] UncheckedAllocate

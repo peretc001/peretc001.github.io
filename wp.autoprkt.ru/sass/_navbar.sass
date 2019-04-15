@@ -1,0 +1,88 @@
+.navbar
+	padding: 0
+	margin: 0
+
+	.navbar-collapse
+		flex-basis: 100%
+		flex-direction: column
+		
+		.navbar-nav
+			.nav-item.item-right
+				margin-left: auto !important
+			.nav-link
+				color: $white
+				font-size: 1em
+				font-weight: bold
+				text-transform: uppercase
+			.nav-link.nav-date
+				font-weight: normal
+	
+		.navbar-brand
+			font-weight: bold
+			font-size: 2em
+			letter-spacing: -2px
+
+	.navbar-first
+		background: $text
+		width: 100%
+	.navbar-second, 
+	.navbar-third
+		background: $white
+		width: 100%
+		padding-top: $gutter/5
+		.navbar-nav
+			.nav-link
+				color: $text
+	.navbar-third
+		.navbar-third--container
+			display: flex
+			flex-direction: row
+			align-items: center
+			padding: $gutter/2 0
+			border-bottom: 3px solid $text
+		.navbar-nav
+			width: 100%
+			.nav-item
+				.nav-link
+					color: $link
+					
+@media screen and (max-width: 991.98px)
+	.navbar
+		.navbar-collapse
+			.navbar-nav
+				.nav-link
+					font-size: 0.8em
+			.navbar-brand
+				font-size: 1.6em
+			.navbar-third
+				.navbar-nav
+					flex-wrap: wrap
+					
+	
+	
+@media screen and (max-width: 767.98px)
+	.navbar
+		background: $text
+		.navbar-toggler
+			background: transparent
+			color: transparent
+			border: none
+			.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
+				background-color: #fff
+		.navbar-collapse
+			justify-content: center
+			text-align: center
+			.navbar-nav
+				.nav-item.item-right
+					margin-left: 5px !important
+				.nav-link
+					font-size: 1em
+
+		.navbar-first
+			padding: 0 0 $gutter/2 0
+		.navbar-third
+			.navbar-third--container
+				flex-direction: column
+				border-bottom: none
+		.navbar-brand
+			color: $white !important

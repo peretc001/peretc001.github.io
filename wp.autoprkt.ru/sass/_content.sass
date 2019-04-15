@@ -1,0 +1,135 @@
+.content
+	.content-left
+		&__name
+			padding: $gutter/6 0 $gutter/6 50px
+			border-bottom: 1px solid $text
+			margin-bottom: $gutter/3
+		&-card
+			display: flex
+			align-items: flex-start
+			justify-content: space-between
+			&-date
+				min-width: 50px
+				max-width: 50px
+				text-align: center
+				font-size: 1em
+				color: #888
+				padding: $gutter/3 0
+			&-text
+				img
+					width: 100%
+					padding: $gutter/6 0
+				p
+					margin: 0
+					padding: $gutter/3 0
+					line-height: 1
+					text-align: left
+				a
+					color: $text
+					text-decoration: none
+					font-size: 1em
+	.content-center
+		&__name
+			padding: $gutter/6 0 $gutter/6 50px
+			border-bottom: 1px solid $text
+			margin-bottom: $gutter/3
+		&-card
+			padding: $gutter/6 0
+			a
+				position: relative
+				color: $text
+				padding: 0
+				margin: $gutter/3 0
+				display: block
+				&:first-child
+					margin-top: 0
+			h2
+				font-weight: bold
+				font-size: 1.5em
+				margin: 0
+				padding: 0
+			p
+				padding: 0
+				margin: 0
+				color: #666
+			img
+				width: 100%
+				padding: 0
+
+		&-block
+			padding: $gutter/3 0
+			a
+				position: relative
+				color: $text
+				padding: 0
+				margin: $gutter/3 0
+				display: block
+				img
+					width: 100%
+					height: auto
+					position: relative
+					padding: 0
+					margin: 0
+				span
+					position: absolute
+					left: 0
+					bottom: 0
+					padding: 0
+					margin: 0
+					&:before
+						content: ''
+						position: absolute
+						left: 0
+						top: 0
+						width: 100%
+						height: 100%
+						background: #000
+						opacity: .4
+					i
+						font-style: normal
+						color: #ffffff
+						position: relative
+						display: block
+						padding: .5em 1em
+						
+						
+			h3
+				font-weight: bold
+				font-size: 1.3em
+				margin: 0
+				padding: 0
+			p
+				padding: 0
+				margin: 0
+			
+	.content-right
+		&__name
+			padding: $gutter/6 0 $gutter/6 50px
+			border-bottom: 1px solid $text
+			margin-bottom: $gutter/3
+		&-card
+			padding: $gutter/3 0
+			img
+				width: 100%
+			a
+				display: block
+				padding: $gutter/3
+				color: $text
+				background: #ececec
+				border-bottom: 1px solid #fff
+				&:hover
+					background: #cce0ea
+
+
+@media screen and (max-width: 767.98px)
+	.content
+		[class*="col-"]
+			padding-bottom: 20px
+		.content-left .content-left__name,
+		.content-center .content-center__name,
+		.content-right .content-right__name
+			display: none
+
+@media screen and (min-width: 1260px)
+	.container
+		max-width: 1200px
