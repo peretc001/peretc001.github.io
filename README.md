@@ -25,7 +25,7 @@ web разработкой, владею навыками
 
 <div style="text-align:center;">
 <h1  style="text-align:center;">CRM учета клиентов</h1>
-<p align="center"><a style="text-align:center" href="http://base.autoprkt.ru"><img src="https://peretc001.github.io/work/crm/base.jpg" style="display:block;width:100%;max-width:900px;border:none;"></a></p>
+<p align="center"><a style="text-align:center" href="http://base.autoprkt.ru"><img src="https://peretc001.github.io/work/crm/screen.jpg" style="display:block;width:100%;max-width:900px;border:none;"></a></p>
 <p><strong>Demo <a href="http://base.autoprkt.ru">http://base.autoprkt.ru</a></strong></p>
 <p>Login <b>admin</b> pas <b>1</b> (admin), login <b>petr</b> pas <b>2</b> (manager), login <b>guest</b> pas <b>4</b> (guest)</p>
 <p>PHP + SafeMySQL + Bootstrap 4 + ListJS</p>
