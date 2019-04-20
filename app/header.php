@@ -2,15 +2,24 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
-	<title><?php echo bloginfo('name'); ?> - <?php echo bloginfo('description'); ?></title>
+	<title><?php if( is_front_page() ) {
+   		echo bloginfo('name'); ?> - <?php echo bloginfo('description'); 
+	} else {
+		echo esc_html( get_the_title() );
+	} ?></title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<style>
 		body {opacity: 0;overflow-x: hidden;}html {background-color: #fff;}
 	</style>
+	<?php 	wp_head();
+			global $post_id;
+			$post_id = get_the_ID(); 
+	?>	
 </head>
 <body>
-<?php wp_head();
+<?php
+
 #Функция вывода ПОЛНОГО НАЗВАНИЯ русского месяца для поиска
 function fdate($param, $time=0) {
 	if(intval($time)==0)$time=time();
@@ -76,13 +85,13 @@ function fdate($param, $time=0) {
 							'walker'		  => new Optimazed_Walker_Nav_Menu()
 							)); 
 						?>
-						<form>
+						<form role="search" method="get" id="searchform" action="/">
 							<div class="row no-gutters">
 								<div class="col">
-									<input class="form-control border-secondary border-right-0 rounded-0" type="search" value="" placeholder="Поиск">
+									<input class="form-control border-secondary border-right-0 rounded-0" type="text" value="" name="s" id="s" placeholder="Поиск">
 								</div>
 								<div class="col-auto">
-									<button class="btn btn-outline-secondary border-left-0 rounded-0 rounded-right" type="button">
+									<button class="btn btn-outline-secondary border-left-0 rounded-0 rounded-right" type="submit" id="searchsubmit">
 										<i class="fa fa-search"></i>
 									</button>
 								</div>
