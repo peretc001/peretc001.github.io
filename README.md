@@ -24,7 +24,12 @@ web разработкой, владею навыками
 <br>
 
 <div style="text-align:center;">
-<h1  style="text-align:center;">CRM учета клиентов</h1>
+<h1  style="text-align:center;">В работе Информационный сайт на WordPress</h1>
+<p align="center"><a style="text-align:center" href="http://wp.autoprkt.ru"><img src="https://peretc001.github.io/app/screen.jpg" style="display:block;width:100%;max-width:900px;border:none;"></a></p>
+<p><strong><a href="http://wp.autoprkt.ru">http://wp.autoprkt.ru</a></strong></p>
+<p>Информационный сайт - копия Коммерсант</p>
+<br><br>
+<h2 style="text-align:center;">CRM учета клиентов</h2>
 <p align="center"><a style="text-align:center" href="http://base.autoprkt.ru"><img src="https://peretc001.github.io/work/crm/screen.jpg" style="display:block;width:100%;max-width:900px;border:none;"></a></p>
 <p><strong>Demo <a href="http://base.autoprkt.ru">http://base.autoprkt.ru</a></strong></p>
 <p>Login <b>admin</b> pas <b>1</b> (admin), login <b>petr</b> pas <b>2</b> (manager), login <b>guest</b> pas <b>4</b> (guest)</p>
