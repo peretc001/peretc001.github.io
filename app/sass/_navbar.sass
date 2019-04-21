@@ -2,105 +2,95 @@
 	padding: 0
 	margin: 0 0 1em 0
 
-	.navbar-collapse
-		flex-basis: 100%
+	.container
 		flex-direction: column
-		
-		.navbar-nav
-			.nav-item.item-right
-				margin-left: auto !important
-			.nav-link
-				color: $white
-				font-size: 1em
-				font-weight: bold
-				text-transform: uppercase
-	
-		.navbar-brand
+		justify-content: flex-start
+		border-bottom: 2px solid $text
+
+	.navbar-brand
+		display: block
+		width: 100%
+		font-weight: 900
+		font-size: 2em
+		letter-spacing: -2px
+		color: $text
+		padding-left: .75rem
+		padding-top: .5em
+
+	.navbar-collapse
+		justify-content: flex-start
+		width: 100%
+	.navbar-nav
+		padding: 1em 0
+		width: 100%
+		.nav-link
+			color: $white
+			font-size: 1em
 			font-weight: bold
-			font-size: 2em
-			letter-spacing: -2px
-			color: $text
-
-	.navbar-first
-		background: $text
-		width: 100%
-	.navbar-second
-		.container
-			display: flex
-			flex-direction: row
-			align-items: center
-			.nav-date
-				font-weight: normal
-				color: #888888
-	.navbar-second, 
-	.navbar-third
-		background: $white
-		width: 100%
-		padding-top: $gutter/5
-		.navbar-nav
+			text-transform: uppercase
+			color: $link
+			&:hover
+				color: $link
+		.current-menu-item,
+		.current-menu-parent
+			font-weight: 900
+			background: $link
 			.nav-link
-				color: $text
-	.navbar-third
-		.navbar-third--container
-			display: flex
-			flex-direction: row
-			align-items: center
-			padding: $gutter/2 0
-			border-bottom: 3px solid $text
-		.navbar-nav
-			width: 100%
-			.nav-item
-				.nav-link
-					color: $link
+				color: #fff !important
+	.desctop-form
+		margin-left: auto
 
-@media screen and (max-width: 1199.98px)
-	.navbar
-		.navbar-collapse
-			.navbar-third
-				.navbar-nav
-					flex-wrap: wrap
-					
+.mobile-search
+	display: none
+	align-items: center
+	justify-content: space-between
+	padding: 0.5em 15px
+	background: #f2f2f2
+	margin: 0 0 1em 0
+		
 @media screen and (max-width: 991.98px)
 	.navbar
+		.navbar-brand
+			font-size: 1.6em
 		.navbar-collapse
 			.navbar-nav
 				.nav-link
 					font-size: 0.8em
-			.navbar-brand
-				font-size: 1.6em
 					
 	
 	
 @media screen and (max-width: 767.98px)
 	.navbar
 		background: $text
+		margin: 0
+		.container
+			display: flex
+			flex-direction: row
 		.navbar-toggler
 			background: transparent
 			color: transparent
 			border: none
 			.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
 				background-color: #fff
+		.navbar-brand
+			display: inline-block
+			width: auto
+			margin-left: auto
+			font-size: 1.5em
+			font-weight: bold
+			padding: 0
+			color: $white !important
+			&:hover
+				color: #fff
 		.navbar-collapse
 			justify-content: center
-			text-align: center
 			.navbar-nav
-				.nav-item.item-right
-					margin-left: 5px !important
+				text-align: center
 				.nav-link
 					font-size: 1em
-
-		.navbar-first
-			padding: 0 0 $gutter/2 0
-		.navbar-second
-			.container
-				flex-direction: column
-				.nav-date
-					display: none
-				.ml-auto
-					margin: 0 auto
-		.navbar-third
-			.navbar-third--container
-				flex-direction: column
-				border-bottom: none
-		.navbar-brand
-			color: $white !important
+					color: #fff
+			.desctop-form
+				display: none
+	.mobile-search
+		display: flex
+		justify-content: center

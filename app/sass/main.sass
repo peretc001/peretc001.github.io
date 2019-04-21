@@ -21,17 +21,29 @@ body
 			border-color: red
 		&:required:valid
 			border-color: green
+h1, h2, h3
+	font-weight: 900
 
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
 .text-center
 	text-align: center
 a, a:hover, a:active
+	color: $link
 	text-decoration: none
-b, strong
+b
 	font-weight: bold
+strong
+	font-weight: 900
 
 @import "navbar"
 @import "search"
 @import "content"
+@import "single"
 
 body
 	opacity: 1

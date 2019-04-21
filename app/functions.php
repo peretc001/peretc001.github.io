@@ -151,3 +151,31 @@ class Optimazed_Walker_Nav_Menu extends Walker_Nav_Menu {
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 	}
 }
+
+## Функция для подсветки слов поиска в WordPress
+//add_filter('the_content', 'kama_search_backlight');
+add_filter('the_excerpt', 'kama_search_backlight');
+add_filter('the_title', 'kama_search_backlight');
+function kama_search_backlight( $text ){
+	// ------------ Настройки -----------
+	
+
+	// только для страниц поиска...
+	if ( ! is_search() ) return $text;
+
+	$query_terms = get_query_var('search_terms');
+	if( empty($query_terms) ) $query_terms = array(get_query_var('s'));
+	if( empty($query_terms) ) return $text;
+
+	$n = 0;
+	foreach( $query_terms as $term ){
+		$n++;
+
+		$term = preg_quote( $term, '/' );
+		$text = preg_replace_callback( "/$term/iu", function($match) use ($n){
+			return '<u class="search_term">'. $match[0] .'</u>';
+		}, $text );
+	}
+
+	return $text;
+}

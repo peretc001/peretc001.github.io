@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+	<meta name="author" lang="ru" content="Разработка: Красовский Игорь => peretc001.github.io" />
 	<meta charset="UTF-8">
-	<title><?php if( is_front_page() ) {
+	<title><?php if( is_front_page() or is_search() ) {
    		echo bloginfo('name'); ?> - <?php echo bloginfo('description'); 
 	} else {
 		echo esc_html( get_the_title() );
@@ -85,10 +86,10 @@ function fdate($param, $time=0) {
 							'walker'		  => new Optimazed_Walker_Nav_Menu()
 							)); 
 						?>
-						<form role="search" method="get" id="searchform" action="/">
+						<form role="search" method="get" id="searchform" action="/" class="desctop-form">
 							<div class="row no-gutters">
 								<div class="col">
-									<input class="form-control border-secondary border-right-0 rounded-0" type="text" value="" name="s" id="s" placeholder="Поиск">
+									<input class="form-control border-secondary border-right-0 rounded-0" type="text" value="" name="s" id="s" placeholder="Поиск" required>
 								</div>
 								<div class="col-auto">
 									<button class="btn btn-outline-secondary border-left-0 rounded-0 rounded-right" type="submit" id="searchsubmit">
@@ -104,3 +105,18 @@ function fdate($param, $time=0) {
 		
 		</div>
 	</nav>
+	<div class="mobile-search">
+		<p class="nav-date"><?php echo fdate('d M Y'); ?></p>
+		<form role="search" method="get" id="searchform" action="/" class="mobile-form">
+			<div class="row no-gutters">
+				<div class="col">
+					<input class="form-control border-secondary border-right-0 rounded-0" type="text" value="" name="s" id="s" placeholder="Поиск" required>
+				</div>
+				<div class="col-auto">
+					<button class="btn btn-outline-secondary border-left-0 rounded-0 rounded-right" type="submit" id="searchsubmit">
+						<i class="fa fa-search"></i>
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>

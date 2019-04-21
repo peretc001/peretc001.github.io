@@ -1,0 +1,50 @@
+.single_content
+    .content-center 
+        img
+            margin: 20px auto
+            display: block
+            max-width: 100%
+            height: auto
+            &.img-width
+                width: 100%
+        h1
+            font-size: 1.5em
+        &-block
+            margin-top: 1em
+    &_line
+        background: #f2f2f2
+        padding: .5em
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: space-between
+        font-size: .8em
+        margin: 1em 0
+        .category
+            display: flex
+            flex-direction: row
+            align-items: center
+            .single_category_date,
+            .single_category_tags,
+            .single_category_tag
+                .far, .fas
+                    color: #888
+                    margin-right: .3em
+            .single_category_date,
+            .single_category_tags
+                margin-right: 0.8em
+            .single_category_tag
+                a
+                    margin-right: 0.5em
+        .social
+            display: flex
+            flex-direction: row
+            align-items: center
+            p
+                margin: 0
+            .fab, .far
+                margin-left: .5em
+                font-size: 1.5em
+            .far
+                margin-right: .5em
+                color: #888888
