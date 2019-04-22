@@ -1,0 +1,157 @@
+.footer
+    background: #f2f2f2
+    padding: 4em 0 4em 0
+    margin-top: 1em
+    .logo
+        .navbar-brand
+            font-weight: 900
+            font-size: 1.8em
+            letter-spacing: -2px
+            color: $text
+            padding: 0
+            margin-bottom: .2em
+        p
+            color: #888888
+        .social
+            display: flex
+            align-items: center
+            margin-top: 2em
+            span
+                margin: 0 1em 0 0
+                color: #888888
+                font-size: 0.8em
+            a
+                .fab
+                    color: $text
+                    font-size: 1.5em
+                    margin-right: .5em
+    .footer-menu
+        p
+            position: relative
+            display: inline-block
+            &:before
+                content: ''
+                position: absolute
+                left: 0
+                bottom: -2px
+                width: 100%
+                height: 1px
+                background-color: #ccc
+        &-nav
+            margin: 0
+            padding: .5em 0 0 0
+            li
+                margin: 0
+                padding: 0
+                list-style: none
+                display: inline !important
+                .nav-link
+                    padding: .3em .5em
+                    display: inline-block
+                    &:first-child
+                        padding-left: 0
+    
+    .policy__checked
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        flex-direction: row
+        margin: 5px 0
+        .radio
+            padding: 0 0 0 1.5em
+            margin: 0
+            input
+                padding: 0
+                margin: 0
+            label
+                margin-bottom: 0
+                display: inline-block
+                cursor: pointer
+                position: relative
+                padding: 0 !important
+                font-size: .8em !important
+                line-height: 1 !important
+                -ms-user-select: none
+                -moz-user-select: none
+                -khtml-user-select: none
+                -webkit-user-select: none
+                &:before
+                    content: "\f0c8"
+                    font-family: "Font Awesome 5 Free"
+                    position: absolute
+                    font-weight: normal
+                    left: -1.5em
+                    top: 50%
+                    transform: translateY(-50%)
+                    border-radius: 0
+            input[type=checkbox]
+                display: none
+            input[type=checkbox]:checked + label:before
+                content: '\f14a'
+                font-family: "Font Awesome 5 Free"
+                font-weight: normal
+            a
+                font-size: .8em !important
+                text-decoration: underline
+    .author
+        padding: 4em 1em 0 0
+        justify-content: flex-end
+.copyright
+    background: $text
+    color: #ffffff
+    text-align: center
+    padding: .5em 0
+
+.wpcf7-response-output.wpcf7-display-none
+    &.wpcf7-validation-errors,
+    &.wpcf7-mail-sent-ok
+        margin: 0
+        border-color: transparent
+        text-align: center
+        color: #fff
+        font-size: .8em
+    &.wpcf7-validation-errors
+        background: #ff0000
+    &.wpcf7-mail-sent-ok
+        background: #398f14
+.wpcf7-not-valid-tip
+    text-align: center
+    font-size: .8em !important
+    padding: 5px 0
+
+@media screen and (max-width: 1199.98px)
+    .footer
+        .logo
+            .navbar-brand
+                font-size: 1.8em
+
+@media screen and (max-width: 991.98px)
+    .footer
+        padding: 4em 0 2em 0
+        .logo, .footer-menu
+            padding-bottom: 2em
+        .logo
+            .navbar-brand
+                font-size: 1.6em
+        .footer-menu
+            text-align: center
+            &-nav
+                margin: 0 auto
+                padding: .5em 0 0 0
+                .nav-link
+                    padding: .3em .5em
+                    display: block !important
+                    &:first-child
+                        padding-left: 0
+
+@media screen and (max-width: 767.98px)
+    .footer
+        .logo
+            text-align: center
+            .social
+                justify-content: center
+        .author
+            padding: 4em 1em 0 0
+            justify-content: center
+    .copyright
+        font-size: 0.8em

@@ -16,6 +16,8 @@
 		color: $text
 		padding-left: .75rem
 		padding-top: .5em
+		&:hover, &:focus, &:active
+			color: $text
 
 	.navbar-collapse
 		justify-content: flex-start
@@ -29,7 +31,7 @@
 			font-weight: bold
 			text-transform: uppercase
 			color: $link
-			&:hover
+			&:hover, &:focus, &:active
 				color: $link
 		.current-menu-item,
 		.current-menu-parent
@@ -94,3 +96,8 @@
 	.mobile-search
 		display: flex
 		justify-content: center
+
+@media screen and (max-width: 374.98px)
+	.navbar
+		.navbar-brand
+			font-size: 1.3em

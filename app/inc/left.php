@@ -10,7 +10,6 @@
 							$image_url = $media->guid;
 					?>
 					<div class="content-left-card">
-						<div class="content-left-card-date"><?php the_date('d.m'); ?></div>
 						<div class="content-left-card-text border-bottom">
 						<?php if ($image_url) { ?><a href="<?php echo get_permalink(); ?>"><img src="<?php echo $image_url; ?>"></a><?php } ?>
 							<p><a href="<?php echo get_permalink(); ?>"><b><?php the_title(); ?></b></a></p>
@@ -28,7 +27,6 @@
 							$image_url = $media->guid;
 					?>
 					<div class="content-left-card">
-						<div class="content-left-card-date"><?php the_date('d.m'); ?></div>
 						<div class="content-left-card-text">
 						<?php if ($image_url) { ?><a href="<?php echo get_permalink(); ?>"><img src="<?php echo $image_url; ?>"></a><?php } ?>
 							<p><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></p>

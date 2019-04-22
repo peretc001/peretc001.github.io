@@ -1,17 +1,14 @@
 <?php
 /**
- * The template for displaying CATEGORYS
+ * The template for displaying TAGS
  *
- * 
  * @link https://peretc001.github.io
  * @author Krasovsky
  * @package WordPress
  * @subpackage Optimazed
  */
 
-get_header(); 
-$category = get_the_category(); 
-$cat__name = $category[0]->cat_name; ?>
+get_header(); ?>
 <section class="content single_content">
 	<div class="container">
 		<div class="row">
@@ -22,10 +19,15 @@ $cat__name = $category[0]->cat_name; ?>
 			<!-- / end left -->
 
 			<div class="col-md-6 content-center order-1 order-md-12">
-
+				<p class="text-center">
+					Записи с меткой: <i class="fas fa-tag"></i> <b><?php
+						$tag = get_queried_object();
+						echo $tag->name;
+					?></b>
+				</p>
 			<?php
 
-			$query = new WP_Query( array('category__in' => $cat_name) );
+			$query = new WP_Query( array('tag__in' => $tag->name) );
 			/* Start the Loop */
 			while ( have_posts() ) : the_post(); 
 				
@@ -46,8 +48,8 @@ $cat__name = $category[0]->cat_name; ?>
 					<a href="<?php echo get_permalink(); ?>"><img src="<?php echo $image_url; ?>"></a>
 					<p>
 						<?php $content = get_the_content();
-								echo wp_trim_words( $content, 60); 
-						?>
+									$trimmed_content = wp_trim_words( $content, 60, '...' );
+									echo $trimmed_content; ?>
 					</p>
 					<div class="single_content_line">
 						<div class="category">

@@ -2,11 +2,10 @@
 /**
  * The template for displaying all single posts
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
+ * @link https://peretc001.github.io
+ * @author Krasovsky
  * @package WordPress
- * @subpackage Twenty_Nineteen
- * @since 1.0.0
+ * @subpackage Optimazed
  */
 
 get_header(); ?>
@@ -32,11 +31,15 @@ get_header(); ?>
 				$media = get_attached_media( 'image', $post->ID );
 				$media = array_shift( $media );
 				$image_url = $media->guid;
+
+				$tags = get_the_tags();
 			?>
+			
 				<h1><?php the_title(); ?></h1>
-				<?php the_content(); ?>
 				<div class="single_content_line">
-					<?php the_category('single'); ?>
+					<div class="category">
+						<div class="single_category_tags"><i class="fas fa-tags"></i> <?php the_category(); ?></div>
+					</div>
 					<div class="social">
 						<p>поделиться:</p>
 						<a href="https://vk.com/share.php?url=<?php the_permalink(); ?>&title=<?php the_title(); ?>&image=<?php echo $image_url; ?>" target="_blank"><i class="fab fa-vk"></i></a>
@@ -44,6 +47,16 @@ get_header(); ?>
 						<a href="https://twitter.com/intent/tweet?text=<?php the_title(); ?>&url=<?php the_permalink(); ?>" target="_blank"><i class="fab fa-twitter"></i></a>
 					</div>
 				</div>
+				<?php the_content(); ?>
+				<div class="single_content_line">
+					<div class="category">
+						<div class="single_category_tag"> </div>
+					</div>
+					<div class="social">
+						<i class="far fa-eye"></i> <?php echo get_post_meta ($post->ID,'views',true); ?>
+					</div>
+				</div>
+
 			<?php endwhile; // End of the loop. ?>
 			<?php
 				//Вывод рекламного блока по центру
@@ -118,5 +131,19 @@ get_header(); ?>
 	</div>
 </section>
 		
+
+<script>
+	let tags = <?php echo json_encode($tags) ?>; //Передаем массив МЕТОК из PHP в JS
+	single_category_tag = document.querySelector('.single_category_tag'); //Находим css класс куда будет записывать МЕТКИ
+
+	let tagList = tags.filter( item => item.term_id != 19 && item.term_id != 21 && item.term_id != 22 ) //Фильтруем метки и удаляем оттуда по ID те которые не нужны
+	.forEach(item => {
+		if(item) {
+			let card = document.createElement('a'); //Создаем ссылку
+			card.innerHTML = `<i class="fas fa-tag"></i> <a href="/tags/${item.slug}/">${item.name}</a>`; // Запихиваем в нее отфильтрованные метки
+			single_category_tag.appendChild(card); //Вставляем на страницу
+		}
+	});
+</script>
 
 <?php get_footer(); ?>

@@ -1,4 +1,14 @@
-<?php get_header(); ?>
+<?php 
+/**
+ * The template for SEARCH
+ *
+ * @link https://peretc001.github.io
+ * @author Krasovsky
+ * @package WordPress
+ * @subpackage Optimazed
+ */
+
+get_header(); ?>
 <div class="content search_content">
 	<div class="container">
 		<div class="row">
@@ -24,6 +34,9 @@
 								$media = get_attached_media( 'image', $post->ID );
 								$media = array_shift( $media );
 								$image_url = $media->guid;
+
+								$category = get_the_category(); 
+								$cat__name = $category[0]->cat_name;
 								
 							?>
 							<div class="row">
@@ -39,7 +52,16 @@
 								<p><?php $content = get_the_content();
 									$trimmed_content = wp_trim_words( $content, 30, '...' );
 									$search_result = $trimmed_content;
-									echo kama_search_backlight($search_result); ?></p>
+									echo kama_search_backlight($search_result); ?>
+								</p>
+								<div class="single_content_line">
+									<div class="category">
+										<div class="single_category_tags"><i class="fas fa-tags"></i> <?php echo $cat__name; ?></div>
+									</div>
+									<div class="social">
+									<i class="far fa-eye"></i> <?php if(get_post_meta ($post->ID,'views',true) != '') { echo get_post_meta ($post->ID,'views',true); } else { echo '0'; } ?>
+									</div>
+								</div>
 							</div>
 							</div>
 					<?php endwhile; ?>

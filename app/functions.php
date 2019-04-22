@@ -153,7 +153,7 @@ class Optimazed_Walker_Nav_Menu extends Walker_Nav_Menu {
 }
 
 ## Функция для подсветки слов поиска в WordPress
-//add_filter('the_content', 'kama_search_backlight');
+add_filter('the_content', 'kama_search_backlight');
 add_filter('the_excerpt', 'kama_search_backlight');
 add_filter('the_title', 'kama_search_backlight');
 function kama_search_backlight( $text ){
@@ -161,8 +161,10 @@ function kama_search_backlight( $text ){
 	
 
 	// только для страниц поиска...
-	if ( ! is_search() ) return $text;
-
+	if( ! is_search() ) {
+		return $text;
+	} 
+	
 	$query_terms = get_query_var('search_terms');
 	if( empty($query_terms) ) $query_terms = array(get_query_var('s'));
 	if( empty($query_terms) ) return $text;
@@ -173,9 +175,118 @@ function kama_search_backlight( $text ){
 
 		$term = preg_quote( $term, '/' );
 		$text = preg_replace_callback( "/$term/iu", function($match) use ($n){
-			return '<u class="search_term">'. $match[0] .'</u>';
+			if( is_admin() ) {
+				return $match[0];
+			} else {
+				return '<u class="search_term">'. $match[0] .'</u>';
+			}
 		}, $text );
 	}
 
 	return $text;
 }
+
+/* Подсчет количества посещений страниц
+---------------------------------------------------------- */
+add_action('wp_head', 'kama_postviews');
+function kama_postviews() {
+
+/* ------------ Настройки -------------- */
+$meta_key       = 'views';  // Ключ мета поля, куда будет записываться количество просмотров.
+$who_count      = 1;            // Чьи посещения считать? 0 - Всех. 1 - Только гостей. 2 - Только зарегистрированных пользователей.
+$exclude_bots   = 1;            // Исключить ботов, роботов, пауков и прочую нечесть :)? 0 - нет, пусть тоже считаются. 1 - да, исключить из подсчета.
+
+global $user_ID, $post;
+	if(is_singular()) {
+		$id = (int)$post->ID;
+		static $post_views = false;
+		if($post_views) return true; // чтобы 1 раз за поток
+		$post_views = (int)get_post_meta($id,$meta_key, true);
+		$should_count = false;
+		switch( (int)$who_count ) {
+			case 0: $should_count = true;
+				break;
+			case 1:
+				if( (int)$user_ID == 0 )
+					$should_count = true;
+				break;
+			case 2:
+				if( (int)$user_ID > 0 )
+					$should_count = true;
+				break;
+		}
+		if( (int)$exclude_bots==1 && $should_count ){
+			$useragent = $_SERVER['HTTP_USER_AGENT'];
+			$notbot = "Mozilla|Opera"; //Chrome|Safari|Firefox|Netscape - все равны Mozilla
+			$bot = "Bot/|robot|Slurp/|yahoo"; //Яндекс иногда как Mozilla представляется
+			if ( !preg_match("/$notbot/i", $useragent) || preg_match("!$bot!i", $useragent) )
+				$should_count = false;
+		}
+
+		if($should_count)
+			if( !update_post_meta($id, $meta_key, ($post_views+1)) ) add_post_meta($id, $meta_key, 1, true);
+	}
+	return true;
+}
+
+#Сортировка ПОИСКА
+function my_search_order( $query ) {
+    if ($query->is_search) {
+  $query->set( 'order', 'DESC' );
+        $query->set( 'orderby', 'date' );
+    };
+    return $query;
+};
+add_filter( 'pre_get_posts', 'my_search_order' );
+
+
+
+
+// Hook for adding admin menus
+add_action('admin_menu', 'optimazed_add_pages');
+ 
+// action function for above hook
+function optimazed_add_pages() {
+    add_menu_page('Соц. сети', 'Соц. сети', 8, __FILE__, 'optimazed_page', 'dashicons-twitter', 84.5);
+    register_setting( 'optimazedCustom', 'optimazed_settings' ); 
+}
+ 
+// mt_toplevel_page() displays the page content for the custom Test Toplevel menu
+function optimazed_page() { 
+	
+	$options = get_option( 'optimazed_settings' );
+?>
+    <link rel='stylesheet' id='bootstrap-css'  href='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' type='text/css' media='all' />
+   <form action='options.php' method='post'>
+
+   	<section class="mt-3">
+   		<div class="container">
+	   		<div class="text-center">
+	   			<h2>Социальные сети</h2>
+	   		</div>
+
+	   		<div class="row">
+	   			<div class="col-md-4 text-center">
+	   				<label for="optimazed__vk">ВК</label>
+	   				<input id="optimazed__vk" type='text' class="form-control text-center mb-2"  name='optimazed_settings[vk]' value='<?php echo $options['vk']; ?>'>
+	   			</div>
+	   			<div class="col-md-4 text-center">
+	   				<label for="optimazed__fb">Facebook</label>
+	   				<input id="optimazed__fb" type='text' class="form-control text-center mb-2"  name='optimazed_settings[fb]' value='<?php echo $options['fb']; ?>'>
+	   			</div>
+	   			<div class="col-md-4 text-center">
+	   				<label for="optimazed_tw">Twitter</label>
+	   				<input id="optimazed_tw" type='text' class="form-control text-center mb-2"  name='optimazed_settings[tw]' value='<?php echo $options['tw']; ?>'>
+	   			</div>
+	   		</div>
+
+   		</div>
+	   </section>
+	   
+	   <?php
+	        settings_fields( 'optimazedCustom' );
+	        do_settings_sections( 'optimazedCustom' );
+	        submit_button('Сохранить');
+	    ?>
+	</form>
+<?php }

@@ -21,8 +21,19 @@ body
 			border-color: red
 		&:required:valid
 			border-color: green
+	
 h1, h2, h3
-	font-weight: 900
+	font-weight: bold
+h1
+	font-size: 1.8em
+h2
+	font-size: 1.5em
+h3
+	font-size: 1.4em
+h4
+	font-size: 1.3em
+h5
+	font-size: 1.2em
 
 .img-responsive
 	display: block
@@ -31,7 +42,8 @@ h1, h2, h3
 	&.img-width
 		width: 100%
 .text-center
-	text-align: center
+	text-align: center !important
+	text-align-last: center !important
 a, a:hover, a:active
 	color: $link
 	text-decoration: none
@@ -40,10 +52,42 @@ b
 strong
 	font-weight: 900
 
+.content-center-banner
+	text-align: center
+	img
+		width: 100%
+		max-width: 468px !important
+.content-right-banner
+	text-align: center
+	img
+		width: 100%
+		max-width: 240px !important
+.not_find
+	display: flex
+	flex-direction: column
+	justify-content: center
+	text-align: center
+	h1
+		font-size: 10em
+		color: $link
+		font-family: 'Dosis', sans-serif
+	.btn
+		margin: 1em auto
+		max-width: 8em
+		&.btn-outline-accent
+			color: $link
+			background-color: transparent
+			background-image: none
+			border-color: $link
+			&:hover
+				background-color: $link
+				color: #ffffff
+
 @import "navbar"
 @import "search"
 @import "content"
 @import "single"
+@import "footer"
 
 body
 	opacity: 1

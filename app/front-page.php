@@ -49,10 +49,13 @@
 									<span><i><?php echo $cat__name; ?></i></span>
 								</a>
 								<h3>
-									<a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
+									<a class="the_title" href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
 								</h3>
 								<p>
-									<a href="<?php echo get_permalink(); ?>"><?php the_excerpt(); ?></a>
+									<a class="the_excerpt" href="<?php echo get_permalink(); ?>"><?php 
+										$excerpt = get_the_excerpt();
+										echo wp_trim_words( $excerpt , '10' ); 
+									?></a>
 								</p>
 							</div>
 						<?php } ?>
@@ -76,6 +79,19 @@
 			</div>
 		</div>
 	</section>
-		
 
+<script>
+//Обрезаем Заголовок и Анонс
+function sliceTheExcerpt(selector, count) {
+	document.querySelectorAll(selector).forEach(item => {
+		item.textContent.trim();
+		if(item.textContent.length < count) { return }
+		else {
+			const str = item.textContent.slice(0, count + 1) + "...";
+			item.textContent = str;
+		}
+	});
+}
+sliceTheExcerpt('.the_title', 40);
+</script>
 <?php get_footer(); ?>
