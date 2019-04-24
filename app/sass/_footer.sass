@@ -39,60 +39,20 @@
                 background-color: #ccc
         &-nav
             margin: 0
-            padding: .5em 0 0 0
-            li
+            padding: 0
+            .nav-item
                 margin: 0
                 padding: 0
                 list-style: none
                 display: inline !important
                 .nav-link
-                    padding: .3em .5em
+                    padding: .4em .5em
                     display: inline-block
+                    font-size: 0.9em
                     &:first-child
                         padding-left: 0
-    
-    .policy__checked
-        display: flex
-        align-items: center
-        justify-content: flex-start
-        flex-direction: row
-        margin: 5px 0
-        .radio
-            padding: 0 0 0 1.5em
-            margin: 0
-            input
-                padding: 0
-                margin: 0
-            label
-                margin-bottom: 0
-                display: inline-block
-                cursor: pointer
-                position: relative
-                padding: 0 !important
-                font-size: .8em !important
-                line-height: 1 !important
-                -ms-user-select: none
-                -moz-user-select: none
-                -khtml-user-select: none
-                -webkit-user-select: none
-                &:before
-                    content: "\f0c8"
-                    font-family: "Font Awesome 5 Free"
-                    position: absolute
-                    font-weight: normal
-                    left: -1.5em
-                    top: 50%
-                    transform: translateY(-50%)
-                    border-radius: 0
-            input[type=checkbox]
-                display: none
-            input[type=checkbox]:checked + label:before
-                content: '\f14a'
-                font-family: "Font Awesome 5 Free"
-                font-weight: normal
-            a
-                font-size: .8em !important
-                text-decoration: underline
+                    u, .search_term
+                        text-decoration: none !important
     .author
         padding: 4em 1em 0 0
         justify-content: flex-end
@@ -123,7 +83,7 @@
     .footer
         .logo
             .navbar-brand
-                font-size: 1.8em
+                font-size: 1.6em
 
 @media screen and (max-width: 991.98px)
     .footer
@@ -133,16 +93,6 @@
         .logo
             .navbar-brand
                 font-size: 1.6em
-        .footer-menu
-            text-align: center
-            &-nav
-                margin: 0 auto
-                padding: .5em 0 0 0
-                .nav-link
-                    padding: .3em .5em
-                    display: block !important
-                    &:first-child
-                        padding-left: 0
 
 @media screen and (max-width: 767.98px)
     .footer
@@ -150,6 +100,9 @@
             text-align: center
             .social
                 justify-content: center
+        .footer-menu
+            text-align: center
+            
         .author
             padding: 4em 1em 0 0
             justify-content: center

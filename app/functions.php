@@ -1,5 +1,20 @@
 <?php
+
+//Включаем миниатюры	
+add_theme_support( 'post-thumbnails' );
+
+//Jquery migrate
+function remove_jq_migrate( $scripts ) {
+	if ( ! is_admin() && isset( $scripts->registered['jquery'] ) ) {
+	$script = $scripts->registered['jquery'];
+	if ( $script->deps ) {
+	$script->deps = array_diff( $script->deps, array( 'jquery-migrate' ) );
+	}
+	}
+}
+add_action( 'wp_default_scripts', 'remove_jq_migrate' );
 //Delete всякую хрень
+remove_action('wp_head','jquery', 1); // убирает ссылки на rss категорий
 remove_action('wp_head','feed_links_extra', 3); // убирает ссылки на rss категорий
 remove_action('wp_head','feed_links', 2); // минус ссылки на основной rss и комментарии
 remove_action('wp_head','rsd_link');  // сервис Really Simple Discovery
@@ -11,11 +26,11 @@ remove_action('wp_head','index_rel_link');
 remove_action('wp_head','adjacent_posts_rel_link_wp_head', 10, 0 );
 remove_action('wp_head','wp_shortlink_wp_head', 10, 0 );
 
-remove_action( 'wp_head', 'rest_output_link_wp_head');
-remove_action( 'wp_head', 'wp_oembed_add_discovery_links');
-remove_action( 'template_redirect', 'rest_output_link_header', 11, 0 );
+remove_action('wp_head', 'rest_output_link_wp_head');
+remove_action('wp_head', 'wp_oembed_add_discovery_links');
+remove_action('template_redirect', 'rest_output_link_header', 11, 0 );
 
-remove_action( 'wp_head', 'wp_resource_hints', 2);
+remove_action('wp_head', 'wp_resource_hints', 2);
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_head', 'wp_oembed_add_discovery_links' );
 remove_action('wp_head', 'wp_oembed_add_host_js' );
@@ -25,12 +40,21 @@ wp_dequeue_style( 'wp-block-library' );
 }
 add_action( 'wp_enqueue_scripts', 'remove_block_css', 100 );
 
+ 
+function deregister_cf7_styles() {
+    if ( !is_page(array(25,45)) ) {
+        wp_deregister_style('contact-form-7');
+    }
+}
+add_action('wp_print_styles', 'deregister_cf7_styles', 100); 
+
 //Add my styles and scripts
 	add_action( 'get_footer', 'my_scripts');
 	function my_scripts() {
 		wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', false, null, all);
 		wp_enqueue_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.7.1/css/all.css', false, null, all);
 		wp_enqueue_style( 'hamburgers', get_stylesheet_directory_uri() . '/css/hamburgers.min.css', false, null, all );
+		wp_enqueue_style( 'contact-form-7', plugins_url( '/contact-form-7/includes/css/styles.css' ), false, null, all );
 		wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/css/main.min.css', false, time(), all );
 
 		//Переподключаем JQUERY в footer
@@ -46,11 +70,13 @@ add_action( 'wp_enqueue_scripts', 'remove_block_css', 100 );
 		wp_enqueue_script( 'myscript' );
 	}
 
+
 //ADMINBAR
 	//add_filter( 'show_admin_bar', '__return_false');
 	#add_action( 'wp_footer', 'admin_bar');
 
 	//function admin_bar() { echo '<style>#wpadminbar {opacity:.1;} #wpadminbar:hover {opacity:1;}</style>';  }
+
 
 //Add menu into admin
 	register_nav_menus(array(

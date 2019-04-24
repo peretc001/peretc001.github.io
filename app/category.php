@@ -23,8 +23,7 @@ $cat__name = $category[0]->cat_name; ?>
 
 			<div class="col-md-6 content-center order-1 order-md-12">
 
-			<?php
-
+			<?php if (have_posts()) : 
 			$query = new WP_Query( array('category__in' => $cat_name) );
 			/* Start the Loop */
 			while ( have_posts() ) : the_post(); 
@@ -59,6 +58,32 @@ $cat__name = $category[0]->cat_name; ?>
 					</div>
 				</div>
 			<?php endwhile; // End of the loop. ?>
+			<?php else: ?>
+
+				<div class="not_find text-center">
+					<p>
+						<i class="far fa-meh"></i>
+					</p>
+					<p>  <b>Опс...</b></p>
+					<p>Похоже что мы не успели опубликовать статьию по данной теме<br>
+					Узнайте первым когда она появится</p>
+					<p>
+						Подписаться на рассылку:
+					</p>
+					<?php echo do_shortcode( '[contact-form-7 id="12" title="footer_email"]' ); ?>
+					<div class="policy__checked">
+						<div class="radio">
+							<input id="policy_callback2" type="checkbox" name="policy" checked required>
+							<label for="policy_callback2">Согласен с условиями</label> <a href="/policy/" target="_blank">Политики конфиденциальности</a>
+						</div>
+					</div>
+					<br>
+					<p>
+						<a href="/" class="btn btn-outline-accent">на главную</a>
+					</p>
+				</div>
+
+			<?php endif;?>
 			<?php
 				//Вывод рекламного блока по центру
 				$query = new WP_Query( array('page_id' => 108) );

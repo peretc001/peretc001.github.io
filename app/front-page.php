@@ -14,9 +14,7 @@
 						while ( $query->have_posts() ) {
 							$query->the_post();
 
-							$media = get_attached_media( 'image', $post->ID );
-							$media = array_shift( $media );
-							$image_url = $media->guid;
+							$img_id = get_post_thumbnail_id( $post->ID );
 					?>
 					<div class="content-center-card">
 						<h2>
@@ -25,7 +23,11 @@
 						<p>
 						<a href="<?php echo get_permalink(); ?>"><?php the_excerpt(); ?></a>
 						</p>
-						<a href="<?php echo get_permalink(); ?>"><img src="<?php echo $image_url; ?>"></a>
+						<?php if ($img_id) { ?><a href="<?php echo get_permalink(); ?>">
+							<img 	src="<?php echo wp_get_attachment_image_url( $img_id, 'medium' ) ?>"
+										srcset="<?php echo wp_get_attachment_image_srcset( $img_id, 'medium' ) ?>"
+										sizes="<?php echo wp_get_attachment_image_sizes( $img_id, 'medium' ) ?>" alt="<?php the_title(); ?>">
+						</a><?php } ?>
 					</div>
 					<?php } ?>
 					<div class="content-center-block">
@@ -36,25 +38,24 @@
 							while ( $query->have_posts() ) {
 								$query->the_post();
 
-								$media = get_attached_media( 'image', $post->ID );
-								$media = array_shift( $media );
-								$image_url = $media->guid;
+								$img_id = get_post_thumbnail_id( $post->ID );
 
 								$category = get_the_category(); 
 								$cat__name = $category[0]->cat_name;
 						?>
 							<div class="col-md-6">
-								<a href="<?php echo get_permalink(); ?>">
-									<img src="<?php echo $image_url; ?>" alt="">
-									<span><i><?php echo $cat__name; ?></i></span>
-								</a>
+								<?php if ($img_id) { ?><a href="<?php echo get_permalink(); ?>">
+								<img 	src="<?php echo wp_get_attachment_image_url( $img_id, 'medium' ) ?>"
+											srcset="<?php echo wp_get_attachment_image_srcset( $img_id, 'medium' ) ?>"
+											sizes="<?php echo wp_get_attachment_image_sizes( $img_id, 'medium' ) ?>" alt="<?php the_title(); ?>">
+								</a><?php } ?>
 								<h3>
 									<a class="the_title" href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
 								</h3>
 								<p>
 									<a class="the_excerpt" href="<?php echo get_permalink(); ?>"><?php 
 										$excerpt = get_the_excerpt();
-										echo wp_trim_words( $excerpt , '10' ); 
+										echo wp_trim_words( $excerpt , '20' ); 
 									?></a>
 								</p>
 							</div>
@@ -92,6 +93,6 @@ function sliceTheExcerpt(selector, count) {
 		}
 	});
 }
-sliceTheExcerpt('.the_title', 40);
+sliceTheExcerpt('.the_title', 48);
 </script>
 <?php get_footer(); ?>

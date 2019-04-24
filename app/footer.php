@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-md-4 logo">
+            <div class="col-md-6 col-lg-4 logo">
                 <a href="/" class="navbar-brand"><?php echo bloginfo('name'); ?></a>
                 <p><?php echo bloginfo('description'); ?></p>
                 <div class="social">
@@ -14,7 +14,7 @@
                 </div>
             </div>
             
-            <div class="col-md-4 footer-menu">
+            <div class="col-md-6 col-lg-4 footer-menu">
                 <p>Меню</p>
             
                 <?php wp_nav_menu(array(
@@ -29,11 +29,11 @@
 
             </div>
         
-            <div class="col-md-4">
+            <div class="col-md-6 col-lg-4">
                 <p>
                     Подписаться на рассылку:
                 </p>
-                <?php echo do_shortcode( '[contact-form-7 id="185" title="footer_email"]' ); ?>
+                <?php echo do_shortcode( '[contact-form-7 id="12" title="footer_email"]' ); ?>
                 <div class="policy__checked">
                     <div class="radio">
                         <input id="policy_callback" type="checkbox" name="policy" checked required>
