@@ -1,5 +1,8 @@
 .single_content
-    .content-center 
+    .content-center
+        h2, h3, h4
+            margin-top: 1em
+            margin-bottom: 1em
         img
             margin: 20px auto
             display: block
@@ -9,6 +12,18 @@
                 width: 100%
         &-block
             margin-top: 1em
+            .img_wrapper
+                position: relative
+                padding-top: 56.25%
+                width: 100%
+                overflow: hidden
+                img
+                    position: absolute
+                    left: 0
+                    top: 0
+                    width: 100%
+                    height: auto
+                    margin: 0 !important
         p
             text-align: justify
             text-align-last: left
