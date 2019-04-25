@@ -1,14 +1,13 @@
 @import "vars"
-@import "fonts"
 
 ::placeholder
 	color: #666
 
 body
-	font-size: 14px
+	font-size: 16px
 	min-width: 320px
 	position: relative
-	line-height: 1.2
+	line-height: 1.4
 	font-family: $default-font
 	overflow-x: hidden
 	color: $text
@@ -41,6 +40,17 @@ h5
 	height: auto
 	&.img-width
 		width: 100%
+.img_wrapper
+	position: relative
+	padding-top: 56.25%
+	width: 100%
+	overflow: hidden
+	img
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: auto
 .text-center
 	text-align: center !important
 	text-align-last: center !important
@@ -70,13 +80,15 @@ strong
 	flex-direction: column
 	justify-content: center
 	text-align: center
+	&.search
+		padding-top: 2em
 	h1
 		font-size: 10em
 		color: $link
 		font-family: 'Dosis', sans-serif
 	.far
 		font-size: 2em
-		margin-left: -0.5em
+		margin-left: -0.2em
 	.btn
 		margin: 1em auto
 		max-width: 8em
@@ -94,6 +106,7 @@ strong
 	justify-content: flex-start
 	flex-direction: row
 	margin: 5px 0
+	font-size: 0.8em
 	.radio
 		padding: 0 0 0 1.5em
 		margin: 0
@@ -132,8 +145,9 @@ strong
 			text-decoration: underline
 
 @import "navbar"
-@import "search"
 @import "content"
+@import "front-category"
+@import "search"
 @import "single"
 @import "footer"
 

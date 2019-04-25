@@ -34,6 +34,8 @@
             display: flex
             flex-direction: row
             align-items: center
+            padding: 0
+            margin: 0
             .single_category_date,
             .single_category_tags,
             .single_category_tag
@@ -43,6 +45,7 @@
             .single_category_date,
             .single_category_tags
                 margin-right: 0.8em
+            .single_category_tags,
             .single_category_tag
                 a
                     margin-right: 0.5em
@@ -70,6 +73,11 @@
     .single_content
         &_line
             .category
+                .single_category_tags,
+                .single_category_tag
+                    .far, .fas
+                        display: none
+                        margin: 0
                 .single_category_tags
                     .post-categories
                         li

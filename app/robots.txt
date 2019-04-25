@@ -20,4 +20,6 @@ Allow: /wp-*.jpeg
 Allow: /wp-*.gif           
 Allow: /wp-*.svg           
 Allow: /wp-*.pdf           
-#Disallow: /wp/            
+#Disallow: /wp/
+Host: https://goodservice.su/
+Sitemap: https://goodservice.su/post-sitemap.xml
