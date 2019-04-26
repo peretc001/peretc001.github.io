@@ -1,0 +1,126 @@
+<style>
+body {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 16px;
+  background: #0000FF;
+}
+.card {} 
+.card p {
+  padding: 0;
+  margin: 0;
+}
+.card-item {
+  max-width: 300px;
+  background: #1E90FF;
+  border-radius: .4em;
+  transition: .5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  width: 100%;
+  position: relative;
+  margin-bottom: .5em;
+}
+.card-item.active {
+  color: #000;
+  background: #fff;
+}
+.card-item .card-btn {
+  font-size: 1em;
+  display: block;
+  padding: .5em 2em;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+}
+.card-item.active .card-btn {
+  color: #000;
+}
+.card-item .card-text {
+  padding: 0 2em;
+  font-size: .8em;
+  height: -1;
+  opacity: 0;
+  color: transparent;
+  line-height: 0;
+  transition: .2s ease-in-out;
+}
+.card-item .card-text.active {
+  padding: 1em 2em 2em 2em;
+  font-size: .8em;
+  height: auto;
+  opacity: 1;
+  line-height: 1.2;
+  color: #000;
+}
+</style>
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<div class="card">
+  <div class="card-item hide">
+    <a href="" class="card-btn">Раскрывающийся список 1</a>
+    <div class="card-text">
+      Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Имеет предупреждал меня приставка осталось, переулка текстами свою страну наш!
+    </div>
+  </div>
+  <div class="card-item hide">
+    <a href="" class="card-btn">Раскрывающийся список 2</a>
+    <div class="card-text">
+      Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Имеет предупреждал меня приставка осталось, переулка текстами свою страну наш!
+    </div>
+  </div>
+  <div class="card-item hide">
+      <a href="" class="card-btn">Раскрывающийся список 3</a>
+      <div class="card-text">
+        Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Имеет предупреждал меня приставка осталось, переулка текстами свою страну наш!
+      </div>
+    </div>
+    <div class="card-item hide">
+        <a href="" class="card-btn">Раскрывающийся список 4</a>
+        <div class="card-text">
+          Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Имеет предупреждал меня приставка осталось, переулка текстами свою страну наш!
+        </div>
+      </div>
+</div>  
+
+<script>
+  let card = document.querySelector('.card');
+  let cardItem = document.querySelectorAll('.card-item');
+
+  cardItem.forEach(item => {
+    let cardText = item.querySelector('.card-item > .card-text');
+    let btn = item.querySelector('.card-item > .card-btn');
+    let cardHide = 'hide';
+    
+    function slideDown() {
+      cardText.classList.add('active');
+    }
+    function slideUp() {
+      cardText.classList.remove('active');
+    }
+
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (e.target === btn && cardHide === 'hide') {
+        slideDown();
+        item.classList.remove('hide');
+        item.classList.add('active');
+        cardHide = 'show';
+      } 
+      else {
+        slideUp();
+        item.classList.add('hide');
+        item.classList.remove('active');
+        cardHide = 'hide';
+      }
+    });
+
+    card.addEventListener('keydown', (e) => {
+      if(e.which === 27 && cardHide === 'show'){
+        slideUp();
+        item.classList.add('hide');
+        item.classList.remove('active');
+      }
+    });
+    
+  });
+</script>
