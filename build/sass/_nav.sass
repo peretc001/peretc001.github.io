@@ -1,0 +1,175 @@
+.navbar
+	color: #fff
+	transition: all .3s ease
+	padding: 0
+	.navbar-phone
+		position: relative
+		color: $gray
+		a
+			color: #fff
+		&__icon:before
+			content: '\f3cd'
+			position: absolute
+			left: -1.5em
+			top: 50%
+			transform: translateY(-50%)
+			font-family: 'Font Awesome 5 Free'
+			color: $gray
+			font-weight: bold
+	.navbar-nav
+		position: relative
+		justify-content: space-between
+		align-items: center
+		.nav-link
+			position: relative
+			color: #fff
+			font-size: 0.9em
+			text-transform: uppercase
+			&::after
+				content: ''
+				position: absolute
+				left: 0
+				bottom: -2px
+				width: 100%
+				height: 3px
+				border-radius: 6px
+				background-color: $accent
+				transform: scale(0)
+				transition: all .3s ease
+			&:hover::after
+				content: ''
+				position: absolute
+				left: 0
+				bottom: -2px
+				width: 100%
+				height: 3px
+				border-radius: 6px
+				background-color: $accent
+				transform: scale(1)
+
+	.navbar-contact
+		min-width: 35%
+		display: flex
+		align-items: center
+		justify-content: space-between
+		p
+			margin: 0
+		&__adres,
+		&__phone
+			&__icon
+				position: relative
+				color: $gray
+		&__adres
+			&__icon:before
+				content: '\f3c5'
+				position: absolute
+				left: -1.5em
+				top: 50%
+				transform: translateY(-50%)
+				font-family: 'Font Awesome 5 Free'
+				color: $gray
+				font-weight: bold
+		&__phone
+			&__icon:before
+				content: '\f3cd'
+				position: absolute
+				left: -1.5em
+				top: 50%
+				transform: translateY(-50%)
+				font-family: 'Font Awesome 5 Free'
+				color: $gray
+				font-weight: bold
+				
+.navbar:not(.active)
+	transition: all .5s ease-in-out
+	&::before
+		content: ''
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		background: #000
+		opacity: .7
+	.navbar-nav
+		.nav-link
+			padding-top: 2em
+			padding-bottom: 2em
+
+.navbar.active
+	transition: all .5s ease-in-out
+	&::before
+		content: ''
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		background: #000
+		opacity: .7
+	.navbar-nav
+		.nav-link
+			padding-top: 1em
+			padding-bottom: 1em
+
+@media screen and (max-width: 1199.98px)
+	.navbar
+		.navbar-contact
+			&__adres,
+			&__phone
+				font-size: 0.8em
+
+@media screen and (max-width: 991.98px)
+	.navbar
+		.navbar-contact
+			min-width: 10%
+			&__adres
+				display: none
+
+@media screen and (max-width: 767.98px)
+	.navbar
+		.navbar-toggler
+			background: transparent
+			color: transparent
+			border: none
+			.hamburger-box
+				width: 30px
+				height: 16px
+			.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
+				background-color: #fff
+				width: 30px
+				height: 2px
+			.hamburger--slider .hamburger-inner
+				top: 1px
+		.navbar-nav
+			.nav-link
+				padding: 0
+				&::after
+					bottom: 0
+					height: 0
+					border-radius: none
+					background-color: transparent
+				&:hover::after
+					bottom: 0
+					height: 0
+					border-radius: none
+					background-color: transparent
+					transform: scale(0)
+		.navbar-contact
+			display: none
+
+	.navbar:not(.active),
+	.navbar.active
+		padding-right: 15px
+		&::before
+			opacity: .9
+		.navbar-nav
+			width: 100%
+			margin-bottom: 1em
+			.nav-item
+				display: block
+				width: 100%
+				text-align: center
+			.nav-link
+				display: block
+				padding: 0.5em 0 !important

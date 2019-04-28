@@ -1,0 +1,86 @@
+@import "vars"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.4
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	opacity: 0
+	
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+a, a:hover
+	text-decoration: none
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+.btn
+	margin: 0
+	color: #fff
+	padding: .375em 1.5em
+	min-width: 150px
+	&.btn-accent
+		background: $accent
+		color: #ffffff
+		border: transparent
+		&:hover
+			background: $accent-hover
+	&.btn-outline-accent
+		background: transparent
+		color: #ffffff
+		border: 1px solid $accent
+		color: $accent
+		&:hover
+			background: $accent
+			color: #fff
+	.fab
+		margin-right: .5em
+		
+// .carousel
+// 	position: relative
+// 	width: 100%
+// 	height: 100vh
+// 	img
+// 		width: 100%
+// 		max-height: 100vh
+// 		position: relative
+// 		&::before
+// 			content: ''
+// 			position: absolute
+// 			left: 0
+// 			top: 0
+// 			width: 100%
+// 			height: 100%
+// 			background: #000
+// 			opacity: .5
+// 			z-index: 2
+
+@import "nav"
+@import "header"
+@import "steps"
+@import "price"
+
+
+body
+	opacity: 1
+
+@import "media"
