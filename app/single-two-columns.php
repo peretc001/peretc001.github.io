@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: 2 колонки
+ * Template Name: Без правого меню
  * Template Post Type: post
  * 
  * 
@@ -25,12 +25,8 @@ get_header(); ?>
 			<?php
 				while ( have_posts() ) : the_post(); 
 				
-				$category = get_the_category(); 
-				$cat__name = $category[0]->cat_name;
-
-				$media = get_attached_media( 'image', $post->ID );
-				$media = array_shift( $media );
-				$image_url = $media->guid;
+				$cat = get_the_category($post->ID);
+				$current = $cat[0]->cat_name;
 
 				$tags = get_the_tags();
 			?>
@@ -38,7 +34,13 @@ get_header(); ?>
 				<h1><?php the_title(); ?></h1>
 				<div class="single_content_line">
 					<div class="category">
-						<div class="single_category_tags"><i class="fas fa-tags"></i> <?php $category_name = the_category(); ?></div>
+						<div class="single_category_tags">
+						<?php foreach((get_the_category()) as $category) { 
+							if($category->cat_name == $current) {} else {
+							echo '<i class="fas fa-tags"></i> <a href="'.get_category_link($category->cat_ID).'" title="'.$category->cat_name.'">'.$category->cat_name.'</a>';
+							}
+						} ?>
+						</div>
 					</div>
 					<div class="social">
 						<p>поделиться:</p>
@@ -50,7 +52,13 @@ get_header(); ?>
 				<?php the_content(); ?>
 				<div class="single_content_line">
 					<div class="category">
-						<div class="single_category_tag"> </div>
+						<div class="single_category_tag">
+							<?php foreach((get_the_tags()) as $tags) { 
+								if($tags->term_id == '19' or $tags->term_id == '21' or $tags->term_id == '22') {} else {
+								echo '<i class="fas fa-tags"></i> <a href="'.get_tag_link($tags->term_id).'" title="'.$tags->name.'">'.$tags->name.'</a>';
+								}
+							} ?>
+						</div>
 					</div>
 					<div class="social">
 						<i class="far fa-eye"></i> <?php echo get_post_meta ($post->ID,'views',true); ?>
@@ -72,22 +80,27 @@ get_header(); ?>
 				<p>Еще по теме:</p>
 				<div class="row">
 					<?php
-					echo $category_name;
 						//Записи с меткой ЦЕНТРАЛЬНАЯ КОЛОНКА и без метки ВАЖНО, id=(21-20)
-						$query = new WP_Query( array( 'post__not_in' => array($post_id), 'category_name' => $cat__name, 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => 3 ) );
+						$query = new WP_Query( array( 'post__not_in' => array($post_id), 'category_name' => $current, 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => 3 ) );
 						while ( $query->have_posts() ) {
 							$query->the_post();
 
-							$media = get_attached_media( 'image', $post->ID );
-							$media = array_shift( $media );
-							$image_url = $media->guid;
-
-							if($image_url) {
+							$post_category = get_the_category($post->ID); 
+							$cat__name = $post_category[0]->cat_name;
+			
+							$img_id = get_post_thumbnail_id( $post->ID );
 					?>
 						<div class="col-md-4">
-							<a href="<?php echo get_permalink(); ?>">
-								<img src="<?php echo $image_url; ?>" alt="">
-							</a>
+							<?php if ($img_id) { ?>
+								<a href="<?php echo get_permalink(); ?>">
+									<div class="img_wrapper">
+										<img src="<?php echo wp_get_attachment_image_url( $img_id, 'medium' ) ?>"
+												srcset="<?php echo wp_get_attachment_image_srcset( $img_id, 'medium' ) ?>"
+												sizes="<?php echo wp_get_attachment_image_sizes( $img_id, 'medium' ) ?>" alt="<?php the_title(); ?>">
+												<span><i><?php echo $cat__name; ?></i></span>
+									</div>
+								</a>
+							<?php } ?>
 							<h3>
 								<a class="the_title" href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
 							</h3>
@@ -98,7 +111,7 @@ get_header(); ?>
 								?></a>
 							</p>
 						</div>
-					<?php } } ?>
+					<?php } ?>
 					</div>
 				</div>
 
@@ -110,22 +123,10 @@ get_header(); ?>
 		
 
 <script>
-let tags = <?php echo json_encode($tags) ?>; //Передаем массив МЕТОК из PHP в JS
-single_category_tag = document.querySelector('.single_category_tag'); //Находим css класс куда будет записывать МЕТКИ
-
-let tagList = tags.filter( item => item.term_id != 19 && item.term_id != 21 && item.term_id != 22 ) //Фильтруем метки и удаляем оттуда по ID те которые не нужны
-.forEach(item => {
-	if(item) {
-		let card = document.createElement('a'); //Создаем ссылку
-		card.innerHTML = `<i class="fas fa-tag"></i> <a href="/tags/${item.slug}/">${item.name}</a>`; // Запихиваем в нее отфильтрованные метки
-		single_category_tag.appendChild(card); //Вставляем на страницу
-	}
-});
 //Обрезаем Заголовок и Анонс
 function sliceTheExcerpt(selector, count) {
 	document.querySelectorAll(selector).forEach(item => {
 		item.textContent.trim();
-		console.log(item.textContent);
 		if(item.textContent.length < count) { return }
 		else {
 			const str = item.textContent.slice(0, count + 1) + "...";

@@ -71,11 +71,13 @@ get_header(); ?>
 					
 				<?php else: ?>
 
-					<div class="not_find">
-						<img src="<?php echo get_stylesheet_directory_uri() . '/img/404.svg'; ?>" alt="">
+					<div class="not_find search">
 						<p>
-							<b>Ничего не найдено</b>
-							попробуйте изменить поисковую фразу или перейдите на главную<br>
+							<i class="far fa-frown"></i>
+						</p>
+						<p><b>Ничего не найдено</b></p>
+						<p>
+							попробуйте изменить поисковую фразу<br> или перейдите на главную<br>
 							<a href="/" class="btn btn-outline-accent">на главную</a>
 						</p>
 					</div>

@@ -62,9 +62,9 @@ $cat__name = $category[0]->cat_name; ?>
 
 				<div class="not_find text-center">
 					<p>
-						<i class="far fa-meh"></i>
+						<i class="far fa-frown"></i>
 					</p>
-					<p>  <b>Опс...</b></p>
+					<p><b>Опс...</b></p>
 					<p>Похоже что мы не успели опубликовать статьию по данной теме<br>
 					Узнайте первым когда она появится</p>
 					<p>

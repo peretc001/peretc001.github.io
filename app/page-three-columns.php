@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: 3 колонки
+ * Template Name: На всю ширину
  * Template Post Type: page
  * 
  * 

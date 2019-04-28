@@ -8,18 +8,17 @@
 	} else {
 		echo esc_html( get_the_title() );
 	} ?></title>
-	<meta name="description" content="<?php if( is_front_page() or is_search() ) {
-		echo bloginfo('name'); ?> - <?php echo bloginfo('description'); 
-	} else {
+	<meta name="description" content="<?php if( is_front_page() or is_search() ) { ?>Статьи, инструкции, пошаговые руководства для начинающих инвесторов. Каждую неделю новые подборки.<?php } else {
 		$excerpt = get_the_excerpt();
 		echo wp_trim_words( $excerpt , '10' ); 
 	} ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="icon" href="<?php echo get_stylesheet_directory_uri() . '/img/favicon.ico'; ?>">
+	<link rel="icon" href="<?php echo get_stylesheet_directory_uri() . '/img/favicon.png'; ?>">
 	<style>
 		body {opacity: 0;overflow-x: hidden;}html {background-color: #fff;}
 	</style>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700&amp;subset=cyrillic" rel="stylesheet">
 	<?php wp_deregister_script('jquery'); ?>
 	<?php 	wp_head();
 			if( is_front_page() ) {} else {
