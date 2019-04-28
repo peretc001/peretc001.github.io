@@ -4,7 +4,8 @@
             margin-top: 1em
             margin-bottom: 1em
         img
-            max-width: 100%
+            max-width: 100% !important
+            height: auto !important
         &-block
             margin-top: 1em
             .img_wrapper
@@ -81,6 +82,10 @@
 
 @media screen and (max-width: 577.98px)
     .single_content
+        img
+            display: block
+            text-align: center
+            margin: 20px auto
         &_line
             .category
                 .single_category_tags,
