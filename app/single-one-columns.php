@@ -1,7 +1,9 @@
 <?php
 /**
- * The template for displaying all single posts
- *
+ * Template Name: С правым меню
+ * Template Post Type: post
+ * 
+ * 
  * @link https://peretc001.github.io
  * @author Krasovsky
  * @package WordPress
@@ -18,10 +20,12 @@ get_header(); ?>
 			</div>
 			<!-- / end left -->
 
-			<div class="col-md-9 content-center order-1 order-md-12">
+			<div class="col-md-6 content-center order-1 order-md-12">
 
 			<?php
-				while ( have_posts() ) : the_post(); 
+
+			/* Start the Loop */
+			while ( have_posts() ) : the_post(); 
 				
 				$cat = get_the_category($post->ID);
 				$current = $cat[0]->cat_name;
@@ -72,67 +76,74 @@ get_header(); ?>
 				<div class="content-center-banner">
 					<?php the_content(); ?>
 				</div>
-			<?php }	?>
-			
-			<div class="content-center-block">
-				<p>Еще по теме:</p>
-				<div class="row">
-					<?php
-						//Записи с меткой ЦЕНТРАЛЬНАЯ КОЛОНКА и без метки ВАЖНО, id=(21-20)
-						$query = new WP_Query( array( 'post__not_in' => array($post_id), 'category_name' => $current, 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => 3 ) );
+				<?php }	?>
+				<?php
+						//Записи с меткой ЦЕНТРАЛЬНАЯ КОЛОНКА+ВАЖНО, id=(21+20)
+						
+						$query = new WP_Query( array( 'post__not_in' => array($post_id), 'tag__and' => array(20,21), 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => 1 ) );
 						while ( $query->have_posts() ) {
 							$query->the_post();
 
-							$post_category = get_the_category($post->ID); 
-							$cat__name = $post_category[0]->cat_name;
-			
 							$img_id = get_post_thumbnail_id( $post->ID );
-					?>
-						<div class="col-md-4">
-							<?php if ($img_id) { ?>
+				?>
+				<div class="content-center-card">
+					<h2>
+						<a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
+					</h2>
+					<?php if ($img_id) { ?>
+						<a href="<?php echo get_permalink(); ?>">
+							<div class="img_wrapper">
+								<img src="<?php echo wp_get_attachment_image_url( $img_id, 'medium' ) ?>"
+										srcset="<?php echo wp_get_attachment_image_srcset( $img_id, 'medium' ) ?>"
+										sizes="<?php echo wp_get_attachment_image_sizes( $img_id, 'medium' ) ?>" alt="<?php the_title(); ?>">
+							</div>
+						</a>
+					<?php } ?>
+					<p>
+						<?php $content = get_the_content();
+									$trimmed_content = wp_trim_words( $content, 60, '...' );
+									echo $trimmed_content; ?>
+					</p>
+				</div>
+				<?php } 
+					//Записи с меткой ЦЕНТРАЛЬНАЯ КОЛОНКА и без метки ВАЖНО, id=(21-20)
+					$query = new WP_Query( array( 'post__not_in' => array($post_id), 'tag__in'=>array(21), 'tag__not_in' => array(20), 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => 4 ) );
+					while ( $query->have_posts() ) {
+						$query->the_post();
+
+						$category = get_the_category(); 
+						$cat__name = $category[0]->cat_name;
+
+						$img_id = get_post_thumbnail_id( $post->ID );
+				?>
+				<div class="content-center-block">
+						<h3>
+							<a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
+						</h3>
+						<?php if ($img_id) { ?>
 								<a href="<?php echo get_permalink(); ?>">
-									<div class="img_wrapper">
 										<img src="<?php echo wp_get_attachment_image_url( $img_id, 'medium' ) ?>"
 												srcset="<?php echo wp_get_attachment_image_srcset( $img_id, 'medium' ) ?>"
 												sizes="<?php echo wp_get_attachment_image_sizes( $img_id, 'medium' ) ?>" alt="<?php the_title(); ?>">
 												<span><i><?php echo $cat__name; ?></i></span>
-									</div>
 								</a>
 							<?php } ?>
-							<h3>
-								<a class="the_title" href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
-							</h3>
-							<p>
-								<a class="the_excerpt" href="<?php echo get_permalink(); ?>"><?php 
-									$excerpt = get_the_excerpt();
-									echo wp_trim_words( $excerpt , 10); 
-								?></a>
-							</p>
-						</div>
-					<?php } ?>
-					</div>
-				</div>
-
+						
+						<p>
+							<?php $content = get_the_content();
+								$trimmed_content = wp_trim_words( $content, 60, '...' );
+								echo $trimmed_content; ?>
+						</p>
+					</div>	
+				<?php } ?>
 			</div>
 			<!-- / end center -->
+
+			<div class="col-md-3 order-3 order-md-12 content-right">
+				<?php include get_theme_file_path( 'inc/right.php' ); //Подключаем правую колонку ?>
+			</div>
+			<!-- / end right -->
 		</div>
 	</div>
 </section>
-		
-
-<script>
-//Обрезаем Заголовок и Анонс
-function sliceTheExcerpt(selector, count) {
-	document.querySelectorAll(selector).forEach(item => {
-		item.textContent.trim();
-		if(item.textContent.length < count) { return }
-		else {
-			const str = item.textContent.slice(0, count + 1) + "...";
-			item.textContent = str;
-		}
-	});
-}
-sliceTheExcerpt('.the_title', 40);
-</script>
-
 <?php get_footer(); ?>
