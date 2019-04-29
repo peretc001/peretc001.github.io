@@ -8,33 +8,11 @@
 				</div>
 				<!-- / end left -->
 				<div class="col-md-6 content-center">
-					<?php
-						//Записи с меткой ЦЕНТРАЛЬНАЯ КОЛОНКА+ВАЖНО, id=(21+20)
-						$query = new WP_Query( array( 'tag__and' => array(20,21), 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => 1 ) );
-						while ( $query->have_posts() ) {
-							$query->the_post();
-
-							$img_id = get_post_thumbnail_id( $post->ID );
-					?>
-					<div class="content-center-card">
-						<h2>
-							<a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
-						</h2>
-						<p>
-						<a href="<?php echo get_permalink(); ?>"><?php the_excerpt(); ?></a>
-						</p>
-						<?php if ($img_id) { ?><a href="<?php echo get_permalink(); ?>">
-							<img 	src="<?php echo wp_get_attachment_image_url( $img_id, 'medium' ) ?>"
-										srcset="<?php echo wp_get_attachment_image_srcset( $img_id, 'medium' ) ?>"
-										sizes="<?php echo wp_get_attachment_image_sizes( $img_id, 'medium' ) ?>" alt="<?php the_title(); ?>">
-						</a><?php } ?>
-					</div>
-					<?php } ?>
 					<div class="content-center-block">
 						<div class="row">
 						<?php
-							//Записи с меткой ЦЕНТРАЛЬНАЯ КОЛОНКА и без метки ВАЖНО, id=(21-20)
-							$query = new WP_Query( array( 'tag__in'=>array(21), 'tag__not_in' => array(20), 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => 4 ) );
+							//Новые записи
+							$query = new WP_Query( array( 'tag__not_in' => array(19,22), 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => 6 ) );
 							while ( $query->have_posts() ) {
 								$query->the_post();
 
@@ -44,12 +22,16 @@
 								$cat__name = $category[0]->cat_name;
 						?>
 							<div class="col-md-6">
-								<?php if ($img_id) { ?><a href="<?php echo get_permalink(); ?>">
-								<img 	src="<?php echo wp_get_attachment_image_url( $img_id, 'medium' ) ?>"
-											srcset="<?php echo wp_get_attachment_image_srcset( $img_id, 'medium' ) ?>"
-											sizes="<?php echo wp_get_attachment_image_sizes( $img_id, 'medium' ) ?>" alt="<?php the_title(); ?>">
-											<span><i><?php echo $cat__name; ?></i></span>
-								</a><?php } ?>
+								<?php if ($img_id) { ?>
+									<a href="<?php echo get_permalink(); ?>">
+									<div class="img_wrapper">
+										<img src="<?php echo wp_get_attachment_image_url( $img_id, 'medium' ) ?>"
+												srcset="<?php echo wp_get_attachment_image_srcset( $img_id, 'medium' ) ?>"
+												sizes="<?php echo wp_get_attachment_image_sizes( $img_id, 'medium' ) ?>" alt="<?php the_title(); ?>">
+												<span><i><?php echo $cat__name; ?></i></span>
+									</div>
+								</a>
+								<?php } ?>
 								<h3>
 									<a class="the_title" href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
 								</h3>

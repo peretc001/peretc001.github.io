@@ -19,42 +19,17 @@
 					text-decoration: none
 					font-size: 1em
 	.content-center
-		&-card
-			padding: $gutter/6 0
-			a
-				position: relative
-				color: $text
-				padding: 0
-				margin: $gutter/3 0
-				display: block
-				&:first-child
-					margin-top: 0
-			h2
-				font-weight: bold
-				margin: 0
-				padding: 0
-			p
-				padding: 0
-				margin: 0
-				color: #666
-			img
-				width: 100%
-				padding: 0
-
 		&-block
-			padding: $gutter/3 0
+			padding: 0
+			.row
+				[class*="col-"]
+					margin-bottom: 1em
 			a
 				position: relative
 				color: $text
 				padding: 0
-				margin: $gutter/3 0
+				margin: $gutter/6 0
 				display: block
-				img
-					width: 100%
-					height: auto
-					position: relative
-					padding: 0
-					margin: 0
 				span
 					position: absolute
 					left: 0
@@ -76,6 +51,7 @@
 						position: relative
 						display: block
 						padding: .5em 1em
+						font-size: 0.8em
 						
 						
 			h3
@@ -150,10 +126,6 @@
 	.content
 		[class*="col-"]
 			padding-bottom: 20px
-		.content-left .content-left__name,
-		.content-center .content-center__name,
-		.content-right .content-right__name
-			display: none
 	.wp-block-embed__wrapper iframe
 		width: 100%
 		min-height: 200px
