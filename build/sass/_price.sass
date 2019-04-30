@@ -1,0 +1,149 @@
+.price
+    padding: 0 0 $gutter 0
+    background: url('http://ok-hall.ru/wp-content/uploads/2019/02/pattern.jpg')
+    background-size: cover
+    background-position: center top
+    a, 
+    a:hover
+        text-decoration: none
+    h2
+        text-align: center
+        font-weight: bold
+        margin: 0 auto 2em auto
+    .services-item
+        position: relative
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        align-content: center
+        justify-content: center
+        height: 340px
+        color: #fff
+        text-align: center
+        padding: 20px 30px
+        border-radius: 4px
+        background-size: cover !important
+        text-decoration: none
+        margin-bottom: 1em
+        overflow-x: hidden
+        &:before
+            content: ''
+            position: absolute
+            left: 0
+            top: 0
+            width: 100%
+            height: 100%
+            background: #000000
+            border-radius: 4px
+            opacity: .5
+            transition: opacity .35s
+        &:hover
+            color: #fff
+            &:before
+                opacity: .2
+        &__title
+            position: relative
+            font-size: 2em
+            text-transform: uppercase
+            transform: translate3d(0,36px,0)
+            transition: transform .35s
+            z-index: 2
+            text-decoration: none
+        &__text
+            position: relative
+            font-size: 1.5em
+            font-weight: bold
+            padding: 0
+            opacity: 0
+            z-index: -1
+            transform: translate3d(0,20px,0)
+            transition: opacity .35s,transform .35s
+            span
+                font-size: .8em
+
+        .more-link
+            display: flex
+            align-items: center
+            color: #fff
+            font-size: 1em
+            font-weight: bold
+            text-transform: uppercase
+            padding-left: 2em
+            letter-spacing: .065em
+            background-size: 0
+            position: absolute
+            right: -30px
+            bottom: 30px
+            opacity: 0
+            z-index: -1
+            transition: all .3s ease-in-out
+            &:hover
+                color: #fff
+                .icon
+                    left: .5em
+            .icon
+                display: inline-block
+                position: absolute
+                left: 0
+                font-size: inherit
+                font-weight: bold
+                color: #fff
+                transition: all .3s ease-in-out
+        
+        &:hover
+            .services-item__title 
+                transform: translate3d(0,0,0)
+            .services-item__text
+                transform: translate3d(0,0,0)
+                opacity: 1
+                z-index: 2
+            .more-link
+                right: 30px
+                opacity: 1
+                z-index: 2
+
+    .flipInY
+        backface-visibility: visible !important
+        animation-name: flipInY
+
+    @-webkit-keyframes flipInY
+        from
+            transform: perspective(400px) rotate3d(0,1,0,90deg)
+            animation-timing-function: ease-in
+            opacity: 0
+        40%
+            transform: perspective(400px) rotate3d(0,1,0,-20deg)
+            animation-timing-function: ease-in
+        60%
+            transform: perspective(400px) rotate3d(0,1,0,10deg)
+            opacity: 1
+        80%
+            transform: perspective(400px) rotate3d(0,1,0,-5deg)
+        to
+            transform: perspective(400px)
+    
+    .btn.btn-accent
+        margin-top: 1em
+        font-size: 1.5em
+
+@media screen and (max-width: 991.98px)
+    .price
+        .services-item
+            &__title
+                font-size: 1.5em
+            &__text
+                font-size: 1.2em
+            .more-link
+                font-size: 0.75em
+
+@media screen and (max-width: 768.98px)
+    .price
+        .services-item
+            &__title
+                font-size: 1.6em
+            &__text
+                font-size: 1.3em
+            .more-link
+                font-size: 0.9em
+        .btn.btn-accent
+            font-size: 1.2em

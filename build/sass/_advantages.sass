@@ -1,8 +1,10 @@
 .advantages
     position: relative
-    background: #efefef
+    background: url('http://ok-hall.ru/wp-content/uploads/2019/02/pattern.jpg')
+    background-size: cover
+    background-position: center bottom
     width: 100%
-    padding: $gutter*2 0
+    padding: $gutter*2 0 $gutter 0
     .feature-box
         margin-bottom: $gutter
         a
@@ -14,3 +16,9 @@
             font-size: 1em
             color: $silver
             margin: 0 1em
+
+@media screen and (max-width: 767.98px)
+    .advantages
+        .feature-box
+            h3
+                font-size: 1.3em
