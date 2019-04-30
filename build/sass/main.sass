@@ -3,10 +3,6 @@
 ::placeholder
 	color: #666
 
-::selection
-	background-color: $accent
-	color: #fff
-
 body
 	font-size: 16px
 	min-width: 320px
@@ -54,16 +50,50 @@ b, strong
 			color: #fff
 	.fab
 		margin-right: .5em
-		
+
+.img_wrapper
+	position: relative
+	padding-top: 56.25%
+	width: 100%
+	overflow: hidden
+	img
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: auto
+	span
+		position: absolute
+		left: 0
+		top: 10px
+		padding: 0
+		margin: 0
+		z-index: 2
+		&:before
+			content: ''
+			position: absolute
+			left: 0
+			top: 0
+			width: 100%
+			height: 100%
+			background: $accent
+			opacity: .7
+		i
+			font-style: normal
+			color: #ffffff
+			position: relative
+			display: block
+			padding: .5em 1em		
 
 @import "nav"
 @import "header"
 @import "advantages"
 @import "icons"
 @import "price"
+@import "portfolio"
 
-
+@media screen and (min-width: 1440px)
+	body
+		font-size: 18px
 body
 	opacity: 1
-
-@import "media"

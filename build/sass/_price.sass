@@ -1,15 +1,17 @@
 .price
+    position: relative
     padding: 0 0 $gutter 0
     background: url('http://ok-hall.ru/wp-content/uploads/2019/02/pattern.jpg')
     background-size: cover
     background-position: center top
+    h2
+        margin: 0 auto 1em auto
+        font-size: 1.8em
+        text-align: center
     a, 
     a:hover
         text-decoration: none
-    h2
-        text-align: center
-        font-weight: bold
-        margin: 0 auto 2em auto
+        position: relative
     .services-item
         position: relative
         display: flex
@@ -90,7 +92,8 @@
                 color: #fff
                 transition: all .3s ease-in-out
         
-        &:hover
+        &:hover,
+        &.active
             .services-item__title 
                 transform: translate3d(0,0,0)
             .services-item__text
@@ -124,7 +127,12 @@
     
     .btn.btn-accent
         margin-top: 1em
-        font-size: 1.5em
+        font-size: 1.3em
+        img
+            display: inline-block
+            width: 1.1em
+            margin: 0
+            margin-right: .5em
 
 @media screen and (max-width: 991.98px)
     .price

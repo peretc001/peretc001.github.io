@@ -20,3 +20,13 @@ $(window).scroll(function () {
         $('.navbar').removeClass('active');
     }
 });
+
+let priceItem = document.querySelectorAll('.services-item');
+priceItem.forEach(item => {
+    item.addEventListener('touchstart', (e) => {
+        item.classList.add('active');
+    });
+    item.addEventListener('touchend', (e) => {
+        item.classList.remove('active');
+    })
+})
