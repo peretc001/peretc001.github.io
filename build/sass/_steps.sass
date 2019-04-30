@@ -14,6 +14,8 @@
         height: 100%
         background: #000
         opacity: .8
+    .container
+        position: relative
     .row
         padding-top: 1em
     [class*="col-"]
@@ -46,6 +48,12 @@
             padding: 0 $gutter
             font-weight: bold
 
+    .btn.btn-accent
+        margin-top: 1em
+        font-size: 1.3em
+        .fas
+            margin-right: .5em
+
 @media screen and (max-width: 991.98px)
     .steps
         [class*="col-"]
@@ -61,3 +69,5 @@
                 top: auto
                 background: transparent
                 width: auto
+        .btn.btn-accent
+            font-size: 1.2em

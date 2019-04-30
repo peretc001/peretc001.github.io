@@ -2,21 +2,7 @@
 	color: #fff
 	transition: all .3s ease
 	padding: 0
-	.navbar-phone
-		display: none
-		position: relative
-		color: $gray
-		a
-			color: #fff
-		&__icon:before
-			content: '\f3cd'
-			position: absolute
-			left: -1.5em
-			top: 50%
-			transform: translateY(-50%)
-			font-family: 'Font Awesome 5 Free'
-			color: $gray
-			font-weight: bold
+	
 	.navbar-nav
 		position: relative
 		justify-content: space-between
@@ -129,8 +115,21 @@
 
 @media screen and (max-width: 767.98px)
 	.navbar
-		.navbar-phone
-			display: inline-block
+		.nav-phone
+			position: relative
+			display: block
+			padding-right: 15px
+			&__icon:before
+				content: '\f3cd'
+				position: absolute
+				left: -1.5em
+				top: 50%
+				transform: translateY(-50%)
+				font-family: 'Font Awesome 5 Free'
+				color: $gray
+				font-weight: bold
+			a
+				color: #ffffff
 		.navbar-toggler
 			background: transparent
 			color: transparent
@@ -163,7 +162,6 @@
 
 	.navbar:not(.active),
 	.navbar.active
-		padding-right: 15px
 		&::before
 			opacity: .9
 		.navbar-nav

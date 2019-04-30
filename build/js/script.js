@@ -2,33 +2,15 @@
 window.onload = function(){
     console.log(window.screen.availWidth- (window.screen.availWidth - window.innerWidth));
 };
-$(window).on('scroll', function () {
-    // remove any existing active
-    $('.navbar').removeClass("active");
 
-    // change bg color of active section
-    $('.navbar').addClass("active");
-
-    // change bg color of navbar
-    $(".navbar").addClass("active");
-
-});
-
-$(window).scroll(function () {
-    /* remove style on scroll back to top */
-    if ($(document).scrollTop() < 60) {
-        $('.navbar').removeClass('active');
+let navbar = document.querySelector('.navbar');
+document.addEventListener('scroll', (e) => {
+    if(window.scrollY > 60) {
+        navbar.classList.add('active');
     }
-});
-
-let priceItem = document.querySelectorAll('.services-item');
-priceItem.forEach(item => {
-    item.addEventListener('touchstart', (e) => {
-        item.classList.add('active');
-    });
-    item.addEventListener('touchend', (e) => {
-        item.classList.remove('active');
-    })
+    else {
+        navbar.classList.remove('active');
+    }
 });
 
 $(".review-carousel").owlCarousel({ 
@@ -38,4 +20,29 @@ $(".review-carousel").owlCarousel({
     nav: true, 
     navText: ['<i class="fas fa-quote-left"></i>', ' <i class="fas fa-quote-right"></i>'], 
     dots: true 
+});
+
+$(function() {
+    ymaps.ready(init);
+
+    function init() {
+        myMap = new ymaps.Map('map_page', {
+            center: [55.7900,37.6000],
+            zoom: 11
+        });
+        s = {
+            iconLayout: 'default#image',
+            iconImageHref: 'http://ok-hall.ru/wp-content/themes/okhall/img/logo-map.svg',
+            iconImageSize: [87, 74],
+            iconImageOffset: [-43, -56]
+        };
+        m = {
+            m1: new ymaps.Placemark([55.7893,37.5668], {}, s)
+        };
+        
+        myMap.geoObjects .add(m["m1"]);
+
+        myMap.behaviors.disable('drag');
+    };
+     
 });
