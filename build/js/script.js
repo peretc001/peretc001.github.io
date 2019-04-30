@@ -29,4 +29,13 @@ priceItem.forEach(item => {
     item.addEventListener('touchend', (e) => {
         item.classList.remove('active');
     })
-})
+});
+
+$(".review-carousel").owlCarousel({ 
+    loop: !0, 
+    items: 1, 
+    smartSpeed: 700, 
+    nav: true, 
+    navText: ['<i class="fas fa-quote-left"></i>', ' <i class="fas fa-quote-right"></i>'], 
+    dots: true 
+});

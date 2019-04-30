@@ -29,6 +29,29 @@ a, a:hover
 b, strong
 	font-weight: bold
 
+.h2_title
+	position: relative
+	margin: 0 auto 1.5em auto
+	font-size: 1.8em
+	text-align: center
+	font-weight: bold
+	text-transform: uppercase
+	&:after
+		content: ''
+		position: absolute
+		left: 50%
+		bottom: -.5em
+		transform: translateX(-50%)
+		width: 100px
+		height: 2px
+		background: $accent
+		display: block
+.h2_title.title_white
+	&:after
+		background: #ffffff
+.h2_title.title_black
+	&:after
+		background: $text
 .btn
 	margin: 0
 	color: #fff
@@ -91,6 +114,8 @@ b, strong
 @import "icons"
 @import "price"
 @import "portfolio"
+@import "steps"
+@import "review"
 
 @media screen and (min-width: 1440px)
 	body
