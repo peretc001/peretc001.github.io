@@ -171,7 +171,7 @@
 
 				<div class="col-md-3 category-right">
 					<?php
-						$query = new WP_Query( array( 'category__in' => $cat_id, 'post_type' => 'post', 'orderby' => 'meta_value', 'meta_key' => 'views', 'order' => 'DESC', 'posts_per_page' => 2 ) );
+						$query = new WP_Query( array( 'category__in' => $cat_id, 'post_type' => 'post', 'orderby' => 'meta_value_num', 'meta_key' => 'views', 'order' => 'DESC', 'posts_per_page' => 2 ) );
 						$i = 0;
 						while ( $query->have_posts() ) {
 							$query->the_post();

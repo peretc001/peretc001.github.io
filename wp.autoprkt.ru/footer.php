@@ -44,9 +44,7 @@
             </div>
     
         </div>
-        <div class="row author">
-            <noindex>Разработка: <a href="https://peretc001.github.io/">{ КИ }</a></noindex>
-        </div>
+        
     </div>
 </footer>
 <div class="copyright">

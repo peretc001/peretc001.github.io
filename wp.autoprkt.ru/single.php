@@ -51,10 +51,12 @@ get_header(); ?>
 				<div class="single_content_line">
 					<div class="category">
 						<div class="single_category_tag">
-							<?php foreach((get_the_tags()) as $tags) { 
+							<?php if(get_the_tags()) {
+								foreach((get_the_tags()) as $tags) { 
 								if($tags->term_id == '19' or $tags->term_id == '21' or $tags->term_id == '22') {} else {
 								echo '<i class="fas fa-tags"></i> <a href="'.get_tag_link($tags->term_id).'" title="'.$tags->name.'">'.$tags->name.'</a>';
 								}
+							} 
 							} ?>
 						</div>
 					</div>

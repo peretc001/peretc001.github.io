@@ -5,10 +5,20 @@
 	<meta charset="UTF-8">
 	<title><?php if( is_front_page() or is_search() ) {
    		echo bloginfo('name'); ?> - <?php echo bloginfo('description'); 
+	} elseif ( is_category() or is_tag() ) {
+		single_cat_title('', 1);
 	} else {
 		echo esc_html( get_the_title() );
 	} ?></title>
-	<meta name="description" content="<?php if( is_front_page() or is_search() ) { ?>Статьи, инструкции, пошаговые руководства для начинающих инвесторов. Каждую неделю новые подборки.<?php } else {
+	<meta name="description" content="<?php if( is_front_page() or is_search() ) { 
+		?>Статьи, инструкции, пошаговые руководства для начинающих инвесторов. Каждую неделю новые подборки.<?php 
+	} 
+	elseif( is_category() or is_tag() ) {
+		$cat_desc = term_description();
+		$cat_description = strip_tags($cat_desc);
+		echo mb_substr($cat_description, 0,139,'UTF-8');
+	}
+	else {
 		$excerpt = get_the_excerpt();
 		echo wp_trim_words( $excerpt , '10' ); 
 	} ?>">
