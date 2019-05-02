@@ -1,9 +1,12 @@
 .footer
     position: relative
     background: #f3f3f3
-    padding: $gutter*2 0
+    padding: $gutter*2 0 $gutter 0
     [class*="col-"]
         margin-bottom: 3em
+    form
+        [class*="col-"]
+            margin-bottom: 0.5em
     h5
         position: relative
         margin-bottom: 2em
@@ -16,9 +19,9 @@
             height: 2px
             background: $accent
             display: block
-    form
-        [class*="col-"]
-            margin-bottom: 0.5em
+    .clear
+        display: block
+        height: $gutter
     .footer-contact
         border-left: 1px solid $gray
         padding-left: $gutter
@@ -44,6 +47,14 @@
                     background: $accent
                     color: #ffffff
                     border-color: $accent
+    .author
+        font-style: 0.8em
+        color: $silver
+        position: relative
+        p
+            position: absolute
+            top: 0
+            right: 0
 
 @keyframes checkmark
     0%
@@ -73,6 +84,15 @@
         .footer-contact
             padding-left: 0
             border-left: 0
+        .footer-social
+            margin-top: 2em
+            margin-left: 0
+        .author
+            text-align: center
+            p
+                position: relative
+                top: auto
+                right: auto
 
     .policy__checked, .robot
         justify-content: center
