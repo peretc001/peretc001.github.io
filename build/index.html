@@ -25,45 +25,40 @@
 			</button>
 
 			<div class="nav-phone d-inline d-md-none ml-auto">
-				<a href="tel:" class="navbar-contact__phone__icon">8 (495) 123-45-67</a>
+				<a href="tel:"><i class="fas fa-mobile-alt"></i> 8 (495) 123-45-67</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="navbarToggle">
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<a class="nav-link" href="#">Главная</a>
+						<a class="nav-link" href="#header">Главная</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">О компании</a>
+						<a class="nav-link" href="#advantages">О компании</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Услуги</a>
+						<a class="nav-link" href="#price">Цены</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Цены</a>
+						<a class="nav-link" href="#portfolio">Портфолио</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Портфолио</a>
+						<a class="nav-link" href="#reviews">Отзывы</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Контакты</a>
+						<a class="nav-link" href="#footer">Контакты</a>
 					</li>
 				</ul>
 			</div>
 			
-			<div class="navbar-contact">
-				<div class="navbar-contact__adres">
-					<p class="navbar-contact__adres__icon">Москва, ул. Такая-то, 123</p>
-				</div>
-				<div class="navbar-contact__phone">
-					<a href="tel:" class="navbar-contact__phone__icon"><span>8 (495) 123-45-67</span></a>
-				</div>
+			<div class="nav-phone d-none d-md-inline ml-auto">
+				<a href="tel:"><i class="fas fa-mobile-alt"></i> 8 (495) 123-45-67</a>
 			</div>
 			
 		</div>
 	</nav>
 	
-	<div class="header">
+	<div class="header" id="header">
 		<div class="container">
 			<div class="logo">
 				<img src="img/logo.png" alt="">
@@ -80,7 +75,7 @@
 		</div>
 	</div>
 	
-	<section class="advantages">
+	<section class="advantages" id="advantages">
 		<div class="container">
 			<h2 class="h2_title">O компании</h2>
 			<div class="row">
@@ -142,7 +137,7 @@
 		</div>
 	</section>
 
-	<section class="price">
+	<section class="price" id="price">
 		<div class="container">
 			<h2 class="h2_title">Стоимость ремонта</h2>
 			<div class="row">
@@ -174,7 +169,7 @@
 		</div>
 	</section>
 	
-	<section class="portfolio">
+	<section class="portfolio" id="portfolio">
 		<div class="container">
 			<h2 class="h2_title">Портфолио</h2>
 			<div class="row">
@@ -304,7 +299,7 @@
 		</div>
 	</section>
 
-	<section class="review" style="background-image:url('img/review.jpg')">
+	<section class="review" id="reviews" style="background-image:url('img/review.jpg')">
 		<div class="container">
 			<h2 class="h2_title title_white">Отзывы наших клиентов</h2>
 			<div class="row">
@@ -415,6 +410,7 @@
 	
 	<section class="news">
 		<div class="container">
+			<h3 class="h2_title">Новости</h3>
 			<div class="row">
 				<div class="col-md-6">
 					<h3>Новость1</h3>
@@ -441,15 +437,54 @@
 		</div>
 	</section>
 
-	<footer class="footer">
-		<div id="map_page"></div>
+	<footer class="footer" id="footer">
 		<div class="container">
-			<div class="contact-block">
-				<div class="contact-block-box">
-					<p><b>Название, ООО</b></p>
-					<p><i class="fas fa-map-marker-alt"></i> Москва, ул. Такая-то, 123</p>
-					<p><i class="fas fa-mobile-alt"></i> Тел: 8-495-123-45-67</p>
-					<p><i class="far fa-clock"></i> График: Пн-Пт с 10 до 18</p>
+			<div class="row">
+				<div class="col-md-6">
+					<h5>Напишите нам</h5>
+					<form action="">
+						<div class="form-group">
+							<label for="user">ФИО</label>
+							<input type="text" class="form-control" id="user" placeholder="Ваше ФИО">
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<label for="email">Email</label>
+								<input type="email" class="form-control" id="email" placeholder="Email">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="phone">Телефон</label>
+								<input type="tel" class="form-control" id="phone" placeholder="Телефон">
+							</div>
+						</div>
+						<div class="policy__checked">
+							<div class="radio">
+								<input id="policy_callback" type="checkbox" name="policy" checked="">
+								<label for="policy_callback">Согласен с условиями</label> <a href="/policy.php" target="_blank">Политики конфиденциальности</a>
+							</div>
+						</div>
+						<div class="robot">
+							<div class="circle-loader">
+								<div class="checkmark draw"></div>
+							</div>
+							<span>подтверждаю, что я не робот</span>
+						</div>
+						<button class="btn btn-accent" disabled>Отправить заявку</button>
+					</form>
+				</div>
+				<div class="col-md-6">
+					<h5>Наши контакты</h5>
+					<div class="footer-contact">
+						<p><b>РДМ, ООО</b></p>
+						<p><i class="fas fa-mobile-alt"></i> Тел: 8-495-123-45-67</p>
+						<p><i class="far fa-clock"></i> График: Пн-Пт с 10 до 18</p>
+					</div>
+					<div class="footer-social">
+						<p>Мы в соц.сетях</p>
+						<a href=""><i class="fab fa-facebook-f"></i></a>
+						<a href=""><i class="fab fa-vk"></i></a>
+						<a href=""><i class="fab fa-instagram"></i></a>
+					</div>
 				</div>
 			</div>
 		</div>

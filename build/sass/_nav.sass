@@ -3,6 +3,15 @@
 	transition: all .3s ease
 	padding: 0
 	
+	.nav-phone
+		position: relative
+		padding-right: 15px
+		a
+			color: #ffffff
+			.fas
+				color: $gray
+				margin-right: 0.5em
+			
 	.navbar-nav
 		position: relative
 		justify-content: space-between
@@ -33,39 +42,6 @@
 				border-radius: 6px
 				background-color: $accent
 				transform: scale(1)
-
-	.navbar-contact
-		min-width: 35%
-		display: flex
-		align-items: center
-		justify-content: space-between
-		p
-			margin: 0
-		&__adres,
-		&__phone
-			&__icon
-				position: relative
-				color: $gray
-		&__adres
-			&__icon:before
-				content: '\f3c5'
-				position: absolute
-				left: -1.5em
-				top: 50%
-				transform: translateY(-50%)
-				font-family: 'Font Awesome 5 Free'
-				color: $gray
-				font-weight: bold
-		&__phone
-			&__icon:before
-				content: '\f3cd'
-				position: absolute
-				left: -1.5em
-				top: 50%
-				transform: translateY(-50%)
-				font-family: 'Font Awesome 5 Free'
-				color: $gray
-				font-weight: bold
 				
 .navbar:not(.active)
 	transition: all .5s ease-in-out
@@ -99,37 +75,18 @@
 			padding-top: 1em
 			padding-bottom: 1em
 
-@media screen and (max-width: 1199.98px)
-	.navbar
-		.navbar-contact
-			&__adres,
-			&__phone
-				font-size: 0.8em
-
 @media screen and (max-width: 991.98px)
 	.navbar
-		.navbar-contact
-			min-width: 10%
-			&__adres
-				display: none
+		.nav-phone a,
+		.navbar-nav .nav-link
+			font-size: 0.8em
+
 
 @media screen and (max-width: 767.98px)
 	.navbar
-		.nav-phone
-			position: relative
-			display: block
-			padding-right: 15px
-			&__icon:before
-				content: '\f3cd'
-				position: absolute
-				left: -1.5em
-				top: 50%
-				transform: translateY(-50%)
-				font-family: 'Font Awesome 5 Free'
-				color: $gray
-				font-weight: bold
-			a
-				color: #ffffff
+		.nav-phone a,
+		.navbar-nav .nav-link
+			font-size: 1em
 		.navbar-toggler
 			background: transparent
 			color: transparent
@@ -157,8 +114,6 @@
 					border-radius: none
 					background-color: transparent
 					transform: scale(0)
-		.navbar-contact
-			display: none
 
 	.navbar:not(.active),
 	.navbar.active

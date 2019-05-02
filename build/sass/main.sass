@@ -74,6 +74,9 @@ b, strong
 			color: #fff
 	.fab
 		margin-right: .5em
+.btn:disabled.btn-accent
+	background: $silver
+	color: $text
 
 .img_wrapper
 	position: relative
@@ -107,7 +110,91 @@ b, strong
 			color: #ffffff
 			position: relative
 			display: block
-			padding: .5em 1em		
+			padding: .5em 1em
+
+.policy__checked
+	display: flex
+	align-items: center
+	justify-content: flex-start
+	margin: 0 0 0 2em
+	.radio
+		padding: 0
+		margin: 0
+		input[type=checkbox]
+			display: none
+		label
+			color: $silver
+			margin-bottom: 0
+			display: inline-block
+			cursor: pointer
+			position: relative
+			padding: 0 !important
+			font-size: .8em !important
+			line-height: 1 !important
+			-ms-user-select: none
+			-moz-user-select: none
+			-khtml-user-select: none
+			-webkit-user-select: none
+			&:before
+				content: "\f0c8"
+				font-family: 'Font Awesome 5 Free'
+				position: absolute
+				left: -1.5em
+				top: 50%
+				transform: translateY(-50%)
+				color: $silver
+				font-weight: normal
+		input[type=checkbox]:checked + label:before
+			content: '\f14a'
+			font-family: 'Font Awesome 5 Free'
+			color: $silver
+			font-weight: normal
+		a
+			font-size: .8em !important
+			color: $silver
+			text-decoration: underline
+
+.robot
+	display: flex
+	align-items: center
+	justify-content: flex-start
+	padding: 20px 0
+	.circle-loader
+		cursor: pointer
+		margin: 0 10px
+		border: 1px solid rgba(255, 255, 255, 0.2)
+		border-color: #5cb85c
+		position: relative
+		display: block
+		vertical-align: top
+		border-radius: 0
+		width: 1.5em
+		height: 1.5em
+		&.load-complete
+			-webkit-animation: none
+			animation: none
+			border-color: #5cb85c
+			transition: border 500ms ease-out
+		.checkmark
+			display: none
+			&.draw:after
+				animation-duration: 800ms
+				animation-timing-function: ease
+				animation-name: checkmark
+				transform: scaleX(-1) rotate(135deg)
+			&:after
+				opacity: 1
+				height: 0.75em
+				width: 0.375em
+				transform-origin: left top
+				border-right: 3px solid #5cb85c
+				border-top: 3px solid #5cb85c
+				content: ''
+				left: 0.375em
+				top: 0.75em
+				position: absolute
+	span
+		color: $text
 
 @import "nav"
 @import "header"

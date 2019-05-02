@@ -22,27 +22,21 @@ $(".review-carousel").owlCarousel({
     dots: true 
 });
 
+let checkBtn = document.querySelector('.circle-loader');
+let complete = document.querySelector('.checkmark');
+checkBtn.addEventListener('click', () => {
+  checkBtn.classList.add('load-complete');
+  checkBtn.style.cursor = 'auto';
+  complete.style.display = 'block';
+});
+
 $(function() {
-    ymaps.ready(init);
 
-    function init() {
-        myMap = new ymaps.Map('map_page', {
-            center: [55.7900,37.6000],
-            zoom: 11
-        });
-        s = {
-            iconLayout: 'default#image',
-            iconImageHref: 'http://ok-hall.ru/wp-content/themes/okhall/img/logo-map.svg',
-            iconImageSize: [87, 74],
-            iconImageOffset: [-43, -56]
-        };
-        m = {
-            m1: new ymaps.Placemark([55.7893,37.5668], {}, s)
-        };
-        
-        myMap.geoObjects .add(m["m1"]);
-
-        myMap.behaviors.disable('drag');
-    };
+    $(".navbar-nav > .nav-item").on("click","a", function (event) {
+        event.preventDefault();
+        var id  = $(this).attr('href'),
+            top = $(id).offset().top;
+        $('body,html').animate({scrollTop: top}, 1500);
+    });
      
 });
