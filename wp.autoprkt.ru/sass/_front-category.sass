@@ -1,42 +1,28 @@
 .category
     margin-top: 2em
+    .category-title
+        border-bottom: 2px solid $text
+        h2
+            background: $text
+            margin: 0
+            padding: 0.5em 1em
+            text-align: center
+            color: #ffffff
+            display: inline-block
+            font-size: 1.2em
     .category-left
-        border-top: 2px solid $text
-        padding-left: 0
+        padding-top: 1em
+        [class*="col-"]
+            margin-bottom: 1em
+        .the_title
+            min-height: 50px
         a
             position: relative
             color: $text
             padding: 0
             margin: 0
             display: block
-            img
-                width: 100%
-                height: auto
-                position: relative
-                padding: 0
-                margin: 0
-            span
-                position: absolute
-                left: 0
-                top: 10px
-                padding: 0
-                margin: 0
-                &:before
-                    content: ''
-                    position: absolute
-                    left: 0
-                    top: 0
-                    width: 100%
-                    height: 100%
-                    background: #000
-                    opacity: .4
-                i
-                    font-style: normal
-                    color: #ffffff
-                    position: relative
-                    display: block
-                    padding: .5em 1em
-        h2
+        h4
             font-weight: bold
             margin: .5em 0
             font-size: 1.2em
@@ -101,8 +87,6 @@
                 a
                     color: $text
     .category-right
-        border-top: 2px solid $text
-        padding-right: 0
         img
             max-width: 100%
         a
@@ -166,6 +150,12 @@
                     &:after
                         content: ''
                         left: 0
+
+@media screen and (max-width: 991.98px)
+    .category
+        .category-left
+            .the_title
+                    min-height: auto
 
 @media screen and (max-width: 767.98px)
     .category

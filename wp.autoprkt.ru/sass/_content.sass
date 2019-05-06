@@ -19,6 +19,8 @@
 					text-decoration: none
 					font-size: 1em
 	.content-center
+		.the_title
+			min-height: 50px
 		&-block
 			padding: 0
 			.row
@@ -106,9 +108,7 @@
 	
 	.content-right
 		&-card
-			padding: $gutter/3 0
-			img
-				width: 100%
+			padding: $gutter/6 0
 			a
 				display: block
 				padding: $gutter/3
@@ -117,10 +117,19 @@
 				border-bottom: 1px solid #fff
 				&:hover
 					background: #cce0ea
+				img
+					width: 100%
+					margin-bottom: .5em
 
 .wp-block-embed__wrapper iframe
     width: 100%
     min-height: 400px
+
+@media screen and (max-width: 991.98px)
+	.content
+		.content-center
+			.the_title
+				min-height: auto
 
 @media screen and (max-width: 767.98px)
 	.content
