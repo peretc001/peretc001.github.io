@@ -49,7 +49,7 @@
 					</div>
 					<div class="clear"></div>
 					<div class="author">
-						<p>Разработка {<a href="https://peretc001.github.io/">КИ</a>}</p>
+						<p>Разработка <a href="https://peretc001.github.io/">{ КИ }</a></p>
 					</div>
 				</div>
 			</div>
