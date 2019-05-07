@@ -1,0 +1,285 @@
+@import "vars"
+@import "fonts"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	box-sizing: border-box
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+a, a:hover
+	text-decoration: none
+b, strong
+	font-weight: bold
+
+
+.prev
+	position: absolute
+	left: 0
+	top: 0
+	width: 100%
+	height: 100%
+	z-index: 100
+	background-image: url('../img/prev.jpg')
+	background-position: top
+	background-size: cover
+
+.pagination 
+	position: fixed
+	right: 20px
+	top: 50%
+	transform: translateY(-50%)
+	font-size: 1.4em
+	z-index: 10
+	display: block
+	a 
+		display: block
+		height: 20px
+		margin-bottom: 5px
+		color: $accent
+		position: relative
+		padding: 4px
+		&.active::after
+			background-color: $accent
+			transition: all .5s ease
+		&::after 
+			transition: box-shadow 0.5s ease
+			width: 10px
+			height: 10px
+			display: block
+			border: 1px solid $accent
+			border-radius: 50%
+			content: ''
+			position: absolute
+			margin: auto
+			top: 0
+			right: 4px
+			bottom: 0
+
+
+@import "header"
+
+.left
+	transform: rotate(90deg)
+	position: relative
+	padding: 0 10px
+	&__number
+		width: 100%
+		font-size: 40px
+		font-weight: 700
+		text-transform: uppercase
+		letter-spacing: 0.1em
+		color: #bea67c
+		text-align: center
+		display: flex
+		align-items: center
+		justify-content: center
+		.line
+			margin: 0 20px 0 0
+			width: 50px
+			height: 4px
+			background-color: #c0af91	
+			
+				
+.second
+	position: relative
+	background: #ffffff
+	color: $text
+	height: 100vh
+	padding: 0
+	display: flex
+	flex-direction: column
+	.container-fluid
+		position: relative
+		padding: 0
+		height: 100%
+		&::before
+			content: ''		
+			position: absolute
+			left: 0
+			top: 0
+			width: 150px
+			height: 50px
+			background: $accent
+			opacity: .2
+		&::after
+			content: ''		
+			position: absolute
+			left: 0
+			top: 50px
+			width: 50px
+			height: 100px
+			background: $accent
+			opacity: .2
+		.row
+			margin: auto
+			height: 100%
+			&::before
+				content: ''		
+				position: absolute
+				right: 0
+				bottom: 0
+				width: 150px
+				height: 50px
+				background: $accent
+				opacity: .2
+			&::after
+				content: ''		
+				position: absolute
+				right: 0
+				bottom: 50px
+				width: 50px
+				height: 100px
+				background: $accent
+				opacity: .2
+		h2
+			font-size: 48px
+			line-height: 100px
+			font-weight: 700
+			text-transform: uppercase
+			letter-spacing: 0.07em
+			color: #010101
+			position: relative
+			&::before
+				content: ''		
+				position: absolute
+				left: -200px
+				top: 50%
+				width: 150px
+				height: 2px
+				background: $text
+		p
+			font-size: 15px
+			line-height: 25px
+			font-weight: 400
+			letter-spacing: 0.025em
+			position: relative
+			&::before
+				content: ''		
+				position: absolute
+				left: -100px
+				top: 15%
+				width: 50px
+				height: 3px
+				background: $accent
+		a.btn.btn-more
+			padding: 10px 0
+			border-radius: 0
+			font-size: 1.2rem
+			opacity: .7
+			transition: opacity .3s ease
+			font-size: 14px
+			font-weight: 700
+			text-transform: uppercase
+			letter-spacing: 0.2em
+			color: $text
+			position: relative
+			margin-top: 40px
+			&::before
+				content: ''		
+				position: absolute
+				left: 0
+				bottom: 0
+				width: 50px
+				height: 2px
+				background: $accent
+			&:hover
+				opacity: 1
+			.line
+				margin: 0
+				padding: 0 20px 0 40px
+				position: relative
+				.arrow
+					position: absolute
+					top: 8px
+					left: 0
+					width: 50px
+					height: .5px
+					background-color: $accent
+				.arrow:before
+					content: ''
+					display: block
+					position: absolute
+					top: 0
+					right: 0
+					width: 10px
+					height: 1px
+					background-color: $accent
+					transform: rotate(-45deg)
+					transform-origin: 100% 0%
+				.arrow:after 
+					content: ''
+					display: block
+					position: absolute
+					top: 0
+					right: 0
+					width: 10px
+					height: 1px
+					background-color: $accent
+					transform: rotate(45deg)
+					transform-origin: 100% 0%
+		.second__img
+			position: relative
+			img
+				position: relative
+				box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.25)
+				opacity: .7
+				transition: opacity 1s ease
+				&:hover
+					opacity: 1
+				&::after
+					content: ''
+					position: absolute
+					top: 0
+					right: 0
+					width: 100px
+					height: 100px
+					background: #fff
+			span
+				position: absolute
+				left: 20%
+				top: 50%
+				transform: translateY(-50%)
+				font-size: 170px
+				line-height: 1
+				font-weight: 700
+				text-transform: uppercase
+				letter-spacing: 0.07em
+				color: #d0d0d0
+				opacity: .2
+	.second__number
+		position: absolute
+		bottom: 0
+		left: 0	
+	
+	
+body
+	opacity: 1
+

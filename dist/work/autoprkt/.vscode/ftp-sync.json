@@ -1,0 +1,27 @@
+{
+    "remotePath": "/user/",
+    "host": "ftp://autoprkt.ru",
+    "username": "u0382_u0382359",
+    "password": "GFDgd39021",
+    "port": 21,
+    "secure": false,
+    "protocol": "ftp",
+    "uploadOnSave": true,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "agent": null,
+    "allow": [],
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store"
+    ],
+    "generatedFiles": {
+        "extensionsToInclude": [
+            ""
+        ],
+        "path": "/user/123/"
+    }
+}

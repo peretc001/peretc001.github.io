@@ -1,0 +1,209 @@
+{
+  "ftp://avtonakidki.net@u0572740": {
+    "httpdocs": {
+      "avtonakidki.net": {
+        ".htaccess": {
+          "type": "-",
+          "size": 5820,
+          "lmtime": 0,
+          "modified": false
+        },
+        "404.php": {
+          "type": "-",
+          "size": 3868,
+          "lmtime": 0,
+          "modified": false
+        },
+        "YM.php": {
+          "type": "-",
+          "size": 6229,
+          "lmtime": 0,
+          "modified": false
+        },
+        "adm": {},
+        "catalog": {
+          "mex": {
+            "page.php": {
+              "type": "-",
+              "size": 12979,
+              "lmtime": 1548938489323,
+              "modified": false
+            }
+          },
+          "sheep": {
+            "page.php": {
+              "type": "-",
+              "size": 13608,
+              "lmtime": 1548938523497,
+              "modified": false
+            }
+          },
+          "len": {
+            "index.php": {
+              "type": "-",
+              "size": 2769,
+              "lmtime": 0,
+              "modified": false
+            },
+            "page.php": {
+              "type": "-",
+              "size": 7561,
+              "lmtime": 1548938840980,
+              "modified": false
+            }
+          },
+          "alcantara": {
+            "page.php": {
+              "type": "-",
+              "size": 8645,
+              "lmtime": 1548938551123,
+              "modified": false
+            }
+          },
+          "velure": {
+            "index.php": {
+              "type": "-",
+              "size": 2671,
+              "lmtime": 0,
+              "modified": false
+            },
+            "page.php": {
+              "type": "-",
+              "size": 7853,
+              "lmtime": 1548938874884,
+              "modified": false
+            }
+          }
+        },
+        "contact.php": {
+          "type": "-",
+          "size": 2990,
+          "lmtime": 1549023786567,
+          "modified": false
+        },
+        "css": {},
+        "delivery.php": {
+          "type": "-",
+          "size": 4133,
+          "lmtime": 0,
+          "modified": false
+        },
+        "df692f125f49.html": {
+          "type": "-",
+          "size": 12,
+          "lmtime": 0,
+          "modified": false
+        },
+        "img": {},
+        "inc": {
+          "check_delivery.php": {
+            "type": "-",
+            "size": 2771,
+            "lmtime": 0,
+            "modified": false
+          },
+          "config.php": {
+            "type": "-",
+            "size": 718,
+            "lmtime": 0,
+            "modified": false
+          },
+          "df": {},
+          "footer.php": {
+            "type": "-",
+            "size": 4017,
+            "lmtime": 0,
+            "modified": false
+          },
+          "header.php": {
+            "type": "-",
+            "size": 337,
+            "lmtime": 0,
+            "modified": false
+          },
+          "nav.php": {
+            "type": "-",
+            "size": 4105,
+            "lmtime": 1549023974145,
+            "modified": false
+          },
+          "safemysql.class.php": {
+            "type": "-",
+            "size": 17648,
+            "lmtime": 0,
+            "modified": false
+          }
+        },
+        "index â ÐºÐ¾Ð¿Ð¸Ñ.php": {
+          "type": "-",
+          "size": 6662,
+          "lmtime": 0,
+          "modified": false
+        },
+        "index.php": {
+          "type": "-",
+          "size": 6662,
+          "lmtime": 1547988100987,
+          "modified": false
+        },
+        "index2.php": {
+          "type": "-",
+          "size": 7372,
+          "lmtime": 1548010115901,
+          "modified": false
+        },
+        "js": {},
+        "nc": {},
+        "policy.php": {
+          "type": "-",
+          "size": 4810,
+          "lmtime": 0,
+          "modified": false
+        },
+        "robots.txt": {
+          "type": "-",
+          "size": 111,
+          "lmtime": 0,
+          "modified": false
+        },
+        "sertificat.php": {
+          "type": "-",
+          "size": 2009,
+          "lmtime": 0,
+          "modified": false
+        },
+        "sitemap.xml": {
+          "type": "-",
+          "size": 8587,
+          "lmtime": 0,
+          "modified": false
+        },
+        "style.css": {
+          "type": "-",
+          "size": 33213,
+          "lmtime": 1549024181461,
+          "modified": false
+        },
+        "style.min.css": {
+          "type": "-",
+          "size": 26281,
+          "lmtime": 1549024216635,
+          "modified": false
+        },
+        "yandex.xml": {
+          "type": "-",
+          "size": 10193,
+          "lmtime": 0,
+          "modified": false
+        },
+        "yandex.xml_back": {
+          "type": "-",
+          "size": 26546,
+          "lmtime": 0,
+          "modified": false
+        }
+      }
+    }
+  },
+  "$version": 1
+}

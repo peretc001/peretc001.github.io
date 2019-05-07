@@ -1,0 +1,167 @@
+
+<style>
+	#player {
+		width: 600px;
+		height: 400px;
+		margin: 40px auto;
+	}
+</style>
+<script src="https://apis.google.com/js/api.js"></script>
+
+
+<a data-url="rfp9eKTijRI" href="#" class="new_video">Show</a>
+<br>
+<form action="" class="search">
+		<input type="text" name="search" value="" placeholder="Поиск">
+	</form>
+	<br><br>
+<div id="player"></div>
+
+
+
+<p class="css_class_of_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem neque sit tempora odio itaque cumque eligendi quaerat iure voluptate rerum?</p>
+<script>
+	let p = document.querySelector('.css_class_of_text');
+    let player = document.querySelector('#player');
+    let newVideo = document.querySelector('.new_video');
+	
+	//Создаем плеер и помещаем туда какое-то видео
+	function createVideo() {
+		
+		var tag = document.createElement('script');
+
+		tag.src = "https://www.youtube.com/iframe_api";
+		var firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		
+		setTimeout(() => {
+			player = new YT.Player('player', {
+				height: '100%',
+				width: '100%',
+				videoId: 'KhXbtZkZZ8o'
+			});
+		}, 1000);
+	}
+    createVideo();
+    //Загружаем новое видео в player по полученному id
+	function LoadVideo(id) {
+		player.loadVideoById({'videoId': `${id}`});
+	}
+   
+	
+	//Функция обращениея в youtube с помощью API
+	function loadVideoFromYoutube() {
+		gapi.client.init({
+			'apiKey': 'AIzaSyBD5UCxbryLgtA_EUS4pQ10ROcTQn_CuDw',
+			'discoveryDocs': ["https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest"],
+		}).then(function() {
+			return gapi.client.youtube.playlistItems.list({
+				"part": "snippet,contentDetails",
+				"maxResults": 25,
+				"playlistId": "PL3LQJkGQtzc6Nwz67GGrMdqxim1c0H5DC"
+			})
+		}).then(function(response) {
+			//Перебираем полученный результат
+			response.result.items.forEach(item => {
+				let card = document.createElement('div');
+				card.classList.add('video_item');
+				card.setAttribute('data-url', item.contentDetails.videoId);
+
+				let getVideoId = item.contentDetails.videoId;
+				
+				card.innerHTML = `
+					<img class="video_item_img" src="${item.snippet.thumbnails.high.url}" alt="${item.snippet.title}">
+					<div class="videos_item_title">
+						${item.snippet.title}
+					</div>
+					<div class="video_item_desc">
+						${item.snippet.description}
+					</div>
+				`;
+				p.appendChild(card); //помещаем карточку на страницу
+				
+				//LoadVideo(getVideoId); //запускаем видео в player
+			});
+
+			sliceTitle('.video_item_desc', 100); //обрезаем Описание
+
+		}).catch( e => {
+			console.log(e);
+		});
+	}
+	
+	function search(target) {
+		gapi.client.init({
+			'apiKey': 'AIzaSyBD5UCxbryLgtA_EUS4pQ10ROcTQn_CuDw',
+			'discoveryDocs': ["https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest"],
+		}).then(function() {
+			return gapi.client.youtube.search.list({
+				'maxResults': 10,
+				'part': "snippet",
+				'q': `${target}`,
+				'type': ''
+			})
+		}).then(function(response){
+			let card = document.querySelector('.video_item');
+			while(card.firstChild) {
+				card.removeChild(card.firstChild);
+			}
+
+			response.result.items.forEach(item => {
+				let card = document.createElement('div');
+				card.classList.add('video_item');
+				card.setAttribute('data-url', item.id.videoId);
+
+				let getVideoId = item.id.videoId;
+				
+				card.innerHTML = `
+					<img class="video_item_img" src="${item.snippet.thumbnails.high.url}" alt="${item.snippet.title}">
+					<div class="videos_item_title">
+						${item.snippet.title}
+					</div>
+					<div class="video_item_desc">
+						${item.snippet.description}
+					</div>
+				`;
+				p.appendChild(card); //помещаем карточку на страницу
+				
+				//LoadVideo(getVideoId); //запускаем видео в player
+			});
+			sliceTitle('.video_item_desc', 100); //обрезаем Описание
+		})
+	}
+
+	searchForm = document.querySelector('.search');
+	searchForm.addEventListener('submit', (e) => {
+		e.preventDefault();
+		gapi.load('client', () => { search(document.querySelector('.search > input').value) });
+		document.querySelector('.search > input').value = '';
+	})
+
+	//Загрузка видео с youtube по клику
+	newVideo.addEventListener('click', (e) => {
+		e.preventDefault();
+		gapi.load('client', loadVideoFromYoutube);		
+	})
+
+
+	//Функция обрезания текста
+	function sliceTitle(selector, count) {
+		document.querySelectorAll(selector).forEach(item => {
+			//Удаляем все пробелы
+			item.textContent.trim();
+			//Если длина текста меньше заданной в count - Ничего не делаем
+			if(item.textContent.length < count) { return }
+			//В противном случае - делаем обрезание :)
+			else {
+				const str = item.textContent.slice(0, count + 1) + "...";
+				item.textContent = str;
+			}
+		});
+	}
+	//Запускаем функцию и передаем css класс текста, который надо обрезать
+	sliceTitle('.css_class_of_text', 100);
+
+
+	//Google youtube API key = AIzaSyBD5UCxbryLgtA_EUS4pQ10ROcTQn_CuDw
+</script>

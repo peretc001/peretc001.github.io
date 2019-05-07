@@ -1,0 +1,16 @@
+{
+    "host": "autoprkt.ru",
+    "username": "u0382359",
+    "password": "GFDgd39021",
+    "remotePath": "/httpdocs/autoprkt.ru/user/",
+    "protocol": "ftp",
+    "port": 0,
+    "fileNameEncoding": "utf8",
+    "autoUpload": true,
+    "autoDelete": false,
+    "autoDownload": false,
+    "ignore": [
+        ".git",
+        "/.vscode"
+    ]
+}

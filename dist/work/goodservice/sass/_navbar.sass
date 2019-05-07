@@ -1,0 +1,133 @@
+.navbar
+	padding: 0
+	margin: 0 0 1em 0
+	
+	.container
+		flex-direction: column
+		justify-content: flex-start
+		border-bottom: 2px solid $text
+	.first-line
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+		align-items: flex-end
+		width: 100%
+		.navbar-brand
+			display: block
+			width: 100%
+			font-weight: 900
+			font-size: 2em
+			letter-spacing: -2px
+			color: $text
+			padding-left: .75rem
+			padding-top: .5em
+			&:hover, &:focus, &:active
+				color: $text
+
+	.navbar-collapse
+		justify-content: flex-start
+		width: 100%
+	.navbar-nav
+		padding: 1em 0
+		width: 100%
+		flex-wrap: wrap
+		justify-content: space-between
+		.nav-link
+			font-size: .9em
+			font-weight: bold
+			text-transform: uppercase
+			color: $link
+			&:hover, &:focus, &:active
+				color: $link
+			.search_term
+				text-decoration: none
+		.current-menu-item,
+		.current-menu-parent,
+		.current-category-ancestor
+			font-weight: 900
+			background: $link
+			.nav-link
+				color: #fff !important
+
+.mobile-search
+	display: none
+	align-items: center
+	justify-content: space-between
+	padding: 0.5em 15px
+	background: #f2f2f2
+	margin: 0 0 1em 0
+
+.breadcrumb
+	background-color: transparent
+	font-size: 0.8em
+	color: #888888
+	padding: 0
+		
+@media screen and (max-width: 1260.98px)
+	.navbar
+		.navbar-nav
+			.nav-link
+				font-size: 0.8em
+
+@media screen and (max-width: 1199.98px)
+	.navbar
+		.navbar-nav
+			.nav-link
+				font-size: 0.7em
+
+@media screen and (max-width: 991.98px)
+	.navbar
+		.navbar-brand
+			font-size: 1.6em
+		.navbar-collapse
+			.navbar-nav
+				justify-content: flex-start
+				.nav-link
+					font-size: 0.8em
+
+@media screen and (max-width: 767.98px)
+	.navbar
+		background: $text
+		margin: 0
+		.container
+			display: flex
+			flex-direction: row
+			align-items: center
+			justify-content: space-between
+		.navbar-toggler
+			background: transparent
+			color: transparent
+			border: none
+			.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
+				background-color: #fff
+		.first-line
+			width: auto
+			.navbar-brand
+				display: inline-block
+				width: auto
+				margin-left: auto
+				font-size: 1.2em
+				font-weight: bold
+				padding: 0
+				color: $white !important
+				&:hover
+					color: #fff
+			form
+				display: none
+		.navbar-collapse
+			justify-content: center
+			.navbar-nav
+				text-align: center
+				.nav-link
+					font-size: 1em
+					color: #fff
+			.desctop-form
+				display: none
+	.mobile-search
+		display: flex
+		justify-content: center
+
+@media screen and (max-width: 374.98px)
+	.navbar
+		.navbar-brand
+			font-size: .9em

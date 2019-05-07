@@ -1,0 +1,101 @@
+RewriteCond %{HTTP_HOST} ^www.avtonakidki.net
+RewriteRule ^(.*)$ http://avtonakidki.net/$1 [R=301,L]
+
+AddDefaultCharset UTF-8
+AddType application/x-httpd-php .php .htm .html .phtml
+ErrorDocument 404 /404.php
+
+
+# Compress compressible fonts
+AddOutputFilterByType DEFLATE application/x-font-ttf application/x-font-opentype image/svg+xml
+
+
+# Cache Images
+ExpiresByType image/x-icon "access plus 2592000 seconds"
+ExpiresByType image/jpeg "access plus 2592000 seconds"
+ExpiresByType image/png "access plus 2592000 seconds"
+ExpiresByType image/gif "access plus 2592000 seconds"
+ExpiresByType image/svg+xml "access plus 2592000 seconds"
+
+# Cache Fonts
+ExpiresByType application/vnd.ms-fontobject "access plus 2592000 seconds"
+ExpiresByType application/x-font-ttf "access plus 2592000 seconds"
+ExpiresByType application/x-font-opentype "access plus 2592000 seconds"
+ExpiresByType application/x-font-woff "access plus 2592000 seconds"
+ExpiresByType image/svg+xml "access plus 2592000 seconds"
+
+# Cache other content types (Flash, CSS, JS, HTML, XML)
+ExpiresByType application/x-shockwave-flash "access plus 2592000 seconds"
+ExpiresByType text/css "access plus 604800 seconds"
+ExpiresByType text/javascript "access plus 2592000 seconds"
+ExpiresByType application/javascript "access plus 2592000 seconds"
+ExpiresByType application/x-javascript "access plus 2592000 seconds"
+ExpiresByType text/html "access plus 600 seconds"
+ExpiresByType application/xhtml+xml "access plus 600 seconds"
+
+
+RewriteEngine On
+# ЧПУ 
+# alcantara
+RewriteRule ^catalog/alcantara/nakidka_dly_avto_iz_alcantary_chernaya/$ 		/catalog/alcantara/page.php?id=101 [NC,L]
+RewriteRule ^catalog/alcantara/nakidka_dly_avto_iz_alcantary_korichnevaya/$ 	/catalog/alcantara/page.php?id=102 [NC,L]
+RewriteRule ^catalog/alcantara/nakidka_dly_avto_iz_alcantary_krasnaya/$ 		/catalog/alcantara/page.php?id=103 [NC,L]
+RewriteRule ^catalog/alcantara/nakidka_dly_avto_iz_alcantary_sinyaya/$ 			/catalog/alcantara/page.php?id=104 [NC,L]
+RewriteRule ^catalog/alcantara/nakidka_dly_avto_iz_alcantary_seraya/$ 			/catalog/alcantara/page.php?id=105 [NC,L]
+RewriteRule ^catalog/alcantara/nakidka_dly_avto_iz_alcantary_bezhevaya/$ 		/catalog/alcantara/page.php?id=106 [NC,L]
+
+# mex
+RewriteRule ^catalog/mex/nakidka_dly_avto_iz_mexa_bezhevaya/$ 					/catalog/mex/page.php?id=201 [NC,L]
+RewriteRule ^catalog/mex/nakidka_dly_avto_iz_mexa_belaya/$ 						/catalog/mex/page.php?id=202 [NC,L]
+RewriteRule ^catalog/mex/nakidka_dly_avto_iz_mexa_avstraliya_kapuchino/$ 		/catalog/mex/page.php?id=203 [NC,L]
+RewriteRule ^catalog/mex/nakidka_dly_avto_iz_mexa_avstraliya_chernaya/$ 		/catalog/mex/page.php?id=204 [NC,L]
+RewriteRule ^catalog/mex/nakidka_dly_avto_iz_mexa_avstraliya_bezhevaya/$ 		/catalog/mex/page.php?id=205 [NC,L]
+RewriteRule ^catalog/mex/nakidka_dly_avto_iz_mexa_avstraliya_belaya/$ 			/catalog/mex/page.php?id=206 [NC,L]
+RewriteRule ^catalog/mex/nakidka_dly_avto_iz_mexa_avstraliya_grey/$ 			/catalog/mex/page.php?id=207 [NC,L]
+RewriteRule ^catalog/mex/nakidka_dly_avto_iz_mexa_avstraliya_combi/$ 			/catalog/mex/page.php?id=208 [NC,L]
+
+# sheep
+RewriteRule ^catalog/sheep/nakidka_dly_avto_iz_ovchini_belaya/$ 				/catalog/sheep/page.php?id=301 [NC,L]
+RewriteRule ^catalog/sheep/nakidka_dly_avto_iz_ovchini_chernaya/$ 				/catalog/sheep/page.php?id=302 [NC,L]
+RewriteRule ^catalog/sheep/nakidka_dly_avto_iz_ovchini_korichnevaya/$ 			/catalog/sheep/page.php?id=303 [NC,L]
+RewriteRule ^catalog/sheep/nakidka_dly_avto_iz_ovchini_sinyaya/$ 				/catalog/sheep/page.php?id=304 [NC,L]
+RewriteRule ^catalog/sheep/nakidka_dly_avto_iz_ovchini_krasnaya/$ 				/catalog/sheep/page.php?id=305 [NC,L]
+RewriteRule ^catalog/sheep/nakidka_dly_avto_iz_ovchini_bezhevaya/$ 				/catalog/sheep/page.php?id=306 [NC,L]
+RewriteRule ^catalog/sheep/nakidka_dly_avto_muton_belaya/$ 						/catalog/sheep/page.php?id=307 [NC,L]
+RewriteRule ^catalog/sheep/nakidka_dly_avto_muton_chernaya/$ 					/catalog/sheep/page.php?id=308 [NC,L]
+RewriteRule ^catalog/sheep/nakidka_dly_avto_iz_ovchini_avstraliya_belaya/$ 		/catalog/sheep/page.php?id=309 [NC,L]
+RewriteRule ^catalog/sheep/nakidka_dly_avto_iz_ovchini_avstraliya_seraya/$ 		/catalog/sheep/page.php?id=310 [NC,L]
+RewriteRule ^catalog/sheep/nakidka_dly_avto_iz_ovchini_avstraliya_chernaya/$ 	/catalog/sheep/page.php?id=311 [NC,L]
+
+# len
+RewriteRule ^catalog/len/nakidka_dly_avto_iz_lna_ceraya/$ 						/catalog/len/page.php?id=401 [NC,L]
+
+# velure
+RewriteRule ^catalog/velure/nakidka_dly_avto_iz_velura_chernaya/$ 				/catalog/velure/page.php?id=501 [NC,L]
+RewriteRule ^catalog/velure/nakidka_dly_avto_iz_velura_korichnevaya/$ 			/catalog/velure/page.php?id=502 [NC,L]
+
+# kids
+RewriteRule ^catalog/kids/nakidka_na_detskoe_kreslo_lisichka1/$ 				/catalog/kids/page.php?id=601 [NC,L]
+RewriteRule ^catalog/kids/nakidka_na_detskoe_kreslo_lisichka2/$ 				/catalog/kids/page.php?id=602 [NC,L]
+RewriteRule ^catalog/kids/nakidka_na_detskoe_kreslo_mishka1/$ 					/catalog/kids/page.php?id=603 [NC,L]
+RewriteRule ^catalog/kids/nakidka_na_detskoe_kreslo_mishka2/$ 					/catalog/kids/page.php?id=604 [NC,L]
+RewriteRule ^catalog/kids/nakidka_na_detskoe_kreslo_koshechka1/$ 				/catalog/kids/page.php?id=605 [NC,L]
+RewriteRule ^catalog/kids/nakidka_na_detskoe_kreslo_koshechka2/$ 				/catalog/kids/page.php?id=606 [NC,L]
+RewriteRule ^catalog/kids/nakidka_na_detskoe_kreslo_koshechka3/$ 				/catalog/kids/page.php?id=607 [NC,L]
+RewriteRule ^catalog/kids/nakidka_na_detskoe_kreslo_enotik/$ 					/catalog/kids/page.php?id=608 [NC,L]
+RewriteRule ^catalog/kids/nakidka_na_detskoe_kreslo_panda/$ 					/catalog/kids/page.php?id=609 [NC,L]
+
+
+
+
+ ## USER IP BANNING
+<Limit GET POST>
+ order allow,deny
+ deny from 188.143.232.13
+ deny from  188.143.232.62
+ deny from  188.143.232.26
+ deny from  188.143.232.14
+ deny from  5.188.211.35
+ deny from  5.188.211.39
+ allow from all
+</Limit>

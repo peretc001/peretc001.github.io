@@ -1,0 +1,352 @@
+AddDefaultCharset UTF-8
+AddType application/x-httpd-php .php .htm .html .phtml
+ErrorDocument 404 /404.php
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^partadami.ru
+RewriteRule (.*) http://www.partadami.ru/$1 [R=301,L]
+
+# Compress compressible fonts
+AddOutputFilterByType DEFLATE application/x-font-ttf application/x-font-opentype image/svg+xml
+
+
+# Cache Images
+ExpiresByType image/x-icon "access plus 2592000 seconds"
+ExpiresByType image/jpeg "access plus 2592000 seconds"
+ExpiresByType image/png "access plus 2592000 seconds"
+ExpiresByType image/gif "access plus 2592000 seconds"
+ExpiresByType image/svg+xml "access plus 2592000 seconds"
+
+# Cache Fonts
+ExpiresByType application/vnd.ms-fontobject "access plus 2592000 seconds"
+ExpiresByType application/x-font-ttf "access plus 2592000 seconds"
+ExpiresByType application/x-font-opentype "access plus 2592000 seconds"
+ExpiresByType application/x-font-woff "access plus 2592000 seconds"
+ExpiresByType image/svg+xml "access plus 2592000 seconds"
+
+# Cache other content types (Flash, CSS, JS, HTML, XML)
+ExpiresByType application/x-shockwave-flash "access plus 2592000 seconds"
+ExpiresByType text/css "access plus 604800 seconds"
+ExpiresByType text/javascript "access plus 2592000 seconds"
+ExpiresByType application/javascript "access plus 2592000 seconds"
+ExpiresByType application/x-javascript "access plus 2592000 seconds"
+ExpiresByType text/html "access plus 600 seconds"
+ExpiresByType application/xhtml+xml "access plus 600 seconds"
+
+Redirect 301 /&sa=U&ei=hZdoT8rnEIKQ4gSTpNySAw&ved=0CF4QFjAc&usg=AFQjCNF1EYFbitpa_9K2XvlcbsCD4j7EYw				http://www.partadami.ru/ 
+Redirect 301 /shop/parta_bez_risunka/detskie_party.php					http://www.partadami.ru/shop/parta_bez_risunka/
+Redirect 301 /shop/parta_bez_risunka/parta_dly_doma.php					http://www.partadami.ru/shop/parta_bez_risunka/
+Redirect 301 /shop/parta_bez_risunka/shkolnaja_parta.php					http://www.partadami.ru/shop/parta_bez_risunka/
+
+
+Redirect 301 /shop/mebel.php					http://www.partadami.ru/detskaya_mebel.php
+Redirect 301 /mebel.php							http://www.partadami.ru/detskaya_mebel.php
+Redirect 301 /opt_im.php						http://www.partadami.ru/opt.php
+Redirect 301 /vkredit.php						http://www.partadami.ru/kredit.php
+Redirect 301 /podarok.php						http://www.partadami.ru/podarok-pervoklassniku.php
+Redirect 301 /contact.php 						http://www.partadami.ru/gde_kupit/ 
+Redirect 301 /01.php 							http://www.partadami.ru/shop/ergonomichnyj_stul/cyt01.php
+Redirect 301 /12.php 							http://www.partadami.ru/shop/parta_bez_risunka/cyt14/parta_cyt14_so_stulom_cyt01-01.php
+Redirect 301 /12-01.php 						http://www.partadami.ru/shop/parta_bez_risunka/cyt14/parta_cyt14-01_so_stulom_cyt01-01.php
+Redirect 301 /12-02.php 						http://www.partadami.ru/shop/parta_bez_risunka/cyt14/parta_cyt14-02_so_stulom_cyt01-01.php
+Redirect 301 /11-04.php 						http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-04_so_stulom_cyt01-01.php
+Redirect 301 /14-01r.php						http://www.partadami.ru/shop/parta_s_risunkom/cyt14/parta_cyt14-01r_so_stulom_cyt01-01.php
+Redirect 301 /14-01.php							http://www.partadami.ru/shop/parta_bez_risunka/cyt14/parta_cyt14-01_so_stulom_cyt01-01.php
+Redirect 301 /14-02.php 						http://www.partadami.ru/shop/parta_bez_risunka/cyt14/parta_cyt14-02_so_stulom_cyt01-01.php
+Redirect 301 /15-04.php 						http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-04_so_stulom_cyt01-01.php
+Redirect 301 /shop/14.php 						http://www.partadami.ru/shop/parta_bez_risunka/cyt14/parta_cyt14_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_so_stulom_demi.php		http://www.partadami.ru/shop/parta_bez_risunka/cyt14/
+Redirect 301 /shop/14-01.php 					http://www.partadami.ru/shop/parta_bez_risunka/cyt14/parta_cyt14-01_so_stulom_cyt01-01.php
+Redirect 301 /shop/14-02.php 					http://www.partadami.ru/shop/parta_bez_risunka/cyt14/parta_cyt14-02_so_stulom_cyt01-01.php
+Redirect 301 /shop/15.php 						http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15_so_stulom_cyt01-01.php
+Redirect 301 /shop/15-01.php 					http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-01_so_stulom_cyt01-01.php
+Redirect 301 /shop/15-02.php 					http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-02_so_stulom_cyt01-01.php
+Redirect 301 /15-03.php 						http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-03_so_stulom_cyt01-01.php
+Redirect 301 /shop/15-03.php 					http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-03_so_stulom_cyt01-01.php
+Redirect 301 /shop/15-04.php 					http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-04_so_stulom_cyt01-01.php
+Redirect 301 /shop/15-05.php 					http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-05_so_stulom_cyt01-01.php
+Redirect 301 /shop/17.php 						http://www.partadami.ru/shop/parta_bez_risunka/cyt17/parta_cyt17_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_bez_risunka/17-03-k.php http://www.partadami.ru/shop/parta_bez_risunka/cyt17/parta_cyt17-03-k_so_stulom_cyt01-01.php
+Redirect 301 /shop/17-04.php 					http://www.partadami.ru/shop/parta_bez_risunka/cyt17/parta_cyt17-04_so_stulom_cyt01-01.php
+Redirect 301 /shop/party_s_risunkom_demi.php	http://www.partadami.ru/shop/parta_s_risunkom/
+Redirect 301 /shop/14-01flow.php				http://www.partadami.ru/shop/parta_s_risunkom/cyt14/parta_cyt14-01r_so_stulom_cyt01.php
+Redirect 301 /shop/14-02freg.php				http://www.partadami.ru/shop/parta_s_risunkom/cyt14/parta_cyt14-02r_so_stulom_cyt01.php
+Redirect 301 /shop/15-04freg.php				http://www.partadami.ru/shop/parta_s_risunkom/cyt14/parta_cyt14r_so_stulom_cyt01.php
+Redirect 301 /shop/tumby_i_stellazhi_demi.php	http://www.partadami.ru/shop/tumby_i_stellazhi/
+Redirect 301 /shop/tyv01.php					http://www.partadami.ru/shop/tumby_i_stellazhi/tyv01.php
+Redirect 301 /shop/tyv01r.php					http://www.partadami.ru/shop/tumby_i_stellazhi/tyv01r.php
+Redirect 301 /shop/tyv02.php					http://www.partadami.ru/shop/tumby_i_stellazhi/tyv02.php
+Redirect 301 /shop/tyv02r.php					http://www.partadami.ru/shop/tumby_i_stellazhi/tyv02r.php
+Redirect 301 /shop/stenka.php					http://www.partadami.ru/shop/tumby_i_stellazhi/cmd04-01.php
+Redirect 301 /shop/ergonomichnyj_stul_demi.php	http://www.partadami.ru/shop/ergonomichnyj_stul/
+Redirect 301 /shop/cyt01.php					http://www.partadami.ru/shop/ergonomichnyj_stul/stul_dami_cyt01.php
+Redirect 301 /shop/cyt02.php					http://www.partadami.ru/shop/ergonomichnyj_stul/stul_dami_cyt02.php
+Redirect 301 /shop/cyt03.php					http://www.partadami.ru/shop/ergonomichnyj_stul/chehol_na_stul_oxford.php
+Redirect 301 /shop/cyt04.php					http://www.partadami.ru/shop/ergonomichnyj_stul/chehol_na_stul_zamsha.php
+Redirect 301 /shop/lbc01.php					http://www.partadami.ru/shop/ergonomichnyj_stul/
+Redirect 301 /shop/dopolnitelnye_elementy.php	http://www.partadami.ru/shop/dopolnitelnye_elementy/
+Redirect 301 /shop/dop1.php						http://www.partadami.ru/shop/dopolnitelnye_elementy/dop1.php
+Redirect 301 /shop/dop2.php						http://www.partadami.ru/shop/dopolnitelnye_elementy/dop2.php
+Redirect 301 /shop/dop3.php						http://www.partadami.ru/shop/dopolnitelnye_elementy/dop3.php
+Redirect 301 /shop/dop4.php						http://www.partadami.ru/shop/dopolnitelnye_elementy/dop4.php
+Redirect 301 /shop/dop5.php						http://www.partadami.ru/shop/dopolnitelnye_elementy/dop5.php
+Redirect 301 /shop/dop6.php						http://www.partadami.ru/shop/dopolnitelnye_elementy/dop6.php
+Redirect 301 /shop/dop7.php						http://www.partadami.ru/shop/dopolnitelnye_elementy/dop7.php
+Redirect 301 /shop/dop8.php						http://www.partadami.ru/shop/dopolnitelnye_elementy/dop8.php
+Redirect 301 /cat.php 							http://www.partadami.ru/shop/
+Redirect 301 /catalog.php 						http://www.partadami.ru/shop/
+Redirect 301 /cart.php 							http://www.partadami.ru/shop/shoppingcart.php
+Redirect 301 /shop/shoppingcart_kredit.php 		http://www.partadami.ru/shop/shoppingcart.php
+Redirect 301 /nnc.php 							http://www.partadami.ru/shop/dopolnitelnye_elementy/dop1.php
+Redirect 301 /price.php 						http://www.partadami.ru/shop/
+Redirect 301 /sborka.php 						http://www.partadami.ru/settingup.php
+Redirect 301 /shop/settingup.php 				http://www.partadami.ru/settingup.php
+Redirect 301 /shop/delivery.php 				http://www.partadami.ru/delivery.php
+Redirect 301 /shop.php 							http://www.partadami.ru/shop/
+Redirect 301 /stenka.php 						http://www.partadami.ru/shop/tumby_i_stellazhi/cmd04-01.php
+Redirect 301 /stul.php 							http://www.partadami.ru/shop/ergonomichnyj_stul/stul_dami_cyt01.php
+Redirect 301 /tyv.php 							http://www.partadami.ru/shop/tumby_i_stellazhi/
+Redirect 301 /stol.php 							http://www.partadami.ru/pismenny_stol.php
+Redirect 301 /shop/stol.php 					http://www.partadami.ru/pismenny_stol.php
+Redirect 301 /shop/parta_bez_risunka/pismennye_stoly.php 							http://www.partadami.ru/pismenny_stol.php
+Redirect 301 /shop/komp.php						http://www.partadami.ru/kompyuterniy-stol.php
+Redirect 301 /shop/kompyuterniy-stol.php		http://www.partadami.ru/kompyuterniy-stol.php
+Redirect 301 /notes/notes1.php					http://www.partadami.ru/notes/kak-pravilno-sidet-za-stolom.php
+Redirect 301 /notes/notes2.php					http://www.partadami.ru/notes/rebenok-i-kompjuter.php
+Redirect 301 /vibiraem-stul.php					http://www.partadami.ru/notes/vibiraem-stul.php
+
+Redirect 301 /shop/parta_so_stulom/				http://www.partadami.ru/shop/parta_bez_risunka/
+Redirect 301 /shop/parta_so_stulom/14.php		http://www.partadami.ru/shop/parta_bez_risunka/cyt14/parta_cyt14_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_so_stulom/14-01.php	http://www.partadami.ru/shop/parta_bez_risunka/cyt14/parta_cyt14-01_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_so_stulom/14-02.php	http://www.partadami.ru/shop/parta_bez_risunka/cyt14/parta_cyt14-02_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_so_stulom/15.php		http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_so_stulom/15-01.php	http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-01_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_so_stulom/15-02.php	http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-02_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_so_stulom/15-03.php	http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-03_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_so_stulom/15-04.php	http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-04_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_so_stulom/15-05.php	http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-05_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_so_stulom/17.php		http://www.partadami.ru/shop/parta_bez_risunka/cyt17/parta_cyt17_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_so_stulom/17-04.php	http://www.partadami.ru/shop/parta_bez_risunka/cyt17/parta_cyt17-04_so_stulom_cyt01-01.php
+
+Redirect 301 /shop/parta_bez_risunka/14.php		http://www.partadami.ru/shop/parta_bez_risunka/cyt14/parta_cyt14_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_bez_risunka/14-01.php	http://www.partadami.ru/shop/parta_bez_risunka/cyt14/parta_cyt14-01_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_bez_risunka/14-02.php	http://www.partadami.ru/shop/parta_bez_risunka/cyt14/parta_cyt14-02_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_bez_risunka/15.php		http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_bez_risunka/15-01.php	http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-01_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_bez_risunka/15-02.php	http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-02_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_bez_risunka/15-03.php	http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-03_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_bez_risunka/15-04.php	http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-04_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_bez_risunka/15-05.php	http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-05_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_bez_risunka/17.php		http://www.partadami.ru/shop/parta_bez_risunka/cyt17/parta_cyt17_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_bez_risunka/17-04.php	http://www.partadami.ru/shop/parta_bez_risunka/cyt17/parta_cyt17-04_so_stulom_cyt01-01.php
+
+Redirect 301 /shop/parta_iz_massiva/14m.php		http://www.partadami.ru/shop/parta_iz_massiva/parta_cyt14-12_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_iz_massiva/14-01m.php	http://www.partadami.ru/shop/parta_iz_massiva/parta_cyt14-12_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_iz_massiva/14-02m.php	http://www.partadami.ru/shop/parta_iz_massiva/parta_cyt14-12_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_iz_massiva/17m.php		http://www.partadami.ru/shop/parta_iz_massiva/parta_cyt17-14_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_iz_massiva/17-04m.php	http://www.partadami.ru/shop/parta_iz_massiva/parta_cyt17-15_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_iz_massiva/tyv01m.php	http://www.partadami.ru/shop/parta_iz_massiva/tyv01-11.php
+Redirect 301 /shop/parta_iz_massiva/14-10.php	http://www.partadami.ru/shop/parta_iz_massiva/parta_cyt14-10_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_iz_massiva/14-12.php	http://www.partadami.ru/shop/parta_iz_massiva/parta_cyt14-12_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_iz_massiva/17-14.php	http://www.partadami.ru/shop/parta_iz_massiva/parta_cyt17-14_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_iz_massiva/17-15.php	http://www.partadami.ru/shop/parta_iz_massiva/parta_cyt17-15_so_stulom_cyt01-01.php
+
+Redirect 301 /shop/parta_s_risunkom/14.php		http://www.partadami.ru/shop/parta_s_risunkom/cyt14/parta_cyt14r_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_s_risunkom/14r.php		http://www.partadami.ru/shop/parta_s_risunkom/cyt14/parta_cyt14r_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_s_risunkom/14-01r.php	http://www.partadami.ru/shop/parta_s_risunkom/cyt14/parta_cyt14-01r_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_s_risunkom/14-02r.php	http://www.partadami.ru/shop/parta_s_risunkom/cyt14/parta_cyt14-02r_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_s_risunkom/15-04r.php	http://www.partadami.ru/shop/parta_s_risunkom/cyt14/parta_cyt14-02r_so_stulom_cyt01-01.php
+
+Redirect 301 /shop/parta_s_risunkom/bez_stula/parta_cyt14r.php							http://www.partadami.ru/shop/parta_s_risunkom/cyt14/bez_stula/parta_cyt14r.php
+Redirect 301 /shop/parta_s_risunkom/parta_cyt14-01r_so_stulom_cyt01.php					http://www.partadami.ru/shop/parta_s_risunkom/cyt14/parta_cyt14-01r_so_stulom_cyt01.php
+Redirect 301 /shop/parta_s_risunkom/parta_cyt14-01r-k_so_stulom_cyt01.php 				http://www.partadami.ru/shop/parta_s_risunkom/cyt14/parta_cyt14-01r_so_stulom_cyt01.php
+Redirect 301 /shop/parta_s_risunkom/parta_cyt14-01r-d_so_stulom_cyt01.php 				http://www.partadami.ru/shop/parta_s_risunkom/cyt14/parta_cyt14-01r_so_stulom_cyt01.php
+Redirect 301 /shop/parta_s_risunkom/parta_cyt14-02r_so_stulom_cyt01.php 				http://www.partadami.ru/shop/parta_s_risunkom/cyt14/parta_cyt14-02r_so_stulom_cyt01.php
+Redirect 301 /shop/parta_s_risunkom/parta_cyt14-02r-d_so_stulom_cyt01.php 				http://www.partadami.ru/shop/parta_s_risunkom/cyt14/parta_cyt14-02r-d_so_stulom_cyt01.php
+
+Redirect 301 /shop/parta_s_risunkom/so_stulom/parta_cyt14-02r_so_stulom_cyt01-01.php  	http://www.partadami.ru/shop/parta_s_risunkom/cyt14/so_stulom/parta_cyt14-02r_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_s_risunkom/so_stulom/parta_cyt14-01r_so_stulom_cyt01-01.php 	http://www.partadami.ru/shop/parta_s_risunkom/cyt14/so_stulom/parta_cyt14-01r_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_s_risunkom/bez_stula/parta_cyt14-02r.php						http://www.partadami.ru/shop/parta_s_risunkom/cyt14/bez_stula/parta_cyt14-02r.php
+Redirect 301 /shop/parta_bez_risunka//parta_cyt14-01_so_stulom_cyt01.php				http://www.partadami.ru/shop/parta_bez_risunka/cyt14/parta_cyt14-01_so_stulom_cyt01.php
+Redirect 301 /shop/parta_s_risunkom/parta_cyt14r_so_stulom_cyt01.php					http://www.partadami.ru/shop/parta_s_risunkom/cyt14/parta_cyt14r_so_stulom_cyt01.php
+Redirect 301 /shop/parta_s_risunkom/so_stulom/parta_cyt14r_so_stulom_cyt01-01.php		http://www.partadami.ru/shop/parta_s_risunkom/cyt14/so_stulom/parta_cyt14r_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_bez_risunka//parta_cyt14-02_so_stulom_cyt01.php				http://www.partadami.ru/shop/parta_bez_risunka/cyt14/parta_cyt14-02_so_stulom_cyt01.php
+Redirect 301 /shop/parta_s_risunkom/bez_stula/parta_cyt14-01r.php						http://www.partadami.ru/shop/parta_s_risunkom/cyt14/bez_stula/parta_cyt14-01r.php
+
+Redirect 301 /shop/tumby_i_stellazhi/stenka.php	http://www.partadami.ru/shop/tumby_i_stellazhi/cmd04-01.php
+
+Redirect 301 /shop/ergonomichnyj_stul/cyt01.php		http://www.partadami.ru/shop/ergonomichnyj_stul/stul_dami_cyt02.php
+Redirect 301 /shop/ergonomichnyj_stul/cyt02.php		http://www.partadami.ru/shop/ergonomichnyj_stul/stul_dami_cyt02.php
+Redirect 301 /shop/ergonomichnyj_stul/stul_dami_cyt02-01.php	http://www.partadami.ru/shop/ergonomichnyj_stul/stul_dami_cyt02.php
+Redirect 301 /shop/ergonomichnyj_stul/cyt03.php		http://www.partadami.ru/shop/ergonomichnyj_stul/chehol_na_stul_oxford.php
+Redirect 301 /shop/ergonomichnyj_stul/cyt04.php		http://www.partadami.ru/shop/ergonomichnyj_stul/chehol_na_stul_zamsha.php
+
+Redirect 301 /shop/new.php						http://www.partadami.ru/shop/new/
+Redirect 301 /shop/sale/						http://www.partadami.ru/akcia/
+Redirect 301 /akcia.php							http://www.partadami.ru/akcia/
+Redirect 301 /shop/ergonomichnyj_stul/lbc01.php	http://www.partadami.ru/shop/ergonomichnyj_stul/detskoe_kreslo_fundesk_sst6.php
+Redirect 301 /shop/parta_bez_risunka/cyt21/bez_stula/parta_cyt21.php		http://www.partadami.ru/shop/parta_bez_risunka/cyt28/bez_stula/parta_cyt28.php
+Redirect 301 /shop/parta_bez_risunka/cyt21/parta_cyt21_so_stulom_cyt01.php	http://www.partadami.ru/shop/parta_bez_risunka/cyt28/parta_cyt28_so_stulom_cyt01-01.php
+Redirect 301 /shop/parta_bez_risunka/cyt21/									http://www.partadami.ru/shop/parta_bez_risunka/cyt28/
+
+Redirect 301 /shop/ergonomichnyj_stul/detskoe_kreslo_fundesk_sst2.php		http://www.partadami.ru/shop/fundesk/detskoe_kreslo_fundesk_sst2.php
+Redirect 301 /shop/ergonomichnyj_stul/detskoe_kreslo_fundesk_sst6.php		http://www.partadami.ru/shop/fundesk/detskoe_kreslo_fundesk_sst6.php
+
+
+
+
+#Редирект на СУТ.01-01
+
+RewriteRule ^(.*)parta_bez_risunka/cyt13/so_stulom(.*)$ 						http://www.partadami.ru/shop/parta_bez_risunka/cyt13$2 [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_bez_risunka/cyt14/so_stulom(.*)$ 						http://www.partadami.ru/shop/parta_bez_risunka/cyt14$2 [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_bez_risunka/cyt15/so_stulom(.*)$ 						http://www.partadami.ru/shop/parta_bez_risunka/cyt15$2 [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_bez_risunka/cyt17/so_stulom(.*)$ 						http://www.partadami.ru/shop/parta_bez_risunka/cyt17$2 [QSA,L,R=301,NC]
+
+#СУТ13
+RewriteRule ^(.*)parta_cyt13_so_stulom_cyt01.php(.*)$ 			http://www.partadami.ru/shop/parta_bez_risunka/cyt13/parta_cyt13_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt13-01_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_bez_risunka/cyt13/parta_cyt13-01_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt13-01-d_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_bez_risunka/cyt13/parta_cyt13-01-d_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+
+#СУТ14
+RewriteRule ^(.*)parta_cyt14_so_stulom_cyt01.php(.*)$ 			http://www.partadami.ru/shop/parta_bez_risunka/cyt14/parta_cyt14_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt14-01_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_bez_risunka/cyt14/parta_cyt14-01_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt14-01-k_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_bez_risunka/cyt14/parta_cyt14-01-k_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt14-01-d_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_bez_risunka/cyt14/parta_cyt14-01-d_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt14-02_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_bez_risunka/cyt14/parta_cyt14-02_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt14-02-d_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_bez_risunka/cyt14/parta_cyt14-02-d_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+
+RewriteRule ^(.*)parta_cyt14-01_so_stulom.php(.*)$ 				http://www.partadami.ru/shop/parta_bez_risunka/cyt14/parta_cyt14-01_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+
+#СУТ15
+RewriteRule ^(.*)parta_cyt15_so_stulom_cyt01.php(.*)$ 			http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt15-01_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-01_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt15-01-k_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-01-k_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt15-01-d1_so_stulom_cyt01.php(.*)$ 	http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-01-d1_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt15-01-d2_so_stulom_cyt01.php(.*)$ 	http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-01-d2_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt15-02_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-02_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt15-02-d1_so_stulom_cyt01.php(.*)$ 	http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-02-d1_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt15-02-d2_so_stulom_cyt01.php(.*)$ 	http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-02-d2_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt15-03_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-03_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt15-03-k_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-03-k_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt15-04_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-04_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt15-04-d1_so_stulom_cyt01.php(.*)$ 	http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-04-d1_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt15-04-d2_so_stulom_cyt01.php(.*)$ 	http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-04-d2_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt15-05_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-05_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt15-05-d1_so_stulom_cyt01.php(.*)$ 	http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-05-d1_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt15-05-d2_so_stulom_cyt01.php(.*)$ 	http://www.partadami.ru/shop/parta_bez_risunka/cyt15/parta_cyt15-05-d2_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+
+#СУТ17
+RewriteRule ^(.*)parta_cyt17_so_stulom_cyt01.php(.*)$ 			http://www.partadami.ru/shop/parta_bez_risunka/cyt17/parta_cyt17_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt17-01_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_bez_risunka/cyt17/parta_cyt17-01_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt17-01-k_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_bez_risunka/cyt17/parta_cyt17-01-k_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt17-01-d1_so_stulom_cyt01.php(.*)$ 	http://www.partadami.ru/shop/parta_bez_risunka/cyt17/parta_cyt17-01-d1_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt17-01-d2_so_stulom_cyt01.php(.*)$ 	http://www.partadami.ru/shop/parta_bez_risunka/cyt17/parta_cyt17-01-d2_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt17-02_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_bez_risunka/cyt17/parta_cyt17-02_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt17-02-d1_so_stulom_cyt01.php(.*)$ 	http://www.partadami.ru/shop/parta_bez_risunka/cyt17/parta_cyt17-02-d1_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt17-02-d2_so_stulom_cyt01.php(.*)$ 	http://www.partadami.ru/shop/parta_bez_risunka/cyt17/parta_cyt17-02-d2_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt17-03_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_bez_risunka/cyt17/parta_cyt17-03_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt17-03-k_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_bez_risunka/cyt17/parta_cyt17-03-k_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt17-04_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_bez_risunka/cyt17/parta_cyt17-04_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt17-04-d1_so_stulom_cyt01.php(.*)$ 	http://www.partadami.ru/shop/parta_bez_risunka/cyt17/parta_cyt17-04-d1_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt17-04-d2_so_stulom_cyt01.php(.*)$ 	http://www.partadami.ru/shop/parta_bez_risunka/cyt17/parta_cyt17-04-d2_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt17-05_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_bez_risunka/cyt17/parta_cyt17-05_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt17-05-d1_so_stulom_cyt01.php(.*)$ 	http://www.partadami.ru/shop/parta_bez_risunka/cyt17/parta_cyt17-05-d1_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt17-05-d2_so_stulom_cyt01.php(.*)$ 	http://www.partadami.ru/shop/parta_bez_risunka/cyt17/parta_cyt17-05-d2_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+
+
+
+#C рисунком
+RewriteRule ^(.*)parta_s_risunkom/cyt14/so_stulom(.*)$ 						http://www.partadami.ru/shop/parta_s_risunkom/cyt14$2 [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_s_risunkom/cyt17/so_stulom(.*)$ 						http://www.partadami.ru/shop/parta_s_risunkom/cyt17$2 [QSA,L,R=301,NC]
+
+#СУТ14P
+RewriteRule ^(.*)parta_cyt14r_so_stulom_cyt01.php(.*)$ 			http://www.partadami.ru/shop/parta_s_risunkom/cyt14/parta_cyt14r_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt14-01r_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_s_risunkom/cyt14/parta_cyt14-01r_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt14-01r-k_so_stulom_cyt01.php(.*)$ 	http://www.partadami.ru/shop/parta_s_risunkom/cyt14/parta_cyt14-01r-k_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt14-01r-d_so_stulom_cyt01.php(.*)$ 	http://www.partadami.ru/shop/parta_s_risunkom/cyt14/parta_cyt14-01r-d_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt14-02r_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_s_risunkom/cyt14/parta_cyt14-02r_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt14-02r-d_so_stulom_cyt01.php(.*)$ 	http://www.partadami.ru/shop/parta_s_risunkom/cyt14/parta_cyt14-02r-d_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+
+
+#СУТ17P
+RewriteRule ^(.*)parta_cyt17-03r_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_s_risunkom/cyt17/parta_cyt17-03r_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt17-03r-k_so_stulom_cyt01.php(.*)$ 	http://www.partadami.ru/shop/parta_s_risunkom/cyt17/parta_cyt17-03r-k_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt17-04r_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_s_risunkom/cyt17/parta_cyt17-04r_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt17-04r-d1_so_stulom_cyt01.php(.*)$ 	http://www.partadami.ru/shop/parta_s_risunkom/cyt17/parta_cyt17-04r-d1_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt17-04r-d2_so_stulom_cyt01.php(.*)$ 	http://www.partadami.ru/shop/parta_s_risunkom/cyt17/parta_cyt17-04r-d2_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt17-05r_so_stulom_cyt01.php(.*)$ 		http://www.partadami.ru/shop/parta_s_risunkom/cyt17/parta_cyt17-05r_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt17-05r-d1_so_stulom_cyt01.php(.*)$ 	http://www.partadami.ru/shop/parta_s_risunkom/cyt17/parta_cyt17-05r-d1_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+RewriteRule ^(.*)parta_cyt17-05r-d2_so_stulom_cyt01.php(.*)$ 	http://www.partadami.ru/shop/parta_s_risunkom/cyt17/parta_cyt17-05r-d2_so_stulom_cyt01-01.php [QSA,L,R=301,NC]
+
+#GDE_KUPIT
+RewriteRule ^gde_kupit/anapa.php 						http://www.partadami.ru/gde_kupit/ [L,R=301]
+RewriteRule ^gde_kupit/armawir.php 						http://www.partadami.ru/gde_kupit/ [L,R=301]
+RewriteRule ^gde_kupit/astrakhan.php 					http://www.partadami.ru/gde_kupit/ [L,R=301]
+RewriteRule ^gde_kupit/engels.php 						http://www.partadami.ru/gde_kupit/ [L,R=301]
+RewriteRule ^gde_kupit/gelendzhik.php 					http://www.partadami.ru/gde_kupit/ [L,R=301]
+RewriteRule ^gde_kupit/korenovsk.php 					http://www.partadami.ru/gde_kupit/ [L,R=301]
+RewriteRule ^gde_kupit/krasnodar.php 					http://www.partadami.ru/gde_kupit/ [L,R=301]
+RewriteRule ^gde_kupit/map.php							http://www.partadami.ru/gde_kupit/ [L,R=301]
+RewriteRule ^gde_kupit/maykop.php 						http://www.partadami.ru/gde_kupit/ [L,R=301]
+RewriteRule ^gde_kupit/nalchik.php						http://www.partadami.ru/gde_kupit/ [L,R=301]
+RewriteRule ^gde_kupit/novoross.php						http://www.partadami.ru/gde_kupit/ [L,R=301]
+RewriteRule ^gde_kupit/pyatigorsk.php					http://www.partadami.ru/gde_kupit/ [L,R=301]
+RewriteRule ^gde_kupit/saratov.php						http://www.partadami.ru/gde_kupit/ [L,R=301]
+RewriteRule ^gde_kupit/simferopol.php					http://www.partadami.ru/gde_kupit/ [L,R=301]
+RewriteRule ^gde_kupit/sochi.php						http://www.partadami.ru/gde_kupit/ [L,R=301]
+RewriteRule ^gde_kupit/stavropol.php					http://www.partadami.ru/gde_kupit/ [L,R=301]
+RewriteRule ^gde_kupit/stavropol_zheleznovodsk.php		http://www.partadami.ru/gde_kupit/ [L,R=301]
+RewriteRule ^gde_kupit/stavropolgeorg.php				http://www.partadami.ru/gde_kupit/ [L,R=301]
+RewriteRule ^gde_kupit/tihoreck.php						http://www.partadami.ru/gde_kupit/ [L,R=301]
+RewriteRule ^gde_kupit/ust-labinsk.php					http://www.partadami.ru/gde_kupit/ [L,R=301]
+RewriteRule ^gde_kupit/vladikavkaz.php					http://www.partadami.ru/gde_kupit/ [L,R=301]
+RewriteRule ^gde_kupit/volgograd.php					http://www.partadami.ru/gde_kupit/ [L,R=301]
+RewriteRule ^gde_kupit/volgskyi.php						http://www.partadami.ru/gde_kupit/ [L,R=301]
+
+
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+</IfModule>
+ ## USER IP BANNING
+<Limit GET POST>
+ order allow,deny
+ deny from  31.180.170.107
+ deny from 188.143.232.22
+ deny from 188.143.232.35
+ deny from 85.115.248.19
+ deny from 157.253.237.13
+ deny from 62.210.78.179
+ deny from 95.215.46.196
+ deny from 54.211.239.16
+ deny from 54.205.13.1
+ deny from 54.91.158.75
+ deny from 54.162.148.190
+ deny from 54.159.2.99
+ deny from 54.163.166.17
+ deny from 54.163.178.227
+ deny from 54.147.150.179
+ deny from 107.22.42.78
+ deny from 54.144.4.138
+ deny from 54.159.157.80
+ deny from 107.21.169.97
+ deny from 107.21.148.47
+ deny from  95.79.11.112
+ deny from  5.141.122.141
+ deny from  83.69.0.24
+ deny from  95.153.135.238
+ deny from  46.161.9.39
+ deny from  178.76.243.0
+ deny from  128.68.24.87
+ deny from  2.92.198.208
+ deny from  23.95.191.126
+ deny from  5.188.210.18
+ deny from 195.91.231.92
+ deny from 195.9.64.82
+ allow from all
+</Limit>
