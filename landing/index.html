@@ -2,8 +2,8 @@
 <html lang="ru">
 <head>
 	<meta charset="utf-8">
-	<title>Templates</title>
-	<meta name="description" content="">
+	<title>Разработка сайтов под ключ, Wordpress, CRM</title>
+	<meta name="description" content="Привет! Я Игорь, я занимаюсь версткой и разработкой сайтов под ключ. Портфолио офигенное!">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -22,18 +22,13 @@
 			opacity: 0;
 			overflow-x: hidden;
 		}
-	
-		html {
-			background-color: #fff;
-		}
 	</style>
 </head>
 
 <body>
-	<nav class="navbar fixed-top navbar-expand-md">
+	<nav class="navbar is-home fixed-top navbar-expand-md">
 		<div class="container">
 			<a class="navbar-brand" href="#">
-				<img src="https://getbootstrap.com/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
 				{КИ}
 			</a>
 		
@@ -44,42 +39,38 @@
 			
 			<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
+					<li class="nav-item">
+						<a class="nav-link line-hover" href="/#header">Главная</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">О компании</a>
+						<a class="nav-link line-hover" href="/#steps">Этапы работ</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Виды работ</a>
+						<a class="nav-link line-hover" href="/#portfolio">Портфолио</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Портфолио</a>
+						<a class="nav-link line-hover" href="/#price">Цены</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Контакты</a>
+						<a class="nav-link line-hover" href="/#footer">Контакты</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#"><button class="btn btn-white">Заказать звонок</button></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#"><button class="btn btn-white"><i class="fab fa-whatsapp"></i> Написать в Whatsapp</button></a>
+						<a class="nav-link" href="#"><button class="btn btn-outline-success"><i class="fab fa-whatsapp"></i> Написать в Whatsapp</button></a>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<header class="header">
-		
-			<h1>Создание сайтов под ключ</h1>
-		
+	<header class="header" id="header">
+			<h1>Разработка сайтов под ключ</h1>
+			<p>Landing page, Wordpress, CRM, Интернет-магазины</p>
 	</header>
 
-	<section class="steps">
+	<section class="steps" id="steps">
 		<div class="container">
 			<div class="introHolder wow bounceIn">
 				<h2 class="liner">
-					Этапы создания Landing Page
+					Этапы разработки сайта
 				</h2>
 			</div>
 			<div class="row">
@@ -164,10 +155,44 @@
 		</div>
 	</section>
 
-	<section class="price">
+	<section class="portfolio" id="portfolio">
+		<div class="container">
+			<div class="introHolder wow fadeInUp">
+				<h2 class="liner">Портфолио</h2>
+			</div>
+			<div class="row">
+				<div class="col-md-4 wow fadeInUp">
+					<h4 class="the_title">РДМ, загородное строительство</h4>
+					<a href="/portfolio/landing-page/remontdomov-msk.html"><img src="img/portfolio/remontdomov-msk.jpg" alt="Разработка сайта для строительной компании"></a>
+				</div>
+				<div class="col-md-4 wow fadeInUp">
+					<h4 class="the_title">Сайт начинающего инвестора</h4>
+					<a href=""><img src="img/portfolio/goodservices.jpg" alt="Информационный сайт на Wordpress"></a>
+				</div>
+				<div class="col-md-4 wow fadeInUp">
+					<h4 class="the_title">Система учета клиентов CRM</h4>
+					<a href=""><img src="img/portfolio/crm.jpg" alt="Система учета клиентов CRM"></a>
+				</div>
+
+				<div class="col-md-4 wow fadeInUp">
+					<h4 class="the_title">OK-HALL, дизайн проекты</h4>
+					<a href="/portfolio/landing-page/ok-hall.html"><img src="img/portfolio/ok-hall.jpg" alt="Разработка Landing page для студии дизайна интерьеров"></a>
+				</div>
+				<div class="col-md-4 wow fadeInUp">
+					<h4 class="the_title">ДЭМИ, детская мебель</h4>
+					<a href=""><img src="img/portfolio/goodservices.jpg" alt="Информационный сайт на Wordpress"></a>
+				</div>
+				<div class="col-md-4 wow fadeInUp">
+					<h4 class="the_title">Автонакидки, интернет магазин</h4>
+					<a href=""><img src="img/portfolio/crm.jpg" alt="Система учета клиентов CRM"></a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="price" id="price">
 		<div class="container">
 			<div class="introHolder wow fadeInDown">
-				<h2 class="liner">Стоимость Landing Page</h2>
+				<h2 class="liner">Стоимость разработки</h2>
 			</div>
 			<div class="row">
 				<div class="col-md-8 wow fadeInLeft">
@@ -176,16 +201,10 @@
 				<div class="col-md-4 right wow fadeInRight">
 					<div class="price__block">
 						<p>
-							Цена: <b>от 7 000 р.</b>
+							Цена: <b>от 15 000 р.</b>
 						</p>
 						<p>
-							Сроки: <b>15 - 30 дней</b>
-						</p>
-						<p>
-							Конверсия: <b>15 - 20%</b>
-						</p>
-						<p>
-							Окупаемость: <b>1 месяц</b>
+							Сроки: <b>от 7 дней</b>
 						</p>
 					</div>
 					<a href="#" class="btn btn-accent">Заказать лендинг</a>
@@ -210,42 +229,20 @@
 	<script src="js/wow/wow.js"></script>
 	<script src="js/script.js"></script>
 	<script>
-		
-		new WOW().init();
+	const anchors = document.querySelectorAll('.nav-link');
+	for (let anchor of anchors) {
+		anchor.addEventListener('click', function (e) {
+			e.preventDefault()
+			let block = anchor.getAttribute('href');
 
-		$(window).on('scroll', function () {
-				// remove any existing active
-				$('.active').removeClass("active");
-
-				// change bg color of active section
-				$('.navbar').addClass("active");
-
-				// change bg color of navbar
-				$(".navbar").addClass("active");
-
-			});
-
-			$(window).scroll(function () {
-				/* remove style on scroll back to top */
-				if ($(document).scrollTop() < 60) {
-					$('.navbar').removeClass('active');
-				}
-			});
-
-$(function() {
-
-		if ($(window).width() < '650') {
-			var classesOfInterest = '';
-			for (var i = 1; i <= 10; i++)
-				classesOfInterest += ' ' + 'ddelay-' + i + 's';
-			$('.steps .bounceIn').removeClass(classesOfInterest);
-			$('.steps .fadeInUp').removeClass('ddelay-10s');
-		}
+			const blockID = block.replace('/','');
 			
-
-			
-});
-	</script>
-
+			document.querySelector('' + blockID).scrollIntoView({
+			behavior: 'smooth',
+			block: 'start'
+			})
+		})
+	}
+</script>
 </body>
 </html>

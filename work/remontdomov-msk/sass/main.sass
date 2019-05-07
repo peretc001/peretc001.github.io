@@ -1,0 +1,333 @@
+@import "vars"
+
+::placeholder
+	color: #666
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.4
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	opacity: 0
+.container
+	position: relative
+
+a,
+a:hover
+	text-decoration: none
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+.h2_title
+	position: relative
+	margin: 0 auto 1.5em auto
+	font-size: 1.8em
+	text-align: center
+	font-weight: bold
+	text-transform: uppercase
+	&:after
+		content: ''
+		position: absolute
+		left: 50%
+		bottom: -.5em
+		transform: translateX(-50%)
+		width: 100px
+		height: 2px
+		background: $accent
+		display: block
+.h2_title.title_white
+	&:after
+		background: #ffffff
+.h2_title.title_black
+	&:after
+		background: $text
+.btn
+	margin: 0
+	color: #fff
+	padding: .375em 1.5em
+	min-width: 150px
+	&.btn-accent
+		background: $accent
+		color: #ffffff
+		border: transparent
+		&:hover
+			background: $accent-hover
+	&.btn-outline-accent
+		background: transparent
+		color: #ffffff
+		border: 1px solid $accent
+		color: $accent
+		&:hover
+			background: $accent
+			color: #fff
+	&.btn-outline-dark
+		background: transparent
+		color: $text
+		border: 1px solid $text
+		color: $text
+		&:hover
+			background: $text
+			color: #fff
+	.fab
+		margin-right: .5em
+.btn:disabled.btn-accent
+	background: $silver
+	color: $text
+
+.img_wrapper
+	position: relative
+	padding-top: 56.25%
+	width: 100%
+	margin: 1em auto
+	overflow: hidden
+	img
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: auto
+	span
+		position: absolute
+		left: 0
+		top: 10px
+		padding: 0
+		margin: 0
+		z-index: 2
+		&:before
+			content: ''
+			position: absolute
+			left: 0
+			top: 0
+			width: 100%
+			height: 100%
+			background: $accent
+			opacity: .7
+		i
+			font-style: normal
+			color: #ffffff
+			position: relative
+			display: block
+			padding: .5em 1em
+
+.policy__checked
+	display: flex
+	align-items: center
+	justify-content: flex-start
+	margin: 0 0 0 2em
+	.radio
+		padding: 0
+		margin: 0
+		input[type=checkbox]
+			display: none
+		label
+			color: $silver
+			margin-bottom: 0
+			display: inline-block
+			cursor: pointer
+			position: relative
+			padding: 0 !important
+			font-size: .8em !important
+			line-height: 1 !important
+			-ms-user-select: none
+			-moz-user-select: none
+			-khtml-user-select: none
+			-webkit-user-select: none
+			&:before
+				content: "\f0c8"
+				font-family: 'Font Awesome 5 Free'
+				position: absolute
+				left: -1.5em
+				top: 50%
+				transform: translateY(-50%)
+				color: $silver
+				font-weight: normal
+		input[type=checkbox]:checked + label:before
+			content: '\f14a'
+			font-family: 'Font Awesome 5 Free'
+			color: $silver
+			font-weight: normal
+		a
+			font-size: .8em !important
+			color: $silver
+			text-decoration: underline
+
+.robot
+	display: flex
+	align-items: center
+	justify-content: flex-start
+	padding: 20px 0
+	.circle-loader
+		cursor: pointer
+		margin: 0 10px
+		border: 1px solid rgba(255, 255, 255, 0.2)
+		border-color: #5cb85c
+		position: relative
+		display: block
+		vertical-align: top
+		border-radius: 0
+		width: 1.5em
+		height: 1.5em
+		&.load-complete
+			-webkit-animation: none
+			animation: none
+			border-color: #5cb85c
+			transition: border 500ms ease-out
+		.checkmark
+			display: none
+			&.draw:after
+				animation-duration: 800ms
+				animation-timing-function: ease
+				animation-name: checkmark
+				transform: scaleX(-1) rotate(135deg)
+			&:after
+				opacity: 1
+				height: 0.75em
+				width: 0.375em
+				transform-origin: left top
+				border-right: 3px solid #5cb85c
+				border-top: 3px solid #5cb85c
+				content: ''
+				left: 0.375em
+				top: 0.75em
+				position: absolute
+	span
+		color: $text
+.not_find
+	display: flex
+	flex-direction: column
+	justify-content: center
+	text-align: center
+	padding-top: 100px
+	h1
+		font-size: 10em
+		color: $silver
+		font-family: 'Dosis', sans-serif
+	.btn
+		margin: 1em auto
+		max-width: 8em
+		&.btn-outline-accent
+			color: $silver
+			background-color: transparent
+			background-image: none
+			border-color: $silver
+			&:hover
+				background-color: $silver
+				color: #ffffff
+.breadcrumbs
+	padding: 10px 0
+	color: $silver
+	font-size: 0.8em
+
+.toTop
+	position: fixed
+	display: none
+	right: 15px
+	bottom: 15px
+	.far
+		color: #888
+		opacity: .6
+		font-size: 2em
+		cursor: pointer
+		&:hover
+			opacity: 1
+
+@import "nav"
+@import "header"
+@import "advantages"
+@import "icons"
+@import "price"
+@import "portfolio"
+@import "steps"
+@import "review"
+@import "news"
+@import "footer"
+@import "modal"
+
+@import "single"
+@import "category"
+//Wordpress
+.alignnone
+    margin: 5px 20px 20px 0
+
+.aligncenter,
+div.aligncenter
+    display: block
+    margin: 5px auto 5px auto
+
+.alignright
+    float: right
+    margin: 5px 0 20px 20px
+
+.alignleft
+    float: left
+    margin: 5px 20px 20px 0
+
+.aligncenter
+    display: block
+    margin: 5px auto 5px auto
+
+a img.alignright
+    float: right
+    margin: 5px 0 20px 20px
+
+a img.alignnone
+    margin: 5px 20px 20px 0
+
+a img.alignleft
+    float: left
+    margin: 5px 20px 20px 0
+
+a img.aligncenter
+    display: block
+    margin-left: auto
+    margin-right: auto
+
+.wp-caption
+    background: #fff
+    border: 1px solid #f0f0f0
+    max-width: 96%
+    padding: 5px 3px 10px
+    text-align: center
+
+.wp-caption.alignnone
+    margin: 5px 20px 20px 0
+
+.wp-caption.alignleft
+    margin: 5px 20px 20px 0
+
+.wp-caption.alignright
+    margin: 5px 0 20px 20px
+
+.wp-caption img
+    border: 0 none
+    height: auto
+    margin: 0
+    max-width: 98.5%
+    padding: 0
+    width: auto
+.wp-caption p.wp-caption-text
+    font-size: 11px
+    line-height: 17px
+    margin: 0
+    padding: 0 4px 5px
+@media screen and (max-width: 767.98px)
+	.alignright,
+	.alignleft,
+	a img.alignright,
+	a img.alignleft
+		float: none
+		display: block
+	
+body
+	opacity: 1
+
+@media screen and (min-width: 1440px)
+	body
+		font-size: 18px
