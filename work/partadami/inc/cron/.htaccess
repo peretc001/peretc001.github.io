@@ -1,3 +1,0 @@
-# Open Rate
-RewriteEngine On
-RewriteRule ([[:alnum:]]+).png$ img.php?email=$1 [L]

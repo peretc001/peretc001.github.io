@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /adm/*
-Disallow: /YM*
-Sitemap: http://avtonakidki.net/sitemap.xml
-Host: avtonakidki.net
