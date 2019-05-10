@@ -20,7 +20,7 @@ get_header(); ?>
 			<!-- / end left -->
 
 			<div class="col-md-9 content-center order-1 order-md-12">
-				<div class="content-center-card">
+				<div class="content-center-card mb-4">
 					<h2>
 						<?php echo $cat_title = single_cat_title(); 
 							
@@ -28,12 +28,16 @@ get_header(); ?>
 							$current = $category->parent;
 						?>
 					</h2>
-					<p class="the_excerpt">
+					<div class="hide_description">
 						<?php 
 							$excerpt = term_description();
-							echo wp_trim_words( $excerpt , '40' ); 
+							#echo wp_trim_words( $excerpt , '40' ); 
+							echo $excerpt;
 						?>
-					</p>
+					</div>
+					<div class="text-center">
+						<a href="#" class="btn btn-outline-accent show_description">показать <i class="fas fa-angle-down"></i></a>
+					</div>
 				</div>
 				<?php
 					echo $cat_list = wp_list_categories(array('child_of' => get_query_var('cat'), 'style' => 'none', 'taxonomy' => 'category', 'hide_empty' => 0, 'show_option_none' => '', 'echo' => 0, 'walker' => new Walker_MY_Category ));
