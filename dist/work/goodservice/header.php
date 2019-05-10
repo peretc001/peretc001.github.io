@@ -48,7 +48,8 @@
 				</span>
 			</button>
 			<div class="first-line">
-				<a href="/" class="navbar-brand"><?php echo bloginfo('name'); ?></a>
+				<a href="/" class="navbar-brand d-none d-md-inline"><img src="<?php echo get_stylesheet_directory_uri() . '/img/logo.svg'; ?>" alt="<?php echo bloginfo('name'); ?>"></a>
+				<a href="/" class="navbar-brand d-md-none"><img src="<?php echo get_stylesheet_directory_uri() . '/img/logo_mobile.svg'; ?>" alt="<?php echo bloginfo('name'); ?>"></a>
 				<form role="search" method="get" id="searchform" action="/">
 					<div class="row no-gutters">
 						<div class="col">

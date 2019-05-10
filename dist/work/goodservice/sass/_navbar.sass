@@ -10,25 +10,18 @@
 		display: flex
 		flex-direction: row
 		justify-content: space-between
-		align-items: flex-end
+		align-items: center
 		width: 100%
+		padding-top: 0.5em
 		.navbar-brand
-			display: block
-			width: 100%
-			font-weight: 900
-			font-size: 2em
-			letter-spacing: -2px
-			color: $text
-			padding-left: .75rem
-			padding-top: .5em
-			&:hover, &:focus, &:active
-				color: $text
+			img
+				width: 20em
 
 	.navbar-collapse
 		justify-content: flex-start
 		width: 100%
 	.navbar-nav
-		padding: 1em 0
+		padding: .5em 0
 		width: 100%
 		flex-wrap: wrap
 		justify-content: space-between
@@ -77,8 +70,6 @@
 
 @media screen and (max-width: 991.98px)
 	.navbar
-		.navbar-brand
-			font-size: 1.6em
 		.navbar-collapse
 			.navbar-nav
 				justify-content: flex-start
@@ -101,17 +92,11 @@
 			.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
 				background-color: #fff
 		.first-line
+			padding: 0
 			width: auto
 			.navbar-brand
-				display: inline-block
-				width: auto
-				margin-left: auto
-				font-size: 1.2em
-				font-weight: bold
-				padding: 0
-				color: $white !important
-				&:hover
-					color: #fff
+				img
+					width: 15em
 			form
 				display: none
 		.navbar-collapse
@@ -127,7 +112,16 @@
 		display: flex
 		justify-content: center
 
+@media screen and (max-width: 576.98px)
+	.navbar
+		.first-line
+			.navbar-brand
+				img
+					width: 12em
+
 @media screen and (max-width: 374.98px)
 	.navbar
-		.navbar-brand
-			font-size: .9em
+		.first-line
+			.navbar-brand
+				img
+					width: 10em
