@@ -1,3 +1,14 @@
+<?php
+	//Вывод рекламного блока
+	$options = get_option( 'optimazedReklama_settings' ); 
+	if($options['footer']) { ?>
+	<section class="footer-banner">
+		<div class="container">
+		<?php echo $options['footer']; ?>
+		</div>
+	</section>
+<?php } ?>
+
 <footer class="footer">
     <div class="container">
         <div class="row">
@@ -39,6 +50,9 @@
                         <input id="policy_callback" type="checkbox" name="policy" checked required>
                         <label for="policy_callback">Согласен с условиями</label> <a href="/policy/" target="_blank">Политики конфиденциальности</a>
                     </div>
+                </div>
+                <div class="row author">
+                    <noindex>Разработка: <a href="https://peretc001.github.io/">{ КИ }</a></noindex>
                 </div>
                 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139610738-1"></script>

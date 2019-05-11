@@ -40,6 +40,14 @@ get_header(); ?>
 					</div>
 				</div>
 				<?php
+					//Вывод рекламного блока
+					$options = get_option( 'optimazedReklama_settings' ); 
+					if($options['single']) { ?>
+				<div class="content-center-banner">
+					<?php echo $options['single']; ?>
+				</div>
+				<?php }	?>
+				<?php
 					echo $cat_list = wp_list_categories(array('child_of' => get_query_var('cat'), 'style' => 'none', 'taxonomy' => 'category', 'hide_empty' => 0, 'show_option_none' => '', 'echo' => 0, 'walker' => new Walker_MY_Category ));
 				?>
 			
@@ -109,15 +117,6 @@ get_header(); ?>
 				<?php endif;
 				
 				} ?>
-			<?php
-				//Вывод рекламного блока по центру
-				$query = new WP_Query( array('page_id' => 108) );
-				while ( $query->have_posts() ) {
-					$query->the_post(); ?>
-				<div class="content-center-banner">
-					<?php the_content(); ?>
-				</div>
-			<?php }	?>
 				
 			</div>
 			<!-- / end center -->

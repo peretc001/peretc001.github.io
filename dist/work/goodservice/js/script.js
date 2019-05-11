@@ -23,4 +23,26 @@ jQuery(document).ready(function ($) {
 		$('body,html').animate({scrollTop:0},800);
   });
   
+  //Hide - show description
+	$('.show_description').click(function(e){
+		e.preventDefault();
+		$(this).toggleClass('active');
+		$('.hide_description').toggleClass('opener');
+		if (!$(this).data('status')) {
+			$(this).data('status', true).html('скрыть <i class="fas fa-angle-up"></i>');
+		} else {
+			$(this).data('status', false).html('показать <i class="fas fa-angle-down"></i>');
+		}
+	});
+
+	$('.lazy').Lazy({
+		scrollDirection: 'vertical',
+		effect: 'fadeIn',
+		visibleOnly: true,
+		onError: function(element) {
+			 console.log('error loading ' + element.data('src'));
+		}
+  	});
+
+
 });

@@ -1,0 +1,162 @@
+.navbar
+   padding: 0
+   margin: 0
+   flex-direction: column
+   margin-bottom: 1em
+   .container
+      position: relative
+   .navbar-first
+      padding-top: 2em
+      padding-bottom: 1em
+   .navbar-toggler
+      background: transparent
+      color: transparent
+      border: none
+      .hamburger-box
+         width: 28px
+         height: 16px
+      .hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
+         background-color: #ffffff
+         height: 2px
+         width: 28px
+      .hamburger-inner:before
+         width: 20px
+   
+   .navbar-brand
+      position: relative
+      color: $text
+      padding: 0
+      margin: 0
+      p
+         margin: 0
+         line-height: 1
+      &--title
+         position: relative
+         font-weight: bold
+         font-size: 1.1em
+         &:before
+            content: ''
+            position: absolute
+            left: -3px
+            top: -12px
+            background: url('../img/arrow.svg') left top no-repeat
+            background-size: 1em
+            width: 100%
+            height: 100%
+      &--description
+         color: $grey
+         font-size: 0.62em
+   
+   .navbar-whatsapp
+      padding-right: 1em
+      .fab
+         font-size: 2em
+         color: #ffffff
+   
+   .top-menu-link
+      color: $text
+      font-size: 1em
+      .fas, .fab
+         margin-right: 0.5em
+         color: $text
+         opacity: .6
+      &:hover
+         .fas, .fab
+            opacity: 1
+   .btn-success
+      font-size: 0.9em
+      .fab
+         margin-right: 0.5em
+
+   .navbar-collapse
+      background: $text
+      width: 100%
+      padding: 0
+      margin: 0
+      .navbar-nav
+         width: 100%
+         justify-content: space-around
+         align-items: center
+         .nav-item
+            color: #ffffff
+            font-size: 1em
+            font-weight: bold
+            text-transform: uppercase
+         .nav-link
+            display: block
+            color: #ffffff
+            text-align: center
+            font-size: .8em
+            font-weight: 700
+            text-transform: uppercase
+            transition: background .5s ease
+            padding: 1em
+            &:hover
+               opacity: .8
+               color: $accent
+
+
+@media screen and (max-width: 991.98px)
+   .navbar
+      .navbar-brand
+         &--title
+            font-size: .9em
+         &--description
+            font-size: 0.5em
+      .top-menu-link
+         font-size: .9em
+      .btn-success
+         font-size: 0.8em
+
+      .navbar-collapse
+         .navbar-nav
+            .nav-link
+               font-size: 0.7em
+
+@media screen and (max-width: 767.98px)
+   .navbar
+      background: $text
+      .navbar-first
+         padding-top: 0
+         padding-bottom: 0
+      .navbar-brand
+         color: #ffffff
+         font-size: 1.7em
+         padding-top: .2em
+         &--title
+            padding: 0 .1em
+            &:before
+               left: -1px
+               top: -10px
+         &--description
+            display: none
+
+      .navbar-collapse
+         .navbar-nav
+            width: 100%
+            padding-bottom: 1em
+            .nav-item
+               width: 100%
+               border-bottom: 1px solid rgba(#fff, .3)
+               &:last-child
+                  border-bottom: 0
+                  padding-bottom: 2em
+            .nav-link
+               color: #ffffff
+               display: block
+               font-size: .9em
+               padding: 1em
+               text-align: left
+               font-weight: normal
+               .fas, .fab
+                  margin-right: 0.5em
+                  font-weight: normal
+                  min-width: 1em
+                  text-align: center
+
+@media screen and (max-width: 374.98px)
+   .navbar
+      .navbar-collapse
+         .navbar-nav
+            .nav-link
+               font-size: 0.8em

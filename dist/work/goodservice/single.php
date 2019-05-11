@@ -67,13 +67,12 @@ get_header(); ?>
 
 			<?php endwhile; // End of the loop. ?>
 			<?php
-				//Вывод рекламного блока по центру
-				$query = new WP_Query( array('page_id' => 659) );
-				while ( $query->have_posts() ) {
-					$query->the_post(); ?>
-				<div class="content-center-banner">
-					<?php the_content(); ?>
-				</div>
+				//Вывод рекламного блока
+				$options = get_option( 'optimazedReklama_settings' ); 
+				if($options['single']) { ?>
+			<div class="content-center-banner">
+				<?php echo $options['single']; ?>
+			</div>
 			<?php }	?>
 			
 			<div class="content-center-block">

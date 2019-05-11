@@ -314,9 +314,9 @@ class Walker_MY_Category extends Walker_Category {
 		if($description) {
 			$output .= '<div class="row category_desc">';
 			if($id_images) {
-				$output .= '<div class="col-lg-4"><div class="img_wrapper">';
+				$output .= '<div class="col-lg-4"><div class="img_wrapper"><a href="'. esc_url( get_term_link( $category ) )  .'">';
 				$output .= wp_get_attachment_image($id_images, 'medium');
-				$output .= '</div></div>';
+				$output .= '</a></div></div>';
 			}
 			$output .= '<div class="col the_excerpt">';
 			$output .= wp_kses_data($description);

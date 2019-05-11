@@ -101,3 +101,14 @@
 		} ?>
 		</div>
 	</div>
+
+	<?php
+		//Вывод рекламного блока
+		$options = get_option( 'optimazedReklama_settings' ); 
+		if($options['header']) { ?>
+		<section class="header-banner">
+			<div class="container">
+			<?php echo $options['header']; ?>
+			</div>
+		</section>
+	<?php } ?>
