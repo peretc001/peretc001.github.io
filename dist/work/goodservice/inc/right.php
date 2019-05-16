@@ -19,11 +19,10 @@
 						<?php } ?>
 					</div>
 					<?php
-						//Вывод рекламного блока по центру
-						$query = new WP_Query( array('page_id' => 662) );
-						while ( $query->have_posts() ) {
-							$query->the_post(); ?>
+						//Вывод рекламного блока
+						$options = get_option( 'optimazedReklama_settings' ); 
+						if($options['right']) { ?>
 					<div class="content-right-banner">
-						<?php the_content(); ?>
+						<?php echo $options['right']; ?>
 					</div>
 					<?php }	?>

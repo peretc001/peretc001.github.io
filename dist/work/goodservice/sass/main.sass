@@ -59,6 +59,7 @@ h5
 	padding-top: 56.25%
 	width: 100%
 	overflow: hidden
+	margin-bottom: 1em
 	img
 		position: absolute
 		left: 0
@@ -79,16 +80,6 @@ b
 strong
 	font-weight: 900
 
-.content-center-banner
-	text-align: center
-	img
-		width: 100%
-		max-width: 468px !important
-.content-right-banner
-	text-align: center
-	img
-		width: 100%
-		max-width: 240px !important
 .not_find
 	display: flex
 	flex-direction: column
@@ -153,79 +144,8 @@ strong
 @import "search"
 @import "single"
 @import "footer"
+@import "wp"
 
-//Wordpress
-.alignnone
-    margin: 5px 20px 20px 0
-
-.aligncenter,
-div.aligncenter
-    display: block
-    margin: 5px auto 5px auto
-
-.alignright
-    float: right
-    margin: 5px 0 20px 20px
-
-.alignleft
-    float: left
-    margin: 5px 20px 20px 0
-
-.aligncenter
-    display: block
-    margin: 5px auto 5px auto
-
-a img.alignright
-    float: right
-    margin: 5px 0 20px 20px
-
-a img.alignnone
-    margin: 5px 20px 20px 0
-
-a img.alignleft
-    float: left
-    margin: 5px 20px 20px 0
-
-a img.aligncenter
-    display: block
-    margin-left: auto
-    margin-right: auto
-
-.wp-caption
-    background: #fff
-    border: 1px solid #f0f0f0
-    max-width: 96%
-    padding: 5px 3px 10px
-    text-align: center
-
-.wp-caption.alignnone
-    margin: 5px 20px 20px 0
-
-.wp-caption.alignleft
-    margin: 5px 20px 20px 0
-
-.wp-caption.alignright
-    margin: 5px 0 20px 20px
-
-.wp-caption img
-    border: 0 none
-    height: auto
-    margin: 0
-    max-width: 98.5%
-    padding: 0
-    width: auto
-.wp-caption p.wp-caption-text
-    font-size: 11px
-    line-height: 17px
-    margin: 0
-    padding: 0 4px 5px
-@media screen and (max-width: 767.98px)
-	.alignright,
-	.alignleft,
-	a img.alignright,
-	a img.alignleft
-		float: none
-		display: block
 .toTop
 	position: fixed
 	display: none
@@ -240,26 +160,45 @@ a img.aligncenter
 			opacity: 1
 
 .header-banner
+	overflow: hidden
 	display: block
 	margin: 0 auto
 	margin-bottom: 1em
 	img
 		max-width: 100%
 		margin: 0 auto
-.content-center-banner
+.content-left-banner,
+.content-right-banner,
+.yatag
+	overflow: hidden
 	display: block
-	margin: 1em auto
-	margin-bottom: 1em
+	margin: 1em auto !important
+	margin-bottom: 1em !important
+	text-align: center !important
+	max-width: 240px !important
 	img
 		max-width: 100%
 		margin: 0 auto
+.content-left-banner,
+.content-right-banner
+	background: #f2f2f2
+.content-center-banner
+	overflow: hidden
+	display: block
+	margin: 1em auto
+	margin-bottom: 1em
+	text-align: center
+	img
+		max-width: 100%
+		margin: 0 auto
+		text-align: center
 .footer-banner
+	overflow: hidden
 	display: block
 	margin: 0 auto
 	margin-top: 1em
 	img
 		max-width: 100%
 		margin: 0 auto
-
 body
 	opacity: 1

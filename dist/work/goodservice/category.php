@@ -58,22 +58,21 @@ get_header(); ?>
 				/* Start the Loop */
 				while ( have_posts() ) : the_post(); 
 					
-					$media = get_attached_media( 'image', $post->ID );
-					$media = array_shift( $media );
-					$image_url = $media->guid;
-
-					$category = get_the_category(); 
-					$cat__name = $category[0]->cat_name;
+					$img_id = get_post_thumbnail_id( $post->ID );
 				?>
 					<div class="content-center-card">
 						<h2>
 							<a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
 						</h2>
-						<p class="post-date">
-							
-						</p>
-						<a href="<?php echo get_permalink(); ?>"><img src="<?php echo $image_url; ?>"></a>
-						<p>
+						<?php if ($img_id) { ?>
+							<a href="<?php echo get_permalink(); ?>">
+								<div class="img_wrapper">
+									<img 	src="<?php echo wp_get_attachment_image_url( $img_id, 'medium' ) ?>"
+												srcset="<?php echo wp_get_attachment_image_srcset( $img_id, 'medium' ) ?>"
+												sizes="<?php echo wp_get_attachment_image_sizes( $img_id, 'medium' ) ?>" alt="<?php the_title(); ?>">
+								</div>
+							</a>
+						<?php } ?>
 						<p class="the_excerpt">
 							<?php $content = get_the_content();
 									echo wp_trim_words( $content, '40'); 

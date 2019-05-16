@@ -12,7 +12,7 @@
 						<div class="row">
 						<?php
 							//Новые записи
-							$query = new WP_Query( array( 'tag__not_in' => array(19,22), 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => 6 ) );
+							$query = new WP_Query( array( 'tag__not_in' => array(19,22), 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => 8 ) );
 							while ( $query->have_posts() ) {
 								$query->the_post();
 
@@ -63,7 +63,9 @@
 		</div>
 	</section>
 
-	<?php 
+<?php 
+	//Пиздец тут четр ногу сломит, сам удивляюсь как я это написал
+	//выводим список категорий по алфавиту
     $categories = get_categories( array(
 		'taxonomy'     => 'category',
 		'type'         => 'post',
@@ -73,35 +75,50 @@
 		'order'        => 'ASC',
 		'hide_empty'   => 1,
 		'hierarchical' => 1,
-		'exclude'      => '',
+		'exclude'      => '1',
 		'include'      => '',
 		'number'       => 0,
 		'pad_counts'   => false,
 	) );
-	
+	//Создаем функцию, которая по id Главной рубрики собирает id Подрубрик
+	function the_services_navigations($item){
+		// Получить данные рубрик, в том числе и без записей, у которых родительская рубрика с ID = 6
+		$cat_data = get_categories( array( 'parent' => $item, 'hide_empty' => 1 ) );
+		if ( $cat_data ) {
+		 $cat_links = '';
+		 foreach ( $cat_data as $one_cat_data) {
+			//Запихиваем id подрубрик в массив
+			$termid[] = $one_cat_data->term_id;
+		 }
+		 return $termid;
+		}
+	 }
+	//Если у нас есть категории
 	if( $categories ){
 		foreach( $categories as $cat ){
-			if($cat->category_parent || $cat->term_id == 1) {}
-			else {
-
-?>
-
+			//Если нет дочерних рубрик пропускае
+			if ($cat->category_parent) {}
+			else {					
+				//Выводим ту блядскую функцию, которая собирала id подрубрик
+				$cat_id = the_services_navigations($cat->term_id);
+				//Если подрубрики есть нихуя не делаем
+				if($cat_id != null) {}
+				//Если нет, ТОГДА это Родительская рубрика, присваиваем ее id
+				else {
+					$cat_id = $cat->term_id;
+				}
+// А теперь просто все выводим на экран		
+?>	
 	<section class="category">
 		<div class="container">
 			<div class="category-title">
 				<h2><?php echo $cat->cat_name; ?></h2>
-				<!-- <div class="category-menu<?php if($category[1]) { echo ' active'; } ?>">
-					<?php if($category[1]) { ?>
-						<?php #wp_list_categories(array('child_of' => $cat_id, 'hide_empty' => 1, 'style' => 'none', 'number' => 6)); ?>
-					<?php } ?> 
-				</div>-->
 			</div>
 			<div class="row">
-				
+
 				<div class="col-md-7 col-lg-9 category-left">
 					<div class="row">
 						<?php
-							$cat_id = $cat->term_id;
 							$query = new WP_Query( array( 'category__in' => $cat_id, 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => 3 ) );
 							while ( $query->have_posts() ) { $query->the_post();
 								$img_id = get_post_thumbnail_id( $post->ID );
@@ -166,7 +183,11 @@
 			</div>
 		</div>
 	</section>
+
 <?
+				
+
+
 			}
 		}
 	}

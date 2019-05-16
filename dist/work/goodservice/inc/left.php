@@ -37,3 +37,11 @@
 						</div>
 					</div>
 					<?php } ?>
+					<?php
+						//Вывод рекламного блока
+						$options = get_option( 'optimazedReklama_settings' ); 
+						if($options['left']) { ?>
+					<div class="content-left-banner">
+						<?php echo $options['left']; ?>
+					</div>
+					<?php }	?>

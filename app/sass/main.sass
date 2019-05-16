@@ -1,50 +1,60 @@
-@import "vars"
 @import "fonts"
+@import "libs"
+@import "vars"
 
-::placeholder
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
 	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
 
 body
 	font-size: 16px
 	min-width: 320px
 	position: relative
-	line-height: 1.4
+	line-height: 1.65
 	font-family: $default-font
 	overflow-x: hidden
-	color: $text
-	opacity: 0
-	
-	input, textarea
-		border: #666 1px solid
-		outline: none
-		&:focus:required:invalid
-			border-color: red
-		&:required:valid
-			border-color: green
-a, a:hover
-	text-decoration: none
 
-@import "wp"
-@import "navbar"
-@import "products"
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
 
+.text-center
+	text-align: center
 
-.toTop
-	position: fixed
-	display: none
-	right: 15px
-	bottom: 15px
-	.far
-		color: #888
-		opacity: .6
-		font-size: 2em
-		cursor: pointer
-		&:hover
-			opacity: 1
+::selection
+	background-color: $accent
+	color: #fff
 
-body
-	opacity: 1
-
-@media screen and (min-width: 1440px)
-	body
-		font-size: 20px
+@import "media" // Всегда в конце

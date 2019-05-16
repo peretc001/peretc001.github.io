@@ -29,17 +29,51 @@
 	© <a href="/">ПОЛИКАРБОНАТА.НЕТ</a> - купить поликарбонат в Краснодаре и крае.
 </div>
 
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  
+	<div class="modal-content">
+		<span class="close_modal">&times;</span>
+		<form method="post" class="callback__form">
+			<h3>Перезвоните мне</h3>
+			<input type="hidden" name="form_name" value="callback">
+			<input type="hidden" name="url" value="/index.php">
+			<input type="text" name="name" value="" placeholder="Меня зовут" required>
+			<input type="tel" name="phone" value="" placeholder="Мой телефон" required>
+			<div class="policy__checked">
+				<div class="radio">
+					<input id="policy_callback" type="checkbox" name="policy" checked="">
+					<label for="policy_callback">Согласен с условиями</label>
+				</div>
+				<a href="/policy.php" target="_blank">Политики конфиденциальности</a>
+			</div>
+			<div class="robot_check_icon">
+				<div class="circle-loader">
+					<div class="checkmark draw"></div>
+				</div>
+				<p>Подтверждаю, <br>что я не робот</p>
+			</div>
+			<button type="submit" class="callback__form__button" disabled>Отправить</button>
+		</form>
+	</div>
+
+</div>
 
 
 	<link rel="stylesheet" href="/css/normalize.css">
 	<link rel="stylesheet" href="/css/skeleton.css">
 	<link rel="stylesheet" href="/js/uikit/css/uikit.css" />
-    <link rel="stylesheet" href="/css/blueimp-gallery.css">
-	<link rel="stylesheet" href="/style.min.css">
+    <!-- <link rel="stylesheet" href="/css/blueimp-gallery.css"> -->
+	<link rel="stylesheet" href="/style.min.css?ver=<?php echo time(); ?>">
 	<!-- Scripts
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="js/uikit/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+	<script src="js/script.js?ver=<?php echo time(); ?>"></script>
+	<script>
+		
+	</script>
 	<!--[if lt IE 9]>
 		<script src="/js/support/html5shiv.js"></script>
 		<script src="/js/support/css3-mediaqueries.js"></script>
