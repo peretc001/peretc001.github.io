@@ -135,6 +135,7 @@
 <id>1880235</id>
 <name>ТЕРМОУСАДКА 0.5-1.5ММ2 (100ШТ)</name>
 <longname>ТЕРМОУСАДКА 0.5-1.5ММ2 (100ШТ)</longname>
+<sale>yes</sale>
 <description></description>
 <status>1</status>
 <qty></qty>
@@ -158,6 +159,7 @@
 <id>1880241</id>
 <name>ТЕРМОУСАДКА СИНЯЯ1.5-2.5ММ2 (50ШТ)</name>
 <longname>ТЕРМОУСАДКА СИНЯЯ1.5-2.5ММ2 (50ШТ)</longname>
+<sale>yes</sale>
 <description></description>
 <status>1</status>
 <qty>141</qty>
@@ -182,6 +184,7 @@
 <id>1880245</id>
 <name>ТЕРМОУСАДКА 1.0-2.5ММ2 (50ШТ)</name>
 <longname>ТЕРМОУСАДКА 1.0-2.5ММ2 (50ШТ)</longname>
+<sale>yes</sale>
 <description></description>
 <status>1</status>
 <qty>10</qty>
@@ -206,6 +209,7 @@
 <id>1880251</id>
 <name>ТЕРМОУСАДКА 4.0-6.0ММ2 (25ШТ) ЖЕЛТАЯ</name>
 <longname>ТЕРМОУСАДКА 4.0-6.0ММ2 (25ШТ) ЖЕЛТАЯ</longname>
+<sale>yes</sale>
 <description></description>
 <status>1</status>
 <qty>10</qty>
@@ -230,6 +234,7 @@
 <id>1880255</id>
 <name>ТЕРМОУСАДКА 3.0-6.0ММ2 (25ШТ)</name>
 <longname>ТЕРМОУСАДКА 3.0-6.0ММ2 (25ШТ)</longname>
+<sale>yes</sale>
 <description></description>
 <status>1</status>
 <qty>20</qty>
@@ -254,6 +259,7 @@
 <id>2412-10</id>
 <name>ПРЕОБРАЗОВАТЕЛЬ С 24В НА 12В</name>
 <longname>ПРЕОБРАЗОВАТЕЛЬ С 24В НА 12В</longname>
+<sale>yes</sale>
 <description></description>
 <status>1</status>
 <qty>1</qty>
@@ -280,6 +286,7 @@
 <id>2412-11</id>
 <name>ПРЕОБРАЗОВАТЕЛЬ С 24В НА 12В INTELLIGENT</name>
 <longname>ПРЕОБРАЗОВАТЕЛЬ С 24В НА 12В INTELLIGENT</longname>
+<sale>yes</sale>
 <description></description>
 <status>1</status>
 <qty>2</qty>
@@ -306,6 +313,7 @@
 <id>2412-15</id>
 <name>ПРЕОБРАЗОВАТЕЛЬ С 24В НА 12В INTELLIGENT</name>
 <longname>ПРЕОБРАЗОВАТЕЛЬ С 24В НА 12В INTELLIGENT</longname>
+<sale>yes</sale>
 <description></description>
 <status>1</status>
 <qty></qty>
@@ -332,6 +340,7 @@
 <id>4410150</id>
 <name>КОННЕКТОР 50 ШТ В УПАКОВКЕ</name>
 <longname>КОННЕКТОР 50 ШТ В УПАКОВКЕ</longname>
+<sale>yes</sale>
 <description></description>
 <status>1</status>
 <qty>300</qty>
@@ -356,6 +365,7 @@
 <id>4410160</id>
 <name>КОННЕКТОР 50 ШТ В УПАКОВКЕ</name>
 <longname>КОННЕКТОР 50 ШТ В УПАКОВКЕ</longname>
+<sale>yes</sale>
 <description></description>
 <status>1</status>
 <qty>200</qty>
@@ -380,6 +390,7 @@
 <id>4410170</id>
 <name>КОННЕКТОР 50 ШТ В УПАКОВКЕ</name>
 <longname>КОННЕКТОР 50 ШТ В УПАКОВКЕ</longname>
+<sale>yes</sale>
 <description></description>
 <status>1</status>
 <qty>200</qty>
@@ -404,6 +415,7 @@
 <id>4410180</id>
 <name>КОННЕКТОР 50 ШТ В УПАКОВКЕ</name>
 <longname>КОННЕКТОР 50 ШТ В УПАКОВКЕ</longname>
+<sale>yes</sale>
 <description></description>
 <status>1</status>
 <qty>100</qty>
@@ -428,6 +440,7 @@
 <id>4410260</id>
 <name>КОННЕКТОР 50 ШТ В УПАКОВКЕ</name>
 <longname>КОННЕКТОР 50 ШТ В УПАКОВКЕ</longname>
+<sale>yes</sale>
 <description></description>
 <status>1</status>
 <qty>300</qty>
@@ -452,6 +465,7 @@
 <id>4410270</id>
 <name>КОННЕКТОР 50 ШТ В УПАКОВКЕ</name>
 <longname>КОННЕКТОР 50 ШТ В УПАКОВКЕ</longname>
+<sale>yes</sale>
 <description></description>
 <status>1</status>
 <qty>300</qty>
@@ -476,6 +490,7 @@
 <id>VUK35-50M</id>
 <name>ПРОВОД 35ММ ЧЕРНЫЙ 50М</name>
 <longname>ПРОВОД 35ММ ЧЕРНЫЙ 50М</longname>
+<sale>yes</sale>
 <description>Артикул : VUK35-50M	
 Размер упаковки : 50	
 Тип : 35мм2	
@@ -505,6 +520,7 @@
 <id>RACO271200</id>
 <name>ПЕРЕМЫЧКА АКБ +/- 30 СМ</name>
 <longname>ПЕРЕМЫЧКА АКБ +/- 30 СМ</longname>
+<sale>yes</sale>
 <description></description>
 <status>1</status>
 <qty>14</qty>
@@ -531,6 +547,7 @@
 <id>1553-5916</id>
 <name>ВИЛКА РОЗЕТКИ 24V</name>
 <longname>ВИЛКА РОЗЕТКИ 24V</longname>
+<sale>yes</sale>
 <description>Артикул : 1553-5916	
 Описание : Алюминиевый
 Сноска : Соответствует ISO 3731	</description>
@@ -559,6 +576,7 @@
 <id>1569-19031LED</id>
 <name>ДЕРЖАТЕЛЬ ПРЕДОХРАНИТЕЛЯ МИНИ</name>
 <longname>ДЕРЖАТЕЛЬ ПРЕДОХРАНИТЕЛЯ МИНИ</longname>
+<sale>yes</sale>
 <description></description>
 <status>1</status>
 <qty></qty>
@@ -585,6 +603,7 @@
 <id>1569-19030</id>
 <name>ДЕРЖАТЕЛЬ ПРЕДОХРАНИТЕЛЯ DIN</name>
 <longname>ДЕРЖАТЕЛЬ ПРЕДОХРАНИТЕЛЯ DIN</longname>
+<sale>yes</sale>
 <description></description>
 <status>1</status>
 <qty>80</qty>
@@ -611,6 +630,7 @@
 <id>13821</id>
 <name>ЛАМПА НАКАЛИВАНИЯ BA15s 24V 5W</name>
 <longname>ЛАМПА НАКАЛИВАНИЯ BA15s 24V 5W</longname>
+<sale>yes</sale>
 <description>Артикул : 13821	
 Тип : 5 Вт (BA15s)	
 Напряжение : 24 В	</description>
@@ -639,6 +659,7 @@
 <id>13844</id>
 <name>ЛАМПА НАКАЛИВАНИЯ SV8.5-8 24V 5W 11Х38ММ</name>
 <longname>ЛАМПА НАКАЛИВАНИЯ SV8.5-8 24V 5W 11Х38ММ</longname>
+<sale>yes</sale>
 <description>Артикул : 13844	
 Размеры : 11x38 мм	
 Тип : 5 Вт, (SV8.5)	
@@ -667,6 +688,7 @@
 <id>13498HD</id>
 <name>ЛАМПА НАКАЛИВАНИЯ BA15s 24V 21W</name>
 <longname>ЛАМПА НАКАЛИВАНИЯ BA15s 24V 21W</longname>
+<sale>yes</sale>
 <description>Артикул : 13498HD	
 Тип : 21 Вт (BA15s)	
 Напряжение : 24 В	
@@ -695,6 +717,7 @@
 <id>2400310</id>
 <name>ГОФРА ДЛЯ ПРОКЛАДКИ КАБЕЛЯ Д 10.0 ММ / 50М</name>
 <longname>ГОФРА ДЛЯ ПРОКЛАДКИ КАБЕЛЯ Д 10.0 ММ / 50М</longname>
+<sale>yes</sale>
 <description>Артикул : 02400310	
 Размер упаковки : 50 м	
 Описание : Внутренняя мера 10 мм	
@@ -724,6 +747,7 @@
 <id>2400313</id>
 <name>ГОФРА ДЛЯ ПРОКЛАДКИ КАБЕЛЯ Д 13.0 ММ / 50М</name>
 <longname>ГОФРА ДЛЯ ПРОКЛАДКИ КАБЕЛЯ Д 13.0 ММ / 50М</longname>
+<sale>yes</sale>
 <description>Артикул : 02400313	
 Размер упаковки : 50 м.	
 Описание : Внутренняя мера 13 мм.	
@@ -753,6 +777,7 @@
 <id>2400317</id>
 <name>ГОФРА ДЛЯ ПРОКЛАДКИ КАБЕЛЯ Д 17.0 ММ / 50М</name>
 <longname>ГОФРА ДЛЯ ПРОКЛАДКИ КАБЕЛЯ Д 17.0 ММ / 50М</longname>
+<sale>yes</sale>
 <description>Артикул: 2400317
 Размер упаковки: 50м 
 Габаритные размеры: Ø 16.5 мм / 20.9 мм 
@@ -782,6 +807,7 @@
 <id>2400322</id>
 <name>ГОФРА ДЛЯ ПРОКЛАДКИ КАБЕЛЯ Д 22.0 ММ / 50М</name>
 <longname>ГОФРА ДЛЯ ПРОКЛАДКИ КАБЕЛЯ Д 22.0 ММ / 50М</longname>
+<sale>yes</sale>
 <description></description>
 <status>1</status>
 <qty></qty>
@@ -807,6 +833,7 @@
 <id>02400329</id>
 <name>ГОФРА ДЛЯ ПРОКЛАДКИ КАБЕЛЯ Д 29.0 ММ / 25М</name>
 <longname>ГОФРА ДЛЯ ПРОКЛАДКИ КАБЕЛЯ Д 29.0 ММ / 25М</longname>
+<sale>yes</sale>
 <description></description>
 <status>1</status>
 <qty>200</qty>
@@ -833,6 +860,7 @@
 <id>2400337</id>
 <name>ГОФРА ДЛЯ ПРОКЛАДКИ КАБЕЛЯ Д 37.0 ММ / 25М</name>
 <longname>ГОФРА ДЛЯ ПРОКЛАДКИ КАБЕЛЯ Д 37.0 ММ / 25М</longname>
+<sale>yes</sale>
 <description></description>
 <status>1</status>
 <qty></qty>
@@ -858,6 +886,7 @@
 <id>2400350</id>
 <name>ГОФРА ДЛЯ ПРОКЛАДКИ КАБЕЛЯ Д 50.0 ММ / 25М</name>
 <longname>ГОФРА ДЛЯ ПРОКЛАДКИ КАБЕЛЯ Д 50.0 ММ / 25М</longname>
+<sale>yes</sale>
 <description></description>
 <status>1</status>
 <qty></qty>
@@ -883,6 +912,7 @@
 <id>2500475</id>
 <name>ГОФРА ДЛЯ ПРОКЛАДКИ КАБЕЛЯ Д 7.5 ММ / 50М</name>
 <longname>ГОФРА ДЛЯ ПРОКЛАДКИ КАБЕЛЯ Д 7.5 ММ / 50М</longname>
+<sale>yes</sale>
 <description></description>
 <status>1</status>
 <qty></qty>
@@ -908,6 +938,7 @@
 <id>2500485</id>
 <name>ГОФРА ДЛЯ ПРОКЛАДКИ КАБЕЛЯ Д 8.5 ММ / 50М</name>
 <longname>ГОФРА ДЛЯ ПРОКЛАДКИ КАБЕЛЯ Д 8.5 ММ / 50М</longname>
+<sale>yes</sale>
 <description></description>
 <status>1</status>
 <qty></qty>
@@ -933,6 +964,7 @@
 <id>02500410</id>
 <name>ГОФРА ДЛЯ ПРОКЛАДКИ КАБЕЛЯ Д 10.0 ММ / 50М</name>
 <longname>ГОФРА ДЛЯ ПРОКЛАДКИ КАБЕЛЯ Д 10.0 ММ / 50М</longname>
+<sale>yes</sale>
 <description></description>
 <status>1</status>
 <qty></qty>
@@ -959,6 +991,7 @@
 <id>2500413</id>
 <name>ГОФРА ДЛЯ ПРОКЛАДКИ КАБЕЛЯ Д 13.0 ММ / 50М</name>
 <longname>ГОФРА ДЛЯ ПРОКЛАДКИ КАБЕЛЯ Д 13.0 ММ / 50М</longname>
+<sale>yes</sale>
 <description></description>
 <status>1</status>
 <qty></qty>

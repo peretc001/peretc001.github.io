@@ -1,4 +1,6 @@
 .navbar
+   border-bottom: 1px solid #E3E3E3
+   padding: 0
    .container
       position: relative
    .navbar-toggler
@@ -14,7 +16,7 @@
          width: 28px
       .hamburger-inner:before
          width: 20px
-   .navbar-brant
+   .navbar-brand
       width: 125px
       height: auto
    .navbar-nav
@@ -26,6 +28,8 @@
          font-size: .9em
          color: $text
          text-transform: uppercase
+         padding-top: 30px
+         padding-bottom: 30px
          &:hover
             color: $accent-dark
          &::after
@@ -50,7 +54,7 @@
             background-color: $accent-dark
             transform: scale(1)
    
-   .mobile-first
+   .mobile-last
       display: flex
       justify-content: space-around
       align-items: center
@@ -144,6 +148,7 @@
    
    .dropdown-center
       .dropdown-menu
+         margin-top: 18px
          width: 350px
          border-radius: 0
          transform: translateX(-50%)
@@ -212,6 +217,74 @@
                   width: 10px
                   height: 10px
 
+   .dropdown-right
+      .dropdown-menu
+         margin-top: 17px
+         width: 235px
+         border-radius: 0
+         box-shadow: 0px 8px 22px rgba(0, 0, 0, 0.12)
+         border: 1px solid $border
+         padding: 35px 30px 0 30px
+         &:before
+            content: ''
+            position: absolute
+            top: -7px
+            right: 15px
+            width: 12px
+            height: 12px
+            background: #ffffff
+            border-left: 1px solid $border
+            border-top: 1px solid $border
+            transform: rotate(45deg)
+         .dropdown-menu-user--img
+            display: block
+            width: 66px
+            height: auto
+            line-height: 0
+            border-radius: 50%
+            background: #F9F9F9
+            padding: 19px
+            margin: 0 auto
+            text-align: center
+            img
+               width: 28px
+               height: 28px
+         .dropdown-menu-user--name
+            font-weight: bold
+            font-size: 0.85em
+            margin: 1em auto 0 auto
+            padding-bottom: 1em
+            display: block
+            text-align: center
+         .dropdown-menu-item
+            border-top: 1px solid #EAEBED
+            border-bottom: 1px solid #EAEBED
+            padding: 20px 0
+            a
+               padding-bottom: 15px
+               font-size: 0.9em
+               display: block
+               &:last-child
+                  padding-bottom: 0
+            .order
+               color: $accent-dark
+         .logout
+            position: relative
+            padding: 20px 0 20px 25px
+            color: #D60016
+            display: block
+            &:before
+               content: ''
+               position: absolute
+               left: 0
+               top: 50%
+               transform: translateY(-50%)
+               width: 18px
+               height: 18px
+               background: url('../img/navbar/logout.svg')
+
+      
+
 
 @media screen and (max-width: 991.98px)
    .navbar
@@ -224,18 +297,26 @@
          justify-content: center
          .nav-link
             font-size: .7em
+            padding-top: 20px
+            padding-bottom: 20px
+      .dropdown-center,
+      .dropdown-right
+         .dropdown-menu
+            margin-top: 14px
 
 @media screen and (max-width: 767.98px)
    .navbar
+      border-bottom: none
       background: $accent-dark
+      padding: 5px 0
       .navbar-collapse
          width: 100%
          text-align: center
 
-      .mobile-first
+      .mobile-last
          position: absolute
          right: 10px
-         top: 5px
+         top: 3px
          padding: 0
       .navbar-nav
          max-width: 100%
@@ -243,6 +324,7 @@
          .nav-link
             color: #ffffff
             font-size: 1em
+            padding: .5em 1em
             &::after
                bottom: 0
                width: 100%
@@ -261,6 +343,12 @@
          max-width: 350px
          .navbar-user--name
             max-width: 200px
+      .dropdown-right
+         .dropdown-menu
+            width: 270px
+            .dropdown-menu-item
+               a
+                  font-size: 1em
 
 @media screen and (max-width: 576.98px)
    .navbar
@@ -270,7 +358,13 @@
          margin: 0
       .dropdown-center
          .dropdown-menu
-            width: 320px
-            left: 0
+            width: 300px
+            left: auto
+            rigth: 50%
+            &:before
+               left: 62%
          .dropdown-body
             height: 360px
+      .dropdown-right
+         .dropdown-menu
+            width: 250px
