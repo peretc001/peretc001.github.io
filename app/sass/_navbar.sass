@@ -108,21 +108,21 @@
       &:active
          background: linear-gradient(180deg, #2A6FF7 50%, #1B489D 100%)
 
-   .hasPush
-      .navbar-notification
-         background: $bg-light
-         width: 44px
+   
+   .navbar-notification.hasPush
+      background: $bg-light
+      width: 44px
+      height: auto
+      line-height: 0
+      border-radius: 50%
+      padding: 15px 12px
+      margin: 0 1.25em
+      &:hover,
+      &:active
+         background: #fff
+      img
+         width: 20px
          height: auto
-         line-height: 0
-         border-radius: 50%
-         padding: 15px 12px
-         margin: 0 1.25em
-         &:hover,
-         &:active
-            background: #fff
-         img
-            width: 20px
-            height: auto
       .navbar-notification--img
          width: 20px
          position: relative

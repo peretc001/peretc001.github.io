@@ -50,14 +50,10 @@
 					<img src="img/navbar/phone.svg" alt="">
 				</a>
 				
-				<!-- Class hasPush add a visual style for notification  -->
-				<div class="dropdown dropdown-center hasPush">
-					<!-- No new notifications
-						<a class="nav-link navbar-notification" href="#">
-							ЗАЯВКА МСИ
-						</a>
-					-->
-					<a class="nav-link navbar-notification" href="#" id="notificationDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<div class="dropdown dropdown-center">
+					<!-- if($notification) { -->
+					<a class="nav-link navbar-notification hasPush" href="#" id="notificationDropdown" 
+						role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<div class="navbar-notification--img"><img src="img/navbar/email.svg" alt=""></div>
 					</a>
 					<div class="dropdown-menu" aria-labelledby="notificationDropdown">
@@ -93,15 +89,17 @@
 							<!-- /end loop -->
 						</div>
 					</div>
+					<!-- } else { 
+						<a class="nav-link navbar-notification" href="#">
+							ЗАЯВКА МСИ
+						</a>
+					} -->
 				</div>
 
 				<div class="dropdown dropdown-right">
-					<!-- No logined
-						<a class="nav-link navbar-enter" href="#">
-							Вход
-						</a>
-					-->
-					<a class="nav-link navbar-user" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<!-- if($login) { -->
+					<a class="nav-link navbar-user" href="#" id="userDropdown" 
+						role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<div class="navbar-user--img"><img src="img/navbar/user.svg" alt=""></div>
 						<div class="navbar-user--name d-none d-lg-inline">ООО “Зерно и компания такое вот название”</div>
 					</a>
@@ -118,6 +116,11 @@
 							</div>
 							<a href="#" class="logout">Выход</a>
 					</div>
+					<!-- } else { 
+						<a class="nav-link navbar-enter" href="#">
+							Вход
+						</a>
+					}-->
 				</div>
 			</div>
 
