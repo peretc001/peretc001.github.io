@@ -1,5 +1,4 @@
 @import "fonts"
-@import "libs"
 @import "vars"
 
 *
@@ -45,11 +44,6 @@ body
 	font-family: $default-font
 	overflow-x: hidden
 
-.img-responsive
-	display: block
-	max-width: 100%
-	height: auto
-
 .text-center
 	text-align: center
 
@@ -57,4 +51,15 @@ body
 	background-color: $accent
 	color: #fff
 
-@import "media" // Всегда в конце
+a, a:hover
+	text-decoration: none
+	color: $text
+
+
+@import "navbar"
+
+
+@media (min-width: 1201px)
+	.container
+		max-width: 1170px
+		padding: 0
