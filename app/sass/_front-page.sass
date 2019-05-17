@@ -1,0 +1,91 @@
+.front-page
+   &-title
+      display: flex
+      align-items: flex-end
+      padding: 50px 0
+      h1
+         font-size: 1.9em
+         font-weight: bold
+         margin: 0
+         margin-right: 22px
+      a
+         font-size: 1em
+         color: $accent
+   .row
+      width: 100%
+      box-sizing: border-box
+      padding: 0
+      margin: 0 auto
+   
+   //Start grid
+   .x-col-9,
+   .x-col-3,
+   .x-col-2
+      box-sizing: border-box
+      column-count: 1
+      margin: 0
+   .x-col-3
+      width: 24%
+      margin-right: 1%
+   .x-col-9
+      width: 75%
+   .x-col-2
+      width: 20%
+   //End grid
+
+
+
+   .msi-left
+      background: #EFF3FC
+      padding: 24px 30px
+      &-title
+         h2
+            font-weight: bold
+            font-size: 1.375em
+            margin: 0
+         p
+            font-size: 0.75em
+      &-block
+         p
+            font-size: 0.8em
+            display: flex
+            align-items: center
+            justify-content: space-between
+            margin: 0
+            b
+               min-width: 70px
+      &-doc
+         padding-top: 30px
+         p
+            font-size: 0.75em
+            color: #99999B
+         a
+            color: $accent
+            font-size: 1em
+            display: block
+            padding-left: 1.5em
+            position: relative
+            &:before
+               content: ''
+               position: absolute
+               left: 0
+               top: 50%
+               transform: translateY(-50%)
+               width: 13px
+               height: 15px
+               background: url('../img/doc.svg')
+
+   .msi-right-title
+      position: relative
+      background: #EFF3FC
+      font-size: 0.7em
+      padding: 10px 30px 10px 20px
+      &:before
+         content: ''
+         position: absolute
+         top: 0
+         right: -15px
+         width: 100%
+         height: 100%
+         background: url('../img/arrow-right.svg') right no-repeat
+         z-index: 10
