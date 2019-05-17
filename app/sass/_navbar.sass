@@ -59,35 +59,35 @@
       justify-content: space-around
       align-items: center
       padding-right: 15px
-
-   .navbar-phone,
-   .navbar-notification
+   
+   .navbar-phone
       width: 44px
       height: auto
       line-height: 0
       border-radius: 50%
+      margin-left: 1.25em
+      padding: 15px
       border: 1px solid $bg-light
       margin: 0
       text-align: center
       transition: background .35s ease
-      &:hover
-         background: $bg-light-hover
-   .navbar-notification,
-   .navbar-user
-      background: $bg-light
-   
-   .navbar-phone
-      margin-left: 1.25em
-      padding: 15px
       img
          width: 15px
          height: auto
+
    .navbar-notification
+      border: 1px solid $bg-light
+      border-radius: 50px
+      padding: 11px 22px
       margin: 0 1.25em
-      padding: 15px 12px
-      img
-         width: 20px
-         height: auto
+      color: $accent-dark
+      font-size: 0.9em
+      text-align: center
+      transition: background .35s ease
+      &:hover,
+      &:active
+         background: #fff
+
    .navbar-user
       padding: 12px
       img
@@ -95,6 +95,20 @@
          height: auto
 
    .hasPush
+      .navbar-notification
+         background: $bg-light
+         width: 44px
+         height: auto
+         line-height: 0
+         border-radius: 50%
+         padding: 15px 12px
+         margin: 0 1.25em
+         &:hover,
+         &:active
+            background: #fff
+         img
+            width: 20px
+            height: auto
       .navbar-notification--img
          width: 20px
          position: relative
@@ -132,8 +146,9 @@
          background-image: url('../img/navbar/arrow-down.svg')
          opacity: .5
          transition: background .35s ease
-      &:hover
-         background: $bg-light-hover
+      &:hover,
+      &:active
+         background: #fff
          &::before
             opacity: 1
       .navbar-user--name
@@ -284,21 +299,39 @@
                background: url('../img/navbar/logout.svg')
 
       
-
+@media screen and (max-width: 1199.98px)
+   .navbar
+      .navbar-brand
+         width: auto
+      .navbar-notification,
+      .navbar-user
+         font-size: 0.9em
+      .navbar-user
+      .navbar-brand
+         img
+            width: 90px
+      .navbar-nav
+         justify-content: center
+         .nav-link
+            font-size: .8em
 
 @media screen and (max-width: 991.98px)
    .navbar
       .navbar-brand
          img
-            width: 90px
+            width: 70px
       .navbar-nav
-         width: auto
-         max-width: 100%
+         width: 100%
          justify-content: center
          .nav-link
             font-size: .7em
-            padding-top: 20px
-            padding-bottom: 20px
+      .navbar-notification,
+      .navbar-user
+         font-size: 0.7em
+      .navbar-notification
+         padding: 13px 20px
+      .navbar-notification
+         margin: 0 .5em
       .dropdown-center,
       .dropdown-right
          .dropdown-menu
@@ -308,7 +341,7 @@
    .navbar
       border-bottom: none
       background: $accent-dark
-      padding: 5px 0
+      padding: 10px 0
       .navbar-collapse
          width: 100%
          text-align: center
@@ -337,12 +370,28 @@
                height: 0
                border-radius: 0
                transform: scale(0)
-      .navbar-phone
+      
+      .navbar-phone,
+      .navbar-notification,
+      .navbar-user
          background: $bg-light
+         font-size: 1em
+      .navbar-notification
+         padding: 10px 20px
       .navbar-user
          max-width: 350px
          .navbar-user--name
             max-width: 200px
+
+      .dropdown-center
+         .dropdown-menu
+            transform: translateX(0)
+            right: 0
+            left: auto
+            &:before
+               left: auto
+               right: 35px
+      
       .dropdown-right
          .dropdown-menu
             width: 270px
@@ -353,18 +402,35 @@
 @media screen and (max-width: 576.98px)
    .navbar
       .navbar-phone,
-      .navber-notification,
+      .navbar-notification,
       .navbar-user
-         margin: 0
+         font-size: 0.8em
+      .navbar-notification
+         padding: 13px 20px
       .dropdown-center
          .dropdown-menu
             width: 300px
-            left: auto
-            rigth: 50%
-            &:before
-               left: 62%
-         .dropdown-body
-            height: 360px
       .dropdown-right
          .dropdown-menu
             width: 250px
+
+@media screen and (max-width: 399.98px)
+   .navbar
+      .dropdown-center
+         .dropdown-menu
+            width: 250px
+            transform: translateX(-60%)
+            right: auto
+            left: 0
+            &:before
+               left: auto
+               right: 55px
+@media screen and (max-width: 349.98px)
+   .navbar
+      .navbar-notification
+         padding: 13px
+      .dropdown-center
+         .dropdown-menu
+            transform: translateX(-50%)
+            &:before
+               right: 33%
