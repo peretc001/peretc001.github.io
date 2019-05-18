@@ -19,3 +19,27 @@
 .hamburger--slider-r.is-active .hamburger-inner{transform:translate3d(0,10px,0) rotate(-45deg)}
 .hamburger--slider-r.is-active .hamburger-inner:before{transform:rotate(45deg) translate3d(5.71429px,-6px,0);opacity:0}
 .hamburger--slider-r.is-active .hamburger-inner:after{transform:translate3d(0,-20px,0) rotate(90deg)}
+
+//Bootstrap Tooltip
+.bs-tooltip-top .arrow::before, .bs-tooltip-auto[x-placement^="top"] .arrow::before {
+   border-top-color: #fff;
+}
+.bs-tooltip-right .arrow::before, .bs-tooltip-auto[x-placement^="right"] .arrow::before {
+   border-right-color: #fff;
+}
+.bs-tooltip-bottom .arrow::before, .bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
+   border-bottom-color: #fff;
+}
+.bs-tooltip-left .arrow::before, .bs-tooltip-auto[x-placement^="left"] .arrow::before {
+   border-left-color: #fff;
+}
+.tooltip-inner {
+   color: #3B3C41;
+   text-align: center;
+   background-color: #fff;
+   box-shadow: 0px 8px 22px rgba(0, 0, 0, 0.12);
+   border-radius: 70px;
+   padding: 6px 17px;
+   font-size: 12px;
+   //border: 1px solid #fff
+}
