@@ -18,6 +18,7 @@
       grid-row-gap: 5px
       grid-auto-rows: 34px 1fr
       align-items: center
+      margin-bottom: 1em
       .x-col-1
          grid-column-start: 1
          grid-row-start: span 2
@@ -96,7 +97,7 @@
          right: -15px
          width: 100%
          height: 100%
-         background: url('../img/card-head.svg') right center no-repeat
+         background: url('../img/front-page/card-head.svg') right center no-repeat
          z-index: 2
       &.done
          background: #E2ECFF
@@ -110,7 +111,7 @@
             right: -15px
             width: 100%
             height: 100%
-            background: url('../img/card-head-next.svg') right center no-repeat
+            background: url('../img/front-page/card-head-next.svg') right center no-repeat
             z-index: 2
       &.disabled
          background: #F4F3F3
@@ -122,7 +123,7 @@
             right: -12px
             width: 100%
             height: 100%
-            background: url('../img/card-head-next.svg') right center no-repeat
+            background: url('../img/front-page/card-head-next.svg') right center no-repeat
             z-index: 2
    
    [class*="x-col-"]:nth-child(10)
@@ -135,6 +136,8 @@
       h2, h3
          font-weight: bold
          margin: 0
+         img
+            margin-left: 0.5em
       h2
          font-size: 1.375em
       h3
@@ -149,14 +152,34 @@
          color: #fff
       .yellow
          background: #FFC000
+      .yellow-outline
+         background: transparent
+         border: 1px solid #FFC000
+         color: #FFC000
       .orange
          background: #FFA656
+      .orange-outline
+         background: transparent
+         border: 1px solid #FFA656
+         color: #FFA656
       .blue
          background: #5191E8
+      .blue-outline
+         background: transparent
+         border: 1px solid #5191E8
+         color: #5191E8
       .green
          background: #5FC94E
+      .green-outline
+         background: transparent
+         border: 1px solid #5FC94E
+         color: #5FC94E
       .grey
          background: #C7C7C7
+      .grey-outline
+         background: transparent
+         border: 1px solid #C7C7C7
+         color: #C7C7C7
 
    .card-block
       margin-bottom: 1em
@@ -199,7 +222,23 @@
             transform: translateY(-50%)
             width: 13px
             height: 15px
-            background: url('../img/doc.svg')
+            background: url('../img/front-page/doc.svg')
+      .btn
+         padding-left: 0
+         max-width: 250px
+         overflow: visible
+         text-overflow: normal
+         text-align: center
+         marign: 0 auto
+         border: 1px solid $accent
+         box-sizing: border-box
+         border-radius: 50px
+         padding: 10px 17px
+         &:hover
+            background: $accent
+            color: #fff
+         &:before
+            background: none
       .sertificat
          display: flex
          a
@@ -331,11 +370,11 @@
             background-image: none !important
       [class*="x-col-"]:nth-child(4)
          &:before
-            background: url('../img/card-head.svg') right center no-repeat !important
+            background: url('../img/front-page/card-head.svg') right center no-repeat !important
          &.next,
          &.disabled
             &:before
-               background: url('../img/card-head-next.svg') right center no-repeat !important
+               background: url('../img/front-page/card-head-next.svg') right center no-repeat !important
       [class*="x-col-"]:nth-child(6)
          background-image: none !important
          &:before
