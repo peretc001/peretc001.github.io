@@ -15,6 +15,7 @@ var gulp          = require('gulp'),
 		imageResize   = require('gulp-image-resize'),
 		imagemin      = require('gulp-imagemin'),
 		del           = require('del');
+		autopref 	  = require('autoprefixer');
 
 // Local Server
 gulp.task('browser-sync', function() {

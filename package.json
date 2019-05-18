@@ -9,6 +9,7 @@
 	"author": "WebDesign Master",
 	"license": "ISC",
 	"devDependencies": {
+		"autoprefixer": "^9.5.1",
 		"browser-sync": "^2.26.5",
 		"del": "^4.1.1",
 		"gulp": "^4.0.2",
