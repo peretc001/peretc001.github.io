@@ -76,8 +76,11 @@
       justify-content: space-between
       border: 1px solid #F3F3F3
       border-right: none
+      transition: background .1s ease
       &:last-child
          border-right: 1px solid #F3F3F3
+      &:hover
+         background: #fbfbfb
 
    .card-head
       position: relative
@@ -225,7 +228,7 @@
             background: url('../img/front-page/doc.svg')
       .btn
          padding-left: 0
-         max-width: 250px
+         max-width: 135px
          overflow: visible
          text-overflow: normal
          text-align: center
@@ -320,6 +323,13 @@
             background-image: none !important
       [class*="x-col-"]:nth-child(5)
          border-right: 1px solid #F3F3F3
+      .card-doc
+         min-height: auto
+         a
+            max-width: 100%
+            white-space: wrap
+            overflow: visible
+            text-overflow: normal
    
 @media screen and (max-width: 767.98px)
    .front-page
@@ -437,3 +447,9 @@
             background-image: none !important
       [class*="x-col-"]:nth-child(1)
          border-right: none
+
+@media screen and (max-width: 374.98px)
+   .front-page
+      &-title
+         h1
+            font-size: 1.1em

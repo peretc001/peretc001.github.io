@@ -9,7 +9,5 @@ $(function() {
 	
 	$('[data-toggle="tooltip"]').tooltip();
 
-	$(grid).gridLayout({
-		'resize' : function() {} 
-	})
+	$('grid').gridLayout();
 });

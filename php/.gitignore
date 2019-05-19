@@ -1,6 +1,5 @@
 /node_modules/
-/php/node_modules/
-/other/
+/dist/
 /.git/
 /**/_backstage
 /**/package-lock.json

@@ -1,0 +1,15 @@
+{
+  "name": "php",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt-php": "^1.5.1",
+    "gulp": "^4.0.2"
+  }
+}

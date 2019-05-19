@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteCond %{HTTPS} =off 
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [QSA,L]
+ErrorDocument 404 /404.php
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+RewriteRule ^index\.php$ https://%{HTTP_HOST} [R=301,L]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteRule ^index\.html$ https://%{HTTP_HOST} [R=301,L]
