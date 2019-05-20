@@ -5,3 +5,65 @@ $text: #242424
 $bg-light: #F4F8FF
 $bg-light-hover: #E2ECFF
 $border: #EAEBED
+
+.page-title
+	display: flex
+	align-items: flex-end
+	padding: 25px 0 15px 0
+	h1
+		font-size: 1.5em
+		font-weight: bold
+		margin: 0
+		margin-right: 22px
+	a
+		font-size: 1em
+		color: $accent
+@media screen and (max-width: 991.98px)
+   .page-title
+      padding: 30px 0
+@media screen and (max-width: 767.98px)
+   .page-title
+      h1
+         font-size: 1.7em
+@media screen and (max-width: 576.98px)
+   .page-title
+      h1
+         font-size: 1.3em
+@media screen and (max-width: 374.98px)
+   .page-title
+      h1
+         font-size: 1.1em
+
+.check_proposal
+   display: flex
+   align-items: center
+   position: relative
+   .radio
+      padding: 0
+      margin: 0
+      input[type=checkbox]
+         display: none
+      label
+         margin: 0
+         display: inline-block
+         cursor: pointer
+         font-size: .75em
+         line-height: 1
+         -ms-user-select: none
+         -moz-user-select: none
+         -khtml-user-select: none
+         -webkit-user-select: none
+         &:before
+            content: ''
+            position: absolute
+            left: -24px
+            top: 55%
+            transform: translateY(-50%)
+            width: 18px
+            height: 18px
+            border: 1px solid $accent
+            border-radius: 2px
+      input[type=checkbox]:checked + label:before
+         width: 18px
+         height: 18px
+         background: $accent url('../img/checked.svg') center no-repeat

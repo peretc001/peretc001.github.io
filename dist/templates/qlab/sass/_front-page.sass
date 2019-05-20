@@ -1,17 +1,6 @@
 .front-page
-   &-title
-      display: flex
-      align-items: flex-end
-      padding: 50px 0
-      h1
-         font-size: 1.9em
-         font-weight: bold
-         margin: 0
-         margin-right: 22px
-      a
-         font-size: 1em
-         color: $accent
-
+   .page-title
+      padding: 25px 0 !important
    .grid
       display: grid
       grid-template-columns: 3fr repeat(5, 2fr)
@@ -91,8 +80,10 @@
       padding: 0 10px 0 30px
       p
          margin: 0
+         padding: 0
          position: relative
          z-index: 3
+         line-height: 1
       &:before
          content: ''
          position: absolute
@@ -275,11 +266,10 @@
 
 @media screen and (max-width: 991.98px)
    .front-page
-      &-title
-         padding: 30px 0
       .grid
          grid-template-columns: repeat(3, 1fr)
          grid-row-gap: 0px
+         grid-auto-rows: 25px 1fr
          .x-col-1
             grid-column-start: 1
             grid-row-start: span 2
@@ -334,12 +324,10 @@
 @media screen and (max-width: 767.98px)
    .front-page
       font-size: 1em
-      &-title
-         h1
-            font-size: 1.7em
       .grid
          grid-template-columns: repeat(2, 1fr)
          grid-row-gap: 0px
+         grid-auto-rows: 34px 1fr
          .x-col-1
             grid-column-start: 1
             grid-row-start: span 2
@@ -373,7 +361,6 @@
          .x-col-11
             grid-column-start: 2
             grid-row-start: 6
-      
       [class*="x-col-"]:nth-child(2)
          background-image: none !important
          &:before
@@ -399,9 +386,6 @@
 @media screen and (max-width: 576.98px)
    .front-page
       font-size: 1em
-      &-title
-         h1
-            font-size: 1.3em
       .grid
          grid-template-columns: repeat(1, 1fr)
          grid-row-gap: 0px
@@ -447,9 +431,3 @@
             background-image: none !important
       [class*="x-col-"]:nth-child(1)
          border-right: none
-
-@media screen and (max-width: 374.98px)
-   .front-page
-      &-title
-         h1
-            font-size: 1.1em

@@ -1,0 +1,237 @@
+.proposal
+   [class*="col-"]
+      //border: 1px solid
+   form
+      margin: 0
+      padding: 0
+   .row
+      width: 100%
+      padding-right: 0
+   .divider
+      padding-bottom: 5px
+      border-bottom: 1px solid #e7e7e7
+
+   h3
+      font-size: 0.82em
+      font-weight: bold
+      margin: 1.5em 0
+      padding-left: 15px
+
+   select
+      position: relative
+      padding-right: 30px
+      padding-left: 13px
+      border-radius: 1.3em
+      font-size: 0.8em
+      -webkit-appearance: none
+      -moz-appearance: none
+      -ms-appearance: none
+      appearance: none
+      background: #fff url('../img/select.svg') 95% center no-repeat
+      cursor: pointer
+
+   .form-control
+      border: 1px solid $accent
+      border-radius: 1.3em
+      padding-left: 13px
+      font-size: 1em
+   
+   .proposal-title
+      position: relative
+      width: 100%
+
+   .proposal-second,
+   .proposal-third
+      .form-group
+         display: flex
+         align-items: center
+      p
+         font-size: 0.7em
+         padding-left: .5em
+         margin-bottom: 0
+         
+   .proposal-last
+      display: flex
+      align-items: center
+      justify-content: space-between
+      padding-right: 0
+   
+   .proposal-btn
+      padding: 1em 0
+         
+   .btn-add,
+   .btn-del,
+   .btn-edit
+      position: relative
+      display: inline-block
+      font-size: .8em
+      font-weight: bold
+      img
+         margin-right: 0.5em
+   .btn-edit
+      color: $accent
+
+   .btn-primary
+      font-size: .7em
+      background: linear-gradient(360deg, #1B489D 0%, #2A6FF7 100%)
+      border-radius: 50px
+      padding: 15px
+      margin: 0 15px 0 0
+      box-sizing: border-box
+      &:hover,
+      &:active
+         background: linear-gradient(180deg, #2A6FF7 50%, #1B489D 100%)
+   
+   .check_proposal
+      margin-left: 24px
+      margin-top: 15px
+
+   .my-proposal
+      padding-top: 0.5em
+      &-title
+         display: flex
+         align-items: center
+         h3
+            font-size: 0.9em
+         .btn-edit
+            margin-left: 3em
+      p
+         font-size: 0.75em
+         margin-bottom: 0
+
+@media screen and (min-width: 576px)
+   .proposal
+      .check_proposal
+         margin-left: 0px
+         margin-top: 0px
+
+@media screen and (min-width: 767.98px)
+   .proposal
+      h3
+         font-size: .7em
+      
+      .form-control
+         font-size: .8em
+
+      .proposal-title,
+      .proposal-first
+         max-width: 200px
+         margin-right: 0 !important
+         padding-right: 0 !important
+         select
+            max-width: 180px
+      .proposal-title
+         &:before
+            content: ''
+            position: absolute
+            left: -5px
+            top: 50%
+            transform: translateY(-50%)
+            width: 12px
+            height: 9px
+            background: url('../img/check.svg') center no-repeat
+         select
+            max-width: 230px
+      .proposal-first
+         max-width: 220px
+         margin-right: 30px
+      .proposal-second,
+      .proposal-third
+         max-width: 230px
+         margin-right: 0 !important
+         padding-right: 0 !important
+         select
+            max-width: 160px
+      .btn-del
+         margin-left: 15px
+      .btn-primary
+         margin-right: 30px
+         padding: 15px 40px
+      
+      .check_proposal
+         margin-left: 70px
+
+@media screen and (min-width: 992px)
+   .proposal
+      h3
+         font-size: .75em
+      .proposal-title,
+      .proposal-first
+         max-width: 200px
+         margin-right: 0 !important
+         padding-right: 0 !important
+         select
+            max-width: 180px
+      .proposal-first
+         max-width: 220px
+         margin-right: 30px
+      .proposal-second,
+      .proposal-third
+         max-width: 230px
+         margin-right: 0 !important
+         padding-right: 0 !important
+         select
+            max-width: 160px
+         p
+            font-size: 0.7em
+            margin: .5em 0 0 0
+      
+      .proposal-last
+         align-items: flex-end
+         padding-bottom: 1em
+
+      .btn-del
+         margin-left: 0
+         margin-bottom: .5em
+         font-size: 0.7em
+      .btn-primary
+         margin-right: 0
+         padding: 15px
+         font-size: 0.6em
+      
+      .check_proposal
+         margin-left: 5px
+         .radio
+            label
+               font-size: .65em
+
+@media screen and (min-width: 1200px)
+   .proposal
+      .proposal-title,
+      .proposal-first
+         max-width: 270px
+         margin-right: 15px !important
+         padding-right: 15px !important
+         select
+            max-width: 230px
+      .proposal-second,
+      .proposal-third
+         max-width: 240px
+         select
+            max-width: 170px
+         .col-2
+            padding-left: .5em
+      
+      .proposal-last
+         margin-left: 20px
+
+      .check_proposal
+         margin-left: 35px
+         .radio
+            label
+               font-size: .75em
+
+      .btn-primary
+         font-size: .85em
+         padding: 20px 25px
+
+@media screen and (max-width: 369.98px)
+   .proposal
+      .my-proposal
+         &-title
+            flex-direction: column
+            margin-bottom: 1em
+         h3
+            margin-bottom: .5em
+         .btn-edit
+            margin: 0
