@@ -1,0 +1,55 @@
+.ios-checkbox
+   display: none
+.switch
+   display: flex
+   width: 38px
+   height: 21px
+   background: #d60016
+   z-index: 0
+   margin: 0
+   padding: 0
+   appearance: none
+   border: none
+   cursor: pointer
+   position: relative
+   border-radius: 16px
+   &:before
+      content: ''
+      position: absolute
+      left: 2px
+      top: 2px
+      width: 16px
+      height: 16px
+      background: #d60016
+      z-index: 1
+      border-radius: 50%
+   &:after
+      content: ''
+      height: 16px
+      width: 16px
+      border-radius: 50%
+      background: #fff
+      position: absolute
+      z-index: 2
+      top: 2px
+      left: 2px
+      transition-duration: 300ms
+      box-shadow: 0 2px 5px #999999
+.switchOn,
+.switchOn:before
+   background: #4cd964 !important
+.switchOn:after
+   left: 20px !important
+
+@media screen and (max-width: 767.98px)
+	.switch
+		width: 50px
+		height: 26px
+		&:before
+			width: 22px
+			height: 22px
+		&:after
+			height: 22px
+			width: 22px
+	.switchOn:after
+		left: 26px !important
