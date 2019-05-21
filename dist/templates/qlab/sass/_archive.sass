@@ -1,0 +1,134 @@
+.archive
+   font-size: 1em
+   .archive-filter
+      margin-top: 0.5em
+      margin-bottom: 1em
+      &--item
+         display: flex
+         align-items: center
+         margin-right: 2em
+         p
+            font-weight: bold
+            margin-right: .5em
+         .form-group
+            width: 100%
+   
+   .archive-head
+      font-size: 0.8em
+      background: #fafafa
+      text-transform: uppercase
+      font-weight: bold
+      text-align: center
+      padding: 6px 0
+      [class*="col-"]
+         border-right: 1px solid #ebebeb
+         &:last-child
+            border-right: none
+   
+   .archive-result
+      font-size: 0.8em
+      padding: 6px 0
+      border-top: 1px solid #f3f3f3
+      &:first-child
+         border-top: none
+      &:hover
+         background: $bg-light
+      &--name
+         padding-left: 1.2em
+      &--num,
+      &--date,
+      &--status
+         text-align: center
+         padding: 0
+      &--msg
+         padding-left: 1em
+      
+      &--name,
+      &--msg
+         white-space: nowrap
+         overflow: hidden
+         text-overflow: ellipsis
+      &--status
+         span
+            color: $accent
+
+      &--num,
+      &--name,
+      &--date,
+      &--status,
+      &--msg
+         white-space: nowrap
+         overflow: hidden
+         text-overflow: ellipsis
+      
+      
+@media screen and (max-width: 1199.98px)
+   .archive
+      font-size: 0.9em
+
+@media screen and (max-width: 991.98px)
+   .archive
+      font-size: 0.8em
+
+@media screen and (max-width: 767.98px)
+   .archive
+      font-size: 0.8em
+      .fomr-control
+         font-size: 1em !important
+      .archive-filter
+         &--item
+            margin-right: 0
+            p
+               min-width: 80px
+      .archive-head
+         font-size: 0.6em
+      .archive-result
+         font-size: 0.6em
+
+@media screen and (max-width: 576.98px)
+   .archive
+      font-size: 0.8em
+      .archive-filter
+         &--item
+            p
+               min-width: 65px
+      .archive-head
+         font-size: 0.8em
+      .archive-result
+         font-size: 0.8em
+         padding: 10px 0
+         &--name
+            padding-right: .2em
+            padding-left: .2em
+
+@media screen and (max-width: 374.98px)
+   .archive
+      font-size: 0.8em
+      .archive-filter
+         &--item
+            p
+               min-width: auto
+      .archive-result
+         font-size: 0.7em
+
+@media screen and (min-width: 992px)
+   .archive
+      .archive-filter
+         .col-lg-3
+            max-width: 35%
+         .col-lg-2
+            max-width: 20%
+         &--item
+            .form-control
+               width: 227px
+               &.second
+                  width: 116px
+                  background-position: 90%
+
+@media screen and (min-width: 1200px)
+   .archive
+      .archive-filter
+         .col-lg-3
+            max-width: 30%
+         .col-lg-2
+            max-width: 17%

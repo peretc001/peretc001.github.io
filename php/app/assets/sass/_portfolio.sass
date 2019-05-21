@@ -12,6 +12,8 @@
       margin-bottom: .5em
       a
          color: #ffffff
+   img
+      max-width: 100%
    .portfolio-img
       position: relative
       display: block
@@ -68,3 +70,9 @@
          overflow: hidden
          padding: 5px
          text-overflow: ellipsis
+
+@media screen and (max-width: 767.98px)
+   .portfolio
+      .portfolio-img
+         &:before
+            opacity: .4

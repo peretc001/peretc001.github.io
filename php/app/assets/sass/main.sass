@@ -83,6 +83,8 @@ $menuItems: 7;
 		color: #fff
 		&:hover
 			background: #da3d7f
+		&:disabled
+			background: #d0d0d0
 blockquote
 	font-style: italic
 	color: #9095a1
@@ -156,12 +158,12 @@ blockquote
 	display: flex
 	align-items: center
 	justify-content: flex-start
-	padding: 20px 0
+	padding: 0
 	.circle-loader
 		cursor: pointer
 		margin: 0 10px
 		border: 1px solid rgba(255, 255, 255, 0.2)
-		border-color: #5cb85c
+		border-color: $accent
 		position: relative
 		display: block
 		vertical-align: top
@@ -171,7 +173,7 @@ blockquote
 		&.load-complete
 			-webkit-animation: none
 			animation: none
-			border-color: #5cb85c
+			border-color: $accent
 			transition: border 500ms ease-out
 		.checkmark
 			display: none
@@ -185,14 +187,15 @@ blockquote
 				height: 0.75em
 				width: 0.375em
 				transform-origin: left top
-				border-right: 3px solid #5cb85c
-				border-top: 3px solid #5cb85c
+				border-right: 3px solid $accent
+				border-top: 3px solid $accent
 				content: ''
 				left: 0.375em
 				top: 0.75em
 				position: absolute
 	span
 		color: $text
+		font-size: 0.8em
 @keyframes checkmark
 	0%
 		height: 0

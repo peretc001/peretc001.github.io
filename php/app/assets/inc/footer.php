@@ -34,17 +34,11 @@
 							<button class="btn btn-accent callback__form__button" disabled>Отправить заявку</button>
 						</div>
 					</div>
-					<div class="policy__checked">
-						<div class="radio">
-							<input id="policy_callback_footer" type="checkbox" name="policy" checked="">
-							<label for="policy_callback_footer">Согласен с условиями</label> <a href="/policy/" target="_blank">Политики конфиденциальности</a>
-						</div>
-					</div>
 					<div class="robot">
 						<div class="circle-loader">
 							<div class="checkmark draw"></div>
 						</div>
-						<span>подтверждаю, что я не робот</span>
+						<span>Согласен с условиями</label> <a href="/policy/" target="_blank">Политики конфиденциальности</a></span>
 					</div>
 					
 				</form>

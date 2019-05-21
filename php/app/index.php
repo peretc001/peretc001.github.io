@@ -136,7 +136,12 @@
 						if($row['themes'] == 'Система учета') { echo 'crm'; }
 						if($row['themes'] == 'Интернет-магазин') { echo 'internet-magazin'; }
 						if($row['themes'] == 'Информационный') { echo 'informacionnyj-sajt'; }
-					?>/<?php echo $row['img']; ?>.php"><img src="/assets/img/portfolio/<?php echo $row['img']; ?>.jpg" alt="Разработка сайта <?php echo $row['title']; ?>">
+					?>/<?php echo $row['img']; ?>.php"><img src="/assets/img/portfolio/<?php echo $row['img']; ?>.jpg" 
+						srcset = "/assets/img/portfolio/<?php echo $row['img']; ?>-350.jpg 350w,
+						/assets/img/portfolio/<?php echo $row['img']; ?>.jpg 1280w"
+						sizes = "(max-width: 375px) 350px,
+									(max-width: 1200px) 1280px"
+							alt="Разработка сайта <?php echo $row['title']; ?>">
 						<span><i><?php echo $row['work']; ?></i></span>
 					</a>
 				</div>
