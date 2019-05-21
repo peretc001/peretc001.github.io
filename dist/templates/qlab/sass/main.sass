@@ -107,26 +107,8 @@ select
 @import "proposal"
 @import "protocol"
 @import "ios_switch"
+@import "footer"
 
-.footer
-	padding: 5px 20px
-	background: #393b3b
-	color: #ffffff
-	margin-top: 50px
-	.container
-		display: flex
-		align-items: center
-	a
-		color: #fff
-	p
-		font-size: 0.8em
-		margin-bottom: 0
-	.phone
-		border-left: 1px solid #ffffff
-		padding-left: 1em
-		margin-left: 1em
-		font-size: 1.2em
-		font-weight: bold
 
 input[readonly], input[readonly="readonly"]
 	background: #fff !important
@@ -175,63 +157,49 @@ input[readonly], input[readonly="readonly"]
 					background: $bg-light-hover
 
 .check_proposal
-   display: flex
-   align-items: center
-   position: relative
-   .radio
-      padding: 0
-      margin: 0
-      input[type=checkbox]
-         display: none
-      label
-         margin: 0
-         display: inline-block
-         cursor: pointer
-         font-size: .75em
-         line-height: 1
-         -ms-user-select: none
-         -moz-user-select: none
-         -khtml-user-select: none
-         -webkit-user-select: none
-         &:before
+	display: flex
+	align-items: center
+	position: relative
+	.radio
+		padding: 0
+		margin: 0
+		input[type=checkbox]
+			display: none
+		label
+			margin: 0
+			font-weight: bold
+			display: inline-block
+			cursor: pointer
+			font-size: .7em
+			line-height: 1
+			font-weight: bold
+			-ms-user-select: none
+			-moz-user-select: none
+			-khtml-user-select: none
+			-webkit-user-select: none
+			&:before
             content: ''
             position: absolute
             left: -24px
-            top: 55%
+            top: 60%
             transform: translateY(-50%)
             width: 18px
             height: 18px
             border: 1px solid $accent
             border-radius: 2px
-      input[type=checkbox]:checked + label:before
-         width: 18px
-         height: 18px
-         background: $accent url('../img/checked.svg') center no-repeat
+		input[type=checkbox]:checked + label:before
+			width: 18px
+			height: 18px
+			background: $accent url('../img/checked.svg') center no-repeat
 
 @media screen and (max-width: 991.98px)
    .page-title
       padding: 30px 0
 
-@media screen and (max-width: 767.98px)
-	.footer
-		p
-			font-size: 0.7em
-		.phone
-			font-size: 1em
-
 @media screen and (max-width: 576.98px)
 	.page-title
       h1
          font-size: 1.3em
-	.footer
-		.container
-			flex-direction: column
-		p
-			font-size: 0.7em
-			margin: 0 !important
-		.phone
-			border: none
-			padding: 0
 
 @media screen and (min-width: 767.98px)
 	.page-title
@@ -258,7 +226,6 @@ input[readonly], input[readonly="readonly"]
 
 @media (min-width: 576px)
 	.container
-		overflow-x: hidden
 		border-radius: 0 0 6px 6px
 		&.page
 			padding-bottom: 15px
