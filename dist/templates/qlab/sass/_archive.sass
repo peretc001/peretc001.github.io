@@ -61,6 +61,190 @@
          overflow: hidden
          text-overflow: ellipsis
       
+
+   .document
+      max-width: 700px
+      margin: 1em auto
+      border-radius: 10px
+      &-header
+         background: $bg-light
+         display: flex
+         align-items: center
+         padding: 10px 20px
+         border-radius: 10px 10px 0 0
+         border: 1px solid rgba($accent, .2)
+         border-bottom: 0
+         p
+            margin-bottom: 0
+            margin-right: 1.2em
+            font-size: 1em
+            font-weight: bold
+            color: $accent-dark
+         .btn-submit
+            padding: 8px 20px
+            img
+               width: 12px
+               height: auto
+               margin-right: 0.5em
+      &-body
+         padding: 18px 20px
+         border: 1px solid rgba($accent, .2)
+         border-top: 0
+         border-radius: 0 0 10px 10px
+         width: 100%
+         margin: 0 auto
+         &-item
+            background: #fafafa
+            border: 1px solid #f5f5f5
+            border-radius: 4px
+            padding: 8px 11px
+            font-size: 0.8em
+            margin-bottom: 1em
+            &--title
+               display: flex
+               font-weight: bold
+               align-items: center
+               margin-bottom: 1em
+               p
+                  font-size: 1em !important
+            p
+               margin-bottom: 0
+               font-size: 0.9em
+            a
+               margin-left: 0.2em
+            img
+               width: 14px
+               height: auto
+               display: block
+         
+         &-protocol
+            font-size: .8em
+            margin-bottom: 1em
+            &--head
+               font-weight: bold
+               &--col
+                  width: 100%
+                  display: flex
+                  align-items: center
+                  text-align: center
+                  background: #f2f2f2
+                  border: 1px solid #ebebeb
+                  border-bottom: 0
+                  border-radius: 10px 10px 0 0
+            &--item
+               border: 1px solid #ebebeb
+               border-top: 0
+               border-radius: 0 0 10px 10px
+               &--col
+                  width: 100%
+                  padding: 0 0 0 20px
+                  display: flex
+                  background: #fafafa
+            
+            &--head--col
+               &--left,
+               &--center,
+               &--right
+                  padding: 10px 0
+               &--right
+                  background: #dbdbdb
+                  margin-left: 20px
+                  border-radius: 0 10px 0 0 
+   
+            &--head--col,
+            &--item--col
+               &--left,
+               &--right
+                  width: 30%
+               &--right
+                  text-align: center
+               &--center
+                  width: 40%
+                  text-align: center
+               &--left,
+               &--center,
+               &--right
+                  p
+                     padding: 5px 0
+                     margin: 0
+                     border-bottom: 1px solid #ebebeb
+               &--right
+                  p
+                     padding-left: 10px
+                     margin-right: 20px
+                     span
+                        color: #d60016
+                        font-weight: bold
+         
+         &-result
+            &--head
+               text-align: center
+               background: #f2f2f2
+               border: 1px solid #ebebeb
+               border-bottom: 0
+               border-radius: 10px 10px 0 0
+               padding: 10px 0
+               font-weight: bold
+            &--item
+               border: 1px solid #ebebeb
+               border-top: 0
+               border-radius: 0 0 10px 10px   
+               &--col
+                  width: 100%
+                  padding: 0 0 0 20px
+                  display: flex
+                  background: #fafafa
+                  &.head
+                     font-weight: bold
+                     text-align: center
+                     font-size: 0.6em
+                     padding: 10px 0
+            
+            &--item--col
+               p
+                  border-top: 1px solid #ebebeb
+                  padding: 10px 0
+                  font-size: 0.8em
+                  margin-bottom: 0
+               &--1
+                  width: 20%
+               &--2,
+               &--3,
+               &--4,
+               &--5,
+               &--6,
+                  width: 16%
+                  text-align: center
+                  padding: 0
+                  margin: 0               
+               &--2,
+               &--3,
+               &--4
+                  display: flex
+                  flex-direction: column
+                  justify-content: space-between
+               &--6
+                  p
+                     margin-right: 20px
+                     padding-left: 20px
+            
+            &--item--col.head
+               .document-body-result--item--col--1
+                  width: 25%
+               
+   
+   
+   .document-body-protocol--item--col:last-child
+      border-radius: 10px
+      .document-body-protocol--item--col--left,
+      .document-body-protocol--item--col--right,
+      .document-body-protocol--item--col--center
+         p
+            border-bottom: 0
+      .document-body-protocol--item--col--right:last-child
+         border-radius: 0 0 10px 0
+   .document-body-protocol--item--col--right:last-child
+      background: $bg-light
       
 @media screen and (max-width: 1199.98px)
    .archive
@@ -84,6 +268,13 @@
          font-size: 0.6em
       .archive-result
          font-size: 0.6em
+      
+      .document
+         max-width: auto
+         &-body
+            padding: 18px 0px
+            &-protocol
+               font-size: 0.7em
 
 @media screen and (max-width: 576.98px)
    .archive
@@ -100,6 +291,26 @@
          &--name
             padding-right: .2em
             padding-left: .2em
+      
+      .document
+         &-header
+            padding: 10px 20px
+            p
+               margin-right: 0.5em
+            .btn-submit
+               font-size: 0.8em
+               padding: 8px 10px
+            img
+               width: 80px
+         &-body
+            &-item
+               p
+                  font-size: 1.2em
+            &-result
+               font-size: 0.8em
+               &--item--col--6
+                  p
+                     margin-right: 10px
 
 @media screen and (max-width: 374.98px)
    .archive
@@ -110,6 +321,18 @@
                min-width: auto
       .archive-result
          font-size: 0.7em
+      
+      .document
+         &-header
+            p
+               margin-right: 1em
+            .btn-submit
+               padding: 8px
+               border-radius: 8px
+               img
+                  margin-right: 0
+               span
+                  display: none
 
 @media screen and (min-width: 992px)
    .archive
