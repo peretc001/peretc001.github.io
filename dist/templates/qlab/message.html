@@ -140,18 +140,15 @@
             <div class="message-head--select">
                <div class="message-head--select--first">
                   <p>Показать</p>
-                  <select class="form-control">
+                  <select>
                      <option>Все сообщения</option>
-                     <option>Все сообщения 1</option>
-                     <option>Все сообщения 2</option>
-                     <option>Все сообщения 3</option>
-                     <option>Все сообщения 4</option>
-                     <option>Все сообщения 5</option>
+                     <option>Прочитано</option>
+                     <option>Не прочитано</option>
                   </select>
                </div>
                <div class="message-head--select--second">
                   <p>Дата</p>
-                  <select class="form-control">
+                  <select class="form-control select_message">
                      <option>Все</option>
                      <option>Все 1</option>
                      <option>Все 2</option>
@@ -164,7 +161,7 @@
                   <p>Показать только важные</p>
                   <label>
                      <input type="checkbox" name="" class="ios-checkbox" />
-                     <div class="switch grey"></div>
+                     <div class="switchFlag"></div>
                   </label>
                </div>
             </div>
@@ -174,7 +171,7 @@
             </div>
          </div>
          <!-- loop -->
-         <a href="#" class="message-body">
+         <div id="message_m1" class="message-body unmarked">
             <div class="message-body--head">
                <p>МПА18 - 01</p>
                <p>Пробы высланы</p>
@@ -189,10 +186,15 @@
                <p>
                   Непрочитано
                </p>
-               <img src="img/flag-read.svg" alt="">
+               <div class="flag">
+                  <div class="radio">
+                     <input id="m1" type="checkbox" name="m1" class="flag_message">
+                     <label for="m1"></label>
+                  </div>
+               </div>
             </div>
-         </a>
-         <a href="#" class="message-body">
+         </div>
+         <div id="message_m2" class="message-body unmarked">
             <div class="message-body--head">
                <p>МПА18 - 01</p>
                <p>Пробы высланы</p>
@@ -207,10 +209,61 @@
                <p>
                   Непрочитано
                </p>
-               <img src="img/flag-read.svg" alt="">
+               <div class="flag">
+                  <div class="radio">
+                     <input id="m2" type="checkbox" name="m2" class="flag_message">
+                     <label for="m2"></label>
+                  </div>
+               </div>
             </div>
-         </a>
-         <a href="#" class="message-body read">
+         </div>
+         <div id="message_m3"  class="message-body unmarked read">
+            <div class="message-body--head">
+               <p>МПА18 - 01</p>
+               <p>Пробы высланы</p>
+               <p class="ml-auto">18.03.2019</p>
+            </div>
+            <div class="message-body--item">
+               <p>
+                  Сопроводительный текст с описанием события и необходимыми заметками по произошедшему действию работы данного события, а так же указание всех необходимых данных
+               </p>
+            </div>
+            <div class="message-body--footer">
+               <p>
+                  Прочитано
+               </p>
+               <div class="flag">
+                  <div class="radio">
+                     <input id="m3" type="checkbox" name="m3" class="flag_message">
+                     <label for="m3"></label>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="message_m4"  class="message-body unmarked read">
+            <div class="message-body--head">
+               <p>МПА18 - 01</p>
+               <p>Пробы высланы</p>
+               <p class="ml-auto">18.03.2019</p>
+            </div>
+            <div class="message-body--item">
+               <p>
+                  Сопроводительный текст с описанием события и необходимыми заметками по произошедшему действию работы данного события, а так же указание всех необходимых данных
+               </p>
+            </div>
+            <div class="message-body--footer">
+               <p>
+                  Прочитано
+               </p>
+               <div class="flag">
+                  <div class="radio">
+                     <input id="m4" type="checkbox" name="m4" class="flag_message">
+                     <label for="m4"></label>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="message_m5"  class="message-body unmarked">
             <div class="message-body--head">
                <p>МПА18 - 01</p>
                <p>Пробы высланы</p>
@@ -225,48 +278,18 @@
                <p>
                   Непрочитано
                </p>
-               <img src="img/flag-read.svg" alt="">
+               <div class="flag">
+                  <div class="radio">
+                     <input id="m5" type="checkbox" name="m5" class="flag_message">
+                     <label for="m5"></label>
+                  </div>
+               </div>
             </div>
-         </a>
-         <a href="#" class="message-body read">
-            <div class="message-body--head">
-               <p>МПА18 - 01</p>
-               <p>Пробы высланы</p>
-               <p class="ml-auto">18.03.2019</p>
-            </div>
-            <div class="message-body--item">
-               <p>
-                  Сопроводительный текст с описанием события и необходимыми заметками по произошедшему действию работы данного события, а так же указание всех необходимых данных
-               </p>
-            </div>
-            <div class="message-body--footer">
-               <p>
-                  Непрочитано
-               </p>
-               <img src="img/flag-unread.svg" alt="">
-            </div>
-         </a>
-         <a href="#" class="message-body">
-            <div class="message-body--head">
-               <p>МПА18 - 01</p>
-               <p>Пробы высланы</p>
-               <p class="ml-auto">18.03.2019</p>
-            </div>
-            <div class="message-body--item">
-               <p>
-                  Сопроводительный текст с описанием события и необходимыми заметками по произошедшему действию работы данного события, а так же указание всех необходимых данных
-               </p>
-            </div>
-            <div class="message-body--footer">
-               <p>
-                  Непрочитано
-               </p>
-               <img src="img/flag-read.svg" alt="">
-            </div>
-         </a>
+         </div>
          <!-- end loop -->
-   </section>
 
+         
+   </section>
    
 	<div class="footer">
 		<div class="container">
@@ -282,10 +305,11 @@
 	
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/main.min.css">
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<script src="js/css-polyfill.min.js"></script>
+   <script src="js/css-polyfill.min.js"></script>
+   <!-- <script src="js/selectize/js/standalone/selectize.min.js"></script> -->
 	<script src="js/script.js"></script>
 
 </body>

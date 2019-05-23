@@ -12,10 +12,12 @@ $(function() {
 	if($("div").is(".grid")) {
 		$('grid').gridLayout();
 	}
+
+	//switch button
 	if($("div").is(".switch")) {
 		$('.protocol-send--after').hide();
 		$('.switch').click(function(){
-		$(this).toggleClass('switchOn');
+			$(this).toggleClass('switchOn');
 			if($(this).hasClass('switchOn')) {
 				$('.btn-submit').prop('disabled', false);
 				$('.protocol-send--before').hide();
@@ -27,6 +29,34 @@ $(function() {
 			}
 		});
 	};
+
+	//switch message
+	let flag = document.querySelectorAll('.flag_message');
+	flag.forEach(item => {
+		item.addEventListener('click', () => {
+			let block = item.closest(".message-body");
+			if(block.classList.contains('unmarked')) {
+				block.classList.remove('unmarked');
+				block.classList.add('marked');
+			} else {
+				block.classList.remove('marked');
+				block.classList.add('unmarked');
+			}
+		})
+	});
+
+	if($("div").is(".switchFlag")) {
+		$('.switchFlag').click(function(){
+			$(this).toggleClass('switchFlagOn');
+			if($(this).hasClass('switchFlagOn')) {
+				$('.unmarked').hide();
+			} else {
+				$('.unmarked').show();
+			}
+		});
+	};
+
+
 	if($("input").is(".datepicker")) {
 		$.fn.datepicker.dates['ru'] = {
 			days: ["Восерсенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"],
@@ -45,4 +75,10 @@ $(function() {
 		});
 		$('.datepicker').datepicker("setDate", new Date());
 	};
+
+	$("select").selectize({
+		persist: false,
+		createOnBlur: true,
+		create: true
+	});
 });
