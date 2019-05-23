@@ -66,6 +66,13 @@
       max-width: 700px
       margin: 1em auto
       border-radius: 10px
+      padding: 0
+      > .row > [class*="col-"]
+         padding: 0
+         margin: 0
+         &:first-child
+            padding-right: 0.5em
+         
       &-header
          background: $bg-light
          display: flex
@@ -87,7 +94,7 @@
                height: auto
                margin-right: 0.5em
       &-body
-         padding: 18px 20px
+         padding: 18px 10px 10px 10px
          border: 1px solid rgba($accent, .2)
          border-top: 0
          border-radius: 0 0 10px 10px
@@ -119,7 +126,6 @@
          
          &-protocol
             font-size: .8em
-            margin-bottom: 1em
             &--head
                font-weight: bold
                &--col
@@ -127,14 +133,15 @@
                   display: flex
                   align-items: center
                   text-align: center
-                  background: #f2f2f2
-                  border: 1px solid #ebebeb
+                  background: #eaeaea
+                  border: 1px solid #cecece
                   border-bottom: 0
                   border-radius: 10px 10px 0 0
             &--item
-               border: 1px solid #ebebeb
+               border: 1px solid #cecece
                border-top: 0
                border-radius: 0 0 10px 10px
+               margin-bottom: 1em
                &--col
                   width: 100%
                   padding: 0 0 0 20px
@@ -145,7 +152,7 @@
                &--left,
                &--center,
                &--right
-                  padding: 10px 0
+                  padding: 5px 0
                &--right
                   background: #dbdbdb
                   margin-left: 20px
@@ -167,7 +174,7 @@
                   p
                      padding: 5px 0
                      margin: 0
-                     border-bottom: 1px solid #ebebeb
+                     border-bottom: 1px solid #ededed
                &--right
                   p
                      padding-left: 10px
@@ -175,35 +182,40 @@
                      span
                         color: #d60016
                         font-weight: bold
+                        font-style: italic
+                     b
+                        font-style: italic
          
          &-result
+            margin-bottom: 0
             &--head
                text-align: center
-               background: #f2f2f2
-               border: 1px solid #ebebeb
+               background: #eaeaea
+               border: 1px solid #cecece
                border-bottom: 0
                border-radius: 10px 10px 0 0
-               padding: 10px 0
+               padding: 9px 0 10px 0
                font-weight: bold
             &--item
-               border: 1px solid #ebebeb
+               border: 1px solid #cecece
                border-top: 0
-               border-radius: 0 0 10px 10px   
+               border-radius: 0 0 10px 10px 
                &--col
                   width: 100%
                   padding: 0 0 0 20px
                   display: flex
                   background: #fafafa
+                  border-radius: 0 0 10px 10px
                   &.head
                      font-weight: bold
                      text-align: center
                      font-size: 0.6em
-                     padding: 10px 0
+                     padding: 10px 5px
             
             &--item--col
                p
-                  border-top: 1px solid #ebebeb
-                  padding: 10px 0
+                  border-top: 1px solid #ededed
+                  padding: 5px 0
                   font-size: 0.8em
                   margin-bottom: 0
                &--1
@@ -216,7 +228,7 @@
                   width: 16%
                   text-align: center
                   padding: 0
-                  margin: 0               
+                  margin: 0              
                &--2,
                &--3,
                &--4
@@ -226,11 +238,11 @@
                &--6
                   p
                      margin-right: 20px
-                     padding-left: 20px
+                     padding-left: 15px
             
             &--item--col.head
                .document-body-result--item--col--1
-                  width: 25%
+                  width: 23%
                
    
    
@@ -271,10 +283,20 @@
       
       .document
          max-width: auto
+         > .row > [class*="col-"]
+            padding: 0 10px
+            margin: 0
+            &:last-child
+               padding-right: 5px
          &-body
-            padding: 18px 0px
+            padding: 5px 0 10px 0
             &-protocol
+               padding: 0
+               margin: 0
                font-size: 0.7em
+            &-result
+               padding: 0
+               margin: 0
 
 @media screen and (max-width: 576.98px)
    .archive
@@ -311,6 +333,9 @@
                &--item--col--6
                   p
                      margin-right: 10px
+               &--item--col.head
+                  .document-body-result--item--col--1
+                     width: 25%
 
 @media screen and (max-width: 374.98px)
    .archive
@@ -347,6 +372,8 @@
                &.second
                   width: 116px
                   background-position: 90%
+            .dropdown.second
+               width: 116px
 
 @media screen and (min-width: 1200px)
    .archive

@@ -136,134 +136,182 @@
             <h1>Заявка на МСИ</h1>
          </div>
 
-			<div class="row">
-				<div class="col-md-6 col-lg-3 select-title">
-					<select class="form-control">
-						<option>Заполнить по шаблону</option>
-						<option>Шаблон 1</option>
-						<option>Шаблон 2</option>
-						<option>Шаблон 3</option>
-						<option>Шаблон 4</option>
-						<option>Шаблон 5</option>
-					</select>
+			<div class="proposal-title">
+				<div class="dropdown">
+					<a class="form-control select" role="button" 
+						id="selectTitle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Заполнить по шаблону
+					</a>
+					<div class="dropdown-menu dropdown-select" aria-labelledby="selectTitle">
+						<a class="dropdown-item">Без шаблона</a>
+						<a class="dropdown-item">Шаблон 1</a>
+						<a class="dropdown-item">Шаблон 2</a>
+						<a class="dropdown-item">Шаблон 3</a>
+						<a class="dropdown-item">Шаблон 4</a>
+						<a class="dropdown-item">Шаблон 5</a>
+					</div>
 				</div>
-			</div>
-         <div class="divider mt-3"></div>
-         
-         <form action="">
-            <div class="row">
-					
-					<div class="col-md-6 col-lg-3 proposal-first">
-                  <h3 class="h3">Шрифт схемы, раунда МСИ</b></h3>
-                  <div class="form-group">
-                     <select class="form-control">
-                        <option>МПА (Пшеница Альвеограмма)</option>
-                        <option>Шаблон 1</option>
-                        <option>Шаблон 2</option>
-                        <option>Шаблон 3</option>
-                        <option>Шаблон 4</option>
-                        <option>Шаблон 5</option>
-                     </select>
-                  </div>
-                  <div class="form-group">
-                     <select class="form-control">
-                        <option>МПГ (Пшеница Грама)</option>
-                        <option>Шаблон 1</option>
-                        <option>Шаблон 2</option>
-                        <option>Шаблон 3</option>
-                        <option>Шаблон 4</option>
-                        <option>Шаблон 5</option>
-                     </select>
-                  </div>
-					</div>
-					
-               <div class="col-md-6 col-lg-3 proposal-second">
-                  <h3>Экземпляры ОПК для МСИ</b></h3>
-                  <div class="form-group">
-                     <select class="form-control">
-                        <option>10</option>
-                        <option>11</option>
-                        <option>12</option>
-                        <option>13</option>
-                        <option>14</option>
-                        <option>15</option>
-                     </select>
-                     <p>шт</p>
-                  </div>
-                  <div class="form-group">
-                     <select class="form-control">
-                        <option>10</option>
-                        <option>11</option>
-                        <option>12</option>
-                        <option>13</option>
-                        <option>14</option>
-                        <option>15</option>
-							</select>
-							<p>шт</p>
-                  </div>
-					</div>
-					
-               <div class="col-md-6 col-lg-3 proposal-third">
-                  <h3>Доп. экземпляра ОПК для МСИ</b></h3>
-                  <div class="form-group">
-                     <select class="form-control">
-                        <option value="">5</option>
-                        <option value="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4</option>
-                     </select>
-                     <p>шт</p>
-                  </div>
-                  <div class="form-group">
-                     <select class="form-control">
-                        <option value="">5</option>
-                        <option value="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4</option>
-                     </select>
-                     <p>шт</p>
-                  </div>
-					</div>
-					
-               <div class="col-lg-3 proposal-last">
-                  <a href="" class="btn-del"><img src="img/del.svg">удалить</a>
-                  <a href="" class="btn-submit">ОТПРАВИТЬ ЗАЯВКУ</a>
-					</div>
-					
-            </div>
-			</form>
-			<div class="divider mt-2"></div>
-
-         <div class="row proposal-btn">
-            <div class="col-sm-6 col-lg-9">
-               <a href="" class="btn-add"><img src="img/add.svg">добавить ещё Раунд</a>
-            </div>
-            <div class="col-sm-6 col-lg-3">
-               <div class="check_proposal">
-                  <div class="radio">
-                     <input id="checkbox" type="checkbox" name="proposal" checked>
-                     <label for="checkbox">Реквизиты моей компании актуальны</label>
-                  </div>
-               </div>
-            </div>
 			</div>
 			<div class="divider"></div>
-
-			<div class="row my-proposal">
-				<div class="col-12">
-					<div class="my-proposal-title">
-						<h3>Мои реквизиты:</h3>
-						<a href="" class="btn-edit"><img src="img/edit.svg">редактировать</a>	
+         
+         <form action="" class="proposal-body">
+				<div class="proposal-body--first">
+					<h3 class="h3">Шрифт схемы, раунда МСИ</b></h3>
+					<div class="form-group">
+						<div class="dropdown">
+							<a class="form-control select" role="button" 
+								id="selectTitle2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								МПА (Пшеница Альвеограмма)
+							</a>
+							<div class="dropdown-menu dropdown-select" aria-labelledby="selectTitle2">
+								<a class="dropdown-item">МПА (Пшеница Альвеограмма)</a>
+								<a class="dropdown-item">Шаблон 1</a>
+								<a class="dropdown-item">Шаблон 2</a>
+								<a class="dropdown-item">Шаблон 3</a>
+								<a class="dropdown-item">Шаблон 4</a>
+								<a class="dropdown-item">Шаблон 5</a>
+							</div>
+						</div>
 					</div>
-					<p>ООО «Зерно»</p>
-					<p>Пупкин Василий Петрович</p>
-					<p>РС 100040005454608</p>
-					<p>РС 100070003458900</p>
-					<p>РС 100023003408954</p>
-					<p>РС 100275053123071</p>
+					<div class="form-group">
+						<div class="dropdown">
+							<a class="form-control select" role="button" 
+								id="selectTitle3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								МПГ (Пшеница Грама)
+							</a>
+							<div class="dropdown-menu dropdown-select" aria-labelledby="selectTitle3">
+								<a class="dropdown-item">МПГ (Пшеница Грама)</a>
+								<a class="dropdown-item">Шаблон 1</a>
+								<a class="dropdown-item">Шаблон 2</a>
+								<a class="dropdown-item">Шаблон 3</a>
+								<a class="dropdown-item">Шаблон 4</a>
+								<a class="dropdown-item">Шаблон 5</a>
+							</div>
+						</div>
+					</div>
 				</div>
+				
+				<div class="proposal-body--second">
+					<h3>Экземпляры ОПК для МСИ</b></h3>
+					<div class="form-group">
+						<div class="dropdown">
+							<a class="form-control select" role="button" 
+								id="selectTitle4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								10
+							</a>
+							<div class="dropdown-menu dropdown-select" aria-labelledby="selectTitle4">
+								<a class="dropdown-item">10</a>
+								<a class="dropdown-item">11</a>
+								<a class="dropdown-item">12</a>
+								<a class="dropdown-item">13</a>
+								<a class="dropdown-item">14</a>
+								<a class="dropdown-item">15</a>
+							</div>
+						</div>
+						<p>шт</p>
+					</div>
+					<div class="form-group">
+						<div class="dropdown">
+							<a class="form-control select" role="button" 
+								id="selectTitle5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								10
+							</a>
+							<div class="dropdown-menu dropdown-select" aria-labelledby="selectTitle5">
+								<a class="dropdown-item">10</a>
+								<a class="dropdown-item">11</a>
+								<a class="dropdown-item">12</a>
+								<a class="dropdown-item">13</a>
+								<a class="dropdown-item">14</a>
+								<a class="dropdown-item">15</a>
+							</div>
+						</div>
+						<p>шт</p>
+					</div>
+				</div>
+				
+				<div class="proposal-body--third">
+					<h3>Доп. экземпляра ОПК для МСИ</b></h3>
+					<div class="form-group">
+						<div class="dropdown">
+							<a class="form-control select" role="button" 
+								id="selectTitle6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								5
+							</a>
+							<div class="dropdown-menu dropdown-select" aria-labelledby="selectTitle6">
+								<a class="dropdown-item">5</a>
+								<a class="dropdown-item">6</a>
+								<a class="dropdown-item">7</a>
+								<a class="dropdown-item">8</a>
+								<a class="dropdown-item">9</a>
+								<a class="dropdown-item">10</a>
+							</div>
+						</div>
+						<p>шт</p>
+					</div>
+					<div class="form-group">
+						<div class="dropdown">
+							<a class="form-control select" role="button" 
+								id="selectTitle7" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								5
+							</a>
+							<div class="dropdown-menu dropdown-select" aria-labelledby="selectTitle7">
+								<a class="dropdown-item">5</a>
+								<a class="dropdown-item">6</a>
+								<a class="dropdown-item">7</a>
+								<a class="dropdown-item">8</a>
+								<a class="dropdown-item">9</a>
+								<a class="dropdown-item">10</a>
+							</div>
+						</div>
+						<p>шт</p>
+					</div>
+				</div>
+				
+				<div class="proposal-body--last d-none d-sm-flex">
+					<a href="" class="btn-del"><img src="img/del.svg">удалить</a>
+					<a href="" class="btn-submit">ОТПРАВИТЬ ЗАЯВКУ</a>
+				</div>
+				
+				<!-- Only for mobile -->
+				<div class="proposal-mobile d-sm-none">
+					<div class="proposal-mobile-btn">
+						<a href="" class="btn-add"><img src="img/add.svg">добавить ещё Раунд</a>
+						<a href="" class="btn-del"><img src="img/del.svg">удалить</a>
+					</div>
+					<div class="check_proposal">
+						<div class="radio">
+							<input id="checkbox" type="checkbox" name="proposal" checked>
+							<label for="checkbox">Реквизиты моей компании актуальны</label>
+						</div>
+					</div>
+					<div class="proposal-mobile-send">
+						<a href="" class="btn-submit">ОТПРАВИТЬ ЗАЯВКУ</a>
+					</div>
+				</div>
+				<!-- end -->
+			</form>
+
+         <div class="proposal-btn d-none d-sm-flex">
+            <a href="" class="btn-add"><img src="img/add.svg">добавить ещё Раунд</a>
+            <div class="check_proposal">
+					<div class="radio">
+						<input id="checkbox" type="checkbox" name="proposal" checked>
+						<label for="checkbox">Реквизиты моей компании актуальны</label>
+					</div>
+				</div>
+			</div>
+
+			<div class="my-proposal">
+				<div class="my-proposal-title">
+					<h3>Мои реквизиты:</h3>
+					<a href="" class="btn-edit"><img src="img/edit.svg">редактировать</a>	
+				</div>
+				<p>ООО «Зерно»</p>
+				<p>Пупкин Василий Петрович</p>
+				<p>РС 100040005454608</p>
+				<p>РС 100070003458900</p>
+				<p>РС 100023003408954</p>
+				<p>РС 100275053123071</p>
 			</div>
 
       </div>

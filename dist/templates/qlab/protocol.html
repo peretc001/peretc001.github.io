@@ -138,13 +138,19 @@
 
 			<div class="row">
 				<div class="col-md-6 col-lg-3 select-title">
-					<select class="form-control">
-						<option>МПФ18-01</option>
-						<option>МПФ18-02</option>
-						<option>МПФ18-03</option>
-						<option>МПФ18-04</option>
-						<option>МПФ18-05</option>
-					</select>
+					<div class="dropdown">
+						<a class="form-control select" role="button" 
+							id="selectTitle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							МПФ18-01
+						</a>
+						<div class="dropdown-menu dropdown-select" aria-labelledby="selectTitle">
+							<a class="dropdown-item">МПФ18-01</a>
+							<a class="dropdown-item">МПФ18-02</a>
+							<a class="dropdown-item">МПФ18-03</a>
+							<a class="dropdown-item">МПФ18-04</a>
+							<a class="dropdown-item">МПФ18-05</a>
+						</div>
+					</div>
 				</div>
 			</div>
 			
@@ -153,7 +159,7 @@
 					<h2>Мука пшеничная. Параметры альвеограммы.</h2>
 				</div>
 			</div>
-			<form action="/123/">
+			<form action="">
 				<div class="row">
 					<div class="col-md-6 col-lg-3">
 
@@ -181,7 +187,7 @@
 								</div>
 							</div>
 
-							<div class="protocol-body-msg">
+							<div class="protocol-body-msg d-none d-sm-block">
 								<p>
 									Комментарий участника:
 								</p>
@@ -192,7 +198,7 @@
 							</div>
 						</div>
 
-						<div class="col-12 protocol-confirm  d-none d-lg-inline">
+						<div class="col-12 protocol-confirm d-none d-lg-block">
 							<div class="protocol-confirm-check">
 								<p>Подтвердить</p>
 								<label>
@@ -205,7 +211,7 @@
 							</p>
 						</div>
 
-						<div class="col-12 protocol-send d-none d-lg-inline">
+						<div class="col-12 protocol-send d-none d-lg-block">
 							<button class="btn-submit" disabled>ОТПРАВИТЬ ПРОТОКОЛ</button>
 							<p class="protocol-send--before">
 								Подтвердите внесенные данные
@@ -326,6 +332,16 @@
 							</div>
 							<!-- end col -->
 
+							<!-- only for mobile -->
+							<div class="protocol-body-msg d-sm-none">
+								<p>
+									Комментарий участника:
+								</p>
+								<textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+								<p class="notes">
+									<b>ВАЖНО!</b> Упаковку пробы необходимо вскрыть непосредственно перед проведением анализа. В случае получения пробы с нарушенной упаковкой или с какими-то другими замечаниями Вам необходимо сразу же заявить письменную претензию на электронную почту INFO@Q-LAB.PRO и Q-LAB@MAIL.RU в течение 3-х дней после получения пробы для её замены. В случае отсутствия письменной претензии в указанный выше срок проба считается полученной без замечаний и участник МСИ не имеет право предъявлять провайдеру МСИ какие-либо связанные с этим претензии в дальнейшем.
+								</p>
+							</div>
 							<div class="col-12 protocol-confirm d-lg-none">
 								<div class="protocol-confirm-check">
 									<p>Подтвердить</p>
@@ -348,6 +364,7 @@
 									ВНИМАНИЕ: после отправки, изменение данных будет невозможно!
 								</p>
 							</div>
+							<!-- end -->
 						</div>
 
 						<div class="protocol-success">

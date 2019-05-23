@@ -30,33 +30,7 @@ $(function() {
 		});
 	};
 
-	//switch message
-	let flag = document.querySelectorAll('.flag_message');
-	flag.forEach(item => {
-		item.addEventListener('click', () => {
-			let block = item.closest(".message-body");
-			if(block.classList.contains('unmarked')) {
-				block.classList.remove('unmarked');
-				block.classList.add('marked');
-			} else {
-				block.classList.remove('marked');
-				block.classList.add('unmarked');
-			}
-		})
-	});
-
-	if($("div").is(".switchFlag")) {
-		$('.switchFlag').click(function(){
-			$(this).toggleClass('switchFlagOn');
-			if($(this).hasClass('switchFlagOn')) {
-				$('.unmarked').hide();
-			} else {
-				$('.unmarked').show();
-			}
-		});
-	};
-
-
+	//Календарь
 	if($("input").is(".datepicker")) {
 		$.fn.datepicker.dates['ru'] = {
 			days: ["Восерсенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"],
@@ -75,10 +49,138 @@ $(function() {
 		});
 		$('.datepicker').datepicker("setDate", new Date());
 	};
-
-	$("select").selectize({
-		persist: false,
-		createOnBlur: true,
-		create: true
-	});
 });
+
+//Вставляем значение селекта в селект :)
+let selected = document.querySelectorAll('.dropdown-item');
+//Если есть на странице boorstrab selectы
+if(selected) {
+	//Перебираем все
+	selected.forEach(item => {
+		//Вещаем клик
+		item.addEventListener('click', () => {
+			//Определяем родительский блок > первую ссылку
+			let block = item.closest(".dropdown").children[0];
+			//Вставляем занчение в нее
+			block.innerHTML = item.textContent;
+		})
+		//Вуаля бля -- магия
+	})
+}
+
+//Находим селект для отображения Прочитанных - Непрочитанных
+let showHideBtn = document.querySelector('.showHide');
+//Если он есть на страницу
+if(showHideBtn) {
+	//Берем весб блок
+	//let block = document.querySelectorAll(".message-body");
+	//Берем ссылки Прочитанные - непрочитанные - все сообщения
+	let dateAttr = showHideBtn.querySelectorAll('.dropdown-item');
+	//Перебираем их
+	dateAttr.forEach(item => {
+		//Достаем значение data атрибута
+		let showAttr = item.getAttribute('data-show');
+		//Вещаем клик на ссылку с этим атрибутом
+		item.addEventListener('click', () => {
+			//Находим Непрочитанные блоки
+			let unread = document.querySelectorAll(".unread");
+			//Находим Прочитанные
+			let read = document.querySelectorAll(".read");
+			//Находим отмеченные блоки
+			let mark = document.querySelectorAll(".unmarked");
+			//Если выбрано показать Прочитанные
+			if(showAttr === 'read') {
+				//Берем непрочитанные
+				unread.forEach(item => {
+					//Скрываем их
+					item.style.display = 'none';
+				})
+				//Берем прочитанные
+				read.forEach(item => {
+					//Показываем их
+					item.style.display = 'block';
+				})
+			} 
+			//Если выбрано показать Непрочитанные
+			else if (showAttr === 'unread'){
+				//Берем непрочитанные
+				unread.forEach(item => {
+					//Показывае их
+					item.style.display = 'block';
+				})
+				//Берем прочитанные
+				read.forEach(item => {
+					//Скрываем их
+					item.style.display = 'none';
+				})
+			} 
+			//Если выбрано показать Все
+			else {
+				//Берем непрочитанные
+				unread.forEach(item => {
+					//Показываем
+					item.style.display = 'block';
+				})
+				//Берем прочитанные
+				read.forEach(item => {
+					//Показываем
+					item.style.display = 'block';
+				})
+			}
+		})
+	})
+	//Флажки для сообщений
+	let flag = document.querySelectorAll('.flag_message');
+	//Если на странице есть флажки
+	if(flag) {
+		//Берем все флафжки и перебираем
+		flag.forEach(item => {
+			//Вешаем клик на каждый
+			item.addEventListener('click', () => {
+				//Определяем родителя отмеченного блока
+				let block = item.closest(".message-body");
+				//Если он не отмечен
+				if(block.classList.contains('unmarked')) {
+					//Удаляем серый флажок
+					block.classList.remove('unmarked');
+					//Ставим синий флажок
+					block.classList.add('marked');
+				} //Если уже помечен
+				else {
+					//Удаляем синий флажок
+					block.classList.remove('marked');
+					//Ставим серый
+					block.classList.add('unmarked');
+				}
+			})
+		});
+	}
+	//Переключатель Отмеченные - неотмеченные
+	let switchFlag = document.querySelector('.switchFlag');
+	//Если на странице есть переключатель
+	if(switchFlag) {
+		//Вешаем клик на переключатель
+		switchFlag.addEventListener('click', () => {
+			//Добавляем класс переключения
+			switchFlag.classList.toggle('switchFlagOn');
+			//Находим неотмеченные
+			let unmarked = document.querySelectorAll(".unmarked");
+			//Если переключатель Включен
+			if(switchFlag.classList.contains('switchFlagOn')) {
+				//Перебираем все непомеченные блоки
+				unmarked.forEach(item => {
+					//Скрываем
+					item.style.display = 'none';
+				})				
+			} 
+			//Иначе, если переключатель Выключен
+			else {
+				//Перебираем все непомеченные блоки
+				unmarked.forEach(item => {
+					//Показываем их
+					item.style.display = 'block';
+				})
+			}
+		});
+	}		
+}

@@ -140,22 +140,34 @@
             <div class="message-head--select">
                <div class="message-head--select--first">
                   <p>Показать</p>
-                  <select>
-                     <option>Все сообщения</option>
-                     <option>Прочитано</option>
-                     <option>Не прочитано</option>
-                  </select>
+                  <div class="dropdown">
+                     <a class="form-control select" role="button" 
+                        id="showHideRead" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Все сообщения
+                     </a>
+                     <div class="dropdown-menu dropdown-select showHide" aria-labelledby="showHideRead">
+                           <a class="dropdown-item" data-show="all">Все сообщения</a>
+                           <a class="dropdown-item" data-show="read">Прочитано</a>
+                        <a class="dropdown-item" data-show="unread">Не прочитано</a>
+                     </div>
+                  </div>
                </div>
                <div class="message-head--select--second">
                   <p>Дата</p>
-                  <select class="form-control select_message">
-                     <option>Все</option>
-                     <option>Все 1</option>
-                     <option>Все 2</option>
-                     <option>Все 3</option>
-                     <option>Все 4</option>
-                     <option>Все 5</option>
-                  </select>
+                  <div class="dropdown">
+                     <a class="form-control select" role="button" 
+                        id="selectFilter2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Все
+                     </a>
+                     <div class="dropdown-menu dropdown-select " aria-labelledby="selectFilter2">
+                        <a class="dropdown-item">Все</a>
+                        <a class="dropdown-item">Все 1</a>
+                        <a class="dropdown-item">Все 2</a>
+                        <a class="dropdown-item">Все 3</a>
+                        <a class="dropdown-item">Все 4</a>
+                        <a class="dropdown-item">Все 5</a>
+                     </div>
+                  </div>
                </div>
                <div class="message-head--select--third">
                   <p>Показать только важные</p>
@@ -171,7 +183,7 @@
             </div>
          </div>
          <!-- loop -->
-         <div id="message_m1" class="message-body unmarked">
+         <div class="message-body unmarked unread">
             <div class="message-body--head">
                <p>МПА18 - 01</p>
                <p>Пробы высланы</p>
@@ -194,7 +206,7 @@
                </div>
             </div>
          </div>
-         <div id="message_m2" class="message-body unmarked">
+         <div class="message-body unmarked unread">
             <div class="message-body--head">
                <p>МПА18 - 01</p>
                <p>Пробы высланы</p>
@@ -217,7 +229,7 @@
                </div>
             </div>
          </div>
-         <div id="message_m3"  class="message-body unmarked read">
+         <div class="message-body unmarked read">
             <div class="message-body--head">
                <p>МПА18 - 01</p>
                <p>Пробы высланы</p>
@@ -240,7 +252,7 @@
                </div>
             </div>
          </div>
-         <div id="message_m4"  class="message-body unmarked read">
+         <div class="message-body unmarked read">
             <div class="message-body--head">
                <p>МПА18 - 01</p>
                <p>Пробы высланы</p>
@@ -263,7 +275,7 @@
                </div>
             </div>
          </div>
-         <div id="message_m5"  class="message-body unmarked">
+         <div class="message-body unmarked unread">
             <div class="message-body--head">
                <p>МПА18 - 01</p>
                <p>Пробы высланы</p>

@@ -11,27 +11,27 @@
 		box-sizing: border-box
 
 *::-webkit-input-placeholder
-	color: #666
+	color: #242424
 	opacity: 1
 
 *:-moz-placeholder
-	color: #666
+	color: #242424
 	opacity: 1
 
 *::-moz-placeholder
-	color: #666
+	color: #242424
 	opacity: 1
 
 *:-ms-input-placeholder
-	color: #666
+	color: #242424
 	opacity: 1
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
-	color: #666
+	color: #242424
 body input:required:valid,
 body textarea:required:valid
-	color: #666
+	color: #242424
 
 html, body
 	height: 100%
@@ -56,24 +56,46 @@ a, a:hover
 	text-decoration: none
 	color: $text
 
-select
-	position: relative
-	padding-right: 30px !important
-	padding-left: 13px
-	border-radius: 1.3em
-	font-size: 0.8em
-	-webkit-appearance: none
-	-moz-appearance: none
-	-ms-appearance: none
-	appearance: none
-	background: #fff url('../img/select.svg') 95% center no-repeat
+.form-control.select
+	width: 100%
+	margin: 0
+.select
+	width: 100%
+	display: flex
+	align-items: center
+	justify-content: flex-start
+	margin-bottom: 0
 	cursor: pointer
+	position: relative
+	&:before
+		content: ''
+		position: absolute
+		right: 10px
+		top: 50%
+		transform: translateY(-50%) scale(1)
+		width: 15px
+		height: 15px
+		background: #fff url('../img/select.svg') center no-repeat
+		transition: all .1s ease
+
+.dropdown-menu.dropdown-select
+	width: 100%
+	min-width: 10px
+	border-radius: 10px
+	margin: 0 auto
+	font-family: inherit
+	font-size: .8em
+	a
+		cursor: pointer
+.dropdown.show 
+	.select:before
+		transform: translateY(-50%) scale(-1)
 
 .form-control
 	border: 1px solid $accent
 	border-radius: 1.3em
 	padding-left: 13px
-	font-size: 1em
+	font-size: .8em
 	max-height: 36px
 	&.datepicker
 		border: 1px solid $accent
@@ -192,9 +214,41 @@ input[readonly], input[readonly="readonly"]
             border: 1px solid $accent
             border-radius: 2px
 		input[type=checkbox]:checked + label:before
-			width: 18px
-			height: 18px
 			background: $accent url('../img/checked.svg') center no-repeat
+
+.flag
+	display: flex
+	align-items: center
+	position: relative
+	margin-left: 2em
+	.radio
+		padding: 0
+		margin: 0
+		input[type=checkbox]
+			display: none
+		label
+			margin: 0
+			font-weight: bold
+			display: inline-block
+			cursor: pointer
+			font-size: .7em
+			line-height: 1
+			font-weight: bold
+			-ms-user-select: none
+			-moz-user-select: none
+			-khtml-user-select: none
+			-webkit-user-select: none
+			&:before
+				content: ''
+				position: absolute
+				left: 50%
+				top: 50%
+				transform: translateX(-50%) translateY(-50%)
+				width: 18px
+				height: 18px
+				background: url('../img/flag-read.svg') center no-repeat
+		input[type=checkbox]:checked + label:before
+			background: url('../img/flag-unread.svg') center no-repeat
 
 @media screen and (max-width: 991.98px)
    .page-title
@@ -204,12 +258,14 @@ input[readonly], input[readonly="readonly"]
 	.page-title
       h1
          font-size: 1.3em
+	.form-control
+		font-size: 1em
 
 @media screen and (min-width: 767.98px)
 	.page-title
       h1
          font-size: 1.7em
-	.select-title
+	.select-title.active
 		&:before
 			content: ''
 			position: absolute
@@ -220,7 +276,6 @@ input[readonly], input[readonly="readonly"]
 			height: 9px
 			background: url('../img/check.svg') center no-repeat
 	.form-control
-		font-size: 1em !important
 		&.datepicker
 			font-size: .8em
    
