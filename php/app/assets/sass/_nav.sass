@@ -1,4 +1,5 @@
 .navbar
+	padding: 0 20px
 	transition: all .3s ease
 	.navbar-toggler
 		background: transparent
@@ -22,6 +23,7 @@
 		.nav-link
 			font-size: 1em
 			position: relative
+			padding: 15px
 		.nav-link.line-hover
 			&::after
 				content: ''
@@ -52,9 +54,14 @@
 				margin-right: .5em
 				
 .navbar 
-	padding: 10px 20px
-	transition: all .5s ease-in-out
-
+	.navbar-nav
+		.nav-link
+			padding: 25px 15px
+			transition: all .5s ease-in-out
+.navbar.is-active
+	.navbar-nav
+		.nav-link
+			padding: 15px
 
 .is-home .navbar
 	background: #000
@@ -87,9 +94,11 @@
 
 @media screen and (max-width: 991.98px)
 	.navbar
+		.navbar-brand
+			font-size: 1.5em
 		.navbar-nav
 			.nav-link, .btn
-				font-size: 0.8em
+				font-size: 0.75em
 
 @media screen and (max-width: 767.98px)
 	.navbar
@@ -98,5 +107,12 @@
 		.navbar-nav
 			.nav-link, .btn
 				font-size: 1em
+	.navbar,
+	.navbar.is-active
+		.navbar-nav
+			.nav-link
+				padding: 8px 0
+			.btn
+				margin: 1em auto
 	.breadcrumbs
 		font-size: .7em

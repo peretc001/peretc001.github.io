@@ -35,4 +35,6 @@ jQuery(document).ready(function ($) {
 		}
 	});
 
+	$("img.lazy").lazy();
+
 });

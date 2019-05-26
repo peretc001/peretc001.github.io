@@ -31,6 +31,16 @@ window.addEventListener("DOMContentLoaded", function() {
 
     new WOW().init();
 
+    let navbar = document.querySelector('.navbar');
+    document.addEventListener('scroll', (e) => {
+        if(window.scrollY > 60) {
+            navbar.classList.add('is-active');
+        }
+        else {
+            navbar.classList.remove('is-active');
+        }
+    });
+
     let player = document.querySelector('#player');
     if(player) {
         //Создаем плеер и помещаем туда какое-то видео

@@ -16,10 +16,10 @@
                <a class="nav-link line-hover" href="/#header">Главная</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link line-hover" href="/#steps">Этапы работ</a>
+               <a class="nav-link line-hover" href="/#portfolio">Портфолио</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link line-hover" href="/#portfolio">Портфолио</a>
+               <a class="nav-link line-hover" href="/#steps">Этапы работ</a>
             </li>
             <li class="nav-item">
                <a class="nav-link line-hover" href="/#price">Цены</a>

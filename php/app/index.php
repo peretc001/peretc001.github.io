@@ -11,11 +11,49 @@
 	<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/inc/nav.php'; ?>
 	<header class="header" id="header" style="background-image:url('/assets/img/header.jpg')">
 			<h1>Разработка сайтов под ключ</h1>
-			
-			<p><b>Привет, меня зовут Игорь,</b><br>занимаюсь frontend и backend разработкой</p>
-			<p>Владею: HTML5, CSS (SASS), JS, PHP, SQL (SafeMySql)<br>
-			Разрабатываю: Landing page, CRM, сайты на Wordpress или интернет-магазины</p>
+			<p>Привет, меня зовут Игорь,<br>я занимаюсь разработкой сайтов под ключ.</p>
+			<p>Разрабатываю: Landing page, CRM, личные кабинеты, сайты на Wordpress и интернет-магазины</p>
 	</header>
+
+	<?php
+	require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/inc/JsonDB.class.php';
+	$db = new JsonDB( $_SERVER['DOCUMENT_ROOT'] . '/portfolio/' );
+		$result = $db->selectAll('portfolio');
+	?>
+	<section class="portfolio" id="portfolio">
+		<div class="container">
+			<div class="introHolder wow fadeInUp">
+				<h2 class="liner">Портфолио</h2>
+			</div>
+			<div class="row">
+			<?php 
+				arsort($result);
+				foreach($result as $row) { ?>
+				<div class="col-md-4 wow fadeInUp">
+					<h4 class="the_title"><a href="/portfolio/<?php 
+						if($row['themes'] == 'Landing page') { echo 'landing-page'; }
+						if($row['themes'] == 'Система учета') { echo 'crm'; }
+						if($row['themes'] == 'Интернет-магазин') { echo 'internet-magazin'; }
+						if($row['themes'] == 'Информационный') { echo 'informacionnyj-sajt'; }
+					?>/<?php echo $row['img']; ?>.php"><?php echo $row['title']; ?></a></h4>
+					<a class="portfolio-img" href="/portfolio/<?php 
+						if($row['themes'] == 'Landing page') { echo 'landing-page'; }
+						if($row['themes'] == 'Система учета') { echo 'crm'; }
+						if($row['themes'] == 'Интернет-магазин') { echo 'internet-magazin'; }
+						if($row['themes'] == 'Информационный') { echo 'informacionnyj-sajt'; }
+					?>/<?php echo $row['img']; ?>.php"><img src="/assets/img/portfolio/<?php echo $row['img']; ?>.jpg" 
+						srcset = "/assets/img/portfolio/<?php echo $row['img']; ?>-350.jpg 350w,
+						/assets/img/portfolio/<?php echo $row['img']; ?>.jpg 1280w"
+						sizes = "(max-width: 375px) 350px,
+									(max-width: 1200px) 1280px"
+							alt="Разработка сайта <?php echo $row['title']; ?>">
+						<span><i><?php echo $row['work']; ?></i></span>
+					</a>
+				</div>
+			<?php } ?>
+			</div>
+		</div>
+	</section>
 
 	<section class="steps" id="steps">
 		<div class="container">
@@ -100,59 +138,12 @@
 					</ul>
 				</div>
 			</div>
-			<div class="row text-center wow fadeInUp">
+			<!-- <div class="row text-center wow fadeInUp">
 				<blockquote>
 					<p>Шикарная схема, правда? Я ее два дня придумывал или стащил у кого-то, я уже не помню.</p>
 					<p>Примерно так и происходит разработка сайта или интернет-магазина, но это не точно</p>
 				</blockquote>
-			</div>
-		</div>
-	</section>
-
-	<?php
-	require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/inc/JsonDB.class.php';
-	$db = new JsonDB( $_SERVER['DOCUMENT_ROOT'] . '/portfolio/' );
-		$result = $db->selectAll('portfolio');
-	?>
-	<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/inc/nav.php'; ?>
-	<section class="portfolio" id="portfolio">
-		<div class="container">
-			<div class="introHolder wow fadeInUp">
-				<h2 class="liner">Портфолио</h2>
-			</div>
-			<div class="row">
-			<?php 
-				arsort($result);
-				foreach($result as $row) { ?>
-				<div class="col-md-4 wow fadeInUp">
-					<h4 class="the_title"><a href="/portfolio/<?php 
-						if($row['themes'] == 'Landing page') { echo 'landing-page'; }
-						if($row['themes'] == 'Система учета') { echo 'crm'; }
-						if($row['themes'] == 'Интернет-магазин') { echo 'internet-magazin'; }
-						if($row['themes'] == 'Информационный') { echo 'informacionnyj-sajt'; }
-					?>/<?php echo $row['img']; ?>.php"><?php echo $row['title']; ?></a></h4>
-					<a class="portfolio-img" href="/portfolio/<?php 
-						if($row['themes'] == 'Landing page') { echo 'landing-page'; }
-						if($row['themes'] == 'Система учета') { echo 'crm'; }
-						if($row['themes'] == 'Интернет-магазин') { echo 'internet-magazin'; }
-						if($row['themes'] == 'Информационный') { echo 'informacionnyj-sajt'; }
-					?>/<?php echo $row['img']; ?>.php"><img src="/assets/img/portfolio/<?php echo $row['img']; ?>.jpg" 
-						srcset = "/assets/img/portfolio/<?php echo $row['img']; ?>-350.jpg 350w,
-						/assets/img/portfolio/<?php echo $row['img']; ?>.jpg 1280w"
-						sizes = "(max-width: 375px) 350px,
-									(max-width: 1200px) 1280px"
-							alt="Разработка сайта <?php echo $row['title']; ?>">
-						<span><i><?php echo $row['work']; ?></i></span>
-					</a>
-				</div>
-			<?php } ?>
-			</div>
-			<div class="row text-center wow fadeInUp">
-				<blockquote>
-					<p>Если честно, мне лень особо расписывать выполненную работу<br>Поэтому внутри каждой работы я оставил ссылку на рабочий сайт.</p>
-					<p>Если нравиться, пишите, звоните - договоримся!</p>
-				</blockquote>
-			</div>
+			</div> -->
 		</div>
 	</section>
 

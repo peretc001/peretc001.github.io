@@ -13,6 +13,11 @@
 ?>
 <body class="is-page">
 	<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/inc/nav.php'; ?>
+	<div class="breadcrumbs">
+		<div class="container">
+			<a href="/">Главная</a> / <a href="/portfolio/">Портфолио</a> / Система учета
+		</div>
+	</div>
 	<section class="portfolio" id="portfolio">
 		<div class="container">
 			<div class="introHolder wow fadeInUp">
