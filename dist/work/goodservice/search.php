@@ -2,8 +2,6 @@
 /**
  * The template for SEARCH
  *
- * @link https://peretc001.github.io
- * @author Krasovsky
  * @package WordPress
  * @subpackage Optimazed
  */

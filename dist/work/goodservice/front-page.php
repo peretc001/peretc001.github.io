@@ -25,9 +25,7 @@
 								<?php if ($img_id) { ?>
 									<a href="<?php echo get_permalink(); ?>">
 									<div class="img_wrapper">
-										<img src="<?php echo wp_get_attachment_image_url( $img_id, 'medium' ) ?>"
-												srcset="<?php echo wp_get_attachment_image_srcset( $img_id, 'medium' ) ?>"
-												sizes="<?php echo wp_get_attachment_image_sizes( $img_id, 'medium' ) ?>" alt="<?php the_title(); ?>">
+										<img class="lazy" src="<?php echo get_stylesheet_directory_uri() .'/img/img.jpg'; ?>" data-src="<?php echo wp_get_attachment_image_url( $img_id, 'medium' ) ?>" alt="<?php the_title(); ?>">
 												<span><i><?php echo $cat__name; ?></i></span>
 									</div>
 								</a>
@@ -127,9 +125,7 @@
 							<?php if ($img_id) { ?>
 							<a href="<?php echo get_permalink(); ?>">
 								<div class="img_wrapper">
-									<img 	src="<?php echo wp_get_attachment_image_url( $img_id, 'medium' ) ?>"
-												srcset="<?php echo wp_get_attachment_image_srcset( $img_id, 'medium' ) ?>"
-												sizes="<?php echo wp_get_attachment_image_sizes( $img_id, 'medium' ) ?>" alt="<?php the_title(); ?>">
+									<img class="lazy" src="<?php echo get_stylesheet_directory_uri() .'/img/img.jpg'; ?>" data-src="<?php echo wp_get_attachment_image_url( $img_id, 'medium' ) ?>" alt="<?php the_title(); ?>">
 								</div>
 							</a>
 							<?php } ?>
@@ -159,9 +155,7 @@
 							$img_id = get_post_thumbnail_id( $post->ID );
 					?>
 					<?php if ($img_id and $i == '0') { ?><a href="<?php echo get_permalink(); ?>">
-						<img 	src="<?php echo wp_get_attachment_image_url( $img_id, 'medium' ) ?>"
-									srcset="<?php echo wp_get_attachment_image_srcset( $img_id, 'medium' ) ?>"
-									sizes="<?php echo wp_get_attachment_image_sizes( $img_id, 'medium' ) ?>" alt="<?php the_title(); ?>">
+						<img class="lazy" src="<?php echo get_stylesheet_directory_uri() .'/img/img.jpg'; ?>" data-src="<?php echo wp_get_attachment_image_url( $img_id, 'medium' ) ?>" alt="<?php the_title(); ?>">
 									<span><i>Самое читаемое</i></span>
 					</a><?php } ?>
 					<a href="<?php echo get_permalink(); ?>">

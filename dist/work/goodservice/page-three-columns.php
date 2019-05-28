@@ -4,8 +4,6 @@
  * Template Post Type: page
  * 
  * 
- * @link https://peretc001.github.io
- * @author Krasovsky
  * @package WordPress
  * @subpackage Optimazed
  */

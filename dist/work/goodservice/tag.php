@@ -2,8 +2,6 @@
 /**
  * The template for displaying TAGS
  *
- * @link https://peretc001.github.io
- * @author Krasovsky
  * @package WordPress
  * @subpackage Optimazed
  */
@@ -19,12 +17,12 @@ get_header(); ?>
 			<!-- / end left -->
 
 			<div class="col-md-6 content-center order-1 order-md-12">
-				<p class="text-center">
-					Записи с меткой: <i class="fas fa-tag"></i> <b><?php
+				<h1 class="text-center">
+					<?php
 						$tag = get_queried_object();
 						echo $tag->name;
-					?></b>
-				</p>
+					?>
+				</h1>
 			<?php
 
 			$query = new WP_Query( array('tag__in' => $tag->name) );

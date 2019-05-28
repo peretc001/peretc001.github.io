@@ -1,6 +1,37 @@
 .content
 	.content-left
 		margin-bottom: 1em
+		.left-menu
+			margin-bottom: 1em
+			ul, 
+			li
+				margin: 0
+				padding: 0
+				list-style: none
+				font-size: 1em
+			li
+				padding: 2px 0
+				list-style: none
+				font-weight: bold
+				a
+					color: $text
+				a:hover
+					opacity: .8
+			ul.children
+				margin: 10px 0 20px 20px
+				li
+					font-weight: normal
+					padding: 0
+					font-size: .9em
+					position: relative
+					&:before
+						content: '- '
+						position: absolute
+						left: -10px
+						color: $text
+			.cat-item.current-cat
+				font-weight: bold
+				text-decoration: underline
 		&-card
 			display: flex
 			align-items: flex-start
@@ -129,6 +160,11 @@
 
 @media screen and (max-width: 991.98px)
 	.content
+		.content-left
+			.left-menu
+				ul, 
+				li
+					font-size: .9em
 		.content-center
 			.the_title
 				min-height: auto
@@ -137,6 +173,9 @@
 	.content
 		[class*="col-"]
 			padding-bottom: 20px
+		.content-left
+			.left-menu
+				display: none
 	.wp-block-embed__wrapper iframe
 		width: 100%
 		min-height: 200px

@@ -2,8 +2,6 @@
 /**
  * The template for displaying all single posts
  *
- * @link https://peretc001.github.io
- * @author Krasovsky
  * @package WordPress
  * @subpackage Optimazed
  */
@@ -24,7 +22,7 @@ get_header(); ?>
 				while ( have_posts() ) : the_post(); 
 				
 				$cat = get_the_category($post->ID);
-				$current = $cat[0]->cat_name;
+				$current = $cat->cat_name;
 
 				$tags = get_the_tags();
 			?>

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<meta name="author" lang="ru" content="Разработка: Красовский Игорь => peretc001.github.io" />
 	<meta charset="UTF-8">
 	<title><?php if( is_front_page() or is_search() ) {
    		echo bloginfo('name'); ?> - <?php echo bloginfo('description'); 
@@ -24,7 +23,7 @@
 	} ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="icon" href="<?php echo get_stylesheet_directory_uri() . '/img/favicon.png'; ?>">
+	<link rel="icon" href="<?php echo get_stylesheet_directory_uri() . '/img/favicon.png'; ?>" type="image/png">
 	<style>
 		body {opacity: 0;overflow-x: hidden;}html {background-color: #fff;}
 	</style>

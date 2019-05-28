@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="row author">
-                    <noindex>Разработка: <a href="https://peretc001.github.io/">{ КИ }</a></noindex>
+                   
                 </div>
                 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139610738-1"></script>

@@ -3,8 +3,6 @@
  * The template for displaying CATEGORYS
  *
  * 
- * @link https://peretc001.github.io
- * @author Krasovsky
  * @package WordPress
  * @subpackage Optimazed
  */
@@ -21,13 +19,13 @@ get_header(); ?>
 
 			<div class="col-md-9 content-center order-1 order-md-12">
 				<div class="content-center-card mb-4">
-					<h2>
+					<h1>
 						<?php echo $cat_title = single_cat_title(); 
 							
 							$category = get_category(get_query_var('cat'));
 							$current = $category->parent;
 						?>
-					</h2>
+					</h1>
 					<div class="hide_description">
 						<?php 
 							$excerpt = term_description();
@@ -53,42 +51,37 @@ get_header(); ?>
 			
 			<?php 
 			if($current != '0') {
-				if (have_posts()) : 
-				$query = new WP_Query( array('category__not_in' => $cat_name) );
-				/* Start the Loop */
-				while ( have_posts() ) : the_post(); 
+				query_posts( array('category__in' => $category, 'posts_per_page' => 12) );
+				
+				#$query = new WP_Query( array('category__not_in' => $cat_name, 'posts_per_page' => 1);
+				if( have_posts() ){ 
+					while( have_posts() ){ 
+						 the_post();
 					
 					$img_id = get_post_thumbnail_id( $post->ID );
 				?>
-					<div class="content-center-card">
-						<h2>
-							<a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
-						</h2>
-						<?php if ($img_id) { ?>
-							<a href="<?php echo get_permalink(); ?>">
-								<div class="img_wrapper">
-									<img 	src="<?php echo wp_get_attachment_image_url( $img_id, 'medium' ) ?>"
-												srcset="<?php echo wp_get_attachment_image_srcset( $img_id, 'medium' ) ?>"
-												sizes="<?php echo wp_get_attachment_image_sizes( $img_id, 'medium' ) ?>" alt="<?php the_title(); ?>">
-								</div>
-							</a>
-						<?php } ?>
-						<p class="the_excerpt">
-							<?php $content = get_the_content();
-									echo wp_trim_words( $content, '40'); 
-							?>
-						</p>
-						<div class="single_content_line">
-							<div class="category">
-								<div class="single_category_tags"><i class="fas fa-tags"></i> <?php echo $cat__name; ?></div>
-							</div>
-							<div class="social">
-							<i class="far fa-eye"></i> <?php if(get_post_meta ($post->ID,'views',true) != '') { echo get_post_meta ($post->ID,'views',true); } else { echo '0'; } ?>
+					<a href="<?php echo get_permalink(); ?>"><b><?php the_title(); ?></b></a><br />
+					<div class="row category_desc">
+						<div class="col-lg-4">
+							<div class="img_wrapper">
+								<a href="<?php echo get_permalink(); ?>">
+									<img 	class="lazy" src="<?php echo get_stylesheet_directory_uri() .'/img/img.jpg'; ?>" data-src="<?php echo wp_get_attachment_image_url( $img_id, 'medium' ) ?>" alt="<?php the_title(); ?>">
+								</a>
 							</div>
 						</div>
+						<div class="col the_excerpt">
+							<p class="the_excerpt">
+								<?php $content = get_the_content();
+										echo wp_trim_words( $content, '40'); 
+								?>
+							</p>
+						</div>
 					</div>
-				<?php endwhile; // End of the loop. ?>
-				<?php else: ?>
+					<?php }
+				wp_reset_query();
+				
+				// End of the loop. ?>
+				<?php } else { ?>
 
 					<div class="not_find text-center">
 						<p>
@@ -113,7 +106,7 @@ get_header(); ?>
 						</p>
 					</div>
 
-				<?php endif;
+				<?php }
 				
 				} ?>
 				

@@ -1,0 +1,67 @@
+BODY {
+	margin:0;
+	padding:0;
+	font-size:7pt;
+	color:#000;
+	text-align:justify;
+}
+h1 {margin:0;padding:0;font-size:14pt;text-align:center;}
+p { margin: 1pt 0 1pt 0; }
+.center {text-align:center;}
+ul {margin:10pt 0 10pt 40pt;}
+ul li {list-style:none;}
+
+.header {width:100%;margin:0 0 10pt 0;padding:0;}
+.header p {margin:0;padding:0;}
+
+p.block { width:12pt;font-weight:bold;text-align:center;margin: 10pt 0 10pt 0; }
+span.date {background:yellow;}
+
+.auto {padding:0;margin:4pt auto;}
+.auto table {width:100%;margin:0;padding:0;border:0;border-collapse: collapse;}
+.auto table td {width:50%;margin:0;padding:4pt 0 4px 10pt;border:0.5px solid #000;}
+
+.booking {padding:0;margin:4pt auto;}
+.booking table {width:100%;margin:0;padding:0;border:0;border-collapse: collapse;}
+.booking table td {width:33.3333336%;margin:0;padding:4pt 0 4px 10pt;border:0.5px solid #000;text-align:center;}
+.booking table td.noborder {border-left:none;border-bottom:none;}
+
+.user {padding:0;margin:4pt auto;}
+.user table {width:100%;margin:0;padding:0;border:0;border-collapse: collapse;}
+.user table td {width:50%;margin:0;padding:4pt 0 4px 10pt;vertical-align:top;border:0.5px solid #000;}
+
+.booking_auto {padding:0;margin:4pt auto;}
+.booking_auto table {width:100%;margin:0;padding:0;border:0;border-collapse: collapse;}
+.booking_auto table td {margin:0;padding:4pt 0 4px 10pt;border:0.5px solid #000;}
+.booking_auto table td.left {width:25%;}
+.booking_auto table td.right {width:75%;}
+
+.act {padding:0;margin:4pt auto;}
+.act table {width:100%;margin:0;padding:0;border:0;border-collapse: collapse;}
+.act table td {margin:0;padding:4pt;border:0.5px solid #000;}
+.act table td.col-1 {width:6%;}
+.act table td.col-2 {width:28%;}
+.act table td.col-3 {width:10%;}
+
+.teh {padding:0;margin:4pt auto;}
+.teh table {width:100%;margin:0;padding:0;border:0;border-collapse: collapse;}
+.teh table td {width:50%;margin:0;padding:4pt;border:none;vertical-align:top;}
+.teh table td img {width:100%;}
+
+.teh table td.right {padding:4pt 10pt;text-align:center;}
+.teh table td.right table {width:100%;margin:10pt 0;padding:0;border:0;border-collapse: collapse;}
+.teh table td.right table td {width:33.33336%;margin:0;padding:2pt 4pt;border:0.5px solid #000;vertical-align:top;text-align:center;}
+
+.dop {padding:0;margin:4pt auto;}
+.dop table {width:100%;margin:0;padding:0;border:0;border-collapse: collapse;}
+.dop table td {width:25%;margin:0;padding:4pt;border:none;border:0.5px solid #000;vertical-align:top;}
+
+.note {padding:0;margin:4pt auto;}
+.note table {width:100%;margin:0;padding:0;border:0;border-collapse: collapse;}
+.note table td {width:25%;margin:0;padding:4pt;border:none;vertical-align:bottom;}
+.note table td.line {width:75%;border-bottom:0.5px solid #000;}
+
+.colontitul table {width:100%;}
+.colontitul table td {width:40%;text-align:center;}
+.colontitul table td.left {width:30%;text-align:left;}
+.colontitul table td.right {width:30%;text-align:right;}

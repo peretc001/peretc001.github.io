@@ -48,6 +48,14 @@ function deregister_cf7_styles() {
 }
 add_action('wp_print_styles', 'deregister_cf7_styles', 100); 
 
+//асинхронный javascript
+function wcs_defer_javascripts ( $url ) {
+	if ( FALSE === strpos( $url, '.js' ) ) return $url;
+	if ( strpos( $url, 'jquery.js' ) ) return $url;
+	return "$url' defer";
+}
+add_filter( 'clean_url', 'wcs_defer_javascripts', 11, 1 );
+
 //Add my styles and scripts
 	add_action( 'get_footer', 'my_scripts');
 	function my_scripts() {
@@ -55,28 +63,22 @@ add_action('wp_print_styles', 'deregister_cf7_styles', 100);
 		wp_enqueue_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.7.1/css/all.css', false, null, all);
 		wp_enqueue_style( 'hamburgers', get_stylesheet_directory_uri() . '/css/hamburgers.min.css', false, null, all );
 		wp_enqueue_style( 'contact-form-7', plugins_url( '/contact-form-7/includes/css/styles.css' ), false, null, all );
-		wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/css/main.min.css', false, time(), all );
+		wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/css/main.min.css', false, null, all );
 
 		//Переподключаем JQUERY в footer
 		wp_deregister_script('jquery');
 		wp_register_script( 'jquery', includes_url( 'js/jquery/jquery.js' ), false, null, true );
 		wp_register_script( 'poper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js', 'jquery', null, true);
+		wp_register_script( 'lazy', get_stylesheet_directory_uri() . '/js/jquery.lazy.min.js', 'jquery', null, true);
 		wp_register_script( 'bootstrap_js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js', 'jquery', null, true);
-		wp_register_script( 'myscript', get_stylesheet_directory_uri() . '/js/script.js', 'jquery', time(), true);
+		wp_register_script( 'myscript', get_stylesheet_directory_uri() . '/js/script.js', 'jquery', null, true);
 		
 		wp_enqueue_script( 'jquery' );
+		wp_enqueue_script( 'lazy' );
 		wp_enqueue_script( 'poper' );
 		wp_enqueue_script( 'bootstrap_js' );
 		wp_enqueue_script( 'myscript' );
 	}
-
-
-//ADMINBAR
-	//add_filter( 'show_admin_bar', '__return_false');
-	#add_action( 'wp_footer', 'admin_bar');
-
-	//function admin_bar() { echo '<style>#wpadminbar {opacity:.1;} #wpadminbar:hover {opacity:1;}</style>';  }
-
 
 //Add menu into admin
 	register_nav_menus(array(

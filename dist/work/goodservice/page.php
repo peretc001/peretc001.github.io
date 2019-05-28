@@ -2,8 +2,6 @@
 /**
  * The template for displaying all page
  *
- * @link https://peretc001.github.io
- * @author Krasovsky
  * @package WordPress
  * @subpackage Optimazed
  */
