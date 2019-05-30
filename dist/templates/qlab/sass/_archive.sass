@@ -13,6 +13,12 @@
          .form-group
             width: 100%
    
+   #sort_block
+      ul, li
+         margin: 0
+         padding: 0
+         list-style: none
+
    .archive-head
       font-size: 0.8em
       background: #fafafa
@@ -20,11 +26,26 @@
       font-weight: bold
       text-align: center
       padding: 6px 0
+      position: relative
+
       [class*="col-"]
          border-right: 1px solid #ebebeb
+         position: relative
          &:last-child
             border-right: none
-   
+         .sort
+            cursor: pointer
+            position: absolute
+            top: -2px
+            right: 10px
+            display: inline-block
+            width: 10px
+            img
+               width: 10px
+               height: auto
+               margin: 0
+               padding: 0
+
    .archive-result
       font-size: 0.8em
       padding: 6px 0
@@ -93,6 +114,9 @@
                width: 12px
                height: auto
                margin-right: 0.5em
+         .stamp
+            width: 150px
+            height: auto
       &-body
          padding: 18px 10px 10px 10px
          border: 1px solid rgba($accent, .2)
@@ -120,7 +144,7 @@
             a
                margin-left: 0.2em
             img
-               width: 14px
+               width: 18px
                height: auto
                display: block
          
@@ -306,7 +330,13 @@
             p
                min-width: 65px
       .archive-head
-         font-size: 0.8em
+         [class*="col-"]
+            font-size: 1em
+            .sort
+               top: 0px
+               right: 7px
+               img
+                  width: 7px
       .archive-result
          font-size: 0.8em
          padding: 10px 0
@@ -322,7 +352,7 @@
             .btn-submit
                font-size: 0.8em
                padding: 8px 10px
-            img
+            .stamp
                width: 80px
          &-body
             &-item

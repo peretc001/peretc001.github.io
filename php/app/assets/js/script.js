@@ -32,14 +32,18 @@ window.addEventListener("DOMContentLoaded", function() {
     new WOW().init();
 
     let navbar = document.querySelector('.navbar');
-    document.addEventListener('scroll', (e) => {
-        if(window.scrollY > 60) {
-            navbar.classList.add('is-active');
-        }
-        else {
-            navbar.classList.remove('is-active');
-        }
-    });
+    let isHome = document.querySelector('.is-home');
+    if(isHome) {
+        console.log('not');
+        document.addEventListener('scroll', (e) => {
+            if(window.scrollY > 60) {
+                navbar.classList.add('is-active');
+            }
+            else {
+                navbar.classList.remove('is-active');
+            }
+        });
+    }
 
     let player = document.querySelector('#player');
     if(player) {
@@ -146,6 +150,17 @@ $(function() {
     });
     $('.navbar').on('hide.bs.collapse', function () {
         $('.hamburger').removeClass('is-active');
+    });
+
+    $('#callbackModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var recipient = button.data('hidden');
+        var modalTitle = button.data('title');
+        var modal = $(this);
+        modal.find('.modal-body .recipient').val(recipient);
+        if(modalTitle) {
+            modal.find('.modal-header .modal-title').text(modalTitle);
+        }
     });
 
 });

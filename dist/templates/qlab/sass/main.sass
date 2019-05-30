@@ -26,6 +26,15 @@
 	color: #242424
 	opacity: 1
 
+.error::-webkit-input-placeholder
+	color: #fff
+.error:-moz-placeholder
+	color: #fff
+.error::-moz-placeholder
+	color: #fff
+.error:-ms-input-placeholder
+	color: #fff
+
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
 	color: #242424
@@ -112,17 +121,19 @@ a, a:hover
 	color: #ffffff
 	background: linear-gradient(360deg, #1B489D 0%, #2A6FF7 100%)
 	border-radius: 50px
+	border: none
 	padding: 15px
 	margin: 0 15px 0 0
 	line-height: 1
 	box-sizing: border-box
+	outline: none
 	&:hover,
 	&:active
 		color: #ffffff
 		background: linear-gradient(180deg, #2A6FF7 50%, #1B489D 100%)
+		outline: none
 	&:disabled
 		background: #e3e3e3
-		border: 1px solid #e3e3e3
 
 @import "hamburger"
 @import "navbar"
@@ -199,10 +210,6 @@ input[readonly], input[readonly="readonly"]
 			font-size: .7em
 			line-height: 1
 			font-weight: bold
-			-ms-user-select: none
-			-moz-user-select: none
-			-khtml-user-select: none
-			-webkit-user-select: none
 			&:before
             content: ''
             position: absolute

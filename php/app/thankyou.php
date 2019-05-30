@@ -1,4 +1,4 @@
-<?php $admin_email = 'info@autoprkt.ru'; ?>
+<?php $admin_email = 'i.krasovsky@yandex.ru'; ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -27,13 +27,16 @@
 <body>
 <?php
 
-if ($_POST['policy'] == 'on' and $_POST['phone'] != '' and $_POST['human'] == 'human') {
+if ($_POST['phone'] != '' and $_POST['human'] == 'human') {
 
 	$to  = 'peretc001@mail.ru'; 
 	$subject = 'Заявка с сайта'; 
 	$headers .= "Content-type: text/html; charset=utf-8 \r\n"; 
-	$headers .= "From: Разработка сайтов <". $admin_email .">\r\n"; 
-	$message = 'Телефон: <b>'. $_POST['phone'] .'</b>';
+	$headers .= "From: Krasovsky23.ru <". $admin_email .">\r\n"; 
+	$message = 'Телефон: <b>'. $_POST['phone'] .'</b><br>';
+	if($_POST['recipient']){
+		$message .= 'Старница: <b>'. $_POST['recipient'] .'</b>';
+	}
 		mail($to, $subject, $message, $headers);
 	?>
 	<div class="send_ok">
@@ -47,7 +50,7 @@ if ($_POST['policy'] == 'on' and $_POST['phone'] != '' and $_POST['human'] == 'h
 	<div class="send_ok">
 		<i class="far fa-thumbs-down"></i>
 		<p><b>Заявка не принята</b></p>
-		<p>Не указан номер телефона или вы не согласились с политикой конфиденциальности</p>
+		<p>Не указан номер телефона</p>
 	</div>
 
 <?php } ?>

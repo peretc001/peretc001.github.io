@@ -20,21 +20,24 @@
 	</div>
 	<section class="portfolio" id="portfolio">
 		<div class="container">
-			<div class="introHolder wow fadeInUp">
-				<h2 class="liner">Портфолио</h2>
+			<div class="introHolder">
+				<h1 class="liner">Портфолио</h1>
 			</div>
 			<div class="row">
 			<?php 
 				arsort($result);
 				foreach($result as $row) { ?>
-				<div class="col-md-4 wow fadeInUp">
-					<h4 class="the_title"><?php echo $row['title']; ?></h4>
-					<a href="/portfolio/<?php 
-						if($row['themes'] == 'Landing page') { echo 'landing-page'; }
-						if($row['themes'] == 'Система учета') { echo 'crm'; }
-						if($row['themes'] == 'Интернет-магазин') { echo 'internet-magazin'; }
-						if($row['themes'] == 'Информационный') { echo 'informacionnyj-sajt'; }
-					?>/<?php echo $row['img']; ?>.php"><img src="/assets/img/portfolio/<?php echo $row['img']; ?>.jpg" alt="Разработка сайта <?php echo $row['title']; ?>"></a>
+				<div class="col-md-4">
+					<h4 class="the_title"><a href="/portfolio/<?php echo $row['portfolio']; ?>/<?php echo $row['img']; ?>.php"><?php echo $row['title']; ?></a></h4>
+					<a class="portfolio-img" href="/portfolio/<?php echo $row['portfolio']; ?>/<?php echo $row['img']; ?>.php">
+					<img src="/assets/img/portfolio/<?php echo $row['img']; ?>.jpg" 
+						srcset = "/assets/img/portfolio/<?php echo $row['img']; ?>-350.jpg 350w,
+						/assets/img/portfolio/<?php echo $row['img']; ?>.jpg 1280w"
+						sizes = "(max-width: 375px) 350px,
+									(max-width: 1200px) 1280px"
+							alt="Разработка сайта <?php echo $row['title']; ?>">
+						<span><i><?php echo $row['work']; ?></i></span>
+					</a>
 				</div>
 			<?php } ?>
 			</div>

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<base href="https://peretc001.github.io/dist/templates/qlab/">
 	<meta charset="utf-8">
 	<title>Home</title>
 	<meta name="description" content="">
@@ -139,19 +138,18 @@
 
          <div class="row">
             
-            <div class="col-md-5 col-lg-4">
-               
+            <div class="col-md-5 col-lg-4 left-col">
                <div class="user-login">
                   <h2>Данные для доступа</h2>
                   <div class="row">
                      <div class="form-group row col-lg-6">
                         <label for="login">ИН</label>
-                        <input type="login" id="login" class="form-control" value="589019359" disabled>
+                        <input type="login" id="login" class="form-control" value="" placeholder="589019359" disabled>
                         <a href="#" class="btn-edit"><img src="img/edit.svg" alt="">заявка на смену ИН</a>
                      </div>
                      <div class="form-group row col-lg-6">
                         <label for="login">Пароль</label>
-                        <input type="password" id="password" class="form-control" value="589019359" disabled>
+                        <input type="password" id="password" class="form-control" value="" placeholder="589019359" disabled>
                         <a href="#" class="btn-edit"><img src="img/edit.svg" alt="">заявка на смену пароля</a>
                      </div>
                   </div>
@@ -162,20 +160,20 @@
                   <form action="" class="row">
                      <div class="form-group row col-12">
                         <label for="name">ФИО Контактного лица</label>
-                        <input type="text" id="name" class="form-control" value="Иванов Иван Иванович">
+                        <input type="text" id="name" class="form-control" value="" placeholder="Иванов Иван Иванович">
                      </div>
                      <div class="form-group row col-12">
                         <label for="phone">Рабочий телефон</label>
-                        <input type="tel" id="phone" class="form-control" value="+7 (499) 34 079 34">
+                        <input type="tel" id="phone" class="form-control phone" value="" placeholder="+7 (499) 34 079 34">
                      </div>
                      <div class="form-group row col-12">
                         <label for="mobile">Мобильный телефон</label>
-                        <input type="tel" id="mobile" class="form-control" value="+7 (987) 705 18 29">
+                        <input type="tel" id="mobile" class="form-control phone" value="" placeholder="+7 (987) 705 18 29">
                      </div>
                      <div class="form-group row col-12">
                         <label for="email">Электронная почта</label>
-                        <input type="tel" id="email" class="form-control" value="INFO@Q-LAB.PRO, Q-LAB@MAIL.RU">
-                     </div>
+                        <input type="email" id="email" class="form-control" value="" placeholder="INFO@Q-LAB.PRO, Q-LAB@MAIL.RU">
+							</div>
                      <div class="form-group row">
                         <button type="submit" class="btn-submit">ИЗМЕНИТЬ</button>
                      </div>
@@ -184,61 +182,95 @@
                <!-- contact -->
             </div>
             <!-- left -->
-            <div class="col-md-7 col-lg-6">
+            <div class="col-md-7 col-lg-7">
                <div class="user-props">
                   <h2>Реквизиты</h2>
                   <form action="">
-                     <div class="form-group row">
-                        <label for="company" class="col-md-4">Организация</label>
-                        <input type="text" id="company" class="form-control col-md-8" value="ООО «Лаборатория качества»">
+                     <div class="form-group row col-12">
+								<label for="company" class="col-md-12 mb-2">Полное и сокращенное наименование юридического лица<br><small>(в соответствии с учредительными документами)</small></label>
+                        <input type="text" id="company" class="form-control col-md-12" value="" placeholder="Общество с ограниченной ответственностью «Лаборатория качества», ООО «Лаборатория качества»">
                      </div>
                      <div class="form-group row">
                         <label for="company_adres" class="col-md-4">Юридический адрес</label>
-                        <input type="text" id="company_adres" class="form-control col-md-8" value="124498, город Москва, г. Зеленоград, проезд 4922-й, дом 4, 
-                        строение 5, этаж 2, пом.1, комнаты №№28, 29">
+                        <input type="text" id="company_adres" class="form-control col-md-8" value="" placeholder="124498, город Москва, г. Зеленоград, проезд 4922-й, дом 4, строение 5, этаж 2, пом.1, комнаты №№28, 29">
                      </div>
                      <div class="form-group row">
-                        <label for="company_mail-adres" class="col-md-4">Корреспонденция</label>
-                        <input type="text" id="company_mail-adres" class="form-control col-md-8" value="125040, г. Москва, ул. Правды, 26, БЦ «Северное сияние»">
+                        <label for="company_mail-adres" class="col-md-4">Почтовый адрес</label>
+                        <input type="text" id="company_mail-adres" class="form-control col-md-8" value="" placeholder="125040, г. Москва, ул. Правды, 26, БЦ «Северное сияние»">
                      </div>
                      <div class="form-group row">
                         <label for="company_inn" class="col-md-4 col-lg-2">ИНН</label>
-                        <input type="text" id="company_inn" class="form-control col-md-8 col-lg-4" value="7715902257">
+                        <input type="tel" id="company_inn" class="form-control col-md-8 col-lg-4" value="" placeholder="7715902257">
                         <label for="company_kpp" class="col-md-4 col-lg-2">КПП</label>
-                        <input type="text" id="company_kpp" class="form-control col-md-8 col-lg-4" value="773501001">
+                        <input type="tel" id="company_kpp" class="form-control col-md-8 col-lg-4" value="" placeholder="773501001">
                      </div>
                      <div class="form-group row">
                         <label for="company_ps" class="col-md-4 col-lg-2">Р/С</label>
-                        <input type="text" id="company_ps" class="form-control col-md-8 col-lg-4" value="407 028 105 380 000 969 78">
+                        <input type="tel" id="company_ps" class="form-control col-md-8 col-lg-4" value="" placeholder="407 028 105 380 000 969 78">
                         <label for="company_ks" class="col-md-4 col-lg-2">К/С</label>
-                        <input type="text" id="company_ks" class="form-control col-md-8 col-lg-4" value="301 018 104 000 000 002 25">
+                        <input type="tel" id="company_ks" class="form-control col-md-8 col-lg-4" value="" placeholder="301 018 104 000 000 002 25">
                      </div>
                      <div class="form-group row">
                         <label for="company_bic" class="col-md-4 col-lg-2">БИК</label>
-                        <input type="text" id="company_bic" class="form-control col-md-8 col-lg-4" value="044 525 225">
+                        <input type="tel" id="company_bic" class="form-control col-md-8 col-lg-4" value="" placeholder="044 525 225">
                         <label for="company_bank" class="col-md-4 col-lg-2">Банк</label>
-                        <input type="text" id="company_bank" class="form-control col-md-8 col-lg-4" value="ПАО Сбербанк">
+                        <input type="text" id="company_bank" class="form-control col-md-8 col-lg-4" value="" placeholder="ПАО Сбербанк">
                      </div>
                      <div class="form-group row">
                         <label for="company_okpo" class="col-md-4 col-lg-2">ОКПО</label>
-                        <input type="text" id="company_okpo" class="form-control col-md-8 col-lg-4" value="38319419">
+                        <input type="tel" id="company_okpo" class="form-control col-md-8 col-lg-4" value="" placeholder="38319419">
                         <label for="company_okvd" class="col-md-4 col-lg-2">ОКВЭД</label>
-                        <input type="text" id="company_okvd" class="form-control col-md-8 col-lg-4" value="72.3">
+                        <input type="text" id="company_okvd" class="form-control col-md-8 col-lg-4" value="" placeholder="72.3">
                      </div>
                      <div class="form-group row">
                         <label for="company_oktmo" class="col-md-4 col-lg-2">ОКТМО</label>
-                        <input type="text" id="company_oktmo" class="form-control col-md-8 col-lg-4" value="45357000">
+                        <input type="tel" id="company_oktmo" class="form-control col-md-8 col-lg-4" value="" placeholder="45357000">
                         <label for="company_ogrn" class="col-md-4 col-lg-2">ОГРН</label>
-                        <input type="text" id="company_ogrn" class="form-control col-md-8 col-lg-4" value="1127746066876">
-                     </div>
+                        <input type="tel" id="company_ogrn" class="form-control col-md-8 col-lg-4" value="" placeholder="1127746066876">
+							</div>
+							<div class="form-group row">
+								<label for="company_boss" class="col-md-4">Руководитель</label>
+								<input type="text" id="company_boss" class="form-control col-md-8" value="" placeholder="Иванов Иван Иванович">
+							</div>
+							<div class="form-group row">
+								<label for="company_boss_position" class="col-md-4">Должность</label>
+								<input type="text" id="company_boss_position" class="form-control col-md-8" value="" placeholder="Генеральный директор">
+							</div>
+							<div class="form-group row">
+								<label for="company_boss_document" class="col-md-4">На основании</label>
+								<input type="text" id="company_boss_document" class="form-control col-md-8" value="" placeholder="Устава">
+							</div>
+							<div class="form-group row">
+								<label class="col-md-12 mb-2">Контакты организации</label>
+								<label for="company_phone" class="col-md-4 col-lg-2">Телефон</label>
+                        <input type="tel" id="company_phone" class="form-control col-md-8 col-lg-4 phone" value="" placeholder="+7 (499) 34 079 34">
+                        <label for="company_email" class="col-md-4 col-lg-2">Email</label>
+                        <input type="email" id="company_email" class="form-control col-md-8 col-lg-4" value="" placeholder="INFO@Q-LAB.PRO, Q-LAB@MAIL.RU">
+							</div>
+							<div class="form-group row col-12">
+								<label for="company_pochta" class="col-md-12 mb-2">Адрес доставки образцов для МСИ</label>
+								<input type="text" id="company_pochta" class="form-control col-md-12" value="" placeholder="124498, город Москва, г. Зеленоград, проезд 4922-й, дом 4, строение 5, этаж 2, пом.1, комнаты №№28, 29">
+							</div>
+							<div class="form-group row col-12">
+								<label for="company_user_fio" class="col-md-12 mb-2">Фамилия, имя, отчество контактного лица – получателя образцов МСИ</label>
+								<input type="text" id="company_user_fio" class="form-control col-md-12" value="" placeholder="Иванов Иван Иванович">
+							</div>
+							<div class="form-group row">
+								<label class="col-md-12 mb-2">Телефон и электронная почта контактного лица – получателя образцов МСИ</label>
+								<label for="company_phone_user" class="col-md-4 col-lg-2">Телефон</label>
+								<input type="tel" id="company_phone_user" class="form-control col-md-8 col-lg-4 phone" value="" placeholder="+7 (499) 34 079 34">
+								<label for="company_email_user" class="col-md-4 col-lg-2">Email</label>
+								<input type="email" id="company_email_user" class="form-control col-md-8 col-lg-4" value="" placeholder="INFO@Q-LAB.PRO, Q-LAB@MAIL.RU">
+							</div>
 
                      <button type="submit" class="btn-submit" disabled>ИЗМЕНИТЬ</button>
 
                   </form>
                </div>
             </div>
-            <!-- right -->
-
+				<!-- right -->
+				
+			</div>
       </div>     
    </section>
 

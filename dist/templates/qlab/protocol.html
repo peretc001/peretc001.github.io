@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<base href="https://peretc001.github.io/dist/templates/qlab/">
 	<meta charset="utf-8">
 	<title>Proposal</title>
 	<meta name="description" content="">
@@ -142,10 +141,10 @@
 					<div class="dropdown">
 						<a class="form-control select" role="button" 
 							id="selectTitle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							МПФ18-01
+							Протокол по раунду
 						</a>
 						<div class="dropdown-menu dropdown-select" aria-labelledby="selectTitle">
-							<a class="dropdown-item">МПФ18-01</a>
+							<a class="dropdown-item">Протокол по раунду</a>
 							<a class="dropdown-item">МПФ18-02</a>
 							<a class="dropdown-item">МПФ18-03</a>
 							<a class="dropdown-item">МПФ18-04</a>
@@ -188,7 +187,7 @@
 								</div>
 							</div>
 
-							<div class="protocol-body-msg d-none d-sm-block">
+							<div class="protocol-body-msg d-none d-md-block">
 								<p>
 									Комментарий участника:
 								</p>
@@ -233,8 +232,9 @@
 								<div class="protocol-right-item">
 									<div class="protocol-right-head">
 										<p>Влажность</p>
-										<input type="text" class="form-control" placeholder="11,2_">
-										<p>% Ошибка</p>
+										<!-- Add class error for input -->
+										<input type="text" class="form-control protocol-vl error" placeholder="11,2_">
+										<p>%</p>
 									</div>
 									<div class="protocol-right-body">
 										<p>ГОСТ 13586.5-2015</p>
@@ -244,7 +244,7 @@
 								<div class="protocol-right-item">
 									<div class="protocol-right-head">
 										<p>Число падения</p>
-										<input type="text" class="form-control" placeholder="111">
+										<input type="text" class="form-control protocol-num" placeholder="111">
 										<p>c</p>
 									</div>
 									<div class="protocol-right-body">
@@ -255,7 +255,7 @@
 								<div class="protocol-right-item">
 									<div class="protocol-right-head">
 										<p>Натура</p>
-										<input type="text" class="form-control" placeholder="_ _ _">
+										<input type="text" class="form-control protocol-under" placeholder="_ _ _">
 										<p>г/л</p>
 									</div>
 									<div class="protocol-right-body">
@@ -269,9 +269,9 @@
 							<div class="col-lg-4">
 								<div class="protocol-right-item">
 									<div class="protocol-right-head">
-										<p>Количество клейковины</p>
-										<input type="text" class="form-control" placeholder="__,_">
-										<p>ед. пр.<br>РЗ - БПЛ</p>
+										<p class="w-110">Количество клейковины</p>
+										<input type="text" class="form-control protocol-divider" placeholder="__,_">
+										<p><small>ед. пр.<br>РЗ - БПЛ</small></p>
 									</div>
 									<div class="protocol-right-body">
 										<p>ГОСТ 13586.5-2015</p>
@@ -285,8 +285,8 @@
 
 								<div class="protocol-right-item">
 									<div class="protocol-right-head">
-										<p>Число падения</p>
-										<input type="text" class="form-control" placeholder="_ _ _">
+										<p class="w-110">Число падения</p>
+										<input type="text" class="form-control protocol-under" placeholder="_ _ _">
 										<p>c</p>
 									</div>
 									<div class="protocol-right-body">
@@ -300,7 +300,7 @@
 								<div class="protocol-right-item">
 									<div class="protocol-right-head">
 										<p>Количество клейковины ISO/Gluten Index</p>
-										<input type="text" class="form-control" placeholder="__,_">
+										<input type="text" class="form-control protocol-divider" placeholder="__,_">
 										<p>%</p>
 									</div>
 									<div class="protocol-right-body">
@@ -311,7 +311,7 @@
 								<div class="protocol-right-item">
 									<div class="protocol-right-head">
 										<p>Стекловидность</p>
-										<input type="text" class="form-control" placeholder="__">
+										<input type="text" class="form-control protocol-num" placeholder="__">
 										<p>%</p>
 									</div>
 									<div class="protocol-right-body">
@@ -322,7 +322,7 @@
 								<div class="protocol-right-item">
 									<div class="protocol-right-head">
 										<p>Альвеограмма: Энергия деформации (W)</p>
-										<input type="text" class="form-control" placeholder="__,_">
+										<input type="text" class="form-control protocol-divider" placeholder="__,_">
 										<p>%</p>
 									</div>
 									<div class="protocol-right-body">
@@ -334,7 +334,7 @@
 							<!-- end col -->
 
 							<!-- only for mobile -->
-							<div class="protocol-body-msg d-sm-none">
+							<div class="protocol-body-msg d-md-none">
 								<p>
 									Комментарий участника:
 								</p>
@@ -371,7 +371,7 @@
 						<div class="protocol-success">
 							<img src="img/send-ok.svg" alt="">
 							<p>
-								Отправленно!
+								Отправлено!
 							</p>
 						</div>
 
@@ -406,7 +406,10 @@
 	<script src="js/css-polyfill.min.js"></script>
 	<!-- Datepicker -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>	
-	<!-- / Datepicker -->	
+	<!-- / Datepicker -->
+	<!-- MaskedInput -->
+	<script src="js/jquery.maskedinput.min.js"></script>
+	<!-- / MaskedInput -->
 	<script src="js/script.js"></script>
 
 </body>

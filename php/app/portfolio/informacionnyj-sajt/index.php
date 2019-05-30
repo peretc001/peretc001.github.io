@@ -1,42 +1,61 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-	<meta charset="utf-8">
-	<title>Портфолио</title>
-	<meta name="description" content="Привет! Я Игорь, это мое Портфолио. Здесь собраны сайты которые я сделал. Заходи, тебе понравится!">
-	<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/inc/header.php'; ?>
-</head>
 <?php
 	require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/inc/JsonDB.class.php';
 	$db = new JsonDB( $_SERVER['DOCUMENT_ROOT'] . '/portfolio/' );
-		$result = $db->select('portfolio', 'themes', 'Информационный');
+		$result = $db->select('portfolio', 'portfolio', 'informacionnyj-sajt');
+		foreach($result as $row) {
+			$themes = $row['themes'];
+		}
 ?>
+<head>
+	<meta charset="utf-8">
+	<title><?php echo $themes; ?> - Портфолио</title>
+	<meta name="description" content="Привет! Я Игорь, это мое Портфолио. На этой странице собраны работы по теме: <?php echo $themes; ?>">
+	<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/inc/header.php'; ?>
+</head>
+
 <body class="is-page">
 	<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/inc/nav.php'; ?>
 	<div class="breadcrumbs">
 		<div class="container">
-			<a href="/">Главная</a> / <a href="/portfolio/">Портфолио</a> / Информационный
+			<a href="/">Главная</a> / <a href="/portfolio/">Портфолио</a> / <?php echo $themes; ?>
 		</div>
 	</div>
 	<section class="portfolio" id="portfolio">
 		<div class="container">
-			<div class="introHolder wow fadeInUp">
-				<h2 class="liner">Портфолио</h2>
+			<div class="introHolder">
+				<h1 class="liner"><?php echo $themes; ?></h1>
 			</div>
 			<div class="row">
+			<div class="offset-md-4">&nbsp;</div>
 			<?php 
 				arsort($result);
 				foreach($result as $row) { ?>
-				<div class="col-md-4 wow fadeInUp">
-					<h4 class="the_title"><?php echo $row['title']; ?></h4>
-					<a href="/portfolio/<?php 
-						if($row['themes'] == 'Landing page') { echo 'landing-page'; }
-						if($row['themes'] == 'Система учета') { echo 'crm'; }
-						if($row['themes'] == 'Интернет-магазин') { echo 'internet-magazin'; }
-						if($row['themes'] == 'Информационный') { echo 'informacionnyj-sajt'; }
-					?>/<?php echo $row['img']; ?>.php"><img src="/assets/img/portfolio/<?php echo $row['img']; ?>.jpg" alt="Разработка сайта <?php echo $row['title']; ?>"></a>
+				<div class="col-md-4">
+					<h4 class="the_title"><a href="/portfolio/<?php echo $row['portfolio']; ?>/<?php echo $row['img']; ?>.php"><?php echo $row['title']; ?></a></h4>
+					<a class="portfolio-img" href="/portfolio/<?php echo $row['portfolio']; ?>/<?php echo $row['img']; ?>.php">
+					<img src="/assets/img/portfolio/<?php echo $row['img']; ?>.jpg" 
+						srcset = "/assets/img/portfolio/<?php echo $row['img']; ?>-350.jpg 350w,
+						/assets/img/portfolio/<?php echo $row['img']; ?>.jpg 1280w"
+						sizes = "(max-width: 375px) 350px,
+									(max-width: 1200px) 1280px"
+							alt="Разработка сайта <?php echo $row['title']; ?>">
+						<span><i><?php echo $row['work']; ?></i></span>
+					</a>
 				</div>
 			<?php } ?>
+			</div>
+			<div class="row text-center">
+				<blockquote>
+					<p>Разработка информационных сайтов под ключ на Wordpress</p>
+					<p>Работаю под ключ, на своем сервере. Вы можете наблюдать в режиме онлайн за ходом работ</p>
+					<p>Используемые технологии HTML5, CSS, Bootstrap4, Grid, JS</p>
+					<p>В итоге вы получите информационный сайт с возможностью редактирования и добавления новостей или статей через админ панель без знания языков программирования.</p>
+				</blockquote>
+			</div>
+			<div class="row text-center">
+				<button class="btn btn-accent m-auto" data-toggle="modal" data-target="#callbackModal" data-title="<?php echo $themes; ?> - Заказать" data-hidden="<?php echo $themes; ?>">Заказать сайт</button>
 			</div>
 		</div>
 	</section>

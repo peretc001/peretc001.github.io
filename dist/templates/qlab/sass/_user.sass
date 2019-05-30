@@ -12,6 +12,7 @@
       padding-top: 2px
       padding-bottom: 2px
       max-height: 32px
+      font-size: .9em
    .btn-submit
       display: block
       margin: .5em auto
@@ -32,7 +33,11 @@
          font-weight: bold
          margin: 0
          margin: 1.5em 0 1.2em 0
-      
+   
+   .left-col
+      display: flex
+      flex-direction: column
+      justify-content: space-between
    .user-login
       label
          margin: 0
@@ -47,16 +52,27 @@
             width: 11px
             height: auto
             margin-right: 0.5em
-
+   .user-contact
+      height: 100%
+      .form-group
+         margin: .5em auto
    .user-props
       h2
          margin-top: 2em
-         margin-bottom: 3em
+         margin-bottom: 0
       .form-group
          align-items: center
-         margin: 2em auto
+         margin: 1.5em auto
+         &.col-12
+            padding-left: 20px
+            label
+               padding-left: 0
+
       label
          margin-bottom: 0
+         line-height: 1.2
+         small
+            line-height: 1
       .btn-submit
          margin-bottom: .8em
 
@@ -66,6 +82,9 @@
       .user-login
          .btn-edit
             font-size: 0.6em
+      .user-contact
+         .form-group
+            margin-top: 20px
       .user-props
          h2
             margin-bottom: 2.7em
@@ -77,6 +96,9 @@
       .user-login
          label
             margin-bottom: .3em
+      .user-contact
+         .form-group
+            margin-top: 5px
       .user-props
          h2
             margin-bottom: .5em
@@ -107,3 +129,18 @@
       .user-props
          .form-control
             margin-bottom: 1em
+         label
+            font-size: 1em
+         .form-group
+            &.col-12
+               padding-left: 0
+               label
+                  padding-left: 20px
+
+@media screen and (max-width: 374.98px)
+   .user
+      .form-control
+         font-size: 1em !important
+         min-height: 38px
+      label
+         font-size: .9em !important

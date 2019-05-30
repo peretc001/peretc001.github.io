@@ -3,7 +3,7 @@
 <?php
 	require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/inc/JsonDB.class.php';
 	$db = new JsonDB( $_SERVER['DOCUMENT_ROOT'] . '/portfolio/' );
-		$result = $db->select('portfolio', 'portfolio', 'crm');
+		$result = $db->select('portfolio', 'portfolio', 'design');
 		foreach($result as $row) {
 			$themes = $row['themes'];
 		}
@@ -25,10 +25,10 @@
 	<section class="portfolio" id="portfolio">
 		<div class="container">
 			<div class="introHolder">
-				<h1 class="liner"><?php echo $themes; ?></h1>
+				<h2 class="liner">Дизайн - Портфолио</h2>
 			</div>
 			<div class="row">
-			<div class="offset-md-2">&nbsp;</div>
+			<div class="offset-md-4">&nbsp;</div>
 			<?php 
 				arsort($result);
 				foreach($result as $row) { ?>
@@ -48,10 +48,9 @@
 			</div>
 			<div class="row text-center">
 				<blockquote>
-					<p>Дизайн, верстка или программирование систем учета клиентов (CRM) или личных кабинетов</p>
-					<p>Работаю под ключ, на своем сервере. Вы можете наблюдать в режиме онлайн за ходом работ</p>
-					<p>Используемые технологии HTML5, CSS, PHP, MySQL.</p>
-					<p>В итоге вы получите систему учета клиентов, которая будет работать на любом устройстве и из любой точки мира.</p>
+					<p>Разработка дизайна под ключ. В работе использую photoshop, illustrator, figma</p>
+					<p>Я не являюсь профессиональным дизайнером, просто создаю дизайн на свой вкус.</p>
+					<p>Если вам нравятся мои работы, пишите, звоните, поработаем.</p>
 				</blockquote>
 			</div>
 			<div class="row text-center">

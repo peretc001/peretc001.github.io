@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<base href="https://peretc001.github.io/dist/templates/qlab/">
 	<meta charset="utf-8">
 	<title>Home</title>
 	<meta name="description" content="">
@@ -193,11 +192,8 @@
 								</a>
 								<div class="dropdown-menu dropdown-select" aria-labelledby="selectFilter2">
 									<a class="dropdown-item">Все</a>
-									<a class="dropdown-item">Все 1</a>
-									<a class="dropdown-item">Все 2</a>
-									<a class="dropdown-item">Все 3</a>
-									<a class="dropdown-item">Все 4</a>
-									<a class="dropdown-item">Все 5</a>
+									<a class="dropdown-item">В работе</a>
+									<a class="dropdown-item">Завершен</a>
 								</div>
 							</div>
 						</div>
@@ -206,51 +202,65 @@
 
          </div>
 
-         <div class="row archive-head">
-            <div class="col-2 col-sm-1">СХЕМА</div>
-            <div class="col-4 col-sm-5">ПРОДУКТ</div>
-            <div class="col-4 col-sm-2">ДАТЫ</div>
-            <div class="col-2 col-lg-1">СТАТУС</div>
-            <div class="col-sm-2 col-lg-3 d-none d-sm-inline">КОММЕНТАРИЙ</div>
-         </div>
-         <!-- loop -->
-         <a href="" class="row archive-result">
-            <div class="col-2 col-sm-1 archive-result--num">МПА18 -11</div>
-            <div class="col-4 col-sm-5 archive-result--name">Мука пшеничная. Параметры альвеограммы</div>
-            <div class="col-4 col-sm-2 archive-result--date">21.01.2018 - 21.03.2018</div>
-            <div class="col-2 col-lg-1 archive-result--status"><span>Завершён</span></div>
-            <div class="col-sm-2 col-lg-3 d-none d-sm-inline archive-result--msg"></div>
-         </a>
-         <a href="" class="row archive-result">
-            <div class="col-2 col-sm-1 archive-result--num">МПА18 -11</div>
-            <div class="col-4 col-sm-5 archive-result--name">Мука пшеничная. Параметры альвеограммы</div>
-            <div class="col-4 col-sm-2 archive-result--date">21.01.2018 - 21.03.2018</div>
-            <div class="col-2 col-lg-1 archive-result--status">В обработке</div>
-            <div class="col-sm-2 col-lg-3 d-none d-sm-inline archive-result--msg">Неверные реквизиты, изменить</div>
-         </a>
-         <a href="" class="row archive-result">
-            <div class="col-2 col-sm-1 archive-result--num">МПА18 -11</div>
-            <div class="col-4 col-sm-5 archive-result--name">Мука пшеничная. Параметры альвеограммы Мука пшеничная. Параметры альвеограммы</div>
-            <div class="col-4 col-sm-2 archive-result--date">21.01.2018 - 21.03.2018</div>
-            <div class="col-2 col-lg-1 archive-result--status"><span>Завершён</span></div>
-            <div class="col-sm-2 col-lg-3 d-none d-sm-inline archive-result--msg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi, pariatur!</div>
-         </a>
-         <a href="" class="row archive-result">
-            <div class="col-2 col-sm-1 archive-result--num">МПА18 -11</div>
-            <div class="col-4 col-sm-5 archive-result--name">Мука пшеничная. Параметры альвеограммы</div>
-            <div class="col-4 col-sm-2 archive-result--date">21.01.2018 - 21.03.2018</div>
-            <div class="col-2 col-lg-1 archive-result--status"><span>Завершён</span></div>
-            <div class="col-sm-2 col-lg-3 d-none d-sm-inline archive-result--msg"></div>
-         </a>
-         <!-- end loop -->
-      </div>
+			<div id="sort_block">
+				<div class="row archive-head">
+					<div class="col-2 col-sm-1">СХЕМА</div>
+					<div class="col-4 col-sm-5">ПРОДУКТ <a class="sort" data-sort="archive-result--name"><img src="img/sort.svg" alt=""></a></div>
+					<div class="col-4 col-sm-2">ДАТЫ <a class="sort" data-sort="archive-result--date"><img src="img/sort.svg" alt=""></a></div>
+					<div class="col-2 col-lg-1">СТАТУС <a class="sort" data-sort="archive-result--status"><img src="img/sort.svg" alt=""></a></div>
+					<div class="col-sm-2 col-lg-3 d-none d-sm-inline">КОММЕНТАРИЙ</div>
+				</div>
+				
+				<ul class="list">
+					<!-- loop -->
+					<li>
+						<a href="" class="row archive-result">
+							<div class="col-2 col-sm-1 archive-result--num">МПА18 -11</div>
+							<div class="col-4 col-sm-5 archive-result--name">Мука пшеничная. Параметры альвеограммы</div>
+							<div class="col-4 col-sm-2 archive-result--date" data-timestamp="">21.01.2018 - 21.03.2018</div>
+							<div class="col-2 col-lg-1 archive-result--status"><span>Завершён</span></div>
+							<div class="col-sm-2 col-lg-3 d-none d-sm-inline archive-result--msg"></div>
+						</a>
+					</li>
+					<li>
+						<a href="" class="row archive-result">
+							<div class="col-2 col-sm-1 archive-result--num">МПА18 -11</div>
+							<div class="col-4 col-sm-5 archive-result--name">Б Мука пшеничная. Параметры альвеограммы</div>
+							<div class="col-4 col-sm-2 archive-result--date">19.01.2018 - 21.03.2018</div>
+							<div class="col-2 col-lg-1 archive-result--status">В работе</div>
+							<div class="col-sm-2 col-lg-3 d-none d-sm-inline archive-result--msg">Неверные реквизиты, изменить</div>
+						</a>
+					</li>
+					<li>
+						<a href="" class="row archive-result">
+							<div class="col-2 col-sm-1 archive-result--num">МПА18 -11</div>
+							<div class="col-4 col-sm-5 archive-result--name">В Мука пшеничная. Параметры альвеограммы Мука пшеничная. Параметры альвеограммы</div>
+							<div class="col-4 col-sm-2 archive-result--date">17.01.2018 - 21.03.2018</div>
+							<div class="col-2 col-lg-1 archive-result--status"><span>Завершён</span></div>
+							<div class="col-sm-2 col-lg-3 d-none d-sm-inline archive-result--msg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi, pariatur!</div>
+						</a>
+					</li>
+					<li>
+						<a href="" class="row archive-result">
+							<div class="col-2 col-sm-1 archive-result--num">МПА18 -11</div>
+							<div class="col-4 col-sm-5 archive-result--name">Г Мука пшеничная. Параметры альвеограммы</div>
+							<div class="col-4 col-sm-2 archive-result--date">15.01.2018 - 21.03.2018</div>
+							<div class="col-2 col-lg-1 archive-result--status"><span>Завершён</span></div>
+							<div class="col-sm-2 col-lg-3 d-none d-sm-inline archive-result--msg"></div>
+						</a>
+					</li>
+					<!-- end loop -->
+				</ul>
+			</div>
+		</div>
 		
 		<div class="container">
 			<div class="document">
 				<div class="document-header">
 					<p>МПА18 - 11</p>
 					<a href="" class="btn-submit"><img src="img/print-submit.svg" alt=""><span>Распечатать PDF</span></a>
-					<img class="ml-auto" src="img/stamp.svg" alt="Завершен">
+					<img class="stamp ml-auto" src="img/stamp.svg" alt="Завершен">
+					<img class="stamp ml-auto" src="img/stamp-in.svg" alt="В работе">
 				</div>
 				<div class="row document-body">
 					
@@ -274,16 +284,12 @@
 						<div class="document-body-item">
 							<div class="document-body-item--title">
 								<p>Оплата</p>
-								<a href="" class="ml-auto"><img src="img/print.svg" alt=""></a>
-								<a href=""><img src="img/pdf.svg" alt=""></a>
 							</div>
 							<p>П/п №123 от 21.01.2018</p>
 						</div>
 						<div class="document-body-item">
 							<div class="document-body-item--title">
 								<p>Пробы</p>
-								<a href="" class="ml-auto"><img src="img/print.svg" alt=""></a>
-								<a href=""><img src="img/pdf.svg" alt=""></a>
 							</div>
 							<p>Отправлены 25.01.2018 Получены 30.01.2018</p>
 						</div>
@@ -316,7 +322,7 @@
 						</div>
 						<div class="document-body-item">
 							<div class="document-body-item--title">
-								<p>Приложение</p>
+								<p>Приложение к сертификату</p>
 								<a href="" class="ml-auto"><img src="img/print.svg" alt=""></a>
 								<a href=""><img src="img/pdf.svg" alt=""></a>
 							</div>
@@ -348,7 +354,7 @@
 									Показатели
 								</div>
 								<div class="document-body-protocol--head--col--center gray">
-									Результаты протокола
+									Результаты в протоколе
 								</div>
 								<div class="document-body-protocol--head--col--right silver">
 									Z - Индексы
@@ -579,6 +585,14 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<script src="js/css-polyfill.min.js"></script>
+	<script src="js/list.min.js"></script>
+	<script>
+		var options = {
+			valueNames: ['archive-result--name', 'archive-result--status', 'archive-result--date']
+		};
+
+		var sortList = new List('sort_block', options);
+	</script>
 	<script src="js/script.js"></script>
 
 </body>

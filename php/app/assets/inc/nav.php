@@ -28,7 +28,7 @@
                <a class="nav-link line-hover" href="/#footer">Контакты</a>
             </li>
             <li class="nav-item">
-               <a class="btn btn-outline-success" href="https://api.whatsapp.com/send?phone=79282102335&text=Добрый%20день.%20Мне%20нужен%20сайт.%20Сколько%20стоит?" target="_blank"><i class="fab fa-whatsapp"></i> Написать в Whatsapp</a>
+               <a class="btn btn-outline-success" href="https://api.whatsapp.com/send?phone=79282102335&text=Добрый%20день.%20Меня%20интересует%20разработка%20сайта.%20Свяжитесь%20со%20мной" target="_blank"><i class="fab fa-whatsapp"></i> Написать в Whatsapp</a>
             </li>
          </ul>
       </div>
