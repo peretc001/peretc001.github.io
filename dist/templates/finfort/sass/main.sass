@@ -1,0 +1,272 @@
+@import "fonts"
+@import "vars"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	color: $text
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	padding: 0
+	margin: 0
+
+.login
+	font-size: 1em
+	width: 100%
+	height: 100%
+	background-size: cover
+	background-position: center
+	display: flex
+	align-items: center
+	justify-content: flex-start
+	.container
+		width: 100%
+		max-width: 1140px
+		margin: 0 auto
+	&-form
+		background: #ffffff
+		border-radius: 10px
+		padding: 25px 30px
+		max-width: 340px
+		&--head
+			display: flex
+			flex-direction: column
+			justify-content: center
+			width: 180px
+			margin: 0 auto
+			margin-bottom: 1em
+			&--title
+				display: flex
+				align-items: flex-end
+				justify-content: flex-start
+
+				p
+					font-size: 1em
+					margin: 0
+					&:first-child
+						width: 100px
+						text-transform: uppercase
+						font-size: 1.25em
+						font-weight: bold
+						padding: 0
+					&:last-child
+						background: $accent
+						color: #ffffff
+						font-size: 1.3em
+						padding: 0 5px
+						margin-left: 5px
+			&--desc
+				display: flex
+				align-items: center
+				justify-content: flex-start
+				p
+					font-size: .6em
+					padding: 0 3px
+					margin: 0
+					line-height: 1
+					&:first-child
+						width: 100px
+						background: $accent
+						padding: 3px
+					&:last-child
+						color: #848484
+						margin-left: 5px
+		&--body
+			margin: 10px
+			span.error
+				color: $accent
+				font-size: 0.8em
+				display: block
+				margin: 0 0 0 15px
+				&.d-none
+					display: none
+			.form-group
+				width: 100%
+				margin-bottom: 1em
+			label
+				color: #7f7f7f
+				display: block
+				margin: 0
+				position: relative
+				span
+					color: $accent
+			input
+				width: 100%
+				background: #ffffff
+				border: 1px solid #a3a3a3
+				border-radius: 6px
+				padding: 10px 15px
+				font-size: 1em
+				color: #444444
+				outline: none
+				&.error
+					border: 1px solid $accent
+			&--remember
+				display: flex
+				align-items: center
+				justify-content: flex-start
+				flex-direction: row
+				margin: 0
+				font-size: 0.8em
+				margin-bottom: 1em
+				&--radio
+					padding: 0
+					margin: 0
+					input
+						padding: 0
+						margin: 0
+					label
+						margin-bottom: 0
+						display: inline-block
+						cursor: pointer
+						position: relative
+						padding: 0 0 0 25px
+						font-size: 1em
+						-ms-user-select: none
+						-moz-user-select: none
+						-khtml-user-select: none
+						-webkit-user-select: none
+						&:before
+							content: ''
+							position: absolute
+							left: 0
+							top: 50%
+							transform: translateY(-50%)
+							width: 20px
+							height: 20px
+							border-radius: 4px
+							background: #ffffff
+							border: 1px solid #a3a3a3
+					input[type=checkbox]
+						display: none
+					input[type=checkbox]:checked + label:before
+						content: ''
+						width: 20px
+						height: 20px
+						background: url('../img/checked.svg') center no-repeat
+			.btn
+				display: block
+				background: #7fb54b
+				border-radius: 6px
+				width: 100%
+				max-width: 160px
+				text-align: center
+				margin: 0 auto
+				color: #ffffff
+				font-size: 1.3em
+				padding: 8px
+				text-align: center
+				margin-bottom: .4em
+				transition: background .2s ease
+				cursor: pointer
+				outline: none
+				&:hover
+					background: darken(#7fb54b, 10%)
+			.lost
+				display: block
+				background: #ffffff
+				border: 1px solid #3a3a3a
+				border-radius: 6px
+				width: 100%
+				max-width: 160px
+				text-align: center
+				margin: 0 auto
+				padding: 5px 0
+				color: #7f7f7f
+				font-size: 0.8em
+				text-decoration: underline
+				outline: none
+				&:hover
+					text-decoration: none
+		&--footer
+			&--phone
+				display: flex
+				align-items: center
+				justify-content: center
+				img
+					width: 40px
+					height: auto
+					margin-right: 5px
+				a
+					font-size: 1.5em
+					color: #7f7f7f
+					text-align: center
+					text-decoration: none
+					margin-left: 5px
+			p
+				color: #7f7f7f
+				text-align: center
+				padding: 0
+				margin: .5em 0 0 0
+				line-height: 1
+				font-size: 0.7em
+
+@media screen and (max-width: 1199.98px)
+	body
+		font-size: 15px
+	.login
+		.container
+			max-width: 960px
+
+@media screen and (max-width: 991.98px)
+	body
+		font-size: 14px
+	.login
+		.container
+			max-width: 720px
+
+@media screen and (max-width: 767.98px)
+	body
+		font-size: 16px
+	.login
+		justify-content: center
+		min-height: 550px
+		.container
+			max-width: auto
+			padding: 15px
+		&-form
+			margin: 0 auto
+
+@media screen and (max-width: 369.98px)
+	body
+		font-size: 15px
+
+body
+	opacity: 1
