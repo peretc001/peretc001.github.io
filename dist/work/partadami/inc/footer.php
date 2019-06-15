@@ -51,7 +51,7 @@
 				<li><a href="/certificate.php">Сертификаты</a></li>
 				<li><a href="/opt.php">Для дилеров</a></li>
 				<li><a href="/shkolnaya-mebel.php">Для учебных заведений</a></li>
-				<li><a href="/gde_kupit/">Адреса магазинов</a></li>
+				<li><a href="/gde_kupit/">Контакты</a></li>
 				<li><a href="/notes/">Статьи</a></li>
 				<li><a href="/otziv.php">Отзывы</a></li>
 			</ul>
@@ -117,24 +117,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- This is the off-canvas sidebar -->
-	<div id="uk_contact" class="uk-offcanvas">
-		<div class="uk-offcanvas-bar uk-offcanvas-bar-flip">
-			<div class="u-pull-left close"><a class="close_bar"><i class="fa fa-times" aria-hidden="true"></i></a></div>
-			<div class="row right">
-				<h3>Контакты</h3>
-				<ul>
-					<li class="str"><a><i class="fa fa-phone" aria-hidden="true"></i> Телефон:</a></li>
-					<li class="adres"><a>8 (861) 242-81-05</a></li>
-					<li>&nbsp;</li>
-					<li class="str"><a class="none"><i class="fa fa-map-marker" aria-hidden="true"></i> Адрес в Краснодаре:</a></li>
-					<li class="adres"><a href="/gde_kupit/krasnodar.php">Тургенева, 56</a></li>
-					<li class="str"><a href="/gde_kupit/"><i class="fa fa-angle-right" aria-hidden="true"></i> все магазины</a></li>
-					<li>&nbsp;</li>
-				</ul>
-			</div>
-		</div>
-	</div>
 </div>
 
 <!-- FONT
@@ -145,7 +127,7 @@
 	<link rel="stylesheet" href="/js/uikit/css/uikit.css" />
     <link rel="stylesheet" href="/css/blueimp-gallery.css">
     <link rel="stylesheet" href="/css/animate.css">
-    <link rel="stylesheet" href="/style.min.css">
+    <link rel="stylesheet" href="/style.css">
 	<!-- Scripts
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

@@ -259,6 +259,7 @@
 
 						<?php if ($company_list_control) { ?><ul class="list"><?php
 						
+
 							foreach ($company_list_control as $row) {   
 							?>	
 							<li>
@@ -272,7 +273,7 @@
 									<?php $event = $db->getRow('SELECT * FROM `event` WHERE company_id = ?s ORDER by event_date desc', $row['id']); 
 									?><div class="col-12 col-sm-8 company_list_block__desc"><?php if($event) { echo '<u>'. date('d.m.Y', strtotime($event['event_date'])) .'</u> '. $event['event_msg']; } ?></div>
 									<div class="col-6 col-sm-2 company_list_block__time"><?php if($row['company_time'] and $row['company_time'] != '00:00:00') { ?><span class="btn btn-dark"><?php echo date('H:i', strtotime($row['company_time'])); ?></span><?php } ?></div>
-									<div class="col-6 col-sm-2 company_list_block__date"><?php if($row['company_date'] and $row['company_date'] != '0000-00-00') { ?><span class="btn btn-danger"><?php echo date('d.m.Y', strtotime($row['company_date'])); ?></span><?php  } ?></div>
+									<div class="col-6 col-sm-2 company_list_block__date"><?php if($row['company_date'] and $row['company_date'] != '0000-00-00') { ?><span class="btn btn-dark"><?php echo date('d.m.Y', strtotime($row['company_date'])); ?></span><?php  } ?></div>
 								</a>
 							</li>	
 						<?php } ?></ul>	

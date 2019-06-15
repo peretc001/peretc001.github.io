@@ -37,15 +37,14 @@
 						</div>
 						<div class="company_page_menu__manager">
 							<label for="company_manager">Менеджер</label>
-							<select class="custom-select ecj" name="company_manager" />
+							<select class="custom-select ecj" name="company_manager">
 								<?php 
 								if($disabled_manager) {
 									echo '<option selected>'. $_SESSION['name'] .'</option>';
 								} else {
 									$manager_list = $db->getAll('SELECT * FROM `manager` ORDER by name desc'); 
 										foreach ($manager_list as $list) { ?>
-									
-									<option<?php if($company_manager == $list['name']) { echo ' selected'; } ?>><?php echo $list['name']; ?></option>
+									<option <?php if($company_manager == $list['name']) { echo ' selected'; } ?>><?php echo $list['name']; ?></option>
 								<?php } } ?>	
 							</select>
 						</div>
@@ -66,13 +65,13 @@
 							<div class="form-group row">
 								<label for="company_code" class="col-sm-3 col-form-label">ИНН</label>
 								<div class="col-sm-9">
-									<input id="company_code" type="text" name="company_code" class="form-control ecj" value="" placeholder="ИНН" />
+									<input id="company_code" type="tel" name="company_code" class="form-control ecj" value="" placeholder="ИНН" />
 								</div>
 							</div>
 							<div class="form-group row">
 								<label for="company_region" class="col-sm-3 col-form-label">Регион</label>
 								<div class="col-sm-9 region_list">
-									<input id="company_region" type="text" name="company_region" class="form-control ecj" value="" placeholder="Регион"  required />
+									<input id="company_region" type="text" name="company_region" class="form-control ecj" value="" placeholder="Регион" />
 								</div>
 							</div>
 							<div class="form-group row">
@@ -84,7 +83,7 @@
 							<div class="form-group row">
 								<label for="company_phone" class="col-sm-3 col-form-label">Телефон</label>
 								<div class="col-sm-9">
-									<input id="company_phone" type="tel" name="company_phone" class="form-control ecj" value="" placeholder="Телефон"  required />
+									<input id="company_phone" type="tel" name="company_phone" class="form-control ecj" value="" placeholder="Телефон" />
 								</div>
 							</div>
 							<div class="form-group row">
@@ -95,7 +94,7 @@
 							</div>
 							<div class="form-group">
 								<label for="company_about">Описание</label>
-								<textarea id="company_about" type="text" name="company_about" class="form-control ecj" rows="10" placeholder="Описание" /></textarea>
+								<textarea id="company_about" type="text" name="company_about" class="form-control ecj" rows="10" placeholder="Описание" ></textarea>
 							</div>
 						</div>
 					</div>

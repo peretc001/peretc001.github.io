@@ -56,7 +56,6 @@ $(function(){
 	
 	$('.edit_company_ajax').on('change','.ecj', function () {
         flag = 2;
-        console.log(flag);
     });
     $('.close_page').click(function() {
 		if(flag == 2) {

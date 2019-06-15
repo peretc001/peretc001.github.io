@@ -1,25 +1,10 @@
-<!-- <div id="nav_msg"></div> -->
-<div id="top">
-	<div class="row">
-		<ul>
-			<li class="location"><a href="/gde_kupit/"><i class="fa fa-map-marker" aria-hidden="true"></i> Адреса магазинов</a></li>
-			<li><a href="/delivery.php">Доставка</a></li>
-			<li><a href="/settingup.php">Сборка</a></li>
-			<li><a href="/garanty.php">Гарантия</a></li>
-			<li><a href="/otziv.php">Отзывы</a></li>
-			<li><a href="/oplata.php">Оплата</a></li>
-			<li><a href="/exchange.php">Возврат</a></li>
-			<li><a href="/certificate.php">Сертификаты</a></li>
-		</ul>
-	</div>
-</div>
-<div id="menu">
+<nav id="menu">
 	<div class="row">
 		<ul>
 			<li class="logo"><a href="/"><img src="/img/logo.svg" alt="Парта ДЭМИ, парта трансформер ДЕМИ"></a></li>
-			<li class="name"><a href="/"><b>Парты трансформеры</b><br><span>официальный дилер «ДЭМИ»</span></a></li>
-			<li class="phone">Телефон: <br><span class="phone">8 (988) 242-81-05</span></li>
-			<li class="contact"><span>Краснодар:</span> <br><a href="/gde_kupit/">ул. Тургенева, 56</a></li>
+			<li class="name"><a href="/"><b>Парты ДЭМИ</b><br><span>официальный дилер в Краснодаре</span></a></li>
+			<li class="phone"><a href="tel:79882428105"><i class="fa fa-mobile" aria-hidden="true"></i> 8 (988) 242-81-05</a></li>
+			<li class="contact"><a href="/gde_kupit/"><i class="fa fa-map-marker" aria-hidden="true"></i> Контакты</a></li>
 			<li class="akcia"><i class="fa fa-percent" aria-hidden="true"></i> <a href="/akcia/">Акции</a></li>
 			<li class="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="cart"><?php	
 				$cart = mysql_query("SELECT id FROM cart WHERE sid = '". session_id() ."'  "); 
@@ -40,13 +25,13 @@
 				?></span><span class="cartajax"></span></li>
 		</ul>
 	</div>
-</div>
+</nav>
 <div id="nav_phone">
 	<div class="row">
 		<ul>
 			<li class="home"><a href="/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
 			<li class="menu"><a href="#uk_menu" data-uk-offcanvas><i class="fa fa-bars" aria-hidden="true"></i> Меню</a></li>
-			<li class="contact"><a href="#uk_contact" data-uk-offcanvas><i class="fa fa-phone" aria-hidden="true"></i> Контакты</a></li>
+			<li class="contact"><a href="tel:79882428105"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
 			<li class="cart"><span class="cart"><?php	
 					$sid = session_id();
 					$cart = mysql_query("SELECT id FROM cart WHERE sid = '". session_id() ."'  "); 

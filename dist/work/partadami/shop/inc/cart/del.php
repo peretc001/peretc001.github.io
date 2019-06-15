@@ -3,7 +3,7 @@
 // Достаем id
 	$id = htmlspecialchars(trim($_GET['id']));
 // Достаем sid
-	$sid = htmlspecialchars(trim($_GET['session_id']));
+	$sid = htmlspecialchars(trim($_GET['sid']));
 // Достаем color
 	$color = htmlspecialchars(trim($_GET['color']));
 	

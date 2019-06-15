@@ -19,19 +19,18 @@ var gulp          = require('gulp'),
 
 gulp.task('browser-sync', function() {
 	browserSync.init({
-		open: 'local',
 		host: 'app',
 		port: 8010
   });
 });
 
 gulp.task('styles', function() {
-	return gulp.src('app/assets/'+syntax+'/**/*.'+syntax+'')
+	return gulp.src('app/'+syntax+'/**/*.'+syntax+'')
 	.pipe(sass({ outputStyle: 'expanded' }).on("error", notify.onError()))
 	.pipe(rename({ suffix: '.min', prefix : '' }))
 	.pipe(autoprefixer(['last 15 versions']))
 	.pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Opt., comment out when debugging
-	.pipe(gulp.dest('app/assets/css'))
+	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.stream())
 });
 
@@ -40,7 +39,7 @@ gulp.task('scripts', function() {
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(uglify()) // Mifify js (opt.)
-	.pipe(gulp.dest('app/assets/js'))
+	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({ stream: true }))
 });
 
@@ -53,7 +52,7 @@ gulp.task('code', function() {
 		php.server({ base: 'app', port: 8010, keepalive: true});
 	});
 	gulp.task('server', function() {
-		gulp.watch('app/assets/'+syntax+'/**/*.'+syntax+'', gulp.parallel('styles'));
+		gulp.watch('app/'+syntax+'/**/*.'+syntax+'', gulp.parallel('styles'));
 		gulp.watch('app/**/*.html').on('change', browserSync.reload);
 		gulp.watch('app/**/*.php').on('change', browserSync.reload);
   });	

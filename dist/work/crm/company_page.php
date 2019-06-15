@@ -88,7 +88,7 @@
 					<div class="col-lg-4">
 						<div class="company_page_block">
 							<button class="show_company_info" type="button" data-toggle="collapse" data-target="#company_info"
-								aria-expanded="false" aria-controls="company_info" /><i class="fas fa-caret-up"></i></button>
+								aria-expanded="false" aria-controls="company_info" ><i class="fas fa-caret-up"></i></button>
 							<div class="company_info collapse show" id="company_info">
 								<div class="form-group row">
 									<label for="company_name" class="col-sm-3 col-form-label">Название</label>
@@ -99,7 +99,7 @@
 								<div class="form-group row">
 									<label for="company_code" class="col-sm-3 col-form-label">ИНН</label>
 									<div class="col-sm-9">
-										<input id="company_code" type="text" name="company_code" class="form-control ecj" value="<?php echo $company_code; ?>" placeholder="ИНН" <?php echo $disabled; ?>/>
+										<input id="company_code" type="tel" name="company_code" class="form-control ecj" value="<?php echo $company_code; ?>" placeholder="ИНН" <?php echo $disabled; ?>/>
 									</div>
 								</div>
 								<div class="form-group row">

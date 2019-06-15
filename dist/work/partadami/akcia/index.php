@@ -14,32 +14,42 @@
 </head>
 <body>
 <?php include $_SERVER['DOCUMENT_ROOT'] .'/inc/nav.php'; ?>
-<!--div id="nav_menuid" class="grey">
-	<div class="row">
-		<a href="/">Главная</a> <i class="fa fa-angle-right" aria-hidden="true"></i> Акции
-	</div>
-</div-->
 
-<?php $_SESSION['black_friday'] = 'yes'; ?>
+
 <div class="black_friday_list">
 	<div class="introHolder">
-		<h2>Тумба ТУВ.01 (выставочный образец)</h2>
+		<h2>Выставочные образецы</h2>
 	</div>
+	<br>
 	<div class="row">
-		<div class="one-half columns">
-			<p class="product-img">
-				<a href="/shop/tumby_i_stellazhi/tyv01r.php?color=tyv_greyf"><img src="/akcia/img/tyv01/1.jpg" alt="ТУВ.01"></a>
+		<div class="one-half column">
+			<p class="product-img gallery">
+				<a href="/akcia/img/42/1.jpg"><img src="/akcia/img/42/1.jpg" alt="СУТ42"></a>
+				<a style="display:none" href="/akcia/img/42/2.jpg"><img src="/akcia/img/42/2.jpg" alt="СУТ42"></a>
+				<a style="display:none" href="/akcia/img/42/2.jpg"><img src="/akcia/img/42/2.jpg" alt="СУТ42"></a>				
 			</p>
-			<p class="hot"><span>50%</span></p>
-			<p class="product-name">Тумба выкатная с рисунком</p>
-			<p class="product-price"><span class="old">&nbsp;9950&nbsp;</span> | <span class="new">5000</span></p>
+			<p class="hot"><span>20%</span></p>
+			<p class="product-name">Парта со стулом<br>100x55см</p>
+			<p class="product-price"><span class="old">&nbsp;16.100&nbsp;</span> | <span class="new">12.999</span></p>
+			<br>
+		</div>
+		<div class="one-half column">
+			<p class="product-img gallery">
+				<a href="/akcia/img/43/1.jpg"><img src="/akcia/img/43/1.jpg" alt="СУТ43"></a>
+				<a style="display:none" href="/akcia/img/43/2.jpg"><img src="/akcia/img/43/2.jpg" alt="СУТ43"></a>
+				<a style="display:none" href="/akcia/img/43/3.jpg"><img src="/akcia/img/43/3.jpg" alt="СУТ43"></a>
+			</p>
+			<p class="hot"><span>25%</span></p>
+			<p class="product-name">Парта со стулом<br>120x55см</p>
+			<p class="product-price"><span class="old">&nbsp;19.800&nbsp;</span> | <span class="new">14.999</span></p>
+			<br>
 		</div>
 	</div>
 </div>
-<!-- div id="check_ok">
+<!-- <div id="check_ok">
 	<p><i class="fa fa-meh-o" aria-hidden="true"></i></p>
 	<p>В данный момент товаров со скидкой нет</p>
-</div -->
+</div> -->
 <?php #include $_SERVER['DOCUMENT_ROOT'] .'/akcia/samples.php'; ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] .'/inc/popular.php'; ?>
 

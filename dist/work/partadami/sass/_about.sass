@@ -1,0 +1,100 @@
+.about
+   .container
+      display: flex
+      justify-content: space-between
+   .about-card
+      width: 65%
+      padding: 40px
+      background: $blue
+      color: #fff
+      .six
+         padding: 20px 10px
+         text-align: center
+         p
+            margin-bottom: 0.5em
+            font-size: 0.8em
+            font-style: italic
+            line-height: 1.2
+            letter-spacing: -.5px
+            color: #ebebeb
+            strong
+               font-weight: bold
+               letter-spacing: normal
+               font-style: normal
+               text-transform: uppercase
+               color: $text
+               color: #fff
+   .today
+      width: 35%
+      border: 1px solid $green
+      padding: 0
+      margin-left: 1em
+      text-align: center
+      font-size: 1em
+      &_head
+         display: flex
+         align-items: center
+         font-weight: bold
+         text-transform: uppercase
+         p
+            margin-bottom: 0
+            line-height: 1
+            margin-right: 1em
+            letter-spacing: -1px
+            &:first-child
+               background: $green
+               border: 1px solid $green
+               padding: .5em
+               font-size: 1.2em
+               color: #fff
+      &_body
+         padding: 0 1em
+         &__img,
+         &__text
+            width: 100%
+         &__img
+            display: flex
+            align-items: center
+            margin-right: 1em
+            img
+               width: 100%
+            p
+               width: 45%
+               &:nth-child(2)
+                  width: 10%
+                  color: #666666
+         &__text
+            font-size: 0.8em
+            p
+               margin-bottom: 2em
+               font-weight: bold
+               position: relative
+            &__price
+               display: flex
+               align-items: center
+               margin-bottom: 1em
+               p
+                  margin-bottom: 0
+                  margin-right: 1em
+                  font-size: 2em
+               .old
+                  color: #888888
+                  position: relative
+                  &:after
+                     content: ''
+                     position: absolute
+                     left: -5%
+                     top: 55%
+                     transform: translateY(-50%)
+                     width: 110%
+                     height: 1px
+                     background: #666666
+               button
+                  background: transparent
+                  border: none
+                  color: $blue
+                  font-size: 2em
+                  line-height: 1
+                  padding: 0
+                  margin: 0
+                  margin-left: auto

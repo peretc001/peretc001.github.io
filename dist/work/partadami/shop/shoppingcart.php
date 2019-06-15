@@ -36,9 +36,11 @@
 			</div>
 			<div class="right">
 				<div class="two columns qty">
-					<?php if ($row['qty'] == 1) { } else { ?><a class="plus" href="/shop/inc/cart/minus.php?id=<?php echo $row['id']; ?>&amp;session_id=<?php echo session_id(); ?>&amp;color=<?php echo $row['color']; ?>">-</a> <?php } ?>
+					<?php if ($row['qty'] == 1) { } else { ?>
+						<a class="minus" href="/shop/inc/cart/minus.php?id=<?php echo $row['id']; ?>&amp;sid=<?php echo $row['sid']; ?>&amp;color=<?php echo $row['color']; ?>">-</a>
+					<?php } ?>
 					<?php echo $row['qty']; ?>
-					<a class="minus" href="/shop/inc/cart/plus.php?id=<?php echo $row['id']; ?>&amp;session_id=<?php echo $row['sid']; ?>&amp;color=<?php echo $row['color']; ?>">+</a>
+					<a class="plus" href="/shop/inc/cart/plus.php?id=<?php echo $row['id']; ?>&amp;sid=<?php echo $row['sid']; ?>&amp;color=<?php echo $row['color']; ?>">+</a>
 				</div>
 				<div class="two columns price">	
 					<?php $price[id] = $row['price'];
@@ -48,7 +50,7 @@
 							echo $total; ?> р.
 				</div>
 				<div class="two columns del">
-					<a class="del" href="/shop/inc/cart/del.php?id=<?php echo $row['id']; ?>&amp;session_id=<?php echo $sid = $row['sid']; ?>&amp;color=<?php echo $row['color']; ?>">x</a>
+					<a class="del" href="/shop/inc/cart/del.php?id=<?php echo $row['id']; ?>&amp;sid=<?php echo $sid = $row['sid']; ?>&amp;color=<?php echo $row['color']; ?>">x</a>
 				</div>
 			</div>
 		</div>
@@ -59,7 +61,7 @@
 						?>
 		<div class="row total">
 			<div class="u-pull-left del">
-				<p><a href="/shop/inc/cart/clear.php?session_id=<?php echo $sid; ?>">Удалить все</a></p>
+				<p><a href="/shop/inc/cart/clear.php?sid=<?php echo $sid; ?>">Удалить все</a></p>
 			</div>
 			<div class="u-pull-right price">
 				<p><span>ИТОГО:</span> <?php echo $total_sum;  ?> p.</p>

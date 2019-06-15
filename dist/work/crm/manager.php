@@ -43,8 +43,9 @@
 							<input id="name" type="text" name="name" class="form-control" value="<?php echo $name; ?>" placeholder="Фамилия Имя" />
 						</div>
 					</div>
-					<?php if($img) { ?><div class="form-group text-center">
-						<img class="manager_img" src="/img/manager/<?php echo $img; ?>" alt="">
+					<?php if($img) { ?><div class="form-group row manager_page__img">
+						<img src="/img/manager/<?php echo $img; ?>" alt="">
+						<a href="/inc/action/delete_manager_img.php?id=<?php echo $id; ?>"><i class="far fa-trash-alt"></i> Удалить</a>
 					</div><?php } ?>
 					<div class="form-group row">
 						<label for="login" class="col-sm-3 col-form-label">Изображение</label>

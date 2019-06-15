@@ -1,5 +1,9 @@
 /node_modules/
 /php/node_modules/
+/dist/work/partadami/doc/
+/dist/work/partadami/img/
+/dist/work/partadami/upload/
+/dist/work/partadami/shop/img/
 /other/
 /.git/
 /**/_backstage
