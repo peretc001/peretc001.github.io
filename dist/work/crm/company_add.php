@@ -33,7 +33,7 @@
 						<div class="company_page_menu__time">
 							<label for="form-time">Время</label>
 							<input type="text" id="form-time" class="btn btn-time ecj"  name="company_time"
-								value="" data-uk-timepicker="{start:8, end:21}" readonly />
+								value="" data-uk-timepicker="{start:8, end:21}" readonly <?php echo $disabled; ?> />
 						</div>
 						<div class="company_page_menu__manager">
 							<label for="company_manager">Менеджер</label>
