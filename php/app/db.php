@@ -132,6 +132,19 @@ $db = new JsonDB( $_SERVER['DOCUMENT_ROOT'] . '/portfolio/' );
 //       'img' => '1c',
 //       'video' => '',
 //    ), true);
+// $db->insert('portfolio', array(
+//       'id' => 11, 
+//       'title' => 'Конская сила',
+//       'description' => 'Зацени прикол, который я придумал для тестового задания',
+//       'portfolio' => 'landing-page',
+//       'themes' => 'Landing page',
+//       'work' => 'Верстка',
+//       'tech' => 'HTML + CSS3 + JS + Youtube API',
+//       'url' => 'https://krasovsky23.ru/work/layout/potencia/',
+//       'about' => 'Сделать тестовое задания по приколу',
+//       'img' => 'test',
+//       'video' => '',
+//    ), true);
 
 
 
