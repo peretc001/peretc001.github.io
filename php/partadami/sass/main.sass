@@ -1,0 +1,305 @@
+@import "_libs/fonts"
+@import "_libs/vars"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #c3c3c3
+	opacity: 1
+
+*:-moz-placeholder
+	color: #c3c3c3
+	opacity: 1
+
+*::-moz-placeholder
+	color: #c3c3c3
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #c3c3c3
+	opacity: 1
+
+.error::-webkit-input-placeholder
+	color: #fff
+.error:-moz-placeholder
+	color: #fff
+.error::-moz-placeholder
+	color: #fff
+.error:-ms-input-placeholder
+	color: #fff
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #242424
+body input:required:valid,
+body textarea:required:valid
+	color: #242424
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	opacity: 0
+	margin: 0 !important
+	padding: 0 !important
+
+.text-center
+	text-align: center
+
+::selection
+	background-color: $accent
+	color: #fff
+
+a, a:hover
+	text-decoration: none
+	color: $text
+
+img
+	max-width: 100%
+
+@import '_libs/normalize'
+@import '_libs/fontawesome'
+@import '_libs/hamburger'
+@import '_libs/skeleton'
+@import '_libs/grid'
+@import 'style'
+@import 'nav'
+@import 'header'
+@import 'new_products'
+@import 'top_products'
+
+.hide_description
+	height: 100px
+	overflow: hidden
+	position: relative
+	&.opener
+		height: auto
+	&.opener:after
+		opacity: 0
+
+.show_description
+	width: 100%
+	max-width: 1080px
+	padding: 0 25px
+	display: block
+	text-align: center
+	margin: 0 auto
+	position: relative
+	&:before
+		content: ''
+		position: absolute
+		left: 0
+		top: 50%
+		transform: translateY(-50%)
+		width: 45%
+		height: 1px
+		background: #ebebeb
+	&:after
+		content: ''
+		position: absolute
+		right: 0
+		top: 50%
+		transform: translateY(-50%)
+		width: 45%
+		height: 1px
+		background: #ebebeb
+	.fa
+		position: relative
+		font-size: 2em
+		color: #ccc
+		transition: all .3s ease
+	&.active
+		.fa
+			transform: rotate(180deg)
+		
+
+
+.introHolder
+	width: 100%
+	padding: 0
+	margin: 0 auto
+	text-align: center
+	h1,
+	h2,
+	h3
+		font-family: OrpheusRegular, sans-serif
+		line-height: 1
+		padding: 0
+		margin: .3em 0
+		position: relative
+		&:after
+			content: ''
+			width: 100px
+			height: 1px
+			background: #d7d7d7
+			position: absolute
+			bottom: -0.2em
+			left: 50%
+			margin-left: -50px
+	h1
+		font-size: 3em
+	h2
+		font-size: 2.6em
+	h3
+		font-size: 1.8em
+		padding-bottom: .3em
+	p
+		padding-top: .2em
+		font-size: 1em
+		color: #555555
+
+@media (max-width: 550px)
+	.introHolder
+		width: 90%
+		padding: 0
+		margin: 0 auto
+		h1,
+		h2
+			font-size: 3rem
+
+.modal
+	display: none
+	&.show
+		width: 100%
+		height: 100%  
+		display: flex
+		justify-content: center
+		align-items: center
+		heigth: 100vh
+		background-color: rgb(0,0,0)
+		background-color: rgba(0,0,0,0.6)
+		position: fixed
+		left: 0
+		top: 0
+		z-index: 999
+		padding: 0 15px
+	.modal-content
+		background-color: #f5f5f5
+		margin: auto
+		padding: 20px
+		width: 100%
+		max-width: 350px
+		text-align: center
+		border: 0
+		border-radius: 6px
+		position: relative
+		.close_modal
+			position: absolute
+			color: #fff
+			background: $blue
+			top: 0
+			right: 0
+			padding: .5em
+			border-radius: 0 4px 0 0
+			font-size: 1em
+			line-height: 1
+			font-weight: bold
+			cursor: pointer
+			z-index: 2
+			&:hover
+				background: darken($blue, 10%)
+		.modal-body
+			p
+				font-size: 1.2em
+				font-weight: bold
+				text-transform: uppercase
+				margin-bottom: .5em
+			.form-row
+				display: flex
+				input
+					border: 1px solid lighten($blue, 50%)
+					border-radius: 4px
+					background: #ffffff
+					color: #666
+					line-height: 1
+					font-size: 1em
+					width: 100%
+					padding: .5em 1em
+				.callback__form__button
+					max-width: 120px
+					margin-left: 0.5em
+					font-size: 0.8em
+					background: $blue
+					color: #ffffff
+					border: 1px solid darken($blue, 10%)
+					transition: background .3s ease
+					&:hover
+						background: darken($blue, 10%)
+					&:disabled
+						background: lighten($blue, 50%)
+						border: 1px solid lighten($blue, 50%)
+.robot
+	display: flex
+	align-items: center
+	justify-content: flex-start
+	padding: 0
+	.circle-loader
+		cursor: pointer
+		margin: 0 10px
+		border: 1px solid rgba(255, 255, 255, 0.2)
+		border-color: $blue
+		position: relative
+		display: block
+		vertical-align: top
+		border-radius: 0
+		width: 1.5em
+		height: 1.5em
+		&.load-complete
+			-webkit-animation: none
+			animation: none
+			border-color: $blue
+			transition: border 500ms ease-out
+		.checkmark
+			display: none
+			&.draw:after
+				animation-duration: 800ms
+				animation-timing-function: ease
+				animation-name: checkmark
+				transform: scaleX(-1) rotate(135deg)
+			&:after
+				opacity: 1
+				height: 0.75em
+				width: 0.375em
+				transform-origin: left top
+				border-right: 3px solid $blue
+				border-top: 3px solid $blue
+				content: ''
+				left: 0.375em
+				top: 0.75em
+				position: absolute
+	span
+		color: $text
+		font-size: 0.6em
+@keyframes checkmark
+	0%
+		height: 0
+		width: 0
+		opacity: 1
+	20%
+		height: 0
+		width: 0.375em
+		opacity: 1
+	40%
+		height: 0.75em
+		width: 0.375em
+		opacity: 1
+	100%
+		height: 0.75em
+		width: 0.375em
+		opacity: 1
+
+body
+	opacity: 1

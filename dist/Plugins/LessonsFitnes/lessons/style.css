@@ -1,0 +1,13 @@
+/*
+Theme Name: Lessons
+Author: Красовский Игорь
+Author URI: https://krasovsky23.ru
+Description: Стартовая тема
+Version: 1.0
+*/
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 16px;
+}

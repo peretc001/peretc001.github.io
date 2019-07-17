@@ -1,0 +1,117 @@
+.cloud
+   background-image: linear-gradient(to bottom, #007bc6 0%, #7fc9ef 100%)
+   padding: 55px 0 10px 0
+   color: #ffffff
+   position: relative
+   &:before
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      width: 50%
+      height: 100%
+      background: url('../img/cloud/left.png') -250px top no-repeat
+   &:after
+      content: ''
+      position: absolute
+      right: 0
+      bottom: 0
+      width: 100%
+      height: 100%
+      background: url('../img/cloud/right.png') 130% 85% no-repeat
+   h3
+      font-size: 1.875em
+      text-transform: uppercase
+      font-weight: bold
+      text-align: center
+      margin-top: 0.5em
+   .row
+      padding: 50px 0
+   [class*="col-"]
+      padding: 0 20px
+      margin-bottom: 30px
+      position: relative
+      z-index: 1
+   h4
+      font-size: 1.2em
+      font-weight: bold
+   .btn
+      outline: none !important
+      &.btn-white
+         background: #ffffff
+         font-size: 1.125em
+         font-weight: bold
+         width: 100%
+         max-width: 263px
+         text-align: center
+         margin: 0 auto
+         margin-top: 1em
+         outline: none !important
+         &:hover
+            background: $red
+            color: #fff
+         &:active
+            background: darken($red, 10%)
+            color: #fff
+            outline: none !important
+
+@media screen and (max-width: 1199.98px)
+   .cloud
+      &:before
+         background-position: -250px top
+      &:after
+         background-position: 150% 85%
+
+@media screen and (max-width: 991.98px)
+   .cloud
+      &:before
+         background-position: -300px top
+      &:after
+         background-position: 650px 85%
+
+@media screen and (max-width: 767.98px)
+   .cloud
+      &:before
+         background-position: -300px top
+      &:after
+         background-position: 500px 5%
+      [class*="col-"]
+         margin-bottom: 10px
+
+@media screen and (max-width: 576.98px)
+   .cloud
+      &:before
+         background-position: -350px top
+      &:after
+         background-position: 350px 5%
+      [class*="col-"]
+         padding: 0 15px
+         margin-bottom: 10px
+         position: relative
+         z-index: 1
+      h4
+         font-size: 1.1em
+      .btn
+         &.btn-white
+            max-width: 100%
+
+@media screen and (max-width: 429.98px)
+   .cloud
+      h3
+         font-size: 1.5em
+      &:after
+         background-position: 300px 5%
+
+@media screen and (min-width: 1440px)
+   .cloud
+      &:before
+         background-position: -20px top
+      &:after
+         background-position: 100% 85%
+
+@media screen and (min-width: 1920px)
+   .cloud
+      &:before
+         background-position: 30% top
+      &:after
+         background-position: 90% 85%

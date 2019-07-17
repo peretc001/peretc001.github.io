@@ -1,16 +1,16 @@
 <?php
-//Add my styles and scripts
-	add_action( 'wp_enqueue_scripts', 'my_scripts');
-	function my_scripts() {
-		wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/assets/css/main.css', false, time() );
+function optimazed_scripts() {
+	wp_enqueue_style( 'optimazed-style', get_template_directory_uri() . '/css/main.min.css', array(), null );
+	
+	wp_deregister_script('jquery');
+	wp_register_script( 'jquery', includes_url( 'js/jquery/jquery.js' ), false, null, true );
+	wp_enqueue_script( 'jquery' );
 
-		//Переподключаем JQUERY в footer
-		wp_deregister_script('jquery');
-		wp_register_script( 'jquery', includes_url( 'js/jquery/jquery.js' ), false, null, true );
-
-		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'main', get_stylesheet_directory_uri() . '/assets/js/main.js', 'jquery', time(), true );
-	}
+	wp_enqueue_script( 'optimazed-popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array(), null, true );
+	wp_enqueue_script( 'optimazed-bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array(), null, true );
+	wp_enqueue_script( 'optimazed-custom', get_template_directory_uri() . '/js/script.js', array(), null, true );
+}
+add_action( 'wp_enqueue_scripts', 'optimazed_scripts' );
 
 //ADMINBAR
 	//add_filter( 'show_admin_bar', '__return_false');
@@ -19,10 +19,12 @@
 	//function admin_bar() { echo '<style>#wpadminbar {opacity:.1;} #wpadminbar:hover {opacity:1;}</style>';  }
 
 //Add menu into admin
-	register_nav_menus(array(
-			'main_menu' => 'Главное меню',
-		)
-	);
+register_nav_menus(array(
+		'main_menu' => 'Главное меню',
+	)
+);
+
+add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
 
 //Walkers
 class Optimazed_Walker_Nav_Menu extends Walker_Nav_Menu {

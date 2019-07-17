@@ -1,0 +1,193 @@
+.steps
+   padding: $gutter 15px
+   .h2_title
+      margin-bottom: 0
+   p
+      &:nth-child(2),
+      &:nth-child(3)
+         text-align: center
+         margin-bottom: 0
+         color: $grey
+   &_card
+      text-align: center
+      margin-top: 1em
+   p
+      margin-bottom: 1em
+      color: $grey
+      strong
+         display: inline-block
+         text-align: center
+         margin: 1em auto
+         text-align: left
+         font-size: 1em
+         color: $text
+         position: relative
+         padding-bottom: 1em
+         &:after
+            content: ''
+            position: absolute
+            left: 50%
+            bottom: 1px
+            transform: translateX(-50%)
+            width: 100px
+            height: 3px
+            background: rgba($accent, .3)
+            transition: background .3s ease
+      em
+         display: block
+         font-size: 0.65em
+         margin-top: .8em
+         color: #666666
+
+   &_card
+      &:hover
+         p
+            strong
+               &:after
+                  background: rgba($accent, 1)
+
+   
+   svg
+      path:first-child
+         stroke-width: 6
+         stroke: rgba($accent, .2)
+
+   .steps_card__img1
+      position: relative
+      width: 100px
+      height: 100px
+      margin: 1em auto
+      overflow: hidden
+      &:before
+         content: ''
+         position: absolute
+         left: 50%
+         top: 50%
+         transform: translateX(-50%) translateY(-50%)
+         background: url('../img/steps/001-incoming-call.svg') center center no-repeat
+         width: 50%
+         height: 50%
+         transition: all .5s ease
+      &:hover
+         &:before
+            transform: translateX(-50%) translateY(-50%) scale(1.1)
+
+   .steps_card__img2
+      position: relative
+      width: 100px
+      height: 100px
+      margin: 1em auto
+      overflow: hidden
+      &:before
+         content: ''
+         position: absolute
+         left: 50%
+         top: 50%
+         transform: translateX(-50%) translateY(-50%)
+         background: url('../img/steps/002-ruler.svg') center center no-repeat
+         width: 50%
+         height: 50%
+         transition: all .5s ease
+      &:hover
+         &:before
+            transform: translateX(-50%) translateY(-50%) scale(1.1)
+   
+   .steps_card__img3
+      position: relative
+      width: 100px
+      height: 100px
+      margin: 1em auto
+      overflow: hidden
+      &:before
+         content: ''
+         position: absolute
+         left: 50%
+         top: 50%
+         transform: translateX(-50%) translateY(-50%)
+         background: url('../img/steps/003-calculator.svg') center center no-repeat
+         width: 50%
+         height: 50%
+         transition: all .5s ease
+      &:hover
+         &:before
+            transform: translateX(-50%) translateY(-50%) scale(1.1)
+
+   .steps_card__img4
+      position: relative
+      width: 100px
+      height: 100px
+      margin: 1em auto
+      overflow: hidden
+      &:before
+         content: ''
+         position: absolute
+         left: 50%
+         top: 50%
+         transform: translateX(-50%) translateY(-50%)
+         background: url('../img/steps/004-handshake.svg') center center no-repeat
+         width: 50%
+         height: 50%
+         transition: all .5s ease
+      &:hover
+         &:before
+            transform: translateX(-50%) translateY(-50%) scale(1.1)
+   
+   .steps_card__img5
+      position: relative
+      width: 100px
+      height: 100px
+      margin: 1em auto
+      overflow: hidden
+      &:before
+         content: ''
+         position: absolute
+         left: 50%
+         top: 50%
+         transform: translateX(-50%) translateY(-50%)
+         background: url('../img/steps/005-window.svg') center center no-repeat
+         width: 50%
+         height: 50%
+         transition: all .5s ease
+      &:hover
+         &:before
+            transform: translateX(-50%) translateY(-50%) scale(1.1)
+   
+   .steps_card__img6
+      position: relative
+      width: 100px
+      height: 100px
+      margin: 1em auto
+      overflow: hidden
+      &:before
+         content: ''
+         position: absolute
+         left: 50%
+         top: 50%
+         transform: translateX(-50%) translateY(-50%)
+         background: url('../img/steps/006-shipped.svg') center center no-repeat
+         width: 50%
+         height: 50%
+         transition: all .5s ease
+      &:hover
+         &:before
+            transform: translateX(-50%) translateY(-50%) scale(1.1)
+
+@media screen and (max-width: 1199.98px)
+   .steps
+      p
+         font-size: 0.75em
+
+@media screen and (max-width: 991.98px)
+   .steps
+      p
+         font-size: 1em
+
+@media screen and (max-width: 767.98px)
+   .steps
+      [class*='col-']
+         width: 50%
+
+@media screen and (max-width: 576.98px)
+   .steps
+      p
+         font-size: .9em

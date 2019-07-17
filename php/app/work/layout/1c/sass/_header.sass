@@ -1,0 +1,86 @@
+.header
+   padding: 60px 0
+   background-size: 1800px
+   background-position: 50% top
+   background-repeat: no-repeat
+   font-size: 1.125em
+   &-right
+      text-align: right
+      color: #ffffff
+      span
+         display: block
+   &-left
+      padding: 260px 0 0 0
+      span
+         display: block
+   .show_description
+      display: none
+
+@media screen and (max-width: 1199.98px)
+   .header
+      background-size: 1500px
+      &-left
+         padding: 200px 0 0 0
+
+@media screen and (max-width: 991.98px)
+   .header
+      background-size: 1120px
+      padding: 30px 0
+      &-left
+         padding: 150px 0 0 0
+
+@media screen and (max-width: 767.98px)
+   .header
+      background-size: 830px
+      &-left,
+      &-right
+         padding: 0
+         text-align: left
+         color: $text
+         font-size: .9em
+         span
+            display: inline-block
+      &-left
+         span
+            position: relative
+            &:after
+               content: ' и'
+      .show_description
+         display: inline-block
+         color: #ffffff
+         margin-top: 120px
+         text-decoration: underline
+      .hide_description
+         height: 0
+         display: none
+         padding: 30px
+         &.open
+            display: inline-block
+         &.open:after
+            opacity: 0
+
+@media screen and (max-width: 576.98px)
+   .header
+      background-size: 250%
+      background-position: 30% top
+      .show_description
+         margin-top: 42%
+         padding: 0
+      .hide_description
+         padding: 0
+         &.open
+            padding: 20px 0 0 0
+
+
+
+
+@media screen and (min-width: 1800px)
+   .header
+      background-size: 1920px
+
+@media screen and (min-width: 1921px)
+   .header
+      background-size: 2560px
+      &-left
+         padding: 450px 0 0 0
+

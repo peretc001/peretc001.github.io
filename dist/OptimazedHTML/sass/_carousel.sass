@@ -1,0 +1,138 @@
+.carousel
+   max-height: calc(100vh - 135px)
+   min-height: 400px
+   overflow: hidden
+   font-size: 1em
+   .carousel-indicators
+      li
+         border-radius: 50%
+         width: 20px
+         height: 20px
+         &:before
+            content: ''
+            transition: background .5s ease
+            position: absolute
+            left: 50%
+            top: 50%
+            transform: translateX(-50%) translateY(-50%)
+            width: 14px
+            height: 14px
+            border-radius: 50%
+            background: transparent
+      .active
+         &:before
+            content: ''
+            position: absolute
+            left: 50%
+            top: 50%
+            transform: translateX(-50%) translateY(-50%)
+            width: 14px
+            height: 14px
+            border-radius: 50%
+            background: $accent-light
+   .carousel-item
+      .carousel-caption
+         margin: auto
+         top: 22%
+         text-align: left
+         &.first
+            top: 5%
+         &__title
+            font-size: 2.4em
+            font-family: $ubuntu
+            font-weight: bold
+            text-transform: uppercase
+            letter-spacing: 1.04px
+            em
+               color: $accent-light
+               display: block
+               font-style: normal
+            span
+               display: block
+         &__desc
+            font-size: 1.4em
+            letter-spacing: 1.04px
+            max-width: 400px
+            margin: 20px 0
+         &__text
+            font-size: .9em
+            max-width: 450px
+            strong
+               font-style: italic
+
+@media screen and (max-width: 991.98px)
+   .carousel
+      max-height: calc(100vh - 75px)
+      font-size: .8em
+      .carousel-item
+         .carousel-caption
+            &__title
+               font-size: 2em
+
+@media screen and (max-width: 767.98px)
+   .carousel
+      .carousel-item
+         .carousel-caption
+            &__title
+               span,
+               em
+                  display: inline
+
+
+@media screen and (max-width: 576.98px)
+   .carousel
+      font-size: 1em
+      .carousel-indicators
+         li
+            width: 14px
+            height: 14px
+            &:before
+               width: 8px
+               height: 8px
+         .active
+            &:before
+               width: 8px
+               height: 8px
+      .carousel-inner
+         overflow: hidden
+      .carousel-item
+         width: 200%
+         img
+            margin-left: -200px
+         .carousel-caption
+            width: 100%
+            max-width: 350px
+            margin: 0
+            left: 0
+            padding: 0 20px
+            &.first
+               top: 10%
+            &__title
+               font-size: 1.2em
+               width: 100%
+            &__desc
+               margin: 2em auto 1em auto
+               font-size: 1em
+               width: 100%
+            &__text
+               font-size: .8em
+               width: 100%
+               margin-bottom: 1em
+               strong
+                  display: inline
+
+@media screen and (max-width: 374.98px)
+   .carousel
+      font-size: .8em
+      .carousel-item
+         .carousel-caption
+            max-width: 300px
+
+@media screen and (min-width: 1440px)
+   .carousel
+      .carousel-item
+         img
+            width: 100% !important
+      .carousel-caption
+         max-width: 1140px
+         top: 25%

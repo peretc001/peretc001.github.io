@@ -1,0 +1,130 @@
+.new_products
+   padding: $gutter 0
+   font-size: 1em
+   .container
+      display: flex
+   h2
+      font-size: 1em
+      font-weight: bold
+      margin: .2em
+      text-transform: uppercase
+
+   .col-x3
+      border: 1px solid #ebebeb
+      border-radius: 4px
+      margin-right: 1%
+      margin-bottom: 1em
+      width: 20%
+      padding: 1em
+      font-size: 0.8em
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+   .product-title
+      font-weight: bold
+      margin-bottom: 0
+      line-height: 1
+      margin-bottom: 0.5em
+   .product-desc,
+   .product-color
+      font-weight: normal
+      display: block
+      font-size: 0.9em
+      margin-bottom: 0
+      color: #666
+   &__price
+      font-size: 1.8em
+      font-weight: bold
+      margin-top: 1em
+      margin-bottom: 0
+      p
+         margin-bottom: 0
+
+   .col-x3
+      &.new_products__sale
+         border: 1px solid $accent
+         padding: 0
+         width: 26%
+         margin-right: 0
+
+         .new_products__img
+            text-align: center
+            img
+               width: 80%
+         .new_products__title
+            padding: 0 1em
+         .new_products__price
+            padding: 0 .5em .5em .5em
+            p
+               margin: 0
+               line-height: 1
+
+      .new_products__sale__head
+         display: flex
+         align-items: center
+         font-weight: bold
+         text-transform: uppercase
+         p
+            margin-bottom: 0
+            line-height: 1
+            margin-right: .5em
+            &:first-child
+               background: $accent
+               border: 1px solid $accent
+               color: #fff
+               padding: .5em
+               font-size: 1.2em
+               color: #fff
+
+      .old
+         color: #888888
+         font-size: .8em
+         position: relative
+         display: inline-block
+         margin-bottom: 0
+         &:after
+            content: ''
+            position: absolute
+            left: -5%
+            top: 55%
+            transform: translateY(-50%)
+            width: 110%
+            height: 1px
+            background: #666666
+
+@media screen and (max-width: 991.98px)
+   .new_products
+      .container
+         font-size: 0.9em
+
+@media screen and (max-width: 767.98px)
+   .new_products
+      .container
+         flex-wrap: wrap
+         padding: 0 15px
+         .col-x3
+            width: 32%
+            &:nth-child(3)
+               width: 34%
+               margin-right: 0
+            &.new_products__sale
+               width: 67%
+
+@media screen and (max-width: 576.98px)
+   .new_products
+      .container
+         font-size: 1em
+         .col-x3
+            width: 49%
+            &:nth-child(3)
+               width: 49%
+               margin-right: 1%
+            &:nth-child(2n)
+               width: 50%
+               margin-right: 0
+            &.new_products__sale
+               width: 100%
+         .new_products__column
+            display: flex
+            .new_products__img
+               width: 60%

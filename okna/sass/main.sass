@@ -1,0 +1,95 @@
+@import '_libs/bootstrap_grid'
+@import '_libs/hamburger'
+@import 'fonts'
+
+$accent: #60C977
+$text: #282e3d
+$grey: #545658
+$gutter: 30px
+$default-font: 'MuseoSans', sans-serif
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.2
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	opacity: 0
+	
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.text-center
+	text-align: center !important
+	text-align-last: center !important
+	p
+		text-align: center !important
+		text-align-last: center !important
+a, 
+	&:hover, 
+	&:active, 
+	&:focus
+		text-decoration: none
+		outline: none
+b, strong
+	font-weight: bold
+img
+	max-width: 100%
+
+h1, h2
+	font-weight: bold
+.h2_title
+	font-size: 1.6em
+	font-weight: bold
+	padding: 0.3em 0
+	margin: .5em auto 1em auto
+	text-align: center
+	&.inverse
+		color: #ffffff
+section
+	padding: $gutter 0
+
+.btn
+	margin-top: 1em
+	cursor: pointer
+	outline: none
+	&.btn-white
+		color: $text
+		font-weight: bold
+		padding-left: 1.5em
+		padding-right: 1.5em
+	&.btn-outline-white
+		background: transparent
+		border: 1px solid #ffffff
+		color: #ffffff
+		font-weight: bold
+		padding-left: 1.5em
+		padding-right: 1.5em
+		&:hover
+			background: #ffffff
+			color: $text
+
+
+@import 'nav'
+@import 'carousel'
+@import 'catalog_home'
+@import 'work'
+@import 'why'
+@import 'steps'
+@import 'footer'
+@import 'modal'
+
+@media screen and (max-width: 576.98px)
+	h1, h2
+		font-size: 1.6em
+	.h2_title
+		margin: .5em auto
+body
+	opacity: 1

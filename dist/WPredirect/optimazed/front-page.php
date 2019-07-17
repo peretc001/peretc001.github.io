@@ -1,5 +1,5 @@
 <?php get_header(); 
-front-page
+
 	the_content();
 		
 

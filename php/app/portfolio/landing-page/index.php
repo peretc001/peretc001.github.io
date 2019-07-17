@@ -28,7 +28,6 @@
 				<h1 class="liner"><?php echo $themes; ?></h1>
 			</div>
 			<div class="row">
-			<div class="offset-md-2">&nbsp;</div>
 			<?php 
 				arsort($result);
 				foreach($result as $row) { ?>

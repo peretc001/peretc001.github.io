@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico" type="image/x-icon" />
+	<title><?php echo get_bloginfo('name') .' - '. get_bloginfo('description'); ?></title>
 </head>
 <body>
 	

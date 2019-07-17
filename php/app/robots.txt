@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /inc/booking/
+Disallow: /user/
+Host: https://krasovsky23.ru
+Sitemap: https://krasovsky23.ru/sitemap.xml

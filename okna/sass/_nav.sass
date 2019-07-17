@@ -1,0 +1,87 @@
+.divider
+   height: 60px
+   display: block
+.navbar
+   position: fixed
+   background: #ffffff
+   left: 0
+   top: 0
+   width: 100%
+   padding: 0 15px
+   z-index: 99
+   .hamburger-box
+      width: 30px
+      height: 16px
+   .hamburger-inner, 
+   .hamburger-inner:after, 
+   .hamburger-inner:before
+      width: 30px
+      height: 2px
+      background-color: $text
+   .hamburger.is-active
+      .hamburger-inner, 
+      .hamburger-inner:after, 
+      .hamburger-inner:before
+         background-color: $text
+   .hamburger--slider 
+      .hamburger-inner
+         top: 1px
+   .navbar-brand
+      display: flex
+      align-items: center
+      color: $text
+      font-size: 1.2em
+      transition: all .3s ease-in-out
+      position: relative
+      img
+         width: 250px
+         height: auto
+         margin: 0 auto
+         margin-right: 0.5em
+         padding: 0
+         transition: all .5s ease-in-out
+      // &__name
+      //    p
+      //       margin-bottom: 0
+      //       line-height: 1
+      //       &:first-child
+      //          font-size: 1.5em
+      //          font-weight: bold
+      //       &:last-child
+      //          font-size: 0.55em
+      //          text-transform: uppercase
+      //          color: #888
+   .navbar-nav
+      .nav-link
+         color: $text
+         margin-right: .2em
+         &:hover
+            color: lighten($text, 20%)
+   .nav-link
+      font-size: .9em
+      font-weight: bold
+      text-transform: uppercase
+      &.phone
+         color: $accent
+
+   &.is-active
+      .navbar-brand
+         // img
+         //    width: 200px
+
+@media screen and (max-width: 1199.98px)
+   .navbar
+      .navbar-brand
+         font-size: 1em
+      .nav-link
+         font-size: 0.8em
+
+@media screen and (max-width: 991.98px)
+   .navbar
+      .navbar-brand
+         font-size: 1em
+      .nav-link
+         text-align: center
+         font-size: 1em
+
+   

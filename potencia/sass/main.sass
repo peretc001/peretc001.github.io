@@ -1,0 +1,240 @@
+@import "../../node_modules/bootstrap/scss/bootstrap-reboot.scss"
+@import 'fonts'
+
+$accent: #60C977
+$text: #2C2C2C
+
+$default-font: 'MuseoSans', sans-serif
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.2
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	opacity: 0
+input
+	font-size: 16px !important
+	-webkit-appearance: none
+header
+	position: relative
+	height: 100vh
+	min-height: 600px
+	overflow: hidden
+	&:before
+		content: ''
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		background: #252525
+		opacity: .7
+		z-index: 1
+.header
+	width: 100%
+	max-width: 960px
+	padding: 40px 20px
+	margin: 0 auto
+	position: absolute
+	left: 50%
+	top: 50%
+	transform: translateX(-50%) translateY(-50%)
+	display: flex
+	flex-direction: column
+	z-index: 2
+	&__block
+		color: #ffffff
+		display: flex
+		justify-content: center
+		align-items: center
+		z-index: 2
+		&_title
+			width: 60%
+			margin-bottom: 2em
+			p
+				margin-bottom: 0
+				font-size: 1.4em
+			h1
+				font-size: 3.4em
+				text-transform: uppercase
+				font-weight: bold
+				margin: 0
+				line-height: 1
+				margin-bottom: 1em
+			.price
+				font-size: 4em
+				font-weight: bold
+				color: $accent
+				&.old
+					position: relative
+					display: inline-block
+					color: rgba(#ffffff, .6)
+					font-size: 3em
+					&:before
+						content: ''
+						position: absolute
+						left: 0
+						bottom: 50%
+						width: 100%
+						height: 2px
+						background: $accent
+						transform: translateY(-50%) rotate(-8deg)
+			.desc
+				font-size: 0.7em
+
+
+		&_form
+			width: 40%
+			background: $accent
+			border-radius: 6px
+			padding: 40px 60px
+			margin-bottom: 1em
+			form
+				display: flex
+				flex-direction: column
+				align-items: center
+				justify-content: center
+				text-align: center
+			h3
+				text-transform: uppercase
+				font-size: 1.1em
+				font-weight: bold
+				margin-bottom: 1em
+			input
+				width: 100%
+				padding: .5em 1em
+				border: 1px solid #ffffff
+				border-radius: 4px
+				background: #ffffff
+				margin-bottom: 0.5em
+			button
+				width: 80%
+				margin: 1em auto
+				padding: .5em 1em
+				border: 1px solid $text
+				border-radius: 4px
+				background: $text
+				color: #ffffff
+				text-transform: uppercase
+				font-weight: bold
+				margin-bottom: 1em
+				cursor: pointer
+				transition: background .3s ease
+				&:hover
+					background: lighten($text, 10%)
+			p
+				margin-bottom: 0
+				font-size: 0.9em
+				a
+					color: #ffffff
+					text-decoration: underline
+					&:hover
+						text-decoration: none
+	&__timer
+		width: 100%
+		margin-top: 40px
+		text-align: center
+		color: #ffffff
+		p
+			text-transform: uppercase
+			font-size: 1.4em
+			margin-bottom: 1em
+
+.timer-element
+	z-index: 999
+	max-width: 300px
+
+video
+	object-fit: cover
+	width: 100%
+	height: 100%
+	margin: 0
+	padding: 0
+	border: none
+
+@media screen and (max-width: 949.98px)
+	.header
+		font-size: 0.8em
+		&__block
+			&_title,
+			&_form
+				width: 50%
+			&_form
+				h3
+					font-size: 1.4em
+				button
+					font-size: 1.4em
+
+@media screen and (max-width: 767.98px)
+	.header
+		font-size: 0.7em
+		&__block
+			&_title
+				p
+					font-size: 1.2em
+				h1
+					font-size: 3em
+
+@media screen and (max-width: 649.98px)
+	header
+		min-height: 710px
+	.header
+		font-size: 1em
+		&__block
+			flex-direction: column
+			text-align: center
+			&_title
+				width: 100%
+				p
+					font-size: .9em
+				h1
+					font-size: 2.05em
+					margin-bottom: 0.5em
+				.price
+					font-size: 2.5em
+					&.old
+						font-size: 1.6em
+						&:before
+							height: 1px
+				.desc
+					span
+						display: none
+			&_form
+				width: 80%
+				padding: 20px
+				h3
+					font-size: 1em
+				button
+					font-size: 1em
+				input,
+				button
+					width: 100%
+					max-width: 200px
+		&__timer
+			max-width: 300px
+			margin: 1em auto
+	#timere404c9d36d2ad3a79601382910b35c44
+		min-width: 250px !important
+		margin-bottom: 0 !important
+	.timer-element
+		width: 70px !important
+		height: 70px !important
+		display: flex !important
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		margin: 0 !important
+		padding: 0 !important
+		text-align: center !important
+		span
+			font-size: .9em !important
+		canvas
+			width: 70px
+			height: 70px
+	.timer-separator
+		padding: 0 5px !important
+body
+	opacity: 1

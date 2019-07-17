@@ -106,17 +106,43 @@ $db = new JsonDB( $_SERVER['DOCUMENT_ROOT'] . '/portfolio/' );
 //    'img' => 'drive-school',
 //    'video' => '',
 // ), true);
+// $db->insert('portfolio', array(
+//       'id' => 9, 
+//       'title' => 'Плагин для Wordpress',
+//       'description' => 'Зацени какой wordpress плагин я сделал для фитнес-центра',
+//       'portfolio' => 'programming',
+//       'themes' => 'Программирование',
+//       'work' => 'Программирование',
+//       'tech' => 'html+css+js+php+wordpress',
+//       'url' => '',
+//       'about' => 'Разработать адаптивный плагин для вывода расписания тренеровок на сайте клиента',
+//       'img' => 'lessons',
+//       'video' => 'QmCvX7T_UF8',
+//    ), true);
+// $db->insert('portfolio', array(
+//       'id' => 10, 
+//       'title' => 'Гарантум',
+//       'description' => 'Зацени верстку сайта по продаже 1С',
+//       'portfolio' => 'landing-page',
+//       'themes' => 'Landing page',
+//       'work' => 'Верстка',
+//       'tech' => 'Bootstrap 4 + JS',
+//       'url' => 'https://krasovsky23.ru/work/layout/1c/',
+//       'about' => 'Сверстать landing page на bootstrap 4 + некоторый функционал на JS',
+//       'img' => '1c',
+//       'video' => '',
+//    ), true);
 
 
 
 //$result = $db->select('portfolio', 'id', 6);
-// $result = $db -> selectAll('portfolio');
+//$result = $db -> selectAll('portfolio');
 // var_dump('<pre>');
 // var_dump($result);
 
 //    echo $result[0]['title'];
 
-//$db -> delete ( 'portfolio', 'id', 8 );
+//$db -> delete ( 'portfolio', 'id', 10 );
 //$db -portfoliote('portfolio', 'id', 6, array('themes' => 'Landing page'));
 //    'themes' => 'Landing page'));
 
