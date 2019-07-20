@@ -12,7 +12,6 @@ var gulp          = require('gulp'),
 		autoprefixer  = require('gulp-autoprefixer'),
 		notify        = require('gulp-notify'),
 		rsync         = require('gulp-rsync'),
-		imageResize   = require('gulp-image-resize'),
 		imagemin      = require('gulp-imagemin'),
 		del           = require('del');
 		autopref 	  = require('autoprefixer');
@@ -75,24 +74,24 @@ gulp.task('rsync', function() {
 	}))
 });
 
-// Images @x1 & @x2 + Compression | Required graphicsmagick (sudo apt update; sudo apt install graphicsmagick)
-gulp.task('imgx1', function() {
-	return gulp.src('app/img/_src/*.*')
-	//.pipe(imageResize({ width: '50%' }))
-	.pipe(imagemin())
-	//.pipe(gulp.dest('app/img/@1x/'))
-});
-gulp.task('imgx2', function() {
-	return gulp.src('app/img/_src/*.*')
-	//.pipe(imageResize({ width: '100%' }))
-	.pipe(imagemin())
-	//.pipe(gulp.dest('app/img/@2x/'))
-});
+// // Images @x1 & @x2 + Compression | Required graphicsmagick (sudo apt update; sudo apt install graphicsmagick)
+// gulp.task('imgx1', function() {
+// 	return gulp.src('app/img/_src/*.*')
+// 	//.pipe(imageResize({ width: '50%' }))
+// 	.pipe(imagemin())
+// 	//.pipe(gulp.dest('app/img/@1x/'))
+// });
+// gulp.task('imgx2', function() {
+// 	return gulp.src('app/img/_src/*.*')
+// 	//.pipe(imageResize({ width: '100%' }))
+// 	.pipe(imagemin())
+// 	//.pipe(gulp.dest('app/img/@2x/'))
+// });
 
-gulp.task('img', function() {
-	return gulp.src('app/img/*.*')
-	.pipe(imagemin())
-});
+// gulp.task('img', function() {
+// 	return gulp.src('app/img/*.*')
+// 	.pipe(imagemin())
+// });
 
 // Clean @*x IMG's
 gulp.task('cleanimg', function() {
@@ -123,8 +122,8 @@ if (gulpversion == 4) {
 		gulp.watch('app/'+syntax+'/**/*.'+syntax+'', gulp.parallel('styles'));
 		//gulp.watch(['libs/**/*.js', 'app/js/common.js'], gulp.parallel('scripts'));
 		gulp.watch('app/*.html', gulp.parallel('code'));
-		gulp.watch('app/img/_src/**/*', gulp.parallel('img'));
+		//gulp.watch('app/img/_src/**/*', gulp.parallel('img'));
 	});
-	gulp.task('default', gulp.parallel('img', 'styles', 'browser-sync', 'watch'));
+	gulp.task('default', gulp.parallel('styles', 'browser-sync', 'watch'));
 
 };

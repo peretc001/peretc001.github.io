@@ -8,6 +8,8 @@ $grey: #545658
 $gutter: 30px
 $default-font: 'MuseoSans', sans-serif
 
+html, body
+	height: 100%
 body
 	font-size: 16px
 	min-width: 320px
@@ -75,11 +77,22 @@ section
 		&:hover
 			background: #ffffff
 			color: $text
-
+	&.btn-outline-accent
+		background: transparent
+		border: 1px solid $accent
+		color: $accent !important
+		font-weight: bold
+		padding-left: 1.5em
+		padding-right: 1.5em
+		margin-bottom: 0
+		&:hover
+			background: $accent
+			color: #ffffff !important
 
 @import 'nav'
 @import 'carousel'
 @import 'catalog_home'
+@import 'calculate'
 @import 'work'
 @import 'why'
 @import 'steps'
@@ -91,5 +104,6 @@ section
 		font-size: 1.6em
 	.h2_title
 		margin: .5em auto
+
 body
 	opacity: 1

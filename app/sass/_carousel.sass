@@ -1,0 +1,103 @@
+.slider
+   padding: 0
+   overflow: hidden
+.carousel
+   min-height: 550px
+   height: 100%
+   overflow: hidden
+   font-size: 1em
+   margin-bottom: 0
+   .carousel-item
+      &:before
+         content: ''
+         position: absolute
+         left: 0
+         top: 0
+         width: 100%
+         height: 100%
+         background: #000
+         opacity: .5
+      img
+         width: 100%
+      .carousel-caption
+         top: 50%
+         transform: translateY(-50%)
+         display: flex !important
+         align-items: center
+         justify-content: center
+         flex-direction: column
+         h1,
+         h2
+            font-size: 2.6em
+            span
+               color: $accent
+   .slider__card
+      position: absolute
+      left: 50%
+      bottom: 100px
+      transform: translateX(-50%)
+      width: 100%
+      max-width: 90%
+      margin: 0 auto
+      color: #ffffff
+      display: flex
+      align-items: center
+      justify-content: space-around
+      &__item
+         width: 33%
+         display: flex
+         align-items: center
+         justify-content: center
+         img
+            width: 100%
+            max-width: 40px
+            margin-right: 1em
+         p
+            margin-bottom: 0
+            text-align: left
+
+@media screen and (max-width: 991.98px)
+   .carousel
+      min-height: auto
+      max-height: auto
+      overflow: visible
+      font-size: 1em
+      .slider__card
+         max-width: 100%
+         padding: 0 15px
+         font-size: 0.9em
+
+@media screen and (max-width: 767.98px)
+   .carousel
+      font-size: .8em
+      .carousel-item
+         overflow-x: hidden
+         &:before
+            opacity: .7
+      .slider__card
+         bottom: 50px
+
+@media screen and (max-width: 576.98px)
+   .carousel
+      font-size: 1em
+      .carousel-item
+         img
+            width: 200%
+            max-width: 200%
+         .carousel-caption
+            h1,
+            h2
+               font-size: 1.4em
+      .slider__card
+         font-size: 0.8em
+         bottom: 20px
+         &__item
+            flex-direction: column
+            justify-content: center
+            img
+               width: 30px
+               height: 30px
+               margin: 0 auto
+               margin-bottom: 1em
+            p
+               text-align: center

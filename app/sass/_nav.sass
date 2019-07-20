@@ -40,17 +40,6 @@
          margin-right: 0.5em
          padding: 0
          transition: all .5s ease-in-out
-      // &__name
-      //    p
-      //       margin-bottom: 0
-      //       line-height: 1
-      //       &:first-child
-      //          font-size: 1.5em
-      //          font-weight: bold
-      //       &:last-child
-      //          font-size: 0.55em
-      //          text-transform: uppercase
-      //          color: #888
    .navbar-nav
       .nav-link
          color: $text
@@ -64,24 +53,24 @@
       &.phone
          color: $accent
 
-   &.is-active
-      .navbar-brand
-         // img
-         //    width: 200px
-
 @media screen and (max-width: 1199.98px)
    .navbar
-      .navbar-brand
-         font-size: 1em
       .nav-link
-         font-size: 0.8em
+         font-size: 0.7em
 
 @media screen and (max-width: 991.98px)
    .navbar
-      .navbar-brand
-         font-size: 1em
       .nav-link
          text-align: center
          font-size: 1em
 
+@media screen and (max-width: 767.98px)
+   .navbar
+      .navbar-brand
+         img
+            width: 200px
+      .navbar-nav
+         padding-top: 20px
+      .phone
+         padding-bottom: 40px
    
