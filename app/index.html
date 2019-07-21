@@ -296,78 +296,95 @@
   </section>
 
   <section class="calculate">
-    <div class="container">
-      <h3 class="h2_title">Рассчет стоимости онлайн</h3>
-      <div class="row">
+    <div class="container-fluid">
+      <h3 class="h2_title inverse">Рассчет стоимости онлайн</h3>
+      <form action="" class="row calc">
 
-        <div class="col-md-3">
-          <p>Материал</p>
-          <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Дуб
+        <div class="col-lg-4">
+          <div class="calculate__card">
+            <div class="dropdown">
+              <button class="btn btn-outline-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Материал
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Дуб</a>
-                <a class="dropdown-item" href="#">Сосна</a>
-                <a class="dropdown-item" href="#">Лиственица</a>
+                <a class="dropdown-item" data-price="1" href="#">Дуб</a>
+                <a class="dropdown-item" data-price="2" href="#">Сосна</a>
+                <a class="dropdown-item" data-price="3" href="#">Лиственица</a>
               </div>
             </div>
+          </div>
+          <div class="calculate__card">
+            <p>Ширина окна - <span id="width"></span></p>
+            <input
+              type="range"
+              min="1000"
+              max="3500"
+              step="100"
+              value="1000"
+              id="range_width">
+          </div>
+          <div class="calculate__card">
+            <p>Высота окна - <span id="height"></span></p>
+            <input
+              type="range"
+              min="1200"
+              max="2500"
+              step="100"
+              value="1200"
+              id="range_height">
+          </div>
         </div>
-        <div class="col-md-3">
-          <input type="checkbox"><img src="/img/catalog_home/window.png" alt="">
-        </div>
-        <div class="col-md-3">
-          <input type="checkbox">
-        </div>
-        <div class="col-md-3">
-          <input type="checkbox">
-        </div>
-
-        <div class="col-md-3">
-          <p>Ширина</p>
-          <input
-            type="range"
-            min="1000"
-            max="10000"
-            step="100"
-            value="1000"
-            data-orientation="vertical" id="line" oninput="testMy()" value="0">
-            <div id="my"></div>
-        </div>
-        <div class="col-md-3">
-          <input type="checkbox">
-        </div>
-        <div class="col-md-3">
-          <input type="checkbox">
-        </div>
-        <div class="col-md-3">
-          <input type="checkbox">
-        </div>
-
-        <div class="col-md-3">
-          <p>Высота</p>
-          <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                1200 мм
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">1200 мм</a>
-                <a class="dropdown-item" href="#">1400 мм</a>
-                <a class="dropdown-item" href="#">1600 мм</a>
-              </div>
+        <div class="col-lg-8">
+          <div class="calculate__windows first">
+            <div class="checked__img">
+              <input id="w1" type="radio" class="windowVar" data-price="1" name="window" checked>
+              <label for="w1"><img src="/img/calculate/w1.svg" alt=""></label>
             </div>
+            <div class="checked__img">
+              <input id="w2" type="radio" class="windowVar" data-price="2" name="window">
+              <label for="w2"><img src="/img/calculate/w2.svg" alt=""></label>
+            </div>
+            <div class="checked__img">
+              <input id="w3" type="radio" class="windowVar" data-price="3" name="window">
+              <label for="w3"><img src="/img/calculate/w3.svg" alt=""></label>
+            </div>
+          </div>
+          <div class="calculate__windows second">
+            <div class="checked__img">
+              <input id="w4" type="radio" class="windowVar" data-price="4" name="window">
+              <label for="w4"><img src="/img/calculate/w4.svg" alt=""></label>
+            </div>
+            <div class="checked__img">
+              <input id="w5" type="radio" class="windowVar" data-price="5" name="window">
+              <label for="w5"><img src="/img/calculate/w5.svg" alt=""></label>
+            </div>
+            <div class="checked__img">
+              <input id="w6" type="radio" class="windowVar" data-price="6" name="window">
+              <label for="w6"><img src="/img/calculate/w6.svg" alt=""></label>
+            </div>
+          </div>
+          <div class="calculate__windows third">
+            <div class="checked__img">
+              <input id="w7" type="radio" class="windowVar" data-price="7" name="window">
+              <label for="w7"><img src="/img/calculate/w7.svg" alt=""></label>
+            </div>
+            <div class="checked__img">
+              <input id="w8" type="radio" class="windowVar" data-price="8" name="window">
+              <label for="w8"><img src="/img/calculate/w8.svg" alt=""></label>
+            </div>
+            <div class="checked__img">
+              <input id="w9" type="radio" class="windowVar" data-price="9" name="window">
+              <label for="w9"><img src="/img/calculate/w9.svg" alt=""></label>
+            </div>
+          </div>
         </div>
-        <div class="col-md-3">
-          <input type="checkbox">
-        </div>
-        <div class="col-md-3">
-          <input type="checkbox">
-        </div>
-        <div class="col-md-3">
-          <input type="checkbox">
+        <div class="col-12">
+          <p class="total">
+            Итого: <span>12.500</span>р
+          </p>
         </div>
 
-      </div>
+      </form>
     </div>
   </section>
 

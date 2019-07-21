@@ -2426,10 +2426,6 @@ module.exports = {
 });
 
 
-var steps = document.querySelector('.steps');
-var box = steps.getBoundingClientRect();
-stepsCoord = box.top + pageYOffset - 200
-
   var steps1 = new ProgressBar.Circle('.steps_card__img1', {
     strokeWidth: 6,
     easing: 'easeInOut',
@@ -2490,8 +2486,15 @@ stepsCoord = box.top + pageYOffset - 200
     svgStyle: null
   });
 
+var steps = document.querySelector('.steps');
+var box = steps.getBoundingClientRect();
+stepsCoord = box.top + pageYOffset - 1000
+
 document.addEventListener('scroll', (e) => {
+  //console.log(box);
+  //console.log(stepsCoord);
   if(window.scrollY > stepsCoord) {
+    //console.log('yes');
     steps1.animate(0.15);
     steps2.animate(0.25);
     steps3.animate(0.5);

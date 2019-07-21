@@ -1,58 +1,121 @@
 .calculate
    padding: $gutter
-input[type=range]
-   -webkit-appearance: none
-   margin: 18px 0
-   width: 100%
-   border: none
-input[type=range]:focus
-   outline: none
-input[type=range]::-webkit-slider-runnable-track
-   width: 100%
-   height: .7em
-   cursor: pointer
-   border-radius: 6px
-   animate: 0.2s
-   background: $accent
-input[type=range]:focus::-webkit-slider-runnable-track
-   background: $accent
-input[type=range]::-moz-range-track
-   width: 100%
-   height: .7em
-   cursor: pointer
-   animate: 0.2s
-   background: $accent
-input[type=range]::-ms-track
-   width: 100%
-   height: .7em
-   cursor: pointer
-   animate: 0.2s
-   background: transparent
-   border-color: transparent
-   border-width: 16px 0
-   color: transparent
-input[type=range]::-ms-fill-lower
-   background: $accent
-input[type=range]::-ms-fill-upper
-   background: $accent
-input[type=range]:focus::-ms-fill-lower
-   background: $accent
-input[type=range]:focus::-ms-fill-upper
-   background: $accent
+   background: $text
+   .container-fluid
+      max-width: 1000px
+   &__card
+      margin-bottom: 2em
+   p
+      margin-bottom: 1em
+      color: #ffffff
+   .total
+      font-size: 2em
+      span
+         font-weight: bold
+   &__windows
+      display: flex
+      &.first
+         .checked__img
+            margin-right: 150px
+            width: 70px
+      &.second
+         .checked__img
+            margin-right: 85px
+            width: 130px
+      &.third
+         .checked__img
+            width: 200px
 
-input[type=range]::-webkit-slider-thumb
-   border: 1px solid $accent
-   height: 36px
-   width: 16px
-   background: #ffffff
-   cursor: pointer
-   -webkit-appearance: none
-   margin-top: -14px
-input[type=range]::-moz-range-thumb,
-input[type=range]::-ms-thumb
-   border: 1px solid $accent
-   height: 36px
-   width: 16px
-   background: #ffffff
-   cursor: pointer
-   -webkit-appearance: none
+   .checked__img
+      display: flex
+      align-items: center
+      justify-content: center
+      margin: 0
+      padding: 0
+      margin-bottom: 2em
+      margin-right: 1em
+      input[type="radio"]
+         display: none
+      label
+         margin: 0
+         padding: 0
+         cursor: pointer
+         -ms-user-select: none
+         -moz-user-select: none
+         -khtml-user-select: none
+         -webkit-user-select: none
+         img
+            width: 100%
+            height: auto
+            border: 3px solid $text
+            transition: border .2s ease
+      input[type="radio"]:checked + label
+         img
+            border: 3px solid $accent
+
+@media screen and (max-width: 991.98px)
+   .calculate
+      .col-lg-4
+         display: flex
+         justify-content: center
+      &__card
+         margin-right: 70px
+         p
+            font-size: 0.8em
+      &__windows
+         justify-content: center
+         &.first
+            .checked__img
+               margin-right: 150px
+               width: 90px
+         &.second
+            .checked__img
+               margin-right: 85px
+               width: 160px
+         &.third
+            .checked__img
+               width: 230px
+
+@media screen and (max-width: 767.98px)
+   .calculate
+      padding: $gutter 30px
+      .col-lg-4
+         display: block
+         padding-left: 50px
+         padding-right: 50px
+      &__card
+         margin-right: auto
+         p
+            font-size: 1em
+      .checked__img
+         margin-bottom: 1em
+      &__windows
+         &.first
+            .checked__img
+               margin-right: 120px
+               width: 50px
+         &.second
+            .checked__img
+               margin-right: 70px
+               width: 100px
+         &.third
+            .checked__img
+               width: 150px
+
+@media screen and (max-width: 576.98px)
+   .calculate
+      .col-lg-4
+         padding: 0 15px
+      &__windows
+         &.first
+            .checked__img
+               margin-right: auto
+               width: 35px
+         &.second
+            .checked__img
+               margin-right: auto
+               width: 70px
+         &.third
+            .checked__img
+               margin-right: auto
+               width: 100px
