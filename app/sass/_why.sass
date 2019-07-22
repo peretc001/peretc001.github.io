@@ -1,50 +1,33 @@
 .why
-   background-position: center
-   background-repeat: no-repeat
-   background-size: cover
-   padding: $gutter 15px $gutter*2 15px
-   color: #ffffff
-   position: relative
-   &:before
-      content: ''
-      position: absolute
-      left: 0
-      top: 0
-      bottom: 0
-      right: 0
-      background: #000
-      opacity: .3
-   .container
-      position: relative
-   h6
-      font-size: 1.3em
+   padding: $gutter 0
+   text-align: center
+   h3
       font-weight: bold
-      margin: 0
-      margin-bottom: 0.8em
-      border-top: 1px solid rgba(#ffffff, .4)
-      padding-top: 1em
-      &:nth-child(2)
-         border-top: 0px
-   p
-      font-size: 1.1em
-      padding-bottom: 1em
-      line-height: 1.5
-      
-         
+      font-size: 2em
+      margin-bottom: 2em
+      span
+         color: $accent
+   [class*="col-"]
+      margin-bottom: 2em
+      img
+         width: 80px
+         margin-bottom: 1em
+      p
+         font-weight: bold
+         font-size: 1.2em
+         &:last-child
+            font-weight: normal
+            font-size: 0.9em
 
 @media screen and (max-width: 991.98px)
    .why
-      font-size: 0.8em
-@media screen and (max-width: 767.98px)
-   .why
-      font-size: 1em
-      background-size: cover
-      background-position: -170px
-      &:before
-         opacity: .8
-      .h2_title
-         font-size: 1.5em
+      font-size: 0.9em
 
 @media screen and (max-width: 576.98px)
    .why
-      font-size: 0.8em
+      padding: $gutter
+      font-size: 1em
+      h3
+         font-size: 2em
+         span
+            display: block

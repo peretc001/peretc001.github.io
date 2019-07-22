@@ -1,15 +1,16 @@
-@import '_libs/bootstrap_grid'
 @import '_libs/hamburger'
 @import 'fonts'
 
-$accent: #60C977
-$text: #282e3d
-$grey: #545658
+$accent: #ffab00
+$text: #151515
+
 $gutter: 30px
-$default-font: 'MuseoSans', sans-serif
+
+$default-font: 'PTSans', sans-serif
 
 html, body
 	height: 100%
+
 body
 	font-size: 16px
 	min-width: 320px
@@ -20,13 +21,30 @@ body
 	color: $text
 	opacity: 0
 	
-	input, textarea
-		border: #666 1px solid
-		outline: none
-		&:focus:required:invalid
-			border-color: red
-		&:required:valid
-			border-color: green
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	text-transform: uppercase
+	color: #a0a0a0 !important
+
+*:-moz-placeholder
+	text-transform: uppercase
+	color: #a0a0a0 !important
+
+*::-moz-placeholder
+	text-transform: uppercase
+	color: #a0a0a0 !important
+
+*:-ms-input-placeholder
+	text-transform: uppercase
+	color: #a0a0a0 !important
 
 .text-center
 	text-align: center !important
@@ -45,128 +63,29 @@ b, strong
 img
 	max-width: 100%
 
-h1, h2
-	font-weight: bold
-.h2_title
-	font-size: 1.6em
-	font-weight: bold
-	padding: 0.3em 0
-	margin: .5em auto 1em auto
-	text-align: center
-	&.inverse
-		color: #ffffff
-section
-	padding: $gutter 0
+@import 'nav'
+@import 'header'
+@import 'about'
+@import 'feauters'
+@import 'why'
+@import 'team'
 
 .btn
-	margin-top: 1em
-	cursor: pointer
-	outline: none
-	&.btn-white
-		color: $text
-		font-weight: bold
-		padding-left: 1.5em
-		padding-right: 1.5em
-	&.btn-outline-white
-		background: transparent
-		border: 1px solid #ffffff
+	&.btn-accent
+		background-color: $accent
+		border-color: darken($accent, 5%)
+		outline: none
+		&:hover
+			background-color: darken($accent, 5%)
+			border-color: darken($accent, 10%)
+	&.btn-dark
 		color: #ffffff
-		font-weight: bold
-		padding-left: 1.5em
-		padding-right: 1.5em
+		background-color: $text
+		border-color: darken($text, 5%)
+		outline: none
 		&:hover
-			background: #ffffff
-			color: $text
-	&.btn-outline-accent
-		background: transparent
-		border: 1px solid $accent
-		color: $accent !important
-		font-weight: bold
-		padding-left: 1.5em
-		padding-right: 1.5em
-		margin-bottom: 0
-		&:hover
-			background: $accent
-			color: #ffffff !important
-
-@import 'nav'
-@import 'carousel'
-@import 'catalog_home'
-@import 'calculate'
-@import 'work'
-@import 'why'
-@import 'steps'
-@import 'footer'
-@import 'modal'
-
-
-input[type=range]
-	-webkit-appearance: none
-	margin: 18px 0
-	width: 100%
-	border: none
-	background: transparent
-input[type=range]:focus
-   outline: none
-input[type=range]::-webkit-slider-runnable-track
-   width: 100%
-   height: .7em
-   cursor: pointer
-   border-radius: 6px
-   animate: 0.2s
-   background: $accent
-input[type=range]:focus::-webkit-slider-runnable-track
-   background: $accent
-input[type=range]::-moz-range-track
-   width: 100%
-   height: .7em
-   cursor: pointer
-   animate: 0.2s
-   background: $accent
-input[type=range]::-ms-track
-   width: 100%
-   height: .7em
-   cursor: pointer
-   animate: 0.2s
-   background: transparent
-   border-color: transparent
-   border-width: 16px 0
-   color: transparent
-input[type=range]::-ms-fill-lower
-   background: $accent
-input[type=range]::-ms-fill-upper
-   background: $accent
-input[type=range]:focus::-ms-fill-lower
-   background: $accent
-input[type=range]:focus::-ms-fill-upper
-   background: $accent
-
-input[type=range]::-webkit-slider-thumb
-	border: 1px solid $accent
-	height: 26px
-	width: 26px
-	border-radius: 50%
-	background: #ffffff
-	border: 1px solid #ffffff
-	cursor: pointer
-	-webkit-appearance: none
-	margin-top: -8px
-input[type=range]::-moz-range-thumb,
-input[type=range]::-ms-thumb
-	border: 1px solid #ffffff
-	height: 26px
-	width: 26px
-	border-radius: 50%
-	background: #ffffff
-	cursor: pointer
-	-webkit-appearance: none
-
-
-@media screen and (max-width: 576.98px)
-	h1, h2
-		font-size: 1.6em
-	.h2_title
-		margin: .5em auto
+			background-color: darken($text, 5%)
+			border-color: darken($text, 10%)
 
 body
 	opacity: 1
