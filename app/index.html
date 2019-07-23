@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-   <base href="/media/">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="img/logo.png" type="image/png">
+  <meta name="ROBOTS" content="index, follow">
   <style>
       body {opacity: 0;overflow-x: hidden;}
    </style>
-  <title>Optimazed</title>
+  <title>Центр Медиации Краснодар - досудебное урегулирование споров</title>
+  <meta name="Description" content="Профессиональное урегулирование споров и конфликтов на досудебной, судебной стадии и на стадии исполнения решения суда" /> 
 </head>
 <body>
 
@@ -161,6 +163,10 @@
                <p>Работаем под ключ</p>
                <p>Осуществляем полный комплекс услуг: от сбора документов до контроля исполнения решения суда</p>
             </div>
+
+            <div class="col-12">
+               <button class="btn btn-outline-accent" data-toggle="modal" data-target="#callback">Заказать консультацию</button>
+            </div>
          </div>
       </div>
    </section>
@@ -224,12 +230,75 @@
       </div>
    </section>
 
+   <div class="map">
+      <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad6f31f1bca1c870c833836ee28cf94f1c15e34faa448232b4e6823f261f53ca6&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>
+   </div>
+
+   <div class="footer">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-5">
+               <a href="/" class="navbar-brand">
+                  <img src="img/logo.svg" alt="">
+                  <p>Центр медиации
+                  <span>Краснодар</span></p>
+               </a>
+            </div>
+            <div class="col-md-7" itemscope itemtype="http://schema.org/Organization">
+               <p itemprop="name" class="company">АНО ДПО "ЦЕНТР ПЕРЕГОВОРОВ И УРЕГУЛИРОВАНИЯ СПОРОВ (МЕДИАЦИИ)"</p>
+               <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="adres"><span itemprop="addressLocality">Краснодар</span>, <span itemprop="streetAddress">ул. Восточно-Кругликовская, д. 18</span></p>
+               <p><a itemprop="telephone" class="phone" href="tel:89182427950">+7 (918) 242-79-50</a></p>
+               <p><a itemprop="email" class="email" href="mailto:elena_morozova_7@bk.ru">elena_morozova_7@bk.ru</a></p>
+            </div>
+            <div class="col-12 text-right">
+               <a href="https://krasovsky23.ru" target="_blank" class="author">
+                  Разработка: СКИ ПАО
+               </a>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <section class="copyright">
+      <p><span>© 2004-2019.</span> Центр медиации Краснодар - досудебное урегулирование споров</p>
+   </section>
+
+
+   <!-- Modal -->
+  <div class="modal fade" id="callback" tabindex="-1" role="dialog" aria-labelledby="callbackTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+                <p>Заказать консультацию</p>
+                <form action="/" class="callback__form" method="post">
+                  <div class="form-row">
+                    <input type="tel" name="phone" class="form-control tel" placeholder="Телефон" required>
+                    <button type="submit" class="btn callback__form__button" disabled>Отправить</button>
+                  </div>
+                  <div class="robot">
+                    <div class="robot__check">
+                        <svg viewBox="0 0 60 60">
+                          <line class="st0 line1" x1="4.5" y1="30.5" x2="29.5" y2="52.5"/>
+                          <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
+                        </svg>
+                    </div>
+                    <span>Согласен с условиями <a href="/policy/" target="_blank">Политики конфиденциальности</a></span>
+                  </div>
+                </form>
+              </div>
+         </div>
+      </div>
+   </div>
+
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
    <link rel="stylesheet" href="css/main.min.css">
 
-   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
    <script src="js/script.js"></script>
   
 </body>
