@@ -125,7 +125,23 @@ img
 		.fa
 			transform: rotate(180deg)
 		
-
+.show_catalog
+	display: block
+	margin: 2em auto
+	text-align: center
+	text-transform: uppercase
+	font-weight: bold
+	width: 100%
+	max-width: 300px
+	background: $blue
+	border: 1px solid darken($blue, 5%)
+	color: #ffffff
+	padding: .5em 1em
+	border-radius: 4px
+	transition: all .3s ease
+	&:hover
+		background: darken($blue, 15%)
+		color: #ffffff
 
 .introHolder
 	width: 100%
@@ -169,6 +185,9 @@ img
 		h1,
 		h2
 			font-size: 3rem
+	.show_catalog
+		font-size: 0.9em
+		max-width: 290px
 
 .modal
 	display: none

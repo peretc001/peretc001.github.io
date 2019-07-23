@@ -9,16 +9,17 @@
       position: absolute
       background: #ffffff
       text-align: center
-      padding: $gutter
+      padding: $gutter*2 $gutter
       left: 10%
       top: 50%
       transform: translateY(-50%)
-      width: 300px
+      width: 400px
       img
          width: 200px
          margin-bottom: 1em
       p
          margin-bottom: 0.5em
+         font-size: 1.2em
 
 .copyright
    background: $text
@@ -49,16 +50,19 @@
 @media screen and (max-width: 600px)
    .footer
       .map
-         max-height: 260px
+         max-height: 250px
          overflow: hidden
          &_wrapper
             overflow: hidden
             transform: translateY(-15%)
       &_block
          position: relative
+         padding: $gutter
          left: 50%
          top: auto
          transform: translateX(-50%)
+         p
+            font-size: 1.1em
    .copyright
       font-size: 0.8em
       span

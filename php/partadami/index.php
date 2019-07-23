@@ -19,12 +19,6 @@
     </head>
 <body>
 
-
-
-
-
-
-
 <nav class="nav">
 	<div class="nav-menu">
 		<button class="navbar-toggler hamburger hamburger--slider" type="button">
@@ -32,13 +26,19 @@
             <span class="hamburger-inner"></span>
          </span>
       </button>
-		<a class="nav-menu__logo" href="/"><img src="/img/logo.svg" alt="Парты ДЕМИ Краснодар"></a>
-		<a class="nav-menu__name" href="/"><strong>Парты ДЭМИ</strong><span>официальный дилер в Краснодаре</span></a>
+		<a href="/" class="brand">
+			<img src="/img/logo.svg" alt="Парты ДЕМИ Краснодар">
+			<p>
+				<strong>Парты ДЭМИ</strong>
+				<span>официальный дилер в Краснодаре</span>
+			</p>
+		</a>
 		<a class="nav-menu__phone" href="tel:79882428105"><i class="fa fa-mobile" aria-hidden="true"></i> <span>8 (988) 242-81-05</span></a>
+		<a href="" class="whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i> <span>Написать в</span> Whatsapp</a>
 		<a class="nav-menu__callback myModal"><i class="fa fa-phone" aria-hidden="true"></i>Заказать звонок</a>
-		<a class="nav-menu__sale" href="/akcia/"><i class="fa fa-percent" aria-hidden="true"></i> Распродажа</a>
-							<a class="nav-menu__cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Корзина</span></a>
-								<span class="cartajax"></span>
+		<a class="nav-menu__sale" href="/akcia/"><i class="fa fa-percent" aria-hidden="true"></i> Акция</a>
+		<a class="nav-menu__cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+		<span class="cartajax"></span>
 	</div>
 	<div class="nav-catalog">
 		<div class="container">
@@ -56,7 +56,9 @@
 			<a class="nav-catalog__contact" href="/gde_kupit/">Контакты</a>
 		</div>
 	</div>
-</nav><div class="header">
+</nav>
+
+<div class="header">
 	<div class="container">
 		<div class="introHolder">
 			<h1>Детская парта и стул "ДЭМИ"</h1>
@@ -283,17 +285,9 @@
 		</div>
 	</div>
 	<div class="show_description"><i class="fa fa-angle-down"></i></div>
+	<a href="/shop/parta_bez_risunka/" class="show_catalog">Выбрать парту для ребенка</a>
 </div>
-<div class="catalog">
-	<div class="container">
-		<div class="catalog_filter">
-			<h5>Фильтр</h5>
-		</div>
-		<div class="catalog_list">
-			<h3>Парты ДЭМИ</h3>
-		</div>
-	</div>
-</div>
+
 <div id="why">
 	<div class="introHolder">
 		<h3>Почему покупают у нас</h3>

@@ -17,8 +17,4 @@ if ($_POST['phone'] != '' and $_POST['human'] == 'human') {
 		wp_mail($to, $subject, $message, $headers);
 	?>
 
-<?php } else { ?>
-
-<div class="error">123</div>
-
 <?php } ?>

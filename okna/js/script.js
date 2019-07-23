@@ -36,6 +36,14 @@ window.addEventListener("DOMContentLoaded", function() {
         item.innerHTML = `<span>${word2}</span> ${other2}`;
     })
 
+    const h3 = document.querySelector('.why h3')
+    const words3 = h3.textContent.split(' ')
+    const word3 = words3[1];
+    const first = words3[0];
+    const last= words3[2]
+    const other3= words3.slice(1).join(' ')
+    h3.innerHTML = `${first} <span>${word3}</span> ${last}`;
+
 
     let navbar = document.querySelector('.navbar');
     document.addEventListener('scroll', (e) => {
@@ -103,80 +111,6 @@ window.addEventListener("DOMContentLoaded", function() {
         input.addEventListener("keydown", mask, false);
     });
 
-
-    
-    function price(val1, val2) {
-        let basePrice = 1;
-        let total = 1;       
-        
-        
-        total *= parseInt(basePrice)*parseInt(val1)*parseInt(val2);
-        return total;
-
-    } price(1,1);
-    
-
-    let dropDown = document.querySelectorAll('.dropdown-item');
-    dropDown.forEach(item => {
-        item.addEventListener('click', (e) => {
-            val1 = item.getAttribute('data-price');
-            val2 = 1;
-            console.log(price(val1,val2));
-        });
-    })
-
-    let windowVar = document.querySelectorAll('.windowVar');
-    windowVar.forEach(item => {
-        item.addEventListener('click', (e) => {
-            val2 = item.getAttribute('data-price');
-            val1 = 1;
-            console.log(price(val1,val2));
-        });
-    })
-    
-    function prettify(num) {
-        var n = num.toString();
-        return n.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + '.');
-    }
-
-    
-
-    //Range slider
-    var rangeWidth      = document.getElementById("range_width");
-    var rangeHeight     = document.getElementById("range_height");
-    
-    var rangeWidthOut   = document.getElementById("width");
-    var rangeHeightOut  = document.getElementById("height");
-
-    rangeWidthOut.innerHTML = prettify(rangeWidth.value) + ' мм';
-    rangeWidth.oninput = function() {
-        rangeWidthOut.innerHTML = prettify(this.value) + ' мм';
-        price(this.value);
-    }
-    rangeHeightOut.innerHTML = prettify(rangeHeight.value) + ' мм';
-    rangeHeight.oninput = function() {
-        rangeHeightOut.innerHTML = prettify(this.value) + ' мм';
-        price(this.value);
-    }
-
-    //Вставляем значение селекта в селект :)
-    let selected = document.querySelectorAll('.dropdown-item');
-    //Если есть на странице boorstrab selectы
-    if(selected) {
-	//Перебираем все
-	selected.forEach(item => {
-		//Вещаем клик
-		item.addEventListener('click', (e) => {
-            e.preventDefault();
-			//Определяем родительский блок > первую ссылку
-			let block = item.closest(".dropdown").children[0];
-			//Вставляем занчение в нее
-            block.innerHTML = item.textContent;
-		})
-		//Вуаля бля -- магия
-    })
-
-}
 });
 
 $(function() {
