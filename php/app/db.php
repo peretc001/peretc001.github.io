@@ -146,7 +146,7 @@ $db = new JsonDB( $_SERVER['DOCUMENT_ROOT'] . '/portfolio/' );
 //       'video' => '',
 //    ), true);
 // $db->insert('portfolio', array(
-//       'id' => 11, 
+//       'id' => 12, 
 //       'title' => 'Арбитраж-Юг',
 //       'description' => 'Зацени какой лэндинг я разработал для компании Арбитраж-Юг',
 //       'portfolio' => 'landing-page',
@@ -155,7 +155,7 @@ $db = new JsonDB( $_SERVER['DOCUMENT_ROOT'] . '/portfolio/' );
 //       'tech' => 'HTML + CSS3 + JS',
 //       'url' => 'https://peretc001.github.io/dist/templates/mediacia/arbitraj-ug/',
 //       'about' => 'Разработать дизайн и сверстать Landing page под ключ',
-//       'img' => 'test',
+//       'img' => 'arbitraj-ug',
 //       'video' => '',
 //    ), true);
 
@@ -163,13 +163,13 @@ $db = new JsonDB( $_SERVER['DOCUMENT_ROOT'] . '/portfolio/' );
 
 
 //$result = $db->select('portfolio', 'id', 6);
-//$result = $db -> selectAll('portfolio');
+// $result = $db -> selectAll('portfolio');
 // var_dump('<pre>');
 // var_dump($result);
 
 //    echo $result[0]['title'];
 
-//$db -> delete ( 'portfolio', 'id', 10 );
+// $db -> delete ( 'portfolio', 'id', 11 );
 //$db -portfoliote('portfolio', 'id', 6, array('themes' => 'Landing page'));
 //    'themes' => 'Landing page'));
 
