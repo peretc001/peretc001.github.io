@@ -145,6 +145,20 @@ $db = new JsonDB( $_SERVER['DOCUMENT_ROOT'] . '/portfolio/' );
 //       'img' => 'test',
 //       'video' => '',
 //    ), true);
+// $db->insert('portfolio', array(
+//       'id' => 11, 
+//       'title' => 'Арбитраж-Юг',
+//       'description' => 'Зацени какой лэндинг я разработал для компании Арбитраж-Юг',
+//       'portfolio' => 'landing-page',
+//       'themes' => 'Landing page',
+//       'work' => 'Верстка',
+//       'tech' => 'HTML + CSS3 + JS',
+//       'url' => 'https://peretc001.github.io/dist/templates/mediacia/arbitraj-ug/',
+//       'about' => 'Разработать дизайн и сверстать Landing page под ключ',
+//       'img' => 'test',
+//       'video' => '',
+//    ), true);
+
 
 
 
