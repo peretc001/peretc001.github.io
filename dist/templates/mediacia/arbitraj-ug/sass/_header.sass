@@ -1,0 +1,196 @@
+.header
+   display: flex
+   align-items: center
+   justify-content: center
+   height: 100%
+   min-height: 600px
+   padding: $gutter
+   background-size: cover
+   background-position: center
+   position: relative
+   &:before
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      width: 100%
+      height: 100%
+      background: #000000
+      opacity: .5
+   .container
+      position: relative
+      color: #ffffff
+      text-align: center
+   h1
+      text-transform: uppercase
+      font-weight: bold
+      font-size: 2.4em
+      margin-top: 2em
+      margin-bottom: 2em
+      span
+         display: block
+         font-size: .8em
+         color: $accent
+   &__card
+      margin-bottom: 1em
+      img
+         width: 70px
+         margin-bottom: 1em
+      p
+         font-size: 1em
+         span
+            display: block
+
+   .consultation
+      margin-top: 2em
+      padding: $gutter/1.5 $gutter
+      border-radius: 6px
+      background: $accent
+      position: relative
+      .form_consult
+         display: flex
+         align-items: center
+         justify-content: space-between
+         &.done
+            opacity: 0
+      p
+         font-size: 1.2em
+         text-transform: uppercase
+         font-weight: bold
+         position: relative
+         margin-bottom: 0
+         span
+            display: block
+            font-weight: normal
+            font-size: .6em
+            text-align: right
+            color: $text
+      &__input
+         display: flex
+         align-items: center
+         justify-content: center
+         position: relative
+      .form-control
+         max-width: 200px
+         margin-right: 1em
+         outline: none
+         text-align: center
+      .btn
+         min-width: 150px
+         text-transform: uppercase
+         font-weight: bold
+         position: relative
+         z-index: 1
+
+      
+      .request_callback
+         display: none
+         text-transform: uppercase
+         font-size: 1.4em
+         font-weight: bold
+         position: absolute
+         left: 50%
+         top: 50%
+         transform: translateX(-50%) translateY(-50%)
+         z-index: 2
+   
+@media screen and (max-width: 1199.98px)
+   .header
+      font-size: 0.9em
+      .consultation
+         p
+            span
+               text-align: center
+
+@media screen and (max-width: 991.98px)
+   .header
+      font-size: 0.9em
+      &__card
+         img
+            width: 50px
+         p
+            font-size: .8em
+      .consultation
+         .form_consult
+            flex-direction: column
+         p
+            width: 100%
+            margin-bottom: 1em
+
+@media screen and (max-width: 767.98px)
+   .header
+      height: auto
+      background-position: -300px
+      h1
+         font-size: 2em
+         margin-top: 3em
+         margin-bottom: 1em
+      &__card
+         img
+            width: 50px
+         p
+            font-size: 1em
+            span
+               display: inline
+      .consultation
+         p
+            width: 100%
+            font-size: 1em
+            margin-bottom: 1em
+         .form-control
+            max-width: 100%
+         .btn
+            margin: 0
+            max-width: 100%
+
+@media screen and (max-width: 599.98px)
+   .header
+      height: auto
+      padding-bottom: $gutter*2
+      background-position: -50%
+      h1
+         font-size: 2em
+         margin-top: 3em
+         margin-bottom: 1em
+      &__card
+         img
+            width: 50px
+         p
+            font-size: 1em
+            span
+               display: block
+      .consultation
+         flex-direction: column
+         padding: $gutter/2 0
+         p
+            width: 100%
+            max-width: 100%
+            font-size: 1.2em
+            margin-bottom: 1em
+         &__input
+            width: 90%
+            flex-direction: column
+            padding: 0
+         .form-control
+            margin: .3em auto
+            margin-right: auto
+            width: 100%
+            max-width: 100%
+         .btn
+            margin: .3em auto
+            padding: .5em 1em
+            width: 100%
+            max-width: 100%
+
+@media screen and (max-width: 374.98px)
+   .header
+      h1
+         font-size: 1.8em
+      &__card
+         p
+            font-size: 1em
+            span
+               display: inline
+      .consultation
+         p
+            font-size: .9em
