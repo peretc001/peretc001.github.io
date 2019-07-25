@@ -1,0 +1,271 @@
+@import '_libs/bootstrap_grid'
+@import '_libs/hamburger'
+@import 'fonts'
+@import 'range'
+
+$accent: #003056
+$text: #001f2c
+$orange: #ff7518
+$gutter: 30px
+$default-font: 'Roboto', sans-serif
+
+html, body
+	height: 100%
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.2
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	img
+		max-width: 100%
+
+.region-header
+   display: none
+.calc---page
+	padding: 50px 20px
+	.form-room
+		display: flex
+		flex-direction: row-reverse
+		justify-content: space-between
+		overflow: hidden
+		//Video
+		.calc-room---monitor
+			width: 50%
+			overflow: hidden
+			background-image: url('../img/indoor3.jpg')
+			background-size: cover
+			.resize-container
+				height: 420px
+				width: 650px
+				transform: perspective(1454px) rotateY(48deg) rotateZ(-3deg) rotateX(-2.3deg)
+				position: relative
+				top: 75px
+				left: 35px
+				.resize-drag
+					height: 120px
+					width: 120px
+					position: relative
+					touch-action: none
+					user-select: none
+					max-height: 100%
+					min-width: 120px !important
+					min-height: 120px !important
+					video
+						width: 100%
+						height: 100%
+						object-fit: fill
+						background: rgba(0, 0, 0, 0.77)
+						border: solid 3px #3c3c3c
+						outline: solid 1px #656565
+						outline-offset: -4px
+						overflow: hidden
+						box-shadow: -3px 0px 4px 0px rgba(0, 0, 0, 0.8)
+				&--text
+					width: 100%
+					position: absolute
+					left: 50%
+					top: 50%
+					transform: translateX(-50%) translateY(-50%)
+					color: #ffffff
+					display: flex
+					flex-direction: column
+					align-items: center
+					font-size: 13px
+					.resize-drag-room
+						margin-bottom: 5%
+		
+		//Calc
+		.calc-room---form
+			width: 50%
+			display: flex
+			.calc-room,
+			.calc-room-option
+				width: 100%
+				background: $accent
+				color: #ffffff
+				padding: $gutter
+				position: relative
+				overflow: hidden
+				.name-block
+					padding-top: 1em
+					font-size: 1.4em
+					display: block
+				#option-block-room
+					display: block
+					position: absolute
+					top: 0
+					right: 0
+					background: darken($accent, 10%)
+					color: #ffffff
+					border: none
+					border-radius: 0 0 0 8px
+					padding: 0.5em 1em
+					cursor: pointer
+					outline: none
+					.fa
+						margin-right: 0.5em
+						font-weight: normal
+					&:hover
+						color: darken(#ffffff, 10%)
+				.range---value
+					display: flex
+					align-items: center
+					justify-content: space-between
+					span
+						&:first-child
+							margin-right: 0.5em
+							font-size: 1.4em
+							font-weight: bold
+				.name-big-block
+					position: relative
+					display: flex
+					align-items: center
+					span
+						margin-bottom: 0
+					.fa
+						display: flex
+						align-items: center
+						padding: 0
+						margin: 0
+						margin-bottom: 0.5em
+						margin-left: 0.5em
+
+				.select-module
+					background: none
+					border: none
+					color: #ffffff
+					appearance: none
+					padding-top: 1em
+
+				.block-inline
+					display: flex
+					align-items: center
+					justify-content: space-between
+					flex-wrap: wrap
+					margin-bottom: 1em
+					a
+						width: 100%
+						max-width: 280px
+						text-align: center
+						display: block
+						background: $orange
+						padding: .5em 1em
+						color: #ffffff
+						border-radius: 4px
+						font-size: 0.9em
+						&:hover
+							background: darken($orange, 5%)
+							text-decoration: none
+				
+				.warranty-room-big-block
+					display: flex
+					align-items: center
+					justify-content: space-between
+					flex-wrap: wrap
+					margin-bottom: 1em
+					&---year
+						display: flex
+						align-items: center
+						flex-direction: row
+						justify-content: space-between
+					.warranty-room-block
+						width: 80px
+						display: flex
+						align-items: center
+						justify-content: center
+						margin: 0
+						margin-bottom: 1em
+						input[type=radio]
+							display: none
+						label
+							color: #ffffff
+							margin-bottom: 0
+							display: inline-block
+							cursor: pointer
+							position: relative
+							font-size: 1em
+							line-height: 1
+							-ms-user-select: none
+							-moz-user-select: none
+							-khtml-user-select: none
+							-webkit-user-select: none
+							padding-top: 2em
+							opacity: .5
+							transition: all .2s ease
+							&:hover
+								opacity: 1
+							&:before
+								content: "\f1db"
+								font-family: 'FontAwesome'
+								position: absolute
+								left: 50%
+								top: 0
+								transform: translateX(-50%)
+								color: $orange
+								font-weight: normal
+								font-size: 1.6em
+								transition: all .2s ease
+						input[type=radio]:checked + label
+							opacity: 1
+						input[type=radio]:checked + label:before
+							content: '\f058'
+							font-family: 'FontAwesome'
+							color: $orange
+							font-weight: normal
+
+					.get-room-pred
+						width: 100%
+						max-width: 280px
+						text-align: center
+						display: block
+						background: #DB3A35
+						padding: .5em 1em
+						color: #ffffff
+						border-radius: 4px
+						&:hover
+							background: darken(#DB3A35, 5%)
+							text-decoration: none
+						a
+							color: #ffffff
+							font-size: 0.9em
+							&:hover
+								text-decoration: none
+					
+
+				.result-room-block
+					display: flex
+					align-items: center
+					justify-content: space-between
+					flex-wrap: wrap
+					padding: 1em 0
+					.result-room-block-price
+						&__caption
+							font-size: 1.4em
+						&__price,
+						&__size
+							font-weight: bold
+							font-size: 2em
+			
+			.calc-room-option
+				background: darken($accent, 10%)
+
+@media screen and (max-width: 576.98px)
+	.calc---page
+		.form-room
+			display: flex
+			flex-direction: column
+			.calc-room---monitor
+				width: 100%
+				.resize-container
+					width: 100%
+					overflow: hidden
+					top: auto
+					left: auto
+			.calc-room---form
+				width: 100%
+				.block-inline,
+				.warranty-room-big-block
+					flex-direction: column

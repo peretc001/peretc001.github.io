@@ -16,27 +16,37 @@
       width: 100%
       height: 100%
       background: #000000
-      opacity: .5
+      opacity: .7
    .container
       position: relative
       color: #ffffff
-   &__img
-      width: 100px
-      margin: 0
    h1
       text-transform: uppercase
       font-weight: bold
       font-size: 3em
-      margin-top: 0
       line-height: 1
       margin-bottom: 0
+      span
+         color: $accent
    p
-      font-size: 1.6em
+      font-size: 1.05em
       padding-top: 0.5em
       margin-bottom: 0
-      &:last-child
-         font-size: 1em
-         padding-left: 5px
+      text-transform: uppercase
+   .for
+      color: #ffffff
+      font-size: .97em
+      position: relative
+      span
+         position: relative
+         &:before
+            content: ''
+            position: absolute
+            left: 0
+            bottom: -5px
+            width: 100%
+            height: 1px
+            background: $accent
 
    .consultation
       padding: $gutter/1.5 10%
@@ -101,21 +111,28 @@
       font-size: 0.9em
       h1
          font-size: 2.8em
+      p
+         font-size: .98em
+      .for
+         font-size: 0.9em
 
 @media screen and (max-width: 991.98px)
    .header
       font-size: 0.9em
       text-align: center
-      &__img
-         margin-top: 5em
+      .container
+         padding-top: 100px
       p
          padding-top: 0.3em
+      
       .consultation
          margin-top: 2em
 
 @media screen and (max-width: 767.98px)
    .header
       height: auto
+      .container
+         padding-top: 50px
       h1
          font-size: 2em
 
@@ -127,6 +144,10 @@
          opacity: .7
       h1
          font-size: 2em
+      p
+         margin-top: 0.5em
+         span
+            display: inline-block
       .consultation
          max-width: 100%
 
