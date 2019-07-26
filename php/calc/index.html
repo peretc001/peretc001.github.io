@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- IMPORTANT -->
-  <link rel="stylesheet" href="/css/main.min.css">
+  <link rel="stylesheet" href="./css/main.min.css">
   <!-- / IMPORTANT -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
@@ -91,261 +91,260 @@
   </div>
 </div>
 <section class="calc---page">
-  <h1>Калькулятор</h1>
+  <h1>Online Калькулятор</h1>
 
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Видеоэкран для помещения</a>
+      <span>Выберите тип экрана</span>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Видеоэкран для улицы</a>
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i>Видеоэкран</i> для помещения</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><i>Видеоэкран</i> для улицы</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Медиафасад</a>
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div class="tab-pane show active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <!-- TAB1 -->
       <section class="tab-content tab-content-room">
 
+        <div class="form-room">
+          <div class="calc-room---form">
 
-          <div class="form-room">
-            <div class="calc-room---form">
-              <div class="calc-room">
-    
-                  <div class="calc-room__caption-block">
-                    <p class="name-block">Размер экрана</p>
-                    <button id="option-block-room"><i class="fa fa-arrow-right" aria-hidden="true"></i>Доп.параметры</button>
-                  </div>
-                  <div class="range---value">
-                    <label for="rangeWidthRoom" class="labelWidth">Ширина</label>
-                    <div class="range---value-index">
-                      <span id="rangeWidthRoomSpan" class="spanWidth">0.96</span><span class="spanWidth"> M</span>
-                    </div>
-                  </div>
-                  <input type="range" id="rangeWidthRoom" value="0.96" min="0.96" max="14.4" step="0.96">
-        
-                  <div class="range---value">
-                    <label for="rangeHeightRoom" class="labelHeight">Высота</label>
-                    <div class="range---value-index">
-                      <span id="rangeHeightRoomSpan" class="spanHeight">0.96</span><span class="spanHeight"> M</span>
-                    </div>
-                  </div>
-                  <input type="range" id="rangeHeightRoom" value="0.96" min="0.96" max="14.4" step="0.96">
-        
-                  <div class="name-big-block">
-                    <p class="name-block">Выберите шаг пикселя</p>
-                    <span>
-                      <i class="fa fa-question-circle quest-pix" aria-hidden="true" id="quest-pix-room"></i>
-                    </span>
-                  </div>
+            <div class="calc-room">
+  
+                <div class="calc-room__caption-block">
+                  <p class="name-block">Размер экрана</p>
+                  <button id="option-block-room"><i class="fa fa-arrow-right" aria-hidden="true"></i>Доп.параметры</button>
+                </div>
 
-                  <select class="select-css" id="select-step-pixel-room">
-                    <option>1.25</option>
-                    <option>1.66</option>
-                    <option>1.83</option>
-                    <option>2</option>
-                    <option>2.5</option>
-                    <option>3.07</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-        
-                  <select class="select-css select-module" id="select-module-room">
-                    <option>Q1.25AT32V2 SMD 320x160mm</option>
-                  </select>
-        
-                  <p class="name-block">Выберите яркость</p>
-                  <select class="select-css">
-                    <option>Яркий</option>
-                    <option>Повышеная яркость</option>
-                  </select>
-        
-                  <div class="block-inline">
-                    <p class="name-block">Гарантия</p>
-                    <a href="javascript:PopUpShow()">Бесплатный выезд замерщика</a>
+                <div class="range---value">
+                  <label for="rangeWidthRoom" class="labelWidth">Ширина</label>
+                  <div class="range---value-index">
+                    <span id="rangeWidthRoomSpan" class="spanWidth">0.96</span><span class="spanWidth"> M</span>
                   </div>
-        
-        
-                  <div class="warranty-room-big-block">
-                    <div class="warranty-room-big-block---year">
-                      <div class="warranty-room-block">
-                        <input type="radio" name="warranty-room" id="warranty-room1" class="warranty-room__radio" value="1" checked>
-                        <label for="warranty-room1"><span></span>1 год</label>
-                      </div>
-                      <div class="warranty-room-block">
-                        <input type="radio" name="warranty-room" id="warranty-room2" class="warranty-room__radio" value="2">
-                        <label for="warranty-room2"><span></span>2 года</label>
-                      </div>
-                      <div class="warranty-room-block">
-                        <input type="radio" name="warranty-room" id="warranty-room3" class="warranty-room__radio" value="3">
-                        <label for="warranty-room3"><span></span>3 года</label>
-                      </div>
-                    </div>
-                    <div class="get-room-pred">
-                      <a href="javascript:PopUpShow4()" class="get-room-pred-text">Получить ком. предложение</a>
-                    </div>
+                </div>
+                <input type="range" id="rangeWidthRoom" value="0.96" min="0.96" max="14.4" step="0.96">
+      
+                <div class="range---value">
+                  <label for="rangeHeightRoom" class="labelHeight">Высота</label>
+                  <div class="range---value-index">
+                    <span id="rangeHeightRoomSpan" class="spanHeight">0.96</span><span class="spanHeight"> M</span>
                   </div>
-        
-                  <!--<div style="margin-top: 20px;">
-                      <span class="name-block"> Введите курс доллара</span>
-                      <input type="text" id="kurs-dollar">
-                    </div>-->
-        
-                  <div class="result-room-block">
-                    <div class="result-room-block-price">
-                      <p class="result-room-block-price__caption">Цена экрана</p>
-                      <p class="result-room-block-price__price" id="result-room-block-price__price"></p>
+                </div>
+                <input type="range" id="rangeHeightRoom" value="0.96" min="0.96" max="14.4" step="0.96">
+      
+                <div class="name-big-block">
+                  <p class="name-block">Выберите шаг пикселя</p>
+                  <span>
+                    <i class="fa fa-question-circle quest-pix" aria-hidden="true" id="quest-pix-room"></i>
+                  </span>
+                </div>
+
+                <select class="select-css" id="select-step-pixel-room">
+                  <option>1.25</option>
+                  <option>1.66</option>
+                  <option>1.83</option>
+                  <option>2</option>
+                  <option>2.5</option>
+                  <option>3.07</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+      
+                <select class="select-css select-module" id="select-module-room">
+                  <option>Q1.25AT32V2 SMD 320x160mm</option>
+                </select>
+      
+                <p class="name-block">Выберите яркость</p>
+                <select class="select-css">
+                  <option>Яркий</option>
+                  <option>Повышеная яркость</option>
+                </select>
+      
+                <div class="block-inline">
+                  <p class="name-block">Гарантия</p>
+                  <a href="javascript:PopUpShow()">Бесплатный выезд замерщика</a>
+                </div>
+      
+                <div class="warranty-room-big-block">
+                  <div class="warranty-room-big-block---year">
+                    <div class="warranty-room-block">
+                      <input type="radio" name="warranty-room" id="warranty-room1" class="warranty-room__radio" value="1" checked>
+                      <label for="warranty-room1"><span></span>1 год</label>
                     </div>
-                    <div class="result-room-block-price" style="display: none">
-                      <p class="result-room-block-price__caption">Цена экрана в &#x24;</p>
-                      <p class="result-room-block-price__price" id="result-room-block-price__price-dollar">0 &#x24;</p>
+                    <div class="warranty-room-block">
+                      <input type="radio" name="warranty-room" id="warranty-room2" class="warranty-room__radio" value="2">
+                      <label for="warranty-room2"><span></span>2 года</label>
                     </div>
-                    <div class="result-room-block-size">
-                      <p class="result-room-block-price__caption">Площадь экрана</p>
-                      <p class="result-room-block-price__size" id="result-room-block-size__size">0.9216 M <sup>2</sup></p>
+                    <div class="warranty-room-block">
+                      <input type="radio" name="warranty-room" id="warranty-room3" class="warranty-room__radio" value="3">
+                      <label for="warranty-room3"><span></span>3 года</label>
                     </div>
                   </div>
-        
-              </div>
-              <div class="calc-room-option" id="calc-room-option">
-                  <p class="name-block">Доп. параметры</p>
-                  <div class="calc-room-option-big-block">
-                    <div class="calc-room-option-block">
-                      <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option1">
-                      <label for="calc-room-option1"><span></span>Управляющий компьютер</label>
-                      <i class="fa fa-question-circle" aria-hidden="true" value="Управляющий компьютер" name="dop-options-room"></i>
-                    </div>
-                    <div class="calc-room-option-block">
-                      <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option2">
-                      <label for="calc-room-option2"><span></span>Отправляющий контроллер</label>
-                      <i class="fa fa-question-circle" aria-hidden="true" value="Отправляющий контроллер" name="dop-options-room"></i>
-                    </div>
-                    <div class="calc-room-option-block">
-                      <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option3">
-                      <label for="calc-room-option3"><span></span>Wi-Fi модуль</label>
-                      <i class="fa fa-question-circle" aria-hidden="true" value="Wi-Fi модуль" name="dop-options-room"></i>
-                    </div>
-                    <div class="calc-room-option-block">
-                      <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option4">
-                      <label for="calc-room-option4"><span></span>Датчик яркости</label>
-                      <i class="fa fa-question-circle" aria-hidden="true" value="Датчик яркости" name="dop-options-room"></i>
-                    </div>
-                    <div class="calc-room-option-block">
-                      <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option5">
-                      <label for="calc-room-option5"><span></span>Датчик температуры</label>
-                      <i class="fa fa-question-circle" aria-hidden="true" value="Датчик температуры" name="dop-options-room"></i>
-                    </div>
-                    <div class="calc-room-option-block">
-                      <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option6">
-                      <label for="calc-room-option6"><span></span>Видеопроцессор</label>
-                      <i class="fa fa-question-circle" aria-hidden="true" value="Видеопроцессор" name="dop-options-room"></i>
-                    </div>
-        
-        
+                  <div class="get-room-pred">
+                    <a href="javascript:PopUpShow4()" class="get-room-pred-text">Получить ком. предложение</a>
                   </div>
-        
-        
-                  <p class="name-block">Монтаж</p>
-                  <div class="calc-room-option-big-block">
-                    <div class="calc-room-option-block">
-                      <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option7">
-                      <label for="calc-room-option7"><span></span>Электрощитовая</label>
-                      <i class="fa fa-question-circle" aria-hidden="true" value="Электрощитовая" name="dop-options-room"></i>
-                    </div>
-                    <div class="calc-room-option-block">
-                      <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option8">
-                      <label for="calc-room-option8"><span></span>Шефмонтаж</label>
-                      <i class="fa fa-question-circle" aria-hidden="true" value="Шефмонтаж" name="dop-options-room"></i>
-                    </div>
-                    <div class="calc-room-option-block">
-                      <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option9">
-                      <label for="calc-room-option9"><span></span>Монтаж оборудования</label>
-                      <i class="fa fa-question-circle" aria-hidden="true" value="Монтаж оборудования" name="dop-options-room"></i>
-                    </div>
-                    <div class="calc-room-option-block">
-                      <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option10">
-                      <label for="calc-room-option10"><span></span>Изгот. металлоконструкции</label>
-                      <i class="fa fa-question-circle" aria-hidden="true" value="Изгот. металлоконструкции" name="dop-options-room"></i>
-                    </div>
-                    <div class="calc-room-option-block">
-                      <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option11">
-                      <label for="calc-room-option11"><span></span>Монтаж металлоконструкций</label>
-                      <i class="fa fa-question-circle" aria-hidden="true" value="Монтаж металлоконструкций" name="dop-options-room"></i>
-                    </div>
-                    <div class="calc-room-option-block">
-                      <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option12">
-                      <label for="calc-room-option12"><span></span>Набор запасных частей</label>
-                      <i class="fa fa-question-circle" aria-hidden="true" value="Набор запасных частей" name="dop-options-room"></i>
-                    </div>
+                </div>
+      
+                <!--<div style="margin-top: 20px;">
+                    <span class="name-block"> Введите курс доллара</span>
+                    <input type="text" id="kurs-dollar">
+                  </div>-->
+      
+                <div class="result-room-block">
+                  <div class="result-room-block-price">
+                    <p class="result-room-block-price__caption">Цена экрана</p>
+                    <p class="result-room-block-price__price" id="result-room-block-price__price"></p>
                   </div>
-              </div>
+                  <div class="result-room-block-price" style="display: none">
+                    <p class="result-room-block-price__caption">Цена экрана в &#x24;</p>
+                    <p class="result-room-block-price__price" id="result-room-block-price__price-dollar">0 &#x24;</p>
+                  </div>
+                  <div class="result-room-block-size">
+                    <p class="result-room-block-price__caption">Площадь экрана</p>
+                    <p class="result-room-block-price__size" id="result-room-block-size__size">0.9216 M <sup>2</sup></p>
+                  </div>
+                </div>
+      
             </div>
-            <div class="calc-room---monitor">
-              <div class="resize-container">
-                <div class="resize-drag">
-                  <video  autoplay loop muted>
-                    <source src="video/smart.mp4">
-                  </video>
-                  <div class="resize-container--text">
-                    <span id="resize-drag-room">0.96 М x 0.96 М</span>
-                    <span id="resize-drag-room-itog">0.9216 M <sup>2</sup></span>
+
+            <div class="calc-room-option" id="calc-room-option">
+                <p class="name-block">Доп. параметры</p>
+                <div class="calc-room-option-big-block">
+                  <div class="calc-room-option-block">
+                    <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option1">
+                    <label for="calc-room-option1"><span></span>Управляющий компьютер</label>
+                    <i class="fa fa-question-circle" aria-hidden="true" value="Управляющий компьютер" name="dop-options-room"></i>
                   </div>
+                  <div class="calc-room-option-block">
+                    <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option2">
+                    <label for="calc-room-option2"><span></span>Отправляющий контроллер</label>
+                    <i class="fa fa-question-circle" aria-hidden="true" value="Отправляющий контроллер" name="dop-options-room"></i>
+                  </div>
+                  <div class="calc-room-option-block">
+                    <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option3">
+                    <label for="calc-room-option3"><span></span>Wi-Fi модуль</label>
+                    <i class="fa fa-question-circle" aria-hidden="true" value="Wi-Fi модуль" name="dop-options-room"></i>
+                  </div>
+                  <div class="calc-room-option-block">
+                    <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option4">
+                    <label for="calc-room-option4"><span></span>Датчик яркости</label>
+                    <i class="fa fa-question-circle" aria-hidden="true" value="Датчик яркости" name="dop-options-room"></i>
+                  </div>
+                  <div class="calc-room-option-block">
+                    <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option5">
+                    <label for="calc-room-option5"><span></span>Датчик температуры</label>
+                    <i class="fa fa-question-circle" aria-hidden="true" value="Датчик температуры" name="dop-options-room"></i>
+                  </div>
+                  <div class="calc-room-option-block">
+                    <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option6">
+                    <label for="calc-room-option6"><span></span>Видеопроцессор</label>
+                    <i class="fa fa-question-circle" aria-hidden="true" value="Видеопроцессор" name="dop-options-room"></i>
+                  </div>
+      
+                </div>
+
+                <p class="name-block">Монтаж</p>
+                <div class="calc-room-option-big-block">
+                  <div class="calc-room-option-block">
+                    <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option7">
+                    <label for="calc-room-option7"><span></span>Электрощитовая</label>
+                    <i class="fa fa-question-circle" aria-hidden="true" value="Электрощитовая" name="dop-options-room"></i>
+                  </div>
+                  <div class="calc-room-option-block">
+                    <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option8">
+                    <label for="calc-room-option8"><span></span>Шефмонтаж</label>
+                    <i class="fa fa-question-circle" aria-hidden="true" value="Шефмонтаж" name="dop-options-room"></i>
+                  </div>
+                  <div class="calc-room-option-block">
+                    <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option9">
+                    <label for="calc-room-option9"><span></span>Монтаж оборудования</label>
+                    <i class="fa fa-question-circle" aria-hidden="true" value="Монтаж оборудования" name="dop-options-room"></i>
+                  </div>
+                  <div class="calc-room-option-block">
+                    <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option10">
+                    <label for="calc-room-option10"><span></span>Изгот. металлоконструкции</label>
+                    <i class="fa fa-question-circle" aria-hidden="true" value="Изгот. металлоконструкции" name="dop-options-room"></i>
+                  </div>
+                  <div class="calc-room-option-block">
+                    <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option11">
+                    <label for="calc-room-option11"><span></span>Монтаж металлоконструкций</label>
+                    <i class="fa fa-question-circle" aria-hidden="true" value="Монтаж металлоконструкций" name="dop-options-room"></i>
+                  </div>
+                  <div class="calc-room-option-block">
+                    <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option12">
+                    <label for="calc-room-option12"><span></span>Набор запасных частей</label>
+                    <i class="fa fa-question-circle" aria-hidden="true" value="Набор запасных частей" name="dop-options-room"></i>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="calc-room---monitor">
+            <div class="resize-container">
+              <div class="resize-drag">
+                <video  autoplay loop muted>
+                  <source src="video/smart.mp4">
+                </video>
+                <div class="resize-container---text">
+                  <span id="resize-drag-room">0.96 М x 0.96 М</span>
+                  <span id="resize-drag-room-itog">0.9216 M <sup>2</sup></span>
                 </div>
               </div>
             </div>
-
-              
-    
-            
-    
-            <div class="calc-room-option-help" id="calc-room-option-help">
-              <p class="name-block" id="calc-room-option-help-caption">Тест</p>
-              <p id="calc-room-option-help-text"></p>
-            </div>
-    
-            <div class="calc-room-option-help" id="step-pix-block">
-              <p class="name-block">Шаг пикселя</p>
-              <p>Чем меньше шаг пикселя, тем более качественное изображение можно отображать на светодиодном экране.
-    
-                Для того чтобы подобрать оптимальный шаг пикселя, в первую очередь необходимо понять место для установки экрана, во-вторых определить минимальное расстояние, с которого будет читаться изображение.
-    
-                Нет смысла выбирать шаг 3 мм, под экран с установкой на фасаде здания с минимальным расстоянием обзора 10 м.
-    
-                Минимальное расстояние (МР) от экрана до зрителя прямо пропорционально шагу пикселя (ШП).
-    
-                Например:
-                МР – 1 м = ШП – 1.2, 1.5 мм.
-                МР – 3 м = ШП – 3 мм.
-                МР – 10 м = ШП – 10мм.</p>
-            </div>
           </div>
-    
-    
+
+          <div class="calc-room-option-help" id="calc-room-option-help">
+            <p class="name-block" id="calc-room-option-help-caption">Тест</p>
+            <p id="calc-room-option-help-text"></p>
+          </div>
+  
+          <div class="calc-room-option-help" id="step-pix-block">
+            <p class="name-block">Шаг пикселя</p>
+            <p>Чем меньше шаг пикселя, тем более качественное изображение можно отображать на светодиодном экране.
+  
+              Для того чтобы подобрать оптимальный шаг пикселя, в первую очередь необходимо понять место для установки экрана, во-вторых определить минимальное расстояние, с которого будет читаться изображение.
+  
+              Нет смысла выбирать шаг 3 мм, под экран с установкой на фасаде здания с минимальным расстоянием обзора 10 м.
+  
+              Минимальное расстояние (МР) от экрана до зрителя прямо пропорционально шагу пикселя (ШП).
+  
+              Например:
+              МР – 1 м = ШП – 1.2, 1.5 мм.
+              МР – 3 м = ШП – 3 мм.
+              МР – 10 м = ШП – 10мм.</p>
+          </div>
+        </div>
+
+        <div class="content---first-line">
           <div class="options-first-block-big">
             <p class="caption-block">Видеоэкран для помещения</p>
             <p id="name-room-module-p" class="caption-block-n">Q1.25AT32V2 SMD 320x160mm</p>
+            
             <div class="options-first-block-big-flex">
+              
               <div class="options-first-block">
                 <i class="fa fa-arrows-alt options-first-block__icon" aria-hidden="true"></i>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Размер экрана</p>
-                  <p class="options-first-block-caption__size" id="size-room"></p>
+                  <p class="options-first-block-caption__size" id="size-room">960 х 960 мм</p>
                 </div>
               </div>
-    
-    
+
               <div class="options-first-block">
                 <i class="fa fa-picture-o options-first-block__icon" aria-hidden="true"></i>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Разрешение экрана</p>
-                  <p class="options-first-block-caption__size" id="resolution-room"></p>
+                  <p class="options-first-block-caption__size" id="resolution-room">960 х 960 мм</p>
                 </div>
               </div>
-    
-    
+
               <div class="options-first-block">
                 <i class="fa fa-square options-first-block__icon" aria-hidden="true"></i>
                 <div class="options-first-block-caption">
@@ -353,306 +352,303 @@
                   <p class="options-first-block-caption__size" id="step-pixel-room">1.25 мм</p>
                 </div>
               </div>
-    
-    
+
               <div class="options-first-block">
                 <i class="fa fa-get-pocket options-first-block__icon" aria-hidden="true"></i>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Гарантия</p>
-                  <p class="options-first-block-caption__size" id="safe-room"></p>
+                  <p class="options-first-block-caption__size" id="safe-room">1 год</p>
                 </div>
               </div>
     
             </div>
-    
           </div>
-    
-    
-    
-          <div class="options-second-block-big">
-            <p class="caption-block">Характеристики</p>
-    
-            <div class="options-second-block-big-photo">
-              <img src="img/1235_site-758130484.jpg">
-              <div class="options-second-block-big-photo-block">
-                <p class="caption-block caption-block-par">Параметры модуля</p>
-                <ul class="options-second-block-big-photo-block__list">
-                  <li class="options-second-block-big-photo-block__item">
-                    <span class="parname">Шаг пикселя</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="step-room">1.25 мм</span>
-                  </li>
-                  <li class="options-second-block-big-photo-block__item">
-                    <span class="parname">Конфигурация светодиодов</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id ="conf-room">SMD 3in1 1RGB</span>
-                  </li>
-                  <li class="options-second-block-big-photo-block__item">
-                    <span class="parname">Производитель светодиодов</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="proiz-room">NationStar SMD2121</span>
-                  </li>
-                  <li class="options-second-block-big-photo-block__item">
-                    <span class="parname">Размер модуля</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="size-room-module">256 х 128 мм</span>
-                  </li>
-                  <li class="options-second-block-big-photo-block__item">
-                    <span class="parname">Разрешение модуля</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="raz-room">32 х 64 px</span>
-                  </li>
-                  <li class="options-second-block-big-photo-block__item">
-                    <span class="parname">Контрастность</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="cont-room">3000:1</span>
-                  </li>
-                  <li class="options-second-block-big-photo-block__item">
-                    <span class="parname">Цветовая температура (°К)</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="color-room">3200 ~ 9300° K</span>
-                  </li>
-                </ul>
-              </div>
+          <div class="content---first-line---img">
+            <div class="img---wrapper">
+              <img src="img/content---first.png">
             </div>
           </div>
-    
-    
-    
-          <div class="options-third-block-big">
-            <p class="caption-block caption-block-par">Параметры кабинета</p>
-            <div class="options-third-block-big-photo">
-              <div class="options-third-block-big-photo-block">
-                <ul class="options-third-block-big-photo-block__list">
-                  <li class="options-second-block-big-photo-block__item">
-                    <span class="parname">Размер кабинета</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="size-cab-room">768 x 768 мм</span>
-                  </li>
-                  <li class="options-third-block-big-photo-block__item">
-                    <span class="parname">Доступ для обслуживания экрана</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id ="dost-obs-room">Тыльное</span>
-                  </li>
-                  <li class="options-third-block-big-photo-block__item">
-                    <span class="parname">Вес (кг/м2)</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="weight-room">32.00</span>
-                  </li>
-                  <li class="options-third-block-big-photo-block__item">
-                    <span class="parname">Плотность пикселей на м2</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="density-room">62500</span>
-                  </li>
-                  <li class="options-third-block-big-photo-block__item">
-                    <span class="parname">Потребляемая мощность макс / сред, Вт/м2</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="power-room">700 / 350</span>
-                  </li>
-                  <li class="options-third-block-big-photo-block__item">
-                    <span class="parname">Частота обновления (Гц)</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="frequency-update-room">1920</span>
-                  </li>
-                  <li class="options-third-block-big-photo-block__item">
-                    <span class="parname">Частота кадра (Гц)</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="frequency-screen-room">50/60</span>
-                  </li>
-                </ul>
-              </div>
-              <img src="img/0020_875x492_3e6.jpg">
-            </div>
-          </div>
-    
-    
-          <div class="options-fourth-block-big">
-            <p class="caption-block-fourth caption-block-par">Параметры Экрана</p>
-            <div class="options-fourth-block-big-block">
-              <ul class="options-fourth-block-big-block__list">
+        </div>
+        
+        
+        <div class="options-second-block-big">
+          <p class="caption-block">Характеристики</p>
+  
+          <div class="options-second-block-big-photo">
+            <img src="img/1235_site-758130484.jpg">
+            <div class="options-second-block-big-photo-block">
+              <p class="caption-block caption-block-par">Параметры модуля</p>
+              <ul class="options-second-block-big-photo-block__list">
                 <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Размер экрана</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="size-screen-room">960 x 960 мм</span>
+                  <span class="parname">Шаг пикселя</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="step-room">1.25 мм</span>
                 </li>
                 <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Разрешение экрана</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="resolution-screen-room">768 x 768 px</span>
+                  <span class="parname">Конфигурация светодиодов</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id ="conf-room">SMD 3in1 1RGB</span>
                 </li>
                 <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Кол-во кабинетов</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="count-cab-room">1</span>
+                  <span class="parname">Производитель светодиодов</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="proiz-room">NationStar SMD2121</span>
                 </li>
                 <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Вес экрана кг</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="weight-screen-room">32.00</span>
+                  <span class="parname">Размер модуля</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="size-room-module">256 х 128 мм</span>
                 </li>
                 <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Энергопотребление экрана макс / сред, Вт</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="energo-screen-room">700 / 350</span>
+                  <span class="parname">Разрешение модуля</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="raz-room">32 х 64 px</span>
                 </li>
                 <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Яркость кд/м2</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="bright-screen-room">>1000</span>
+                  <span class="parname">Контрастность</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="cont-room">3000:1</span>
                 </li>
                 <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Рабочее напряжение</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="work-screen-room">220V/50Hz</span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Степень защиты IP</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="protected-screen-room">IP31</span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Угол обзора</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="corner-screen-room">H=140° / V=120°</span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Температурный режим работы</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="temp-screen-room">-10°C~+60°C, влажн. до 90%</span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Срок службы светодиодов</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="srok-screen-room">>100 000</span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Площадь экрана м2</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="squar-screen-room">0.9216 M <sup>2</sup></span>
+                  <span class="parname">Цветовая температура (°К)</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="color-room">3200 ~ 9300° K</span>
                 </li>
               </ul>
             </div>
           </div>
-    
-    
-          <div class="b-popup" id="popup1">
-            <form class="popupform" id="myform">
-              <div style="display: flex" class="popupform__block">
-                <p class="form__caption">Оформить заказ со скидкой</p>
-                <a href="javascript:PopUpHide()"><i class="fa fa-times" aria-hidden="true"></i></a>
-              </div>
-              <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_room_popup">
-              <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_room_popup">
-              <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_room_popup">
-              <input type="button" value="Отправить" class="form__submit" id="btn_submit_room_popup">
-              <div class="messages-room-popup"></div>
-            </form>
+        </div>
+
+        <div class="options-third-block-big">
+          <p class="caption-block caption-block-par">Параметры кабинета</p>
+          <div class="options-third-block-big-photo">
+            <div class="options-third-block-big-photo-block">
+              <ul class="options-third-block-big-photo-block__list">
+                <li class="options-second-block-big-photo-block__item">
+                  <span class="parname">Размер кабинета</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="size-cab-room">768 x 768 мм</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Доступ для обслуживания экрана</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id ="dost-obs-room">Тыльное</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Вес (кг/м2)</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="weight-room">32.00</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Плотность пикселей на м2</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="density-room">62500</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Потребляемая мощность макс / сред, Вт/м2</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="power-room">700 / 350</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Частота обновления (Гц)</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="frequency-update-room">1920</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Частота кадра (Гц)</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="frequency-screen-room">50/60</span>
+                </li>
+              </ul>
+            </div>
+            <img src="img/0020_875x492_3e6.jpg">
           </div>
-    
-    
-          <div class="b-popup" id="popup4">
-            <form class="popupform" id="myform">
-              <div style="display: flex" class="popupform__block">
-                <p class="form__caption">Получить коммерческое предложение</p>
-                <a href="javascript:PopUpHide4()"><i class="fa fa-times" aria-hidden="true"></i></a>
-              </div>
-              <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_room_popup_com">
-              <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_room_popup_com">
-              <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_room_popup_com">
-              <div class="result-room-block">
-                <div class="result-room-block-price">
-                  <p class="result-room-block-price__caption">Цена экрана</p>
-                  <p class="result-room-block-price__price" id="result-room-block-price__price-com"></p>
-                </div>
-                <div class="result-room-block-size">
-                  <p class="result-room-block-price__caption">Площадь экрана</p>
-                  <p class="result-room-block-price__size" id="result-room-block-size__size-com">0.9216 M <sup>2</sup></p>
-                </div>
-              </div>
-              <input type="button" value="Отправить" class="form__submit" id="btn_submit_room_popup_com">
-              <div class="messages-room-popup"></div>
-            </form>
+        </div>
+        
+  
+        <div class="options-fourth-block-big">
+          <p class="caption-block-fourth caption-block-par">Параметры Экрана</p>
+          <div class="options-fourth-block-big-block">
+            <ul class="options-fourth-block-big-block__list">
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Размер экрана</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="size-screen-room">960 x 960 мм</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Разрешение экрана</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="resolution-screen-room">768 x 768 px</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Кол-во кабинетов</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="count-cab-room">1</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Вес экрана кг</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="weight-screen-room">32.00</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Энергопотребление экрана макс / сред, Вт</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="energo-screen-room">700 / 350</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Яркость кд/м2</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="bright-screen-room">>1000</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Рабочее напряжение</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="work-screen-room">220V/50Hz</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Степень защиты IP</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="protected-screen-room">IP31</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Угол обзора</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="corner-screen-room">H=140° / V=120°</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Температурный режим работы</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="temp-screen-room">-10°C~+60°C, влажн. до 90%</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Срок службы светодиодов</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="srok-screen-room">>100 000</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Площадь экрана м2</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="squar-screen-room">0.9216 M <sup>2</sup></span>
+              </li>
+            </ul>
           </div>
-    
-    
-    
-    
-          
-    
-    
-          <p id="rangeWidth"></p>
-    
-    
-    
-          <div class="form-itog-block">
-            <div class="form-itog">
-              <p class="caption-block">Итог</p>
-              <div class="form-itog-item">
-                <span class="form-itog-item__caption">Монтаж</span>
-                <span class="form-itog-item__value">0 &#x20bd;</span>
+        </div>
+
+        <div class="b-popup" id="popup1">
+          <form class="popupform" id="myform">
+            <div style="display: flex" class="popupform__block">
+              <p class="form__caption">Оформить заказ со скидкой</p>
+              <a href="javascript:PopUpHide()"><i class="fa fa-times" aria-hidden="true"></i></a>
+            </div>
+            <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_room_popup">
+            <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_room_popup">
+            <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_room_popup">
+            <input type="button" value="Отправить" class="form__submit" id="btn_submit_room_popup">
+            <div class="messages-room-popup"></div>
+          </form>
+        </div>
+
+        <div class="b-popup" id="popup4">
+          <form class="popupform" id="myform">
+            <div style="display: flex" class="popupform__block">
+              <p class="form__caption">Получить коммерческое предложение</p>
+              <a href="javascript:PopUpHide4()"><i class="fa fa-times" aria-hidden="true"></i></a>
+            </div>
+            <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_room_popup_com">
+            <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_room_popup_com">
+            <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_room_popup_com">
+            <div class="result-room-block">
+              <div class="result-room-block-price">
+                <p class="result-room-block-price__caption">Цена экрана</p>
+                <p class="result-room-block-price__price" id="result-room-block-price__price-com"></p>
               </div>
-              <div class="form-itog-item">
-                <span class="form-itog-item__caption">Стоимость экрана</span>
-                <span class="form-itog-item__value" id="itog_room">639 431 &#x20bd;</span>
-              </div>
-              <div class="form-itog-item">
-                <span class="form-itog-item__caption">Управляющий компьютер</span>
-                <span class="form-itog-item__value">0 &#x20bd;</span>
-              </div>
-              <div class="form-itog-item">
-                <span class="form-itog-item__caption">Доставка</span>
-                <span class="form-itog-item__value">0 &#x20bd;</span>
-              </div>
-              <div class="form-itog-item">
-                <span class="form-itog-item__caption">Итого</span>
-                <span class="form-itog-item__value" id="itog_room_all">639 431 &#x20bd;</span>
+              <div class="result-room-block-size">
+                <p class="result-room-block-price__caption">Площадь экрана</p>
+                <p class="result-room-block-price__size" id="result-room-block-size__size-com">0.9216 M <sup>2</sup></p>
               </div>
             </div>
-    
-            <form  class="form" id="myform">
-              <p class="form__caption">Оформить заказ со скидкой</p>
-              <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_room">
-              <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_room">
-              <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_room">
-              <input type="button" value="Отправить" class="form__submit" id="btn_submit_room">
-              <div class="messages-room"></div>
-            </form>
+            <input type="button" value="Отправить" class="form__submit" id="btn_submit_room_popup_com">
+            <div class="messages-room-popup"></div>
+          </form>
+        </div>
+
+        <p id="rangeWidth"></p>
+
+        <div class="form-itog-block">
+          <div class="form-itog">
+            <p class="caption-block">Итог</p>
+            <div class="form-itog-item">
+              <span class="form-itog-item__caption">Монтаж</span>
+              <span class="form-itog-item__value">0 &#x20bd;</span>
+            </div>
+            <div class="form-itog-item">
+              <span class="form-itog-item__caption">Стоимость экрана</span>
+              <span class="form-itog-item__value" id="itog_room">639 431 &#x20bd;</span>
+            </div>
+            <div class="form-itog-item">
+              <span class="form-itog-item__caption">Управляющий компьютер</span>
+              <span class="form-itog-item__value">0 &#x20bd;</span>
+            </div>
+            <div class="form-itog-item">
+              <span class="form-itog-item__caption">Доставка</span>
+              <span class="form-itog-item__value">0 &#x20bd;</span>
+            </div>
+            <div class="form-itog-item">
+              <span class="form-itog-item__caption">Итого</span>
+              <span class="form-itog-item__value" id="itog_room_all">639 431 &#x20bd;</span>
+            </div>
           </div>
-    
-    
-    
-        </section>
+  
+          <form  class="form" id="myform">
+            <p class="form__caption">Оформить заказ со скидкой</p>
+            <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_room">
+            <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_room">
+            <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_room">
+            <input type="button" value="Отправить" class="form__submit" id="btn_submit_room">
+            <div class="messages-room"></div>
+          </form>
+        </div>
+
+      </section>
       <!-- /TAB1 -->
     </div>
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
       <!-- TAB2 -->
       <section class="tab-content">
-          <!--<video width="100%" height="auto" loop="" muted="" autoplay="" id="myvideo" class="myvideo">
-              <source src="./video/SB3.mp4">
-            </video>-->
-          <div class="form-street">
-    
-    
+        <!--<video width="100%" height="auto" loop="" muted="" autoplay="" id="myvideo" class="myvideo">
+            <source src="./video/SB3.mp4">
+          </video>-->
+        <div class="form-street">
+  
+          <div class="calc-room---form">
             <div class="calc-street">
+
               <div class="calc-room__caption-block">
                 <p class="name-block">Размер экрана</p>
                 <button id="option-block-street"><i class="fa fa-arrow-right" aria-hidden="true"></i>Доп.параметры</button>
               </div>
-              <label for="rangeWidthStreet" class="labelWidth">Ширина</label>
-              <span id="rangeWidthStreetSpan" class="spanWidth">0.96</span><span class="spanWidth"> M</span>
+
+              <div class="range---value">
+                <label for="rangeWidthStreet" class="labelWidth">Ширина</label>
+                <div class="range---value-index">
+                  <span id="rangeWidthStreetSpan" class="spanWidth">0.96</span><span class="spanWidth"> M</span>
+                </div>
+              </div>
               <input type="range" id="rangeWidthStreet" value="0.96" min="0.96" max="14.4" step="0.96">
-    
-    
-              <label for="rangeHeightStreet" class="labelHeight">Высота</label>
-              <span id="rangeHeightStreetSpan" class="spanHeight">0.96</span><span class="spanHeight"> M</span>
+              
+              <div class="range---value">
+                <label for="rangeHeightStreet" class="labelHeight">Высота</label>
+                <div class="range---value-index">
+                  <span id="rangeHeightStreetSpan" class="spanHeight">0.96</span><span class="spanHeight"> M</span>
+                </div>
+              </div>
               <input type="range" id="rangeHeightStreet" value="0.96" min="0.96" max="14.4" step="0.96">
-    
-    
+
               <div class="name-big-block">
                 <p class="name-block">Выберите шаг пикселя</p>
                 <span>
-                        <i class="fa fa-question-circle quest-pix" aria-hidden="true" id="quest-pix-street"></i>
-                      </span>
+                  <i class="fa fa-question-circle quest-pix" aria-hidden="true" id="quest-pix-street"></i>
+                </span>
               </div>
     
               <select class="select-css" id="select-step-pixel-street">
@@ -699,12 +695,12 @@
                   <a href="javascript:PopUpShow5()" class="get-room-pred-text">Получить ком. предложение</a>
                 </div>
               </div>
-    
+
               <!--<div style="margin-top: 10px;">
-                      <span class="name-block"> Введите курс доллара</span>
-                      <input type="text" id="kurs-dollar-street">
-                    </div>-->
-    
+                <span class="name-block"> Введите курс доллара</span>
+                <input type="text" id="kurs-dollar-street">
+              </div>-->
+
               <div class="result-room-block">
                 <div class="result-room-block-price">
                   <p class="result-room-block-price__caption">Цена экрана</p>
@@ -721,8 +717,7 @@
               </div>
     
             </div>
-    
-    
+
             <div class="calc-room-option" id="calc-street-option">
               <p class="name-block">Доп. параметры</p>
               <div class="calc-room-option-big-block">
@@ -793,387 +788,405 @@
                 </div>
               </div>
             </div>
-    
-            <div class="calc-room-option-help" id="calc-street-option-help">
-              <p class="name-block" id="calc-street-option-help-caption">Тест</p>
-              <p id="calc-street-option-help-text"></p>
-            </div>
-    
-            <div class="calc-room-option-help" id="step-pix-block-street">
-              <p class="name-block">Шаг пикселя</p>
-              <p>Чем меньше шаг пикселя, тем более качественное изображение можно отображать на светодиодном экране.
-    
-                Для того чтобы подобрать оптимальный шаг пикселя, в первую очередь необходимо понять место для установки экрана, во-вторых определить минимальное расстояние, с которого будет читаться изображение.
-    
-                Нет смысла выбирать шаг 3 мм, под экран с установкой на фасаде здания с минимальным расстоянием обзора 10 м.
-    
-                Минимальное расстояние (МР) от экрана до зрителя прямо пропорционально шагу пикселя (ШП).
-    
-                Например:
-                МР – 1 м = ШП – 1.2, 1.5 мм.
-                МР – 3 м = ШП – 3 мм.
-                МР – 10 м = ШП – 10мм.</p>
-            </div>
-    
           </div>
-    
-    
-          <div class="options-first-block-big">
-            <p class="caption-block">Видеоэкран для улицы</p>
-    
-            <div class="options-first-block-big-flex">
-              <div class="options-first-block">
-                <i class="fa fa-arrows-alt options-first-block__icon" aria-hidden="true"></i>
-                <div class="options-first-block-caption">
-                  <p class="options-first-block-caption__title">Размер экрана</p>
-                  <p class="options-first-block-caption__size" id="size-street">960 x 960 мм</p>
+
+          <div class="calc-room---monitor">
+            <div class="resize-container-street">
+                <div class="resize-drag-street">
+                  <video autoplay loop muted>
+                    <source src="video/smart.mp4">
+                  </video>
+                  <div class="resize-container-street---text">
+                    <span id="resize-drag-street-span">0.96 М x 0.96 М</span>
+                    <span id="resize-drag-street-span-itog">0.9216 M <sup>2</sup></span>
+                  </div>
                 </div>
-              </div>
-    
-    
-              <div class="options-first-block">
-                <i class="fa fa-picture-o options-first-block__icon" aria-hidden="true"></i>
-                <div class="options-first-block-caption">
-                  <p class="options-first-block-caption__title">Разрешение экрана</p>
-                  <p class="options-first-block-caption__size" id="resolution-street">240 x 240 px</p>
-                </div>
-              </div>
-    
-    
-              <div class="options-first-block">
-                <i class="fa fa-square options-first-block__icon" aria-hidden="true"></i>
-                <div class="options-first-block-caption">
-                  <p class="options-first-block-caption__title">Шаг пикселя</p>
-                  <p class="options-first-block-caption__size" id="step-pixel-street"></p>
-                </div>
-              </div>
-    
-    
-              <div class="options-first-block">
-                <i class="fa fa-get-pocket options-first-block__icon" aria-hidden="true"></i>
-                <div class="options-first-block-caption">
-                  <p class="options-first-block-caption__title">Гарантия</p>
-                  <p class="options-first-block-caption__size" id="safe-street"></p>
-                </div>
-              </div>
-    
-            </div>
-    
-          </div>
-    
-    
-    
-          <div class="options-second-block-big">
-            <p class="caption-block">Характеристики</p>
-    
-            <div class="options-second-block-big-photo">
-              <img src="img/1235_site-758130484.jpg">
-              <div class="options-second-block-big-photo-block">
-                <p class="caption-block caption-block-par">Параметры модуля</p>
-                <ul class="options-second-block-big-photo-block__list">
-                  <li class="options-second-block-big-photo-block__item">
-                    <span class="parname">Шаг пикселя</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="step-street">4 мм</span>
-                  </li>
-                  <li class="options-second-block-big-photo-block__item">
-                    <span class="parname">Конфигурация светодиодов</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id ="conf-street">SMD</span>
-                  </li>
-                  <li class="options-second-block-big-photo-block__item">
-                    <span class="parname">Производитель светодиодов</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="proiz-street">SMD 1921</span>
-                  </li>
-                  <li class="options-second-block-big-photo-block__item">
-                    <span class="parname">Размер модуля</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="size-street-module">256 х 128 мм</span>
-                  </li>
-                  <li class="options-second-block-big-photo-block__item">
-                    <span class="parname">Разрешение модуля</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="raz-street">32 х 64 px</span>
-                  </li>
-                  <li class="options-second-block-big-photo-block__item">
-                    <span class="parname">Контрастность</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="cont-street">3000:1</span>
-                  </li>
-                  <li class="options-second-block-big-photo-block__item">
-                    <span class="parname">Цветовая температура (°К)</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="color-street">3200 ~ 9300° K</span>
-                  </li>
-                </ul>
-              </div>
             </div>
           </div>
-    
-    
-          <div class="options-third-block-big">
-            <p class="caption-block caption-block-par">Параметры кабинета</p>
-            <div class="options-third-block-big-photo">
-              <div class="options-third-block-big-photo-block">
-                <ul class="options-third-block-big-photo-block__list">
-                  <li class="options-second-block-big-photo-block__item">
-                    <span class="parname">Размер кабинета</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="size-cab-street">768 x 768 мм</span>
-                  </li>
-                  <li class="options-third-block-big-photo-block__item">
-                    <span class="parname">Доступ для обслуживания экрана</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id ="dost-obs-street">Тыльное</span>
-                  </li>
-                  <li class="options-third-block-big-photo-block__item">
-                    <span class="parname">Вес (кг/м2)</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="weight-street">32.00</span>
-                  </li>
-                  <li class="options-third-block-big-photo-block__item">
-                    <span class="parname">Плотность пикселей на м2</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="density-street">62500</span>
-                  </li>
-                  <li class="options-third-block-big-photo-block__item">
-                    <span class="parname">Потребляемая мощность макс / сред, Вт/м2</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="power-street">1000 / 500</span>
-                  </li>
-                  <li class="options-third-block-big-photo-block__item">
-                    <span class="parname">Частота обновления (Гц)</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="frequency-update-street">960</span>
-                  </li>
-                  <li class="options-third-block-big-photo-block__item">
-                    <span class="parname">Частота кадра (Гц)</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="frequency-screen-street">50/60</span>
-                  </li>
-                </ul>
-              </div>
-              <img src="img/0020_875x492_3e6.jpg">
-            </div>
+
+          <div class="calc-room-option-help" id="calc-street-option-help">
+            <p class="name-block" id="calc-street-option-help-caption">Тест</p>
+            <p id="calc-street-option-help-text"></p>
           </div>
-    
-    
-          <div class="options-fourth-block-big">
-            <p class="caption-block-fourth caption-block-par">Параметры Экрана</p>
-            <div class="options-fourth-block-big-block">
-              <ul class="options-fourth-block-big-block__list">
+  
+          <div class="calc-room-option-help" id="step-pix-block-street">
+            <p class="name-block">Шаг пикселя</p>
+            <p>Чем меньше шаг пикселя, тем более качественное изображение можно отображать на светодиодном экране.
+  
+              Для того чтобы подобрать оптимальный шаг пикселя, в первую очередь необходимо понять место для установки экрана, во-вторых определить минимальное расстояние, с которого будет читаться изображение.
+  
+              Нет смысла выбирать шаг 3 мм, под экран с установкой на фасаде здания с минимальным расстоянием обзора 10 м.
+  
+              Минимальное расстояние (МР) от экрана до зрителя прямо пропорционально шагу пикселя (ШП).
+  
+              Например:
+              МР – 1 м = ШП – 1.2, 1.5 мм.
+              МР – 3 м = ШП – 3 мм.
+              МР – 10 м = ШП – 10мм.</p>
+          </div>
+  
+        </div>
+
+        <div class="options-first-block-big">
+          <p class="caption-block">Видеоэкран для улицы</p>
+  
+          <div class="options-first-block-big-flex">
+            <div class="options-first-block">
+              <i class="fa fa-arrows-alt options-first-block__icon" aria-hidden="true"></i>
+              <div class="options-first-block-caption">
+                <p class="options-first-block-caption__title">Размер экрана</p>
+                <p class="options-first-block-caption__size" id="size-street">960 x 960 мм</p>
+              </div>
+            </div>
+  
+  
+            <div class="options-first-block">
+              <i class="fa fa-picture-o options-first-block__icon" aria-hidden="true"></i>
+              <div class="options-first-block-caption">
+                <p class="options-first-block-caption__title">Разрешение экрана</p>
+                <p class="options-first-block-caption__size" id="resolution-street">240 x 240 px</p>
+              </div>
+            </div>
+  
+  
+            <div class="options-first-block">
+              <i class="fa fa-square options-first-block__icon" aria-hidden="true"></i>
+              <div class="options-first-block-caption">
+                <p class="options-first-block-caption__title">Шаг пикселя</p>
+                <p class="options-first-block-caption__size" id="step-pixel-street"></p>
+              </div>
+            </div>
+  
+  
+            <div class="options-first-block">
+              <i class="fa fa-get-pocket options-first-block__icon" aria-hidden="true"></i>
+              <div class="options-first-block-caption">
+                <p class="options-first-block-caption__title">Гарантия</p>
+                <p class="options-first-block-caption__size" id="safe-street"></p>
+              </div>
+            </div>
+  
+          </div>
+  
+        </div>
+
+        <div class="options-second-block-big">
+          <p class="caption-block">Характеристики</p>
+  
+          <div class="options-second-block-big-photo">
+            <img src="img/1235_site-758130484.jpg">
+            <div class="options-second-block-big-photo-block">
+              <p class="caption-block caption-block-par">Параметры модуля</p>
+              <ul class="options-second-block-big-photo-block__list">
                 <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Размер экрана</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="size-screen-street">960 x 960 мм</span>
+                  <span class="parname">Шаг пикселя</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="step-street">4 мм</span>
                 </li>
                 <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Разрешение экрана</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="resolution-screen-street">240 x 240 px</span>
+                  <span class="parname">Конфигурация светодиодов</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id ="conf-street">SMD</span>
                 </li>
                 <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Кол-во кабинетов</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="count-cab-street">1</span>
+                  <span class="parname">Производитель светодиодов</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="proiz-street">SMD 1921</span>
                 </li>
                 <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Вес экрана кг</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="weight-screen-street">32</span>
+                  <span class="parname">Размер модуля</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="size-street-module">256 х 128 мм</span>
                 </li>
                 <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Энергопотребление экрана макс / сред, Вт</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="energo-screen-street">2360 / 1180</span>
+                  <span class="parname">Разрешение модуля</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="raz-street">32 х 64 px</span>
                 </li>
                 <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Яркость кд/м2</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="bright-screen-street">>6000</span>
+                  <span class="parname">Контрастность</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="cont-street">3000:1</span>
                 </li>
                 <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Рабочее напряжение</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="work-screen-street">220V/50Hz</span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Степень защиты IP</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="protected-screen-street">IP65</span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Угол обзора</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="corner-screen-street">H=160° / V=160°</span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Температурный режим работы</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="temp-screen-street">-45°C~+50°C, влажн. до 90%</span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Срок службы светодиодов</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="srok-screen-street">>100 000</span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Площадь экрана м2</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="squar-screen-street">0.9216 M <sup>2</sup></span>
+                  <span class="parname">Цветовая температура (°К)</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="color-street">3200 ~ 9300° K</span>
                 </li>
               </ul>
             </div>
           </div>
-    
-    
-    
-          <div class="form-itog-block">
-            <div class="form-itog">
-              <p class="caption-block">Итог</p>
-              <div class="form-itog-item">
-                <span class="form-itog-item__caption">Монтаж</span>
-                <span class="form-itog-item__value">0 &#x20bd;</span>
-              </div>
-              <div class="form-itog-item">
-                <span class="form-itog-item__caption">Стоимость экрана</span>
-                <span class="form-itog-item__value" id="itog_street">90 597 &#x20bd;</span>
-              </div>
-              <div class="form-itog-item">
-                <span class="form-itog-item__caption">Управляющий компьютер</span>
-                <span class="form-itog-item__value">0 &#x20bd;</span>
-              </div>
-              <div class="form-itog-item">
-                <span class="form-itog-item__caption">Доставка</span>
-                <span class="form-itog-item__value">0 &#x20bd;</span>
-              </div>
-              <div class="form-itog-item">
-                <span class="form-itog-item__caption">Итого</span>
-                <span class="form-itog-item__value" id="itog_street_all">90 597 &#x20bd;</span>
-              </div>
+        </div>
+
+        <div class="options-third-block-big">
+          <p class="caption-block caption-block-par">Параметры кабинета</p>
+          <div class="options-third-block-big-photo">
+            <div class="options-third-block-big-photo-block">
+              <ul class="options-third-block-big-photo-block__list">
+                <li class="options-second-block-big-photo-block__item">
+                  <span class="parname">Размер кабинета</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="size-cab-street">768 x 768 мм</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Доступ для обслуживания экрана</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id ="dost-obs-street">Тыльное</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Вес (кг/м2)</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="weight-street">32.00</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Плотность пикселей на м2</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="density-street">62500</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Потребляемая мощность макс / сред, Вт/м2</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="power-street">1000 / 500</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Частота обновления (Гц)</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="frequency-update-street">960</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Частота кадра (Гц)</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="frequency-screen-street">50/60</span>
+                </li>
+              </ul>
             </div>
-    
-            <form  class="form">
+            <img src="img/0020_875x492_3e6.jpg">
+          </div>
+        </div>
+
+        <div class="options-fourth-block-big">
+          <p class="caption-block-fourth caption-block-par">Параметры Экрана</p>
+          <div class="options-fourth-block-big-block">
+            <ul class="options-fourth-block-big-block__list">
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Размер экрана</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="size-screen-street">960 x 960 мм</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Разрешение экрана</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="resolution-screen-street">240 x 240 px</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Кол-во кабинетов</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="count-cab-street">1</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Вес экрана кг</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="weight-screen-street">32</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Энергопотребление экрана макс / сред, Вт</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="energo-screen-street">2360 / 1180</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Яркость кд/м2</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="bright-screen-street">>6000</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Рабочее напряжение</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="work-screen-street">220V/50Hz</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Степень защиты IP</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="protected-screen-street">IP65</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Угол обзора</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="corner-screen-street">H=160° / V=160°</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Температурный режим работы</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="temp-screen-street">-45°C~+50°C, влажн. до 90%</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Срок службы светодиодов</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="srok-screen-street">>100 000</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Площадь экрана м2</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="squar-screen-street">0.9216 M <sup>2</sup></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="form-itog-block">
+          <div class="form-itog">
+            <p class="caption-block">Итог</p>
+            <div class="form-itog-item">
+              <span class="form-itog-item__caption">Монтаж</span>
+              <span class="form-itog-item__value">0 &#x20bd;</span>
+            </div>
+            <div class="form-itog-item">
+              <span class="form-itog-item__caption">Стоимость экрана</span>
+              <span class="form-itog-item__value" id="itog_street">90 597 &#x20bd;</span>
+            </div>
+            <div class="form-itog-item">
+              <span class="form-itog-item__caption">Управляющий компьютер</span>
+              <span class="form-itog-item__value">0 &#x20bd;</span>
+            </div>
+            <div class="form-itog-item">
+              <span class="form-itog-item__caption">Доставка</span>
+              <span class="form-itog-item__value">0 &#x20bd;</span>
+            </div>
+            <div class="form-itog-item">
+              <span class="form-itog-item__caption">Итого</span>
+              <span class="form-itog-item__value" id="itog_street_all">90 597 &#x20bd;</span>
+            </div>
+          </div>
+  
+          <form  class="form">
+            <p class="form__caption">Оформить заказ со скидкой</p>
+            <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_street">
+            <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_street">
+            <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_street">
+            <input type="button" value="Отправить" class="form__submit">
+            <div class="messages-street"></div>
+          </form>
+        </div>
+  
+        <div class="b-popup" id="popup2">
+          <form class="popupform" id="myform">
+            <div style="display: flex" class="popupform__block">
               <p class="form__caption">Оформить заказ со скидкой</p>
-              <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_street">
-              <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_street">
-              <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_street">
-              <input type="button" value="Отправить" class="form__submit">
-              <div class="messages-street"></div>
-            </form>
-          </div>
-    
-          <div class="b-popup" id="popup2">
-            <form class="popupform" id="myform">
-              <div style="display: flex" class="popupform__block">
-                <p class="form__caption">Оформить заказ со скидкой</p>
-                <a href="javascript:PopUpHide2()"><i class="fa fa-times" aria-hidden="true"></i></a>
-              </div>
-              <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_street_popup">
-              <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_street_popup">
-              <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_street_popup">
-              <input type="button" value="Отправить" class="form__submit" id="btn_submit_street_popup">
-              <div class="messages-street-popup"></div>
-            </form>
-          </div>
-    
-          <div class="b-popup" id="popup5">
-            <form class="popupform" id="myform">
-              <div style="display: flex" class="popupform__block">
-                <p class="form__caption">Получить коммерческое предложение</p>
-                <a href="javascript:PopUpHide5()"><i class="fa fa-times" aria-hidden="true"></i></a>
-              </div>
-              <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_room_popup_com">
-              <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_room_popup_com">
-              <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_room_popup_com">
-              <div class="result-room-block">
-                <div class="result-room-block-price">
-                  <p class="result-room-block-price__caption">Цена экрана</p>
-                  <p class="result-room-block-price__price" id="result-room-block-price__price-com">89 203 ₽</p>
-                </div>
-                <div class="result-room-block-size">
-                  <p class="result-room-block-price__caption">Площадь экрана</p>
-                  <p class="result-room-block-price__size" id="result-room-block-size__size-com">0.9216 M <sup>2</sup></p>
-                </div>
-              </div>
-              <input type="button" value="Отправить" class="form__submit" id="btn_submit_room_popup_com">
-              <div class="messages-room-popup"></div>
-            </form>
-          </div>
-    
-    
-    
-          <div class="resize-container-street">
-            <div class="resize-drag-street">
-              <video autoplay loop muted>
-                <source src="video/smart.mp4">
-              </video>
-              <span id="resize-drag-street-span">0.96 М x 0.96 М</span>
-              <span id="resize-drag-street-span-itog">0.9216 M <sup>2</sup></span>
+              <a href="javascript:PopUpHide2()"><i class="fa fa-times" aria-hidden="true"></i></a>
             </div>
+            <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_street_popup">
+            <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_street_popup">
+            <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_street_popup">
+            <input type="button" value="Отправить" class="form__submit" id="btn_submit_street_popup">
+            <div class="messages-street-popup"></div>
+          </form>
+        </div>
+  
+        <div class="b-popup" id="popup5">
+          <form class="popupform" id="myform">
+            <div style="display: flex" class="popupform__block">
+              <p class="form__caption">Получить коммерческое предложение</p>
+              <a href="javascript:PopUpHide5()"><i class="fa fa-times" aria-hidden="true"></i></a>
+            </div>
+            <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_room_popup_com">
+            <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_room_popup_com">
+            <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_room_popup_com">
+            <div class="result-room-block">
+              <div class="result-room-block-price">
+                <p class="result-room-block-price__caption">Цена экрана</p>
+                <p class="result-room-block-price__price" id="result-room-block-price__price-com">89 203 ₽</p>
+              </div>
+              <div class="result-room-block-size">
+                <p class="result-room-block-price__caption">Площадь экрана</p>
+                <p class="result-room-block-price__size" id="result-room-block-size__size-com">0.9216 M <sup>2</sup></p>
+              </div>
+            </div>
+            <input type="button" value="Отправить" class="form__submit" id="btn_submit_room_popup_com">
+            <div class="messages-room-popup"></div>
+          </form>
+        </div>
+
+        <div class="resize-container-street">
+          <div class="resize-drag-street">
+            <video autoplay loop muted>
+              <source src="video/smart.mp4">
+            </video>
+            <span id="resize-drag-street-span">0.96 М x 0.96 М</span>
+            <span id="resize-drag-street-span-itog">0.9216 M <sup>2</sup></span>
           </div>
-    
-    </section>
+        </div>
+
+      </section>
       <!-- /TAB2 -->
     </div>
     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
       <!-- TAB3 -->
       <section class="tab-content">
 
-          <div class="form-media">
-            <div class="switch-street" style="display: none;">
-              <p id="switch-street-day">День</p>
-              <p id="switch-street-night">Ночь</p>
+        <div class="form-media">
+          <div class="calc-room---form">
+
+          <div class="switch-street" style="display: none;">
+            <p id="switch-street-day">День</p>
+            <p id="switch-street-night">Ночь</p>
+          </div>
+  
+          <div class="calc-media">
+
+            <div class="calc-room__caption-block">
+              <p class="name-block">Размер экрана</p>
+              <button id="option-block-media"><i class="fa fa-arrow-right" aria-hidden="true"></i>Доп.параметры</button>
             </div>
-    
-            <div class="calc-media">
-              <div class="calc-room__caption-block">
-                <p class="name-block">Размер экрана</p>
-                <button id="option-block-media"><i class="fa fa-arrow-right" aria-hidden="true"></i>Доп.параметры</button>
-              </div>
+
+            <div class="range---value">
               <label for="rangeWidthMedia" class="labelWidth">Ширина</label>
-              <span id="rangeWidthMediaSpan" class="spanWidth">1</span><span class="spanWidth"> M</span>
-              <input type="range" id="rangeWidthMedia" value="1" min="1" max="50" step="1">
-    
-    
+              <div class="range---value-index">
+                <span id="rangeWidthMediaSpan" class="spanWidth">1</span><span class="spanWidth"> M</span>
+              </div>
+            </div>
+            <input type="range" id="rangeWidthMedia" value="1" min="1" max="50" step="1">
+            
+            <div class="range---value">
               <label for="rangeHeightMedia" class="labelHeight">Высота</label>
-              <span id="rangeHeightMediaSpan" class="spanHeight">1</span><span class="spanHeight"> M</span>
-              <input type="range" id="rangeHeightMedia" value="1" min="1" max="50" step="1">
-    
-              <div class="name-big-block">
-                <p class="name-block">Выберите шаг пикселя</p>
-                <span>
-                          <i class="fa fa-question-circle quest-pix" aria-hidden="true" id="quest-pix-media"></i>
-                        </span>
+              <div class="range---value-index">
+                <span id="rangeHeightMediaSpan" class="spanHeight">1</span><span class="spanHeight"> M</span>
               </div>
-    
-              <select class="select-css" id="select-step-pixel-media">
-                <option value="25">25x25</option>
-                <option value="50">50x25</option>
-                <option value="31">31x31</option>
-                <option value="10.4">10.4x13.8</option>
-                <option value="15.6">15.6x15.6</option>
-                <option value="15.63">15.63x31.25</option>
-                <option value="16.6">16.6x16.6</option>
-              </select>
-    
-              <select class="select-css select-module" id="select-module-media">
-                <option>HD-XL-P 25 x 25 (прозрачность 60%)</option>
-              </select>
-    
-              <p class="name-block">Выберите яркость</p>
-              <select class="select-css">
-                <option>Яркий</option>
-                <option>Повышеная яркость</option>
-              </select>
-    
-              <div class="block-inline">
-                <p class="name-block">Гарантия</p>
-                <a href="javascript:PopUpShow3()">Бесплатный выезд замерщика</a>
-              </div>
-    
-              <div class="warranty-room-big-block">
+            </div>
+            <input type="range" id="rangeHeightMedia" value="1" min="1" max="50" step="1">
+  
+            <div class="name-big-block">
+              <p class="name-block">Выберите шаг пикселя</p>
+              <span>
+                <i class="fa fa-question-circle quest-pix" aria-hidden="true" id="quest-pix-media"></i>
+              </span>
+            </div>
+  
+            <select class="select-css" id="select-step-pixel-media">
+              <option value="25">25x25</option>
+              <option value="50">50x25</option>
+              <option value="31">31x31</option>
+              <option value="10.4">10.4x13.8</option>
+              <option value="15.6">15.6x15.6</option>
+              <option value="15.63">15.63x31.25</option>
+              <option value="16.6">16.6x16.6</option>
+            </select>
+  
+            <select class="select-css select-module" id="select-module-media">
+              <option>HD-XL-P 25 x 25 (прозрачность 60%)</option>
+            </select>
+  
+            <p class="name-block">Выберите яркость</p>
+            <select class="select-css">
+              <option>Яркий</option>
+              <option>Повышеная яркость</option>
+            </select>
+  
+            <div class="block-inline">
+              <p class="name-block">Гарантия</p>
+              <a href="javascript:PopUpShow3()">Бесплатный выезд замерщика</a>
+            </div>
+  
+            <div class="warranty-room-big-block">
+              <div class="warranty-room-big-block---year">
                 <div class="warranty-room-block">
                   <input type="radio" name="warranty-media" id="warranty-media1" class="warranty-room__radio" value="1" checked>
                   <label for="warranty-media1"><span></span>1 год</label>
@@ -1186,441 +1199,424 @@
                   <input type="radio" name="warranty-media" id="warranty-media3" class="warranty-room__radio" value="3">
                   <label for="warranty-media3"><span></span>3 года</label>
                 </div>
-                <div class="get-room-pred">
-                  <a href="javascript:PopUpShow6()" class="get-room-pred-text">Получить ком. предложение</a>
-                </div>
               </div>
-    
-    
-              <!--<div style="margin-top: 10px;">
-                        <span class="name-block"> Введите курс доллара</span>
-                        <input type="text" id="kurs-dollar-media">
-                      </div>-->
-    
-              <div class="result-room-block">
-                <div class="result-room-block-price">
-                  <p class="result-room-block-price__caption">Цена экрана</p>
-                  <p class="result-room-block-price__price" id="result-media-block-price__price">121 400 &#x20bd;</p>
-                </div>
-                <div class="result-room-block-price" style="display: none">
-                  <p class="result-room-block-price__caption">Цена экрана в $</p>
-                  <p class="result-room-block-price__price" id="result-media-block-price__price-dollar">0 $</p>
-                </div>
-                <div class="result-room-block-size">
-                  <p class="result-room-block-price__caption">Площадь экрана</p>
-                  <p class="result-room-block-price__size" id="result-media-block-size__size">1 М <sup>2</sup></p>
-                </div>
-              </div>
-    
-            </div>
-    
-    
-            <div class="calc-room-option" id="calc-media-option">
-              <p class="name-block">Доп. параметры</p>
-              <div class="calc-room-option-big-block">
-                <div class="calc-room-option-block">
-                  <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option1">
-                  <label for="calc-media-option1"><span></span>Управляющий компьютер</label>
-                  <i class="fa fa-question-circle" aria-hidden="true" value="Управляющий компьютер" name="dop-options-media"></i>
-                </div>
-                <div class="calc-room-option-block">
-                  <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option2">
-                  <label for="calc-media-option2"><span></span>Отправляющий контроллер</label>
-                  <i class="fa fa-question-circle" aria-hidden="true" value="Отправляющий контроллер" name="dop-options-media"></i>
-                </div>
-                <div class="calc-room-option-block">
-                  <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option3">
-                  <label for="calc-media-option3"><span></span>Wi-Fi модуль</label>
-                  <i class="fa fa-question-circle" aria-hidden="true" value="Wi-Fi модуль" name="dop-options-media"></i>
-                </div>
-                <div class="calc-room-option-block">
-                  <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option4">
-                  <label for="calc-media-option4"><span></span>Датчик яркости</label>
-                  <i class="fa fa-question-circle" aria-hidden="true" value="Датчик яркости" name="dop-options-media"></i>
-                </div>
-                <div class="calc-room-option-block">
-                  <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option5">
-                  <label for="calc-media-option5"><span></span>Датчик температуры</label>
-                  <i class="fa fa-question-circle" aria-hidden="true" value="Датчик температуры" name="dop-options-media"></i>
-                </div>
-                <div class="calc-room-option-block">
-                  <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option6">
-                  <label for="calc-media-option6"><span></span>Видеопроцессор</label>
-                  <i class="fa fa-question-circle" aria-hidden="true" value="Видеопроцессор" name="dop-options-media"></i>
-                </div>
-              </div>
-    
-    
-              <p class="name-block">Монтаж</p>
-              <div class="calc-room-option-big-block">
-                <div class="calc-room-option-block">
-                  <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option7">
-                  <label for="calc-media-option7"><span></span>Электрощитовая</label>
-                  <i class="fa fa-question-circle" aria-hidden="true" value="Электрощитовая" name="dop-options-media"></i>
-                </div>
-                <div class="calc-room-option-block">
-                  <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option8">
-                  <label for="calc-media-option8"><span></span>Шефмонтаж</label>
-                  <i class="fa fa-question-circle" aria-hidden="true" value="Шефмонтаж" name="dop-options-media"></i>
-                </div>
-                <div class="calc-room-option-block">
-                  <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-media9">
-                  <label for="calc-media-option9"><span></span>Монтаж оборудования</label>
-                  <i class="fa fa-question-circle" aria-hidden="true" value="Монтаж оборудования" name="dop-options-media"></i>
-                </div>
-                <div class="calc-room-option-block">
-                  <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option10">
-                  <label for="calc-media-option10"><span></span>Изгот. металлоконструкции</label>
-                  <i class="fa fa-question-circle" aria-hidden="true" value="Изгот. металлоконструкции" name="dop-options-media"></i>
-                </div>
-                <div class="calc-room-option-block">
-                  <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option11">
-                  <label for="calc-media-option11"><span></span>Монтаж металлоконструкций</label>
-                  <i class="fa fa-question-circle" aria-hidden="true" value="Монтаж металлоконструкций" name="dop-options-media"></i>
-                </div>
-                <div class="calc-room-option-block">
-                  <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option12">
-                  <label for="calc-media-option12"><span></span>Набор запасных частей</label>
-                  <i class="fa fa-question-circle" aria-hidden="true" value="Набор запасных частей" name="dop-options-media"></i>
-                </div>
+              <div class="get-room-pred">
+                <a href="javascript:PopUpShow6()" class="get-room-pred-text">Получить ком. предложение</a>
               </div>
             </div>
-    
-            <div class="calc-room-option-help" id="calc-media-option-help">
-              <p class="name-block" id="calc-media-option-help-caption">Тест</p>
-              <p id="calc-media-option-help-text"></p>
+
+            <!--<div style="margin-top: 10px;">
+              <span class="name-block"> Введите курс доллара</span>
+              <input type="text" id="kurs-dollar-media">
+            </div>-->
+  
+            <div class="result-room-block">
+              <div class="result-room-block-price">
+                <p class="result-room-block-price__caption">Цена экрана</p>
+                <p class="result-room-block-price__price" id="result-media-block-price__price">121 400 &#x20bd;</p>
+              </div>
+              <div class="result-room-block-price" style="display: none">
+                <p class="result-room-block-price__caption">Цена экрана в $</p>
+                <p class="result-room-block-price__price" id="result-media-block-price__price-dollar">0 $</p>
+              </div>
+              <div class="result-room-block-size">
+                <p class="result-room-block-price__caption">Площадь экрана</p>
+                <p class="result-room-block-price__size" id="result-media-block-size__size">1 М <sup>2</sup></p>
+              </div>
             </div>
-    
-    
-            <div class="calc-room-option-help" id="step-pix-block-media">
-              <p class="name-block">Шаг пикселя</p>
-              <p>Чем меньше шаг пикселя, тем более качественное изображение можно отображать на светодиодном экране.
-    
-                Для того чтобы подобрать оптимальный шаг пикселя, в первую очередь необходимо понять место для установки экрана, во-вторых определить минимальное расстояние, с которого будет читаться изображение.
-    
-                Нет смысла выбирать шаг 3 мм, под экран с установкой на фасаде здания с минимальным расстоянием обзора 10 м.
-    
-                Минимальное расстояние (МР) от экрана до зрителя прямо пропорционально шагу пикселя (ШП).
-    
-                Например:
-                МР – 1 м = ШП – 1.2, 1.5 мм.
-                МР – 3 м = ШП – 3 мм.
-                МР – 10 м = ШП – 10мм.</p>
-            </div>
-    
+  
           </div>
-    
-    
-          <div class="options-first-block-big">
-            <p class="caption-block">Медиафасад</p>
-            <p id="name-media-module-p" class="caption-block-n">HD-XL-P 25 x 25 (прозрачность 60%)</p>
-    
-            <div class="options-first-block-big-flex">
-              <div class="options-first-block">
-                <i class="fa fa-arrows-alt options-first-block__icon" aria-hidden="true"></i>
-                <div class="options-first-block-caption">
-                  <p class="options-first-block-caption__title">Размер экрана</p>
-                  <p class="options-first-block-caption__size" id="size-media"></p>
-                </div>
+
+          <div class="calc-room-option" id="calc-media-option">
+            <p class="name-block">Доп. параметры</p>
+            <div class="calc-room-option-big-block">
+              <div class="calc-room-option-block">
+                <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option1">
+                <label for="calc-media-option1"><span></span>Управляющий компьютер</label>
+                <i class="fa fa-question-circle" aria-hidden="true" value="Управляющий компьютер" name="dop-options-media"></i>
               </div>
-    
-    
-              <div class="options-first-block">
-                <i class="fa fa-picture-o options-first-block__icon" aria-hidden="true"></i>
-                <div class="options-first-block-caption">
-                  <p class="options-first-block-caption__title">Разрешение экрана</p>
-                  <p class="options-first-block-caption__size" id="resolution-media"></p>
-                </div>
+              <div class="calc-room-option-block">
+                <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option2">
+                <label for="calc-media-option2"><span></span>Отправляющий контроллер</label>
+                <i class="fa fa-question-circle" aria-hidden="true" value="Отправляющий контроллер" name="dop-options-media"></i>
               </div>
-    
-    
-              <div class="options-first-block">
-                <i class="fa fa-square options-first-block__icon" aria-hidden="true"></i>
-                <div class="options-first-block-caption">
-                  <p class="options-first-block-caption__title">Шаг пикселя</p>
-                  <p class="options-first-block-caption__size" id="step-pixel-media"></p>
-                </div>
+              <div class="calc-room-option-block">
+                <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option3">
+                <label for="calc-media-option3"><span></span>Wi-Fi модуль</label>
+                <i class="fa fa-question-circle" aria-hidden="true" value="Wi-Fi модуль" name="dop-options-media"></i>
               </div>
-    
-    
-              <div class="options-first-block">
-                <i class="fa fa-get-pocket options-first-block__icon" aria-hidden="true"></i>
-                <div class="options-first-block-caption">
-                  <p class="options-first-block-caption__title">Гарантия</p>
-                  <p class="options-first-block-caption__size" id="safe-media"></p>
-                </div>
+              <div class="calc-room-option-block">
+                <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option4">
+                <label for="calc-media-option4"><span></span>Датчик яркости</label>
+                <i class="fa fa-question-circle" aria-hidden="true" value="Датчик яркости" name="dop-options-media"></i>
               </div>
-    
+              <div class="calc-room-option-block">
+                <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option5">
+                <label for="calc-media-option5"><span></span>Датчик температуры</label>
+                <i class="fa fa-question-circle" aria-hidden="true" value="Датчик температуры" name="dop-options-media"></i>
+              </div>
+              <div class="calc-room-option-block">
+                <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option6">
+                <label for="calc-media-option6"><span></span>Видеопроцессор</label>
+                <i class="fa fa-question-circle" aria-hidden="true" value="Видеопроцессор" name="dop-options-media"></i>
+              </div>
             </div>
-    
-          </div>
-    
-    
-          <div class="options-second-block-big">
-            <p class="caption-block">Характеристики</p>
-    
-            <div class="options-second-block-big-photo">
-              <img src="img/1235_site-758130484.jpg">
-              <div class="options-second-block-big-photo-block">
-                <p class="caption-block caption-block-par">Параметры модуля</p>
-                <ul class="options-second-block-big-photo-block__list">
-                  <li class="options-second-block-big-photo-block__item">
-                    <span class="parname">Шаг пикселя</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="step-media">25 мм</span>
-                  </li>
-                  <li class="options-second-block-big-photo-block__item">
-                    <span class="parname">Конфигурация светодиодов</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id ="conf-media">DIP 1R1G1B</span>
-                  </li>
-                  <li class="options-second-block-big-photo-block__item">
-                    <span class="parname">Производитель светодиодов</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="proiz-media">Xinda</span>
-                  </li>
-                  <li class="options-second-block-big-photo-block__item">
-                    <span class="parname">Размер модуля</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="size-media-module">1200 х 1200 мм</span>
-                  </li>
-                  <li class="options-second-block-big-photo-block__item">
-                    <span class="parname">Разрешение модуля</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="raz-media">48 х 48 px</span>
-                  </li>
-                  <li class="options-second-block-big-photo-block__item">
-                    <span class="parname">Контрастность</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="cont-media">3000:1</span>
-                  </li>
-                  <li class="options-second-block-big-photo-block__item">
-                    <span class="parname">Цветовая температура (°К)</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="color-media">3200 ~ 9300° K</span>
-                  </li>
-                </ul>
+  
+  
+            <p class="name-block">Монтаж</p>
+            <div class="calc-room-option-big-block">
+              <div class="calc-room-option-block">
+                <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option7">
+                <label for="calc-media-option7"><span></span>Электрощитовая</label>
+                <i class="fa fa-question-circle" aria-hidden="true" value="Электрощитовая" name="dop-options-media"></i>
+              </div>
+              <div class="calc-room-option-block">
+                <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option8">
+                <label for="calc-media-option8"><span></span>Шефмонтаж</label>
+                <i class="fa fa-question-circle" aria-hidden="true" value="Шефмонтаж" name="dop-options-media"></i>
+              </div>
+              <div class="calc-room-option-block">
+                <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option9">
+                <label for="calc-media-option9"><span></span>Монтаж оборудования</label>
+                <i class="fa fa-question-circle" aria-hidden="true" value="Монтаж оборудования" name="dop-options-media"></i>
+              </div>
+              <div class="calc-room-option-block">
+                <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option10">
+                <label for="calc-media-option10"><span></span>Изгот. металлоконструкции</label>
+                <i class="fa fa-question-circle" aria-hidden="true" value="Изгот. металлоконструкции" name="dop-options-media"></i>
+              </div>
+              <div class="calc-room-option-block">
+                <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option11">
+                <label for="calc-media-option11"><span></span>Монтаж металлоконструкций</label>
+                <i class="fa fa-question-circle" aria-hidden="true" value="Монтаж металлоконструкций" name="dop-options-media"></i>
+              </div>
+              <div class="calc-room-option-block">
+                <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option12">
+                <label for="calc-media-option12"><span></span>Набор запасных частей</label>
+                <i class="fa fa-question-circle" aria-hidden="true" value="Набор запасных частей" name="dop-options-media"></i>
               </div>
             </div>
           </div>
-    
-    
-          <div class="options-third-block-big">
-            <p class="caption-block caption-block-par">Параметры кабинета</p>
-            <div class="options-third-block-big-photo">
-              <div class="options-third-block-big-photo-block">
-                <ul class="options-third-block-big-photo-block__list">
-                  <li class="options-second-block-big-photo-block__item">
-                    <span class="parname">Размер кабинета</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="size-cab-media">640 x 640 мм</span>
-                  </li>
-                  <li class="options-third-block-big-photo-block__item">
-                    <span class="parname">Доступ для обслуживания экрана</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id ="dost-obs-media">Фронтальное/с тыльной стороны</span>
-                  </li>
-                  <li class="options-third-block-big-photo-block__item">
-                    <span class="parname">Вес (кг/м2)</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="weight-media">38.00</span>
-                  </li>
-                  <li class="options-third-block-big-photo-block__item">
-                    <span class="parname">Плотность пикселей на м2</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="density-media">1600</span>
-                  </li>
-                  <li class="options-third-block-big-photo-block__item">
-                    <span class="parname">Потребляемая мощность макс / сред, Вт/м2</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="power-media">550 / 230</span>
-                  </li>
-                  <li class="options-third-block-big-photo-block__item">
-                    <span class="parname">Частота обновления (Гц)</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="frequency-update-media">3840</span>
-                  </li>
-                  <li class="options-third-block-big-photo-block__item">
-                    <span class="parname">Частота кадра (Гц)</span>
-                    <span class="dotted"></span>
-                    <span class="parval" id="frequency-screen-media">50/60</span>
-                  </li>
-                </ul>
-              </div>
-              <img src="img/0020_875x492_3e6.jpg">
-            </div>
-          </div>
-    
-    
-          <div class="options-fourth-block-big">
-            <p class="caption-block-fourth caption-block-par">Параметры Экрана</p>
-            <div class="options-fourth-block-big-block">
-              <ul class="options-fourth-block-big-block__list">
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Размер экрана</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="size-screen-media"></span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Разрешение экрана</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="resolution-screen-media"></span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Кол-во кабинетов</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="count-cab-media">1</span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Вес экрана кг</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="weight-screen-media">38</span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Энергопотребление экрана макс / сред, Вт</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="energo-screen-media">550 / 230</span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Яркость кд/м2</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="bright-screen-media">>6500</span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Рабочее напряжение</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="work-screen-media">220V/50Hz</span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Степень защиты IP</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="protected-screen-media">IP65</span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Угол обзора</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="corner-screen-media">H=120° / V=60°</span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Температурный режим работы</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="temp-screen-media">-40°C~+60°C, влажн. 10% - 90% RH</span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Срок службы светодиодов</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="srok-screen-media">>100 000</span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname-fourth">Площадь экрана м2</span>
-                  <span class="dotted-fourth"></span>
-                  <span class="parval-fourth" id="squar-screen-media">1 М <sup>2</sup></span>
-                </li>
-              </ul>
-            </div>
-          </div>
-    
-    
-          <div class="form-itog-block">
-            <div class="form-itog">
-              <p class="caption-block">Итог</p>
-              <div class="form-itog-item">
-                <span class="form-itog-item__caption">Монтаж</span>
-                <span class="form-itog-item__value">0 &#x20bd;</span>
-              </div>
-              <div class="form-itog-item">
-                <span class="form-itog-item__caption">Стоимость экрана</span>
-                <span class="form-itog-item__value" id="itog_media">124 472 &#x20bd;</span>
-              </div>
-              <div class="form-itog-item">
-                <span class="form-itog-item__caption">Управляющий компьютер</span>
-                <span class="form-itog-item__value">0 &#x20bd;</span>
-              </div>
-              <div class="form-itog-item">
-                <span class="form-itog-item__caption">Доставка</span>
-                <span class="form-itog-item__value">0 &#x20bd;</span>
-              </div>
-              <div class="form-itog-item">
-                <span class="form-itog-item__caption">Итого</span>
-                <span class="form-itog-item__value" id="itog_media_all">124 472 &#x20bd;</span>
-              </div>
-            </div>
-    
-            <form action="send.php" method="post" class="form">
-              <p class="form__caption">Оформить заказ со скидкой</p>
-              <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_media">
-              <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_media">
-              <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_media">
-              <input type="submit" value="Отправить" class="form__submit">
-              <div class="messages-media"></div>
-            </form>
-          </div>
-    
-    
-    
-    
-          <div class="b-popup" id="popup3">
-            <form class="popupform" id="myform">
-              <div style="display: flex" class="popupform__block">
-                <p class="form__caption">Оформить заказ со скидкой</p>
-                <a href="javascript:PopUpHide3()"><i class="fa fa-times" aria-hidden="true"></i></a>
-              </div>
-              <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_media_popup">
-              <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_media_popup">
-              <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_media_popup">
-              <input type="button" value="Отправить" class="form__submit" id="btn_submit_media_popup">
-              <div class="messages-media-popup"></div>
-            </form>
-          </div>
-    
-          <div class="b-popup" id="popup6">
-            <form class="popupform" id="myform">
-              <div style="display: flex" class="popupform__block">
-                <p class="form__caption">Получить коммерческое предложение</p>
-                <a href="javascript:PopUpHide6()"><i class="fa fa-times" aria-hidden="true"></i></a>
-              </div>
-              <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_room_popup_com">
-              <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_room_popup_com">
-              <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_room_popup_com">
-              <div class="result-room-block">
-                <div class="result-room-block-price">
-                  <p class="result-room-block-price__caption">Цена экрана</p>
-                  <p class="result-room-block-price__price" id="result-room-block-price__price-com">122 557 ₽</p>
-                </div>
-                <div class="result-room-block-size">
-                  <p class="result-room-block-price__caption">Площадь экрана</p>
-                  <p class="result-room-block-price__size" id="result-room-block-size__size-com">0.9216 M <sup>2</sup></p>
-                </div>
-              </div>
-              <input type="button" value="Отправить" class="form__submit" id="btn_submit_room_popup_com">
-              <div class="messages-room-popup"></div>
-            </form>
-          </div>
-    
-    
+        </div>
+
+        <div class="calc-room---monitor">
           <div class="resize-container-media">
             <div class="resize-drag-media">
               <video autoplay loop muted>
                 <source src="video/smart.mp4">
               </video>
-              <span id="resize-drag-media-span">1 М x 1 М</span>
-              <span id="resize-drag-media-span-itog">1 M <sup>2</sup></span>
+              <div class="resize-container---text">
+                <span id="resize-drag-media-span">1 М x 1 М</span>
+                <span id="resize-drag-media-span-itog">1 M <sup>2</sup></span>
+              </div>
             </div>
           </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-        </section>
+        </div>
+  
+        <div class="calc-room-option-help" id="calc-media-option-help">
+          <p class="name-block" id="calc-media-option-help-caption">Тест</p>
+          <p id="calc-media-option-help-text"></p>
+        </div>
+  
+  
+        <div class="calc-room-option-help" id="step-pix-block-media">
+          <p class="name-block">Шаг пикселя</p>
+          <p>Чем меньше шаг пикселя, тем более качественное изображение можно отображать на светодиодном экране.
+
+            Для того чтобы подобрать оптимальный шаг пикселя, в первую очередь необходимо понять место для установки экрана, во-вторых определить минимальное расстояние, с которого будет читаться изображение.
+
+            Нет смысла выбирать шаг 3 мм, под экран с установкой на фасаде здания с минимальным расстоянием обзора 10 м.
+
+            Минимальное расстояние (МР) от экрана до зрителя прямо пропорционально шагу пикселя (ШП).
+
+            Например:
+            МР – 1 м = ШП – 1.2, 1.5 мм.
+            МР – 3 м = ШП – 3 мм.
+            МР – 10 м = ШП – 10мм.</p>
+        </div>
+  
+        </div>
+  
+        <div class="options-first-block-big">
+          <p class="caption-block">Медиафасад</p>
+          <p id="name-media-module-p" class="caption-block-n">HD-XL-P 25 x 25 (прозрачность 60%)</p>
+  
+          <div class="options-first-block-big-flex">
+            <div class="options-first-block">
+              <i class="fa fa-arrows-alt options-first-block__icon" aria-hidden="true"></i>
+              <div class="options-first-block-caption">
+                <p class="options-first-block-caption__title">Размер экрана</p>
+                <p class="options-first-block-caption__size" id="size-media"></p>
+              </div>
+            </div>
+  
+  
+            <div class="options-first-block">
+              <i class="fa fa-picture-o options-first-block__icon" aria-hidden="true"></i>
+              <div class="options-first-block-caption">
+                <p class="options-first-block-caption__title">Разрешение экрана</p>
+                <p class="options-first-block-caption__size" id="resolution-media"></p>
+              </div>
+            </div>
+  
+  
+            <div class="options-first-block">
+              <i class="fa fa-square options-first-block__icon" aria-hidden="true"></i>
+              <div class="options-first-block-caption">
+                <p class="options-first-block-caption__title">Шаг пикселя</p>
+                <p class="options-first-block-caption__size" id="step-pixel-media"></p>
+              </div>
+            </div>
+  
+  
+            <div class="options-first-block">
+              <i class="fa fa-get-pocket options-first-block__icon" aria-hidden="true"></i>
+              <div class="options-first-block-caption">
+                <p class="options-first-block-caption__title">Гарантия</p>
+                <p class="options-first-block-caption__size" id="safe-media"></p>
+              </div>
+            </div>
+  
+          </div>
+  
+        </div>
+
+        <div class="options-second-block-big">
+          <p class="caption-block">Характеристики</p>
+  
+          <div class="options-second-block-big-photo">
+            <img src="img/1235_site-758130484.jpg">
+            <div class="options-second-block-big-photo-block">
+              <p class="caption-block caption-block-par">Параметры модуля</p>
+              <ul class="options-second-block-big-photo-block__list">
+                <li class="options-second-block-big-photo-block__item">
+                  <span class="parname">Шаг пикселя</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="step-media">25 мм</span>
+                </li>
+                <li class="options-second-block-big-photo-block__item">
+                  <span class="parname">Конфигурация светодиодов</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id ="conf-media">DIP 1R1G1B</span>
+                </li>
+                <li class="options-second-block-big-photo-block__item">
+                  <span class="parname">Производитель светодиодов</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="proiz-media">Xinda</span>
+                </li>
+                <li class="options-second-block-big-photo-block__item">
+                  <span class="parname">Размер модуля</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="size-media-module">1200 х 1200 мм</span>
+                </li>
+                <li class="options-second-block-big-photo-block__item">
+                  <span class="parname">Разрешение модуля</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="raz-media">48 х 48 px</span>
+                </li>
+                <li class="options-second-block-big-photo-block__item">
+                  <span class="parname">Контрастность</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="cont-media">3000:1</span>
+                </li>
+                <li class="options-second-block-big-photo-block__item">
+                  <span class="parname">Цветовая температура (°К)</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="color-media">3200 ~ 9300° K</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="options-third-block-big">
+          <p class="caption-block caption-block-par">Параметры кабинета</p>
+          <div class="options-third-block-big-photo">
+            <div class="options-third-block-big-photo-block">
+              <ul class="options-third-block-big-photo-block__list">
+                <li class="options-second-block-big-photo-block__item">
+                  <span class="parname">Размер кабинета</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="size-cab-media">640 x 640 мм</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Доступ для обслуживания экрана</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id ="dost-obs-media">Фронтальное/с тыльной стороны</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Вес (кг/м2)</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="weight-media">38.00</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Плотность пикселей на м2</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="density-media">1600</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Потребляемая мощность макс / сред, Вт/м2</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="power-media">550 / 230</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Частота обновления (Гц)</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="frequency-update-media">3840</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Частота кадра (Гц)</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="frequency-screen-media">50/60</span>
+                </li>
+              </ul>
+            </div>
+            <img src="img/0020_875x492_3e6.jpg">
+          </div>
+        </div>
+
+        <div class="options-fourth-block-big">
+          <p class="caption-block-fourth caption-block-par">Параметры Экрана</p>
+          <div class="options-fourth-block-big-block">
+            <ul class="options-fourth-block-big-block__list">
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Размер экрана</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="size-screen-media"></span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Разрешение экрана</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="resolution-screen-media"></span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Кол-во кабинетов</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="count-cab-media">1</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Вес экрана кг</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="weight-screen-media">38</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Энергопотребление экрана макс / сред, Вт</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="energo-screen-media">550 / 230</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Яркость кд/м2</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="bright-screen-media">>6500</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Рабочее напряжение</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="work-screen-media">220V/50Hz</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Степень защиты IP</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="protected-screen-media">IP65</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Угол обзора</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="corner-screen-media">H=120° / V=60°</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Температурный режим работы</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="temp-screen-media">-40°C~+60°C, влажн. 10% - 90% RH</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Срок службы светодиодов</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="srok-screen-media">>100 000</span>
+              </li>
+              <li class="options-second-block-big-photo-block__item">
+                <span class="parname-fourth">Площадь экрана м2</span>
+                <span class="dotted-fourth"></span>
+                <span class="parval-fourth" id="squar-screen-media">1 М <sup>2</sup></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="form-itog-block">
+          <div class="form-itog">
+            <p class="caption-block">Итог</p>
+            <div class="form-itog-item">
+              <span class="form-itog-item__caption">Монтаж</span>
+              <span class="form-itog-item__value">0 &#x20bd;</span>
+            </div>
+            <div class="form-itog-item">
+              <span class="form-itog-item__caption">Стоимость экрана</span>
+              <span class="form-itog-item__value" id="itog_media">124 472 &#x20bd;</span>
+            </div>
+            <div class="form-itog-item">
+              <span class="form-itog-item__caption">Управляющий компьютер</span>
+              <span class="form-itog-item__value">0 &#x20bd;</span>
+            </div>
+            <div class="form-itog-item">
+              <span class="form-itog-item__caption">Доставка</span>
+              <span class="form-itog-item__value">0 &#x20bd;</span>
+            </div>
+            <div class="form-itog-item">
+              <span class="form-itog-item__caption">Итого</span>
+              <span class="form-itog-item__value" id="itog_media_all">124 472 &#x20bd;</span>
+            </div>
+          </div>
+  
+          <form action="send.php" method="post" class="form">
+            <p class="form__caption">Оформить заказ со скидкой</p>
+            <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_media">
+            <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_media">
+            <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_media">
+            <input type="submit" value="Отправить" class="form__submit">
+            <div class="messages-media"></div>
+          </form>
+        </div>
+
+        <div class="b-popup" id="popup3">
+          <form class="popupform" id="myform">
+            <div style="display: flex" class="popupform__block">
+              <p class="form__caption">Оформить заказ со скидкой</p>
+              <a href="javascript:PopUpHide3()"><i class="fa fa-times" aria-hidden="true"></i></a>
+            </div>
+            <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_media_popup">
+            <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_media_popup">
+            <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_media_popup">
+            <input type="button" value="Отправить" class="form__submit" id="btn_submit_media_popup">
+            <div class="messages-media-popup"></div>
+          </form>
+        </div>
+  
+        <div class="b-popup" id="popup6">
+          <form class="popupform" id="myform">
+            <div style="display: flex" class="popupform__block">
+              <p class="form__caption">Получить коммерческое предложение</p>
+              <a href="javascript:PopUpHide6()"><i class="fa fa-times" aria-hidden="true"></i></a>
+            </div>
+            <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_room_popup_com">
+            <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_room_popup_com">
+            <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_room_popup_com">
+            <div class="result-room-block">
+              <div class="result-room-block-price">
+                <p class="result-room-block-price__caption">Цена экрана</p>
+                <p class="result-room-block-price__price" id="result-room-block-price__price-com">122 557 ₽</p>
+              </div>
+              <div class="result-room-block-size">
+                <p class="result-room-block-price__caption">Площадь экрана</p>
+                <p class="result-room-block-price__size" id="result-room-block-size__size-com">0.9216 M <sup>2</sup></p>
+              </div>
+            </div>
+            <input type="button" value="Отправить" class="form__submit" id="btn_submit_room_popup_com">
+            <div class="messages-room-popup"></div>
+          </form>
+        </div>
+
+      </section>
       <!-- /TAB3 -->
     </div>
   </div>

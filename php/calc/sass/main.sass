@@ -25,26 +25,83 @@ body
 .region-header
    display: none
 .calc---page
-	padding: 50px 20px
-	.form-room
+	padding: 50px 0
+	color: $text
+	h1
+		font-size: 2.4em
+		font-weight: bold
+		margin-bottom: 1em
+	.nav-tabs
+		border: none
+		border-top: 1px solid #ebebeb
+		padding: 1em 0
+		text-align: center
+		justify-content: center
+		.nav-item
+			border: none
+			border-right: 1px solid #ebebeb
+			border-radius: 0
+			&:last-child
+				border-right: 0
+			span
+				display: block
+				padding: 0 2em
+				font-weight: bold
+		.nav-link
+			display: block
+			padding: 0 1em
+			border: none
+			border-radius: 0
+			color: $accent
+			position: relative
+			&:before
+				content: ''
+				position: absolute
+				left: -1px
+				top: -1.1em
+				width: 101%
+				height: 4px
+				background: $orange
+				opacity: 0
+				transition: opacity .2s ease
+			&.active
+				border: none
+				border-color: none
+				background: transparent
+			&:hover,
+			&.active
+				&:before
+					opacity: 1
+			i
+				font-style: normal
+	.tab-content
+		border: none
+	.form-room,
+	.form-street,
+	.form-media
 		display: flex
 		flex-direction: row-reverse
 		justify-content: space-between
 		overflow: hidden
+		position: relative
 		//Video
 		.calc-room---monitor
 			width: 50%
 			overflow: hidden
-			background-image: url('../img/indoor3.jpg')
+			background-image: url('../img/holl.jpg')
 			background-size: cover
-			.resize-container
+			.resize-container,
+			.resize-container-street,
+			.resize-container-media
 				height: 420px
 				width: 650px
 				transform: perspective(1454px) rotateY(48deg) rotateZ(-3deg) rotateX(-2.3deg)
 				position: relative
 				top: 75px
 				left: 35px
-				.resize-drag
+				.resize-drag,
+				.resize-drag-street,
+				.resize-drag-media
 					height: 120px
 					width: 120px
 					position: relative
@@ -63,7 +120,7 @@ body
 						outline-offset: -4px
 						overflow: hidden
 						box-shadow: -3px 0px 4px 0px rgba(0, 0, 0, 0.8)
-				&--text
+				&---text
 					width: 100%
 					position: absolute
 					left: 50%
@@ -82,34 +139,36 @@ body
 			width: 50%
 			display: flex
 			.calc-room,
-			.calc-room-option
+			.calc-street,
+			.calc-media
 				width: 100%
 				background: $accent
 				color: #ffffff
 				padding: $gutter
 				position: relative
 				overflow: hidden
-				.name-block
+				p
 					padding-top: 1em
 					font-size: 1.4em
 					display: block
-				#option-block-room
-					display: block
-					position: absolute
-					top: 0
-					right: 0
-					background: darken($accent, 10%)
-					color: #ffffff
-					border: none
-					border-radius: 0 0 0 8px
-					padding: 0.5em 1em
-					cursor: pointer
-					outline: none
-					.fa
-						margin-right: 0.5em
-						font-weight: normal
-					&:hover
-						color: darken(#ffffff, 10%)
+				.calc-room__caption-block
+					button
+						display: block
+						position: absolute
+						top: 0
+						right: 0
+						background: darken($accent, 10%)
+						color: #ffffff
+						border: none
+						border-radius: 0 0 0 8px
+						padding: 0.5em 1em
+						cursor: pointer
+						outline: none
+						.fa
+							margin-right: 0.5em
+							font-weight: normal
+						&:hover
+							color: darken(#ffffff, 10%)
 				.range---value
 					display: flex
 					align-items: center
@@ -240,7 +299,9 @@ body
 					align-items: center
 					justify-content: space-between
 					flex-wrap: wrap
-					padding: 1em 0
+					padding: 0
+					p
+						padding-top: 0 !important
 					.result-room-block-price
 						&__caption
 							font-size: 1.4em
@@ -250,22 +311,316 @@ body
 							font-size: 2em
 			
 			.calc-room-option
+				width: 100%
+				background: $accent
+				color: #ffffff
+				padding: $gutter
+				position: relative
+				overflow: hidden
 				background: darken($accent, 10%)
+				.name-block
+					padding-top: 1em
+					font-size: 1.4em
+					display: block
+				.calc-room-option-block
+					input[type=checkbox]
+						display: none
+					label
+						color: #ffffff
+						margin-bottom: 0
+						display: inline-block
+						cursor: pointer
+						position: relative
+						font-size: .9em
+						line-height: 1
+						-ms-user-select: none
+						-moz-user-select: none
+						-khtml-user-select: none
+						-webkit-user-select: none
+						padding-left: 2em
+						margin-top: 1em
+						opacity: .5
+						transition: all .2s ease
+						&:hover
+							opacity: 1
+						&:before
+							content: "\f1db"
+							font-family: 'FontAwesome'
+							position: absolute
+							left: 0
+							top: 50%
+							transform: translateY(-50%)
+							color: $orange
+							font-weight: normal
+							font-size: 1.6em
+							transition: all .2s ease
+					input[type=checkbox]:checked + label
+						opacity: 1
+					input[type=checkbox]:checked + label:before
+						content: '\f058'
+						font-family: 'FontAwesome'
+						color: $orange
+						font-weight: normal
 
-@media screen and (max-width: 576.98px)
+		.calc-room-option-help
+			display: none
+			position: absolute
+			left: 30%
+			top: 0
+			width: 20%
+			height: 100%
+			background: #ffffff
+			padding: 30px
+			font-size: 0.9em
+			.name-block
+				font-weight: bold
+				font-size: 1.2em
+	
+	//Content
+	//First-block
+	.content---first-line
+		display: flex
+		padding: $gutter*2 $gutter
+		align-items: flex-start
+		justify-content: center
+		max-width: 1180px
+		margin: 0 auto
+		.options-first-block-big
+			flex: 1 1 50%
+			.caption-block
+				font-weight: bold
+				font-size: 2.4em
+			.caption-block-n
+				font-weight: bold
+				font-size: 1.3em
+			.options-first-block-big-flex
+				display: flex
+				align-items: center
+				justify-content: center
+				flex-wrap: wrap
+				.options-first-block
+					flex: 1 1 50%
+					display: flex
+					align-items: center
+					margin-top: 2em
+					p
+						margin: 0
+						&:first-child
+							margin-bottom: 0.5em
+					.fa
+						margin-right: .5em
+						font-size: 3em
+
+		.content---first-line---img
+			width: 50%
+			.img---wrapper
+				position: relative
+				padding-top: 56.25%
+				width: 100%
+				overflow: hidden
+				img
+					position: absolute
+					left: 0
+					top: 0
+					width: 100%
+					height: auto
+					margin: 0 !important
+
+@media screen and (max-width: 1199.98px)
 	.calc---page
-		.form-room
+		.form-room,
+		.form-street,
+		.form-media
+			.calc-room---form
+				.calc-room,
+				.calc-street,
+				.calc-media
+					.warranty-room-big-block
+						.warranty-room-block
+							width: 60px
+				.calc-room-option
+					padding-left: 20px
+					.calc-room-option-block
+						label
+							font-size: .7em
+
+			.calc-room-option-help
+				left: 20%
+				width: 30%
+				padding: 30px
+				font-size: 0.9em
+				.name-block
+					font-weight: bold
+					font-size: 1.2em
+
+		//Content
+		//First-block
+		.content---first-line
+			.options-first-block-big
+				.caption-block
+					font-size: 2em
+
+@media screen and (max-width: 1023.98px)
+	.calc---page
+		.fa-question-circle
+			display: none !important
+
+@media screen and (max-width: 991.98px)
+	.calc---page
+		.nav-tabs
+			.nav-item
+				font-size: 0.9em
+				span
+					display: none
+				&:first-child
+					border-right: none
+			.nav-link
+				&:before
+					top: -1.3em
+
+		.form-room,
+		.form-street,
+		.form-media
+			.calc-room---form
+				.calc-room,
+				.calc-street,
+				.calc-media
+					.calc-room__caption-block
+						button
+							display: none
+				.calc-room-option
+					display: none
+		
+		//Content
+		//First-block
+		.content---first-line
+			font-size: 0.8em
+			.options-first-block-big
+				.caption-block
+					font-size: 2em
+
+@media screen and (max-width: 767.98px)
+	.calc---page
+		.form-room,
+		.form-street,
+		.form-media
 			display: flex
 			flex-direction: column
 			.calc-room---monitor
 				width: 100%
-				.resize-container
+				.resize-container,
+				.resize-container-street,
+				.resize-container-media
 					width: 100%
 					overflow: hidden
 					top: auto
 					left: auto
 			.calc-room---form
 				width: 100%
-				.block-inline,
-				.warranty-room-big-block
-					flex-direction: column
+				.calc-room,
+				.calc-street,
+				.calc-media
+					.calc-room__caption-block
+						button
+							display: block
+					.block-inline,
+					.warranty-room-big-block
+						flex-direction: column
+					.result-room-block
+						margin-top: 2em
+				.calc-room-option
+					padding-left: $gutter
+					.calc-room-option-block
+						label
+							font-size: .8em
+
+		//Content
+		//First-block
+		.content---first-line
+			justify-content: center
+			flex-direction: column
+			.options-first-block-big
+				width: 100%
+				.options-first-block-big-flex
+					.options-first-block
+						p
+							font-size: 1.55em
+						.fa
+							font-size: 3.5em
+
+			.content---first-line---img
+				display: none
+
+@media screen and (max-width: 576.98px)
+	.calc---page
+		.nav-tabs
+			.nav-item
+				span
+					display: none
+			.nav-link
+				text-transform: uppercase
+				i
+					display: none
+		.form-room,
+		.form-street,
+		.form-media
+			.calc-room---form
+				.calc-room,
+				.calc-street,
+				.calc-media
+					.calc-room__caption-block
+						button
+							display: none
+					.result-room-block
+						justify-content: center
+						&-price,
+						&-size
+							text-align: center
+							margin: 0 10%
+
+		//Content
+		//First-block
+		.content---first-line
+			padding: $gutter $gutter/2
+			.options-first-block-big
+				text-align: center
+				.caption-block
+					font-size: 1.6em
+				.caption-block-n
+					font-weight: bold
+					font-size: 1.2em
+				.options-first-block-big-flex
+					.options-first-block
+						flex-direction: column
+						justify-content: center
+						margin-top: 1em
+						&:nth-child(3),
+						&:nth-child(4)
+							margin-top: 3em
+						p
+							font-size: 1.3em
+							text-align: center
+						.fa
+							margin-right: 0
+							margin-bottom: 0.5em
+
+@media screen and (max-width: 409.98px)
+	.calc---page
+		h1
+			font-size: 2em
+		.nav-tabs
+			.nav-link
+				font-size: 0.75em
+				&:before
+					top: - 1.5em
+
+@media screen and (max-width: 374.98px)
+	.calc---page
+		//Content
+		//First-block
+		.content---first-line
+			.options-first-block-big
+				.options-first-block-big-flex
+					.options-first-block
+						p
+							font-size: 1.2em
