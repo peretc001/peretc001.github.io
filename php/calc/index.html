@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- IMPORTANT -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/main.min.css">
   <!-- / IMPORTANT -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
@@ -108,7 +109,7 @@
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
-    <div class="tab-pane show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div class="tab-pane  show active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <!-- TAB1 -->
       <section class="tab-content tab-content-room">
 
@@ -169,7 +170,7 @@
       
                 <div class="block-inline">
                   <p class="name-block">Гарантия</p>
-                  <a href="javascript:PopUpShow()">Бесплатный выезд замерщика</a>
+                  <a class="form-modal" href="#" data-toggle="modal" data-target="#tab1_modal1">Бесплатный выезд замерщика</a>
                 </div>
       
                 <div class="warranty-room-big-block">
@@ -188,7 +189,7 @@
                     </div>
                   </div>
                   <div class="get-room-pred">
-                    <a href="javascript:PopUpShow4()" class="get-room-pred-text">Получить ком. предложение</a>
+                    <a class="form-modal" href="#" class="get-room-pred-text" data-toggle="modal" data-target="#tab1_modal2">Получить ком. предложение</a>
                   </div>
                 </div>
       
@@ -341,7 +342,7 @@
                 <i class="fa fa-picture-o options-first-block__icon" aria-hidden="true"></i>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Разрешение экрана</p>
-                  <p class="options-first-block-caption__size" id="resolution-room">960 х 960 мм</p>
+                  <p class="options-first-block-caption__size" id="resolution-room">960 х 960 px</p>
                 </div>
               </div>
 
@@ -370,12 +371,15 @@
           </div>
         </div>
         
-        
         <div class="options-second-block-big">
           <p class="caption-block">Характеристики</p>
   
           <div class="options-second-block-big-photo">
-            <img src="img/1235_site-758130484.jpg">
+            <div class="content---second-line---img">
+              <div class="img---wrapper">
+                <img src="img/1235_site-758130484.jpg">
+              </div>
+            </div>
             <div class="options-second-block-big-photo-block">
               <p class="caption-block caption-block-par">Параметры модуля</p>
               <ul class="options-second-block-big-photo-block__list">
@@ -418,13 +422,13 @@
             </div>
           </div>
         </div>
-
+        
         <div class="options-third-block-big">
           <p class="caption-block caption-block-par">Параметры кабинета</p>
           <div class="options-third-block-big-photo">
             <div class="options-third-block-big-photo-block">
               <ul class="options-third-block-big-photo-block__list">
-                <li class="options-second-block-big-photo-block__item">
+                <li class="options-third-block-big-photo-block__item">
                   <span class="parname">Размер кабинета</span>
                   <span class="dotted"></span>
                   <span class="parval" id="size-cab-room">768 x 768 мм</span>
@@ -461,14 +465,17 @@
                 </li>
               </ul>
             </div>
-            <img src="img/0020_875x492_3e6.jpg">
+            <div class="content---third-line---img">
+              <div class="img---wrapper">
+                <img src="img/0020_875x492_3e6.jpg">
+              </div>
+            </div>
           </div>
         </div>
-        
-  
+
         <div class="options-fourth-block-big">
-          <p class="caption-block-fourth caption-block-par">Параметры Экрана</p>
-          <div class="options-fourth-block-big-block">
+          <div class="options-fourth-block-big-photo">
+            <p class="caption-block caption-block-par">Параметры Экрана</p>
             <ul class="options-fourth-block-big-block__list">
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Размер экрана</span>
@@ -532,44 +539,21 @@
               </li>
             </ul>
           </div>
-        </div>
-
-        <div class="b-popup" id="popup1">
-          <form class="popupform" id="myform">
-            <div style="display: flex" class="popupform__block">
-              <p class="form__caption">Оформить заказ со скидкой</p>
-              <a href="javascript:PopUpHide()"><i class="fa fa-times" aria-hidden="true"></i></a>
+          <div class="content---fourth-line---img">
+            <div class="calc-room---monitor">
+                <div class="resize-container">
+                  <div class="resize-drag">
+                    <video  autoplay loop muted>
+                      <source src="video/smart.mp4">
+                    </video>
+                    <div class="resize-container---text">
+                      <span id="resize-drag-room">0.96 М x 0.96 М</span>
+                      <span id="resize-drag-room-itog">0.9216 M <sup>2</sup></span>
+                    </div>
+                  </div>
+                </div>
             </div>
-            <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_room_popup">
-            <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_room_popup">
-            <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_room_popup">
-            <input type="button" value="Отправить" class="form__submit" id="btn_submit_room_popup">
-            <div class="messages-room-popup"></div>
-          </form>
-        </div>
-
-        <div class="b-popup" id="popup4">
-          <form class="popupform" id="myform">
-            <div style="display: flex" class="popupform__block">
-              <p class="form__caption">Получить коммерческое предложение</p>
-              <a href="javascript:PopUpHide4()"><i class="fa fa-times" aria-hidden="true"></i></a>
-            </div>
-            <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_room_popup_com">
-            <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_room_popup_com">
-            <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_room_popup_com">
-            <div class="result-room-block">
-              <div class="result-room-block-price">
-                <p class="result-room-block-price__caption">Цена экрана</p>
-                <p class="result-room-block-price__price" id="result-room-block-price__price-com"></p>
-              </div>
-              <div class="result-room-block-size">
-                <p class="result-room-block-price__caption">Площадь экрана</p>
-                <p class="result-room-block-price__size" id="result-room-block-size__size-com">0.9216 M <sup>2</sup></p>
-              </div>
-            </div>
-            <input type="button" value="Отправить" class="form__submit" id="btn_submit_room_popup_com">
-            <div class="messages-room-popup"></div>
-          </form>
+          </div>
         </div>
 
         <p id="rangeWidth"></p>
@@ -599,14 +583,94 @@
             </div>
           </div>
   
-          <form  class="form" id="myform">
+          <form action="" class="form callback__form" method="post">
             <p class="form__caption">Оформить заказ со скидкой</p>
             <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_room">
             <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_room">
-            <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_room">
-            <input type="button" value="Отправить" class="form__submit" id="btn_submit_room">
-            <div class="messages-room"></div>
+            <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_room" required>
+            <div class="robot">
+              <div class="robot__check">
+                  <svg viewBox="0 0 60 60">
+                    <line class="st0 line1" x1="4.5" y1="30.5" x2="29.5" y2="52.5"/>
+                    <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
+                  </svg>
+              </div>
+              <span>Согласен с условиями <a href="/policy/" target="_blank">Политики конфиденциальности</a></span>
+            </div>
+            <input type="submit" value="Отправить" class="form__submit callback__form__button">
           </form>
+        </div>
+
+        <!-- Modal TAB1_MODAL1 -->
+        <div class="modal fade" id="tab1_modal1" tabindex="-1" role="dialog" aria-labelledby="Замер" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Бесплатный замер</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="" class="popupform callback__form" method="post">
+                  <input type="text" name="fio" placeholder="Укажите ФИО" class="form-control" id="user_name_room_popup">
+                  <input type="text" name="email" placeholder="Укажите e-mail" class="form-control" id="user_email_room_popup">
+                  <input type="text" placeholder="Телефон" class="phone_mask form-control" id="user_phone_room_popup"  required>
+                  <div class="robot">
+                    <div class="robot__check">
+                        <svg viewBox="0 0 60 60">
+                          <line class="st0 line1" x1="4.5" y1="30.5" x2="29.5" y2="52.5"/>
+                          <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
+                        </svg>
+                    </div>
+                    <span>Согласен с условиями <a href="/policy/" target="_blank">Политики конфиденциальности</a></span>
+                  </div>
+                  <input type="submit" value="Отправить" class="form-submit callback__form__button">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal TAB1_MODAL2 -->
+        <div class="modal fade" id="tab1_modal2" tabindex="-1" role="dialog" aria-labelledby="Замер" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Получить коммерческое предложение</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="" class="popupform callback__form" method="post">
+                  <input type="text" name="fio" placeholder="Укажите ФИО" class="form-control" id="user_name_room_popup_com">
+                  <input type="text" name="email" placeholder="Укажите e-mail" class="form-control" id="user_email_room_popup_com">
+                  <input type="text" placeholder="Телефон" class="phone_mask form-control" id="user_phone_room_popup_com" required>
+                  <div class="result-room-block">
+                    <div class="result-room-block-price">
+                      <p class="result-room-block-price__caption">Цена экрана</p>
+                      <p class="result-room-block-price__price" id="result-room-block-price__price-com"></p>
+                    </div>
+                    <div class="result-room-block-size">
+                      <p class="result-room-block-price__caption">Площадь экрана</p>
+                      <p class="result-room-block-price__size" id="result-room-block-size__size-com">0.9216 M <sup>2</sup></p>
+                    </div>
+                  </div>
+                  <div class="robot">
+                    <div class="robot__check">
+                        <svg viewBox="0 0 60 60">
+                          <line class="st0 line1" x1="4.5" y1="30.5" x2="29.5" y2="52.5"/>
+                          <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
+                        </svg>
+                    </div>
+                    <span>Согласен с условиями <a href="/policy/" target="_blank">Политики конфиденциальности</a></span>
+                  </div>
+                  <input type="submit" value="Отправить" class="form-submit  callback__form__button">
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
 
       </section>
@@ -673,7 +737,7 @@
     
               <div class="block-inline">
                 <p class="name-block">Гарантия</p>
-                <a href="javascript:PopUpShow2()">Бесплатный выезд замерщика</a>
+                <a class="form-modal" href="#" data-toggle="modal" data-target="#tab2_modal1">Бесплатный выезд замерщика</a>
               </div>
     
               <div class="warranty-room-big-block">
@@ -692,7 +756,7 @@
                   </div>
                 </div>
                 <div class="get-room-pred">
-                  <a href="javascript:PopUpShow5()" class="get-room-pred-text">Получить ком. предложение</a>
+                    <a class="form-modal" href="#" class="get-room-pred-text" data-toggle="modal" data-target="#tab2_modal2">Получить ком. предложение</a>
                 </div>
               </div>
 
@@ -827,54 +891,66 @@
   
         </div>
 
-        <div class="options-first-block-big">
-          <p class="caption-block">Видеоэкран для улицы</p>
-  
-          <div class="options-first-block-big-flex">
-            <div class="options-first-block">
-              <i class="fa fa-arrows-alt options-first-block__icon" aria-hidden="true"></i>
-              <div class="options-first-block-caption">
-                <p class="options-first-block-caption__title">Размер экрана</p>
-                <p class="options-first-block-caption__size" id="size-street">960 x 960 мм</p>
+        <div class="content---first-line">
+          <div class="options-first-block-big">
+            <p class="caption-block">Видеоэкран для улицы</p>
+            <p id="name-street-module-p" class="caption-block-n">Q1.25AT32V2 SMD 320x160mm</p>
+    
+            <div class="options-first-block-big-flex">
+              <div class="options-first-block">
+                <i class="fa fa-arrows-alt options-first-block__icon" aria-hidden="true"></i>
+                <div class="options-first-block-caption">
+                  <p class="options-first-block-caption__title">Размер экрана</p>
+                  <p class="options-first-block-caption__size" id="size-street">960 x 960 мм</p>
+                </div>
               </div>
-            </div>
-  
-  
-            <div class="options-first-block">
-              <i class="fa fa-picture-o options-first-block__icon" aria-hidden="true"></i>
-              <div class="options-first-block-caption">
-                <p class="options-first-block-caption__title">Разрешение экрана</p>
-                <p class="options-first-block-caption__size" id="resolution-street">240 x 240 px</p>
+    
+    
+              <div class="options-first-block">
+                <i class="fa fa-picture-o options-first-block__icon" aria-hidden="true"></i>
+                <div class="options-first-block-caption">
+                  <p class="options-first-block-caption__title">Разрешение экрана</p>
+                  <p class="options-first-block-caption__size" id="resolution-street">240 x 240 px</p>
+                </div>
               </div>
-            </div>
-  
-  
-            <div class="options-first-block">
-              <i class="fa fa-square options-first-block__icon" aria-hidden="true"></i>
-              <div class="options-first-block-caption">
-                <p class="options-first-block-caption__title">Шаг пикселя</p>
-                <p class="options-first-block-caption__size" id="step-pixel-street"></p>
+    
+    
+              <div class="options-first-block">
+                <i class="fa fa-square options-first-block__icon" aria-hidden="true"></i>
+                <div class="options-first-block-caption">
+                  <p class="options-first-block-caption__title">Шаг пикселя</p>
+                  <p class="options-first-block-caption__size" id="step-pixel-street">4</p>
+                </div>
               </div>
-            </div>
-  
-  
-            <div class="options-first-block">
-              <i class="fa fa-get-pocket options-first-block__icon" aria-hidden="true"></i>
-              <div class="options-first-block-caption">
-                <p class="options-first-block-caption__title">Гарантия</p>
-                <p class="options-first-block-caption__size" id="safe-street"></p>
+    
+    
+              <div class="options-first-block">
+                <i class="fa fa-get-pocket options-first-block__icon" aria-hidden="true"></i>
+                <div class="options-first-block-caption">
+                  <p class="options-first-block-caption__title">Гарантия</p>
+                  <p class="options-first-block-caption__size" id="safe-street">1 год</p>
+                </div>
               </div>
+    
             </div>
-  
+    
           </div>
-  
+          <div class="content---first-line---img">
+            <div class="img---wrapper">
+              <img src="img/content---first.png">
+            </div>
+          </div>
         </div>
 
         <div class="options-second-block-big">
           <p class="caption-block">Характеристики</p>
   
           <div class="options-second-block-big-photo">
-            <img src="img/1235_site-758130484.jpg">
+            <div class="content---second-line---img">
+              <div class="img---wrapper">
+                <img src="img/1235_site-758130484.jpg">
+              </div>
+            </div>
             <div class="options-second-block-big-photo-block">
               <p class="caption-block caption-block-par">Параметры модуля</p>
               <ul class="options-second-block-big-photo-block__list">
@@ -960,13 +1036,17 @@
                 </li>
               </ul>
             </div>
-            <img src="img/0020_875x492_3e6.jpg">
+            <div class="content---third-line---img">
+              <div class="img---wrapper">
+                <img src="img/0020_875x492_3e6.jpg">
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="options-fourth-block-big">
-          <p class="caption-block-fourth caption-block-par">Параметры Экрана</p>
-          <div class="options-fourth-block-big-block">
+          <div class="options-fourth-block-big-photo">
+            <p class="caption-block caption-block-par">Параметры Экрана</p>
             <ul class="options-fourth-block-big-block__list">
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Размер экрана</span>
@@ -1030,6 +1110,21 @@
               </li>
             </ul>
           </div>
+          <div class="content---fourth-line---img">
+            <div class="calc-room---monitor">
+                <div class="resize-container">
+                  <div class="resize-drag">
+                    <video  autoplay loop muted>
+                      <source src="video/smart.mp4">
+                    </video>
+                    <div class="resize-container---text">
+                      <span id="resize-drag-room">0.96 М x 0.96 М</span>
+                      <span id="resize-drag-room-itog">0.9216 M <sup>2</sup></span>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
         </div>
 
         <div class="form-itog-block">
@@ -1057,61 +1152,93 @@
             </div>
           </div>
   
-          <form  class="form">
+          <form action="" class="form callback__form" method="post">
             <p class="form__caption">Оформить заказ со скидкой</p>
-            <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_street">
-            <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_street">
-            <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_street">
-            <input type="button" value="Отправить" class="form__submit">
-            <div class="messages-street"></div>
-          </form>
-        </div>
-  
-        <div class="b-popup" id="popup2">
-          <form class="popupform" id="myform">
-            <div style="display: flex" class="popupform__block">
-              <p class="form__caption">Оформить заказ со скидкой</p>
-              <a href="javascript:PopUpHide2()"><i class="fa fa-times" aria-hidden="true"></i></a>
-            </div>
-            <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_street_popup">
-            <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_street_popup">
-            <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_street_popup">
-            <input type="button" value="Отправить" class="form__submit" id="btn_submit_street_popup">
-            <div class="messages-street-popup"></div>
-          </form>
-        </div>
-  
-        <div class="b-popup" id="popup5">
-          <form class="popupform" id="myform">
-            <div style="display: flex" class="popupform__block">
-              <p class="form__caption">Получить коммерческое предложение</p>
-              <a href="javascript:PopUpHide5()"><i class="fa fa-times" aria-hidden="true"></i></a>
-            </div>
-            <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_room_popup_com">
-            <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_room_popup_com">
-            <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_room_popup_com">
-            <div class="result-room-block">
-              <div class="result-room-block-price">
-                <p class="result-room-block-price__caption">Цена экрана</p>
-                <p class="result-room-block-price__price" id="result-room-block-price__price-com">89 203 ₽</p>
+            <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_room">
+            <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_room">
+            <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_room" required>
+            <div class="robot">
+              <div class="robot__check">
+                  <svg viewBox="0 0 60 60">
+                    <line class="st0 line1" x1="4.5" y1="30.5" x2="29.5" y2="52.5"/>
+                    <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
+                  </svg>
               </div>
-              <div class="result-room-block-size">
-                <p class="result-room-block-price__caption">Площадь экрана</p>
-                <p class="result-room-block-price__size" id="result-room-block-size__size-com">0.9216 M <sup>2</sup></p>
-              </div>
+              <span>Согласен с условиями <a href="/policy/" target="_blank">Политики конфиденциальности</a></span>
             </div>
-            <input type="button" value="Отправить" class="form__submit" id="btn_submit_room_popup_com">
-            <div class="messages-room-popup"></div>
+            <input type="submit" value="Отправить" class="form__submit callback__form__button">
           </form>
         </div>
 
-        <div class="resize-container-street">
-          <div class="resize-drag-street">
-            <video autoplay loop muted>
-              <source src="video/smart.mp4">
-            </video>
-            <span id="resize-drag-street-span">0.96 М x 0.96 М</span>
-            <span id="resize-drag-street-span-itog">0.9216 M <sup>2</sup></span>
+        <!-- Modal TAB1_MODAL1 -->
+        <div class="modal fade" id="tab2_modal1" tabindex="-1" role="dialog" aria-labelledby="Замер" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle">Бесплатный замер</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form action="" class="popupform callback__form" method="post">
+                    <input type="text" name="fio" placeholder="Укажите ФИО" class="form-control" id="user_name_room_popup">
+                    <input type="text" name="email" placeholder="Укажите e-mail" class="form-control" id="user_email_room_popup">
+                    <input type="text" placeholder="Телефон" class="phone_mask form-control" id="user_phone_room_popup"  required>
+                    <div class="robot">
+                      <div class="robot__check">
+                          <svg viewBox="0 0 60 60">
+                            <line class="st0 line1" x1="4.5" y1="30.5" x2="29.5" y2="52.5"/>
+                            <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
+                          </svg>
+                      </div>
+                      <span>Согласен с условиями <a href="/policy/" target="_blank">Политики конфиденциальности</a></span>
+                    </div>
+                    <input type="submit" value="Отправить" class="form-submit callback__form__button">
+                  </form>
+                </div>
+              </div>
+            </div>
+        </div>
+  
+        <!-- Modal TAB1_MODAL2 -->
+        <div class="modal fade" id="tab2_modal2" tabindex="-1" role="dialog" aria-labelledby="Замер" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Получить коммерческое предложение</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="" class="popupform callback__form" method="post">
+                  <input type="text" name="fio" placeholder="Укажите ФИО" class="form-control" id="user_name_room_popup_com">
+                  <input type="text" name="email" placeholder="Укажите e-mail" class="form-control" id="user_email_room_popup_com">
+                  <input type="text" placeholder="Телефон" class="phone_mask form-control" id="user_phone_room_popup_com" required>
+                  <div class="result-room-block">
+                    <div class="result-room-block-price">
+                      <p class="result-room-block-price__caption">Цена экрана</p>
+                      <p class="result-room-block-price__price" id="result-room-block-price__price-com">89 203 ₽</p>
+                    </div>
+                    <div class="result-room-block-size">
+                      <p class="result-room-block-price__caption">Площадь экрана</p>
+                      <p class="result-room-block-price__size" id="result-room-block-size__size-com">0.9216 M <sup>2</sup></p>
+                    </div>
+                  </div>
+                  <div class="robot">
+                    <div class="robot__check">
+                        <svg viewBox="0 0 60 60">
+                          <line class="st0 line1" x1="4.5" y1="30.5" x2="29.5" y2="52.5"/>
+                          <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
+                        </svg>
+                    </div>
+                    <span>Согласен с условиями <a href="/policy/" target="_blank">Политики конфиденциальности</a></span>
+                  </div>
+                  <input type="submit" value="Отправить" class="form-submit  callback__form__button">
+                </form>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1182,7 +1309,7 @@
   
             <div class="block-inline">
               <p class="name-block">Гарантия</p>
-              <a href="javascript:PopUpShow3()">Бесплатный выезд замерщика</a>
+              <a class="form-modal" href="#" data-toggle="modal" data-target="#tab3_modal1">Бесплатный выезд замерщика</a>
             </div>
   
             <div class="warranty-room-big-block">
@@ -1201,7 +1328,7 @@
                 </div>
               </div>
               <div class="get-room-pred">
-                <a href="javascript:PopUpShow6()" class="get-room-pred-text">Получить ком. предложение</a>
+                  <a class="form-modal" href="#" class="get-room-pred-text" data-toggle="modal" data-target="#tab3_modal2">Получить ком. предложение</a>
               </div>
             </div>
 
@@ -1337,55 +1464,66 @@
   
         </div>
   
-        <div class="options-first-block-big">
-          <p class="caption-block">Медиафасад</p>
-          <p id="name-media-module-p" class="caption-block-n">HD-XL-P 25 x 25 (прозрачность 60%)</p>
-  
-          <div class="options-first-block-big-flex">
-            <div class="options-first-block">
-              <i class="fa fa-arrows-alt options-first-block__icon" aria-hidden="true"></i>
-              <div class="options-first-block-caption">
-                <p class="options-first-block-caption__title">Размер экрана</p>
-                <p class="options-first-block-caption__size" id="size-media"></p>
+        <div class="content---first-line">
+          <div class="options-first-block-big">
+            <p class="caption-block">Медиафасад</p>
+            <p id="name-media-module-p" class="caption-block-n">HD-XL-P 25 x 25 (прозрачность 60%)</p>
+    
+            <div class="options-first-block-big-flex">
+              <div class="options-first-block">
+                <i class="fa fa-arrows-alt options-first-block__icon" aria-hidden="true"></i>
+                <div class="options-first-block-caption">
+                  <p class="options-first-block-caption__title">Размер экрана</p>
+                  <p class="options-first-block-caption__size" id="size-media">1000 x 1000 мм</p>
+                </div>
               </div>
-            </div>
-  
-  
-            <div class="options-first-block">
-              <i class="fa fa-picture-o options-first-block__icon" aria-hidden="true"></i>
-              <div class="options-first-block-caption">
-                <p class="options-first-block-caption__title">Разрешение экрана</p>
-                <p class="options-first-block-caption__size" id="resolution-media"></p>
+    
+    
+              <div class="options-first-block">
+                <i class="fa fa-picture-o options-first-block__icon" aria-hidden="true"></i>
+                <div class="options-first-block-caption">
+                  <p class="options-first-block-caption__title">Разрешение экрана</p>
+                  <p class="options-first-block-caption__size" id="resolution-media">1000 х 1000 px</p>
+                </div>
               </div>
-            </div>
-  
-  
-            <div class="options-first-block">
-              <i class="fa fa-square options-first-block__icon" aria-hidden="true"></i>
-              <div class="options-first-block-caption">
-                <p class="options-first-block-caption__title">Шаг пикселя</p>
-                <p class="options-first-block-caption__size" id="step-pixel-media"></p>
+    
+    
+              <div class="options-first-block">
+                <i class="fa fa-square options-first-block__icon" aria-hidden="true"></i>
+                <div class="options-first-block-caption">
+                  <p class="options-first-block-caption__title">Шаг пикселя</p>
+                  <p class="options-first-block-caption__size" id="step-pixel-media">25х25</p>
+                </div>
               </div>
-            </div>
-  
-  
-            <div class="options-first-block">
-              <i class="fa fa-get-pocket options-first-block__icon" aria-hidden="true"></i>
-              <div class="options-first-block-caption">
-                <p class="options-first-block-caption__title">Гарантия</p>
-                <p class="options-first-block-caption__size" id="safe-media"></p>
+    
+    
+              <div class="options-first-block">
+                <i class="fa fa-get-pocket options-first-block__icon" aria-hidden="true"></i>
+                <div class="options-first-block-caption">
+                  <p class="options-first-block-caption__title">Гарантия</p>
+                  <p class="options-first-block-caption__size" id="safe-media">1 год</p>
+                </div>
               </div>
+    
             </div>
-  
+    
           </div>
-  
+          <div class="content---first-line---img">
+            <div class="img---wrapper">
+              <img src="img/content---first.png">
+            </div>
+          </div>
         </div>
 
         <div class="options-second-block-big">
           <p class="caption-block">Характеристики</p>
   
           <div class="options-second-block-big-photo">
-            <img src="img/1235_site-758130484.jpg">
+            <div class="content---second-line---img">
+              <div class="img---wrapper">
+                <img src="img/1235_site-758130484.jpg">
+              </div>
+            </div>
             <div class="options-second-block-big-photo-block">
               <p class="caption-block caption-block-par">Параметры модуля</p>
               <ul class="options-second-block-big-photo-block__list">
@@ -1471,23 +1609,27 @@
                 </li>
               </ul>
             </div>
-            <img src="img/0020_875x492_3e6.jpg">
+            <div class="content---third-line---img">
+              <div class="img---wrapper">
+                <img src="img/0020_875x492_3e6.jpg">
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="options-fourth-block-big">
-          <p class="caption-block-fourth caption-block-par">Параметры Экрана</p>
-          <div class="options-fourth-block-big-block">
+          <div class="options-fourth-block-big-photo">
+            <p class="caption-block caption-block-par">Параметры Экрана</p>
             <ul class="options-fourth-block-big-block__list">
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Размер экрана</span>
                 <span class="dotted-fourth"></span>
-                <span class="parval-fourth" id="size-screen-media"></span>
+                <span class="parval-fourth" id="size-screen-media">1000 x 1000 мм</span>
               </li>
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Разрешение экрана</span>
                 <span class="dotted-fourth"></span>
-                <span class="parval-fourth" id="resolution-screen-media"></span>
+                <span class="parval-fourth" id="resolution-screen-media">1000 х 1000 мм</span>
               </li>
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Кол-во кабинетов</span>
@@ -1541,6 +1683,21 @@
               </li>
             </ul>
           </div>
+          <div class="content---fourth-line---img">
+            <div class="calc-room---monitor">
+                <div class="resize-container">
+                  <div class="resize-drag">
+                    <video  autoplay loop muted>
+                      <source src="video/smart.mp4">
+                    </video>
+                    <div class="resize-container---text">
+                      <span id="resize-drag-room">0.96 М x 0.96 М</span>
+                      <span id="resize-drag-room-itog">0.9216 M <sup>2</sup></span>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
         </div>
 
         <div class="form-itog-block">
@@ -1568,52 +1725,95 @@
             </div>
           </div>
   
-          <form action="send.php" method="post" class="form">
+          <form action="" class="form callback__form" method="post">
             <p class="form__caption">Оформить заказ со скидкой</p>
-            <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_media">
-            <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_media">
-            <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_media">
-            <input type="submit" value="Отправить" class="form__submit">
-            <div class="messages-media"></div>
+            <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_room">
+            <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_room">
+            <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_room" required>
+            <div class="robot">
+              <div class="robot__check">
+                  <svg viewBox="0 0 60 60">
+                    <line class="st0 line1" x1="4.5" y1="30.5" x2="29.5" y2="52.5"/>
+                    <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
+                  </svg>
+              </div>
+              <span>Согласен с условиями <a href="/policy/" target="_blank">Политики конфиденциальности</a></span>
+            </div>
+            <input type="submit" value="Отправить" class="form__submit callback__form__button">
           </form>
         </div>
 
-        <div class="b-popup" id="popup3">
-          <form class="popupform" id="myform">
-            <div style="display: flex" class="popupform__block">
-              <p class="form__caption">Оформить заказ со скидкой</p>
-              <a href="javascript:PopUpHide3()"><i class="fa fa-times" aria-hidden="true"></i></a>
+
+        <!-- Modal TAB1_MODAL1 -->
+        <div class="modal fade" id="tab3_modal1" tabindex="-1" role="dialog" aria-labelledby="Замер" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle">Бесплатный замер</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form action="" class="popupform callback__form" method="post">
+                    <input type="text" name="fio" placeholder="Укажите ФИО" class="form-control" id="user_name_room_popup">
+                    <input type="text" name="email" placeholder="Укажите e-mail" class="form-control" id="user_email_room_popup">
+                    <input type="text" placeholder="Телефон" class="phone_mask form-control" id="user_phone_room_popup"  required>
+                    <div class="robot">
+                      <div class="robot__check">
+                          <svg viewBox="0 0 60 60">
+                            <line class="st0 line1" x1="4.5" y1="30.5" x2="29.5" y2="52.5"/>
+                            <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
+                          </svg>
+                      </div>
+                      <span>Согласен с условиями <a href="/policy/" target="_blank">Политики конфиденциальности</a></span>
+                    </div>
+                    <input type="submit" value="Отправить" class="form-submit callback__form__button">
+                  </form>
+                </div>
+              </div>
             </div>
-            <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_media_popup">
-            <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_media_popup">
-            <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_media_popup">
-            <input type="button" value="Отправить" class="form__submit" id="btn_submit_media_popup">
-            <div class="messages-media-popup"></div>
-          </form>
         </div>
   
-        <div class="b-popup" id="popup6">
-          <form class="popupform" id="myform">
-            <div style="display: flex" class="popupform__block">
-              <p class="form__caption">Получить коммерческое предложение</p>
-              <a href="javascript:PopUpHide6()"><i class="fa fa-times" aria-hidden="true"></i></a>
-            </div>
-            <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_room_popup_com">
-            <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_room_popup_com">
-            <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_room_popup_com">
-            <div class="result-room-block">
-              <div class="result-room-block-price">
-                <p class="result-room-block-price__caption">Цена экрана</p>
-                <p class="result-room-block-price__price" id="result-room-block-price__price-com">122 557 ₽</p>
+        <!-- Modal TAB1_MODAL2 -->
+        <div class="modal fade" id="tab3_modal2" tabindex="-1" role="dialog" aria-labelledby="Замер" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Получить коммерческое предложение</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
-              <div class="result-room-block-size">
-                <p class="result-room-block-price__caption">Площадь экрана</p>
-                <p class="result-room-block-price__size" id="result-room-block-size__size-com">0.9216 M <sup>2</sup></p>
+              <div class="modal-body">
+                <form action="" class="popupform callback__form" method="post">
+                  <input type="text" name="fio" placeholder="Укажите ФИО" class="form-control" id="user_name_room_popup_com">
+                  <input type="text" name="email" placeholder="Укажите e-mail" class="form-control" id="user_email_room_popup_com">
+                  <input type="text" placeholder="Телефон" class="phone_mask form-control" id="user_phone_room_popup_com" required>
+                  <div class="result-room-block">
+                    <div class="result-room-block-price">
+                      <p class="result-room-block-price__caption">Цена экрана</p>
+                      <p class="result-room-block-price__price" id="result-room-block-price__price-com">122 557 ₽</p>
+                    </div>
+                    <div class="result-room-block-size">
+                      <p class="result-room-block-price__caption">Площадь экрана</p>
+                      <p class="result-room-block-price__size" id="result-room-block-size__size-com">0.9216 M <sup>2</sup></p>
+                    </div>
+                  </div>
+                  <div class="robot">
+                    <div class="robot__check">
+                        <svg viewBox="0 0 60 60">
+                          <line class="st0 line1" x1="4.5" y1="30.5" x2="29.5" y2="52.5"/>
+                          <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
+                        </svg>
+                    </div>
+                    <span>Согласен с условиями <a href="/policy/" target="_blank">Политики конфиденциальности</a></span>
+                  </div>
+                  <input type="submit" value="Отправить" class="form-submit  callback__form__button">
+                </form>
               </div>
             </div>
-            <input type="button" value="Отправить" class="form__submit" id="btn_submit_room_popup_com">
-            <div class="messages-room-popup"></div>
-          </form>
+          </div>
         </div>
 
       </section>
@@ -1641,6 +1841,29 @@ $('.select-module').on('mousedown', function(e) {
 $('.select-module').on('touchstart', function(e) {
    e.preventDefault();
 });
+
+let form = document.querySelectorAll('.callback__form');
+  form.forEach(item => {
+      let formBtn = item.querySelector('.callback__form__button');
+      let checkBtn = item.querySelector('.robot__check');
+
+      formBtn.disabled = true;
+      checkBtn.addEventListener('click', () => {
+          checkBtn.classList.add('active');
+      
+          item.action = '/thankyou.php';
+          let input = document.createElement("input");
+          input.setAttribute("type", "hidden");
+          input.setAttribute("name", "human");
+          input.setAttribute("value", "human");
+          input.classList.add('human');
+          console.log(typeof input);
+          //
+          item.appendChild(input);
+          //
+          formBtn.disabled = false;
+      });
+  });
 </script>
 <!-- /JS TABS -->
 
@@ -5079,8 +5302,13 @@ $('.select-module').on('touchstart', function(e) {
             PopUpHide();
         });*/
   //Функция отображения PopUp
+  // $('.form-modal').on('click', function (e) {
+  //   e.preventDefault();
+  //   console.log(e.target);
+  //   $("#popup1").show();
+  // })
   function PopUpShow(){
-    $("#popup1").show();
+    
   }
   //Функция скрытия PopUp
   function PopUpHide(){
@@ -5164,12 +5392,3 @@ $('.select-module').on('touchstart', function(e) {
 </script>
 </body>
 </html>
-
-
-
-
-<!--
-
-  
-
--->
