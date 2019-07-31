@@ -97,9 +97,6 @@ $(function() {
         e.preventDefault();
         $(this).toggleClass('active');
         $('.hide_description').toggleClass('opener');
-        if (!$(this).data('status')) {
-        } else {
-        }
     });
 
     $('.hover-column').on('touchstart', function(e){

@@ -8,6 +8,7 @@
          margin: 0
          position: relative
       &:last-child
+         align-self: center
          padding-left: 3em
          padding-top: 2em
          padding-right: 30px
@@ -34,11 +35,16 @@
       color: #ffffff
       &:hover
          color: #ffffff
+   .education
+      text-decoration: underline
+      margin-left: 2em
+      display: block
    .company,
    .adres,
    .phone,
    .email,
-   .link
+   .link,
+   .insta
       position: relative
       padding-left: 2em
       &:before
@@ -69,6 +75,10 @@
    .link
       &:before
          background: url('../img/link.svg') center no-repeat
+   
+   .insta
+      &:before
+         background: url('../img/instagram.svg') center no-repeat
    
    .author
       display: block

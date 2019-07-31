@@ -65,14 +65,24 @@ img
 
 @import 'nav'
 @import 'header'
+@import 'curs'
 @import 'about'
 @import 'feauters'
 @import 'why'
-@import 'team'
+@import 'review'
 @import 'footer'
 @import 'modal'
 
+*:focus
+	outline: none !important
+	box-shadow: none
+
 .btn
+	user-select: none
+	box-shadow: none
+	&:focus
+		outline: none
+		box-shadow: none
 	&.btn-accent
 		background-color: $accent
 		border-color: darken($accent, 5%)

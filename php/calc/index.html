@@ -114,13 +114,13 @@
       <section class="tab-content tab-content-room">
 
         <div class="form-room">
-          <div class="calc-room---form">
-
+          <form action="calc.php" method="post" class="calc-room---form calc_form">
+              
             <div class="calc-room">
-  
+              
                 <div class="calc-room__caption-block">
                   <p class="name-block">Размер экрана</p>
-                  <button id="option-block-room"><i class="fa fa-arrow-right" aria-hidden="true"></i>Доп.параметры</button>
+                  <span id="option-block-room"><i class="fa fa-arrow-right" aria-hidden="true"></i>Доп.параметры</span>
                 </div>
 
                 <div class="range---value">
@@ -129,7 +129,7 @@
                     <span id="rangeWidthRoomSpan" class="spanWidth">0.96</span><span class="spanWidth"> M</span>
                   </div>
                 </div>
-                <input type="range" id="rangeWidthRoom" value="0.96" min="0.96" max="14.4" step="0.96">
+                <input type="range" name="width" id="rangeWidthRoom" value="0.96" min="0.96" max="14.4" step="0.96">
       
                 <div class="range---value">
                   <label for="rangeHeightRoom" class="labelHeight">Высота</label>
@@ -137,7 +137,7 @@
                     <span id="rangeHeightRoomSpan" class="spanHeight">0.96</span><span class="spanHeight"> M</span>
                   </div>
                 </div>
-                <input type="range" id="rangeHeightRoom" value="0.96" min="0.96" max="14.4" step="0.96">
+                <input type="range" name="height" id="rangeHeightRoom" value="0.96" min="0.96" max="14.4" step="0.96">
       
                 <div class="name-big-block">
                   <p class="name-block">Выберите шаг пикселя</p>
@@ -146,7 +146,7 @@
                   </span>
                 </div>
 
-                <select class="select-css" id="select-step-pixel-room">
+                <select name="step" class="select-css" id="select-step-pixel-room">
                   <option>1.25</option>
                   <option>1.66</option>
                   <option>1.83</option>
@@ -163,7 +163,7 @@
                 </select>
       
                 <p class="name-block">Выберите яркость</p>
-                <select class="select-css">
+                <select name="light" class="select-css">
                   <option>Яркий</option>
                   <option>Повышеная яркость</option>
                 </select>
@@ -219,32 +219,32 @@
                 <p class="name-block">Доп. параметры</p>
                 <div class="calc-room-option-big-block">
                   <div class="calc-room-option-block">
-                    <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option1">
+                    <input name="calc-room-option1" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option1">
                     <label for="calc-room-option1"><span></span>Управляющий компьютер</label>
                     <i class="fa fa-question-circle" aria-hidden="true" value="Управляющий компьютер" name="dop-options-room"></i>
                   </div>
                   <div class="calc-room-option-block">
-                    <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option2">
+                    <input name="calc-room-option2" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option2">
                     <label for="calc-room-option2"><span></span>Отправляющий контроллер</label>
                     <i class="fa fa-question-circle" aria-hidden="true" value="Отправляющий контроллер" name="dop-options-room"></i>
                   </div>
                   <div class="calc-room-option-block">
-                    <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option3">
+                    <input name="calc-room-option3" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option3">
                     <label for="calc-room-option3"><span></span>Wi-Fi модуль</label>
                     <i class="fa fa-question-circle" aria-hidden="true" value="Wi-Fi модуль" name="dop-options-room"></i>
                   </div>
                   <div class="calc-room-option-block">
-                    <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option4">
+                    <input name="calc-room-option4" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option4">
                     <label for="calc-room-option4"><span></span>Датчик яркости</label>
                     <i class="fa fa-question-circle" aria-hidden="true" value="Датчик яркости" name="dop-options-room"></i>
                   </div>
                   <div class="calc-room-option-block">
-                    <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option5">
+                    <input name="calc-room-option5" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option5">
                     <label for="calc-room-option5"><span></span>Датчик температуры</label>
                     <i class="fa fa-question-circle" aria-hidden="true" value="Датчик температуры" name="dop-options-room"></i>
                   </div>
                   <div class="calc-room-option-block">
-                    <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option6">
+                    <input name="calc-room-option6" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option6">
                     <label for="calc-room-option6"><span></span>Видеопроцессор</label>
                     <i class="fa fa-question-circle" aria-hidden="true" value="Видеопроцессор" name="dop-options-room"></i>
                   </div>
@@ -254,38 +254,40 @@
                 <p class="name-block">Монтаж</p>
                 <div class="calc-room-option-big-block">
                   <div class="calc-room-option-block">
-                    <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option7">
+                    <input name="calc-room-option7" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option7">
                     <label for="calc-room-option7"><span></span>Электрощитовая</label>
                     <i class="fa fa-question-circle" aria-hidden="true" value="Электрощитовая" name="dop-options-room"></i>
                   </div>
                   <div class="calc-room-option-block">
-                    <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option8">
+                    <input name="calc-room-option8" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option8">
                     <label for="calc-room-option8"><span></span>Шефмонтаж</label>
                     <i class="fa fa-question-circle" aria-hidden="true" value="Шефмонтаж" name="dop-options-room"></i>
                   </div>
                   <div class="calc-room-option-block">
-                    <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option9">
+                    <input name="calc-room-option9" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option9">
                     <label for="calc-room-option9"><span></span>Монтаж оборудования</label>
                     <i class="fa fa-question-circle" aria-hidden="true" value="Монтаж оборудования" name="dop-options-room"></i>
                   </div>
                   <div class="calc-room-option-block">
-                    <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option10">
+                    <input name="calc-room-option10" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option10">
                     <label for="calc-room-option10"><span></span>Изгот. металлоконструкции</label>
                     <i class="fa fa-question-circle" aria-hidden="true" value="Изгот. металлоконструкции" name="dop-options-room"></i>
                   </div>
                   <div class="calc-room-option-block">
-                    <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option11">
+                    <input name="calc-room-option11" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option11">
                     <label for="calc-room-option11"><span></span>Монтаж металлоконструкций</label>
                     <i class="fa fa-question-circle" aria-hidden="true" value="Монтаж металлоконструкций" name="dop-options-room"></i>
                   </div>
                   <div class="calc-room-option-block">
-                    <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option12">
+                    <input name="calc-room-option12" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option12">
                     <label for="calc-room-option12"><span></span>Набор запасных частей</label>
                     <i class="fa fa-question-circle" aria-hidden="true" value="Набор запасных частей" name="dop-options-room"></i>
                   </div>
                 </div>
             </div>
-          </div>
+
+              <button type="submit" value="">Отправить</button>
+          </form>
 
           <div class="calc-room---monitor">
             <div class="resize-container">

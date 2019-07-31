@@ -10,15 +10,12 @@ if ($_POST['phone'] != '' and $_POST['human'] == 'human') {
 	$subject = 'Заявка с сайта'; 
 	$headers[]  = "Content-type: text/html; charset=utf-8 \r\n"; 
 	$headers[] = "From: ". $admin_email ." <". $admin_email .">\r\n"; 
-	if($_POST['name'] !== '') {
-		$message .= 'Имя: <b>'. $_POST['name'] .'</b><br>';
-	}
-	$message .= 'Телефон:  <b>'. $_POST['phone'] .'</b><br>';
+	$message .= 'Имя: <b>'. $_POST['name'] .'</b><br>Телефон:  <b>'. $_POST['phone'] .'</b><br>';
 		wp_mail($to, $subject, $message, $headers);
 	?>
 
 <?php } else { ?>
 
-<div class="error">123</div>
+<div class="error">error</div>
 
 <?php } ?>
