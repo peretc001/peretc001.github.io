@@ -114,30 +114,30 @@
       <section class="tab-content tab-content-room">
 
         <div class="form-room">
-          <form action="calc.php" method="post" class="calc-room---form calc_form">
+          <form method="post" class="calc-room---form calc__ajax__form--first">
               
             <div class="calc-room">
-              
+                <span class="dop"><i class="fa fa-arrow-right" aria-hidden="true"></i>Доп.параметры</span>
+
                 <div class="calc-room__caption-block">
                   <p class="name-block">Размер экрана</p>
-                  <span id="option-block-room"><i class="fa fa-arrow-right" aria-hidden="true"></i>Доп.параметры</span>
                 </div>
-
+                
                 <div class="range---value">
                   <label for="rangeWidthRoom" class="labelWidth">Ширина</label>
                   <div class="range---value-index">
-                    <span id="rangeWidthRoomSpan" class="spanWidth">0.96</span><span class="spanWidth"> M</span>
+                    <span id="rangeWidthRoomSpan" class="spanWidth rangeWidth">0.96</span><span class="spanWidth"> M</span>
                   </div>
                 </div>
-                <input type="range" name="width" id="rangeWidthRoom" value="0.96" min="0.96" max="14.4" step="0.96">
+                <input type="range" name="width" id="rangeWidthRoom" class="rangeWidthRoom" value="0.96" min="0.96" max="14.40" step="0.96">
       
                 <div class="range---value">
                   <label for="rangeHeightRoom" class="labelHeight">Высота</label>
                   <div class="range---value-index">
-                    <span id="rangeHeightRoomSpan" class="spanHeight">0.96</span><span class="spanHeight"> M</span>
+                    <span id="rangeHeightRoomSpan" class="spanHeight rangeHeight">0.96</span><span class="spanHeight"> M</span>
                   </div>
                 </div>
-                <input type="range" name="height" id="rangeHeightRoom" value="0.96" min="0.96" max="14.4" step="0.96">
+                <input type="range" name="height" id="rangeHeightRoom" class="rangeHeightRoom" value="0.96" min="0.96" max="14.40" step="0.96">
       
                 <div class="name-big-block">
                   <p class="name-block">Выберите шаг пикселя</p>
@@ -146,7 +146,7 @@
                   </span>
                 </div>
 
-                <select name="step" class="select-css" id="select-step-pixel-room">
+                <select name="step" class="select-css select-first-step" id="select-step-pixel-room">
                   <option>1.25</option>
                   <option>1.66</option>
                   <option>1.83</option>
@@ -155,18 +155,18 @@
                   <option>3.07</option>
                   <option>3</option>
                   <option>4</option>
-                  <option>5</option>
+                  <option selected>5</option>
                 </select>
       
-                <select class="select-css select-module" id="select-module-room">
+                <select class="select-css select-module select-first-module redblock" id="select-module-room">
                   <option>Q1.25AT32V2 SMD 320x160mm</option>
                 </select>
       
-                <p class="name-block">Выберите яркость</p>
+                <!-- <p class="name-block">Выберите яркость</p>
                 <select name="light" class="select-css">
                   <option>Яркий</option>
                   <option>Повышеная яркость</option>
-                </select>
+                </select> -->
       
                 <div class="block-inline">
                   <p class="name-block">Гарантия</p>
@@ -176,15 +176,15 @@
                 <div class="warranty-room-big-block">
                   <div class="warranty-room-big-block---year">
                     <div class="warranty-room-block">
-                      <input type="radio" name="warranty-room" id="warranty-room1" class="warranty-room__radio" value="1" checked>
+                      <input type="radio" name="warranty-room" id="warranty-room1" class="warranty-room__radio warranty-first" value="1" checked>
                       <label for="warranty-room1"><span></span>1 год</label>
                     </div>
                     <div class="warranty-room-block">
-                      <input type="radio" name="warranty-room" id="warranty-room2" class="warranty-room__radio" value="2">
+                      <input type="radio" name="warranty-room" id="warranty-room2" class="warranty-room__radio warranty-first" value="2">
                       <label for="warranty-room2"><span></span>2 года</label>
                     </div>
                     <div class="warranty-room-block">
-                      <input type="radio" name="warranty-room" id="warranty-room3" class="warranty-room__radio" value="3">
+                      <input type="radio" name="warranty-room" id="warranty-room3" class="warranty-room__radio warranty-first" value="3">
                       <label for="warranty-room3"><span></span>3 года</label>
                     </div>
                   </div>
@@ -193,23 +193,14 @@
                   </div>
                 </div>
       
-                <!--<div style="margin-top: 20px;">
-                    <span class="name-block"> Введите курс доллара</span>
-                    <input type="text" id="kurs-dollar">
-                  </div>-->
-      
                 <div class="result-room-block">
                   <div class="result-room-block-price">
                     <p class="result-room-block-price__caption">Цена экрана</p>
-                    <p class="result-room-block-price__price" id="result-room-block-price__price"></p>
-                  </div>
-                  <div class="result-room-block-price" style="display: none">
-                    <p class="result-room-block-price__caption">Цена экрана в &#x24;</p>
-                    <p class="result-room-block-price__price" id="result-room-block-price__price-dollar">0 &#x24;</p>
+                    <p class="result-room-block-price__price" id="result-room-block-price__price">0 Р</p>
                   </div>
                   <div class="result-room-block-size">
                     <p class="result-room-block-price__caption">Площадь экрана</p>
-                    <p class="result-room-block-price__size" id="result-room-block-size__size">0.9216 M <sup>2</sup></p>
+                    <p class="result-room-block-price__size" id="result-room-block-size__size">0.92 M <sup>2</sup></p>
                   </div>
                 </div>
       
@@ -284,9 +275,15 @@
                     <i class="fa fa-question-circle" aria-hidden="true" value="Набор запасных частей" name="dop-options-room"></i>
                   </div>
                 </div>
-            </div>
 
-              <button type="submit" value="">Отправить</button>
+                <p class="name-block">Доставка</p>
+                <div class="calc-room-option-big-block">
+                  <div class="calc-room-option-block">
+                    <input name="delivery" type="checkbox" class="calc-room-option-block__checkbox" id="delivery">
+                    <label for="delivery"><span></span>Доставка</label>
+                  </div>
+                </div>
+            </div>
           </form>
 
           <div class="calc-room---monitor">
@@ -296,8 +293,8 @@
                   <source src="video/smart.mp4">
                 </video>
                 <div class="resize-container---text">
-                  <span id="resize-drag-room">0.96 М x 0.96 М</span>
-                  <span id="resize-drag-room-itog">0.9216 M <sup>2</sup></span>
+                  <span class="videoSize" id="resize-drag-room">0.96 М x 0.96 М</span>
+                  <span class="videoSquare" id="resize-drag-room-itog">0.92 M <sup>2</sup></span>
                 </div>
               </div>
             </div>
@@ -336,13 +333,13 @@
                 <i class="fa fa-arrows-alt options-first-block__icon" aria-hidden="true"></i>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Размер экрана</p>
-                  <p class="options-first-block-caption__size" id="size-room">960 х 960 мм</p>
+                  <p class="options-first-block-caption__size option-first-size" id="size-room">960 х 960 мм</p>
                 </div>
               </div>
 
               <div class="options-first-block">
                 <i class="fa fa-picture-o options-first-block__icon" aria-hidden="true"></i>
-                <div class="options-first-block-caption">
+                <div class="options-first-block-caption redblock">
                   <p class="options-first-block-caption__title">Разрешение экрана</p>
                   <p class="options-first-block-caption__size" id="resolution-room">960 х 960 px</p>
                 </div>
@@ -352,7 +349,7 @@
                 <i class="fa fa-square options-first-block__icon" aria-hidden="true"></i>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Шаг пикселя</p>
-                  <p class="options-first-block-caption__size" id="step-pixel-room">1.25 мм</p>
+                  <p class="options-first-block-caption__size option-first-step" id="step-pixel-room">5 мм</p>
                 </div>
               </div>
 
@@ -360,7 +357,7 @@
                 <i class="fa fa-get-pocket options-first-block__icon" aria-hidden="true"></i>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Гарантия</p>
-                  <p class="options-first-block-caption__size" id="safe-room">1 год</p>
+                  <p class="options-first-block-caption__size option-first-warranty" id="safe-room">1 год</p>
                 </div>
               </div>
     
@@ -388,7 +385,7 @@
                 <li class="options-second-block-big-photo-block__item">
                   <span class="parname">Шаг пикселя</span>
                   <span class="dotted"></span>
-                  <span class="parval" id="step-room">1.25 мм</span>
+                  <span class="parval option-first-step" id="step-room">5 мм</span>
                 </li>
                 <li class="options-second-block-big-photo-block__item">
                   <span class="parname">Конфигурация светодиодов</span>
@@ -482,7 +479,7 @@
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Размер экрана</span>
                 <span class="dotted-fourth"></span>
-                <span class="parval-fourth" id="size-screen-room">960 x 960 мм</span>
+                <span class="parval-fourth option-first-size" id="size-screen-room">960 x 960 мм</span>
               </li>
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Разрешение экрана</span>
@@ -537,7 +534,7 @@
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Площадь экрана м2</span>
                 <span class="dotted-fourth"></span>
-                <span class="parval-fourth" id="squar-screen-room">0.9216 M <sup>2</sup></span>
+                <span class="parval-fourth videoSquare" id="squar-screen-room">0.92 M <sup>2</sup></span>
               </li>
             </ul>
           </div>
@@ -565,23 +562,23 @@
             <p class="caption-block">Итог</p>
             <div class="form-itog-item">
               <span class="form-itog-item__caption">Монтаж</span>
-              <span class="form-itog-item__value">0 &#x20bd;</span>
+              <span class="form-itog-item__value option-first-settingup">0 &#x20bd;</span>
             </div>
             <div class="form-itog-item">
               <span class="form-itog-item__caption">Стоимость экрана</span>
-              <span class="form-itog-item__value" id="itog_room">639 431 &#x20bd;</span>
+              <span class="form-itog-item__value option-first-led" id="itog_room">639 431 &#x20bd;</span>
             </div>
             <div class="form-itog-item">
               <span class="form-itog-item__caption">Управляющий компьютер</span>
-              <span class="form-itog-item__value">0 &#x20bd;</span>
+              <span class="form-itog-item__value option-first-control">0 &#x20bd;</span>
             </div>
             <div class="form-itog-item">
               <span class="form-itog-item__caption">Доставка</span>
-              <span class="form-itog-item__value">0 &#x20bd;</span>
+              <span class="form-itog-item__value option-first-delivery">0 &#x20bd;</span>
             </div>
             <div class="form-itog-item">
               <span class="form-itog-item__caption">Итого</span>
-              <span class="form-itog-item__value" id="itog_room_all">639 431 &#x20bd;</span>
+              <span class="form-itog-item__value option-first-price" id="itog_room_all">0 &#x20bd;</span>
             </div>
           </div>
   
@@ -652,11 +649,11 @@
                   <div class="result-room-block">
                     <div class="result-room-block-price">
                       <p class="result-room-block-price__caption">Цена экрана</p>
-                      <p class="result-room-block-price__price" id="result-room-block-price__price-com"></p>
+                      <p class="result-room-block-price__price modal-first-price" id="result-room-block-price__price-com"></p>
                     </div>
                     <div class="result-room-block-size">
                       <p class="result-room-block-price__caption">Площадь экрана</p>
-                      <p class="result-room-block-price__size" id="result-room-block-size__size-com">0.9216 M <sup>2</sup></p>
+                      <p class="result-room-block-price__size modal-first-square" id="result-room-block-size__size-com">0.9216 M <sup>2</sup></p>
                     </div>
                   </div>
                   <div class="robot">
@@ -686,56 +683,56 @@
           </video>-->
         <div class="form-street">
   
-          <div class="calc-room---form">
-            <div class="calc-street">
+          <form method="post" class="calc-room---form calc__ajax__form--second">
+            <div class="calc-room">
 
               <div class="calc-room__caption-block">
                 <p class="name-block">Размер экрана</p>
-                <button id="option-block-street"><i class="fa fa-arrow-right" aria-hidden="true"></i>Доп.параметры</button>
+                <span id="option-block-room" class="dop"><i class="fa fa-arrow-right" aria-hidden="true"></i>Доп.параметры</span>
               </div>
 
               <div class="range---value">
-                <label for="rangeWidthStreet" class="labelWidth">Ширина</label>
+                <label for="rangeWidthRoom" class="labelWidth">Ширина</label>
                 <div class="range---value-index">
-                  <span id="rangeWidthStreetSpan" class="spanWidth">0.96</span><span class="spanWidth"> M</span>
+                  <span id="rangeWidthRoomSpan" class="spanWidth rangeWidthStreet">0.96</span><span class="spanWidth"> M</span>
                 </div>
               </div>
-              <input type="range" id="rangeWidthStreet" value="0.96" min="0.96" max="14.4" step="0.96">
-              
+              <input type="range" name="width" id="rangeWidthRoom" class="rangeWidthRoomStreet" value="0.96" min="0.96" max="14.40" step="0.96">
+    
               <div class="range---value">
-                <label for="rangeHeightStreet" class="labelHeight">Высота</label>
+                <label for="rangeHeightRoom" class="labelHeight">Высота</label>
                 <div class="range---value-index">
-                  <span id="rangeHeightStreetSpan" class="spanHeight">0.96</span><span class="spanHeight"> M</span>
+                  <span id="rangeHeightRoomSpan" class="spanHeight rangeHeightStreet">0.96</span><span class="spanHeight"> M</span>
                 </div>
               </div>
-              <input type="range" id="rangeHeightStreet" value="0.96" min="0.96" max="14.4" step="0.96">
-
+              <input type="range" name="height" id="rangeHeightRoom" class="rangeHeightRoomStreet" value="0.96" min="0.96" max="14.40" step="0.96">
+    
               <div class="name-big-block">
                 <p class="name-block">Выберите шаг пикселя</p>
                 <span>
-                  <i class="fa fa-question-circle quest-pix" aria-hidden="true" id="quest-pix-street"></i>
+                  <i class="fa fa-question-circle quest-pix" aria-hidden="true" id="quest-pix-room"></i>
                 </span>
               </div>
     
-              <select class="select-css" id="select-step-pixel-street">
+              <select name="step" class="select-css" id="select-step-pixel-street">
                 <option>4</option>
                 <option>4.81</option>
                 <option>5</option>
                 <option>6</option>
                 <option>6.66</option>
                 <option>8</option>
-                <option>10</option>
+                <option selected>10</option>
               </select>
     
               <select class="select-css select-module" id="select-module-street">
                 <option>P4 SMD1921 5500 cd/㎡ 320*160mm</option>
               </select>
     
-              <p class="name-block">Выберите яркость</p>
+              <!-- <p class="name-block">Выберите яркость</p>
               <select class="select-css">
                 <option>Яркий</option>
                 <option>Повышеная яркость</option>
-              </select>
+              </select> -->
     
               <div class="block-inline">
                 <p class="name-block">Гарантия</p>
@@ -745,15 +742,15 @@
               <div class="warranty-room-big-block">
                 <div class="warranty-room-big-block---year">
                   <div class="warranty-room-block">
-                    <input type="radio" name="warranty-street" id="warranty-street1" class="warranty-room__radio" value="1" checked>
+                    <input type="radio" name="warranty-room" id="warranty-street1" class="warranty-room__radio" value="1" checked>
                     <label for="warranty-street1"><span></span>1 год</label>
                   </div>
                   <div class="warranty-room-block">
-                    <input type="radio" name="warranty-street" id="warranty-street2" class="warranty-room__radio" value="2">
+                    <input type="radio" name="warranty-room" id="warranty-street2" class="warranty-room__radio" value="2">
                     <label for="warranty-street2"><span></span>2 года</label>
                   </div>
                   <div class="warranty-room-block">
-                    <input type="radio" name="warranty-street" id="warranty-street3" class="warranty-room__radio" value="3">
+                    <input type="radio" name="warranty-room" id="warranty-street3" class="warranty-room__radio" value="3">
                     <label for="warranty-street3"><span></span>3 года</label>
                   </div>
                 </div>
@@ -770,15 +767,11 @@
               <div class="result-room-block">
                 <div class="result-room-block-price">
                   <p class="result-room-block-price__caption">Цена экрана</p>
-                  <p class="result-room-block-price__price" id="result-street-block-price__price"></p>
-                </div>
-                <div class="result-room-block-price" style="display: none">
-                  <p class="result-room-block-price__caption">Цена экрана в &#x24;</p>
-                  <p class="result-room-block-price__price" id="result-street-block-price__price-dollar">0 &#x24;</p>
+                  <p class="result-room-block-price__price" id="result-room-block-price__price">0 Р</p>
                 </div>
                 <div class="result-room-block-size">
                   <p class="result-room-block-price__caption">Площадь экрана</p>
-                  <p class="result-room-block-price__size" id="result-street-block-size__size">0.9216 M <sup>2</sup></p>
+                  <p class="result-room-block-price__size" id="result-room-block-size__size">0.92 M <sup>2</sup></p>
                 </div>
               </div>
     
@@ -854,19 +847,19 @@
                 </div>
               </div>
             </div>
-          </div>
+          </form>
 
           <div class="calc-room---monitor">
             <div class="resize-container-street">
-                <div class="resize-drag-street">
-                  <video autoplay loop muted>
-                    <source src="video/smart.mp4">
-                  </video>
-                  <div class="resize-container-street---text">
-                    <span id="resize-drag-street-span">0.96 М x 0.96 М</span>
-                    <span id="resize-drag-street-span-itog">0.9216 M <sup>2</sup></span>
-                  </div>
+              <div class="resize-drag-street">
+                <video  autoplay loop muted>
+                  <source src="video/smart.mp4">
+                </video>
+                <div class="resize-container---text">
+                  <span class="videoSizeStreet" id="resize-drag-room">0.96 М x 0.96 М</span>
+                  <span class="videoSquareStreet" id="resize-drag-room-itog">0.92 M <sup>2</sup></span>
                 </div>
+              </div>
             </div>
           </div>
 
@@ -1828,10 +1821,16 @@
 
 
 <!-- BS4 -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<!-- JS TABS -->
+<script src="js/jquery.maskedinput.min.js"></script>
+<script>
+  $(".phone_mask").mask("+7(999)999-99-99");
+</script>
+<!-- FontAwesome -->
+<script src="https://use.fontawesome.com/402f73ccf5.js"></script>
+<!-- CUSTOM -->
 <script>  
 $('#myTab a').on('click', function (e) {
   e.preventDefault()
@@ -1867,10 +1866,227 @@ let form = document.querySelectorAll('.callback__form');
       });
   });
 </script>
-<!-- /JS TABS -->
+<!-- /CUSTOM -->
 
 
-<script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
+
+
+<script type="text/javascript">
+  $(function() {
+
+    $('.dop').on('click', function(){
+      $('.calc-room-option').toggleClass('active');
+    })
+
+    //Приводим сумму в красивый вид
+    function prettify (num) {
+      let n = num.toString();
+      let separator = " ";
+      return n.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + separator);
+    }
+
+    //////////////////////////////// TAB1
+    //ФУНКЦИЯ Отправка формы и получение значений
+    function sendFirst() {
+        let data = $('.calc__ajax__form--first').serialize();
+        $.ajax({
+          method: "POST",
+          url: "calc.php",
+          data: data
+        }).done(function(response) {
+
+          let result = $.parseJSON(response);
+          console.log(result);
+          
+          //Цена и площадь
+          $('.calc__ajax__form--first .result-room-block-price__price').html(prettify(result.price) + ' Р');
+          $('.calc__ajax__form--first .result-room-block-price__size').html(result.square + ' М <sup>2</sup>');
+          
+          //Ширина 
+          let rangeWidth = $('.rangeWidthRoom').val();
+          //Высота
+          let rangeHeight = $('.rangeHeightRoom').val();
+          $('.videoSize').html(rangeWidth + ' М x ' + rangeHeight + ' M');
+          $('.videoSquare').html(result.square + ' М <sup>2</sup>');
+
+          //Вставляем в следующие блоки ниже
+          let smodule = $('.select-first-module').val();
+          $('.caption-block-n').html(smodule);
+          $('.option-first-size').html(rangeWidth*1000 + ' x ' + rangeHeight*1000 + ' мм');
+          let step = $('.select-first-step').val();
+          $('.option-first-step').html(step + ' мм');
+          let warranty = $('.warranty-room-big-block---year input:checked').val();
+          console.log(warranty);
+          let formYear = 'год';
+          if (warranty > 1) {
+            formYear = 'года';
+          }
+          $('.option-first-warranty').html(warranty + ' ' + formYear);
+
+          //Total
+          $('.option-first-settingup').html(prettify(result.settingup) + ' &#x20bd;');
+          $('.option-first-led').html(prettify(result.led) + ' &#x20bd;');
+          $('.option-first-control').html(prettify(result.control) + ' &#x20bd;');
+          $('.option-first-delivery').html(prettify(result.delivery) + ' &#x20bd;');
+          $('.option-first-price').html(prettify(result.price) + ' &#x20bd;');
+
+          //Modal
+          $('.modal-first-price').html(prettify(result.price) + ' &#x20bd;');
+          $('.modal-first-square').html(result.square + ' М <sup>2</sup>');
+
+        }).fail(function(xhr, ajaxOptions, thrownError){
+          console.log(thrownError);
+        });
+    }
+
+    /////// Просто отправка
+    $('.calc__ajax__form--first').on('change', function(e) {
+        e.preventDefault();
+        sendFirst();
+      })
+
+    /////Ползунок Ширина
+    $(".rangeWidthRoom").mousemove(function(){
+      //Расчитываем кличество шагов
+      let rangeWidth = ((($(this).val()-0.96)/0.96)*20)+100;
+      let setRangeWidth = (($(this).val()-0.96)+0.96).toFixed(2);
+      //Изменяем шаг ползунка
+      $(".resize-drag").css('width', rangeWidth);
+      //Изменяем html значение ползунка
+      $('.rangeWidth').html(setRangeWidth);
+    });
+    //Ползунок Высота
+    $(".rangeHeightRoom").mousemove(function(){
+      let rangeHeight = ((($(this).val()-0.96)/0.96)*20)+100;
+      let setRangeHeight = (($(this).val()-0.96)+0.96).toFixed(2);
+      $(".resize-drag").css('height', rangeHeight);
+      $('.rangeHeight').html(setRangeHeight);
+    });
+
+
+    //Перетаскивание экрана
+    $('.resize-drag').draggable({
+      containment: "parent"
+    });
+    //Изменение размера экрана
+    $(".resize-drag").resizable({
+      containment: "parent",
+      grid: 20,
+      
+      minWidth: 100,
+      maxWidth: 380,
+      minHeight: 100,
+      maxHeight: 380,
+
+      resize: function(event, ui) {
+        //Определяем шаг
+        let width = (ui.size.width-100)/20+1;
+        let height = (ui.size.height-100)/20+1;
+        //Устанавливаем ползунок в нужное положение
+        $(".rangeWidthRoom").val(0.96*width);
+        $(".rangeHeightRoom").val(0.96*height);
+        //Устанавливаем html значение над ползунком
+        $('.rangeWidth').html((0.96*width).toFixed(2));
+        $('.rangeHeight').html((0.96*height).toFixed(2));
+        sendFirst();
+
+      }
+    });
+
+
+    //////////////////////////////// TAB2
+
+    /////Ползунок Ширина
+    $(".rangeWidthRoomStreet").mousemove(function(){
+      //Расчитываем кличество шагов
+      let rangeWidth = ((($(this).val()-0.96)/0.96)*20)+100;
+      let setRangeWidth = (($(this).val()-0.96)+0.96).toFixed(2);
+      //Изменяем шаг ползунка
+      $(".resize-drag-street").css('width', rangeWidth);
+      //Изменяем html значение ползунка
+      $('.rangeWidthStreet').html(setRangeWidth);
+    });
+    //Ползунок Высота
+    $(".rangeHeightRoomStreet").mousemove(function(){
+      let rangeHeight = ((($(this).val()-0.96)/0.96)*20)+100;
+      let setRangeHeight = (($(this).val()-0.96)+0.96).toFixed(2);
+      $(".resize-drag-street").css('height', rangeHeight);
+      $('.rangeHeightStreet').html(setRangeHeight);
+    });
+
+    //Перетаскивание экрана
+    $('.resize-drag-street').draggable({
+      containment: "parent"
+    });
+    //Изменение размера экрана
+    $(".resize-drag-street").resizable({
+      containment: "parent",
+      grid: 20,
+      
+      minWidth: 100,
+      maxWidth: 380,
+      minHeight: 100,
+      maxHeight: 380,
+
+      resize: function(event, ui) {
+        //Определяем шаг
+        let width = (ui.size.width-100)/20+1;
+        let height = (ui.size.height-100)/20+1;
+        //Устанавливаем ползунок в нужное положение
+        $(".rangeWidthRoomStreet").val(0.96*width);
+        $(".rangeHeightRoomStreet").val(0.96*height);
+        //Устанавливаем html значение над ползунком
+        $('.rangeWidthStreet').html((0.96*width).toFixed(2));
+        $('.rangeHeightStreet').html((0.96*height).toFixed(2));
+        sendSecond();
+      }
+    });
+    
+    //////////////////////////////////////////////////
+    //Отправка формы и получение значений
+
+    function sendSecond() {
+      let data = $('.calc__ajax__form--second').serialize();
+      $.ajax({
+        method: "POST",
+        url: "calc2.php",
+        data: data
+      }).done(function(response) {
+
+        let result = $.parseJSON(response);
+        console.log(result);
+        
+        //Цена и площадь
+        $('.calc__ajax__form--second .result-room-block-price__price').html(prettify(result.price) + ' Р');
+        $('.calc__ajax__form--second .result-room-block-price__size').html(result.square + ' М <sup>2</sup>');
+        
+        //Ширина 
+        let rangeWidth = $('.rangeWidthRoomStreet').val();
+        //Высота
+        let rangeHeight = $('.rangeHeightRoomStreet').val();
+        $('.videoSizeStreet').html(rangeWidth + ' М ' + rangeHeight + ' M');
+        $('.videoSquareStreet').html(result.square + ' М <sup>2</sup>');
+
+      }).fail(function(xhr, ajaxOptions, thrownError){
+        console.log(thrownError);
+      });
+    };
+
+    $('.calc__ajax__form--second').on('change', function(e) {
+      e.preventDefault();
+      sendSecond();
+    })
+    
+
+    //Вуаля бля - магия
+  });
+  </script>
+
+<!-- <script>
 
   var ert = document.getElementById("perem");
 
@@ -5080,317 +5296,7 @@ let form = document.querySelectorAll('.callback__form');
 
 
 
-</script>
+</script> -->
 
-
-<script src="https://use.fontawesome.com/402f73ccf5.js"></script>
-<script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous">
-</script>
-<script src="js/jquery.maskedinput.min.js"></script>
-<script>
-  $(".phone_mask").mask("+7(999)999-99-99");
-</script>
-
-<script>
-  $(document).mouseup(function (e) {
-    var container = $("#step-pix-block");
-    if (container.has(e.target).length === 0){
-      container.hide();
-    }
-  });
-
-  $(document).mouseup(function (e) {
-    var container = $("#step-pix-block-street");
-    if (container.has(e.target).length === 0){
-      container.hide();
-    }
-  });
-
-  $(document).mouseup(function (e) {
-    var container = $("#calc-room-option-help");
-    if (container.has(e.target).length === 0){
-      container.hide();
-    }
-  });
-
-  $(document).mouseup(function (e) {
-    var container = $("#calc-street-option-help");
-    if (container.has(e.target).length === 0){
-      container.hide();
-    }
-  });
-
-  $(document).mouseup(function (e) {
-    var container = $("#calc-media-option-help");
-    if (container.has(e.target).length === 0){
-      container.hide();
-    }
-  });
-
-  $(document).mouseup(function (e) {
-    var container = $("#step-pix-block-media");
-    if (container.has(e.target).length === 0){
-      container.hide();
-    }
-  });
-
-</script>
-<script>
-  $(document).ready(function(){
-    $('#btn_submit_room').click(function(){
-      // собираем данные с формы
-      var user_name_room    = $('#user_name_room').val();
-      var user_email_room   = $('#user_email_room').val();
-      var user_phone_room = $('#user_phone_room').val();
-      // отправляем данные
-      $.ajax({
-        url: "send.php", // куда отправляем
-        type: "post", // метод передачи
-        dataType: "json", // тип передачи данных
-        data: { // что отправляем
-          "user_name_room":    user_name_room,
-          "user_email_room":   user_email_room,
-          "user_phone_room":  user_phone_room
-        },
-        // после получения ответа сервера
-        success: function(data){
-          $('.messages-room').html(data.result); // выводим ответ сервера
-        }
-      });
-    });
-  });
-
-</script>
-<script>
-  $(document).ready(function(){
-    $('#btn_submit_room').click(function(){
-      // собираем данные с формы
-      var user_name_street    = $('#user_name_street').val();
-      var user_email_street   = $('#user_email_street').val();
-      var user_phone_street = $('#user_phone_street').val();
-      // отправляем данные
-      $.ajax({
-        url: "send2.php", // куда отправляем
-        type: "post", // метод передачи
-        dataType: "json", // тип передачи данных
-        data: { // что отправляем
-          "user_name_street":    user_name_street,
-          "user_email_street":   user_email_street,
-          "user_phone_street":  user_phone_street
-        },
-        // после получения ответа сервера
-        success: function(data){
-          $('.messages-street').html(data.result); // выводим ответ сервера
-        }
-      });
-    });
-  });
-
-</script>
-<script>
-  $(document).ready(function(){
-    $('#btn_submit_room').click(function(){
-      // собираем данные с формы
-      var user_name_media    = $('#user_name_media').val();
-      var user_email_media   = $('#user_email_media').val();
-      var user_phone_media = $('#user_phone_media').val();
-      // отправляем данные
-      $.ajax({
-        url: "send3.php", // куда отправляем
-        type: "post", // метод передачи
-        dataType: "json", // тип передачи данных
-        data: { // что отправляем
-          "user_name_media":    user_name_media,
-          "user_email_media":   user_email_media,
-          "user_phone_media":  user_phone_media
-        },
-        // после получения ответа сервера
-        success: function(data){
-          $('.messages-media').html(data.result); // выводим ответ сервера
-        }
-      });
-    });
-  });
-
-</script>
-
-<script>
-  $(document).ready(function(){
-    $('#btn_submit_room').click(function(){
-      // собираем данные с формы
-      var user_name_room_popup   = $('#user_name_room_popup').val();
-      var user_email_room_popup   = $('#user_email_room_popup').val();
-      var user_phone_room_popup = $('#user_phone_room_popup').val();
-      // отправляем данные
-      $.ajax({
-        url: "send4.php", // куда отправляем
-        type: "post", // метод передачи
-        dataType: "json", // тип передачи данных
-        data: { // что отправляем
-          "user_name_room_popup":    user_name_room_popup,
-          "user_email_room_popup":   user_email_room_popup,
-          "user_phone_room_popup":  user_phone_room_popup
-        },
-        // после получения ответа сервера
-        success: function(data){
-          $('.messages-room-popup').html(data.result); // выводим ответ сервера
-        }
-      });
-    });
-  });
-
-</script>
-
-<script>
-  $(document).ready(function(){
-    $('#btn_submit_street').click(function(){
-      // собираем данные с формы
-      var user_name_street_popup   = $('#user_name_street_popup').val();
-      var user_email_street_popup   = $('#user_email_street_popup').val();
-      var user_phone_street_popup = $('#user_phone_street_popup').val();
-      // отправляем данные
-      $.ajax({
-        url: "send5.php", // куда отправляем
-        type: "post", // метод передачи
-        dataType: "json", // тип передачи данных
-        data: { // что отправляем
-          "user_name_street_popup":    user_name_street_popup,
-          "user_email_street_popup":   user_email_street_popup,
-          "user_phone_street_popup":  user_phone_street_popup
-        },
-        // после получения ответа сервера
-        success: function(data){
-          $('.messages-street-popup').html(data.result); // выводим ответ сервера
-        }
-      });
-    });
-  });
-
-</script>
-
-<script>
-  $(document).ready(function(){
-    $('#btn_submit_media').click(function(){
-      // собираем данные с формы
-      var user_name_media_popup   = $('#user_name_media_popup').val();
-      var user_email_media_popup   = $('#user_email_media_popup').val();
-      var user_phone_media_popup = $('#user_phone_media_popup').val();
-      // отправляем данные
-      $.ajax({
-        url: "send6.php", // куда отправляем
-        type: "post", // метод передачи
-        dataType: "json", // тип передачи данных
-        data: { // что отправляем
-          "user_name_media_popup":    user_name_media_popup,
-          "user_email_media_popup":   user_email_media_popup,
-          "user_phone_media_popup":  user_phone_media_popup
-        },
-        // после получения ответа сервера
-        success: function(data){
-          $('.messages-media-popup').html(data.result); // выводим ответ сервера
-        }
-      });
-    });
-  });
-
-</script>
-
-<script>
-  /* $(document).ready(function(){
-            //Скрыть PopUp при загрузке страницы
-            PopUpHide();
-        });*/
-  //Функция отображения PopUp
-  // $('.form-modal').on('click', function (e) {
-  //   e.preventDefault();
-  //   console.log(e.target);
-  //   $("#popup1").show();
-  // })
-  function PopUpShow(){
-    
-  }
-  //Функция скрытия PopUp
-  function PopUpHide(){
-    $("#popup1").hide();
-  }
-</script>
-
-<script>
-  /*$(document).ready(function(){
-        //Скрыть PopUp при загрузке страницы
-        PopUpHide();
-    });*/
-  //Функция отображения PopUp
-  function PopUpShow2(){
-    $("#popup2").show();
-  }
-  //Функция скрытия PopUp
-  function PopUpHide2(){
-    $("#popup2").hide();
-  }
-</script>
-
-<script>
-  /*$(document).ready(function(){
-        //Скрыть PopUp при загрузке страницы
-        PopUpHide();
-    });*/
-  //Функция отображения PopUp
-  function PopUpShow3(){
-    $("#popup3").show();
-  }
-  //Функция скрытия PopUp
-  function PopUpHide3(){
-    $("#popup3").hide();
-  }
-</script>
-
-<script>
-  /*$(document).ready(function(){
-        //Скрыть PopUp при загрузке страницы
-        PopUpHide();
-    });*/
-  //Функция отображения PopUp
-  function PopUpShow4(){
-    $("#popup4").show();
-  }
-  //Функция скрытия PopUp
-  function PopUpHide4(){
-    $("#popup4").hide();
-  }
-</script>
-
-<script>
-  /*$(document).ready(function(){
-        //Скрыть PopUp при загрузке страницы
-        PopUpHide();
-    });*/
-  //Функция отображения PopUp
-  function PopUpShow5(){
-    $("#popup5").show();
-  }
-  //Функция скрытия PopUp
-  function PopUpHide5(){
-    $("#popup5").hide();
-  }
-</script>
-
-<script>
-  /*$(document).ready(function(){
-        //Скрыть PopUp при загрузке страницы
-        PopUpHide();
-    });*/
-  //Функция отображения PopUp
-  function PopUpShow6(){
-    $("#popup6").show();
-  }
-  //Функция скрытия PopUp
-  function PopUpHide6(){
-    $("#popup6").hide();
-  }
-</script>
 </body>
 </html>

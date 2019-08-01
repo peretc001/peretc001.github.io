@@ -66,10 +66,21 @@
             text-align: right
             color: $text
       &__input
-         display: flex
-         align-items: center
-         justify-content: center
-         position: relative
+         &__group
+            display: flex
+            align-items: center
+            justify-content: center
+            position: relative
+         .robot
+            margin-left: 2em
+            padding-top: 0.5em
+            &__check
+               display: flex
+               svg
+                  width: $gutter/1.2
+                  height: $gutter/1.2
+            span
+               color: $text
       .form-control
          max-width: 200px
          margin-right: 1em
@@ -168,9 +179,20 @@
             font-size: 1.2em
             margin-bottom: 1em
          &__input
-            width: 90%
-            flex-direction: column
             padding: 0
+            margin: 0 auto
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            &__group
+               width: 90%
+               flex-direction: column
+               justify-content: center
+               padding: 0
+            .robot
+               padding: 1em 2em
+               margin-left: 0
          .form-control
             margin: .3em auto
             margin-right: auto

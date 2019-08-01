@@ -9,6 +9,9 @@ $default-font: 'Roboto', sans-serif
 
 html, body
 	height: 100%
+
+form
+	margin: 0
 body
 	font-size: 16px
 	min-width: 320px
@@ -19,7 +22,8 @@ body
 	color: $text
 	img
 		max-width: 100%
-
+.redblock
+	background: red !important
 .img---wrapper
 	position: relative
 	padding-top: 56.25%
@@ -41,56 +45,7 @@ body
 	a,
 	a:hover
 		text-decoration: none
-	//Video
-	.calc-room---monitor
-		width: 50%
-		overflow: hidden
-		background-image: url('../img/holl.jpg')
-		background-size: cover
-		.resize-container,
-		.resize-container-street,
-		.resize-container-media
-			height: 420px
-			width: 650px
-			transform: perspective(1454px) rotateY(48deg) rotateZ(-3deg) rotateX(-2.3deg)
-			position: relative
-			top: 75px
-			left: 35px
-			.resize-drag,
-			.resize-drag-street,
-			.resize-drag-media
-				height: 120px
-				width: 120px
-				position: relative
-				touch-action: none
-				user-select: none
-				max-height: 100%
-				min-width: 120px !important
-				min-height: 120px !important
-				video
-					width: 100%
-					height: 100%
-					object-fit: fill
-					background: rgba(0, 0, 0, 0.77)
-					border: solid 3px #3c3c3c
-					outline: solid 1px #656565
-					outline-offset: -4px
-					overflow: hidden
-					box-shadow: -3px 0px 4px 0px rgba(0, 0, 0, 0.8)
-			&---text
-				width: 100%
-				position: absolute
-				left: 50%
-				top: 50%
-				transform: translateX(-50%) translateY(-50%)
-				color: #ffffff
-				display: flex
-				flex-direction: column
-				align-items: center
-				font-size: 13px
-				.resize-drag-room
-					margin-bottom: 5%
-
+	
 	h1
 		font-size: 2.4em
 		font-weight: bold
@@ -140,6 +95,11 @@ body
 				font-style: normal
 	.tab-content
 		border: none
+	
+	.calc__ajax__form
+		margin: 0
+		padding: 0
+
 	.form-room,
 	.form-street,
 	.form-media
@@ -148,6 +108,60 @@ body
 		justify-content: space-between
 		overflow: hidden
 		position: relative
+
+	//Video
+	.calc-room---monitor
+		width: 50%
+		background-image: url('../img/holl.jpg')
+		background-size: cover
+		overflow: hidden
+		.resize-container,
+		.resize-container-street,
+		.resize-container-media
+			width: 95%
+			height: 500px
+			transform: perspective(1800) rotateY(30deg) rotateZ(-1deg) rotateX(-2.3deg)
+			position: relative
+			top: 0
+			left: 0
+			display: flex
+			align-items: center
+			justify-content: center
+			.resize-drag,
+			.resize-drag-street,
+			.resize-drag-media
+				height: 100px
+				width: 100px
+				position: relative
+				touch-action: none
+				user-select: none
+				video
+					width: 100%
+					height: 100%
+					object-fit: fill
+					background: rgba(0, 0, 0, 0.77)
+					border: solid 3px #3c3c3c
+					outline: solid 1px #656565
+					outline-offset: -4px
+					overflow: hidden
+					box-shadow: -3px 0px 4px 0px rgba(0, 0, 0, 0.8)
+			&---text
+				width: 100%
+				position: absolute
+				left: 50%
+				top: 50%
+				transform: translateX(-50%) translateY(-50%)
+				color: #ffffff
+				display: flex
+				flex-direction: column
+				align-items: center
+				font-size: 13px
+				.resize-drag-room
+					margin-bottom: 5%
+
+	.form-room,
+	.form-street,
+	.form-media
 		
 		//Calc
 		.calc-room---form
@@ -162,28 +176,27 @@ body
 				padding: $gutter
 				position: relative
 				overflow: hidden
+				.dop
+					display: block
+					position: absolute
+					top: 0
+					right: 0
+					background: darken($accent, 10%)
+					color: #ffffff
+					border: none
+					border-radius: 0 0 0 8px
+					padding: 0.5em 1em
+					cursor: pointer
+					outline: none
+					.fa
+						margin-right: 0.5em
+						font-weight: normal
+					&:hover
+						color: darken(#ffffff, 10%)
 				p
 					padding-top: 1em
 					font-size: 1.4em
 					display: block
-				.calc-room__caption-block
-					span
-						display: block
-						position: absolute
-						top: 0
-						right: 0
-						background: darken($accent, 10%)
-						color: #ffffff
-						border: none
-						border-radius: 0 0 0 8px
-						padding: 0.5em 1em
-						cursor: pointer
-						outline: none
-						.fa
-							margin-right: 0.5em
-							font-weight: normal
-						&:hover
-							color: darken(#ffffff, 10%)
 				.range---value
 					display: flex
 					align-items: center
@@ -334,6 +347,8 @@ body
 				position: relative
 				overflow: hidden
 				background: darken($accent, 10%)
+				&.active
+					display: block
 				.name-block
 					padding-top: 1em
 					font-size: 1.4em
@@ -449,6 +464,7 @@ body
 				.options-second-block-big-photo-block__item,
 				.options-third-block-big-photo-block__item
 					display: flex
+					margin-bottom: 1em
 					.parname
 						order: 1
 					.parval
@@ -530,6 +546,7 @@ body
 			z-index: 6
 			.options-second-block-big-photo-block__item
 				display: flex
+				margin-bottom: 1em
 				.parname-fourth
 					order: 1
 				.parval-fourth

@@ -60,13 +60,22 @@
             </div>
             <div class="col-lg-6">
                <div class="consultation">
-                  <form action="/thankyou.php" class="form_consult" method="post">
+                  <form action="/thankyou.php" class="form_consult callback__form" method="post">
                      <p>Получить консультацию</p>
                      <div class="consultation__input">
                         <input type="hidden" name="human" value="human">
                         <input type="text" name="name" class="form-control" value="" placeholder="Имя">
                         <input type="tel" name="phone" class="form-control tel" value="" placeholder="Телефон" required>
-                        <button type="submit" class="btn btn-dark">Записаться</button>
+                        <div class="robot">
+                           <div class="robot__check">
+                              <svg viewBox="0 0 60 60">
+                                 <line class="st0 line1" x1="4.5" y1="30.5" x2="29.5" y2="52.5"/>
+                                 <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
+                              </svg>
+                           </div>
+                           <span>Согласен с условиями <a href="#" data-toggle="modal" data-target="#policy">Политики конфиденциальности</a></span>
+                        </div>
+                        <button type="submit" class="btn btn-dark callback__form__button">Записаться</button>
                      </div>
                   </form>
                   <div class="request_callback">Заявка принята!!!</div>
@@ -349,7 +358,7 @@
                            <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
                         </svg>
                      </div>
-                     <span>Согласен с условиями <a href="/policy/" target="_blank">Политики конфиденциальности</a></span>
+                     <span>Согласен с условиями <a href="#" data-toggle="modal" data-target="#policy">Политики конфиденциальности</a></span>
                   </div>
 
                   <button type="submit" class="btn callback__form__button" disabled>Отправить</button>

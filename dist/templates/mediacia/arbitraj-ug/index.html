@@ -77,12 +77,23 @@
                </div>
             </div>
             <div class="consultation">
-               <form action="/thankyou.php" class="form_consult" method="post">
+               <form action="/thankyou.php" class="form_consult callback__form" method="post">
                   <p>Бесплатная юридическая консультация <span>Перезваниваем в течении 5 минут</span></p>
                   <div class="consultation__input">
-                     <input type="text" name="name" class="form-control" value="" placeholder="Имя">
-                     <input type="tel" name="phone" class="form-control tel" value="" placeholder="Телефон" required>
-                     <button type="submit" class="btn btn-dark">Получить</button>
+                     <div class="consultation__input__group">
+                        <input type="text" name="name" class="form-control" value="" placeholder="Имя">
+                        <input type="tel" name="phone" class="form-control tel" value="" placeholder="Телефон" required>
+                        <button type="submit" class="btn btn-dark callback__form__button">Получить</button>
+                     </div>
+                     <div class="robot">
+                        <div class="robot__check">
+                           <svg viewBox="0 0 60 60">
+                              <line class="st0 line1" x1="4.5" y1="30.5" x2="29.5" y2="52.5"/>
+                              <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
+                           </svg>
+                        </div>
+                        <span>Согласен с условиями <a href="#" data-toggle="modal" data-target="#policy">Политики конфиденциальности</a></span>
+                     </div>
                   </div>
                </form>
                <div class="request_callback">Заявка принята!!!</div>
@@ -251,7 +262,7 @@
                            <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
                         </svg>
                      </div>
-                     <span>Согласен с условиями <a href="/policy/" target="_blank">Политики конфиденциальности</a></span>
+                     <span>Согласен с условиями <a href="#" data-toggle="modal" data-target="#policy">Политики конфиденциальности</a></span>
                   </div>
 
                   <button type="submit" class="btn callback__form__button" disabled>Отправить</button>
@@ -259,6 +270,40 @@
                </form>
             </div>
             <div class="request_callback__footer">Заявка принята!!!</div>
+         </div>
+      </div>
+   </div>
+
+   <!-- Policy -->
+   <div class="modal fade" id="policy" tabindex="-1" role="dialog" aria-labelledby="callbackTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content policy">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+               <h5>Политика конфиденциальности</h5>
+               
+               <p>Предоставляя свои персональные данные Посетитель даёт согласие на обработку, хранение и использование своих персональных данных на основании ФЗ № 152-ФЗ «О персональных данных» от 27.07.2006 г. в следующих целях:</p>
+               <ul>
+                  <li>- Регистрации Пользователя на сайте</li>
+                  <li>- Осуществление клиентской поддержки</li>
+                  <li>- Получения Пользователем информации о маркетинговых событиях</li>
+                  <li>- Выполнение Администрацией сайта обязательств перед Посетителем</li>
+                  <li>- Проведения аудита и прочих внутренних исследований с целью повышения качества предоставляемых услуг.</li>
+               </ul>
+               <p>Под персональными данными подразумевается любая информация личного характера, позволяющая установить личность Посетителя такая как:</p>
+               <ul>
+                  <li>- Фамилия, Имя, Отчество</li>
+                  <li>- Контактный телефон</li>
+                  <li>- Адрес электронной почты</li>
+               </ul>
+               <p>Персональные данные Посетителей хранятся исключительно на электронных носителях и обрабатываются с использованием автоматизированных систем, за исключением случаев, когда неавтоматизированная обработка персональных данных необходима в связи с исполнением требований законодательства.</p>
+               <p>Администрация сайта обязуется не передавать полученные персональные данные третьим лицам, за исключением следующих случаев:</p>
+               <p>По запросам уполномоченных органов государственной власти РФ только по основаниям и в порядке, установленным законодательством РФ</p>
+               <p>Администрация сайта оставляет за собой право вносить изменения в одностороннем порядке в настоящие правила, при условии, что изменения не противоречат действующему законодательству РФ.</p>
+               <p>Изменения условий настоящих правил вступают в силу после их публикации на Сайте</p>
+            </div>
          </div>
       </div>
    </div>
