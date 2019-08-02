@@ -1,0 +1,196 @@
+.header
+   display: flex
+   align-items: center
+   justify-content: flex-start
+   height: 100%
+   min-height: 600px
+   padding: $gutter*2 $gutter
+   background-size: cover
+   background-position: center
+   position: relative
+   &:before
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      width: 100%
+      height: 100%
+      background: #000000
+      opacity: .7
+   .container
+      position: relative
+      color: #ffffff
+   h1
+      text-transform: uppercase
+      font-weight: bold
+      font-size: 2em
+      line-height: 1
+      margin-bottom: 0
+      span
+         color: rgba($accent, .9)
+   p
+      font-size: .85em
+      padding-top: 0.5em
+      margin-bottom: 0
+      text-transform: uppercase
+      color: darken(#ffffff, 30%)
+   .desc__title
+      font-size: 1.6em
+      font-weight: bold
+      color: #ffffff
+      position: relative
+      margin-top: 1em
+      padding-top: 0
+      padding-left: $gutter*1.5
+      span
+         color: lighten($accent, 10%)
+      &:before
+         content: ''
+         position: absolute
+         left: 0
+         top: 50%
+         transform: translateY(-50%)
+         background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDg3LjcgNDg3LjciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ4Ny43IDQ4Ny43OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTgwLjIsNjIuN2MtNC44LTQuOC0xMi41LTQuOC0xNy4zLTAuMUM1OCw2Ny40LDU4LDc1LjEsNjIuOCw3OS45TDkyLDEwOS4zYzIuMywyLjMsNS40LDMuNiw4LjcsMy42bDAsMCAgICBjMy4yLDAsNi4zLTEuMyw4LjYtMy42bDg4LjktODguNGM0LjgtNC44LDQuOC0xMi41LDAuMS0xNy4zYy00LjgtNC44LTEyLjUtNC44LTE3LjMsMGwtMjYuOSwyNi43QzEzOS44LDE1LjUsMTE5LjksNyw5OSw3ICAgIEM1Ni43LDcsMjIuMyw0MS40LDIyLjMsODMuN3MzNC40LDc2LjcsNzYuNyw3Ni43YzM0LjEsMCw2My42LTIxLjksNzMuNS01NC41YzItNi41LTEuNy0xMy4zLTguMi0xNS4zYy02LjUtMS45LTEzLjMsMS43LTE1LjMsOC4yICAgIGMtNi42LDIxLjgtMjcuMiwzNy4xLTUwLDM3LjFjLTI4LjgsMC01Mi4yLTIzLjQtNTIuMi01Mi4yUzcwLjIsMzEuNSw5OSwzMS41YzE0LjMsMCwyNy45LDYsMzcuNywxNi4ybC0zNS45LDM1LjdMODAuMiw2Mi43eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgc3R5bGU9ImZpbGw6I0JCMDEzNSI+PC9wYXRoPgoJCTxwYXRoIGQ9Ik05OSwxNzAuNmMtNDIuMywwLTc2LjcsMzQuNC03Ni43LDc2LjdTNTYuNywzMjQsOTksMzI0czc2LjctMzQuNCw3Ni43LTc2LjdTMTQxLjMsMTcwLjYsOTksMTcwLjZ6IE05OSwyOTkuNSAgICBjLTI4LjgsMC01Mi4yLTIzLjQtNTIuMi01Mi4yczIzLjQtNTIuMiw1Mi4yLTUyLjJzNTIuMiwyMy40LDUyLjIsNTIuMlMxMjcuOCwyOTkuNSw5OSwyOTkuNXoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiIHN0eWxlPSJmaWxsOiNCQjAxMzUiPjwvcGF0aD4KCQk8cGF0aCBkPSJNMTc1LjcsNDExYzAtNDIuMy0zNC40LTc2LjctNzYuNy03Ni43UzIyLjMsMzY4LjcsMjIuMyw0MTFzMzQuNCw3Ni43LDc2LjcsNzYuN1MxNzUuNyw0NTMuMywxNzUuNyw0MTF6IE05OSw0NjMuMyAgICBjLTI4LjgsMC01Mi4yLTIzLjQtNTIuMi01Mi4yczIzLjQtNTIuMiw1Mi4yLTUyLjJzNTIuMiwyMy40LDUyLjIsNTIuMlMxMjcuOCw0NjMuMyw5OSw0NjMuM3oiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiIHN0eWxlPSJmaWxsOiNCQjAxMzUiPjwvcGF0aD4KCQk8cGF0aCBkPSJNNDUzLjEsMjM1SDIxNC44Yy02LjgsMC0xMi4zLDUuNS0xMi4zLDEyLjNzNS41LDEyLjMsMTIuMywxMi4zaDIzOC4zYzYuOCwwLDEyLjMtNS41LDEyLjMtMTIuM1M0NTkuOSwyMzUsNDUzLjEsMjM1eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgc3R5bGU9ImZpbGw6I0JCMDEzNSI+PC9wYXRoPgoJCTxwYXRoIGQ9Ik00NTMuMSw3MS41SDIxNC44Yy02LjgsMC0xMi4zLDUuNS0xMi4zLDEyLjNzNS41LDEyLjMsMTIuMywxMi4zaDIzOC4zYzYuOCwwLDEyLjMtNS41LDEyLjMtMTIuM1M0NTkuOSw3MS41LDQ1My4xLDcxLjV6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBzdHlsZT0iZmlsbDojQkIwMTM1Ij48L3BhdGg+CgkJPHBhdGggZD0iTTQ1My4xLDM5OC44SDIxNC44Yy02LjgsMC0xMi4zLDUuNS0xMi4zLDEyLjNzNS41LDEyLjMsMTIuMywxMi4zaDIzOC4zYzYuOCwwLDEyLjMtNS41LDEyLjMtMTIuMyAgICBDNDY1LjQsNDA0LjIsNDU5LjksMzk4LjgsNDUzLjEsMzk4Ljh6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBzdHlsZT0iZmlsbDojQkIwMTM1Ij48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==') center no-repeat
+         background-size: $gutter
+         width: $gutter
+         height: $gutter
+
+   .consultation
+      padding: $gutter/1.5 10%
+      padding-bottom: $gutter
+      border-radius: 6px
+      background: $accent
+      overflow: hidden
+      position: relative
+      max-width: 70%
+      margin: 0 auto
+      text-align: center
+      form
+         width: 100%
+         padding: 0
+         margin: 0
+      p
+         font-size: 1.2em
+         text-transform: uppercase
+         font-weight: bold
+         position: relative
+         margin-bottom: 1em
+         color: #ffffff
+      &__input
+         display: flex
+         align-items: center
+         justify-content: center
+         flex-direction: column
+         position: relative
+      .form-control
+         width: 100% !important
+         margin: 0 auto
+         outline: none
+         text-align: center
+         margin-bottom: 1em
+      .btn
+         width: 100%
+         text-transform: uppercase
+         font-weight: bold
+         position: relative
+         z-index: 1
+
+      .form_consult
+         display: flex
+         justify-content: flex-start
+         flex-direction: column
+         width: 100%
+         margin: 0
+         &.done
+            opacity: 0
+      .request_callback
+         display: none
+         text-transform: uppercase
+         font-size: 1.4em
+         font-weight: bold
+         position: absolute
+         left: 50%
+         top: 50%
+         transform: translateX(-50%) translateY(-50%)
+         z-index: 2
+      .robot
+         padding-bottom: 1em
+         a
+            color: #ffffff
+            text-decoration: underline
+         &__check
+            display: flex
+            svg
+               border: 1px solid #ffffff
+            .st0
+               stroke: #ffffff
+   
+@media screen and (max-width: 1199.98px)
+   .header
+      font-size: 0.9em
+      h1
+         font-size: 2.4em
+         span
+            display: block
+      p
+         font-size: .98em
+      .consultation
+         .robot
+            a
+               font-size: 0.9em
+
+
+@media screen and (max-width: 991.98px)
+   .header
+      font-size: 0.9em
+      text-align: center
+      .container
+         padding-top: 100px
+      p
+         padding-top: 0.3em
+      .desc__title
+         font-size: 2em
+         padding-left: 0
+         &:before
+            background: none
+
+      .consultation
+         margin-top: 2em
+
+@media screen and (max-width: 767.98px)
+   .header
+      height: auto
+      .container
+         padding-top: 50px
+      h1
+         font-size: 2em
+
+@media screen and (max-width: 599.98px)
+   .header
+      height: auto
+      padding-bottom: $gutter*2
+      &:before
+         opacity: .7
+      h1
+         font-size: 2em
+      p
+         margin-top: 0.5em
+         span
+            display: inline-block
+      .desc__title
+         font-size: 1.6em
+      .consultation
+         max-width: 100%
+
+@media screen and (max-width: 374.98px)
+   .header
+      h1
+         font-size: 1.8em
+      &__card
+         p
+            font-size: 1em
+            span
+               display: inline
+      .consultation
+         p
+            font-size: .9em

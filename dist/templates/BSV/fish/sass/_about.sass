@@ -1,0 +1,102 @@
+.about
+   padding: $gutter $gutter
+   margin: 0 auto
+   position: relative
+   overflow: hidden
+   .container
+      position: relative
+      overflow: hidden
+
+   p
+      margin-bottom: 0
+
+   video
+      border-radius: 6px
+   &__column
+      display: flex
+      align-items: center
+      justify-content: space-between
+      padding: $gutter 0 0 0
+      flex-wrap: wrap
+      position: relative
+      &__video
+         width: 30%
+         text-align: right
+         padding-right: 2em
+      &__item
+         width: 70%
+         margin-bottom: 1em
+         padding-right: 15px
+         position: relative
+         h2
+            font-weight: bold
+            margin-bottom: 1em
+            position: relative
+            &:before
+               content: ''
+               position: absolute
+               left: 0
+               bottom: -15px
+               width: 80px
+               height: 1px
+               background: $accent
+         p
+            color: #a0a0a0
+         h3
+            font-size: 1.6em
+            font-weight: bold
+            position: relative
+            margin-top: 1em
+         ul
+            margin: .5em 0 0.5em 0
+            padding: 0
+            li
+               list-style: none
+               padding-left: 1.5em
+               position: relative
+               &:before
+                  content: ''
+                  position: absolute
+                  left: 0
+                  top: 50%
+                  transform: translateY(-50%)
+                  width: 1em
+                  height: 1px
+                  background: $accent
+
+@media screen and (max-width: 991.98px)
+   .about
+      font-size: 0.8em
+      &__column
+         &__video
+            width: 40%
+         &__item
+            width: 60%
+
+@media screen and (max-width: 767.98px)
+   .about
+      font-size: 1em
+      &__column
+         &__video
+            width: 100%
+            text-align: center
+            padding-right: 0
+            margin-bottom: 2em
+         &__item
+            width: 100%
+
+@media screen and (max-width: 576.98px)
+   .about
+      h2
+         font-size: 1.5em
+      &__column
+         &__item
+            h2
+               text-align: center
+               &:before
+                  left: 50%
+                  transform: translateX(-50%)
+            p
+               text-align: center
+            h3
+               font-size: 1.2em

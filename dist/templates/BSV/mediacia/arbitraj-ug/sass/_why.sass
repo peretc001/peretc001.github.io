@@ -1,0 +1,37 @@
+.why
+   padding: $gutter 0
+   text-align: center
+   h3
+      font-weight: bold
+      font-size: 2em
+      margin-bottom: 2em
+      span
+         color: $accent
+   [class*="col-"]
+      margin-bottom: 2em
+      img
+         width: 80px
+         margin-bottom: 1em
+      p
+         font-weight: bold
+         font-size: 1.2em
+         &:last-child
+            font-weight: normal
+            font-size: 0.9em
+      .btn
+         padding: .5em 2em
+         margin-bottom: 0
+         font-size: 1.2em
+
+@media screen and (max-width: 991.98px)
+   .why
+      font-size: 0.9em
+
+@media screen and (max-width: 576.98px)
+   .why
+      padding: $gutter
+      font-size: 1em
+      h3
+         font-size: 2em
+         span
+            display: block
