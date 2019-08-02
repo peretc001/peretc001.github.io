@@ -1,0 +1,96 @@
+.about
+   padding: $gutter 0 $gutter*2 0
+   position: relative
+   overflow: hidden
+   .container
+      position: relative
+      overflow: hidden
+   h2
+      text-align: center
+      font-weight: bold
+      margin-bottom: 1em
+      position: relative
+      &:before
+         content: ''
+         position: absolute
+         left: 50%
+         bottom: -15px
+         transform: translateX(-50%)
+         width: 100px
+         height: 1px
+         background: $accent
+   .text-center
+      color: #a0a0a0
+      max-width: 70%
+      margin: 0 auto
+
+   p
+      margin-bottom: 0
+
+   &__column
+      display: flex
+      justify-content: space-between
+      padding: $gutter 0 0 0
+      flex-wrap: wrap
+      &__item
+         width: 50%
+         display: flex
+         align-items: center
+         margin-bottom: 1em
+         padding-right: 15px
+         p
+            &:first-child
+               font-size: 5em
+               font-weight: bold
+               color: $accent
+               margin-bottom: 0
+               margin-top: 0
+            &:last-child
+               border-left: 1px solid $accent
+               padding-left: 1em
+               margin-left: 1em
+            strong
+               display: block
+   
+@media screen and (max-width: 1199.98px)
+   .about
+      &__column
+         &__item
+            p
+               &:first-child
+                  font-size: 4em
+               &:last-child
+                  font-size: 0.9em
+
+@media screen and (max-width: 991.98px)
+   .about
+      .text-center
+         max-width: 80%
+
+@media screen and (max-width: 767.98px)
+   .about
+      .text-center
+         max-width: 90%
+      &__column
+         &__item
+            width: 100%
+            p
+               &:first-child
+               &:last-child
+                  font-size: 1em
+            &:last-child
+               margin-left: 0
+
+@media screen and (max-width: 576.98px)
+   .about
+      h2
+         font-size: 1.5em
+      .text-center
+         font-size: .9em
+      &__column
+         &__item
+            margin-bottom: 2em
+            p
+               &:first-child
+               &:last-child
+                  font-size: 1em
