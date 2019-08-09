@@ -1,0 +1,242 @@
+.navbar
+   background: #ffffff
+   position: absolute
+   left: 0
+   top: 0
+   width: 100%
+   display: flex
+   flex-direction: column
+   padding: 0
+   z-index: 3
+   a
+      color: $accent
+   .hamburger-box
+      width: 30px
+      height: 16px
+   .hamburger-inner, 
+   .hamburger-inner:after, 
+   .hamburger-inner:before
+      width: 30px
+      height: 2px
+      background-color: $accent
+   .hamburger.is-active
+      .hamburger-inner, 
+      .hamburger-inner:after, 
+      .hamburger-inner:before
+         background-color: $accent
+   .hamburger--slider 
+      .hamburger-inner
+         top: 1px
+   
+   p
+      margin: 0
+   
+   .first-line
+      display: flex
+      align-items: center
+      justify-content: space-between
+      width: 100%
+      max-width: 1170px
+      padding: 1em
+      margin: 0 auto
+
+   .navbar-brand
+      display: flex
+      align-items: center
+      position: relative
+      a
+         position: relative
+         display: block
+         text-decoration: none
+         padding-left: 3.5em
+         font-weight: bold
+         &:before
+            content: ''
+            position: absolute
+            left: 0
+            top: 50%
+            transform: translateY(-50%)
+            background-image: url('../img/logo.svg')
+            background-position: center
+            background-repeat: no-repeat
+            background-size: 3em
+            width: 3em
+            height: 3em
+         span
+            color: #444
+            display: block
+            font-size: .6em
+            font-weight: normal
+            padding-top: 0.1em
+            text-transform: uppercase
+   
+   .adress
+      display: flex
+      flex-direction: column
+      position: relative
+      padding-left: 1.6em
+      &:before
+         content: ''
+         position: absolute
+         left: 0
+         top: 10px
+         transform: translateY(-50%)
+         width: 1.2em
+         height: 1.2em
+         background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48Zz48Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0yNTYsMEMxNTYuNzQ4LDAsNzYsODAuNzQ4LDc2LDE4MGMwLDMzLjUzNCw5LjI4OSw2Ni4yNiwyNi44NjksOTQuNjUybDE0Mi44ODUsMjMwLjI1NyAgICBjMi43MzcsNC40MTEsNy41NTksNy4wOTEsMTIuNzQ1LDcuMDkxYzAuMDQsMCwwLjA3OSwwLDAuMTE5LDBjNS4yMzEtMC4wNDEsMTAuMDYzLTIuODA0LDEyLjc1LTcuMjkyTDQxMC42MTEsMjcyLjIyICAgIEM0MjcuMjIxLDI0NC40MjgsNDM2LDIxMi41MzksNDM2LDE4MEM0MzYsODAuNzQ4LDM1NS4yNTIsMCwyNTYsMHogTTM4NC44NjYsMjU2LjgxOEwyNTguMjcyLDQ2OC4xODZsLTEyOS45MDUtMjA5LjM0ICAgIEMxMTMuNzM0LDIzNS4yMTQsMTA1LjgsMjA3Ljk1LDEwNS44LDE4MGMwLTgyLjcxLDY3LjQ5LTE1MC4yLDE1MC4yLTE1MC4yUzQwNi4xLDk3LjI5LDQwNi4xLDE4MCAgICBDNDA2LjEsMjA3LjEyMSwzOTguNjg5LDIzMy42ODgsMzg0Ljg2NiwyNTYuODE4eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgc3R5bGU9ImZpbGw6IzBGNTY5RCI+PC9wYXRoPgoJPC9nPgo8L2c+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMjU2LDkwYy00OS42MjYsMC05MCw0MC4zNzQtOTAsOTBjMCw0OS4zMDksMzkuNzE3LDkwLDkwLDkwYzUwLjkwMywwLDkwLTQxLjIzMyw5MC05MEMzNDYsMTMwLjM3NCwzMDUuNjI2LDkwLDI1Niw5MHogICAgIE0yNTYsMjQwLjJjLTMzLjI1NywwLTYwLjItMjcuMDMzLTYwLjItNjAuMmMwLTMzLjA4NCwyNy4xMTYtNjAuMiw2MC4yLTYwLjJzNjAuMSwyNy4xMTYsNjAuMSw2MC4yICAgIEMzMTYuMSwyMTIuNjgzLDI4OS43ODQsMjQwLjIsMjU2LDI0MC4yeiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgc3R5bGU9ImZpbGw6IzBGNTY5RCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=') center no-repeat
+         background-size: 1.2em
+      p
+         color: #888888
+         b
+            text-decoration: underline
+      
+
+   .phone
+      display: flex
+      align-items: center
+      justify-content: center
+      font-weight: bold
+      position: relative
+      .phone-icon
+         position: relative
+         padding-left: 1.4em
+         &:before
+            content: ''
+            position: absolute
+            left: 0
+            top: 50%
+            transform: translateY(-50%)
+            width: 1.2em
+            height: 1.2em
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjcuNDQyIDI3LjQ0MiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjcuNDQyIDI3LjQ0MjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48Zz48Zz4KCTxwYXRoIGQ9Ik0xOS40OTQsMEg3Ljk0OEM2Ljg0MywwLDUuOTUxLDAuODk2LDUuOTUxLDEuOTk5djIzLjQ0NmMwLDEuMTAyLDAuODkyLDEuOTk3LDEuOTk3LDEuOTk3aDExLjU0NiAgIGMxLjEwMywwLDEuOTk3LTAuODk1LDEuOTk3LTEuOTk3VjEuOTk5QzIxLjQ5MSwwLjg5NiwyMC41OTcsMCwxOS40OTQsMHogTTEwLjg3MiwxLjIxNGg1LjdjMC4xNDQsMCwwLjI2MSwwLjIxNSwwLjI2MSwwLjQ4MSAgIHMtMC4xMTcsMC40ODItMC4yNjEsMC40ODJoLTUuN2MtMC4xNDUsMC0wLjI2LTAuMjE2LTAuMjYtMC40ODJDMTAuNjEyLDEuNDI5LDEwLjcyNywxLjIxNCwxMC44NzIsMS4yMTR6IE0xMy43MjIsMjUuNDY5ICAgYy0wLjcwMywwLTEuMjc1LTAuNTcyLTEuMjc1LTEuMjc2czAuNTcyLTEuMjc0LDEuMjc1LTEuMjc0YzAuNzAxLDAsMS4yNzMsMC41NywxLjI3MywxLjI3NFMxNC40MjMsMjUuNDY5LDEzLjcyMiwyNS40Njl6ICAgIE0xOS45OTUsMjEuMUg3LjQ0OFYzLjM3M2gxMi41NDdWMjEuMXoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6IzBGNTY5RCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+') center no-repeat
+            background-size: 1.2em
+      a
+         margin: 0
+         padding: 0
+         color: $accent
+         text-decoration: none
+         font-weight: bold
+         font-size: 1.4em
+
+      .social
+         display: flex
+         align-items: center
+         justify-content: center
+         padding: 0
+         margin: 0
+         padding-left: 1em
+         margin-left: 1em
+         border-left: 1px solid #ebebeb
+         a
+            margin-right: 0.5em
+            img
+               width: 1.1em
+               height: auto
+
+   .navbar-collapse
+      background: $accent
+      padding: 0 1em
+      width: 100%
+   .navbar-nav
+      width: 100%
+      max-width: 1170px
+      margin: 0 auto
+      align-items: center
+      justify-content: space-between
+      .nav-link
+         color: #ffffff
+         margin: 0 .5em
+         font-size: 1em
+         padding: 1em .5em
+         position: relative
+         &:after
+            content: ''
+            position: absolute
+            left: 0
+            bottom: 0
+            width: 100%
+            height: 3px
+            border-radius: 6px
+            background-color: $accent2
+            transform: scale(0)
+            transition: all .3s ease
+         &:hover
+            &:hover
+               color: darken(#ffffff, 10%)
+            &:after
+               content: ''
+               position: absolute
+               left: 0
+               bottom: 0
+               width: 100%
+               height: 3px
+               border-radius: 6px
+               background-color: $accent2
+               transform: scale(1)
+               z-index: 2
+         &.nav-phone
+            display: none
+
+@media screen and (max-width: 991.98px)
+   .navbar
+      font-size: 0.8em
+      .navbar-brand
+         a
+            font-size: .9em
+            padding-left: 2.5em
+            &:before
+               background-size: 2em
+               width: 2em
+               height: 2em
+         
+      .navbar-nav
+         .nav-link
+            font-size: .8em
+
+@media screen and (max-width: 767.98px)
+   .navbar
+      font-size: 1em
+      .first-line
+         padding: .5em
+      .navbar-brand
+         a
+            font-size: .8em
+      .adress
+         display: none
+      .phone
+         font-size: 0.8em
+
+      .navbar-nav
+         padding: $gutter 0
+         .nav-link
+            font-size: 1em
+            padding: .5em 0
+
+@media screen and (max-width: 599.98px)
+   .navbar
+      .navbar-brand
+         a
+            font-size: .8em
+      .callback
+         display: none
+      .phone
+         display: none
+      
+      .navbar-nav
+         .nav-link
+            &.nav-phone
+               margin-top: 1em
+               border-top: 1px solid rgba(#ffffff, .5)
+               display: block
+               position: relative
+               padding: 1em 0 1em 1.5em
+               &:before
+                  content: ''
+                  position: absolute
+                  left: 0
+                  top: 50%
+                  transform: translateY(-50%)
+                  width: 1em
+                  height: 1em
+                  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjcuNDQyIDI3LjQ0MiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjcuNDQyIDI3LjQ0MjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48Zz48Zz4KCTxwYXRoIGQ9Ik0xOS40OTQsMEg3Ljk0OEM2Ljg0MywwLDUuOTUxLDAuODk2LDUuOTUxLDEuOTk5djIzLjQ0NmMwLDEuMTAyLDAuODkyLDEuOTk3LDEuOTk3LDEuOTk3aDExLjU0NiAgIGMxLjEwMywwLDEuOTk3LTAuODk1LDEuOTk3LTEuOTk3VjEuOTk5QzIxLjQ5MSwwLjg5NiwyMC41OTcsMCwxOS40OTQsMHogTTEwLjg3MiwxLjIxNGg1LjdjMC4xNDQsMCwwLjI2MSwwLjIxNSwwLjI2MSwwLjQ4MSAgIHMtMC4xMTcsMC40ODItMC4yNjEsMC40ODJoLTUuN2MtMC4xNDUsMC0wLjI2LTAuMjE2LTAuMjYtMC40ODJDMTAuNjEyLDEuNDI5LDEwLjcyNywxLjIxNCwxMC44NzIsMS4yMTR6IE0xMy43MjIsMjUuNDY5ICAgYy0wLjcwMywwLTEuMjc1LTAuNTcyLTEuMjc1LTEuMjc2czAuNTcyLTEuMjc0LDEuMjc1LTEuMjc0YzAuNzAxLDAsMS4yNzMsMC41NywxLjI3MywxLjI3NFMxNC40MjMsMjUuNDY5LDEzLjcyMiwyNS40Njl6ICAgIE0xOS45OTUsMjEuMUg3LjQ0OFYzLjM3M2gxMi41NDdWMjEuMXoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0ZGRkZGRiIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+') center no-repeat
+                  background-size: 1em

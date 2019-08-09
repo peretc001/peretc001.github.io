@@ -1,0 +1,102 @@
+.course
+   font-size: 1.1em
+   padding: $gutter
+   [class*="col-"]
+      margin-bottom: 0
+      margin-bottom: 2em
+      position: relative
+      display: flex
+      align-items: center
+      justify-content: center
+      &:before
+         content: ''
+         position: absolute
+         left: 0
+         top: 0
+         width: 50px
+         height: 50px
+         background-image: url('../img/angle.svg')
+         background-size: 50px
+         transition: background .3s ease
+      &:after
+         content: ''
+         position: absolute
+         right: 0
+         bottom: 0
+         width: 50px
+         height: 50px
+         background-image: url('../img/angle-reverse.svg')
+         background-size: 50px
+         transition: background .3s ease
+
+   &__card
+      padding: $gutter
+      padding-left: $gutter*1.5
+      position: relative
+      overflow: hidden
+      h3
+         font-size: 1.2em
+         margin-bottom: 1.5em
+         position: relative
+         font-weight: bold
+      a
+         color: $accent
+      p
+         margin-bottom: 1.5em
+         b
+            background: $accent2
+            border-radius: 4px
+            padding: .5em
+      .about
+         color: #666
+         font-size: 1.1em
+      .price
+         font-size: 1.5em
+         padding-left: 0.5em
+      .green
+         background: #e2ffe6
+      .all
+         background: #e2ffff
+         margin-left: 0.3em
+      &__place
+         display: flex
+         align-items: center
+         p
+            margin-right: 1em
+            u
+               display: inline-block
+               &.w150
+                  width: 150px
+      &__btn
+         margin-bottom: 0
+         .btn
+            margin-bottom: 1em
+
+@media screen and (max-width: 991.98px)
+   .course
+      &__card
+         &__place
+            align-items: flex-start
+            flex-direction: column
+            p
+               margin-right: 0
+
+@media screen and (max-width: 767.98px)
+   .course
+      &__card
+         &__place
+            align-items: center
+            flex-direction: row
+            p
+               margin-right: 1em
+
+@media screen and (max-width: 576.98px)
+   .course
+      font-size: 1em
+      &__card
+         padding: $gutter $gutter/2
+         &__place
+            align-items: flex-start
+            flex-direction: column
+            p
+               margin-right: 0

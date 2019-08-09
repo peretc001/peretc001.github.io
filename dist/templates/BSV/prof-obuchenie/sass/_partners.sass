@@ -1,0 +1,59 @@
+.partners
+   padding: $gutter 0
+   background: #f1f1f1
+   &__row
+      display: flex
+      align-items: flex-start
+      justify-content: space-evenly
+      padding-top: 2em
+      &__col
+         padding-left: $gutter
+         position: relative
+         &::before
+            content: ''
+            position: absolute
+            left: -20px
+            top: -50px
+            font-size: 8em
+            color: rgba($accent, .5)
+            font-weight: bold
+            line-height: .9
+            opacity: .15
+            padding: 0
+
+         @for $i from 1 through 9
+            &:nth-child(#{$i})::before
+               content: '0#{$i}'
+         
+         p
+            margin-bottom: 0
+            position: relative
+            &:first-child
+               font-weight: bold
+               margin-bottom: 0.5em
+
+@media screen and (max-width: 991.98px)
+   .partners
+      font-size: 0.8em
+      &__row
+         &__col
+            &::before
+               left: -10px
+               top: -25px
+               font-size: 6em
+
+@media screen and (max-width: 767.98px)
+   .partners
+      font-size: 1em
+      &__row
+         flex-direction: column
+         justify-content: center
+         &__col
+            width: 100%
+            max-width: 400px
+            margin: 0 auto
+            margin-bottom: 3em
+            &::before
+               left: 0px
+               top: -35px
+               font-size: 6em

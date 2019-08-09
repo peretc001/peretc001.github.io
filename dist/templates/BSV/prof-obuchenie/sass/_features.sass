@@ -1,0 +1,29 @@
+.features
+   background: #f5f5f5
+   padding: $gutter
+   padding-top: $gutter*2
+
+   [class*="col-"]
+      text-align: center
+      margin-bottom: 2em
+   &__img
+      text-align: center
+      margin-bottom: 1em
+      img
+         width: 80px
+
+@media screen and (max-width: 1199.98px)
+   .features
+      font-size: 0.9em
+
+@media screen and (max-width: 767.98px)
+   .features
+      font-size: 1em
+      [class*="col-"]
+         padding: 0 5em
+
+@media screen and (max-width: 576.98px)
+   .features
+      font-size: 1em
+      [class*="col-"]
+         padding: 0

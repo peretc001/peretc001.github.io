@@ -29,7 +29,7 @@ window.addEventListener("DOMContentLoaded", function() {
         checkBtn.addEventListener('click', () => {
             checkBtn.classList.add('active');
         
-            item.action = './thankyou.php';
+            item.action = '/thankyou.php';
             let input = document.createElement("input");
             input.setAttribute("type", "hidden");
             input.setAttribute("name", "human");
@@ -121,87 +121,15 @@ $(function() {
         $('.hamburger').removeClass('is-active');
     });
 
-
-    var carouselInit = false;
-    var carouselBlock = $(".about").offset().top;
-
-    function carouselStart(){
-        var node = document.createElement('script');
-        node.defer = true;
-        node.src = "js/slick/slick.min.js";
-        $('script')[0].appendChild(node);
-        carouselInit = true;
-    }
-
-    $(window).scroll(function() {
-        if ( $(this).scrollTop() > carouselBlock ) {
-            if ( !carouselInit ) {
-                carouselStart();
-            }
-        }
-    });
-
     $(window).bind('scroll.once', function(){
-        if($(this).scrollTop() > 300) {
-            show_video();
-            show_photo(); 
+        if($(this).scrollTop() > 500) {
             show_map(); 
-            $(window).unbind('scroll.once')
         }
     });
     function show_map() {
-        $('.map_wrap').append('<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aa7e78fcd7751d94e21f2297d24cc0818cf1a4d0eb45cc2bca817c834d379113d&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>');
-        
+        $('.map_wrap').append('<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A243cf0479ab602d877238ac90340ca15a4d8a8b6363103bab9ecc86fa14232c7&amp;width=100%25&amp;height=350&amp;lang=ru_RU&amp;scroll=true"></script>');
+        $(window).unbind('scroll.once')
      };
-
-     function show_video() {
-            $('.about__column__video').append(`<video width="215" height="380" autoplay loop muted poster="img/video.jpg" preload="metadata">
-            <source src="img/video.mp4" type="video/mp4">
-            <source src="img/video.webm" type="video/webm">
-            <source src="img/video.ogv" type="video/ogg">
-            <object data="img/video.swf" type="application/x-shockwave-flash">
-            <param name="movie" value="img/video.swf">
-            </object>
-        </video>`);
-     };
-     function show_photo() {
-        $('.photo').append(`
-        <div class="container">
-            <h4>Фотогалерея</h4>
-            <div class="photo__carousel">
-            
-            <div class="photo__carousel__item">
-                <div class="img_wrapper">
-                    <img data-lazy="img/photo/0772c533-702d-447d-8523-7936fca70dbf.jpg" src="img/photo/0772c533-702d-447d-8523-7936fca70dbf.jpg" alt="">
-                </div>
-            </div>
-            <div class="photo__carousel__item">
-                <div class="img_wrapper">
-                    <img data-lazy="img/photo/1090375a-7354-4a3d-b645-becd2de215db.jpg" src="img/photo/1090375a-7354-4a3d-b645-becd2de215db.jpg" alt="">
-                </div>
-            </div>
-            <div class="photo__carousel__item">
-                <div class="img_wrapper">
-                    <img data-lazy="img/photo/17f4387b-c00a-4e20-abbf-be380f307fb9.jpg" src="img/photo/17f4387b-c00a-4e20-abbf-be380f307fb9.jpg" alt="">
-                </div>
-            </div>
-            <div class="photo__carousel__item">
-                <div class="img_wrapper">
-                    <img data-lazy="img/photo/48afa64e-a075-40a1-ac40-cf9c9783cc78.jpg" src="img/photo/48afa64e-a075-40a1-ac40-cf9c9783cc78.jpg" alt="">
-                </div>
-            </div>
-            <div class="photo__carousel__item">
-                <div class="img_wrapper">
-                    <img data-lazy="img/photo/6b4997fe-7c2e-4009-b564-6d30e98bd6f2.jpg" src="img/photo/6b4997fe-7c2e-4009-b564-6d30e98bd6f2.jpg" alt="">
-                </div>
-            </div>
-
-            </div>
-        </div>
-        `);
-     }
-
-     
 
     //Modal
 	$('.form_consult').submit(function(e){
@@ -253,6 +181,25 @@ $(function() {
             }, 3500);
         });
     });
+    
+    //
+    
+    var carouselInit = false;
+    var carouselBlock = $(".course").offset().top;
 
+    function carouselStart(){
+        var node = document.createElement('script');
+        node.defer = true;
+        node.src = "js/slick/slick.min.js";
+        $('script')[0].appendChild(node);
+        carouselInit = true;
+    }
+
+    $(window).scroll(function() {
+        if ( $(this).scrollTop() > carouselBlock ) {
+            if ( !carouselInit ) {
+                carouselStart();
+            }
+        }
+    });
 });
-

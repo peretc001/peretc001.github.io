@@ -30,7 +30,7 @@
 if ($_POST['phone'] != '' and $_POST['human'] == 'human') {
 
 	$to  = 'peretc001@mail.ru'; 
-	$subject = 'Заявка с сайта'; 
+	$subject = 'Мой сайт: Заявка с сайта'; 
 	$headers .= "Content-type: text/html; charset=utf-8 \r\n"; 
 	$headers .= "From: Krasovsky23.ru <". $admin_email .">\r\n"; 
 	$message = 'Телефон: <b>'. $_POST['phone'] .'</b><br>';
