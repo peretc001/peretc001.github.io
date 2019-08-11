@@ -151,11 +151,24 @@ $db = new JsonDB( $_SERVER['DOCUMENT_ROOT'] . '/portfolio/' );
 //       'description' => 'Зацени какой лэндинг я разработал для компании Арбитраж-Юг',
 //       'portfolio' => 'landing-page',
 //       'themes' => 'Landing page',
-//       'work' => 'Верстка',
+//       'work' => 'Дизайн и Верстка',
 //       'tech' => 'HTML + CSS3 + JS',
-//       'url' => 'https://peretc001.github.io/dist/templates/mediacia/arbitraj-ug/',
+//       'url' => 'https://peretc001.github.io/dist/templates/BSV/mediacia/arbitraj-ug/',
 //       'about' => 'Разработать дизайн и сверстать Landing page под ключ',
 //       'img' => 'arbitraj-ug',
+//       'video' => '',
+//    ), true);
+// $db->insert('portfolio', array(
+//       'id' => 13, 
+//       'title' => 'Детские праздники',
+//       'description' => 'Зацени какой лэндинг я разработал для компании по организации детских праздников',
+//       'portfolio' => 'landing-page',
+//       'themes' => 'Landing page',
+//       'work' => 'Дизайн и Верстка',
+//       'tech' => 'HTML + CSS3 + JS',
+//       'url' => 'https://peretc001.github.io/dist/templates/BSV/detskiy-prazdnik-krasnodar/',
+//       'about' => 'Разработать дизайн и сверстать Landing page под ключ',
+//       'img' => 'detskiy-prazdnik-krasnodar',
 //       'video' => '',
 //    ), true);
 
@@ -169,7 +182,7 @@ $db = new JsonDB( $_SERVER['DOCUMENT_ROOT'] . '/portfolio/' );
 
 //    echo $result[0]['title'];
 
-// $db -> delete ( 'portfolio', 'id', 11 );
+// $db -> delete ( 'portfolio', 'id', 13 );
 //$db -portfoliote('portfolio', 'id', 6, array('themes' => 'Landing page'));
 //    'themes' => 'Landing page'));
 
