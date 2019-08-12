@@ -1,0 +1,45 @@
+.features
+   padding: $gutter 0 $gutter*2 0
+   position: relative
+   overflow: hidden
+   .container
+      position: relative
+      overflow: hidden
+   h3
+      display: block
+      text-align: center
+      font-weight: bold
+      margin-bottom: 2em
+
+   p
+      margin-bottom: 0
+   [class*="col-"]
+      text-align: center
+      margin-bottom: 2em
+      p
+         font-size: 1.4em
+         &:last-child
+            font-size: 2.4em
+            font-weight: bold
+
+   &__img
+      img
+         width: 100%
+         max-width: 100px
+         margin-bottom: 2em
+
+@media screen and (max-width: 991.98px)
+   .features
+      [class*="col-"]
+         text-align: center
+         margin-bottom: 2em
+         p
+            font-size: 1.4em
+            &:last-child
+               font-size: 2em
+               font-weight: bold
+
+@media screen and (max-width: 576.98px)
+   .features
+      h3
+         font-size: 1.5em

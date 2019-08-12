@@ -1,0 +1,116 @@
+.navbar
+   position: absolute
+   left: 0
+   top: 0
+   width: 100%
+   z-index: 1
+   .hamburger-box
+      width: 30px
+      height: 16px
+   .hamburger-inner, 
+   .hamburger-inner:after, 
+   .hamburger-inner:before
+      width: 30px
+      height: 2px
+      background-color: #ffffff
+   .hamburger.is-active
+      .hamburger-inner, 
+      .hamburger-inner:after, 
+      .hamburger-inner:before
+         background-color: #ffffff
+   .hamburger--slider 
+      .hamburger-inner
+         top: 1px
+   .navbar-brand
+      display: flex
+      align-items: flex-end
+      img
+         width: 70px
+         height: auto
+         margin-right: 1em
+      p
+         text-transform: uppercase
+         margin-bottom: 0
+         color: #ffffff
+         font-size: 1em
+         margin-bottom: 0.5em
+         span
+            display: block
+            font-size: 0.6em
+            color: $accent2
+            margin-bottom: 0
+   .navbar-nav
+      align-items: center
+      justify-content: space-evenly
+      margin-left: auto
+      .nav-link
+         color: #ffffff
+         margin: 0 .5em
+         font-size: 1em
+         &:hover
+            color: darken(#ffffff, 10%)
+      .phone
+         font-weight: bold
+         position: relative
+         padding-left: 2em
+         &:before
+            content: ''
+            position: absolute
+            left: 0
+            top: 50%
+            transform: translateY(-50%)
+            width: 1.2em
+            height: 1.2em
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDM1IDM1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAzNSAzNTsiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxnPgoJPHBhdGggZD0iTTI1LjMwMiwwSDkuNjk4Yy0xLjMsMC0yLjM2NCwxLjA2My0yLjM2NCwyLjM2NHYzMC4yNzFDNy4zMzQsMzMuOTM2LDguMzk4LDM1LDkuNjk4LDM1aDE1LjYwNCAgIGMxLjMsMCwyLjM2NC0xLjA2MiwyLjM2NC0yLjM2NFYyLjM2NEMyNy42NjYsMS4wNjMsMjYuNjAyLDAsMjUuMzAyLDB6IE0xNS4wMDQsMS43MDRoNC45OTJjMC4xNTgsMCwwLjI4NiwwLjEyOCwwLjI4NiwwLjI4NyAgIGMwLDAuMTU4LTAuMTI4LDAuMjg2LTAuMjg2LDAuMjg2aC00Ljk5MmMtMC4xNTgsMC0wLjI4Ni0wLjEyOC0wLjI4Ni0wLjI4NkMxNC43MTgsMS44MzIsMTQuODQ2LDEuNzA0LDE1LjAwNCwxLjcwNHogTTE3LjUsMzMuODE4ICAgYy0wLjY1MywwLTEuMTgyLTAuNTI5LTEuMTgyLTEuMTgzczAuNTI5LTEuMTgyLDEuMTgyLTEuMTgyczEuMTgyLDAuNTI4LDEuMTgyLDEuMTgyUzE4LjE1MywzMy44MTgsMTcuNSwzMy44MTh6IE0yNi4wMjEsMzAuNjI1ICAgSDguOTc5VjMuNzQ5aDE3LjA0MlYzMC42MjV6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+CjwvZz48L2c+IDwvc3ZnPg==') center no-repeat
+            background-size: 1.2em
+         a
+            color: #ffffff
+            display: block
+            margin-bottom: 0.1em
+
+@media screen and (max-width: 991.98px)
+   .navbar
+      background: $text
+      .navbar-brand
+         img
+            width: 40px
+      .navbar-nav
+         .nav-link
+            font-size: .8em
+         .phone
+            a
+               display: none
+
+@media screen and (max-width: 767.98px)
+   .navbar
+      .navbar-nav
+         width: 100%
+         margin-left: none
+         padding: $gutter/2
+         .nav-link
+            font-size: 1.1em
+         .phone
+            border-top: 1px solid #fff
+            padding-left: 0
+            padding-top: 1em
+            padding-bottom: 1em
+            margin-top: 1em
+            &:before
+               left: -2em
+            a
+               display: block
+
+@media screen and (max-width: 399.98px)
+   .navbar
+      .navbar-brand
+         img
+            width: 30px
+            margin-right: 0.5em
+         p
+            font-size: 0.8em
+
+@media screen and (max-width: 374.98px)
+   .navbar
+      .navbar-brand
+         p
+            font-size: 0.7em

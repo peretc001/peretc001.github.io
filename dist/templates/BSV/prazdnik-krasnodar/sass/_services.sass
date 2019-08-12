@@ -1,0 +1,69 @@
+.services
+   padding: $gutter 0
+   text-align: center
+   h3
+      font-weight: bold
+      font-size: 2em
+      margin-bottom: 2em
+      span
+         color: $accent
+   &__card
+      border-radius: 6px
+      padding: 40px 20px
+      &__img
+         margin-bottom: 1em
+         img
+            width: 100%
+            border-radius: 6px
+      p
+         font-weight: bold
+         font-size: 1.2em
+         &:last-child
+            font-weight: normal
+            font-size: .9em
+
+   [class*="col-"]
+      margin-bottom: 2em
+      text-align: center
+      &:first-child
+         .services__card
+            background: #fee0e9
+      &:nth-child(2)
+         .services__card
+            background: #eee0fe
+      &:nth-child(3)
+         .services__card
+            background: #e0effe
+      &:nth-child(4)
+         .services__card
+            background: #fffdaf
+      &:nth-child(5)
+         .services__card
+            background: #fef1e0
+      &:nth-child(6)
+         .services__card
+            background: #e0fef4
+
+
+@media screen and (max-width: 1199.98px)
+   .services
+      font-size: 0.85em
+
+@media screen and (max-width: 991.98px)
+   .services
+      font-size: 1em
+
+@media screen and (max-width: 576.98px)
+   .services
+      padding: $gutter
+      &__card
+         p
+            font-size: 1.2em
+      [class*="col-"]
+
+@media screen and (max-width: 374.98px)
+   .services
+      padding: $gutter $gutter/2
+      &__card
+         p
+            font-size: 1em
