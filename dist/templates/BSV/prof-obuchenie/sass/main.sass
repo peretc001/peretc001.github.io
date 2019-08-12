@@ -94,6 +94,9 @@ img
 @import 'footer'
 @import 'modal'
 
+@import 'single'
+
+
 *:focus
 	outline: none !important
 	box-shadow: none
@@ -105,6 +108,46 @@ img
 	text-align: center
 	margin: 0
 	margin-bottom: 1em
+
+
+.breadcrumb
+	background: #ffffff
+	margin-bottom: 0
+	font-size: 0.8em
+	color: #888888
+	.container
+		padding: 0
+		a
+			color: $accent
+			position: relative
+			padding-right: 1.5em
+			margin-right: 0.5em
+			&:before
+				content: ''
+				position: absolute
+				right: 0
+				top: 50%
+				transform: translateY(-50%)
+				width: 10px
+				height: 10px
+				background-size: 10px
+				background-position: center
+				background-repeat: no-repeat
+				background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMjkgMTI5IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjkgMTI5IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+CiAgICA8cGF0aCBkPSJtNDAuNCwxMjEuM2MtMC44LDAuOC0xLjgsMS4yLTIuOSwxLjJzLTIuMS0wLjQtMi45LTEuMmMtMS42LTEuNi0xLjYtNC4yIDAtNS44bDUxLTUxLTUxLTUxYy0xLjYtMS42LTEuNi00LjIgMC01LjggMS42LTEuNiA0LjItMS42IDUuOCwwbDUzLjksNTMuOWMxLjYsMS42IDEuNiw0LjIgMCw1LjhsLTUzLjksNTMuOXoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6IzBGNTY5RCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KICA8L2c+PC9nPiA8L3N2Zz4=')
+
+.page
+	.breadcrumb
+		padding-top: 140px
+@media screen and (max-width: 991.98px)
+	.h2__title
+		font-size: 1.8em
+@media screen and (max-width: 767.98px)
+	.h2__title
+		font-size: 1.6em
+	.page
+		.breadcrumb
+			padding-top: 80px
+
 .btn
 	user-select: none
 	box-shadow: none

@@ -1,0 +1,16 @@
+.single
+   padding: $gutter
+   font-size: 1em
+   .h2__title
+      text-align: left
+      font-size: 1.8em
+   ol
+      list-style: none
+      counter-reset: li
+      li
+         &:before
+            counter-increment: li
+            content: counters(li,".") ". "
+   p
+      text-align: justify
+      text-align-last: left

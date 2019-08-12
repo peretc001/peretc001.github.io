@@ -179,7 +179,11 @@
 
 @media screen and (max-width: 991.98px)
    .navbar
-      font-size: 0.8em
+      font-size: 1em
+      .first-line,
+      .navbar-nav
+         max-width: 760px
+
       .navbar-brand
          a
             font-size: .9em
@@ -188,16 +192,24 @@
                background-size: 2em
                width: 2em
                height: 2em
+      
+      .phone,
+      .adress
+         font-size: 0.8em
          
       .navbar-nav
+         .nav-item
+            &.dop
+               display: none
          .nav-link
-            font-size: .8em
+            font-size: 1em
 
 @media screen and (max-width: 767.98px)
    .navbar
       font-size: 1em
       .first-line
          padding: .5em
+         max-width: 600px
       .navbar-brand
          a
             font-size: .8em
@@ -208,6 +220,9 @@
 
       .navbar-nav
          padding: $gutter 0
+         .nav-item
+            &.dop
+               display: block
          .nav-link
             font-size: 1em
             padding: .5em 0

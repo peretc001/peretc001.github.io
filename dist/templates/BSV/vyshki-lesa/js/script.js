@@ -133,15 +133,15 @@ $(function() {
 
     //Modal
 	$('.form_consult').submit(function(e){
-        // e.preventDefault();
-        // var method=$(this).attr('method');
-        // var action=$(this).attr('action');
-        // var data=$(this).serialize();
-        // return $.ajax({ 
-        //     type: method,
-        //     url: action,
-        //     data: data})
-        // .done(function () { 
+        e.preventDefault();
+        var method=$(this).attr('method');
+        var action=$(this).attr('action');
+        var data=$(this).serialize();
+        return $.ajax({ 
+            type: method,
+            url: action,
+            data: data})
+        .done(function () { 
             $('.form_consult').addClass("done");
             setTimeout(function () { 
                 $(".request_callback").fadeIn();
@@ -153,19 +153,19 @@ $(function() {
             setTimeout(function () { 
                 $('.form_consult').removeClass("done");
             }, 3500);
-        //});
+        });
     });
 
     $('.callback__form').submit(function(e){
-        // e.preventDefault();
-        // var method=$(this).attr('method');
-        // var action=$(this).attr('action');
-        // var data=$(this).serialize();
-        // return $.ajax({ 
-        //     type: method,
-        //     url: action,
-        //     data: data})
-        // .done(function () { 
+        e.preventDefault();
+        var method=$(this).attr('method');
+        var action=$(this).attr('action');
+        var data=$(this).serialize();
+        return $.ajax({ 
+            type: method,
+            url: action,
+            data: data})
+        .done(function () { 
             $('.modal-body').addClass("done");
             setTimeout(function () { 
                 $(".request_callback__footer").fadeIn();
@@ -179,7 +179,6 @@ $(function() {
                 $('.modal-body').removeClass("done");
                 $('#callback').modal('hide');
             }, 3500);
-        //});
+        });
     });
 });
-
