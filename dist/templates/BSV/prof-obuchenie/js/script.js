@@ -93,11 +93,6 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 
 $(function() {
-    $('.show_description').click(function(e){
-        e.preventDefault();
-        $(this).toggleClass('active');
-        $('.hide_description').toggleClass('opener');
-    });
 
     $('.hover-column').on('touchstart', function(e){
         $(".name").trigger("mouseover");
@@ -121,8 +116,9 @@ $(function() {
         $('.hamburger').removeClass('is-active');
     });
 
+
     $(window).bind('scroll.once', function(){
-        if($(this).scrollTop() > 500) {
+        if($(this).scrollTop() > 200) {
             show_map(); 
         }
     });
@@ -183,23 +179,37 @@ $(function() {
     });
     
     //
-    
-    var carouselInit = false;
-    var carouselBlock = $(".course").offset().top;
+    if ( $('section').is('.course') ) {
+        var carouselInit = false;
+        var carouselBlock = $(".course").offset().top;
 
-    function carouselStart(){
-        var node = document.createElement('script');
-        node.defer = true;
-        node.src = "js/slick/slick.min.js";
-        $('script')[0].appendChild(node);
-        carouselInit = true;
+        function carouselStart(){
+            var node = document.createElement('script');
+            node.defer = true;
+            node.src = "js/slick/slick.min.js";
+            $('script')[0].appendChild(node);
+            carouselInit = true;
+        }
+
+        $(window).scroll(function() {
+            if ( $(this).scrollTop() > carouselBlock ) {
+                if ( !carouselInit ) {
+                    carouselStart();
+                }
+            }
+        });
     }
 
-    $(window).scroll(function() {
-        if ( $(this).scrollTop() > carouselBlock ) {
-            if ( !carouselInit ) {
-                carouselStart();
-            }
-        }
+    $('#callback').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var modalName = button.data('name');
+        var modalTitle = button.data('title'); // Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this);
+        modal.find('.name').html(modalName);
+        modal.find('.title').html(modalTitle);
+        modal.find('input[name="data-name"]').val(modalName);
+        modal.find('input[name="data-title"]').val(modalTitle);
     });
 });

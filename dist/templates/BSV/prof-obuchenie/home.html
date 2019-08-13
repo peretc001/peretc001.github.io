@@ -106,7 +106,7 @@
                   </div>
                   <p class="price"><strong>-15.000р</strong></p>
                   <div class="course__card__btn">
-                     <a href="#" class="btn btn-accent" data-toggle="modal" data-target="#callback">Записаться на курс</a>
+                     <a href="#" class="btn btn-accent" data-toggle="modal" data-target="#callback" data-name="Записаться на обучение" data-title="«Слесарь по ремонту и обслуживанию систем вентиляции и кондиционирования»">Записаться на обучение</a>
                      <a href="#" class="btn btn-outline-accent">Описание курса</a>
                   </div>
                </div>
@@ -124,7 +124,7 @@
                   </div>
                   <p class="price"><strong>-12.000р</strong></p>
                   <div class="course__card__btn">
-                     <a href="#" class="btn btn-accent" data-toggle="modal" data-target="#callback">Записаться на курс</a>
+                     <a href="#" class="btn btn-accent" data-toggle="modal" data-target="#callback" data-name="Записаться на обучение" data-title="«Монтаж, ремонт, техническое обслуживание систем кондиционирования воздуха»">Записаться на обучение</a>
                      <a href="#" class="btn btn-outline-accent">Описание курса</a>
                   </div>
                </div>
@@ -142,7 +142,7 @@
                   </div>
                   <p class="price"><strong>-7.000р</strong></p>
                   <div class="course__card__btn">
-                     <a href="#" class="btn btn-accent" data-toggle="modal" data-target="#callback">Записаться на курс</a>
+                     <a href="#" class="btn btn-accent" data-toggle="modal" data-target="#callback"  data-name="Записаться на обучение" data-title="«Монтаж, ремонт, техническое обслуживание систем кондиционирования воздуха (Express)»">Записаться на обучение</a>
                      <a href="#" class="btn btn-outline-accent">Описание курса</a>
                   </div>
                </div>
@@ -275,7 +275,7 @@
                   </div>
                   <p class="name">Lorem, ipsum.</p>
                   <p>
-                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores quia dignissimos molestiae eligendi eius. Blanditiis nesciunt praesentium commodi repellendus numquam harum distinctio, reprehenderit doloribus? Debitis, cupiditate! Rerum saepe consectetur porro.
+                     Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Текст вопроса большой его, рыбного реторический необходимыми текстами! Инициал предупредила взгляд снова сих подпоясал! Раз, ему. Эта жизни курсивных не!
                   </p>
                </div>
    
@@ -310,24 +310,24 @@
             Наши партнеры
          </h4>
          <div class="partners__row">
-            <div class="partners__row__col">
-               <p>Компания «ДАИЧИ-ЮГ» (дистрибьютор Daikin)</p>
-               <p>Краснодар, ул. Аэродромная, 19</p>
-               <p>Телефон: 8 (861) 210-06-20, 259-62-36</p>
-               <p>info@krd.daichi.ru, <a href="https://daichi.ru">www.daichi.ru</a></p>
-            </div>
-            <div class="partners__row__col">
-               <p>Торговый Дом «КЛИМАТПРОФ»</p>
-               <p>Краснодар, ул. Захарова, дом 11, офис. 128</p>
-               <p>Телефон: +7 (861) 210-10-20</p>
-               <p>krasnodar@tradecond.ru</p>
-            </div>
-            <div class="partners__row__col">
-               <p>ООО «Хиконикс»</p>
-               <p>Химки, ул. Ленинградская, д. 1</p>
-               <p>Телефон: 8 (495) 777-23-66</p>
-               <p><a href="https://hiconix.ru/">www.hiconix.ru</a></p>
-            </div>
+   <div class="partners__row__col">
+      <p>Компания «ДАИЧИ-ЮГ» (дистрибьютор Daikin)</p>
+      <p>Краснодар, ул. Аэродромная, 19</p>
+      <p>Телефон: 8 (861) 210-06-20, 259-62-36</p>
+      <p>info@krd.daichi.ru, <a href="https://daichi.ru">www.daichi.ru</a></p>
+   </div>
+   <div class="partners__row__col">
+      <p>Торговый Дом «КЛИМАТПРОФ»</p>
+      <p>Краснодар, ул. Захарова, дом 11, офис. 128</p>
+      <p>Телефон: +7 (861) 210-10-20</p>
+      <p>krasnodar@tradecond.ru</p>
+   </div>
+   <div class="partners__row__col">
+      <p>ООО «Хиконикс»</p>
+      <p>Химки, ул. Ленинградская, д. 1</p>
+      <p>Телефон: 8 (495) 777-23-66</p>
+      <p><a href="https://hiconix.ru/">www.hiconix.ru</a></p>
+   </div>
          </div>
       </div>
    </section>
@@ -443,9 +443,12 @@
               <span aria-hidden="true">&times;</span>
             </button>
             <div class="modal-body">
-               <p>Получить консультацию</p>
+               <p class="name">Получить консультацию</p>
+               <span class="title"></span>
                <form action="/" class="callback__form" method="post">
                <div class="form-row">
+                  <input type="hidden" name="data-name" value="">
+                  <input type="hidden" name="data-title" value="">
                   <input type="text" name="name" class="form-control" placeholder="Имя">
                   <input type="tel" name="phone" class="form-control tel" placeholder="Телефон" required>
                   

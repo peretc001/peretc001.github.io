@@ -1,31 +1,23 @@
 .time
    padding: $gutter 0
-   .table
-      .thead-accent
-         background-color: $accent
-         border-color: $accent
-         color: #ffffff
-         th
-            border-bottom: none
-            text-align: center
-      th
-         a
-            //color: $text
-            font-weight: normal
-      .express
-         position: relative
-         &:before
-            content: 'Express программа'
-            position: absolute
-            left: 12px
-            top: 8px
-            transform: translateY(-50%)
-            transform-origin: center
-            font-size: .8em
-            color: $accent2
-
+   .wp-block-table
+      width: 100%
+      tr
+         &:first-child
+            background-color: $accent
+            border-color: $accent
+            color: #ffffff
+            strong
+               color: #ffffff !important
       td
+         padding: 10px
          text-align: center
+         &:first-child
+            text-align: left
+            a
+               font-weight: normal
+            strong
+               color: $accent2
 
 @media screen and (max-width: 1199.98px)
    .time
@@ -34,55 +26,24 @@
 @media screen and (max-width: 767.98px)
    .time
       font-size: 1em
-      .table
-         .thead-accent
-            display: none
-         tbody
-            tr
-               display: flex
-               flex-wrap: wrap
-               border: 0
-         th
-            width: 100%
-            text-align: center
-            border: none
-            &:before
-               content: attr(data-name)
-               border-bottom: 1px solid $accent
-               color: $text
-               padding: .5em
-               text-align: center
-               display: block
-               margin-bottom: 1em
-               font-weight: normal
-         .express
-            width: 100%
-            text-align: center
-            border: none
-            &:before
-               position: relative
-               content: attr(data-name)
-               left: auto
-               top: auto
-               width: 100%
-               margin-top: 1em
-               font-size: 1em
-               border-bottom: 1px solid $accent2
-               color: $accent2
-               padding: .5em
-               text-align: center
-               display: block
-               margin-bottom: 1em
-               font-weight: normal
-         a
-            color: $accent
+      .wp-block-table
+         tr
+            &:first-child
+               display: none
+         tr
+            display: flex
+            align-items: center
+            justify-content: center
+            flex-wrap: wrap
          td
             width: 50%
             border: none
             position: relative
-            &:before
-               content: attr(data-name)
-               color: #888888
+            &:first-child
+               width: 100%
                text-align: center
-               display: block
-               margin-bottom: 1em        
+               a
+                  display: block
+                  padding-top: 1em
+                  padding-bottom: 1em
+                  border-bottom: 1px solid #eeeeee

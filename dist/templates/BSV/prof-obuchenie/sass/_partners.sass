@@ -1,12 +1,12 @@
 .partners
    padding: $gutter 0
    background: #f1f1f1
-   &__row
+   .wp-block-columns
       display: flex
       align-items: flex-start
       justify-content: space-evenly
       padding-top: 2em
-      &__col
+      .wp-block-column
          padding-left: $gutter
          position: relative
          &::before
@@ -35,8 +35,8 @@
 @media screen and (max-width: 991.98px)
    .partners
       font-size: 0.8em
-      &__row
-         &__col
+      .wp-block-columns
+         .wp-block-column
             &::before
                left: -10px
                top: -25px
@@ -45,10 +45,10 @@
 @media screen and (max-width: 767.98px)
    .partners
       font-size: 1em
-      &__row
+      .wp-block-columns
          flex-direction: column
          justify-content: center
-         &__col
+         .wp-block-column
             width: 100%
             max-width: 400px
             margin: 0 auto
