@@ -49,6 +49,8 @@
          font-size: 1em
          &:hover
             color: darken(#ffffff, 10%)
+         &.other
+            color: $accent
       .phone
          font-weight: bold
          position: relative
@@ -67,6 +69,13 @@
             color: #ffffff
             display: block
             margin-bottom: 0.1em
+
+@media screen and (max-width: 1199.98px)
+   .navbar
+      .navbar-nav
+         .nav-link
+            &.dop
+               display: none
 
 @media screen and (max-width: 991.98px)
    .navbar
@@ -89,6 +98,10 @@
          padding: $gutter/2
          .nav-link
             font-size: 1.1em
+            &.dop
+               display: block
+               margin: 0
+               padding: 0.5em 0
          .phone
             border-top: 1px solid #fff
             padding-left: 0

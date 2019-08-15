@@ -7,7 +7,7 @@
 ////////////////////////////////////////
 
 //Стоимость ДОЛЛАРА в рублях
-$dollor = 1;
+$dollor = 65;
 
 
 //Ценна ШАГА для ПОМЕЩЕНИЯ в долларах
@@ -25,25 +25,26 @@ $stepsPrice = [
 
 //Цены для дополнительных полей в Долларах
 $dopPrice = [
-   'calc-room-option1' =>  [ 'price' => 1 ],
-   'calc-room-option2' =>  [ 'price' => 1 ],
-   'calc-room-option3' =>  [ 'price' => 1 ],
-   'calc-room-option4' =>  [ 'price' => 1 ],
-   'calc-room-option5' =>  [ 'price' => 1 ],
-   'calc-room-option6' =>  [ 'price' => 1 ],
-   'calc-room-option7' =>  [ 'price' => 1 ],
-   'calc-room-option8' =>  [ 'price' => 1 ],
-   'calc-room-option9' =>  [ 'price' => 1 ],
-   'calc-room-option10' => [ 'price' => 1 ],
-   'calc-room-option11' => [ 'price' => 1 ],
-   'calc-room-option12' => [ 'price' => 1 ]
+   'calc-room-option1' =>  [ 'price' => 32000 ],
+   'calc-room-option2' =>  [ 'price' => 13500 ],
+   'calc-room-option3' =>  [ 'price' => 3500 ],
+   'calc-room-option4' =>  [ 'price' => 14500 ],
+   'calc-room-option5' =>  [ 'price' => 1000 ],
+   'calc-room-option6' =>  [ 'price' => 55000 ],
+
+   'calc-room-option7' =>  [ 'price' => 1500 ],
+   'calc-room-option8' =>  [ 'price' => 1000 ],
+   'calc-room-option9' =>  [ 'price' => 2000 ],
+   'calc-room-option10' => [ 'price' => 2000 ],
+   'calc-room-option11' => [ 'price' => 2500 ],
+   'calc-room-option12' => [ 'price' => 300 ]
 ];
 
 //Процент гарантии
 $warrantyPercent = [
-   '1' =>  [ 'price' => 1 ],
-   '2' =>  [ 'price' => 2 ],
-   '3' =>  [ 'price' => 3 ]
+   '1' =>  [ 'price' => 0.95 ],
+   '2' =>  [ 'price' => 1 ],
+   '3' =>  [ 'price' => 1.05 ]
 ];
 
 //Доставка
@@ -109,15 +110,15 @@ $col = $width/0.96*$height/0.96;
 $led = (($col*$step)*$warranty)*$dollor;
 
 //Итоговая
-$calc = ((($col*$step) + $dop)*$warranty)*$dollor + $delivery*$dollor + $settingup*$dollor;
+$calc = (($col*$step)*$warranty)*$dollor + $dop + $delivery + $settingup;
 
 $square = $width*$height;
 
 $response = [
    'led' => round($led, 0),
-   'control' => round($dop*$dollor*$warranty, 0),
-   'delivery' => round($delivery*$dollor, 0),
-   'settingup' => round($settingup*$dollor, 0),
+   'control' => round($dop, 0),
+   'delivery' => round($delivery, 0),
+   'settingup' => round($settingup, 0),
    'price' => round($calc, 0),
    'square' => round($square, 2)
 ];

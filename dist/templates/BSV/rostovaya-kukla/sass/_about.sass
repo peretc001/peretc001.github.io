@@ -1,0 +1,65 @@
+.about
+   padding: $gutter 0 $gutter*2 0
+   position: relative
+   overflow: hidden
+   .container
+      position: relative
+      overflow: hidden
+   h2
+      text-align: center
+      font-weight: bold
+      margin-bottom: 1em
+      position: relative
+      &:before
+         content: ''
+         position: absolute
+         left: 50%
+         bottom: -15px
+         transform: translateX(-50%)
+         width: 100px
+         height: 1px
+         background: $accent
+   .text-center
+      color: #a0a0a0
+      max-width: 70%
+      margin: 0 auto
+      margin-bottom: 3em
+
+   p
+      margin-bottom: 0
+   [class*="col-"]
+      text-align: center
+      margin-bottom: 2em
+      p
+         font-size: 1.4em
+         font-weight: bold
+
+   &__img
+      img
+         width: 100%
+         max-width: 100px
+         margin-bottom: 1em
+
+@media screen and (max-width: 991.98px)
+   .about
+      .text-center
+         max-width: 80%
+
+@media screen and (max-width: 767.98px)
+   .about
+      .text-center
+         max-width: 90%
+
+@media screen and (max-width: 576.98px)
+   .about
+      h2
+         font-size: 1.5em
+      .text-center
+         font-size: .9em
+      [class*="col-"]
+         padding: 0 50px
+
+@media screen and (max-width: 369.98px)
+   .about
+      [class*="col-"]
+         padding: 0 20px

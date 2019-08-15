@@ -15,23 +15,26 @@
       width: 100%
       height: 100%
       background: #000000
-      opacity: .3
-   &:after
-      content: ''
-      position: absolute
-      left: 0
-      top: 0
-      width: 50%
-      height: 100%
-      background: linear-gradient(45deg, $accent, lighten($accent, 10%))
-      opacity: .8
+      opacity: .6
+   // &:after
+   //    content: ''
+   //    position: absolute
+   //    left: 0
+   //    top: 0
+   //    width: 50%
+   //    height: 100%
+   //    background: linear-gradient(45deg, $accent, lighten($accent, 10%))
+   //    opacity: .8
    .container
       position: relative
       z-index: 2
       color: #ffffff
    .header--title
-      max-width: 500px
-      padding-top: 200px
+      width: 100%
+      max-width: 600px
+      padding-top: 150px
+      text-align: center
+      margin: 0 auto
    h1
       text-transform: uppercase
       font-weight: bold
@@ -43,11 +46,16 @@
       color: $accent2
    p
       margin-bottom: 1em
-      strong
+      em
          font-size: 1.8em
+         font-style: normal
          padding-top: 1em
          font-weight: bold
          text-transform: uppercase
+      strong
+         display: block
+         margin: 2em auto
+         font-size: 1.4em
       
       
    .btn
@@ -92,5 +100,6 @@
       h1
          font-size: 1.4em
       p
+         em,
          strong
             font-size: 1.2em

@@ -218,7 +218,7 @@ $(function() {
     });
     
     var carouselInit = false;
-    var carouselBlock = $(".about").offset().top;
+    var carouselBlock = $(".dop").offset().top;
 
     function carouselStart(){
         var node = document.createElement('script');

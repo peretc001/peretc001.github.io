@@ -176,11 +176,11 @@
                 <div class="warranty-room-big-block">
                   <div class="warranty-room-big-block---year">
                     <div class="warranty-room-block">
-                      <input type="radio" name="warranty-room" id="warranty-room1" class="warranty-room__radio warranty-first" value="1" checked>
+                      <input type="radio" name="warranty-room" id="warranty-room1" class="warranty-room__radio warranty-first" value="1">
                       <label for="warranty-room1"><span></span>1 год</label>
                     </div>
                     <div class="warranty-room-block">
-                      <input type="radio" name="warranty-room" id="warranty-room2" class="warranty-room__radio warranty-first" value="2">
+                      <input type="radio" name="warranty-room" id="warranty-room2" class="warranty-room__radio warranty-first" value="2" checked>
                       <label for="warranty-room2"><span></span>2 года</label>
                     </div>
                     <div class="warranty-room-block">
@@ -196,7 +196,7 @@
                 <div class="result-room-block">
                   <div class="result-room-block-price">
                     <p class="result-room-block-price__caption">Цена экрана</p>
-                    <p class="result-room-block-price__price" id="result-room-block-price__price">0 Р</p>
+                    <p class="result-room-block-price__price" id="result-room-block-price__price">50 050 Р</p>
                   </div>
                   <div class="result-room-block-size">
                     <p class="result-room-block-price__caption">Площадь экрана</p>
