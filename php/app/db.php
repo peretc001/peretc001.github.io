@@ -171,6 +171,19 @@ $db = new JsonDB( $_SERVER['DOCUMENT_ROOT'] . '/portfolio/' );
 //       'img' => 'detskiy-prazdnik-krasnodar',
 //       'video' => '',
 //    ), true);
+// $db->insert('portfolio', array(
+//       'id' => 14, 
+//       'title' => 'Профобучение',
+//       'description' => 'Зацени какой сайт каталог я разработал для компании по обучению специалистов климатехники',
+//       'portfolio' => 'landing-page',
+//       'themes' => 'Landing page',
+//       'work' => 'Дизайн, Верстка, Натяжка на Wordpress',
+//       'tech' => 'HTML + CSS3 + JS + Wordpress',
+//       'url' => 'http://prof-obuchenie-krd.ru',
+//       'about' => 'Разработать дизайн, сверстать и натянуть на Wordpress сайт для клиента web студии SKIPAO',
+//       'img' => 'prof-obuchenie-krd',
+//       'video' => '',
+//    ), true);
 
 
 
