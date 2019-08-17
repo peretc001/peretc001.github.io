@@ -1,0 +1,108 @@
+.header
+   padding: $gutter*2 $gutter
+   min-height: 450px
+   background-size: cover
+   background-position: left top
+   background-repeat: no-repeat
+   position: relative
+   .row
+      align-items: flex-end
+   img
+      width: 400px
+      margin-bottom: 2em
+   .h2__title
+      text-transform: uppercase
+      font-weight: bold
+      line-height: 1.2
+      color: #ffffff
+      position: relative
+      span
+         color: $accent
+         display: block
+   p
+      text-align: center
+      color: #ffffff
+   
+   .consultation
+      padding: $gutter
+      max-width: 350px
+      border-radius: 6px
+      background: $accent
+      overflow: hidden
+      position: relative
+      margin: 0 auto
+      text-align: center
+      form
+         width: 100%
+         padding: 0
+         margin: 0
+      p
+         font-size: 1.2em
+         text-transform: uppercase
+         font-weight: bold
+         position: relative
+         margin-bottom: 1em
+      &__row
+         display: flex
+         align-items: center
+         justify-content: center
+         position: relative
+      .form-control
+         width: 100% !important
+         margin: 0 auto
+         outline: none
+         text-align: center
+         margin-right: 1em
+      .btn
+         width: 100%
+         text-transform: uppercase
+         font-weight: bold
+         position: relative
+         z-index: 1
+
+      .form_consult
+         display: flex
+         justify-content: flex-start
+         flex-direction: column
+         width: 100%
+         margin: 0
+         &.done
+            opacity: 0
+      .request_callback
+         display: none
+         text-transform: uppercase
+         font-size: 1.4em
+         font-weight: bold
+         position: absolute
+         left: 50%
+         top: 50%
+         transform: translateX(-50%) translateY(-50%)
+         z-index: 2
+      .robot
+         padding: 1em 0 0 0
+         justify-content: center
+         font-size: 0.8em
+         a
+            color: #ffffff
+
+@media screen and (max-width: 991.98px)
+   .header
+      [class*="col-"]
+         text-align: center
+      img
+         width: 300px
+      .h2__title
+         margin-bottom: 2em
+
+@media screen and (max-width: 576.98px)
+   .header
+      .h2__title
+         font-size: 1.3em
+         span
+            font-size: 1.6em
+      .consultation
+         &__row
+            flex-direction: column
+         .form-control
+            margin-right: 0
+            margin-bottom: 1em

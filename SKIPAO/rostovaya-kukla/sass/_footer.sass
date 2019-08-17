@@ -1,0 +1,234 @@
+.footer
+   padding: $gutter*2 $gutter
+
+   .left
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      padding: $gutter 0
+      position: relative
+      &:before
+         content: ''
+         position: absolute
+         bottom: 0
+         right: 0
+         width: 200px
+         height: 200px
+         background-size: 200px
+         background-image: url('../img/mask.svg')
+         background-repeat: no-repeat
+         background-position: center
+   .footer--title
+      position: relative
+   h5
+      font-weight: bold
+      font-size: 2em
+   .desc
+      color: #999999
+      font-size: 1.2em
+
+   .contact
+      position: relative
+      a
+         color: $text
+         display: block
+      p
+         margin-bottom: 1em
+         &:first-child
+            margin-bottom: 0
+            a
+               margin: 0
+      .phone
+         font-size: 2em
+         font-weight: bold
+      .adres
+         margin-top: 2em
+      .email
+         text-decoration: underline
+   
+      .adres,
+      .email,
+      .link,
+      .insta
+         position: relative
+         padding-left: 2em
+         &:before
+            content: ''
+            position: absolute
+            left: 0
+            top: 50%
+            transform: translateY(-50%)
+            background-size: 20px
+            background-position: center
+            background-repeat: no-repeat
+            width: 20px
+            height: 20px
+      
+      .adres
+         &:before
+            background-image: url('../img/placeholder.svg')
+      .email
+         &:before
+            background-image: url('../img/mail.svg')
+      .insta
+         &:before
+            background-image: url('../img/instagram.svg')
+
+   .footer--form
+      widht: 100%
+      max-width: 400px
+      margin: 0 auto
+      padding: 40px
+      border: 1px solid $accent2
+      border-radius: 6px
+      position: relative
+      h6
+         display: block
+         margin-bottom: 1em
+         font-weight: bold
+         font-size: 1.1em
+         text-transform: uppercase
+      .footer--form--check
+         display: flex
+         align-items: center
+         margin-bottom: 1em
+         div
+            width: 25%
+            text-align: center
+         input
+            display: none
+         label
+            font-size: 0.8em
+            color: #444444
+            text-align: center
+            padding-top: 40px
+            position: relative
+            cursor: pointer
+            &:before
+               content: ''
+               position: absolute
+               left: 50%
+               top: 0
+               transform: translateX(-50%)
+               width: $gutter
+               height: $gutter
+               background-size: $gutter
+               background-position: center
+               background-repeat: no-repeat
+               transition: opacity .3s ease
+               opacity: .3
+            &:hover
+               &:before
+                  opacity: 1
+         .call
+            label
+               &:before
+                  background-image: url('../img/social/phone.svg')
+         .whatsapp
+            label
+               &:before
+                  background-image: url('../img/social/whatsapp.svg')
+         .viber
+            label
+               &:before
+                  background-image: url('../img/social/viber.svg')
+         .telegram
+            label
+               &:before
+                  background-image: url('../img/social/telegram.svg')
+         
+         input:checked+label:before
+            opacity: 1
+
+      .form-control
+         background: #f5f5f5
+         border: 1px solid #eee
+         border-radius: 10px
+         padding: 25px
+         text-align: center
+         margin-bottom: 2em
+      .robot
+         font-size: 0.8em
+         justify-content: center
+         margin-bottom: 1em
+      .btn
+         display: block
+         text-align: center
+         margin: 0 auto
+      
+      .form_consult__footer
+         &.done
+            opacity: 0
+
+      .request_callback2
+         display: none
+         text-transform: uppercase
+         font-size: 1.4em
+         font-weight: bold
+         position: absolute
+         left: 50%
+         top: 50%
+         transform: translateX(-50%) translateY(-50%)
+         z-index: 2
+
+   .author
+      color: $text
+   
+.copyright
+   background: #e0effe
+   border-top: 1px solid darken(#e0effe, 5%)
+   padding: $gutter/3
+   display: flex
+   align-items: center
+   justify-content: center
+   font-size: 0.8em
+   position: relative
+   img
+      width: 50px
+      height: auto
+      margin-right: 1em
+   p
+      text-transform: uppercase
+      margin-bottom: 0
+      color: $text
+
+@media screen and (max-width: 991.98px)
+   .footer
+      .left
+         &:before
+            bottom: 0
+            right: 0
+            width: 120px
+            height: 120px
+            background-size: 120px
+
+@media screen and (max-width: 767.98px)
+   .footer
+      padding: $gutter*2 $gutter/2
+      text-align: center
+      .author
+         margin-top: 4em
+      .left
+         &:before
+            bottom: auto
+            right: auto
+            left: 50%
+            top: 0
+            transform: translateX(-50%)
+            width: 120px
+            height: 120px
+            background-size: 120px
+            opacity: .3
+      .contact
+         .adres,
+         .email,
+         .link,
+         .insta
+            padding-left: 0
+            &:before
+               display: none
+
+@media screen and (max-width: 576.98px)
+   .footer
+      .footer--form
+         padding: 40px 20px

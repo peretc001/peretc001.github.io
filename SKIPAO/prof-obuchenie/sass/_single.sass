@@ -1,0 +1,24 @@
+.single
+   font-size: 1em
+   .h2__title
+      text-align: left
+      font-size: 1.8em
+   ol
+      margin: 20px 10px
+      padding: 0
+      list-style: none
+      counter-reset: li
+      li
+         padding: 5px 0
+         &:before
+            counter-increment: li
+            content: counters(li,".") ". "
+   
+   .has-small-font-size
+      font-size: 0.8em
+
+.single-post
+   .single
+      p
+         text-align: justify
+         text-align-last: left

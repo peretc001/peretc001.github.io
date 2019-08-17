@@ -72,7 +72,7 @@ gulp.task('code', function() {
 
 gulp.task('watch', function() {
 	gulp.watch('app/'+syntax+'/**/*.'+syntax+'', gulp.parallel('styles'));
-	//gulp.watch(['libs/**/*.js', 'app/js/common.js'], gulp.parallel('scripts'));
+	gulp.watch(['app/js/common.js'], gulp.parallel('scripts'));
 	gulp.watch('app/*.html', gulp.parallel('code'));
 });
 gulp.task('default', gulp.parallel('styles', 'browser-sync', 'watch'));
