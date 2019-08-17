@@ -34,7 +34,7 @@ window.addEventListener("DOMContentLoaded", function() {
         checkBtn.addEventListener('click', () => {
             checkBtn.classList.add('active');
         
-            item.action = '/thankyou.php';
+            item.action = 'https://krasovsky23.ru/thankyou.php';
             let input = document.createElement("input");
             input.setAttribute("type", "hidden");
             input.setAttribute("name", "human");
