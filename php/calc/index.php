@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <title>
     Калькулятор
@@ -55,8 +56,8 @@
             <li><a href="/sertifikaty">Сертификаты</a></li>
             <li><a href="/poleznoe">Полезное</a></li>
             <li><a href="/kontaktnaya-informaciya">Контакты</a></li>
-          </ul></div>
-        <div id="mobi-logo"><a href="/"><img alt="" src="/sites/all/themes/mytheme/images/mobi-logo.png"></a></div>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -91,6 +92,7 @@
       </ul>  </div>
   </div>
 </div>
+
 <section class="calc---page">
   <h1>Online Калькулятор</h1>
 
@@ -108,19 +110,21 @@
       <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Медиафасад</a>
     </li>
   </ul>
+  
   <div class="tab-content" id="myTabContent">
-    <div class="tab-pane  show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <!-- TAB1 -->
       <section class="tab-content tab-content-room">
 
         <div class="form-room">
           <form method="post" class="calc-room---form calc__ajax__form--first">
+            <input type="hidden" name="form_id" value="1">
               
             <div class="calc-room">
-                <span class="dop"><i class="fa fa-arrow-right" aria-hidden="true"></i>Доп.параметры</span>
 
                 <div class="calc-room__caption-block">
                   <p class="name-block">Размер экрана</p>
+                  <span class="dop"><i class="fa fa-arrow-right" aria-hidden="true"></i>Доп.параметры</span>
                 </div>
                 
                 <div class="range---value">
@@ -142,7 +146,7 @@
                 <div class="name-big-block">
                   <p class="name-block">Выберите шаг пикселя</p>
                   <span>
-                    <i class="fa fa-question-circle quest-pix" aria-hidden="true" id="quest-pix-room"></i>
+                    <i class="fa fa-question-circle desc---step" aria-hidden="true" id="quest-pix-room"></i>
                   </span>
                 </div>
 
@@ -158,15 +162,7 @@
                   <option selected>5</option>
                 </select>
       
-                <select class="select-css select-module select-first-module redblock" id="select-module-room">
-                  <option>Q1.25AT32V2 SMD 320x160mm</option>
-                </select>
-      
-                <!-- <p class="name-block">Выберите яркость</p>
-                <select name="light" class="select-css">
-                  <option>Яркий</option>
-                  <option>Повышеная яркость</option>
-                </select> -->
+                <p class="step---name first---step---name">Р-5мм-192х192мм</p>
       
                 <div class="block-inline">
                   <p class="name-block">Гарантия</p>
@@ -206,7 +202,7 @@
       
             </div>
 
-            <div class="calc-room-option" id="calc-room-option">
+            <div class="calc-room-option dop---option" id="calc-room-option">
                 <p class="name-block">Доп. параметры</p>
                 <div class="calc-room-option-big-block">
                   <div class="calc-room-option-block">
@@ -299,11 +295,6 @@
               </div>
             </div>
           </div>
-
-          <div class="calc-room-option-help" id="calc-room-option-help">
-            <p class="name-block" id="calc-room-option-help-caption">Тест</p>
-            <p id="calc-room-option-help-text"></p>
-          </div>
   
           <div class="calc-room-option-help" id="step-pix-block">
             <p class="name-block">Шаг пикселя</p>
@@ -325,7 +316,7 @@
         <div class="content---first-line">
           <div class="options-first-block-big">
             <p class="caption-block">Видеоэкран для помещения</p>
-            <p id="name-room-module-p" class="caption-block-n">Q1.25AT32V2 SMD 320x160mm</p>
+            <p id="name-room-module-p" class="caption-block-n first---step---name">P-5мм-192x192мм</p>
             
             <div class="options-first-block-big-flex">
               
@@ -333,15 +324,15 @@
                 <i class="fa fa-arrows-alt options-first-block__icon" aria-hidden="true"></i>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Размер экрана</p>
-                  <p class="options-first-block-caption__size option-first-size" id="size-room">960 х 960 мм</p>
+                  <p class="options-first-block-caption__size option-first-size" id="size-room">192 х 192 мм</p>
                 </div>
               </div>
 
               <div class="options-first-block">
                 <i class="fa fa-picture-o options-first-block__icon" aria-hidden="true"></i>
-                <div class="options-first-block-caption redblock">
+                <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Разрешение экрана</p>
-                  <p class="options-first-block-caption__size" id="resolution-room">960 х 960 px</p>
+                  <p class="options-first-block-caption__size first---step--size" id="resolution-room">192 х 192 px</p>
                 </div>
               </div>
 
@@ -484,7 +475,7 @@
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Разрешение экрана</span>
                 <span class="dotted-fourth"></span>
-                <span class="parval-fourth" id="resolution-screen-room">768 x 768 px</span>
+                <span class="parval-fourth first---step--size" id="resolution-screen-room">192 x 192 px</span>
               </li>
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Кол-во кабинетов</span>
@@ -538,7 +529,7 @@
               </li>
             </ul>
           </div>
-          <div class="content---fourth-line---img">
+          <!-- <div class="content---fourth-line---img">
             <div class="calc-room---monitor">
                 <div class="resize-container">
                   <div class="resize-drag">
@@ -552,10 +543,8 @@
                   </div>
                 </div>
             </div>
-          </div>
+          </div> -->
         </div>
-
-        <p id="rangeWidth"></p>
 
         <div class="form-itog-block">
           <div class="form-itog">
@@ -566,7 +555,7 @@
             </div>
             <div class="form-itog-item">
               <span class="form-itog-item__caption">Стоимость экрана</span>
-              <span class="form-itog-item__value option-first-led" id="itog_room">639 431 &#x20bd;</span>
+              <span class="form-itog-item__value option-first-led" id="itog_room">0 &#x20bd;</span>
             </div>
             <div class="form-itog-item">
               <span class="form-itog-item__caption">Управляющий компьютер</span>
@@ -583,10 +572,19 @@
           </div>
   
           <form action="" class="form callback__form" method="post">
+            <input type="hidden" name="form" value="Видеоэкран для помещений">
+            <input type="hidden" name="form_title" value="Заказ со скидкой">
+            
+            <input type="hidden" name="settingup" class="option-first-settingup-input"  value="Видеоэкран для помещений">
+            <input type="hidden" name="led"       class="option-first-led-input"        value="Заказ со скидкой">
+            <input type="hidden" name="control"   class="option-first-control-input"    value="Видеоэкран для помещений">
+            <input type="hidden" name="delivery"  class="option-first-delivery-input"   value="Заказ со скидкой">
+            <input type="hidden" name="total"     class="option-first-price-input"      value="Видеоэкран для помещений">
+            
             <p class="form__caption">Оформить заказ со скидкой</p>
             <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_room">
             <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_room">
-            <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_room" required>
+            <input type="text" name="phone" placeholder="Телефон" class="phone_mask form__input" id="user_phone_room" required>
             <div class="robot">
               <div class="robot__check">
                   <svg viewBox="0 0 60 60">
@@ -612,9 +610,11 @@
               </div>
               <div class="modal-body">
                 <form action="" class="popupform callback__form" method="post">
+                  <input type="hidden" name="form" value="Видеоэкран для помещений">
+                  <input type="hidden" name="form_title" value="Замер">
                   <input type="text" name="fio" placeholder="Укажите ФИО" class="form-control" id="user_name_room_popup">
                   <input type="text" name="email" placeholder="Укажите e-mail" class="form-control" id="user_email_room_popup">
-                  <input type="text" placeholder="Телефон" class="phone_mask form-control" id="user_phone_room_popup"  required>
+                  <input type="text" name="phone" placeholder="Телефон" class="phone_mask form-control" id="user_phone_room_popup"  required>
                   <div class="robot">
                     <div class="robot__check">
                         <svg viewBox="0 0 60 60">
@@ -643,17 +643,22 @@
               </div>
               <div class="modal-body">
                 <form action="" class="popupform callback__form" method="post">
+                  <input type="hidden" name="form" value="Видеоэкран для помещений">
+                  <input type="hidden" name="form_title" value="Коммерческое предложение">
                   <input type="text" name="fio" placeholder="Укажите ФИО" class="form-control" id="user_name_room_popup_com">
                   <input type="text" name="email" placeholder="Укажите e-mail" class="form-control" id="user_email_room_popup_com">
-                  <input type="text" placeholder="Телефон" class="phone_mask form-control" id="user_phone_room_popup_com" required>
+                  <input type="text" name="phone" placeholder="Телефон" class="phone_mask form-control" id="user_phone_room_popup_com" required>
                   <div class="result-room-block">
                     <div class="result-room-block-price">
                       <p class="result-room-block-price__caption">Цена экрана</p>
-                      <p class="result-room-block-price__price modal-first-price" id="result-room-block-price__price-com"></p>
+                      <p class="result-room-block-price__price modal-first-price" id="result-room-block-price__price-com">0 &#x20bd;</p>
+                      <input type="hidden" class="modal-first-price-input" name="price" value="">
+                      
                     </div>
                     <div class="result-room-block-size">
                       <p class="result-room-block-price__caption">Площадь экрана</p>
-                      <p class="result-room-block-price__size modal-first-square" id="result-room-block-size__size-com">0.9216 M <sup>2</sup></p>
+                      <p class="result-room-block-price__size modal-first-square" id="result-room-block-size__size-com">0.92 M<sup>2</sup></p>
+                      <input type="hidden" class="modal-first-price-input modal-first-square-input" name="square" value="">
                     </div>
                   </div>
                   <div class="robot">
@@ -684,6 +689,7 @@
         <div class="form-street">
   
           <form method="post" class="calc-room---form calc__ajax__form--second">
+            <input type="hidden" name="form_id" value="2">
             <div class="calc-room">
 
               <div class="calc-room__caption-block">
@@ -710,7 +716,7 @@
               <div class="name-big-block">
                 <p class="name-block">Выберите шаг пикселя</p>
                 <span>
-                  <i class="fa fa-question-circle quest-pix" aria-hidden="true" id="quest-pix-room"></i>
+                  <i class="fa fa-question-circle desc---step" aria-hidden="true" id="quest-pix-room"></i>
                 </span>
               </div>
     
@@ -724,15 +730,7 @@
                 <option selected>10</option>
               </select>
     
-              <select class="select-css select-module" id="select-module-street">
-                <option>P4 SMD1921 5500 cd/㎡ 320*160mm</option>
-              </select>
-    
-              <!-- <p class="name-block">Выберите яркость</p>
-              <select class="select-css">
-                <option>Яркий</option>
-                <option>Повышеная яркость</option>
-              </select> -->
+              <p class="step---name second---step---name">Р-10мм-96х96мм</p>
     
               <div class="block-inline">
                 <p class="name-block">Гарантия</p>
@@ -742,11 +740,11 @@
               <div class="warranty-room-big-block">
                 <div class="warranty-room-big-block---year">
                   <div class="warranty-room-block">
-                    <input type="radio" name="warranty-room" id="warranty-street1" class="warranty-room__radio" value="1" checked>
+                    <input type="radio" name="warranty-room" id="warranty-street1" class="warranty-room__radio" value="1">
                     <label for="warranty-street1"><span></span>1 год</label>
                   </div>
                   <div class="warranty-room-block">
-                    <input type="radio" name="warranty-room" id="warranty-street2" class="warranty-room__radio" value="2">
+                    <input type="radio" name="warranty-room" id="warranty-street2" class="warranty-room__radio" value="2" checked>
                     <label for="warranty-street2"><span></span>2 года</label>
                   </div>
                   <div class="warranty-room-block">
@@ -767,7 +765,7 @@
               <div class="result-room-block">
                 <div class="result-room-block-price">
                   <p class="result-room-block-price__caption">Цена экрана</p>
-                  <p class="result-room-block-price__price" id="result-room-block-price__price">0 Р</p>
+                  <p class="result-room-block-price__price" id="result-room-block-price__price">46 150 &#x20bd;</p>
                 </div>
                 <div class="result-room-block-size">
                   <p class="result-room-block-price__caption">Площадь экрана</p>
@@ -777,75 +775,83 @@
     
             </div>
 
-            <div class="calc-room-option" id="calc-street-option">
-              <p class="name-block">Доп. параметры</p>
-              <div class="calc-room-option-big-block">
-                <div class="calc-room-option-block">
-                  <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-street-option1">
-                  <label for="calc-street-option1"><span></span>Управляющий компьютер</label>
-                  <i class="fa fa-question-circle" aria-hidden="true" value="Управляющий компьютер" name="dop-options-street"></i>
+            <div class="calc-room-option dop---option" id="calc-room-option">
+                <p class="name-block">Доп. параметры</p>
+                <div class="calc-room-option-big-block">
+                  <div class="calc-room-option-block">
+                    <input name="calc-room-option1" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option21">
+                    <label for="calc-room-option21"><span></span>Управляющий компьютер</label>
+                    <i class="fa fa-question-circle" aria-hidden="true" value="Управляющий компьютер" name="dop-options-room"></i>
+                  </div>
+                  <div class="calc-room-option-block">
+                    <input name="calc-room-option2" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option22">
+                    <label for="calc-room-option22"><span></span>Отправляющий контроллер</label>
+                    <i class="fa fa-question-circle" aria-hidden="true" value="Отправляющий контроллер" name="dop-options-room"></i>
+                  </div>
+                  <div class="calc-room-option-block">
+                    <input name="calc-room-option3" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option23">
+                    <label for="calc-room-option23"><span></span>Wi-Fi модуль</label>
+                    <i class="fa fa-question-circle" aria-hidden="true" value="Wi-Fi модуль" name="dop-options-room"></i>
+                  </div>
+                  <div class="calc-room-option-block">
+                    <input name="calc-room-option4" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option24">
+                    <label for="calc-room-option24"><span></span>Датчик яркости</label>
+                    <i class="fa fa-question-circle" aria-hidden="true" value="Датчик яркости" name="dop-options-room"></i>
+                  </div>
+                  <div class="calc-room-option-block">
+                    <input name="calc-room-option5" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option25">
+                    <label for="calc-room-option25"><span></span>Датчик температуры</label>
+                    <i class="fa fa-question-circle" aria-hidden="true" value="Датчик температуры" name="dop-options-room"></i>
+                  </div>
+                  <div class="calc-room-option-block">
+                    <input name="calc-room-option6" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option26">
+                    <label for="calc-room-option26"><span></span>Видеопроцессор</label>
+                    <i class="fa fa-question-circle" aria-hidden="true" value="Видеопроцессор" name="dop-options-room"></i>
+                  </div>
+      
                 </div>
-                <div class="calc-room-option-block">
-                  <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-street-option2">
-                  <label for="calc-street-option2"><span></span>Отправляющий контроллер</label>
-                  <i class="fa fa-question-circle" aria-hidden="true" value="Отправляющий контроллер" name="dop-options-street"></i>
+
+                <p class="name-block">Монтаж</p>
+                <div class="calc-room-option-big-block">
+                  <div class="calc-room-option-block">
+                    <input name="calc-room-option7" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option27">
+                    <label for="calc-room-option27"><span></span>Электрощитовая</label>
+                    <i class="fa fa-question-circle" aria-hidden="true" value="Электрощитовая" name="dop-options-room"></i>
+                  </div>
+                  <div class="calc-room-option-block">
+                    <input name="calc-room-option8" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option28">
+                    <label for="calc-room-option28"><span></span>Шефмонтаж</label>
+                    <i class="fa fa-question-circle" aria-hidden="true" value="Шефмонтаж" name="dop-options-room"></i>
+                  </div>
+                  <div class="calc-room-option-block">
+                    <input name="calc-room-option9" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option29">
+                    <label for="calc-room-option29"><span></span>Монтаж оборудования</label>
+                    <i class="fa fa-question-circle" aria-hidden="true" value="Монтаж оборудования" name="dop-options-room"></i>
+                  </div>
+                  <div class="calc-room-option-block">
+                    <input name="calc-room-option10" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option210">
+                    <label for="calc-room-option210"><span></span>Изгот. металлоконструкции</label>
+                    <i class="fa fa-question-circle" aria-hidden="true" value="Изгот. металлоконструкции" name="dop-options-room"></i>
+                  </div>
+                  <div class="calc-room-option-block">
+                    <input name="calc-room-option11" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option211">
+                    <label for="calc-room-option211"><span></span>Монтаж металлоконструкций</label>
+                    <i class="fa fa-question-circle" aria-hidden="true" value="Монтаж металлоконструкций" name="dop-options-room"></i>
+                  </div>
+                  <div class="calc-room-option-block">
+                    <input name="calc-room-option12" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option212">
+                    <label for="calc-room-option212"><span></span>Набор запасных частей</label>
+                    <i class="fa fa-question-circle" aria-hidden="true" value="Набор запасных частей" name="dop-options-room"></i>
+                  </div>
                 </div>
-                <div class="calc-room-option-block">
-                  <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-street-option3">
-                  <label for="calc-street-option3"><span></span>Wi-Fi модуль</label>
-                  <i class="fa fa-question-circle" aria-hidden="true" value="Wi-Fi модуль" name="dop-options-street"></i>
+
+                <p class="name-block">Доставка</p>
+                <div class="calc-room-option-big-block">
+                  <div class="calc-room-option-block">
+                    <input name="delivery" type="checkbox" class="calc-room-option-block__checkbox" id="delivery2">
+                    <label for="delivery2"><span></span>Доставка</label>
+                  </div>
                 </div>
-                <div class="calc-room-option-block">
-                  <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-street-option4">
-                  <label for="calc-street-option4"><span></span>Датчик яркости</label>
-                  <i class="fa fa-question-circle" aria-hidden="true" value="Датчик яркости" name="dop-options-street"></i>
-                </div>
-                <div class="calc-room-option-block">
-                  <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-street-option5">
-                  <label for="calc-street-option5"><span></span>Датчик температуры</label>
-                  <i class="fa fa-question-circle" aria-hidden="true" value="Датчик температуры" name="dop-options-street"></i>
-                </div>
-                <div class="calc-room-option-block">
-                  <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-street-option6">
-                  <label for="calc-street-option6"><span></span>Видеопроцессор</label>
-                  <i class="fa fa-question-circle" aria-hidden="true" value="Видеопроцессор" name="dop-options-street"></i>
-                </div>
-              </div>
-    
-    
-              <p class="name-block">Монтаж</p>
-              <div class="calc-room-option-big-block">
-                <div class="calc-room-option-block">
-                  <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-street-option7">
-                  <label for="calc-street-option7"><span></span>Электрощитовая</label>
-                  <i class="fa fa-question-circle" aria-hidden="true" value="Электрощитовая" name="dop-options-street"></i>
-                </div>
-                <div class="calc-room-option-block">
-                  <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-street-option8">
-                  <label for="calc-street-option8"><span></span>Шефмонтаж</label>
-                  <i class="fa fa-question-circle" aria-hidden="true" value="Шефмонтаж" name="dop-options-street"></i>
-                </div>
-                <div class="calc-room-option-block">
-                  <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-street-option9">
-                  <label for="calc-street-option9"><span></span>Монтаж оборудования</label>
-                  <i class="fa fa-question-circle" aria-hidden="true" value="Монтаж оборудования" name="dop-options-street"></i>
-                </div>
-                <div class="calc-room-option-block">
-                  <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-street-option10">
-                  <label for="calc-street-option10"><span></span>Изгот. металлоконструкции</label>
-                  <i class="fa fa-question-circle" aria-hidden="true" value="Изгот. металлоконструкции" name="dop-options-street"></i>
-                </div>
-                <div class="calc-room-option-block">
-                  <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-street-option11">
-                  <label for="calc-street-option11"><span></span>Монтаж металлоконструкций</label>
-                  <i class="fa fa-question-circle" aria-hidden="true" value="Монтаж металлоконструкций" name="dop-options-street"></i>
-                </div>
-                <div class="calc-room-option-block">
-                  <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-street-option12">
-                  <label for="calc-street-option12"><span></span>Набор запасных частей</label>
-                  <i class="fa fa-question-circle" aria-hidden="true" value="Набор запасных частей" name="dop-options-street"></i>
-                </div>
-              </div>
             </div>
           </form>
 
@@ -861,11 +867,6 @@
                 </div>
               </div>
             </div>
-          </div>
-
-          <div class="calc-room-option-help" id="calc-street-option-help">
-            <p class="name-block" id="calc-street-option-help-caption">Тест</p>
-            <p id="calc-street-option-help-text"></p>
           </div>
   
           <div class="calc-room-option-help" id="step-pix-block-street">
@@ -889,14 +890,14 @@
         <div class="content---first-line">
           <div class="options-first-block-big">
             <p class="caption-block">Видеоэкран для улицы</p>
-            <p id="name-street-module-p" class="caption-block-n">Q1.25AT32V2 SMD 320x160mm</p>
+            <p id="name-street-module-p" class="caption-block-n second---step---name">Р-10мм-192х192мм</p>
     
             <div class="options-first-block-big-flex">
               <div class="options-first-block">
                 <i class="fa fa-arrows-alt options-first-block__icon" aria-hidden="true"></i>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Размер экрана</p>
-                  <p class="options-first-block-caption__size" id="size-street">960 x 960 мм</p>
+                  <p class="options-first-block-caption__size option-second-size" id="size-street">960 x 960 мм</p>
                 </div>
               </div>
     
@@ -905,7 +906,7 @@
                 <i class="fa fa-picture-o options-first-block__icon" aria-hidden="true"></i>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Разрешение экрана</p>
-                  <p class="options-first-block-caption__size" id="resolution-street">240 x 240 px</p>
+                  <p class="options-first-block-caption__size second---step--size" id="resolution-street">96 x 96 px</p>
                 </div>
               </div>
     
@@ -914,7 +915,7 @@
                 <i class="fa fa-square options-first-block__icon" aria-hidden="true"></i>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Шаг пикселя</p>
-                  <p class="options-first-block-caption__size" id="step-pixel-street">4</p>
+                  <p class="options-first-block-caption__size option-second-step" id="step-pixel-street">4</p>
                 </div>
               </div>
     
@@ -923,7 +924,7 @@
                 <i class="fa fa-get-pocket options-first-block__icon" aria-hidden="true"></i>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Гарантия</p>
-                  <p class="options-first-block-caption__size" id="safe-street">1 год</p>
+                  <p class="options-first-block-caption__size warranty-street-big-block---year" id="safe-street">1 год</p>
                 </div>
               </div>
     
@@ -952,7 +953,7 @@
                 <li class="options-second-block-big-photo-block__item">
                   <span class="parname">Шаг пикселя</span>
                   <span class="dotted"></span>
-                  <span class="parval" id="step-street">4 мм</span>
+                  <span class="parval option-second-step" id="step-street">10 мм</span>
                 </li>
                 <li class="options-second-block-big-photo-block__item">
                   <span class="parname">Конфигурация светодиодов</span>
@@ -1046,12 +1047,12 @@
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Размер экрана</span>
                 <span class="dotted-fourth"></span>
-                <span class="parval-fourth" id="size-screen-street">960 x 960 мм</span>
+                <span class="parval-fourth option-second-size" id="size-screen-street">960 x 960 мм</span>
               </li>
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Разрешение экрана</span>
                 <span class="dotted-fourth"></span>
-                <span class="parval-fourth" id="resolution-screen-street">240 x 240 px</span>
+                <span class="parval-fourth second---step--size" id="resolution-screen-street">240 x 240 px</span>
               </li>
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Кол-во кабинетов</span>
@@ -1105,7 +1106,7 @@
               </li>
             </ul>
           </div>
-          <div class="content---fourth-line---img">
+          <!-- <div class="content---fourth-line---img">
             <div class="calc-room---monitor">
                 <div class="resize-container">
                   <div class="resize-drag">
@@ -1119,7 +1120,7 @@
                   </div>
                 </div>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <div class="form-itog-block">
@@ -1127,31 +1128,40 @@
             <p class="caption-block">Итог</p>
             <div class="form-itog-item">
               <span class="form-itog-item__caption">Монтаж</span>
-              <span class="form-itog-item__value">0 &#x20bd;</span>
+              <span class="form-itog-item__value option-second-settingup">0 &#x20bd;</span>
             </div>
             <div class="form-itog-item">
               <span class="form-itog-item__caption">Стоимость экрана</span>
-              <span class="form-itog-item__value" id="itog_street">90 597 &#x20bd;</span>
+              <span class="form-itog-item__value option-second-led" id="itog_street">0 &#x20bd;</span>
             </div>
             <div class="form-itog-item">
               <span class="form-itog-item__caption">Управляющий компьютер</span>
-              <span class="form-itog-item__value">0 &#x20bd;</span>
+              <span class="form-itog-item__value option-second-control">0 &#x20bd;</span>
             </div>
             <div class="form-itog-item">
               <span class="form-itog-item__caption">Доставка</span>
-              <span class="form-itog-item__value">0 &#x20bd;</span>
+              <span class="form-itog-item__value option-second-delivery">0 &#x20bd;</span>
             </div>
             <div class="form-itog-item">
               <span class="form-itog-item__caption">Итого</span>
-              <span class="form-itog-item__value" id="itog_street_all">90 597 &#x20bd;</span>
+              <span class="form-itog-item__value option-second-price" id="itog_street_all">0 &#x20bd;</span>
             </div>
           </div>
   
           <form action="" class="form callback__form" method="post">
+            <input type="hidden" name="form" value="Видеоэкран для улицы">
+            <input type="hidden" name="form_title" value="Заказ со скидкой">
+            
+            <input type="hidden" name="settingup" class="option-second-settingup-input"  value="Видеоэкран для помещений">
+            <input type="hidden" name="led"       class="option-second-led-input"        value="Заказ со скидкой">
+            <input type="hidden" name="control"   class="option-second-control-input"    value="Видеоэкран для помещений">
+            <input type="hidden" name="delivery"  class="option-second-delivery-input"   value="Заказ со скидкой">
+            <input type="hidden" name="total"     class="option-second-price-input"      value="Видеоэкран для помещений">
+            
             <p class="form__caption">Оформить заказ со скидкой</p>
             <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_room">
             <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_room">
-            <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_room" required>
+            <input type="text" name="phone" placeholder="Телефон" class="phone_mask form__input" id="user_phone_room" required>
             <div class="robot">
               <div class="robot__check">
                   <svg viewBox="0 0 60 60">
@@ -1177,9 +1187,11 @@
                 </div>
                 <div class="modal-body">
                   <form action="" class="popupform callback__form" method="post">
+                    <input type="hidden" name="form" value="Видеоэкран для улицы">
+                    <input type="hidden" name="form_title" value="Замер">
                     <input type="text" name="fio" placeholder="Укажите ФИО" class="form-control" id="user_name_room_popup">
                     <input type="text" name="email" placeholder="Укажите e-mail" class="form-control" id="user_email_room_popup">
-                    <input type="text" placeholder="Телефон" class="phone_mask form-control" id="user_phone_room_popup"  required>
+                    <input type="text" name="phone" placeholder="Телефон" class="phone_mask form-control" id="user_phone_room_popup"  required>
                     <div class="robot">
                       <div class="robot__check">
                           <svg viewBox="0 0 60 60">
@@ -1208,17 +1220,21 @@
               </div>
               <div class="modal-body">
                 <form action="" class="popupform callback__form" method="post">
+                  <input type="hidden" name="form" value="Видеоэкран для улицы">
+                  <input type="hidden" name="form_title" value="Коммерческое предложение">  
                   <input type="text" name="fio" placeholder="Укажите ФИО" class="form-control" id="user_name_room_popup_com">
                   <input type="text" name="email" placeholder="Укажите e-mail" class="form-control" id="user_email_room_popup_com">
-                  <input type="text" placeholder="Телефон" class="phone_mask form-control" id="user_phone_room_popup_com" required>
+                  <input type="text" name="phone" placeholder="Телефон" class="phone_mask form-control" id="user_phone_room_popup_com" required>
                   <div class="result-room-block">
                     <div class="result-room-block-price">
                       <p class="result-room-block-price__caption">Цена экрана</p>
-                      <p class="result-room-block-price__price" id="result-room-block-price__price-com">89 203 ₽</p>
+                      <p class="result-room-block-price__price modal-second-price" id="result-room-block-price__price-com">0 ₽</p>
+                      <input type="hidden" class="modal-second-price-input" name="price" value="">
                     </div>
                     <div class="result-room-block-size">
                       <p class="result-room-block-price__caption">Площадь экрана</p>
-                      <p class="result-room-block-price__size" id="result-room-block-size__size-com">0.9216 M <sup>2</sup></p>
+                      <p class="result-room-block-price__size modal-second-square" id="result-room-block-size__size-com">0.92 M <sup>2</sup></p>
+                      <input type="hidden" class="modal-second-square-input" name="square" value="">
                     </div>
                   </div>
                   <div class="robot">
@@ -1245,231 +1261,223 @@
       <section class="tab-content">
 
         <div class="form-media">
-          <div class="calc-room---form">
+          
+          <form method="post" class="calc-room---form calc__ajax__form--third">
+            <input type="hidden" name="form_id" value="3">
+            <div class="calc-room">
 
-          <div class="switch-street" style="display: none;">
-            <p id="switch-street-day">День</p>
-            <p id="switch-street-night">Ночь</p>
-          </div>
-  
-          <div class="calc-media">
-
-            <div class="calc-room__caption-block">
-              <p class="name-block">Размер экрана</p>
-              <button id="option-block-media"><i class="fa fa-arrow-right" aria-hidden="true"></i>Доп.параметры</button>
-            </div>
-
-            <div class="range---value">
-              <label for="rangeWidthMedia" class="labelWidth">Ширина</label>
-              <div class="range---value-index">
-                <span id="rangeWidthMediaSpan" class="spanWidth">1</span><span class="spanWidth"> M</span>
+              <div class="calc-room__caption-block">
+                <p class="name-block">Размер экрана</p>
+                <span class="dop"><i class="fa fa-arrow-right" aria-hidden="true"></i>Доп.параметры</span>
               </div>
-            </div>
-            <input type="range" id="rangeWidthMedia" value="1" min="1" max="50" step="1">
-            
-            <div class="range---value">
-              <label for="rangeHeightMedia" class="labelHeight">Высота</label>
-              <div class="range---value-index">
-                <span id="rangeHeightMediaSpan" class="spanHeight">1</span><span class="spanHeight"> M</span>
-              </div>
-            </div>
-            <input type="range" id="rangeHeightMedia" value="1" min="1" max="50" step="1">
-  
-            <div class="name-big-block">
-              <p class="name-block">Выберите шаг пикселя</p>
-              <span>
-                <i class="fa fa-question-circle quest-pix" aria-hidden="true" id="quest-pix-media"></i>
-              </span>
-            </div>
-  
-            <select class="select-css" id="select-step-pixel-media">
-              <option value="25">25x25</option>
-              <option value="50">50x25</option>
-              <option value="31">31x31</option>
-              <option value="10.4">10.4x13.8</option>
-              <option value="15.6">15.6x15.6</option>
-              <option value="15.63">15.63x31.25</option>
-              <option value="16.6">16.6x16.6</option>
-            </select>
-  
-            <select class="select-css select-module" id="select-module-media">
-              <option>HD-XL-P 25 x 25 (прозрачность 60%)</option>
-            </select>
-  
-            <p class="name-block">Выберите яркость</p>
-            <select class="select-css">
-              <option>Яркий</option>
-              <option>Повышеная яркость</option>
-            </select>
-  
-            <div class="block-inline">
-              <p class="name-block">Гарантия</p>
-              <a class="form-modal" href="#" data-toggle="modal" data-target="#tab3_modal1">Бесплатный выезд замерщика</a>
-            </div>
-  
-            <div class="warranty-room-big-block">
-              <div class="warranty-room-big-block---year">
-                <div class="warranty-room-block">
-                  <input type="radio" name="warranty-media" id="warranty-media1" class="warranty-room__radio" value="1" checked>
-                  <label for="warranty-media1"><span></span>1 год</label>
-                </div>
-                <div class="warranty-room-block">
-                  <input type="radio" name="warranty-media" id="warranty-media2" class="warranty-room__radio" value="2">
-                  <label for="warranty-media2"><span></span>2 года</label>
-                </div>
-                <div class="warranty-room-block">
-                  <input type="radio" name="warranty-media" id="warranty-media3" class="warranty-room__radio" value="3">
-                  <label for="warranty-media3"><span></span>3 года</label>
+
+              <div class="range---value">
+                <label for="rangeWidthMedia" class="labelWidth">Ширина</label>
+                <div class="range---value-index">
+                  <span id="rangeWidthMediaSpan" class="spanWidth rangeWidthMedia">1</span><span class="spanWidth"> M</span>
                 </div>
               </div>
-              <div class="get-room-pred">
-                  <a class="form-modal" href="#" class="get-room-pred-text" data-toggle="modal" data-target="#tab3_modal2">Получить ком. предложение</a>
+              <input type="range" name="width" id="rangeWidthMedia" class="rangeWidthMediaStreet" value="1" min="1" max="50" step="1">
+    
+              <div class="range---value">
+                <label for="rangeHeightMedia" class="labelHeight">Высота</label>
+                <div class="range---value-index">
+                  <span id="rangeHeightMediaSpan" class="spanHeight rangeHeightMedia">1</span><span class="spanHeight"> M</span>
+                </div>
               </div>
+              <input type="range" name="height" id="rangeHeightMedia" class="rangeHeightMediaStreet" value="1" min="1" max="50" step="1">
+    
+              <div class="name-big-block">
+                <p class="name-block">Выберите шаг пикселя</p>
+                <span>
+                  <i class="fa fa-question-circle desc---step" aria-hidden="true" id="quest-pix-media"></i>
+                </span>
+              </div>
+    
+              <select name="step" class="select-css select-third-step" id="select-step-pixel-media">
+                <option value="25">25x25</option>
+                <option value="50">50x25</option>
+                <option value="31" selected>31x31</option>
+                <!-- <option value="10.4">10.4x13.8</option>
+                <option value="15.6">15.6x15.6</option>
+                <option value="15.63">15.63x31.25</option>
+                <option value="16.6" selected>16.6x16.6</option> -->
+              </select>
+    
+              <p class="step---name third---step---name">Р-31мм-19x38мм</p>
+    
+              <!-- <p class="name-block">Выберите яркость</p>
+              <select class="select-css">
+                <option>Яркий</option>
+                <option>Повышеная яркость</option>
+              </select> -->
+    
+              <div class="block-inline">
+                <p class="name-block">Гарантия</p>
+                <a class="form-modal" href="#" data-toggle="modal" data-target="#tab3_modal1">Бесплатный выезд замерщика</a>
+              </div>
+    
+              <div class="warranty-room-big-block">
+                <div class="warranty-room-big-block---year warranty-media-big-block---year">
+                  <div class="warranty-room-block">
+                    <input type="radio" name="warranty-room" id="warranty-media1" class="warranty-room__radio" value="1">
+                    <label for="warranty-media1"><span></span>1 год</label>
+                  </div>
+                  <div class="warranty-room-block">
+                    <input type="radio" name="warranty-room" id="warranty-media2" class="warranty-room__radio" value="2" checked>
+                    <label for="warranty-media2"><span></span>2 года</label>
+                  </div>
+                  <div class="warranty-room-block">
+                    <input type="radio" name="warranty-room" id="warranty-media3" class="warranty-room__radio" value="3">
+                    <label for="warranty-media3"><span></span>3 года</label>
+                  </div>
+                </div>
+                <div class="get-room-pred">
+                    <a class="form-modal" href="#" class="get-room-pred-text" data-toggle="modal" data-target="#tab3_modal2">Получить ком. предложение</a>
+                </div>
+              </div>
+
+              <!--<div style="margin-top: 10px;">
+                <span class="name-block"> Введите курс доллара</span>
+                <input type="text" id="kurs-dollar-media">
+              </div>-->
+    
+              <div class="result-room-block">
+                <div class="result-room-block-price">
+                  <p class="result-room-block-price__caption">Цена экрана</p>
+                  <p class="result-room-block-price__price" id="result-media-block-price__price">74 425 &#x20bd;</p>
+                </div>
+                <div class="result-room-block-size">
+                  <p class="result-room-block-price__caption">Площадь экрана</p>
+                  <p class="result-room-block-price__size" id="result-media-block-size__size">1 М <sup>2</sup></p>
+                </div>
+              </div>
+    
             </div>
 
-            <!--<div style="margin-top: 10px;">
-              <span class="name-block"> Введите курс доллара</span>
-              <input type="text" id="kurs-dollar-media">
-            </div>-->
-  
-            <div class="result-room-block">
-              <div class="result-room-block-price">
-                <p class="result-room-block-price__caption">Цена экрана</p>
-                <p class="result-room-block-price__price" id="result-media-block-price__price">121 400 &#x20bd;</p>
+            <div class="calc-room-option dop---option" id="calc-room-option">
+              <p class="name-block">Доп. параметры</p>
+              <div class="calc-room-option-big-block">
+                <div class="calc-room-option-block">
+                  <input name="calc-room-option1" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option31">
+                  <label for="calc-room-option31"><span></span>Управляющий компьютер</label>
+                  <i class="fa fa-question-circle" aria-hidden="true" value="Управляющий компьютер" name="dop-options-room"></i>
+                </div>
+                <div class="calc-room-option-block">
+                  <input name="calc-room-option2" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option32">
+                  <label for="calc-room-option32"><span></span>Отправляющий контроллер</label>
+                  <i class="fa fa-question-circle" aria-hidden="true" value="Отправляющий контроллер" name="dop-options-room"></i>
+                </div>
+                <div class="calc-room-option-block">
+                  <input name="calc-room-option3" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option33">
+                  <label for="calc-room-option33"><span></span>Wi-Fi модуль</label>
+                  <i class="fa fa-question-circle" aria-hidden="true" value="Wi-Fi модуль" name="dop-options-room"></i>
+                </div>
+                <div class="calc-room-option-block">
+                  <input name="calc-room-option4" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option34">
+                  <label for="calc-room-option34"><span></span>Датчик яркости</label>
+                  <i class="fa fa-question-circle" aria-hidden="true" value="Датчик яркости" name="dop-options-room"></i>
+                </div>
+                <div class="calc-room-option-block">
+                  <input name="calc-room-option5" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option35">
+                  <label for="calc-room-option35"><span></span>Датчик температуры</label>
+                  <i class="fa fa-question-circle" aria-hidden="true" value="Датчик температуры" name="dop-options-room"></i>
+                </div>
+                <div class="calc-room-option-block">
+                  <input name="calc-room-option6" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option36">
+                  <label for="calc-room-option36"><span></span>Видеопроцессор</label>
+                  <i class="fa fa-question-circle" aria-hidden="true" value="Видеопроцессор" name="dop-options-room"></i>
+                </div>
+    
               </div>
-              <div class="result-room-block-price" style="display: none">
-                <p class="result-room-block-price__caption">Цена экрана в $</p>
-                <p class="result-room-block-price__price" id="result-media-block-price__price-dollar">0 $</p>
+
+              <p class="name-block">Монтаж</p>
+              <div class="calc-room-option-big-block">
+                <div class="calc-room-option-block">
+                  <input name="calc-room-option7" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option37">
+                  <label for="calc-room-option37"><span></span>Электрощитовая</label>
+                  <i class="fa fa-question-circle" aria-hidden="true" value="Электрощитовая" name="dop-options-room"></i>
+                </div>
+                <div class="calc-room-option-block">
+                  <input name="calc-room-option8" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option38">
+                  <label for="calc-room-option38"><span></span>Шефмонтаж</label>
+                  <i class="fa fa-question-circle" aria-hidden="true" value="Шефмонтаж" name="dop-options-room"></i>
+                </div>
+                <div class="calc-room-option-block">
+                  <input name="calc-room-option9" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option39">
+                  <label for="calc-room-option39"><span></span>Монтаж оборудования</label>
+                  <i class="fa fa-question-circle" aria-hidden="true" value="Монтаж оборудования" name="dop-options-room"></i>
+                </div>
+                <div class="calc-room-option-block">
+                  <input name="calc-room-option10" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option310">
+                  <label for="calc-room-option310"><span></span>Изгот. металлоконструкции</label>
+                  <i class="fa fa-question-circle" aria-hidden="true" value="Изгот. металлоконструкции" name="dop-options-room"></i>
+                </div>
+                <div class="calc-room-option-block">
+                  <input name="calc-room-option11" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option311">
+                  <label for="calc-room-option311"><span></span>Монтаж металлоконструкций</label>
+                  <i class="fa fa-question-circle" aria-hidden="true" value="Монтаж металлоконструкций" name="dop-options-room"></i>
+                </div>
+                <div class="calc-room-option-block">
+                  <input name="calc-room-option12" type="checkbox" class="calc-room-option-block__checkbox" id="calc-room-option312">
+                  <label for="calc-room-option312"><span></span>Набор запасных частей</label>
+                  <i class="fa fa-question-circle" aria-hidden="true" value="Набор запасных частей" name="dop-options-room"></i>
+                </div>
               </div>
-              <div class="result-room-block-size">
-                <p class="result-room-block-price__caption">Площадь экрана</p>
-                <p class="result-room-block-price__size" id="result-media-block-size__size">1 М <sup>2</sup></p>
+
+              <p class="name-block">Доставка</p>
+              <div class="calc-room-option-big-block">
+                <div class="calc-room-option-block">
+                  <input name="delivery" type="checkbox" class="calc-room-option-block__checkbox" id="delivery3">
+                  <label for="delivery3"><span></span>Доставка</label>
+                </div>
               </div>
             </div>
-  
+          </form>
+
+          <div class="calc-room---monitor">
+            <div class="resize-container-media">
+              <div class="resize-drag-media">
+                <video autoplay loop muted>
+                  <source src="video/smart.mp4">
+                </video>
+                <div class="resize-container---text">
+                <span class="videoSizeMedia">1 М x 1 М</span>
+                  <span class="videoSquareMedia">1 M <sup>2</sup></span>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="calc-room-option" id="calc-media-option">
-            <p class="name-block">Доп. параметры</p>
-            <div class="calc-room-option-big-block">
-              <div class="calc-room-option-block">
-                <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option1">
-                <label for="calc-media-option1"><span></span>Управляющий компьютер</label>
-                <i class="fa fa-question-circle" aria-hidden="true" value="Управляющий компьютер" name="dop-options-media"></i>
-              </div>
-              <div class="calc-room-option-block">
-                <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option2">
-                <label for="calc-media-option2"><span></span>Отправляющий контроллер</label>
-                <i class="fa fa-question-circle" aria-hidden="true" value="Отправляющий контроллер" name="dop-options-media"></i>
-              </div>
-              <div class="calc-room-option-block">
-                <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option3">
-                <label for="calc-media-option3"><span></span>Wi-Fi модуль</label>
-                <i class="fa fa-question-circle" aria-hidden="true" value="Wi-Fi модуль" name="dop-options-media"></i>
-              </div>
-              <div class="calc-room-option-block">
-                <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option4">
-                <label for="calc-media-option4"><span></span>Датчик яркости</label>
-                <i class="fa fa-question-circle" aria-hidden="true" value="Датчик яркости" name="dop-options-media"></i>
-              </div>
-              <div class="calc-room-option-block">
-                <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option5">
-                <label for="calc-media-option5"><span></span>Датчик температуры</label>
-                <i class="fa fa-question-circle" aria-hidden="true" value="Датчик температуры" name="dop-options-media"></i>
-              </div>
-              <div class="calc-room-option-block">
-                <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option6">
-                <label for="calc-media-option6"><span></span>Видеопроцессор</label>
-                <i class="fa fa-question-circle" aria-hidden="true" value="Видеопроцессор" name="dop-options-media"></i>
-              </div>
-            </div>
-  
-  
-            <p class="name-block">Монтаж</p>
-            <div class="calc-room-option-big-block">
-              <div class="calc-room-option-block">
-                <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option7">
-                <label for="calc-media-option7"><span></span>Электрощитовая</label>
-                <i class="fa fa-question-circle" aria-hidden="true" value="Электрощитовая" name="dop-options-media"></i>
-              </div>
-              <div class="calc-room-option-block">
-                <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option8">
-                <label for="calc-media-option8"><span></span>Шефмонтаж</label>
-                <i class="fa fa-question-circle" aria-hidden="true" value="Шефмонтаж" name="dop-options-media"></i>
-              </div>
-              <div class="calc-room-option-block">
-                <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option9">
-                <label for="calc-media-option9"><span></span>Монтаж оборудования</label>
-                <i class="fa fa-question-circle" aria-hidden="true" value="Монтаж оборудования" name="dop-options-media"></i>
-              </div>
-              <div class="calc-room-option-block">
-                <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option10">
-                <label for="calc-media-option10"><span></span>Изгот. металлоконструкции</label>
-                <i class="fa fa-question-circle" aria-hidden="true" value="Изгот. металлоконструкции" name="dop-options-media"></i>
-              </div>
-              <div class="calc-room-option-block">
-                <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option11">
-                <label for="calc-media-option11"><span></span>Монтаж металлоконструкций</label>
-                <i class="fa fa-question-circle" aria-hidden="true" value="Монтаж металлоконструкций" name="dop-options-media"></i>
-              </div>
-              <div class="calc-room-option-block">
-                <input type="checkbox" class="calc-room-option-block__checkbox" id="calc-media-option12">
-                <label for="calc-media-option12"><span></span>Набор запасных частей</label>
-                <i class="fa fa-question-circle" aria-hidden="true" value="Набор запасных частей" name="dop-options-media"></i>
-              </div>
-            </div>
+          <div class="calc-room-option-help" id="step-pix-block-media">
+            <p class="name-block">Шаг пикселя</p>
+            <p>Чем меньше шаг пикселя, тем более качественное изображение можно отображать на светодиодном экране.
+
+              Для того чтобы подобрать оптимальный шаг пикселя, в первую очередь необходимо понять место для установки экрана, во-вторых определить минимальное расстояние, с которого будет читаться изображение.
+
+              Нет смысла выбирать шаг 3 мм, под экран с установкой на фасаде здания с минимальным расстоянием обзора 10 м.
+
+              Минимальное расстояние (МР) от экрана до зрителя прямо пропорционально шагу пикселя (ШП).
+
+              Например:
+              МР – 1 м = ШП – 1.2, 1.5 мм.
+              МР – 3 м = ШП – 3 мм.
+              МР – 10 м = ШП – 10мм.</p>
           </div>
-        </div>
-
-        <div class="calc-room---monitor">
-          <div class="resize-container-media">
-            <div class="resize-drag-media">
-              <video autoplay loop muted>
-                <source src="video/smart.mp4">
-              </video>
-              <div class="resize-container---text">
-                <span id="resize-drag-media-span">1 М x 1 М</span>
-                <span id="resize-drag-media-span-itog">1 M <sup>2</sup></span>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-        <div class="calc-room-option-help" id="calc-media-option-help">
-          <p class="name-block" id="calc-media-option-help-caption">Тест</p>
-          <p id="calc-media-option-help-text"></p>
-        </div>
-  
-  
-        <div class="calc-room-option-help" id="step-pix-block-media">
-          <p class="name-block">Шаг пикселя</p>
-          <p>Чем меньше шаг пикселя, тем более качественное изображение можно отображать на светодиодном экране.
-
-            Для того чтобы подобрать оптимальный шаг пикселя, в первую очередь необходимо понять место для установки экрана, во-вторых определить минимальное расстояние, с которого будет читаться изображение.
-
-            Нет смысла выбирать шаг 3 мм, под экран с установкой на фасаде здания с минимальным расстоянием обзора 10 м.
-
-            Минимальное расстояние (МР) от экрана до зрителя прямо пропорционально шагу пикселя (ШП).
-
-            Например:
-            МР – 1 м = ШП – 1.2, 1.5 мм.
-            МР – 3 м = ШП – 3 мм.
-            МР – 10 м = ШП – 10мм.</p>
-        </div>
   
         </div>
   
         <div class="content---first-line">
           <div class="options-first-block-big">
             <p class="caption-block">Медиафасад</p>
-            <p id="name-media-module-p" class="caption-block-n">HD-XL-P 25 x 25 (прозрачность 60%)</p>
+            <p id="name-media-module-p" class="caption-block-n third---step---name">Р-31мм-19x38мм</p>
     
             <div class="options-first-block-big-flex">
               <div class="options-first-block">
                 <i class="fa fa-arrows-alt options-first-block__icon" aria-hidden="true"></i>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Размер экрана</p>
-                  <p class="options-first-block-caption__size" id="size-media">1000 x 1000 мм</p>
+                  <p class="options-first-block-caption__size option-third-size" id="size-media">1000 x 1000 мм</p>
                 </div>
               </div>
     
@@ -1478,7 +1486,7 @@
                 <i class="fa fa-picture-o options-first-block__icon" aria-hidden="true"></i>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Разрешение экрана</p>
-                  <p class="options-first-block-caption__size" id="resolution-media">1000 х 1000 px</p>
+                  <p class="options-first-block-caption__size third---step--size" id="resolution-media">31 х 31 px</p>
                 </div>
               </div>
     
@@ -1487,7 +1495,7 @@
                 <i class="fa fa-square options-first-block__icon" aria-hidden="true"></i>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Шаг пикселя</p>
-                  <p class="options-first-block-caption__size" id="step-pixel-media">25х25</p>
+                  <p class="options-first-block-caption__size option-third-step" id="step-pixel-media">31х31</p>
                 </div>
               </div>
     
@@ -1496,7 +1504,7 @@
                 <i class="fa fa-get-pocket options-first-block__icon" aria-hidden="true"></i>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Гарантия</p>
-                  <p class="options-first-block-caption__size" id="safe-media">1 год</p>
+                  <p class="options-first-block-caption__size option-third-warranty" id="safe-media">2 года</p>
                 </div>
               </div>
     
@@ -1525,7 +1533,7 @@
                 <li class="options-second-block-big-photo-block__item">
                   <span class="parname">Шаг пикселя</span>
                   <span class="dotted"></span>
-                  <span class="parval" id="step-media">25 мм</span>
+                  <span class="parval option-third-step" id="step-media">25 мм</span>
                 </li>
                 <li class="options-second-block-big-photo-block__item">
                   <span class="parname">Конфигурация светодиодов</span>
@@ -1619,12 +1627,12 @@
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Размер экрана</span>
                 <span class="dotted-fourth"></span>
-                <span class="parval-fourth" id="size-screen-media">1000 x 1000 мм</span>
+                <span class="parval-fourth option-third-size" id="size-screen-media">1000 x 1000 мм</span>
               </li>
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Разрешение экрана</span>
                 <span class="dotted-fourth"></span>
-                <span class="parval-fourth" id="resolution-screen-media">1000 х 1000 мм</span>
+                <span class="parval-fourth third---step--size" id="resolution-screen-media">31 х 31 px</span>
               </li>
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Кол-во кабинетов</span>
@@ -1678,7 +1686,7 @@
               </li>
             </ul>
           </div>
-          <div class="content---fourth-line---img">
+          <!-- <div class="content---fourth-line---img">
             <div class="calc-room---monitor">
                 <div class="resize-container">
                   <div class="resize-drag">
@@ -1686,13 +1694,13 @@
                       <source src="video/smart.mp4">
                     </video>
                     <div class="resize-container---text">
-                      <span id="resize-drag-room">0.96 М x 0.96 М</span>
+                      <span id="resize-drag-room">1 М x 1 М</span>
                       <span id="resize-drag-room-itog">0.9216 M <sup>2</sup></span>
                     </div>
                   </div>
                 </div>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <div class="form-itog-block">
@@ -1700,31 +1708,40 @@
             <p class="caption-block">Итог</p>
             <div class="form-itog-item">
               <span class="form-itog-item__caption">Монтаж</span>
-              <span class="form-itog-item__value">0 &#x20bd;</span>
+              <span class="form-itog-item__value option-third-settingup">0 &#x20bd;</span>
             </div>
             <div class="form-itog-item">
               <span class="form-itog-item__caption">Стоимость экрана</span>
-              <span class="form-itog-item__value" id="itog_media">124 472 &#x20bd;</span>
+              <span class="form-itog-item__value option-third-led" id="itog_media">0 &#x20bd;</span>
             </div>
             <div class="form-itog-item">
               <span class="form-itog-item__caption">Управляющий компьютер</span>
-              <span class="form-itog-item__value">0 &#x20bd;</span>
+              <span class="form-itog-item__value option-third-control">0 &#x20bd;</span>
             </div>
             <div class="form-itog-item">
               <span class="form-itog-item__caption">Доставка</span>
-              <span class="form-itog-item__value">0 &#x20bd;</span>
+              <span class="form-itog-item__value option-third-delivery">0 &#x20bd;</span>
             </div>
             <div class="form-itog-item">
               <span class="form-itog-item__caption">Итого</span>
-              <span class="form-itog-item__value" id="itog_media_all">124 472 &#x20bd;</span>
+              <span class="form-itog-item__value option-third-price" id="itog_media_all">0 &#x20bd;</span>
             </div>
           </div>
   
           <form action="" class="form callback__form" method="post">
+            <input type="hidden" name="form" value="Медиафасад">
+            <input type="hidden" name="form_title" value="Заказ со скидкой">
+            
+            <input type="hidden" name="settingup" class="option-third-settingup-input"  value="Видеоэкран для помещений">
+            <input type="hidden" name="led"       class="option-third-led-input"        value="Заказ со скидкой">
+            <input type="hidden" name="control"   class="option-third-control-input"    value="Видеоэкран для помещений">
+            <input type="hidden" name="delivery"  class="option-third-delivery-input"   value="Заказ со скидкой">
+            <input type="hidden" name="total"     class="option-third-price-input"      value="Видеоэкран для помещений">
+            
             <p class="form__caption">Оформить заказ со скидкой</p>
             <input type="text" name="fio" placeholder="Укажите ФИО" class="form__input" id="user_name_room">
             <input type="text" name="email" placeholder="Укажите e-mail" class="form__input" id="user_email_room">
-            <input type="text" placeholder="Телефон" class="phone_mask form__input" id="user_phone_room" required>
+            <input type="text" name="phone" placeholder="Телефон" class="phone_mask form__input" id="user_phone_room" required>
             <div class="robot">
               <div class="robot__check">
                   <svg viewBox="0 0 60 60">
@@ -1751,9 +1768,11 @@
                 </div>
                 <div class="modal-body">
                   <form action="" class="popupform callback__form" method="post">
+                    <input type="hidden" name="form" value="Медиафасад">
+                    <input type="hidden" name="form_title" value="Замер">
                     <input type="text" name="fio" placeholder="Укажите ФИО" class="form-control" id="user_name_room_popup">
                     <input type="text" name="email" placeholder="Укажите e-mail" class="form-control" id="user_email_room_popup">
-                    <input type="text" placeholder="Телефон" class="phone_mask form-control" id="user_phone_room_popup"  required>
+                    <input type="text" name="phone" placeholder="Телефон" class="phone_mask form-control" id="user_phone_room_popup"  required>
                     <div class="robot">
                       <div class="robot__check">
                           <svg viewBox="0 0 60 60">
@@ -1782,17 +1801,21 @@
               </div>
               <div class="modal-body">
                 <form action="" class="popupform callback__form" method="post">
+                  <input type="hidden" name="form" value="Медиафасад">
+                  <input type="hidden" name="form_title" value="Коммерческое предложение">
                   <input type="text" name="fio" placeholder="Укажите ФИО" class="form-control" id="user_name_room_popup_com">
                   <input type="text" name="email" placeholder="Укажите e-mail" class="form-control" id="user_email_room_popup_com">
-                  <input type="text" placeholder="Телефон" class="phone_mask form-control" id="user_phone_room_popup_com" required>
+                  <input type="text" name="phone" placeholder="Телефон" class="phone_mask form-control" id="user_phone_room_popup_com" required>
                   <div class="result-room-block">
                     <div class="result-room-block-price">
                       <p class="result-room-block-price__caption">Цена экрана</p>
-                      <p class="result-room-block-price__price" id="result-room-block-price__price-com">122 557 ₽</p>
+                      <p class="result-room-block-price__price modal-third-price" id="result-room-block-price__price-com">0 ₽</p>
+                      <input type="hidden" class="modal-third-price-input" name="price" value="">
                     </div>
                     <div class="result-room-block-size">
                       <p class="result-room-block-price__caption">Площадь экрана</p>
-                      <p class="result-room-block-price__size" id="result-room-block-size__size-com">0.9216 M <sup>2</sup></p>
+                      <p class="result-room-block-price__size modal-third-square" id="result-room-block-size__size-com">0.92 M <sup>2</sup></p>
+                      <input type="hidden" class="modal-third-square-input" name="square" value="">
                     </div>
                   </div>
                   <div class="robot">
@@ -1825,266 +1848,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="js/jquery.maskedinput.min.js"></script>
-<script>
-  $(".phone_mask").mask("+7(999)999-99-99");
-</script>
 <!-- FontAwesome -->
 <script src="https://use.fontawesome.com/402f73ccf5.js"></script>
-<!-- CUSTOM -->
-<script>  
-$('#myTab a').on('click', function (e) {
-  e.preventDefault()
-  $(this).tab('show')
-});
-$('.select-module').on('mousedown', function(e) {
-   e.preventDefault();
-});
-$('.select-module').on('touchstart', function(e) {
-   e.preventDefault();
-});
-
-let form = document.querySelectorAll('.callback__form');
-  form.forEach(item => {
-      let formBtn = item.querySelector('.callback__form__button');
-      let checkBtn = item.querySelector('.robot__check');
-
-      formBtn.disabled = true;
-      checkBtn.addEventListener('click', () => {
-          checkBtn.classList.add('active');
-      
-          item.action = '/thankyou.php';
-          let input = document.createElement("input");
-          input.setAttribute("type", "hidden");
-          input.setAttribute("name", "human");
-          input.setAttribute("value", "human");
-          input.classList.add('human');
-          console.log(typeof input);
-          //
-          item.appendChild(input);
-          //
-          formBtn.disabled = false;
-      });
-  });
-</script>
-<!-- /CUSTOM -->
 
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  
-
-
-<script type="text/javascript">
-  $(function() {
-
-    $('.dop').on('click', function(){
-      $('.calc-room-option').toggleClass('active');
-    })
-
-    //Приводим сумму в красивый вид
-    function prettify (num) {
-      let n = num.toString();
-      let separator = " ";
-      return n.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + separator);
-    }
-
-    //////////////////////////////// TAB1
-    //ФУНКЦИЯ Отправка формы и получение значений
-    function sendFirst() {
-        let data = $('.calc__ajax__form--first').serialize();
-        $.ajax({
-          method: "POST",
-          url: "calc.php",
-          data: data
-        }).done(function(response) {
-
-          let result = $.parseJSON(response);
-          console.log(result);
-          
-          //Цена и площадь
-          $('.calc__ajax__form--first .result-room-block-price__price').html(prettify(result.price) + ' Р');
-          $('.calc__ajax__form--first .result-room-block-price__size').html(result.square + ' М <sup>2</sup>');
-          
-          //Ширина 
-          let rangeWidth = $('.rangeWidthRoom').val();
-          //Высота
-          let rangeHeight = $('.rangeHeightRoom').val();
-          $('.videoSize').html(rangeWidth + ' М x ' + rangeHeight + ' M');
-          $('.videoSquare').html(result.square + ' М <sup>2</sup>');
-
-          //Вставляем в следующие блоки ниже
-          let smodule = $('.select-first-module').val();
-          $('.caption-block-n').html(smodule);
-          $('.option-first-size').html(rangeWidth*1000 + ' x ' + rangeHeight*1000 + ' мм');
-          let step = $('.select-first-step').val();
-          $('.option-first-step').html(step + ' мм');
-          let warranty = $('.warranty-room-big-block---year input:checked').val();
-          console.log(warranty);
-          let formYear = 'год';
-          if (warranty > 1) {
-            formYear = 'года';
-          }
-          $('.option-first-warranty').html(warranty + ' ' + formYear);
-
-          //Total
-          $('.option-first-settingup').html(prettify(result.settingup) + ' &#x20bd;');
-          $('.option-first-led').html(prettify(result.led) + ' &#x20bd;');
-          $('.option-first-control').html(prettify(result.control) + ' &#x20bd;');
-          $('.option-first-delivery').html(prettify(result.delivery) + ' &#x20bd;');
-          $('.option-first-price').html(prettify(result.price) + ' &#x20bd;');
-
-          //Modal
-          $('.modal-first-price').html(prettify(result.price) + ' &#x20bd;');
-          $('.modal-first-square').html(result.square + ' М <sup>2</sup>');
-
-        }).fail(function(xhr, ajaxOptions, thrownError){
-          console.log(thrownError);
-        });
-    }
-
-    /////// Просто отправка
-    $('.calc__ajax__form--first').on('change', function(e) {
-        e.preventDefault();
-        sendFirst();
-      })
-
-    /////Ползунок Ширина
-    $(".rangeWidthRoom").mousemove(function(){
-      //Расчитываем кличество шагов
-      let rangeWidth = ((($(this).val()-0.96)/0.96)*20)+100;
-      let setRangeWidth = (($(this).val()-0.96)+0.96).toFixed(2);
-      //Изменяем шаг ползунка
-      $(".resize-drag").css('width', rangeWidth);
-      //Изменяем html значение ползунка
-      $('.rangeWidth').html(setRangeWidth);
-    });
-    //Ползунок Высота
-    $(".rangeHeightRoom").mousemove(function(){
-      let rangeHeight = ((($(this).val()-0.96)/0.96)*20)+100;
-      let setRangeHeight = (($(this).val()-0.96)+0.96).toFixed(2);
-      $(".resize-drag").css('height', rangeHeight);
-      $('.rangeHeight').html(setRangeHeight);
-    });
-
-
-    //Перетаскивание экрана
-    $('.resize-drag').draggable({
-      containment: "parent"
-    });
-    //Изменение размера экрана
-    $(".resize-drag").resizable({
-      containment: "parent",
-      grid: 20,
-      
-      minWidth: 100,
-      maxWidth: 380,
-      minHeight: 100,
-      maxHeight: 380,
-
-      resize: function(event, ui) {
-        //Определяем шаг
-        let width = (ui.size.width-100)/20+1;
-        let height = (ui.size.height-100)/20+1;
-        //Устанавливаем ползунок в нужное положение
-        $(".rangeWidthRoom").val(0.96*width);
-        $(".rangeHeightRoom").val(0.96*height);
-        //Устанавливаем html значение над ползунком
-        $('.rangeWidth').html((0.96*width).toFixed(2));
-        $('.rangeHeight').html((0.96*height).toFixed(2));
-        sendFirst();
-
-      }
-    });
-
-
-    //////////////////////////////// TAB2
-
-    /////Ползунок Ширина
-    $(".rangeWidthRoomStreet").mousemove(function(){
-      //Расчитываем кличество шагов
-      let rangeWidth = ((($(this).val()-0.96)/0.96)*20)+100;
-      let setRangeWidth = (($(this).val()-0.96)+0.96).toFixed(2);
-      //Изменяем шаг ползунка
-      $(".resize-drag-street").css('width', rangeWidth);
-      //Изменяем html значение ползунка
-      $('.rangeWidthStreet').html(setRangeWidth);
-    });
-    //Ползунок Высота
-    $(".rangeHeightRoomStreet").mousemove(function(){
-      let rangeHeight = ((($(this).val()-0.96)/0.96)*20)+100;
-      let setRangeHeight = (($(this).val()-0.96)+0.96).toFixed(2);
-      $(".resize-drag-street").css('height', rangeHeight);
-      $('.rangeHeightStreet').html(setRangeHeight);
-    });
-
-    //Перетаскивание экрана
-    $('.resize-drag-street').draggable({
-      containment: "parent"
-    });
-    //Изменение размера экрана
-    $(".resize-drag-street").resizable({
-      containment: "parent",
-      grid: 20,
-      
-      minWidth: 100,
-      maxWidth: 380,
-      minHeight: 100,
-      maxHeight: 380,
-
-      resize: function(event, ui) {
-        //Определяем шаг
-        let width = (ui.size.width-100)/20+1;
-        let height = (ui.size.height-100)/20+1;
-        //Устанавливаем ползунок в нужное положение
-        $(".rangeWidthRoomStreet").val(0.96*width);
-        $(".rangeHeightRoomStreet").val(0.96*height);
-        //Устанавливаем html значение над ползунком
-        $('.rangeWidthStreet').html((0.96*width).toFixed(2));
-        $('.rangeHeightStreet').html((0.96*height).toFixed(2));
-        sendSecond();
-      }
-    });
-    
-    //////////////////////////////////////////////////
-    //Отправка формы и получение значений
-
-    function sendSecond() {
-      let data = $('.calc__ajax__form--second').serialize();
-      $.ajax({
-        method: "POST",
-        url: "calc2.php",
-        data: data
-      }).done(function(response) {
-
-        let result = $.parseJSON(response);
-        console.log(result);
-        
-        //Цена и площадь
-        $('.calc__ajax__form--second .result-room-block-price__price').html(prettify(result.price) + ' Р');
-        $('.calc__ajax__form--second .result-room-block-price__size').html(result.square + ' М <sup>2</sup>');
-        
-        //Ширина 
-        let rangeWidth = $('.rangeWidthRoomStreet').val();
-        //Высота
-        let rangeHeight = $('.rangeHeightRoomStreet').val();
-        $('.videoSizeStreet').html(rangeWidth + ' М ' + rangeHeight + ' M');
-        $('.videoSquareStreet').html(result.square + ' М <sup>2</sup>');
-
-      }).fail(function(xhr, ajaxOptions, thrownError){
-        console.log(thrownError);
-      });
-    };
-
-    $('.calc__ajax__form--second').on('change', function(e) {
-      e.preventDefault();
-      sendSecond();
-    })
-    
-
-    //Вуаля бля - магия
-  });
-  </script>
-
+<script type="text/javascript" src="./js/calc.js"></script>
 </body>
 </html>

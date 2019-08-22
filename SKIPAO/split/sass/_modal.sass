@@ -17,7 +17,7 @@
          right: 0
          padding: .5em
          border-radius: 0 4px 0 0
-         font-size: 1em
+         font-size: 20px
          line-height: 1
          font-weight: bold
          cursor: pointer
@@ -26,6 +26,9 @@
          opacity: 1
          &:hover
             background: darken($text, 10%)
+      .name
+         font-weight: bold
+         text-transform: uppercase
       .modal-body
          &.done
             opacity: 0
@@ -38,15 +41,26 @@
             width: 100%
             max-width: 250px
             margin-bottom: 1em
-         .name
+         .title
             display: block
+            font-weight: bold
             margin-bottom: 1em
+         .price
+            display: flex
+            justify-content: space-between
+            margin-bottom: 1em
+            padding: 0 1em
+            &:after
+               content: ""
+               border-bottom: 1px dotted #ccc
+               flex-grow: 1
+               order: 2
+               margin: 0 0.5em
+         .modal
+            order: 1
          .total
-            display: block
-            margin: 0 0 1en 0
-            .price
-               font-weight: bold
-               font-size: 1.4em
+            order: 3
+            font-weight: bold
          .form-row
             display: flex
             align-items: center

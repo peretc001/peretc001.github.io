@@ -1,0 +1,32 @@
+.services
+   padding: $gutter
+   background: rgba($accent, .1)
+   .row
+      padding-top: 2em
+   &__card
+      margin-bottom: 3em
+      &__title
+         display: flex
+         align-items: center
+         font-weight: bold
+         font-size: 1.2em
+         margin-bottom: 1em
+         img
+            width: 2em
+            margin-right: 1em
+         p
+            margin-bottom: 0
+            span
+               display: block
+
+@media screen and (max-width: 767.98px)
+   .services
+      padding: $gutter
+      &__card
+         text-align: center
+         &__title
+            justify-content: center
+            img
+               display: none
+            p
+               font-size: 1em

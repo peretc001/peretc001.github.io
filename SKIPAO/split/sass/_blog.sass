@@ -1,0 +1,43 @@
+.blog
+   margin-top: 2em
+   padding: $gutter
+   .img__wrapper
+      position: relative
+      overflow: hidden
+      width: 100%
+      min-height: 200px
+      margin: 0 auto
+      margin-bottom: 1em
+      img
+         position: absolute
+         left: 0
+         top: 0
+         width: 100%
+         height: auto
+         margin: 0 auto
+         transform: scale(1)
+         transition: transform .3s ease
+      &:hover
+         img
+            transform: scale(1.1)
+   [class*="col-"]
+      margin-bottom: 2em
+      a
+         color: $accent
+         strong
+            font-weight: bold
+            font-size: 1.4em
+            display: block
+            margin-bottom: 1em
+      .btn
+         &.btn-accent
+            color: #ffffff
+            text-transform: uppercase
+            width: 100%
+            max-width: 160px
+
+@media screen and (max-width: 991.98px)
+   .blog
+      padding: $gutter 0
+      .img__wrapper
+         min-height: 150px

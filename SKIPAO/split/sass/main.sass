@@ -77,8 +77,15 @@ img
 @import 'nav'
 @import 'header'
 @import 'about'
-@import 'top'
+@import 'top_product'
 @import 'how'
+@import 'brands_list'
+@import 'features'
+@import 'services'
+@import 'callform'
+@import 'blog'
+@import 'description'
+@import 'footer'
 @import 'modal'
 
 *:focus
@@ -126,6 +133,18 @@ img
 	font-weight: bold
 	display: block
 	margin: 0
+	position: relative
+	&.liner
+      margin-bottom: 1em
+      padding-left: 0.5em
+      &:before
+         content: ''
+         position: absolute
+         left: 0
+         top: 0
+         width: 2px
+         height: 100%
+         background: $accent
 
 @media screen and (max-width: 991.98px)
 	.h2__title
@@ -134,6 +153,22 @@ img
 @media screen and (max-width: 767.98px)
 	.h2__title
 		font-size: 1.4em
+		&.liner
+			margin: 0 auto
+			text-align: center
+			margin-bottom: 1em
+			padding-left: 0
+			padding-bottom: 0.5em
+			&:before
+				content: ''
+				position: absolute
+				left: 50%
+				transform: translateX(-50%)
+				top: auto
+				bottom: 0
+				width: 80px
+				height: 2px
+				background: $accent
 
 .img__wrapper
 	position: relative

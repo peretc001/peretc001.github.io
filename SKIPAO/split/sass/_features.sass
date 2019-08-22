@@ -1,0 +1,86 @@
+.features
+   padding: $gutter
+   .row
+      padding-top: 2em
+   [class*="col-"]
+      margin-bottom: 2em
+      &:last-child
+         margin-bottom: 0
+   &__card
+      position: relative
+      &:before
+         content: ''
+         position: absolute
+         left: -8%
+         top: -15%
+         width: 100px
+         height: 100px
+         background: rgba($accent, .1)
+         border-radius: 50%
+      img
+         display: block
+         margin-bottom: 2em
+         width: 4em
+      p
+         font-weight: bold
+         font-size: 1.2em
+         padding-left: 0.5em
+         position: relative
+         &:before
+            content: ''
+            position: absolute
+            left: 0
+            top: 0
+            width: 2px
+            height: 100%
+            background: $accent
+
+@media screen and (max-width: 991.98px)
+   .features
+      padding: $gutter 0
+      &__card
+         &:before
+            content: ''
+            position: absolute
+            left: -10%
+            top: -15%
+            width: 80px
+            height: 80px
+            background: rgba($accent, .1)
+            border-radius: 50%
+         img
+            width: 3em
+         p
+            font-size: 1em
+
+@media screen and (max-width: 767.98px)
+   .features
+      &__card
+         &:before
+            content: ''
+            position: absolute
+            left: -7%
+            top: -15%
+            width: 80px
+            height: 80px
+            background: rgba($accent, .1)
+            border-radius: 50%
+         img
+            width: 3em
+         p
+            font-size: 1em
+
+@media screen and (max-width: 576.98px)
+   .features
+      [class*="col-"]
+         text-align: center
+      &__card
+         &:before
+            display: none
+         img
+            width: 4em
+            margin: 0 auto 1em auto
+         p
+            font-size: 1.3em
+            &:before
+               display: none

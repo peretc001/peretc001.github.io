@@ -34,26 +34,31 @@
       margin-bottom: 0
       text-transform: uppercase
       color: darken(#ffffff, 30%)
-   .desc__title
-      font-size: 1.6em
+   .desc
+      font-size: 1.2em
       font-weight: bold
       color: #ffffff
       position: relative
       margin-top: 1em
       padding-top: 0
-      padding-left: $gutter*1.5
-      span
-         color: lighten($accent, 10%)
-      &:before
-         content: ''
-         position: absolute
-         left: 0
-         top: 50%
-         transform: translateY(-50%)
-         background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDg3LjcgNDg3LjciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ4Ny43IDQ4Ny43OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTgwLjIsNjIuN2MtNC44LTQuOC0xMi41LTQuOC0xNy4zLTAuMUM1OCw2Ny40LDU4LDc1LjEsNjIuOCw3OS45TDkyLDEwOS4zYzIuMywyLjMsNS40LDMuNiw4LjcsMy42bDAsMCAgICBjMy4yLDAsNi4zLTEuMyw4LjYtMy42bDg4LjktODguNGM0LjgtNC44LDQuOC0xMi41LDAuMS0xNy4zYy00LjgtNC44LTEyLjUtNC44LTE3LjMsMGwtMjYuOSwyNi43QzEzOS44LDE1LjUsMTE5LjksNyw5OSw3ICAgIEM1Ni43LDcsMjIuMyw0MS40LDIyLjMsODMuN3MzNC40LDc2LjcsNzYuNyw3Ni43YzM0LjEsMCw2My42LTIxLjksNzMuNS01NC41YzItNi41LTEuNy0xMy4zLTguMi0xNS4zYy02LjUtMS45LTEzLjMsMS43LTE1LjMsOC4yICAgIGMtNi42LDIxLjgtMjcuMiwzNy4xLTUwLDM3LjFjLTI4LjgsMC01Mi4yLTIzLjQtNTIuMi01Mi4yUzcwLjIsMzEuNSw5OSwzMS41YzE0LjMsMCwyNy45LDYsMzcuNywxNi4ybC0zNS45LDM1LjdMODAuMiw2Mi43eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgc3R5bGU9ImZpbGw6I0JCMDEzNSI+PC9wYXRoPgoJCTxwYXRoIGQ9Ik05OSwxNzAuNmMtNDIuMywwLTc2LjcsMzQuNC03Ni43LDc2LjdTNTYuNywzMjQsOTksMzI0czc2LjctMzQuNCw3Ni43LTc2LjdTMTQxLjMsMTcwLjYsOTksMTcwLjZ6IE05OSwyOTkuNSAgICBjLTI4LjgsMC01Mi4yLTIzLjQtNTIuMi01Mi4yczIzLjQtNTIuMiw1Mi4yLTUyLjJzNTIuMiwyMy40LDUyLjIsNTIuMlMxMjcuOCwyOTkuNSw5OSwyOTkuNXoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiIHN0eWxlPSJmaWxsOiNCQjAxMzUiPjwvcGF0aD4KCQk8cGF0aCBkPSJNMTc1LjcsNDExYzAtNDIuMy0zNC40LTc2LjctNzYuNy03Ni43UzIyLjMsMzY4LjcsMjIuMyw0MTFzMzQuNCw3Ni43LDc2LjcsNzYuN1MxNzUuNyw0NTMuMywxNzUuNyw0MTF6IE05OSw0NjMuMyAgICBjLTI4LjgsMC01Mi4yLTIzLjQtNTIuMi01Mi4yczIzLjQtNTIuMiw1Mi4yLTUyLjJzNTIuMiwyMy40LDUyLjIsNTIuMlMxMjcuOCw0NjMuMyw5OSw0NjMuM3oiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiIHN0eWxlPSJmaWxsOiNCQjAxMzUiPjwvcGF0aD4KCQk8cGF0aCBkPSJNNDUzLjEsMjM1SDIxNC44Yy02LjgsMC0xMi4zLDUuNS0xMi4zLDEyLjNzNS41LDEyLjMsMTIuMywxMi4zaDIzOC4zYzYuOCwwLDEyLjMtNS41LDEyLjMtMTIuM1M0NTkuOSwyMzUsNDUzLjEsMjM1eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgc3R5bGU9ImZpbGw6I0JCMDEzNSI+PC9wYXRoPgoJCTxwYXRoIGQ9Ik00NTMuMSw3MS41SDIxNC44Yy02LjgsMC0xMi4zLDUuNS0xMi4zLDEyLjNzNS41LDEyLjMsMTIuMywxMi4zaDIzOC4zYzYuOCwwLDEyLjMtNS41LDEyLjMtMTIuM1M0NTkuOSw3MS41LDQ1My4xLDcxLjV6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBzdHlsZT0iZmlsbDojQkIwMTM1Ij48L3BhdGg+CgkJPHBhdGggZD0iTTQ1My4xLDM5OC44SDIxNC44Yy02LjgsMC0xMi4zLDUuNS0xMi4zLDEyLjNzNS41LDEyLjMsMTIuMywxMi4zaDIzOC4zYzYuOCwwLDEyLjMtNS41LDEyLjMtMTIuMyAgICBDNDY1LjQsNDA0LjIsNDU5LjksMzk4LjgsNDUzLjEsMzk4Ljh6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBzdHlsZT0iZmlsbDojQkIwMTM1Ij48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==') center no-repeat
-         background-size: $gutter
-         width: $gutter
-         height: $gutter
+   
+   
+   ul
+      margin: .5em 0 1em 0
+      padding: 0
+      li
+         list-style: none
+         padding-left: 1.5em
+         position: relative
+         &:before
+            content: ''
+            position: absolute
+            left: 0
+            top: 50%
+            transform: translateY(-50%)
+            width: 1em
+            height: 1px
+            background: $accent
 
    .consultation
       padding: $gutter/1.5 10%
@@ -144,15 +149,16 @@
    .header
       font-size: 0.9em
       text-align: center
+      height: auto
       .container
          padding-top: 100px
       p
          padding-top: 0.3em
-      .desc__title
-         font-size: 2em
-         padding-left: 0
-         &:before
-            background: none
+      ul
+         li
+            padding-left: 0
+            &:before
+               display: none
 
       .consultation
          margin-top: 2em

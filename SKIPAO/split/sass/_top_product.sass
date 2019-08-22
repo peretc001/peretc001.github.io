@@ -1,0 +1,375 @@
+.top__product
+   padding: $gutter $gutter 
+   .nav-pills.nav__tabs__menu
+      margin-bottom: 1em
+      .nav-item
+         min-width: 120px
+         text-align: center
+         padding: 0
+         margin: 0
+         background: none
+      .nav-link
+         background: none
+         color: rgba($accent, .8)
+         border-bottom: 1px dashed rgba($accent, .8)
+         border-radius: 0
+         padding: 0
+         margin: 0
+         transition: all .3s ease
+         display: inline-block
+         &:hover
+            color: rgba($accent, 1)
+            border-bottom: 1px dashed rgba($accent, 1)
+
+      .nav-link.active, 
+      .show > .nav-link
+         background: transparent
+         color: $text
+         font-weight: bold
+         border-radius: 0
+         position: relative
+         &:before
+            content: ''
+            position: absolute
+            left: 0
+            bottom: -2px
+            background: $accent
+            width: 100%
+            height: 3px
+   
+   .top__card
+      border: 1px solid #eeeeee
+      padding: 20px
+      border-radius: 4px
+      position: relative
+      margin-bottom: 2em
+      .preloader
+         position: absolute
+         left: 50%
+         top: 0
+         display: none
+         &.active
+            display: block
+      &__header
+         display: flex
+         flex-wrap: wrap
+         margin-bottom: 1em
+         &__img,
+         &__title
+            flex: 1 1 auto
+         &__img
+            width: 35%
+            img
+               width: 100%
+               max-width: 500px
+               margin: auto
+         &__title
+            width: 65%
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+
+            &__caption
+               display: flex
+               align-items: center
+               justify-content: space-between
+               h3
+                  font-weight: bold
+               .accent
+                  a
+                     display: inline-block
+                     padding: .3em .5em
+                     border-radius: 4px
+                     background: $accent2
+                     color: $text
+                     font-size: 0.8em
+                     font-weight: bold
+                     margin-right: 0.5em
+                     margin-bottom: 0.5em
+                     transition: opacity .3s ease
+                     &:last-child
+                        margin-right: 0
+                     &:hover
+                        opacity: .9
+            
+            &__bottom
+               text-align: right
+               a
+                  display: inline-block
+                  background: $accent
+                  padding: 0.3em 0.5em
+                  color: #ffffff
+                  border-radius: 4px
+
+            .nav-pills
+               border-bottom: 1px solid rgba($accent, .2)
+               margin-bottom: 1em
+               .nav-link
+                  color: #888
+               .nav-link.active, 
+               .show > .nav-link
+                     background: transparent
+                     color: $text
+                     font-weight: bold
+                     border-radius: 0
+                     position: relative
+                     &:before
+                        content: ''
+                        position: absolute
+                        left: 0
+                        bottom: -2px
+                        background: $accent
+                        width: 100%
+                        height: 3px
+            .tab-pane
+               padding: 0 0 0 1em
+               font-size: 0.9em
+            .tech__list
+               margin: 0
+               padding: 0
+               display: flex
+               flex-wrap: wrap
+               &__item
+                  flex: 1 1 50%
+                  display: flex
+                  justify-content: space-between
+                  margin-bottom: .5em
+                  &:after
+                     content: ""
+                     border-bottom: 1px dotted #ccc
+                     flex-grow: 1
+                     order: 2
+                     margin: 0 0.5em
+                  span
+                     position: relative
+                     &:first-child
+                        order: 1
+                     &:last-child
+                        order: 3
+                  &:nth-child(odd)
+                     span
+                        &:last-child
+                           padding-right: 1em
+      &__body
+         .table
+            width: 100%
+            thead
+               font-weight: bold
+               background: rgba($accent, .2)
+               tr
+                  &:last-child
+                     td
+                        background: rgba($accent, .3)
+               td
+                  padding: 0.5em
+                  margin: 0
+                  vertical-align: middle
+                  border-top: none
+            td
+               text-align: center
+               border-top: 1px solid rgba($accent, .1)
+               vertical-align: middle
+               .btn
+                  &.btn-accent
+                     padding: .3em 1em .3em 2em
+                     margin: 0
+                     position: relative
+                     &:before
+                        content: ''
+                        position: absolute
+                        left: .5em
+                        top: 50%
+                        transform: translateY(-50%)
+                        width: 1em
+                        height: 1em
+                        background-size: 1em
+                        background-position: center
+                        background-repeat: no-repeat
+                        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDQ0Ni44NTMgNDQ2Ljg1MyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDQ2Ljg1MyA0NDYuODUzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PGc+Cgk8cGF0aCBkPSJNNDQ0LjI3NCw5My4zNmMtMi41NTgtMy42NjYtNi42NzQtNS45MzItMTEuMTQ1LTYuMTIzTDE1NS45NDIsNzUuMjg5Yy03Ljk1My0wLjM0OC0xNC41OTksNS43OTItMTQuOTM5LDEzLjcwOCAgIGMtMC4zMzgsNy45MTMsNS43OTIsMTQuNTk5LDEzLjcwNywxNC45MzlsMjU4LjQyMSwxMS4xNEwzNjIuMzIsMjczLjYxSDEzNi4yMDVMOTUuMzU0LDUxLjE3OSAgIGMtMC44OTgtNC44NzUtNC4yNDUtOC45NDItOC44NjEtMTAuNzUzTDE5LjU4NiwxNC4xNDFjLTcuMzc0LTIuODg3LTE1LjY5NSwwLjczNS0xOC41OTEsOC4xYy0yLjg5MSw3LjM2OSwwLjczLDE1LjY5NSw4LjEsMTguNTkxICAgbDU5LjQ5MSwyMy4zNzFsNDEuNTcyLDIyNi4zMzVjMS4yNTMsNi44MDQsNy4xODMsMTEuNzQ2LDE0LjEwNCwxMS43NDZoNi44OTZsLTE1Ljc0Nyw0My43NGMtMS4zMTgsMy42NjQtMC43NzUsNy43MzMsMS40NjgsMTAuOTE2ICAgYzIuMjQsMy4xODQsNS44ODMsNS4wNzgsOS43NzIsNS4wNzhoMTEuMDQ1Yy02Ljg0NCw3LjYxNy0xMS4wNDUsMTcuNjQ2LTExLjA0NSwyOC42NzVjMCwyMy43MTgsMTkuMjk5LDQzLjAxMiw0My4wMTIsNDMuMDEyICAgczQzLjAxMi0xOS4yOTQsNDMuMDEyLTQzLjAxMmMwLTExLjAyOC00LjIwMS0yMS4wNTgtMTEuMDQ0LTI4LjY3NWg5My43NzdjLTYuODQ3LDcuNjE3LTExLjA0NywxNy42NDYtMTEuMDQ3LDI4LjY3NSAgIGMwLDIzLjcxOCwxOS4yOTQsNDMuMDEyLDQzLjAxMiw0My4wMTJjMjMuNzE5LDAsNDMuMDEyLTE5LjI5NCw0My4wMTItNDMuMDEyYzAtMTEuMDI4LTQuMi0yMS4wNTgtMTEuMDQyLTI4LjY3NWgxMy40MzIgICBjNi42LDAsMTEuOTQ4LTUuMzQ5LDExLjk0OC0xMS45NDdjMC02LjYtNS4zNDktMTEuOTQ4LTExLjk0OC0xMS45NDhIMTQzLjY1MWwxMi45MDItMzUuODQzaDIxNi4yMjEgICBjNi4yMzUsMCwxMS43NTItNC4wMjgsMTMuNjUxLTkuOTZsNTkuNzM5LTE4Ni4zODdDNDQ3LjUzNiwxMDEuNjc5LDQ0Ni44MzIsOTcuMDI4LDQ0NC4yNzQsOTMuMzZ6IE0xNjkuNjY0LDQwOS44MTQgICBjLTEwLjU0MywwLTE5LjExNy04LjU3My0xOS4xMTctMTkuMTE2czguNTc0LTE5LjExNywxOS4xMTctMTkuMTE3czE5LjExNiw4LjU3NCwxOS4xMTYsMTkuMTE3UzE4MC4yMDcsNDA5LjgxNCwxNjkuNjY0LDQwOS44MTR6ICAgIE0zMjcuMzczLDQwOS44MTRjLTEwLjU0MywwLTE5LjExNi04LjU3My0xOS4xMTYtMTkuMTE2czguNTczLTE5LjExNywxOS4xMTYtMTkuMTE3czE5LjExNiw4LjU3NCwxOS4xMTYsMTkuMTE3ICAgUzMzNy45MTYsNDA5LjgxNCwzMjcuMzczLDQwOS44MTR6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBzdHlsZT0iZmlsbDojRkZGRkZGIj48L3BhdGg+CjwvZz48L2c+IDwvc3ZnPg==')
+            td.price
+               color: $accent
+               font-weight: bold
+            td.settingup
+               color: $accent2
+               font-weight: bold
+
+   .product__carousel
+      position: relative
+      .slick-slide
+         width: 100%
+         height: 100%
+         padding-top: 3em
+         outline: none
+      .slick-next,
+      .slick-prev
+         position: absolute
+         top: 0
+         z-index: 1
+         background-position: center
+         background-repeat: no-repeat
+         background-size: 25px
+         background-color: transparent
+         font-size: 0
+         width: 35px
+         height: 35px
+         outline: none
+         border: none
+         cursor: pointer
+         color: #ffffff
+         background-color: $accent
+      .slick-next
+         right: 0
+         border-radius: 0 4px 0 4px
+         background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDc3LjE3NSA0NzcuMTc1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NzcuMTc1IDQ3Ny4xNzU7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8cGF0aCBkPSJNMzYwLjczMSwyMjkuMDc1bC0yMjUuMS0yMjUuMWMtNS4zLTUuMy0xMy44LTUuMy0xOS4xLDBzLTUuMywxMy44LDAsMTkuMWwyMTUuNSwyMTUuNWwtMjE1LjUsMjE1LjUgICBjLTUuMyw1LjMtNS4zLDEzLjgsMCwxOS4xYzIuNiwyLjYsNi4xLDQsOS41LDRjMy40LDAsNi45LTEuMyw5LjUtNGwyMjUuMS0yMjUuMUMzNjUuOTMxLDI0Mi44NzUsMzY1LjkzMSwyMzQuMjc1LDM2MC43MzEsMjI5LjA3NXogICAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0ZGRkZGRiIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KPC9nPjwvZz4gPC9zdmc+')
+      .slick-prev
+         left: 0
+         border-radius: 4px 0 4px 0
+         background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDc3LjE3NSA0NzcuMTc1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NzcuMTc1IDQ3Ny4xNzU7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8cGF0aCBkPSJNMTQ1LjE4OCwyMzguNTc1bDIxNS41LTIxNS41YzUuMy01LjMsNS4zLTEzLjgsMC0xOS4xcy0xMy44LTUuMy0xOS4xLDBsLTIyNS4xLDIyNS4xYy01LjMsNS4zLTUuMywxMy44LDAsMTkuMWwyMjUuMSwyMjUgICBjMi42LDIuNiw2LjEsNCw5LjUsNHM2LjktMS4zLDkuNS00YzUuMy01LjMsNS4zLTEzLjgsMC0xOS4xTDE0NS4xODgsMjM4LjU3NXoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiIHN0eWxlPSJmaWxsOiNGRkZGRkYiPjwvcGF0aD4KPC9nPjwvZz4gPC9zdmc+')
+      
+      .slick-dots
+         margin: 1em auto
+         padding: 0
+         display: flex !important
+         justify-content: center
+         li
+            list-style: none
+            display: block
+            width: 20px
+            margin-right: 0.5em
+            button
+               border: none
+               position: relative
+               font-size: 0
+               width: 20px
+               height: 4px
+               background: $accent2
+               opacity: .4
+               transition: opacity .3s ease
+            &.slick-active
+               button
+                  opacity: 1
+
+@media screen and (max-width: 991.98px)
+   .top__product
+      padding: $gutter 0
+      .top__card
+         &__header
+            &__img,
+            &__title
+               width: 100%
+         &__body
+            .table
+               font-size: 0.9em
+               td.size
+                  display: none
+
+@media screen and (max-width: 767.98px)
+   .top__product
+      padding: $gutter 0
+      .top__card
+         &__header
+            &__img,
+            &__title
+               &__caption
+                  flex-direction: column
+                  align-items: flex-start
+                  margin-bottom: 1em
+               .tab-pane
+                  padding: 0 1em
+               .tech__list
+                  &__item
+                     flex: 1 1 100%
+                     &:nth-child(odd)
+                        span
+                           &:last-child
+                              padding-right: 0
+         &__body
+            .table
+               thead
+                  display: none
+               tbody
+                  tr
+                     display: flex
+                     flex-wrap: wrap
+                  td
+                     flex: 1 1 auto
+                     position: relative
+                     vertical-align: top
+                     padding: 0
+                     border: none
+                     &:before
+                        content: attr(data-name)
+                        display: block
+                        background: rgba($accent, .2)
+                        padding: .5em
+                        color: $text
+                        font-weight: bold
+                        margin-bottom: 1em
+                     p
+                        padding: .5em 0
+                        padding-bottom: 0
+                  td.model
+                     width: 100%
+                     padding: .5em
+                     font-weight: bold
+                     font-size: 1.2em
+                     &:before
+                        display: none
+
+
+@media screen and (max-width: 576.98px)
+   .top__product
+      padding: $gutter 0
+      .nav-pills.nav__tabs__menu
+         display: flex
+         .nav-item
+            flex: 1 1 auto
+            margin-bottom: 1em
+
+
+      .top__card
+         &__header
+            &__img,
+            &__title
+               &__caption
+                  h3
+                     font-size: 1.4em
+               .nav-pills
+                  .nav-link
+                     font-size: 1.1em
+         &__body
+            .table
+               font-size: 1em
+               tbody
+                  td.twin,
+                  td.size
+                     display: none
+                  td
+                     &:before
+                        font-size: 0.9em
+
+@media screen and (max-width: 374.98px)
+   .top__product
+      padding: $gutter 0
+      .top__card
+         &__header
+            &__img,
+            &__title
+               &__caption
+                  h3
+                     font-size: 1.2em
+               .nav-pills
+                  .nav-link
+                     font-size: .9em
+         &__body
+            .table
+               font-size: 0.9em
+               tbody
+                  td
+                     .btn
+                        &.btn-accent
+                           font-size: 0.9em
+                           padding: .3em .5em
+                           &:before
+                              display: none
+                     

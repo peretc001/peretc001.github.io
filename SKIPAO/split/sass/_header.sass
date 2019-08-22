@@ -87,11 +87,33 @@
 
 @media screen and (max-width: 991.98px)
    .header
+      min-height: auto
+      img
+         width: 250px
+      .h2__title
+         font-size: 1.4em
+         margin-bottom: 2em
+      .consultation
+         p
+            font-size: 1em
+         &__row
+            flex-direction: column
+         .form-control
+            margin-bottom: 1em
+            margin-right: 0
+         .btn
+            width: 100%
+            text-transform: uppercase
+            font-weight: bold
+            position: relative
+            z-index: 1
+
+@media screen and (max-width: 767.98px)
+   .header
       [class*="col-"]
          text-align: center
-      img
-         width: 300px
       .h2__title
+         font-size: 1.6em
          margin-bottom: 2em
 
 @media screen and (max-width: 576.98px)
@@ -106,3 +128,10 @@
          .form-control
             margin-right: 0
             margin-bottom: 1em
+
+@media screen and (max-width: 374.98px)
+   .header
+      .h2__title
+         font-size: 1.2em
+         span
+            font-size: 1.4em

@@ -7,7 +7,7 @@
    display: flex
    flex-direction: column
    padding: 0
-   z-index: 3
+   z-index: 5
    transition: transform .3s ease
    
    p
@@ -40,18 +40,18 @@
             &:hover
                &:before
                   height: 5px
-            &.menu
-               &:before
-                  left: auto
-                  right: 0
-                  width: 0
-                  height: 100%
-                  background-color: $text
-                  z-index: 5
-               &:hover
-                  &:before
-                     width: 10px
-                     height: 100%
+            // &.menu
+            //    &:before
+            //       left: auto
+            //       right: 0
+            //       width: 0
+            //       height: 100%
+            //       background-color: $text
+            //       z-index: 5
+            //    &:hover
+            //       &:before
+            //          width: 10px
+            //          height: 100%
 
          .nav-link
             width: 100%
@@ -189,7 +189,7 @@
    .navbar
       font-size: 1em
       position: fixed
-      top: 82px
+      top: 68px
 
       .mobile--menu
          display: flex
@@ -213,7 +213,6 @@
 
 @media screen and (max-width: 576.98px)
    .navbar
-      top: 68px      
       .navbar-nav
          .nav-link
             &.nav-phone
