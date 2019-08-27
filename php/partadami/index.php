@@ -207,8 +207,8 @@
 	</div>
 	<div class="flex">
 		<div class="col-x4">
-			<a class="top_products__href has-overlay" href="/shop/parta_bez_risunka/cyt14/bez_stula/parta_cyt14-01.php?color=pink" style="background-image: url('/img/home/3.jpg')">
-				<div class="top_products__text">Парта ДЭМИ СУТ.14-01</div>
+			<a class="top_products__href has-overlay" href="/parta_bez_risunka/cyt41/parta_cyt41_so_stulom_cyt01-01.php" style="background-image: url('/img/home/6.jpg')">
+				<div class="top_products__text">Парта ДЭМИ СУТ.41</div>
 				<span class="more-link"><i class="fa fa-angle-right flipInY" aria-hidden="true"></i> Подробнее</span>
 			</a>
 		</div>
@@ -395,6 +395,10 @@
 
 </div>
 
+<div class="whatsapp__bottom">
+ <a href="https://api.whatsapp.com/send?phone=79282102335&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C.%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D1%8E%D1%82%20%D0%BF%D0%B0%D1%80%D1%82%D1%8B%20%D0%94%D0%AD%D0%9C%D0%98.%20%D0%A1%D0%B2%D1%8F%D0%B6%D0%B8%D1%82%D0%B5%D1%81%D1%8C%20%D1%81%D0%BE%20%D0%BC%D0%BD%D0%BE%D0%B9" class="whatsapp" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i> <span>Написать в</span> Whatsapp</a>
+</div>
+
 <!-- FONT
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<link rel="stylesheet" href="/js/uikit/css/uikit.css" />
@@ -455,9 +459,5 @@
 
 </script>
 <!-- / Google Analytics counter -->
-<!-- BEGIN JIVOSITE CODE {literal} -->
-<script>
-(function(){ var widget_id = 'vHRq2Ai740';var d=document;var w=window;function l(){var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
-</script>
-<!-- {/literal} END JIVOSITE CODE -->
+
 

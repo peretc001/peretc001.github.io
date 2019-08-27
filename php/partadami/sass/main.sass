@@ -81,6 +81,31 @@ img
 @import 'new_products'
 @import 'top_products'
 
+.button
+	&.button-all
+		&:disabled
+			opacity: .5
+
+.whatsapp__bottom
+	position: fixed
+	bottom: 0
+	right: 10px
+	z-index: 99
+	display: none
+	cursor: pointer
+	a
+		display: block
+		border: 1px solid #26a726
+		background: #26a726
+		color: #ffffff
+		border-radius: 4px 4px 0 0
+		padding: .2em 1.5em
+		font-weight: 200
+		transition: opacity .3s ease
+		opacity: .5
+		&:hover
+			opacity: 1
+
 .hide_description
 	height: 100px
 	overflow: hidden

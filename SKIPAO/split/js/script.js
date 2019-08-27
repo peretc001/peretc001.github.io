@@ -95,6 +95,23 @@ padding:"inner"+a,content:b,"":"outer"+a},function(c,d){n.fn[d]=function(d,e){va
             })
         })
     };
+
+    //Функция Обрезаем текст
+    function sliceTheExcerpt(selector, count) {
+        document.querySelectorAll(selector).forEach(item => {
+            item.textContent.trim();
+            if(item.textContent.length < count) { return }
+            else {
+                const str = item.textContent.slice(0, count + 1) + "...";
+                item.textContent = str;
+            }
+        });
+    }
+
+    if ( document.querySelector('.brand__about') ) {
+        sliceTheExcerpt('.brand__about', 350);
+    }
+
 });
 
 $(function() {
@@ -160,7 +177,7 @@ $(function() {
         if (modalPrice)     modal.find('input[name="data-price"]').val(modalPrice);
     });
 
-    if( document.querySelector('.nav__tabs__menu') ) {
+    if( document.querySelector('.product__carousel.init') || document.querySelector('.our__work') ) {
         $(window).bind('scroll.once', function(){
             if($(this).scrollTop() > 200) {
                 slickAppend();

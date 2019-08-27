@@ -5,16 +5,22 @@
             <span class="hamburger-inner"></span>
          </span>
       </button>
-		<a class="nav-menu__logo" href="/"><img src="/img/logo.svg" alt="Парты ДЕМИ Краснодар"></a>
-		<a class="nav-menu__name" href="/"><strong>Парты ДЭМИ</strong><span>официальный дилер в Краснодаре</span></a>
+		<a href="/" class="brand">
+			<img src="/img/logo.svg" alt="Парты ДЕМИ Краснодар">
+			<p>
+				<strong>Парты ДЭМИ</strong>
+				<span>официальный дилер в Краснодаре</span>
+			</p>
+		</a>
 		<a class="nav-menu__phone" href="tel:79882428105"><i class="fa fa-mobile" aria-hidden="true"></i> <span>8 (988) 242-81-05</span></a>
+		<a class="whatsapp" href="https://api.whatsapp.com/send?phone=79282102335&text=Добрый%20день.%20Меня%20интересуют%20парты%20ДЭМИ.%20Свяжитесь%20со%20мной" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i> <span>Написать в</span> Whatsapp</a>
 		<a class="nav-menu__callback myModal"><i class="fa fa-phone" aria-hidden="true"></i>Заказать звонок</a>
-		<a class="nav-menu__sale" href="/akcia/"><i class="fa fa-percent" aria-hidden="true"></i> Распродажа</a>
+		<a class="nav-menu__sale" href="/akcia/"><i class="fa fa-percent" aria-hidden="true"></i> Акция</a>
 		<?php	
 				$cart = mysql_query("SELECT id FROM cart WHERE sid = '". session_id() ."'  "); 
 				$query = mysql_fetch_assoc($cart); 
 					if ( $query['id'] == '' ) { ?>
-					<a class="nav-menu__cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Корзина</span></a>
+					<a class="nav-menu__cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
 				<?php }
 					else { 
 						$res = mysql_query("SELECT count(id) FROM cart WHERE sid = '". session_id() ."' ");
@@ -40,6 +46,7 @@
 			<a href="/shop/ergonomichnyj_stul/">Стулья и кресла</a>
 			<a href="/shop/dopolnitelnye_elementy/">Аксессуары</a>
 			<a href="/shop/tumby_i_stellazhi/">Тумбы и стеллажи</a>
+			<a class="action" href="/akcia/">Акции</a>
 			<a class="nav-catalog__garanty" href="/delivery.php">Доставка</a>
 			<a class="nav-catalog__review" href="/settingup.php">Сборка</a>
 			<a class="nav-catalog__review" href="/garanty.php">Гарантия</a>

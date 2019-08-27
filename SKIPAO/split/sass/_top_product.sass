@@ -3,7 +3,7 @@
    .nav-pills.nav__tabs__menu
       margin-bottom: 1em
       .nav-item
-         min-width: 120px
+         min-width: 150px
          text-align: center
          padding: 0
          margin: 0
@@ -13,8 +13,9 @@
          color: rgba($accent, .8)
          border-bottom: 1px dashed rgba($accent, .8)
          border-radius: 0
-         padding: 0
+         padding: 0.3em 0
          margin: 0
+         font-size: 1.2em
          transition: all .3s ease
          display: inline-block
          &:hover
@@ -38,18 +39,7 @@
             height: 3px
    
    .top__card
-      border: 1px solid #eeeeee
-      padding: 20px
-      border-radius: 4px
       position: relative
-      margin-bottom: 2em
-      .preloader
-         position: absolute
-         left: 50%
-         top: 0
-         display: none
-         &.active
-            display: block
       &__header
          display: flex
          flex-wrap: wrap
@@ -58,42 +48,59 @@
          &__title
             flex: 1 1 auto
          &__img
-            width: 35%
+            width: 30%
             img
                width: 100%
-               max-width: 500px
+               max-width: 200px
                margin: auto
          &__title
-            width: 65%
+            width: 70%
             display: flex
             flex-direction: column
-            justify-content: space-between
-
+            &__wrap
+               min-height: 220px
             &__caption
                display: flex
                align-items: center
-               justify-content: space-between
+               justify-content: flex-start
+               margin-bottom: 1em
+               a
+                  font-weight: bold
+                  font-size: 2em
+                  color: $accent
+                  margin-right: .5em
                h3
                   font-weight: bold
-               .accent
-                  a
-                     display: inline-block
-                     padding: .3em .5em
-                     border-radius: 4px
-                     background: $accent2
-                     color: $text
-                     font-size: 0.8em
-                     font-weight: bold
-                     margin-right: 0.5em
-                     margin-bottom: 0.5em
-                     transition: opacity .3s ease
-                     &:last-child
-                        margin-right: 0
-                     &:hover
-                        opacity: .9
-            
+                  margin: 0
+               &__tabs
+                  display: flex
+                  align-items: center
+                  justify-content: space-between
+                  border-bottom: 1px solid rgba($accent, .2)
+                  margin-bottom: 16px
+                  &__warrantly
+                     display: flex
+                     align-items: center
+                     p
+                        &:first-child
+                           margin-right: 1em
+                        u
+                           display: inline-block
+                           background: $accent
+                           padding: .3em
+                           border-radius: 50%
+                           color: #ffffff
+                           text-decoration: none
+                           width: 30px
+                           text-align: center
+                        a
+                           color: $accent
+            .tab-content
+               a
+                  color: $accent
             &__bottom
                text-align: right
+               align-self: flex-end
                a
                   display: inline-block
                   background: $accent
@@ -102,8 +109,6 @@
                   border-radius: 4px
 
             .nav-pills
-               border-bottom: 1px solid rgba($accent, .2)
-               margin-bottom: 1em
                .nav-link
                   color: #888
                .nav-link.active, 
@@ -117,7 +122,7 @@
                         content: ''
                         position: absolute
                         left: 0
-                        bottom: -2px
+                        bottom: -7px
                         background: $accent
                         width: 100%
                         height: 3px
@@ -153,6 +158,7 @@
       &__body
          .table
             width: 100%
+            margin-bottom: 0
             thead
                font-weight: bold
                background: rgba($accent, .2)
@@ -165,14 +171,21 @@
                   margin: 0
                   vertical-align: middle
                   border-top: none
+            tr
+               &:nth-child(even)
+                  background: rgba($accent, .1)
             td
                text-align: center
-               border-top: 1px solid rgba($accent, .1)
+               border-top: none
                vertical-align: middle
+               padding: .5em
+               p
+                  margin-bottom: 0
                .btn
                   &.btn-accent
-                     padding: .3em 1em .3em 2em
+                     padding: .2em 1em .3em 2em
                      margin: 0
+                     font-size: 0.8em
                      position: relative
                      &:before
                         content: ''
@@ -189,12 +202,34 @@
             td.price
                color: $accent
                font-weight: bold
-            td.settingup
-               color: $accent2
-               font-weight: bold
+            td.note
+               font-size: 0.9em
 
    .product__carousel
       position: relative
+      &.init
+         border: 1px solid #eeeeee
+         box-shadow: 0px 3px 10px rgba(#000000, .2)
+         border-radius: 6px
+      .top__card
+         border: 1px solid #eeeeee
+         box-shadow: 0px 3px 10px rgba(#000000, .2)
+         border-radius: 6px
+         margin-bottom: 2em
+         padding-top: 2em
+         padding-bottom: 2em
+         padding-left: $gutter
+         padding-right: $gutter
+         &:last-child
+            margin-bottom: 0
+      &.init
+         .top__card
+            border: none
+            box-shadow: none
+            border-radius: 0
+            margin-bottom: 0
+            padding-top: 2em
+            padding-bottom: 2em
       .slick-slide
          width: 100%
          height: 100%
@@ -205,26 +240,30 @@
          position: absolute
          top: 0
          z-index: 1
-         background-position: center
          background-repeat: no-repeat
-         background-size: 25px
+         background-size: 15px
          background-color: transparent
-         font-size: 0
-         width: 35px
+         font-size: .8em
+         color: #ffffff
          height: 35px
          outline: none
          border: none
          cursor: pointer
-         color: #ffffff
          background-color: $accent
       .slick-next
          right: 0
-         border-radius: 0 4px 0 4px
+         border-radius: 0 6px 0 6px
          background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDc3LjE3NSA0NzcuMTc1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NzcuMTc1IDQ3Ny4xNzU7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8cGF0aCBkPSJNMzYwLjczMSwyMjkuMDc1bC0yMjUuMS0yMjUuMWMtNS4zLTUuMy0xMy44LTUuMy0xOS4xLDBzLTUuMywxMy44LDAsMTkuMWwyMTUuNSwyMTUuNWwtMjE1LjUsMjE1LjUgICBjLTUuMyw1LjMtNS4zLDEzLjgsMCwxOS4xYzIuNiwyLjYsNi4xLDQsOS41LDRjMy40LDAsNi45LTEuMyw5LjUtNGwyMjUuMS0yMjUuMUMzNjUuOTMxLDI0Mi44NzUsMzY1LjkzMSwyMzQuMjc1LDM2MC43MzEsMjI5LjA3NXogICAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0ZGRkZGRiIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KPC9nPjwvZz4gPC9zdmc+')
+         background-position: 95% center
+         padding-right: 25px
+         padding-left: 10px
       .slick-prev
          left: 0
-         border-radius: 4px 0 4px 0
+         border-radius: 6px 0 6px 0
          background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDc3LjE3NSA0NzcuMTc1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NzcuMTc1IDQ3Ny4xNzU7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8cGF0aCBkPSJNMTQ1LjE4OCwyMzguNTc1bDIxNS41LTIxNS41YzUuMy01LjMsNS4zLTEzLjgsMC0xOS4xcy0xMy44LTUuMy0xOS4xLDBsLTIyNS4xLDIyNS4xYy01LjMsNS4zLTUuMywxMy44LDAsMTkuMWwyMjUuMSwyMjUgICBjMi42LDIuNiw2LjEsNCw5LjUsNHM2LjktMS4zLDkuNS00YzUuMy01LjMsNS4zLTEzLjgsMC0xOS4xTDE0NS4xODgsMjM4LjU3NXoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiIHN0eWxlPSJmaWxsOiNGRkZGRkYiPjwvcGF0aD4KPC9nPjwvZz4gPC9zdmc+')
+         background-position: 5% center
+         padding-left: 25px
+         padding-right: 10px
       
       .slick-dots
          margin: 1em auto
@@ -266,16 +305,20 @@
 @media screen and (max-width: 767.98px)
    .top__product
       padding: $gutter 0
+      .nav-pills.nav__tabs__menu
+         .nav-item
+            min-width: 120px
+         .nav-link
+            font-size: 1em
       .top__card
          &__header
             &__img,
             &__title
                &__caption
-                  flex-direction: column
-                  align-items: flex-start
-                  margin-bottom: 1em
-               .tab-pane
-                  padding: 0 1em
+                  &__tabs
+                     padding: 0.35em 0
+                     &__warrantly
+                        display: none
                .tech__list
                   &__item
                      flex: 1 1 100%
@@ -283,6 +326,9 @@
                         span
                            &:last-child
                               padding-right: 0
+               &__bottom
+                  padding-top: 1em
+
          &__body
             .table
                thead
@@ -291,6 +337,8 @@
                   tr
                      display: flex
                      flex-wrap: wrap
+                     &:nth-child(even)
+                        background: none
                   td
                      flex: 1 1 auto
                      position: relative
@@ -304,10 +352,16 @@
                         padding: .5em
                         color: $text
                         font-weight: bold
-                        margin-bottom: 1em
                      p
-                        padding: .5em 0
+                        padding: 1em 0
                         padding-bottom: 0
+                     .btn
+                        &.btn-accent
+                           margin-top: 1em
+                  td.twin
+                     display: none
+                  td.note
+                     font-size: 1em
                   td.model
                      width: 100%
                      padding: .5em
@@ -332,7 +386,8 @@
             &__img,
             &__title
                &__caption
-                  h3
+                  h3,
+                  a
                      font-size: 1.4em
                .nav-pills
                   .nav-link
@@ -347,29 +402,37 @@
                   td
                      &:before
                         font-size: 0.9em
+                  td.buy
+                     &:before
+                        display: none
 
 @media screen and (max-width: 374.98px)
    .top__product
-      padding: $gutter 0
       .top__card
          &__header
             &__img,
             &__title
                &__caption
-                  h3
+                  h3,
+                  a
                      font-size: 1.2em
+               &__bottom
+                  a
+                     margin-bottom: 0.5em
                .nav-pills
                   .nav-link
                      font-size: .9em
+               
          &__body
             .table
-               font-size: 0.9em
+               font-size: .9em
                tbody
+                  td.twin,
+                  td.size
+                     display: none
                   td
+                     &:before
+                        font-size: 0.9em
                      .btn
                         &.btn-accent
-                           font-size: 0.9em
-                           padding: .3em .5em
-                           &:before
-                              display: none
-                     
+                           font-size: 1em

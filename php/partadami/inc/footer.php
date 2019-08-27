@@ -10,11 +10,11 @@
 						<li>Единственный дилер
 							<p>Единственный дилер завода ДЭМИ на территории Краснодарского края</p>
 						</li>
-						<li>Доставка в день заказа
-							<p>Мы храним на складе достаточно товара для того чтобы вы могли получить его сегодня же</p>
+						<li>Доставка и сборка
+							<p>Доставка, сборка, настройка под рост ребенка</p>
 						</li>
 						<li>Гарантия 60 месяцев
-							<p>Гарантия от производителя + расширенная гарантия продавца.</p>
+							<p>Гарантия от производителя + расширенная гарантия продавца</p>
 						</li>
 					</ul>
 				</div>
@@ -59,7 +59,8 @@
 		<div class="one-third column social">
 			<p>Конаткты:</p>
 			<h3>8 (861) 242-81-05</h3>
-			<h6><small><a href="https://yandex.ru/maps/-/CCevz-oG" target="_blank">Краснодар, ул. Тургенева, 56</a></small></h6>
+			<!-- <h6><small><a href="https://yandex.ru/maps/-/CCevz-oG" target="_blank">Краснодар, ул. Тургенева, 56</a></small></h6> -->
+			<br>
 			<h6 class="insta"><a href="https://www.instagram.com/partadami/" target="_blank"><img src="/img/social/instagram.svg" alt="Наш instagram">@partadami</a></h6>
 		</div>
 	</div>
@@ -76,47 +77,6 @@
 		<a itemprop="sameAs" href="https://vk.com/partadami">VK</a>
 	</div>
 <p style="display:none;" >Тел: <span itemprop="telephone">+7 (861) 242-81-05</span></p>
-</div>
-<!-- This is the off-canvas sidebar -->
-<div id="nav_bar_phone">
-	<div id="uk_menu" class="uk-offcanvas">
-		<div class="uk-offcanvas-bar">
-			<div class="u-pull-right close"><a class="close_bar"><i class="fa fa-times" aria-hidden="true"></i></a></div>
-			<div class="row top">
-				<h3>Меню</h3>
-				<ul>
-					<li class="sale"><a href="/akcia/"><i class="fa fa-percent" aria-hidden="true"></i> Акции</a></li>
-				</ul>
-				<div class="catalog">Каталог <i class="fa fa-caret-down" aria-hidden="true"></i></div>
-				<div class="u-pull-left"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
-				<ul class="catalog">
-					<li><a href="/shop/parta_bez_risunka/"><i class="fa fa-angle-right" aria-hidden="true"></i> Парты ДЭМИ</a></li>
-					<li><a href="/shop/white.php"><i class="fa fa-angle-right" aria-hidden="true"></i> Белые парты</a></li>
-					<li><a href="/shop/ergonomichnyj_stul/"><i class="fa fa-angle-right" aria-hidden="true"></i> Стулья и кресла</a></li>
-					<li><a href="/shop/dopolnitelnye_elementy/"><i class="fa fa-angle-right" aria-hidden="true"></i> Аксессуары</a></li>
-					<li><a href="/shop/tumby_i_stellazhi/"><i class="fa fa-angle-right" aria-hidden="true"></i> Тумбы и стеллажи</a></li>
-					<li><a href="/shop/parta_s_risunkom/"><i class="fa fa-angle-right" aria-hidden="true"></i> Парты с рисунком</a></li>
-					<li><a href="/shop/parta_iz_massiva/"><i class="fa fa-angle-right" aria-hidden="true"></i> Парты из массива</a></li>
-				</ul>
-			</div>
-			<div class="row bottom">
-				<ul>	
-					<li><a href="/delivery.php">Доставка</a></li>
-					<li><a href="/settingup.php">Сборка</a></li>
-					<li><a href="/garanty.php">Гарантия</a></li>
-					<li><a href="/otziv.php">Отзывы</a></li>
-					<li><a href="/oplata.php">Оплата</a></li>
-					<li><a href="/exchange.php">Возврат</a></li>
-					<li><a href="/certificate.php">Сертификаты</a></li>
-					<li><a class="contact" href="/gde_kupit/">Контакты</a></li>
-					<li>&nbsp;</li>
-					<li><a href="/opt.php">Для дилеров</a></li>
-					<li><a href="/shkolnaya-mebel.php">Для учебных заведений</a></li>
-					<li><a href="/notes/">Статьи</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
 </div>
 
 <!-- The Modal -->
@@ -136,7 +96,7 @@
 						<div class="circle-loader">
 							<div class="checkmark draw"></div>
 						</div>
-						<span>Согласен с условиями <a href="/policy/" target="_blank">Политики конфиденциальности</a></span>
+						<span>Согласен с условиями <a href="/policy.php" target="_blank">Политики конфиденциальности</a></span>
 					</div>
 					
 				</form>
@@ -145,13 +105,14 @@
 
 </div>
 
+<div class="whatsapp__bottom">
+ 	<a href="https://api.whatsapp.com/send?phone=79282102335&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C.%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D1%8E%D1%82%20%D0%BF%D0%B0%D1%80%D1%82%D1%8B%20%D0%94%D0%AD%D0%9C%D0%98.%20%D0%A1%D0%B2%D1%8F%D0%B6%D0%B8%D1%82%D0%B5%D1%81%D1%8C%20%D1%81%D0%BE%20%D0%BC%D0%BD%D0%BE%D0%B9" class="whatsapp" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i> <span>Написать в</span> Whatsapp</a>
+</div>
+
 <!-- FONT
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&subset=latin,cyrillic,cyrillic-ext" rel="stylesheet" type="text/css">	
-	<link rel="stylesheet" href="/css/normalize.css">
 	<link rel="stylesheet" href="/js/uikit/css/uikit.css" />
-    <link rel="stylesheet" href="/css/blueimp-gallery.css">
-	 <link rel="stylesheet" href="/css/main.min.css">
+	 <link rel="stylesheet" href="/css/main.min.css?ver=4">
 	<!-- Scripts
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -166,7 +127,6 @@
 	<?php } ?>
 	<link rel="stylesheet" href="/js/simplelightbox/simplelightbox.min.css">
 	<script src="/js/simplelightbox/simple-lightbox.min.js"></script>
-	<script src="/js/scripts.js"></script>
 	<script src="/js/script.min.js"></script>
 	<!--[if lt IE 9]>
 	  	<script src="/js/support/html5shiv.js"></script>
@@ -217,9 +177,4 @@
 
 </script>
 <!-- / Google Analytics counter -->
-<!-- BEGIN JIVOSITE CODE {literal} -->
-<script>
-(function(){ var widget_id = 'vHRq2Ai740';var d=document;var w=window;function l(){var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
-</script>
-<!-- {/literal} END JIVOSITE CODE -->
 

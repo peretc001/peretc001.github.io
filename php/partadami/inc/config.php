@@ -2,8 +2,8 @@
 	
 	/* Переменные для соединения с базой данных */
 $hostname = "localhost";
-$username = "root";
-$password = "GFDgd39021";
+$username = "u1730_dami";
+$password = "2032004133";
 $dbName = "u1730440_otziv";
 /** Кодировка базы данных при создании таблиц. */
 define('DB_CHARSET', 'utf8_general_ci');

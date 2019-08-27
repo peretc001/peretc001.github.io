@@ -1,28 +1,71 @@
 .services
-   padding: $gutter
+   padding: $gutter*2 $gutter 0 $gutter
    background: rgba($accent, .1)
-   .row
-      padding-top: 2em
+   [class*="col-"]
+      margin-bottom: 2em
    &__card
       margin-bottom: 3em
+      color: $text
       &__title
          display: flex
          align-items: center
          font-weight: bold
-         font-size: 1.2em
+         font-size: 1.1em
          margin-bottom: 1em
          img
             width: 2em
             margin-right: 1em
+            transition: transform .3s ease
          p
             margin-bottom: 0
             span
                display: block
+      &:hover
+         color: $text
+         img
+            transform: scale(1.1)
+   
+   .our__work
+      padding: $gutter
+      .slick-slide
+         outline: none
+      .slick-next,
+      .slick-prev
+         position: absolute
+         top: 50%
+         transform: translateY(-50%)
+         z-index: 1
+         background-repeat: no-repeat
+         background-size: 15px
+         background-color: transparent
+         font-size: .8em
+         font-size: 0
+         width: 35px
+         height: 35px
+         border-radius: 50%
+         outline: none
+         border: none
+         cursor: pointer
+         background-color: $accent
+      .slick-next
+         right: -10px
+         background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDc3LjE3NSA0NzcuMTc1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NzcuMTc1IDQ3Ny4xNzU7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8cGF0aCBkPSJNMzYwLjczMSwyMjkuMDc1bC0yMjUuMS0yMjUuMWMtNS4zLTUuMy0xMy44LTUuMy0xOS4xLDBzLTUuMywxMy44LDAsMTkuMWwyMTUuNSwyMTUuNWwtMjE1LjUsMjE1LjUgICBjLTUuMyw1LjMtNS4zLDEzLjgsMCwxOS4xYzIuNiwyLjYsNi4xLDQsOS41LDRjMy40LDAsNi45LTEuMyw5LjUtNGwyMjUuMS0yMjUuMUMzNjUuOTMxLDI0Mi44NzUsMzY1LjkzMSwyMzQuMjc1LDM2MC43MzEsMjI5LjA3NXogICAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0ZGRkZGRiIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KPC9nPjwvZz4gPC9zdmc+')
+         background-position: center
+      .slick-prev
+         left: -10px
+         background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDc3LjE3NSA0NzcuMTc1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NzcuMTc1IDQ3Ny4xNzU7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8cGF0aCBkPSJNMTQ1LjE4OCwyMzguNTc1bDIxNS41LTIxNS41YzUuMy01LjMsNS4zLTEzLjgsMC0xOS4xcy0xMy44LTUuMy0xOS4xLDBsLTIyNS4xLDIyNS4xYy01LjMsNS4zLTUuMywxMy44LDAsMTkuMWwyMjUuMSwyMjUgICBjMi42LDIuNiw2LjEsNCw5LjUsNHM2LjktMS4zLDkuNS00YzUuMy01LjMsNS4zLTEzLjgsMC0xOS4xTDE0NS4xODgsMjM4LjU3NXoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiIHN0eWxlPSJmaWxsOiNGRkZGRkYiPjwvcGF0aD4KPC9nPjwvZz4gPC9zdmc+')
+         background-position: center
 
 @media screen and (max-width: 767.98px)
    .services
-      padding: $gutter
+      padding: $gutter 0
+      .h2__title
+         margin-bottom: 2em !important
+      [class*="col-"]
+         &:last-child
+            margin-bottom: 0
       &__card
+         margin-bottom: 0
          text-align: center
          &__title
             justify-content: center
@@ -30,3 +73,6 @@
                display: none
             p
                font-size: 1em
+      .our__work
+         padding: 0 $gutter
+         padding-bottom: $gutter

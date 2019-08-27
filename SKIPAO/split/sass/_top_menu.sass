@@ -131,12 +131,17 @@
          margin: 0
          padding-left: 1em
          margin-left: 1em
+         transform: scale(1)
          border-left: 1px solid #ebebeb
          a
             margin-right: 0.5em
             img
                width: 1.1em
                height: auto
+               transition: transform .2s ease
+            &:hover
+               img
+                  transform: scale(1.1)
 
 @keyframes phone-call
    30%

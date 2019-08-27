@@ -73,8 +73,8 @@ class SafeMySQL
 	private $exname;
 	private $defaults = array(
 		'host'      => 'localhost',
-		'user'      => 'root',
-		'pass'      => 'GFDgd39021',
+		'user'      => 'u1730_dami',
+		'pass'      => '2032004133',
 		'db'        => 'u1730440_otziv',
 		'port'      => NULL,
 		'socket'    => NULL,
