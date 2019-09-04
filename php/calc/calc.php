@@ -142,8 +142,8 @@ $calc = (($col*$step)*$warranty)*$dollor + $dop + $delivery + $settingup;
 $square = $width*$height;
 
 
-$pixel_w = 320/$step_id*3*$width;
-$pixel_y = 160/$step_id*6*$height;
+$pixel_w = 320/$step_id*$width;
+$pixel_y = 160/$step_id*$height;
 
 $pixel = $pixel_w .' x '. $pixel_y;
 

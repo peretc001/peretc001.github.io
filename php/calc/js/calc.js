@@ -121,7 +121,7 @@ $(function() {
       }).done(function(response) {
 
          let result = $.parseJSON(response);
-         //console.log(result);
+         console.log(result);
          
          //Цена и площадь
          $('.calc__ajax__form--first .result-room-block-price__price').html(prettify(result.price) + ' Р');

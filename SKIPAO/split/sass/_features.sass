@@ -1,14 +1,33 @@
 .features
    padding: $gutter
    .row
-      padding-top: 2em
    [class*="col-"]
-      margin-bottom: 2em
-      &:last-child
-         margin-bottom: 0
+      margin-top: 2em
    &__card
       position: relative
       text-align: center
+      padding: $gutter
+      position: relative
+      &:before
+         position: absolute
+         left: 25%
+         top: 5%
+         font-size: 140px
+         font-weight: bold
+         font-family: 'Rubik', sans-serif
+         color: rgba($accent, .1)
+      &:nth-child(1)
+         &:before
+            content: '1'
+      &:nth-child(2)
+         &:before
+            content: '2'
+      &:nth-child(3)
+         &:before
+            content: '3'
+      &:nth-child(4)
+         &:before
+            content: '4'
       img
          display: block
          margin: 0 auto
@@ -16,6 +35,8 @@
          width: 4em
          transition: transform .3s ease
       p
+         display: block
+         background: #ffffff
          font-weight: bold
          font-size: 1.1em
          position: relative
@@ -34,7 +55,15 @@
 
 @media screen and (max-width: 767.98px)
    .features
+      padding: $gutter $gutter/2
       &__card
+         max-width: 48%
+         margin-right: 2%
+         &:nth-child(2n)
+            margin-right: 0
+            max-width: 50%
+         &:last-child
+            max-width: 50%
          img
             width: 3em
          p
@@ -45,6 +74,15 @@
       [class*="col-"]
          text-align: center
       &__card
+         max-width: 100%
+         margin-right: 0
+         &:before
+            font-size: 160px
+         &:nth-child(2n)
+            margin-right: 0
+            max-width: 100%
+         &:last-child
+            max-width: 100%
          img
             width: 4em
             margin: 0 auto 1em auto

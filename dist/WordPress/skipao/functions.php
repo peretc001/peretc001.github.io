@@ -1,23 +1,22 @@
 <?php
-function optimazed_scripts() {
-	wp_enqueue_style( 'optimazed-style', get_template_directory_uri() . '/css/main.min.css', array(), time() );
+function skipao_scripts() {
+	wp_enqueue_style( 'bootstrap-4', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', array(), null );
+	wp_enqueue_style( 'skipao-style', get_template_directory_uri() . '/css/main.min.css', array(), time() );
 	
 	wp_deregister_script('jquery');
 	//wp_register_script( 'jquery', includes_url( 'js/jquery/jquery.js' ), false, null, true );
 	//wp_enqueue_script( 'jquery' );
 
-	//wp_enqueue_script( 'optimazed-popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array(), '1', true );
-	//wp_enqueue_script( 'optimazed-bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array(), '1', true );
-	if( is_front_page() ) {
-		wp_enqueue_script( 'optimazed-progressbar', get_template_directory_uri() . '/js/progressbar.js', array(), '1', true );
-	}
-	wp_enqueue_script( 'optimazed-custom', get_template_directory_uri() . '/js/script.js', array(), time(), true );
+	//wp_enqueue_script( 'skipao-popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array(), '1', true );
+	//wp_enqueue_script( 'skipao-bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array(), '1', true );
+
+	wp_enqueue_script( 'skipao-js', get_template_directory_uri() . '/js/script.js', array(), time(), true );
 }
-add_action( 'wp_enqueue_scripts', 'optimazed_scripts' );
+add_action( 'wp_enqueue_scripts', 'skipao_scripts' );
 
 function add_defer_attribute($tag, $handle) {
    // add script handles to the array below
-   $scripts_to_defer = array('optimazed-progressbar', 'optimazed-custom');
+   $scripts_to_defer = array('skipao-custom');
    
    foreach($scripts_to_defer as $defer_script) {
       if ($defer_script === $handle) {
@@ -43,7 +42,7 @@ register_nav_menus(array(
 add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
 
 //Walkers
-class Optimazed_Walker_Nav_Menu extends Walker_Nav_Menu {
+class skipao_Walker_Nav_Menu extends Walker_Nav_Menu {
 	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		
 		if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {

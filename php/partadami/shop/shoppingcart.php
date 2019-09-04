@@ -89,7 +89,7 @@
 			</p>
 		</div>
 		
-		<form action="/shop/inc/zakaz.php" method="post" role="form" data-togg="validator">
+		<form action="/shop/inc/zakaz.php" class="shopping_cart" method="post" role="form" data-togg="validator">
 			<input type="hidden" name="coupon" value="<?php echo $coupon; ?>">
 			<div class="row">
 				<div class="six columns">
@@ -101,10 +101,10 @@
 					
 					
 					if ($query['email'] == '') { ?>
-						<input id="email" type="email" class="u-full-width form-control" name="email" placeholder="Ваш email" required>
+						<input id="email" type="email" class="u-full-width form-control email_input" name="email" placeholder="Ваш email" required>
 					<?php } #Если email известен 
 					else { ?>
-						<input id="email" type="email" class="u-full-width form-control" name="email" placeholder="Ваш email" required value="<?php echo $query['email']; ?>"/>
+						<input id="email" type="email" class="u-full-width form-control email_input" name="email" placeholder="Ваш email" required value="<?php echo $query['email']; ?>"/>
 					<?php } ?>
 				</div>
 				<div class="six columns">

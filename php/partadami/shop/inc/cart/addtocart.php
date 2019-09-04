@@ -68,45 +68,23 @@ include $_SERVER['DOCUMENT_ROOT'] .'/inc/header.php';
 	elseif ($_POST['color'] == 'white') { $color = 'Белый';}
 	elseif ($_POST['color'] == 'white_grey') { $color = 'Белый / Серый';}
 	elseif ($_POST['color'] == 'white_red') { $color = 'Белый / Красный';}
+	elseif ($_POST['color'] == 'white_pink') { $color = 'Белый / Розовый';}
 	elseif ($_POST['color'] == 'white_blue') { $color = 'Белый / Синий';}
 	elseif ($_POST['color'] == 'white_green') { $color = 'Белый / Зеленый';}
 	elseif ($_POST['color'] == 'white_orange') { $color = 'Белый / Оранжевый';}
-	elseif ($_POST['color'] == 'fundesk_grey') { $color = 'Серый';}
-	elseif ($_POST['color'] == 'fundesk_pink') { $color = 'Розовый';}
-	elseif ($_POST['color'] == 'fundesk_blue') { $color = 'Синий';}
+	elseif ($_POST['color'] == 'white_beige') { $color = 'Белый / Бежевый';}
 	elseif ($_POST['color'] == 'ja_grey') { $color = 'Ясень / Серый';}
-	elseif ($_POST['color'] == 'mealux_black') { $color = 'Черный / Жуки';}
-	elseif ($_POST['color'] == 'mealux_blue') { $color = 'Голубой';}
-	elseif ($_POST['color'] == 'mealux_blue2') { $color = 'Синий';}
-	elseif ($_POST['color'] == 'mealux_blue3') { $color = 'Синий / Жуки';}
-	elseif ($_POST['color'] == 'mealux_blue4') { $color = 'Голубой / Звери';}
-	elseif ($_POST['color'] == 'mealux_blue5') { $color = 'Синий / Мячи';}
-	elseif ($_POST['color'] == 'mealux_green') { $color = 'Зеленый';}
-	elseif ($_POST['color'] == 'mealux_green2') { $color = 'Зеленый / Звери';}
-	elseif ($_POST['color'] == 'mealux_green3') { $color = 'Салатовый / Салют';}
-	elseif ($_POST['color'] == 'mealux_green4') { $color = 'Зеленый / Мячи';}	
-	elseif ($_POST['color'] == 'mealux_orange') { $color = 'Оранжевый';}
-	elseif ($_POST['color'] == 'mealux_orange2') { $color = 'Оранжевый / Жуки';}
-	elseif ($_POST['color'] == 'mealux_pink') { $color = 'Розовый';}
-	elseif ($_POST['color'] == 'mealux_pink2') { $color = 'Розовый / Звери';}
-	elseif ($_POST['color'] == 'mealux_pink3') { $color = 'Фиолетовый / Девочки';}
-	elseif ($_POST['color'] == 'mealux_red') { $color = 'Красный / Звездочки';}			
-	elseif ($_POST['color'] == 'mealux_red2') { $color = 'Красный / Листочки';}			
-	elseif ($_POST['color'] == 'mealux_red3') { $color = 'Красный / Жуки';}			
-	elseif ($_POST['color'] == 'mealux_yellow') { $color = 'Желтый / Звери';}
-	elseif ($_POST['color'] == 'mealux_blue_oxford') { $color = 'Голубой';}
-	elseif ($_POST['color'] == 'mealux_red_oxford') { $color = 'Красный';}
-	elseif ($_POST['color'] == 'mealux_green_oxford') { $color = 'Зеленый';}
-	elseif ($_POST['color'] == 'mealux_darkblue_oxford') { $color = 'Синий';}
+
+	elseif ($_POST['color'] == 'sonoma_grey') { $color = 'Сонома / Серый';}
+	elseif ($_POST['color'] == 'sonoma_pink') { $color = 'Сонома / Розовый';}
+	elseif ($_POST['color'] == 'sonoma_blue') { $color = 'Сонома / Синий';}
+	elseif ($_POST['color'] == 'sonoma_turquoise') { $color = 'Сонома / Бирюзовый';}
+	elseif ($_POST['color'] == 'sonoma_beige') { $color = 'Сонома / Бежевый';}
+	elseif ($_POST['color'] == 'dub_grey') { $color = 'Дуб / Серый';}
+	elseif ($_POST['color'] == 'dub_beige') { $color = 'Дуб / Бежевый';}
+
 	
-	elseif ($_POST['color'] == 'mealux_blue_champion') { $color = 'Синий';}
-	elseif ($_POST['color'] == 'mealux_red_champion') { $color = 'Красный';}
-	elseif ($_POST['color'] == 'mealux_green_champion') { $color = 'Зеленый';}
-	elseif ($_POST['color'] == 'mealux_orange_champion') { $color = 'Оранжевый';}
-	elseif ($_POST['color'] == 'mealux_violet_champion') { $color = 'Фиолетовый';}
-	elseif ($_POST['color'] == 'mealux_blue_r') { $color = 'Синий / Кольца';}
-	elseif ($_POST['color'] == 'mealux_red_r') { $color = 'Красный / Кольца';}
-	elseif ($_POST['color'] == 'mealux_green_r') { $color = 'Зеленый / Кольца';}
+	
 	
 
 	$package = $_POST['package']; // определяем комплект со стулом или без
@@ -140,13 +118,12 @@ include $_SERVER['DOCUMENT_ROOT'] .'/inc/header.php';
 		$res = mysql_query("SELECT count(id) FROM cart WHERE sid = '$sid' ");
 		$row = mysql_fetch_row($res);
 		$qtys = $row[0]; // всего записей
-		echo '<a class="cart_mobile" href="/shop/shoppingcart.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i> '. $qtys .'</a>';
+		echo '<a class="nav-menu__cart" href="/shop/shoppingcart.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i> '. $qtys;
 		
-		echo '<a class="cart_desctop" href="/shop/shoppingcart.php">'. $qtys .' : <span>';
-
 		$res = mysql_query("SELECT SUM(total) FROM cart WHERE sid = '$sid'  "); 
 		$row = mysql_fetch_row($res);
 		$totals = $row[0]; // всего записей
+		echo '<span> : ';
 		echo number_format($totals, 0, ',', ' '); 
 		echo " р</span></a>";
 ?>

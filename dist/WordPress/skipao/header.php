@@ -3,8 +3,10 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.png" type="image/png" />
+	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.png" />
 	<title><?php echo get_bloginfo('name') .' - '. get_bloginfo('description'); ?></title>
+	<?php wp_head(); ?>
 </head>
 <body>
 	
@@ -16,6 +18,6 @@
 			'menu_class'      => 'links',
 			'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
 			'depth'           => 0,
-			'walker'		  => new Optimazed_Walker_Nav_Menu()
+			'walker'		  => new skipao_Walker_Nav_Menu()
 			)); 
 		?>

@@ -56,9 +56,9 @@
 			<a class="button add" role="button" data-toggle="collapse" href="#add_review" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-plus-circle" aria-expanded="true"></i> Добавить отзыв</a>
 			<?php 
 				if ($url == '14-01' or $url == '14-02' or $url == '24' or $url == '17-03') { ?>
-				<div class="add_your_otziv">
+				<!-- <div class="add_your_otziv">
 					Оставь отзыв с фото данной модели и получи 100р на мобильный
-				</div>
+				</div> -->
 			<?php } ?>
 		</div>
 		<div class="all_otziv  gallery_otziv">
@@ -155,3 +155,7 @@
 		</div>
 
 </div>
+
+<?php 
+	include $_SERVER['DOCUMENT_ROOT'] .'/shop/inc/tpl/more_models.php'; 
+?>

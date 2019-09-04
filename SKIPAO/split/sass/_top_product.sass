@@ -49,24 +49,33 @@
             flex: 1 1 auto
          &__img
             width: 30%
+            border: 1px solid #eeeeee
+            border-radius: 4px
+            display: flex
+            align-items: center
+            justify-content: center
+            position: relative
+            overflow: hidden
+            min-height: 250px
             img
-               width: 100%
-               max-width: 200px
-               margin: auto
+               position: absolute
+               left: 50%
+               transform: translateX(-50%)
+               top: 0
+               width: 95%
+               height: auto
+               margin: 0 auto
          &__title
             width: 70%
             display: flex
             flex-direction: column
+            padding-left: 1em
             &__wrap
                min-height: 220px
             &__caption
-               display: flex
-               align-items: center
-               justify-content: flex-start
                margin-bottom: 1em
-               a
-                  font-weight: bold
-                  font-size: 2em
+               a,
+               span
                   color: $accent
                   margin-right: .5em
                h3
@@ -84,29 +93,34 @@
                      p
                         &:first-child
                            margin-right: 1em
-                        u
-                           display: inline-block
-                           background: $accent
-                           padding: .3em
-                           border-radius: 50%
-                           color: #ffffff
-                           text-decoration: none
-                           width: 30px
-                           text-align: center
                         a
                            color: $accent
+                           font-weight: bold
             .tab-content
                a
                   color: $accent
             &__bottom
-               text-align: right
-               align-self: flex-end
+               display: flex
+               align-items: center
+               justify-content: space-between
+               p
+                  margin-bottom: 0
+                  span
+                     display: inline-block
+                     border: 2px solid red
+                     border-radius: 4px
+                     padding: .3em
+                     text-decoration: none
+                     width: 30px
+                     text-align: center
                a
                   display: inline-block
                   background: $accent
                   padding: 0.3em 0.5em
                   color: #ffffff
                   border-radius: 4px
+                  &.orange
+                     background: #F87217
 
             .nav-pills
                .nav-link
@@ -122,7 +136,7 @@
                         content: ''
                         position: absolute
                         left: 0
-                        bottom: -7px
+                        bottom: -2px
                         background: $accent
                         width: 100%
                         height: 3px
@@ -187,6 +201,8 @@
                      margin: 0
                      font-size: 0.8em
                      position: relative
+                     background: #0ed40b
+                     border-color: darken(#0ed40b, 5%)
                      &:before
                         content: ''
                         position: absolute
@@ -199,11 +215,21 @@
                         background-position: center
                         background-repeat: no-repeat
                         background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDQ0Ni44NTMgNDQ2Ljg1MyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDQ2Ljg1MyA0NDYuODUzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PGc+Cgk8cGF0aCBkPSJNNDQ0LjI3NCw5My4zNmMtMi41NTgtMy42NjYtNi42NzQtNS45MzItMTEuMTQ1LTYuMTIzTDE1NS45NDIsNzUuMjg5Yy03Ljk1My0wLjM0OC0xNC41OTksNS43OTItMTQuOTM5LDEzLjcwOCAgIGMtMC4zMzgsNy45MTMsNS43OTIsMTQuNTk5LDEzLjcwNywxNC45MzlsMjU4LjQyMSwxMS4xNEwzNjIuMzIsMjczLjYxSDEzNi4yMDVMOTUuMzU0LDUxLjE3OSAgIGMtMC44OTgtNC44NzUtNC4yNDUtOC45NDItOC44NjEtMTAuNzUzTDE5LjU4NiwxNC4xNDFjLTcuMzc0LTIuODg3LTE1LjY5NSwwLjczNS0xOC41OTEsOC4xYy0yLjg5MSw3LjM2OSwwLjczLDE1LjY5NSw4LjEsMTguNTkxICAgbDU5LjQ5MSwyMy4zNzFsNDEuNTcyLDIyNi4zMzVjMS4yNTMsNi44MDQsNy4xODMsMTEuNzQ2LDE0LjEwNCwxMS43NDZoNi44OTZsLTE1Ljc0Nyw0My43NGMtMS4zMTgsMy42NjQtMC43NzUsNy43MzMsMS40NjgsMTAuOTE2ICAgYzIuMjQsMy4xODQsNS44ODMsNS4wNzgsOS43NzIsNS4wNzhoMTEuMDQ1Yy02Ljg0NCw3LjYxNy0xMS4wNDUsMTcuNjQ2LTExLjA0NSwyOC42NzVjMCwyMy43MTgsMTkuMjk5LDQzLjAxMiw0My4wMTIsNDMuMDEyICAgczQzLjAxMi0xOS4yOTQsNDMuMDEyLTQzLjAxMmMwLTExLjAyOC00LjIwMS0yMS4wNTgtMTEuMDQ0LTI4LjY3NWg5My43NzdjLTYuODQ3LDcuNjE3LTExLjA0NywxNy42NDYtMTEuMDQ3LDI4LjY3NSAgIGMwLDIzLjcxOCwxOS4yOTQsNDMuMDEyLDQzLjAxMiw0My4wMTJjMjMuNzE5LDAsNDMuMDEyLTE5LjI5NCw0My4wMTItNDMuMDEyYzAtMTEuMDI4LTQuMi0yMS4wNTgtMTEuMDQyLTI4LjY3NWgxMy40MzIgICBjNi42LDAsMTEuOTQ4LTUuMzQ5LDExLjk0OC0xMS45NDdjMC02LjYtNS4zNDktMTEuOTQ4LTExLjk0OC0xMS45NDhIMTQzLjY1MWwxMi45MDItMzUuODQzaDIxNi4yMjEgICBjNi4yMzUsMCwxMS43NTItNC4wMjgsMTMuNjUxLTkuOTZsNTkuNzM5LTE4Ni4zODdDNDQ3LjUzNiwxMDEuNjc5LDQ0Ni44MzIsOTcuMDI4LDQ0NC4yNzQsOTMuMzZ6IE0xNjkuNjY0LDQwOS44MTQgICBjLTEwLjU0MywwLTE5LjExNy04LjU3My0xOS4xMTctMTkuMTE2czguNTc0LTE5LjExNywxOS4xMTctMTkuMTE3czE5LjExNiw4LjU3NCwxOS4xMTYsMTkuMTE3UzE4MC4yMDcsNDA5LjgxNCwxNjkuNjY0LDQwOS44MTR6ICAgIE0zMjcuMzczLDQwOS44MTRjLTEwLjU0MywwLTE5LjExNi04LjU3My0xOS4xMTYtMTkuMTE2czguNTczLTE5LjExNywxOS4xMTYtMTkuMTE3czE5LjExNiw4LjU3NCwxOS4xMTYsMTkuMTE3ICAgUzMzNy45MTYsNDA5LjgxNCwzMjcuMzczLDQwOS44MTR6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBzdHlsZT0iZmlsbDojRkZGRkZGIj48L3BhdGg+CjwvZz48L2c+IDwvc3ZnPg==')
+                     &:hover
+                        background: darken(#0ed40b, 5%)
+                        border-color: darken(#0ed40b, 10%)
+            td.model
+               font-weight: bold
+               text-align: left
+               padding-left: 1em
             td.price
-               color: $accent
+               color: $text
                font-weight: bold
             td.note
                font-size: 0.9em
+            td.square
+               p:last-child
+                  display: none
 
    .product__carousel
       position: relative
@@ -296,6 +322,10 @@
             &__img,
             &__title
                width: 100%
+            &__img
+               margin-bottom: 1em
+            &__title
+               padding-left: 0
          &__body
             .table
                font-size: 0.9em
@@ -312,11 +342,13 @@
             font-size: 1em
       .top__card
          &__header
-            &__img,
+            &__img
+               margin-top: 1em
             &__title
+               &__wrap
+                  min-height: 10px
                &__caption
                   &__tabs
-                     padding: 0.35em 0
                      &__warrantly
                         display: none
                .tech__list
@@ -328,6 +360,11 @@
                               padding-right: 0
                &__bottom
                   padding-top: 1em
+                  flex-direction: column
+                  justify-content: center
+                  text-align: center
+                  p
+                     margin-bottom: 1em
 
          &__body
             .table
@@ -339,37 +376,29 @@
                      flex-wrap: wrap
                      &:nth-child(even)
                         background: none
+                     &:nth-child(odd)
+                        background: rgba($accent, .1)
+
                   td
                      flex: 1 1 auto
                      position: relative
                      vertical-align: top
-                     padding: 0
                      border: none
-                     &:before
-                        content: attr(data-name)
-                        display: block
-                        background: rgba($accent, .2)
-                        padding: .5em
-                        color: $text
-                        font-weight: bold
                      p
-                        padding: 1em 0
+                        padding: 0
                         padding-bottom: 0
-                     .btn
-                        &.btn-accent
-                           margin-top: 1em
                   td.twin
                      display: none
                   td.note
                      font-size: 1em
                   td.model
-                     width: 100%
-                     padding: .5em
-                     font-weight: bold
-                     font-size: 1.2em
-                     &:before
+                     display: none
+                  td.square
+                     p:first-child
                         display: none
-
+                     p:last-child
+                        font-weight: bold
+                        display: inline-block
 
 @media screen and (max-width: 576.98px)
    .top__product
@@ -386,8 +415,7 @@
             &__img,
             &__title
                &__caption
-                  h3,
-                  a
+                  h3
                      font-size: 1.4em
                .nav-pills
                   .nav-link
@@ -413,8 +441,7 @@
             &__img,
             &__title
                &__caption
-                  h3,
-                  a
+                  h3
                      font-size: 1.2em
                &__bottom
                   a

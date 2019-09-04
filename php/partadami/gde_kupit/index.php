@@ -27,27 +27,17 @@
 			<ul class="top">
 				<li class="name">Название:</li>
 				<li>ООО "КрасГрупп"</li>
-				<li class="name">Адрес:</li>
-				<li>Краснодар, ул. Тургенева, 56</li>
+				<li class="name">Магазин:</li>
+				<li>Краснодар, ул. Тургенева, 56 <br>
+				<span style="color: #ff0000">(магазин закрыт, просьба звонить)</span>
+				<li class="name">Склад:</li>
+				<li>Краснодар, Платановый бульвар, 4/1</li>
 				<li class="name">Телефон:</li>
 				<li>+7 (861) 242-81-05</li>
-			</ul>
-			<p class="work">График:</p>
-			<ul>
-				<li class="name">Пн:</li>
-				<li>выходной</li>
-				<li class="name">Вт:</li>
-				<li>с 10 до 17-00</li>
-				<li class="name">Ср:</li>
-				<li>с 10 до 17-00</li>
-				<li class="name">Чт:</li>
-				<li>с 10 до 17-00</li>
-				<li class="name">Пт:</li>
-				<li>с 10 до 17-00</li>
-				<li class="name">Сб:</li>
-				<li>с 10 до 16-00</li>
-				<li class="name">Вс:</li>
-				<li>выходной</li>
+				<li class="name">Instagram:</li>
+				<li><a href="https://www.instagram.com/partadami/" target="_blank">@partadami</a></li>
+				<li class="name">Написать:</li>
+				<li><a href="https://api.whatsapp.com/send?phone=79282102335&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C.%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D1%8E%D1%82%20%D0%BF%D0%B0%D1%80%D1%82%D1%8B%20%D0%94%D0%AD%D0%9C%D0%98.%20%D0%A1%D0%B2%D1%8F%D0%B6%D0%B8%D1%82%D0%B5%D1%81%D1%8C%20%D1%81%D0%BE%20%D0%BC%D0%BD%D0%BE%D0%B9" target="_blank">Whatsapp</a></li>
 			</ul>
 		</div>
 	</div>

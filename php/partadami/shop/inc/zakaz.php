@@ -283,7 +283,6 @@ if($_POST['email'] == '' or $_POST['phone'] == '') {
 	
 	$headers  = "Content-type: text/html; charset=utf-8 \r\n"; 
 	$headers .= "From: www.partadami.ru <info@partadami.ru>\r\n"; 
-	$headers .= "CC: opt@partadami.ru\r\n";
 	$headers .= "CC: ". $_POST['email'] ."\r\n";
 	$headers .= "CC: skodeks@mail.ru\r\n";
 		mail($to, $subject, $message, $headers); 

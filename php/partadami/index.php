@@ -1,63 +1,15 @@
-
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <title>Купить парты ДЭМИ | Официальный сайт ДЭМИ Краснодар</title> 
 	<meta name="Keywords" content="парта деми, парта деми купить, парты деми, парты деми купить, парта трансформер, парта трансформер купить, официальный дилер деми" /> 
 	<meta name="Description" content="Официальный сайт ДЭМИ по Краснодарскому краю. Описание, цены, отзывы. Доставка. Сборка. Гарантия. Кредит." /> 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="ROBOTS" content="index, follow">
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-	<meta name='yandex-verification' content='6be7b6eda6c1d883' />
-	<link rel="icon" href="/img/logo.png" type="image/png">
-	<style>
-		body {
-			opacity: 0;
-			overflow-x: hidden;
-		}
-	</style> 	
-    </head>
+    <?php include $_SERVER['DOCUMENT_ROOT'] .'/inc/header.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] .'/inc/config.php'; ?>
+</head>
 <body>
-
-<nav class="nav">
-	<div class="nav-menu">
-		<button class="navbar-toggler hamburger hamburger--slider" type="button">
-         <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-         </span>
-      </button>
-		<a href="/" class="brand">
-			<img src="/img/logo.svg" alt="Парты ДЕМИ Краснодар">
-			<p>
-				<strong>Парты ДЭМИ</strong>
-				<span>официальный дилер в Краснодаре</span>
-			</p>
-		</a>
-		<a class="nav-menu__phone" href="tel:79882428105"><i class="fa fa-mobile" aria-hidden="true"></i> <span>8 (988) 242-81-05</span></a>
-		<a href="" class="whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i> <span>Написать в</span> Whatsapp</a>
-		<a class="nav-menu__callback myModal"><i class="fa fa-phone" aria-hidden="true"></i>Заказать звонок</a>
-		<a class="nav-menu__sale" href="/akcia/"><i class="fa fa-percent" aria-hidden="true"></i> Акция</a>
-		<a class="nav-menu__cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-		<span class="cartajax"></span>
-	</div>
-	<div class="nav-catalog">
-		<div class="container">
-			<a class="nav-catalog__title" href="/shop/"><i class="fa fa-bars" aria-hidden="true"></i> <span>Каталог товаров</span></a>
-			<a href="/shop/parta_bez_risunka/">Парты ДЭМИ</a>
-			<a href="/shop/white.php">Белые парты</a>
-			<a href="/shop/ergonomichnyj_stul/">Стулья и кресла</a>
-			<a href="/shop/dopolnitelnye_elementy/">Аксессуары</a>
-			<a href="/shop/tumby_i_stellazhi/">Тумбы и стеллажи</a>
-			<a class="nav-catalog__garanty" href="/delivery.php">Доставка</a>
-			<a class="nav-catalog__review" href="/settingup.php">Сборка</a>
-			<a class="nav-catalog__review" href="/garanty.php">Гарантия</a>
-			<a class="nav-catalog__review" href="/otziv.php">Отзывы</a>
-			<a class="nav-catalog__school" href="/shkolnaya-mebel.php">Для школ</a>
-			<a class="nav-catalog__contact" href="/gde_kupit/">Контакты</a>
-		</div>
-	</div>
-</nav>
-
+<?php include $_SERVER['DOCUMENT_ROOT'] .'/inc/nav.php'; ?>
 <div class="header">
 	<div class="container">
 		<div class="introHolder">
@@ -95,7 +47,7 @@
 
 		<div class="col-x3">
 			<div class="new_products__img">
-				<a href="/shop/parta_bez_risunka/cyt41/parta_cyt41_so_stulom_cyt01-01.php"><img src="/shop/img/41/1.jpg" alt="Парта ДЭМИ 75х55 см и стул"></a>
+				<a href="/shop/parta_bez_risunka/cyt41/parta_cyt41_so_stulom_cyt01-01.php"><img src="/shop/img/41/1.png" alt="Парта ДЭМИ 75х55 см и стул"></a>
 			</div>
 			<div class="new_products__title">
 				<p class="product-title">
@@ -114,40 +66,40 @@
 		</div>
 		<div class="col-x3">
 			<div class="new_products__img">
-				<a href="/shop/parta_bez_risunka/cyt41/parta_cyt41_so_stulom_cyt01-01.php?color=sonoma_pink"><img src="/shop/img/41/2.jpg" alt="Парта ДЭМИ 75х55 см и стул"></a>
+				<a href="/shop/parta_bez_risunka/cyt42/parta_cyt42_so_stulom_cyt01-01.php?color=sonoma_pink"><img src="/shop/img/42/2.png" alt="Парта ДЭМИ 120х55 см и стул"></a>
 			</div>
 			<div class="new_products__title">
 				<p class="product-title">
-					<a href="/shop/parta_bez_risunka/cyt41/parta_cyt41_so_stulom_cyt01-01.php?color=sonoma_pink">Парта ДЭМИ 75х55 см и стул</a>
+					<a href="/shop/parta_bez_risunka/cyt42/parta_cyt42_so_stulom_cyt01-01.php?color=sonoma_pink">Парта ДЭМИ 120х55 см и стул</a>
 				</p>
 				<p class="product-desc">
-					СУТ.41
+					СУТ.42
 				</p>
 				<p class="product-color">
 					Сонома / Розовый
 				</p>
 			</div>
 			<div class="new_products__price">
-				<p>12.600 р.</p>
+				<p>19.800 р.</p>
 			</div>
 		</div>
 		<div class="col-x3">
 			<div class="new_products__img">
-				<a href="/shop/parta_bez_risunka/cyt41/parta_cyt41_so_stulom_cyt01-01.php?color=dub_grey"><img src="/shop/img/41/6.jpg" alt="Парта ДЭМИ 75х55 см и стул"></a>
+				<a href="/shop/parta_bez_risunka/cyt42/parta_cyt42-04_so_stulom_cyt01-01.php?color=dub_beige"><img src="/shop/img/42-04/7.png" alt="Парта ДЭМИ 120х55 см и стул"></a>
 			</div>
 			<div class="new_products__title">
 				<p class="product-title">
-				<a href="/shop/parta_bez_risunka/cyt41/parta_cyt41_so_stulom_cyt01-01.php?color=dub_grey">Парта ДЭМИ 75х55 см и стул</a>
+				<a href="/shop/parta_bez_risunka/cyt42/parta_cyt42-04_so_stulom_cyt01-01.php?color=dub_beige">Парта ДЭМИ 120х55 см и стул</a>
 				</p>
 				<p class="product-desc">
-					СУТ.41
+					СУТ.42-04
 				</p>
 				<p class="product-color">
-					Дуб / Серый
+					Дуб / Бежевый
 				</p>
 			</div>
 			<div class="new_products__price">
-				<p>12.600 р.</p>
+				<p>23.700 р.</p>
 			</div>
 		</div>
 		<div class="col-x3">
@@ -207,7 +159,7 @@
 	</div>
 	<div class="flex">
 		<div class="col-x4">
-			<a class="top_products__href has-overlay" href="/parta_bez_risunka/cyt41/parta_cyt41_so_stulom_cyt01-01.php" style="background-image: url('/img/home/6.jpg')">
+		<a class="top_products__href has-overlay" href="/shop/parta_bez_risunka/cyt41/parta_cyt41_so_stulom_cyt01-01.php?color=dub_grey" style="background-image: url('/img/home/6.jpg')">
 				<div class="top_products__text">Парта ДЭМИ СУТ.41</div>
 				<span class="more-link"><i class="fa fa-angle-right flipInY" aria-hidden="true"></i> Подробнее</span>
 			</a>
@@ -231,7 +183,7 @@
 			</a>
 		</div>
 	</div>
-
+	
 	<div class="row">
 		<div class="twelve columns box desk">
 			<ul>
@@ -287,177 +239,4 @@
 	<div class="show_description"><i class="fa fa-angle-down"></i></div>
 	<a href="/shop/parta_bez_risunka/" class="show_catalog">Выбрать парту для ребенка</a>
 </div>
-
-<div id="why">
-	<div class="introHolder">
-		<h3>Почему покупают у нас</h3>
-	</div>
-	<div class="row">
-		
-		<div class="one-third column img"><img src="img/why/why.jpg" alt="Свидетельство"></div>
-		<div class="one-third column ul-li">
-					<ul>
-						<li>Единственный дилер
-							<p>Единственный дилер завода ДЭМИ на территории Краснодарского края</p>
-						</li>
-						<li>Доставка в день заказа
-							<p>Мы храним на складе достаточно товара для того чтобы вы могли получить его сегодня же</p>
-						</li>
-						<li>Гарантия 60 месяцев
-							<p>Гарантия от производителя + расширенная гарантия продавца.</p>
-						</li>
-					</ul>
-				</div>
-				<div class="one-third column ul-li">
-					<ul>
-						<li>Заказать легко!
-							<p>Оформить заказ, доставку и произвести оплату товара можно не выходя из дома.</p>
-						</li>
-						<li>Оплатить просто
-							<p>Вы можете оплатить заказ наличными, картой или банковским переводом</p>
-						</li>
-						<li>100% Российское качество
-							<p>Вся продукция ДЭМИ производится на территории РФ. И, кстати, не содержит ГМО :)</p>
-						</li>
-					</ul>
-				</div>
-	</div>
-</div>
-<div id="footer">
-	<div class="row">
-		<div class="one-third column">
-			<p>ПОКУПАТЕЛЮ</p>
-			<ul>
-				<li><a href="/delivery.php">Доставка</a></li>
-				<li><a href="/settingup.php">Сборка</a></li>
-				<li><a href="/garanty.php">Гарантия</a></li>
-				<li><a href="/exchange.php">Обмен и Возврат</a></li>
-				<li><a href="/oplata.php">Способы оплаты</a></li>
-			</ul>
-		</div>
-		<div class="one-third column">
-			<p>КОМПАНИЯ</p>
-			<ul>
-				<li><a href="/certificate.php">Сертификаты</a></li>
-				<li><a href="/opt.php">Для дилеров</a></li>
-				<li><a href="/shkolnaya-mebel.php">Для учебных заведений</a></li>
-				<li><a href="/gde_kupit/">Контакты</a></li>
-				<li><a href="/notes/">Статьи</a></li>
-				<li><a href="/otziv.php">Отзывы</a></li>
-			</ul>
-		</div>
-		<div class="one-third column social">
-			<p>Конаткты:</p>
-			<h3>8 (861) 242-81-05</h3>
-			<!-- <h6><small><a href="https://yandex.ru/maps/-/CCevz-oG" target="_blank">Краснодар, ул. Тургенева, 56</a></small></h6> -->
-			<br>
-			<h6 class="insta"><a href="https://www.instagram.com/partadami/" target="_blank"><img src="/img/social/instagram.svg" alt="Наш instagram">@partadami</a></h6>
-		</div>
-	</div>
-	<div class="row">
-		<p class="copyright">#партадэми © 2011–2019. ООО «КрасГрупп» - официальный интернет-магазин детской мебели «ДЭМИ». Все права защищены.</p>
-	</div>
-</div>
-<div itemscope itemtype="http://schema.org/Organization">
-	<div itemprop="name" style="display:none;">Парты ДЭМИ</div>
-	<div style="display:none;" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-		<p><span itemprop="postalCode">350049</span>, <span itemprop="addressLocality">г. Краснодар</span>, <span itemprop="streetAddress">ул. Тургенева, 56</span></p>
-		<link itemprop="url" href="http://www.partadami.ru">
-		<a itemprop="sameAs" href="https://www.instagram.com/partadami/">Instagram</a>
-		<a itemprop="sameAs" href="https://vk.com/partadami">VK</a>
-	</div>
-<p style="display:none;" >Тел: <span itemprop="telephone">+7 (861) 242-81-05</span></p>
-</div>
-
-<!-- The Modal -->
-<div class="modal">
-  
-	<div class="modal-content">
-		<span class="close_modal">&times;</span>
-		<div class="modal-body">
-				<p>Заказать звонок</p>
-				<form action="/" class="callback__form" method="post">
-					<input type="hidden" name="recipient" class="recipient" value="">
-					<div class="form-row">
-						<input type="tel" name="phone" class="form-control tel" placeholder="Телефон" required>
-						<input type="submit" class="callback__form__button" value="Отправить" disabled>
-					</div>
-					<div class="robot">
-						<div class="circle-loader">
-							<div class="checkmark draw"></div>
-						</div>
-						<span>Согласен с условиями <a href="/policy/" target="_blank">Политики конфиденциальности</a></span>
-					</div>
-					
-				</form>
-			</div>
-	</div>
-
-</div>
-
-<div class="whatsapp__bottom">
- <a href="https://api.whatsapp.com/send?phone=79282102335&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C.%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D1%8E%D1%82%20%D0%BF%D0%B0%D1%80%D1%82%D1%8B%20%D0%94%D0%AD%D0%9C%D0%98.%20%D0%A1%D0%B2%D1%8F%D0%B6%D0%B8%D1%82%D0%B5%D1%81%D1%8C%20%D1%81%D0%BE%20%D0%BC%D0%BD%D0%BE%D0%B9" class="whatsapp" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i> <span>Написать в</span> Whatsapp</a>
-</div>
-
-<!-- FONT
-	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	<link rel="stylesheet" href="/js/uikit/css/uikit.css" />
-	 <link rel="stylesheet" href="/css/main.min.css">
-	<!-- Scripts
-	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="/js/uikit/js/uikit.min.js"></script>
-			<link rel="stylesheet" href="/js/simplelightbox/simplelightbox.min.css">
-	<script src="/js/simplelightbox/simple-lightbox.min.js"></script>
-	<script src="/js/script.min.js"></script>
-	<!--[if lt IE 9]>
-	  	<script src="/js/support/html5shiv.js"></script>
-	   	<script src="/js/support/css3-mediaqueries.js"></script>
-	   	<script src="/js/support/respond.min.js"></script>
-	 <![endif]--> 
-
-	
-<!-- Yandex.Metrika counter -->
-<script>
-(function (d, w, c) {
-    (w[c] = w[c] || []).push(function() {
-        try {
-            w.yaCounter15357751 = new Ya.Metrika({id:15357751,
-                    webvisor:true,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true});
-        } catch(e) { }
-    });
-
-    var n = d.getElementsByTagName("script")[0],
-        s = d.createElement("script"),
-        f = function () { n.parentNode.insertBefore(s, n); };
-    s.type = "text/javascript";
-    s.async = true;
-    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
-
-    if (w.opera == "[object Opera]") {
-        d.addEventListener("DOMContentLoaded", f, false);
-    } else { f(); }
-})(document, window, "yandex_metrika_callbacks");
-</script>
-<noscript><div><img src="//mc.yandex.ru/watch/15357751" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-<!-- Google Analytics counter -->
-<script>
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-37283478-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-<!-- / Google Analytics counter -->
-
-
+<?php include $_SERVER['DOCUMENT_ROOT'] .'/inc/footer.php'; ?>

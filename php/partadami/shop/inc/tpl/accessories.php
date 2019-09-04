@@ -9,9 +9,13 @@
 					if ($category == 'ergonomichnyj_stul') {
 						$dop = mysql_query("SELECT * FROM `dopolnitelnye_elementy` WHERE id != '100' and id != '111' and id != '112' order by id asc ");
 					}
-					elseif ($category == 'parta_bez_risunka' or $category == 'parta_s_risunkom' or $category == 'parta_iz_massiva') { 
-					
-						$dop = mysql_query("SELECT * FROM `dopolnitelnye_elementy` WHERE id != '100' and id != '111' and id != '112' order by id asc ");
+					elseif ($category == 'parta_bez_risunka' or $category == 'parta_s_risunkom' or $category == 'parta_iz_massiva') {
+						
+						if($art == '41') {
+							$dop = mysql_query("SELECT * FROM `dopolnitelnye_elementy` WHERE id != '100' and id != '111' and id != '112' and id < '105' UNION SELECT * FROM `ergonomichnyj_stul` WHERE id != '96' order by id asc ");
+						} else {
+							$dop = mysql_query("SELECT * FROM `dopolnitelnye_elementy` WHERE id != '100' and id != '111' and id != '112' order by id asc ");
+						}
 						
 					}
 					

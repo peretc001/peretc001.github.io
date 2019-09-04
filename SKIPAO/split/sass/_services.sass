@@ -1,8 +1,7 @@
 .services
    padding: $gutter*2 $gutter 0 $gutter
-   background: rgba($accent, .1)
    [class*="col-"]
-      margin-bottom: 2em
+      margin-top: 2em
    &__card
       margin-bottom: 3em
       color: $text
@@ -12,9 +11,13 @@
          font-weight: bold
          font-size: 1.1em
          margin-bottom: 1em
+         color: $text
+         figure
+            margin: 0
          img
             width: 2em
             margin-right: 1em
+            margin-bottom: 0
             transition: transform .3s ease
          p
             margin-bottom: 0
@@ -27,8 +30,13 @@
    
    .our__work
       padding: $gutter
+      border: 1px solid #eee
+      box-shadow: 2px 2px 10px rgba(#000, .1)
+      border-radius: 4px
+      padding: $gutter
       .slick-slide
          outline: none
+         margin-bottom: 0
       .slick-next,
       .slick-prev
          position: absolute
@@ -48,11 +56,11 @@
          cursor: pointer
          background-color: $accent
       .slick-next
-         right: -10px
+         right: 10px
          background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDc3LjE3NSA0NzcuMTc1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NzcuMTc1IDQ3Ny4xNzU7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8cGF0aCBkPSJNMzYwLjczMSwyMjkuMDc1bC0yMjUuMS0yMjUuMWMtNS4zLTUuMy0xMy44LTUuMy0xOS4xLDBzLTUuMywxMy44LDAsMTkuMWwyMTUuNSwyMTUuNWwtMjE1LjUsMjE1LjUgICBjLTUuMyw1LjMtNS4zLDEzLjgsMCwxOS4xYzIuNiwyLjYsNi4xLDQsOS41LDRjMy40LDAsNi45LTEuMyw5LjUtNGwyMjUuMS0yMjUuMUMzNjUuOTMxLDI0Mi44NzUsMzY1LjkzMSwyMzQuMjc1LDM2MC43MzEsMjI5LjA3NXogICAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0ZGRkZGRiIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KPC9nPjwvZz4gPC9zdmc+')
          background-position: center
       .slick-prev
-         left: -10px
+         left: 10px
          background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDc3LjE3NSA0NzcuMTc1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NzcuMTc1IDQ3Ny4xNzU7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8cGF0aCBkPSJNMTQ1LjE4OCwyMzguNTc1bDIxNS41LTIxNS41YzUuMy01LjMsNS4zLTEzLjgsMC0xOS4xcy0xMy44LTUuMy0xOS4xLDBsLTIyNS4xLDIyNS4xYy01LjMsNS4zLTUuMywxMy44LDAsMTkuMWwyMjUuMSwyMjUgICBjMi42LDIuNiw2LjEsNCw5LjUsNHM2LjktMS4zLDkuNS00YzUuMy01LjMsNS4zLTEzLjgsMC0xOS4xTDE0NS4xODgsMjM4LjU3NXoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiIHN0eWxlPSJmaWxsOiNGRkZGRkYiPjwvcGF0aD4KPC9nPjwvZz4gPC9zdmc+')
          background-position: center
 
@@ -62,17 +70,18 @@
       .h2__title
          margin-bottom: 2em !important
       [class*="col-"]
+         text-align: center
          &:last-child
             margin-bottom: 0
       &__card
          margin-bottom: 0
          text-align: center
          &__title
-            justify-content: center
+            justify-content: flex-start
+            max-width: 180px
+            margin: 0 auto
             img
-               display: none
+               margin-right: 0.5em
             p
+               text-align: left
                font-size: 1em
-      .our__work
-         padding: 0 $gutter
-         padding-bottom: $gutter

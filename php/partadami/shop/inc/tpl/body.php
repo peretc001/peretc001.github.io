@@ -59,7 +59,6 @@
 					<div class="one-half column">
 						<div class="center product_img gallery">
 							<p>
-								
 								<?php if ($category == 'ergonomichnyj_stul' and $url == 'cyt01') { ?>
 									<a href="/shop/img/<?php echo $row['url']; ?>/1.jpg" <?php if ($color == 'cyt_grey') {} else { ?> class="hidden_item"  <?php } ?>>
 										<img src="/shop/img/<?php echo $row['url']; ?>/1.png" alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
@@ -117,11 +116,7 @@
 									</a>
 								
 								<?php } elseif ($category == 'parta_bez_risunka') { 
-									if ($url == '28' or $url == '29') { ?>
-										<a href="/shop/img/<?php echo $row['url']; ?>/<?php if ($package == 'parta_0_stul') { echo 'parta_bez_stula/'; } elseif ($package == 'parta_2_stul') { echo 'parta_so_stulom/'; } else {} ?>1.jpg" <?php if ($color == 'grey' or $color == 'ja_grey') {} else { ?> class="hidden_item"  <?php } ?> data-gallery >
-											<img src="/shop/img/<?php echo $row['url']; ?>/<?php if ($package == 'parta_0_stul') { echo 'parta_bez_stula/'; } elseif ($package == 'parta_2_stul') { echo 'parta_so_stulom/'; } else {} ?>1.png" alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
-										</a>
-									<?php } else { ?>
+									if ($art == '14' or $art == '17')  { ?>
 										<a href="/shop/img/<?php echo $row['url']; ?>/<?php if ($package == 'parta_0_stul') { echo 'parta_bez_stula/'; } elseif ($package == 'parta_2_stul') { echo 'parta_so_stulom/'; } else {} ?>1.jpg" <?php if ($color == 'grey' or $color == 'ja_grey') {} else { ?> class="hidden_item"  <?php } ?>>
 											<img src="/shop/img/<?php echo $row['url']; ?>/<?php if ($package == 'parta_0_stul')  { echo 'parta_bez_stula/'; } elseif ($package == 'parta_2_stul') { echo 'parta_so_stulom/'; } else {} ?>1.png" alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 										</a>
@@ -145,8 +140,31 @@
 												<img src="/shop/img/<?php echo $row['url']; ?>/<?php if ($package == 'parta_0_stul') { echo 'parta_bez_stula/'; } elseif ($package == 'parta_2_stul') { echo 'parta_so_stulom/'; } else {} ?>0.png" alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
 											</a>
 										<?php } ?>
-									<?php } ?>									
-								<?php } ?>								
+										
+									<?php } elseif ($art == '41' or $art == '42' or $art == '43') { ?>
+									<a href="/shop/img/<?php echo $row['url']; ?>/<?php if ($package == 'parta_0_stul') { echo 'parta_bez_stula/'; } ?>1.jpg" <?php if ($color == 'sonoma_grey') {} else { ?> class="hidden_item"  <?php } ?>>
+										<img src="/shop/img/<?php echo $row['url']; ?>/<?php if ($package == 'parta_0_stul') { echo 'parta_bez_stula/'; } ?>1.png" alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
+									</a>
+									<a href="/shop/img/<?php echo $row['url']; ?>/<?php if ($package == 'parta_0_stul') { echo 'parta_bez_stula/'; } ?>2.jpg" <?php if ($color == 'sonoma_pink') {} else { ?> class="hidden_item"  <?php } ?>>
+										<img src="/shop/img/<?php echo $row['url']; ?>/<?php if ($package == 'parta_0_stul') { echo 'parta_bez_stula/'; } ?>2.png" alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
+									</a>
+									<a href="/shop/img/<?php echo $row['url']; ?>/<?php if ($package == 'parta_0_stul') { echo 'parta_bez_stula/'; } ?>3.jpg" <?php if ($color == 'sonoma_blue') {} else { ?> class="hidden_item"  <?php } ?>>
+										<img src="/shop/img/<?php echo $row['url']; ?>/<?php if ($package == 'parta_0_stul') { echo 'parta_bez_stula/'; } ?>3.png" alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
+									</a>
+									<a href="/shop/img/<?php echo $row['url']; ?>/<?php if ($package == 'parta_0_stul') { echo 'parta_bez_stula/'; } ?>4.jpg" <?php if ($color == 'sonoma_turquoise') {} else { ?> class="hidden_item"  <?php } ?>>
+										<img src="/shop/img/<?php echo $row['url']; ?>/<?php if ($package == 'parta_0_stul') { echo 'parta_bez_stula/'; } ?>4.png" alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
+									</a>
+									<a href="/shop/img/<?php echo $row['url']; ?>/<?php if ($package == 'parta_0_stul') { echo 'parta_bez_stula/'; } ?>5.jpg" <?php if ($color == 'sonoma_beige') {} else { ?> class="hidden_item"  <?php } ?>>
+										<img src="/shop/img/<?php echo $row['url']; ?>/<?php if ($package == 'parta_0_stul') { echo 'parta_bez_stula/'; } ?>5.png" alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
+									</a>
+									<a href="/shop/img/<?php echo $row['url']; ?>/<?php if ($package == 'parta_0_stul') { echo 'parta_bez_stula/'; } ?>6.jpg" <?php if ($color == 'dub_grey') {} else { ?> class="hidden_item"  <?php } ?>>
+										<img src="/shop/img/<?php echo $row['url']; ?>/<?php if ($package == 'parta_0_stul') { echo 'parta_bez_stula/'; } ?>6.png" alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
+									</a>
+									<a href="/shop/img/<?php echo $row['url']; ?>/<?php if ($package == 'parta_0_stul') { echo 'parta_bez_stula/'; } ?>7.jpg" <?php if ($color == 'dub_beige') {} else { ?> class="hidden_item"  <?php } ?>>
+										<img src="/shop/img/<?php echo $row['url']; ?>/<?php if ($package == 'parta_0_stul') { echo 'parta_bez_stula/'; } ?>7.png" alt="<?php echo $row['name'] .' '.  $row['model'] ?>">
+									</a>								
+								<?php } ?>
+							<?php } ?>								
 							</p>
 						</div>
 					</div>
@@ -184,9 +202,7 @@
 									<li><a class="refresh__item" href="<?php echo $_SERVER['PHP_SELF'] ?>?color=white_orange"><i class="fa <?php if ($color == 'white_orange') { ?>fa-circle<?php } else { ?>fa-square<?php } ?> orange" aria-hidden="true"></i></a></li>
 								
 								<?php } elseif ($category == "parta_bez_risunka") { ?>
-									<?php if ($url == '28' or $url == '29') { ?>
-										<li><a class="refresh__item" href="<?php echo $_SERVER['PHP_SELF'] ?>?color=grey"><i class="fa <?php if ($color == 'grey' or $color == 'ja_grey') { ?>fa-circle<?php } else { ?>fa-square<?php } ?>  grey" aria-hidden="true"></i></a></li>
-									<?php } else { ?>
+									<?php if ($art == '14' or $art == '17') { ?>
 										<?php if ($art == '14') { ?>
 											<li><a class="refresh__item" href="<?php echo $_SERVER['PHP_SELF'] ?>?color=beige"><i class="fa <?php if ($color == 'beige') { ?>fa-circle<?php } else { ?>fa-square<?php } ?> beige" aria-hidden="true"></i></a></li>
 										<?php }  ?>
@@ -196,8 +212,17 @@
 										<li><a class="refresh__item" href="<?php echo $_SERVER['PHP_SELF'] ?>?color=green"><i class="fa <?php if ($color == 'green') { ?>fa-circle<?php } else { ?>fa-square<?php } ?>  green" aria-hidden="true"></i></a></li>
 										<li><a class="refresh__item" href="<?php echo $_SERVER['PHP_SELF'] ?>?color=orange"><i class="fa <?php if ($color == 'orange') { ?>fa-circle<?php } else { ?>fa-square<?php } ?>  orange" aria-hidden="true"></i></a></li>
 										<li><a class="refresh__item" href="<?php echo $_SERVER['PHP_SELF'] ?>?color=brown"><i class="fa <?php if ($color == 'brown') { ?>fa-circle<?php } else { ?>fa-square<?php } ?>  brown" aria-hidden="true"></i></a></li>
-									<?php }  ?>
-								<?php }  ?>
+
+								<?php }  elseif ($art == '41' or $art == '42' or $art == '43') { ?>
+									<li><a class="refresh__item" href="<?php echo $_SERVER['PHP_SELF'] ?>?color=sonoma_grey"><i class="fa <?php if ($color == 'sonoma_grey') { ?>fa-circle<?php } else { ?>fa-square<?php } ?>  grey" aria-hidden="true"></i></a></li>
+									<li><a class="refresh__item" href="<?php echo $_SERVER['PHP_SELF'] ?>?color=sonoma_pink"><i class="fa <?php if ($color == 'sonoma_pink') { ?>fa-circle<?php } else { ?>fa-square<?php } ?>  pink" aria-hidden="true"></i></a></li>
+									<li><a class="refresh__item" href="<?php echo $_SERVER['PHP_SELF'] ?>?color=sonoma_blue"><i class="fa <?php if ($color == 'sonoma_blue') { ?>fa-circle<?php } else { ?>fa-square<?php } ?>  blue" aria-hidden="true"></i></a></li>
+									<li><a class="refresh__item" href="<?php echo $_SERVER['PHP_SELF'] ?>?color=sonoma_turquoise"><i class="fa <?php if ($color == 'sonoma_turquoise') { ?>fa-circle<?php } else { ?>fa-square<?php } ?>  turquoise" aria-hidden="true"></i></a></li>
+									<li><a class="refresh__item" href="<?php echo $_SERVER['PHP_SELF'] ?>?color=sonoma_beige"><i class="fa <?php if ($color == 'sonoma_beige') { ?>fa-circle<?php } else { ?>fa-square<?php } ?>  beige" aria-hidden="true"></i></a></li>
+									<li><a class="refresh__item" href="<?php echo $_SERVER['PHP_SELF'] ?>?color=dub_grey"><i class="fa <?php if ($color == 'dub_grey') { ?>fa-circle<?php } else { ?>fa-square<?php } ?>  grey" aria-hidden="true"></i></a></li>
+									<li><a class="refresh__item" href="<?php echo $_SERVER['PHP_SELF'] ?>?color=dub_beige"><i class="fa <?php if ($color == 'dub_beige') { ?>fa-circle<?php } else { ?>fa-square<?php } ?>  beige" aria-hidden="true"></i></a></li>
+								<?php } ?>
+							<?php } ?>
 							</ul>
 						</div>
 						
@@ -268,30 +293,16 @@
 								elseif ($color == 'orange' or $color == 'orangef' or $color == 'cyt_orange'  or $color == 'dop_orange' or $color == 'white_orange' or $color == 'yellow_det' ) { echo '5.png'; } 
 								elseif ($color == 'brown' or $color == 'brownf' or $color == 'cyt_beige' or $color == 'dop_beige') { echo '6.png'; } 
 								elseif ($color == 'beige' or $color == 'cyt_white') { echo '0.png'; } 
-								elseif ($color == 'fundesk_grey') { echo '1.png'; } elseif ($color == 'fundesk_pink') { echo '2.png'; } elseif ($color == 'fundesk_blue') { echo '3.png'; } 
 								elseif ($color == 'ja_grey') { echo '1.png'; }
+								elseif ($color == 'sonoma_grey') 		{ echo '1.png'; }
+								elseif ($color == 'sonoma_pink') 		{ echo '2.png'; }
+								elseif ($color == 'sonoma_blue') 		{ echo '3.png'; }
+								elseif ($color == 'sonoma_turquoise') 	{ echo '4.png'; }
+								elseif ($color == 'sonoma_beige') 		{ echo '5.png'; }
+								elseif ($color == 'dub_grey') 			{ echo '6.png'; }
+								elseif ($color == 'dub_beige') 			{ echo '7.png'; }
 
-								elseif ($color == 'mealux_black' or $color == 'mealux_blue_oxford' or $color == 'mealux_blue_champion') { echo '1.jpg'; } 
-								elseif ($color == 'mealux_blue' or $color == 'mealux_darkblue_oxford' or $color == 'mealux_red_champion') { echo '2.jpg'; } 
-								elseif ($color == 'mealux_blue2' or $color == 'mealux_orange2' or $color == 'mealux_red_oxford' or $color == 'mealux_green_champion') { echo '3.jpg'; } 
-								elseif ($color == 'mealux_blue3' or $color == 'mealux_green_oxford' or $color == 'mealux_orange_champion') { echo '4.jpg'; } 
-								elseif ($color == 'mealux_blue4' or $color == 'mealux_violet_champion') { echo '5.jpg'; }	
-								elseif ($color == 'mealux_blue5') { echo '6.jpg'; } 
-								elseif ($color == 'mealux_green') { echo '7.jpg'; } 
-								elseif ($color == 'mealux_green2') { echo '8.jpg'; }
-								elseif ($color == 'mealux_green3') { echo '9.jpg'; }
-								elseif ($color == 'mealux_green4') { echo '10.jpg'; }
-								elseif ($color == 'mealux_orange') { echo '11.jpg'; }
-								elseif ($color == 'mealux_pink') { echo '12.jpg'; }
-								elseif ($color == 'mealux_pink2') { echo '13.jpg'; }
-								elseif ($color == 'mealux_pink3') { echo '14.jpg'; }
-								elseif ($color == 'mealux_red') { echo '15.jpg'; }
-								elseif ($color == 'mealux_red2') { echo '16.jpg'; }
-								elseif ($color == 'mealux_red3') { echo '17.jpg'; }
-								elseif ($color == 'mealux_yellow') { echo '18.jpg'; }
-								elseif ($color == 'mealux_blue_r') { echo '1r.jpg'; }
-								elseif ($color == 'mealux_red_r') { echo '2r.jpg'; }
-								elseif ($color == 'mealux_green_r') { echo '3r.jpg'; }
+								
 							?>">
 							<input class="button addtocar" <?php if ($url == 'piccolino' or $url == 'bambino' or $url == 'lavoro' or $url == 'volare' or $url == 'amare' or $url == 'cyt01' or $art == '15') { ?>disabled<?php } ?> name="button" type="submit" value="В корзину" onclick="yaCounter15357751.reachGoal('CARTORDER'); return true;" >
 						</form>

@@ -164,6 +164,18 @@
          background: $accent
       .sale
          color: $accent2
+      
+.breadcrumb
+   max-width: 1140px
+   margin: 0 auto
+   background: none
+   color: #888
+   a
+      padding-right: 5px
+      padding-left: 5px
+      color: $accent
+      &:first-child
+         padding-left: 0
 
 @media screen and (max-width: 1199.98px)
    .navbar
@@ -173,10 +185,11 @@
             max-width: 960px
             .nav-link
                font-size: 0.9em
+   .breadcrumb
+      max-width: 960px
 
 @media screen and (max-width: 991.98px)
    .navbar
-      font-size: 1em         
       .navbar-collapse
          .navbar-nav
             max-width: 720px
@@ -184,6 +197,8 @@
                font-size: .8em
                &.about
                   display: none
+   .breadcrumb
+      max-width: 720px
 
 @media screen and (max-width: 767.98px)
    .navbar
@@ -210,6 +225,9 @@
                &.about,
                &.nav-phone
                   display: block
+   
+   .breadcrumb
+      max-width: 540px
 
 @media screen and (max-width: 576.98px)
    .navbar

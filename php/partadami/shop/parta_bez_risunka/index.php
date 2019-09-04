@@ -1,7 +1,7 @@
 <?php session_start(); 
 	include $_SERVER['DOCUMENT_ROOT'] .'/inc/config.php';
 
-	$art = htmlspecialchars(trim($_GET['art']));			if ($art == '' or $art == '13' or $art == '15' or $art == '28' or $art == '29') {$art = '14'; }
+	$art = htmlspecialchars(trim($_GET['art']));			if ($art == '' or $art == '13' or $art == '15' or $art == '28' or $art == '29') {$art = '41'; }
 	$package = htmlspecialchars(trim($_GET['package'])); 	if ($package == '') {$package = 'parta_0_stul'; } 
 
 	$title = mysql_query("SELECT * FROM ". $package ." WHERE category = 'parta_bez_risunka' and art = '$art' ORDER by id asc "); 
@@ -28,7 +28,7 @@
 			<?php include $_SERVER['DOCUMENT_ROOT'] .'/shop/inc/tpl/filter_m.php'; ?>
 			
 			<div class="two-thirds column list-product">
-				<?php 	$cyt14 = mysql_query("SELECT * FROM ". $package ." WHERE category = 'parta_bez_risunka' and art = '$art' "); 
+				<?php 	$cyt14 = mysql_query("SELECT * FROM ". $package ." WHERE category = 'parta_bez_risunka' and art = '$art' ORDER by id asc"); 
 					while( $row = mysql_fetch_array($cyt14) ) {
 				?><div class="row product-list-all">
 					<div class="one-third column  product-list-img center">
@@ -60,7 +60,15 @@
 								<li><a href="/shop/<?php echo $row['category']; ?>/cyt<?php echo $row['art']; ?><?php if ($package == 'parta_0_stul') { echo "/bez_stula"; }?>/parta_cyt<?php echo $row['url']; ?><?php if ($package == '' or $package == 'parta_1_stul') { echo "_so_stulom_cyt01-01"; } ?>.php?color=green"><i class="fa fa-square green" aria-hidden="true"></i></a></li>
 								<li><a href="/shop/<?php echo $row['category']; ?>/cyt<?php echo $row['art']; ?><?php if ($package == 'parta_0_stul') { echo "/bez_stula"; }?>/parta_cyt<?php echo $row['url']; ?><?php if ($package == '' or $package == 'parta_1_stul') { echo "_so_stulom_cyt01-01"; } ?>.php?color=orange"><i class="fa fa-square orange" aria-hidden="true"></i></a></li>
 								<li><a href="/shop/<?php echo $row['category']; ?>/cyt<?php echo $row['art']; ?><?php if ($package == 'parta_0_stul') { echo "/bez_stula"; }?>/parta_cyt<?php echo $row['url']; ?><?php if ($package == '' or $package == 'parta_1_stul') { echo "_so_stulom_cyt01-01"; } ?>.php?color=brown"><i class="fa fa-square brown" aria-hidden="true"></i></a></li>
-							<?php } else { ?>
+							<?php } elseif ($art == '41' or $art == '42' or $art == '43') { ?>
+								<li><a href="/shop/<?php echo $row['category']; ?>/cyt<?php echo $row['art']; ?><?php if ($package == 'parta_0_stul') { echo "/bez_stula"; }?>/parta_cyt<?php echo $row['url']; ?><?php if ($package == '' or $package == 'parta_1_stul') { echo "_so_stulom_cyt01-01"; } ?>.php?color=sonoma_grey"><i class="fa fa-square grey" aria-hidden="true"></i></a></li>
+								<li><a href="/shop/<?php echo $row['category']; ?>/cyt<?php echo $row['art']; ?><?php if ($package == 'parta_0_stul') { echo "/bez_stula"; }?>/parta_cyt<?php echo $row['url']; ?><?php if ($package == '' or $package == 'parta_1_stul') { echo "_so_stulom_cyt01-01"; } ?>.php?color=sonoma_pink"><i class="fa fa-square pink" aria-hidden="true"></i></a></li>
+								<li><a href="/shop/<?php echo $row['category']; ?>/cyt<?php echo $row['art']; ?><?php if ($package == 'parta_0_stul') { echo "/bez_stula"; }?>/parta_cyt<?php echo $row['url']; ?><?php if ($package == '' or $package == 'parta_1_stul') { echo "_so_stulom_cyt01-01"; } ?>.php?color=sonoma_blue"><i class="fa fa-square blue" aria-hidden="true"></i></a></li>
+								<li><a href="/shop/<?php echo $row['category']; ?>/cyt<?php echo $row['art']; ?><?php if ($package == 'parta_0_stul') { echo "/bez_stula"; }?>/parta_cyt<?php echo $row['url']; ?><?php if ($package == '' or $package == 'parta_1_stul') { echo "_so_stulom_cyt01-01"; } ?>.php?color=sonoma_turquoise"><i class="fa fa-square turquoise" aria-hidden="true"></i></a></li>
+								<li><a href="/shop/<?php echo $row['category']; ?>/cyt<?php echo $row['art']; ?><?php if ($package == 'parta_0_stul') { echo "/bez_stula"; }?>/parta_cyt<?php echo $row['url']; ?><?php if ($package == '' or $package == 'parta_1_stul') { echo "_so_stulom_cyt01-01"; } ?>.php?color=sonoma_beige"><i class="fa fa-square beige" aria-hidden="true"></i></a></li>
+								<li><a href="/shop/<?php echo $row['category']; ?>/cyt<?php echo $row['art']; ?><?php if ($package == 'parta_0_stul') { echo "/bez_stula"; }?>/parta_cyt<?php echo $row['url']; ?><?php if ($package == '' or $package == 'parta_1_stul') { echo "_so_stulom_cyt01-01"; } ?>.php?color=dub_grey"><i class="fa fa-square grey" aria-hidden="true"></i></a></li>
+								<li><a href="/shop/<?php echo $row['category']; ?>/cyt<?php echo $row['art']; ?><?php if ($package == 'parta_0_stul') { echo "/bez_stula"; }?>/parta_cyt<?php echo $row['url']; ?><?php if ($package == '' or $package == 'parta_1_stul') { echo "_so_stulom_cyt01-01"; } ?>.php?color=dub_beige"><i class="fa fa-square beige" aria-hidden="true"></i></a></li>
+								<?php } else { ?>
 								<li><a href="/shop/<?php echo $row['category']; ?>/cyt<?php echo $row['art']; ?><?php if ($package == 'parta_0_stul') { echo "/bez_stula"; }?>/parta_cyt<?php echo $row['url']; ?><?php if ($package == '' or $package == 'parta_1_stul') { echo "_so_stulom_cyt01-01"; } ?>.php?color=grey"><i class="fa fa-square grey" aria-hidden="true"></i></a></li>
 								<li><a href="/shop/<?php echo $row['category']; ?>/cyt<?php echo $row['art']; ?><?php if ($package == 'parta_0_stul') { echo "/bez_stula"; }?>/parta_cyt<?php echo $row['url']; ?><?php if ($package == '' or $package == 'parta_1_stul') { echo "_so_stulom_cyt01-01"; } ?>.php?color=pink"><i class="fa fa-square pink" aria-hidden="true"></i></a></li>
 								<li><a href="/shop/<?php echo $row['category']; ?>/cyt<?php echo $row['art']; ?><?php if ($package == 'parta_0_stul') { echo "/bez_stula"; }?>/parta_cyt<?php echo $row['url']; ?><?php if ($package == '' or $package == 'parta_1_stul') { echo "_so_stulom_cyt01-01"; } ?>.php?color=blue"><i class="fa fa-square blue" aria-hidden="true"></i></a></li>

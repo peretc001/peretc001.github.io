@@ -6,7 +6,10 @@
       margin-bottom: 2em
       text-align: center
       img
+         display: block
          width: 6em
+         text-align: center
+         margin: 0 auto
          margin-bottom: 1em
          transition: transform .3s ease
       p
@@ -15,6 +18,9 @@
       &:hover
          img
             transform: rotate(5deg)
+      &.left,
+      &.right
+         text-align: left
 
 @media screen and (max-width: 767.98px)
    .oplata
