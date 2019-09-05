@@ -84,7 +84,9 @@ is_float((float)$_POST['width']) || is_integer((int)$_POST['width']) ? $width = 
 is_float((float)$_POST['height']) || is_integer((int)$_POST['height']) ? $height = $_POST['height'] : $height = null;
 is_float((float)$_POST['step']) || is_integer((int)$_POST['step']) ? $step = $_POST['step'] : $step = null;
 is_float((float)$_POST['step']) || is_integer((int)$_POST['step']) ? $step_id = (float)$_POST['step'] : $step_id = null;
-is_float((float)$_POST['warranty-room']) || is_integer((int)$_POST['warranty-room']) ? $warrantyRoom = $_POST['warranty-room'] : $warrantyRoom = null;
+is_float((float)$_POST['warranty-room']) || is_integer((int)$_POST['warranty-room']) ? $warrantyRoom = (int)$_POST['warranty-room'] : $warrantyRoom = null;
+is_float((float)$_POST['warranty-street']) || is_integer((int)$_POST['warranty-street']) ? $warrantyStreet = (int)$_POST['warranty-street'] : $warrantyStreet = null;
+is_float((float)$_POST['warranty-media']) || is_integer((int)$_POST['warranty-media']) ? $warrantyMedia = (int)$_POST['warranty-media'] : $warrantyMedia = null;
 ((bool)$_POST['delivery'] != null) ? $delivery = $deliveryPrice : $delivery = null;
 //Проверка доп полей и внесение их в массив
 for($i = 1; $i <= 6; $i++) {
@@ -124,13 +126,22 @@ if($calcSettingupOption != null) {
 //Достаем цену шага
 $step = $stepsPrice[$step]['price'];
 
+if ( $warrantyRoom != null )           $garanty = $warrantyRoom;
+else if ( $warrantyStreet != null )    $garanty = $warrantyStreet;
+else if ( $warrantyMedia  != null )    $garanty = $warrantyMedia;
+else $garanty = 2;
+
 //Достаем процент гарантии
-$warranty = $warrantyPercent[$warrantyRoom]['price'];
+$warranty = $warrantyPercent[$garanty]['price'];
 
 if($id == 3) {
-   $col = $width*$height;   
+   $col = $width*$height;
+   $x = $width;
+   $y = $height;
 } else {
    $col = $width/0.96*$height/0.96;
+   $x = $width/0.96;
+   $y = $height/0.96;
 }
 
 //Цена LED экрана
@@ -142,8 +153,9 @@ $calc = (($col*$step)*$warranty)*$dollor + $dop + $delivery + $settingup;
 $square = $width*$height;
 
 
-$pixel_w = 320/$step_id*$width;
-$pixel_y = 160/$step_id*$height;
+
+$pixel_w = 320/$step_id*$x;
+$pixel_y = 160/$step_id*$y;
 
 $pixel = $pixel_w .' x '. $pixel_y;
 
@@ -159,7 +171,8 @@ $response = [
    'step' => $step_id,
    'step_name' => $step_name,
    'pixel_w' => round($pixel_w, 0),
-   'pixel_y' => round($pixel_y, 0)
+   'pixel_y' => round($pixel_y, 0),
+   'garanty' => $garanty
 ];
 echo json_encode($response);
 ?>

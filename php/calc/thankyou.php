@@ -47,6 +47,9 @@ if ($_POST['phone'] != '' and $_POST['human'] == 'human') {
 		$message .= 'Доставка: <b>'. $_POST['delivery'] .'</b><br>';
 		$message .= 'Итого: <b>'. $_POST['total'] .'</b><br>';
 	}
+	if($_POST['commercial']) {
+		$message .= 'Ссылка на коммерческое предложение: <a href="http://calcled.skipao.site'. $_POST['commercial'] .'">Скачать</a>';
+	}
 		mail($to, $subject, $message, $headers);
 	?>
 	<div class="send_ok">

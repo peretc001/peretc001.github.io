@@ -162,7 +162,7 @@
                   <option selected>5</option>
                 </select>
       
-                <p class="step---name first---step---name">Р-5мм-192х192мм</p>
+                <p class="step---name first---step---name">Р-5мм-64х32мм</p>
       
                 <div class="block-inline">
                   <p class="name-block">Гарантия</p>
@@ -316,28 +316,34 @@
         <div class="content---first-line">
           <div class="options-first-block-big">
             <p class="caption-block">Видеоэкран для помещения</p>
-            <p id="name-room-module-p" class="caption-block-n first---step---name">P-5мм-192x192мм</p>
+            <p id="name-room-module-p" class="caption-block-n first---step---name">P-5мм-64x32мм</p>
             
             <div class="options-first-block-big-flex">
               
               <div class="options-first-block">
-                <i class="fa fa-arrows-alt options-first-block__icon" aria-hidden="true"></i>
+                <div class="options-first-block__icon" aria-hidden="true">
+                  <img src="./img/icon/size.svg">
+                </div>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Размер экрана</p>
-                  <p class="options-first-block-caption__size option-first-size" id="size-room">192 х 192 мм</p>
+                  <p class="options-first-block-caption__size option-first-size" id="size-room">960 x 960 мм</p>
                 </div>
               </div>
 
               <div class="options-first-block">
-                <i class="fa fa-picture-o options-first-block__icon" aria-hidden="true"></i>
+                <div class="options-first-block__icon" aria-hidden="true">
+                  <img src="./img/icon/photo-size.svg">
+                </div>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Разрешение экрана</p>
-                  <p class="options-first-block-caption__size first---step--size" id="resolution-room">192 х 192 px</p>
+                  <p class="options-first-block-caption__size first---step--size" id="resolution-room">64 x 32 px</p>
                 </div>
               </div>
 
               <div class="options-first-block">
-                <i class="fa fa-square options-first-block__icon" aria-hidden="true"></i>
+                <div class="options-first-block__icon" aria-hidden="true">
+                  <img src="./img/icon/reduce.svg">
+                </div>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Шаг пикселя</p>
                   <p class="options-first-block-caption__size option-first-step" id="step-pixel-room">5 мм</p>
@@ -345,10 +351,12 @@
               </div>
 
               <div class="options-first-block">
-                <i class="fa fa-get-pocket options-first-block__icon" aria-hidden="true"></i>
+                <div class="options-first-block__icon" aria-hidden="true">
+                  <img src="./img/icon/guarantee.svg">
+                </div>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Гарантия</p>
-                  <p class="options-first-block-caption__size option-first-warranty" id="safe-room">1 год</p>
+                  <p class="options-first-block-caption__size option-first-warranty" id="safe-room">2 года</p>
                 </div>
               </div>
     
@@ -356,59 +364,7 @@
           </div>
           <div class="content---first-line---img">
             <div class="img---wrapper">
-              <img src="img/content---first.png">
-            </div>
-          </div>
-        </div>
-        
-        <div class="options-second-block-big">
-          <p class="caption-block">Характеристики</p>
-  
-          <div class="options-second-block-big-photo">
-            <div class="content---second-line---img">
-              <div class="img---wrapper">
-                <img src="img/1235_site-758130484.jpg">
-              </div>
-            </div>
-            <div class="options-second-block-big-photo-block">
-              <p class="caption-block caption-block-par">Параметры модуля</p>
-              <ul class="options-second-block-big-photo-block__list">
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname">Шаг пикселя</span>
-                  <span class="dotted"></span>
-                  <span class="parval option-first-step" id="step-room">5 мм</span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname">Конфигурация светодиодов</span>
-                  <span class="dotted"></span>
-                  <span class="parval" id ="conf-room">SMD 3in1 1RGB</span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname">Производитель светодиодов</span>
-                  <span class="dotted"></span>
-                  <span class="parval" id="proiz-room">NationStar SMD2121</span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname">Размер модуля</span>
-                  <span class="dotted"></span>
-                  <span class="parval" id="size-room-module">256 х 128 мм</span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname">Разрешение модуля</span>
-                  <span class="dotted"></span>
-                  <span class="parval" id="raz-room">32 х 64 px</span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname">Контрастность</span>
-                  <span class="dotted"></span>
-                  <span class="parval" id="cont-room">3000:1</span>
-                </li>
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname">Цветовая температура (°К)</span>
-                  <span class="dotted"></span>
-                  <span class="parval" id="color-room">3200 ~ 9300° K</span>
-                </li>
-              </ul>
+              <img class="content---first---img" src="./img/tab1/step---5.jpg">
             </div>
           </div>
         </div>
@@ -463,6 +419,58 @@
           </div>
         </div>
 
+        <div class="options-second-block-big">
+          <p class="caption-block">Характеристики</p>
+  
+          <div class="options-second-block-big-photo">
+            <div class="content---second-line---img">
+              <div class="img---wrapper">
+                <img src="img/1235_site-758130484.jpg">
+              </div>
+            </div>
+            <div class="options-second-block-big-photo-block">
+              <p class="caption-block caption-block-par">Параметры модуля</p>
+              <ul class="options-second-block-big-photo-block__list">
+                <li class="options-second-block-big-photo-block__item">
+                  <span class="parname">Шаг пикселя</span>
+                  <span class="dotted"></span>
+                  <span class="parval option-first-step" id="step-room">5 мм</span>
+                </li>
+                <li class="options-second-block-big-photo-block__item">
+                  <span class="parname">Конфигурация светодиодов</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id ="conf-room">SMD 3in1 1RGB</span>
+                </li>
+                <li class="options-second-block-big-photo-block__item">
+                  <span class="parname">Производитель светодиодов</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="proiz-room">NationStar SMD2121</span>
+                </li>
+                <li class="options-second-block-big-photo-block__item">
+                  <span class="parname">Размер модуля</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="size-room-module">256 х 128 мм</span>
+                </li>
+                <li class="options-second-block-big-photo-block__item">
+                  <span class="parname">Разрешение модуля</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="raz-room">32 х 64 px</span>
+                </li>
+                <li class="options-second-block-big-photo-block__item">
+                  <span class="parname">Контрастность</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="cont-room">3000:1</span>
+                </li>
+                <li class="options-second-block-big-photo-block__item">
+                  <span class="parname">Цветовая температура (°К)</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="color-room">3200 ~ 9300° K</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         <div class="options-fourth-block-big">
           <div class="options-fourth-block-big-photo">
             <p class="caption-block caption-block-par">Параметры Экрана</p>
@@ -475,7 +483,7 @@
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Разрешение экрана</span>
                 <span class="dotted-fourth"></span>
-                <span class="parval-fourth first---step--size" id="resolution-screen-room">192 x 192 px</span>
+                <span class="parval-fourth first---step--size" id="resolution-screen-room">64 x 32 px</span>
               </li>
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Кол-во кабинетов</span>
@@ -670,7 +678,11 @@
                     </div>
                     <span>Согласен с условиями <a href="/policy/" target="_blank">Политики конфиденциальности</a></span>
                   </div>
+
+                  <a class="commercial--first" href="./pdf.php?tab=1&step_name=P-5%D0%BC%D0%BC-64x32%D0%BC%D0%BC&width=960&height=960&pixel_w=64&pixel_y=32&step=5&garanty=2&square=0.92&settingup=0&led=50050&control=0&delivery=0&price=50050">Коммерческое предложение</a>
+                  <input type="hidden" name="commercial" class="commercial--first--input" value="/pdf.php?tab=1&step_name=P-5%D0%BC%D0%BC-64x32%D0%BC%D0%BC&width=960&height=960&pixel_w=64&pixel_y=32&step=5&garanty=2&square=0.92&settingup=0&led=50050&control=0&delivery=0&price=50050">
                   <input type="submit" value="Отправить" class="form-submit  callback__form__button">
+
                 </form>
               </div>
             </div>
@@ -730,7 +742,7 @@
                 <option selected>10</option>
               </select>
     
-              <p class="step---name second---step---name">Р-10мм-96х96мм</p>
+              <p class="step---name second---step---name">Р-10мм-32х16мм</p>
     
               <div class="block-inline">
                 <p class="name-block">Гарантия</p>
@@ -740,15 +752,15 @@
               <div class="warranty-room-big-block">
                 <div class="warranty-room-big-block---year">
                   <div class="warranty-room-block">
-                    <input type="radio" name="warranty-room" id="warranty-street1" class="warranty-room__radio" value="1">
+                    <input type="radio" name="warranty-street" id="warranty-street1" class="warranty-room__radio" value="1">
                     <label for="warranty-street1"><span></span>1 год</label>
                   </div>
                   <div class="warranty-room-block">
-                    <input type="radio" name="warranty-room" id="warranty-street2" class="warranty-room__radio" value="2" checked>
+                    <input type="radio" name="warranty-street" id="warranty-street2" class="warranty-room__radio" value="2" checked>
                     <label for="warranty-street2"><span></span>2 года</label>
                   </div>
                   <div class="warranty-room-block">
-                    <input type="radio" name="warranty-room" id="warranty-street3" class="warranty-room__radio" value="3">
+                    <input type="radio" name="warranty-street" id="warranty-street3" class="warranty-room__radio" value="3">
                     <label for="warranty-street3"><span></span>3 года</label>
                   </div>
                 </div>
@@ -890,11 +902,13 @@
         <div class="content---first-line">
           <div class="options-first-block-big">
             <p class="caption-block">Видеоэкран для улицы</p>
-            <p id="name-street-module-p" class="caption-block-n second---step---name">Р-10мм-192х192мм</p>
+            <p id="name-street-module-p" class="caption-block-n second---step---name">Р-10мм-32х16мм</p>
     
             <div class="options-first-block-big-flex">
               <div class="options-first-block">
-                <i class="fa fa-arrows-alt options-first-block__icon" aria-hidden="true"></i>
+                <div class="options-first-block__icon" aria-hidden="true">
+                  <img src="./img/icon/size.svg">
+                </div>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Размер экрана</p>
                   <p class="options-first-block-caption__size option-second-size" id="size-street">960 x 960 мм</p>
@@ -903,28 +917,34 @@
     
     
               <div class="options-first-block">
-                <i class="fa fa-picture-o options-first-block__icon" aria-hidden="true"></i>
+                <div class="options-first-block__icon" aria-hidden="true">
+                  <img src="./img/icon/photo-size.svg">
+                </div>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Разрешение экрана</p>
-                  <p class="options-first-block-caption__size second---step--size" id="resolution-street">96 x 96 px</p>
+                  <p class="options-first-block-caption__size second---step--size" id="resolution-street">32 x 16 px</p>
                 </div>
               </div>
     
     
               <div class="options-first-block">
-                <i class="fa fa-square options-first-block__icon" aria-hidden="true"></i>
+                <div class="options-first-block__icon" aria-hidden="true">
+                  <img src="./img/icon/reduce.svg">
+                </div>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Шаг пикселя</p>
-                  <p class="options-first-block-caption__size option-second-step" id="step-pixel-street">4</p>
+                  <p class="options-first-block-caption__size option-second-step" id="step-pixel-street">10 мм</p>
                 </div>
               </div>
     
     
               <div class="options-first-block">
-                <i class="fa fa-get-pocket options-first-block__icon" aria-hidden="true"></i>
+                <div class="options-first-block__icon" aria-hidden="true">
+                  <img src="./img/icon/guarantee.svg">
+                </div>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Гарантия</p>
-                  <p class="options-first-block-caption__size warranty-street-big-block---year" id="safe-street">1 год</p>
+                  <p class="options-first-block-caption__size option-second-warranty" id="safe-street">2 года</p>
                 </div>
               </div>
     
@@ -933,7 +953,57 @@
           </div>
           <div class="content---first-line---img">
             <div class="img---wrapper">
-              <img src="img/content---first.png">
+              <img class="content---second---img" src="./img/tab2/step---10.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="options-third-block-big">
+          <p class="caption-block caption-block-par">Параметры кабинета</p>
+          <div class="options-third-block-big-photo">
+            <div class="options-third-block-big-photo-block">
+              <ul class="options-third-block-big-photo-block__list">
+                <li class="options-second-block-big-photo-block__item">
+                  <span class="parname">Размер кабинета</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="size-cab-street">768 x 768 мм</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Доступ для обслуживания экрана</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id ="dost-obs-street">Тыльное</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Вес (кг/м2)</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="weight-street">32.00</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Плотность пикселей на м2</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="density-street">62500</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Потребляемая мощность макс / сред, Вт/м2</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="power-street">1000 / 500</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Частота обновления (Гц)</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="frequency-update-street">960</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Частота кадра (Гц)</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="frequency-screen-street">50/60</span>
+                </li>
+              </ul>
+            </div>
+            <div class="content---third-line---img">
+              <div class="img---wrapper">
+                <img src="img/0020_875x492_3e6.jpg">
+              </div>
             </div>
           </div>
         </div>
@@ -990,56 +1060,6 @@
           </div>
         </div>
 
-        <div class="options-third-block-big">
-          <p class="caption-block caption-block-par">Параметры кабинета</p>
-          <div class="options-third-block-big-photo">
-            <div class="options-third-block-big-photo-block">
-              <ul class="options-third-block-big-photo-block__list">
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname">Размер кабинета</span>
-                  <span class="dotted"></span>
-                  <span class="parval" id="size-cab-street">768 x 768 мм</span>
-                </li>
-                <li class="options-third-block-big-photo-block__item">
-                  <span class="parname">Доступ для обслуживания экрана</span>
-                  <span class="dotted"></span>
-                  <span class="parval" id ="dost-obs-street">Тыльное</span>
-                </li>
-                <li class="options-third-block-big-photo-block__item">
-                  <span class="parname">Вес (кг/м2)</span>
-                  <span class="dotted"></span>
-                  <span class="parval" id="weight-street">32.00</span>
-                </li>
-                <li class="options-third-block-big-photo-block__item">
-                  <span class="parname">Плотность пикселей на м2</span>
-                  <span class="dotted"></span>
-                  <span class="parval" id="density-street">62500</span>
-                </li>
-                <li class="options-third-block-big-photo-block__item">
-                  <span class="parname">Потребляемая мощность макс / сред, Вт/м2</span>
-                  <span class="dotted"></span>
-                  <span class="parval" id="power-street">1000 / 500</span>
-                </li>
-                <li class="options-third-block-big-photo-block__item">
-                  <span class="parname">Частота обновления (Гц)</span>
-                  <span class="dotted"></span>
-                  <span class="parval" id="frequency-update-street">960</span>
-                </li>
-                <li class="options-third-block-big-photo-block__item">
-                  <span class="parname">Частота кадра (Гц)</span>
-                  <span class="dotted"></span>
-                  <span class="parval" id="frequency-screen-street">50/60</span>
-                </li>
-              </ul>
-            </div>
-            <div class="content---third-line---img">
-              <div class="img---wrapper">
-                <img src="img/0020_875x492_3e6.jpg">
-              </div>
-            </div>
-          </div>
-        </div>
-
         <div class="options-fourth-block-big">
           <div class="options-fourth-block-big-photo">
             <p class="caption-block caption-block-par">Параметры Экрана</p>
@@ -1052,7 +1072,7 @@
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Разрешение экрана</span>
                 <span class="dotted-fourth"></span>
-                <span class="parval-fourth second---step--size" id="resolution-screen-street">240 x 240 px</span>
+                <span class="parval-fourth second---step--size" id="resolution-screen-street">32 x 16 px</span>
               </li>
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Кол-во кабинетов</span>
@@ -1246,6 +1266,8 @@
                     </div>
                     <span>Согласен с условиями <a href="/policy/" target="_blank">Политики конфиденциальности</a></span>
                   </div>
+                  <a class="commercial--second" href="./pdf.php?tab=2&step_name=P-10%D0%BC%D0%BC-32x16%D0%BC%D0%BC&width=960&height=960&pixel_w=32&pixel_y=16&step=10&garanty=2&square=0.92&settingup=0&led=46150&control=0&delivery=0&price=46150">Коммерческое предложение</a>
+                  <input type="hidden" name="commercial" class="commercial--second--input" value="/pdf.php?tab=2&step_name=P-10%D0%BC%D0%BC-32x16%D0%BC%D0%BC&width=960&height=960&pixel_w=32&pixel_y=16&step=10&garanty=2&square=0.92&settingup=0&led=46150&control=0&delivery=0&price=46150">
                   <input type="submit" value="Отправить" class="form-submit  callback__form__button">
                 </form>
               </div>
@@ -1304,13 +1326,7 @@
                 <option value="16.6" selected>16.6x16.6</option> -->
               </select>
     
-              <p class="step---name third---step---name">Р-31мм-19x38мм</p>
-    
-              <!-- <p class="name-block">Выберите яркость</p>
-              <select class="select-css">
-                <option>Яркий</option>
-                <option>Повышеная яркость</option>
-              </select> -->
+              <p class="step---name third---step---name">Р-31мм-10x5мм</p>
     
               <div class="block-inline">
                 <p class="name-block">Гарантия</p>
@@ -1320,15 +1336,15 @@
               <div class="warranty-room-big-block">
                 <div class="warranty-room-big-block---year warranty-media-big-block---year">
                   <div class="warranty-room-block">
-                    <input type="radio" name="warranty-room" id="warranty-media1" class="warranty-room__radio" value="1">
+                    <input type="radio" name="warranty-media" id="warranty-media1" class="warranty-room__radio" value="1">
                     <label for="warranty-media1"><span></span>1 год</label>
                   </div>
                   <div class="warranty-room-block">
-                    <input type="radio" name="warranty-room" id="warranty-media2" class="warranty-room__radio" value="2" checked>
+                    <input type="radio" name="warranty-media" id="warranty-media2" class="warranty-room__radio" value="2" checked>
                     <label for="warranty-media2"><span></span>2 года</label>
                   </div>
                   <div class="warranty-room-block">
-                    <input type="radio" name="warranty-room" id="warranty-media3" class="warranty-room__radio" value="3">
+                    <input type="radio" name="warranty-media" id="warranty-media3" class="warranty-room__radio" value="3">
                     <label for="warranty-media3"><span></span>3 года</label>
                   </div>
                 </div>
@@ -1336,11 +1352,6 @@
                     <a class="form-modal" href="#" class="get-room-pred-text" data-toggle="modal" data-target="#tab3_modal2">Получить ком. предложение</a>
                 </div>
               </div>
-
-              <!--<div style="margin-top: 10px;">
-                <span class="name-block"> Введите курс доллара</span>
-                <input type="text" id="kurs-dollar-media">
-              </div>-->
     
               <div class="result-room-block">
                 <div class="result-room-block-price">
@@ -1470,11 +1481,13 @@
         <div class="content---first-line">
           <div class="options-first-block-big">
             <p class="caption-block">Медиафасад</p>
-            <p id="name-media-module-p" class="caption-block-n third---step---name">Р-31мм-19x38мм</p>
+            <p id="name-media-module-p" class="caption-block-n third---step---name">Р-31мм-10x5мм</p>
     
             <div class="options-first-block-big-flex">
               <div class="options-first-block">
-                <i class="fa fa-arrows-alt options-first-block__icon" aria-hidden="true"></i>
+                <div class="options-first-block__icon" aria-hidden="true">
+                  <img src="./img/icon/size.svg">
+                </div>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Размер экрана</p>
                   <p class="options-first-block-caption__size option-third-size" id="size-media">1000 x 1000 мм</p>
@@ -1483,16 +1496,20 @@
     
     
               <div class="options-first-block">
-                <i class="fa fa-picture-o options-first-block__icon" aria-hidden="true"></i>
+                <div class="options-first-block__icon" aria-hidden="true">
+                  <img src="./img/icon/photo-size.svg">
+                </div>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Разрешение экрана</p>
-                  <p class="options-first-block-caption__size third---step--size" id="resolution-media">31 х 31 px</p>
+                  <p class="options-first-block-caption__size third---step--size" id="resolution-media">10 х 5 px</p>
                 </div>
               </div>
     
     
               <div class="options-first-block">
-                <i class="fa fa-square options-first-block__icon" aria-hidden="true"></i>
+                <div class="options-first-block__icon" aria-hidden="true">
+                  <img src="./img/icon/reduce.svg">
+                </div>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Шаг пикселя</p>
                   <p class="options-first-block-caption__size option-third-step" id="step-pixel-media">31х31</p>
@@ -1501,7 +1518,9 @@
     
     
               <div class="options-first-block">
-                <i class="fa fa-get-pocket options-first-block__icon" aria-hidden="true"></i>
+                <div class="options-first-block__icon" aria-hidden="true">
+                  <img src="./img/icon/guarantee.svg">
+                </div>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Гарантия</p>
                   <p class="options-first-block-caption__size option-third-warranty" id="safe-media">2 года</p>
@@ -1513,7 +1532,57 @@
           </div>
           <div class="content---first-line---img">
             <div class="img---wrapper">
-              <img src="img/content---first.png">
+            <img class="content---third---img" src="./img/tab3/step---31.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="options-third-block-big">
+          <p class="caption-block caption-block-par">Параметры кабинета</p>
+          <div class="options-third-block-big-photo">
+            <div class="options-third-block-big-photo-block">
+              <ul class="options-third-block-big-photo-block__list">
+                <li class="options-second-block-big-photo-block__item">
+                  <span class="parname">Размер кабинета</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="size-cab-media">640 x 640 мм</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Доступ для обслуживания экрана</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id ="dost-obs-media">Фронтальное/с тыльной стороны</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Вес (кг/м2)</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="weight-media">38.00</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Плотность пикселей на м2</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="density-media">1600</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Потребляемая мощность макс / сред, Вт/м2</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="power-media">550 / 230</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Частота обновления (Гц)</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="frequency-update-media">3840</span>
+                </li>
+                <li class="options-third-block-big-photo-block__item">
+                  <span class="parname">Частота кадра (Гц)</span>
+                  <span class="dotted"></span>
+                  <span class="parval" id="frequency-screen-media">50/60</span>
+                </li>
+              </ul>
+            </div>
+            <div class="content---third-line---img">
+              <div class="img---wrapper">
+                <img src="img/0020_875x492_3e6.jpg">
+              </div>
             </div>
           </div>
         </div>
@@ -1566,56 +1635,6 @@
                   <span class="parval" id="color-media">3200 ~ 9300° K</span>
                 </li>
               </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="options-third-block-big">
-          <p class="caption-block caption-block-par">Параметры кабинета</p>
-          <div class="options-third-block-big-photo">
-            <div class="options-third-block-big-photo-block">
-              <ul class="options-third-block-big-photo-block__list">
-                <li class="options-second-block-big-photo-block__item">
-                  <span class="parname">Размер кабинета</span>
-                  <span class="dotted"></span>
-                  <span class="parval" id="size-cab-media">640 x 640 мм</span>
-                </li>
-                <li class="options-third-block-big-photo-block__item">
-                  <span class="parname">Доступ для обслуживания экрана</span>
-                  <span class="dotted"></span>
-                  <span class="parval" id ="dost-obs-media">Фронтальное/с тыльной стороны</span>
-                </li>
-                <li class="options-third-block-big-photo-block__item">
-                  <span class="parname">Вес (кг/м2)</span>
-                  <span class="dotted"></span>
-                  <span class="parval" id="weight-media">38.00</span>
-                </li>
-                <li class="options-third-block-big-photo-block__item">
-                  <span class="parname">Плотность пикселей на м2</span>
-                  <span class="dotted"></span>
-                  <span class="parval" id="density-media">1600</span>
-                </li>
-                <li class="options-third-block-big-photo-block__item">
-                  <span class="parname">Потребляемая мощность макс / сред, Вт/м2</span>
-                  <span class="dotted"></span>
-                  <span class="parval" id="power-media">550 / 230</span>
-                </li>
-                <li class="options-third-block-big-photo-block__item">
-                  <span class="parname">Частота обновления (Гц)</span>
-                  <span class="dotted"></span>
-                  <span class="parval" id="frequency-update-media">3840</span>
-                </li>
-                <li class="options-third-block-big-photo-block__item">
-                  <span class="parname">Частота кадра (Гц)</span>
-                  <span class="dotted"></span>
-                  <span class="parval" id="frequency-screen-media">50/60</span>
-                </li>
-              </ul>
-            </div>
-            <div class="content---third-line---img">
-              <div class="img---wrapper">
-                <img src="img/0020_875x492_3e6.jpg">
-              </div>
             </div>
           </div>
         </div>
@@ -1756,7 +1775,7 @@
         </div>
 
 
-        <!-- Modal TAB1_MODAL1 -->
+        <!-- Modal TAB3_MODAL1 -->
         <div class="modal fade" id="tab3_modal1" tabindex="-1" role="dialog" aria-labelledby="Замер" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -1789,7 +1808,7 @@
             </div>
         </div>
   
-        <!-- Modal TAB1_MODAL2 -->
+        <!-- Modal TAB3_MODAL2 -->
         <div class="modal fade" id="tab3_modal2" tabindex="-1" role="dialog" aria-labelledby="Замер" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -1827,6 +1846,8 @@
                     </div>
                     <span>Согласен с условиями <a href="/policy/" target="_blank">Политики конфиденциальности</a></span>
                   </div>
+                  <a class="commercial--third" href="./pdf.php?tab=3&step_name=P-31%D0%BC%D0%BC-10x5%D0%BC%D0%BC&width=1000&height=1000&pixel_w=10&pixel_y=5&step=31&garanty=2&square=1&settingup=0&led=74425&control=0&delivery=0&price=74425">Коммерческое предложение</a>
+                  <input type="hidden" name="commercial" class="commercial--third--input" value="/pdf.php?tab=3&step_name=P-31%D0%BC%D0%BC-10x5%D0%BC%D0%BC&width=1000&height=1000&pixel_w=10&pixel_y=5&step=31&garanty=2&square=1&settingup=0&led=74425&control=0&delivery=0&price=74425">
                   <input type="submit" value="Отправить" class="form-submit  callback__form__button">
                 </form>
               </div>
