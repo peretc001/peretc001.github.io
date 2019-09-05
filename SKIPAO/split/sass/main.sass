@@ -82,6 +82,7 @@ img
 @import 'news'
 @import 'single_page'
 @import 'seria_about'
+@import 'polupromyshlennye'
 @import 'footer'
 @import 'modal'
 @import 'wp'
@@ -121,6 +122,15 @@ img
 			background-color: $accent
 			border-color: $accent
 			color: #ffffff
+	&.btn-outline-white
+		color: #ffffff
+		background-color: transparent
+		border-color: #ffffff
+		outline: none
+		&:hover
+			background-color: #ffffff
+			border-color: #ffffff
+			color: $text
 
 *:focus
 	outline: none !important
@@ -182,42 +192,6 @@ img
 		width: 100%
 		height: auto
 		margin: 0 auto
-
-.tech__list
-	margin: 0
-	padding: 0
-	display: flex
-	flex-wrap: wrap
-	&__item
-		flex: 1 1 50%
-		display: flex
-		justify-content: space-between
-		margin-bottom: .5em
-		&:after
-			content: ""
-			border-bottom: 1px dotted #ccc
-			flex-grow: 1
-			order: 2
-			margin: 0 0.5em
-		span
-			position: relative
-			&:first-child
-				order: 1
-			&:last-child
-				order: 3
-		&:nth-child(odd)
-			span
-				&:last-child
-					padding-right: 1em
-
-@media screen and (max-width: 576.98px)
-	.tech__list
-		&__item
-			flex: 1 1 100%
-			&:nth-child(odd)
-				span
-					&:last-child
-						padding-right: 0
 
 
 .toTop

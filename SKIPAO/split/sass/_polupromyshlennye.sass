@@ -1,0 +1,28 @@
+.polupromyshlennye
+   padding: $gutter
+   padding-bottom: $gutter*2
+   [class*="col-"]
+      margin-top: 1em
+   
+   h2
+      font-weight: bold
+      font-size: 1.3em
+      a
+         color: $accent
+         &:hover
+            color: #0ed40b
+      
+   .block
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      align-items: flex-start
+
+@media screen and (max-width: 991.98px)
+   .polupromyshlennye
+      [class*="col-"]
+         text-align: center
+         h2,
+         .btn
+            margin-left: auto
+            margin-right: auto

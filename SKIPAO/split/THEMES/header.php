@@ -64,19 +64,19 @@
       <nav class="navbar navbar-expand-md">
          <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="mobile--menu">
-               <a href="#" class="catalog">
+               <a class="catalog" href="/brands/">
                   <img src="<?php echo get_template_directory_uri(); ?>/img/menu/menu.svg" alt="">
                   Каталог
                </a>
-               <a href="/brand.html" class="brands">
+               <a class="brands" href="/brands/">
                   <img src="<?php echo get_template_directory_uri(); ?>/img/menu/brand.svg" alt="">
                   Бренды
                </a>
-               <a href="#" class="prom" href="/#pay">
+               <a class="prom" href="/polupromyshlennye/">
                   <img src="<?php echo get_template_directory_uri(); ?>/img/menu/prom.svg" alt="">
                   Полупромышленные
                </a>
-               <a href="#" class="sale" href="/#team">
+               <a class="sale" href="/sale/">
                   <img src="<?php echo get_template_directory_uri(); ?>/img/menu/sale.svg" alt="">
                   Акции
                </a>
@@ -84,10 +84,27 @@
             <ul class="navbar-nav">
                <li class="nav-item menu menu--hover">
                      <div class="dropdown">
-                        <a href="/brands/" class="nav-link catalog">
-                              <img src="<?php echo get_template_directory_uri(); ?>/img/menu/menu.svg" alt="">
-                              Каталог
-                        </a>
+                        <button class="nav-link catalog dropdown-toggle" type="button" id="catalogDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <img src="<?php echo get_template_directory_uri(); ?>/img/menu/menu.svg" alt="">
+                           Каталог
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="catalogDropdownMenu">
+                           <div class="col-row">
+                              <div class="col-x-3">
+                                 <a class="dropdown-item" href="/brands/">Сплит-системы для дома</a>
+                                 <?php 
+                                    $query = new WP_Query('post_parent=19&post_type=page&orderby=date&order=ASC');
+                                       if ($query->have_posts()):
+                                       while ( $query->have_posts() ) : $query->the_post();
+                                 ?>
+                                 <a class="dropdown-item" href="<?php echo get_permalink(); ?>"><?php echo the_title(); ?></a>
+                                 <?php
+                                    endwhile; wp_reset_postdata();
+                                    endif;
+                                 ?>
+                              </div>
+                           </div>
+                        </div>
                      </div>
                </li>
                <li class="nav-item menu--hover">
@@ -119,7 +136,7 @@
                   </div>
                </li>
                <li class="nav-item prom">
-                  <a class="nav-link prom" href="/#pay">
+                  <a class="nav-link prom" href="/polupromyshlennye/">
                      <img src="<?php echo get_template_directory_uri(); ?>/img/menu/prom.svg" alt="">
                      Полупромышленные
                   </a>

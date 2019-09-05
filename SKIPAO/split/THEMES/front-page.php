@@ -25,7 +25,7 @@ $options = get_option( 'skipao_settings' );
 				<div class="col-md-7">
 						<?php echo the_content(); ?>
 				</div>
-				<div class="col-md-5">
+				<div class="col-md-5 right">
 					<!-- Форма обратной связи -->
 					<div class="consultation">
 						<form action="/" class="form_consult callback__form" method="post">
@@ -161,10 +161,10 @@ $options = get_option( 'skipao_settings' );
 										<div class="top__card__header__title__caption__tabs">
 											<ul class="nav nav-pills" id="pills-tab" role="tablist">
 												<li class="nav-item">
-													<a class="nav-link active" id="pills-about-tab" data-toggle="pill" href="#pills-about<?php echo $i; ?>" role="tab" aria-controls="pills-about" aria-selected="true">Описание</a>
+													<a class="nav-link" id="pills-about-tab" data-toggle="pill" href="#pills-about<?php echo $i; ?>" role="tab" aria-controls="pills-about" aria-selected="true">Описание</a>
 												</li>
 												<li class="nav-item">
-													<a class="nav-link" id="pills-tech-tab" data-toggle="pill" href="#pills-tech<?php echo $i; ?>" role="tab" aria-controls="pills-tech" aria-selected="false">Характеристики</a>
+													<a class="nav-link active" id="pills-tech-tab" data-toggle="pill" href="#pills-tech<?php echo $i; ?>" role="tab" aria-controls="pills-tech" aria-selected="false">Характеристики</a>
 												</li>
 											</ul>
 											<div class="top__card__header__title__caption__tabs__warrantly">
@@ -172,12 +172,12 @@ $options = get_option( 'skipao_settings' );
 											</div>
 										</div>
 										<div class="tab-content" id="pills-tabContent">
-											<div class="tab-pane fade show active" id="pills-about<?php echo $i; ?>" role="tabpanel" aria-labelledby="pills-top-about">
+											<div class="tab-pane fade" id="pills-about<?php echo $i; ?>" role="tabpanel" aria-labelledby="pills-top-about">
 												<div class="slice brand__about">
 													<?php echo the_excerpt(); ?>
 												</div>
 											</div>
-											<div class="tab-pane fade" id="pills-tech<?php echo $i; ?>" role="tabpanel" aria-labelledby="pills-tech-tab">
+											<div class="tab-pane fade show active" id="pills-tech<?php echo $i; ?>" role="tabpanel" aria-labelledby="pills-tech-tab">
 													<!-- Start Tech -->
 													<ul class="tech__list">
 														<li class="tech__list__item">
@@ -425,10 +425,10 @@ $options = get_option( 'skipao_settings' );
 										<div class="top__card__header__title__caption__tabs">
 											<ul class="nav nav-pills" id="pills-tab" role="tablist">
 												<li class="nav-item">
-													<a class="nav-link active" id="pills-about-tab" data-toggle="pill" href="#pills-about<?php echo $i; ?>" role="tab" aria-controls="pills-about" aria-selected="true">Описание</a>
+													<a class="nav-link" id="pills-about-tab" data-toggle="pill" href="#pills-about<?php echo $i; ?>" role="tab" aria-controls="pills-about" aria-selected="true">Описание</a>
 												</li>
 												<li class="nav-item">
-													<a class="nav-link" id="pills-tech-tab" data-toggle="pill" href="#pills-tech<?php echo $i; ?>" role="tab" aria-controls="pills-tech" aria-selected="false">Характеристики</a>
+													<a class="nav-link active" id="pills-tech-tab" data-toggle="pill" href="#pills-tech<?php echo $i; ?>" role="tab" aria-controls="pills-tech" aria-selected="false">Характеристики</a>
 												</li>
 											</ul>
 											<div class="top__card__header__title__caption__tabs__warrantly">
@@ -436,12 +436,12 @@ $options = get_option( 'skipao_settings' );
 											</div>
 										</div>
 										<div class="tab-content" id="pills-tabContent">
-											<div class="tab-pane fade show active" id="pills-about<?php echo $i; ?>" role="tabpanel" aria-labelledby="pills-top-about">
+											<div class="tab-pane fade" id="pills-about<?php echo $i; ?>" role="tabpanel" aria-labelledby="pills-top-about">
 												<div class="slice brand__about">
 													<?php echo the_excerpt(); ?>
 												</div>
 											</div>
-											<div class="tab-pane fade" id="pills-tech<?php echo $i; ?>" role="tabpanel" aria-labelledby="pills-tech-tab">
+											<div class="tab-pane fade show active" id="pills-tech<?php echo $i; ?>" role="tabpanel" aria-labelledby="pills-tech-tab">
 													<!-- Start Tech -->
 													<ul class="tech__list">
 														<li class="tech__list__item">
@@ -689,10 +689,10 @@ $options = get_option( 'skipao_settings' );
 										<div class="top__card__header__title__caption__tabs">
 											<ul class="nav nav-pills" id="pills-tab" role="tablist">
 												<li class="nav-item">
-													<a class="nav-link active" id="pills-about-tab" data-toggle="pill" href="#pills-about<?php echo $i; ?>" role="tab" aria-controls="pills-about" aria-selected="true">Описание</a>
+													<a class="nav-link" id="pills-about-tab" data-toggle="pill" href="#pills-about<?php echo $i; ?>" role="tab" aria-controls="pills-about" aria-selected="true">Описание</a>
 												</li>
 												<li class="nav-item">
-													<a class="nav-link" id="pills-tech-tab" data-toggle="pill" href="#pills-tech<?php echo $i; ?>" role="tab" aria-controls="pills-tech" aria-selected="false">Характеристики</a>
+													<a class="nav-link active" id="pills-tech-tab" data-toggle="pill" href="#pills-tech<?php echo $i; ?>" role="tab" aria-controls="pills-tech" aria-selected="false">Характеристики</a>
 												</li>
 											</ul>
 											<div class="top__card__header__title__caption__tabs__warrantly">
@@ -700,12 +700,12 @@ $options = get_option( 'skipao_settings' );
 											</div>
 										</div>
 										<div class="tab-content" id="pills-tabContent">
-											<div class="tab-pane fade show active" id="pills-about<?php echo $i; ?>" role="tabpanel" aria-labelledby="pills-top-about">
+											<div class="tab-pane fade" id="pills-about<?php echo $i; ?>" role="tabpanel" aria-labelledby="pills-top-about">
 												<div class="slice brand__about">
 													<?php echo the_excerpt(); ?>
 												</div>
 											</div>
-											<div class="tab-pane fade" id="pills-tech<?php echo $i; ?>" role="tabpanel" aria-labelledby="pills-tech-tab">
+											<div class="tab-pane fade show active" id="pills-tech<?php echo $i; ?>" role="tabpanel" aria-labelledby="pills-tech-tab">
 													<!-- Start Tech -->
 													<ul class="tech__list">
 														<li class="tech__list__item">
@@ -953,10 +953,10 @@ $options = get_option( 'skipao_settings' );
 										<div class="top__card__header__title__caption__tabs">
 											<ul class="nav nav-pills" id="pills-tab" role="tablist">
 												<li class="nav-item">
-													<a class="nav-link active" id="pills-about-tab" data-toggle="pill" href="#pills-about<?php echo $i; ?>" role="tab" aria-controls="pills-about" aria-selected="true">Описание</a>
+													<a class="nav-link" id="pills-about-tab" data-toggle="pill" href="#pills-about<?php echo $i; ?>" role="tab" aria-controls="pills-about" aria-selected="true">Описание</a>
 												</li>
 												<li class="nav-item">
-													<a class="nav-link" id="pills-tech-tab" data-toggle="pill" href="#pills-tech<?php echo $i; ?>" role="tab" aria-controls="pills-tech" aria-selected="false">Характеристики</a>
+													<a class="nav-link active" id="pills-tech-tab" data-toggle="pill" href="#pills-tech<?php echo $i; ?>" role="tab" aria-controls="pills-tech" aria-selected="false">Характеристики</a>
 												</li>
 											</ul>
 											<div class="top__card__header__title__caption__tabs__warrantly">
@@ -964,12 +964,12 @@ $options = get_option( 'skipao_settings' );
 											</div>
 										</div>
 										<div class="tab-content" id="pills-tabContent">
-											<div class="tab-pane fade show active" id="pills-about<?php echo $i; ?>" role="tabpanel" aria-labelledby="pills-top-about">
+											<div class="tab-pane fade" id="pills-about<?php echo $i; ?>" role="tabpanel" aria-labelledby="pills-top-about">
 												<div class="slice brand__about">
 													<?php echo the_excerpt(); ?>
 												</div>
 											</div>
-											<div class="tab-pane fade" id="pills-tech<?php echo $i; ?>" role="tabpanel" aria-labelledby="pills-tech-tab">
+											<div class="tab-pane fade show active" id="pills-tech<?php echo $i; ?>" role="tabpanel" aria-labelledby="pills-tech-tab">
 													<!-- Start Tech -->
 													<ul class="tech__list">
 														<li class="tech__list__item">
@@ -1212,7 +1212,7 @@ $options = get_option( 'skipao_settings' );
 	<section class="brands__list">
 		<div class="container">
 			<h3 class="h2__title liner">
-				Выберите бренд
+				Выберите интересующий бренд
 			</h3>
 
 			<div class="brands__list__row hide_description">
@@ -1242,25 +1242,50 @@ $options = get_option( 'skipao_settings' );
 	</section>
 <!-- End Brands list -->
 
+
 <!-- Features -->
 	<section class="features">
 		<div class="container">
-		<?php #Данный блок редактируется в админке -> Страницы -> Для вас
-			$query = new WP_Query('page_id=40&post_type=page');
-				if ($query->have_posts()):
-				while ( $query->have_posts() ) : $query->the_post();
-				$post_tumb = get_post_thumbnail_id( $post->ID );
-		?>
 			<h3 class="h2__title liner">
-				<?php echo the_title(); ?>
-			</h2>
-			<?php echo the_content(); ?>
-		<?php
-			endwhile; wp_reset_postdata();
-			endif;
-		?>
+				Для вас
+			</h3>
+			<div class="row align-items-center">
+				<?php #Данный блок редактируется в админке -> Страницы -> Наши акции
+					$query = new WP_Query('page_id=6009&post_type=page');
+						if ($query->have_posts()):
+						while ( $query->have_posts() ) : $query->the_post();
+						$post_tumb = get_post_thumbnail_id( $post->ID );
+				?>
+				<div class="col-md-6">
+					<div class="features__sale" style="background-image: url('<?php echo wp_get_attachment_image_url( $post_tumb, 'full' ); ?>')">
+						<h5><?php echo the_title(); ?></h5>
+						<?php echo the_content(); ?>
+						<a href="/sale/" class="btn btn-outline-white">Подробнее</a>
+					</div>
+				</div>
+				<?php
+					endwhile; wp_reset_postdata();
+					endif;
+				?>
+				<?php #Данный блок редактируется в админке -> Страницы -> Для вас
+					$query = new WP_Query('page_id=40&post_type=page');
+						if ($query->have_posts()):
+						while ( $query->have_posts() ) : $query->the_post();
+						$post_tumb = get_post_thumbnail_id( $post->ID );
+				?>
+				<div class="col-md-6">
+					<div class="row">
+						<?php echo the_content(); ?>
+					</div>
+				</div>
+				<?php
+					endwhile; wp_reset_postdata();
+					endif;
+				?>
+			</div>
 		</div>
 	</section>
+	<div class="divider"></div>
 <!-- End Features -->
 
 <!-- Services -->

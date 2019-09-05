@@ -51,10 +51,10 @@ $options = get_option( 'skipao_settings' );
 									<div class="top__card__header__title__caption__tabs">
 										<ul class="nav nav-pills" id="pills-tab" role="tablist">
 											<li class="nav-item">
-												<a class="nav-link active" id="pills-about-tab" data-toggle="pill" href="#pills-about<?php echo $i; ?>" role="tab" aria-controls="pills-about" aria-selected="true">Описание</a>
+												<a class="nav-link" id="pills-about-tab" data-toggle="pill" href="#pills-about<?php echo $i; ?>" role="tab" aria-controls="pills-about" aria-selected="true">Описание</a>
 											</li>
 											<li class="nav-item">
-												<a class="nav-link" id="pills-tech-tab" data-toggle="pill" href="#pills-tech<?php echo $i; ?>" role="tab" aria-controls="pills-tech" aria-selected="false">Характеристики</a>
+												<a class="nav-link active" id="pills-tech-tab" data-toggle="pill" href="#pills-tech<?php echo $i; ?>" role="tab" aria-controls="pills-tech" aria-selected="false">Характеристики</a>
 											</li>
 										</ul>
 										<div class="top__card__header__title__caption__tabs__warrantly">
@@ -62,12 +62,12 @@ $options = get_option( 'skipao_settings' );
 										</div>
 									</div>
 									<div class="tab-content" id="pills-tabContent">
-										<div class="tab-pane fade show active" id="pills-about<?php echo $i; ?>" role="tabpanel" aria-labelledby="pills-top-about">
+										<div class="tab-pane fade" id="pills-about<?php echo $i; ?>" role="tabpanel" aria-labelledby="pills-top-about">
 											<div class="slice brand__about">
 												<?php echo the_excerpt(); ?>
 											</div>
 										</div>
-										<div class="tab-pane fade" id="pills-tech<?php echo $i; ?>" role="tabpanel" aria-labelledby="pills-tech-tab">
+										<div class="tab-pane fade show active" id="pills-tech<?php echo $i; ?>" role="tabpanel" aria-labelledby="pills-tech-tab">
 												<!-- Start Tech -->
 												<ul class="tech__list">
 													<li class="tech__list__item">

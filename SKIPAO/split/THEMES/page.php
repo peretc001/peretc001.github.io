@@ -17,7 +17,7 @@ get_header(); ?>
 		the_post(); ?>
 		<section class="single_page<?php echo is_page(5770) ? ' oplata' : ''; ?>">
 			<div class="container">
-				<h1 class="h2__title"><?php echo the_title(); ?></h1>
+				<h1 class="h2__title liner"><?php echo the_title(); ?></h1>
 				<?php echo the_content(); ?>
 			</div>
 		</section>

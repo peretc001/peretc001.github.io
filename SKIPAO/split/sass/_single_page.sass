@@ -1,2 +1,71 @@
 .single_page
    padding: $gutter
+   position: relative
+   
+   
+.taxonomy__page
+   padding: $gutter
+   position: relative
+   margin-bottom: 3em
+
+   .container
+      display: flex
+      justify-content: space-between
+      align-items: flex-start
+
+   .text
+      display: flex
+      flex-direction: column
+      padding-right: $gutter
+
+   .montage
+      display: flex
+      flex-direction: column
+      max-width: 360px
+      min-width: 360px
+      padding: 40px 20px 20px 20px
+      background-color: #f7f6fc
+      border-radius: 4px
+      box-shadow: 2px 2px 10px rgba(#000000, .1)
+      h4
+         font-weight: bold
+         text-align: center
+         margin-bottom: 1em
+
+      .tech__list
+         margin: 0
+         padding: 0
+         display: flex
+         flex-wrap: wrap
+         &__item
+            flex: 1 1 100%
+            display: flex
+            justify-content: space-between
+            margin-bottom: .5em
+            &:after
+               content: ""
+               border-bottom: 1px dotted #ccc
+               flex-grow: 1
+               order: 2
+               margin: 0 0.5em
+            span
+               position: relative
+               &:first-child
+                  order: 1
+               &:last-child
+                  order: 3
+
+      .text-center
+         margin-top: 2em
+
+@media screen and (max-width: 767.98px)
+   .taxonomy__page
+      .container
+         justify-content: center
+         flex-direction: column
+      .text
+         padding-right: 0
+      .montage
+         min-width: 280px
+         max-width: 100%
+         margin: 2em auto auto auto
