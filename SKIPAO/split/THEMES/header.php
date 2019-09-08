@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+   <meta name="author" content='Красовский Игорь' />
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.png" type="image/png" />
-	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.png" />
+	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/img/logo.png" type="image/png" />
+	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/img/logo.png" />
    <title><?php 
    if ( is_tax('brands') ) {
       $term = get_queried_object();
@@ -161,6 +162,9 @@
                </li>
                <li class="nav-item">
                   <a class="nav-link nav-phone" href="tel:<?php echo $options['phone']; ?>"><?php echo $options['phone']; ?></a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link nav-whatsapp" href="https://api.whatsapp.com/send?phone=79885007001&text=Добрый%20день.%20Меня%20интересует%20сплит-система.%20Свяжитесь%20со%20мной" target="_blank">Написать в whatsapp</a>
                </li>
             </ul>
          </div>

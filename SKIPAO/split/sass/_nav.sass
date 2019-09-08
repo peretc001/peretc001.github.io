@@ -94,6 +94,25 @@
                   height: 1em
                   background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjcuNDQyIDI3LjQ0MiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjcuNDQyIDI3LjQ0MjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48Zz48Zz4KCTxwYXRoIGQ9Ik0xOS40OTQsMEg3Ljk0OEM2Ljg0MywwLDUuOTUxLDAuODk2LDUuOTUxLDEuOTk5djIzLjQ0NmMwLDEuMTAyLDAuODkyLDEuOTk3LDEuOTk3LDEuOTk3aDExLjU0NiAgIGMxLjEwMywwLDEuOTk3LTAuODk1LDEuOTk3LTEuOTk3VjEuOTk5QzIxLjQ5MSwwLjg5NiwyMC41OTcsMCwxOS40OTQsMHogTTEwLjg3MiwxLjIxNGg1LjdjMC4xNDQsMCwwLjI2MSwwLjIxNSwwLjI2MSwwLjQ4MSAgIHMtMC4xMTcsMC40ODItMC4yNjEsMC40ODJoLTUuN2MtMC4xNDUsMC0wLjI2LTAuMjE2LTAuMjYtMC40ODJDMTAuNjEyLDEuNDI5LDEwLjcyNywxLjIxNCwxMC44NzIsMS4yMTR6IE0xMy43MjIsMjUuNDY5ICAgYy0wLjcwMywwLTEuMjc1LTAuNTcyLTEuMjc1LTEuMjc2czAuNTcyLTEuMjc0LDEuMjc1LTEuMjc0YzAuNzAxLDAsMS4yNzMsMC41NywxLjI3MywxLjI3NFMxNC40MjMsMjUuNDY5LDEzLjcyMiwyNS40Njl6ICAgIE0xOS45OTUsMjEuMUg3LjQ0OFYzLjM3M2gxMi41NDdWMjEuMXoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0ZGRkZGRiIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+') center no-repeat
                   background-size: 1em
+            &.nav-whatsapp
+               display: none
+               border: 1px solid $green
+               border-radius: 4px
+               color: $green
+               padding: .5em .5em .5em 2em
+               position: relative
+               &:before
+                  content: ''
+                  position: absolute
+                  left: .5em
+                  top: 50%
+                  transform: translateY(-50%)
+                  width: 1em
+                  height: 1em
+                  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIuMDAwOTYgNTEyLjAwMDk2IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PHBhdGggZD0ibTM3My40MDYyNSAwaC0yMzQuODEyNWMtNzYuNDIxODc1IDAtMTM4LjU5Mzc1IDYyLjE3MTg3NS0xMzguNTkzNzUgMTM4LjU5Mzc1djIzNC44MTY0MDZjMCA3Ni40MTc5NjkgNjIuMTcxODc1IDEzOC41ODk4NDQgMTM4LjU5Mzc1IDEzOC41ODk4NDRoMjM0LjgxNjQwNmM3Ni40MTc5NjkgMCAxMzguNTg5ODQ0LTYyLjE3MTg3NSAxMzguNTg5ODQ0LTEzOC41ODk4NDR2LTIzNC44MTY0MDZjMC03Ni40MjE4NzUtNjIuMTcxODc1LTEzOC41OTM3NS0xMzguNTkzNzUtMTM4LjU5Mzc1em0xMDguNTc4MTI1IDM3My40MTAxNTZjMCA1OS44NjcxODgtNDguNzA3MDMxIDEwOC41NzQyMTktMTA4LjU3ODEyNSAxMDguNTc0MjE5aC0yMzQuODEyNWMtNTkuODcxMDk0IDAtMTA4LjU3ODEyNS00OC43MDcwMzEtMTA4LjU3ODEyNS0xMDguNTc0MjE5di0yMzQuODE2NDA2YzAtNTkuODcxMDk0IDQ4LjcwNzAzMS0xMDguNTc4MTI1IDEwOC41NzgxMjUtMTA4LjU3ODEyNWgyMzQuODE2NDA2YzU5Ljg2NzE4OCAwIDEwOC41NzQyMTkgNDguNzA3MDMxIDEwOC41NzQyMTkgMTA4LjU3ODEyNXptMCAwIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiMwRUQ0MEIiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+PHBhdGggZD0ibTI1NiAxMTYuMDAzOTA2Yy03Ny4xOTUzMTIgMC0xMzkuOTk2MDk0IDYyLjgwMDc4Mi0xMzkuOTk2MDk0IDEzOS45OTYwOTRzNjIuODAwNzgyIDEzOS45OTYwOTQgMTM5Ljk5NjA5NCAxMzkuOTk2MDk0IDEzOS45OTYwOTQtNjIuODAwNzgyIDEzOS45OTYwOTQtMTM5Ljk5NjA5NC02Mi44MDA3ODItMTM5Ljk5NjA5NC0xMzkuOTk2MDk0LTEzOS45OTYwOTR6bTAgMjQ5Ljk3NjU2M2MtNjAuNjQwNjI1IDAtMTA5Ljk4MDQ2OS00OS4zMzU5MzgtMTA5Ljk4MDQ2OS0xMDkuOTgwNDY5IDAtNjAuNjQwNjI1IDQ5LjMzOTg0NC0xMDkuOTgwNDY5IDEwOS45ODA0NjktMTA5Ljk4MDQ2OSA2MC42NDQ1MzEgMCAxMDkuOTgwNDY5IDQ5LjMzOTg0NCAxMDkuOTgwNDY5IDEwOS45ODA0NjkgMCA2MC42NDQ1MzEtNDkuMzM1OTM4IDEwOS45ODA0NjktMTA5Ljk4MDQ2OSAxMDkuOTgwNDY5em0wIDAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6IzBFRDQwQiIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD48cGF0aCBkPSJtMzk5LjM0Mzc1IDY2LjI4NTE1NmMtMjIuODEyNSAwLTQxLjM2NzE4OCAxOC41NTg1OTQtNDEuMzY3MTg4IDQxLjM2NzE4OCAwIDIyLjgxMjUgMTguNTU0Njg4IDQxLjM3MTA5NCA0MS4zNjcxODggNDEuMzcxMDk0czQxLjM3MTA5NC0xOC41NTg1OTQgNDEuMzcxMDk0LTQxLjM3MTA5NC0xOC41NTg1OTQtNDEuMzY3MTg4LTQxLjM3MTA5NC00MS4zNjcxODh6bTAgNTIuNzE4NzVjLTYuMjU3ODEyIDAtMTEuMzUxNTYyLTUuMDkzNzUtMTEuMzUxNTYyLTExLjM1MTU2MiAwLTYuMjYxNzE5IDUuMDkzNzUtMTEuMzUxNTYzIDExLjM1MTU2Mi0xMS4zNTE1NjMgNi4yNjE3MTkgMCAxMS4zNTU0NjkgNS4wODk4NDQgMTEuMzU1NDY5IDExLjM1MTU2MyAwIDYuMjU3ODEyLTUuMDkzNzUgMTEuMzUxNTYyLTExLjM1NTQ2OSAxMS4zNTE1NjJ6bTAgMCIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojMEVENDBCIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPjwvZz4gPC9zdmc+')
+                  background-position: center
+                  background-repeat: no-repeat
+                  background-size: 1em
       .dropdown
          a
             background: none  
@@ -216,6 +235,10 @@
             padding: 1em 0
             .menu--hover
                display: none
+            .nav-item
+               &:hover
+                  &:before
+                     display: none
             .nav-link
                font-size: 1em
                padding: 0.5em 0
@@ -223,7 +246,8 @@
                &.sale
                   display: none
                &.about,
-               &.nav-phone
+               &.nav-phone,
+               &.nav-whatsapp
                   display: block
    
    .breadcrumb

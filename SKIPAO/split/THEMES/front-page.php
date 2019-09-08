@@ -159,7 +159,7 @@ $options = get_option( 'skipao_settings' );
 										</div>
 										<!-- TAB -->
 										<div class="top__card__header__title__caption__tabs">
-											<ul class="nav nav-pills" id="pills-tab" role="tablist">
+											<ul class="nav nav-pills nav__tabs__card" id="pills-tab" role="tablist">
 												<li class="nav-item">
 													<a class="nav-link" id="pills-about-tab" data-toggle="pill" href="#pills-about<?php echo $i; ?>" role="tab" aria-controls="pills-about" aria-selected="true">Описание</a>
 												</li>
@@ -1223,12 +1223,12 @@ $options = get_option( 'skipao_settings' );
 						$post_tumb = get_post_thumbnail_id( $post->ID );
 						$url = get_term_link( $brand->term_id, 'brands' ); 
 						
-						if ( $brand->term_id < 92 ||  $brands->term_id > 95 ) { ?>
+						if ( $brand->term_id < 92 ||  $brand->term_id > 95 ) { ?>
 
 				<div class="brands__list__row__col">
 					<a href="<?php echo $url; ?>">
 						<div class="brand__img">
-							<img class="lazy" data-src="<?php echo get_attachment_url_by_slug( $brand->name ); ?>" src="<?php echo get_template_directory_uri(); ?>/img/no-image.png" alt="<?php echo $brand->name; ?>"></div>
+							<img class="lazy" data-src="<?php echo get_field('img', 'brands_'. $brand->term_id); ?>" src="<?php echo get_template_directory_uri(); ?>/img/no-image.png" alt="<?php echo $brand->name; ?>"></div>
 						<span><?php echo $brand->name; ?></span>
 					</a>
 				</div>

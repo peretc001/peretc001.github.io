@@ -44,7 +44,7 @@ register_nav_menus(array(
 	)
 );
 
-add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
+add_theme_support( 'post-thumbnails', array( 'post', 'page', 'seria', 'models' ) );
 
 
 /* --------------- Защита ----------------*/
@@ -379,7 +379,7 @@ function pages_tax() {
 				'show_ui'               => true,
 				'show_in_menu'          => true,
 				'show_in_nav_menus'     => true,
-				'show_in_rest'          => false,
+				'show_in_rest'          => true,
 				'rest_base'             => 'url_rest',
 				'rest_controller_class' => 'WP_REST_Terms_Controller',
 				'show_tagcloud'         => true,
@@ -601,3 +601,8 @@ function kama_excerpt( $args = '' ){
 
 	return ( $rg->autop && $text ) ? "<p>$text</p>" : $text;
 }
+
+function add_shortcode_skipao_map(){
+	return '<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aaa679d9bead2a71032587d45bde9da34d2bfbb1e04eb7ee5ddc5ef2b473a047c&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>';
+}
+add_shortcode('skipao_map', 'add_shortcode_skipao_map');

@@ -175,14 +175,27 @@ $db = new JsonDB( $_SERVER['DOCUMENT_ROOT'] . '/portfolio/' );
 //       'id' => 14, 
 //       'title' => 'Профобучение',
 //       'description' => 'Зацени какой сайт каталог я разработал для компании по обучению специалистов климатехники',
-//       'portfolio' => 'landing-page',
-//       'themes' => 'Landing page',
+//       'portfolio' => 'catalog',
+//       'themes' => 'Сайт-каталог',
 //       'work' => 'Дизайн, Верстка, Натяжка на Wordpress',
 //       'tech' => 'HTML + CSS3 + JS + Wordpress',
 //       'url' => 'http://prof-obuchenie-krd.ru',
 //       'about' => 'Разработать дизайн, сверстать и натянуть на Wordpress сайт для клиента web студии SKIPAO',
 //       'img' => 'prof-obuchenie-krd',
 //       'video' => '',
+//    ), true);
+// $db->insert('portfolio', array(
+//       'id' => 15, 
+//       'title' => 'СплитПрайс',
+//       'description' => 'Зацени какой сайт каталог я разработал для компании по продаже сплит систем',
+//       'portfolio' => 'catalog',
+//       'themes' => 'Сайт-каталог',
+//       'work' => 'Разработка логотипа, Дизайн, Верстка, Натяжка на Wordpress',
+//       'tech' => 'HTML + CSS3 + JS + Wordpress',
+//       'url' => 'http://split-price.ru/',
+//       'about' => 'Разработать дизайн, сверстать и натянуть на Wordpress, спарсить товары и залить в Wordpress с возможностью редактирования каждого Бренда, Серии и Модели сплит системы для клиента web студии SKIPAO',
+//       'img' => 'split-price',
+//       'video' => 'u7XOjXESG_c',
 //    ), true);
 
 
@@ -195,7 +208,7 @@ $db = new JsonDB( $_SERVER['DOCUMENT_ROOT'] . '/portfolio/' );
 
 //    echo $result[0]['title'];
 
-// $db -> delete ( 'portfolio', 'id', 13 );
+// $db -> delete ( 'portfolio', 'id', 14 );
 //$db -portfoliote('portfolio', 'id', 6, array('themes' => 'Landing page'));
 //    'themes' => 'Landing page'));
 

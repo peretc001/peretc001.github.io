@@ -2,28 +2,75 @@
    $options = get_option( 'skipao_settings' );
 ?>
       <div class="footer" id="footer">
-         <div class="container-fluid">
+         <div class="container">
             <div class="row">
-               <div class="col-md-6">
-                  <div class="map">
-                     <div class="map_wrap"></div>
-                  </div>
-               </div>
-               <div class="col-md-6">
-                  <a href="/" class="navbar-brand">
+               <div class="col-md-4 order-1 order-md-2">
+                  <a href="/" class="logo">
                      <img src="<?php echo $options['logo_footer']; ?>" alt="<?php echo get_bloginfo('name'); ?>">
                   </a>
                   <div temscope itemtype="http://schema.org/Organization">
-                     <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="icon adres"><span itemprop="addressLocality"><?php echo $options['city']; ?></span>, <span itemprop="streetAddress"><?php echo $options['adress']; ?></span></p>
+                     <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="icon adres"><span itemprop="addressLocality"><?php echo $options['city']; ?></span><br><span itemprop="streetAddress"><?php echo $options['adress']; ?></span></p>
                      <p><a itemprop="telephone" class="icon phone" href="tel:<?php echo $options['phone']; ?>"><?php echo $options['phone']; ?></a></p>
-                     <br>
-                     <p><a href="https://api.whatsapp.com/send?phone=<?php echo $options['whatsapp']; ?>&text=Добрый%20день.%20Меня%20интересует%20сплит-система.%20Свяжитесь%20со%20мной" class="icon whatsapp" target="_blank">Написать в whatsapp</a></p>
-                     <p><a href="<?php echo $options['insta']; ?>" class="icon instagram" target="_blank">Наш Инстаграм</a></p>
-                     <p><a href="<?php echo $options['vk']; ?>" class="icon vk" target="_blank">Наш Вконтактке</a></p>
+                     <p class="last"><a href="https://api.whatsapp.com/send?phone=<?php echo $options['whatsapp']; ?>&text=Добрый%20день.%20Меня%20интересует%20сплит-система.%20Свяжитесь%20со%20мной" class="whatsapp" target="_blank">Написать в whatsapp</a></p>
                   </div>
-                  <a href="https://skipao.ru/" target="_blank" class="author">
-                     Разработка: СКИ ПАО
-                  </a>
+               </div>
+               <div class="col-md-4 menu order-2 order-md-1">
+                  <h4>Меню:</h4>
+                  <ul>
+                     <li class="nav-item prom">
+                        <a href="/brands/">
+                           Бренды
+                        </a>
+                     </li>
+                     <li class="nav-item prom">
+                        <a href="/polupromyshlennye/">
+                           Полупромышленные
+                        </a>
+                     </li>
+                     <li class="nav-item sale">
+                        <a href="/sale/">
+                           Акции
+                        </a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="/uslugi/">Услуги</a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="/oplata/">Оплата и доставка</a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="/about/">О компанни</a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="/contact/">Контакты</a>
+                     </li>
+                  </ul>
+
+               </div>
+
+               <div class="col-md-4 order-3">
+                  <div class="right">
+                     <div class="right_head">
+                        <p>Принимаем к оплате:</p>
+                        <div class="bank">
+                           <div class="bank__img"><img src="<?php echo get_template_directory_uri(); ?>/img/footer/visa.png" alt=""></div>
+                           <div class="bank__img"><img src="<?php echo get_template_directory_uri(); ?>/img/footer/mastercard.png" alt=""></div>
+                           <div class="bank__img"><img src="<?php echo get_template_directory_uri(); ?>/img/footer/mir.png" alt=""></div>
+                        </div>
+                     </div>
+                     
+                     <div class="right_body">
+                        <p>Мы в социальных сетях:</p>
+                        <div class="social">
+                           <a href="<?php echo $options['insta']; ?>" class="instagram" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/social/instagram.svg"></a>
+                           <a href="<?php echo $options['vk']; ?>" class="vk" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/social/vk.svg"></a>
+                        </div>
+                     </div>
+
+                     <a href="https://skipao.ru/" target="_blank" class="author">
+                        Разработка: СКИ ПАО
+                     </a>
+                  </div>
                </div>
             </div>
          </div>

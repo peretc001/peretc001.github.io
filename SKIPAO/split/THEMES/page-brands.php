@@ -8,16 +8,16 @@
 */
 
 get_header(); 
-$brands = get_terms( 'brands' ); ?>
+$options = get_option( 'skipao_settings' ); ?>
 
 <!-- Brands list -->
 	<section class="brands__list">
 		<div class="container">
 			<h3 class="h2__title liner">
-				Выберите бренд
+				Выберите интересующий бренд
 			</h3>
 
-			<div class="row">
+			<div class="brands__list__row">
 			<?php $brands = get_terms( 'brands' );
 
 				if( $brands && ! is_wp_error($brands) ){
@@ -25,15 +25,13 @@ $brands = get_terms( 'brands' ); ?>
 						$post_tumb = get_post_thumbnail_id( $post->ID );
 						$url = get_term_link( $brand->term_id, 'brands' ); 
 						
-						if ( $brand->term_id < 92 ||  $brands->term_id > 95 ) { ?>
+						if ( $brand->term_id < 92 ||  $brand->term_id > 95 ) { ?>
 
-				<div class="col-sm-6 col-md-4">
-					<a href="<?php echo $url; ?>" class="brands__home__card">
-						<div class="brand__home__img">
-							<img class="lazy" data-src="<?php echo get_attachment_url_by_slug( $brand->name ); ?>" src="<?php echo get_template_directory_uri(); ?>/img/no-image.png" alt="<?php echo $brand->name; ?>">
-						</div>
-						<p><b><?php echo $brand->name; ?></b></p>
-                  <?php echo term_description($brand->term_id); ?>
+				<div class="brands__list__row__col">
+					<a href="<?php echo $url; ?>">
+						<div class="brand__img">
+							<img class="lazy" data-src="<?php echo get_field('img', 'brands_'. $brand->term_id); ?>" src="<?php echo get_template_directory_uri(); ?>/img/no-image.png" alt="<?php echo $brand->name; ?>"></div>
+						<span><?php echo $brand->name; ?></span>
 					</a>
 				</div>
 

@@ -21,7 +21,7 @@ $options = get_option( 'skipao_settings' );
                   while ( $query->have_posts() ) : $query->the_post();
                   $post_tumb = get_post_thumbnail_id( $post->ID );
             ?>
-            <div class="col-md-6 col-lg-3">
+            <div class="col-12<?php echo is_category('Услуги') ? ' col-md-6 col-lg-3' : ''; ?>">
                <?php if ($post_tumb) { ?>
                <div class="img__wrapper">
                   <a href="<?php echo get_permalink(); ?>"><img src="<?php echo wp_get_attachment_image_url( $post_tumb, 'large' ); ?>" alt="<?php echo the_title(); ?>"></a>

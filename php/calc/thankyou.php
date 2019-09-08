@@ -51,7 +51,27 @@ if ($_POST['phone'] != '' and $_POST['human'] == 'human') {
 		$message .= 'Ссылка на коммерческое предложение: <a href="http://calcled.skipao.site'. $_POST['commercial'] .'">Скачать</a>';
 	}
 		mail($to, $subject, $message, $headers);
+
+	$to2  = $_POST['email']; 
+	$subject2 = $_POST['form'] .': '. $_POST['form_title']; 
+	$headers2 .= "Content-type: text/html; charset=utf-8 \r\n"; 
+	$headers2 .= "From: Калькулятор <". $admin_email .">\r\n"; 
+	$message2 = '
+		<p style="text-align: center; color: #151515;"><b>Благодарим за обращение в LedImperial</b></p>
+		<table style="width: 70%; margin: 10px auto; border: 1px solid #ddd; text-align: center; background: #eee; color: #151515; border-radius: 6px; padding: 100px 0; background: url(http://calcled.skipao.site/img/led.jpg) center no-repeat;">
+			<tr>
+				<td>
+					<p style="color: #fff; text-transform: uppercase; font-size: 20px; font-weight: bold;">Ваше коммерческое предложение</p>
+					<p style="text-align: center;"><a href="http://calcled.skipao.site'. $_POST['commercial'] .'"><img src="http://calcled.skipao.site/img/download.png" style="width: 150px;"></a></p>
+				</td>
+			</tr>
+		</table>
+		<table style="width: 68%; margin: 10px auto; "><tr><td>Телефон: 8 (800) 777-02-91</td><td style="text-align: right;"><a href="http://ledimperial.ru/">ledimperial.ru</td></tr></table>';
+	mail($to2, $subject2, $message2, $headers2);
+
 	?>
+
+
 	<div class="send_ok">
 		<i class="far fa-thumbs-up"></i>
 		<p><b>Благодарим за заявку</b></p>

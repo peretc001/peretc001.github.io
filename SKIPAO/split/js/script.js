@@ -60,21 +60,22 @@
         input.addEventListener("keydown", mask, false);
     });
 
-    //Функция Обрезаем текст
-    function sliceTheExcerpt(selector, count) {
-        document.querySelectorAll(selector).forEach(item => {
-            item.textContent.trim();
-            if(item.textContent.length < count) { return }
-            else {
-                const str = item.textContent.slice(0, count + 1) + "...";
-                item.textContent = str;
-            }
-        });
-    }
-
-    if ( document.querySelector('.brand__about') ) {
+    if (document.querySelector('.slice')) {
+        //Обрезаем Заголовок и Анонс
+        function sliceTheExcerpt(selector, count) {
+            document.querySelectorAll(selector).forEach(item => {
+                item.textContent.trim();
+                if(item.textContent.length < count) { return }
+                else {
+                    const str = item.textContent.slice(0, count + 1) + "...";
+                    item.textContent = str;
+                }
+            });
+        }
+        sliceTheExcerpt('.the_title', 50);
+        sliceTheExcerpt('.the_excerpt', 150);
         sliceTheExcerpt('.brand__about', 350);
-    }
+    };
 
 });
 
@@ -156,33 +157,6 @@ jQuery(document).ready(function ($) {
             $(window).unbind('scroll.once');
         };
     }
-
-    $(window).bind('scroll.twice', function(){
-        if($(this).scrollTop() > 60) {
-            show_map(); 
-        }
-    });
-    function show_map() {
-        $('.map_wrap').append('<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aaa679d9bead2a71032587d45bde9da34d2bfbb1e04eb7ee5ddc5ef2b473a047c&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>');
-        $(window).unbind('scroll.twice');
-    };
-    
-    if (document.querySelector('.slice')) {
-        //Обрезаем Заголовок и Анонс
-        function sliceTheExcerpt(selector, count) {
-            document.querySelectorAll(selector).forEach(item => {
-                item.textContent.trim();
-                if(item.textContent.length < count) { return }
-                else {
-                    const str = item.textContent.slice(0, count + 1) + "...";
-                    item.textContent = str;
-                }
-            });
-        }
-        sliceTheExcerpt('.the_title', 50);
-        sliceTheExcerpt('.the_excerpt', 150);
-        sliceTheExcerpt('.brand__about', 350);
-    };
 
     $(".fancybox").fancybox();
 
