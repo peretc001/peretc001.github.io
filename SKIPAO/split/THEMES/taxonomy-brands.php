@@ -283,35 +283,41 @@ $options = get_option( 'skipao_settings' );
                                           if ( get_field( 'square', $model->ID ) ): ?>
                                           <?php echo the_field( 'square', $model->ID ); ?>
                                        <?php endif; ?></p>
-                              <p><?php 
-                              if ( get_field( 'square', $model->ID ) <= '20') {
-                                 echo '07';
-                              }
-                              else if ( get_field( 'square', $model->ID ) <= '27') {
-                                 echo '09';
-                              }
-                              else if ( get_field( 'square', $model->ID ) <= '33') {
-                                 echo '11';
-                              }
-                              else if ( get_field( 'square', $model->ID ) <= '36') {
-                                 echo '12';
-                              }
-                              else if ( get_field( 'square', $model->ID ) <= '40') {
-                                 echo '13';
-                              }
-                              else if ( get_field( 'square', $model->ID ) <= '56') {
-                                 echo '18';
-                              }
-                              else if ( get_field( 'square', $model->ID ) <= '72') {
-                                 echo '24';
-                              }
-                              else if ( get_field( 'square', $model->ID ) <= '90') {
-                                 echo '30';
-                              }
-                              else if ( get_field( 'square', $model->ID ) <= '110') {
-                                 echo '36';
-                              }
-                              ?></p>
+                                       <p><?php 
+												if ( get_field( 'square', $model->ID ) <= '20') {
+													echo '07';
+												}
+												if ( get_field( 'square', $model->ID ) == '22') {
+													echo '08';
+												}
+												else if ( get_field( 'square', $model->ID ) <= '27') {
+													echo '09';
+												}
+												else if ( get_field( 'square', $model->ID ) <= '33') {
+													echo '11';
+												}
+												else if ( get_field( 'square', $model->ID ) <= '36') {
+													echo '12';
+												}
+												else if ( get_field( 'square', $model->ID ) <= '40') {
+													echo '13';
+												}
+												else if ( get_field( 'square', $model->ID ) == '40') {
+													echo '14';
+												}
+												else if ( get_field( 'square', $model->ID ) <= '56') {
+													echo '18';
+												}
+												else if ( get_field( 'square', $model->ID ) <= '72') {
+													echo '24';
+												}
+												else if ( get_field( 'square', $model->ID ) <= '90') {
+													echo '30';
+												}
+												else if ( get_field( 'square', $model->ID ) <= '110') {
+													echo '36';
+												}
+												?></p>
                            </td>
                            <td class="twin"><p><?php
                                           if ( get_field( 'cold', $model->ID ) ): ?>
@@ -342,7 +348,7 @@ $options = get_option( 'skipao_settings' );
                                           if ( get_field( 'price', $model->ID ) ): ?>
                                           <?php echo the_field( 'price', $model->ID ); ?>
                                        <?php endif; ?>">
-                                 Купить
+                                 <img src="<?php echo get_template_directory_uri(); ?>/img/shopping-cart.svg"> <span>Купить</span>
                               </a>
                            </td>
                         </tr>

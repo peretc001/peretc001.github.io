@@ -1,4 +1,128 @@
-<?php $admin_email = 'i.krasovsky@yandex.ru'; ?>
+<?php 
+// Import PHPMailer classes into the global namespace
+// These must be at the top of your script, not inside a function
+// use PHPMailer\PHPMailer\PHPMailer;
+// use PHPMailer\PHPMailer\Exception;
+
+// // Load Composer's autoloader
+// require __DIR__ . '/vendor/autoload.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+
+require __DIR__ . '/vendor/phpmailer/phpmailer/src/PHPMailer.php';
+require __DIR__ . '/vendor/phpmailer/phpmailer/src/SMTP.php';
+
+// Instantiation and passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
+    try {
+        $mail->CharSet = 'UTF-8';
+        $mail->isSMTP();
+        $mail->Host = 'ssl://smtp.mail.ru';
+        $mail->SMTPAuth = true;
+        $mail->Username =  'l3dimperial@yandex.ru'; // имя пользователя yandex
+        $mail->Password = 'l3dimperial123'; // пароль на yandex
+        $mail->SMTPSecure = 'SSL';
+        $mail->Port = 465;
+
+        $mail->setFrom('email', '');
+
+        $mail->addAddress('email', '');
+
+        $mail->Subject = 'Заявка';
+
+        $mail->Body = '123';
+        $mail->IsHTML(true);
+        $mail->send();
+
+        $test = $json['error'] = 0; // ошибок не было
+        echo json_encode($test); // выводим массив ответа
+
+    } catch (Exception $e) {
+        echo 'Не возможно отправить письмо. Ошибка: ', $mail->ErrorInfo;
+	 }
+	 
+
+
+// try {
+//     //Server settings
+//     $mail->SMTPDebug = 2;                                       // Enable verbose debug output
+//     $mail->isSMTP();                                            // Set mailer to use SMTP
+//     $mail->Host       = 'smtp.yandex.ru';  							// Specify main and backup SMTP servers
+//     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+//     $mail->Username   = 'l3dimperial@yandex.ru';                     // SMTP username
+//     $mail->Password   = 'l3dimperial123';                               // SMTP password
+//     $mail->SMTPSecure = 'SSL';                                  // Enable TLS encryption, `ssl` also accepted
+//     $mail->Port       = 465;                                    // TCP port to connect to
+
+//     //Recipients
+//     $mail->setFrom('l3dimperial@yandex.ru', 'Calcled');
+    
+//     //$mail->addAddress('ellen@example.com');               // Name is optional
+//     //$mail->addReplyTo('info@example.com', 'Information');
+//     //$mail->addCC('cc@example.com');
+//     //$mail->addBCC('bcc@example.com');
+
+// //if ($_POST['phone'] != '' and $_POST['human'] == 'human') {
+
+// 	// // Attachments
+// 	// $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+// 	// $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+
+// 	$mail->addAddress('peretc001@mail.ru', 'Joe User');     // Add a recipient
+
+
+// 	// Content
+// 	$mail->isHTML(true);                                  // Set email format to HTML
+// 	$mail->Subject = $_POST['form'] .': '. $_POST['form_title'];
+// 	//$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+// 	//$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+// 	$mail->Body .= 'ФИО: <b>'. $_POST['fio'] .'</b><br>';
+// 	$mail->Body .= 'Email: <b>'. $_POST['email'] .'</b><br>';
+// 	$mail->Body .= 'Телефон: <b>'. $_POST['phone'] .'</b><br>';
+// 	if($_POST['price']) {
+// 		$mail->Body .= 'Цена: <b>'. $_POST['price'] .'</b><br>';
+// 		$mail->Body .= 'Площадь: <b>'. $_POST['square'] .'</b><br>';
+// 	}
+// 	if($_POST['settingup']) {
+// 		$mail->Body .= 'Монтаж: <b>'. $_POST['settingup'] .'</b><br>';
+// 		$mail->Body .= 'Экран: <b>'. $_POST['led'] .'</b><br>';
+// 		$mail->Body .= 'Управление: <b>'. $_POST['control'] .'</b><br>';
+// 		$mail->Body .= 'Доставка: <b>'. $_POST['delivery'] .'</b><br>';
+// 		$mail->Body .= 'Итого: <b>'. $_POST['total'] .'</b><br>';
+// 	}
+// 	if($_POST['commercial']) {
+// 		$mail->Body .= 'Ссылка на коммерческое предложение: <a href="http://calcled.skipao.site'. $_POST['commercial'] .'">Скачать</a>';
+// 	}
+
+
+// 	$mail->send();
+// 	echo 'Message has been sent';
+
+// } catch (Exception $e) {
+// 	echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+// }
+	
+
+// $to2  = $_POST['email']; 
+// $subject2 = $_POST['form'] .': '. $_POST['form_title']; 
+// $headers2 .= "Content-type: text/html; charset=utf-8 \r\n"; 
+// $headers2 .= "From: Калькулятор <". $admin_email .">\r\n"; 
+// $message2 = '
+// 	<p style="text-align: center; color: #151515;"><b>Благодарим за обращение в LedImperial</b></p>
+// 	<table style="width: 70%; margin: 10px auto; border: 1px solid #ddd; text-align: center; background: #eee; color: #151515; border-radius: 6px; padding: 100px 0; background: url(http://calcled.skipao.site/img/led.jpg) center no-repeat;">
+// 		<tr>
+// 			<td>
+// 				<p style="color: #fff; text-transform: uppercase; font-size: 20px; font-weight: bold;">Ваше коммерческое предложение</p>
+// 				<p style="text-align: center;"><a href="http://calcled.skipao.site'. $_POST['commercial'] .'"><img src="http://calcled.skipao.site/img/download.png" style="width: 150px;"></a></p>
+// 			</td>
+// 		</tr>
+// 	</table>
+// 	<table style="width: 68%; margin: 10px auto; "><tr><td>Телефон: 8 (800) 777-02-91</td><td style="text-align: right;"><a href="http://ledimperial.ru/">ledimperial.ru</td></tr></table>';
+// mail($to2, $subject2, $message2, $headers2);
+
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -25,51 +149,7 @@
 	</style>
 </head>
 <body>
-<?php
 
-if ($_POST['phone'] != '' and $_POST['human'] == 'human') {
-
-	$to  = 'peretc001@mail.ru'; 
-	$subject = $_POST['form'] .': '. $_POST['form_title']; 
-	$headers .= "Content-type: text/html; charset=utf-8 \r\n"; 
-	$headers .= "From: Калькулятор <". $admin_email .">\r\n"; 
-	$message .= 'ФИО: <b>'. $_POST['fio'] .'</b><br>';
-	$message .= 'Email: <b>'. $_POST['email'] .'</b><br>';
-	$message .= 'Телефон: <b>'. $_POST['phone'] .'</b><br>';
-	if($_POST['price']) {
-		$message .= 'Цена: <b>'. $_POST['price'] .'</b><br>';
-		$message .= 'Площадь: <b>'. $_POST['square'] .'</b><br>';
-	}
-	if($_POST['settingup']) {
-		$message .= 'Монтаж: <b>'. $_POST['settingup'] .'</b><br>';
-		$message .= 'Экран: <b>'. $_POST['led'] .'</b><br>';
-		$message .= 'Управление: <b>'. $_POST['control'] .'</b><br>';
-		$message .= 'Доставка: <b>'. $_POST['delivery'] .'</b><br>';
-		$message .= 'Итого: <b>'. $_POST['total'] .'</b><br>';
-	}
-	if($_POST['commercial']) {
-		$message .= 'Ссылка на коммерческое предложение: <a href="http://calcled.skipao.site'. $_POST['commercial'] .'">Скачать</a>';
-	}
-		mail($to, $subject, $message, $headers);
-
-	$to2  = $_POST['email']; 
-	$subject2 = $_POST['form'] .': '. $_POST['form_title']; 
-	$headers2 .= "Content-type: text/html; charset=utf-8 \r\n"; 
-	$headers2 .= "From: Калькулятор <". $admin_email .">\r\n"; 
-	$message2 = '
-		<p style="text-align: center; color: #151515;"><b>Благодарим за обращение в LedImperial</b></p>
-		<table style="width: 70%; margin: 10px auto; border: 1px solid #ddd; text-align: center; background: #eee; color: #151515; border-radius: 6px; padding: 100px 0; background: url(http://calcled.skipao.site/img/led.jpg) center no-repeat;">
-			<tr>
-				<td>
-					<p style="color: #fff; text-transform: uppercase; font-size: 20px; font-weight: bold;">Ваше коммерческое предложение</p>
-					<p style="text-align: center;"><a href="http://calcled.skipao.site'. $_POST['commercial'] .'"><img src="http://calcled.skipao.site/img/download.png" style="width: 150px;"></a></p>
-				</td>
-			</tr>
-		</table>
-		<table style="width: 68%; margin: 10px auto; "><tr><td>Телефон: 8 (800) 777-02-91</td><td style="text-align: right;"><a href="http://ledimperial.ru/">ledimperial.ru</td></tr></table>';
-	mail($to2, $subject2, $message2, $headers2);
-
-	?>
 
 
 	<div class="send_ok">
@@ -78,7 +158,7 @@ if ($_POST['phone'] != '' and $_POST['human'] == 'human') {
 		<p>В ближайщее время мы свяжемся с вами</p>
 	</div>
 
-<?php } else { ?>
+<?php //} else { ?>
 
 	<div class="send_ok">
 		<i class="far fa-thumbs-down"></i>
@@ -86,10 +166,10 @@ if ($_POST['phone'] != '' and $_POST['human'] == 'human') {
 		<p>Не указан номер телефона</p>
 	</div>
 
-<?php } ?>
+<?php //} ?>
 	<script language="JavaScript">
 		setTimeout(() => {
-			window.location.href = "/"
+			//window.location.href = "/"
 		}, 2000);
 	</script>
 </body>

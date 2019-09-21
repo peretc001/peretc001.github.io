@@ -8,6 +8,71 @@ require_once( ABSPATH . 'wp-admin/includes/file.php' );
 require_once( ABSPATH . 'wp-admin/includes/media.php' );
 
 
+	$query = new WP_Query(
+		array ( 
+		'post_type' => 'models',
+		'orderby' => 'date', 
+		'order' => 'DESC', 
+		'posts_per_page' => -1)
+		//'page_id=6716&post_type=models'
+	);
+	
+if ($query->have_posts()):
+			while ( $query->have_posts() ) : $query->the_post();
+
+			$title = $post->post_title;
+			$title = explode('/', $title);
+			echo $title[0] .'-- '. $post->ID;
+			echo '<br>';
+			$parent = wp_get_post_parent_id( $post->ID );
+			var_dump($parent);
+
+
+			$post_data = array(
+				'ID'		   	=> $post->ID,
+				'post_title'   => $title[0],
+				'post_type'    => 'models',
+				'post_status'  => 'publish',
+				'post_content' => '',
+				'post_parent'    => $parent,
+			);
+			// //Добавляем запись - Серия
+			$post_id = wp_insert_post( $post_data );
+
+		endwhile;
+	endif;
+
+
+	// if ($query->have_posts()):
+	// 		while ( $query->have_posts() ) : $query->the_post();
+
+	// 		echo $title = $post->post_title;
+	// 		echo '<br>------';
+	// 		echo the_content();
+	// 		echo '<br>';
+	// 		$parent = wp_get_post_parent_id( $post->ID );
+	// 		var_dump($parent);
+
+
+
+	// 		$post_data = array(
+	// 			'ID'		   => $post->ID,
+	// 			'post_title'   => $post->post_title,
+	// 			'post_type'    => 'models',
+	// 			'post_status'  => 'publish',
+	// 			'post_content' => '',
+	// 			'post_parent'    => $parent,
+	// 		);
+	// 		// //Добавляем запись - Серия
+	// 		$post_id = wp_insert_post( $post_data );
+
+	
+	// 	endwhile;
+	// endif;
+
+
+
+
 //Редактируем название постов
 	// $query = new WP_Query(array ( 
 	// 	'post_type' => 'seria', 
@@ -84,302 +149,302 @@ require_once( ABSPATH . 'wp-admin/includes/media.php' );
 
 
 
-//Import
-include './simplehtmldom/simple_html_dom.php';
-$html = file_get_html('https://splitsystem-krasnodar.ru/katalog/');
+// //Import
+// include './simplehtmldom/simple_html_dom.php';
+// $html = file_get_html('https://splitsystem-krasnodar.ru/katalog/');
 
 
-$menu = array();
-foreach($html->find('.brands_item') as $k => $href) {
+// $menu = array();
+// foreach($html->find('.brands_item') as $k => $href) {
 	
-	//foreach($element->find('.brands_list') as $href) {
-			 //$title = $href->find("span", 0)->plaintext;
+// 	//foreach($element->find('.brands_list') as $href) {
+// 			 //$title = $href->find("span", 0)->plaintext;
 			 
-			$menu[$k]['title']    = $href->find("span", 0)->plaintext;
-			 //$menu[$k]['about']     = $href->find('.cat__main__desc', 0)->plaintext;
-			$menu[$k]['img']      = $href->find("a img", 0)->attr['src'];
-			$menu[$k]['url']      = $href->find("a", 0)->attr['href'];
+// 			$menu[$k]['title']    = $href->find("span", 0)->plaintext;
+// 			 //$menu[$k]['about']     = $href->find('.cat__main__desc', 0)->plaintext;
+// 			$menu[$k]['img']      = $href->find("a img", 0)->attr['src'];
+// 			$menu[$k]['url']      = $href->find("a", 0)->attr['href'];
 
 			 
-			//  $name = $href->find('img', 0)->attr['src'];
+// 			//  $name = $href->find('img', 0)->attr['src'];
 			 
-			 // $dir = @mkdir('./img/brands/'. $title2);
-			 // if($dir) { continue; }
+// 			 // $dir = @mkdir('./img/brands/'. $title2);
+// 			 // if($dir) { continue; }
 
-			 // $file = 'http://splitlife-krasnodar.ru'. $name;
-			 // $newfile = './img/brands/'. $title .'.png';
+// 			 // $file = 'http://splitlife-krasnodar.ru'. $name;
+// 			 // $newfile = './img/brands/'. $title .'.png';
 
-			 // copy($file, $newfile);
+// 			 // copy($file, $newfile);
 
 
-			//Записываем Бренды как категории в базу WP
-			// $add_cat = wp_insert_term(
-			// 	$href->find('.cat__main__title', 0)->plaintext,
-			// 	'brands',
-			// 	array(
-			// 		'description'=> $href->find('.cat__main__desc', 0)->plaintext,
-			// 		'slug' => $href->find('.cat__main__title', 0)->plaintext,
-			// 		'parent'=> ''
-			// 	)
-			// );
+// 			//Записываем Бренды как категории в базу WP
+// 			// $add_cat = wp_insert_term(
+// 			// 	$href->find('.cat__main__title', 0)->plaintext,
+// 			// 	'brands',
+// 			// 	array(
+// 			// 		'description'=> $href->find('.cat__main__desc', 0)->plaintext,
+// 			// 		'slug' => $href->find('.cat__main__title', 0)->plaintext,
+// 			// 		'parent'=> ''
+// 			// 	)
+// 			// );
 			
-			// foreach($add_cat as $ac) {
-			// 	//Если категория существует
-			// 	if( $ac['term_exists'] ) {
-			// 		//достаем id
-			// 		$cat_id = $ac['term_exists'];
-			// 	} else {
-			// 		//Если категории нет id = новый id
-			// 		$cat_id = $ac;
-			// 	}
-			// }
-			//var_dump($cat_id);
+// 			// foreach($add_cat as $ac) {
+// 			// 	//Если категория существует
+// 			// 	if( $ac['term_exists'] ) {
+// 			// 		//достаем id
+// 			// 		$cat_id = $ac['term_exists'];
+// 			// 	} else {
+// 			// 		//Если категории нет id = новый id
+// 			// 		$cat_id = $ac;
+// 			// 	}
+// 			// }
+// 			//var_dump($cat_id);
 			
-			//$upload_img = media_sideload_image( 'http://splitlife-krasnodar.ru'. $href->find('img')[0]->attr['src'], 0, $href->find('.cat__main__title')[0]->plaintext, 'id' );
+// 			//$upload_img = media_sideload_image( 'http://splitlife-krasnodar.ru'. $href->find('img')[0]->attr['src'], 0, $href->find('.cat__main__title')[0]->plaintext, 'id' );
 
-			// if( is_wp_error($upload_img) ){
-			// 	//echo $upload_img->get_error_message();
-			// }
-			// else {
-			// 	//Id картинки = $upload_img;
-			// }
+// 			// if( is_wp_error($upload_img) ){
+// 			// 	//echo $upload_img->get_error_message();
+// 			// }
+// 			// else {
+// 			// 	//Id картинки = $upload_img;
+// 			// }
 			
-			//Обновляем поле ACF - Изображение категории
-			//$upd = update_field( 'img', $upload_img, 'brands_'. $cat_id );
+// 			//Обновляем поле ACF - Изображение категории
+// 			//$upd = update_field( 'img', $upload_img, 'brands_'. $cat_id );
 
-	//}
-}
-for ($i = 0; $i <= 36; $i++) {
-	if ($i <= 10 || $i == 13 || $i == 14 || $i == 15 || $i == 16 || $i == 21 || $i == 23 || $i == 24 || $i == 25 || $i == 30 || $i == 31 || $i >= 34 ) {
-		unset ($menu[$i]);
-	}
-}
+// 	//}
+// }
+// for ($i = 0; $i <= 36; $i++) {
+// 	if ($i <= 10 || $i == 13 || $i == 14 || $i == 15 || $i == 16 || $i == 21 || $i == 23 || $i == 24 || $i == 25 || $i == 30 || $i == 31 || $i >= 34 ) {
+// 		unset ($menu[$i]);
+// 	}
+// }
 
-foreach($menu as $k => $value) {
-	// //Записываем Бренды как категории в базу WP
-	// $add_cat = wp_insert_term(
-	// 	$value['title'],
-	// 	'brands',
-	// 	array(
-	// 		'description'=> '',
-	// 		'parent'=> ''
-	// 	)
-	// );
+// foreach($menu as $k => $value) {
+// 	// //Записываем Бренды как категории в базу WP
+// 	// $add_cat = wp_insert_term(
+// 	// 	$value['title'],
+// 	// 	'brands',
+// 	// 	array(
+// 	// 		'description'=> '',
+// 	// 		'parent'=> ''
+// 	// 	)
+// 	// );
 
-	// foreach($add_cat as $ac) {
-	// 		//Если категория существует
-	// 		if( $ac['term_exists'] ) {
-	// 			//достаем id
-	// 			$cat_id = $ac['term_exists'];
-	// 		} else {
-	// 			//Если категории нет id = новый id
-	// 			$cat_id = $ac;
-	// 		}
-	// }
+// 	// foreach($add_cat as $ac) {
+// 	// 		//Если категория существует
+// 	// 		if( $ac['term_exists'] ) {
+// 	// 			//достаем id
+// 	// 			$cat_id = $ac['term_exists'];
+// 	// 		} else {
+// 	// 			//Если категории нет id = новый id
+// 	// 			$cat_id = $ac;
+// 	// 		}
+// 	// }
 
-	// $upload_img = media_sideload_image( 'https://splitsystem-krasnodar.ru/'. $value['img'], 0, $value['title'], 'id' );
+// 	// $upload_img = media_sideload_image( 'https://splitsystem-krasnodar.ru/'. $value['img'], 0, $value['title'], 'id' );
 
-	// if( is_wp_error($upload_img) ){
-	// 	//echo $upload_img->get_error_message();
-	// }
-	// else {
-	// 	//Id картинки = $upload_img;
-	// }
+// 	// if( is_wp_error($upload_img) ){
+// 	// 	//echo $upload_img->get_error_message();
+// 	// }
+// 	// else {
+// 	// 	//Id картинки = $upload_img;
+// 	// }
 	
-	// //Обновляем поле ACF - Изображение категории
-	// $upd = update_field( 'img', $upload_img, 'brands_'. $cat_id );
+// 	// //Обновляем поле ACF - Изображение категории
+// 	// $upd = update_field( 'img', $upload_img, 'brands_'. $cat_id );
 	
-}
+// }
 
-// echo '<pre>';
-// var_dump($menu);
-// echo '</pre>';
+// // echo '<pre>';
+// // var_dump($menu);
+// // echo '</pre>';
 
 
 
-////Добавляем серии
-$products = array();
+// ////Добавляем серии
+// $products = array();
 
-foreach ($menu as $key => $page) {
-       $html2 = file_get_html('https://splitsystem-krasnodar.ru/'. $page['url']);
-		//  echo 'https://splitsystem-krasnodar.ru/'. $page['url'];
+// foreach ($menu as $key => $page) {
+//        $html2 = file_get_html('https://splitsystem-krasnodar.ru/'. $page['url']);
+// 		//  echo 'https://splitsystem-krasnodar.ru/'. $page['url'];
 		 
 		 
 
-		// foreach($html2->find('.50percent.fleft') as $key2 => $element) {
+// 		// foreach($html2->find('.50percent.fleft') as $key2 => $element) {
 
-		// 		$products[$key][$key2]['title'] = $page['title'];
-		// 		$name = str_replace(['on/of','onoff','ON/OFF','(Инвертор)', 'Серия ', 'Сплит система '],'',$element->find('a', 0)->plaintext);
-		// 		$products[$key][$key2]['name'] = $name;
-		// }
+// 		// 		$products[$key][$key2]['title'] = $page['title'];
+// 		// 		$name = str_replace(['on/of','onoff','ON/OFF','(Инвертор)', 'Серия ', 'Сплит система '],'',$element->find('a', 0)->plaintext);
+// 		// 		$products[$key][$key2]['name'] = $name;
+// 		// }
 
-		foreach($html2->find('.series_item') as $key2 => $element) {
+// 		foreach($html2->find('.series_item') as $key2 => $element) {
 
-			$products[$key][$key2]['title'] = $page['title'];
-			$name = str_replace(['on/of','onoff','ON/OFF','(Инвертор)', 'Серия ', 'Сплит Система ', 'Сплит Система  серии ', 'Сплит Система  серий ', 'серия ', 'серии ', 'серий ', 'Сплит система ', $page['title']],'',$element->find('.series_item_name', 0)->plaintext);
-			$products[$key][$key2]['name'] = $name;
+// 			$products[$key][$key2]['title'] = $page['title'];
+// 			$name = str_replace(['on/of','onoff','ON/OFF','(Инвертор)', 'Серия ', 'Сплит Система ', 'Сплит Система  серии ', 'Сплит Система  серий ', 'серия ', 'серии ', 'серий ', 'Сплит система ', $page['title']],'',$element->find('.series_item_name', 0)->plaintext);
+// 			$products[$key][$key2]['name'] = $name;
 
-              $products[$key][$key2]['img']  = $element->find('.series_item_image img', 0)->attr['src'];
-              $products[$key][$key2]['garanty'] = 'Гарантия <span>3</span> года';
+//               $products[$key][$key2]['img']  = $element->find('.series_item_image img', 0)->attr['src'];
+//               $products[$key][$key2]['garanty'] = 'Гарантия <span>3</span> года';
 				  
-				  $desc = $name = str_replace([' 		 			Заказать сплит-систему 			Нашли дешевле? 			Стоимость установки 		 		 		', $page['title']],'',$element->find('.series_item_desc', 0)->plaintext);
+// 				  $desc = $name = str_replace([' 		 			Заказать сплит-систему 			Нашли дешевле? 			Стоимость установки 		 		 		', $page['title']],'',$element->find('.series_item_desc', 0)->plaintext);
 
-				  $products[$key][$key2]['desc'] = $desc;
+// 				  $products[$key][$key2]['desc'] = $desc;
 				  
 
              
               
 
-      //         $name = $element->find('a', 0)->attr['href'];
+//       //         $name = $element->find('a', 0)->attr['href'];
               
-              //$dir = @mkdir('./img/'. $title2 .'/');
-              //if($dir) { continue; } 
+//               //$dir = @mkdir('./img/'. $title2 .'/');
+//               //if($dir) { continue; } 
 
-              // $file2 = 'http://splitlife-krasnodar.ru'. $name;
-              // $newfile2 = './img/'. $title2 .'/'. $key2 .'.png';
+//               // $file2 = 'http://splitlife-krasnodar.ru'. $name;
+//               // $newfile2 = './img/'. $title2 .'/'. $key2 .'.png';
               
 
-				  // copy($file2, $newfile2);
+// 				  // copy($file2, $newfile2);
 				  
 				
 
-				// 
+// 				// 
 
 				
 
-				// $products[$key][$key2]['tech']['zavod'] = $page['title'];
-				// update_field( 'zavod_izgotovitel', $page['title'], $post_id );
-				// //Компрессор
-				// update_field( 'tip_kompressora', $element->find('.item-block__chars.row li')[0]->find('span')[1]->plaintext, $post_id );
-				// //Таймер
-				// update_field( 'tajmer', $element->find('.item-block__chars.row li')[3]->find('span')[1]->plaintext, $post_id );
-				// //Класс
-				// update_field( 'klass_energoeffektivnosti', $element->find('.item-block__chars.row li')[4]->find('span')[1]->plaintext, $post_id );
-				// //Шум
-				// update_field( 'uroven_shuma', $element->find('.item-block__chars.row li')[7]->find('span')[1]->plaintext, $post_id );
-				// //Ионизация
-				// update_field( 'ionizacziya', $element->find('.item-block__chars.row li')[8]->find('span')[1]->plaintext, $post_id );
-				// //Wifi 
-				// update_field( 'wi-fi', $element->find('.item-block__chars.row li')[9]->find('span')[1]->plaintext, $post_id );
+// 				// $products[$key][$key2]['tech']['zavod'] = $page['title'];
+// 				// update_field( 'zavod_izgotovitel', $page['title'], $post_id );
+// 				// //Компрессор
+// 				// update_field( 'tip_kompressora', $element->find('.item-block__chars.row li')[0]->find('span')[1]->plaintext, $post_id );
+// 				// //Таймер
+// 				// update_field( 'tajmer', $element->find('.item-block__chars.row li')[3]->find('span')[1]->plaintext, $post_id );
+// 				// //Класс
+// 				// update_field( 'klass_energoeffektivnosti', $element->find('.item-block__chars.row li')[4]->find('span')[1]->plaintext, $post_id );
+// 				// //Шум
+// 				// update_field( 'uroven_shuma', $element->find('.item-block__chars.row li')[7]->find('span')[1]->plaintext, $post_id );
+// 				// //Ионизация
+// 				// update_field( 'ionizacziya', $element->find('.item-block__chars.row li')[8]->find('span')[1]->plaintext, $post_id );
+// 				// //Wifi 
+// 				// update_field( 'wi-fi', $element->find('.item-block__chars.row li')[9]->find('span')[1]->plaintext, $post_id );
 				
 
-				// foreach ($element->find('.series_item_models table tbody tr') as $key3 => $t) {
+// 				// foreach ($element->find('.series_item_models table tbody tr') as $key3 => $t) {
 
-				// 	$products[$key][$key2]['models'][$key3]['name'] = $t->find('td')[0]->plaintext;
-				// 	$products[$key][$key2]['models'][$key3]['square'] = preg_replace("/[^0-9]/", '', $t->find('td')[0]->next_sibling(0)->plaintext);
-				// 	$products[$key][$key2]['models'][$key3]['cold'] 	= (int)$t->find('td')[0]->next_sibling(0)->next_sibling(0)->plaintext;
-				// 	$products[$key][$key2]['models'][$key3]['hot'] 	= (int)$t->find('td')[0]->next_sibling(0)->next_sibling(0)->plaintext;
-				// 	$products[$key][$key2]['models'][$key3]['size'] 	= $t->find('td')[0]->next_sibling(0)->next_sibling(0)->next_sibling(0)->plaintext;
-				// 	$price = str_replace([' руб.', ' руб. ', 'руб.'], '', $t->find('td')[0]->next_sibling(0)->next_sibling(0)->next_sibling(0)->next_sibling(0)->plaintext);
+// 				// 	$products[$key][$key2]['models'][$key3]['name'] = $t->find('td')[0]->plaintext;
+// 				// 	$products[$key][$key2]['models'][$key3]['square'] = preg_replace("/[^0-9]/", '', $t->find('td')[0]->next_sibling(0)->plaintext);
+// 				// 	$products[$key][$key2]['models'][$key3]['cold'] 	= (int)$t->find('td')[0]->next_sibling(0)->next_sibling(0)->plaintext;
+// 				// 	$products[$key][$key2]['models'][$key3]['hot'] 	= (int)$t->find('td')[0]->next_sibling(0)->next_sibling(0)->plaintext;
+// 				// 	$products[$key][$key2]['models'][$key3]['size'] 	= $t->find('td')[0]->next_sibling(0)->next_sibling(0)->next_sibling(0)->plaintext;
+// 				// 	$price = str_replace([' руб.', ' руб. ', 'руб.'], '', $t->find('td')[0]->next_sibling(0)->next_sibling(0)->next_sibling(0)->next_sibling(0)->plaintext);
 
-				// 	$products[$key][$key2]['models'][$key3]['price'] 	= $price;
+// 				// 	$products[$key][$key2]['models'][$key3]['price'] 	= $price;
 					
-		  		// }
+// 		  		// }
 
-				//Добавляем изображение
-				// $upload_img = media_sideload_image( 'http://splitlife-krasnodar.ru'. $element->find('a', 0)->attr['href'], $post_id, $key2, 'id' );
-				// set_post_thumbnail( $post_id, $upload_img );
+// 				//Добавляем изображение
+// 				// $upload_img = media_sideload_image( 'http://splitlife-krasnodar.ru'. $element->find('a', 0)->attr['href'], $post_id, $key2, 'id' );
+// 				// set_post_thumbnail( $post_id, $upload_img );
 
               
-       }
-}
+//        }
+// }
 
 
-foreach ($products as $prod) {
+// foreach ($products as $prod) {
 
-	foreach ($prod as $k => $p) {
+// 	foreach ($prod as $k => $p) {
 
-		echo $p['title'];
-		echo '<ul>';
-		//Находим категорию
-		// $cat_id = get_term_by( 'name', $p['title'], 'brands');
-		// echo '<ul>';
-		// 	echo $p['name'];
-		// 	echo '<br>';
-			echo '<a href="https://splitsystem-krasnodar.ru/'. $p['img'] .'">'. $p['name'] .'</a> --- ';
-		// 	echo '<br>';
-		// 	echo $p['garanty'];
-		// 	echo '<br>';
-		// 	echo $p['desc'];
+// 		echo $p['title'];
+// 		echo '<ul>';
+// 		//Находим категорию
+// 		// $cat_id = get_term_by( 'name', $p['title'], 'brands');
+// 		// echo '<ul>';
+// 		// 	echo $p['name'];
+// 		// 	echo '<br>';
+// 			echo '<a href="https://splitsystem-krasnodar.ru/'. $p['img'] .'">'. $p['name'] .'</a> --- ';
+// 		// 	echo '<br>';
+// 		// 	echo $p['garanty'];
+// 		// 	echo '<br>';
+// 		// 	echo $p['desc'];
 
-			// //Находим id поста
-			$mypost = get_page_by_title( trim($p['name']), '', 'seria' );
-			echo $mypost->ID;
+// 			// //Находим id поста
+// 			$mypost = get_page_by_title( trim($p['name']), '', 'seria' );
+// 			echo $mypost->ID;
 
-			echo ' --- '. $k; 
-			//Добавляем изображение
-			// $upload_img = media_sideload_image( 'https://splitsystem-krasnodar.ru/'. $p['img'], $mypost->ID, $k, 'id' );
-			// set_post_thumbnail( $mypost->ID, $upload_img );
+// 			echo ' --- '. $k; 
+// 			//Добавляем изображение
+// 			// $upload_img = media_sideload_image( 'https://splitsystem-krasnodar.ru/'. $p['img'], $mypost->ID, $k, 'id' );
+// 			// set_post_thumbnail( $mypost->ID, $upload_img );
 
-		echo '</ul>';
+// 		echo '</ul>';
 			
 		
-			// // Create new post.
-			// $post_data = array(
-			// 	'ID' 				=> $mypost->ID, //Если существует - обновляем
-			// 	'post_title'   => $p['name'],
-			// 	'post_type'    => 'seria',
-			// 	'post_status'  => 'publish',
-			// 	'post_content' => $p['desc'], 
-			// 	'post_category'=> array( $cat_id )
-			// );
-			// // //Добавляем запись - Серия
-			// $post_id = wp_insert_post( $post_data );
-			// $taxonomy = 'brands';
-			// // // //Присваиваем бренд
-			// wp_set_object_terms($post_id, $p['title'], $taxonomy);
+// 			// // Create new post.
+// 			// $post_data = array(
+// 			// 	'ID' 				=> $mypost->ID, //Если существует - обновляем
+// 			// 	'post_title'   => $p['name'],
+// 			// 	'post_type'    => 'seria',
+// 			// 	'post_status'  => 'publish',
+// 			// 	'post_content' => $p['desc'], 
+// 			// 	'post_category'=> array( $cat_id )
+// 			// );
+// 			// // //Добавляем запись - Серия
+// 			// $post_id = wp_insert_post( $post_data );
+// 			// $taxonomy = 'brands';
+// 			// // // //Присваиваем бренд
+// 			// wp_set_object_terms($post_id, $p['title'], $taxonomy);
 
-			// $post_parent = $post_id;
-			// //Добавляем гарантию
-			// update_field( 'garanty', 'Гарантия <span>3</span> года', $post_id );
+// 			// $post_parent = $post_id;
+// 			// //Добавляем гарантию
+// 			// update_field( 'garanty', 'Гарантия <span>3</span> года', $post_id );
 
-			// echo 'models:';
-			// echo '<ul>';
+// 			// echo 'models:';
+// 			// echo '<ul>';
 			
 
-		// echo '</ul>';
+// 		// echo '</ul>';
 
-		// foreach ( $p['models'] as $m) {
-			// echo $m['name'];
-			// echo '<br>';
-			// echo $m['square'];
-			// echo '<br>';
-			// echo $m['cold'];
-			// echo '<br>';
-			// echo $m['hot'];
-			// echo '<br>';
-			// echo $m['size'];
-			// echo '<br>';
-			// echo $m['price'];
-			// echo '<br>';
+// 		// foreach ( $p['models'] as $m) {
+// 			// echo $m['name'];
+// 			// echo '<br>';
+// 			// echo $m['square'];
+// 			// echo '<br>';
+// 			// echo $m['cold'];
+// 			// echo '<br>';
+// 			// echo $m['hot'];
+// 			// echo '<br>';
+// 			// echo $m['size'];
+// 			// echo '<br>';
+// 			// echo $m['price'];
+// 			// echo '<br>';
 
-			//Находим id поста
-			// $myseriapost = get_page_by_title( $m['name'], '', 'models' );
+// 			//Находим id поста
+// 			// $myseriapost = get_page_by_title( $m['name'], '', 'models' );
 			
-			// $post_data = array(
-			// 	'ID' 				=> $myseriapost->ID, //Если существует - обновляем
-			// 	'post_title'   => $m['name'],
-			// 	'post_type'    => 'models',
-			// 	'post_status'  => 'publish',
-			// 	//'post_content' => $element->find('.text-description__in')[0]->innertext,
-			// 	'post_parent'    => $post_parent, 
-			// );
-			// $post_id = wp_insert_post( $post_data );
+// 			// $post_data = array(
+// 			// 	'ID' 				=> $myseriapost->ID, //Если существует - обновляем
+// 			// 	'post_title'   => $m['name'],
+// 			// 	'post_type'    => 'models',
+// 			// 	'post_status'  => 'publish',
+// 			// 	//'post_content' => $element->find('.text-description__in')[0]->innertext,
+// 			// 	'post_parent'    => $post_parent, 
+// 			// );
+// 			// $post_id = wp_insert_post( $post_data );
 
-			// update_field( 'square', $m['square'], $post_id );
-			// update_field( 'cold', 	$m['cold'], $post_id );
-			// update_field( 'hot', 	$m['hot'], $post_id );
-			// update_field( 'size', 	$m['size'], $post_id );
-			// update_field( 'price', 	$m['price'], $post_id );
+// 			// update_field( 'square', $m['square'], $post_id );
+// 			// update_field( 'cold', 	$m['cold'], $post_id );
+// 			// update_field( 'hot', 	$m['hot'], $post_id );
+// 			// update_field( 'size', 	$m['size'], $post_id );
+// 			// update_field( 'price', 	$m['price'], $post_id );
 
 
-		// }
+// 		// }
 
 		
 		
 
-	}
-}
+// 	}
+// }
 // $products[0][0]['title'] = 'DAHATSU';
 
 // $products[0][0]['name'] 		= 'Classik';

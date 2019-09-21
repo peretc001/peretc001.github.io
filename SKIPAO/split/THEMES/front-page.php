@@ -307,6 +307,9 @@ $options = get_option( 'skipao_settings' );
 												if ( get_field( 'square', $model->ID ) <= '20') {
 													echo '07';
 												}
+												if ( get_field( 'square', $model->ID ) == '22') {
+													echo '08';
+												}
 												else if ( get_field( 'square', $model->ID ) <= '27') {
 													echo '09';
 												}
@@ -318,6 +321,9 @@ $options = get_option( 'skipao_settings' );
 												}
 												else if ( get_field( 'square', $model->ID ) <= '40') {
 													echo '13';
+												}
+												else if ( get_field( 'square', $model->ID ) == '40') {
+													echo '14';
 												}
 												else if ( get_field( 'square', $model->ID ) <= '56') {
 													echo '18';
@@ -362,7 +368,7 @@ $options = get_option( 'skipao_settings' );
 																if ( get_field( 'price', $model->ID ) ): ?>
 																<?php echo the_field( 'price', $model->ID ); ?>
 															<?php endif; ?>">
-													Купить
+													<img src="<?php echo get_template_directory_uri(); ?>/img/shopping-cart.svg"> <span>Купить</span>
 												</a>
 											</td>
 										</tr>
@@ -571,6 +577,9 @@ $options = get_option( 'skipao_settings' );
 												if ( get_field( 'square', $model->ID ) <= '20') {
 													echo '07';
 												}
+												if ( get_field( 'square', $model->ID ) == '22') {
+													echo '08';
+												}
 												else if ( get_field( 'square', $model->ID ) <= '27') {
 													echo '09';
 												}
@@ -582,6 +591,9 @@ $options = get_option( 'skipao_settings' );
 												}
 												else if ( get_field( 'square', $model->ID ) <= '40') {
 													echo '13';
+												}
+												else if ( get_field( 'square', $model->ID ) == '40') {
+													echo '14';
 												}
 												else if ( get_field( 'square', $model->ID ) <= '56') {
 													echo '18';
@@ -626,7 +638,7 @@ $options = get_option( 'skipao_settings' );
 																if ( get_field( 'price', $model->ID ) ): ?>
 																<?php echo the_field( 'price', $model->ID ); ?>
 															<?php endif; ?>">
-													Купить
+													<img src="<?php echo get_template_directory_uri(); ?>/img/shopping-cart.svg"> <span>Купить</span>
 												</a>
 											</td>
 										</tr>
@@ -831,9 +843,12 @@ $options = get_option( 'skipao_settings' );
 																if ( get_field( 'square', $model->ID ) ): ?>
 																<?php echo the_field( 'square', $model->ID ); ?>
 															<?php endif; ?></p>
-												<p><?php 
+															<p><?php 
 												if ( get_field( 'square', $model->ID ) <= '20') {
 													echo '07';
+												}
+												if ( get_field( 'square', $model->ID ) == '22') {
+													echo '08';
 												}
 												else if ( get_field( 'square', $model->ID ) <= '27') {
 													echo '09';
@@ -846,6 +861,9 @@ $options = get_option( 'skipao_settings' );
 												}
 												else if ( get_field( 'square', $model->ID ) <= '40') {
 													echo '13';
+												}
+												else if ( get_field( 'square', $model->ID ) == '40') {
+													echo '14';
 												}
 												else if ( get_field( 'square', $model->ID ) <= '56') {
 													echo '18';
@@ -890,7 +908,7 @@ $options = get_option( 'skipao_settings' );
 																if ( get_field( 'price', $model->ID ) ): ?>
 																<?php echo the_field( 'price', $model->ID ); ?>
 															<?php endif; ?>">
-													Купить
+													<img src="<?php echo get_template_directory_uri(); ?>/img/shopping-cart.svg"> <span>Купить</span>
 												</a>
 											</td>
 										</tr>
@@ -1095,9 +1113,12 @@ $options = get_option( 'skipao_settings' );
 																if ( get_field( 'square', $model->ID ) ): ?>
 																<?php echo the_field( 'square', $model->ID ); ?>
 															<?php endif; ?></p>
-												<p><?php 
+															<p><?php 
 												if ( get_field( 'square', $model->ID ) <= '20') {
 													echo '07';
+												}
+												if ( get_field( 'square', $model->ID ) == '22') {
+													echo '08';
 												}
 												else if ( get_field( 'square', $model->ID ) <= '27') {
 													echo '09';
@@ -1110,6 +1131,9 @@ $options = get_option( 'skipao_settings' );
 												}
 												else if ( get_field( 'square', $model->ID ) <= '40') {
 													echo '13';
+												}
+												else if ( get_field( 'square', $model->ID ) == '40') {
+													echo '14';
 												}
 												else if ( get_field( 'square', $model->ID ) <= '56') {
 													echo '18';
@@ -1154,7 +1178,7 @@ $options = get_option( 'skipao_settings' );
 																if ( get_field( 'price', $model->ID ) ): ?>
 																<?php echo the_field( 'price', $model->ID ); ?>
 															<?php endif; ?>">
-													Купить
+													<img src="<?php echo get_template_directory_uri(); ?>/img/shopping-cart.svg"> <span>Купить</span>
 												</a>
 											</td>
 										</tr>

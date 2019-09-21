@@ -1,0 +1,47 @@
+.step1
+   .slick-slide
+      img
+         width: 100%
+   .slick-dots
+      list-style: none
+      margin: 1em 0
+      padding: 0
+      display: flex
+      align-items: center
+      justify-content: center
+      li
+         padding: 0
+         margin: 0 0.2em
+      button
+         border-radius: 50%
+         width: $gutter/2
+         height: $gutter/2
+         font-size: 0
+         padding: 0
+         margin: 0
+         border: 1px solid #888888
+         opacity: .3
+         transition: opacity .3s ease
+         &:hover
+            opacity: 1
+      .slick-active
+         button
+            opacity: 1
+            background: #888888
+   .materials
+      margin-bottom: .5em
+      display: flex
+      align-items: center
+      justify-content: space-between
+      &__card
+         img
+            width: 100%
+         p
+            padding-top: .5em
+            font-size: .8em
+   p.text
+      text-align: left
+      margin-bottom: 0
+   .step_button
+      padding-top: 1em
+      text-align: left

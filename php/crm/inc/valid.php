@@ -73,7 +73,7 @@
     $_SESSION['name'] = $row["name"];
     $_SESSION['role'] = $row["role"];
     $_SESSION['id'] = $row["id"];//эти данные очень часто используются, вот их и будет "носить с собой" вошедший пользователь
-	echo '<script language="JavaScript">window.location.href = "/home.php"</script>';	
+	echo '<script language="JavaScript">window.location.href = "/home.php"; cosole.log("ok");</script>';	
     }
  else {
     //если пароли не сошлись

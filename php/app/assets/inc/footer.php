@@ -38,7 +38,7 @@
 						<div class="circle-loader">
 							<div class="checkmark draw"></div>
 						</div>
-						<span>Согласен с условиями</label> <a href="/policy/" target="_blank">Политики конфиденциальности</a></span>
+						<span>Согласен с условиями</span> <a href="/policy/" target="_blank">Политики конфиденциальности</a></span>
 					</div>
 					
 				</form>

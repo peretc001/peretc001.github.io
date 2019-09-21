@@ -1,0 +1,27 @@
+$gutter: 30px
+
+body
+   opacity: 0
+   $default-font: 'MuseoSans', sans-serif
+   font-size: 16px
+
+a, a:focus, a:visited, button, button:focus, .btn, .btn:focus
+   outline: none
+   box-shadow: none
+
+@import 'sass/font'
+@import 'sass/stepLine'
+@import 'sass/step1'
+@import 'sass/step2'
+@import 'sass/step3'
+
+input, textarea
+   border: #666 1px solid
+   outline: none
+   &:focus:required:invalid
+      border-color: red
+   &:required:valid
+      border-color: green
+
+body
+   opacity: 1

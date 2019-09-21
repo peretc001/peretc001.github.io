@@ -170,6 +170,7 @@
                      span
                         &:last-child
                            padding-right: 1em
+      
       &__body
          .table
             width: 100%
@@ -184,6 +185,7 @@
                td
                   padding: 0.5em
                   margin: 0
+                  font-size: 0.9em
                   vertical-align: middle
                   border-top: none
             tr
@@ -193,32 +195,28 @@
                text-align: center
                border-top: none
                vertical-align: middle
-               padding: .5em
+               padding: .5em 0
                p
                   margin-bottom: 0
                .btn
                   &.btn-accent
-                     padding: .2em 1em .3em 2em
-                     margin: 0
+                     display: flex
+                     align-items: center
+                     justify-content: center
+                     padding: .5em 1em
+                     margin: 0 auto
+                     max-width: 90px
                      font-size: 0.8em
                      position: relative
                      background: #0ed40b
                      border-color: darken(#0ed40b, 5%)
-                     &:before
-                        content: ''
-                        position: absolute
-                        left: .5em
-                        top: 50%
-                        transform: translateY(-50%)
-                        width: 1em
-                        height: 1em
-                        background-size: 1em
-                        background-position: center
-                        background-repeat: no-repeat
-                        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDQ0Ni44NTMgNDQ2Ljg1MyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDQ2Ljg1MyA0NDYuODUzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PGc+Cgk8cGF0aCBkPSJNNDQ0LjI3NCw5My4zNmMtMi41NTgtMy42NjYtNi42NzQtNS45MzItMTEuMTQ1LTYuMTIzTDE1NS45NDIsNzUuMjg5Yy03Ljk1My0wLjM0OC0xNC41OTksNS43OTItMTQuOTM5LDEzLjcwOCAgIGMtMC4zMzgsNy45MTMsNS43OTIsMTQuNTk5LDEzLjcwNywxNC45MzlsMjU4LjQyMSwxMS4xNEwzNjIuMzIsMjczLjYxSDEzNi4yMDVMOTUuMzU0LDUxLjE3OSAgIGMtMC44OTgtNC44NzUtNC4yNDUtOC45NDItOC44NjEtMTAuNzUzTDE5LjU4NiwxNC4xNDFjLTcuMzc0LTIuODg3LTE1LjY5NSwwLjczNS0xOC41OTEsOC4xYy0yLjg5MSw3LjM2OSwwLjczLDE1LjY5NSw4LjEsMTguNTkxICAgbDU5LjQ5MSwyMy4zNzFsNDEuNTcyLDIyNi4zMzVjMS4yNTMsNi44MDQsNy4xODMsMTEuNzQ2LDE0LjEwNCwxMS43NDZoNi44OTZsLTE1Ljc0Nyw0My43NGMtMS4zMTgsMy42NjQtMC43NzUsNy43MzMsMS40NjgsMTAuOTE2ICAgYzIuMjQsMy4xODQsNS44ODMsNS4wNzgsOS43NzIsNS4wNzhoMTEuMDQ1Yy02Ljg0NCw3LjYxNy0xMS4wNDUsMTcuNjQ2LTExLjA0NSwyOC42NzVjMCwyMy43MTgsMTkuMjk5LDQzLjAxMiw0My4wMTIsNDMuMDEyICAgczQzLjAxMi0xOS4yOTQsNDMuMDEyLTQzLjAxMmMwLTExLjAyOC00LjIwMS0yMS4wNTgtMTEuMDQ0LTI4LjY3NWg5My43NzdjLTYuODQ3LDcuNjE3LTExLjA0NywxNy42NDYtMTEuMDQ3LDI4LjY3NSAgIGMwLDIzLjcxOCwxOS4yOTQsNDMuMDEyLDQzLjAxMiw0My4wMTJjMjMuNzE5LDAsNDMuMDEyLTE5LjI5NCw0My4wMTItNDMuMDEyYzAtMTEuMDI4LTQuMi0yMS4wNTgtMTEuMDQyLTI4LjY3NWgxMy40MzIgICBjNi42LDAsMTEuOTQ4LTUuMzQ5LDExLjk0OC0xMS45NDdjMC02LjYtNS4zNDktMTEuOTQ4LTExLjk0OC0xMS45NDhIMTQzLjY1MWwxMi45MDItMzUuODQzaDIxNi4yMjEgICBjNi4yMzUsMCwxMS43NTItNC4wMjgsMTMuNjUxLTkuOTZsNTkuNzM5LTE4Ni4zODdDNDQ3LjUzNiwxMDEuNjc5LDQ0Ni44MzIsOTcuMDI4LDQ0NC4yNzQsOTMuMzZ6IE0xNjkuNjY0LDQwOS44MTQgICBjLTEwLjU0MywwLTE5LjExNy04LjU3My0xOS4xMTctMTkuMTE2czguNTc0LTE5LjExNywxOS4xMTctMTkuMTE3czE5LjExNiw4LjU3NCwxOS4xMTYsMTkuMTE3UzE4MC4yMDcsNDA5LjgxNCwxNjkuNjY0LDQwOS44MTR6ICAgIE0zMjcuMzczLDQwOS44MTRjLTEwLjU0MywwLTE5LjExNi04LjU3My0xOS4xMTYtMTkuMTE2czguNTczLTE5LjExNywxOS4xMTYtMTkuMTE3czE5LjExNiw4LjU3NCwxOS4xMTYsMTkuMTE3ICAgUzMzNy45MTYsNDA5LjgxNCwzMjcuMzczLDQwOS44MTR6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBzdHlsZT0iZmlsbDojRkZGRkZGIj48L3BhdGg+CjwvZz48L2c+IDwvc3ZnPg==')
                      &:hover
                         background: darken(#0ed40b, 5%)
                         border-color: darken(#0ed40b, 10%)
+                  img
+                     width: 1.4em
+                     margin-right: 0.5em
+            
             td.model
                font-weight: bold
                text-align: left
@@ -231,6 +229,24 @@
             td.square
                p:last-child
                   display: none
+            
+            //Size
+            td
+               &.model
+                  width: 15%
+               &.square
+                  width: 10%
+               &.twin
+                  width: 8%
+               &.size
+                  width: 14%
+               &.price
+                  width: 10%
+               &.note
+                  width: 25%
+               &.buy
+                  padding-right: 0.5em
+                  width: 10%
 
    .product__carousel
       position: relative
@@ -317,6 +333,14 @@
 
 @media screen and (max-width: 991.98px)
    .top__product
+      .top__card
+         &__body
+            .table
+               td.size
+                  display: none
+
+@media screen and (max-width: 991.98px)
+   .top__product
       padding: $gutter 0
       .top__card
          &__header
@@ -324,14 +348,29 @@
             &__title
                width: 100%
             &__img
+               border: 1px solid #eeeeee
+               border-radius: 4px
+               display: flex
+               align-items: center
+               justify-content: center
+               position: relative
+               overflow: visible
+               min-height: auto
+               img
+                  position: relative
+                  left: auto
+                  transform: translateX(0)
+                  top: auto
+                  width: 100%
+                  max-width: 250px
+                  margin: 0 auto
+            &__img
                margin-bottom: 1em
             &__title
                padding-left: 0
          &__body
             .table
                font-size: 0.9em
-               td.size
-                  display: none
 
 @media screen and (max-width: 767.98px)
    .top__product
@@ -341,65 +380,90 @@
             min-width: 120px
          .nav-link
             font-size: 1em
-      .top__card
-         &__header
-            &__img
-               margin-top: 1em
-            &__title
-               &__wrap
-                  min-height: 10px
-               &__caption
-                  &__tabs
-                     &__warrantly
-                        display: none
-               .tech__list
-                  &__item
-                     flex: 1 1 100%
-                     &:nth-child(odd)
-                        span
-                           &:last-child
-                              padding-right: 0
-               &__bottom
-                  padding-top: 1em
-                  flex-direction: column
-                  justify-content: center
-                  text-align: center
-                  p
-                     margin-bottom: 1em
-
-         &__body
-            .table
-               thead
-                  display: none
-               tbody
-                  tr
-                     display: flex
-                     flex-wrap: wrap
-                     &:nth-child(even)
-                        background: none
-                     &:nth-child(odd)
-                        background: rgba($accent, .1)
-
-                  td
-                     flex: 1 1 auto
-                     position: relative
-                     vertical-align: top
-                     border: none
+      .product__carousel
+         .top__card
+            padding: $gutter 10px
+            &__header
+               &__img
+                  margin-top: 1em
+               &__title
+                  &__wrap
+                     min-height: 10px
+                     padding-right: 10px
+                  &__caption
+                     padding-left: 10px
+                     &__tabs
+                        &__warrantly
+                           display: none
+                  .tech__list
+                     &__item
+                        flex: 1 1 100%
+                        &:nth-child(odd)
+                           span
+                              &:last-child
+                                 padding-right: 0
+                  &__bottom
+                     padding-top: 1em
+                     flex-direction: column
+                     justify-content: center
+                     text-align: center
                      p
-                        padding: 0
-                        padding-bottom: 0
-                  td.twin
+                        margin-bottom: 1em
+
+            &__body
+               .table
+                  thead
                      display: none
-                  td.note
-                     font-size: 1em
-                  td.model
-                     display: none
-                  td.square
-                     p:first-child
+                  tbody
+                     tr
+                        display: flex
+                        flex-wrap: wrap
+                        align-items: center
+                        &:nth-child(even)
+                           background: none
+                        &:nth-child(odd)
+                           background: rgba($accent, .1)
+
+                     td
+                        flex: 1 1 auto
+                        position: relative
+                        border: none
+                        p
+                           padding: 0
+                           padding-bottom: 0
+                           margin: 0
+                     td.twin
                         display: none
-                     p:last-child
-                        font-weight: bold
-                        display: inline-block
+                     td.note
+                        font-size: 1em
+                     td.model
+                        display: none
+                     td.square
+                        p:first-child
+                           display: none
+                        p:last-child
+                           font-weight: bold
+                           display: inline-block
+                     
+                     //Size
+                     td
+                        &.model
+                           width: 15%
+                        &.square
+                           width: 10%
+                        &.twin,
+                        &.size,
+                           width: 0
+                           display: none
+                        &.price
+                           width: 15%
+                        &.note
+                           width: 45%
+                        &.buy
+                           width: 15%
+                        .btn
+                           &.btn-accent
+                              padding: .3em
 
 @media screen and (max-width: 576.98px)
    .top__product
@@ -410,30 +474,58 @@
             flex: 1 1 auto
             margin-bottom: 1em
 
-
-      .top__card
-         &__header
-            &__img,
-            &__title
-               &__caption
-                  h3
-                     font-size: 1.4em
-               .nav-pills
-                  .nav-link
-                     font-size: 1.1em
-         &__body
-            .table
-               font-size: 1em
-               tbody
-                  td.twin,
-                  td.size
-                     display: none
-                  td
-                     &:before
-                        font-size: 0.9em
-                  td.buy
-                     &:before
+      .product__carousel
+         .top__card
+            &__header
+               &__img,
+               &__title
+                  &__caption
+                     h3
+                        font-size: 1.4em
+                  .nav-pills
+                     .nav-link
+                        font-size: 1.1em
+            &__body
+               .table
+                  font-size: 1em
+                  tbody
+                     td.twin,
+                     td.size
                         display: none
+                     td
+                        &:before
+                           font-size: 0.9em
+                     td.buy
+                        &:before
+                           display: none
+                     
+                     //Size
+                     td
+                        &.model
+                           width: 15%
+                        &.square
+                           width: 10%
+                        &.twin,
+                        &.size,
+                           width: 0
+                           display: none
+                        &.price
+                           width: 15%
+                        &.note
+                           font-size: 0.8em
+                           width: 45%
+                        &.buy
+                           width: 15%
+                        
+                        .btn
+                           &.btn-accent
+                              font-size: 1em
+                              max-width: 50px
+                           img
+                              margin-right: 0
+                           span
+                              display: none
+
 
 @media screen and (max-width: 374.98px)
    .top__product

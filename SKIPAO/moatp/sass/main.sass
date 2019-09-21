@@ -1,0 +1,161 @@
+@import '_libs/hamburger'
+@import '_libs/fonts'
+
+$accent: #2c353b
+$text: #151515
+
+$gutter: 30px
+
+$default-font: 'Roboto', sans-serif
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.2
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	opacity: 0
+	background-color: $accent
+	background-image: url('../img/bg.jpg')
+	background-size: cover
+	background-position: top center
+	background-repeat: no-repeat
+	height: 100%
+
+@media screen and (max-width: 767.98px)
+	body
+		background-size: 200%
+		background-image: url('../img/bg_mobile.jpg')
+
+@media screen and (max-width: 374.98px)
+	body
+		background-size: 250%
+	
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	text-transform: uppercase
+	color: #a0a0a0 !important
+
+*:-moz-placeholder
+	text-transform: uppercase
+	color: #a0a0a0 !important
+
+*::-moz-placeholder
+	text-transform: uppercase
+	color: #a0a0a0 !important
+
+*:-ms-input-placeholder
+	text-transform: uppercase
+	color: #a0a0a0 !important
+
+.text-center
+	text-align: center !important
+	text-align-last: center !important
+	p
+		text-align: center !important
+		text-align-last: center !important
+a, 
+	&:hover, 
+	&:active, 
+	&:focus
+		text-decoration: none
+		outline: none
+b, strong
+	font-weight: bold
+img
+	max-width: 100%
+section
+	padding: $gutter
+
+@media screen and (max-width: 767.98px)
+	section
+		padding: $gutter 0
+
+@import 'header'
+@import 'features'
+@import 'contact'
+@import 'partners'
+@import 'footer'
+@import 'modal'
+
+*:focus
+	outline: none !important
+	box-shadow: none
+
+.h2__title
+	font-size: 2em
+	margin: 0 auto
+	margin-bottom: 1em
+	text-align: center
+	font-family: 'Kepler', sans-serif
+
+.btn
+	user-select: none
+	box-shadow: none
+	&:focus
+		outline: none
+		box-shadow: none
+	&.btn-accent
+		background-color: $accent
+		border-color: darken($accent, 5%)
+		color: #ffffff
+		outline: none
+		&:hover
+			background-color: darken($accent, 5%)
+			border-color: darken($accent, 10%)
+	&.btn-dark
+		color: #ffffff
+		background-color: $text
+		border-color: darken($text, 5%)
+		outline: none
+		&:hover
+			background-color: darken($text, 5%)
+			border-color: darken($text, 10%)
+	&.btn-outline-accent
+		color: $accent
+		background-color: transparent
+		border-color: $accent
+		outline: none
+		&:hover
+			background-color: $accent
+			border-color: $accent
+			color: #ffffff
+	&.btn-outline-white
+		color: #ffffff
+		background-color: transparent
+		border-color: #ffffff
+		outline: none
+		&:hover
+			background-color: #ffffff
+			border-color: #ffffff
+			color: $text
+
+.toTop
+	position: fixed
+	display: none
+	cursor: pointer
+	right: 15px
+	bottom: 15px
+	img
+		width: 30px
+		height: 30px
+		opacity: .5
+		transition: opacity .2s ease
+		&:hover
+			opacity: 1
+
+body
+	opacity: 1

@@ -9,7 +9,6 @@ function skipao_scripts() {
 	// wp_register_script( 'jquery', includes_url( 'js/jquery/jquery.js' ), false, null, true );
 	// wp_enqueue_script( 'jquery' );
 
-	wp_enqueue_script( 'jqmin', '//code.jquery.com/jquery-3.3.1.min.js', array('jquery'), '1', true );
 	wp_enqueue_script( 'skipao-popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array('jquery'), '1', true );
 	wp_enqueue_script( 'skipao-bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array('jquery'), '1', true );
 
@@ -233,7 +232,8 @@ function true_include_skipao_admin() {
 		wp_enqueue_media();
 	}
 	// само собой - меняем admin.js на название своего файла
- 	wp_enqueue_script( 'skipao_admin', get_stylesheet_directory_uri() . '/js/upload.js', array('jquery'), null, false );
+	wp_enqueue_script( 'jquery', includes_url( 'js/jquery/jquery.js' ), array(), null, true  ); 
+	wp_enqueue_script( 'skipao_admin', get_stylesheet_directory_uri() . '/js/upload.js', array('jquery'), null, false );
 }
 add_action( 'admin_enqueue_scripts', 'true_include_skipao_admin' );
 
@@ -242,7 +242,7 @@ function skipao_page() {
 	
 	$options = get_option( 'skipao_settings' );
 ?>
-	<link rel='stylesheet' id='bootstrap-css'  href='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='bootstrap-css'  href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' type='text/css' media='all' />
 	<link rel='stylesheet' id='skipao-css'  href='<?php echo get_stylesheet_directory_uri(); ?>/css/main.min.css' type='text/css' media='all' />
 	<style>
 		.edit_text {

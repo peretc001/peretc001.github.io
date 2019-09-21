@@ -79,7 +79,7 @@
 
 });
 
-jQuery(document).ready(function ($) {
+$(function() {
 
     $('.lazy').Lazy();
 
@@ -151,7 +151,7 @@ jQuery(document).ready(function ($) {
         function slickAppend(){
             var node = document.createElement('script');
             node.defer = true;
-            node.src = "/wp-content/themes/skipao/js/slick/slick.min.js";
+            node.src = "./js/slick/slick.min.js";
             $('script')[0].appendChild(node);
             carouselInit = true;
             $(window).unbind('scroll.once');

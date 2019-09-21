@@ -1,0 +1,29 @@
+.contact
+   color: #ffffff
+   [class*="col-"]
+      margin-top: 2em
+   &__card
+      padding: $gutter
+      display: flex
+      flex-direction: column
+      justify-content: space-around
+      &__item
+         p
+            line-height: 150%
+            margin-bottom: 0
+            b
+               display: block
+               margin-bottom: 0.5em
+         a
+            color: #ffffff
+
+@media screen and (max-width: 767.98px)
+   .contact
+      [class*="col-"]
+         margin-top: 1em
+      &__card
+         text-align: center
+         &__item
+            margin-bottom: 1em
+            &:last-child
+               margin-bottom: 0

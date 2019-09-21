@@ -1,5 +1,5 @@
 <?php session_start();
-	include ($_SERVER['DOCUMENT_ROOT'] .'/inc/check.php');
+	include $_SERVER['DOCUMENT_ROOT'] .'/inc/check.php';
 	include $_SERVER['DOCUMENT_ROOT'] .'/inc/safemysql.class.php'; 
 
 	#Для поиска
@@ -153,7 +153,9 @@
 			</form>
 		</div>
 	</section>
-
+	
+	<?php include $_SERVER['DOCUMENT_ROOT'] .'/inc/widget.php'; ?>
+	
 	<section class="company_list">
 		<div class="container-fluid">
 			<div class="row">

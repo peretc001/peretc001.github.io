@@ -10,21 +10,17 @@
       border-radius: 4px
       margin-bottom: 1em
       padding: 1em
-      position: relative
-      height: auto
-      min-height: 350px
-      overflow: hidden
-      &:after
-         content: '.'
       img
-         position: absolute
-         left: 50%
-         transform: translateX(-50%)
-         top: 0
-         width: 90%
+         width: 100%
+         max-width: 250px
          height: auto
          margin: 0 auto
    iframe
       max-width: 100%
       margin: 0 auto
+      border-radius: 4px
       text-align: center
+
+@media screen and (max-width: 767.98px)
+   .seria_about
+      padding: $gutter 0

@@ -70,6 +70,7 @@
                      <a href="https://skipao.ru/" target="_blank" class="author">
                         Разработка: СКИ ПАО
                      </a>
+                     <meta name="author" content='Красовский Игорь' href="https://krasovsky23.ru" />
                   </div>
                </div>
             </div>

@@ -29,9 +29,7 @@ $options = get_option( 'skipao_settings' );
 	<!-- Top ptoducts -->
 		<section class="top__product">
 			<div class="container">
-				<h2 class="h2__title liner">
-					<h1 class="h2__title liner">Сплит система <?php echo $brand_name; ?> <?php echo the_title(); ?></h1>
-				</h2>
+				<h1 class="h2__title liner">Сплит система <?php echo $brand_name; ?> <?php echo the_title(); ?></h1>
 					
 				<div class="product__carousel">
 					<!-- Card -->
@@ -45,7 +43,7 @@ $options = get_option( 'skipao_settings' );
 							<div class="top__card__header__title">
 								<div class="top__card__header__title__wrap">
 									<div class="top__card__header__title__caption">
-										<h3><a href="/brands/<?php echo $term->slug; ?>/"><?php echo $term->name; ?></a> <?php echo the_title(); ?></h3>
+										<h3><a href="/brands/<?php echo $brand_slug; ?>/"><?php echo $brand_name; ?></a> <?php echo the_title(); ?></h3>
 									</div>
 									<!-- TAB -->
 									<div class="top__card__header__title__caption__tabs">
@@ -191,35 +189,41 @@ $options = get_option( 'skipao_settings' );
 															if ( get_field( 'square', $model->ID ) ): ?>
 															<?php echo the_field( 'square', $model->ID ); ?>
 														<?php endif; ?></p>
-											<p><?php 
-											if ( get_field( 'square', $model->ID ) <= '20') {
-												echo '07';
-											}
-											else if ( get_field( 'square', $model->ID ) <= '27') {
-												echo '09';
-											}
-											else if ( get_field( 'square', $model->ID ) <= '33') {
-												echo '11';
-											}
-											else if ( get_field( 'square', $model->ID ) <= '36') {
-												echo '12';
-											}
-											else if ( get_field( 'square', $model->ID ) <= '40') {
-												echo '13';
-											}
-											else if ( get_field( 'square', $model->ID ) <= '56') {
-												echo '18';
-											}
-											else if ( get_field( 'square', $model->ID ) <= '72') {
-												echo '24';
-											}
-											else if ( get_field( 'square', $model->ID ) <= '90') {
-												echo '30';
-											}
-											else if ( get_field( 'square', $model->ID ) <= '110') {
-												echo '36';
-											}
-											?></p>
+														<p><?php 
+												if ( get_field( 'square', $model->ID ) <= '20') {
+													echo '07';
+												}
+												if ( get_field( 'square', $model->ID ) == '22') {
+													echo '08';
+												}
+												else if ( get_field( 'square', $model->ID ) <= '27') {
+													echo '09';
+												}
+												else if ( get_field( 'square', $model->ID ) <= '33') {
+													echo '11';
+												}
+												else if ( get_field( 'square', $model->ID ) <= '36') {
+													echo '12';
+												}
+												else if ( get_field( 'square', $model->ID ) <= '40') {
+													echo '13';
+												}
+												else if ( get_field( 'square', $model->ID ) == '40') {
+													echo '14';
+												}
+												else if ( get_field( 'square', $model->ID ) <= '56') {
+													echo '18';
+												}
+												else if ( get_field( 'square', $model->ID ) <= '72') {
+													echo '24';
+												}
+												else if ( get_field( 'square', $model->ID ) <= '90') {
+													echo '30';
+												}
+												else if ( get_field( 'square', $model->ID ) <= '110') {
+													echo '36';
+												}
+												?></p>
 										</td>
 										<td class="twin"><p><?php
 															if ( get_field( 'cold', $model->ID ) ): ?>
@@ -250,7 +254,7 @@ $options = get_option( 'skipao_settings' );
 															if ( get_field( 'price', $model->ID ) ): ?>
 															<?php echo the_field( 'price', $model->ID ); ?>
 														<?php endif; ?>">
-												Купить
+												<img src="<?php echo get_template_directory_uri(); ?>/img/shopping-cart.svg"> <span>Купить</span>
 											</a>
 										</td>
 									</tr>
@@ -281,34 +285,33 @@ $options = get_option( 'skipao_settings' );
 						if ($query->have_posts()):
 						while ( $query->have_posts() ) : $query->the_post();
 
-						$images = get_post_meta($post->ID, 'vdw_gallery_id', true);
-						
-				if ( $images ) { ?>
+						$images = get_post_meta($post->ID, 'vdw_gallery_id', true); 
+						$youtube = get_field( 'youtube', $post->ID ); 
+					?>
 					<div class="row">
-						<div class="col-lg-6">
+						<div class="col-12 <?php echo ($images || $youtube) ? ' col-md-7' : ''; ?>">
 							<?php echo the_content(); ?>
 						</div>
-						<div class="col-lg-6">
+						<div class="col-12 <?php echo ($images || $youtube) ? ' col-md-5' : ''; ?>">
 						<?php 
-							$i = 0;
-							foreach ($images as $image) {
-								//echo wp_get_attachment_url($image, 'large');
-								//echo wp_get_attachment_image($image, 'large');
-								?>
-								<a <?php echo ($i > 0) ? 'style="display: none;"' : 'class="seria_about__img"'; ?> data-fancybox="gallary" href="<?php echo wp_get_attachment_url($image, 'large'); ?>">
-									<img src="<?php echo wp_get_attachment_url($image, 'large'); ?>" alt="<?php echo the_title(); ?>">
-								</a>
-								<?php $i++;
+							if ($images) {
+								$i = 0;
+								foreach ($images as $image) {
+									//echo wp_get_attachment_url($image, 'large');
+									//echo wp_get_attachment_image($image, 'large');
+									?>
+									<a <?php echo ($i > 0) ? 'style="display: none;"' : 'class="seria_about__img"'; ?> data-fancybox="gallary" href="<?php echo wp_get_attachment_url($image, 'large'); ?>">
+										<img src="<?php echo wp_get_attachment_url($image, 'large'); ?>" alt="<?php echo the_title(); ?>">
+									</a>
+									<?php $i++;
+								}
 							}
 						?>
-						<?php
-							if ( get_field( 'youtube', $post->ID ) ): ?>
-							<iframe width="540" height="315" src="https://www.youtube.com/embed/<?php the_field( 'youtube' ); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						<?php endif; ?>
+						<?php if ($youtube) { ?>
+							<iframe width="100%" height="250px" src="https://www.youtube.com/embed/<?php the_field( 'youtube' ); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<?php } ?>
+						</div>
 					</div>
-				<?php } else { ?>
-					<?php echo the_content(); ?>
-				<?php } ?>
 
 				
 				<?php
