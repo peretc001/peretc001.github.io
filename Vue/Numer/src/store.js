@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import squareImg from './assets/img/01_sp.png'
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -15,7 +17,7 @@ export default new Vuex.Store({
       width: '200',
       height: '150',
       forms: '',
-      img: 'http://placehold.it/150x150/000000',
+      img: squareImg,
       step3: {
         number: {
           number: '1',

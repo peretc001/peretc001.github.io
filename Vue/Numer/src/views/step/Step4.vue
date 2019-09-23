@@ -24,13 +24,10 @@
                         <label :for="i"><img :src="border"></label>
                      </div>
                   </div>
-                  <div class="step_button">
-                     <b-button to="/step3" variant="outline-success">Назад</b-button><b-button to="/step5" variant="success">Далее</b-button>
-                  </div>
+                  <Button />
                </b-col>
             </b-row>
          </b-container>
-         {{ this.$store.state }}
       </div>
    </div>
 </template>
@@ -38,11 +35,12 @@
 <script>
 import stepLine from '../../components/stepLine.vue'
 import houseNumberView from '../../components/HouseNumberView.vue'
-
+import Button from '../../components/Button.vue'
 export default {
   components: {
     stepLine,
-    houseNumberView
+    houseNumberView,
+    Button
   },
   data () {
     return {
@@ -59,13 +57,11 @@ export default {
     }
   },
   beforeMount () {
-    // Устанавливаем выбранный размер
-    this.price = this.$store.state.price
-    this.img = this.$store.state.steps.img
-
-    this.step3['number'] = this.$store.state.steps.step3.number
-    this.step3['adress'] = this.$store.state.steps.step3.adress
-    this.step3['adressSecond'] = this.$store.state.steps.step3.adressSecond
+   this.price = this.$store.state.price
+   this.img = this.$store.state.steps.img
+   this.step3['number'] = this.$store.state.steps.step3.number
+   this.step3['adress'] = this.$store.state.steps.step3.adress
+   this.step3['adressSecond'] = this.$store.state.steps.step3.adressSecond
   },
   methods: {
     changeBorders (index) {

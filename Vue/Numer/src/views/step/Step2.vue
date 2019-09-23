@@ -38,9 +38,7 @@
                         <label :for="index"><img :src="img.url"></label>
                      </div>
                   </div>
-                  <div class="step_button">
-                     <b-button to="/step1" variant="outline-success">Назад</b-button><b-button to="/step3" variant="success">Далее</b-button>
-                  </div>
+                  <Button />
                </b-col>
             </b-row>
          </b-container>
@@ -50,10 +48,24 @@
 
 <script>
 import stepLine from '../../components/stepLine.vue'
+import Button from '../../components/Button.vue'
+
+import squareImg from '../../assets/img/01_sp.png'
+import rectangleImg from '../../assets/img/02_sp.png'
+import triangleImg from '../../assets/img/03_sp.png'
+import curcleImg from '../../assets/img/05_sp.png'
+
+import square2Img from '../../assets/img/06_sp.png'
+import rectangle2Img from '../../assets/img/07_sp.png'
+import triangle2Img from '../../assets/img/08_sp.png'
+import curcle2Img from '../../assets/img/09_sp.png'
+import square3Img from '../../assets/img/10_sp.png'
+import rectangle3Img from '../../assets/img/11_sp.png'
+import triangle3Img from '../../assets/img/12_sp.png'
 
 export default {
   components: {
-    stepLine
+    stepLine, Button
   },
   data () {
     return {
@@ -80,40 +92,37 @@ export default {
       forma: '',
       forms: {
         square: {
-          url: 'https://www.designahousesign.com/app/themes/dahs/assets/images/01_sp.png'
+          url: squareImg
         },
         rectangle: {
-          url: 'https://www.designahousesign.com/app/themes/dahs/assets/images/02_sp.png'
+          url: rectangleImg
         },
         triangle: {
-          url: 'https://www.designahousesign.com/app/themes/dahs/assets/images/03_sp.png'
+          url: triangleImg
         },
         curcle: {
-          url: 'https://www.designahousesign.com/app/themes/dahs/assets/images/03_sp.png'
+          url: curcleImg
         },
         square2: {
-          url: 'https://www.designahousesign.com/app/themes/dahs/assets/images/05_sp.png'
+          url: square2Img
         },
         rectangle2: {
-          url: 'https://www.designahousesign.com/app/themes/dahs/assets/images/06_sp.png'
+          url: rectangle2Img
         },
         triangle2: {
-          url: 'https://www.designahousesign.com/app/themes/dahs/assets/images/07_sp.png'
+          url: triangle2Img
         },
         curcle2: {
-          url: 'https://www.designahousesign.com/app/themes/dahs/assets/images/08_sp.png'
+          url: curcle2Img
         },
         square3: {
-          url: 'https://www.designahousesign.com/app/themes/dahs/assets/images/09_sp.png'
+          url: square3Img
         },
         rectangle3: {
-          url: 'https://www.designahousesign.com/app/themes/dahs/assets/images/10_sp.png'
+          url: rectangle3Img
         },
         triangle3: {
-          url: 'https://www.designahousesign.com/app/themes/dahs/assets/images/11_sp.png'
-        },
-        curcle3: {
-          url: 'https://www.designahousesign.com/app/themes/dahs/assets/images/12_sp.png'
+          url: triangle3Img
         }
       }
     }

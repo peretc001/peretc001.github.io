@@ -16,15 +16,20 @@
                <b-col md="7">
                   <p><b>Материал</b></p>
                   <div class="materials">
-                     <div class="materials__card" v-for="(option, index) in options" :key="index">
-                        <input type="radio" v-model="selected" @change="changeSelectedIndex(index)" :value="option.text">
-                        <label>{{option.text}}</label>
-                     </div>
+                     <div v-for="(option, index) in options" :key="index" class="materials__card">
+                        <input
+                          :id="index"
+                          v-model="selected"
+                          type="radio"
+                          :value="option.text"
+                          @change="changeSelectedIndex(index)"
+                          required
+                        >
+                        <label :for="index"><img :src="option.url">{{option.text}}</label>
+                      </div>
                   </div>
                   <p class="text">{{options[selected].desc}}</p>
-                  <div class="step_button">
-                     <b-button to="/step2" variant="success">Далее</b-button>
-                  </div>
+                  <Button />
                </b-col>
             </b-row>
          </b-container>
@@ -36,12 +41,20 @@
 import stepLine from '../../components/stepLine.vue'
 import Slick from 'vue-slick'
 import '../../../node_modules/slick-carousel/slick/slick.css'
+import Button from '../../components/Button.vue'
 
 // https://github.com/KitchenStories/vue-gallery-slideshow
 import VueGallerySlideshow from 'vue-gallery-slideshow'
 
+import slideImg from '../../assets/img/000000.png'
+import slideImg2 from '../../assets/img/FF0000.png'
+import slideImg3 from '../../assets/img/008000.png'
+import slideImg4 from '../../assets/img/0000FF.png'
+import slideImg5 from '../../assets/img/FFFFFF.png'
+
 export default {
-  components: { stepLine, Slick, VueGallerySlideshow },
+  name: 'home',
+  components: { stepLine, Slick, VueGallerySlideshow, Button },
   data () {
     return {
       price: '',
@@ -62,11 +75,7 @@ export default {
           text: 'Plexiglass',
           desc: 'Plexiglass - Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Снова приставка она текстов домах щеке инициал ему маленький. Безорфографичный путь текста, текстов великий все силуэт вопрос своего рукопись они журчит коварный предупредила курсивных, что если. Алфавит его предупреждал языкового ipsum о безопасную дал свое, осталось пустился единственное снова страну!',
           images: [
-            'http://placehold.it/420x220/000000',
-            'http://placehold.it/420x220/000000',
-            'http://placehold.it/420x220/000000',
-            'http://placehold.it/420x220/000000',
-            'http://placehold.it/420x220/000000'
+            slideImg, slideImg2, slideImg3, slideImg4, slideImg5
           ],
           price: 600
         },
@@ -74,11 +83,7 @@ export default {
           text: 'Frosted',
           desc: 'Frosted - Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Снова приставка она текстов домах щеке инициал ему маленький. Безорфографичный путь текста, текстов великий все силуэт вопрос своего рукопись они журчит коварный предупредила курсивных, что если. Алфавит его предупреждал языкового ipsum о безопасную дал свое, осталось пустился единственное снова страну!',
           images: [
-            'http://placehold.it/420x220/FF0000',
-            'http://placehold.it/420x220/000000',
-            'http://placehold.it/420x220/FF0000',
-            'http://placehold.it/420x220/FF0000',
-            'http://placehold.it/420x220/FF0000'
+            slideImg2, slideImg3, slideImg4, slideImg5, slideImg
           ],
           price: 650
         },
@@ -86,11 +91,7 @@ export default {
           text: 'Aluminium',
           desc: 'Aluminium - Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Снова приставка она текстов домах щеке инициал ему маленький. Безорфографичный путь текста, текстов великий все силуэт вопрос своего рукопись они журчит коварный предупредила курсивных, что если. Алфавит его предупреждал языкового ipsum о безопасную дал свое, осталось пустился единственное снова страну!',
           images: [
-            'http://placehold.it/420x220/0000FF',
-            'http://placehold.it/420x220/000000',
-            'http://placehold.it/420x220/FF0000',
-            'http://placehold.it/420x220/FF0000',
-            'http://placehold.it/420x220/FF0000'
+            slideImg2, slideImg3, slideImg4, slideImg5, slideImg
           ],
           price: 700
         },
@@ -98,11 +99,7 @@ export default {
           text: 'Oak',
           desc: 'Oak - Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Снова приставка она текстов домах щеке инициал ему маленький. Безорфографичный путь текста, текстов великий все силуэт вопрос своего рукопись они журчит коварный предупредила курсивных, что если. Алфавит его предупреждал языкового ipsum о безопасную дал свое, осталось пустился единственное снова страну!',
           images: [
-            'http://placehold.it/420x220/008000',
-            'http://placehold.it/420x220/000000',
-            'http://placehold.it/420x220/FF0000',
-            'http://placehold.it/420x220/FF0000',
-            'http://placehold.it/420x220/FF0000'
+            slideImg3, slideImg4, slideImg5, slideImg, slideImg2
           ],
           price: 750
         },
@@ -110,23 +107,16 @@ export default {
           text: 'Brass',
           desc: 'Brass - Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Снова приставка она текстов домах щеке инициал ему маленький. Безорфографичный путь текста, текстов великий все силуэт вопрос своего рукопись они журчит коварный предупредила курсивных, что если. Алфавит его предупреждал языкового ipsum о безопасную дал свое, осталось пустился единственное снова страну!',
           images: [
-            'http://placehold.it/420x220/FFFFFF',
-            'http://placehold.it/420x220/000000',
-            'http://placehold.it/420x220/FF0000',
-            'http://placehold.it/420x220/FF0000',
-            'http://placehold.it/420x220/FF0000'
+            slideImg4, slideImg5, slideImg, slideImg2, slideImg3
           ],
           price: 800
         }
       },
-      // Индекс фото в lightbox
       i: null
     }
   },
   beforeMount () {
-    // Устанавливаем выбранный материал
     this.selected = this.$store.state.steps.material
-    // Устанавливаем цену
     this.price = this.$store.state.price
   },
   methods: {
@@ -140,11 +130,8 @@ export default {
       this.$refs.slick.reSlick()
     },
     changeSelectedIndex (index) {
-      // Перезагружаем slick
       this.$refs.slick.reSlick()
-      // Записываем выбранный материал
       this.$store.commit('setMaterial', this.selected)
-      // Вычисляем стоимость
       this.$store.commit('setPrice', this.options[index].price)
       this.price = this.$store.state.price
     }

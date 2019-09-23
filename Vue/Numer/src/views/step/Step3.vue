@@ -13,9 +13,7 @@
                   <houseNumberInput v-on:number="number"         id="number"        placeholder="Номер здания" />
                   <houseNumberInput v-on:number="adress"         id="adress"        placeholder="Адрес" />
                   <houseNumberInput v-on:number="adressSecond"   id="adressSecond"  placeholder="Адрес" />
-                  <div class="step_button">
-                     <b-button to="/step2" variant="outline-success">Назад</b-button><b-button to="/step4" variant="success">Далее</b-button>
-                  </div>
+                  <Button />
                </b-col>
             </b-row>
          </b-container>
@@ -28,12 +26,14 @@
 import stepLine from '../../components/stepLine'
 import houseNumberView from '../../components/HouseNumberView'
 import houseNumberInput from '../../components/HouseNumberInput'
+import Button from '../../components/Button.vue'
 
 export default {
   components: {
     stepLine,
     houseNumberView,
-    houseNumberInput
+    houseNumberInput,
+    Button
   },
   data () {
     return {

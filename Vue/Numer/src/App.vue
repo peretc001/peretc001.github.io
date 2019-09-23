@@ -11,6 +11,9 @@ import Nav from './components/Nav.vue'
 export default {
   components: {
     Nav
+  },
+  beforeMount () {
+    this.$router.push('/step1')
   }
 }
 </script>

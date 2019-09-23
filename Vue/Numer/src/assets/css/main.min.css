@@ -236,10 +236,8 @@ a, a:focus, a:visited, button, button:focus, .btn, .btn:focus {
 
 .step3 .step3__house {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-          transform: translateX(-50%) translateY(-50%);
+  left: 0;
+  top: 0;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;

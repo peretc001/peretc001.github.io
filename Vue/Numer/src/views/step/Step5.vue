@@ -6,7 +6,9 @@
             <b-row>
                <b-col md="5">
                   <h3>{{ price }} p.</h3>
-                  <houseNumberView :step3="step3" :img="img"/>
+                  <div ref="printMe">
+                  <houseNumberView :step3="step3" :img="img" />
+                  </div>
                </b-col>
                <b-col md="7">
                   <p>Заказ</p>
@@ -17,6 +19,7 @@
                   <p>Итог: {{ this.$store.state.price }} руб</p>
                   <br>
                   <form class="form" @submit.prevent="someAction()">
+                    <input type="hidden" name="screen" :value="output">
                      <b-form-group>
                         <div class="input-group">
                            <span class="input-group-addon"><span>+7</span></span>
@@ -55,9 +58,9 @@
                         Заказать
                      </b-button>
                   </form>
-                  <div class="answer">Good</div>
+                  <br>
+                  <div class="answer">Спасибо за заказ</div>
                </b-col>
-
             </b-row>
          </b-container>
       </div>
@@ -82,18 +85,17 @@ export default {
       phoneValid: false,
       isPhoneTouched: false,
       email: null,
-      isEmailTouched: false
+      isEmailTouched: false,
+      output: null
     }
   },
   beforeMount () {
     // Устанавливаем выбранный размер
     this.price = this.$store.state.price
     this.img = this.$store.state.steps.img
-
     this.step3['number'] = this.$store.state.steps.step3.number
     this.step3['adress'] = this.$store.state.steps.step3.adress
     this.step3['adressSecond'] = this.$store.state.steps.step3.adressSecond
-
     this.phone = this.$store.state.steps.phone
     this.email = this.$store.state.steps.email
   },
@@ -128,25 +130,33 @@ export default {
       this.$store.commit('setEmail', value)
     },
     someAction () {
-      if (!this.isAllValid) {
-        return
+      if (this.isAllValid) {
+        this.print()
+        setTimeout(() => {
+          axios.post('/thankyou.php', {
+            data: { all: this.$store.state, img: this.output}
+          }).then(function (response) {
+            console.log(response.data)
+            if (response.data.answer === 'good') {
+              let thisStep = document.querySelector('.form')
+              let thisAnswer = document.querySelector('.answer')
+              thisStep.style.display = 'none'
+              thisAnswer.style.display = 'block'
+            }
+          }).catch(function (error) {
+            console.log(error)
+          })
+        }, 500);
       }
-
-      axios.post('/thankyou.php', {
-        data: this.$store.state
-      })
-        .then(function (response) {
-          console.log(response.data)
-          if (response.data.answer === 'good') {
-            let thisStep = document.querySelector('.form')
-            let thisAnswer = document.querySelector('.answer')
-            thisStep.style.display = 'none'
-            thisAnswer.style.display = 'block'
-          }
-        })
-        .catch(function (error) {
-          console.log(error)
-        })
+    },
+    async print () {
+      const el = this.$refs.printMe
+      const options = {
+        type: 'dataURL',
+        scale: 1,
+        windowWidth: 500
+      }
+      this.output = await this.$html2canvas(el, options)
     }
   }
 }
