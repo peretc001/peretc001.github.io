@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /inc/booking/
-Disallow: /user/
-Disallow: *.php
-Host: www.autoprkt.ru

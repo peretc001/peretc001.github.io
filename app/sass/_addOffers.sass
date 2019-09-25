@@ -1,0 +1,268 @@
+.addOffers
+   padding: 25px 0
+   position: relative
+   &.divider
+      &:before
+         content: ''
+         position: absolute
+         bottom: -18px
+         left: 50%
+         transform: translateX(-50%)
+         width: 1px
+         height: 36px
+         background: #C4C4C4
+
+   .container
+      background: #FAFAFA
+      border: 1px solid #D1D1D1
+      border-radius: 7px
+      padding: 20px
+      min-height: 266px
+      .row.head
+         [class*="col-"]
+            align-self: center
+            &:nth-child(2)
+               text-align: center
+            &:last-child
+               text-align: right
+         p
+            font-size: 1.2rem
+            color: #C0C0C0
+            margin-bottom: 0
+            
+   &__point
+      display: flex
+      align-items: center
+      justify-content: center
+      span
+         display: block
+         width: 8px
+         height: 8px
+         background: #C4C4C4
+         border-radius: 50%
+         transition: background .3s ease
+         position: relative
+         margin-left: 24px
+         &:before
+            content: ''
+            position: absolute
+            top: 50%
+            left: 11px
+            transform: translateY(-50%)
+            width: 18px
+            height: 1px
+            background: #C4C4C4
+
+         &.is-active
+            background: $accent
+            &:before
+               background: $accent
+         
+         &:first-child
+            margin-left: 0
+
+         &:last-child
+            &:before
+               display: none
+         
+   .caption
+      font-size: 1.5rem
+      margin: 22px auto 38px
+      text-align: center
+      font-weight: bold
+      color: $text
+      b
+         font-size: 2.125rem
+   
+   .form-row
+      .form-select,
+      .btn
+         margin-bottom: 1em
+      .btn
+         max-width: 155px
+         margin-left: auto
+
+   // Grid
+   .x-row
+      display: flex
+      align-items: center
+      justify-content: space-evenly
+      margin-bottom: 1.68em
+      .x-group
+         background: none
+         padding: 0 10px
+         flex: 1 1 33%
+         position: relative
+         &.mark
+            &:before
+               content: '*'
+               position: absolute
+               color: #FF5454
+               top: 50%
+               left: 0
+               transform: translateY(-50%)
+               font-size: 0.8em
+         &.alone
+            max-width: 33.33333336%
+            margin: 0 auto
+         &-col
+            display: flex
+            align-items: center
+            justify-content: space-between
+            .checkbox
+               display: flex
+               align-items: center
+               justify-content: center
+               &-group
+                  input
+                     display: none
+                  label
+                     min-width: 48px
+                     text-align: center
+                     padding: 8px 0
+                     border: 1px solid $accent
+                     transition: background, color .3s ease
+                     cursor: pointer
+                  input:checked + label
+                     background: $accent
+                     color: #ffffff
+               &-group
+                  &.first
+                     label
+                        border-radius: 7px 0 0 7px
+                        border-right: 0
+                  &.last
+                     label
+                        border-radius: 0 7px 7px 0
+
+   .x-group-ul
+      flex: 1 1 50%
+      display: flex
+      justify-content: space-between
+      margin-bottom: .5em
+      &:after
+         content: ""
+         border-bottom: 1px solid $accent
+         flex-grow: 1
+         order: 2
+         margin: auto 0.5em
+      li
+         position: relative
+         &:first-child
+            order: 1
+         &:last-child
+            order: 3
+         input
+            display: none
+         label
+            margin: 0
+            padding: 0
+            position: relative
+            &.check
+               width: 16px
+               height: 16px
+               border: 1px solid $accent
+               margin: 0
+               padding: 0
+               position: relative
+               &:before
+                  transition: background .3s ease
+            &.icon
+               padding-left: 3em
+               &:before
+                  content: ''
+                  position: absolute
+                  left: 0
+                  top: 50%
+                  transform: translateY(-50%)
+                  width: 40px
+                  height: 40px
+                  background-size: 30px
+                  background-position: center
+                  background-repeat: no-repeat
+               &.leather
+                  &:before
+                     background-image: url('../img/addOffer/leather.svg')
+               &.leather2
+                  &:before
+                     background-image: url('../img/addOffer/leather2.svg')
+               &.alcantara
+                  &:before
+                     background-size: 40px
+                     background-image: url('../img/addOffer/alcantara.svg')
+               &.velure
+                  &:before
+                     background-size: 40px
+                     background-image: url('../img/addOffer/velure.svg')
+               &.textile
+                  &:before
+                     background-size: 40px
+                     background-image: url('../img/addOffer/textile.svg')
+
+         input:checked + label:before
+            content: ''
+            position: absolute
+            left: 0
+            top: 0
+            width: 100%
+            height: 100%
+            background: url('../img/checked.svg') center no-repeat
+   .x-row
+      .checkbox
+         &.color
+            input
+               display: none
+            label
+               width: 33px
+               height: 33px
+               border-radius: 7px
+               position: relative
+               border: 1px solid #ffffff
+               padding: 0
+               margin: 0
+               &:before
+                  content: ''
+                  position: absolute
+                  left: -6px
+                  top: -6px
+                  width: 43px
+                  height: 43px
+                  border: 1px solid #ffffff
+                  border-radius: 7px
+                  transition: border .3s ease
+               &.black
+                  background: #000000
+               &.grey
+                  background: #808080
+               &.silver
+                  background: linear-gradient(180deg, #F4F2F2 0%, #CCCCCC 100%)
+               &.white
+                  background: #FEFEFE
+                  border: 1px solid #C4C4C4
+               &.blue
+                  background: #0001FC
+               &.orange
+                  background: #FF7E01
+               &.red
+                  background: #FF0101
+               &.brown
+                  background: #944B05
+               &.beige
+                  background: #F5F6DB
+               &.yellow
+                  background: #FFFC0E
+               &.purple
+                  background: #7E017E
+               &.green
+                  background: #01FE02
+               &.peach
+                  background: linear-gradient(180deg, #FFE7CB 0%, #CEAC85 100%)
+               &.gold
+                  background: linear-gradient(180deg, #FFEEB8 0%, #EDC02B 100%)
+               &.raduga
+                  background: url('../img/addOffer/raduga.png')
+            input:checked + label
+               &:before
+                  border-color: $accent
+   .col-x3
+      width: 240px

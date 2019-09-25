@@ -1,0 +1,79 @@
+.header
+  display: flex
+  justify-content: space-between
+  margin: 22px 0 29px 0
+  &__logo
+    max-width: 200px
+  &__right
+    align-items: center
+    display: flex
+    justify-content: flex-end
+    max-width: 400px
+    width: 100%
+  &__geolocation
+    align-items: center
+    display: flex
+    margin-right: 28.65px
+    &:before
+      background-image: url("/img/icons/icon-geolocation.svg")
+      content: ''
+      display: inline-block
+      height: 19.5px
+      margin-right: 7px
+      width: 13.7px
+  &__favorite
+    align-items: center
+    display: flex
+    margin-right: 23px
+    a
+      color: $doveGray
+    &:before
+      background-image: url("/img/icons/icon-favorit.svg")
+      content: ''
+      display: inline-block
+      height: 24.26px
+      margin-right: 7px
+      width: 25.19px
+  &__language
+    position: relative
+    margin-right: 15.15px
+    &:before
+      background-image: url("/img/icons/icon-arrow-bottom.svg")
+      content: ''
+      display: block
+      height: 4.5px
+      margin-right: 7px
+      position: absolute
+      top: 10px
+      width: 7px
+    button
+      background: unset
+      border: 0
+      color: $silver
+      font-size: .6em
+      &:after
+        content: ''
+        display: none
+      &:focus
+        box-shadow: 0 0 0 0
+        outline: unset
+    .dropdown-menu
+      a
+        color: $doveGray
+        font-size: .6em
+    &.show
+      &:before
+        transform: rotate(180deg)
+  &__user
+    border: 1px solid $accent
+    border-radius: 7px
+    display: flex
+    height: 31px
+    width: 181px
+    a
+      color: $doveGray
+.user-login
+  padding: 6px 15px 6px 16px
+  border-right: 1px solid $accent
+.user-registration
+  padding: 6px 10px 6px 8px

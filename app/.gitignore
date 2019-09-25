@@ -1,0 +1,10 @@
+/node_modules/
+/php/node_modules/
+/other/
+/.git/
+/**/_backstage
+/**/package-lock.json
+/**/Thumbs.db
+/**/*.DS_Store
+/**/*.psd
+

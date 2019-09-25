@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Optimazed</title>
+  <style>
+     body {opacity: 0; overflow-x: hidden;}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+        <div class="header">
+            <div class="header__logo">
+                <a href="#">
+                    <img src="img/logo.png" alt="" title="">
+                </a>
+            </div>
+            <div class="header__right">
+                <div class="header__geolocation">Москва</div>
+                <div class="header__favorite"><a href="#">Избранное</a></div>
+                <div class="header__language">
+                    <button class="" type="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">RU
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">EN</a>
+                        <a class="dropdown-item" href="#">UK</a>
+                        <a class="dropdown-item" href="#">ZH</a>
+                        <a class="dropdown-item" href="#">NO</a>
+                        <a class="dropdown-item" href="#">ZH</a>
+                        <a class="dropdown-item" href="#">NO</a>
+                    </div>
+                </div>
+                <div class="header__user">
+                    <div class="user-login">
+                        <a href="#">Вход</a>
+                    </div>
+                    <div class="user-registration">
+                        <a href="#">Регистрация</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </header>
+    
+  <nav class="top-nav-bar">
+    <div class="container">
+        <ul>
+            <li><a href="#">Легковые автомобили</a></li>
+            <li><a href="#">Грузовые, спецтехника и мото</a></li>
+            <li><a href="#">Запчасти и аксессуары</a></li>
+            <li><a href="#">Компьтерная техника, планшеты</a></li>
+            <li><a href="#">Телефоны, фото и видеотехника</a></li>
+            <li><a href="#">Бытовая техника,<br/> ТВ и аудио</a></li>
+            <li><a href="#">Личные вещи</a></li>
+            <li><a href="#">Детские товары</a></li>
+        </ul>
+    </div>
+  </nav>
+    
+  <div class="container d-flex">
+    <div class="search-block">
+        <input type="text" class="form-control" placeholder="Поиск по объявлениям">
+        <input type="submit" class="btn" value="Искать">
+    </div>
+    <div class="add-offers">
+        <a href="#" class="btn">Продать</a>
+    </div>
+  </div>
+
+  <section class="addOffers">
+    <div class="container">
+      <div class="row head">
+        <div class="col-4">
+          <p>Шаг 1</p>
+        </div>
+        <div class="col-4">
+          <div class="addOffers__point">
+            <span class="is-active"></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div class="col-4">
+          <p>Продажа товара</p>
+        </div>
+      </div>
+      <p class="caption"><b>Выберите категорию объявления</b></p>
+      <form action="/" class="form-row">
+        <div class="col-md-4 offset-md-1">
+          <select class="form-select" name="category">
+            <option value="">Категория</option>
+            <option value="2">Lorem</option>
+            <option value="3">Lorem</option>
+            <option value="4">Lorem</option>
+            <option value="5">Lorem</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <select class="form-select" name="sub_category">
+            <option value="">Подкатегория</option>
+            <option value="2">Lorem</option>
+            <option value="3">Lorem</option>
+            <option value="4">Lorem</option>
+            <option value="5">Lorem</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <button class="btn" type="submit">Далее</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="addOffers divider">
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <p>Шаг 2</p>
+        </div>
+        <div class="col-4">
+          <div class="addOffers__point">
+            <span class="is-active"></span>
+            <span class="is-active"></span>
+            <span></span>
+          </div>
+        </div>
+        <div class="col-4">
+          <p>Продажа товара</p>
+        </div>
+      </div>
+      <p class="caption"><b>Заполните поля объявления</b></p>
+      <form action="/">
+        <div class="x-row">
+          <div class="x-group mark">
+            <select class="form-select" name="brands">
+              <option value="">Марка</option>
+            </select>
+          </div>
+          <div class="x-group">
+            <select class="form-select" name="models" disabled>
+              <option value="">Модель</option>
+            </select>
+          </div>
+          <div class="x-group mark">
+            <input type="text" class="form-control" placeholder="Vin" name="vin">
+          </div>
+        </div>
+        <div class="x-row">
+          <div class="x-group mark">
+              <input type="text" class="form-control" placeholder="Пробег" name="mileage">
+          </div>
+          <div class="x-group">
+            <select class="form-select" name="type">
+              <option value="">Тип кузова</option>
+            </select>
+          </div>
+          <div class="x-group">
+            <select class="form-select" name="door">
+              <option value="">Кол-во дверей</option>
+            </select>
+          </div>
+        </div>
+        <div class="x-row">
+          <div class="x-group">
+              <input type="text" class="form-control" placeholder="Год выпуска" name="year">
+          </div>
+          <div class="x-group">
+            <select class="form-select" name="state">
+              <option value="">Состояние авто</option>
+            </select>
+          </div>
+          <div class="x-group mark">
+              <input type="text" class="form-control" placeholder="Цена" name="price">
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="addOffers divider">
+    <div class="container">
+      <p class="caption"><b>История автомобиля</b></p>
+      <form action="/">
+        <div class="x-row">
+          <div class="x-group">
+            <select class="form-select" name="register_mounth">
+              <option value="">Первый месяц регистрации</option>
+            </select>
+          </div>
+          <div class="x-group">
+            <select class="form-select" name="register_year">
+              <option value="">Год первой регистрации</option>
+            </select>
+          </div>
+          <div class="x-group mark">
+            <select class="form-select" name="users">
+              <option value="">Количество владельцев ТС</option>
+              <option value="2">1</option>
+              <option value="3">2</option>
+              <option value="4">3</option>
+              <option value="5">4+</option>
+            </select>
+          </div>
+        </div>
+        <div class="x-row">
+          <div class="x-group">
+            <div class="x-group-col">
+              <span>Аварийный авто</span>
+              <div class="checkbox">
+                <div class="checkbox-group first">
+                  <input id="crash_yes" type="radio" name="crash">
+                  <label for="crash_yes">Да</label>
+                </div>
+                <div class="checkbox-group last">
+                  <input id="crash_no" type="radio" name="crash">
+                  <label for="crash_no">Нет</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="x-group">
+            <ul class="x-group-ul">
+              <li><label for="garanty">Гарантия</label></li>
+              <li class="checkbox">
+                <input id="garanty" type="checkbox" name="garanty">
+                <label for="garanty" class="check"></label>
+              </li>
+            </ul>
+          </div>
+          <div class="x-group">
+            <ul class="x-group-ul">
+              <li><label for="smoke">Автомобиль для некурящих</label></li>
+              <li class="checkbox">
+                <input id="smoke" type="checkbox" name="smoke">
+                <label for="smoke" class="check"></label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="x-row">
+          <div class="x-group">
+            <div class="x-group-col">
+              <span>Пригоден для езды</span>
+              <div class="checkbox">
+                <div class="checkbox-group first">
+                  <input id="onthemove_yes" type="radio" name="onthemove">
+                  <label for="onthemove_yes">Да</label>
+                </div>
+                <div class="checkbox-group last">
+                  <input id="onthemove_no" type="radio" name="onthemove">
+                  <label for="onthemove_no">Нет</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="x-group">
+              <ul class="x-group-ul">
+                <li><label for="service">Наличие сервисной книги</label></li>
+                <li class="checkbox">
+                  <input id="service" type="checkbox" name="service">
+                  <label for="service" class="check"></label>
+                </li>
+              </ul>
+          </div>
+          <div class="x-group">
+              <ul class="x-group-ul">
+                <li><label for="demo">Демонстрационный авто</label></li>
+                <li class="checkbox">
+                  <input id="demo" type="checkbox" name="demo">
+                  <label for="demo" class="check"></label>
+                </li>
+              </ul>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="addOffers divider">
+    <div class="container">
+      <p class="caption"><b>Мотор, коробка передач и привод</b></p>
+      <form action="/">
+        <div class="x-row">
+          <div class="x-group">
+            <select class="form-select" name="fuel">
+              <option value="">Топливо</option>
+            </select>
+          </div>
+          <div class="x-group">
+            <select class="form-select" name="cylinder">
+              <option value="">Цилиндр</option>
+            </select>
+          </div>
+          <div class="x-group">
+            <select class="form-select" name="size">
+              <option value="">Объём двигателя (куб.см)</option>
+            </select>
+          </div>
+        </div>
+        <div class="x-row">
+          <div class="x-group">
+            <select class="form-select" name="capacity">
+              <option value="">Мощность от 50 до 999</option>
+            </select>
+          </div>
+          <div class="x-group">
+            <select class="form-select" name="kpp">
+              <option value="">КПП</option>
+            </select>
+          </div>
+          <div class="x-group">
+            <select class="form-select" name="kppcount">
+              <option value="">Кол-во передач</option>
+            </select>
+          </div>
+        </div>
+        <div class="x-row">
+          <div class="x-group alone">
+            <select class="form-select" name="motion">
+              <option value="">Привод</option>
+            </select>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="addOffers divider">
+    <div class="container">
+      <p class="caption"><b>Цвет и обивка</b></p>
+      <p class="caption">Цвет кузова</p>
+      <form action="/">
+        <div class="x-row">
+          <div class="checkbox color">
+            <input id="black" type="radio" name="color">
+            <label for="black" class="black"></label>
+          </div>
+          <div class="checkbox color">
+            <input id="grey" type="radio" name="color">
+            <label for="grey" class="grey"></label>
+          </div>
+          <div class="checkbox color">
+            <input id="silver" type="radio" name="color">
+            <label for="silver" class="silver"></label>
+          </div>
+          <div class="checkbox color">
+            <input id="white" type="radio" name="color">
+            <label for="white" class="white"></label>
+          </div>
+          <div class="checkbox color">
+            <input id="blue" type="radio" name="color">
+            <label for="blue" class="blue"></label>
+          </div>
+          <div class="checkbox color">
+            <input id="orange" type="radio" name="color">
+            <label for="orange" class="orange"></label>
+          </div>
+          <div class="checkbox color">
+            <input id="red" type="radio" name="color">
+            <label for="red" class="red"></label>
+          </div>
+          <div class="checkbox color">
+            <input id="brown" type="radio" name="color">
+            <label for="brown" class="brown"></label>
+          </div>
+          <div class="checkbox color">
+            <input id="beige" type="radio" name="color">
+            <label for="beige" class="beige"></label>
+          </div>
+          <div class="checkbox color">
+            <input id="yellow" type="radio" name="color">
+            <label for="yellow" class="yellow"></label>
+          </div>
+          <div class="checkbox color">
+            <input id="purple" type="radio" name="color">
+            <label for="purple" class="purple"></label>
+          </div>
+          <div class="checkbox color">
+            <input id="green" type="radio" name="color">
+            <label for="green" class="green"></label>
+          </div>
+          <div class="checkbox color">
+            <input id="peach" type="radio" name="color">
+            <label for="peach" class="peach"></label>
+          </div>
+          <div class="checkbox color">
+            <input id="gold" type="radio" name="color">
+            <label for="gold" class="gold"></label>
+          </div>
+          <div class="checkbox color">
+            <input id="raduga" type="radio" name="color">
+            <label for="raduga" class="raduga"></label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 offset-md-1">
+            <p class="caption">Лакокрасочное покрытие</p>
+            <select class="form-select" name="capacity">
+              <option value="">Выберите покрытие</option>
+            </select>
+          </div>
+          <div class="col-md-4 offset-md-1">
+            <p class="caption">Цвет салона</p>
+            <div class="x-row">
+              <div class="checkbox color">
+                <input id="interior-black" type="radio" name="interior-color">
+                <label for="interior-black" class="black"></label>
+              </div>
+              <div class="checkbox color">
+                <input id="interior-grey" type="radio" name="interior-color">
+                <label for="interior-grey" class="grey"></label>
+              </div>
+              <div class="checkbox color">
+                <input id="interior-brown" type="radio" name="interior-color">
+                <label for="interior-brown" class="brown"></label>
+              </div>
+              <div class="checkbox color">
+                <input id="interior-beige" type="radio" name="interior-color">
+                <label for="interior-beige" class="beige"></label>
+              </div>
+              <div class="checkbox color">
+                <input id="interior-raduga" type="radio" name="interior-color">
+                <label for="interior-raduga" class="raduga"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="caption">Материал обивки</p>
+        <div class="x-row">
+          <div class="col-x3">
+            <ul class="x-group-ul">
+              <li><label for="leather" class="icon leather">Полная кожа</label></li>
+              <li class="checkbox">
+                <input id="leather" type="radio" name="material">
+                <label for="leather" class="check"></label>
+              </li>
+            </ul>
+          </div>
+          <div class="col-x3">
+            <ul class="x-group-ul">
+              <li><label for="leather2" class="icon leather2">Часть кожа</label></li>
+              <li class="checkbox">
+                <input id="leather2" type="radio" name="material">
+                <label for="leather2" class="check"></label>
+              </li>
+            </ul>
+          </div>
+          <div class="col-x3">
+            <ul class="x-group-ul">
+              <li><label for="alcantara" class="icon alcantara">Алькантара</label></li>
+              <li class="checkbox">
+                <input id="alcantara" type="radio" name="material">
+                <label for="alcantara" class="check"></label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="x-row">
+          <div class="col-x3">
+            <ul class="x-group-ul">
+              <li><label for="velure" class="icon velure">Велюр</label></li>
+              <li class="checkbox">
+                <input id="velure" type="radio" name="material">
+                <label for="velure" class="check"></label>
+              </li>
+            </ul>
+          </div>
+          <div class="col-x3">
+            <ul class="x-group-ul">
+              <li><label for="textile" class="icon textile">Ткань</label></li>
+              <li class="checkbox">
+                <input id="textile" type="radio" name="material">
+                <label for="textile" class="check"></label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+      <div class="container">
+          <div class="footer-top">
+              <div class="row">
+  
+                  <div class="col-3">
+                      <div class="footer-list-link">
+                          <p>Грузовые, спец техника и мотор</p>
+                          <ul>
+                              <li><a href="">Строительная техника</a></li>
+                              <li><a href="">Мотоциклы</a></li>
+                              <li><a href="">Грузовики</a></li>
+                              <li><a href="">Автопогрузчики</a></li>
+                              <li><a href="">Автокраны</a></li>
+                          </ul>
+                      </div>
+  
+                      <div class="footer-list-link">
+                          <p>Запчасти и аксессуары</p>
+                          <ul>
+                              <li><a href="">Мсла и автохимия</a></li>
+                              <li><a href="">Запчасти</a></li>
+                              <li><a href="">Аудио и видео</a></li>
+                              <li><a href="">Мотоэкипировка</a></li>
+                              <li><a href="">Шины и диски</a></li>
+                          </ul>
+                      </div>
+                  </div>
+  
+                  <div class="col-3">
+                      <div class="footer-list-link">
+                          <p>Техника и планшеты</p>
+                          <ul>
+                              <li><a href="">Сетевое оборудование</a></li>
+                              <li><a href="">Ноутбуки</a></li>
+                              <li><a href="">Мультимедиа</a></li>
+                              <li><a href="">Компьютеры</a></li>
+                              <li><a href="">Клавиатуры и мыши</a></li>
+                          </ul>
+                      </div>
+  
+                      <div class="footer-list-link">
+                          <p>Телефоны, фото и видеотехника</p>
+                          <ul>
+                              <li><a href="">Фотоаппараты</a></li>
+                              <li><a href="">Мобильные телефоны</a></li>
+                              <li><a href="">Внешние аккумуляторы</a></li>
+                              <li><a href="">Видеокамеры</a></li>
+                              <li><a href="">Аксессуары</a></li>
+                          </ul>
+                      </div>
+                  </div>
+  
+                  <div class="col-3">
+                      <div class="footer-list-link">
+                          <p>Бытовая техника ТВ и аудио</p>
+                          <ul>
+                              <li><a href="">Холодильники</a></li>
+                              <li><a href="">Спутниковые и цифровое ТВ</a></li>
+                              <li><a href="">Телевизоры</a></li>
+                              <li><a href="">Утюги и уход за одеждой</a></li>
+                              <li><a href="">Вытяжки</a></li>
+                          </ul>
+                      </div>
+  
+                      <div class="footer-list-link">
+                          <p>Детские товары</p>
+                          <ul>
+                              <li><a href="">Автокресла</a></li>
+                              <li><a href="">Здоровье и уход</a></li>
+                              <li><a href="">Игрушки и игры</a></li>
+                              <li><a href="">Коляски</a></li>
+                              <li><a href="">Подгузники</a></li>
+                          </ul>
+                      </div>
+                  </div>
+  
+                  <div class="col-3">
+                      <div class="footer-list-link">
+                          <p>Личные вещи</p>
+                          <ul>
+                              <li>
+                                  <p>Женский гардероб</p>
+                                  <ul>
+                                      <li><a href="#">Блузы и рубашки</a></li>
+                                      <li><a href="#">Будущим мамам</a></li>
+                                      <li><a href="#">Нижнее бельё</a></li>
+                                      <li><a href="#">Свитеры и толстовки</a></li>
+                                      <li><a href="#">Штаны и шорты</a></li>
+                                  </ul>
+                              </li>
+                              <li>
+                                  <p>Мужской гардероб</p>
+                                  <ul>
+                                      <li><a href="#">Спортивная одежда</a></li>
+                                      <li><a href="#">Футболки и поло</a></li>
+                                      <li><a href="#">Домашняя одежда</a></li>
+                                      <li><a href="#">Головные уборы</a></li>
+                                      <li><a href="#">Футболки и поло</a></li>
+                                  </ul>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+  
+          </div>
+          <div class="footer-bottom">
+              <ul>
+                  <li><a href="#">Рекламодателям</a></li>
+                  <li><a href="#">О компании</a></li>
+                  <li><a href="#">Помощь</a></li>
+                  <li><a href="#">Правовая документация</a></li>
+              </ul>
+              <div class="app-link">
+                  <a href="#">
+                      <img src="img/icons/app-apple.svg" alt="" title="">
+                  </a>
+              </div>
+              <div class="app-link">
+                  <a href="#">
+                      <img src="img/icons/app-android.svg" alt="" title="">
+                  </a>
+              </div>
+              <div class="copy">© 2019 MILLARDA</div>
+          </div>
+      </div>
+  </footer>
+
+  <link rel="stylesheet" href="/css/main.min.css">
+</body>
+</html>

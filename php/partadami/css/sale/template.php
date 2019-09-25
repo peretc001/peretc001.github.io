@@ -1,1 +1,0 @@
-<?php $templates['sale']  = array('For Sale', '3 column product thumbnail grid three columns with title and price.');

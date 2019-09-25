@@ -23,7 +23,7 @@ $(function() {
       checkBtn.addEventListener('click', () => {
          checkBtn.classList.add('active');
       
-         item.action = '/thankyou.php';
+         item.action = './thankyou.php';
          let input = document.createElement("input");
          input.setAttribute("type", "hidden");
          input.setAttribute("name", "human");

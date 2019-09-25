@@ -1,0 +1,46 @@
+@import '_libs/bootstrap_grid'
+@import '_libs/fonts'
+
+$accent: #60C977
+$text: #2C2C2C
+
+$default-font: 'Roboto', sans-serif
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.2
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	opacity: 0
+	
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.text-center
+	text-align: center !important
+	text-align-last: center !important
+	p
+		text-align: center !important
+		text-align-last: center !important
+a, 
+	&:hover, 
+	&:active, 
+	&:focus
+		text-decoration: none
+		outline: none
+b, strong
+	font-weight: bold
+img
+	max-width: 100%
+
+
+body
+	opacity: 1

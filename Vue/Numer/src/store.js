@@ -8,14 +8,14 @@ Vue.use(Vuex)
 export default new Vuex.Store({
 
   state: {
-    price: 600,
+    price: 750,
     steps: {
       number: 1,
       material: 'Plexiglass',
       size: 'small',
       range: '1',
-      width: '200',
-      height: '150',
+      width: '150',
+      height: '200',
       forms: '',
       img: squareImg,
       step3: {
