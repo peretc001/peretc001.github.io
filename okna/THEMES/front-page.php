@@ -52,43 +52,28 @@
       <h2 class="h2_title">Каталог</h2>
       <div class="row">
       <?php 
-        $query = new WP_Query( array( 'post_parent__in' => array( 2, 8, 12, 14, 20 ), 'post_type' => 'page', 'order' => 'ASC', 'orderby' => 'ID' ) );
+        $query = new WP_Query( array( 'post_parent__in' => array(8), 'post_type' => 'page', 'order' => 'ASC', 'orderby' => 'menu_order' ) );
           if ($query->have_posts()):
           while ( $query->have_posts() ) : $query->the_post();
           $post_tumb = get_post_thumbnail_id( $post->ID );
       ?>
-        <div class="col-sm-6 col-md-4">
+      <div class="col-sm-6 col-md-4">
           <a href="<?php echo get_permalink(); ?>"><img src="<?php echo wp_get_attachment_image_url( $post_tumb, 'medium' ); ?>"></a>
           <h3><a href="<?php echo get_permalink(); ?>"><?php echo the_title(); ?></a></h3>
-          <ul>
-            <li class="param__item">Материал:</li>
-            <li class="param__text"><?php echo get_post_meta( $post->ID, 'Материал', true ); ?></li>
-            <li class="param__item">Стеклопакет:</li>
-            <li class="param__text"><?php echo get_post_meta( $post->ID, 'Стеклопакет', true ); ?></li>
-            <li class="param__item">Лаки, краски:</li>
-            <li class="param__text"><?php echo get_post_meta( $post->ID, 'Лаки, краски', true ); ?></li>
-            <?php if( get_post_meta( $post->ID, 'Водоотливной профиль', true ) ) {?>
-            <li class="param__item">Водоотливной профиль:</li>
-            <li class="param__text"><?php echo get_post_meta( $post->ID, 'Водоотливной профиль', true ); ?></li>
-            <?php } ?>
-            <?php if( get_post_meta( $post->ID, 'Окраска алюминия', true ) ) {?>
-            <li class="param__item">Окраска алюминия:</li>
-            <li class="param__text"><?php echo get_post_meta( $post->ID, 'Окраска алюминия', true ); ?></li>
-            <?php } ?>
-            <?php if( get_post_meta( $post->ID, 'Алюминиевый профиль', true ) ) {?>
-            <li class="param__item">Окраска алюминия:</li>
-            <li class="param__text"><?php echo get_post_meta( $post->ID, 'Алюминиевый профиль', true ); ?></li>
-            <?php } ?>
-            <li class="param__item">Уплотнитель:</li>
-            <li class="param__text"><?php echo get_post_meta( $post->ID, 'Уплотнитель', true ); ?></li>
-            <li class="param__item">Фурнитура:</li>
-            <li class="param__text"><?php echo get_post_meta( $post->ID, 'Фурнитура', true ); ?></li>
-          </ul>
-          <div class="price">
-            <p>от 1990р</p>
-            <a href="<?php echo get_permalink(); ?>" class="btn btn-outline-accent">Подробнее</a>
-          </div>
-        </div>
+          <?php 
+            $query_child = new WP_Query( array( 'post_parent__in' => array( $post->ID ), 'post_type' => 'page' ) );
+              if ($query_child->have_posts()):
+              while ( $query_child->have_posts() ) : $query_child->the_post();
+              $post_tumb = get_post_thumbnail_id( $post->ID );
+          ?>
+          <?php echo the_content(); ?>
+          <?php
+              endwhile;
+              endif;
+          ?>
+      </div>
+
+        
         
         <?php
           endwhile; wp_reset_postdata();
@@ -98,7 +83,7 @@
     </div>
   </section>  
   
-  <?php 
+  <?php  #WHY
     $query = new WP_Query('page_id=85&post_type=page');
       if ($query->have_posts()):
       while ( $query->have_posts() ) : $query->the_post();
@@ -118,30 +103,51 @@
     endif;
   ?>
 
-<section class="work">
+  <section class="work">
     <div class="container">
       <h4 class="h2_title">Примеры работ</h4>
-      <div class="work_items">
+      
+      <div class="work__carousel">
       <?php 
         $query = new WP_Query(array ( 'category__in' => array(3), 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => 8));
           if ($query->have_posts()):
           while ( $query->have_posts() ) : $query->the_post();
           $post_tumb = get_post_thumbnail_id( $post->ID );
       ?>
-        <a href="<?php echo get_permalink(); ?>" class="work_items__card lazy" style="background-image: url('<?php echo wp_get_attachment_image_url( $post_tumb, 'large' ); ?>')"></a>
+        <a href="<?php echo get_permalink(); ?>">
+          <div class="img_wrapper">
+            <img src="<?php echo get_stylesheet_directory_uri() .'/img/img.jpg'; ?>" data-lazy="<?php echo wp_get_attachment_image_url( $post_tumb, 'large' ); ?>" alt="<?php echo the_title(); ?>">
+          </div>
+        </a>
       <?php
         endwhile; wp_reset_postdata();
         endif;
       ?>
       </div>
+
     </div>
   </section>
 
-<?php 
+  <section class="advantages">
+    <div class="container">
+    <?php 
+        $query = new WP_Query('page_id=216&post_type=page');
+          if ($query->have_posts()):
+          while ( $query->have_posts() ) : $query->the_post();
+      ?>
+      <h4 class="h2_title"><?php echo the_title(); ?></h4>
+      <?php echo the_content(); ?>
+      <?php
+        endwhile; wp_reset_postdata();
+        endif;
+      ?>
+    </div>
+  </section>
+
+<?php  #STEPS
     $query = new WP_Query('page_id=103&post_type=page');
       if ($query->have_posts()):
       while ( $query->have_posts() ) : $query->the_post();
-      $post_tumb = get_post_thumbnail_id( $post->ID );
   ?>
   <section class="steps">
     <div class="container">
@@ -154,7 +160,7 @@
     endif;
   ?>
 
-<?php 
+<?php  #FOOTER
     $query = new WP_Query('page_id=129&post_type=page');
       if ($query->have_posts()):
       while ( $query->have_posts() ) : $query->the_post();

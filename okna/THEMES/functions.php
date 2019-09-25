@@ -1,7 +1,9 @@
 <?php
 function optimazed_scripts() {
 	wp_enqueue_style( 'optimazed-style', get_template_directory_uri() . '/css/main.min.css', array(), time() );
-	
+	if( is_front_page() ) {
+		wp_enqueue_style( 'slick-style', get_template_directory_uri() . '/js/slick/slick.css', array(), time() );
+	}
 	wp_deregister_script('jquery');
 	//wp_register_script( 'jquery', includes_url( 'js/jquery/jquery.js' ), false, null, true );
 	//wp_enqueue_script( 'jquery' );
@@ -12,12 +14,15 @@ function optimazed_scripts() {
 		wp_enqueue_script( 'optimazed-progressbar', get_template_directory_uri() . '/js/progressbar.js', array(), '1', true );
 	}
 	wp_enqueue_script( 'optimazed-custom', get_template_directory_uri() . '/js/script.js', array(), time(), true );
+	if( is_front_page() ) {
+		wp_enqueue_script( 'slick-carousel', get_template_directory_uri() . '/js/slick/slick.min.js', array(), '1', true );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'optimazed_scripts' );
 
 function add_defer_attribute($tag, $handle) {
    // add script handles to the array below
-   $scripts_to_defer = array('optimazed-progressbar', 'optimazed-custom');
+   $scripts_to_defer = array('optimazed-progressbar', 'optimazed-custom', 'slick-carousel');
    
    foreach($scripts_to_defer as $defer_script) {
       if ($defer_script === $handle) {
@@ -242,7 +247,7 @@ remove_action( 'wp_head', 'wp_oembed_add_host_js' );
 
 //Переадресация со сладеров
 add_action( 'template_redirect', function() {
-	if( is_page(49) || is_page(70) || is_page(72) || is_page(85)){
+	if( is_page(49) || is_page(67) || is_page(70) || is_page(72) || is_page(85) || is_page(103) || is_page(129) || is_page(216) || is_page(234) || is_page(245) || is_page(249) || is_page(255) || is_page(257) || is_page(259)){
 		wp_redirect( home_url() );
 		exit;
 	}
