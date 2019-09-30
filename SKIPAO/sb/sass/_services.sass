@@ -1,0 +1,102 @@
+.services
+   text-align: center
+   margin: 0 auto
+   background: #f5f5f5
+   h2
+      font-size: 2em
+      margin-bottom: 1em
+   [class*="col-"]
+      padding-bottom: 1em
+      margin-bottom: 0
+      background: #f5f5f5
+   .services__card
+      position: relative
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-direction: column
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+      font-size: 1em
+      border-radius: 8px
+      min-height: 300px
+      overflow: hidden
+      transition: color .3s ease
+      &__text
+         position: relative
+         font-size: 1.3em
+         font-weight: bold
+         color: #fff
+         z-index: 2
+         padding: 0 30px
+         transform: translate3d(0, 20px, 0)
+         transition: transform .35s ease
+      &__desc
+         position: relative
+         font-size: .8em
+         font-weight: normal
+         color: #fff
+         z-index: 2
+         height: 0
+         opacity: 0
+         padding: 0 30px
+         transform: translate3d(0, -30px, 0)
+         transition: transform .35s ease, opacity .35s ease
+      .more-link
+         position: absolute
+         right: -10px
+         bottom: 30px
+         opacity: 0
+         z-index: 2
+         color: #fff
+         font-size: .8em
+         font-weight: bold
+         text-transform: uppercase
+         transition: all .3s ease-in-out
+
+      &:hover
+         .services__card__text
+            transform: translate3d(0, -10px, 0)
+            color: $accent
+         .services__card__desc
+            transform: translate3d(0, -10px, 0)
+            color: #ffffff
+            opacity: 1
+         .more-link
+            right: 30px
+            opacity: 1
+
+   .has-overlay
+      padding: 0
+      &:before
+         content: ""
+         position: absolute
+         top: 0
+         left: 0
+         width: 100%
+         height: 100%
+         background: #000
+         opacity: .5
+         transition: opacity .35s ease-in-out
+         z-index: 1
+         border-radius: 8px
+      &:hover
+         &:before
+            opacity: .8
+
+@media screen and (max-width: 991.98px)
+   .services
+      font-size: 0.9em
+      h2
+         top: auto
+         position: relative
+      [class*='col-']
+         padding-bottom: 2em
+
+@media screen and (max-width: 576.98px)
+   .services
+      font-size: 1em
+      [class*='col-']
+         &:last-child
+            padding-bottom: 0

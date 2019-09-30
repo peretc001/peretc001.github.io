@@ -26,7 +26,7 @@
                   <b-form-input id="range" v-model="value" type="range" min="1" max="2.5" step="0.005" @input="changeSelectedSize2(value)"></b-form-input>
                   <div class="mt-4 mb-4">X: {{ width }} см х Y: {{ height }} см</div>
                   <div class="step2form">
-                     <div v-for="(img, index) in forms" :key="index" class="step2form__card">
+                     <div v-for="(img, index) in forma" :key="index" class="step2form__card">
                         <input
                            :id="index"
                            v-model="forma"
@@ -36,7 +36,7 @@
                            @change="changeForms(index)"
                            required
                         >
-                        <label :for="index"><img :src="img.url"></label>
+                        <label :for="index">{{ index }}<img :src="img.url"></label>
                      </div>
                   </div>
                   <Button />
@@ -50,19 +50,6 @@
 <script>
 import stepLine from '../../components/stepLine.vue'
 import Button from '../../components/Button.vue'
-
-import squareImg from '../../assets/img/01_sp.png'
-import rectangleImg from '../../assets/img/02_sp.png'
-import triangleImg from '../../assets/img/03_sp.png'
-import curcleImg from '../../assets/img/05_sp.png'
-
-import square2Img from '../../assets/img/06_sp.png'
-import rectangle2Img from '../../assets/img/07_sp.png'
-import triangle2Img from '../../assets/img/08_sp.png'
-import curcle2Img from '../../assets/img/09_sp.png'
-import square3Img from '../../assets/img/10_sp.png'
-import rectangle3Img from '../../assets/img/11_sp.png'
-import triangle3Img from '../../assets/img/12_sp.png'
 
 export default {
   components: {
@@ -89,42 +76,7 @@ export default {
       },
       value: '',
       value2: '',
-      forma: '',
-      forms: {
-        square: {
-          url: squareImg
-        },
-        rectangle: {
-          url: rectangleImg
-        },
-        triangle: {
-          url: triangleImg
-        },
-        curcle: {
-          url: curcleImg
-        },
-        square2: {
-          url: square2Img
-        },
-        rectangle2: {
-          url: rectangle2Img
-        },
-        triangle2: {
-          url: triangle2Img
-        },
-        curcle2: {
-          url: curcle2Img
-        },
-        square3: {
-          url: square3Img
-        },
-        rectangle3: {
-          url: rectangle3Img
-        },
-        triangle3: {
-          url: triangle3Img
-        }
-      }
+      forma: 'aluminium'
     }
   },
   beforeMount () {
@@ -134,7 +86,8 @@ export default {
     this.value = this.$store.state.steps.range
     this.width = this.$store.state.steps.width
     this.height = this.$store.state.steps.height
-    this.forma = this.$store.state.steps.forms
+
+    this.forma = this.$store.state.steps.material
     this.img = this.$store.state.steps.img
   },
   methods: {

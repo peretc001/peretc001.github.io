@@ -1,0 +1,98 @@
+@import '_libs/bootstrap_grid'
+
+$accent: #60C977
+$text: #151515
+$gutter: 30px
+
+$default-font: 'Montserrat', sans-serif
+
+html,
+body
+  height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.2
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	opacity: 0
+
+section
+	padding: $gutter*2 0
+	
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.text-center
+	text-align: center !important
+	text-align-last: center !important
+	p
+		text-align: center !important
+		text-align-last: center !important
+a, 
+	&:hover, 
+	&:active, 
+	&:focus
+		text-decoration: none
+		outline: none
+b, strong
+	font-weight: bold
+img
+	max-width: 100%
+
+h1, h2, h3, h4, h5
+	font-weight: 700
+	font-size: 2em
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,800&display=swap')
+@import '_libs/hamburger'
+@import 'nav'
+@import 'header'
+@import 'about'
+@import 'services'
+@import 'how'
+@import 'seo'
+@import 'partners'
+@import 'footer'
+@import 'modal'
+@import 'simplelightbox'
+
+.certificat
+	[class*='col-']
+		margin-bottom: 1em
+		text-align: center
+		img
+			max-width: 100%
+
+.toTop
+	position: fixed
+	display: none
+	cursor: pointer
+	right: 15px
+	bottom: 15px
+	img
+		width: 30px
+		height: 30px
+		opacity: .5
+		transition: opacity .2s ease
+		&:hover
+			opacity: 1
+
+@media screen and (max-width: 991.98px)
+	h1, h2, h3, h4, h5
+		font-size: 1.5em
+
+@media screen and (max-width: 767.98px)
+	h1, h2, h3, h4, h5
+		font-size: 1.8em
+
+body
+	opacity: 1

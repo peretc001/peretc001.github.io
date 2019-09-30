@@ -1,0 +1,89 @@
+@import "_libs/normalize"
+@import "_libs/bootstrap_grid"
+@import "_libs/hamburger"
+
+	
+$default-font: 'MuseoSans', sans-serif
+$accent: #c13854
+$text: #151515
+$text-hover: #c1c1c1
+$white: #ffffff
+
+$border-light: #e5e9f2
+$bg-main: #f7f7f7
+$bg-hover: #f5f6fa
+
+// Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
+$gutter: 30px
+
+::placeholder
+	color: #666
+html,
+body
+	height: 100%
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.2
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	opacity: 0
+	&.opener
+		overflow: hidden
+	
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.text-center
+	text-align: center
+a, a:hover, a:active
+	text-decoration: none
+b, strong
+	font-weight: bold
+
+.btn
+	margin: 0
+	font-size: 1em
+	outline: none
+	box-shadow: none
+	&.btn-outline-white
+		border: .5px solid $white
+		color: $white
+		&:hover
+			background: $white
+			color: $text
+	&:hover
+		outline: none
+		box-shadow: none
+
+@import "navbar"
+@import "header"
+@import "products"
+@import "top_products"
+@import "tech"
+
+.flex
+   display: flex
+   justify-content: space-between
+   align-items: flex-start
+   flex-wrap: wrap
+   max-width: 1200px
+   margin: 1em auto
+   padding: 0 15px
+.col-x4
+   width: 24%
+   margin-left: 1%
+   &:first-child
+      margin-left: 0
+   &:last-child
+      width: 25%
+
+body
+	opacity: 1

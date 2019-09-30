@@ -11,12 +11,146 @@ export default new Vuex.Store({
     price: 750,
     steps: {
       number: 1,
-      material: 'Plexiglass',
+      material: 'aluminium',
       size: 'small',
       range: '1',
       width: '150',
       height: '200',
-      forms: '',
+      forma: {
+        brass: {
+          brass1: {
+            url: require('@/assets/img/step2/brass/brass-1.png')
+          },
+          brass2: {
+            url: require('@/assets/img/step2/brass/brass-2.png')
+          },
+          brass3: {
+            url: require('@/assets/img/step2/brass/brass-3.png')
+          },
+          brass4: {
+            url: require('@/assets/img/step2/brass/brass-4.png')
+          },
+          brass5: {
+            url: require('@/assets/img/step2/brass/brass-5.png')
+          },
+          brass6: {
+            url: require('@/assets/img/step2/brass/brass-6.png')
+          },
+          brass7: {
+            url: require('@/assets/img/step2/brass/brass-7.png')
+          },
+          brass8: {
+            url: require('@/assets/img/step2/brass/brass-8.png')
+          },
+          brass9: {
+            url: require('@/assets/img/step2/brass/brass-9.png')
+          },
+          brass10: {
+            url: require('@/assets/img/step2/brass/brass-10.png')
+          },
+          brass11: {
+            url: require('@/assets/img/step2/brass/brass-11.png')
+          },
+          brass12: {
+            url: require('@/assets/img/step2/brass/brass-12.png')
+          },
+          brass13: {
+            url: require('@/assets/img/step2/brass/brass-13.png')
+          },
+          brass14: {
+            url: require('@/assets/img/step2/brass/brass-14.png')
+          },
+          brass15: {
+            url: require('@/assets/img/step2/brass/brass-15.png')
+          },
+          brass16: {
+            url: require('@/assets/img/step2/brass/brass-16.png')
+          },
+          brass17: {
+            url: require('@/assets/img/step2/brass/brass-17.png')
+          },
+          brass18: {
+            url: require('@/assets/img/step2/brass/brass-18.png')
+          },
+          brass19: {
+            url: require('@/assets/img/step2/brass/brass-19.png')
+          },
+          brass20: {
+            url: require('@/assets/img/step2/brass/brass-20.png')
+          },
+          brass21: {
+            url: require('@/assets/img/step2/brass/brass-21.png')
+          },
+          brass22: {
+            url: require('@/assets/img/step2/brass/brass-22.png')
+          },
+          brass23: {
+            url: require('@/assets/img/step2/brass/brass-23.png')
+          },
+          brass24: {
+            url: require('@/assets/img/step2/brass/brass-24.png')
+          },
+          brass25: {
+            url: require('@/assets/img/step2/brass/brass-25.png')
+          }
+        },
+        aluminium: {
+          aluminium1: {
+            url: require('@/assets/img/step2/aluminium/aluminium-1.png')
+          },
+          aluminium2: {
+            url: require('@/assets/img/step2/aluminium/aluminium-2.png')
+          },
+          aluminium3: {
+            url: require('@/assets/img/step2/aluminium/aluminium-3.png')
+          },
+          aluminium4: {
+            url: require('@/assets/img/step2/aluminium/aluminium-4.png')
+          },
+          aluminium5: {
+            url: require('@/assets/img/step2/aluminium/aluminium-5.png')
+          },
+          aluminium6: {
+            url: require('@/assets/img/step2/aluminium/aluminium-6.png')
+          },
+          aluminium7: {
+            url: require('@/assets/img/step2/aluminium/aluminium-7.png')
+          },
+          aluminium8: {
+            url: require('@/assets/img/step2/aluminium/aluminium-8.png')
+          },
+          aluminium9: {
+            url: require('@/assets/img/step2/aluminium/aluminium-9.png')
+          },
+          aluminium10: {
+            url: require('@/assets/img/step2/aluminium/aluminium-10.png')
+          },
+          aluminium11: {
+            url: require('@/assets/img/step2/aluminium/aluminium-11.png')
+          },
+          aluminium12: {
+            url: require('@/assets/img/step2/aluminium/aluminium-12.png')
+          },
+          aluminium13: {
+            url: require('@/assets/img/step2/aluminium/aluminium-13.png')
+          },
+          aluminium14: {
+            url: require('@/assets/img/step2/aluminium/aluminium-14.png')
+          },
+          aluminium15: {
+            url: require('@/assets/img/step2/aluminium/aluminium-15.png')
+          },
+          aluminium16: {
+            url: require('@/assets/img/step2/aluminium/aluminium-16.png')
+          },
+          aluminium17: {
+            url: require('@/assets/img/step2/aluminium/aluminium-17.png')
+          },
+          aluminium18: {
+            url: require('@/assets/img/step2/aluminium/aluminium-18.png')
+          }
+        }
+      },
       img: squareImg,
       step3: {
         number: {
