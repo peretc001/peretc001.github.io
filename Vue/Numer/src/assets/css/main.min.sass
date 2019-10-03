@@ -1,14 +1,23 @@
 $gutter: 30px
+$general: #ffffff
+$dark: #151515
+$orange: #FEB121
 
 body
    opacity: 0
    $default-font: 'MuseoSans', sans-serif
    font-size: 16px
+   background: url('../img/bg.png') center top no-repeat
+   background-size: cover
+   color: $general
 
 a, a:focus, a:visited, button, button:focus, .btn, .btn:focus
+   color: #ffffff
    outline: none
    box-shadow: none
-
+h2, h3
+   font-size: 2em
+   margin-bottom: 1em
 @import 'sass/font'
 @import 'sass/stepLine'
 @import 'sass/step1'
@@ -22,6 +31,33 @@ input, textarea
       border-color: red
    &:required:valid
       border-color: green
+.step__button
+   display: flex
+   align-items: center
+   justify-content: space-between
+
+.step1
+   .step__button
+      justify-content: flex-end
+.btn
+   width: 100%
+   max-width: 150px
+   color: $dark
+   margin-bottom: 1em
+   &.btn-success
+      background: $orange
+      border-color: darken($orange, 5%)
+      &:hover
+         background: darken($orange, 8%)
+         border-color: darken($orange, 10%)
+         color: $dark
+   &.btn-outline-success
+      border-color: darken($orange, 5%)
+      color: $orange
+      margin-right: 1em
+      &:hover
+         background: $orange
+         color: $dark
 
 body
    opacity: 1

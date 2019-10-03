@@ -1,5 +1,5 @@
 <template>
-   <div class="step_button">
+   <div class="step__button">
       <b-button v-if="display" @click="goBack()" variant="outline-success">Назад</b-button>
       <b-button @click="goNext()" variant="success">Далее</b-button>
    </div>

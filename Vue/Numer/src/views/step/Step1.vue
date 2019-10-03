@@ -3,33 +3,33 @@
       <stepLine />
       <div class="step1">
          <b-container>
+           <h2>{{ price }} p.</h2>
             <b-row>
                <b-col md="5">
-                  <h3>{{ price }} p.</h3>
                   <slick ref="slick" :options="slickOptions">
-                     <div class="list" v-for="(n, index) in options[selected].images" :key="index" :data-index="index">
+                     <div class="list" v-for="(n, index) in materials[selected_material].images" :key="index" :data-index="index">
                         <img class="image" :src="n" :key="index" @click="i = index">
                      </div>
                   </slick>
-                  <vue-gallery-slideshow :images="options[selected].images" :index="i" @close="i = null"></vue-gallery-slideshow>
+                  <vue-gallery-slideshow :images="materials[selected_material].images" :index="i" @close="i = null"></vue-gallery-slideshow>
+                  <Button />
                </b-col>
                <b-col md="7">
-                  <p><b>Материал</b></p>
+                  <h3>Выберите материал</h3>
                   <div class="materials">
-                     <div v-for="(option, index) in options" :key="index" class="materials__card">
+                     <div v-for="(material, index) in materials" :key="index" class="materials__card">
                         <input
                           :id="index"
-                          v-model="selected"
                           type="radio"
-                          :value="option.text"
+                          v-model="selected_material"
+                          name="material"
+                          :value="index"
                           @change="changeSelectedIndex(index)"
-                          required
                         >
-                        <label :for="index">{{ index }}<img :src="option.url">{{option.text}}</label>
+                        <label :for="index">{{material.name}}</label>
                       </div>
                   </div>
-                  <p class="text">{{options[selected].desc}}</p>
-                  <Button />
+                  <p class="text">{{materials[selected_material].desc}}</p>
                </b-col>
             </b-row>
          </b-container>
@@ -62,13 +62,13 @@ export default {
         edgeFriction: 0.30,
         swipe: true
       },
-      selected: '',
+      selected_material: 'plexiglass',
       i: null
     }
   },
   beforeMount () {
-    this.selected = this.$store.state.steps.material
-    this.options = this.$store.state.steps.options
+    this.selected_material = this.$store.state.steps.material
+    this.materials = this.$store.state.steps.materials
     this.price = this.$store.state.price
   },
   methods: {
@@ -83,8 +83,8 @@ export default {
     },
     changeSelectedIndex (index) {
       this.$refs.slick.reSlick()
-      this.$store.commit('setMaterial', this.selected)
-      this.$store.commit('setPrice', this.options[index].price)
+      this.$store.commit('setMaterial', this.selected_material)
+      this.$store.commit('setPrice', this.materials[index].price)
       this.price = this.$store.state.price
     }
   }

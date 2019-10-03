@@ -49,10 +49,10 @@ export default {
       img: '',
       selected: '',
       borders: {
-        square: 'http://placehold.it/150x150/000000',
-        rectangle: 'http://placehold.it/150x150/FF0000',
-        triangle: 'http://placehold.it/150x150/0000FF',
-        curcle: 'http://placehold.it/150x150/008800'
+      //   square: 'http://placehold.it/150x150/000000',
+      //   rectangle: 'http://placehold.it/150x150/FF0000',
+      //   triangle: 'http://placehold.it/150x150/0000FF',
+      //   curcle: 'http://placehold.it/150x150/008800'
       }
     }
   },

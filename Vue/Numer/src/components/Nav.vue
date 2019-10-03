@@ -1,7 +1,7 @@
 <template>
    <nav class="nav">
       <div class="container">
-         <b-navbar toggleable="md" type="light">
+         <b-navbar toggleable="md" type="default">
             <b-navbar-brand to="/">Logo</b-navbar-brand>
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
             <b-collapse id="nav-collapse" is-nav>

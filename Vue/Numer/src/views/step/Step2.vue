@@ -3,43 +3,44 @@
       <stepLine />
       <div class="step2">
          <b-container>
+           <h2>{{ price }} p.</h2>
             <b-row>
                <b-col md="5">
-                  <h3>{{ price }} p.</h3>
                   <div class="step2__img">
-                     <img :src="this.img">
-                  </div>
-               </b-col>
-               <b-col md="7">
-                  <b-form-group label="Размер и форма">
-                     <b-form-radio-group
-                     id="btn-size"
-                     v-model="checked"
-                     :options="options"
-                     buttons
-                     name="size"
-                     @input="changeSelectedSize(checked)"
-                     ></b-form-radio-group>
-                  </b-form-group>
-                  <br>
-                  <p>Прямоугольные 3:4</p>
-                  <b-form-input id="range" v-model="value" type="range" min="1" max="2.5" step="0.005" @input="changeSelectedSize2(value)"></b-form-input>
-                  <div class="mt-4 mb-4">X: {{ width }} см х Y: {{ height }} см</div>
-                  <div class="step2form">
-                     <div v-for="(img, index) in forma" :key="index" class="step2form__card">
-                        <input
-                           :id="index"
-                           v-model="forma"
-                           type="radio"
-                           :value="index"
-                           name="forms"
-                           @change="changeForms(index)"
-                           required
-                        >
-                        <label :for="index">{{ index }}<img :src="img.url"></label>
-                     </div>
+                     <img :src="img">
                   </div>
                   <Button />
+               </b-col>
+               <b-col md="7">
+                  <h2>Размер и форма</h2>
+                  <div class="sizes">
+                    <div v-for="(size, i) in sizes" :key="i" class="sizes__card">
+                      <input
+                        :id="i"
+                        type="radio"
+                        name="size"
+                        :value="i"
+                        @input="changeSize(i)"
+                        :checked="selected_size == i"
+                      >
+                      <label :for="i">{{size.text}}</label>
+                    </div>
+                    <div class="params">Размер: {{ selected_forms.width }} х {{ selected_forms.height }} см</div>  
+                  </div>
+                  <b-form-input id="range" v-model="range" type="range" min="1" max="2.5" step="0.005" @input="changeRange(range)"></b-form-input>
+                  <div class="forms">
+                     <div v-for="(form, i) in forms[selected_forms.name]" :key="i" class="forms__card">
+                        <input
+                          :id="i"
+                          type="radio"
+                          :value="i"
+                          name="forms"
+                          @change="changeForms(i)"
+                          :checked="selected_forms.current == i"
+                        >
+                        <label :for="i"><img :src="form"></label>
+                     </div>
+                  </div>
                </b-col>
             </b-row>
          </b-container>
@@ -57,79 +58,70 @@ export default {
   },
   data () {
     return {
-      price: '',
       img: '',
-      checked: '',
-      options: {
+      sizes: {
         small: {
           text: 'Маленький',
           size: '1'
         },
         middle: {
           text: 'Средний',
-          size: '1.30525'
+          size: '1.5'
         },
         big: {
           text: 'Большой',
-          size: '1.60495'
+          size: '2'
         }
-      },
-      value: '',
-      value2: '',
-      forma: 'aluminium'
+      }
     }
   },
   beforeMount () {
     // Устанавливаем выбранный размер
     this.price = this.$store.state.price
-    this.checked = this.$store.state.steps.size
-    this.value = this.$store.state.steps.range
-    this.width = this.$store.state.steps.width
-    this.height = this.$store.state.steps.height
+    this.selected_size = this.$store.state.steps.size
+    this.range = this.$store.state.steps.range
 
-    this.forma = this.$store.state.steps.material
-    this.img = this.$store.state.steps.img
+    this.img = this.$store.state.steps.selected_forms.img
+    this.selected_forms = this.$store.state.steps.selected_forms
+    this.forms = this.$store.state.steps.forms
   },
   methods: {
-    changeSelectedSize (checked) {
-      this.value = this.options[checked].size
-
-      this.width = parseFloat(150 * this.options[checked].size).toFixed(2)
-      this.height = parseFloat(200 * this.options[checked].size).toFixed(2)
-
+    changeSize (i) {
+      this.range = this.sizes[i].size
+      this.selected_forms.width = parseFloat(150 * this.sizes[i].size).toFixed(2)
+      this.selected_forms.height = parseFloat(200 * this.sizes[i].size).toFixed(2)
       // Записываем выбранный размер
-      this.$store.commit('setSize', checked)
-      this.$store.commit('setRange', this.options[checked].size)
-      this.$store.commit('setWidth', parseFloat(150 * this.options[checked].size).toFixed(2))
-      this.$store.commit('setHeight', parseFloat(200 * this.options[checked].size).toFixed(2))
+      this.$store.commit('setSize', i)
+      this.$store.commit('setRange', this.sizes[i].size)
+      this.$store.commit('setWidth', parseFloat(150 * this.sizes[i].size).toFixed(2))
+      this.$store.commit('setHeight', parseFloat(200 * this.sizes[i].size).toFixed(2))
     },
-    changeSelectedSize2 (value) {
-      if (this.value <= 1.3) {
-        this.checked = 'small'
+    changeRange (value) {
+      if (value <= 1.5) {
+        this.selected_size = 'small'
       }
-      if (this.value > 1.3 && this.value < 1.6) {
-        this.checked = 'middle'
+      if (value > 1.5 && value < 2) {
+        this.selected_size = 'middle'
       }
-      if (this.value >= 1.6) {
-        this.checked = 'big'
+      if (value >= 2) {
+        this.selected_size = 'big'
       }
-
-      this.width = parseFloat(150 * this.value).toFixed(2)
-      this.height = parseFloat(200 * this.value).toFixed(2)
+      this.selected_forms.width = parseFloat(150 * this.range).toFixed(2)
+      this.selected_forms.height = parseFloat(200 * this.range).toFixed(2)
 
       // Записываем выбранный размер
-      this.$store.commit('setSize', this.checked)
+      this.$store.commit('setSize', this.selected_size)
       this.$store.commit('setRange', value)
-      this.$store.commit('setWidth', parseFloat(150 * this.value).toFixed(2))
-      this.$store.commit('setHeight', parseFloat(200 * this.value).toFixed(2))
+      this.$store.commit('setWidth', parseFloat(150 * this.range).toFixed(2))
+      this.$store.commit('setHeight', parseFloat(200 * this.range).toFixed(2))
       //Рассчитываем прайс
-      this.price = ((((this.width*this.height)/1000000)*15000)+300).toFixed(2)
+      this.price = ((((this.selected_forms.width*this.selected_forms.height)/1000000)*15000)+300).toFixed(0)
       this.$store.commit('setPrice', this.price)
 
     },
     changeForms (index) {
-      this.img = this.forms[index].url
-      let arr = { forms: index, url: this.forms[index].url }
+      this.img = this.forms[this.selected_forms.name][index]
+      let arr = { material: this.selected_forms.name, img: this.forms[this.selected_forms.name][index], current: index }
       // Записываем выбранную форму
       this.$store.commit('setForms', arr)
     }
