@@ -1,0 +1,82 @@
+.contact
+   padding: $gutter*3 $gutter/2
+   .row
+      align-items: center
+   &__info
+      &__card
+         display: flex
+         align-items: center
+         justify-content: flex-start
+         margin-bottom: $gutter*1.5
+         &:last-child
+            margin-bottom: 0
+         img
+            margin-right: 20px
+         p
+            margin-bottom: 0
+         a
+            color: $text
+            font-family: $custom-font
+            font-size: 1.5em
+   .consultation
+      padding-top: $gutter*3
+      padding-bottom: $gutter*3
+      max-width: 480px
+      &__input
+         max-width: 300px
+         margin: 0 auto
+
+.copyright
+   background: $text
+   padding: $gutter $gutter/2
+   .row
+      align-items: center
+   [class*="col-"]
+      &:last-child
+         text-align: right
+   a
+      color: #ffffff
+   ul
+      list-style: none
+
+@media screen and (max-width: 991.98px)
+   .contact
+      font-size: 0.9em
+
+@media screen and (max-width: 767.98px)
+   .contact
+      padding: $gutter $gutter/2
+      font-size: 1em
+      [class*="col-"]
+         margin-bottom: 2em
+         &:first-child
+            margin-bottom: 0
+      
+      &__info
+         display: flex
+         flex-direction: column
+         align-items: center
+         &__card
+            width: 300px
+            margin: 0 auto
+            margin-bottom: $gutter/2
+            text-align: left
+            img
+               margin-right: 20px
+               max-width: 40px
+            a
+               font-size: 1.2em
+      
+      .consultation
+         padding-top: $gutter
+         padding-bottom: $gutter
+      
+   .copyright
+      text-align: center
+      [class*="col-"]
+         &:last-child
+            text-align: center
+      img
+         margin: 0 auto
+         text-align: center
+      

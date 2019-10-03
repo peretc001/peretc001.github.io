@@ -1,0 +1,139 @@
+.navbar
+   position: absolute
+   left: 0
+   top: 0
+   width: 100%
+   z-index: 1
+   padding: 1.8em
+   .container
+      padding-right: $gutter*2
+   .hamburger--slider
+      .hamburger-box
+         width: 30px
+         height: 16px
+         .hamburger-inner, 
+         .hamburger-inner:after, 
+         .hamburger-inner:before
+            width: 30px
+            height: 2px
+            background-color: $text
+         &.is-active
+            .hamburger-box
+               .hamburger-inner, 
+               .hamburger-inner:after, 
+               .hamburger-inner:before
+                  background-color: $text
+      .hamburger-inner
+         top: 1px
+
+   .navbar-brand
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 100px
+      text-align: center
+      img
+         width: 100px
+         height: auto
+         margin-right: 1em
+         transition: width .3s ease
+      p
+         text-transform: uppercase
+         margin-bottom: 0
+         color: $text
+         font-size: 1em
+         span
+            display: block
+            font-size: 0.6em
+            color: $accent
+   
+   .mobile-phone
+      padding-left: 1.6em
+      color: $text
+      position: relative
+      margin: 0
+      &:before
+         content: ''
+         position: absolute
+         left: 0
+         top: 50%
+         transform: translateY(-50%)
+         width: 1.2em
+         height: 1.2em
+         background-size: 1.2em
+         background-position: left
+         background-repeat: no-repeat
+         background-image: url('data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgMzIuNjY3IDMyLjY2NyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzIuNjY3IDMyLjY2NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxwYXRoIGQ9Ik0xNi4zMzMsMEM3LjMyNywwLDAsNy4zMjcsMCwxNi4zMzRjMCw5LjAwNiw3LjMyNiwxNi4zMzMsMTYuMzMzLDE2LjMzM2MwLjU1NywwLDEuMDA3LTAuNDUxLDEuMDA3LTEuMDA2ICAgYzAtMC41NTYtMC40NS0xLjAwNy0xLjAwNy0xLjAwN2MtNy44OTYsMC0xNC4zMTgtNi40MjQtMTQuMzE4LTE0LjMxOWMwLTcuODk2LDYuNDIyLTE0LjMyLDE0LjMxOC0xNC4zMiAgIGM3Ljg5NiwwLDE0LjMxNyw2LjQyNCwxNC4zMTcsMTQuMzJjMCwzLjI5OS0xLjc1Niw2LjU3MS00LjI2OSw3Ljk1NWMtMC45MTMsMC41MDItMS45MDMsMC43NTEtMi45NTksMC43NjEgICBjMC42MzQtMC4zNzgsMS4xODMtMC44ODcsMS41OTEtMS41MzFjMC4wOC0wLjEyMSwwLjE4Ni0wLjIyNiwwLjIzOC0wLjM1OWMwLjMyOC0wLjc4OSwwLjM1Ny0xLjY4NCwwLjU1NS0yLjUxNiAgIGMwLjI0My0xLjA2Ni00LjY1OC0zLjE0My01LjA4NC0xLjgxNWMtMC4xNTQsMC40OTMtMC4zOSwyLjA0OC0wLjY5OSwyLjQ1OGMtMC4yNzUsMC4zNjUtMC45NTMsMC4xOTMtMS4zNzctMC4xNjggICBjLTEuMTE3LTAuOTUyLTIuMzY0LTIuMzUyLTMuNDU4LTMuNDU3bDAuMDAyLTAuMDAxYy0wLjAyOC0wLjAyOS0wLjA2Mi0wLjA2Mi0wLjA5Mi0wLjA5MWMtMC4wMzEtMC4wMy0wLjA2Mi0wLjA2Mi0wLjA5My0wLjA5MmwwLDAgICBjLTEuMTA2LTEuMDkzLTIuNTA2LTIuMzM4LTMuNDU3LTMuNDU4Yy0wLjM2LTAuNDI0LTAuNTM0LTEuMS0wLjE2OC0xLjM3NmMwLjQxLTAuMzEsMS45NjYtMC41NDMsMi40NTgtMC42OTggICBjMS4zMjYtMC40MjUtMC43NS01LjMyOS0xLjgxNi01LjA4NGMtMC44MzIsMC4xOTUtMS43MjcsMC4yMjUtMi41MTYsMC41NTJjLTAuMTM0LDAuMDU2LTAuMjM4LDAuMTYtMC4zNTksMC4yNCAgIGMtMi43OTksMS43NzUtMy4xNiw2LjA4My0wLjQyOCw5LjI5MmMxLjA0MSwxLjIyOCwyLjEyNywyLjQxNiwzLjI0NSwzLjU3NmwtMC4wMDYsMC4wMDRjMC4wMzEsMC4wMzEsMC4wNjMsMC4wNiwwLjA5NSwwLjA5ICAgYzAuMDMsMC4wMzEsMC4wNTksMC4wNjIsMC4wODgsMC4wOTVsMC4wMDYtMC4wMDZjMS4xNiwxLjExOCwyLjUzNSwyLjc2NCw0Ljc2OSw0LjI1NWM0LjcwMywzLjE0MSw4LjMxMiwyLjI2NCwxMC40MzgsMS4wOTggICBjMy42Ny0yLjAyMSw1LjMxMi02LjMzOCw1LjMxMi05LjcxOUMzMi42NjcsNy4zMjcsMjUuMzM5LDAsMTYuMzMzLDB6IiBmaWxsPSIjMDAwMDAwIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==')
+
+   .navbar-nav
+      align-items: center
+      justify-content: space-evenly
+      padding-left: 0.8em
+      .nav-link
+         color: $text
+         margin: 0 .5em
+         font-size: 1em
+
+   .phone
+      position: relative
+      padding-left: 1.8em
+      color: $text
+      &:before
+         content: ''
+         position: absolute
+         left: 0
+         top: 50%
+         transform: translateY(-50%)
+         width: 1.2em
+         height: 1.2em
+         background-size: 1.2em
+         background-position: left
+         background-repeat: no-repeat
+         background-image: url('data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgMzIuNjY3IDMyLjY2NyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzIuNjY3IDMyLjY2NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxwYXRoIGQ9Ik0xNi4zMzMsMEM3LjMyNywwLDAsNy4zMjcsMCwxNi4zMzRjMCw5LjAwNiw3LjMyNiwxNi4zMzMsMTYuMzMzLDE2LjMzM2MwLjU1NywwLDEuMDA3LTAuNDUxLDEuMDA3LTEuMDA2ICAgYzAtMC41NTYtMC40NS0xLjAwNy0xLjAwNy0xLjAwN2MtNy44OTYsMC0xNC4zMTgtNi40MjQtMTQuMzE4LTE0LjMxOWMwLTcuODk2LDYuNDIyLTE0LjMyLDE0LjMxOC0xNC4zMiAgIGM3Ljg5NiwwLDE0LjMxNyw2LjQyNCwxNC4zMTcsMTQuMzJjMCwzLjI5OS0xLjc1Niw2LjU3MS00LjI2OSw3Ljk1NWMtMC45MTMsMC41MDItMS45MDMsMC43NTEtMi45NTksMC43NjEgICBjMC42MzQtMC4zNzgsMS4xODMtMC44ODcsMS41OTEtMS41MzFjMC4wOC0wLjEyMSwwLjE4Ni0wLjIyNiwwLjIzOC0wLjM1OWMwLjMyOC0wLjc4OSwwLjM1Ny0xLjY4NCwwLjU1NS0yLjUxNiAgIGMwLjI0My0xLjA2Ni00LjY1OC0zLjE0My01LjA4NC0xLjgxNWMtMC4xNTQsMC40OTMtMC4zOSwyLjA0OC0wLjY5OSwyLjQ1OGMtMC4yNzUsMC4zNjUtMC45NTMsMC4xOTMtMS4zNzctMC4xNjggICBjLTEuMTE3LTAuOTUyLTIuMzY0LTIuMzUyLTMuNDU4LTMuNDU3bDAuMDAyLTAuMDAxYy0wLjAyOC0wLjAyOS0wLjA2Mi0wLjA2Mi0wLjA5Mi0wLjA5MWMtMC4wMzEtMC4wMy0wLjA2Mi0wLjA2Mi0wLjA5My0wLjA5MmwwLDAgICBjLTEuMTA2LTEuMDkzLTIuNTA2LTIuMzM4LTMuNDU3LTMuNDU4Yy0wLjM2LTAuNDI0LTAuNTM0LTEuMS0wLjE2OC0xLjM3NmMwLjQxLTAuMzEsMS45NjYtMC41NDMsMi40NTgtMC42OTggICBjMS4zMjYtMC40MjUtMC43NS01LjMyOS0xLjgxNi01LjA4NGMtMC44MzIsMC4xOTUtMS43MjcsMC4yMjUtMi41MTYsMC41NTJjLTAuMTM0LDAuMDU2LTAuMjM4LDAuMTYtMC4zNTksMC4yNCAgIGMtMi43OTksMS43NzUtMy4xNiw2LjA4My0wLjQyOCw5LjI5MmMxLjA0MSwxLjIyOCwyLjEyNywyLjQxNiwzLjI0NSwzLjU3NmwtMC4wMDYsMC4wMDRjMC4wMzEsMC4wMzEsMC4wNjMsMC4wNiwwLjA5NSwwLjA5ICAgYzAuMDMsMC4wMzEsMC4wNTksMC4wNjIsMC4wODgsMC4wOTVsMC4wMDYtMC4wMDZjMS4xNiwxLjExOCwyLjUzNSwyLjc2NCw0Ljc2OSw0LjI1NWM0LjcwMywzLjE0MSw4LjMxMiwyLjI2NCwxMC40MzgsMS4wOTggICBjMy42Ny0yLjAyMSw1LjMxMi02LjMzOCw1LjMxMi05LjcxOUMzMi42NjcsNy4zMjcsMjUuMzM5LDAsMTYuMzMzLDB6IiBmaWxsPSIjMDAwMDAwIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==')
+
+   &.is-active
+      background: $accent
+      position: fixed
+      z-index: 5
+      width: 100%
+      padding: 0em
+      .navbar-brand
+         display: flex
+         align-items: center
+         img
+            width: 50px
+
+
+@media screen and (max-width: 1199.98px)
+   .navbar
+      .container
+         padding: 0
+
+@media screen and (max-width: 991.98px)
+   .navbar
+      padding: 0
+      background: $accent
+      .container
+         padding: 0 15px
+      .navbar-brand
+         width: 50px
+         img
+            width: 50px
+            margin-right: 0
+
+      .navbar-collapse
+         position: relative
+         padding: 0
+         margin: 0
+      
+      .navbar-nav
+         position: relative
+         width: 100%
+         padding: $gutter/2
+         .nav-link
+            font-size: 1.1em
+
+@media screen and (max-width: 374.98px)
+   .navbar
+      .mobile-phone
+         font-size: 0.9em

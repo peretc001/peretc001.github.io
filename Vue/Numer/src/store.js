@@ -5,17 +5,81 @@ import squareImg from './assets/img/01_sp.png'
 
 Vue.use(Vuex)
 
+
+
 export default new Vuex.Store({
 
   state: {
     price: 750,
     steps: {
       number: 1,
-      material: 'aluminium',
+      material: 'plexiglass',
       size: 'small',
       range: '1',
       width: '150',
       height: '200',
+      options: {
+        plexiglass: {
+          text: 'Plexiglass',
+          desc: 'Plexiglass - Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Снова приставка она текстов домах щеке инициал ему маленький. Безорфографичный путь текста, текстов великий все силуэт вопрос своего рукопись они журчит коварный предупредила курсивных, что если. Алфавит его предупреждал языкового ipsum о безопасную дал свое, осталось пустился единственное снова страну!',
+          images: [
+            require('@/assets/img/step2/brass/brass-1.png'),
+            require('@/assets/img/step2/brass/brass-2.png'),
+            require('@/assets/img/step2/brass/brass-3.png'),
+            require('@/assets/img/step2/brass/brass-4.png'),
+            require('@/assets/img/step2/brass/brass-5.png')
+          ],
+          price: 600
+        },
+        frosted: {
+          text: 'Frosted',
+          desc: 'Frosted - Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Снова приставка она текстов домах щеке инициал ему маленький. Безорфографичный путь текста, текстов великий все силуэт вопрос своего рукопись они журчит коварный предупредила курсивных, что если. Алфавит его предупреждал языкового ipsum о безопасную дал свое, осталось пустился единственное снова страну!',
+          images: [
+            require('@/assets/img/step2/brass/brass-1.png'),
+            require('@/assets/img/step2/brass/brass-2.png'),
+            require('@/assets/img/step2/brass/brass-3.png'),
+            require('@/assets/img/step2/brass/brass-4.png'),
+            require('@/assets/img/step2/brass/brass-5.png')
+          ],
+          price: 650
+        },
+        aluminium: {
+          text: 'Aluminium',
+          desc: 'Aluminium - Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Снова приставка она текстов домах щеке инициал ему маленький. Безорфографичный путь текста, текстов великий все силуэт вопрос своего рукопись они журчит коварный предупредила курсивных, что если. Алфавит его предупреждал языкового ipsum о безопасную дал свое, осталось пустился единственное снова страну!',
+          images: [
+            require('@/assets/img/step2/aluminium/aluminium-1.png'),
+            require('@/assets/img/step2/aluminium/aluminium-2.png'),
+            require('@/assets/img/step2/aluminium/aluminium-3.png'),
+            require('@/assets/img/step2/aluminium/aluminium-4.png'),
+            require('@/assets/img/step2/aluminium/aluminium-5.png')
+          ],
+          price: 700
+        },
+        oak: {
+          text: 'Oak',
+          desc: 'Oak - Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Снова приставка она текстов домах щеке инициал ему маленький. Безорфографичный путь текста, текстов великий все силуэт вопрос своего рукопись они журчит коварный предупредила курсивных, что если. Алфавит его предупреждал языкового ipsum о безопасную дал свое, осталось пустился единственное снова страну!',
+          images: [
+            require('@/assets/img/step2/brass/brass-1.png'),
+            require('@/assets/img/step2/brass/brass-2.png'),
+            require('@/assets/img/step2/brass/brass-3.png'),
+            require('@/assets/img/step2/brass/brass-4.png'),
+            require('@/assets/img/step2/brass/brass-5.png')
+          ],
+          price: 750
+        },
+        brass: {
+          text: 'Brass',
+          desc: 'Brass - Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Снова приставка она текстов домах щеке инициал ему маленький. Безорфографичный путь текста, текстов великий все силуэт вопрос своего рукопись они журчит коварный предупредила курсивных, что если. Алфавит его предупреждал языкового ipsum о безопасную дал свое, осталось пустился единственное снова страну!',
+          images: [
+            require('@/assets/img/step2/brass/brass-1.png'),
+            require('@/assets/img/step2/brass/brass-2.png'),
+            require('@/assets/img/step2/brass/brass-3.png'),
+            require('@/assets/img/step2/brass/brass-4.png'),
+            require('@/assets/img/step2/brass/brass-5.png')
+          ],
+          price: 800
+        }
+      },
       forma: {
         brass: {
           brass1: {

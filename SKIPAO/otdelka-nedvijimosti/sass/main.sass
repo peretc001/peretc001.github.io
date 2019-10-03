@@ -1,0 +1,188 @@
+@import '_libs/bootstrap_grid'
+@import '_libs/fonts'
+@import '_libs/hamburger'
+
+$accent: #90D873
+$text: #050505
+
+$gutter: 30px
+
+$default-font: 'Roboto', sans-serif
+$custom-font: 'Merriweather', sans-serif
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.2
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	opacity: 0
+	
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.text-center
+	text-align: center !important
+	text-align-last: center !important
+	p
+		text-align: center !important
+		text-align-last: center !important
+a, 
+	&:hover, 
+	&:active, 
+	&:focus
+		text-decoration: none
+		outline: none
+b, strong
+	font-weight: bold
+img
+	max-width: 100%
+
+h1
+	font-family: $custom-font
+h2, h3
+	font-size: 2.75em
+	font-family: $custom-font
+	
+
+.btn
+	background: $accent
+	border: 1px solid $text
+	border-radius: 6px
+	outline: none
+	box-shadow: none
+	&:hover
+		background: #86E85F
+	&:active
+		background: #AAF88A
+	&:focus
+		outline: none
+		box-shadow: none
+	
+
+@import 'navbar'
+@import 'header'
+@import 'price'
+@import 'features'
+@import 'work'
+@import 'contact'
+@import 'modal'
+
+.consultation
+	padding: $gutter*2 $gutter*1.2
+	border-radius: 20px
+	overflow: hidden
+	position: relative
+	margin: 0 auto
+	text-align: center
+	&:before
+		content: ''
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		background: rgba(210, 210, 210, 0.8)
+		box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25)
+	form
+		width: 100%
+		padding: 0
+		margin: 0
+	p
+		font-size: 1.3em
+		position: relative
+		margin-bottom: $gutter*1.2
+		font-family: $custom-font
+		span
+			display: block
+	&__input
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-direction: column
+		position: relative
+		padding: 0 1em
+		margin: 0
+	.form-control
+		width: 100% !important
+		margin: 0 auto
+		outline: none
+		text-align: center
+		margin-bottom: 1em
+		background: transparent
+		border: 1px solid $text
+		border-radius: 6px
+		outline: none
+		box-shadow: none
+	.btn
+		width: 100%
+		position: relative
+		z-index: 1
+		margin-bottom: 0
+
+	.form_consult
+		display: flex
+		justify-content: flex-start
+		flex-direction: column
+		width: 100%
+		margin: 0
+	.robot
+		padding-top: .5em
+		padding-bottom: 2em
+		text-align: left
+		font-size: 0.9em
+		a
+			display: block
+			color: $text
+		&__check
+			display: flex
+			svg
+				border: 1px solid $text
+				border-radius: 10px
+			.st0
+				stroke: $text
+
+//Формы
+.form__header,
+.modal__form,
+.form__footer
+	&.done
+			opacity: 0
+
+.request_callback
+	display: none
+	text-transform: uppercase
+	font-size: 1.2em
+	font-family: $custom-font
+	position: absolute
+	left: 50%
+	top: 50%
+	transform: translateX(-50%) translateY(-50%)
+	z-index: 2
+	&.done
+		display: block
+
+@media screen and (max-width: 991.98px)
+	h2, h3
+		font-size: 2.2em
+@media screen and (max-width: 767.98px)
+	h2, h3
+		font-size: 2em
+@media screen and (max-width: 576.98px)
+	h2, h3
+		font-size: 1.6em
+	.btn
+		padding: .5em 1em
+
+body
+	opacity: 1

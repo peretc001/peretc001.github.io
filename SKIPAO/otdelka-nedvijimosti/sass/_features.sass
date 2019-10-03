@@ -1,0 +1,45 @@
+.features
+   padding: $gutter*2 0
+   text-align: center
+   .row
+      padding-top: $gutter*2
+   [class*="col-"]
+      margin-bottom: $gutter*2.5
+      img
+         margin-bottom: $gutter
+      p
+         max-width: 220px
+         margin: 0 auto
+         text-align: center
+         b
+            display: block
+            font-size: 1.5em
+            margin-bottom: 1em
+            font-family: $custom-font
+   .how
+      .img_wrapper
+         min-height: 120px
+         display: block
+         text-align: left
+      p
+         max-width: 250px
+         text-align: left
+
+@media screen and (max-width: 576.98px)
+   .features
+      .row
+         padding-top: $gutter
+      [class*="col-"]
+         margin-bottom: $gutter
+         img
+            margin-bottom: $gutter
+         p
+            max-width: 80%
+            text-align: center
+      .how
+         .img_wrapper
+            min-height: auto
+            text-align: center
+         p
+            max-width: 80%
+            text-align: center

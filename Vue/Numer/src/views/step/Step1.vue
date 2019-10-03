@@ -25,7 +25,7 @@
                           @change="changeSelectedIndex(index)"
                           required
                         >
-                        <label :for="index"><img :src="option.url">{{option.text}}</label>
+                        <label :for="index">{{ index }}<img :src="option.url">{{option.text}}</label>
                       </div>
                   </div>
                   <p class="text">{{options[selected].desc}}</p>
@@ -46,18 +46,11 @@ import Button from '../../components/Button.vue'
 // https://github.com/KitchenStories/vue-gallery-slideshow
 import VueGallerySlideshow from 'vue-gallery-slideshow'
 
-import slideImg from '../../assets/img/000000.png'
-import slideImg2 from '../../assets/img/FF0000.png'
-import slideImg3 from '../../assets/img/008000.png'
-import slideImg4 from '../../assets/img/0000FF.png'
-import slideImg5 from '../../assets/img/FFFFFF.png'
-
 export default {
   name: 'home',
   components: { stepLine, Slick, VueGallerySlideshow, Button },
   data () {
     return {
-      price: '',
       slickOptions: {
         slidesToShow: 1,
         infinite: true,
@@ -70,53 +63,12 @@ export default {
         swipe: true
       },
       selected: '',
-      options: {
-        Plexiglass: {
-          text: 'Plexiglass',
-          desc: 'Plexiglass - Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Снова приставка она текстов домах щеке инициал ему маленький. Безорфографичный путь текста, текстов великий все силуэт вопрос своего рукопись они журчит коварный предупредила курсивных, что если. Алфавит его предупреждал языкового ipsum о безопасную дал свое, осталось пустился единственное снова страну!',
-          images: [
-            slideImg, slideImg2, slideImg3, slideImg4, slideImg5
-          ],
-          price: 600
-        },
-        Frosted: {
-          text: 'Frosted',
-          desc: 'Frosted - Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Снова приставка она текстов домах щеке инициал ему маленький. Безорфографичный путь текста, текстов великий все силуэт вопрос своего рукопись они журчит коварный предупредила курсивных, что если. Алфавит его предупреждал языкового ipsum о безопасную дал свое, осталось пустился единственное снова страну!',
-          images: [
-            slideImg2, slideImg3, slideImg4, slideImg5, slideImg
-          ],
-          price: 650
-        },
-        aluminium: {
-          text: 'Aluminium',
-          desc: 'Aluminium - Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Снова приставка она текстов домах щеке инициал ему маленький. Безорфографичный путь текста, текстов великий все силуэт вопрос своего рукопись они журчит коварный предупредила курсивных, что если. Алфавит его предупреждал языкового ipsum о безопасную дал свое, осталось пустился единственное снова страну!',
-          images: [
-            slideImg2, slideImg3, slideImg4, slideImg5, slideImg
-          ],
-          price: 700
-        },
-        Oak: {
-          text: 'Oak',
-          desc: 'Oak - Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Снова приставка она текстов домах щеке инициал ему маленький. Безорфографичный путь текста, текстов великий все силуэт вопрос своего рукопись они журчит коварный предупредила курсивных, что если. Алфавит его предупреждал языкового ipsum о безопасную дал свое, осталось пустился единственное снова страну!',
-          images: [
-            slideImg3, slideImg4, slideImg5, slideImg, slideImg2
-          ],
-          price: 750
-        },
-        Brass: {
-          text: 'Brass',
-          desc: 'Brass - Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Снова приставка она текстов домах щеке инициал ему маленький. Безорфографичный путь текста, текстов великий все силуэт вопрос своего рукопись они журчит коварный предупредила курсивных, что если. Алфавит его предупреждал языкового ipsum о безопасную дал свое, осталось пустился единственное снова страну!',
-          images: [
-            slideImg4, slideImg5, slideImg, slideImg2, slideImg3
-          ],
-          price: 800
-        }
-      },
       i: null
     }
   },
   beforeMount () {
     this.selected = this.$store.state.steps.material
+    this.options = this.$store.state.steps.options
     this.price = this.$store.state.price
   },
   methods: {

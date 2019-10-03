@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="./img/logo.png" type="image/png">
+  <title>Полный комплекс отделочных работ в Краснодаре</title>
+  <style>
+     body {opacity: 0; overflow-x: hidden;}
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a href="/" class="navbar-brand">
+        <img src="./img/logo.png" alt="otdelka-nedvizhimosti.ru">
+      </a>
+
+      <a class="nav-link mobile-phone d-lg-none" href="tel:7-903-410-56-83">+7-903-410-56-83</a>
+
+      <button class="navbar-toggler hamburger hamburger--slider" type="button" data-toggle="collapse" data-target="#navbarToggle"
+        aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+      </button>
+          
+      <div class="collapse navbar-collapse" id="navbarToggle">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link line-hover" href="/#step">Порядок работы</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link line-hover" href="/#work">Выполненные работы</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link line-hover" href="/#features">Преимущества</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link line-hover" href="/#contact">Контакты</a>
+          </li>
+        </ul>
+        <a class="nav-link phone ml-auto d-none d-lg-block" href="tel:7-903-410-56-83">+7-903-410-56-83</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="header lazy" style="background-image: url('./img/header.jpg')">
+    <div class="container">
+       <div class="row">
+          <div class="col-md-6 col-lg-7 align-self-center">
+             <h1>Полный комплекс <span>отделочных работ в Краснодаре</span></h1>
+             <p>Квартиры, коттеджи  и коммерческие помещения</p>
+          </div>
+          <div class="col-md-6 col-lg-5">
+            <div class="consultation">
+              <form action="/" class="form__header callback__form" method="post">
+                  <p>Заказать консультацию</p>
+                  <div class="consultation__input">
+                      <input type="hidden" name="data-name" value="Форма в шапке">
+                    <input type="text" name="name" class="form-control" value="" placeholder="Имя">
+                    <input type="tel" name="phone" class="form-control tel" value="" placeholder="Телефон" required>
+                    <div class="robot">
+                        <div class="robot__check">
+                          <svg viewBox="0 0 60 60">
+                              <line class="st0 line1" x1="4.5" y1="30.5" x2="29.5" y2="52.5"/>
+                              <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
+                          </svg>
+                        </div>
+                        <span>Согласен с условиями <a href="#" data-toggle="modal" data-target="#policy">Политики конфиденциальности</a></span>
+                    </div>
+                    <button type="submit" class="btn callback__form__button">Заказать</button>
+                  </div>
+              </form>
+              <div class="request_callback form__header__req">Заявка принята!!!</div>
+            </div>
+          </div>
+       </div>
+      </div>
+  </section>
+
+  <section class="price lazy" id="step" style="background-image: url('./img/price.jpg')">
+    <div class="container">
+      <h2>
+        Виды и стоимость ремонта
+      </h2>
+      <p class="desc">
+        Условно мы делим ремонт на 3 категории, которые отличаются наполнением и сложностью работ
+      </p>
+      <div class="row">
+        <div class="col-md-6 col-lg-4">
+          <div class="price__card">
+            <p><b>Косметический ремонт</b><span>от 1500 ₽/м²</span></p>
+            <ul>
+              <li>Возможность освежить интерьер квартиры в короткий срок и по доступной цене. Минимум шумных работ. Рекомендуется для предпродажной подготовки и перед сдачей квартиры в аренду</li>
+              <li>Срок выполнения: от 14 дней</li>
+              <li>Стоимость ремонта с материалом от 3000 ₽/м²</li>
+            </ul>
+            <button class="btn" data-toggle="modal" data-target="#callback" data-name="Косметический ремонт">Заказать</button>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="price__card">
+            <p><b>Стандартный</b><span>от 3500 ₽/м²</span></p>
+            <ul>
+              <li>Капитальный ремонт квартиры по европейским стандартам с использованием современных материалов и технологий. Рекомендуется для ремонта квартиры в новостройке</li>
+              <li>Срок выполнения: от 28 дней</li>
+              <li>Стоимость ремонта с материалом от 6000 ₽/м²  </li>
+            </ul>
+            <button class="btn" data-toggle="modal" data-target="#callback" data-name="Стандартный ремонт">Заказать</button>
+          </div>
+        </div>
+        <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-0">
+          <div class="price__card">
+            <p><b>Элитный ремонт</b><span>от 5000 ₽/м²</span></p>
+            <ul>
+              <li>Ремонт по эксклюзивному дизайн-проекту с авторским контролем дизайнера с использованием лучших отделочных материалов. Рекомендуется для ремонта элитных квартир и особняков</li>
+              <li>Срок выполнения: от 40 дней</li>
+              <li>Стоимость ремонта с материалом от 8000 ₽/м²</li>
+            </ul>
+            <button class="btn" data-toggle="modal" data-target="#callback" data-name="Элитный ремонт">Заказать</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features lazy" id="features" style="background-image: url('./img/features.jpg')">
+    <div class="container">
+      <h3>Почему выбирают именно нас</h3>
+      <div class="row">
+        <div class="col-sm-6 col-md-4">
+          <img src="./img/features/icon1.svg" alt="">
+          <p>Самостоятельная доставка стройматериалов на объект</p>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <img src="./img/features/icon2.svg" alt="">
+          <p>Вы получаете нашу оптовую скидку на все отделочные материалы от 15 до 25%</p>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <img src="./img/features/icon3.svg" alt="">
+          <p>Рекомендации по дизайну</p>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <img src="./img/features/icon4.svg" alt="">
+          <p>Выполняем все работы в строго оговоренный срок</p>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <img src="./img/features/icon5.svg" alt="">
+          <p>Гарантия 2 года на все выполненные работы</p>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <img src="./img/features/icon6.svg" alt="">
+          <p>Фотоотчет по проделанной работе</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="work lazy" id="work" style="background-image: url('./img/work.jpg')">
+    <div class="container">
+      <h3>
+        Реализованные проекты
+      </h3>
+      <div class="row">
+        <div class="col-sm-6 col-lg-4">
+          <div class="work__card">
+            <p>
+                Ремонт однокомнатной <span>квартиры на улице</span> 40 лет Победы, 97
+            </p>
+            <ul>
+              <li>Количество комнат: 1 к. квартира</li>
+              <li>Общая площадь: 38,8 кв.м</li>
+              <li>Срок выполнения: 36 рабочих дней</li>
+              <li>За счет демонтажа стены  и устройства подиума удалось увеличить пространство комнаты</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="work__card">
+            <p>
+                Ремонт однокомнатной <span>квартиры на улице</span> 40 лет Победы, 97
+            </p>
+            <ul>
+              <li>Количество комнат: 1 к. квартира</li>
+              <li>Общая площадь: 38,8 кв.м</li>
+              <li>Срок выполнения: 36 рабочих дней</li>
+              <li>За счет демонтажа стены  и устройства подиума удалось увеличить пространство комнаты</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="work__card">
+            <p>
+                Ремонт однокомнатной <span>квартиры на улице</span> 40 лет Победы, 97
+            </p>
+            <ul>
+              <li>Количество комнат: 1 к. квартира</li>
+              <li>Общая площадь: 38,8 кв.м</li>
+              <li>Срок выполнения: 36 рабочих дней</li>
+              <li>За счет демонтажа стены  и устройства подиума удалось увеличить пространство комнаты</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="work__card">
+            <p>
+                Ремонт однокомнатной <span>квартиры на улице</span> 40 лет Победы, 97
+            </p>
+            <ul>
+              <li>Количество комнат: 1 к. квартира</li>
+              <li>Общая площадь: 38,8 кв.м</li>
+              <li>Срок выполнения: 36 рабочих дней</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="work__card">
+            <p>
+                Ремонт однокомнатной <span>квартиры на улице</span> 40 лет Победы, 97
+            </p>
+            <ul>
+              <li>Количество комнат: 1 к. квартира</li>
+              <li>Общая площадь: 38,8 кв.м</li>
+              <li>Срок выполнения: 36 рабочих дней</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="work__card">
+            <p>
+                Ремонт однокомнатной <span>квартиры на улице</span> 40 лет Победы, 97
+            </p>
+            <ul>
+              <li>Количество комнат: 1 к. квартира</li>
+              <li>Общая площадь: 38,8 кв.м</li>
+              <li>Срок выполнения: 36 рабочих дней</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="features lazy" style="background-image: url('./img/how.jpg')">
+    <div class="container">
+      <h3>
+        Как мы работаем
+      </h3>
+      <div class="row how">
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="img_wrapper">
+            <img src="./img/how/icon1.svg" alt="">
+          </div>
+          <p><b>Шаг 1</b></p>
+          <p>Вы звоните нам или оставляете заявку</p>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="img_wrapper">
+            <img src="./img/how/icon2.svg" alt="">
+          </div>
+          <p><b>Шаг 2</b></p>
+          <p>Мы договариваемся о выезде нашего специалиста в удобное для вас время</p>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="img_wrapper">
+            <img src="./img/how/icon3.svg" alt="">
+          </div>
+          <p><b>Шаг 3</b></p>
+          <p>Составление сметы на ремонтные работы и расходные материалы</p>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="img_wrapper">
+            <img src="./img/how/icon4.svg" alt="">
+          </div>
+          <p><b>Шаг 4</b></p>
+          <p>Согласовываем условия и подписываем договор</p>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="img_wrapper">
+            <img src="./img/how/icon5.svg" alt="">
+          </div>
+          <p><b>Шаг 5</b></p>
+          <p>Закупаем и доставляем материалы</p>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="img_wrapper">
+            <img src="./img/how/icon6.svg" alt="">
+          </div>
+          <p><b>Шаг 6</b></p>
+          <p>Наши мастера выполняют ремонтно-отделочные работы</p>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="img_wrapper">
+            <img src="./img/how/icon7.svg" alt="">
+          </div>
+          <p><b>Шаг 7</b></p>
+          <p>Ваш ремонт окончен качественно и в срок</p>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="img_wrapper">
+            <img src="./img/how/icon8.svg" alt="">
+          </div>
+          <p><b>Шаг 8</b></p>
+          <p>Гарантийное, постгарантийное обслуживание</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact lazy" id="contact" style="background-image: url('./img/contact.jpg')">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 order-2 order-md-1">
+          <div class="contact__info">
+            <div class="contact__info__card">
+              <img src="./img/contact/instagram.svg" alt="">
+              <p><a href="https://instagram.com/otdelka_nedvizhimosti/" target="_blank">otdelka_nedvizhimosti</a></p>
+            </div>
+            <div class="contact__info__card">
+              <img src="./img/contact/email.svg" alt="">
+              <p><a href="mailto:nedvizhimosti@yandex.ru">nedvizhimosti@yandex.ru</a></p>
+            </div>
+            <div class="contact__info__card">
+              <img src="./img/contact/whatsapp.svg" alt="">
+              <p><a href="https://api.whatsapp.com/send?phone=79284402010" target="_blank">8 928 440-20-10</a></p>
+            </div>
+            <div class="contact__info__card">
+              <img src="./img/contact/phone.svg" alt="">
+              <p><a href="tel:79034105683">8 903 410 56 83</a><br><a href="tel:79284402010">8 928 440-20-10</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 order-1 order-md-2">
+          <div class="consultation">
+            <form action="/" class="form__footer callback__form" method="post">
+                <p><span>Получите консультацию</span> и смету вашего ремонта бесплатно</p>
+                <div class="consultation__input">
+                    <input type="hidden" name="data-name" value="Форма в подвале">
+                  <input type="text" name="name" class="form-control" value="" placeholder="Имя">
+                  <input type="tel" name="phone" class="form-control tel" value="" placeholder="Телефон" required>
+                  <div class="robot">
+                      <div class="robot__check">
+                        <svg viewBox="0 0 60 60">
+                            <line class="st0 line1" x1="4.5" y1="30.5" x2="29.5" y2="52.5"/>
+                            <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
+                        </svg>
+                      </div>
+                      <span>Согласен с условиями <a href="#" data-toggle="modal" data-target="#policy">Политики конфиденциальности</a></span>
+                  </div>
+                  <button type="submit" class="btn callback__form__button">Заказать</button>
+                </div>
+            </form>
+            <div class="request_callback form__footer__req">Заявка принята!!!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="copyright">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <img src="./img/logo.png" alt="">
+        </div>
+        <div class="col-md-6">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link line-hover" href="/#step">Порядок работы</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link line-hover" href="/#work">Выполненные работы</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link line-hover" href="/#features">Преимущества</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link line-hover" href="/#contact">Контакты</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <a class="nav-link phone" href="tel:7-903-410-56-83">+7-903-410-56-83</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="modal fade" id="callback" tabindex="-1" role="dialog" aria-labelledby="callbackTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <span class="name">Заказать консультацию</span>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+          <div class="modal-body">
+              <form action="/" class="modal__form callback__form" method="post">
+              <div class="form-row">
+                <input type="hidden" name="data-name" value="">
+                <input type="text" name="name" class="form-control" placeholder="Имя">
+                <input type="tel" name="phone" class="form-control tel" placeholder="Телефон" required>
+                
+                <div class="robot">
+                    <div class="robot__check">
+                      <svg viewBox="0 0 60 60">
+                          <line class="st0 line1" x1="4.5" y1="30.5" x2="29.5" y2="52.5"/>
+                          <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
+                      </svg>
+                    </div>
+                    <span>Согласен с условиями <a href="#" data-toggle="modal" data-target="#policy">Политики конфиденциальности</a></span>
+                </div>
+
+                <button type="submit" class="btn callback__form__button" disabled>Заказать</button>
+              </div>
+              </form>
+          </div>
+          <div class="request_callback modal__form__req">Заявка принята!!!</div>
+        </div>
+    </div>
+  </div>
+
+  <link rel="stylesheet" href="/css/main.min.css">
+  <script src="./js/script.js"></script>
+</body>
+</html>

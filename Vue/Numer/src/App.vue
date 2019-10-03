@@ -13,7 +13,7 @@ export default {
     Nav
   },
   beforeMount () {
-    this.$router.push('/step2')
+    this.$router.push('/step1')
   }
 }
 </script>
