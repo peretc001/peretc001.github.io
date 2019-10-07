@@ -1,3 +1,4 @@
 module.exports = {
-  publicPath: '/Vue/novostroyki/dist/'
+  publicPath: '/work/vue/novostroyki',
+  productionSourceMap: false
 }

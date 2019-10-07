@@ -53,7 +53,7 @@
             },
             sendEmail() {
                 event.preventDefault();
-                axios.post('./thankyou.php', {
+                axios.post('/work/vue/novostroyki/thankyou.php', {
                     data: { all: this.$store.state, phone: this.phone }
                 }).then(function (response) {
                     console.log(response.data)
