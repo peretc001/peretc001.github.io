@@ -20,7 +20,7 @@
       background-repeat: no-repeat
       font-size: 1em
       border-radius: 8px
-      min-height: 300px
+      min-height: 350px
       overflow: hidden
       transition: color .3s ease
       &__text
@@ -66,6 +66,20 @@
          .more-link
             right: 30px
             opacity: 1
+      
+      &.large
+         .services__card__text
+            transform: translate3d(0, 20px, 0)
+         .services__card__desc
+            transform: translate3d(0, -100px, 0)
+         &:hover
+            .services__card__text
+               transform: translate3d(0, -60px, 0)
+            .services__card__desc
+               transform: translate3d(0, -50px, 0)
+
+
+
 
    .has-overlay
       padding: 0
@@ -87,12 +101,15 @@
 
 @media screen and (max-width: 991.98px)
    .services
-      font-size: 0.9em
+      font-size: 1em
       h2
          top: auto
          position: relative
       [class*='col-']
          padding-bottom: 2em
+      .services__card
+         min-height: 350px
+         font-size: 0.9em
 
 @media screen and (max-width: 576.98px)
    .services
