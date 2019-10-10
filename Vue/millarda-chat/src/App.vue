@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <List :uid="uid"/>
-    <Message />
+    <div class="container">
+      <List class="chatList" :chatList="chatList" @setChat="onSetChat" :preloader="showPreloader"/>
+      <Message class="msgList" :msg="msg" :preloader="showPreloader2"/>
+    </div>
   </div>
 </template>
 
@@ -9,7 +11,7 @@
 import List from './components/List'
 import Message from './components/Message'
 
-const axios = require('axios');
+
 
 export default {
   name: 'app',
@@ -18,24 +20,46 @@ export default {
   },
   data () {
     return {
-      uid: 1,
+      chatList: {},
+      msg: {},
+      showPreloader: true,
+      showPreloader2: true,
+    }
+  }, 
+  methods: {
+    fetchData() {
+      //Обращаемся на api  и получаем данные о чатах
+      this.$store.dispatch('api/getChatList')
+        .then(result => {
+          this.chatList = result;
+          console.log(this.chatList)
+          this.showPreloader = false
+
+          //Обращаемся на api отправляем id чата и получаем сообщения
+          this.$store.dispatch('api/getMsg', result[0].chat.id_url)
+            .then(resultMsg => {
+              this.msg = resultMsg;
+              console.log(this.msg)
+            }).then(() => {
+              this.showPreloader2 = false
+            }); 
+        });
       
+    },
+    onSetChat (value) {
+      console.log(value)
+      this.showPreloader2 = true
+
+      this.$store.dispatch('api/getMsg', value)
+        .then(resultMsg => {
+          this.msg = resultMsg;
+          console.log(this.msg)
+          this.showPreloader2 = false
+        }); 
     }
   },
-  beforeMount () {
-    axios.get('https://millarda.ru/api/v1/get-chat-room?uid=1', {
-      headers: {'Content-Type': 'application/json'}
-    })
-    .then(function (response) {
-      console.log(response.data)
-      this.uid = response.data
-    })
-    .catch(function (error) {
-      console.log(error);
-    }); 
-  },
-  methods: {
-
+  created() {
+    this.fetchData()
   }
 }
 </script>

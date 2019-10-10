@@ -1,0 +1,675 @@
+@import 'sass/_libs/reset'
+@import 'sass/_libs/fonts'
+@import 'sass/_libs/bootstrap-grid'
+
+$accent: #003056
+$text: #001f2c
+$orange: #ff7518
+$gutter: 30px
+$default-font: 'Roboto', sans-serif
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	opacity: 0
+	
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.text-center
+	text-align: center !important
+	text-align-last: center !important
+	p
+		text-align: center !important
+		text-align-last: center !important
+a, 
+	&:hover, 
+	&:active, 
+	&:focus
+		text-decoration: none
+		outline: none
+
+*::-webkit-input-placeholder
+	color: #B8B8B8
+
+*:-moz-placeholder
+	color: #B8B8B8
+
+*::-moz-placeholder
+	color: #B8B8B8
+
+*:-ms-input-placeholder
+	color: #B8B8B8
+
+b, strong
+	font-weight: bold
+img
+	max-width: 100%
+
+.calc_modules
+   .mt-gutter
+      margin-top: $gutter*1.5
+   .mt-5
+      margin-bottom: $gutter
+   .pb-gutter
+      padding-bottom: $gutter*1.5
+   .mh-60
+      min-height: 60px
+      display: block
+   
+   .col-lg-5
+      &.left
+         background-size: cover
+         background-repeat: no-repeat
+         background-position: center
+         background-image: url('../img/bg.jpg')
+         display: flex
+         align-items: center
+         justify-content: center
+         padding: $gutter
+         overflow: hidden
+   
+   .display
+      border: 10px solid #373431
+      display: inline-block
+      .table
+         border-collapse: collapse
+         border-spacing: 0
+         border: 1px solid #878078
+         tr
+            padding: 0
+            margin: 0
+         td
+            padding: 0
+            margin: 0
+            width: 32px
+            height: 16px
+         span
+            display: block
+            width: 100%
+            height: 100%
+            min-width: 32px
+            min-height: 16px
+            position: relative
+            background-size: cover
+            background-position: center
+            background-repeat: no-repeat
+            border: 1px solid #151515
+            transition: background .5s ease
+            &.red
+               background-image: url('../img/red.svg')
+            &.blue
+               background-image: url('../img/blue.svg')
+            &.green
+               background-image: url('../img/green.svg')
+            &.yellow
+               background-image: url('../img/yellow.svg')
+            &.white
+               background-image: url('../img/white.svg')
+            &.rgb
+               background-image: url('../img/rgb.svg')
+
+   .col-lg-7
+      &.right
+         background: $accent
+         color: #ffffff
+         padding: 0 $gutter*1.5
+
+   .caption
+      font-size: 1.5em
+
+   .color
+      display: flex
+      flex-wrap: wrap
+      align-items: center
+      justify-content: space-betwen
+      min-height: 150px
+      &__card
+         flex: 1 1 auto
+         input
+            display: none
+         label
+            display: block
+            text-align: center
+            padding: 1em
+            margin: 0 .3em
+            margin-bottom: 1em
+            max-width: 100px
+            height: 42px
+            user-select: none
+            cursor: pointer
+            position: relative
+            transition: transform .3s ease
+            &.red
+               background: #E12727
+            &.blue
+               background: #2E3092
+            &.green
+               background: #219E42
+            &.yellow
+               background: #E9B62D
+            &.white
+               background: #FFFFFF
+            &.rgb
+               background-size: cover
+               background-position: center
+               background-repeat: no-repeat
+               background-image: url('../img/rgba.png')
+            
+         input:checked + label
+            transform: scale(1.1)
+            height: 50px
+   
+   .where
+      padding-top: 0.5em
+      display: flex
+      align-items: center
+      justify-content: space-between
+      &__card
+         flex: 1 1 auto
+         text-align: center
+         input
+            display: none
+         label
+            user-select: none
+            cursor: pointer
+            position: relative
+            &:before
+               content: ''
+               position: absolute
+               left: -30px
+               top: 50%
+               transform: translateY(-50%)
+               width: 20px
+               height: 20px
+               border: 1px solid #ffffff
+               transition: background .5s ease
+         input:checked + label:before
+            background: #ffffff
+   
+   .params
+      display: flex
+      align-items: flex-start
+      justify-content: space-betwen
+      .width,
+      .height
+         text-align: center
+         max-width: 120px
+         margin: 0 auto
+         .name
+            display: block
+            margin-bottom: 1em
+
+      &__block
+         display: flex
+         align-items: center
+         justify-content: space-between
+         text-align: center
+         
+         
+      button
+         font-size: 2em
+         line-height: 1
+         color: #ffffff
+         text-align: center
+         border: none
+         background: none
+         cursor: pointer
+         outline: none
+         box-shadow: none
+      span
+         display: inline-block
+         width: 60px
+         font-size: 2em
+         text-align: center
+         padding: 0
+   
+   .select_step
+      margin-right: 1em
+      appearance: none
+      width: 200px
+      padding: .5em 1em
+      font-size: 1em
+      outline: none
+      box-shadow: none
+      background-color: #ffffff
+      background-size: 1em
+      background-repeat: no-repeat
+      background-position: 95% center
+      background-image: url('data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgMjU1IDI1NSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjU1IDI1NTsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxnIGlkPSJhcnJvdy1kcm9wLWRvd24iPgoJCTxwb2x5Z29uIHBvaW50cz0iMCw2My43NSAxMjcuNSwxOTEuMjUgMjU1LDYzLjc1ICAgIiBmaWxsPSIjMDAwMDAwIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==')
+
+   .price
+      padding-top: 55px
+      padding-bottom: 40px
+      p
+         font-size: 1.3em
+         span
+            font-size: 1.5em
+            margin-left: 0.5em
+
+   .fade-enter-active, .fade-leave-active
+      transition: opacity .5s
+   .fade-enter, .fade-leave-to
+      opacity: 0
+
+   .img---wrapper
+      position: relative
+      padding-top: 56.25%
+      width: 100%
+      overflow: hidden
+      img
+         position: absolute
+         left: 0
+         top: 0
+         width: 100%
+         height: auto
+         max-height: 500px
+         margin: 0 !important
+         transition: opacity .3s ease
+
+   .content---first-line
+      display: flex
+      padding: $gutter*2 $gutter
+      align-items: flex-start
+      justify-content: center
+      max-width: 1180px
+      margin: 0 auto
+      .options-first-block__icon
+         img
+            width: 50px
+            margin-right: 0.8em
+      .options-first-block-big
+         flex: 1 1 50%
+         .caption-block
+            font-weight: bold
+            font-size: 2.4em
+         .caption-block-n
+            font-weight: bold
+            font-size: 1.3em
+         .options-first-block-big-flex
+            display: flex
+            align-items: center
+            justify-content: center
+            flex-wrap: wrap
+            .options-first-block
+               flex: 1 1 50%
+               display: flex
+               align-items: center
+               margin-top: 2em
+               p
+                  margin: 0
+                  &:first-child
+                     margin-bottom: 0.5em
+               .fa
+                  margin-right: .5em
+                  font-size: 3em
+
+      .content---first-line---img
+         width: 50%
+
+   .options-second-block-big
+      padding: $gutter*2 $gutter
+      max-width: 1180px
+      margin: 0 auto
+      .options-second-block-big-photo
+         display: flex
+         align-items: center
+         justify-content: center
+         .content---second-line---img,
+         .options-second-block-big-photo-block,
+         .content---third-line---img
+            flex: 1 1 50%
+            .options-second-block-big-photo-block__item
+               display: flex
+               margin-bottom: 1em
+               .parname
+                  order: 1
+               .parval
+                  order: 3
+               &:after
+                  content: ""
+                  border-bottom: 1px dotted
+                  flex-grow: 1
+                  order: 2
+
+         .options-second-block-big-photo-block
+            padding-left: 50px
+            .caption-block
+               margin-bottom: 1em
+         .content---second-line---img
+            img
+               width: 100%
+         .content---third-line---img,
+         .content---fourth-line---img
+            padding: 0
+            margin: 0
+            img
+               width: 100%
+            
+
+   .caption-block
+      font-weight: bold
+      font-size: 2.4em
+      margin-bottom: 1em
+
+   .caption-block-n
+      font-weight: bold
+      font-size: 1.3em
+
+   .callback__form
+      background: $accent
+      padding: $gutter*2 $gutter
+      .container
+         max-width: 900px
+      [class*="col-"]
+         margin-bottom: 1em
+         &:last-child
+            margin-bottom: 0
+      input, .btn
+         width: 100%
+         padding: .5em 1em
+         border: none
+         border-radius: 4px
+         font-size: 1em
+         border: 1px solid $accent
+      .btn
+         background: $orange
+         color: #ffffff
+         cursor: pointer
+         user-select: none
+         transition: background .3s ease
+         &:hover
+            background: darken($orange, 8%)
+         &:disabled
+            opacity: .5
+
+      .robot
+         display: flex
+         align-items: center
+         justify-content: flex-start
+         padding: 0
+         &__check
+            display: flex
+            svg
+               width: $gutter
+               height: $gutter
+               border: 1px solid #ffffff
+               padding: 5px
+               cursor: pointer
+               margin-right: .5em
+            .st0
+               display: none
+               fill: none
+               stroke: #ffffff
+               stroke-width: 10
+               stroke-linecap: round
+               stroke-linejoin: round
+               stroke-miterlimit: 10
+               opacity: 0
+            &.active
+               .st0
+                  display: block
+                  &.line1
+                     animation: fadeIn .1s ease-in-out forwards
+                  &.line2
+                     opacity: 0
+                     animation: fadeIn .1s ease-in-out .05s forwards
+         span
+            font-size: 0.7em
+            user-select: none
+            color: #ffffff
+   
+   .form_request
+      transition: opacity .3s ease
+      &.done
+         opacity: 0
+      &.hide
+         display: none
+
+   .responce_good
+      text-align: center
+      display: none
+      color: #ffffff
+      font-size: 1em
+      opacity: 0
+      transition: opacity 1s ease
+      &.done
+         display: block
+      &.show
+         opacity: 1
+      img
+         width: 100px
+         margin-bottom: .5em
+      p
+         margin-bottom: 1em
+         b
+            font-size: 1.6em
+
+@keyframes fadeIn
+   from
+      opacity: 0
+   to
+      opacity: 1
+
+body
+   opacity: 1
+
+@media screen and (max-width: 1199.98px)
+   .calc_modules
+      font-size: 0.9em
+      .display
+         .table
+            td
+               width: 21px
+               height: 10px
+            span
+               min-width: 21px
+               min-height: 10px
+         .price
+            font-size: 0.9em
+
+@media screen and (max-width: 991.98px)
+   .calc_modules
+      font-size: 1em
+      .mt-gutter
+         margin-top: $gutter/1.5
+      .pb-5
+         padding-bottom: $gutter/1.5 !important
+      .color
+         min-height: 100px
+      .params
+         margin-bottom: 1em
+      .price
+         padding-top: 15px
+         padding-bottom: 40px
+         font-size: .8em
+      .display
+         .table
+            td
+               width: 32px
+               height: 16px
+            span
+               min-width: 32px
+               min-height: 16px
+
+      .img---wrapper
+         min-height: 250px
+
+      .content---first-line
+         padding: $gutter*2 $gutter $gutter $gutter
+         font-size: 0.9em
+         .options-first-block__icon
+            img
+               width: 40px
+               margin-right: 0.8em
+         .options-first-block-big
+            .options-first-block-big-flex
+               .options-first-block
+                  p
+                     font-size: 0.9em
+                     &:first-child
+                        margin-bottom: 0.5em
+
+         .content---first-line---img
+            padding-left: 1em
+      
+      .options-second-block-big
+         font-size: 0.8em
+
+@media screen and (max-width: 767.98px)
+   .calc_modules
+      .content---first-line
+         font-size: 1em
+         flex-wrap: wrap
+         .options-first-block-big,
+         .content---first-line---img
+            width: 100%
+         
+         .options-first-block-big
+            margin-bottom: 2em
+         
+         .content---first-line---img
+            padding-left: 0
+      
+      .options-second-block-big
+         font-size: 1em
+         .options-second-block-big-photo
+            flex-direction: column
+            .content---second-line---img,
+            .options-second-block-big-photo-block
+               width: 100%
+               flex: 1 1 auto
+               padding: 0
+
+            
+            .options-second-block-big-photo-block
+               padding-left: 0
+               margin-left: 0
+
+
+               .options-second-block-big-photo-block__item
+                  display: flex
+                  margin-bottom: 1em
+                  .parname
+                     order: 1
+                  .parval
+                     order: 3
+                  &:after
+                     content: ""
+                     border-bottom: 1px dotted
+                     flex-grow: 1
+                     order: 2
+            
+            .options-second-block-big-photo-block
+               .caption-block
+                  margin-bottom: 1em
+            .content---second-line---img
+               img
+                  width: 100%
+            .content---third-line---img,
+            .content---fourth-line---img
+               padding: 0
+               margin: 0
+               img
+                  width: 100%
+         .caption-block
+            font-weight: bold
+            font-size: 2.4em
+         .caption-block-n
+            font-weight: bold
+            font-size: 1.3em
+
+
+@media screen and (max-width: 576.98px)
+   .calc_modules
+      .col-lg-5
+         &.left
+            padding: $gutter $gutter/2
+      .col-lg-7
+         &.right
+            padding: 0 $gutter/2
+      font-size: 1em
+      [class*="col-"]
+         text-align: center !important
+      .mt-gutter
+         margin-top: $gutter/1.5
+      .pb-5
+         padding-bottom: $gutter/1.5 !important
+      .color
+         min-height: 100px
+      .mh-60
+         min-height: auto
+      .where
+         padding-top: 1.5em
+         padding-bottom: 1.5em
+      .params
+         justify-content: center
+         margin-bottom: 1em
+         text-align: center
+         margin: 0 auto
+         margin-bottom: 2em
+         .width,
+         .height
+            margin: 0 auto
+         &__block
+            justify-content: center
+
+      .select_step
+         margin-right: 0
+      .price
+         padding-top: 0px
+         padding-bottom: 20px
+         font-size: .8em
+         display: flex
+         flex-direction: column
+         p
+            margin-bottom: 1em
+      .display
+         border: 5px solid #373431
+         .table
+            td
+               width: 16px
+               height: 8px
+            span
+               width: 16px
+               height: 8px
+               border: 0
+      
+      .img---wrapper
+         min-height: auto
+
+      .content---first-line
+         padding: $gutter $gutter/2
+         text-align: center
+         .options-first-block-big-flex
+            .options-first-block
+               flex-direction: column
+               justify-content: center
+               text-align: center
+               .options-first-block__icon
+                  margin-bottom: 0.5em
+                  img
+                     margin-right: 0
+      
+      .options-second-block-big
+         padding: $gutter $gutter/2
+         font-size: .8em

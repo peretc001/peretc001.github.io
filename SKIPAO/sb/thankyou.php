@@ -1,5 +1,5 @@
 <?php 
-$admin_email = 'i.krasovsky@yandex.ru';
+$admin_email = 'vla2076@yandex.ru';
 
 if ($_POST['phone'] != '' and $_POST['human'] == 'human') {
 
