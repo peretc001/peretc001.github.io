@@ -87,7 +87,28 @@
             <div class="col-sm-6"><p>Размер <span>{{ h }} x {{ w }} см</span></p></div>
           </div>
 
+          <div class="dop_params">
+            <span class="btn dop_params_btn">Доп. параметры</span>
+            <div class="dop_params_checkbox">
+              <p class="dop_name">Доп. параметры</p>
+              <div class="dop_params_checkbox_item" v-for="(item, i) in led" :key="i">
+                <input :id="i" type="checkbox" name="led" :value="i" @change="checkLed($event)">
+                <label :for="i">{{ item.name }}</label>
+              </div>
+              <p class="dop_name">Монтаж</p>
+              <div class="dop_params_checkbox_item" v-for="(item, i) in setting" :key="i">
+                <input :id="i" type="checkbox" name="setting" :value="i" @change="checkSetting($event)">
+                <label :for="i">{{ item.name }}</label>
+              </div>
+              <p class="dop_name">Доставка</p>
+              <div class="dop_params_checkbox_item">
+                <input id="delivery" type="checkbox" name="delivery" v-model="check_delivery">
+                <label for="delivery">Доставка</label>
+              </div>
+            </div>
+          </div>
         </div>
+        
       </div>
     </div>
 
@@ -237,6 +258,7 @@
 
     <form class="callback__form" @submit.prevent="sendEmail()">
       <div class="container">
+        <p class="form_caption">Заполните контактные данные и получите скидку 5%</p>
         <div class="row form_request">
             <input type="hidden" name="human" value="false">
             <div class="col-md-4">
@@ -313,7 +335,7 @@ export default {
         }
       },
       selected_where: 'inside',
-      selected_step: 's1',
+      selected_step: 's9',
       steps: {
         inside: {
           s1: {
@@ -369,6 +391,81 @@ export default {
         }
       },
       select: {},
+      led: {
+        dop1: {
+          check: false,
+          name: 'Управляющий компьютер',
+          price: 100
+        },
+        dop2: {
+          check: false,
+          name: 'Отправляющий контроллер',
+          price: 100
+        },
+        dop3: {
+          check: false,
+          name: 'Wi-Fi модуль',
+          price: 100
+        },
+        dop4: {
+          check: false,
+          name: 'Датчик яркости',
+          price: 100
+        },
+        dop5: {
+          check: false,
+          name: 'Датчик яркости',
+          price: 100
+        },
+        dop6: {
+          check: false,
+          name: 'Датчик температуры',
+          price: 100
+        },
+        dop7: {
+          check: false,
+          name: 'Видеопроцессор',
+          price: 100
+        }
+      },
+      setting: {
+        set1: {
+          check: false,
+          name: 'Электрощитовая',
+          price: 100
+        },
+        set2: {
+          check: false,
+          name: 'Шефмонтаж',
+          price: 100
+        },
+        set3: {
+          check: false,
+          name: 'Монтаж оборудования',
+          price: 100
+        },
+        set4: {
+          check: false,
+          name: 'Изгот. металлоконструкции',
+          price: 100
+        },
+        set5: {
+          check: false,
+          name: 'Монтаж металлоконструкций',
+          price: 100
+        },
+        set6: {
+          check: false,
+          name: 'Набор запасных частей',
+          price: 100
+        }
+      },
+      delivery: 100,
+      check_led: {},
+      sum_led: 0,
+      check_setting: {},
+      sum_setting: 0,
+      check_delivery: '',
       width: 3,
       height: 6,
       w: 96,
@@ -417,6 +514,26 @@ export default {
       const formBtn = document.querySelector('.callback__form__button')
       this.human == 'good' ? formBtn.disabled = false : formBtn.disabled = true
     },
+    checkLed(event) {
+      this.led[event.target.value].check = event.target.checked
+      if (this.led[event.target.value].check == true) {
+        this.check_led[event.target.value] = this.led[event.target.value].price
+        this.sum_led += this.led[event.target.value].price
+      } else {
+        delete this.check_led[event.target.value]
+        this.sum_led -= this.led[event.target.value].price
+      }
+    },
+    checkSetting(event) {
+      this.setting[event.target.value].check = event.target.checked
+      if (this.setting[event.target.value].check == true) {
+        this.check_setting[event.target.value] = this.setting[event.target.value].price
+        this.sum_setting += this.setting[event.target.value].price;
+      } else {
+        delete this.check_setting[event.target.value]
+        this.sum_setting -= this.setting[event.target.value].price;
+      }
+    },
     validName(event) {
       if (event.target.value == '') {
         event.target.style.border = '1px solid red'
@@ -430,6 +547,9 @@ export default {
         color: this.colors[this.selected_color].name,
         where: this.selected_where,
         step: this.steps[this.selected_where][this.selected_step].name,
+        led: this.check_led,
+        setting: this.check_setting,
+        delivery: this.check_delivery,
         width: this.width,
         height: this.height,
         h: this.h,
@@ -438,7 +558,6 @@ export default {
         name: this.name,
         phone: this.phone
       }
-
       
       const phone = document.querySelector('.phone')
 
@@ -487,7 +606,16 @@ export default {
         if (this.selected_step == 's9' && this.selected_where == 'outside') {
           this.selected_step = 's3'
         }
-        this.price = (this.height * this.width)*1300 + (this.height * this.width)*(this.steps[this.selected_where][this.selected_step].price * 65)
+        this.price = this.height * this.width * this.steps[this.selected_where][this.selected_step].price * 66
+      }
+      if (this.sum_led) {
+        this.price += this.sum_led
+      }
+      if (this.sum_setting) {
+        this.price += this.sum_setting
+      }
+      if (this.check_delivery) {
+        this.price += this.delivery
       }
       return this.price.toLocaleString()
     },
@@ -496,8 +624,26 @@ export default {
     }
   },
   mounted() {
+    const dopBtn = document.querySelector('.dop_params_btn')
+    const dopParams = document.querySelector('.dop_params')
+    const colLg7 = document.querySelector('.col-lg-7.right')
+
+    dopBtn.addEventListener('click', () => {
+      dopParams.classList.toggle('opened')
+    })
+    dopParams.addEventListener('mouseover', () => {
+      if ( !dopParams.classList.contains('opened') ) dopParams.classList.add('hovered')
+    })
+    dopParams.addEventListener('mouseout', () => {
+      if ( !dopParams.classList.contains('opened') ) dopParams.classList.remove('hovered')
+    })
+    document.addEventListener('click', (e) => {
+      if ( !dopParams.contains(event.target) && dopParams.classList.contains('opened') ) dopParams.classList.remove('opened')
+    })
+
     const formBtn = document.querySelector('.callback__form__button')
     formBtn.disabled = true
+
   }
 }
 </script>

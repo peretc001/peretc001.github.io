@@ -3,7 +3,7 @@
         <div class="form__title">
             Какой район города Вам интересен?
         </div>
-        <div class="form__items">
+        <div class="form__items area">
 
             <div class="form__item">
                 <input type="checkbox" id="allDistrict" required value="allDistrict" v-model="housingStock1">
@@ -278,7 +278,7 @@
     }
 </script>
 
-<style>
+<style scoped>
     .form__items {
         flex-wrap: wrap;
         display: flex;
@@ -287,10 +287,27 @@
     .form__item {
         width: 50%;
     }
-
-    @media only screen and (max-width: 600px) {
+    @media screen and (max-width: 600px) {
         span {
             display: none;
+        }
+        .form__items {
+            flex-wrap: wrap;
+        }
+        .form__items {
+            flex-wrap: wrap;
+        }
+        .form__item {
+            width: 33%;
+        }
+        .form__item:nth-child(1) {
+            width: 100%;
+        }
+        .form__item:nth-child(2) {
+            width: 100%;
+        }
+        .form__item:nth-child(3) {
+            width: 100%;
         }
     }
 </style>

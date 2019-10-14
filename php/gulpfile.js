@@ -25,7 +25,7 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('styles', function() {
-	return gulp.src('app/'+syntax+'/**/*.'+syntax+'')
+	return gulp.src('app/sass/**/*.sass')
 	.pipe(sass({ outputStyle: 'expanded' }).on("error", notify.onError()))
 	.pipe(rename({ suffix: '.min', prefix : '' }))
 	.pipe(autoprefixer(['last 15 versions']))
@@ -52,13 +52,13 @@ gulp.task('code', function() {
 		php.server({ base: 'app', port: 8010, keepalive: true});
 	});
 	gulp.task('server', function() {
-		gulp.watch('app/'+syntax+'/**/*.'+syntax+'', gulp.parallel('styles'));
+		gulp.watch('app/sass/**/*.sass', gulp.parallel('styles'));
 		gulp.watch('app/**/*.html').on('change', browserSync.reload);
 		gulp.watch('app/**/*.php').on('change', browserSync.reload);
   });	
   gulp.task('server', gulp.parallel('server', 'php', 'browser-sync'));
 	gulp.task('watch', function() {
-		gulp.watch('app/'+syntax+'/**/*.'+syntax+'', gulp.parallel('styles'));
+		gulp.watch('app/sass/**/*.sass', gulp.parallel('styles'));
 		gulp.watch('app/*.html', gulp.parallel('code'));
 	});
 	gulp.task('default', gulp.parallel('watch', 'browser-sync'));

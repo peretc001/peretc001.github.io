@@ -320,12 +320,12 @@
         }
     }
 
-    @media only screen and (max-width: 576.98px) {
-        .body {
-            font-size: 20px !important;
+    @media screen and (max-width: 576.98px) {
+        #app {
+            min-height: 500px;
         }
         .form {
-            top: 45%;
+            top: 48%;
             padding: 0;            
         }
         .container {
@@ -344,6 +344,14 @@
         }
         .result-request__number {
             font-size: 20px !important;
+        }
+        .counter-building__number {
+            font-size: 26px;
+        }
+
+        .counter-building__text {
+            font-size: 12px;
+            text-align: right;
         }
 
     }

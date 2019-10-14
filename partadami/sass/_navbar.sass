@@ -11,11 +11,15 @@
 	a
 		color: #ffffff
 
+	.first-line
+		background: #111111
+		width: 100%
 	.container
 		display: flex
 		align-items: center
 		justify-content: space-evenly
 		padding: 1em 0
+		max-width: 1000px
 		
 		.navbar-toggler
 			background: transparent
@@ -44,7 +48,7 @@
 			span
 				font-weight: bold
 				font-size: 1.3rem
-				line-height: 1
+				line-height: 1.1
 				b
 					display: block
 					font-size: .75rem
@@ -123,11 +127,12 @@
 		background: $text
 		.navmenu
 			width: 100%
-			max-width: 1200px
+			max-width: 960px
+			padding: 0
 			margin: 0 auto
 			display: flex
 			align-items: center
-			justify-content: space-evenly
+			justify-content: space-between
 			a
 				padding: 1em 0
 				position: relative

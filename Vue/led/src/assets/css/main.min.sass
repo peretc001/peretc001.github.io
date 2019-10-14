@@ -76,6 +76,10 @@ img
       min-height: 60px
       display: block
    
+   .container-fluid
+      overflow: hidden
+      position: relative
+   
    .col-lg-5
       &.left
          background-size: cover
@@ -271,6 +275,81 @@ img
    .fade-enter, .fade-leave-to
       opacity: 0
 
+   .dop_params
+      position: absolute
+      right: 0
+      top: 0
+      width: 300px
+      height: 100%
+      padding: 0 $gutter
+      background: darken($accent, 10%)
+      transform: translateX(270px)
+      transition: transform .3s ease
+      &.hovered
+         transform: translateX(260px)
+      &.opened
+         transform: translateX(0)
+
+      .btn
+         position: absolute
+         left: -150px
+         top: 0
+         display: inline-block
+         background: darken($accent, 10%)
+         color: #ffffff
+         border: none
+         border-radius: 0 0 0 8px
+         padding: .8em 1em
+         padding-right: 2em
+         cursor: pointer
+         outline: none
+      
+      .dop_name
+         font-size: 1.4em
+         color: #ffffff
+         margin-bottom: 1em
+         margin-top: 1em
+      &_checkbox
+         &_item
+            margin-bottom: .7em
+            input
+               display: none
+            label
+               font-size: 0.9em
+               margin: 0
+               padding: 0
+               color: #ffffff
+               opacity: .7
+               transition: opacity .3s ease
+               user-select: none
+               position: relative
+               padding-left: 2em
+               cursor: pointer
+               &:before
+                  content: ''
+                  position: absolute
+                  left: 0
+                  top: 50%
+                  transform: translateY(-50%)
+                  width: 1.2em
+                  height: 1.2em
+                  border-radius: 50%
+                  border: 1px solid $orange
+                  transition: background .3s ease
+                  background-position: center
+                  background-repeat: no-repeat
+                  background-size: .7em
+                  background-color: transparent
+               &:hover
+                  opacity: 1
+            input:checked + label
+               opacity: 1
+               &:before
+                  background-color: $orange
+                  background-image: url('data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgNDUuNzAxIDQ1LjciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ1LjcwMSA0NS43OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTIwLjY4NywzOC4zMzJjLTIuMDcyLDIuMDcyLTUuNDM0LDIuMDcyLTcuNTA1LDBMMS41NTQsMjYuNzA0Yy0yLjA3Mi0yLjA3MS0yLjA3Mi01LjQzMywwLTcuNTA0ICAgIGMyLjA3MS0yLjA3Miw1LjQzMy0yLjA3Miw3LjUwNSwwbDYuOTI4LDYuOTI3YzAuNTIzLDAuNTIyLDEuMzcyLDAuNTIyLDEuODk2LDBMMzYuNjQyLDcuMzY4YzIuMDcxLTIuMDcyLDUuNDMzLTIuMDcyLDcuNTA1LDAgICAgYzAuOTk1LDAuOTk1LDEuNTU0LDIuMzQ1LDEuNTU0LDMuNzUyYzAsMS40MDctMC41NTksMi43NTctMS41NTQsMy43NTJMMjAuNjg3LDM4LjMzMnoiIGZpbGw9IiMwMDAwMDAiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K')
+            
+
+
    .img---wrapper
       position: relative
       padding-top: 56.25%
@@ -384,6 +463,12 @@ img
          margin-bottom: 1em
          &:last-child
             margin-bottom: 0
+      .form_caption
+         font-size: 2em
+         text-align: center
+         color: #ffffff
+         margin-bottom: $gutter*1.5
+         
       input, .btn
          width: 100%
          padding: .5em 1em
@@ -511,6 +596,11 @@ body
                min-width: 32px
                min-height: 16px
 
+      .dop_params
+         font-size: .8em
+         .btn
+            left: -120px
+                  
       .img---wrapper
          min-height: 250px
 
@@ -534,6 +624,10 @@ body
       
       .options-second-block-big
          font-size: 0.8em
+      
+      .callback__form
+         .form_caption
+            font-size: 1.6em
 
 @media screen and (max-width: 767.98px)
    .calc_modules
@@ -598,6 +692,9 @@ body
             font-weight: bold
             font-size: 1.3em
 
+      .callback__form
+         .form_caption
+            font-size: 1.4em
 
 @media screen and (max-width: 576.98px)
    .calc_modules
@@ -654,6 +751,13 @@ body
                height: 8px
                border: 0
       
+      .dop_params
+         width: 250px
+         font-size: .75em
+         text-align: left
+         .btn
+            left: -120px
+
       .img---wrapper
          min-height: auto
 
@@ -673,3 +777,7 @@ body
       .options-second-block-big
          padding: $gutter $gutter/2
          font-size: .8em
+      
+      .callback__form
+         .form_caption
+            font-size: 1.2em

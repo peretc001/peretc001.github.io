@@ -40,7 +40,7 @@
             <p class="placeholder_text"></p>
          </div>
       </div>
-      <div class="msgelwfhkwufh" :class="{ 'show': preloader }">
+      <div class="fade" :class="{ 'show': preloader }">
          <div :class="{ 'show': preloader }" v-for="(chatListItem, i) in chatList" :key="i" class="chatListItem" @click="setChat(chatListItem.chat.id_url)">
             <div class="chatListItem_img">
                <img :src="chatListItem.offers.img">

@@ -53,7 +53,7 @@
             },
             sendEmail() {
                 event.preventDefault();
-                axios.post('/work/vue/novostroyki/thankyou.php', {
+                axios.post('thankyou.php', {
                     data: { all: this.$store.state, phone: this.phone }
                 }).then(function (response) {
                     console.log(response.data)
@@ -267,5 +267,14 @@
             font-size: 14px !important;
         }
     }
+
+    @media screen and (max-width: 374.98px) {
+        .result-request__info-text {
+            max-width: 222px;
+            font-size: 16px;
+        }
+    }
+
+    
 
 </style>

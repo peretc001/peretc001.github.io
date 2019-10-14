@@ -63,7 +63,6 @@ img
    display: flex
    align-items: flex-start
    justify-content: space-between
-   height: 100%
    height: 100vh
    padding: 0
    margin: 0
@@ -71,6 +70,8 @@ img
       flex: 1 1 auto
       max-width: 377px
       padding: $gutter/2
+      padding-bottom: 0
+      overflow-x: scroll
       .chatListItem
          cursor: pointer
          flex: 1 1 50%
@@ -143,7 +144,8 @@ img
                      margin-bottom: 0
          &.show
             opacity: 0
-            transition: opacity 3s ease
+            transition: opacity .3s ease
+            margin-bottom: 0
 
 
    .msgList
@@ -201,14 +203,25 @@ img
                      text-align: left
                      background: #14bb65
                      color: #ffffff
-      
+         &.preloader
+            display: flex
+            align-items: center
+            justify-content: center
+            height: 100%
+            p
+               margin: auto
+
       .msgAdd
          width: 100%
          box-sizing: border-box
          margin-top: 2em
          background: #f5f5f5
          padding: $gutter/2
-         input
+         .send_form
+            display: flex
+            align-items: center
+            justify-content: space-between
+         input, .btn-send
             margin: 0
             box-sizing: border-box
             width: 100%
@@ -217,6 +230,14 @@ img
             padding: .5em 1em
             border-radius: 4px
             color: $text
+         .btn-send
+            background: $accent
+            max-width: 150px
+            color: #ffffff
+            margin-left: 0.5em
+            img
+               width: 1em
+               margin-right: 0.5em
 
 .msgelwfhkwufh
    opacity: 1
@@ -233,5 +254,41 @@ body
       .chatList
          max-width: auto
          .chatListItem
+            flex-direction: column
+            justify-content: center
+            &:last-child
+               margin-bottom: 0
             &_body
-               display: none
+               padding-left: 0.5em
+               padding-top: 0.5em
+               font-size: 0.8em
+               height: auto
+               &__user
+                  font-size: 1em
+                  b
+                     font-size: 1em
+               &__price
+                  padding-top: 0.5em
+      .msgList
+         font-size: 0.8em
+         .msgItem
+            &__text
+               text-align: right
+               .msgItem__msg
+                  display: inline-block
+                  margin: 0
+                  margin-left: 30%
+                  max-width: 70%
+               &.author
+                  .msgItem__msg
+                     margin-left: auto
+                     margin-right: 30%  
+         .msgAdd
+            .btn-send
+               max-width: 40px
+               text-align: center
+               span
+                  display: none
+               img
+                  width: 1em
+                  margin-right: 0.5em

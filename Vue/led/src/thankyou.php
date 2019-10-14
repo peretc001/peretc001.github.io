@@ -58,6 +58,36 @@ $mail->CharSet = 'UTF-8';
 			$body .= '<b>Шаг:</b> '. $posts['sendData']['step'] .'<br>';
 		}
 
+		if ($posts['sendData']['led']) {
+			$body .= '<b>Доп. параметры:</b><br>';
+			foreach ($posts['sendData']['led'] as $key => $row) {
+				$key == 'dop1' ? $body .= 'Управляющий компьютер<br>' : '';
+				$key == 'dop2' ? $body .= 'Отправляющий контроллер<br>' : '';
+				$key == 'dop3' ? $body .= 'Wi-Fi модуль<br>' : '';
+				$key == 'dop4' ? $body .= 'Датчик яркости<br>' : '';
+				$key == 'dop5' ? $body .= 'Датчик яркости<br>' : '';
+				$key == 'dop6' ? $body .= 'Датчик температуры<br>' : '';
+				$key == 'dop7' ? $body .= 'Видеопроцессор<br>' : '';
+			}
+		}
+
+		if ($posts['sendData']['setting']) {
+			$body .= '<b>Монтаж:</b><br>';
+			foreach ($posts['sendData']['led'] as $key => $row) {
+				$key == 'dop1' ? $body .= 'Электрощитовая<br>' : '';
+				$key == 'dop2' ? $body .= 'Шефмонтаж<br>' : '';
+				$key == 'dop3' ? $body .= 'Монтаж оборудования<br>' : '';
+				$key == 'dop4' ? $body .= 'Изгот. металлоконструкции<br>' : '';
+				$key == 'dop5' ? $body .= 'Монтаж металлоконструкций<br>' : '';
+				$key == 'dop6' ? $body .= 'Набор запасных частей<br>' : '';
+			}
+		}
+
+		if ($posts['sendData']['delivery'] == true) {
+			$body .= '<b>Доставка:</b> Нужна<br>';
+		}
+
+
 		$body .= '<b>Модули:</b> '. $posts['sendData']['height'] .' x '. $posts['sendData']['width'] .'<br>';
 		$body .= '<b>Размер:</b> '. $posts['sendData']['h'] .' x '. $posts['sendData']['w'] .'см<br>';
 		$body .= '<b>Цена:</b> '. $posts['sendData']['price'] .' p<br><br>';
