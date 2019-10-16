@@ -1,7 +1,9 @@
 
 <template>
    <div class="step3__card">
-      <img class="step3__img" :src="this.img">
+      <div class="step2__img">
+         <img :src="img">
+      </div>
       <div class="step3__house">
          <p class="houseNumber" :style="{
             'font-family': this.step3.number.font,

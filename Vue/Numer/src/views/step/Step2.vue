@@ -9,23 +9,25 @@
                   <div class="step2__img">
                      <img :src="img">
                   </div>
-                  <Button />
+                  <Button class="d-none d-md-flex" />
                </b-col>
                <b-col md="7">
                   <h2>Размер и форма</h2>
                   <div class="sizes">
-                    <div v-for="(size, i) in sizes" :key="i" class="sizes__card">
-                      <input
-                        :id="i"
-                        type="radio"
-                        name="size"
-                        :value="i"
-                        @input="changeSize(i)"
-                        :checked="selected_size == i"
-                      >
-                      <label :for="i">{{size.text}}</label>
+                    <div class="sizes__label">
+                      <div v-for="(size, i) in sizes" :key="i" class="sizes__card">
+                        <input
+                          :id="i"
+                          type="radio"
+                          name="size"
+                          :value="i"
+                          @input="changeSize(i)"
+                          :checked="selected_size == i"
+                        >
+                        <label :for="i">{{size.text}}</label>
+                      </div>
                     </div>
-                    <div class="params">Размер: {{ selected_forms.width }} х {{ selected_forms.height }} см</div>  
+                    <div class="params">Размер: <b>{{ selected_forms.width }}</b> х <b>{{ selected_forms.height }}</b> см</div>  
                   </div>
                   <b-form-input id="range" v-model="range" type="range" min="1" max="2.5" step="0.005" @input="changeRange(range)"></b-form-input>
                   <div class="forms">
@@ -41,6 +43,7 @@
                         <label :for="i"><img :src="form"></label>
                      </div>
                   </div>
+                  <Button class="d-md-none mt-4 mb-4" />
                </b-col>
             </b-row>
          </b-container>

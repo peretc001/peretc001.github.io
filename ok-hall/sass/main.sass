@@ -234,7 +234,7 @@ a, a:hover
 		display: flex
 		flex-direction: row
 		justify-content: space-between
-		align-items: center
+		align-items: flex-start
 		width: 42%
 		p
 			margin: 0
@@ -257,23 +257,20 @@ a, a:hover
 				background-repeat: no-repeat
 				background-image: url('../img/logo_white.png')
 				transition: background .3s ease
+		
 		&__text
+			display: block
 			width: 85%
 			margin: 0
-			padding: 0 2em
-			line-height: 1
-			box-sizing: border-box
-			b
-				display: block
-				font-weight: 500
-				padding-bottom: 0
-				font-size: 1.6em
-				color: #fff
-			span
-				display: block
-				color: #a5a5a5
-				font-size: 1.1em
-				margin: .7em auto
+			padding: 0.5em 1.5em
+			line-height: 1.4
+			font-size: 1.2em
+			text-transform: uppercase
+			text-align: center
+			color: #ffffff
+			font-weight: normal
+			font-stretch: expanded
+
 	&__right
 		display: flex
 		flex-direction: column-reverse
@@ -1052,7 +1049,7 @@ a, a:hover
 			position: relative
 			.manager
 				position: absolute
-				left: -90%
+				left: -150%
 				top: 0
 				width: 90%
 				opacity: 1

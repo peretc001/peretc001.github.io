@@ -12,7 +12,7 @@
                      </div>
                   </slick>
                   <vue-gallery-slideshow :images="materials[selected_material].images" :index="i" @close="i = null"></vue-gallery-slideshow>
-                  <Button />
+                  <Button class="d-none d-md-flex" />
                </b-col>
                <b-col md="7">
                   <h3>Выберите материал</h3>
@@ -30,6 +30,7 @@
                       </div>
                   </div>
                   <p class="text">{{materials[selected_material].desc}}</p>
+                  <Button class="d-md-none mt-4 mb-4" />
                </b-col>
             </b-row>
          </b-container>
@@ -86,7 +87,7 @@ export default {
       this.$store.commit('setMaterial', this.selected_material)
       this.$store.commit('setPrice', this.materials[index].price)
       this.price = this.$store.state.price
-    }
+    }    
   }
 }
 
