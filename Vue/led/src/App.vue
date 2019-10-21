@@ -80,7 +80,9 @@
             </div>
             </transition>
           </div>
-          
+          <div class="kp">
+            <button class="btn" data-toggle="modal" data-target="#tab1_modal2">Получить коммерческое предложение</button>
+          </div>
           <div class="row price">
             <div class="col-sm-6"><p>Цена <span>{{ calcPrice }} ₽</span></p>
             </div>
@@ -115,8 +117,7 @@
     <div class="content---first-line">
       <div class="options-first-block-big">
         <p class="caption-block">Видеоэкран</p>
-        <p id="name-room-module-p" class="caption-block-n first---step---name">P-{{ this.steps[selected_where][selected_step].name }}мм-32x16мм</p>
-        
+        <p id="name-room-module-p" class="caption-block-n first---step---name">P{{ this.steps[selected_where][selected_step].name }}-{{ this.steps[selected_where][selected_step].pixel }}</p>
         <div class="options-first-block-big-flex">
           
           <div class="options-first-block">
@@ -135,7 +136,7 @@
             </div>
             <div class="options-first-block-caption">
               <p class="options-first-block-caption__title">Разрешение экрана</p>
-              <p class="options-first-block-caption__size first---step--size" id="resolution-room">{{ height*16 }} x {{ width*32 }} px</p>
+              <p class="options-first-block-caption__size first---step--size" id="resolution-room">{{ calcPixel }} {{ pixel_h }} x {{ pixel_w }} px</p>
             </div>
           </div>
 
@@ -197,12 +198,12 @@
             <li class="options-second-block-big-photo-block__item">
               <span class="parname">Размер модуля</span>
               <span class="dotted"></span>
-              <span class="parval" id="size-room-module">256 х 128 мм</span>
+              <span class="parval" id="size-room-module">{{ this.steps[selected_where][selected_step].size }}</span>
             </li>
             <li class="options-second-block-big-photo-block__item">
               <span class="parname">Разрешение модуля</span>
               <span class="dotted"></span>
-              <span class="parval" id="raz-room">32 х 64 px</span>
+              <span class="parval" id="raz-room">{{ this.steps[selected_where][selected_step].pixel }}</span>
             </li>
             <li class="options-second-block-big-photo-block__item">
               <span class="parname">Контрастность</span>
@@ -234,12 +235,12 @@
             <li class="options-second-block-big-photo-block__item">
               <span class="parname">Размер модуля</span>
               <span class="dotted"></span>
-              <span class="parval" id="size-street-module">256 х 128 мм</span>
+              <span class="parval" id="size-street-module">{{ this.steps[selected_where][selected_step].size }}</span>
             </li>
             <li class="options-second-block-big-photo-block__item">
               <span class="parname">Разрешение модуля</span>
               <span class="dotted"></span>
-              <span class="parval" id="raz-street">32 х 64 px</span>
+              <span class="parval" id="raz-street">{{ this.steps[selected_where][selected_step].pixel }}</span>
             </li>
             <li class="options-second-block-big-photo-block__item">
               <span class="parname">Контрастность</span>
@@ -257,9 +258,9 @@
     </div>
 
     <form class="callback__form" @submit.prevent="sendEmail()">
-      <div class="container">
+      <div class="container form_request">
         <p class="form_caption">Заполните контактные данные и получите скидку 5%</p>
-        <div class="row form_request">
+        <div class="row">
             <input type="hidden" name="human" value="false">
             <div class="col-md-4">
               <input type="text" placeholder="Имя" v-model="name" @input="validName($event)" class="user" />
@@ -285,13 +286,55 @@
             </div>
 
         </div>
-        <div class="responce_good">
-          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTIgNTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUyIDUyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIGNsYXNzPSIiPjxnPjxnPgoJPHBhdGggZD0iTTI2LDBDMTEuNjY0LDAsMCwxMS42NjMsMCwyNnMxMS42NjQsMjYsMjYsMjZzMjYtMTEuNjYzLDI2LTI2UzQwLjMzNiwwLDI2LDB6IE0yNiw1MEMxMi43NjcsNTAsMiwzOS4yMzMsMiwyNiAgIFMxMi43NjcsMiwyNiwyczI0LDEwLjc2NywyNCwyNFMzOS4yMzMsNTAsMjYsNTB6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBzdHlsZT0iZmlsbDojRkZGRkZGIj48L3BhdGg+Cgk8cGF0aCBkPSJNMzguMjUyLDE1LjMzNmwtMTUuMzY5LDE3LjI5bC05LjI1OS03LjQwN2MtMC40My0wLjM0NS0xLjA2MS0wLjI3NC0xLjQwNSwwLjE1NmMtMC4zNDUsMC40MzItMC4yNzUsMS4wNjEsMC4xNTYsMS40MDYgICBsMTAsOEMyMi41NTksMzQuOTI4LDIyLjc4LDM1LDIzLDM1YzAuMjc2LDAsMC41NTEtMC4xMTQsMC43NDgtMC4zMzZsMTYtMThjMC4zNjctMC40MTIsMC4zMy0xLjA0NS0wLjA4My0xLjQxMSAgIEMzOS4yNTEsMTQuODg1LDM4LjYyLDE0LjkyMiwzOC4yNTIsMTUuMzM2eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgc3R5bGU9ImZpbGw6I0ZGRkZGRiI+PC9wYXRoPgo8L2c+PC9nPiA8L3N2Zz4=" />
-          <p><b>Благодарим за заявку!</b></p>
-          <p>В ближайшее время наш менеджер свяжется с вами</p>
-        </div>
+      </div>
+      <div class="responce_good">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTIgNTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUyIDUyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIGNsYXNzPSIiPjxnPjxnPgoJPHBhdGggZD0iTTI2LDBDMTEuNjY0LDAsMCwxMS42NjMsMCwyNnMxMS42NjQsMjYsMjYsMjZzMjYtMTEuNjYzLDI2LTI2UzQwLjMzNiwwLDI2LDB6IE0yNiw1MEMxMi43NjcsNTAsMiwzOS4yMzMsMiwyNiAgIFMxMi43NjcsMiwyNiwyczI0LDEwLjc2NywyNCwyNFMzOS4yMzMsNTAsMjYsNTB6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBzdHlsZT0iZmlsbDojRkZGRkZGIj48L3BhdGg+Cgk8cGF0aCBkPSJNMzguMjUyLDE1LjMzNmwtMTUuMzY5LDE3LjI5bC05LjI1OS03LjQwN2MtMC40My0wLjM0NS0xLjA2MS0wLjI3NC0xLjQwNSwwLjE1NmMtMC4zNDUsMC40MzItMC4yNzUsMS4wNjEsMC4xNTYsMS40MDYgICBsMTAsOEMyMi41NTksMzQuOTI4LDIyLjc4LDM1LDIzLDM1YzAuMjc2LDAsMC41NTEtMC4xMTQsMC43NDgtMC4zMzZsMTYtMThjMC4zNjctMC40MTIsMC4zMy0xLjA0NS0wLjA4My0xLjQxMSAgIEMzOS4yNTEsMTQuODg1LDM4LjYyLDE0LjkyMiwzOC4yNTIsMTUuMzM2eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgc3R5bGU9ImZpbGw6I0ZGRkZGRiI+PC9wYXRoPgo8L2c+PC9nPiA8L3N2Zz4=" />
+        <p><b>Благодарим за заявку!</b></p>
+        <p>В ближайшее время наш менеджер свяжется с вами</p>
       </div>
     </form>
+
+    <div class="modal fade" id="tab1_modal2" tabindex="-1" role="dialog" aria-labelledby="Замер" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="form_request_modal">
+              <h5 class="modal-title">Получить коммерческое предложение</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <form class="modal__form" @submit.prevent="sendKp()">
+                <input type="hidden" name="humanModal" value="false">
+                <input type="text" name="fio" v-model="nameModal" placeholder="Укажите ФИО" required>
+                <input type="email" name="email" v-model="emailModal" placeholder="Укажите e-mail" required>
+                <masked-input v-model="phoneModal" mask="\+7\ (111) 111-1111" placeholder="Телефон" type="tel" class="phoneModal" required/>
+                
+                <div class="row price">
+                  <div class="col-sm-6"><p>Цена <span>{{ calcPrice }} ₽</span></p>
+                  </div>
+                  <div class="col-sm-6"><p>Размер <span>{{ h }} x {{ w }} см</span></p></div>
+                </div>
+                <div class="robot" @click="checkRobotModal()">
+                  <div class="robot__check__modal">
+                    <svg viewBox="0 0 60 60">
+                        <line class="st0 line1" x1="4.5" y1="30.5" x2="29.5" y2="52.5"/>
+                        <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
+                    </svg>
+                  </div>
+                  <span>Согласен с условиями Политики конфиденциальности</span>
+                </div>
+                <input type="submit" value="Отправить" class="btn callback__form__button__modal" disabled>
+              </form>
+            </div>
+            <div class="responce_good_modal">
+              <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUyIDUyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MiA1MjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxnPgoJPHBhdGggZD0iTTI2LDBDMTEuNjY0LDAsMCwxMS42NjMsMCwyNnMxMS42NjQsMjYsMjYsMjZzMjYtMTEuNjYzLDI2LTI2UzQwLjMzNiwwLDI2LDB6IE0yNiw1MEMxMi43NjcsNTAsMiwzOS4yMzMsMiwyNiAgIFMxMi43NjcsMiwyNiwyczI0LDEwLjc2NywyNCwyNFMzOS4yMzMsNTAsMjYsNTB6IiBmaWxsPSIjMDAwMDAwIi8+Cgk8cGF0aCBkPSJNMzguMjUyLDE1LjMzNmwtMTUuMzY5LDE3LjI5bC05LjI1OS03LjQwN2MtMC40My0wLjM0NS0xLjA2MS0wLjI3NC0xLjQwNSwwLjE1NmMtMC4zNDUsMC40MzItMC4yNzUsMS4wNjEsMC4xNTYsMS40MDYgICBsMTAsOEMyMi41NTksMzQuOTI4LDIyLjc4LDM1LDIzLDM1YzAuMjc2LDAsMC41NTEtMC4xMTQsMC43NDgtMC4zMzZsMTYtMThjMC4zNjctMC40MTIsMC4zMy0xLjA0NS0wLjA4My0xLjQxMSAgIEMzOS4yNTEsMTQuODg1LDM4LjYyLDE0LjkyMiwzOC4yNTIsMTUuMzM2eiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
+              <p><b>Благодарим за заявку!</b></p>
+              <p>Коммерческое предложение отправленно вам на почту</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
 </template>
@@ -299,6 +342,7 @@
 <script>
 const axios = require('axios')
 import MaskedInput from 'vue-masked-input'
+
 export default {
   name: 'app',
   components: {
@@ -340,53 +384,85 @@ export default {
         inside: {
           s1: {
             name: '1.25',
+            size: '320x160 мм',
+            pixel: '256x128 px',
             price: 480 },
           s2: {
             name: '1.66',
+            size: '320x160 мм',
+            pixel: '192x96 px',
             price: 265 },
           s3: {
             name: '1.83',
+            size: '320x160 мм',
+            pixel: '174x87 px',
             price: 165 },
           s4: {
             name: '2',
+            size: '320x160 мм',
+            pixel: '160x80 px',
             price: 97 },
           s5: {
             name: '2.5',
+            size: '320x160 мм',
+            pixel: '128x64 px',
             price: 68 },
           s6: {
             name: '3',
+            size: '320x160 мм',
+            pixel: '104x52 px',
             price: 51 },
           s7: {
             name: '3.07',
+            size: '320x160 мм',
+            pixel: '104x52 px',
             price: 48 },
           s8: {
             name: '4',
+            size: '320x160 мм',
+            pixel: '80x40 px',
             price: 40 },
           s9: {
             name:  '5',
+            size: '320x160 мм',
+            pixel: '64x32 px',
             price: 36 }
         },
         outside: {
           s1: {
             name: '4',
+            size: '320x160 мм',
+            pixel: '80x40 px',
             price: 65 },
           s2: {
             name: '4.81',
+            size: '320x160 мм',
+            pixel: '67x33 px',
             price: 60 },
           s3: {
             name:  '5',
+            size: '320x160 мм',
+            pixel: '64x32 px',
             price: 52 },
           s4: {
             name:  '6',
+            size: '192x192 мм',
+            pixel: '32x32 px',
             price: 47 },
           s5: {
             name:  '6.66',
+            size: '320x160 мм',
+            pixel: '48x24 px',
             price: 42 },
           s6: {
             name:  '8',
+            size: '320x160 мм',
+            pixel: '40x20 px',
             price: 38 },
           s7: {
             name:  '10',
+            size: '320x160 мм',
+            pixel: '32x16 px',
             price: 34 }
         }
       },
@@ -395,84 +471,86 @@ export default {
         dop1: {
           check: false,
           name: 'Управляющий компьютер',
-          price: 100
+          price: 32000
         },
         dop2: {
           check: false,
           name: 'Отправляющий контроллер',
-          price: 100
+          price: 13500
         },
         dop3: {
           check: false,
           name: 'Wi-Fi модуль',
-          price: 100
+          price: 3500
         },
         dop4: {
           check: false,
           name: 'Датчик яркости',
-          price: 100
+          price: 14500
         },
         dop5: {
           check: false,
-          name: 'Датчик яркости',
-          price: 100
+          name: 'Датчик температуры',
+          price: 1000
         },
         dop6: {
           check: false,
-          name: 'Датчик температуры',
-          price: 100
-        },
-        dop7: {
-          check: false,
           name: 'Видеопроцессор',
-          price: 100
+          price: 55000
         }
       },
       setting: {
         set1: {
           check: false,
           name: 'Электрощитовая',
-          price: 100
+          price: 80
         },
         set2: {
           check: false,
           name: 'Шефмонтаж',
-          price: 100
+          price: 55
         },
         set3: {
           check: false,
           name: 'Монтаж оборудования',
-          price: 100
+          price: 110
         },
         set4: {
           check: false,
           name: 'Изгот. металлоконструкции',
-          price: 100
+          price: 220
         },
         set5: {
           check: false,
           name: 'Монтаж металлоконструкций',
-          price: 100
+          price: 140
         },
         set6: {
           check: false,
           name: 'Набор запасных частей',
-          price: 100
+          price: 15
         }
       },
-      delivery: 100,
+      delivery: 25,
       check_led: {},
       sum_led: 0,
       check_setting: {},
       sum_setting: 0,
       check_delivery: '',
+      sum_delivery: 0,
       width: 3,
       height: 6,
-      w: 96,
       h: 96,
+      w: 96,
+      pixel_w: '384',
+      pixel_h: '96',
       human: false,
       name: '',
-      phone: ''
+      phone: '',
+      humanModal: false,
+      nameModal: '',
+      emailModal: '',
+      phoneModal: ''
     }
   },
   methods: {
@@ -483,7 +561,7 @@ export default {
       }
     },
     heightPlus() {
-      if (this.height < 15) {
+      if (this.height < 150) {
         this.height += 1
         this.h += 16
       }
@@ -491,11 +569,11 @@ export default {
     widthMinus() {
       if (this.width > 1) {
         this.width -= 1
-        this.w -= 32 
+        this.w -= 32
       }
     },
     widthPlus() {
-      if (this.width < 15) {
+      if (this.width < 150) {
         this.width += 1
         this.w += 32
       }
@@ -504,15 +582,28 @@ export default {
       this.selected_color = i
     },
     checkRobot() {
-      const checkBtn = document.querySelector('.robot__check');
+      const callbackForm = document.querySelector('.callback__form')
+      const checkBtn = callbackForm.querySelector('.robot__check');
       checkBtn.classList.toggle('active')
 
-      const human = document.querySelector('input[name=human]')
+      const human = callbackForm.querySelector('input[name=human]')
       checkBtn.classList.contains('active') ? human.value = 'good' : human.value = false
       checkBtn.classList.contains('active') ? this.human = 'good' : this.human = false
 
-      const formBtn = document.querySelector('.callback__form__button')
+      const formBtn = callbackForm.querySelector('.callback__form__button')
       this.human == 'good' ? formBtn.disabled = false : formBtn.disabled = true
+    },
+    checkRobotModal() {
+      const ModalForm = document.querySelector('.modal__form');
+      const checkBtnModal = ModalForm.querySelector('.robot__check__modal');
+      checkBtnModal.classList.toggle('active')
+
+      const humanModal = ModalForm.querySelector('input[name=humanModal]')
+      checkBtnModal.classList.contains('active') ? humanModal.value = 'good' : humanModal.value = false
+      checkBtnModal.classList.contains('active') ? this.humanModal = 'good' : this.humanModal = false
+
+      const formBtnModal = ModalForm.querySelector('.callback__form__button__modal')
+      this.humanModal == 'good' ? formBtnModal.disabled = false : formBtnModal.disabled = true
     },
     checkLed(event) {
       this.led[event.target.value].check = event.target.checked
@@ -565,7 +656,7 @@ export default {
           
         phone.style.border = ''
 
-        axios.post('thankyou.php', {
+        axios.post('/v2/thankyou.php', {
             data: { sendData }
           }).then(function (response) {
             if (response.data.answer === 'good') {
@@ -589,8 +680,84 @@ export default {
           phone.style.border  = '1px solid red'
         }
     },
+    sendKp() {
+      let sendData = {
+        price: this.price.toLocaleString(),
+        color: this.colors[this.selected_color].name,
+        where: this.selected_where,
+        step: this.steps[this.selected_where][this.selected_step].name,
+        size: this.steps[this.selected_where][this.selected_step].size,
+        pixel: this.steps[this.selected_where][this.selected_step].pixel,
+        led: this.check_led,
+        setting: this.check_setting,
+        delivery: this.check_delivery,
+        width: this.width,
+        height: this.height,
+        h: this.h,
+        w: this.w,
+        pixel_w: this.pixel_w,
+        pixel_h: this.pixel_h,
+        human: this.humanModal,
+        name: this.nameModal,
+        email: this.emailModal,
+        phone: this.phoneModal,
+        sum_led: this.sum_led,
+        sum_setting: this.sum_setting,
+        sum_delivery: this.sum_delivery,
+        commercial: 'yes'
+      }
+      
+      const phoneModal = document.querySelector('.phoneModal')
+
+      if ( this.humanModal == 'good' && this.phoneModal != '') {
+          
+        phoneModal.style.border = ''
+
+        axios.post('/v2/thankyou.php', {
+            data: { sendData }
+          }).then(function (response) {
+            if (response.data.answer === 'good') {
+              if (response.data.answer === 'good') {
+                  let thisStep = document.querySelector('.form_request_modal')
+                  let thisAnswer = document.querySelector('.responce_good_modal')
+                  thisStep.classList.add('done');
+                  setTimeout(() => {
+                      thisStep.classList.remove('done');
+                      thisStep.classList.add('hide');
+                      thisAnswer.classList.add('done');
+                  }, 500);
+                      thisAnswer.classList.add('show');
+                  setTimeout(() => {
+                      $('.close').click(); 
+                  }, 1500);
+              }
+            }
+          }).catch(function (error) {
+            console.log(error)
+          })
+
+        } else {
+          phoneModal.style.border  = '1px solid red'
+        }
+    },
   },
   computed: {
+    calcPixel() {
+      if (this.pixel_h) {
+        if (this.selected_where == 'outside' && this.selected_step == 's4') {
+          this.pixel_h = (192/this.steps[this.selected_where][this.selected_step].name*this.height).toFixed()
+        } else {
+          this.pixel_h = (320/this.steps[this.selected_where][this.selected_step].name*this.height).toFixed()
+        }
+      }
+      if (this.pixel_w) {
+        if (this.selected_where == 'outside' && this.selected_step == 's4') {
+          this.pixel_w = (192/this.steps[this.selected_where][this.selected_step].name*this.width).toFixed()
+        } else {
+          this.pixel_w = (160/this.steps[this.selected_where][this.selected_step].name*this.width).toFixed()
+        }
+      }
+    },
     calcPrice() {
       if (this.selected_color == 'red') {
         this.price = this.height * this.width * 1000
@@ -612,10 +779,11 @@ export default {
         this.price += this.sum_led
       }
       if (this.sum_setting) {
-        this.price += this.sum_setting
+        this.price += this.sum_setting*this.width*this.height
       }
       if (this.check_delivery) {
-        this.price += this.delivery
+        this.price += this.delivery*this.width*this.height
+        this.sum_delivery = this.delivery*this.width*this.height
       }
       return this.price.toLocaleString()
     },
@@ -630,15 +798,18 @@ export default {
 
     dopBtn.addEventListener('click', () => {
       dopParams.classList.toggle('opened')
+      if ( !dopParams.classList.contains('opened') ) dopParams.classList.remove('hovered')
     })
-    dopParams.addEventListener('mouseover', () => {
+    dopBtn.addEventListener('mouseover', () => {
       if ( !dopParams.classList.contains('opened') ) dopParams.classList.add('hovered')
     })
-    dopParams.addEventListener('mouseout', () => {
+    dopBtn.addEventListener('mouseout', () => {
       if ( !dopParams.classList.contains('opened') ) dopParams.classList.remove('hovered')
     })
     document.addEventListener('click', (e) => {
-      if ( !dopParams.contains(event.target) && dopParams.classList.contains('opened') ) dopParams.classList.remove('opened')
+      if ( !dopParams.contains(event.target) && dopParams.classList.contains('opened') ) 
+        dopParams.classList.remove('opened')
+        dopParams.classList.remove('hovered')
     })
 
     const formBtn = document.querySelector('.callback__form__button')

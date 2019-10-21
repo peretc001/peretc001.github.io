@@ -1,0 +1,134 @@
+@import '_libs/bootstrap_grid'
+@import '_libs/fonts'
+@import '_libs/hamburger'
+
+$accent: #001D3E
+$btn: #D15150
+$text: #000000
+$gutter: 30px
+
+$default-font: 'Roboto', sans-serif
+html
+	height: 100%
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.2
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	opacity: 0
+	height: 100%
+	
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.text-center
+	text-align: center !important
+	text-align-last: center !important
+	p
+		text-align: center !important
+		text-align-last: center !important
+a, 
+	&:hover, 
+	&:active, 
+	&:focus
+		text-decoration: none
+		outline: none
+b, strong
+	font-weight: bold
+img
+	max-width: 100%
+
+.accent
+	background: $accent
+	color: #ffffff
+
+.btn
+	background: $btn
+	border-radius: 0
+	user-select: none
+	outline: none
+	box-shadow: 4px 4px 12px #000D1B
+	transition: opacity .3s ease
+	&:hover
+		opacity: .9
+		outline: none
+	&:focus
+		outline: none
+		box-shadow: 4px 4px 12px #000D1B
+
+.front-page
+   height: 100%
+
+.navbar.accent
+	padding: .5em 0 1em 0
+	.navbar-collapse
+      .main-nav
+         .expanded
+            .menu
+               background: $accent
+
+.section__title
+	padding-top: 2em
+	text-align: center
+	img
+		width: 77px
+		height: auto
+		margin-bottom: $gutter/2
+	h2
+		font-size: 1.875em
+		margin-bottom: 2em
+
+@import 'navbar'
+@import 'header'
+@import 'products'
+@import 'features'
+@import 'how'
+@import 'about'
+@import 'callback'
+@import 'partners'
+@import 'tech'
+@import 'footer'
+@import 'modal'
+
+
+
+.hide_description
+	height: auto
+	overflow: hidden
+	position: relative
+	background: #ffffff
+	height: 300px
+	transition: height .3s ease
+	&:after
+		content: ''
+		width: 100%
+		left: 0
+		position: absolute
+		height: 100%
+		bottom: 0
+		background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 90%)
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 )
+	&.opener
+		transition: height .3s ease
+		height: auto
+		overflow: visible
+		&:after
+			display: none
+
+.show_description
+	width: 100%
+	max-width: 200px
+	margin: 0 auto
+	margin-bottom: 2em
+	display: block
+
+body
+	opacity: 1

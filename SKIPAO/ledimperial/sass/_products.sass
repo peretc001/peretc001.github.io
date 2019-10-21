@@ -1,0 +1,64 @@
+.front-page
+   .products
+      padding: $gutter 0
+
+      [class*="col-"]
+         display: flex
+         flex-direction: column
+         align-items: flex-start
+         justify-content: space-between
+         padding: $gutter
+
+         h3
+            font-size: 1.5em
+            padding-top: 2em
+         
+         .btn-group
+            display: flex
+            align-items: center
+            flex-wrap: wrap
+            .btn
+               margin-right: 1em
+
+         .btn
+            margin-bottom: 2em
+            color: $text
+            min-width: 130px
+            &.grey
+               background: #A3A3A3
+
+
+@media screen and (max-width: 1199.98px)
+   .front-page
+      .products
+         padding: $gutter 0
+         font-size: 0.9em
+         [class*="col-"]
+            h3
+               padding-top: 1em
+
+@media screen and (max-width: 991.98px)
+   .front-page
+      .products
+         padding: $gutter 0
+         [class*="col-"]
+            padding: 0 $gutter/2
+            text-align: center
+            img
+               margin: 0 auto
+               margin-bottom: 1em
+            h3
+               padding-top: 1em
+               text-align: center
+               margin: 0 auto
+               margin-bottom: 1em
+            
+            .btn-group
+               justify-content: center
+               margin: 0 auto
+               margin-bottom: 2em
+
+            .btn
+               margin: 1em auto 0 auto
+
+   

@@ -47,22 +47,88 @@
          &:hover
             color: lighten($text, 20%)
    .nav-link
-      font-size: .9em
+      font-size: .8em
       font-weight: bold
       text-transform: uppercase
       &.phone
          color: $accent
+         font-size: 1.2em
+         padding-right: 0.2em
+   
+   .callback_arrow
+      display: inline-block
+      width: 1em
+      height: 1em
+      overflow: hidden
+      position: relative
+      background-position: center
+      background-repeat: no-repeat
+      background-size: .8em
+      background-image: url('data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgMjg0LjkyOSAyODQuOTI5IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyODQuOTI5IDI4NC45Mjk7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8cGF0aCBkPSJNMjgyLjA4Miw3Ni41MTFsLTE0LjI3NC0xNC4yNzNjLTEuOTAyLTEuOTA2LTQuMDkzLTIuODU2LTYuNTctMi44NTZjLTIuNDcxLDAtNC42NjEsMC45NS02LjU2MywyLjg1NkwxNDIuNDY2LDE3NC40NDEgICBMMzAuMjYyLDYyLjI0MWMtMS45MDMtMS45MDYtNC4wOTMtMi44NTYtNi41NjctMi44NTZjLTIuNDc1LDAtNC42NjUsMC45NS02LjU2NywyLjg1NkwyLjg1Niw3Ni41MTVDMC45NSw3OC40MTcsMCw4MC42MDcsMCw4My4wODIgICBjMCwyLjQ3MywwLjk1Myw0LjY2MywyLjg1Niw2LjU2NWwxMzMuMDQzLDEzMy4wNDZjMS45MDIsMS45MDMsNC4wOTMsMi44NTQsNi41NjcsMi44NTRzNC42NjEtMC45NTEsNi41NjItMi44NTRMMjgyLjA4Miw4OS42NDcgICBjMS45MDItMS45MDMsMi44NDctNC4wOTMsMi44NDctNi41NjVDMjg0LjkyOSw4MC42MDcsMjgzLjk4NCw3OC40MTcsMjgyLjA4Miw3Ni41MTF6IiBmaWxsPSIjMDAwMDAwIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==')
+      .callback
+         cursor: pointer
+         display: inline-block
+         text-align: center
+         min-width: 190px
+         opacity: 0
+         position: absolute
+         right: 0
+         bottom: 0
+         width: 100%
+         opacity: 0
+         z-index: 2
+         background: #ffffff
+         padding: 1em
+         font-weight: bold
+         color: $accent
+         text-decoration: none
+         transform: translateY(80%)
+         transition: transform .1s ease, opacity .1s ease
+      &:hover
+         overflow: visible
+         .callback
+            color: $accent
+            opacity: 1
+            transform: translateY(100%)
 
 @media screen and (max-width: 1199.98px)
    .navbar
+      .navbar-brand
+         img
+            width: 200px
       .nav-link
          font-size: 0.7em
+         &.phone
+            font-size: .9em
 
 @media screen and (max-width: 991.98px)
    .navbar
       .nav-link
          text-align: center
          font-size: 1em
+         &.phone
+            font-size: 1em
+      
+      .callback_arrow
+         display: block
+         text-align: center
+         width: auto
+         height: auto
+         overflow: visible
+         background: none
+         .callback
+            display: block
+            position: relative
+            padding: 0
+            color: $accent
+            opacity: 1
+            transform: translateY(0)
+            padding: .5em 0 40px 0
+         &:hover
+            transform: translateY(0)
+            .callback
+               transform: translateY(0)
+
 
 @media screen and (max-width: 767.98px)
    .navbar
@@ -72,5 +138,5 @@
       .navbar-nav
          padding-top: 20px
       .phone
-         padding-bottom: 40px
+         font-size: 1.1em
    

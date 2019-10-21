@@ -1,0 +1,164 @@
+.navbar
+   position: absolute
+   left: 0
+   top: 0
+   width: 100%
+   padding-top: 2em
+   z-index: 5
+   .container
+      align-items: flex-start
+   
+   .hamburger--slider
+      .hamburger-box
+         width: 30px
+         height: 16px
+         .hamburger-inner, 
+         .hamburger-inner:after, 
+         .hamburger-inner:before
+            width: 30px
+            height: 2px
+            background-color: #ffffff
+            // top: 1px
+         &.is-active
+            .hamburger-box
+               .hamburger-inner, 
+               .hamburger-inner:after, 
+               .hamburger-inner:before
+                  background-color: #ffffff
+
+   #logo
+      img
+         width: 126px
+   
+   a
+      color: #ffffff
+
+   .navbar-collapse
+      align-items: flex-start
+      #block-system-main-menu
+         flex: 1 1 auto
+      .main-nav
+         padding: 0 2em
+         margin: 0 auto
+         display: flex
+         text-align: center
+         justify-content: space-between
+         li
+            flex: 1 1 auto
+            list-style: none
+            padding: 0
+            margin: 0
+            position: relative
+            a
+               display: block
+               padding: .6em
+               font-size: 1em
+               transition: opacity .3s ease
+               &:hover
+                  opacity: .7
+         .expanded
+            overflow: hidden
+            .menu
+               background: rgba($accent, .1)
+               border-radius: 4px
+               // border: 1px solid rgba(#ffffff, .5)
+               padding: $gutter/2
+               margin: 0
+               text-align: left
+               min-width: 180px
+               position: absolute
+               left: 0
+               bottom: 0
+               width: 100%
+               opacity: 0
+               z-index: 2
+               transform: translateY(80%)
+               transition: transform .3s ease, opacity .1s ease
+               li
+                  padding: 0
+                  margin: 0
+                  a
+                     display: block
+                     padding: 0
+                     margin: 0
+                     margin-bottom: 0.5em
+                  &:last-child
+                     a
+                        margin-bottom: 0
+            &:hover
+               overflow: visible
+               .menu
+                  opacity: 1
+                  transform: translateY(100%)
+            
+
+   .phone
+      position: relative
+      a
+         display: block
+         padding-top: 0.6em
+         padding-right: 0
+
+@media screen and (max-width: 1200px)
+   #block-system-main-menu
+      display: inline !important
+
+@media screen and (max-width: 1199.98px)
+   .navbar
+      font-size: 0.9em
+
+@media screen and (max-width: 991.98px)
+   .navbar
+      padding-top: 0.5em
+      background: $accent
+      .container
+         align-items: center
+      .navbar-collapse
+         padding: 1em
+         background: $accent
+         .main-nav
+            flex-direction: column
+            a
+               font-size: 1rem
+            .expanded
+               overflow: visible
+               .menu
+                  position: relative
+                  opacity: 1
+                  background: none
+                  text-align: center
+                  transform: none
+                  padding: 0.5em 0
+                  padding-bottom: 1em
+                  // border-bottom: 1px solid rgba(#ffffff, .3)
+                  border-radius: 0
+                  transition: none
+               &:hover
+                  .menu
+                     transform: none
+
+      
+      .phone
+         width: 60px
+         padding: 0 15px
+         a
+            font-size: 0
+            width: 30px
+            height: 30px
+            background-size: 30px
+            background-position: center right
+            background-repeat: no-repeat
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDMyLjY2NyAzMi42NjciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMyLjY2NyAzMi42Njc7IiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48Zz48Zz4KCTxwYXRoIGQ9Ik0xNi4zMzMsMEM3LjMyNywwLDAsNy4zMjcsMCwxNi4zMzRjMCw5LjAwNiw3LjMyNiwxNi4zMzMsMTYuMzMzLDE2LjMzM2MwLjU1NywwLDEuMDA3LTAuNDUxLDEuMDA3LTEuMDA2ICAgYzAtMC41NTYtMC40NS0xLjAwNy0xLjAwNy0xLjAwN2MtNy44OTYsMC0xNC4zMTgtNi40MjQtMTQuMzE4LTE0LjMxOWMwLTcuODk2LDYuNDIyLTE0LjMyLDE0LjMxOC0xNC4zMiAgIGM3Ljg5NiwwLDE0LjMxNyw2LjQyNCwxNC4zMTcsMTQuMzJjMCwzLjI5OS0xLjc1Niw2LjU3MS00LjI2OSw3Ljk1NWMtMC45MTMsMC41MDItMS45MDMsMC43NTEtMi45NTksMC43NjEgICBjMC42MzQtMC4zNzgsMS4xODMtMC44ODcsMS41OTEtMS41MzFjMC4wOC0wLjEyMSwwLjE4Ni0wLjIyNiwwLjIzOC0wLjM1OWMwLjMyOC0wLjc4OSwwLjM1Ny0xLjY4NCwwLjU1NS0yLjUxNiAgIGMwLjI0My0xLjA2Ni00LjY1OC0zLjE0My01LjA4NC0xLjgxNWMtMC4xNTQsMC40OTMtMC4zOSwyLjA0OC0wLjY5OSwyLjQ1OGMtMC4yNzUsMC4zNjUtMC45NTMsMC4xOTMtMS4zNzctMC4xNjggICBjLTEuMTE3LTAuOTUyLTIuMzY0LTIuMzUyLTMuNDU4LTMuNDU3bDAuMDAyLTAuMDAxYy0wLjAyOC0wLjAyOS0wLjA2Mi0wLjA2Mi0wLjA5Mi0wLjA5MWMtMC4wMzEtMC4wMy0wLjA2Mi0wLjA2Mi0wLjA5My0wLjA5MmwwLDAgICBjLTEuMTA2LTEuMDkzLTIuNTA2LTIuMzM4LTMuNDU3LTMuNDU4Yy0wLjM2LTAuNDI0LTAuNTM0LTEuMS0wLjE2OC0xLjM3NmMwLjQxLTAuMzEsMS45NjYtMC41NDMsMi40NTgtMC42OTggICBjMS4zMjYtMC40MjUtMC43NS01LjMyOS0xLjgxNi01LjA4NGMtMC44MzIsMC4xOTUtMS43MjcsMC4yMjUtMi41MTYsMC41NTJjLTAuMTM0LDAuMDU2LTAuMjM4LDAuMTYtMC4zNTksMC4yNCAgIGMtMi43OTksMS43NzUtMy4xNiw2LjA4My0wLjQyOCw5LjI5MmMxLjA0MSwxLjIyOCwyLjEyNywyLjQxNiwzLjI0NSwzLjU3NmwtMC4wMDYsMC4wMDRjMC4wMzEsMC4wMzEsMC4wNjMsMC4wNiwwLjA5NSwwLjA5ICAgYzAuMDMsMC4wMzEsMC4wNTksMC4wNjIsMC4wODgsMC4wOTVsMC4wMDYtMC4wMDZjMS4xNiwxLjExOCwyLjUzNSwyLjc2NCw0Ljc2OSw0LjI1NWM0LjcwMywzLjE0MSw4LjMxMiwyLjI2NCwxMC40MzgsMS4wOTggICBjMy42Ny0yLjAyMSw1LjMxMi02LjMzOCw1LjMxMi05LjcxOUMzMi42NjcsNy4zMjcsMjUuMzM5LDAsMTYuMzMzLDB6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBzdHlsZT0iZmlsbDojRkZGRkZGIj48L3BhdGg+CjwvZz48L2c+IDwvc3ZnPg==')
+            &:last-child
+               display: none
+
+
+@media screen and (max-width: 576.98px)
+   .navbar
+      .phone
+         font-size: 0.8em
+
+@media screen and (max-width: 374.98px)
+   .navbar
+      .mobile-phone
+         font-size: 0.9em

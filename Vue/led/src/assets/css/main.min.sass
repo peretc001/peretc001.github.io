@@ -7,6 +7,7 @@ $text: #001f2c
 $orange: #ff7518
 $gutter: 30px
 $default-font: 'Roboto', sans-serif
+$btn: $orange
 
 *
 	-webkit-box-sizing: border-box
@@ -93,8 +94,9 @@ img
          overflow: hidden
    
    .display
-      border: 10px solid #373431
+      border: 3px solid #373431
       display: inline-block
+      overflow: hidden
       .table
          border-collapse: collapse
          border-spacing: 0
@@ -105,32 +107,32 @@ img
          td
             padding: 0
             margin: 0
-            width: 32px
-            height: 16px
+            width: 6px
+            height: 3px
          span
             display: block
             width: 100%
             height: 100%
-            min-width: 32px
-            min-height: 16px
+            min-width: 6px
+            min-height: 3px
             position: relative
-            background-size: cover
-            background-position: center
-            background-repeat: no-repeat
             border: 1px solid #151515
             transition: background .5s ease
             &.red
-               background-image: url('../img/red.svg')
+               background: #E12727
             &.blue
-               background-image: url('../img/blue.svg')
+               background: #2E3092
             &.green
-               background-image: url('../img/green.svg')
+               background: #219E42
             &.yellow
-               background-image: url('../img/yellow.svg')
+               background: #E9B62D
             &.white
-               background-image: url('../img/white.svg')
+               background: #FFFFFF
             &.rgb
-               background-image: url('../img/rgb.svg')
+               background-size: cover
+               background-position: center
+               background-repeat: no-repeat
+               background-image: url('../img/rgba.png')
 
    .col-lg-7
       &.right
@@ -265,9 +267,9 @@ img
       padding-top: 55px
       padding-bottom: 40px
       p
-         font-size: 1.3em
+         font-size: 1.2em
          span
-            font-size: 1.5em
+            font-size: 1.4em
             margin-left: 0.5em
 
    .fade-enter-active, .fade-leave-active
@@ -283,16 +285,19 @@ img
       height: 100%
       padding: 0 $gutter
       background: darken($accent, 10%)
-      transform: translateX(270px)
+      transform: translateX(100%)
       transition: transform .3s ease
       &.hovered
-         transform: translateX(260px)
+         transform: translateX(95%)
       &.opened
          transform: translateX(0)
+         .btn
+            &:before
+               transform: translateY(-50%) rotate(180deg)
 
       .btn
          position: absolute
-         left: -150px
+         left: -180px
          top: 0
          display: inline-block
          background: darken($accent, 10%)
@@ -301,8 +306,24 @@ img
          border-radius: 0 0 0 8px
          padding: .8em 1em
          padding-right: 2em
+         padding-left: 2em
          cursor: pointer
          outline: none
+         user-select: none
+         &:before
+            content: ''
+            position: absolute
+            left: .5em
+            top: 50%
+            transform: translateY(-50%)
+            width: 1em
+            height: 1em
+            margin-right: .5em
+            background-size: 1em
+            background-position: left center
+            background-repeat: no-repeat
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjQwLjgyMyAyNDAuODIzIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNDAuODIzIDI0MC44MjM7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8cGF0aCBpZD0iQ2hldnJvbl9SaWdodCIgZD0iTTU3LjYzMywxMjkuMDA3TDE2NS45MywyMzcuMjY4YzQuNzUyLDQuNzQsMTIuNDUxLDQuNzQsMTcuMjE1LDBjNC43NTItNC43NCw0Ljc1Mi0xMi40MzksMC0xNy4xNzkgICBsLTk5LjcwNy05OS42NzFsOTkuNjk1LTk5LjY3MWM0Ljc1Mi00Ljc0LDQuNzUyLTEyLjQzOSwwLTE3LjE5MWMtNC43NTItNC43NC0xMi40NjMtNC43NC0xNy4yMTUsMEw1Ny42MjEsMTExLjgxNiAgIEM1Mi45NDIsMTE2LjUwNyw1Mi45NDIsMTI0LjMyNyw1Ny42MzMsMTI5LjAwN3oiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiIHN0eWxlPSJmaWxsOiNGRkZGRkYiPjwvcGF0aD4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+')
+            transition: transform .5s wase
       
       .dop_name
          font-size: 1.4em
@@ -523,14 +544,16 @@ img
             user-select: none
             color: #ffffff
    
-   .form_request
+   .form_request,
+   .form_request_modal
       transition: opacity .3s ease
       &.done
          opacity: 0
       &.hide
          display: none
 
-   .responce_good
+   .responce_good,
+   .responce_good_modal
       text-align: center
       display: none
       color: #ffffff
@@ -548,6 +571,168 @@ img
          margin-bottom: 1em
          b
             font-size: 1.6em
+   .responce_good_modal
+      padding: 20px
+      color: $text
+      font-size: 0.7em
+   .kp
+      display: flex
+      align-items: center
+      justify-content: flex-end
+      .btn
+         background: $orange
+         color: #ffffff
+         padding: .5em 1em
+         font-size: 1em
+         border: none
+         cursor: pointer
+         border-radius: 4px
+         text-decoration: none
+         outline: none
+         box-shadow: none
+         transition: background .3s ease
+         &:hover
+            text-decoration: none
+            background: darken($orange, 8%)
+
+   .modal
+      .modal-content
+         background-color: #f5f5f5
+         margin: auto
+         width: 100%
+         max-width: 350px
+         text-align: center
+         border: 0
+         border-radius: 6px
+         position: relative
+         overflow: hidden
+         .close
+            position: absolute
+            color: #fff
+            background: $text
+            top: -1px
+            right: -1px
+            padding: .5em
+            border-radius: 0 4px 0 0
+            font-size: 20px
+            line-height: 1
+            font-weight: bold
+            cursor: pointer
+            z-index: 2
+            text-shadow: none
+            opacity: 1
+            &:hover
+               background: darken($text, 10%)
+         h5
+            font-size: 1.2em
+            font-weight: bold
+            line-height: 1
+            margin-bottom: 1em
+
+         .modal-body
+            color: $text
+            &.done
+               opacity: 0
+            p
+               font-size: 1.2em
+               font-weight: bold
+               text-transform: uppercase
+               margin-bottom: .5em
+            input
+               border: 1px solid #ccc
+               border-radius: 4px
+               background: #ffffff
+               color: #666
+               line-height: 1
+               font-size: 1em
+               color: $text
+               width: 100%
+               padding: .5em 1em
+               margin: 0 auto
+               margin-bottom: 1em
+            .btn
+               width: 100%
+               font-size: 1em
+               margin: 0 auto
+               background: $text
+               color: #ffffff
+               border: 1px solid darken($text, 10%)
+               transition: background .3s ease
+               &:hover
+                  background: darken($text, 10%)
+               &:disabled
+                  background: rgba($text, .6)
+                  border: 1px solid #f5f5f5
+            
+            .price
+               font-size: 0.7em
+               padding: 1em 0
+               p
+                  color: #444
+                  span
+                     display: block
+                     color: $text
+         .request_callback__footer
+            display: none
+            text-transform: uppercase
+            font-size: 1.2em
+            font-weight: bold
+            position: absolute
+            left: 50%
+            top: 50%
+            transform: translateX(-50%) translateY(-50%)
+            z-index: 2
+         
+         .robot
+            padding-bottom: 1em
+         &.policy
+            font-size: 0.7em
+            max-width: 500px
+            text-align: left
+            p
+               font-weight: normal
+               text-transform: none
+            ul
+               margin: 10px
+               padding: 0
+               li
+                  font-size: 1em
+                  text-align: left
+                  list-style: none
+                  margin: 0
+   .robot
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      padding: 0
+      &__check__modal
+         display: flex
+         svg
+            width: $gutter
+            height: $gutter
+            border: 1px solid $text
+            padding: 5px
+            cursor: pointer
+            margin-right: .5em
+         .st0
+            display: none
+            fill: none
+            stroke: $text
+            stroke-width: 10
+            stroke-linecap: round
+            stroke-linejoin: round
+            stroke-miterlimit: 10
+            opacity: 0
+         &.active
+            .st0
+               display: block
+               &.line1
+                  animation: fadeIn .1s ease-in-out forwards
+               &.line2
+                  opacity: 0
+                  animation: fadeIn .1s ease-in-out .05s forwards
+      span
+         font-size: 0.7em
 
 @keyframes fadeIn
    from
@@ -560,17 +745,8 @@ body
 
 @media screen and (max-width: 1199.98px)
    .calc_modules
-      font-size: 0.9em
-      .display
-         .table
-            td
-               width: 21px
-               height: 10px
-            span
-               min-width: 21px
-               min-height: 10px
-         .price
-            font-size: 0.9em
+      .price
+         font-size: 0.8em
 
 @media screen and (max-width: 991.98px)
    .calc_modules
@@ -583,23 +759,18 @@ body
          min-height: 100px
       .params
          margin-bottom: 1em
+      .kp
+         justify-content: center
+         margin-bottom: 2em
       .price
          padding-top: 15px
          padding-bottom: 40px
          font-size: .8em
-      .display
-         .table
-            td
-               width: 32px
-               height: 16px
-            span
-               min-width: 32px
-               min-height: 16px
 
       .dop_params
          font-size: .8em
          .btn
-            left: -120px
+            left: -150px
                   
       .img---wrapper
          min-height: 250px
@@ -704,6 +875,7 @@ body
       .col-lg-7
          &.right
             padding: 0 $gutter/2
+            padding-top: $gutter
       font-size: 1em
       [class*="col-"]
          text-align: center !important
@@ -723,7 +895,7 @@ body
          margin-bottom: 1em
          text-align: center
          margin: 0 auto
-         margin-bottom: 2em
+         margin-bottom: 0
          .width,
          .height
             margin: 0 auto
@@ -732,6 +904,10 @@ body
 
       .select_step
          margin-right: 0
+      .kp
+         .btn
+            font-size: 0.9em
+            padding: 1em
       .price
          padding-top: 0px
          padding-bottom: 20px
@@ -740,23 +916,20 @@ body
          flex-direction: column
          p
             margin-bottom: 1em
-      .display
-         border: 5px solid #373431
-         .table
-            td
-               width: 16px
-               height: 8px
-            span
-               width: 16px
-               height: 8px
-               border: 0
       
       .dop_params
          width: 250px
          font-size: .75em
          text-align: left
          .btn
-            left: -120px
+            left: -130px
+            transition: left .5s ease
+         .dop_name
+            &:first-child
+               margin-top: 2em
+         &.opened
+            .btn
+               left: -50px
 
       .img---wrapper
          min-height: auto
@@ -781,3 +954,12 @@ body
       .callback__form
          .form_caption
             font-size: 1.2em
+
+
+   .modal
+      .modal-content
+         .modal-body            
+            .price
+               p
+                  color: #444
+                  margin-bottom: 1em

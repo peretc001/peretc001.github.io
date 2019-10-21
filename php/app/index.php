@@ -1,100 +1,150 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>
-    Калькулятор
-  </title>
-  <meta charset="utf-8">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" version="XHTML+RDFa 1.0" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic" rel="stylesheet">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="http://ledimperial.ru/misc/favicon.ico" type="image/vnd.microsoft.icon" />
+  <title>ledimperial.ru</title>
+  <meta name="yandex-verification" content="95991de90fdb743a" />
+  <style type="text/css" media="all">
+@import url("http://ledimperial.ru/modules/system/system.base.css?pzj0sa");
+@import url("http://ledimperial.ru/modules/system/system.menus.css?pzj0sa");
+@import url("http://ledimperial.ru/modules/system/system.messages.css?pzj0sa");
+@import url("http://ledimperial.ru/modules/system/system.theme.css?pzj0sa");
+</style>
+<style type="text/css" media="all">
+@import url("http://ledimperial.ru/modules/comment/comment.css?pzj0sa");
+@import url("http://ledimperial.ru/modules/field/theme/field.css?pzj0sa");
+@import url("http://ledimperial.ru/modules/node/node.css?pzj0sa");
+@import url("http://ledimperial.ru/modules/search/search.css?pzj0sa");
+@import url("http://ledimperial.ru/modules/user/user.css?pzj0sa");
+@import url("http://ledimperial.ru/sites/all/modules/views/css/views.css?pzj0sa");
+@import url("http://ledimperial.ru/sites/all/modules/ckeditor/css/ckeditor.css?pzj0sa");
+</style>
+<style type="text/css" media="all">
+@import url("http://ledimperial.ru/sites/all/modules/colorbox/styles/plain/colorbox_style.css?pzj0sa");
+@import url("http://ledimperial.ru/sites/all/modules/ctools/css/ctools.css?pzj0sa");
+@import url("http://ledimperial.ru/sites/all/modules/webform/css/webform.css?pzj0sa");
+</style>
+<style type="text/css" media="all">
+@import url("http://ledimperial.ru/sites/all/themes/mytheme/css/main.min.css?pzj0sa");
+</style>
+<style type="text/css" media="(max-width: 1200px)">
+@import url("http://ledimperial.ru/sites/all/themes/mytheme/css/mobile.css?pzj0sa");
+</style>
+
+<!-- button-up -->
+<script type="text/javascript">
+jQuery(document).ready(function($){
+    $('<style>'+
+        '.scrollTop{ display:none; z-index:9999; position:fixed;'+
+            'bottom:77px; left:93%; width:67px; height:67px;'+
+            'background:url(/sites/all/themes/mytheme/images/button-up-color.png) 0 0 no-repeat; }' +
+         '</style>').appendTo('body');
+    var
+    speed = 550,
+    $scrollTop = $('<a href="#" class="scrollTop">').appendTo('body');
+    $scrollTop.click(function(e){
+        e.preventDefault();
+        $( 'html:not(:animated),body:not(:animated)' ).animate({ scrollTop: 0}, speed );
+    });
+
+    //появление
+    function show_scrollTop(){
+        ( $(window).scrollTop() > 330 ) ? $scrollTop.fadeIn(700) : $scrollTop.fadeOut(700);
+    }
+    $(window).scroll( function(){ show_scrollTop(); } );
+    show_scrollTop();
+});
+</script>
+
+    
+</head>
+<body class="html front not-logged-in no-sidebars page-node" >
+  <a href="#" title="Вернуться наверх" class="buttonup"></a>
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Перейти к основному содержанию</a>
+  </div>
+    <div class="front-page">
+    <nav class="navbar navbar-expand-lg accent">
+        <div class="container">
+            <button class="navbar-toggler hamburger hamburger--slider" type="button" data-toggle="collapse"
+                    data-target="#navbarToggle"
+                    aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+            </button>
+            <div id="logo">
+                <a href="/">
+                    <img alt="На главную" src="http://ledimperial.ru/sites/all/themes/mytheme/images/logo.png"/>
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse order-3 order-lg-2" id="navbarToggle">
+                <div id="block-system-main-menu" class="block block-system block-menu">
+                    <div class="content">
+                        <ul class="main-nav">
+                            <li class="expanded">
+                                <a href="http://ledimperial.ru/uslugi" title="">Услуги</a>
+                                <ul class="menu">
+                                    <li class="first leaf"><a
+                                                href="http://ledimperial.ru/uslugi/arenda-svetodiodnogo-ekrana"
+                                                title="">Аренда LED экрана</a></li>
+                                    <li class="last leaf"><a href="http://ledimperial.ru/uslugi/uslugi-soglasovaniya"
+                                                             title="">Согласование</a></li>
+                                    <li class="last leaf"><a href="http://ledimperial.ru/uslugi/uslugi-montazha"
+                                                             title="">Монтаж</a></li>
+                                    <li class="last leaf"><a href="http://ledimperial.ru/uslugi/uslugi-remonta"
+                                                             title="">Ремонт</a></li>
+                                </ul>
+                            </li>
+                            <li class="leaf"><a href="http://ledimperial.ru/nashi-proekty" title="">Проекты</a></li>
+                            <li class="leaf"><a href="http://ledimperial.ru/products">Продукция</a></li>
+                            <li class="leaf"><a href="http://ledimperial.ru/poleznoe">Полезное</a></li>
+                            <li class="leaf"><a href="http://ledimperial.ru/lenta_news">Новости</a></li>
+                            <li class="leaf"><a href="http://ledimperial.ru/kontaktnaya-informaciya">Контакты</a></li>
+                            <li class="expanded">
+                                <a href="http://ledimperial.ru/uslugi" title="">Калькулятор</a>
+                                <ul class="menu">
+                                    <li class="first leaf"><a href="http://calcled.skipao.site" title="">LED экраны</a>
+                                    </li>
+                                    <li class="last leaf"><a href="http://calcled2.skipao.site" title="">LED модули</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="phone order-2 order-lg-3">
+                <a href="tel:88007770291">8 (800) 777-02-91</a>
+                <a href="tel:89186742828">8 (918) 674-28-28</a>
+            </div>
+        </div>
+    </nav>
   <!-- IMPORTANT -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/main.min.css">
   <!-- / IMPORTANT -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
-</head>
-<body>
-<div style="display:none">Переменная из php:
-  <span id="perem"><?php echo $homepage; ?></span>
-</div>
 
-<div class="region region-header">
-  <div id="block-block-1" class="block block-block">
-
-
-    <div class="content">
-      <!--ШАПКА--><div id="header">
-        <div class="width" id="header-inner">
-          <div id="logo"><a href="http://ledimperial.ru/"><img alt="На главную" src="http://ledimperial.ru/sites/all/themes/mytheme/images/logo.png"></a></div>
-          <div id="desc"><font size="4">Светодиодная продукция от производителя<br>
-              в Краснодаре, Краснодарском крае и Республике Крым</font></div>
-          <div id="head-contacts">
-            <div class="srow">
-              <div class="sval"><a class="phoneicon" href="tel:+78007770291" rel="nofollow">8 (800) 777-02-91</a></div>
-              <div><span style="font-size: 10px; line-height: 5px; color: #6d6e71;">Звонок по России бесплатный</span></div>
-            </div>
-            <div class="srow">
-              <div class="slab">Краснодар</div>
-              <div class="sval"><a href="tel+79186742828" rel="nofollow" style="text-decoration:none;">8 (918) 674-28-28</a></div>
-            </div>
-            <div class="srow">
-              <div class="slab">Сочи</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="mobi-header">
-        <div id="burger">&nbsp;</div>
-        <div id="burger-navi">
-          <div id="exit-burger">&nbsp;</div>
-          <ul><li><a href="/index.php">Главная</a></li>
-            <li><a href="/uslugi">Услуги</a></li>
-            <li><a href="/raschyot-stoimosti">Расчёт стоимости</a></li>
-            <li><a href="/nashi-proekty">Наши проекты</a></li>
-            <li><a href="/products">Продукция</a></li>
-            <li><a href="/sertifikaty">Сертификаты</a></li>
-            <li><a href="/poleznoe">Полезное</a></li>
-            <li><a href="/kontaktnaya-informaciya">Контакты</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="block-search-form" class="block block-search">
-
-
-    <div class="content">
-      <form action="/" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
-            <span class="element-invisible">Форма поиска</span>
-            <div class="form-item form-type-textfield form-item-search-block-form">
-              <label class="element-invisible" for="edit-search-block-form--2">Поиск </label>
-              <input title="Введите ключевые слова для поиска." type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" placeholder="Ваш запрос">
-            </div>
-            <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Поиск" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-N1Ych2ECM-pQu_TiEHQqSumlY7lG6_6Sjrg95_uzVAA">
-            <input type="hidden" name="form_id" value="search_block_form">
-          </div>
-        </div></form>  </div>
-  </div>
-  <div id="block-system-main-menu" class="block block-system block-menu">
-
-
-    <div class="content">
-      <ul class="menu"><li class="first leaf"><a href="http://ledimperial.ru/lenta_news">Новости</a></li>
-        <li class="leaf"><a href="http://ledimperial.ru/uslugi">Услуги</a></li>
-        <li class="leaf"><a href="http://ledimperial.ru/raschyot-stoimosti">Расчёт стоимости</a></li>
-        <li class="leaf"><a href="http://ledimperial.ru/nashi-proekty" title="">Проекты</a></li>
-        <li class="leaf"><a href="http://ledimperial.ru/products">Продукция</a></li>
-        <li class="leaf"><a href="http://ledimperial.ru/uslugi/arenda-svetodiodnogo-ekrana" title="">Аренда led экрана</a></li>
-        <li class="leaf"><a href="http://ledimperial.ru/poleznoe">Полезное</a></li>
-        <li class="leaf"><a href="http://ledimperial.ru/sertifikaty">Сертификаты</a></li>
-        <li class="leaf"><a href="http://ledimperial.ru/kontaktnaya-informaciya">Контакты</a></li>
-      </ul>  </div>
-  </div>
-</div>
 
 <section class="calc---page">
-  <h1>Online Калькулятор</h1>
-
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item">
       <span>Выберите тип экрана</span>
@@ -123,7 +173,6 @@
 
                 <div class="calc-room__caption-block">
                   <p class="name-block">Размер экрана</p>
-                  <span class="dop"><i class="fa fa-arrow-right" aria-hidden="true"></i>Доп.параметры</span>
                 </div>
                 
                 <div class="range---value">
@@ -145,7 +194,7 @@
                 <div class="name-big-block">
                   <p class="name-block">Выберите шаг пикселя</p>
                   <span>
-                    <i class="fa fa-question-circle desc---step" aria-hidden="true" id="quest-pix-room"></i>
+                    <i class="fa fa-question-circle desc---step step-dop" aria-hidden="true" id="quest-pix-room"></i>
                   </span>
                 </div>
 
@@ -165,7 +214,7 @@
       
                 <div class="block-inline">
                   <p class="name-block">Гарантия</p>
-                  <a class="form-modal" href="#" data-toggle="modal" data-target="#tab1_modal1">Бесплатный выезд замерщика</a>
+                  <a class="form-modal" href="#" data-toggle="modal" data-target="#tab1_modal1">Заказать вызов специалиста</a>
                 </div>
       
                 <div class="warranty-room-big-block">
@@ -202,6 +251,7 @@
             </div>
 
             <div class="calc-room-option dop---option" id="calc-room-option">
+              <span class="dop-btn"><i class="fa fa-arrow-right" aria-hidden="true"></i>Доп.параметры</span>
                 <p class="name-block">Доп. параметры</p>
                 <div class="calc-room-option-big-block">
                   <div class="calc-room-option-block">
@@ -281,12 +331,12 @@
             </div>
           </form>
 
-          <div class="calc-room---monitor">
+          <div class="calc-room---monitor first">
             <div class="bg_video">
-              <video id="video" width="100%" height="100%" autoplay loop playsinline poster="./video/tab2.jpg">
-                <source src="./video/tab2.mp4" type="video/mp4"></source>
-                <source src="./video/tab2.ogv" type="video/ogg"/></source>
-                <source src="./video/tab2.webm" type="video/webm"></source>
+              <video id="video" width="100%" height="100%" autoplay loop playsinline >
+                <source src="./video/tab1.mp4" type="video/mp4"></source>
+                <source src="./video/tab1.ogv" type="video/ogg"/></source>
+                <source src="./video/tab1.webm" type="video/webm"></source>
               </video>
             </div>
             <div class="resize-container">
@@ -305,18 +355,7 @@
   
           <div class="calc-room-option-help" id="step-pix-block">
             <p class="name-block">Шаг пикселя</p>
-            <p>Чем меньше шаг пикселя, тем более качественное изображение можно отображать на светодиодном экране.
-  
-              Для того чтобы подобрать оптимальный шаг пикселя, в первую очередь необходимо понять место для установки экрана, во-вторых определить минимальное расстояние, с которого будет читаться изображение.
-  
-              Нет смысла выбирать шаг 3 мм, под экран с установкой на фасаде здания с минимальным расстоянием обзора 10 м.
-  
-              Минимальное расстояние (МР) от экрана до зрителя прямо пропорционально шагу пикселя (ШП).
-  
-              Например:
-              МР – 1 м = ШП – 1.2, 1.5 мм.
-              МР – 3 м = ШП – 3 мм.
-              МР – 10 м = ШП – 10мм.</p>
+            <p></p>
           </div>
         </div>
 
@@ -694,7 +733,6 @@
 
               <div class="calc-room__caption-block">
                 <p class="name-block">Размер экрана</p>
-                <span id="option-block-room" class="dop"><i class="fa fa-arrow-right" aria-hidden="true"></i>Доп.параметры</span>
               </div>
 
               <div class="range---value">
@@ -716,7 +754,7 @@
               <div class="name-big-block">
                 <p class="name-block">Выберите шаг пикселя</p>
                 <span>
-                  <i class="fa fa-question-circle desc---step" aria-hidden="true" id="quest-pix-room"></i>
+                  <i class="fa fa-question-circle desc---step step-dop" aria-hidden="true" id="quest-pix-room"></i>
                 </span>
               </div>
     
@@ -734,7 +772,7 @@
     
               <div class="block-inline">
                 <p class="name-block">Гарантия</p>
-                <a class="form-modal" href="#" data-toggle="modal" data-target="#tab2_modal1">Бесплатный выезд замерщика</a>
+                <a class="form-modal" href="#" data-toggle="modal" data-target="#tab2_modal1">Заказать вызов специалиста</a>
               </div>
     
               <div class="warranty-room-big-block">
@@ -776,6 +814,7 @@
             </div>
 
             <div class="calc-room-option dop---option" id="calc-room-option">
+                <span class="dop-btn"><i class="fa fa-arrow-right" aria-hidden="true"></i>Доп.параметры</span>
                 <p class="name-block">Доп. параметры</p>
                 <div class="calc-room-option-big-block">
                   <div class="calc-room-option-block">
@@ -1270,7 +1309,6 @@
 
               <div class="calc-room__caption-block">
                 <p class="name-block">Размер экрана</p>
-                <span class="dop"><i class="fa fa-arrow-right" aria-hidden="true"></i>Доп.параметры</span>
               </div>
 
               <div class="range---value">
@@ -1292,7 +1330,7 @@
               <div class="name-big-block">
                 <p class="name-block">Выберите шаг пикселя</p>
                 <span>
-                  <i class="fa fa-question-circle desc---step" aria-hidden="true" id="quest-pix-media"></i>
+                  <i class="fa fa-question-circle desc---step step-dop" aria-hidden="true" id="quest-pix-media"></i>
                 </span>
               </div>
     
@@ -1310,7 +1348,7 @@
     
               <div class="block-inline">
                 <p class="name-block">Гарантия</p>
-                <a class="form-modal" href="#" data-toggle="modal" data-target="#tab3_modal1">Бесплатный выезд замерщика</a>
+                <a class="form-modal" href="#" data-toggle="modal" data-target="#tab3_modal1">Заказать вызов специалиста</a>
               </div>
     
               <div class="warranty-room-big-block">
@@ -1347,6 +1385,7 @@
             </div>
 
             <div class="calc-room-option dop---option" id="calc-room-option">
+              <span class="dop-btn"><i class="fa fa-arrow-right" aria-hidden="true"></i>Доп.параметры</span>
               <p class="name-block">Доп. параметры</p>
               <div class="calc-room-option-big-block">
                 <div class="calc-room-option-block">

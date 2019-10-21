@@ -2,7 +2,7 @@
 @import '_libs/hamburger'
 @import 'fonts'
 
-$accent: #60C977
+$accent: #873259
 $text: #282e3d
 $grey: #545658
 $gutter: 30px
@@ -62,6 +62,7 @@ section
 	margin-top: 1em
 	cursor: pointer
 	outline: none
+	position: relative
 	&.btn-white
 		color: $text
 		font-weight: bold
@@ -77,6 +78,9 @@ section
 		&:hover
 			background: #ffffff
 			color: $text
+	&.btn-accent
+		background: $accent
+		color: #ffffff
 	&.btn-outline-accent
 		background: transparent
 		border: 1px solid $accent
@@ -91,6 +95,7 @@ section
 
 @import 'nav'
 @import 'carousel'
+@import 'about_home'
 @import 'catalog_home'
 @import 'work'
 @import 'advantages'
@@ -98,6 +103,7 @@ section
 @import 'steps'
 @import 'footer'
 @import 'modal'
+@import 'wp'
 
 
 input[type=range]

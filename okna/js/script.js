@@ -46,7 +46,6 @@ window.addEventListener("DOMContentLoaded", function() {
         h3.innerHTML = `${first} <span>${word3}</span> ${last}`;
     }
 
-
     let navbar = document.querySelector('.navbar');
     document.addEventListener('scroll', (e) => {
         if(window.scrollY > 60) {

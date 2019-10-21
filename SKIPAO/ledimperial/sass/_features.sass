@@ -1,0 +1,82 @@
+.front-page
+   .features
+      padding: $gutter*2 0
+      .flex-row
+         display: flex
+         justify-content: space-between
+      &__card
+         display: flex
+         align-items: flex-end
+         justify-content: flex-start
+         p
+            flex: 1 1 auto
+            margin-bottom: 0
+            line-height: 1
+            &:first-child
+               font-size: 5em
+            &:last-child
+               margin-bottom: 1em
+         &:nth-child(1)
+            min-width: 300px
+         &:nth-child(2)
+            min-width: 300px
+            p
+               max-width: 160px
+         &:nth-child(3)
+            min-width: 400px
+            p
+               max-width: 200px
+
+@media screen and (max-width: 1199.98px)
+   .front-page
+      .features
+         font-size: 0.9em
+         &__card
+            p
+               &:first-child
+                  font-size: 4em
+            &:nth-child(1)
+               min-width: 250px
+            &:nth-child(2)
+               min-width: 300px
+               p
+                  max-width: 160px
+            &:nth-child(3)
+               min-width: 350px
+
+@media screen and (max-width: 991.98px)
+   .front-page
+      .features
+         font-size: 0.9em
+         &__card
+            flex-direction: column
+            p
+               margin: 0 auto
+               margin-bottom: 0
+               text-align: center
+               width: auto !important
+               &:first-child
+                  font-size: 5em
+                  margin-bottom: .5em
+            &:nth-child(1)
+               min-width: auto
+            &:nth-child(2)
+               min-width: auto
+            &:nth-child(3)
+               min-width: auto
+
+@media screen and (max-width: 767.98px)
+   .front-page
+      .features
+         font-size: 1em
+         .flex-row
+            flex-direction: column !important
+         &__card
+            flex: 1 1 auto
+            flex-direction: column
+            margin-bottom: 2em
+            p
+               &:first-child
+                  font-size: 5em
+                  margin-bottom: 0.1em
+

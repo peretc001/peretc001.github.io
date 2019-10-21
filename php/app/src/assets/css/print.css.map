@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAMA,AAAA,KAAK,AAAC,CACH,KAAK,CAND,OAAO,CAWc,AAN5B,AAEG,KAFE,CAEF,EAAE,AAAC,CACA,OAAO,CAAE,KAAK,CACd,UAAU,CAAE,MAAM,CAClB,SAAS,CAAE,GAAG,CACd,WAAW,CAAE,IAAI,CAAG",
+    "sources": [
+        "../../../sass/print.sass"
+    ],
+    "names": [],
+    "file": "print.css"
+}

@@ -167,7 +167,7 @@ $html .= '
         Размер модуля
       </td>
       <td style="padding: 5px; text-align: right;">
-        256 х 128 мм
+        320 х 160 мм
       </td>
     </tr>
     <tr style="background: #f5f5f5">
