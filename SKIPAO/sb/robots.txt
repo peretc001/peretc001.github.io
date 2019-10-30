@@ -1,0 +1,3 @@
+User-agent: *
+Host: https://xn----7sbbdrdoch7arkclubkcfo.xn--p1ai/
+Sitemap: https://xn----7sbbdrdoch7arkclubkcfo.xn--p1ai/sitemap.xml

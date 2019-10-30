@@ -2,7 +2,7 @@
     <div id="app">
         <Modal v-if="showModal" @close="showModal = false" :text="textModal"/>
         
-        <div class="phone"><a href="tel:89181234455">8 (918) 123 44 55</a></div>
+        <div class="phone"><a href="tel:89952204088">8 (995) 220-40-88</a></div>
         <div class="step">
             <div class="step-current">{{currentStep}}</div>
             <div class="step-max">{{maxStep}}</div>

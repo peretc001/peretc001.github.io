@@ -208,7 +208,7 @@
             <li class="options-second-block-big-photo-block__item">
               <span class="parname">Контрастность</span>
               <span class="dotted"></span>
-              <span class="parval" id="cont-room">3000:1</span>
+              <span class="parval" id="cont-room">1000 Кнд/м<sup>2</sup></span>
             </li>
             <li class="options-second-block-big-photo-block__item">
               <span class="parname">Цветовая температура (°К)</span>
@@ -245,7 +245,7 @@
             <li class="options-second-block-big-photo-block__item">
               <span class="parname">Контрастность</span>
               <span class="dotted"></span>
-              <span class="parval" id="cont-street">3000:1</span>
+              <span class="parval" id="cont-room">5500 Кнд/м<sup>2</sup></span>
             </li>
             <li class="options-second-block-big-photo-block__item">
               <span class="parname">Цветовая температура (°К)</span>
@@ -257,42 +257,119 @@
       </div>
     </div>
 
-    <form class="callback__form" @submit.prevent="sendEmail()">
-      <div class="container form_request">
-        <p class="form_caption">Заполните контактные данные и получите скидку 5%</p>
-        <div class="row">
-            <input type="hidden" name="human" value="false">
-            <div class="col-md-4">
-              <input type="text" placeholder="Имя" v-model="name" @input="validName($event)" class="user" />
-            </div>
-            <div class="col-md-4">
-              <masked-input v-model="phone" mask="\+7\ (111) 111-1111" placeholder="Телефон" type="tel" class="phone" required/>
-            </div>
+    <div class="options-fourth-block-big">
+      <div class="options-fourth-block-big-photo">
+        <p class="caption-block caption-block-par">Параметры Экрана</p>
+        <ul class="options-fourth-block-big-block__list">
+          <li class="options-second-block-big-photo-block__item">
+            <span class="parname-fourth">Размер экрана</span>
+            <span class="dotted-fourth"></span>
+            <span class="parval-fourth option-first-size" id="size-screen-room">{{ h }} x {{ w }} см</span>
+          </li>
+          <li class="options-second-block-big-photo-block__item">
+            <span class="parname-fourth">Разрешение экрана</span>
+            <span class="dotted-fourth"></span>
+            <span class="parval-fourth first---step--size" id="resolution-screen-room">{{ calcPixel }} {{ pixel_h }} x {{ pixel_w }} px</span>
+          </li>
+          <li class="options-second-block-big-photo-block__item">
+            <span class="parname-fourth">Вес экрана кг</span>
+            <span class="dotted-fourth"></span>
+            <span class="parval-fourth" id="weight-screen-room">32.00</span>
+          </li>
+          <li class="options-second-block-big-photo-block__item">
+            <span class="parname-fourth">Энергопотребление экрана макс / сред, Вт</span>
+            <span class="dotted-fourth"></span>
+            <span class="parval-fourth" id="energo-screen-room">700 / 350</span>
+          </li>
+          <li class="options-second-block-big-photo-block__item">
+            <span class="parname-fourth">Контрастность</span>
+            <span class="dotted-fourth"></span>
+            <span class="parval-fourth" id="energo-screen-room" v-if="selected_where == 'inside'">1000 Кнд/м<sup>2</sup></span>
+            <span class="parval-fourth" id="energo-screen-room" v-if="selected_where == 'outside'">5500 Кнд/м<sup>2</sup></span>
+          </li>
+          <li class="options-second-block-big-photo-block__item">
+            <span class="parname-fourth">Рабочее напряжение</span>
+            <span class="dotted-fourth"></span>
+            <span class="parval-fourth" id="work-screen-room">220V/50Hz</span>
+          </li>
+          <li class="options-second-block-big-photo-block__item">
+            <span class="parname-fourth">Степень защиты IP</span>
+            <span class="dotted-fourth"></span>
+            <span class="parval-fourth" id="protected-screen-room">IP31</span>
+          </li>
+          <li class="options-second-block-big-photo-block__item">
+            <span class="parname-fourth">Угол обзора</span>
+            <span class="dotted-fourth"></span>
+            <span class="parval-fourth" id="corner-screen-room">H=140° / V=120°</span>
+          </li>
+          <li class="options-second-block-big-photo-block__item">
+            <span class="parname-fourth">Температурный режим работы</span>
+            <span class="dotted-fourth"></span>
+            <span class="parval-fourth" id="temp-screen-room">-10°C~+60°C, влажн. до 90%</span>
+          </li>
+          <li class="options-second-block-big-photo-block__item">
+            <span class="parname-fourth">Срок службы светодиодов</span>
+            <span class="dotted-fourth"></span>
+            <span class="parval-fourth" id="srok-screen-room">>100 000</span>
+          </li>
+        </ul>
+      </div>
+    </div>
 
-            <div class="col-md-4">
-              <button type="submit" class="btn callback__form__button">Заказать</button>
-            </div>
-
-            <div class="col-12">
-              <div class="robot" @click="checkRobot()">
-                <div class="robot__check">
-                  <svg viewBox="0 0 60 60">
-                      <line class="st0 line1" x1="4.5" y1="30.5" x2="29.5" y2="52.5"/>
-                      <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
-                  </svg>
-                </div>
-                <span>Согласен с условиями Политики конфиденциальности</span>
-              </div>
-            </div>
-
+    <div class="form-itog-block">
+      <div class="form-itog">
+        <p class="caption-block">Итог</p>
+        <div class="form-itog-item">
+          <span class="form-itog-item__caption">Монтаж</span>
+          <span class="form-itog-item__value option-first-settingup">{{ sum_setting * width * height }} &#x20bd;</span>
+        </div>
+        <div class="form-itog-item">
+          <span class="form-itog-item__caption">Стоимость экрана</span>
+          <span class="form-itog-item__value option-first-led" id="itog_room">{{ price - sum_led - sum_delivery - sum_setting * (width * height)  }} &#x20bd;</span>
+        </div>
+        <div class="form-itog-item">
+          <span class="form-itog-item__caption">Управляющий компьютер</span>
+          <span class="form-itog-item__value option-first-control">{{ sum_led }} &#x20bd;</span>
+        </div>
+        <div class="form-itog-item">
+          <span class="form-itog-item__caption">Доставка</span>
+          <span class="form-itog-item__value option-first-delivery">{{ sum_delivery }} &#x20bd;</span>
+        </div>
+        <div class="form-itog-item">
+          <span class="form-itog-item__caption">Итого</span>
+          <span class="form-itog-item__value option-first-price" id="itog_room_all">{{ price }} &#x20bd;</span>
         </div>
       </div>
-      <div class="responce_good">
-        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTIgNTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUyIDUyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIGNsYXNzPSIiPjxnPjxnPgoJPHBhdGggZD0iTTI2LDBDMTEuNjY0LDAsMCwxMS42NjMsMCwyNnMxMS42NjQsMjYsMjYsMjZzMjYtMTEuNjYzLDI2LTI2UzQwLjMzNiwwLDI2LDB6IE0yNiw1MEMxMi43NjcsNTAsMiwzOS4yMzMsMiwyNiAgIFMxMi43NjcsMiwyNiwyczI0LDEwLjc2NywyNCwyNFMzOS4yMzMsNTAsMjYsNTB6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBzdHlsZT0iZmlsbDojRkZGRkZGIj48L3BhdGg+Cgk8cGF0aCBkPSJNMzguMjUyLDE1LjMzNmwtMTUuMzY5LDE3LjI5bC05LjI1OS03LjQwN2MtMC40My0wLjM0NS0xLjA2MS0wLjI3NC0xLjQwNSwwLjE1NmMtMC4zNDUsMC40MzItMC4yNzUsMS4wNjEsMC4xNTYsMS40MDYgICBsMTAsOEMyMi41NTksMzQuOTI4LDIyLjc4LDM1LDIzLDM1YzAuMjc2LDAsMC41NTEtMC4xMTQsMC43NDgtMC4zMzZsMTYtMThjMC4zNjctMC40MTIsMC4zMy0xLjA0NS0wLjA4My0xLjQxMSAgIEMzOS4yNTEsMTQuODg1LDM4LjYyLDE0LjkyMiwzOC4yNTIsMTUuMzM2eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgc3R5bGU9ImZpbGw6I0ZGRkZGRiI+PC9wYXRoPgo8L2c+PC9nPiA8L3N2Zz4=" />
-        <p><b>Благодарим за заявку!</b></p>
-        <p>В ближайшее время наш менеджер свяжется с вами</p>
-      </div>
-    </form>
+    
+
+      <form class="callback__form" @submit.prevent="sendEmail()">
+        <div class="container form_request">
+          <p class="form_caption">Заполните контактные данные и получите скидку 5%</p>
+          <input type="hidden" name="human" value="false">
+          <input type="text" placeholder="Имя" v-model="name" @input="validName($event)" class="user" />
+          <input type="email" name="email" v-model="email" placeholder="Укажите e-mail" required>
+          <masked-input v-model="phone" mask="\+7\ (111) 111-1111" placeholder="Телефон" type="tel" class="phone" required/>
+
+          <div class="robot" @click="checkRobot()">
+            <div class="robot__check">
+              <svg viewBox="0 0 60 60">
+                  <line class="st0 line1" x1="4.5" y1="30.5" x2="29.5" y2="52.5"/>
+                  <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
+              </svg>
+            </div>
+            <span>Согласен с условиями Политики конфиденциальности</span>
+          </div>
+
+          <button type="submit" class="btn callback__form__button">Заказать</button>
+        </div>
+        <div class="responce_good">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTIgNTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUyIDUyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIGNsYXNzPSIiPjxnPjxnPgoJPHBhdGggZD0iTTI2LDBDMTEuNjY0LDAsMCwxMS42NjMsMCwyNnMxMS42NjQsMjYsMjYsMjZzMjYtMTEuNjYzLDI2LTI2UzQwLjMzNiwwLDI2LDB6IE0yNiw1MEMxMi43NjcsNTAsMiwzOS4yMzMsMiwyNiAgIFMxMi43NjcsMiwyNiwyczI0LDEwLjc2NywyNCwyNFMzOS4yMzMsNTAsMjYsNTB6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBzdHlsZT0iZmlsbDojRkZGRkZGIj48L3BhdGg+Cgk8cGF0aCBkPSJNMzguMjUyLDE1LjMzNmwtMTUuMzY5LDE3LjI5bC05LjI1OS03LjQwN2MtMC40My0wLjM0NS0xLjA2MS0wLjI3NC0xLjQwNSwwLjE1NmMtMC4zNDUsMC40MzItMC4yNzUsMS4wNjEsMC4xNTYsMS40MDYgICBsMTAsOEMyMi41NTksMzQuOTI4LDIyLjc4LDM1LDIzLDM1YzAuMjc2LDAsMC41NTEtMC4xMTQsMC43NDgtMC4zMzZsMTYtMThjMC4zNjctMC40MTIsMC4zMy0xLjA0NS0wLjA4My0xLjQxMSAgIEMzOS4yNTEsMTQuODg1LDM4LjYyLDE0LjkyMiwzOC4yNTIsMTUuMzM2eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgc3R5bGU9ImZpbGw6I0ZGRkZGRiI+PC9wYXRoPgo8L2c+PC9nPiA8L3N2Zz4=" />
+          <p><b>Благодарим за заявку!</b></p>
+          <p>В ближайшее время наш менеджер свяжется с вами</p>
+        </div>
+      </form>
+
+    </div>
 
     <div class="modal fade" id="tab1_modal2" tabindex="-1" role="dialog" aria-labelledby="Замер" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
@@ -409,8 +486,8 @@ export default {
             price: 68 },
           s6: {
             name: '3',
-            size: '320x160 мм',
-            pixel: '104x52 px',
+            size: '192x192 мм',
+            pixel: '64x64 px',
             price: 51 },
           s7: {
             name: '3.07',
@@ -656,7 +733,7 @@ export default {
           
         phone.style.border = ''
 
-        axios.post('/v2/thankyou.php', {
+        axios.post('http://calculator.ledimperial.ru/v2/thankyou.php', {
             data: { sendData }
           }).then(function (response) {
             if (response.data.answer === 'good') {
@@ -702,8 +779,9 @@ export default {
         email: this.emailModal,
         phone: this.phoneModal,
         sum_led: this.sum_led,
-        sum_setting: this.sum_setting,
+        sum_setting: this.sum_setting * this.width * this.height,
         sum_delivery: this.sum_delivery,
+        monitor: this.price - this.sum_led - this.sum_delivery - this.sum_setting * (this.width * this.height),
         commercial: 'yes'
       }
       
@@ -713,7 +791,7 @@ export default {
           
         phoneModal.style.border = ''
 
-        axios.post('/v2/thankyou.php', {
+        axios.post('http://calculator.ledimperial.ru/v2/thankyou.php', {
             data: { sendData }
           }).then(function (response) {
             if (response.data.answer === 'good') {
@@ -746,12 +824,16 @@ export default {
       if (this.pixel_h) {
         if (this.selected_where == 'outside' && this.selected_step == 's4') {
           this.pixel_h = (192/this.steps[this.selected_where][this.selected_step].name*this.height).toFixed()
+        } else if (this.selected_where == 'inside' && this.selected_step == 's6') {
+          this.pixel_h = (192/this.steps[this.selected_where][this.selected_step].name*this.height).toFixed()
         } else {
           this.pixel_h = (320/this.steps[this.selected_where][this.selected_step].name*this.height).toFixed()
         }
       }
       if (this.pixel_w) {
         if (this.selected_where == 'outside' && this.selected_step == 's4') {
+          this.pixel_w = (192/this.steps[this.selected_where][this.selected_step].name*this.width).toFixed()
+        } else if (this.selected_where == 'inside' && this.selected_step == 's6') {
           this.pixel_w = (192/this.steps[this.selected_where][this.selected_step].name*this.width).toFixed()
         } else {
           this.pixel_w = (160/this.steps[this.selected_where][this.selected_step].name*this.width).toFixed()
@@ -781,9 +863,11 @@ export default {
       if (this.sum_setting) {
         this.price += this.sum_setting*this.width*this.height
       }
-      if (this.check_delivery) {
+      if (this.check_delivery == true) {
         this.price += this.delivery*this.width*this.height
         this.sum_delivery = this.delivery*this.width*this.height
+      } else if (this.check_delivery == false) {
+        this.sum_delivery = 0
       }
       return this.price.toLocaleString()
     },

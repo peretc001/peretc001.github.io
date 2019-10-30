@@ -1,47 +1,45 @@
 .work
-   .work__carousel
+   .row
       position: relative
-      .slick-slide
-         margin-right: 1em
+   [class*="col-"]
+      text-align: center
+      margin-bottom: 2em
+      &:last-child
+         margin-bottom: 0
+
       .img_wrapper
          position: relative
-         padding-top: 56.25%
          width: 100%
+         min-height: 350px
          overflow: hidden
+         margin-bottom: 1em
          img
             position: absolute
-            left: 0
-            top: 0
+            left: 50%
+            top: 50%
+            transform: translateY(-50%) translateX(-50%)
             width: 100%
             height: auto
-            margin: 0 !important
-      .slick-next,
-      .slick-prev
-         position: absolute
-         top: 50%
-         transform: translateY(-50%)
-         width: 25px
-         z-index: 1
-         background-position: center
-         background-repeat: no-repeat
-         background-size: 10px
-         border-radius: 50%
-         font-size: 0
-         width: 35px
-         height: 35px
-         padding: 10px
-         outline: none
-         opacity: .5
-         transition: background, opacity .2s ease
-         border: none
-         cursor: pointer
+            margin: 0 auto
+            transition: transform .5s ease
          &:hover
-            opacity: 1
-            background-color: $accent
-      .slick-next
-         right: 3%
-         background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23202020'%2F%3E%3C%2Fsvg%3E")
-      .slick-prev
-         left: 3%
-         background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23202020'%2F%3E%3C%2Fsvg%3E")
-         
+            img
+               transform: translateY(-50%) translateX(-50%) scale(1.1)
+      
+      p
+         font-size: 1.2em
+         a
+            color: $text
+            font-weight: bold
+
+@media screen and (max-width: 1199.98px)
+   .work
+      [class*="col-"]
+         .img_wrapper
+            min-height: 300px
+
+@media screen and (max-width: 374.98px)
+   .work
+      [class*="col-"]
+         .img_wrapper
+            min-height: 200px

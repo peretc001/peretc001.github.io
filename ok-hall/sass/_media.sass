@@ -76,19 +76,7 @@
 		.recomendation__carousel__item
 			min-height: 400px
 		
-	.acquaintance
-		&__block
-			&__about
-				.manager
-					left: -110%
-					top: 55%
-					&.right
-						left: auto
-						right: -70%
-						top: 48%
-		&__img
-			p
-				font-size: 1rem
+
 	
 	.price
 		&__header
@@ -339,37 +327,19 @@
 				p
 					margin-left: 20px
 
-	.acquaintance
-		&__block
-			text-align: center
-			padding: $gutter*1.5 $gutter
-			&__about
-				.manager
-					position: relative
-					width: 50%
-					left: auto
-					top: auto
-					&.right
-						left: auto
-						right: auto
-						top: auto
-				h3
-					margin: 1rem 0
-					color: $blue
-					text-transform: uppercase
-					font-size: 20px
-					font-weight: bold
-				p
-					color: #fff
-					font-size: 1rem
-		&__img
-			.col-lg-4
-				padding: $gutter/2 0
-		&__text
-			background: #fff
-			color: $text
-			padding: $gutter/2 $gutter
-			margin: 0
+	// .acquaintance
+	// 	&__block
+	// 		flex-direction: column
+	// 		justify-content: center
+	// 		text-align: center
+	// 		&__author
+	// 			margin-right: auto
+	// 			margin: 0 auto
+	// 			margin-bottom: 2em
+	// 			&__img
+	// 				max-width: 220px
+	// 				margin: 0 auto
+	// 				margin-bottom: 2em
 
 	.price
 		.container
@@ -726,10 +696,12 @@
 					margin: 1em 0
 					padding: 0
 
-	.acquaintance
-		&__block
-			margin: 1rem 0
-			height: auto
+	// .acquaintance
+	// 	&__block
+	// 		margin: 1rem auto
+	// 		height: auto
+	// 		padding: 1em
+	// 		font-size: 0.9em
 
 	.banner
 		min-height: 1200px
@@ -902,7 +874,9 @@
 
 	.acquaintance
 		&__img
-			padding: $gutter*1.5 $gutter
+			padding: $gutter*1.5 $gutter/2
+			img
+				max-width: 80px
 		
 	.banner
 		&__list
@@ -1077,43 +1051,28 @@
 				&__item
 					p
 						font-size: 1.1em
-	.acquaintance
-		.container
-			max-width: 800px
-		&__block
-			&__about
-				.manager
-					left: -110%
-					top: 66%
-					&.right
-						top: 44%
-						right: -80%
-		&__img
-			&__item
-				p
-					font-size: 1em
+	// .acquaintance
+	// 	.container
+	// 		max-width: 800px
+	// 	&__block
+	// 		&__about
+	// 			.manager
+	// 				left: -110%
+	// 				top: 66%
+	// 				&.right
+	// 					top: 44%
+	// 					right: -80%
+		// &__img
+		// 	&__item
+		// 		p
+		// 			font-size: 1em
 
 @media screen and (min-width: 1200px) and (max-width: 1560px)
 	body
 		font-size: 13px
 	.container
 		max-width: 960px
-	.acquaintance
-		.container
-			max-width: 800px
-		&__block
-			&__about
-				.manager
-					width: 50%
-					left: -80%
-					top: 66%
-					&.right
-						top: 44%
-						right: -80%
-		&__img
-			&__item
-				p
-					font-size: 1em
+
 	.after
 		&__block
 			padding: $gutter 0

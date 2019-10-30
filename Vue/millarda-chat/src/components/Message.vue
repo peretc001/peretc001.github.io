@@ -1,11 +1,9 @@
 <template>
    <div>
-      <div v-if="preloader" class="msgItem preloader">
-         <p>Загрузка...</p>
-      </div>
-      <div class="msgItem" :class="{ 'show': preloader }">
+      <div v-if="preloader" class="msgItem preloader"></div>
+      <div v-else class="msgItem" :class="{ 'show': preloader, 'active': id }" >
          <div v-show="!preloader" v-for="(msgDay, i) in msg" :key="i">
-            <p class="msgItem__date">{{ msgDay }}</p>
+            <p class="msgItem__date">{{ msgDay[0].date }}</p>
             <div v-for="(msgItem, j) in msgDay" :key="j" class="msgItem__text" :class="{ 'author': msgItem.user }">
                <div class="msgItem__msg">
                   <div class="msgItem__time">{{ msgItem.created }}</div>

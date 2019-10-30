@@ -1,0 +1,3 @@
+User-agent: *
+Host: http://tokarnaya-rabota23.ru/
+Sitemap: http://tokarnaya-rabota23.ru/sitemap.xml

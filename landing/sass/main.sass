@@ -1,0 +1,213 @@
+@import '_libs/reset'
+@import '_libs/bootstrap_grid'
+@import '_libs/fonts'
+@import '_libs/hamburger'
+
+$accent: #B49C74
+$text: #282936
+$gutter: 30px
+$white: #fff
+
+$default-font: 'Roboto', sans-serif
+html
+	height: 100%
+body
+	height: 100%
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.2
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	opacity: 0
+	
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+	
+		&::-webkit-input-placeholder
+			text-transform: uppercase
+			color: rgba($text, .7) !important
+
+		&:-moz-placeholder
+			text-transform: uppercase
+			color: rgba($text, .7) !important
+
+		&::-moz-placeholder
+			text-transform: uppercase
+			color: rgba($text, .7) !important
+
+		&:-ms-input-placeholder
+			text-transform: uppercase
+			color: rgba($text, .7) !important
+
+.text-center
+	text-align: center !important
+	text-align-last: center !important
+	p
+		text-align: center !important
+		text-align-last: center !important
+a, 
+	&:hover, 
+	&:active, 
+	&:focus
+		text-decoration: none
+		outline: none
+b, strong
+	font-weight: bold
+
+img
+	max-width: 100%
+
+h1, h2, h3
+	font-family: 'Comfortaa', sans-serif
+	display: block
+	text-align: center
+
+@import 'navbar'
+@import 'header'
+@import 'portfolio'
+@import 'services'
+@import 'modal'
+
+
+@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1))
+	transition: $property $duration $ease
+
+.btn
+	position: relative
+	display: inline-block
+	cursor: pointer
+	outline: none
+	border: 0
+	vertical-align: middle
+	text-decoration: none
+	background: transparent
+	padding: 0
+	font-size: inherit
+	font-family: inherit
+	box-shadow: none !important
+	outline: none !important
+	&.btn-dark
+		background: $text
+		color: #ffffff
+		padding: .5em 1em
+		cursor: pointer
+		user-select: none
+		box-shadow: none
+		&:hover
+			background: darken($text, 10%)
+		&:disabled
+			background: lighten($text, 10%)
+	&.btn-outline-dark
+		background: transparent
+		color: $text
+		border: 1px solid $text
+		padding: .5em 1em
+		cursor: pointer
+		user-select: none
+		box-shadow: none
+		&:hover
+			background: $text
+			color: #ffffff
+
+	&.learn-more
+		width: 12rem
+		height: auto
+		box-shadow: none
+		outline: none
+		.circle
+			@include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1))
+			position: relative
+			margin: 0
+			width: 3rem
+			height: 3rem
+			background: $text
+			border-radius: 1.625rem
+			.icon
+				@include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1))
+				position: absolute
+				top: 0
+				bottom: 0
+				margin: auto
+				background: $white
+				&.arrow
+					@include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1))
+					left: 0.625rem
+					width: 1.125rem
+					height: 0.125rem
+					background: none
+					&::before
+						position: absolute
+						content: ''
+						top: -0.25rem
+						right: 0.0625rem
+						width: 0.625rem
+						height: 0.625rem
+						border-top: 0.125rem solid #fff
+						border-right: 0.125rem solid #fff
+						transform: rotate(45deg)
+		&.accent
+			opacity: 1
+			width: 15rem
+			.circle
+				background: $accent
+
+	.button-text
+		@include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1))
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		padding: 0.75rem 0
+		margin: 0 0 0 1.85rem
+		color: $text
+		font-weight: 700
+		line-height: 1.6
+		text-align: center
+		text-transform: uppercase
+
+	&:hover
+		.circle
+			width: 100%
+			.icon
+				&.arrow
+					background: $white
+					transform: translate(1rem, 0)
+		.button-text
+			color: $white
+
+@media screen and (max-width: 576.98px)
+	.btn
+		&.learn-more
+			margin: 0 3em
+			font-size: 0.9em
+			margin-bottom: 1em
+			&.accent
+
+.toTop
+	position: fixed
+	display: none
+	cursor: pointer
+	right: 15px
+	bottom: 15px
+	img
+		width: 30px
+		height: 30px
+		opacity: .5
+		transition: opacity .2s ease
+		&:hover
+			opacity: 1
+
+@media screen and (min-width: 1440px)
+	body
+		font-size: 18px
+
+body
+	opacity: 1

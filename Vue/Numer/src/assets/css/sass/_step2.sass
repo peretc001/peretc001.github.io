@@ -47,6 +47,11 @@
             cursor: pointer
          input:checked + label
             background: $dark
+         input:disabled + label
+            border: 1px solid $dark
+            border-left: none
+            opacity: .5
+            color: $dark
          &:first-child
             label
                border-left: 1px solid $general

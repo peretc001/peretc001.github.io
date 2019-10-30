@@ -8,7 +8,9 @@ let getChatList = () => {
    })
    .then(function (response) {
      return response.data
-   })
+   }).catch(function (error) {
+    return error
+  })
 }
 let getMsg = (context,data) => {
   return axios.get('https://millarda.ru/api/v1/get-chat-msg?uid=' + uid +'&id=' + data, {
@@ -28,18 +30,18 @@ let sendMsg = (context,data) => {
     return error
   })
 }
-let getMsgTime = (context,data) => {
-  return axios.get('https://millarda.ru/api/v1/load-chat-msg?uid=' + uid +'&id=' + data.id + '&time=' + data.time, {
-    headers: {'Content-Type': 'application/json'}
-  })
-  .then(function (response) {
-    return response.data
-  })
-}
+// let getMsgTime = (context,data) => {
+//   return axios.get('https://millarda.ru/api/v1/load-chat-msg?uid=' + uid +'&id=' + data.id + '&time=' + data.time, {
+//     headers: {'Content-Type': 'application/json'}
+//   })
+//   .then(function (response) {
+//     return response.data
+//   })
+// }
 
 export default {
    getChatList,
    getMsg,
    sendMsg,
-   getMsgTime
+   //getMsgTime
 }

@@ -1,0 +1,160 @@
+.portfolio
+   background: linear-gradient(to bottom, #d8dbe5 50px, #e8e9ed)
+   padding: $gutter 0
+   &__carousel
+      &__item
+         position: relative
+      .slick-slide
+         padding: 80px .5%
+         img
+            width: 90%
+            margin: 0 auto
+            transition: transform .5s ease
+         .learn-more
+            position: relative
+            opacity: 0
+            height: 0
+            overflow: hidden
+            transform: translateX(0)
+            transition: opacity 1s ease, height 1s ease, transform 1s ease
+         &.slick-active
+            img
+               transform: scale(1.2)
+            .learn-more
+               opacity: 1
+               height: auto
+               overflow: visible
+               transform: translateX(50px)
+      .slick-next,
+      .slick-prev
+         position: absolute
+         top: 50%
+         transform: translateY(-50%)
+         z-index: 1
+         background-position: center
+         background-repeat: no-repeat
+         background-size: 35px
+         background-color: transparent
+         font-size: 0
+         width: 35px
+         height: 35px
+         outline: none
+         border: none
+         cursor: pointer
+      .slick-next
+         right: 15%
+         background-image: url('data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ3Ny4xNzUgNDc3LjE3NSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDc3LjE3NSA0NzcuMTc1OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPGc+Cgk8cGF0aCBkPSJNMzYwLjczMSwyMjkuMDc1bC0yMjUuMS0yMjUuMWMtNS4zLTUuMy0xMy44LTUuMy0xOS4xLDBzLTUuMywxMy44LDAsMTkuMWwyMTUuNSwyMTUuNWwtMjE1LjUsMjE1LjUgICBjLTUuMyw1LjMtNS4zLDEzLjgsMCwxOS4xYzIuNiwyLjYsNi4xLDQsOS41LDRjMy40LDAsNi45LTEuMyw5LjUtNGwyMjUuMS0yMjUuMUMzNjUuOTMxLDI0Mi44NzUsMzY1LjkzMSwyMzQuMjc1LDM2MC43MzEsMjI5LjA3NXogICAiIGZpbGw9IiMwMDAwMDAiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K')
+      .slick-prev
+         left: 15%
+         background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDc3LjE3NSA0NzcuMTc1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NzcuMTc1IDQ3Ny4xNzU7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8cGF0aCBkPSJNMTQ1LjE4OCwyMzguNTc1bDIxNS41LTIxNS41YzUuMy01LjMsNS4zLTEzLjgsMC0xOS4xcy0xMy44LTUuMy0xOS4xLDBsLTIyNS4xLDIyNS4xYy01LjMsNS4zLTUuMywxMy44LDAsMTkuMWwyMjUuMSwyMjUgICBjMi42LDIuNiw2LjEsNCw5LjUsNHM2LjktMS4zLDkuNS00YzUuMy01LjMsNS4zLTEzLjgsMC0xOS4xTDE0NS4xODgsMjM4LjU3NXoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6IzAwMDAwMCI+PC9wYXRoPgo8L2c+PC9nPiA8L3N2Zz4=')
+
+@media screen and (max-width: 1199.98px)
+   .portfolio
+      &__carousel
+         .slick-next
+            right: 200px
+         .slick-prev
+            left: 200px
+
+@media screen and (max-width: 991.98px)
+   .portfolio
+      h3
+         margin-bottom: 1em
+      &__carousel
+         font-size: 0.9em
+         .slick-list.draggable
+            padding: 0 140px !important
+         .slick-slide
+            padding: 40px .8%
+            img
+               width: 100%
+            .learn-more
+               width: 10rem
+               transform: translateX(-40px)
+               .button-text
+                  padding: .85rem 0
+            &.slick-active
+               img
+                  transform: scale(1.3)
+               .learn-more
+                  transform: translateX(0px)
+         .slick-next
+            right: 100px
+         .slick-prev
+            left: 100px
+
+@media screen and (max-width: 767.98px)
+   .portfolio
+      &__carousel
+         .slick-slide
+            .learn-more
+               font-size: 0.9em
+               width: 10rem
+               transform: translateX(-80px)
+               .button-text
+                  padding: .9rem 0
+            &.slick-active
+               img
+                  transform: scale(1.3)
+               .learn-more
+                  transform: translateX(-40px)
+         
+         .slick-next
+            background-size: 25px
+         .slick-prev
+            background-size: 25px
+
+@media screen and (max-width: 576.98px)
+   .portfolio
+      h3
+         margin-bottom: 0
+      &__carousel
+         .slick-list.draggable
+            padding: 0 40px !important
+         
+         .slick-next
+            background-size: 25px
+            right: 10px
+         .slick-prev
+            background-size: 25px
+            left: 10px
+
+@media screen and (max-width: 499.98px)
+   .portfolio
+      h3
+         margin-bottom: 0
+      &__carousel
+         .slick-list.draggable
+            padding: 0px !important
+         .slick-slide
+            .learn-more
+               transform: translateX(-100px)
+            &.slick-active
+               .learn-more
+                  transform: translateX(-60px)
+         
+         .slick-next,
+         .slick-prev
+            display: none
+            background-size: 0
+
+@media screen and (min-width: 1440px)
+   .portfolio
+      h3
+         margin-bottom: 1em
+      &__carousel
+         .slick-slide
+            padding: 40px .5%
+         
+         .slick-next
+            right: 180px
+         .slick-prev
+            left: 180px
+
+@media screen and (min-width: 1921px)
+   .portfolio
+      h3
+         margin-bottom: 1em
+      &__carousel
+         .slick-slide
+            padding: 40px .3%

@@ -23,6 +23,7 @@
                           :value="i"
                           @input="changeSize(i)"
                           :checked="selected_size == i"
+                          :disabled="selected_forms.name == 'oak' && i == 'big'"
                         >
                         <label :for="i">{{size.text}}</label>
                       </div>
@@ -109,6 +110,11 @@ export default {
       if (value >= 2) {
         this.selected_size = 'big'
       }
+
+      if (this.selected_forms.name == 'oak' && this.range >= 1.5 ) {
+        this.range = 1.5
+      }
+
       this.selected_forms.width = parseFloat(150 * this.range).toFixed(2)
       this.selected_forms.height = parseFloat(200 * this.range).toFixed(2)
 

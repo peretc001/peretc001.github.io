@@ -65,24 +65,35 @@ img
    justify-content: space-between
    height: 100vh
    padding: 0
-   margin: 0
+   margin: 20px
+   border-radius: 7px
    .chatList
       flex: 1 1 auto
       max-width: 377px
-      padding: $gutter/2
       padding-bottom: 0
       overflow-x: scroll
+      height: 100%
+      border-bottom: 1px solid #eee
+      border-left: 1px solid #eee
+      border-radius: 7px 0 0 7px
       .chatListItem
+         padding: $gutter/2
          cursor: pointer
          flex: 1 1 50%
          display: flex
          align-items: flex-start
          justify-content: space-between
-         padding-bottom: 0.5em
-         margin-bottom: 0.5em
+         overflow-x: scroll
+         border-left: 1px solid #fff
          border-bottom: 1px solid #eee
+         border-top: 1px solid #fff
+         &:first-child
+            border-top: 1px solid #eee
+            border-radius: 7px 0 0 0
+         &.active
+            border: 1px solid $accent
+            border-right: 0
          &_img
-            border: 1px solid #000
             position: relative
             // padding-top: 56.25%
             width: 95px
@@ -109,15 +120,15 @@ img
             p
                margin: 0
             &__user
-               font-size: 1.1em
+               font-size: 1em
                b
                   display: block
-                  font-size: 1.5rem
+                  font-size: 1rem
                   margin-bottom: 0.5em
 
             &__price
                color: $accent
-               font-size: 1.5em
+               font-size: 1.2em
                font-weight: bold
 
          &.preloader
@@ -151,11 +162,13 @@ img
    .msgList
       height: 100%
       flex: 1 1 auto
-      border: 1px solid $accent
       box-sizing: border-box
       display: flex
       flex-direction: column
       justify-content: space-between
+      position: relative
+      border: 1px solid $accent
+      border-radius: 0 7px 7px 0
       .msgItem
          padding: $gutter/2
          height: 100%
@@ -203,19 +216,23 @@ img
                      text-align: left
                      background: #14bb65
                      color: #ffffff
+
          &.preloader
-            display: flex
-            align-items: center
-            justify-content: center
-            height: 100%
-            p
-               margin: auto
+            display: block
+            background-position: center
+            background-repeat: no-repeat
+            background-size: 30px
+            background-image: url('data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU4IDU4IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1OCA1ODsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxnPgoJPHBhdGggc3R5bGU9ImZpbGw6IzNCQTU4QjsiIGQ9Ik0yNSw5LjU4NkMxMS4xOTMsOS41ODYsMCwxOS42MjEsMCwzMmMwLDQuNTYyLDEuNTI0LDguODAzLDQuMTM1LDEyLjM0MyAgIEMzLjc5Miw0OC40MzMsMi44MDUsNTQuMTk0LDAsNTdjMCwwLDguNTcxLTEuMjAzLDE0LjM3Ny00LjcwOWMzLjIyNSwxLjM1OSw2LjgyNCwyLjEyMywxMC42MjMsMi4xMjNjMTMuODA3LDAsMjUtMTAuMDM1LDI1LTIyLjQxNCAgIFMzOC44MDcsOS41ODYsMjUsOS41ODZ6Ii8+Cgk8cGF0aCBzdHlsZT0iZmlsbDojMjI2QkFDOyIgZD0iTTU4LDIzLjQxNEM1OCwxMS4wMzUsNDYuODA3LDEsMzMsMWMtOS45NywwLTE4LjU3NSw1LjIzNC0yMi41ODksMTIuODA0ICAgQzE0LjUxOCwxMS4xNTMsMTkuNTUzLDkuNTg2LDI1LDkuNTg2YzEzLjgwNywwLDI1LDEwLjAzNSwyNSwyMi40MTRjMCw0LjczNS0xLjY0Miw5LjEyNC00LjQzNywxMi43NDMgICBDNTEuMTYyLDQ3LjQ0OCw1OCw0OC40MTQsNTgsNDguNDE0Yy0yLjgwNS0yLjgwNS0zLjc5Mi04LjU2Ni00LjEzNS0xMi42NTdDNTYuNDc2LDMyLjIxNyw1OCwyNy45NzYsNTgsMjMuNDE0eiIvPgoJPGNpcmNsZSBzdHlsZT0iZmlsbDojRkZGRkZGOyIgY3g9IjEyIiBjeT0iMzIiIHI9IjMiLz4KCTxjaXJjbGUgc3R5bGU9ImZpbGw6I0ZGRkZGRjsiIGN4PSIyNSIgY3k9IjMyIiByPSIzIi8+Cgk8Y2lyY2xlIHN0eWxlPSJmaWxsOiNGRkZGRkY7IiBjeD0iMzgiIGN5PSIzMiIgcj0iMyIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=')
+            animation: scale 800ms infinite
+            
+
 
       .msgAdd
          width: 100%
          box-sizing: border-box
          margin-top: 2em
          background: #f5f5f5
+         border-radius: 0 0 7px 0
          padding: $gutter/2
          .send_form
             display: flex
@@ -245,6 +262,14 @@ img
    &.show
       opacity: 0      
       transition: opacity 1s ease
+
+@keyframes scale
+   30%
+      background-size: 30px
+   50%
+      background-size: 40px
+   100%
+      background-size: 30px
 
 body
    opacity: 1

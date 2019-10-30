@@ -127,7 +127,7 @@ $(function() {
         }
     });
     function show_map() {
-        $('.map_wrap').append('<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A2b2645adef1c42a7f6b53bc12d990e669128eccace5f9e20718c722bbb4c3968&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>');
+        $('.map_wrap').append('<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad46d927338447ed1640d7e3cb8abd6750574ac7d875bb1a6d0a47b4e5d643447&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>');
         $('.photo').append(`
             <div class="container">
             <h4>Фотогалерея</h4>

@@ -35,7 +35,6 @@
       &__item
          width: 50%
          display: flex
-         align-items: center
          margin-bottom: 2em
          padding-right: 15px
          &:last-child
@@ -47,12 +46,18 @@
                color: $accent
                margin-bottom: 0
                margin-top: 0
-            &:last-child
-               border-left: 1px solid $accent
-               padding-left: 1em
-               margin-left: 1em
-            strong
-               display: block
+         &__text
+            border-left: 1px solid $accent
+            padding-left: 2em
+            margin-left: 1em
+            h3
+               font-size: 1.2em
+               font-weight: bold
+            ul
+               margin: 0
+               padding: 0
+               li
+                  list-style: none
    
 @media screen and (max-width: 1199.98px)
    .about
@@ -61,8 +66,8 @@
             p
                &:first-child
                   font-size: 4em
-               &:last-child
-                  font-size: 0.9em
+            &__text
+               font-size: 0.9em
 
 @media screen and (max-width: 991.98px)
    .about
@@ -76,12 +81,12 @@
       &__column
          &__item
             width: 100%
-            p
-               &:first-child
-               &:last-child
-                  font-size: 1em
             &:last-child
                margin-left: 0
+            p
+               font-size: 1em
+            &__text
+               font-size: 1em
 
 @media screen and (max-width: 576.98px)
    .about

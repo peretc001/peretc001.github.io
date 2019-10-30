@@ -78,6 +78,24 @@ window.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    if( document.querySelectorAll('.dropdown-item') ) {
+    //Вставляем значение селекта в селект :)
+    const selected = document.querySelectorAll('.dropdown-item');
+    //Если есть на странице boorstrab selectы
+        //Перебираем все
+        selected.forEach(item => {
+            //Вещаем клик
+            item.addEventListener('click', () => {
+                //Определяем родительский блок > первую ссылку
+                let block = item.closest(".dropdown").children[0];
+                let input = item.closest(".dropdown").children[1];
+                //Вставляем занчение в нее
+                block.innerHTML = item.textContent;
+                input.value = item.textContent;
+            })
+        })
+    }
+
     //Phone mask
     [].forEach.call( document.querySelectorAll('.tel'), function(input) {
         var keyCode;

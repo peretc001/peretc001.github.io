@@ -1,0 +1,61 @@
+.contact__form
+   padding: $gutter*2 0
+   background-size: cover
+   background-position: center
+   background-repeat: no-repeat
+   position: relative
+   &:before
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      bottom: 0
+      right: 0
+      background: #000
+      opacity: .7
+   .container
+      position: relative
+   h4
+      position: relative
+      color: #ffffff
+   .form-row
+      display: flex
+      align-items: center
+      justify-content: space-between
+      .form-control,
+      .btn
+         flex: 1 1 auto
+         width: 20%
+         margin: 0
+         border-radius: 0
+         box-shadow: none
+         outline: none
+      .form-control
+         border: 1px solid #ebebeb
+         border-right: 0
+         background: #ffffff
+
+
+   .robot
+      position: relative
+      justify-content: center
+      padding: 1em 0
+      &__check
+         svg
+            border: 1px solid #fff
+         .st0
+            stroke: #ffffff
+      span, a
+         color: #ffffff 
+
+@media screen and (max-width: 767.98px)
+   .contact__form
+      padding: $gutter*2 $gutter/2
+      .form-row
+         flex-direction: column
+         .form-control,
+         .btn
+            width: 100%
+         .form-control
+            border-right: 1px solid #ebebeb
+            margin-bottom: 1em
