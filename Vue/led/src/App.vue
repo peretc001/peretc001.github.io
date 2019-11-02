@@ -733,7 +733,7 @@ export default {
           
         phone.style.border = ''
 
-        axios.post('http://calculator.ledimperial.ru/v2/thankyou.php', {
+        axios.post('/v2/thankyou.php', {
             data: { sendData }
           }).then(function (response) {
             if (response.data.answer === 'good') {
@@ -791,7 +791,7 @@ export default {
           
         phoneModal.style.border = ''
 
-        axios.post('http://calculator.ledimperial.ru/v2/thankyou.php', {
+        axios.post('/v2/thankyou.php', {
             data: { sendData }
           }).then(function (response) {
             if (response.data.answer === 'good') {

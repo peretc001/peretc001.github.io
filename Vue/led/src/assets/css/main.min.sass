@@ -582,6 +582,7 @@ img
    .callback__form
       background: $accent
       padding: $gutter
+      margin: auto
       .container
          max-width: 900px
       [class*="col-"]
@@ -671,7 +672,10 @@ img
       opacity: 0
       transition: opacity 1s ease
       &.done
-         display: block
+         display: flex
+         flex-direction: column
+         align-items: center
+         justify-content: center
       &.show
          opacity: 1
       img
@@ -681,6 +685,9 @@ img
          margin-bottom: 1em
          b
             font-size: 1.6em
+   .responce_good
+      height: 100%
+
    .responce_good_modal
       padding: 20px
       color: $text

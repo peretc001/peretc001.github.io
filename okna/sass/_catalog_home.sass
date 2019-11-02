@@ -28,6 +28,7 @@
       .wp-block-column
          flex: 1 1 50%
          font-size: 0.8em
+         margin-bottom: 0
          &:first-child
             text-align: left
          &:last-child
@@ -47,9 +48,24 @@
       font-weight: bold
       margin-bottom: 0
    
+   .wp-block-button
+      display: inherit
+      padding: inherit
+      margin: inherit
+      border: inherit
+      background: inherit
+   
    .wp-block-button__link
-      color: inherit
+      background: transparent
+      padding: .5em 1em
+      border: 1px solid $accent
+      border-radius: 4px
+      color: $accent
       margin: 0
+      font-size: 1.2em
+      &:hover
+         background: $accent
+         color: #ffffff
 
 @media screen and (max-width: 1199.98px)
    .catalog__home

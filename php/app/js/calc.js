@@ -150,7 +150,7 @@ $(function() {
       }).done(function(response) {
 
          let result = $.parseJSON(response);
-         // console.log(result);
+         console.log(result);
          
          //Цена и площадь
          $('.calc__ajax__form--first .result-room-block-price__price').html(prettify(result.price) + ' Р');
@@ -158,10 +158,8 @@ $(function() {
          
          //Ширина 
          let rangeWidth = $('.rangeWidthRoom').val();
-         console.log(rangeWidth)
          //Высота
          let rangeHeight = $('.rangeHeightRoom').val();
-         console.log(rangeWidth)
          $('.videoSize').html(rangeWidth + ' М x ' + rangeHeight + ' M');
          $('.videoSquare').html(result.square + ' М <sup>2</sup>');
 
@@ -173,6 +171,9 @@ $(function() {
          $('.option-first-size').html(rangeWidth*1000 + ' x ' + rangeHeight*1000 + ' мм');
          let step = $('.select-first-step').val();
          $('.option-first-step').html(result.step + ' мм');
+         $('.option-first-step__size').html(result.step_size);
+         $('.option-first-step__ratio').html(result.step_ratio);
+         $('.option-first-step__col').html(result.col);
          let garanty = result.garanty;
          let formYear = 'год';
          if (garanty > 1) {
@@ -202,7 +203,7 @@ $(function() {
          $('.modal-first-square-input').val(result.square + ' М <sup>2</sup>');
 
 
-         $('.commercial--first').attr('href', './pdf.php?tab=1&step_name='+ result.step_name 
+         $('.commercial--first--input').val('/pdf.php?tab=1&step_name='+ result.step_name 
          +'&width='+ rangeWidth*1000 
          +'&height='+ rangeHeight*1000 
          +'&pixel_w='+ result.pixel_w 
@@ -215,21 +216,9 @@ $(function() {
          +'&control='+ result.control
          +'&delivery='+ result.delivery
          +'&price='+ result.price
-         );
-
-         $('.commercial--first--input').val('./pdf.php?tab=1&step_name='+ result.step_name 
-         +'&width='+ rangeWidth*1000 
-         +'&height='+ rangeHeight*1000 
-         +'&pixel_w='+ result.pixel_w 
-         +'&pixel_y='+ result.pixel_y 
-         +'&step='+ result.step 
-         +'&garanty='+ garanty
-         +'&square='+ result.square
-         +'&settingup='+ result.settingup
-         +'&led='+ result.led
-         +'&control='+ result.control
-         +'&delivery='+ result.delivery
-         +'&price='+ result.price
+         +'&step_size='+ result.step_size
+         +'&step_ratio='+ result.step_ratio
+         +'&col='+ result.col
          );
          
 
@@ -347,6 +336,9 @@ $(function() {
          $('.option-second-size').html(rangeWidth*1000 + ' x ' + rangeHeight*1000 + ' мм');
          let step = $('.select-second-step').val();
          $('.option-second-step').html(result.step + ' мм');
+         $('.option-second-step__size').html(result.step_size);
+         $('.option-second-step__ratio').html(result.step_ratio);
+         $('.option-second-step__col').html(result.col);
          let garanty = result.garanty;
          let formYear = 'год';
          if (garanty > 1) {
@@ -375,22 +367,7 @@ $(function() {
          $('.modal-second-price-input').val(prettify(result.price) + ' &#x20bd;');
          $('.modal-second-square-input').val(result.square + ' М <sup>2</sup>');
 
-         $('.commercial--second').attr('href', './pdf.php?tab=2&step_name='+ result.step_name 
-         +'&width='+ rangeWidth*1000 
-         +'&height='+ rangeHeight*1000 
-         +'&pixel_w='+ result.pixel_w 
-         +'&pixel_y='+ result.pixel_y 
-         +'&step='+ result.step 
-         +'&garanty='+ garanty 
-         +'&square='+ result.square
-         +'&settingup='+ result.settingup
-         +'&led='+ result.led
-         +'&control='+ result.control
-         +'&delivery='+ result.delivery
-         +'&price='+ result.price
-         );
-
-         $('.commercial--second--input').val('./pdf.php?tab=2&step_name='+ result.step_name 
+         $('.commercial--second--input').val('/pdf.php?tab=2&step_name='+ result.step_name 
          +'&width='+ rangeWidth*1000 
          +'&height='+ rangeHeight*1000 
          +'&pixel_w='+ result.pixel_w 
@@ -403,6 +380,9 @@ $(function() {
          +'&control='+ result.control
          +'&delivery='+ result.delivery
          +'&price='+ result.price
+         +'&step_size='+ result.step_size
+         +'&step_ratio='+ result.step_ratio
+         +'&col='+ result.col
          );
 
       }).fail(function(xhr, ajaxOptions, thrownError){
@@ -515,6 +495,8 @@ $(function() {
          $('.option-third-size').html(rangeWidth*1000 + ' x ' + rangeHeight*1000 + ' мм');
          let step = $('.select-third-step').val();
          $('.option-third-step').html(result.step + ' мм');
+         $('.option-third-step__ratio').html(result.step_ratio);
+         $('.option-third-step__col').html(result.col);
          let garanty = result.garanty;
          let formYear = 'год';
          if (garanty > 1) {
@@ -543,7 +525,7 @@ $(function() {
          $('.modal-third-price-input').val(prettify(result.price) + ' &#x20bd;');
          $('.modal-third-square-input').val(result.square + ' М <sup>2</sup>');
 
-         $('.commercial--third').attr('href', './pdf.php?tab=3&step_name='+ result.step_name 
+         $('.commercial--third--input').val('/pdf.php?tab=3&step_name='+ result.step_name 
          +'&width='+ rangeWidth*1000 
          +'&height='+ rangeHeight*1000 
          +'&pixel_w='+ result.pixel_w 
@@ -556,21 +538,9 @@ $(function() {
          +'&control='+ result.control
          +'&delivery='+ result.delivery
          +'&price='+ result.price
-         );
-
-         $('.commercial--third--input').val('./pdf.php?tab=3&step_name='+ result.step_name 
-         +'&width='+ rangeWidth*1000 
-         +'&height='+ rangeHeight*1000 
-         +'&pixel_w='+ result.pixel_w 
-         +'&pixel_y='+ result.pixel_y 
-         +'&step='+ result.step 
-         +'&garanty='+ garanty
-         +'&square='+ result.square
-         +'&settingup='+ result.settingup
-         +'&led='+ result.led
-         +'&control='+ result.control
-         +'&delivery='+ result.delivery
-         +'&price='+ result.price
+         +'&step_size='+ result.step_size
+         +'&step_ratio='+ result.step_ratio
+         +'&col='+ result.col
          );
 
       }).fail(function(xhr, ajaxOptions, thrownError){

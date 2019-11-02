@@ -1,0 +1,219 @@
+.mobile-menu
+   display: none
+   position: sticky
+   top: 0
+   width: 100%
+
+.menu
+   width: 100%
+   z-index: 1
+   padding: 0
+   background: #ffffff
+   position: sticky
+   top: 0
+   width: 100%
+
+   .menu-nav
+      margin: 0
+      padding: 0
+      display: flex
+      align-items: center
+      justify-content: space-between
+      li
+         list-style: none
+         display: block
+      a
+         color: $text
+         font-size: 1em
+   
+   .logo
+      display: block
+      width: 105px
+      height: 60px
+      backgroudn-size: cover
+      background-position: center
+      background-repeat: no-repeat
+      background-image: url('../img/logo.svg')
+
+   .has-children
+      position: relative
+      overflow: hidden
+      padding: 1em 0
+      .sub-menu
+         opacity: 0
+         z-index: -1
+         background: #ffffff
+         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+         padding: $gutter/3 $gutter
+         margin: 0
+         text-align: left
+         min-width: 260px
+         position: absolute
+         left: -$gutter/2
+         bottom: 0
+         width: 100%
+         transform: translateY(110%)
+         transition: transform .3s ease, opacity .1s ease
+      &:hover
+         overflow: visible
+         .sub-menu
+            z-index: 1
+            opacity: 1
+            transform: translateY(100%)
+      &:nth-child(3)
+         .sub-menu
+            min-width: 340px
+      &:nth-child(4)
+         .sub-menu
+            min-width: 150px
+      &:nth-child(5)
+         .sub-menu
+            min-width: 240px
+   
+   .sub-menu
+      li
+         list-style: none
+         padding: 0
+         margin: 0
+         a
+            color: $text
+            display: block
+            padding-top: 0.3em
+            padding-bottom: 0.3em
+            font-size: 0.9em
+            &:hover
+               text-decoration: underline
+
+   .phone
+      position: relative
+      color: $text
+      padding-left: 2em
+   
+.lang
+   display: flex
+   align-items: center
+   justify-content: flex-end
+   a
+      img
+         width: $gutter
+         height: auto
+      &:first-child
+         margin-right: 0.5em
+
+@media screen and (max-width: 1199.98px)
+   .menu
+      font-size: 0.9em
+      .container
+         max-width: 965px
+
+
+@media screen and (max-width: 991.98px)
+   .menu
+      position: fixed
+      left: 0
+      top: 50px
+      height: 0
+      overflow-y: scroll
+      transform: translateX(-100%)
+      font-size: 1em
+      &.is-opened
+         height: 95vh
+         transition: transform .5s ease
+         transform: translateX(0)
+         &.is-close
+            transition: transform .5s ease
+            transform: translateX(-100%)
+      .menu-nav
+         padding: 20px 0 30px 0
+         max-width: 300px
+         margin: 0 auto
+         flex-direction: column
+         justify-content: flex-start
+         align-items: flex-start
+         li
+            a
+               padding: 0.3em 0
+      
+      .has-children
+         padding: 0
+         overflow: visible
+         .sub-menu
+            padding: 0
+            margin: 0.5em
+            min-width: 250px !important
+            position: relative
+            border: none
+            box-shadow: none
+            left: 0
+            top: 0
+            bottom: auto
+            transform: translateY(0)
+            opacity: 1
+            z-index: 1
+            transition: none
+         &:hover
+            .sub-menu
+               z-index: 1
+               opacity: 1
+               transform: translateY(0)
+
+      
+      .logo
+         display: none
+
+      .phone
+         display: none
+
+   .mobile-menu
+      display: flex
+      align-items: center
+      justify-content: space-between
+      padding-right: 15px
+      background: #ffffff
+      a
+         color: $text
+      .hamburger
+         .hamburger-box
+            width: 30px
+            height: 20px
+            .hamburger-inner, 
+            .hamburger-inner:after, 
+            .hamburger-inner:before
+               width: 30px
+               height: 2px
+               background-color: $text
+            &.is-active
+               .hamburger-box
+                  .hamburger-inner, 
+                  .hamburger-inner:after, 
+                  .hamburger-inner:before
+                     background-color: $text
+         &:hover
+            opacity: 1
+      .logo
+         img
+            width: 80px
+            height: auto
+
+@media screen and (max-width: 576.98px)
+   .mobile-menu
+      .phone
+         display: block
+         width: 1.5em
+         height: 1.5em
+         position: relative
+         margin: 0
+         overflow: hidden
+         color: #ffffff
+         &:before
+            content: ''
+            position: absolute
+            left: 0
+            top: 50%
+            transform: translateY(-50%)
+            width: 1.5em
+            height: 1.5em
+            background-size: 1.5em
+            background-position: left
+            background-repeat: no-repeat
+            background-image: url('data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgMzIuNjY3IDMyLjY2NyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzIuNjY3IDMyLjY2NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxwYXRoIGQ9Ik0xNi4zMzMsMEM3LjMyNywwLDAsNy4zMjcsMCwxNi4zMzRjMCw5LjAwNiw3LjMyNiwxNi4zMzMsMTYuMzMzLDE2LjMzM2MwLjU1NywwLDEuMDA3LTAuNDUxLDEuMDA3LTEuMDA2ICAgYzAtMC41NTYtMC40NS0xLjAwNy0xLjAwNy0xLjAwN2MtNy44OTYsMC0xNC4zMTgtNi40MjQtMTQuMzE4LTE0LjMxOWMwLTcuODk2LDYuNDIyLTE0LjMyLDE0LjMxOC0xNC4zMiAgIGM3Ljg5NiwwLDE0LjMxNyw2LjQyNCwxNC4zMTcsMTQuMzJjMCwzLjI5OS0xLjc1Niw2LjU3MS00LjI2OSw3Ljk1NWMtMC45MTMsMC41MDItMS45MDMsMC43NTEtMi45NTksMC43NjEgICBjMC42MzQtMC4zNzgsMS4xODMtMC44ODcsMS41OTEtMS41MzFjMC4wOC0wLjEyMSwwLjE4Ni0wLjIyNiwwLjIzOC0wLjM1OWMwLjMyOC0wLjc4OSwwLjM1Ny0xLjY4NCwwLjU1NS0yLjUxNiAgIGMwLjI0My0xLjA2Ni00LjY1OC0zLjE0My01LjA4NC0xLjgxNWMtMC4xNTQsMC40OTMtMC4zOSwyLjA0OC0wLjY5OSwyLjQ1OGMtMC4yNzUsMC4zNjUtMC45NTMsMC4xOTMtMS4zNzctMC4xNjggICBjLTEuMTE3LTAuOTUyLTIuMzY0LTIuMzUyLTMuNDU4LTMuNDU3bDAuMDAyLTAuMDAxYy0wLjAyOC0wLjAyOS0wLjA2Mi0wLjA2Mi0wLjA5Mi0wLjA5MWMtMC4wMzEtMC4wMy0wLjA2Mi0wLjA2Mi0wLjA5My0wLjA5MmwwLDAgICBjLTEuMTA2LTEuMDkzLTIuNTA2LTIuMzM4LTMuNDU3LTMuNDU4Yy0wLjM2LTAuNDI0LTAuNTM0LTEuMS0wLjE2OC0xLjM3NmMwLjQxLTAuMzEsMS45NjYtMC41NDMsMi40NTgtMC42OTggICBjMS4zMjYtMC40MjUtMC43NS01LjMyOS0xLjgxNi01LjA4NGMtMC44MzIsMC4xOTUtMS43MjcsMC4yMjUtMi41MTYsMC41NTJjLTAuMTM0LDAuMDU2LTAuMjM4LDAuMTYtMC4zNTksMC4yNCAgIGMtMi43OTksMS43NzUtMy4xNiw2LjA4My0wLjQyOCw5LjI5MmMxLjA0MSwxLjIyOCwyLjEyNywyLjQxNiwzLjI0NSwzLjU3NmwtMC4wMDYsMC4wMDRjMC4wMzEsMC4wMzEsMC4wNjMsMC4wNiwwLjA5NSwwLjA5ICAgYzAuMDMsMC4wMzEsMC4wNTksMC4wNjIsMC4wODgsMC4wOTVsMC4wMDYtMC4wMDZjMS4xNiwxLjExOCwyLjUzNSwyLjc2NCw0Ljc2OSw0LjI1NWM0LjcwMywzLjE0MSw4LjMxMiwyLjI2NCwxMC40MzgsMS4wOTggICBjMy42Ny0yLjAyMSw1LjMxMi02LjMzOCw1LjMxMi05LjcxOUMzMi42NjcsNy4zMjcsMjUuMzM5LDAsMTYuMzMzLDB6IiBmaWxsPSIjMDAwMDAwIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==')

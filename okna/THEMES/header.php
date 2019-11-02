@@ -26,18 +26,21 @@
         </button>
         
         <div class="collapse navbar-collapse" id="navbarToggle">
-      <?php wp_nav_menu(array(
-        'theme_location'  => 'main_menu',
-        'container'       => 'ul',
-        'menu_class'      => 'navbar-nav m-auto',
-        'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
-        'depth'           => 0,
-        'walker'		  => new Optimazed_Walker_Nav_Menu()
-        )); 
-      ?>
-          <a class="nav-link phone" href="tel:123">8 (918) 123-34-56</a>
+          <?php wp_nav_menu(array(
+            'theme_location'  => 'main_menu',
+            'container'       => 'ul',
+            'menu_class'      => 'navbar-nav m-auto',
+            'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
+            'depth'           => 3,
+            'walker'		  => new Optimazed_Walker_Nav_Menu()
+            )); 
+          ?>
+          <a class="nav-link phone" href="tel:+7-861-779-26-77">8 (861) 779-26-77</a>
+            <span class="callback_arrow">
+              <a class="callback" data-toggle="modal" data-target="#callback">Заказать звонок</a>
+            </span>
         </div>
     </div>
   </nav>
-  <div class="divider"></div>
+  <?php echo !is_front_page() ? '<div class="divider"></div>' : ''; ?>
 		

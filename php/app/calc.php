@@ -22,6 +22,17 @@ if ($id == 1) {
       '4'    =>   ['price' => 868],
       '5'    =>   ['price' => 770]
    ];
+   // $stepsRatio = [
+   //    '1.25' =>   ['ratio' => '256x128'], 
+   //    '1.66' =>   ['ratio' => '192x96'], 
+   //    '1.83' =>   ['ratio' => '174x87'], 
+   //    '2'    =>   ['ratio' => '160x80'], 
+   //    '2.5'  =>   ['ratio' => '128x64'], 
+   //    '3.07' =>   ['ratio' => 1075], 
+   //    '3'    =>   ['ratio' => 1100], 
+   //    '4'    =>   ['ratio' => 868],
+   //    '5'    =>   ['ratio' => 770]
+   // ];
 } else if ($id == 2) {
    //Ценна ШАГА для УЛИЦЫ в долларах
    $stepsPrice = [
@@ -153,13 +164,23 @@ $calc = (($col*$step)*$warranty)*$dollor + $dop + $delivery + $settingup;
 $square = $width*$height;
 
 
+if ($step_id == 3 || $step_id == 6) {
+   $w = $h = 192;
+} else {
+   $w = 320;
+   $h =  160;
+}
 
-$pixel_w = 320/$step_id*$x;
-$pixel_y = 160/$step_id*$y;
+$pixel_w = $w/$step_id*$x*6;
+$pixel_y = $h/$step_id*$y*3;
 
 $pixel = $pixel_w .' x '. $pixel_y;
 
-$step_name = 'P-'. $step_id .'мм-'. round($pixel_w, 0) .'x'. round($pixel_y, 0) .'мм';
+$step_name = 'P'. $step_id .'-'. round($w/$step_id, 0) .'x'. round($h/$step_id, 0) .'мм';
+
+$step_size = $w .' x '. $h .' мм';
+$step_ratio = round($w/$step_id, 0) .' x '. round($h/$step_id, 0) .' мм';
+
 
 $response = [
    'led' => round($led, 0),
@@ -172,6 +193,9 @@ $response = [
    'step_name' => $step_name,
    'pixel_w' => round($pixel_w, 0),
    'pixel_y' => round($pixel_y, 0),
+   'step_size' => $step_size,
+   'step_ratio' => $step_ratio,
+   'col' => $col,
    'garanty' => $garanty
 ];
 echo json_encode($response);

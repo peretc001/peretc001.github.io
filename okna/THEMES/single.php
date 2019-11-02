@@ -16,8 +16,7 @@ get_header(); ?>
 ?>
 	<section class="single_page">
 		<div class="container">
-			<h1 class="h2__title">
-				<?php echo the_title(); ?></h1>
+			<h1 class="h2_title"><?php echo the_title(); ?></h1>
 			<?php echo the_content(); ?>
 		</div>
 	</section>

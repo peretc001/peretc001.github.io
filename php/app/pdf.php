@@ -16,31 +16,51 @@ if ( $garanty > 1) {
   $year = 'a';
 }
 $_GET['square']      ?   $square = htmlspecialchars(trim($_GET['square'])) : '';
-$_GET['settingup']   ?   $settingup = htmlspecialchars(trim($_GET['settingup'])) : '';
-$_GET['led']         ?   $led = htmlspecialchars(trim($_GET['led'])) : '';
-$_GET['control']     ?   $control = htmlspecialchars(trim($_GET['control'])) : '';
-$_GET['delivery']    ?   $delivery = htmlspecialchars(trim($_GET['delivery'])) : '';
-$_GET['price']       ?   $price = htmlspecialchars(trim($_GET['price'])) : '';
+$_GET['settingup']   ?   $settingup = htmlspecialchars(trim($_GET['settingup'])) : '0';
+$_GET['led']         ?   $led = htmlspecialchars(trim($_GET['led'])) : '0';
+$_GET['control']     ?   $control = htmlspecialchars(trim($_GET['control'])) : '0';
+$_GET['delivery']    ?   $delivery = htmlspecialchars(trim($_GET['delivery'])) : '0';
+$_GET['price']       ?   $price = htmlspecialchars(trim($_GET['price'])) : '0';
+$_GET['step_size']   ?   $step_size = htmlspecialchars(trim($_GET['step_size'])) : '';
+$_GET['step_ratio']  ?   $step_ratio = htmlspecialchars(trim($_GET['step_ratio'])) : '';
+$_GET['col']         ?   $col = htmlspecialchars(trim($_GET['col'])) : '';
+
+$settingup != '' ? $settingup : $settingup = '0';
+$led != '' ? $led : $led = '0';
+$control != '' ? $control : $control = '0';
+$delivery != '' ? $delivery : $delivery = '0';
 
 switch ($tab) {
   case 1:
       $tab_name = 'Видеоэкран для помещения';
+      $contrast = '1000';
+      $size = '960 х 960 мм';
+      $smd1 = 'SMD 3in1 1RGB';
+      $smd2 = 'NationStar SMD2121';
       break;
   case 2:
       $tab_name = 'Видеоэкран для улицы';
+      $contrast = '5500';
+      $size = '960 х 960 мм';
+      $smd1 = 'SMD';
+      $smd2 = 'SMD 1921';
       break;
   case 3:
       $tab_name = 'Медиафасад';
+      $contrast = '7000';
+      $size = '1000 х 1000 мм';
+      $smd1 = 'DIP 1R1G1B';
+      $smd2 = 'Xinda';
       break;
 }
 
 
 
 $html .= '
+  <div class="general">
   <h2 style="text-align: center"><b>Коммерческое предложение<br>ООО "LedImperial"</b></h2>
   <p><b>'. $tab_name .'</b><br>
   Модуль: <b>'. $step_name .'</b></p>
-  <p style="text-align: justify; text-align-last: left;">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Грамматики переписывается одна маленькая что осталось, назад взобравшись свой. Жизни наш деревни инициал если послушавшись дороге сбить от всех меня себя всемогущая обеспечивает эта маленький текста, домах вопроса несколько заглавных? Все, безорфографичный текстами, заголовок дал даже, курсивных ее рот ведущими путь вскоре послушавшись. Моей решила языком силуэт, собрал власти несколько, коварных свое продолжил рыбными не, дорогу переписывается. Языком, маленькая, пояс которое рыбными назад но единственное щеке она текстами рот гор родного сих предупреждал составитель домах! Большого грустный единственное меня строчка пустился переписали даже, страна до домах, дал пояс рыбными букв ведущими.</p>
   <br>
   <table style="width: 100%;">
     <tr>
@@ -72,13 +92,13 @@ $html .= '
   </div>
         
   <h2 style="page-break-before:always;">Параметры кабинета</h2>
-  <table style="width: 75%;cellspacing: 0; cellpadding: 0; border-spacing: 0">
+  <table style="width: 100%;cellspacing: 0; cellpadding: 0; border-spacing: 0">
     <tr style="background: #f5f5f5">
       <td style="padding: 5px;">
         Размер кабинета
       </td>
       <td style="padding: 5px; text-align: right;">
-        768 x 768 мм
+        '. $size .'
       </td>
     </tr>
     <tr>
@@ -137,7 +157,7 @@ $html .= '
   </div>
 
   <h2>Параметры модуля</h2>
-  <table style="width: 75%;cellspacing: 0; cellpadding: 0; border-spacing: 0">
+  <table style="width: 100%;cellspacing: 0; cellpadding: 0; border-spacing: 0">
     <tr style="background: #f5f5f5">
       <td style="padding: 5px;">
         Шаг пикселя
@@ -151,7 +171,7 @@ $html .= '
         Конфигурация светодиодов
       </td>
       <td style="padding: 5px; text-align: right;">
-        SMD 3in1 1RGB
+        '. $smd1 .'
       </td>
     </tr>
     <tr style="background: #f5f5f5">
@@ -159,7 +179,7 @@ $html .= '
         Производитель светодиодов
       </td>
       <td style="padding: 5px; text-align: right;">
-        NationStar SMD2121
+      '. $smd2 .'
       </td>
     </tr>
     <tr>
@@ -167,7 +187,7 @@ $html .= '
         Размер модуля
       </td>
       <td style="padding: 5px; text-align: right;">
-        320 х 160 мм
+      '. $step_size .'
       </td>
     </tr>
     <tr style="background: #f5f5f5">
@@ -175,7 +195,7 @@ $html .= '
         Разрешение модуля
       </td>
       <td style="padding: 5px; text-align: right;">
-        32 х 64 px
+      '. $step_ratio .'
       </td>
     </tr>
 
@@ -184,7 +204,7 @@ $html .= '
         Контрастность
       </td>
       <td style="padding: 5px; text-align: right;">
-        3000:1
+        '. $contrast .' Кнд/м<sup>2</sup>
       </td>
     </tr>
     <tr style="background: #f5f5f5">
@@ -192,7 +212,7 @@ $html .= '
         Цветовая температура (°К)
       </td>
       <td style="padding: 5px; text-align: right;">
-        200 ~ 9300° K
+        3200 ~ 9300° K
       </td>
     </tr>
   </table>
@@ -204,7 +224,7 @@ $html .= '
   </div>
   <br>
 
-  <table style="width: 75%;cellspacing: 0; cellpadding: 0; border-spacing: 0">
+  <table style="width: 100%;cellspacing: 0; cellpadding: 0; border-spacing: 0">
     <tr style="background: #f5f5f5">
       <td style="padding: 5px;">
         Размер экрана
@@ -226,7 +246,7 @@ $html .= '
         Кол-во кабинетов
       </td>
       <td style="padding: 5px; text-align: right;">
-        1
+        '. $col .'
       </td>
     </tr>
     <tr>
@@ -247,10 +267,10 @@ $html .= '
     </tr>
     <tr>
       <td style="padding: 5px;">
-        Яркость кд/м2
+        Контрастность
       </td>
       <td style="padding: 5px; text-align: right;">
-        > 1000
+        '. $contrast .' Кнд/м<sup>2</sup>
       </td>
     </tr>
     <tr style="background: #f5f5f5">
@@ -303,30 +323,30 @@ $html .= '
     </tr>
   </table>
 
-
   <h1 style="page-break-before:always;"><b>Итог</b></h1>
   <table style="width: 100%;cellspacing: 0; cellpadding: 0; border-spacing: 0">
     <tr style="background: #f5f5f5">
-      <td style="padding: 10px;">Монтаж</td>
-      <td style="padding: 10px; text-align: right;">'. $settingup .' p.</td>
+      <td style="padding: 10px;"><p style="display: block;">Монтаж</p></td>
+      <td style="padding: 10px;text-align: right;"><p style="display: block;padding: 10px;">'. $settingup .' p.</p></td>
     </tr>
     <tr>
-      <td style="padding: 10px;">Стоимость экрана</td>
-      <td style="padding: 10px; text-align: right;">'. $led .' p.</td>
+    <td style="padding: 10px;"><p style="display: block;">Стоимость экрана</p></td>
+    <td style="padding: 10px;text-align: right;"><p style="display: block;padding: 10px;">'. $led .' p.</p></td>
     </tr>
     <tr style="background: #f5f5f5">
-      <td style="padding: 10px;">Управляющий компьютер</td>
-      <td style="padding: 10px; text-align: right;">'. $control .' p.</td>
+    <td style="padding: 10px;"><p style="display: block;">Управляющий компьютер</p></td>
+    <td style="padding: 10px;text-align: right;"><p style="display: block;padding: 10px;">'. $control .' p.</p></td>
     </tr>
     <tr>
-      <td style="padding: 10px;">Доставка</td>
-      <td style="padding: 10px; text-align: right;">'. $delivery .' p.</td>
+    <td style="padding: 10px;"><p style="display: block;">Доставка</p></td>
+    <td style="padding: 10px;text-align: right;"><p style="display: block;padding: 10px;">'. $delivery .' p.</p></td>
     </tr>
-    <tr style="background: #cafcca">
-      <td style="padding: 10px;"><b>Итого</b></td>
-      <td style="padding: 10px; text-align: right;"><b>'. $price .' p.</b></td>
+    <tr style="background: #f5f5f5">
+      <td style="padding: 10px;"><p style="display: block;"><b>Итого</b></p></td>
+      <td style="padding: 10px;text-align: right;"><p style="display: block;padding: 10px;"><b>'. $price .' p.</b></p></td>
     </tr>
   </table>
+  </div>
 
 ';
 

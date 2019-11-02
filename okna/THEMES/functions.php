@@ -66,6 +66,10 @@ class Optimazed_Walker_Nav_Menu extends Walker_Nav_Menu {
 		$args = apply_filters( 'nav_menu_item_args', $args, $item, $depth );
 
 		$class_names = $item->current ? ' class="nav-item current-menu-item" ' : ' class="nav-item"';
+		if($args->walker->has_children)
+        {
+			$class_names = ' class="nav-item has-children" ';
+        } 
 		$output .= $indent . '<li' . $class_names .'>';
 
 
@@ -191,7 +195,7 @@ remove_action( 'wp_head', 'pagenavi_css' );
 
 //Disable gutenberg style in Front
 function wps_deregister_styles() {
-	wp_dequeue_style( 'wp-block-library' );
+	#wp_dequeue_style( 'wp-block-library' );
 }
 add_action( 'wp_print_styles', 'wps_deregister_styles', 100 );
 //Закрываем REST API не авторизованным пользвователям

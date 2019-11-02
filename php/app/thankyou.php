@@ -8,7 +8,7 @@ $mail->CharSet = 'UTF-8';
 	$mail->isSMTP();
 	$mail->SMTPAuth = true;
 	$mail->SMTPDebug = 0;
-
+	
 	$mail->Host = 'ssl://smtp.yandex.ru';
 	$mail->SMTPAuth = true;
 	$mail->Username =  'l3dimperial@yandex.ru'; // имя пользователя yandex
@@ -18,7 +18,18 @@ $mail->CharSet = 'UTF-8';
 
 	$mail->setFrom('l3dimperial@yandex.ru', 'LedImperial');
 
-	$mail->addAddress('l3dimperial@yandex.ru', '');
+	$mail->addAddress('ledimperial@mail.ru', '');
+
+	// $mail->Host = 'ssl://smtp.yandex.ru';
+	// $mail->SMTPAuth = true;
+	// $mail->Username =  'i.krasovsky@yandex.ru'; // имя пользователя yandex
+	// $mail->Password = 'GFDgd39021'; // пароль на yandex
+	// $mail->SMTPSecure = 'SSL';
+	// $mail->Port = 465;
+
+	// $mail->setFrom('i.krasovsky@yandex.ru', 'Krasovsky');
+
+	// $mail->addAddress('i.krasovsky@yandex.ru', '');
 
 	if ($_POST['form_title'] == 'Замер') {
 		$mail->Subject = 'Заявка на Замер';
@@ -43,7 +54,7 @@ $mail->CharSet = 'UTF-8';
 		$body .= 'Итого: <b>'. $_POST['total'] .'</b><br>';
 	}
 	if($_POST['commercial']) {
-		$body .= 'Ссылка на коммерческое предложение: <a href="http://calculator.ledimperial.ru/'. $_POST['commercial'] .'">Скачать</a>';
+		$body .= 'Ссылка на коммерческое предложение: <a href="http://calcled.skipao.site/'. $_POST['commercial'] .'">Скачать</a>';
 	}
 
 	$mail->msgHTML($body);
@@ -71,7 +82,7 @@ $mail->CharSet = 'UTF-8';
 						<tr>
 							<td>
 								<p style="color: #fff; text-transform: uppercase; font-size: 20px; font-weight: bold;">Ваше коммерческое предложение</p>
-								<p style="text-align: center;"><a href="http://calculator.ledimperial.ru/'. $_POST['commercial'] .'"><img src="http://calcled.skipao.site/img/download.png" style="width: 150px;"></a></p>
+								<p style="text-align: center;"><a href="http://calcled.skipao.site'. $_POST['commercial'] .'"><img src="http://calcled.skipao.site/img/download.png" style="width: 150px;"></a></p>
 							</td>
 						</tr>
 					</table>

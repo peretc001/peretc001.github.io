@@ -45,32 +45,6 @@
 <style type="text/css" media="(max-width: 1200px)">
 @import url("http://ledimperial.ru/sites/all/themes/mytheme/css/mobile.css?pzj0sa");
 </style>
-
-<!-- button-up -->
-<script type="text/javascript">
-jQuery(document).ready(function($){
-    $('<style>'+
-        '.scrollTop{ display:none; z-index:9999; position:fixed;'+
-            'bottom:77px; left:93%; width:67px; height:67px;'+
-            'background:url(/sites/all/themes/mytheme/images/button-up-color.png) 0 0 no-repeat; }' +
-         '</style>').appendTo('body');
-    var
-    speed = 550,
-    $scrollTop = $('<a href="#" class="scrollTop">').appendTo('body');
-    $scrollTop.click(function(e){
-        e.preventDefault();
-        $( 'html:not(:animated),body:not(:animated)' ).animate({ scrollTop: 0}, speed );
-    });
-
-    //появление
-    function show_scrollTop(){
-        ( $(window).scrollTop() > 330 ) ? $scrollTop.fadeIn(700) : $scrollTop.fadeOut(700);
-    }
-    $(window).scroll( function(){ show_scrollTop(); } );
-    show_scrollTop();
-});
-</script>
-
     
 </head>
 <body class="html front not-logged-in no-sidebars page-node" >
@@ -89,7 +63,7 @@ jQuery(document).ready(function($){
         </span>
             </button>
             <div id="logo">
-                <a href="/">
+                <a href="http://ledimperial.ru/">
                     <img alt="На главную" src="http://ledimperial.ru/sites/all/themes/mytheme/images/logo.png"/>
                 </a>
             </div>
@@ -118,11 +92,11 @@ jQuery(document).ready(function($){
                             <li class="leaf"><a href="http://ledimperial.ru/lenta_news">Новости</a></li>
                             <li class="leaf"><a href="http://ledimperial.ru/kontaktnaya-informaciya">Контакты</a></li>
                             <li class="expanded">
-                                <a href="http://ledimperial.ru/uslugi" title="">Калькулятор</a>
+                                <a href="http://calculator.ledimperial.ru/index.php" title="">Калькулятор</a>
                                 <ul class="menu">
-                                    <li class="first leaf"><a href="http://calcled.skipao.site" title="">LED экраны</a>
+                                    <li class="first leaf"><a href="http://calculator.ledimperial.ru/index.php" title="">LED модульный</a>
                                     </li>
-                                    <li class="last leaf"><a href="http://calcled2.skipao.site" title="">LED модули</a>
+                                    <li class="last leaf"><a href="http://calculator.ledimperial.ru/v2/" title="">LED кабинетный</a>
                                     </li>
                                 </ul>
                             </li>
@@ -362,7 +336,7 @@ jQuery(document).ready(function($){
         <div class="content---first-line">
           <div class="options-first-block-big">
             <p class="caption-block">Видеоэкран для помещения</p>
-            <p id="name-room-module-p" class="caption-block-n first---step---name">P-5мм-64x32мм</p>
+            <p id="name-room-module-p" class="caption-block-n first---step---name">P5-64x32мм</p>
             
             <div class="options-first-block-big-flex">
               
@@ -382,7 +356,7 @@ jQuery(document).ready(function($){
                 </div>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Разрешение экрана</p>
-                  <p class="options-first-block-caption__size first---step--size" id="resolution-room">64 x 32 px</p>
+                  <p class="options-first-block-caption__size first---step--size" id="resolution-room">384 x 96 px</p>
                 </div>
               </div>
 
@@ -495,17 +469,17 @@ jQuery(document).ready(function($){
                 <li class="options-second-block-big-photo-block__item">
                   <span class="parname">Размер модуля</span>
                   <span class="dotted"></span>
-                  <span class="parval" id="size-room-module">320 х 160 мм</span>
+                  <span class="parval option-first-step__size" id="size-room-module">320 х 160 мм</span>
                 </li>
                 <li class="options-second-block-big-photo-block__item">
                   <span class="parname">Разрешение модуля</span>
                   <span class="dotted"></span>
-                  <span class="parval" id="raz-room">32 х 64 px</span>
+                  <span class="parval option-first-step__ratio" id="raz-room">64 x 32 px</span>
                 </li>
                 <li class="options-second-block-big-photo-block__item">
                   <span class="parname">Контрастность</span>
                   <span class="dotted"></span>
-                  <span class="parval" id="cont-room">3000:1</span>
+                  <span class="parval" id="cont-room">1000 Кнд/м<sup>2</sup></span>
                 </li>
                 <li class="options-second-block-big-photo-block__item">
                   <span class="parname">Цветовая температура (°К)</span>
@@ -534,7 +508,7 @@ jQuery(document).ready(function($){
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Кол-во кабинетов</span>
                 <span class="dotted-fourth"></span>
-                <span class="parval-fourth" id="count-cab-room">1</span>
+                <span class="parval-fourth option-first-step__col" id="count-cab-room">1</span>
               </li>
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Вес экрана кг</span>
@@ -547,9 +521,9 @@ jQuery(document).ready(function($){
                 <span class="parval-fourth" id="energo-screen-room">700 / 350</span>
               </li>
               <li class="options-second-block-big-photo-block__item">
-                <span class="parname-fourth">Яркость кд/м2</span>
+                <span class="parname-fourth">Контрастность</span>
                 <span class="dotted-fourth"></span>
-                <span class="parval-fourth" id="bright-screen-room">>1000</span>
+                <span class="parval-fourth" id="bright-screen-room">1000 Кнд/м<sup>2</sup></span>
               </li>
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Рабочее напряжение</span>
@@ -671,7 +645,7 @@ jQuery(document).ready(function($){
         </div>
 
         <!-- Modal TAB1_MODAL2 -->
-        <div class="modal fade" id="tab1_modal2" tabindex="-1" role="dialog" aria-labelledby="Замер" aria-hidden="true">
+        <div class="modal fade" id="tab1_modal2" tabindex="-1" role="dialog" aria-labelledby="КП" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -690,7 +664,7 @@ jQuery(document).ready(function($){
                   <div class="result-room-block">
                     <div class="result-room-block-price">
                       <p class="result-room-block-price__caption">Цена экрана</p>
-                      <p class="result-room-block-price__price modal-first-price" id="result-room-block-price__price-com">0 &#x20bd;</p>
+                      <p class="result-room-block-price__price modal-first-price" id="result-room-block-price__price-com">50050 &#x20bd;</p>
                       <input type="hidden" class="modal-first-price-input" name="price" value="">
                       
                     </div>
@@ -710,7 +684,7 @@ jQuery(document).ready(function($){
                     <span>Согласен с условиями <a href="/policy/" target="_blank">Политики конфиденциальности</a></span>
                   </div>
 
-                  <input type="hidden" name="commercial" class="commercial--first--input" value="/pdf.php?tab=1&step_name=P-5%D0%BC%D0%BC-64x32%D0%BC%D0%BC&width=960&height=960&pixel_w=64&pixel_y=32&step=5&garanty=2&square=0.92&settingup=0&led=50050&control=0&delivery=0&price=50050">
+                  <input type="hidden" name="commercial" class="commercial--first--input" value="/pdf.php?tab=1&step_name=P5-64x32%D0%BC%D0%BC&width=960&height=960&pixel_w=64&pixel_y=32&step=5&garanty=2&square=0.92&settingup=0&led=50050&control=0&delivery=0&price=50050&step_size=320%20x%20160%20мм&step_ratio=64%20x%2032%20мм&col=1">
                   <input type="submit" value="Отправить" class="form-submit  callback__form__button">
 
                 </form>
@@ -936,7 +910,7 @@ jQuery(document).ready(function($){
         <div class="content---first-line">
           <div class="options-first-block-big">
             <p class="caption-block">Видеоэкран для улицы</p>
-            <p id="name-street-module-p" class="caption-block-n second---step---name">Р-10мм-32х16мм</p>
+            <p id="name-street-module-p" class="caption-block-n second---step---name">Р10-32х16мм</p>
     
             <div class="options-first-block-big-flex">
               <div class="options-first-block">
@@ -956,7 +930,7 @@ jQuery(document).ready(function($){
                 </div>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Разрешение экрана</p>
-                  <p class="options-first-block-caption__size second---step--size" id="resolution-street">32 x 16 px</p>
+                  <p class="options-first-block-caption__size second---step--size" id="resolution-street">192 x 48 px</p>
                 </div>
               </div>
     
@@ -1072,17 +1046,17 @@ jQuery(document).ready(function($){
                 <li class="options-second-block-big-photo-block__item">
                   <span class="parname">Размер модуля</span>
                   <span class="dotted"></span>
-                  <span class="parval" id="size-street-module">320 х 160 мм</span>
+                  <span class="parval option-second-step__size" id="size-street-module">320 х 160 мм</span>
                 </li>
                 <li class="options-second-block-big-photo-block__item">
                   <span class="parname">Разрешение модуля</span>
                   <span class="dotted"></span>
-                  <span class="parval" id="raz-street">32 х 64 px</span>
+                  <span class="parval  option-second-step__ratio" id="raz-street">32 х 16 px</span>
                 </li>
                 <li class="options-second-block-big-photo-block__item">
                   <span class="parname">Контрастность</span>
                   <span class="dotted"></span>
-                  <span class="parval" id="cont-street">3000:1</span>
+                  <span class="parval" id="cont-street">5500 Кнд/м<sup>2</sup></span>
                 </li>
                 <li class="options-second-block-big-photo-block__item">
                   <span class="parname">Цветовая температура (°К)</span>
@@ -1106,12 +1080,12 @@ jQuery(document).ready(function($){
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Разрешение экрана</span>
                 <span class="dotted-fourth"></span>
-                <span class="parval-fourth second---step--size" id="resolution-screen-street">32 x 16 px</span>
+                <span class="parval-fourth option-second-step__ratio" id="resolution-screen-street">32 x 16 px</span>
               </li>
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Кол-во кабинетов</span>
                 <span class="dotted-fourth"></span>
-                <span class="parval-fourth" id="count-cab-street">1</span>
+                <span class="parval-fourth option-second-step__col" id="count-cab-street">1</span>
               </li>
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Вес экрана кг</span>
@@ -1124,9 +1098,9 @@ jQuery(document).ready(function($){
                 <span class="parval-fourth" id="energo-screen-street">2360 / 1180</span>
               </li>
               <li class="options-second-block-big-photo-block__item">
-                <span class="parname-fourth">Яркость кд/м2</span>
+                <span class="parname-fourth">Контрастность</span>
                 <span class="dotted-fourth"></span>
-                <span class="parval-fourth" id="bright-screen-street">>6000</span>
+                <span class="parval-fourth" id="bright-screen-street">5500 Кнд/м<sup>2</sup></span>
               </li>
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Рабочее напряжение</span>
@@ -1156,7 +1130,7 @@ jQuery(document).ready(function($){
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Площадь экрана м2</span>
                 <span class="dotted-fourth"></span>
-                <span class="parval-fourth" id="squar-screen-street">0.9216 M <sup>2</sup></span>
+                <span class="parval-fourth" id="squar-screen-street">0.92 M <sup>2</sup></span>
               </li>
             </ul>
           </div>
@@ -1248,7 +1222,7 @@ jQuery(document).ready(function($){
         </div>
   
         <!-- Modal TAB1_MODAL2 -->
-        <div class="modal fade" id="tab2_modal2" tabindex="-1" role="dialog" aria-labelledby="Замер" aria-hidden="true">
+        <div class="modal fade" id="tab2_modal2" tabindex="-1" role="dialog" aria-labelledby="КП" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -1267,7 +1241,7 @@ jQuery(document).ready(function($){
                   <div class="result-room-block">
                     <div class="result-room-block-price">
                       <p class="result-room-block-price__caption">Цена экрана</p>
-                      <p class="result-room-block-price__price modal-second-price" id="result-room-block-price__price-com">0 ₽</p>
+                      <p class="result-room-block-price__price modal-second-price" id="result-room-block-price__price-com">46150 ₽</p>
                       <input type="hidden" class="modal-second-price-input" name="price" value="">
                     </div>
                     <div class="result-room-block-size">
@@ -1286,7 +1260,7 @@ jQuery(document).ready(function($){
                     <span>Согласен с условиями <a href="/policy/" target="_blank">Политики конфиденциальности</a></span>
                   </div>
                   
-                  <input type="hidden" name="commercial" class="commercial--second--input" value="/pdf.php?tab=2&step_name=P-10%D0%BC%D0%BC-32x16%D0%BC%D0%BC&width=960&height=960&pixel_w=32&pixel_y=16&step=10&garanty=2&square=0.92&settingup=0&led=46150&control=0&delivery=0&price=46150">
+                  <input type="hidden" name="commercial" class="commercial--second--input" value="/pdf.php?tab=2&step_name=P10-32x16%D0%BC%D0%BC&width=960&height=960&pixel_w=192&pixel_y=48&step=10&garanty=2&square=0.92&settingup=0&led=46150&control=0&delivery=0&price=46150&step_size=320%20x%20160%20мм&step_ratio=32%20x%2016%20мм&col=1">
                   <input type="submit" value="Отправить" class="form-submit  callback__form__button">
                 </form>
               </div>
@@ -1507,7 +1481,7 @@ jQuery(document).ready(function($){
         <div class="content---first-line">
           <div class="options-first-block-big">
             <p class="caption-block">Медиафасад</p>
-            <p id="name-media-module-p" class="caption-block-n third---step---name">Р-31мм-10x5мм</p>
+            <p id="name-media-module-p" class="caption-block-n third---step---name">Р31-10x5мм</p>
     
             <div class="options-first-block-big-flex">
               <div class="options-first-block">
@@ -1527,7 +1501,7 @@ jQuery(document).ready(function($){
                 </div>
                 <div class="options-first-block-caption">
                   <p class="options-first-block-caption__title">Разрешение экрана</p>
-                  <p class="options-first-block-caption__size third---step--size" id="resolution-media">10 х 5 px</p>
+                  <p class="options-first-block-caption__size third---step--size" id="resolution-media">62 х 15 px</p>
                 </div>
               </div>
     
@@ -1628,7 +1602,7 @@ jQuery(document).ready(function($){
                 <li class="options-second-block-big-photo-block__item">
                   <span class="parname">Шаг пикселя</span>
                   <span class="dotted"></span>
-                  <span class="parval option-third-step" id="step-media">25 мм</span>
+                  <span class="parval option-third-step" id="step-media">31 мм</span>
                 </li>
                 <li class="options-second-block-big-photo-block__item">
                   <span class="parname">Конфигурация светодиодов</span>
@@ -1643,17 +1617,17 @@ jQuery(document).ready(function($){
                 <li class="options-second-block-big-photo-block__item">
                   <span class="parname">Размер модуля</span>
                   <span class="dotted"></span>
-                  <span class="parval" id="size-media-module">1200 х 1200 мм</span>
+                  <span class="parval" id="size-media-module">320 х 160 мм</span>
                 </li>
                 <li class="options-second-block-big-photo-block__item">
                   <span class="parname">Разрешение модуля</span>
                   <span class="dotted"></span>
-                  <span class="parval" id="raz-media">48 х 48 px</span>
+                  <span class="parval option-third-step__ratio" id="raz-media">62 х 15 px</span>
                 </li>
                 <li class="options-second-block-big-photo-block__item">
                   <span class="parname">Контрастность</span>
                   <span class="dotted"></span>
-                  <span class="parval" id="cont-media">3000:1</span>
+                  <span class="parval" id="cont-media">7000 Кнд/м<sup>2</sup></span>
                 </li>
                 <li class="options-second-block-big-photo-block__item">
                   <span class="parname">Цветовая температура (°К)</span>
@@ -1682,7 +1656,7 @@ jQuery(document).ready(function($){
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Кол-во кабинетов</span>
                 <span class="dotted-fourth"></span>
-                <span class="parval-fourth" id="count-cab-media">1</span>
+                <span class="parval-fourth option-third-step__col" id="count-cab-media">1</span>
               </li>
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Вес экрана кг</span>
@@ -1695,9 +1669,9 @@ jQuery(document).ready(function($){
                 <span class="parval-fourth" id="energo-screen-media">550 / 230</span>
               </li>
               <li class="options-second-block-big-photo-block__item">
-                <span class="parname-fourth">Яркость кд/м2</span>
+                <span class="parname-fourth">Контрастность</span>
                 <span class="dotted-fourth"></span>
-                <span class="parval-fourth" id="bright-screen-media">>6500</span>
+                <span class="parval-fourth" id="bright-screen-media">>7000 Кнд/м<sup>2</sup></span>
               </li>
               <li class="options-second-block-big-photo-block__item">
                 <span class="parname-fourth">Рабочее напряжение</span>
@@ -1839,7 +1813,7 @@ jQuery(document).ready(function($){
                   <div class="result-room-block">
                     <div class="result-room-block-price">
                       <p class="result-room-block-price__caption">Цена экрана</p>
-                      <p class="result-room-block-price__price modal-third-price" id="result-room-block-price__price-com">0 ₽</p>
+                      <p class="result-room-block-price__price modal-third-price" id="result-room-block-price__price-com">74425 ₽</p>
                       <input type="hidden" class="modal-third-price-input" name="price" value="">
                     </div>
                     <div class="result-room-block-size">
@@ -1857,7 +1831,7 @@ jQuery(document).ready(function($){
                     </div>
                     <span>Согласен с условиями <a href="/policy/" target="_blank">Политики конфиденциальности</a></span>
                   </div>
-                  <input type="hidden" name="commercial" class="commercial--third--input" value="/pdf.php?tab=3&step_name=P-31%D0%BC%D0%BC-10x5%D0%BC%D0%BC&width=1000&height=1000&pixel_w=10&pixel_y=5&step=31&garanty=2&square=1&settingup=0&led=74425&control=0&delivery=0&price=74425">
+                  <input type="hidden" name="commercial" class="commercial--third--input" value="/pdf.php?tab=3&step_name=P31-10x5%D0%BC%D0%BC&width=1000&height=1000&pixel_w=62&pixel_y=15&step=31&garanty=2&square=1&settingup=0&led=74425&control=0&delivery=0&price=74425&step_size=320%20x%20160%20мм&step_ratio=10%20x%205%20мм&col=1">
                   <input type="submit" value="Отправить" class="form-submit  callback__form__button">
                 </form>
               </div>
