@@ -1,0 +1,137 @@
+.slider
+    &__item
+        position: relative
+        &::before
+            content: ''
+            position: absolute
+            left: 10%
+            top: 0
+            background: linear-gradient(-28deg, #fff 0, #fff 50%, transparent 50%)
+            opacity: .7
+            width: 90%
+            height: 100%
+        img
+            width: 100%
+
+        &__caption
+            position: absolute
+            width: 100%
+            max-width: 1140px
+            margin: 0 auto
+            left: 50%
+            bottom: 10%
+            transform: translateX(-50%)
+            display: flex
+            align-items: flex-start
+            justify-content: flex-end
+            padding-right: 15px
+            &__block
+                max-width: 350px
+                h1
+                    font-size: 1.875em
+                p
+                    margin-bottom: 2em
+    
+    .slick-slide
+        outline: none
+    
+    .slick-dots
+        position: absolute
+        width: 100%
+        max-width: 1140px
+        margin: 0 auto
+        left: 50%
+        bottom: 2%
+        transform: translateX(-50%)
+        z-index: 2
+        margin: 1em auto
+        padding: 0
+        display: flex !important
+        justify-content: flex-end
+        padding-right: 15px
+        li
+            list-style: none
+            margin-right: 0.5em
+            &:last-child
+                margin-right: 0
+        button
+            border: none
+            position: relative
+            font-size: 0
+            padding: 0
+            margin: 0
+            width: 12px
+            height: 12px
+            border-radius: 50%
+            background: transparent
+            border: 1px solid $text
+            transition: background .3s ease
+            cursor: pointer
+            outline: none
+        .slick-active
+            button
+                background: $text
+
+@media screen and (max-width: 1199.98px)
+    .slider
+        &__item
+            &__caption
+                max-width: 960px
+        .slick-dots
+            max-width: 960px
+
+@media screen and (max-width: 991.98px)
+    .slider
+        &__item
+            &::before
+                left: 45%
+                top: 0
+                width: 55%
+                background: #fff
+
+@media screen and (max-width: 767.98px)
+    .slider
+        &__item
+            &::before
+                left: 35%
+                top: 0
+                width: 65%
+                background: #fff
+            &__caption
+                &__block
+                    h1
+                        font-size: 1.6em
+
+
+@media screen and (max-width: 576.98px)
+    .slider
+        &__item
+            &::before
+                content: ''
+                position: absolute
+                left: 0
+                top: 0
+                width: 100%
+                background: #fff
+            &__caption
+                padding-right: 0
+                bottom: auto
+                top: 50%
+                left: 50%
+                transform: translateX(-50%) translateY(-50%)
+                justify-content: center
+                &__block
+                    text-align: center
+            
+        
+        .slick-slide
+            min-height: 300px
+            overflow: hidden
+            img
+                width: 200%
+                max-width: 200% !important
+        
+        .slick-dots
+            padding-right: 0
+            justify-content: center
+                

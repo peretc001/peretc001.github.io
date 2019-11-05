@@ -11,11 +11,7 @@ var gulp          = require('gulp'),
 		rename        = require('gulp-rename'),
 		autoprefixer  = require('gulp-autoprefixer'),
 		notify        = require('gulp-notify'),
-		del           = require('del'),
-		cache         = require('gulp-cache'),
-		imagemin      = require('gulp-imagemin'),
-		php 	  	  		= require('gulp-connect-php'),
-		rsync         = require('gulp-rsync');
+		php 	  	  		= require('gulp-connect-php');
 
 gulp.task('browser-sync', function() {
 	browserSync.init({

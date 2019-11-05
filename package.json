@@ -1,7 +1,7 @@
 {
   "name": "krasovsky",
   "version": "1.0.0",
-  "description": "",
+  "description": "Портфолио <a href=\"http://krasovsky23.ru\">http://krasovsky23.ru</a>",
   "main": "/",
   "scripts": {
     "test": ""
@@ -11,7 +11,7 @@
   "devDependencies": {
     "grunt-php": "^3.0.0",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.0",
+    "gulp-autoprefixer": "^7.0.1",
     "gulp-clean-css": "^4.2.0",
     "gulp-concat": "^2.6.1",
     "gulp-notify": "^3.2.0",
@@ -27,5 +27,13 @@
     "reset.css": "^2.0.2",
     "sass-lint": "^1.13.1",
     "sasslint": "0.0.10"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peretc001/peretc001.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/peretc001/peretc001.github.io/issues"
+  },
+  "homepage": "https://github.com/peretc001/peretc001.github.io#readme"
 }

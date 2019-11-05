@@ -30,6 +30,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })
     }
+    
+    var menu = $('.menu'),
+	scrollPrev = 0;
+
+    $(window).scroll(function() {
+        var scrolled = $(window).scrollTop();
+    
+        if ( scrolled > 100 && scrolled > scrollPrev ) {
+            menu.addClass('out');
+        } else {
+            menu.removeClass('out');
+        }
+        scrollPrev = scrolled;
+    });
 
     if ( document.querySelectorAll('.callback__form') ) {
         const form = document.querySelectorAll('.callback__form');
@@ -56,6 +70,13 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 $(function() {
+
+    if ($(window).width() < 567) {
+        $(".col-grey").each( function () {
+            $(this).attr('data-aos-delay', '0');
+        });
+    }
+
     $(window).scroll(function() {
         if($(this).scrollTop() != 0) {
            $('.toTop').fadeIn();

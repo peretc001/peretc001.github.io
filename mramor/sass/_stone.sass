@@ -1,0 +1,72 @@
+.stone
+    padding-right: calc(50% - 555px)
+    padding-bottom: 170px
+    .left
+        padding-left: 0
+    .right
+        position: relative
+        &::before
+            content: ''
+            position: absolute
+            left: 0
+            top: 0
+            width: 100%
+            height: 100%
+            background: #ffffff
+        .stone__wrap
+            position: relative
+            display: flex
+            flex-direction: column
+            justify-content: center
+            height: 100%
+            border: 1px solid $text
+            padding: 10px 30px
+
+            h3
+                font-size: 2.2em
+                text-align: center
+                position: relative
+            
+            ul
+                margin: 1em auto
+                position: relative
+
+            .step__catalog
+                position: relative
+                padding-left: 30px
+                color: $text
+                img
+                    margin-right: 1em
+
+
+@media (max-width: 1199.98px)
+    .stone
+        padding-right: calc(50% - 465px)
+
+@media (max-width: 991.98px)
+    .stone
+        font-size: 0.8em
+        padding-righ: 0
+
+@media (max-width: 767.98px)
+    .stone
+        font-size: 0.8em
+        padding-righ: 0
+        overflow: hidden
+        [class*="col-"]
+            padding: 0
+            &:first-child
+                display: none
+
+        .right
+            &::before
+                opacity: .7
+            .stone__wrap
+                position: relative
+                border: 0
+                padding: 30px
+                .step__catalog
+                    padding-left: 0
+                    text-align: center
+                ul
+                    margin: 2em auto

@@ -1,0 +1,72 @@
+.catalog
+    padding: 170px 0
+    h2
+        text-align: center
+    .row
+        padding-top: 60px
+        padding-bottom: 0px
+        align-items: center
+        position: relative
+        &:last-child
+            padding-top: 0
+    
+    .caption
+        position: absolute
+        right: 0
+        top: 0
+        color: rgba(196, 196, 196, 0.23)
+        font-size: 100px
+        font-family: 'Lazurski'
+        text-transform: uppercase
+        text-align: right
+    
+    .catalog__link
+        display: flex
+        align-items: center
+        justify-content: center
+        .btn
+            min-height: 50px
+            &:first-child
+                margin-right: 1em
+                display: flex
+                align-items: center
+                justify-content: center
+            &:last-child
+                max-width: 320px
+                display: flex
+                align-items: center
+                justify-content: space-between
+                span
+                    max-width: 230px
+                    white-space: pre-wrap
+                    line-height: 1
+                    text-align: left
+                    margin-right: 1em
+
+@media screen and (max-width: 1199.98px)
+    .catalog
+        padding: 100px 0
+        font-size: 0.9em
+        .catalog__link
+            .btn
+                font-size: 0.8em
+
+@media screen and (max-width: 767.98px)
+    .catalog
+        padding: 100px 0
+        font-size: 0.9em
+
+
+        .caption
+            display: none
+        
+        [class*="col-"]
+            text-align: center
+            margin-bottom: 2em
+
+        .catalog__link
+            flex-direction: column
+            .btn
+                font-size: 1em
+                &:first-child
+                    margin-bottom: 1em

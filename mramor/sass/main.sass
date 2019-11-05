@@ -19,7 +19,8 @@ body
 	overflow-x: hidden
 	color: $text
 	opacity: 0
-	background: #ebebeb
+	max-width: 1920px
+	margin: 0 auto
 	
 	input, textarea
 		border: #666 1px solid
@@ -46,7 +47,57 @@ b, strong
 img
 	max-width: 100%
 
+.btn
+	border-radius: 0
+	&.btn-outline
+		background: transparent
+		border: 1px solid $text
+		color: $text
+		&:hover
+			border: 1px solid $text
+			color: $text
+h1, h2, h3
+	font-family: 'Lazurski'
+
+ul.menu_secondary
+	max-width: 260px
+	margin: 0
+	padding: 0
+	li
+		list-style: none
+		margin-bottom: 1em
+		position: relative
+		a
+			display: inline-block
+			color: $text
+			transition: padding .5s ease
+			&:hover
+				padding-left: 0.5em
+
+		&.active
+			padding-left: 65px
+			&::before
+				content: ''
+				position: absolute
+				left: 0
+				top: 50%
+				transform: translateY(-50%)
+				width: 55px
+				height: 1px
+				background: $text
+			a
+				&:hover
+					padding-left: 0
+
 @import 'menu'
+@import 'slider'
+@import 'catalog'
+@import 'stone'
+@import 'instrument'
+
+@media screen and (max-width: 767.98px)
+	ul.menu_secondary
+		margin: 0 auto
 
 body
 	opacity: 1
