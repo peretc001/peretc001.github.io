@@ -20,6 +20,7 @@ body
 	color: $text
 	opacity: 0
 	max-width: 1920px
+	height: 100%
 	margin: 0 auto
 	
 	input, textarea
@@ -56,7 +57,15 @@ img
 		&:hover
 			border: 1px solid $text
 			color: $text
-h1, h2, h3
+			background: #D8D8D8
+		&:disabled
+			border: 1px solid #626262
+			color: #626262
+			background: transparent
+			&:hover
+				background: transparent
+			
+h1, h2, h3, h4
 	font-family: 'Lazurski'
 
 ul.menu_secondary
@@ -94,6 +103,9 @@ ul.menu_secondary
 @import 'catalog'
 @import 'stone'
 @import 'instrument'
+@import 'about'
+@import 'news'
+@import 'callback_form'
 
 @media screen and (max-width: 767.98px)
 	ul.menu_secondary

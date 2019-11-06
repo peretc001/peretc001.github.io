@@ -10,6 +10,9 @@
         &:last-child
             padding-top: 0
     
+    [class*="col-"]
+        overflow: hidden
+    
     .caption
         position: absolute
         right: 0
@@ -47,6 +50,8 @@
     .catalog
         padding: 100px 0
         font-size: 0.9em
+        .caption
+            font-size: 80px
         .catalog__link
             .btn
                 font-size: 0.8em
@@ -62,11 +67,44 @@
         
         [class*="col-"]
             text-align: center
-            margin-bottom: 2em
+            padding: 0
+            margin: 0
+
+        
+        ul.menu_secondary
+            max-width: 200px
+            margin: 0
+            padding-left: 15px
+            li
+                text-align: left
+                a
+                    border-bottom: 1px solid #ffffff
+                    &:hover
+                        padding-left: 0
+                &.active
+                    padding-left: 0
+                    &::before
+                        display: none
+                    a
+                        border-bottom: 1px solid $text
+        
+        .catalog_img
+            max-width: 300%
 
         .catalog__link
             flex-direction: column
             .btn
+                max-width: 250px
                 font-size: 1em
                 &:first-child
+                    margin-top: 1em
                     margin-bottom: 1em
+                    margin-right: 0
+                    width: 250px
+                &:last-child
+                    width: 250px
+                    span
+                        text-align: center
+                        margin-right: 0
+                    img
+                        display: none

@@ -66,6 +66,61 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         })
     }
+
+    if ( document.querySelector('.catalog .menu_secondary') ) {
+        const menu_list = document.querySelectorAll('.catalog .menu_secondary li')
+        const caption = document.querySelector('.catalog .caption')
+        const catalogImg = document.querySelector('.catalog_img')
+        menu_list.forEach((item, i) => {
+            const menu_link = item.querySelector('a');
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector('.catalog .menu_secondary li.active').classList.remove('active')
+                this.classList.add('active')
+                caption.textContent = menu_link.textContent
+                catalogImg.src = '/img/catalog/'+ (i + 1) +'.png'
+                catalogImg.animate([
+                    // keyframes
+                    { transform: 'translateX(100%)' }, 
+                    { transform: 'translateX(0)' }
+                  ], { 
+                    // timing options
+                    duration: 600,
+                  });
+                  caption.animate([
+                    // keyframes
+                    { transform: 'translateX(100%)' }, 
+                    { transform: 'translateX(0)' }
+                  ], { 
+                    // timing options
+                    duration: 600,
+                  });
+
+            })
+        })
+    }
+
+    if ( document.querySelector('.stone .menu_secondary') ) {
+        const menu_list = document.querySelectorAll('.stone .menu_secondary li')
+        const stoneImg = document.querySelector('.stone_img')
+        menu_list.forEach((item, i) => {
+            const menu_link = item.querySelector('a');
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector('.stone .menu_secondary li.active').classList.remove('active')
+                this.classList.add('active')
+                stoneImg.src = '/img/stone/'+ (i + 1) +'.jpg'
+                stoneImg.animate([
+                    // keyframes
+                    { transform: 'translateX(-100%)' }, 
+                    { transform: 'translateX(0)' }
+                  ], { 
+                    // timing options
+                    duration: 600,
+                  });
+            })
+        })
+    }
     
 })
 

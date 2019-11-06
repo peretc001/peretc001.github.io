@@ -251,7 +251,7 @@ remove_action( 'wp_head', 'wp_oembed_add_host_js' );
 
 //Переадресация со сладеров
 add_action( 'template_redirect', function() {
-	if( is_page(49) || is_page(67) || is_page(70) || is_page(72) || is_page(85) || is_page(103) || is_page(129) || is_page(216) || is_page(234) || is_page(245) || is_page(249) || is_page(255) || is_page(257) || is_page(259)){
+	if( is_page(49) || is_page(67) || is_page(70) || is_page(72) || is_page(85) || is_page(103) || is_page(216) || is_page(234) || is_page(245) || is_page(249) || is_page(255) || is_page(257) || is_page(259)){
 		wp_redirect( home_url() );
 		exit;
 	}

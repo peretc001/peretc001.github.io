@@ -12,13 +12,10 @@
             display: flex
             flex-wrap: wrap
             .col-grey
-                background: #EAEAEA
                 margin-right: 1%
                 margin-bottom: 1%
-                padding: 23px 16px 
-                &:hover
-                    img
-                        transform: scale(1.1)
+                position: relative
+
             .x-12
                 width: 100%
                 overflow: hidden
@@ -34,6 +31,38 @@
             color: $text
             font-size: 0.9em
             display: block
+    
+    .first
+        transition: transform .5s ease
+        z-index: 1
+        background: #EAEAEA
+        padding: 23px 16px
+    .second
+        position: absolute
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        background: #EAEAEA
+        padding: 23px 16px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        transform: rotateY(-180deg)
+        z-index: -1
+        transition: transform .5s ease
+        &.fz12
+            font-size: 12px
+    
+    .col-grey
+        &:hover
+            .first
+                z-index: -1
+                transform: rotateY(-180deg)
+            .second
+                transform: rotateY(0)
+                z-index: 1
+
 
 @media screen and (max-width: 991.98px)
     .instrument

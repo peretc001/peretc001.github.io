@@ -1,0 +1,40 @@
+.news
+    h4
+        display: block
+        margin: 0 auto
+        font-size: 2.2em
+        text-align: center
+        position: relative
+    .row
+        padding-top: 2em
+        padding-bottom: 2em
+    
+    .img_wrap
+        overflow: hidden
+        display: block
+        margin: 0
+        padding: 0
+        margin-bottom: 1em
+        img
+            transition: transform 2s ease
+        &:hover
+            img
+                transform: scale(1.1)
+    
+    a
+        color: $text
+
+@media screen and (max-width: 991.98px)
+    .news
+        font-size: 0.9em
+        [class*="col-"]
+            margin-bottom: 1em
+            &:last-child
+                margin-bottom: 0
+
+@media screen and (max-width: 991.98px)
+    .news
+        font-size: 0.9em
+        [class*="col-"]
+            text-align: center
+    
