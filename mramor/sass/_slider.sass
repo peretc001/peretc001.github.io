@@ -36,7 +36,7 @@ $mh: 500px
             padding-right: 15px
             &__block
                 max-width: 350px
-                h1
+                h1, h2
                     font-size: 1.875em
                 p
                     margin-bottom: 2em
@@ -91,7 +91,10 @@ $mh: 500px
 
 @media screen and (max-width: 991.98px)
     .slider
+        overflow: hidden
+        max-height: 500px
         &__item
+            max-height: 550px
             &::before
                 left: 45%
                 top: 0
@@ -103,7 +106,6 @@ $mh: 500px
                 transform: translateY(-50%) translateX(-50%)
 
 @media screen and (max-width: 767.98px)
-    $mh: 400px
     .slider
         &__item
             &::before
@@ -113,8 +115,12 @@ $mh: 500px
                 background: #fff
             &__caption
                 &__block
-                    h1
+                    h1, h2
                         font-size: 1.6em
+        .slick-slide
+            img
+                width: 150%
+                max-width: 150% !important
 
 
 @media screen and (max-width: 576.98px)

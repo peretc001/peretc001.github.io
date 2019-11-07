@@ -1,0 +1,88 @@
+.footer
+    padding: 70px 30px
+    border-top: 1px solid $text
+
+    ul
+        margin: 0
+        padding: 0
+        li
+            list-style: none
+            margin-bottom: 0.7em
+    a
+        color: $text
+    
+    .row
+        position: relative
+        .right
+            position: absolute
+            top: 0
+            right: 0
+            display: flex
+            justify-content: flex-end
+            .insta
+                display: flex
+                flex-direction: column
+                align-items: flex-end
+                justify-content: flex-end
+                margin-right: 1em
+                a
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                    img
+                        margin-left: 0.5em
+            .social
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: center
+            a
+                margin-bottom: 0.8em
+    
+    .author
+        img
+            width: 60px
+            margin-left: 0.5em
+
+@media screen and (max-width: 991.98px)
+    .footer
+        [class*="col-"]
+            margin-bottom: 2em
+            &:last-child
+                margin-bottom: 2em
+        .row
+            .right
+                position: relative
+                top: auto
+                right: auto
+                align-items: center
+                justify-content: center
+                flex-direction: column
+                .insta
+                    display: flex
+                    flex-direction: column
+                    align-items: flex-start
+                    justify-content: center
+                    margin-right: 0
+                    margin-bottom: 1em
+                    a
+                        display: flex
+                        flex-direction: row-reverse
+                        align-items: center
+                        justify-content: space-between
+                        margin-bottom: 1em
+                        img
+                            margin-right: 0.5em
+                .social
+                    display: flex
+                    flex-direction: row
+                    align-items: center
+                    justify-content: flex-end
+                a
+                    margin-bottom: 0
+                    margin-right: 0.8em
+
+@media screen and (max-width: 576.98px)
+    .footer
+        [class*="col-"]
+            text-align: center

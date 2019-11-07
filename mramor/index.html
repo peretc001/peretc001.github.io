@@ -116,7 +116,7 @@
 
     <section class="slider">
       <div class="slider__item">
-        <img src="./img/slider/slide1.jpg" alt="">
+        <img data-lazy="./img/slider/slide1.jpg" alt="Изделия из натурального камня">
         <div class="slider__item__caption">
           <div class="slider__item__caption__block">
             <h1>Изделия из натурального камня</h1>
@@ -126,20 +126,20 @@
         </div>
       </div>
       <div class="slider__item">
-        <img src="./img/slider/slide2.jpg" alt="">
+        <img data-lazy="./img/slider/slide2.jpg" alt="Натуральный камень">
         <div class="slider__item__caption">
             <div class="slider__item__caption__block">
-              <h1>Натуральный камень</h1>
+              <h2>Натуральный камень</h2>
               <p>Мрамор, гранит, оникс, травертин</p>
               <a href="" class="btn btn-outline">Смотреть каталог</a>
             </div>
         </div>
       </div>
       <div class="slider__item">
-        <img src="./img/slider/slide3.jpg" alt="">
+        <img data-lazy="./img/slider/slide3.jpg" alt="Все для обработки камня">
         <div class="slider__item__caption">
             <div class="slider__item__caption__block">
-              <h1>Все для обработки камня</h1>
+              <h2>Все для обработки камня</h2>
               <p>Инструмент и химия</p>
               <a href="" class="btn btn-outline">Смотреть каталог</a>
             </div>
@@ -168,7 +168,8 @@
             </ul>
           </div>
           <div class="col-6 col-md-8 col-lg-6" data-aos="fade-up">
-            <img class="catalog_img" src="./img/catalog/6.png" alt="Самоцветы">
+            <img class="preloader hidden" src="./img/preloader.gif">
+            <img class="catalog_img lazy" data-src="./img/catalog/6.png" alt="Самоцветы">
           </div>
           <div class="d-none d-lg-flex col-lg-3" data-aos="fade-right">
             <p>117 предложений</p>
@@ -207,53 +208,57 @@
             </div>
           </div>
           <div class="col-md-7 left order-2 order-md-1" data-aos="fade-right">
-            <img class="stone_img" src="./img/stone/1.jpg" alt="Изделия из камня">
+            <img class="preloader hidden" src="./img/preloader.gif">
+            <img class="stone_img lazy" data-src="./img/stone/1.jpg" alt="Изделия из камня">
           </div>
         </div>
+
         <h3 class="d-md-none">Изделия из камня</h3>
         <div class="stone__carousel">
-          <div>
+
+          <div class="stone__carousel__slide">
             <p class="caption">Лестницы, балюстрады</p>
-            <img class="stone_img" src="./img/stone/1.jpg" alt="Лестницы, балюстрады">
+            <img class="stone_img" data-lazy="./img/stone/1.jpg" src="./img/preloader.gif" alt="Лестницы, балюстрады">
           </div>
-          <div>
+          <div class="stone__carousel__slide">
             <p class="caption">Камины, барбекю</p>
-            <img class="stone_img" src="./img/stone/2.jpg" alt="Камины, барбекю">
+            <img class="stone_img" data-lazy="./img/stone/2.jpg" src="./img/preloader.gif" alt="Камины, барбекю">
           </div>
-          <div>
+          <div class="stone__carousel__slide">
             <p class="caption">Столешницы, раковины</p>
-            <img class="stone_img" src="./img/stone/3.jpg" alt="Столешницы, раковины">
+            <img class="stone_img" data-lazy="./img/stone/3.jpg" src="./img/preloader.gif" alt="Столешницы, раковины">
           </div>
-          <div>
+          <div class="stone__carousel__slide">
             <p class="caption">Подоконники</p>
-            <img class="stone_img" src="./img/stone/4.jpg" alt="Подоконники">
+            <img class="stone_img" data-lazy="./img/stone/4.jpg" src="./img/preloader.gif" alt="Подоконники">
           </div>
-          <div>
+          <div class="stone__carousel__slide">
             <p class="caption">Полы</p>
-            <img class="stone_img" src="./img/stone/5.jpg" alt="Полы">
+            <img class="stone_img" data-lazy="./img/stone/5.jpg" src="./img/preloader.gif" alt="Полы">
           </div>
-          <div>
+          <div class="stone__carousel__slide">
             <p class="caption">Декоративные панно</p>
-            <img class="stone_img" src="./img/stone/6.jpg" alt="Декоративные панно">
+            <img class="stone_img" data-lazy="./img/stone/6.jpg" src="./img/preloader.gif" alt="Декоративные панно">
           </div>
-          <div>
+          <div class="stone__carousel__slide">
             <p class="caption">Фонтаны, бассейны</p>
-            <img class="stone_img" src="./img/stone/7.jpg" alt="Фонтаны, бассейны">
+            <img class="stone_img" data-lazy="./img/stone/7.jpg" src="./img/preloader.gif" alt="Фонтаны, бассейны">
           </div>
-          <div>
+          <div class="stone__carousel__slide">
             <p class="caption">Фасады, элементы мощения</p>
-            <img class="stone_img" src="./img/stone/8.jpg" alt="Фасады, элементы мощения">
+            <img class="stone_img" data-lazy="./img/stone/8.jpg" src="./img/preloader.gif" alt="Фасады, элементы мощения">
           </div>
-          <div>
+          <div class="stone__carousel__slide">
             <p class="caption">Фасонные профили</p>
-            <img class="stone_img" src="./img/stone/9.jpg" alt="Фасонные профили">
+            <img class="stone_img" data-lazy="./img/stone/9.jpg" src="./img/preloader.gif" alt="Фасонные профили">
           </div>
-          <div>
+          <div class="stone__carousel__slide">
             <p class="caption">Колонны, вазы, скульптуры</p>
-            <img class="stone_img" src="./img/stone/10.jpg" alt="Колонны, вазы, скульптуры">
+            <img class="stone_img" data-lazy="./img/stone/10.jpg" src="./img/preloader.gif" alt="Колонны, вазы, скульптуры">
           </div>
+
         </div>
-      </div>
+
     </section>
 
     <section class="instrument">
@@ -267,14 +272,14 @@
                 <p>
                   <a href="">Алмазный инструмент</a>
                 </p>
-                <a href=""><img src="./img/instrument/almaz.png" alt="Алмазный инструмент"></a>
+                <a href=""><img class="lazy" data-src="./img/instrument/almaz.png" src="./img/preloader.gif" alt="Алмазный инструмент"></a>
               </div>
               <div class="second">
                 <p><b>Алмазный инструмент</b></p>
                 <p>Инструмент с алмазным слоем 
                     для резки и обработки 
                     природного камня.</p>
-                <a href="" class="btn">Перейти <img src="./img/arrow-right.svg" alt=""></a>
+                <a href="" class="btn">Перейти <img class="lazy" data-src="./img/arrow-right.svg" alt=""></a>
               </div>
             </div>
             <div class="col-grey x-6" data-aos="fade-up"  data-aos-delay="100">
@@ -282,7 +287,7 @@
                 <p>
                   <a href="">Электро и пневмоинструмент</a>
                 </p>
-                <a href=""><img src="./img/instrument/electro.png" alt="Электро и пневмоинструмент"></a>
+                <a href=""><img class="lazy" data-src="./img/instrument/electro.png" src="./img/preloader.gif" alt="Электро и пневмоинструмент"></a>
               </div>
               <div class="second fz12">
                 <p><b>Электро и пневмоинструмент</b></p>
@@ -293,7 +298,7 @@
                     Шлифовально-полировальные машины
                     Электробучарды
                     </p>
-                <a href="" class="btn">Перейти <img src="./img/arrow-right.svg" alt=""></a>
+                <a href="" class="btn">Перейти <img class="lazy" data-src="./img/arrow-right.svg" alt=""></a>
               </div>
             </div>
             <div class="col-grey x-6" data-aos="fade-up"  data-aos-delay="250">
@@ -301,21 +306,25 @@
                 <p>
                   <a href="">Алмазный инструмент</a>
                 </p>
-                <a href=""><img src="./img/instrument/tverdo.png" alt="Алмазный инструмент"></a>
+                <a href=""><img class="lazy" data-src="./img/instrument/tverdo.png" src="./img/preloader.gif" alt="Алмазный инструмент"></a>
               </div>
               <div class="second fz12">
                 <p><b>Алмазный 
                     инструмент</b></p>
-                <p>Диски
-                    Корпуса дисков
-                    Сверла и коронки
-                    АГШК
-                    АШК
-                    Сегменты алмазные
-                    Алмазные щетки
-                    Ручной алмазный инструмент                    
-                    </p>
-                <a href="" class="btn">Перейти <img src="./img/arrow-right.svg" alt=""></a>
+                <p>
+                  Диски
+                  Корпуса дисков
+                  Сверла и коронки
+                  АГШК
+                  АШК
+                  Сегменты алмазные
+                  Алмазные щетки
+                  Ручной алмазный инструмент
+                  Алмазные иглы, ручки, чертилки
+                  Канаты алмазные
+                  Пасты алмазные                                  
+                </p>
+                <a href="" class="btn">Перейти <img class="lazy" data-src="./img/arrow-right.svg" alt=""></a>
               </div>
             </div>
           </div>
@@ -327,12 +336,12 @@
                 <p>
                   <a href="">Клей для камня</a>
                 </p>
-                <a href=""><img src="./img/instrument/cley.png" alt="Клей для камня"></a>
+                <a href=""><img class="lazy" data-src="./img/instrument/cley.png" src="./img/preloader.gif" alt="Клей для камня"></a>
               </div>
               <div class="second">
                 <p><b>Клей для камня</b></p>
                 <p></p>
-                <a href="" class="btn">Перейти <img src="./img/arrow-right.svg" alt=""></a>
+                <a href="" class="btn">Перейти <img class="lazy" data-src="./img/arrow-right.svg" alt=""></a>
               </div>
             </div>
             <div class="col-grey x-12" data-aos="fade-up"  data-aos-delay="350">
@@ -340,7 +349,7 @@
                 <p>
                   <a href="">Абразивный инструмент</a>
                 </p>
-                <a href=""><img src="./img/instrument/abraziv.png" alt="Абразивный инструмент"></a>
+                <a href=""><img class="lazy" data-src="./img/instrument/abraziv.png" src="./img/preloader.gif" alt="Абразивный инструмент"></a>
               </div>
               <div class="second">
                 <p><b>Абразивный инструмент</b></p>
@@ -352,7 +361,7 @@
                     Фибро-круги
                     Щетки для состаривания 
                     </p>
-                <a href="" class="btn">Перейти <img src="./img/arrow-right.svg" alt=""></a>
+                <a href="" class="btn">Перейти <img class="lazy" data-src="./img/arrow-right.svg" alt=""></a>
               </div>
             </div>
           </div>
@@ -363,7 +372,7 @@
                 <p>
                   <a href="">Профессиональная химия для камня</a>
                 </p>
-                <a href=""><img src="./img/instrument/chemical.png" alt="Профессиональная химия для камня"></a>
+                <a href=""><img class="lazy" data-src="./img/instrument/chemical.png" src="./img/preloader.gif" alt="Профессиональная химия для камня"></a>
               </div>
               <div class="second">
                 <p><b>Профессиональная химия для камня</b></p>
@@ -378,7 +387,7 @@
                     Лаки для камня
                     Нитро-растворители
                     </p>
-                <a href="" class="btn">Перейти <img src="./img/arrow-right.svg" alt=""></a>
+                <a href="" class="btn">Перейти <img class="lazy" data-src="./img/arrow-right.svg" alt=""></a>
               </div>
             </div>
             <div class="col-grey x-6" data-aos="fade-up" data-aos-delay="400">
@@ -386,7 +395,7 @@
                 <p>
                   <a href="">Камнеобрабатывающее оборудование</a>
                 </p>
-                <a href=""><img src="./img/instrument/stone.png" alt="Камнеобрабатывающее оборудование"></a>
+                <a href=""><img class="lazy" data-src="./img/instrument/stone.png" src="./img/preloader.gif" alt="Камнеобрабатывающее оборудование"></a>
               </div>
               <div class="second fz12">
                 <p><b>Камнеобрабатывающее 
@@ -395,9 +404,11 @@
                     Очистные сооружения
                     Пескоструйное оборудование
                     Расходные комплектующие к станкам
-                    Станки отрезные
+                    Станки отрезные 
+                    Станки полировальные 
+                    Станки токарные                    
                     </p>
-                <a href="" class="btn">Перейти <img src="./img/arrow-right.svg" alt=""></a>
+                <a href="" class="btn">Перейти <img class="lazy" data-src="./img/arrow-right.svg" alt=""></a>
               </div>
             </div>
             <div class="col-grey x-6" data-aos="fade-up" data-aos-delay="450">
@@ -405,7 +416,7 @@
                 <p>
                   <a href="">Прочий инструмент</a>
                 </p>
-                <a href=""><img src="./img/instrument/other.png" alt="Прочий инструмент"></a>
+                <a href=""><img class="lazy" data-src="./img/instrument/other.png" src="./img/preloader.gif" alt="Прочий инструмент"></a>
               </div>
               <div class="second fz12">
                 <p><b>Прочий
@@ -417,9 +428,10 @@
                     Войлок
                     Карандаши 
                     Спецодежда 
-                    
+                    Вакуумные пылесосы
+                    Переходники и адаптеры для сверл                 
                     </p>
-                <a href="" class="btn">Перейти <img src="./img/arrow-right.svg" alt=""></a>
+                <a href="" class="btn">Перейти <img class="lazy" data-src="./img/arrow-right.svg" alt=""></a>
               </div>
             </div>
           </div>
@@ -446,7 +458,7 @@
                   </p>
                 </div>
                 <div class="col-lg-6 about_img" data-aos="fade-up">
-                  <img src="./img/about/1.jpg" alt="">
+                  <img data-lazy="./img/about/1.jpg" src="./img/preloader.gif" alt="">
                 </div>
                 <div class="col-md-6 col-lg-3" data-aos="fade-left">
                   <p class="caption">
@@ -482,7 +494,7 @@
                   </p>
                 </div>
                 <div class="col-lg-6 about_img" data-aos="fade-left">
-                  <img src="./img/about/1.jpg" alt="">
+                  <img data-lazy="./img/about/1.jpg" src="./img/preloader.gif" alt="">
                 </div>
               </div>
             </div>
@@ -490,7 +502,7 @@
             <div class="about__carousel__item">
               <div class="row">
                 <div class="col-lg-6 about_img" data-aos="fade-right">
-                  <img src="./img/about/2.jpg" alt="">
+                  <img data-lazy="./img/about/2.jpg" src="./img/preloader.gif" alt="">
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
                   <p class="caption">
@@ -537,7 +549,7 @@
                   </p>
                 </div>
                 <div class="col-lg-6 about_img" data-aos="fade-left">
-                  <img src="./img/about/3.jpg" alt="">
+                  <img data-lazy="./img/about/3.jpg" src="./img/preloader.gif" alt="">
                 </div>
               </div>
             </div>
@@ -545,7 +557,7 @@
             <div class="about__carousel__item">
               <div class="row">
               <div class="col-lg-6 about_img" data-aos="fade-right">
-                  <img src="./img/about/2.jpg" alt="">
+                  <img data-lazy="./img/about/2.jpg" src="./img/preloader.gif" alt="">
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
                   <p class="caption">
@@ -580,25 +592,25 @@
         <h4 data-aos="fade-up">Новости компании</h4>
         <div class="row">
           <div class="col-sm-6 col-md-3" data-aos="fade-up" data-aos-offset="100">
-            <a href="" class="img_wrap"><img src="./img/news/1.jpg" alt=""></a>
+            <a href="" class="img_wrap"><img class="lazy" data-src="./img/news/1.jpg" alt=""></a>
             <p><a href="">Новое поступление
                 Голубого оникса, Colorful и Beige</a></p>
                 <p><a href="">26.09.2019</a></p>
           </div>
           <div class="col-sm-6 col-md-3" data-aos="fade-up" data-aos-offset="200">
-            <a href="" class="img_wrap"><img src="./img/news/2.jpg" alt=""></a>
+            <a href="" class="img_wrap"><img class="lazy" data-src="./img/news/2.jpg" alt=""></a>
             <p><a href="">Новое поступление 
                 травертина и мрамора из Турции</a></p>
                 <p><a href="">24.09.2019</a></p>
           </div>
           <div class="col-sm-6 col-md-3" data-aos="fade-up" data-aos-offset="300">
-            <a href="" class="img_wrap"><img src="./img/news/3.jpg" alt=""></a>
+            <a href="" class="img_wrap"><img class="lazy" data-src="./img/news/3.jpg" alt=""></a>
             <p><a href="">Большое поступление химии и 
                 инструмента для обработки камня</a></p>
                 <p><a href="">09.09.2019</a></p>
           </div>
           <div class="col-sm-6 col-md-3" data-aos="fade-up" data-aos-offset="400">
-            <a href="" class="img_wrap"><img src="./img/news/4.jpg" alt=""></a>
+            <a href="" class="img_wrap"><img class="lazy" data-src="./img/news/4.jpg" alt=""></a>
             <p><a href="">Поступление гранитной 
                 Дымовской плитки</a></p>
                 <p><a href="">09.09.2019</a></p>
@@ -630,6 +642,70 @@
         </form>
       </div>
     </section>
+
+    <footer class="footer" data-aos="fade-up">
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-sm-6 col-lg-2">
+            <ul>
+              <li><a href="">Каталог камней</a></li>
+              <li><a href="">Изделия</a></li>
+              <li><a href="">Инструменты</a></li>
+              <li><a href="">Новости</a></li>
+              <li><a href="">Акции</a></li>
+            </ul>
+          </div>
+
+          <div class="col-sm-6 col-lg-3">
+            <ul>
+              <li><a href="">Контакты</a></li>
+              <li><a href="">Вакансии</a></li>
+              <li><a href="">О компании</a></li>
+              <li><a href="">Гарантии качества</a></li>
+              <li><a href="">Политика обработки персональных данный</a></li>
+            </ul>
+          </div>
+
+          <div class="col-sm-6 col-lg-3">
+            <ul>
+              <li><a href="">Статьи</a></li>
+              <li><a href="">Видеоинструкции</a></li>
+              <li><a href="">Информация о станках</a></li>
+              <li><a href="">Рекомендации</a></li>
+            </ul>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 last">
+            <ul>
+              <li><a href="">8 800 505 20 45</a></li>
+              <li><a href="">8 861 251 78 00</a></li>
+              <li><a href="">hmg@mramor23.ru</a></li>
+            </ul>
+          </div>
+          <div class="col-12 right">
+            <div class="insta">
+              <a href="">Камень <img src="./img/footer/instagram.svg" alt=""></a>
+              <a href="">Инструмент и химия <img src="./img/footer/instagram.svg" alt=""></a>
+            </div>
+            <div class="social">
+              <a href=""><img src="./img/footer/facebook.svg" alt=""></a>
+              <a href=""><img src="./img/footer/twitter.svg" alt=""></a>
+              <a href=""><img src="./img/footer/vk.svg" alt=""></a>
+              <a href=""><img src="./img/footer/pinterest.svg" alt=""></a>
+            </div>
+          </div>
+
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-12">
+            Разработка: <a class="author" href="https://skipao.ru" target="_blank"><img src="./img/ski.svg"></a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
 
   <script src="./js/scripts.min.js"></script>
   <script src="./js/slick/slick.min.js"></script>

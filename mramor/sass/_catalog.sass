@@ -45,6 +45,17 @@
                     line-height: 1
                     text-align: left
                     margin-right: 1em
+    
+    .preloader
+        margin: 0
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translateX(-50%) translateY(-50%)
+        z-index: 1
+        &.hidden
+            opacity: 0
+            z-index: -1
 
 @media screen and (max-width: 1199.98px)
     .catalog
