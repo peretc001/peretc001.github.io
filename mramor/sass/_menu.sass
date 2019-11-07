@@ -1,6 +1,6 @@
 .mobile-menu
    display: none
-   position: stickya
+   position: fixed
    top: 0
    width: 100%
 
@@ -130,15 +130,17 @@
       overflow-y: scroll
       transform: translateX(-100%)
       font-size: 1em
+      padding-bottom: 3em
       &.is-opened
          height: 95vh
          transition: transform .5s ease
-         transform: translateX(0) 
+         transform: translateX(0) !important
          &.is-close
             transition: transform .5s ease
-            transform: translateX(-100%)
+            transform: translateX(-100%) !important
       &.out
-         transform: translateY(0)
+         transform: translateY(0) translateX(-100%)
+
       .menu-nav
          padding: 20px 0 30px 0
          max-width: 300px
@@ -179,6 +181,9 @@
 
       .phone
          display: none
+      
+      .lang
+         margin-bottom: 2em
 
    .mobile-menu
       display: flex

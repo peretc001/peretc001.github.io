@@ -14,9 +14,13 @@ var gulp          = require('gulp'),
 gulp.task('browser-sync', function() {
 	browserSync({
 		server: {
-			baseDir: 'app'
+			baseDir: 'app',
 		},
 		notify: false,
+		port: 8080,//Or whatever port you want for your application
+		ui: {
+			port: 8081 //Or whatever port you want for browsersync ui
+		}
 		// open: false,
 		// online: false, // Work Offline Without Internet Connection
 		// tunnel: true, tunnel: "projectname", // Demonstration page: http://projectname.localtunnel.me
