@@ -2,7 +2,7 @@
    <div>
       <stepLine />
       <div class="step1">
-         <b-container>
+         <b-container> 
            <h2>{{ price }} p.</h2>
             <b-row>
                <b-col md="5">
@@ -84,9 +84,16 @@ export default {
     },
     changeSelectedIndex (index) {
       this.$refs.slick.reSlick()
-      this.$store.commit('setMaterial', this.selected_material)
-      this.$store.commit('setPrice', this.materials[index].price)
-      this.price = this.$store.state.price
+      this.$store.commit('setMaterial', index)
+      this.$store.commit('setImg2', index + '1')
+
+      let arr = { 
+        material: index, 
+        img: this.$store.state.steps.forms_img[index][index + '1'], 
+        current: index + '1' 
+      }
+      // Записываем выбранную форму
+      this.$store.commit('setForms', arr)
     }    
   }
 }

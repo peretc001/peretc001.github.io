@@ -1,54 +1,46 @@
 <template>
-   <div>
-      <input type="text" v-model="houseNumber.number" :placeholder="placeholder" @input="sethouseNumber()">
-      <b-dropdown id="fonts" :text="this.houseNumber.font" class="m-md-2">
-         <b-dropdown-item v-for="(font, i) in fonts" :key="i" @click="setHouseNumberFont(font)">{{ font }}</b-dropdown-item>
-      </b-dropdown>
-      <b-form-input id="range" v-model="houseNumber.size" type="range" min="24" max="192" step="2" @input="setHouseNumberFontSize(houseNumber.size)"></b-form-input>
-      <div class="font__color">
-         <div class="font__color__card" v-for="(color, index) in colors" :key="index">
-            <input
-               :id="index + '-' + id"
-               v-model="houseNumber.color"
-               type="radio"
-               :value="index"
-               name="color"
-               @input="setHouseNumberFontColor(color.color)"
-            >
-            <label :for="index + '-' + id"><i :style="{ 'background-color': color.color }"></i></label>
-         </div>
+   <div class="step3__input">
+     <div class="step3__input__font">
+        <input type="text" class="text" v-model="houseNumber.number" :placeholder="placeholder" @input="sethouseNumber()">
+        <b-dropdown id="fonts" :text="'Шрифт ' + this.houseNumber.font" v-model="houseNumber.font" variant="dark">
+          <b-dropdown-item v-for="(font, i) in this.$store.state.steps.step3.fonts" :key="i" @click="setHouseNumberFont(i)">Шрифт {{ i }}</b-dropdown-item>
+        </b-dropdown>
+        <div class="font__color">
+          <div class="font__color__card" v-for="(color, index) in this.$store.state.steps.step3.colors" :key="index">
+              <input
+                :id="index + '-' + id"
+                v-model="houseNumber.color"
+                type="radio"
+                :value="index"
+                name="color"
+                @input="setHouseNumberFontColor(color)"
+              >
+              <label :for="index + '-' + id" :class="index"></label>
+          </div>
+        </div>
       </div>
-      <div class="button__list">
-         <button
-            class="btn btn-outline-secondary left"
-            @click="setHouseNumberPadding('left')"
-            > <
-         </button>
-         <button
-            class="btn btn-outline-secondary right"
-            @click="setHouseNumberPadding('right')"
-            > >
-         </button>
-         <button
-            class="btn btn-outline-secondary top"
-            @click="setHouseNumberPadding('top')"
-            > ^
-         </button>
-         <button
-            class="btn btn-outline-secondary bottom"
-            @click="setHouseNumberPadding('bottom')"
-            > v
-         </button>
-         <button
-            class="btn btn-outline-secondary bottom"
-            @click="setHouseNumberPadding('horizontal')"
-            > H
-         </button>
-         <button
-            class="btn btn-outline-secondary bottom"
-            @click="setHouseNumberPadding('vertical')"
-            > V
-         </button>
+      <div class="step3__input__align">
+        <b-form-input id="range" v-model="houseNumber.size" type="range" min="24" max="192" step="2" @input="setHouseNumberFontSize(houseNumber.size)"></b-form-input>
+        <div class="button__list">
+          <button
+              class="btn btn-outline left"
+              @click="setHouseNumberPadding('left')"></button>
+          <button
+              class="btn btn-outline right"
+              @click="setHouseNumberPadding('right')"></button>
+          <button
+              class="btn btn-outline top"
+              @click="setHouseNumberPadding('top')"></button>
+          <button
+              class="btn btn-outline bottom"
+              @click="setHouseNumberPadding('bottom')"></button>
+          <button
+              class="btn btn-outline horizontal"
+              @click="setHouseNumberPadding('horizontal')"></button>
+          <button
+              class="btn btn-outline vertical"
+              @click="setHouseNumberPadding('vertical')"></button>
+        </div>
       </div>
    </div>
 </template>
@@ -64,7 +56,7 @@ export default {
     return {
       houseNumber: {
         number: '1',
-        font: 'Arial Black',
+        font: '1',
         size: '48',
         color: '#FFFFFF',
         padding: {
@@ -73,27 +65,6 @@ export default {
           top: 0,
           bottom: 0
         }
-      },
-      colors: {
-        black: {
-          color: '#000000'
-        },
-        blue: {
-          color: '#0000FF'
-        },
-        red: {
-          color: '#FF0000'
-        },
-        white: {
-          color: '#FFFFFF'
-        }
-      },
-      fonts: {
-        ArialBlack: 'Arial Black',
-        Georgia: 'Georgia',
-        Tahoma: 'Tahoma',
-        TimesNewRoman: 'Times New Roman',
-        Verdana: 'Verdana'
       }
     }
   },
@@ -102,6 +73,7 @@ export default {
     this.houseNumber.font = this.$store.state.steps.step3[this.id].font
     this.houseNumber.size = this.$store.state.steps.step3[this.id].size
     this.houseNumber.color = this.$store.state.steps.step3[this.id].color
+
     this.houseNumber.padding.left = this.$store.state.steps.step3[this.id].padding.left
     this.houseNumber.padding.right = this.$store.state.steps.step3[this.id].padding.right
     this.houseNumber.padding.top = this.$store.state.steps.step3[this.id].padding.top
@@ -116,10 +88,10 @@ export default {
       this.$store.commit('setHouseNumber', value)
       this.$emit('number', this.houseNumber)
     },
-    setHouseNumberFont (font) {
+    setHouseNumberFont (i) {
       let value = {
         id: this.id,
-        val: font
+        val: i
       }
       this.$store.commit('setHouseNumberFont', value)
       this.houseNumber.font = value.val

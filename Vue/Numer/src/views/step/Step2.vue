@@ -28,18 +28,18 @@
                         <label :for="i">{{size.text}}</label>
                       </div>
                     </div>
-                    <div class="params">Размер: <b>{{ selected_forms.width }}</b> х <b>{{ selected_forms.height }}</b> см</div>  
+                    <div class="params">Размер: <b>{{ selected_forms.width }}</b> х <b>{{ selected_forms.height }}</b> мм</div>  
                   </div>
-                  <b-form-input id="range" v-model="range" type="range" min="1" max="2.5" step="0.005" @input="changeRange(range)"></b-form-input>
+                  <b-form-input id="range" v-model="range" type="range" min="1" :max="max" step="0.005" @input="changeRange(range)"></b-form-input>
                   <div class="forms">
-                     <div v-for="(form, i) in forms[selected_forms.name]" :key="i" class="forms__card">
+                     <div v-for="(form, i) in forms" :key="i" class="forms__card">
                         <input
                           :id="i"
                           type="radio"
                           :value="i"
                           name="forms"
                           @change="changeForms(i)"
-                          :checked="selected_forms.current == i"
+                          :checked="selected_forms.current == selected_forms.name + i"
                         >
                         <label :for="i"><img :src="form"></label>
                      </div>
@@ -62,7 +62,6 @@ export default {
   },
   data () {
     return {
-      img: '',
       sizes: {
         small: {
           text: 'Маленький',
@@ -76,6 +75,14 @@ export default {
           text: 'Большой',
           size: '2'
         }
+      },
+      max: 2,
+      forms_oak: {
+        1: require('@/assets/img/step2/8.png'),
+        2: require('@/assets/img/step2/9.png'),
+        3: require('@/assets/img/step2/12.png'),
+        4: require('@/assets/img/step2/20.png'),
+        5: require('@/assets/img/step2/22.png')
       }
     }
   },
@@ -83,11 +90,37 @@ export default {
     // Устанавливаем выбранный размер
     this.price = this.$store.state.price
     this.selected_size = this.$store.state.steps.size
-    this.range = this.$store.state.steps.range
 
-    this.img = this.$store.state.steps.selected_forms.img
     this.selected_forms = this.$store.state.steps.selected_forms
-    this.forms = this.$store.state.steps.forms
+
+    this.img = this.$store.state.steps.forms_img[this.selected_forms.name][this.selected_forms.current]
+
+    this.range = this.$store.state.steps.range
+    
+    if ( this.selected_forms.name == 'oak' ) {
+      this.forms = this.forms_oak
+      if (this.range >= 1.5 ) {
+        this.range = 1.5
+        this.max = 1.5
+        this.selected_size = 'middle'
+        this.selected_forms.width = parseFloat(150 * this.range).toFixed(2)
+        this.selected_forms.height = parseFloat(200 * this.range).toFixed(2)
+        this.price = ((((this.selected_forms.width*this.selected_forms.height)/1000000)*15000)+300).toFixed(0)
+        this.$store.commit('setSize', 'middle')
+        this.$store.commit('setRange', this.range)
+        this.$store.commit('setWidth', parseFloat(150 * this.range).toFixed(2))
+        this.$store.commit('setHeight', parseFloat(200 * this.range).toFixed(2))
+        this.$store.commit('setPrice', this.price)
+      }
+    } else {
+      this.forms = this.$store.state.steps.forms
+      this.max = 2
+      this.selected_forms.width = parseFloat(150 * this.range).toFixed(2)
+      this.selected_forms.height = parseFloat(200 * this.range).toFixed(2)
+      this.price = ((((this.selected_forms.width*this.selected_forms.height)/1000000)*15000)+300).toFixed(0)
+    }
+
+    this.forms_img = this.$store.state.steps.forms_img
   },
   methods: {
     changeSize (i) {
@@ -99,12 +132,16 @@ export default {
       this.$store.commit('setRange', this.sizes[i].size)
       this.$store.commit('setWidth', parseFloat(150 * this.sizes[i].size).toFixed(2))
       this.$store.commit('setHeight', parseFloat(200 * this.sizes[i].size).toFixed(2))
+
+      //Рассчитываем прайс
+      this.price = ((((this.selected_forms.width*this.selected_forms.height)/1000000)*15000)+300).toFixed(0)
+      this.$store.commit('setPrice', this.price)
     },
     changeRange (value) {
-      if (value <= 1.5) {
+      if (value < 1.5) {
         this.selected_size = 'small'
       }
-      if (value > 1.5 && value < 2) {
+      if (value >= 1.5 && value < 2) {
         this.selected_size = 'middle'
       }
       if (value >= 2) {
@@ -113,6 +150,7 @@ export default {
 
       if (this.selected_forms.name == 'oak' && this.range >= 1.5 ) {
         this.range = 1.5
+        this.max = 1.5
       }
 
       this.selected_forms.width = parseFloat(150 * this.range).toFixed(2)
@@ -129,10 +167,11 @@ export default {
 
     },
     changeForms (index) {
-      this.img = this.forms[this.selected_forms.name][index]
-      let arr = { material: this.selected_forms.name, img: this.forms[this.selected_forms.name][index], current: index }
+      this.img = this.forms_img[this.selected_forms.name][this.selected_forms.name + '' + index]
+      let arr = { material: this.selected_forms.name, img: this.forms_img[this.selected_forms.name][this.selected_forms.name + '' + index], current: this.selected_forms.name + '' + index, current_num: index }
       // Записываем выбранную форму
       this.$store.commit('setForms', arr)
+      this.$store.commit('setColor', '1')
     }
   }
 }

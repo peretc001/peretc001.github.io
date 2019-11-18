@@ -1,0 +1,62 @@
+.products-logo
+    padding: 170px 0 0 0
+    &__flex
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-wrap: wrap
+        &__item
+            flex: 0 1 150px
+            margin-left: calc( (100% - 150px*6)/5 )
+            margin-bottom: 60px
+            &:nth-child(1),
+            &:nth-child(6n+1)
+                margin-left: 0
+            img
+                filter: grayscale(1)
+                transition: filter .5s ease
+                &:hover
+                    filter: grayscale(0)
+
+@media screen and (max-width: 1199.98px)
+    .products-logo
+        &__flex
+            &__item
+                flex: 0 1 120px
+                margin-left: calc( (100% - 120px*6)/5 )
+
+@media screen and (max-width: 991.98px)
+    .products-logo
+        padding: 100px 0 0 0
+        &__flex
+            &__item
+                flex: 0 1 150px
+                margin-left: calc( (100% - 150px*4)/3 )
+                margin-bottom: 60px
+                &:nth-child(1),
+                &:nth-child(4n+1)
+                    margin-left: 0
+                &:nth-child(6n+1)
+                    margin-left: auto
+
+@media screen and (max-width: 767.98px)
+    .products-logo
+        padding: 100px 0 0 0
+        &__flex
+            &__item
+                flex: 0 1 100px
+                margin-left: calc( (100% - 100px*4)/3 )
+
+@media screen and (max-width: 576.98px)
+    .products-logo
+        padding: 50px 0 0 0
+        &__flex
+            &__item
+                flex: 0 1 80px
+                margin-left: calc( (100% - 80px*3)/2 )
+                margin-bottom: 30px
+                &:nth-child(1),
+                &:nth-child(3n+1)
+                    margin-left: 0
+                &:nth-child(4n+1)
+                    margin-left: auto

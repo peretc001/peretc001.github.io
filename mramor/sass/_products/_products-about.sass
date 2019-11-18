@@ -1,0 +1,35 @@
+.products-about
+    padding: 170px 0 0 0
+    h2
+        font-size: 2.2em
+        text-align: center
+        margin-bottom: 2em
+    
+    .column
+        display: flex
+        margin-bottom: 2em
+        flex-wrap: wrap
+        &-item
+            flex: 0 1 50%
+            &:nth-child(1n)
+                padding-right: 1em
+            &:nth-child(2n)
+                padding-left: 1em
+            &.center
+                flex: 0 1 50%
+                margin-left: 25%
+
+@media screen and ( max-width: 767.98px )
+    .products-about
+        .column
+            &-item
+                flex: 0 1 100%
+                &:nth-child(1n)
+                    padding-right: 0
+                &:nth-child(2n)
+                    padding-left: 0
+                &.center
+                    flex: 0 1 100%
+                    margin-left: 0
+
+    

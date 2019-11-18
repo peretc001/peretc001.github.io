@@ -18,6 +18,11 @@ export default new Router({
       component: () => import('./views/About.vue')
     },
     {
+      path: '/delivery',
+      name: 'delivery',
+      component: () => import('./views/Delivery.vue')
+    },
+    {
       path: '/step1',
       name: 'step1',
       component: () => import('./views/step/Step1.vue')
@@ -36,11 +41,6 @@ export default new Router({
       path: '/step4',
       name: 'step4',
       component: () => import('./views/step/Step4.vue')
-    },
-    {
-      path: '/step5',
-      name: 'step5',
-      component: () => import('./views/step/Step5.vue')
     }
   ]
 })

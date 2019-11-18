@@ -25,9 +25,13 @@
       li
          list-style: none
          display: block
+         &:first-child
+            .nav-link
+               padding-left: 0
       a
          color: $text
          font-size: 1em
+
    
    .logo
       display: block
@@ -114,6 +118,37 @@
    &.out
       transform: translateY(-100%)
 
+.divider
+   display: block
+   height: 100px
+
+.breadcrumb
+   padding: 10px 0 20px 0
+   background: transparent
+   color: $text2
+   font-size: 0.8em
+      
+   a
+      position: relative
+      padding: 0
+      margin: 0
+      margin-right: 1em
+      padding-right: 2em
+      color: $text2
+      &::before
+         content: ''
+         position: absolute
+         right: 0
+         top: 55%
+         transform: translateY(-50%)
+         width: .7em
+         height: .7em
+         background-size: .7em
+         background-position: center
+         background-repeat: no-repeat
+         background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDc3LjE3NSA0NzcuMTc1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NzcuMTc1IDQ3Ny4xNzU7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8cGF0aCBkPSJNMzYwLjczMSwyMjkuMDc1bC0yMjUuMS0yMjUuMWMtNS4zLTUuMy0xMy44LTUuMy0xOS4xLDBzLTUuMywxMy44LDAsMTkuMWwyMTUuNSwyMTUuNWwtMjE1LjUsMjE1LjUgICBjLTUuMyw1LjMtNS4zLDEzLjgsMCwxOS4xYzIuNiwyLjYsNi4xLDQsOS41LDRjMy40LDAsNi45LTEuMyw5LjUtNGwyMjUuMS0yMjUuMUMzNjUuOTMxLDI0Mi44NzUsMzY1LjkzMSwyMzQuMjc1LDM2MC43MzEsMjI5LjA3NXogICAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiIHN0eWxlPSJmaWxsOiM2MjYyNjIiPjwvcGF0aD4KPC9nPjwvZz4gPC9zdmc+')
+
+
 @media screen and (max-width: 1199.98px)
    .menu
       font-size: 0.9em
@@ -122,6 +157,17 @@
 
 
 @media screen and (max-width: 991.98px)
+   .divider
+      display: block
+      height: 50px
+   
+   .breadcrumb
+      padding: 10px 0
+      a
+         display: inline-block
+         margin-right: .5em
+         padding-right: 1em
+
    .menu
       position: fixed
       left: 0

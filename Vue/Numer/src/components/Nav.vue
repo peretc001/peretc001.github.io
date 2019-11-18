@@ -8,6 +8,7 @@
                <b-navbar-nav class="ml-auto">
                <b-nav-item to="/step1">Калькулятор</b-nav-item>
                <b-nav-item to="/about">О компании</b-nav-item>
+               <b-nav-item to="/delivery">Доставка и оплата</b-nav-item>
                <b-nav-item href="tel:88001112233"><span class="phone">8 800 111 22 33</span></b-nav-item>
                </b-navbar-nav>
             </b-collapse>

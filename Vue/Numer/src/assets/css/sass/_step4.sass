@@ -1,0 +1,110 @@
+.step3.last
+   .step3__left
+      position: relative
+      width: 400px
+      height: 400px
+      margin: 0 auto
+      &__img
+         background-position: center
+         background-size: cover
+         position: absolute
+         padding-top: 0
+         width: 400px
+         height: 400px
+         overflow: hidden
+         img
+            position: absolute
+            left: 0
+            top:  0
+            transform: none
+            width: 100%
+            height: 100%
+            margin: 0 auto
+            transition: transform .3s ease
+
+   .form-group
+      max-width: 250px
+   
+   .form-group
+      div
+         &:last-child
+            color: red
+
+   .input-group-addon
+      display: inline-block
+      min-width: 60px
+      text-align: center
+      background: $dark
+      color: #ffffff !important
+      padding: 6px 10px
+      border-radius: 4px 0 0 4px
+      border: 1px solid #ccc
+      border-right: none
+      .field
+         margin-bottom: 24px
+      .field > label
+         margin-right: 8px
+      .error
+         border-color: red
+   
+   .group-btn
+      margin-top: 3em
+   
+
+   .form
+      &.done
+         display: none
+
+   .answer
+      overflow: hidden
+      position: relative
+      opacity: 0
+      z-index: -1
+      height: 0
+      color: #ffffff
+      max-width: 300px
+      margin: 0
+      text-align: center
+      transition: opacity .5s ease
+      img
+         width: 100px
+         margin-bottom: 1em
+      &.done
+         overflow: visible
+         opacity: 1
+         z-index: 1
+         height: auto
+         padding-bottom: 3em
+         img
+            animation: scale 1.5s ease
+
+@keyframes scale
+   0%
+      transform: scale(1)
+   50%
+      transform: scale(1.2)
+   100%
+      transform: scale(1)
+
+@media screen and (max-width: 991.98px)
+   .step3.last
+      .step3__left
+         width: 300px
+         height: 300px
+         margin: 0 auto
+         margin-bottom: 1em
+         &__img
+            width: 300px
+            height: 300px
+            margin: 0 auto
+
+@media screen and (max-width: 767.98px)
+   .step3.last
+      text-align: center
+      .form-group
+         margin: 0 auto
+         margin-bottom: 1em
+         text-align: center
+      .answer
+         margin: 0 auto
+   

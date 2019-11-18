@@ -49,6 +49,19 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollPrev = scrolled;
     });
 
+    if ( document.querySelector('.open__filter') ) {
+        const filterBtn = document.querySelector('.open__filter')
+        const filter = document.querySelector('.products__filter')
+        const filterShow = localStorage.getItem('open__filter')
+
+        filterShow == 'active' ? filter.classList.add('active') : ''
+
+        filterBtn.addEventListener( 'click', () => {
+            filter.classList.contains('active') ? localStorage.setItem('open__filter', '') : localStorage.setItem('open__filter', 'active')
+            filter.classList.toggle('active')
+        });
+    }
+
     if ( document.querySelectorAll('.callback__form') ) {
         const form = document.querySelectorAll('.callback__form');
         form.forEach(item => {
