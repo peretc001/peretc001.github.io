@@ -1,0 +1,40 @@
+.work
+    padding: $gutter*2 0
+    background-size: cover
+    background-position: top center
+    .row
+        align-items: center
+    [class*="col-"]
+        padding-top: $gutter*2
+    h4
+        max-width: 500px
+        margin: 0
+        text-align: left
+        line-height: 1.5
+        margin-bottom: 1em
+    a
+        color: $text
+    .link
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        a
+            margin-right: 2em
+    p
+        margin-bottom: 2em
+        &:last-child
+            margin-bottom: 0
+    
+    img
+        width: 100%
+        transition: transform .5s ease
+
+    .row
+        &:hover
+            h4
+                text-decoration: underline
+            img
+                transform: scale(1.05)
+            .btn
+                background: $text
+                color: #ffffff

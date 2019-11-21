@@ -2,6 +2,10 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    window.onload = function(){
+        console.log(window.screen.availWidth- (window.screen.availWidth - window.innerWidth));
+    };
+
     if ( document.querySelector('.hamburger') ) {
         const hamburger = document.querySelector('.hamburger');
         const mobileMenu = document.querySelector('.menu')

@@ -43,29 +43,29 @@ export default new Router({
       component: () => import('./components/steps/SixthStep'),
       meta: { step:6 }
     },
-    {
-      path: '/SeventhStep',
-      name: 'SeventhStep',
-      component: () => import('./components/steps/SeventhStep'),
-      meta: { step:7 }
-    },
-    {
-      path: '/EighthStep',
-      name: 'EighthStep',
-      component: () => import('./components/steps/EighthStep'),
-      meta: { step:8 }
-    },
-    {
-      path: '/NinthStep',
-      name: 'NinthStep',
-      component: () => import('./components/steps/NinthStep'),
-      meta: { step:9 }
-    },
-    {
-      path: '/TenthStep',
-      name: 'TenthStep',
-      component: () => import('./components/steps/TenthStep'),
-      meta: { step:10 }
-    }
+    // {
+    //   path: '/SeventhStep',
+    //   name: 'SeventhStep',
+    //   component: () => import('./components/steps/SeventhStep'),
+    //   meta: { step:7 }
+    // },
+    // {
+    //   path: '/EighthStep',
+    //   name: 'EighthStep',
+    //   component: () => import('./components/steps/EighthStep'),
+    //   meta: { step:8 }
+    // },
+    // {
+    //   path: '/NinthStep',
+    //   name: 'NinthStep',
+    //   component: () => import('./components/steps/NinthStep'),
+    //   meta: { step:9 }
+    // },
+    // {
+    //   path: '/TenthStep',
+    //   name: 'TenthStep',
+    //   component: () => import('./components/steps/TenthStep'),
+    //   meta: { step:10 }
+    // }
   ]
 })

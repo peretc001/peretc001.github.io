@@ -21,6 +21,7 @@ body
 	overflow-x: hidden
 	color: $text
 	opacity: 0
+	background: #e9eaec
 	
 	input, textarea
 		border: #666 1px solid
@@ -31,19 +32,15 @@ body
 			border-color: green
 	
 		&::-webkit-input-placeholder
-			text-transform: uppercase
 			color: rgba($text, .7) !important
 
 		&:-moz-placeholder
-			text-transform: uppercase
 			color: rgba($text, .7) !important
 
 		&::-moz-placeholder
-			text-transform: uppercase
 			color: rgba($text, .7) !important
 
 		&:-ms-input-placeholder
-			text-transform: uppercase
 			color: rgba($text, .7) !important
 
 .text-center
@@ -64,7 +61,7 @@ b, strong
 img
 	max-width: 100%
 
-h1, h2, h3
+h1, h2, h3, h4, h5
 	font-family: 'Comfortaa', sans-serif
 	display: block
 	text-align: center
@@ -73,11 +70,20 @@ h1, h2, h3
 @import 'header'
 @import 'portfolio'
 @import 'services'
+@import 'how'
+@import 'partners'
+@import 'footer'
 @import 'modal'
+
+@import 'work'
 
 
 @mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1))
 	transition: $property $duration $ease
+
+.divider
+	display: block
+	height: 100px
 
 .btn
 	position: relative

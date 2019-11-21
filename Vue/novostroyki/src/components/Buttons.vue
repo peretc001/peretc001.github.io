@@ -1,10 +1,6 @@
 <template>
     <div class="form__button">
-        <div v-if="step === 1">
-            <button class="stepStart" type="button" @click="go">Начать подбор</button>
-        </div>
-
-        <div v-if="step > 1 && step < 9">
+        <div v-if="step > 1 && step < 5">
             <button class="btn stepDel" type="button" @click="step2Del"> Назад</button>
             <button class="btn stepAdd" type="button" @click="step2Add">Далее</button>
         </div>
@@ -16,9 +12,6 @@
         name: "Buttons",
         props: {step: {type: Number},showModal:{type: Boolean}},
         methods: {
-            go() {
-                this.$router.push('/SecondStep');
-            },
             step2Add() {
 	            let currentState = {};
 	            if (this.$router.currentRoute.name !=='NinthStep'){
@@ -30,6 +23,10 @@
                 
                 if(currentState.length > 0 || this.$router.currentRoute.name === 'NinthStep') {
                   let curretStep = this.step + 1;
+
+                  if (document.documentElement.clientWidth < 767) {
+                        window.scrollTo(0,0)
+                    }
 
                   switch (curretStep) {
                       case 1 :
@@ -46,21 +43,6 @@
                           break;
                       case 5 :
                           this.$router.push({path: '/FifthStep'});
-                          break;
-                      case 6 :
-                          this.$router.push({path: '/SixthStep'});
-                          break;
-                      case 7 :
-                          this.$router.push({path: '/SeventhStep'});
-                          break;
-                      case 8 :
-                          this.$router.push({path: '/EighthStep'});
-                          break;
-                      case 9 :
-                          this.$router.push({path: '/NinthStep'});
-                          break;
-                      case 10 :
-                          this.$router.push({path: '/TenthStep'});
                           break;
                   }
               }else {
@@ -79,18 +61,6 @@
                         break;
                     case 4 : this.$router.push({path:'/FourthStep'});
                         break;
-                    case 5 : this.$router.push({path:'/FifthStep'});
-                        break;
-                    case 6 : this.$router.push({path:'/SixthStep'});
-                        break;
-                    case 7 : this.$router.push({path:'/SeventhStep'});
-                        break;
-                    case 8 : this.$router.push({path:'/EighthStep'});
-                        break;
-                    case 9 : this.$router.push({path:'/NinthStep'});
-                        break;
-                    case 10 : this.$router.push({path:'/TenthStep'});
-                        break;
                 }
             },
         }
@@ -98,20 +68,7 @@
 </script>
 
 <style scoped>
-    .stepStart {
-        background: #4DBA4B;
-        width: 180px;
-        height: 40px;
-        cursor: pointer;
-        border: 0;
-        font-size: 18px;
-        color: #fff;
-    }
-
-    .stepStart:focus {
-        outline: 0;
-    }
-
+    
     .btn {
         width: 100px;
         height: 45px;

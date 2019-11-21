@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="form__title">
-            Какой район города Вам интересен?
+            Какой район Вам интересен?
         </div>
         <div class="form__items area">
 
@@ -287,10 +287,8 @@
     .form__item {
         width: 50%;
     }
+
     @media screen and (max-width: 600px) {
-        span {
-            display: none;
-        }
         .form__items {
             flex-wrap: wrap;
         }

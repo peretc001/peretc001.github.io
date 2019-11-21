@@ -1,8 +1,4 @@
-<?php 
-header('Access-Control-Allow-Origin: *');
-header('Content-Type: application/json');
-header('Access-Control-Allow-Methods: GET, POST, OPTIONS' );
-header('Access-Control-Allow-Headers: Version, Authorization, Content-Type' );
+<?php
 
 $posts = json_decode(file_get_contents('php://input'), true)['data'];
 
@@ -69,16 +65,17 @@ $mail->CharSet = 'UTF-8';
 		  
 	$mail->Host = 'ssl://smtp.yandex.ru';
 	$mail->SMTPAuth = true;
-	$mail->Username =  'i.krasovsky@yandex.ru'; // имя пользователя yandex
-	$mail->Password = 'Parol123'; // пароль на yandex
+	$mail->Username =  'svetlanaanasimova@yandex.ru'; // имя пользователя yandex
+	$mail->Password = 'Chnch56gj'; // пароль на yandex
 	$mail->SMTPSecure = 'SSL';
 	$mail->Port = 465;
 
-	$mail->setFrom('i.krasovsky@yandex.ru', 'Krasovsky');
+	$mail->setFrom('svetlanaanasimova@yandex.ru', 'Новостройки-в-Краснодаре');
 
-	$mail->addAddress('i.krasovsky@yandex.ru', '');
+	$mail->addAddress('svetlanaanasimova@yandex.ru', '');
 
 	$mail->Subject = 'Новостройки-в-Краснодаре: Заявка';
+
 
 	$body .= 'Меня интересует:<br>';
 	foreach ($posts['all']['form'] as $key => $row) {

@@ -1,34 +1,12 @@
 <template>
     <div class="container">
         <div class="form__title">
-            Какой год сдачи жилого комплекса Вам интересен?
+            Подождите, мы осуществляем подбор квартир согласно заданным параметрам
         </div>
-        <div class="form__items">
-            <div class="form__item">
-                <input type="checkbox" id="finished" required  value="finished" v-model="housingStock1">
-                <label for="finished">готовое</label>
-            </div>
-
-            <div class="form__item">
-                <input type="checkbox" id="surrenderYear" required value="surrenderYear" v-model="housingStock2">
-                <label for="surrenderYear">сдача в этом году</label>
-            </div>
-
-            <div class="form__item">
-                <input type="checkbox" id="Year20" required value="Year20" v-model="housingStock3">
-                <label for="Year20"> 2020-2021 г</label>
-            </div>
-
-            <div class="form__item">
-                <input type="checkbox" id="Year21" required value="Year21" v-model="housingStock4">
-                <label for="Year21">2021-2022 г</label>
-            </div>
-
-            <div class="form__item">
-                <input type="checkbox" id="Year22" required value="Year22" v-model="housingStock5">
-                <label for="Year22">2022-2023 г</label>
-            </div>
-
+        <div class="loader">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="45"/>
+            </svg>
         </div>
     </div>
 </template>
@@ -36,76 +14,118 @@
 <script>
 	export default {
 		name: "FifthStep",
-		computed: {
-			housingStock1: {
-				get() {
-					return this.$store.state.form.FifthStep.finished
-				},
-				set(value) {
-					let obj = {
-						input: 'FifthStep',
-						name: 'finished',
-						value:value
-					};
-					this.$store.commit('updateForm', obj)
-				}
-			},
-			housingStock2: {
-				get() {
-					return this.$store.state.form.FifthStep.surrenderYear
-				},
-				set(value) {
-					let obj = {
-						input: 'FifthStep',
-						name: 'surrenderYear',
-						value:value
-					};
-					this.$store.commit('updateForm', obj)
-				}
-			},
-			housingStock3: {
-				get() {
-					return this.$store.state.form.FifthStep.Year20
-				},
-				set(value) {
-					let obj = {
-						input: 'FifthStep',
-						name: 'Year20',
-						value:value
-					};
-					this.$store.commit('updateForm', obj)
-				}
-			},
-			housingStock4: {
-				get() {
-					return this.$store.state.form.FifthStep.Year21
-				},
-				set(value) {
-					let obj = {
-						input: 'FifthStep',
-						name: 'Year21',
-						value:value
-					};
-					this.$store.commit('updateForm', obj)
-				}
-			},
-			housingStock5: {
-				get() {
-					return this.$store.state.form.FifthStep.Year22
-				},
-				set(value) {
-					let obj = {
-						input: 'FifthStep',
-						name: 'Year22',
-						value:value
-					};
-					this.$store.commit('updateForm', obj)
-				}
-			}
-		}
+        created() {
+			setTimeout(()=>{ this.$router.push({path: '/SixthStep'});},2500)
+        }
 	}
 </script>
 
 <style scoped>
+
+    .form__title {
+        font-size: 34px;
+        text-align: center;
+    }
+    .loader {
+        margin: auto;
+        max-width: 100px;
+        width: 100%;
+    }
+
+    svg {
+        -webkit-animation: 2s linear infinite svg-animation;
+        animation: 2s linear infinite svg-animation;
+        max-width: 100px;
+    }
+
+    /* // SVG animation. */
+    @keyframes svg-animation {
+        0% {
+            -webkit-transform: rotateZ(0deg);
+            -ms-transform: rotate(0deg);
+            transform: rotateZ(0deg);
+        }
+        100% {
+            -webkit-transform: rotateZ(360deg);
+            -ms-transform: rotate(360deg);
+            transform: rotateZ(360deg);
+        }
+    }
+
+    /* // Circle styles. */
+    circle {
+        -webkit-animation: 1.4s ease-in-out infinite both circle-animation;
+        animation: 1.4s ease-in-out infinite both circle-animation;
+        display: block;
+        fill: transparent;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-dasharray: 283;
+        stroke-dashoffset: 280;
+        stroke-width: 10px;
+        -webkit-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+    }
+
+    /* // Circle animation. */
+    @-webkit-keyframes circle-animation {
+        0%,
+        25% {
+            stroke-dashoffset: 280;
+            -webkit-transform: rotate(0);
+            transform: rotate(0);
+        }
+
+        50%,
+        75% {
+            stroke-dashoffset: 75;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        100% {
+            stroke-dashoffset: 280;
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+    @keyframes circle-animation {
+        0%,
+        25% {
+            stroke-dashoffset: 280;
+            -webkit-transform: rotate(0);
+            transform: rotate(0);
+        }
+
+        50%,
+        75% {
+            stroke-dashoffset: 75;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        100% {
+            stroke-dashoffset: 280;
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+    @media screen and (max-width: 812px) {
+        .form__title {
+            font-size: 1.6em;
+        }
+    }
+
+    @media screen and (max-width: 575.98px) {
+        .form__title {
+            font-size: 1.3em;
+        }
+        .loader {
+            max-width: 70px;
+        }
+    }
+
 
 </style>

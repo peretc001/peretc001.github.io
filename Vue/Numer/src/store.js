@@ -78,13 +78,14 @@ export default new Vuex.Store({
         }
       },
       size: 'small',
-      range: '1',
+      range: '150',
       selected_forms: {
         name: 'plexiglass',
         current: 'plexiglass1',
         img: require('@/assets/img/step2/1.png'),
         width: '150.00',
-        height: '200.00'
+        height: '200.00',
+        current_num: 1
       },
       forms: {
         1: require('@/assets/img/step2/1.png'),
@@ -112,6 +113,33 @@ export default new Vuex.Store({
         23: require('@/assets/img/step2/23.png'),
         24: require('@/assets/img/step2/24.png'),
         25: require('@/assets/img/step2/25.png')
+      },
+      property: {
+        1: { width: 150, height: 200, min: 200, max: 400, step: 1 },
+        2: { width: 150, height: 200, min: 200, max: 400, step: 1 },
+        3: { width: 150, height: 200, min: 200, max: 400, step: 1 },
+        4: { width: 150, height: 200, min: 200, max: 400, step: 1 },
+        5: { width: 150, height: 200, min: 200, max: 400, step: 1 },
+        6: { width: 150, height: 200, min: 200, max: 400, step: 1 },
+        7: { width: 300, height: 75, min: 300, max: 400, step: 1 },
+        8: { width: 150, height: 200, min: 200, max: 400, step: 1 },
+        9: { width: 300, height: 75, min: 300, max: 400, step: 1 },
+        10: { width: 175, height: 175, min: 175, max: 400, step: 1 },
+        11: { width: 150, height: 200, min: 200, max: 400, step: 1 },
+        12: { width: 250, height: 125, min: 250, max: 400, step: 1 },
+        13: { width: 300, height: 75, min: 300, max: 400, step: 1 },
+        14: { width: 150, height: 200, min: 200, max: 400, step: 1 },
+        15: { width: 200, height: 150, min: 200, max: 400, step: 1 },
+        16: { width: 175, height: 175, min: 175, max: 400, step: 1 },
+        17: { width: 150, height: 200, min: 200, max: 400, step: 1 },
+        18: { width: 175, height: 175, min: 175, max: 400, step: 1 },
+        19: { width: 150, height: 200, min: 200, max: 400, step: 1 },
+        20: { width: 175, height: 175, min: 175, max: 400, step: 1 },
+        21: { width: 200, height: 150, min: 200, max: 400, step: 1 },
+        22: { width: 200, height: 150, min: 200, max: 400, step: 1 },
+        23: { width: 200, height: 150, min: 200, max: 400, step: 1 },
+        24: { width: 200, height: 150, min: 200, max: 400, step: 1 },
+        25: { width: 200, height: 150, min: 200, max: 400, step: 1 },
       },
       forms_img: {
         plexiglass: {
@@ -196,11 +224,11 @@ export default new Vuex.Store({
           aluminium25: require('@/assets/img/step3/aluminium/25.png')
         },
         oak: {
-          oak1: require('@/assets/img/step3/oak/1.png'),
-          oak2: require('@/assets/img/step3/oak/2.png'),
-          oak3: require('@/assets/img/step3/oak/3.png'),
-          oak4: require('@/assets/img/step3/oak/4.png'),
-          oak5: require('@/assets/img/step3/oak/5.png')
+          oak8: require('@/assets/img/step3/oak/8.png'),
+          oak9: require('@/assets/img/step3/oak/9.png'),
+          oak12: require('@/assets/img/step3/oak/12.png'),
+          oak20: require('@/assets/img/step3/oak/20.png'),
+          oak22: require('@/assets/img/step3/oak/22.png')
         },
         brass: {
           brass1: require('@/assets/img/step3/brass/1.png'),
@@ -491,7 +519,6 @@ export default new Vuex.Store({
       state.steps.selected_forms.name = value
       state.steps.selected_forms.current = value + '1'
     },
-    // Step2
     setSize (state, value) {
       state.steps.size = value
     },
@@ -508,9 +535,8 @@ export default new Vuex.Store({
       state.steps.selected_forms.name = value.material
       state.steps.selected_forms.img = value.img
       state.steps.selected_forms.current = value.current
-      value.current_num != '' ? state.steps.selected_forms.current_num = value.current_num : ''
+      state.steps.selected_forms.current_num != '' ? state.steps.selected_forms.current_num = value.current_num : state.steps.selected_forms.current_num = 1
     },
-    // Step3
     setHouseNumber (state, value) {
       state.steps.step3[value.id].number = value.val
     },

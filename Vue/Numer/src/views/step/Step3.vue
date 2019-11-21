@@ -3,7 +3,7 @@
       <stepLine />
       <div class="step3">
          <b-container>
-           <h2>{{ price }} p.</h2>
+           <h2 class="price">{{ price }} p.</h2>
             <b-row>
                <b-col md="5">
                   <houseNumberView :step3="step3" :img="img" :selected_number="selected_number" />

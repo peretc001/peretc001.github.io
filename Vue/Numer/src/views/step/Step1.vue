@@ -3,7 +3,7 @@
       <stepLine />
       <div class="step1">
          <b-container> 
-           <h2>{{ price }} p.</h2>
+           <h2 class="price">{{ price }} p.</h2>
             <b-row>
                <b-col md="5">
                   <slick ref="slick" :options="slickOptions">
@@ -87,10 +87,14 @@ export default {
       this.$store.commit('setMaterial', index)
       this.$store.commit('setImg2', index + '1')
 
+      let cur
+      index == 'oak' ? cur = 8 : cur= 1
+
       let arr = { 
         material: index, 
-        img: this.$store.state.steps.forms_img[index][index + '1'], 
-        current: index + '1' 
+        img: this.$store.state.steps.forms_img[index][index + cur], 
+        current: index + cur,
+        current_num: cur
       }
       // Записываем выбранную форму
       this.$store.commit('setForms', arr)
