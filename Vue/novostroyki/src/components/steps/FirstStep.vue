@@ -32,7 +32,8 @@
         },
         methods: {
             go() {
-                this.$router.push('/SecondStep');
+                ym(56345998, 'reachGoal', 'step1')
+                this.$router.push('/SecondStep')
             },
         }
 	}

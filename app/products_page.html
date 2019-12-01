@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Optimazed</title>
+  <style>
+     body {opacity: 0; overflow-x: hidden;}
+  </style>
+</head>
+<body>
+    
+<div class="mobile-menu">
+    <a class="hamburger hamburger--spin js-hamburger">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </a>
+    <a href="/" class="logo">
+      <img src="./img/logo.svg" alt="">
+    </a>
+    <a class="phone" href="tel:88005052045">8 800 505 20 45</a>
+  </div>
+    
+  <nav class="menu">
+    <div class="container">
+      <ul class="menu-nav">
+          <li class="has-children">
+            <a class="nav-link" href="/catalog.php?hasFilter=true">Каталог камней</a>
+            <ul class="sub-menu">
+              <li><a href="">Гранит</a></li>
+              <li><a href="">Мрамор</a></li>
+              <li><a href="">Оникс</a></li>
+              <li><a href="">Кварцит</a></li>
+              <li><a href="">Травертин</a></li>
+              <li><a href="">Сланец</a></li>
+              <li><a href="">Песчаник</a></li>
+              <li><a href="">Самоцветы</a></li>
+              <li><a href="">Кварцевый агломерат</a></li>
+              <li><a href="">Камни в раскладке бабочка</a></li>
+              <li><a href="">Камень колотой  фактуры</a></li>
+              <li><a href="">Мозаика</a></li>
+              <li><a href="">Плитка</a></li>
+            </ul>
+          </li>
+          <li class="has-children">
+            <a class="nav-link" href="/">Изделия</a>
+            <ul class="sub-menu">
+              <li><a href="">Полы</a></li>
+              <li><a href="">Камины</a></li>
+              <li><a href="/catalog2.html">Лестницы</a></li>
+              <li><a href="">Столешницы</a></li>
+              <li><a href="">Подоконники</a></li>
+              <li><a href="">Декоративное панно</a></li>
+              <li><a href="">Фонтаны, бассейны</a></li>
+              <li><a href="">Фасады, элементы мощения</a></li>
+              <li><a href="">Фасонные профили</a></li>
+              <li><a href="">Камни в раскладке бабочка</a></li>
+              <li><a href="">Камень колотой  фактуры</a></li>
+              <li><a href="">Мозаика</a></li>
+              <li><a href="">Плитка</a></li>
+            </ul>
+          </li>
+          <li class="has-children">
+            <a class="nav-link" href="/">Инструмент</a>
+            <ul class="sub-menu">
+              <li><a href="">Алмазный инструмент</a></li>
+              <li><a href="">Абразивный инструмент</a></li>
+              <li><a href="">Твердосплавный инструмент</a></li>
+              <li><a href="">Электро и пневмоинструмент</a></li>
+              <li><a href="">Клей для камня</a></li>
+              <li><a href="">Химия для камня</a></li>
+              <li><a href="">Прочий инструмент</a></li>
+              <li><a href="">Камнеобрабатывающее оборудование</a></li>
+            </ul>
+          </li>
+          <li class="has-children">
+            <a class="nav-link" href="/">О нас</a>
+            <ul class="sub-menu">
+              <li><a href="">О компании</a></li>
+              <li><a href="">Новости</a></li>
+              <li><a href="">Вакансии</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="/" class="logo"></a>
+          </li>
+          <li class="has-children">
+            <a class="nav-link" href="/">Полезное</a>
+            <ul class="sub-menu">
+              <li><a href="">Статьи</a></li>
+              <li><a href="">Видеоинструкции</a></li>
+              <li><a href="">Рестоврационные работы</a></li>
+              <li><a href="">Рекомендации</a></li>
+              <li><a href="">Техническая информация</a></li>
+              <li><a href="">Гарантии качества</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="nav-link" href="/">Акции</a>
+          </li>
+          <li>
+            <a class="nav-link" href="/">Контакты</a>
+          </li>
+          <li class="last">
+              <a class="phone" href="tel:88005052045">8 800 505 20 45</a>
+              <div class="lang">
+                <a href="/"><img src="./img/ru.svg" alt=""></a>
+                <a href="/"><img src="./img/uk.svg" alt=""></a>
+              </div>
+          </li>
+      </ul>
+    </div>
+  </nav>
+
+    <div class="divider"></div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="/">Главная</a> Каталог камней
+        </div>
+    </div>
+
+    <!--  ШАБЛОН 1 имеет класс "promo" и background-image | В ШАБЛОНЕ 2 их нет -->
+    <section class="products-page promo" style="background-image: url('../img/catalog/poludragocen/6.jpg')">
+        <div class="container">
+            <!-- Н1 внутри row | В ШАБЛОНЕ 2 заголовок на этом месте-->
+
+            <div class="row align-items-center">
+              <!-- .col-md-6 && .col-md-6.col-lg-4 | В ШАБЛОНЕ 2 классы по другому -->
+              <div class="col-md-6" data-aos="fade-right">
+                  <img src="./img/catalog/poludragocen/6_1.jpg" alt="">
+              </div>
+              <div class="col-md-6 col-lg-4 text-center"  data-aos="fade-left">
+                  <h1>Smokey quartz</h1>
+                  <p>Дымчатый кварц</p>
+                  <div class="has-2">
+                      <p>Италия</p>
+                      <p>В наличии</p>
+                  </div>
+              </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <p>
+                        <b>Описание</b>
+                    </p>
+                    <p>Элегантный и благородный дымчатый кварц.
+                            Дымчатый кварц отлично сочетает в себе 
+                            игру света и тени, его оттенок переливается
+                            бежевым, темно-серым и коричневым. 
+                    </p>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <p>
+                        <b>Физико-механические свойства</b>
+                    </p>
+                    <p>Элегантный и благородный дымчатый кварц.
+                            Дымчатый кварц отлично сочетает в себе 
+                            игру света и тени, его оттенок переливается
+                            бежевым, темно-серым и коричневым. 
+                    </p>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <p>
+                        <b>Применение</b>
+                    </p>
+                    <p>Элегантный и благородный дымчатый кварц.
+                            Дымчатый кварц отлично сочетает в себе 
+                            игру света и тени, его оттенок переливается
+                            бежевым, темно-серым и коричневым. 
+                    </p>
+                </div>
+                <div class="col-md-6 col-lg-4 offset-lg-4 catalog__link mt-4" data-aos="fade-up">
+                    <a href="/" class="btn btn-outline">
+                        <span>Посмотреть online коллекцию материалов в наличии</span>
+                        <img src="./img/arrow-right.svg">
+                    </a>
+                </div>
+            </div>
+
+            <table data-aos="fade-up">
+                <thead>
+                    <tr>
+                        <td>Толщина, м.м</td>
+                        <td>Вид обработки поверхности</td>
+                        <td>Общее количество, м²</td>
+                        <td>В резерве, м²</td>
+                        <td>Доступное количество, м²</td>
+                        <td>Цена, ₽./м²</td>
+                    </tr>
+                </thead>
+                <tr>
+                    <td data-label="Толщина, м.м">20</td>
+                    <td data-label="Вид обработки поверхности">Полированная</td>
+                    <td data-label="Общее количество, м²">2,96</td>
+                    <td data-label="В резерве, м²">&nbsp;</td>
+                    <td data-label="Доступное количество, м²">2,96</td>
+                    <td data-label="Цена, ₽./м²"><a data-toggle="modal" data-target="#callback" data-title="Smokey quartz">Цена по запросу</a></td>
+                </tr>
+                <tr>
+                    <td  data-label="Толщина, м.м">20</td>
+                    <td  data-label="Вид обработки поверхности">Полированная</td>
+                    <td  data-label="Общее количество, м²">49,98</td>
+                    <td  data-label="В резерве, м²">49,98</td>
+                    <td  data-label="Доступное количество, м²">49,98</td>
+                    <td  data-label="Цена, ₽./м²">49,98</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section class="products-gallary">
+        <div class="container">
+            <h3 data-aos="fade-up">Галерея</h3>
+            <p data-aos="fade-up">Предупреждаем о том, что цвет камня на экране монитора может отличаться от реального. <br>
+                Для окончательного выбора рекомендуем посетить наш склад.
+            </p>
+            <div class="products-gallary__wrap">
+                <div class="products-gallary__wrap__item" data-aos="fade-up">
+                    <a href="./img/catalog/poludragocen/6/1.jpg" class="img_wrap" data-fancybox="gallary" data-caption="<p>Smokey quartz</p>">
+                        <img src="./img/catalog/poludragocen/6/1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-gallary__wrap__item" data-aos="fade-up">
+                    <a href="./img/catalog/poludragocen/6/2.jpg" class="img_wrap" data-fancybox="gallary" data-caption="<p>Smokey quartz</p>">
+                        <img src="./img/catalog/poludragocen/6/2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-gallary__wrap__item" data-aos="fade-up">
+                    <a href="./img/catalog/poludragocen/6/3.jpg" class="img_wrap" data-fancybox="gallary" data-caption="<p>Smokey quartz</p>">
+                        <img src="./img/catalog/poludragocen/6/3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-gallary__wrap__item" data-aos="fade-up">
+                    <a href="./img/catalog/poludragocen/6/4.jpg" class="img_wrap" data-fancybox="gallary" data-caption="<p>Smokey quartz</p>">
+                        <img src="./img/catalog/poludragocen/6/4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-gallary__wrap__item twice2-4" data-aos="fade-up">
+                    <a href="./img/catalog/poludragocen/6/5.jpg" class="img_wrap" data-fancybox="gallary" data-caption="<p>Smokey quartz</p>">
+                        <img src="./img/catalog/poludragocen/6/5.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-gallary__wrap__item twice1-3" data-aos="fade-up">
+                    <a href="./img/catalog/poludragocen/6/6.jpg" class="img_wrap" data-fancybox="gallary" data-caption="<p>Smokey quartz</p>">
+                        <img src="./img/catalog/poludragocen/6/6.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-gallary__wrap__item" data-aos="fade-up">
+                    <a href="./img/catalog/poludragocen/6/4.jpg" class="img_wrap" data-fancybox="gallary" data-caption="<p>Smokey quartz</p>">
+                        <img src="./img/catalog/poludragocen/6/4.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h3 data-aos="fade-up">Камни в раскладке “бабочка”</h3>
+            <div class="row">
+                <div class="col-md-6 offset-md-3" data-aos="fade-up">
+                  <a href="./img/catalog/poludragocen/6/butterfly.jpg" class="img_wrap" data-fancybox="gallary" data-caption="<p>Камни в раскладке “бабочка”</p>">
+                    <img src="./img/catalog/poludragocen/6/butterfly.jpg" alt="">
+                  </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="callback_form">
+      <div class="container">
+          <h4 data-aos="fade-up">
+              Заказать натуральный камень
+          </h4>
+          <form action="" class="callback__form" data-aos="fade-up">
+          <input type="text" name="name" placeholder="Имя">
+          <input type="tel" name="phone" class="tel" placeholder="Телефон" required>
+          <div class="robot">
+              <div class="robot__check">
+              <svg viewBox="0 0 60 60">
+                  <line class="st0 line1" x1="4.5" y1="30.5" x2="29.5" y2="52.5"/>
+                  <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
+              </svg>
+              </div>
+              <span>Даю свое согласие на обработку персональных данных <br>
+                  и соглашаюсь с <a href="">политикой конфиденциальности.</a></span>
+          </div>
+          <button type="submit" class="btn btn-outline callback__form__button" disabled>Оставить заявку</button>
+          </form>
+      </div>
+    </section>
+
+    <footer class="footer" data-aos="fade-up">
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-sm-6 col-lg-2">
+            <ul>
+              <li><a href="">Каталог камней</a></li>
+              <li><a href="">Изделия</a></li>
+              <li><a href="">Инструменты</a></li>
+              <li><a href="">Новости</a></li>
+              <li><a href="">Акции</a></li>
+            </ul>
+          </div>
+
+          <div class="col-sm-6 col-lg-3">
+            <ul>
+              <li><a href="">Контакты</a></li>
+              <li><a href="">Вакансии</a></li>
+              <li><a href="">О компании</a></li>
+              <li><a href="">Гарантии качества</a></li>
+              <li><a href="">Политика обработки персональных данный</a></li>
+            </ul>
+          </div>
+
+          <div class="col-sm-6 col-lg-3">
+            <ul>
+              <li><a href="">Статьи</a></li>
+              <li><a href="">Видеоинструкции</a></li>
+              <li><a href="">Информация о станках</a></li>
+              <li><a href="">Рекомендации</a></li>
+            </ul>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 last">
+            <ul>
+              <li><a href="">8 800 505 20 45</a></li>
+              <li><a href="">8 861 251 78 00</a></li>
+              <li><a href="">hmg@mramor23.ru</a></li>
+            </ul>
+          </div>
+          <div class="col-12 right">
+            <div class="insta">
+              <a href="">Камень <img src="./img/footer/instagram.svg" alt=""></a>
+              <a href="">Инструмент и химия <img src="./img/footer/instagram.svg" alt=""></a>
+            </div>
+            <div class="social">
+              <a href=""><img src="./img/footer/facebook.svg" alt=""></a>
+              <a href=""><img src="./img/footer/twitter.svg" alt=""></a>
+              <a href=""><img src="./img/footer/vk.svg" alt=""></a>
+              <a href=""><img src="./img/footer/pinterest.svg" alt=""></a>
+            </div>
+          </div>
+
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-12">
+            Разработка: <a class="author" href="https://skipao.ru" target="_blank"><img src="./img/ski.svg"></a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="callback" tabindex="-1" role="dialog" aria-labelledby="callbackTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+            <span class="name">Заказать звонок</span>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+                <form action="/" class="callback__form" method="post">
+                <input type="hidden" name="title" class="form-control title" value="">
+                <div class="form-row">
+                    <input type="text" name="fio" class="form-control" placeholder="Имя" required>
+                </div>
+                <div class="form-row">
+                    <input type="tel" name="phone" class="form-control tel" placeholder="Телефон" required>
+                </div>
+                    
+                <div class="robot">
+                    <div class="robot__check">
+                    <svg viewBox="0 0 60 60">
+                        <line class="st0 line1" x1="4.5" y1="30.5" x2="29.5" y2="52.5"/>
+                        <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
+                    </svg>
+                    </div>
+                    <span>Согласен с условиями Политики конфиденциальности</span>
+                </div>
+
+                <button type="submit" class="btn btn-dark callback__form__button" disabled>Отправить</button>
+                </form>
+            </div>
+            <div class="request_callback__footer">Заявка принята!!!</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/scripts.min.js"></script>
+    <script src="./js/fancybox/jquery.fancybox.min.js"></script>
+    <script src="./js/slick/slick.min.js"></script>
+    <script src="./js/aos.js"></script>
+    <link rel="stylesheet" href="./css/aos.css" />
+    <link rel="stylesheet" href="./js/fancybox/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="./js/slick/slick.css">
+    <link rel="stylesheet" href="./css/main.min.css">
+  
+    <script>
+      AOS.init();
+    </script>
+  
+</body>
+</html>

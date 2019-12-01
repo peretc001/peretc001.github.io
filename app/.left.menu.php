@@ -1,0 +1,39 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Гранит", 
+		"/stones/granit/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Мрамор", 
+		"/stones/mramor/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Оникс", 
+		"/stones/oniks/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Кварц", 
+		"/stones/kvartsit/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Каталог камней", 
+		"/stones/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

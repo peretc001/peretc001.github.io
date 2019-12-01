@@ -1,0 +1,241 @@
+@import '_libs/bootstrap_grid'
+@import '_libs/fonts'
+@import '_libs/hamburger'
+
+$accent: #0F5939
+$text: #141414
+$text2: #626262
+$gutter: 30px
+
+$default-font: 'Roboto', sans-serif
+
+html
+	height: 100%
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.2
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	opacity: 0
+	max-width: 1920px
+	height: 100%
+	margin: 0 auto
+	
+	input, textarea, select
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+		
+		&::-webkit-input-placeholder
+			color: $text2 !important
+
+		&:-moz-placeholder
+			color: $text2 !important
+
+		&::-moz-placeholder
+			color: $text2 !important
+
+		&:-ms-input-placeholder
+			color: $text2 !important
+
+.text-center
+	text-align: center !important
+	text-align-last: center !important
+	p
+		text-align: center !important
+		text-align-last: center !important
+a
+	color: $text 
+	&:hover, 
+	&:active, 
+	&:focus
+		text-decoration: none
+		outline: none
+		color: $accent
+
+b, strong
+	font-weight: bold
+img
+	max-width: 100%
+
+.btn
+	border-radius: 0
+	outline: none !important
+	box-shadow: none !important
+	&.btn-outline
+		background: transparent
+		border: 1px solid $text
+		color: $text
+		&:hover
+			border: 1px solid $text
+			color: $text
+			background: #D8D8D8
+		&:disabled
+			border: 1px solid $text2
+			color: $text2
+			background: transparent
+			&:hover
+				background: transparent
+			
+h1, h2, h3, h4
+	font-family: 'Lazurski'
+
+ul
+	margin: 0
+	padding: 0
+	margin-bottom: 1em
+	li
+		list-style: none
+
+.page-caption
+	text-align: center
+	margin: 0 auto
+	margin-bottom: 3em
+
+ul.menu_secondary
+	max-width: 260px
+	margin: 0
+	padding: 0
+	li
+		list-style: none
+		margin-bottom: 1em
+		position: relative
+		a
+			display: inline-block
+			color: $text
+			transition: padding .5s ease
+			&:hover
+				padding-left: 0.5em
+
+		&.active
+			padding-left: 65px
+			&::before
+				content: ''
+				position: absolute
+				left: 0
+				top: 50%
+				transform: translateY(-50%)
+				width: 55px
+				height: 1px
+				background: $text
+			a
+				&:hover
+					padding-left: 0
+
+.img__carousel
+	img
+		margin: 0 auto
+	.slick-slide
+		outline: none
+        
+	.slick-dots
+		width: 100%
+		margin: 0 auto
+		margin-top: 1em
+		padding: 0
+		display: flex !important
+		justify-content: center
+		li
+			list-style: none
+			margin-right: 0.5em
+			&:last-child
+				margin-right: 0
+		button
+			border: none
+			position: relative
+			font-size: 0
+			padding: 0
+			margin: 0
+			width: 12px
+			height: 12px
+			border-radius: 50%
+			background: transparent
+			border: 1px solid $text
+			transition: background .3s ease
+			cursor: pointer
+			outline: none
+		.slick-active
+			button
+				background: $text
+
+.catalog__link
+	display: flex
+	align-items: center
+	justify-content: center
+	.btn
+		min-height: 50px
+		&:first-child
+			margin-right: 1em
+			display: flex
+			align-items: center
+			justify-content: center
+		&:last-child
+			max-width: 320px
+			display: flex
+			align-items: center
+			justify-content: space-between
+			span
+				max-width: 230px
+				white-space: pre-wrap
+				line-height: 1
+				text-align: left
+				margin-right: 1em
+
+@import 'menu'
+@import 'slider'
+@import 'catalog'
+@import 'stone'
+@import 'instrument'
+@import 'about'
+@import 'news'
+@import 'callback_form'
+@import 'footer'
+
+@import 'sale'
+@import 'contact'
+
+@import '_products/_products'
+@import '_products/_products-about'
+@import '_products/_products-page'
+@import '_products/_products-gallary'
+@import '_products/_products-logo'
+
+@import '_libs/modal'
+
+
+@media screen and (max-width: 767.98px)
+	ul.menu_secondary
+		margin: 0 auto
+
+@media screen and (max-width: 576.98px)
+	h1
+		font-size: 1.8em
+
+.fancybox-caption__body
+	display: flex
+	align-items: center
+	justify-content: space-between
+	max-width: 500px
+	margin: 0 auto
+	a
+		position: relative
+		padding-right: 45px
+		padding-left: 20px
+		&::before
+			content: ''
+			position: absolute
+			right: 0
+			top: 50%
+			transform: translateY(-50%)
+			width: 35px
+			height: 10px
+			background: url('../img/arrow-right-white.svg') no-repeat center
+
+
+body
+	opacity: 1

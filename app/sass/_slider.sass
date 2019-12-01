@@ -1,0 +1,190 @@
+$mh: 500px
+.slider
+    width: 100%
+    height: 100%
+    min-height: $mh
+    max-height: $mh*1.5
+    overflow: hidden
+    &__item
+        position: relative
+        min-height: $mh
+        max-height: $mh*1.5
+        &::before
+            content: ''
+            position: absolute
+            right: 0
+            top: 0
+            background: linear-gradient(-27deg, #fff 0, #fff 44%, transparent 44%)
+            opacity: .7
+            width: 100%
+            height: 100%
+            filter: blur(.5px)
+        img
+            width: 100%
+            height: 100vh
+            min-height: $mh
+            max-height: $mh*1.5
+
+        &__caption
+            position: absolute
+            width: 100%
+            max-width: 1140px
+            margin: 0 auto
+            left: 50%
+            bottom: 10%
+            transform: translateX(-50%)
+            display: flex
+            align-items: flex-start
+            justify-content: flex-end
+            padding-right: 15px
+            &__block
+                max-width: 350px
+                h1, h2
+                    font-size: 1.875em
+                p
+                    margin-bottom: 2em
+        .btn
+            width: 185px
+            height: 47px
+            line-height: 44px
+            padding: 0
+
+    .slick-slide
+        outline: none
+    
+    .slick-dots
+        position: absolute
+        width: 100%
+        max-width: 1140px
+        margin: 0 auto
+        left: 50%
+        bottom: 2%
+        transform: translateX(-50%)
+        z-index: 2
+        margin: 1em auto
+        padding: 0
+        display: flex !important
+        justify-content: flex-end
+        padding-right: 15px
+        li
+            list-style: none
+            margin-right: 0.5em
+            &:last-child
+                margin-right: 0
+        button
+            border: none
+            position: relative
+            font-size: 0
+            padding: 0
+            margin: 0
+            width: 12px
+            height: 12px
+            border-radius: 50%
+            background: transparent
+            border: 1px solid $text
+            transition: background .3s ease
+            cursor: pointer
+            outline: none
+        .slick-active
+            button
+                background: $text
+
+@media screen and (max-width: 1199.98px)
+    .slider
+        max-height: 700px
+        &__item
+            max-height: 700px
+            &__caption
+                max-width: 960px
+            &::before
+                background: linear-gradient(-35deg, #fff 0, #fff 44%, transparent 44%)
+            img
+                margin-left: -80px
+                width: 150%
+                max-width: 150%
+        .slick-dots
+            max-width: 960px
+
+@media screen and (max-width: 991.98px)
+    .slider
+        overflow: hidden
+        max-height: 450px
+        &__item
+            overflow: hidden
+            &::before
+                left: 45%
+                top: 0
+                width: 55%
+                background: #fff
+            &__caption
+                top: 50%
+                bottom: auto
+                transform: translateY(-50%) translateX(-50%)
+            img
+                margin-top: -50px
+                width: auto
+                max-width: 200%
+                height: auto
+                min-height: auto
+
+@media screen and (max-width: 767.98px)
+    .slider
+        &__item
+            &::before
+                left: 35%
+                top: 0
+                width: 65%
+                background: #fff
+            &__caption
+                &__block
+                    h1, h2
+                        font-size: 1.6em
+        .slick-slide
+            img
+                max-width: 200%
+
+
+@media screen and (max-width: 576.98px)
+    .slider
+        min-height: 300px
+        max-height: 400px
+        &__item
+            &::before
+                content: ''
+                position: absolute
+                left: 0
+                top: 0
+                width: 100%
+                background: #fff
+            &__caption
+                padding-right: 0
+                bottom: auto
+                left: 50%
+                top: 40%
+                justify-content: center
+                &__block
+                    text-align: center
+            
+        
+        .slick-slide
+            img
+                // margin-top: -150px
+                width: 250%
+                max-width: 250% !important
+                min-height: 450px
+        
+        .slick-dots
+            padding-right: 0
+            justify-content: center
+
+@media screen and (min-width: 1440px)
+    .slider
+        max-height: $mh*2
+        &__item
+            max-height: $mh*2
+            &::before
+                background: linear-gradient(-25deg, #fff 0, #fff 44%, transparent 44%)
+            img
+                max-height: $mh*2
+
+                

@@ -28,6 +28,9 @@
                         window.scrollTo(0,0)
                     }
 
+                ym(56345998, 'reachGoal', curretStep)
+
+
                   switch (curretStep) {
                       case 1 :
                           this.$router.push('/');
@@ -51,6 +54,8 @@
             },
             step2Del() {
                 let curretStep = this.step -1;
+                
+                ym(56345998, 'reachGoal', curretStep)
 
                 switch (curretStep) {
                     case 1 : this.$router.push('/');

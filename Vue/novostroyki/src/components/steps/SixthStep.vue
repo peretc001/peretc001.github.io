@@ -6,8 +6,8 @@
                 <p>Для получения информации по подобранным квартирам введите номер телефона</p>
             </div>
             <div class="form-group">
-                <input type="tel" class="result-request__phone" v-mask="'+7 (###) ###-##-##'" v-model="phone" placeholder="Телефон" ref="setPhone" @click="inputPhone($event.target.value)" required />
-                <button class="result-request__submit"> Отправить заявку </button>
+                <input type="tel" class="result-request__phone" v-mask="'+7 (###) ###-##-##'" v-model="phone" placeholder="Телефон" ref="setPhone" @input="inputPhone($event.target.value)" @mouseover="mouseover" @mouseleave="mouseleave" required/>
+                <button class="result-request__submit" :disabled="disabled"> Отправить заявку </button>
             </div>
             <p class="result-request__text">В течении 10 минут менеджер подготовит несколько лучших предложений и свяжется с Вами</p>
             <div class="other">
@@ -15,7 +15,7 @@
                     или
                 </p>
                 <p class="other_second">
-                    позвоните нам по телефону <a href="tel:89952204088">8 (995) 220-40-88</a>
+                    позвоните нам по телефону <a href="tel:89952204088" :click="ya()">8 (995) 220-40-88</a>
                 </p>
                 <p class="other_third">
                     Номер вашей заявки <span>{{numberRequest}}</span>
@@ -26,7 +26,7 @@
             <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTIgNTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUyIDUyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIGNsYXNzPSIiPjxnPjxnPgoJPHBhdGggZD0iTTI2LDBDMTEuNjY0LDAsMCwxMS42NjMsMCwyNnMxMS42NjQsMjYsMjYsMjZzMjYtMTEuNjYzLDI2LTI2UzQwLjMzNiwwLDI2LDB6IE0yNiw1MEMxMi43NjcsNTAsMiwzOS4yMzMsMiwyNiAgIFMxMi43NjcsMiwyNiwyczI0LDEwLjc2NywyNCwyNFMzOS4yMzMsNTAsMjYsNTB6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBzdHlsZT0iZmlsbDojRkZGRkZGIj48L3BhdGg+Cgk8cGF0aCBkPSJNMzguMjUyLDE1LjMzNmwtMTUuMzY5LDE3LjI5bC05LjI1OS03LjQwN2MtMC40My0wLjM0NS0xLjA2MS0wLjI3NC0xLjQwNSwwLjE1NmMtMC4zNDUsMC40MzItMC4yNzUsMS4wNjEsMC4xNTYsMS40MDYgICBsMTAsOEMyMi41NTksMzQuOTI4LDIyLjc4LDM1LDIzLDM1YzAuMjc2LDAsMC41NTEtMC4xMTQsMC43NDgtMC4zMzZsMTYtMThjMC4zNjctMC40MTIsMC4zMy0xLjA0NS0wLjA4My0xLjQxMSAgIEMzOS4yNTEsMTQuODg1LDM4LjYyLDE0LjkyMiwzOC4yNTIsMTUuMzM2eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgc3R5bGU9ImZpbGw6I0ZGRkZGRiI+PC9wYXRoPgo8L2c+PC9nPiA8L3N2Zz4=" />
             <p><b>Благодарим за заявку!</b></p>
             <p>В течении 10 минут менеджер подготовит несколько лучших предложений и свяжется с Вами.</p>
-            <p>Или вы можете позвонить нашим специалистам прямо сейчас <a href="tel:89952204088">8 (995) 220-40-88</a></p>
+            <p>Или вы можете позвонить нашим специалистам прямо сейчас <a href="tel:89952204088" :click="ya()">8 (995) 220-40-88</a></p>
         </div>
     </div>
 </template>
@@ -40,7 +40,8 @@
         data: () => ({
             countBuildings: 0,
             phone: '',
-            numberRequest: 0
+            numberRequest: 0,
+            disabled: true
         }),
         beforeMount() {
             let max = 105;
@@ -49,19 +50,36 @@
             this.numberRequest = new Intl.NumberFormat().format(Math.floor(Math.random() * (13000 - 10000)) + 10000);
         },
         methods: {
+            ya() {
+                ym(56345998, 'reachGoal', 'click_phone_step6')
+            },
+            mouseover() {
+                this.$refs.setPhone.placeholder = '+7'
+            },
+            mouseleave() {
+                this.$refs.setPhone.placeholder = 'Телефон'
+            },
             inputPhone(val) {
-                this.$refs.setPhone.value = '+7'
                 if (this.$refs.setPhone.value == '+7 (8') {
                   this.phone = '+7 ('
                 }
+                if (this.$refs.setPhone.value.length == 18) {
+                    this.disabled = false
+                } else {
+                    this.disabled = true
+                }
             },
             sendEmail() {
+                
                 event.preventDefault();
                 axios.post('thankyou.php', {
                     data: { all: this.$store.state, phone: this.phone }
                 }).then(function (response) {
                     console.log(response.data)
                     if (response.data.answer === 'good') {
+
+                        ym(56345998, 'reachGoal', 'step5')
+
                         let thisStep = document.querySelector('.result-request')
                         let thisAnswer = document.querySelector('.responce_good')
                         thisStep.classList.add('done');
@@ -192,6 +210,10 @@
         color: #fff;
         padding: 10px 15px;
         margin-left: 1em;
+        user-select: none
+    }
+    .result-request__submit:disabled {
+        opacity: .5
     }
 
     .result-request__text {

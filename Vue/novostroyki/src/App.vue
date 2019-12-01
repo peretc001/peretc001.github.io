@@ -5,7 +5,7 @@
         <div class="contact_top">
             <p>Краснодар, ул. Юнатов, 23</p>
             <p><a href="mailto:svetlanaanasimova@yandex.ru">svetlanaanasimova@yandex.ru</a></p>
-            <p class="phone"><a href="tel:89952204088">8 (995) 220-40-88</a></p>
+            <p class="phone"><a href="tel:89952204088" :click="ya">8 (995) 220-40-88</a></p>
         </div>
         <div class="step">
             <div class="step-current">{{currentStep}}</div>
@@ -42,6 +42,9 @@
             }
         },
         methods: {
+            ya() {
+                ym(56345998, 'reachGoal', 'click_phone_header')
+            },
             showModalErr() {
                 this.showModal = true;
             }
