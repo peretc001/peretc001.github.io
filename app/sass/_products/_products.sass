@@ -1,4 +1,9 @@
 .products
+    &.stone_general
+        .bx_catalog_item_title
+            margin-top: 1em
+            font-weight: bold
+            text-align: center
 
     .caption
         margin: 0 auto
@@ -31,77 +36,31 @@
 
     &__filter
         padding-top: 2em
+
+        .smart-filter-parameters-box-title
+            white-space: no-wrap
+        .smart-filter-parameters-box-title-text
+            color: #7e7e7e7e
+        .smart-filter-angle
+            width: 10px !important
+        .smart-filter-angles
+            &::before, 
+            &::after
+                background-color: $accent !important
+
+
         .form-group
             margin-bottom: .8em
             p
                 font-size: 0.9em
-            select,
+
+        label
+            position: relative
             input
-                width: 100%
-                border: none
-                border-bottom: 1px solid $text
-                background: transparent
-                border-radius: 0
-                padding: .5em .3em
-            
-            &.color
-                display: flex
-                align-items: center
-                justify-content: flex-start
-                flex-wrap: wrap
-                margin-top: 1.5em
-                margin-bottom: 1.5em
-                .color__item
-                    flex: 0 1 30px
-                    margin-left: calc( (100% - 30px*4)/3 )
-                    margin-bottom: 2%
-                    &:nth-child(1),
-                    &:nth-child(5),
-                    &:nth-child(9)
-                        margin-left: 0
-                    input[type="radio"]
-                        display: none
-                    label
-                        display: block
-                        width: 30px
-                        height: 30px
-                        cursor: pointer
-                        user-select: none
-                        border: 1px solid #fff
-                        transition: border .5s ease
-                        &.white
-                            background: #ffffff
-                            border: 1px solid #ccc
-                        &.pink
-                            background: #FB55A4
-                        &.red
-                            background: #FF0000
-                        &.yellow
-                            background: #EFF174
-                        &.green
-                            background: $accent
-                        &.black
-                            background: #000000
-                        &.blue
-                            background: #31F3FF
-                        &.grey
-                            background: #C4C4C4
-                        &.brown
-                            background: #AD8C64
-                        &.beige
-                            background: #FFE8BC
-                        &.rgb
-                            background: linear-gradient(180deg, #C4C4C4 0%, #D8B63D 21.35%, #9AD450 41.15%, #77BCAF 56.77%, #3E33B5 75%, #F70000 100%)
-                    input[type="radio"]:checked + label
-                        border: 1px solid $text
-            
-            input[type="checkbox"]
                 display: none
-            .checkbox
-                padding-left: 1.2em
+            .smart-filter-param-text
                 position: relative
-                user-select: none
-                cursor: pointer
+                padding-left: 1em
                 &::before
                     content: ''
                     position: absolute
@@ -110,15 +69,19 @@
                     transform: translateY(-50%)
                     width: 12px
                     height: 12px
-                    border: 1px solid $text
+                    border: 1px solid #141414
                     transition: background .5s ease
-            input[type="checkbox"]:checked + label
-                &:before
+            input:checked + .smart-filter-param-text
+                &::before
                     background: $text
-            
-            input[type="reset"]
-                border-bottom: none
-                cursor: pointer
+        
+
+
+        .reset
+            width: 100%
+            border: none
+            color: $text
+            cursor: pointer
             
         .btn
             &.btn-outline
@@ -126,10 +89,12 @@
                 width: 100%
 
     &__list
+
         &__sort
             display: flex
             align-items: flex-start
             justify-content: space-between
+            margin-bottom: 0 !important
             &--block
                 position: relative
                 overflow: hidden
@@ -166,6 +131,7 @@
                 position: relative
                 .find
                     border: none
+                    border-radius: 0
                     border-bottom: 1px solid $text
                     padding-top: 0
                     padding-bottom: .3em
@@ -197,7 +163,9 @@
             position: relative
             overflow: hidden
             .img_wrap
-                display: block
+                display: flex
+                align-items: center
+                justify-content: center
                 min-height: 150px
                 overflow: hidden
                 position: relative
@@ -239,6 +207,10 @@
                 .hvr-catalog
                     transform: translateX(0)
 
+        .stones_item
+            b
+                display: block
+                text-align: center
 
         .hvr-flex
             display: flex
@@ -249,6 +221,7 @@
                 transition: transform 1s ease
                 img
                     margin-left: 0.5em
+        
 
     .online-caption
         display: flex
@@ -256,14 +229,25 @@
         justify-content: space-between
         margin: 1em auto
         color: $text
+    
+    .online-catalog-name
+        display: flex
+        align-items: center
+        justify-content: space-between
 
-    .pagination
-        a
-            color: $text2
-            margin-right: 1em
-            &.active
-                font-weight: bold
-                color: $text
+.pagination
+    a
+        color: $text2
+        margin-right: 1em
+        border: 1px solid $text
+        padding: .5em
+        display: inline-block
+        min-width: 30px
+        text-align: center
+        &.active
+            background: $text
+            font-weight: bold
+            color: #ffffff
 
 
 @media screen and (max-width: 1199.98px)

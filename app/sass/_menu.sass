@@ -15,8 +15,13 @@
    top: 0
    width: 100%
    transition: transform 1s ease
+   .container
+      display: flex
+      align-items: center
+      justify-content: space-between
 
    .menu-nav
+      flex: 1 1 auto
       margin: 0
       padding: 0
       display: flex
@@ -47,8 +52,23 @@
       position: relative
       overflow: hidden
       padding: 2em 0
+      display: flex !important
+      align-items: center
+      justify-content: space-between
       a
          cursor: pointer
+      .arrow
+         opacity: 0
+         width: .5em
+         height: .5em
+         background-size: .5em
+         background-position: center
+         background-repeat: no-repeat
+         background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDI4NC45MjkgMjg0LjkyOSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjg0LjkyOSAyODQuOTI5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PGc+Cgk8cGF0aCBkPSJNMjgyLjA4Miw3Ni41MTFsLTE0LjI3NC0xNC4yNzNjLTEuOTAyLTEuOTA2LTQuMDkzLTIuODU2LTYuNTctMi44NTZjLTIuNDcxLDAtNC42NjEsMC45NS02LjU2MywyLjg1NkwxNDIuNDY2LDE3NC40NDEgICBMMzAuMjYyLDYyLjI0MWMtMS45MDMtMS45MDYtNC4wOTMtMi44NTYtNi41NjctMi44NTZjLTIuNDc1LDAtNC42NjUsMC45NS02LjU2NywyLjg1NkwyLjg1Niw3Ni41MTVDMC45NSw3OC40MTcsMCw4MC42MDcsMCw4My4wODIgICBjMCwyLjQ3MywwLjk1Myw0LjY2MywyLjg1Niw2LjU2NWwxMzMuMDQzLDEzMy4wNDZjMS45MDIsMS45MDMsNC4wOTMsMi44NTQsNi41NjcsMi44NTRzNC42NjEtMC45NTEsNi41NjItMi44NTRMMjgyLjA4Miw4OS42NDcgICBjMS45MDItMS45MDMsMi44NDctNC4wOTMsMi44NDctNi41NjVDMjg0LjkyOSw4MC42MDcsMjgzLjk4NCw3OC40MTcsMjgyLjA4Miw3Ni41MTF6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiMwRjU5MzkiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+CjwvZz48L2c+IDwvc3ZnPg==')
+         transition: transform .5s ease
+         &.active
+            transform: rotate(180deg)
+
       .sub-menu
          opacity: 0
          z-index: -1
@@ -64,7 +84,7 @@
          width: 100%
          transform: translateY(110%)
          transition: transform .3s ease
-      &.active
+      &:hover
          overflow: visible
          .sub-menu
             z-index: 1
@@ -108,12 +128,12 @@
    .last
       padding: 0
       padding-top: 1.5em
-      padding-bottom: 0
+      margin: 0
+      padding-left: 4em
    .phone
       position: relative
       color: $text
-      padding-left: 2em
-      padding-top: 2em
+      
    
    .lang
       display: flex
@@ -168,6 +188,8 @@
       font-size: 0.9em
       .container
          max-width: 965px
+      .last
+         padding-left: 1em
 
 
 @media screen and (max-width: 991.98px)
@@ -202,8 +224,13 @@
       &.out
          transform: translateY(0) translateX(-100%)
 
+      .container
+         flex-direction: column
+         justify-content: center
+         padding-bottom: 60px
+
       .menu-nav
-         padding: 20px 0 30px 0
+         padding: 20px 0 10px 0
          max-width: 300px
          margin: 0 auto
          flex-direction: column
@@ -215,11 +242,20 @@
       
       .has-children
          padding: 0
-         overflow: visible
+         flex-wrap: wrap
+         min-width: 250px
+         max-width: 250px
+         .arrow
+            opacity: 1
+            min-width: 2em
          .sub-menu
+            height: 0
+            opacity: 0
+            flex: 1 1 100%
+            width: 100% !important
+            min-width: 100% !important
             padding: 0
             margin: 0.5em
-            min-width: 250px !important
             position: relative
             border: none
             box-shadow: none
@@ -227,24 +263,40 @@
             top: 0
             bottom: auto
             transform: translateY(0)
-            opacity: 1
-            z-index: 1
-            transition: none
+            transition: height .5s ease
          &:hover
+            overflow: hidden
+            .sub-menu
+               z-index: -1
+               opacity: -1
+               transform: translateY(0)
+         &.active
+            overflow: visible
             .sub-menu
                z-index: 1
                opacity: 1
+               height: auto
+               max-height: auto
                transform: translateY(0)
+               li
+                  a
+                     padding: .5em 0
 
       
       .logo
          display: none
 
+      .last
+         padding: 0
+         margin: 0
+         padding-top: 0.5em
+
       .phone
          display: none
       
       .lang
-         margin-bottom: 2em
+         margin: 0
+         padding: 0
 
    .mobile-menu
       display: flex
