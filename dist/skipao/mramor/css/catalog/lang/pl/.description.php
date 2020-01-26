@@ -1,0 +1,5 @@
+<?
+$MESS["IBLOCK_CATALOG_DESCRIPTION"] = "Pe?ny katalog";
+$MESS["IBLOCK_CATALOG_NAME"] = "Katalog";
+$MESS["T_IBLOCK_DESC_CATALOG"] = "Katalog";
+?>

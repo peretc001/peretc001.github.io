@@ -1,0 +1,75 @@
+.proposal
+    padding: 100px 0
+    h3
+        display: block
+        text-align: center
+        font-size: 2.75em
+        margin-bottom: 10px
+    
+    .row
+        padding-top: 50px
+        padding-bottom: 50px
+        align-items: center
+        color: $text
+        text-decoration: none
+        &:nth-child(odd)
+            flex-direction: row-reverse
+        p
+            line-height: 1.6
+        a
+            b
+                color: $text
+                font-size: 1.5em
+                line-height: 1.6
+                display: block
+                margin-bottom: 1em
+        .btn
+            transform: translateX(-110%)
+            transition: transform .5s ease
+        [class*="col-"]
+            overflow: hidden
+        
+        &:hover
+            .btn
+                transform: translateX(0)
+
+@media screen and ( max-width:  1199.98px)
+    .proposal
+        .row
+            a
+                b
+                    line-height: 1.2
+
+@media screen and ( max-width:  991.98px)
+    .proposal
+        h3
+            font-size: 2em
+        .row
+            padding-top: 20px
+            padding-bottom: 20px
+            [class*="col-"]
+                &:first-child
+                    display: none
+            a
+                b
+                    font-size: 1.3em
+            .btn
+                transform: translateX(0)
+                transition: none
+
+@media screen and ( max-width:  767.98px)
+    .proposal
+        padding: 50px 0
+        h3
+            margin-top: 60px
+            font-size: 1.8em
+            text-align: left
+        .row
+            a
+                b
+                    font-size: 1.1em
+
+@media screen and ( max-width: 576.98px )
+    .proposal
+        h3
+            font-size: 1.5em

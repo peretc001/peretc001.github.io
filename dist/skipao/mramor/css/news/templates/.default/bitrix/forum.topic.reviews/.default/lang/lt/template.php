@@ -1,0 +1,30 @@
+<?
+$MESS["OPINIONS_NAME"] = "Jыsш vardas";
+$MESS["OPINIONS_EMAIL"] = "Jыsш el. paрtas";
+$MESS["OPINIONS_SEND"] = "Siшsti";
+$MESS["OPINIONS_PREVIEW"] = "Perюiыrлti";
+$MESS["F_C_GOTO_FORUM"] = "Pereiti б forumа >>";
+$MESS["F_CAPTCHA_TITLE"] = "Apsaugos kodas nuo automatiniш praneрimш";
+$MESS["F_CAPTCHA_PROMT"] = "Бveskite tekstа iр paveikslлlio";
+$MESS["F_QUOTE_FULL"] = "Cituoti";
+$MESS["F_WANT_ALLOW_SMILES"] = "Ar norite <b>leisti</b> naudoti рypsenлles рiame praneрime?";
+$MESS["F_WANT_SUBSCRIBE_TOPIC"] = "Prenumeruoti naujus рios <b>temos</b> praneрimus";
+$MESS["F_LOAD_FILE"] = "Бkelti bylа";
+$MESS["F_LOAD_IMAGE"] = "Бkelti nuotraukа";
+$MESS["F_QUOTE_HINT"] = "Norлdami cituoti praneрimа, paюymлkite jб ir spauskite иia";
+$MESS["F_NAME"] = "Vardas";
+$MESS["JQOUTE_AUTHOR_WRITES"] = "raрo";
+$MESS["JERROR_NO_TOPIC_NAME"] = "Turite бvesti pavadinimа";
+$MESS["JERROR_NO_MESSAGE"] = "Turite бvesti praneрimа.";
+$MESS["JERROR_MAX_LEN"] = "Maksimalus praneрimo ilgis yra #MAX_LENGTH# simboliш. Viso simboliш: #LENGTH#.";
+$MESS["F_FILE_SIZE"] = "pilnas dydis neturi virрyti #SIZE#";
+$MESS["F_PREVIEW"] = "Perюiыra";
+$MESS["F_DOWNLOAD"] = "Parsisiшsti";
+$MESS["F_FILE_EXTENSION"] = "Leidюiami failai: #EXTENSION#.";
+$MESS["F_HIDE"] = "Slлpti";
+$MESS["F_SHOW"] = "Rodyti";
+$MESS["F_WAIT"] = "Praрome palaukti...";
+$MESS["F_DELETE"] = "Iрtrinti";
+$MESS["F_DELETE_CONFIRM"] = "Praneрimas bus iрtrintas negrбюtamai. Tжsti?";
+$MESS["F_ATTACH_FILES"] = "Prikabinti failai";
+?>

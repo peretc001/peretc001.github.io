@@ -1,0 +1,30 @@
+<?
+$MESS["F_ATTACH_FILES"] = "Adjuntar Archivos";
+$MESS["F_CAPTCHA_PROMT"] = "Imagen de caracteres CAPTCHA";
+$MESS["F_CAPTCHA_TITLE"] = "Protecciуn anti-spam bots (CAPTCHA)";
+$MESS["F_C_GOTO_FORUM"] = "Ir al foro &gt;&gt;";
+$MESS["F_DELETE"] = "Eliminar";
+$MESS["F_DELETE_CONFIRM"] = "El mensaje serб eliminado irreversiblemente. Continuar?";
+$MESS["F_DOWNLOAD"] = "Descargar";
+$MESS["F_FILE_EXTENSION"] = "Archivos permitidos: #EXTENSION#.";
+$MESS["F_FILE_SIZE"] = "el archivo no debe exceder de #SIZE#";
+$MESS["F_HIDE"] = "Ocultar";
+$MESS["F_LOAD_FILE"] = "Cargar archivo";
+$MESS["F_LOAD_IMAGE"] = "Cargar imagen";
+$MESS["F_NAME"] = "Nombre";
+$MESS["F_PREVIEW"] = "Previo";
+$MESS["F_QUOTE_FULL"] = "Cotizaciуn";
+$MESS["F_QUOTE_HINT"] = "Para citar el mensaje en el formulario de respuesta, seleccione el texto y haga click acб.";
+$MESS["F_SHOW"] = "Mostrar";
+$MESS["F_WAIT"] = "Por favor esperar...";
+$MESS["F_WANT_ALLOW_SMILES"] = "їDesea <b>habilitar</b> smiles para este mensaje?";
+$MESS["F_WANT_SUBSCRIBE_TOPIC"] = "Suscribirse a nuevos mensajes en Este Tema";
+$MESS["JERROR_MAX_LEN"] = "La longitud mбxima para el mensaje es de #MAX_LENGTH# sнmbolos. Total de sнmbolos: #LENGTH#.";
+$MESS["JERROR_NO_MESSAGE"] = "Sнrvбse proporcionar mensaje tнtulo.";
+$MESS["JERROR_NO_TOPIC_NAME"] = "Sнrvбse proporcionar mensaje tнtulo.";
+$MESS["JQOUTE_AUTHOR_WRITES"] = "escribiу";
+$MESS["OPINIONS_EMAIL"] = "Su E-mail";
+$MESS["OPINIONS_NAME"] = "Su nombre";
+$MESS["OPINIONS_PREVIEW"] = "Previo";
+$MESS["OPINIONS_SEND"] = "Enviar";
+?>

@@ -1,0 +1,8 @@
+<?
+$MESS["CP_BCCL_TPL_PARAM_POSITION_BOTTOM_LEFT"] = "Poni?ej Po Lewej";
+$MESS["CP_BCCL_TPL_PARAM_POSITION_BOTTOM_RIGHT"] = "Poni?ej Po Prawej";
+$MESS["CP_BCCL_TPL_PARAM_POSITION_TOP_LEFT"] = "Na G?rze Po Lewej";
+$MESS["CP_BCCL_TPL_PARAM_POSITION_TOP_RIGHT"] = "Na G?rze Po Prawej";
+$MESS["CP_BCCL_TPL_PARAM_TITLE_POSITION"] = "Stanowisko";
+$MESS["CP_BCCL_TPL_PARAM_TITLE_POSITION_FIXED"] = "Wykres por?wnawczy powy?ej strony";
+?>

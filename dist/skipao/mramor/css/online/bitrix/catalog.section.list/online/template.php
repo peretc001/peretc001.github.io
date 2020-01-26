@@ -1,0 +1,139 @@
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+/** @var array $arParams */
+/** @var array $arResult */
+/** @global CMain $APPLICATION */
+/** @global CUser $USER */
+/** @global CDatabase $DB */
+/** @var CBitrixComponentTemplate $this */
+/** @var string $templateName */
+/** @var string $templateFile */
+/** @var string $templateFolder */
+/** @var string $componentPath */
+/** @var CBitrixComponent $component */
+$this->setFrameMode(true);
+
+
+$arViewModeList = $arResult['VIEW_MODE_LIST'];
+
+
+
+$arViewStyles = array(
+	'TILE' => array(
+		'TITLE' => 'catalog-section-list-item-title',
+		'LIST' =>  'catalog-section-list-tile-list row mb-4',
+		'EMPTY_IMG' => $this->GetFolder().'/images/tile-empty.png'
+	)
+);
+$arCurView = $arViewStyles[$arParams['VIEW_MODE']];
+
+$strSectionEdit = CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_EDIT");
+$strSectionDelete = CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_DELETE");
+$arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_CONFIRM'));
+
+
+
+function getUnitCase2( $value, $unit1, $unit2, $unit3 ){
+	$value = abs( (int)$value );
+	if( ($value % 100 >= 11) && ($value % 100 <= 19) ){
+		return $unit3;
+	}else{
+		switch( $value % 10 ){
+			case 1:
+				return $unit1;
+			case 2:case 3:case 4:
+				return $unit2;
+			default:
+				return $unit3;
+		}
+	}
+}
+?>
+
+		<div class="row products__list">
+
+
+		<? if ('Y' == $arParams['SHOW_PARENT_NAME'] && 0 < $arResult['SECTION']['ID'])
+		{
+			$this->AddEditAction($arResult['SECTION']['ID'], $arResult['SECTION']['EDIT_LINK'], $strSectionEdit);
+			$this->AddDeleteAction($arResult['SECTION']['ID'], $arResult['SECTION']['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
+
+			?><h2 class="mb-3" id="<? echo $this->GetEditAreaId($arResult['SECTION']['ID']); ?>" ><?
+			echo (
+			isset($arResult['SECTION']["IPROPERTY_VALUES"]["SECTION_PAGE_TITLE"]) && $arResult['SECTION']["IPROPERTY_VALUES"]["SECTION_PAGE_TITLE"] != ""
+				? $arResult['SECTION']["IPROPERTY_VALUES"]["SECTION_PAGE_TITLE"]
+				: $arResult['SECTION']['NAME']
+			);
+			?>
+			</h2><?
+		}
+
+		if (0 < $arResult["SECTIONS_COUNT"])
+		{
+		?>
+		<?
+
+			switch ($arParams['VIEW_MODE'])
+			{
+				
+
+				case 'TILE':
+					foreach ($arResult['SECTIONS'] as &$arSection)
+					{
+						$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
+						$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
+
+						if (false === $arSection['PICTURE'])
+							$arSection['PICTURE'] = array(
+								'SRC' => $arCurView['EMPTY_IMG'],
+								'ALT' => (
+									'' != $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_ALT"]
+									? $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_ALT"]
+									: $arSection["NAME"]
+								),
+								'TITLE' => (
+									'' != $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_TITLE"]
+									? $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_TITLE"]
+									: $arSection["NAME"]
+								)
+							);
+
+							?>
+							<div class="col-md-6 col-lg-3 stones_item" data-aos="fade-up">								
+								<a
+									href="<? echo $arSection['SECTION_PAGE_URL']; ?>"
+									title="<? echo $arSection['PICTURE']['TITLE']; ?>"
+									>
+									<span class="img_wrap">
+										<img src="<? echo $arSection['PICTURE']['SRC'] ? $arSection['PICTURE']['SRC'] : $arCurView['EMPTY_IMG']; ?>" alt="<? echo $arSection['NAME']; ?>">
+									</span>
+									<p class="online-catalog-name">
+									<b><? echo $arSection['NAME']; ?></b>
+									<?
+									if ( count($rowData["PROPERTIES"]["ONLINECATALOG"]["VALUE"]) > 0) {
+
+										echo $qty = count($rowData["PROPERTIES"]["ONLINECATALOG"]["VALUE"]);
+
+										
+
+										echo getUnitCase2($qty, ' вид', ' вида', ' видов');
+									}
+
+										if ($arParams["COUNT_ELEMENTS"])
+										{
+											?> <b><? echo $arSection["ELEMENT_CNT"]; ?> шт</b><?
+										}
+									?>
+									</p>
+								</a>
+							</div>
+						<?
+					}
+					unset($arSection);
+					break;
+
+				
+			}
+			?><?
+		}
+		?>
+		</div>

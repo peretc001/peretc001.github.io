@@ -1,0 +1,5 @@
+<?
+$MESS["CT_BSP_ADDITIONAL_PARAMS"] = "Crit?res de recherche suppl?mentaires";
+$MESS["CT_BSP_KEYBOARD_WARNING"] = "La langue de la demande de recherche a ?t? chang?e pour '#query#'.";
+$MESS["SEARCH_GO"] = "Aller";
+?>

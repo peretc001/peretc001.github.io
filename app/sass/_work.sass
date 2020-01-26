@@ -1,0 +1,61 @@
+.work
+   .row
+      position: relative
+   [class*="col-"]
+      text-align: center
+      margin-bottom: 2em
+      &:last-child
+         margin-bottom: 0
+
+      .img_wrapper
+         position: relative
+         width: 100%
+         min-height: 350px
+         overflow: hidden
+         margin-bottom: 1em
+         a
+            &::before
+               content: 'Подробнее'
+               position: absolute
+               right: 0
+               bottom: 0
+               transform: translateX(100%)
+               display: inline-block
+               background: rgba(#fff, .7)
+               padding: .5em 1em
+               color: $text
+               z-index: 1
+               transition: transform .5s ease
+            &:hover
+               &::before
+                  transform: translateX(0)
+         img
+            position: absolute
+            left: 50%
+            top: 50%
+            transform: translateY(-50%) translateX(-50%)
+            width: 100%
+            height: auto
+            margin: 0 auto
+            transition: transform .5s ease
+         &:hover
+            img
+               transform: translateY(-50%) translateX(-50%) scale(1.1)
+      
+      p
+         font-size: 1.2em
+         a
+            color: $text
+            font-weight: bold
+
+@media screen and (max-width: 1199.98px)
+   .work
+      [class*="col-"]
+         .img_wrapper
+            min-height: 300px
+
+@media screen and (max-width: 374.98px)
+   .work
+      [class*="col-"]
+         .img_wrapper
+            min-height: 200px

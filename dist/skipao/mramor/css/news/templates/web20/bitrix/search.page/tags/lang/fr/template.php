@@ -1,0 +1,26 @@
+<?
+$MESS["CT_BSP_KEYBOARD_WARNING"] = "La configuration du clavier est restitu? ? la demande '#query#'.";
+$MESS["SEARCH_ALL"] = "(partout)";
+$MESS["SEARCH_AND"] = "et";
+$MESS["SEARCH_AND_ALT"] = "Op?rateur <i>logique &quot;et&quot;</i> il est sousentendu qu'il puisse ?tre omis: demande &quot;information de contact&quot; compl?tement ?quivalent ? la demande &quot;contacts et information&quot;.";
+$MESS["SEARCH_BRACKETS_ALT"] = "<i>Parenth?ses rondes</i> d?finissent l'ordre d'action des op?rateurs logiques.";
+$MESS["SEARCH_CORRECT_AND_CONTINUE"] = "S'il vous pla?t corriger l'expression de recherche et essayez ? nouveau.";
+$MESS["SEARCH_DESCRIPTION"] = "Description";
+$MESS["SEARCH_ERROR"] = "Une erreur est d?tect?e dans la phrase de recherche : ";
+$MESS["SEARCH_GO"] = "Aller";
+$MESS["SEARCH_LOGIC"] = "Op?rateurs logiques : ";
+$MESS["SEARCH_MODIFIED"] = "Chang?:";
+$MESS["SEARCH_NOT"] = "ne";
+$MESS["SEARCH_NOTHING_TO_FOUND"] = "D?sol?, votre recherche n'a donn? aucun r?sultat.";
+$MESS["SEARCH_NOT_ALT"] = "L'op?rateur <i>logique &quot;ne&quot;</i> limite pas la recherche des pages qui ne contiennent pas de mot indiqu? apr?s l'op?rateur.";
+$MESS["SEARCH_OPERATOR"] = "Op?rateur";
+$MESS["SEARCH_OR"] = "ou";
+$MESS["SEARCH_OR_ALT"] = "L'op?rateur <i>logique &quot;ou&quot;</i> vous permet de chercher les marchandises qui contiennent au moins l'un des op?randes.";
+$MESS["SEARCH_PATH"] = "Chemin vers le disque r?seau";
+$MESS["SEARCH_SINTAX"] = "<b>Syntaxe de la requ?te de recherche : </b><br /><br />Habituellement la requ?te repr?sente tout simplement un ou plusieurs mots, par exemple: <br /><i>information de contact</i><br />Selon cette requ?te on trouvera les pages contenant les deux mots de la requ?te. <br /><br />Les op?rateurs logiques permettent de construire des requ?te s plus complexes, telles que: <br /><i>information de contact ou t?l?phone</i><br />Selon cette requ?te on trouvera les pages contenant soit les mots &quot;de contact&quot; et &quot;informations&quot;, soit le mot &quot;t?l?phone&quot;.<br /><br /> <i>informations de contact pas t?l?phone</i><br /> Selon cette requ?te on trouvera les pages contenant les mots &quot;de contact&quot; et &quot;informations&quot;, mais il n'y a pas de mot &quot;t?l?phone&quot;.<br />Vous pouvez utiliser des parenth?ses pour cr?er les demandes plus complexes.<br />";
+$MESS["SEARCH_SORTED_BY_DATE"] = "Tri? par la date";
+$MESS["SEARCH_SORTED_BY_RANK"] = "Class? selon la pertinence";
+$MESS["SEARCH_SORT_BY_DATE"] = "Trier par date";
+$MESS["SEARCH_SORT_BY_RANK"] = "Trier par pertinence";
+$MESS["SEARCH_SYNONIM"] = "Synonymes";
+?>

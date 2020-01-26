@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Optimazed</title>
+  <style>
+     body {opacity: 0; overflow-x: hidden;}
+  </style>
+</head>
+<body>
+    
+    <div class="mobile-menu">
+      <a class="hamburger hamburger--spin js-hamburger">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </a>
+      <a href="/" class="logo">
+        <img src="./img/logo.svg" alt="">
+      </a>
+      <a class="phone" href="tel:88005052045">8 800 505 20 45</a>
+    </div>
+    
+    <nav class="menu">
+      <div class="container">
+        <ul class="menu-nav">
+            <li class="has-children">
+              <a class="nav-link" href="/catalog.html">Каталог камней</a>
+              <ul class="sub-menu">
+                <li><a href="">Гранит</a></li>
+                <li><a href="">Мрамор</a></li>
+                <li><a href="">Оникс</a></li>
+                <li><a href="">Кварцит</a></li>
+                <li><a href="">Травертин</a></li>
+                <li><a href="">Сланец</a></li>
+                <li><a href="">Песчаник</a></li>
+                <li><a href="">Самоцветы</a></li>
+                <li><a href="">Кварцевый агломерат</a></li>
+                <li><a href="">Камни в раскладке бабочка</a></li>
+                <li><a href="">Камень колотой  фактуры</a></li>
+                <li><a href="">Мозаика</a></li>
+                <li><a href="">Плитка</a></li>
+              </ul>
+            </li>
+            <li class="has-children">
+              <a class="nav-link" href="/">Изделия</a>
+              <ul class="sub-menu">
+                <li><a href="">Полы</a></li>
+                <li><a href="">Камины</a></li>
+                <li><a href="/catalog2.html">Лестницы</a></li>
+                <li><a href="">Столешницы</a></li>
+                <li><a href="">Подоконники</a></li>
+                <li><a href="">Декоративное панно</a></li>
+                <li><a href="">Фонтаны, бассейны</a></li>
+                <li><a href="">Фасады, элементы мощения</a></li>
+                <li><a href="">Фасонные профили</a></li>
+                <li><a href="">Камни в раскладке бабочка</a></li>
+                <li><a href="">Камень колотой  фактуры</a></li>
+                <li><a href="">Мозаика</a></li>
+                <li><a href="">Плитка</a></li>
+              </ul>
+            </li>
+            <li class="has-children">
+              <a class="nav-link" href="/catalog-instrument.html">Инструмент</a>
+              <ul class="sub-menu">
+                <li><a href="/catalog-child.html">Алмазный инструмент</a></li>
+                <li><a href="">Абразивный инструмент</a></li>
+                <li><a href="">Твердосплавный инструмент</a></li>
+                <li><a href="">Электро и пневмоинструмент</a></li>
+                <li><a href="">Клей для камня</a></li>
+                <li><a href="">Химия для камня</a></li>
+                <li><a href="">Прочий инструмент</a></li>
+                <li><a href="">Камнеобрабатывающее оборудование</a></li>
+              </ul>
+            </li>
+            <li class="has-children">
+              <a class="nav-link" href="/">О нас</a>
+              <ul class="sub-menu">
+                <li><a href="">О компании</a></li>
+                <li><a href="/news.html">Новости</a></li>
+                <li><a href="/vacansy.html">Вакансии</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/" class="logo"></a>
+            </li>
+            <li class="has-children">
+              <a class="nav-link" href="/">Полезное</a>
+              <ul class="sub-menu">
+                <li><a href="/notes.html">Статьи</a></li>
+                <li><a href="">Видеоинструкции</a></li>
+                <li><a href="">Рестоврационные работы</a></li>
+                <li><a href="">Рекомендации</a></li>
+                <li><a href="">Техническая информация</a></li>
+                <li><a href="">Гарантии качества</a></li>
+              </ul>
+            </li>
+            <li>
+              <a class="nav-link" href="/sale.html">Акции</a>
+            </li>
+            <li>
+              <a class="nav-link" href="/contact.html">Контакты</a>
+            </li>
+            <li class="last">
+                <a class="phone" href="tel:88005052045">8 800 505 20 45</a>
+                <div class="lang">
+                  <a href="/"><img src="./img/ru.svg" alt=""></a>
+                  <a href="/"><img src="./img/uk.svg" alt=""></a>
+                </div>
+            </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="divider"></div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="/">Главная</a> Каталог камней
+        </div>
+    </div>
+
+    <!-- Если есть фильтр class="has-filter" -->
+    <section class="products has-filter">
+        <div class="container">
+            <div class="caption">
+                <h1>Полудрагоценные камни</h1>
+            </div>
+            <div class="row">
+              <!-- Если есть фильтр =>
+                  <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">Фильтр</div> 
+                  <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10 products__list">Товары</div>
+
+                  Если нет то =>
+                  <div class="col-12 products__list">Товары</div>
+              -->
+                <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                    <div class="open__filter">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDk3MS45ODYgOTcxLjk4NiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgOTcxLjk4NiA5NzEuOTg2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PGc+Cgk8cGF0aCBkPSJNMzcwLjIxNiw0NTkuM2MxMC4yLDExLjEsMTUuOCwyNS42LDE1LjgsNDAuNnY0NDJjMCwyNi42MDEsMzIuMSw0MC4xMDEsNTEuMSwyMS40bDEyMy4zLTE0MS4zICAgYzE2LjUtMTkuOCwyNS42LTI5LjYwMSwyNS42LTQ5LjJWNTAwYzAtMTUsNS43LTI5LjUsMTUuOC00MC42MDFMOTU1LjYxNSw3NS41YzI2LjUtMjguOCw2LjEwMS03NS41LTMzLjEtNzUuNWgtODczICAgYy0zOS4yLDAtNTkuNyw0Ni42LTMzLjEsNzUuNUwzNzAuMjE2LDQ1OS4zeiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojMkMyQzJDIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgo8L2c+PC9nPiA8L3N2Zz4=" />
+                        <span>Фильтр</span>
+                    </div>
+                    <div class="products__filter">  <!-- <div class="products__filter active"> -->
+                        <!-- FORM -->
+                        <div class="form-group">
+                            <p>
+                                <b>Найти по параметрам</b>
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="title" placeholder="Поиск по названию">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="type" placeholder="Тип фактуры">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="place" placeholder="Месторождение">
+                        </div>
+                        <div class="form-group color">
+                            <div class="color__item">
+                                <input type="radio" id="white" name="color">
+                                <label for="white" class="white"></label>
+                            </div>
+                            <div class="color__item">
+                                <input type="radio" id="pink" name="color">
+                                <label for="pink" class="pink"></label>
+                            </div>
+                            <div class="color__item">
+                                <input type="radio" id="red" name="color">
+                                <label for="red" class="red"></label>
+                            </div>
+                            <div class="color__item">
+                                <input type="radio" id="yellow" name="color">
+                                <label for="yellow" class="yellow"></label>
+                            </div>
+                            <div class="color__item">
+                                <input type="radio" id="green" name="color">
+                                <label for="green" class="green"></label>
+                            </div>
+                            <div class="color__item">
+                                <input type="radio" id="black" name="color">
+                                <label for="black" class="black"></label>
+                            </div>
+                            <div class="color__item">
+                                <input type="radio" id="blue" name="color">
+                                <label for="blue" class="blue"></label>
+                            </div>
+                            <div class="color__item">
+                                <input type="radio" id="grey" name="color">
+                                <label for="grey" class="grey"></label>
+                            </div>
+                            <div class="color__item">
+                                <input type="radio" id="brown" name="color">
+                                <label for="brown" class="brown"></label>
+                            </div>
+                            <div class="color__item">
+                                <input type="radio" id="beige" name="color">
+                                <label for="beige" class="beige"></label>
+                            </div>
+                            <div class="color__item">
+                                <input type="radio" id="rgb" name="color">
+                                <label for="rgb" class="rgb"></label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="available" name="available">
+                            <label for="available" class="checkbox">В наличии</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="sale" name="sale">
+                            <label for="sale" class="checkbox">Распродажа</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="new" name="new">
+                            <label for="new" class="checkbox">Новинки</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="slab" name="slab">
+                            <label for="slab" class="checkbox">Парные слэбы</label>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="reset" value="Очистить фильтр">
+                        </div>
+                        <button type="submit" href="" class="btn btn-outline">Поиск</button>
+                        <!-- END FORM -->
+                    </div>
+                </div>
+                <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10 products__list">
+                    <div class="products__list__sort">
+                        <p>Найдено 8 вариантов</p>
+                        <p class="products__list__sort--block">
+                            Сортировать по
+                            <span class="products__list__sort--block-item">
+                                <a href="">Наличию</a>
+                                <a class="active" href="">Алфавиту</a>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3" data-aos="fade-up">
+                            <a href="/products_page.html">
+                                <span class="img_wrap">
+                                    <img src="./img/catalog/poludragocen/1.jpg" alt="Blue agate">
+                                </span>
+                                Blue agate
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-3" data-aos="fade-up">
+                            <a href="">
+                                <span class="img_wrap">
+                                    <img src="./img/catalog/poludragocen/2.jpg" alt="Amethyst">
+                                </span>
+                                Amethyst
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-3" data-aos="fade-up">
+                            <a href="">
+                                <span class="img_wrap">
+                                    <img src="./img/catalog/poludragocen/3.jpg" alt="Brown Petrified Wood">
+                                </span>
+                                Brown Petrified Wood
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-3" data-aos="fade-up">
+                            <a href="">
+                                <span class="img_wrap">
+                                    <img src="./img/catalog/poludragocen/4.jpg" alt="Retro Petrified Wood">
+                                </span>
+                                Retro Petrified Wood
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-3" data-aos="fade-up">
+                            <a href="">
+                                <span class="img_wrap">
+                                    <img src="./img/catalog/poludragocen/5.jpg" alt="Rose quartz">
+                                </span>
+                                Rose quartz
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-3" data-aos="fade-up">
+                            <a href="">
+                                <span class="img_wrap">
+                                    <img src="./img/catalog/poludragocen/6.jpg" alt="Smokey quartz">
+                                </span>
+                                Smokey quartz
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-3" data-aos="fade-up">
+                            <a href="">
+                                <span class="img_wrap">
+                                    <img src="./img/catalog/poludragocen/7.jpg" alt="Tiger eye">
+                                </span>
+                                Tiger eye
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-3" data-aos="fade-up">
+                            <a href="">
+                                <span class="img_wrap">
+                                    <img src="./img/catalog/poludragocen/8.jpg" alt="White quartz">
+                                </span>
+                                White quartz
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-3" data-aos="fade-up">
+                            <a href="">
+                                <span class="img_wrap">
+                                    <img src="./img/catalog/poludragocen/9.jpg" alt="Wild agate">
+                                </span>
+                                Wild agate
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pagination" data-aos="fade-up">
+                        <a href="/" class="active">1</a> 
+                        <a href="/">2</a>
+                        <a href="/">3</a>
+                        <a href="/">4</a>
+                        <a href="/">></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-about">
+        <div class="container">
+            <h2 data-aos="fade-up">Самоцветы и полудрагоценные камни для интерьера</h2>
+            <div class="column" data-aos="fade-up">
+                <div class="column-item">
+                    <p>Для создания элитного интерьера, дизайнеры применяют различные
+                            отделочные материалы. Полудрагоценные камни часто служат
+                            основой такого интерьера, ведь их эстетические свойства отвечают 
+                            запросам самых изысканных персон, а спектр применения позволяет 
+                            реализовать самые умопомрачительные идеи.
+                    </p>
+                    <p>Выпускаются камни в слэбах (каменных плитах толщиной от 10 мм.).
+                            Одними из самых популярных пород являются агат и кварц.
+                    </p>
+                </div>
+                <div class="column-item">
+                    <p>Используются для облицовки и декорирования полов и стен, создания
+                            панно и авторских картин, изготовления столешниц для кухни,
+                            гостиной, ванной комнаты. Хорошо сочетаются с деревом 
+                            и металлом, мрамором и гранитом, практически не имеют 
+                            ограничений в выборе стиля интерьера.
+                    </p>
+                    <p>Камни обладают уникальным свойством - пропускают свет сквозь
+                            себя. Это дает дополнительные возможности для ваших идей, чтобы 
+                            подчеркнуть прекрасный вкус, индивидуальность 
+                            и статусность помещения.
+                    </p>
+                </div>
+            </div>
+            <p data-aos="fade-up"><b>Ассортимент самоцветов и полудрагоценных камней</b></p>
+            <div class="column" data-aos="fade-up">
+                <div class="column-item">
+                   <p><b>Агат</b></p>
+                    <p>Настоящая находка для уникального интерьера — многогранный 
+                        и мистический агат. В природе встречаются шесть цветовых оттенков,
+                        это белый, желтый, серый, голубой, коричневый и черный.
+                        Самым популярным является голубой агат, его глубокий синий цвет 
+                        поражает и ошеломляет одновременно.
+                    </p>
+                    <p>Агат является твердым и плотным минералом, и сравним по данным
+                        характеристикам с гранитом. Используется при облицовке полов, стен, 
+                        потолков. Материал подходит для изготовления столешниц, панно 
+                        и конструкций с освещением и без, дизайнерских светильников.
+                    </p> 
+                </div>
+                <div class="column-item">
+                    <p><b>Кварц</b></p>
+                    <p>Кварц - король минералов, самый важный компонент большинства 
+                            горных пород. Это прочная кристаллическая порода, которая имеет
+                            прозрачный цвет и отличные светопропускные способности.
+                    </p>
+                    <p>Самые популярные — белый и розовый кварц. 
+                            Также пользуются спросом дымчатый кварц, тигровый глаз, аметист.
+                            При этом последний - наиболее ценный в группе кварцевых 
+                            минералов. Аметист имеет красивые, выразительные цвета 
+                            розового, голубого и синего оттенков, и обладает высокими 
+                            декоративными свойствами.
+                    </p>
+                </div>
+                <div class="column-item">
+                    <p><b>Petrified Wood — окаменелое дерево</b></p>
+                    <p>Полудрагоценные камни состоящие из элементов окаменевших 
+                            деревьев. Настоящее чудо природы, которое формировалось 
+                            миллионами лет в толщах земли. Каждый слэб неповторим, и поистине 
+                            великолепен. Четко просматриваемые годичные слоя древесины, 
+                            характерные цвета и оттенки придают интерьеру
+                            особую роскошь, теплоту и уют.
+                    </p>
+                </div>
+            </div>
+            <div class="column" data-aos="fade-up">
+                <div class="column-item center">
+                    <p>Компания «Хозяйка Медной горы» предлагает полудрагоценные 
+                            камни в слэбах (каменных плитах), а также изготовление
+                             различных изделий по индивидуальным заказам.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="callback_form">
+      <div class="container">
+        <h4 data-aos="fade-up">
+            Подпишись на рассылку
+        </h4>
+        <form action="" class="callback__form" data-aos="fade-up">
+          <input type="text" name="name" placeholder="Имя">
+          <input type="email" name="email" placeholder="Ваш E-mail" required>
+          <div class="robot">
+            <div class="robot__check">
+              <svg viewBox="0 0 60 60">
+                  <line class="st0 line1" x1="4.5" y1="30.5" x2="29.5" y2="52.5"/>
+                  <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
+              </svg>
+            </div>
+            <span>Даю свое согласие на обработку персональных данных <br>
+                и соглашаюсь с <a href="">политикой конфиденциальности.</a></span>
+          </div>
+          <button type="submit" class="btn btn-outline callback__form__button" disabled>Подписаться</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer" data-aos="fade-up">
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-sm-6 col-lg-2">
+            <ul>
+              <li><a href="">Каталог камней</a></li>
+              <li><a href="">Изделия</a></li>
+              <li><a href="">Инструменты</a></li>
+              <li><a href="">Новости</a></li>
+              <li><a href="">Акции</a></li>
+            </ul>
+          </div>
+
+          <div class="col-sm-6 col-lg-3">
+            <ul>
+              <li><a href="">Контакты</a></li>
+              <li><a href="">Вакансии</a></li>
+              <li><a href="">О компании</a></li>
+              <li><a href="">Гарантии качества</a></li>
+              <li><a href="">Политика обработки персональных данный</a></li>
+            </ul>
+          </div>
+
+          <div class="col-sm-6 col-lg-3">
+            <ul>
+              <li><a href="">Статьи</a></li>
+              <li><a href="">Видеоинструкции</a></li>
+              <li><a href="">Информация о станках</a></li>
+              <li><a href="">Рекомендации</a></li>
+            </ul>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 last">
+            <ul>
+              <li><a href="">8 800 505 20 45</a></li>
+              <li><a href="">8 861 251 78 00</a></li>
+              <li><a href="">hmg@mramor23.ru</a></li>
+            </ul>
+          </div>
+          <div class="col-12 right">
+            <div class="insta">
+              <a href="">Камень <img src="./img/footer/instagram.svg" alt=""></a>
+              <a href="">Инструмент и химия <img src="./img/footer/instagram.svg" alt=""></a>
+            </div>
+            <div class="social">
+              <a href=""><img src="./img/footer/facebook.svg" alt=""></a>
+              <a href=""><img src="./img/footer/twitter.svg" alt=""></a>
+              <a href=""><img src="./img/footer/vk.svg" alt=""></a>
+              <a href=""><img src="./img/footer/pinterest.svg" alt=""></a>
+            </div>
+          </div>
+
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-12">
+            Разработка: <a class="author" href="https://skipao.ru" target="_blank"><img src="./img/ski.svg"></a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+    <script src="./js/scripts.min.js"></script>
+    <script src="./js/fancybox/jquery.fancybox.min.js"></script>
+    <script src="./js/slick/slick.min.js"></script>
+    <script src="./js/aos.js"></script>
+    <link rel="stylesheet" href="./css/aos.css" />
+    <link rel="stylesheet" href="./js/fancybox/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="./js/slick/slick.css">
+    <link rel="stylesheet" href="./css/main.min.css">
+  
+    <script>
+      AOS.init();
+    </script>
+  
+</body>
+</html>

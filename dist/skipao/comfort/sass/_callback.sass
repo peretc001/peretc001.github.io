@@ -1,0 +1,185 @@
+
+.callback__form
+    &.top-form
+        position: absolute
+        left: 0
+        top: 835px
+        width: 100%
+        &::before
+            content: ''
+            position: absolute
+            width: 50%
+            height: 100%
+            background: $accent
+    &.bottom-form
+        margin-top: $gutter*3
+        position: relative
+        background: $accent
+        .container
+            max-width: 450px
+            margin: 0 auto
+
+
+    .container
+        position: relative
+        padding-top: 77px
+        padding-bottom: 77px
+    p
+        color: #ffffff
+        font-size: 1.2em
+        b
+            font-size: 2.75rem
+    .form__field
+        width: 100%
+        max-width: 430px
+        padding: 0
+        margin: 0
+        position: relative
+    label
+        display: block
+        height: .5em
+    input,
+    button
+        position: relative
+        z-index: 4
+        width: 100%
+        color: #ffffff
+        background: none
+        border: none
+        appearance: none
+        border-radius: 0
+        border-bottom: 1px solid #ffffff
+        line-height: 1
+        box-shadow: none
+        outline: none
+        font-size: 1em
+        padding: .3em 1em
+        margin: 0 auto
+    input
+        padding-left: 0
+        margin-bottom: 0
+        // &:focus:required:invalid
+        //     border-color: #000
+        // &:required:valid
+        //     border-color: green
+        &::-webkit-input-placeholder
+            color: #FFA49A
+        &:-moz-placeholder
+            color: #FFA49A
+        &::-moz-placeholder
+            color: #FFA49A
+        &:-ms-input-placeholder
+            color: #FFA49A
+    button
+        background: #000
+        color: #ffffff
+        border: none
+        margin: 0
+        max-width: 252px
+        cursor: pointer
+        padding: 1.5em 1em
+        user-select: none
+        &:disabled
+            cursor: default
+    .form__error
+        position: absolute
+        width: 100%
+        right: 0
+        bottom: -15px
+        color: #ffffff
+        text-align: right
+        font-size: .7em
+        display: none
+            
+
+    input:invalid:not(:placeholder-shown) + .form__error
+        display: block
+
+.robot
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    padding: 0
+    margin: 2em auto
+    position: relative
+    z-index: 4
+    &__check
+        svg
+            width: $gutter
+            height: $gutter
+            border: 1px solid #ffffff
+            padding: 5px
+            cursor: pointer
+            margin-right: .5em
+        .st0
+            display: none
+            fill: none
+            stroke: #ffffff
+            stroke-width: 10
+            stroke-linecap: round
+            stroke-linejoin: round
+            stroke-miterlimit: 10
+            opacity: 0
+        &.active
+            .st0
+                display: block
+                &.line1
+                    animation: fadeIn .1s ease-in-out forwards
+                &.line2
+                    opacity: 0
+                    animation: fadeIn .1s ease-in-out .05s forwards
+    a, span
+        font-size: 0.8rem
+        color: #ffffff
+        user-select: none
+
+   
+@keyframes fadeIn
+    from
+        opacity: 0
+    to
+        opacity: 1
+
+@media screen and ( max-width: 1199.98px )
+    .callback__form
+        &.top-form
+            top: 750px
+    
+@media screen and ( max-width: 991.98px )
+    .callback__form
+        &.top-form
+            &::before
+                width: 70%
+
+@media screen and ( max-width: 767.98px )
+    .callback__form
+        &.top-form
+            position: relative
+            top: 0
+            &::before
+                width: 100%
+        p
+            b
+                font-size: 2.5rem
+
+@media screen and ( max-width: 576.98px )
+    .callback__form
+        &.bottom-form
+            .container
+                max-width: 450px
+                margin: 0
+        p
+            font-size: 1em
+            b
+                font-size: 2.2rem
+    .robot
+        margin: 2em auto
+
+@media screen and ( max-width: 374.98px )
+    .callback__form
+        p
+            font-size: 1em
+            b
+                font-size: 1.8rem
+
+    

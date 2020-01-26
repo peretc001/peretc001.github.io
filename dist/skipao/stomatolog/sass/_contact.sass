@@ -1,0 +1,29 @@
+.contact
+    &.home
+        .wp-block-columns
+            background: #f5f5f5
+            border-radius: 4px
+            padding: 30px
+
+    .wp-block-columns
+        align-items: center
+        a
+            color: $text
+            font-weight: bold
+
+@media screen and ( max-width: 576.98px )
+    .contact
+        &.home
+            .wp-block-columns
+                background: #f5f5f5
+                border-radius: 4px
+                padding: 30px 10px
+                .wp-block-column
+                    &:first-child
+                        padding: 30px
+
+        .wp-block-columns
+            .wp-block-column
+                &:first-child
+                    margin-bottom: 1em
+    

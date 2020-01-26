@@ -1,0 +1,92 @@
+.callback
+    position: relative
+    width: 100%
+    background: #ffffff
+    display: none
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    z-index: 5
+    padding: 60px 0 20px 0
+    &.active
+        display: flex
+    .close
+        cursor: pointer
+        position: fixed
+        right: 20px
+        top: 20px
+        display: inline-block
+        width: 1em
+        height: 1em
+        background-size: 1em
+        background-position: center
+        background-repeat: no-repeat
+        background-image: url('data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMi4wMDEgNTEyLjAwMSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyLjAwMSA1MTIuMDAxOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMjg0LjI4NiwyNTYuMDAyTDUwNi4xNDMsMzQuMTQ0YzcuODExLTcuODExLDcuODExLTIwLjQ3NSwwLTI4LjI4NWMtNy44MTEtNy44MS0yMC40NzUtNy44MTEtMjguMjg1LDBMMjU2LDIyNy43MTcgICAgTDM0LjE0Myw1Ljg1OWMtNy44MTEtNy44MTEtMjAuNDc1LTcuODExLTI4LjI4NSwwYy03LjgxLDcuODExLTcuODExLDIwLjQ3NSwwLDI4LjI4NWwyMjEuODU3LDIyMS44NTdMNS44NTgsNDc3Ljg1OSAgICBjLTcuODExLDcuODExLTcuODExLDIwLjQ3NSwwLDI4LjI4NWMzLjkwNSwzLjkwNSw5LjAyNCw1Ljg1NywxNC4xNDMsNS44NTdjNS4xMTksMCwxMC4yMzctMS45NTIsMTQuMTQzLTUuODU3TDI1NiwyODQuMjg3ICAgIGwyMjEuODU3LDIyMS44NTdjMy45MDUsMy45MDUsOS4wMjQsNS44NTcsMTQuMTQzLDUuODU3czEwLjIzNy0xLjk1MiwxNC4xNDMtNS44NTdjNy44MTEtNy44MTEsNy44MTEtMjAuNDc1LDAtMjguMjg1ICAgIEwyODQuMjg2LDI1Ni4wMDJ6IiBmaWxsPSIjMDAwMDAwIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==')
+    .callback__form
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        p
+            font-weight: 200
+            color: $grey
+            margin-bottom: 2em
+            max-width: 300px
+            text-align: center
+        a
+            display: inline-block
+            color: $text
+            margin-top: 0.5em
+            font-weight: bold
+        .form__field
+            padding: 0
+            margin: 0
+            position: relative
+        input,
+        button
+            width: 100%
+            max-width: 250px
+            background: none
+            border: 1px solid $grey
+            border-radius: 4px
+            padding: .5em 1em
+            line-height: 1
+            appearance: none
+            box-shadow: none
+            outline: none
+            font-size: 1em
+            margin: 0 auto
+            box-sizing: border-box
+        label
+            display: block
+            height: .5em
+        button
+            background: $text
+            color: #ffffff
+            margin-top: 1em
+            margin-bottom: 2em
+            cursor: pointer
+            padding: .8em 1em
+            &:disabled
+                opacity: .5
+                cursor: default
+        .form__error
+            position: absolute
+            right: 0
+            bottom: 3px
+            width: 100%
+            color: #ff7700
+            text-align: right
+            font-size: .7em
+            display: none
+            a
+                color: #ff7700 !important
+                font-weight: normal !important
+        input:invalid:not(:placeholder-shown) + .form__error
+            display: block
+
+@media screen and ( min-width: 1024px )
+    .callback
+        .callback__form
+            padding: 60px
+    

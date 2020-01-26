@@ -1,0 +1,39 @@
+.contact
+    h5
+        display: none
+        font-weight: bold
+        font-size: 1.5em
+        margin-bottom: 1em
+    .row
+        align-items: center
+        [class*="col-"]
+            &:last-child
+                padding-left: $gutter*2
+            .map
+                overflow: hidden
+                max-width: 100%
+                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25)
+            h5
+                display: block
+            a
+                color: $text
+            p
+                line-height: 1.6
+
+@media screen and ( max-width: 767.98px )
+    .contact
+        h5
+            display: block
+        .row
+            [class*="col-"]
+                &:first-child
+                    margin-bottom: 2em
+                &:last-child
+                    padding-left: 15px
+                .map
+                    min-height: 300px
+                    max-height: 300px
+                h5
+                    display: none
+
+    

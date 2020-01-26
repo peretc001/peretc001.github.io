@@ -1,0 +1,156 @@
+@import '_libs/bootstrap_grid'
+@import '_libs/fonts'
+
+$accent: #0635C9
+$accent2: #1AE5BE
+$text: #151515
+$grey: #888888
+
+$gutter: 30px
+
+$default-font: 'MuseoSans', sans-serif
+
+*
+	box-sizing: border-box
+	&:before, &:after
+		box-sizing: border-box
+html, body
+	height: 100%
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.2
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	opacity: 0
+main
+	min-height: calc(100vh - 280px)
+	&.no-scroll
+		display: none
+	
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: #ff7700
+		&:required:valid
+			border-color: green
+
+h1, h2, h3
+	font-size: 2em
+
+.text-center
+	text-align: center !important
+	text-align-last: center !important
+	p
+		text-align: center !important
+		text-align-last: center !important
+
+a, 
+	&:hover, 
+	&:active, 
+	&:focus
+		text-decoration: none
+		outline: none
+ul
+	li
+		list-style: none
+
+b, strong
+	font-weight: bold
+
+img
+	max-width: 100%
+
+.callback_btn
+	display: block
+	text-align: center
+	margin: 1em auto
+	margin-top: 2em
+	a
+		color: $text
+		text-transform: uppercase
+		font-size: 0.9em
+		letter-spacing: -.4px
+		padding: .5em 1em
+		margin-right: 1em
+		border: 1px solid $text
+		border-radius: 4px
+		transition: background .3s ease, color .3s ease
+		&:hover
+			background: $text
+			color: #f5f5f5
+
+@import '_libs/hamburger'
+@import 'nav'
+@import 'slider'
+@import 'pay'
+@import 'about'
+@import 'page'
+@import 'review'
+@import 'company'
+@import 'doctor'
+@import 'contact'
+@import 'callback'
+@import 'footer'
+
+.robot
+	display: flex
+	align-items: center
+	justify-content: center
+	max-width: 200px
+	padding: 0
+	margin: 0 auto
+	&__check
+		svg
+			width: $gutter
+			height: $gutter
+			border: 1px solid $text
+			padding: 5px
+			cursor: pointer
+			margin-right: .5em
+		.st0
+			display: none
+			fill: none
+			stroke: $text
+			stroke-width: 10
+			stroke-linecap: round
+			stroke-linejoin: round
+			stroke-miterlimit: 10
+			opacity: 0
+		&.active
+			.st0
+				display: block
+				&.line1
+					animation: fadeIn .1s ease-in-out forwards
+				&.line2
+					opacity: 0
+					animation: fadeIn .1s ease-in-out .05s forwards
+	span
+		font-size: 0.7em
+		color: $grey
+	a
+		display: inline !important
+		margin: 0 !important
+		color: $grey !important
+   
+@keyframes fadeIn
+	from
+		opacity: 0
+	to
+		opacity: 1
+
+@media screen and ( max-width: 991.98px )
+	h1, h2, h3
+		font-size: 1.8em
+@media screen and ( max-width: 767.98px )
+	h1, h2, h3
+		font-size: 1.6em
+@media screen and ( max-width: 576.98px )
+	h1, h2, h3
+		font-size: 1.4em
+	
+body
+	opacity: 1

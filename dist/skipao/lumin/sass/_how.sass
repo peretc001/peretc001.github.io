@@ -1,0 +1,51 @@
+.how
+   padding: $gutter 0
+   padding-top: $gutter*2
+   text-align: center
+   h3
+      font-weight: bold
+      color: $accent
+      font-size: 2em
+      margin-bottom: 2em
+      span
+         color: $accent2
+   a
+      cursor: pointer
+      border: none
+      outline: none
+
+   [class*="col-"]
+      margin-bottom: 2em
+      img
+         width: 100px
+         margin-bottom: 1em
+      p
+         font-weight: bold
+         font-size: 1.2em
+      .btn
+         padding: .5em 2em
+         margin-bottom: 0
+         font-size: 1.2em
+
+@media screen and (max-width: 1199.98px)
+   .how
+      font-size: 0.85em
+
+@media screen and (max-width: 991.98px)
+   .how
+      font-size: 0.9em
+
+@media screen and (max-width: 576.98px)
+   .how
+      padding: $gutter 0
+      font-size: 1em
+      h3
+         font-size: 1.3em
+      [class*="col-"]
+         img
+            width: 80px
+         p
+            font-size: 1em
+      .btn
+         &.btn-outline-accent
+            font-size: 1.1em

@@ -1,0 +1,123 @@
+.catalog
+    padding: 170px 0
+    overflow: hidden
+    h2
+        text-align: center
+        margin-bottom: 3em
+    .row
+        padding-top: 60px
+        padding-bottom: 0px
+        align-items: center
+        position: relative
+        &:last-child
+            padding-top: 0
+    
+    [class*="col-"]
+        overflow: hidden
+        &:first-child
+            padding-right: 0
+    
+    .caption
+        position: absolute
+        right: 0
+        top: -70px
+        color: rgba(196, 196, 196, 0.23)
+        font-size: 100px
+        font-family: 'Lazurski'
+        text-transform: uppercase
+        text-align: right
+    
+    .btn
+        width: 185px
+        height: 61px
+        line-height: 60px
+        padding: 0 1.2em
+        &.w-320
+            width: 320px
+    
+    .preloader
+        margin: 0
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translateX(-50%) translateY(-50%)
+        z-index: 1
+        &.hidden
+            opacity: 0
+            z-index: -1
+    
+    .catalog_img
+        display: none
+        &.active
+            display: block
+    
+    .catalog_count
+        display: none
+        &.active
+            display: block
+
+@media screen and (max-width: 1199.98px)
+    .catalog
+        padding: 100px 0
+        font-size: 0.9em
+        .caption
+            font-size: 80px
+        .btn
+            font-size: 1em
+
+@media screen and (max-width: 767.98px)
+    .catalog
+        padding: 100px 0
+        font-size: 0.9em
+        .container
+            max-width: 100%
+
+        h2
+            margin-bottom: 1em
+
+        .caption
+            display: none
+        
+        [class*="col-"]
+            text-align: center
+            padding: 0
+            margin: 0
+
+        
+        ul.menu_secondary
+            max-width: 200px
+            margin: 0
+            padding-left: 15px
+            li
+                text-align: left
+                a
+                    border-bottom: 1px solid #ffffff
+                    &:hover
+                        padding-left: 0
+                &.active
+                    padding-left: 0
+                    &::before
+                        display: none
+                    a
+                        border-bottom: 1px solid $text
+        
+        .catalog_img
+            max-width: 300%
+
+        .catalog__link
+            flex-direction: column
+            .btn
+                max-width: 250px
+                font-size: 1em
+                &:first-child
+                    margin-top: 1em
+                    margin-bottom: 1em
+                    margin-right: 0
+                    width: 250px
+                &:last-child
+                    width: 250px
+                    span
+                        text-align: center
+                        margin-right: 0
+                    img
+                        display: none

@@ -1,0 +1,30 @@
+<?
+$MESS["F_ATTACH_FILES"] = "Arquivos Anexados";
+$MESS["F_CAPTCHA_PROMT"] = "Imagem de caracteres CAPTCHA";
+$MESS["F_CAPTCHA_TITLE"] = "Bot de proteзгo contra spam (CAPTCHA)";
+$MESS["F_C_GOTO_FORUM"] = "Ir ao fуrum >>";
+$MESS["F_DELETE"] = "Excluir";
+$MESS["F_DELETE_CONFIRM"] = "A mensagem serб excluнda de forma irreversнvel. Continuar?";
+$MESS["F_DOWNLOAD"] = "Download";
+$MESS["F_FILE_EXTENSION"] = "Arquivos permitidos: #EXTENSION#.";
+$MESS["F_FILE_SIZE"] = "tamanho do arquivo nгo deve exceder #SIZE#";
+$MESS["F_HIDE"] = "Ocultar";
+$MESS["F_LOAD_FILE"] = "Carregar arquivo";
+$MESS["F_LOAD_IMAGE"] = "Carregar imagem";
+$MESS["F_NAME"] = "Nome:";
+$MESS["F_PREVIEW"] = "Visualizaзгo";
+$MESS["F_QUOTE_FULL"] = "Citar";
+$MESS["F_QUOTE_HINT"] = "Para citar a mensagem no formulбrio de resposta, selecione o texto e clique aqui";
+$MESS["F_SHOW"] = "Mostrar";
+$MESS["F_WAIT"] = "Por favor aguarde...";
+$MESS["F_WANT_ALLOW_SMILES"] = "Vocк quer <b>ativar</b> smileys nesta mensagem?";
+$MESS["F_WANT_SUBSCRIBE_TOPIC"] = "Inscrever-se a Novos Posts neste tуpico";
+$MESS["JERROR_MAX_LEN"] = "Comprimento mбximo da mensagem й #MAX_LENGTH# sнmbolos. Total de sнmbolos: #LENGTH#.";
+$MESS["JERROR_NO_MESSAGE"] = "Por favor, forneзa a sua mensagem.  ";
+$MESS["JERROR_NO_TOPIC_NAME"] = "Por favor, forneзa o tнtulo da mensagem.  ";
+$MESS["JQOUTE_AUTHOR_WRITES"] = "escreveu";
+$MESS["OPINIONS_EMAIL"] = "Seu e-mail";
+$MESS["OPINIONS_NAME"] = "Seu nome ";
+$MESS["OPINIONS_PREVIEW"] = "Visualizaзгo";
+$MESS["OPINIONS_SEND"] = "Enviar";
+?>

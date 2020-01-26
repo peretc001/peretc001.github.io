@@ -1,0 +1,55 @@
+footer
+    padding: $gutter*1.5 0
+    background: #131313
+    color: #ffffff
+    a
+        color: #ffffff
+        &:hover
+            color: #ffffff
+    
+    .navbar-brand
+        img
+            width: 191px
+            height: auto
+    
+    ul
+        margin: 0
+        padding: 0
+        li
+            list-style: none
+            margin: .8em 0
+            padding: 0
+            &:first-child
+                margin-top: 0
+
+    [class*="col-"]
+        &:nth-child(2)
+            display: flex
+            ul
+                margin-right: 5em
+                &:last-child
+                    margin-right: 0
+
+@media screen and ( max-width: 991.98px )
+    footer
+        [class*="col-"]
+            &:nth-child(1)
+                text-align: center
+                margin-bottom: 2em
+            &:nth-child(2)
+                ul
+                    margin-right: 3em
+                    &:last-child
+                        margin-right: 0
+
+@media screen and ( max-width: 576.98px )
+    footer
+        [class*="col-"]
+            margin-bottom: 2em
+            &:nth-child(2)
+                display: block
+                ul
+                    margin-right: 0
+
+    
+            

@@ -1,0 +1,48 @@
+.eng
+    .page-caption
+        max-width: 450px
+        p
+            text-align: left
+    .mt-170
+        margin-top: 170px
+    p
+        margin-bottom: 0
+    p.mt-2
+        margin-top: 20px !important
+    p.mt-3
+        margin-top: 50px !important
+    p.mt-4
+        margin-top: 70px !important
+    
+    .pb-5
+        padding-bottom: 50px !important
+    
+    .cards
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(158px, 1fr))
+        gap: 30px
+        a
+            display: block
+            text-align: center
+            min-height: 60px
+            border: 1px solid $text
+            display: flex
+            align-items: center
+            justify-content: center
+            transition: background .5s ease
+            small
+                font-size: 0.9em
+            &:hover
+                background: #D8D8D8
+                color: $text
+        
+        &.instruments
+            grid-template-columns: repeat(auto-fit, minmax(252px, 1fr))
+
+@media screen and ( min-width: 1024px )
+    .eng
+        .page-caption
+            h1, h2, h3
+                font-size: 40px
+    
+    

@@ -1,0 +1,96 @@
+.header
+   display: flex
+   align-items: center
+   justify-content: flex-start
+   height: 100%
+   min-height: 600px
+   padding: $gutter*2 $gutter
+   background-size: cover
+   background-position: center
+   position: relative
+   background-color: #000
+   &:before
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      width: 100%
+      height: 100%
+      background: #000000
+      opacity: .4
+   .container
+      position: relative
+      color: #ffffff
+   h1
+      text-transform: uppercase
+      font-weight: bold
+      font-size: 3em
+      line-height: 1
+      margin-bottom: 0
+      span
+         display: block
+         margin: 0 auto
+         text-align: center
+   p
+      font-size: .85em
+      padding-top: 0.5em
+      margin-bottom: 0
+      text-transform: uppercase
+      color: darken(#ffffff, 30%)
+   
+   .btn.btn-outline-accent
+      margin-top: 2em
+      padding: .5em 1.5em
+      font-size: 1.4em
+      color: #ffffff
+      border: 1px solid #ffffff
+      transition: background .5s ease, color .5s ease, border .5s ease
+      &:hover
+         background: #ffffff
+         color: #000
+      
+   
+@media screen and (max-width: 1199.98px)
+   .header
+      font-size: 0.9em
+      h1
+         font-size: 2.4em
+         span
+            display: block
+      p
+         font-size: .98em
+
+
+@media screen and (max-width: 991.98px)
+   .header
+      font-size: 0.9em
+      text-align: center
+      height: auto
+      .container
+         padding-top: 100px
+      p
+         padding-top: 0.3em
+
+@media screen and (max-width: 767.98px)
+   .header
+      height: auto
+      .container
+         padding-top: 50px
+      h1
+         font-size: 2em
+
+@media screen and (max-width: 599.98px)
+   .header
+      height: auto
+      padding-bottom: $gutter*2
+      h1
+         font-size: 2em
+      p
+         margin-top: 0.5em
+         span
+            display: inline-block
+
+@media screen and (max-width: 374.98px)
+   .header
+      h1
+         font-size: 1.8em

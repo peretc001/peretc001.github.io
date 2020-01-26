@@ -1,0 +1,430 @@
+.smart-filter-popup-result
+    display: none !important
+.popup-window
+    border-radius: 4px
+.smart-filter-dropdown-popup ul li
+    margin: 0
+.smart-filter-dropdown-popup ul li label
+    padding: .5em
+    margin: 0
+.smart-filter-dropdown-popup ul li label.selected, .smart-filter-dropdown-popup ul li label:hover
+    background: #f5f5f5
+
+.products
+    &.stone_general
+        .bx_catalog_item_title
+            margin-top: 1em
+            font-weight: bold
+            text-align: center
+
+    .caption
+        margin: 0 auto
+        text-align: center
+        margin-bottom: 2em
+        h1
+            text-align: center
+        &.left
+            text-align: left
+            h1
+                text-align: left
+    
+    .preview-text
+        h2
+            font-size: 1em
+            margin: 0 auto !important
+            font-family: $default-font
+            text-align: center
+    
+
+    
+    &.has-filter
+        .caption
+            text-align: left
+            margin-left: 190px
+        h1
+            margin-bottom: 0
+            text-align: left
+
+    .open__filter
+        position: relative
+        display: none
+        width: 100%
+        border: 1px solid $text
+        background: transparent
+        color: $text
+        padding: .5em 1em
+        text-align: center
+        margin-bottom: 1em
+        img
+            width: 1em
+            margin-right: 0.5em
+
+    &__filter
+        padding-top: 2em
+
+        .smart-filter-parameters-box-title
+            white-space: no-wrap
+        .smart-filter-parameters-box-title-text
+            color: $text
+            font-weight: bold
+        .smart-filter-angle
+            width: 10px !important
+        .smart-filter-angles
+            &::before, 
+            &::after
+                background-color: $accent !important
+        
+        .smart-filter-dropdown-label
+            &:hover
+                background: none !important
+            &.selected
+                background: none !important
+                font-weight: bold
+
+        .smart-filter-checkbox-btn.bx-color-sl
+            border: none
+            width: auto
+            height: auto
+        .smart-filter-checkbox-label
+            border: 1px solid #ebebeb
+            &.bx-active
+                border: 1px solid $text
+        
+
+
+
+        .form-group
+            margin-bottom: .8em
+            p
+                font-size: 0.9em
+        
+        .form-group.form-check
+            padding-left: 0
+            input
+                display: none
+            label
+                position: relative
+            .smart-filter-checkbox-text
+                position: relative
+                padding-left: 1.5em
+                &::before
+                    content: ''
+                    position: absolute
+                    left: 0
+                    top: 50%
+                    transform: translateY(-50%)
+                    width: 1em
+                    height: 1em
+                    border: 1px solid #141414
+                    transition: background .5s ease
+            input:checked + .smart-filter-checkbox-text
+                &::before
+                    background: $text
+        
+        .radio
+            label
+                position: relative
+            .smart-filter-input-checkbox
+                input
+                    display: none
+            .smart-filter-param-text
+                padding-left: 1.5em
+                &::before
+                    content: ''
+                    position: absolute
+                    left: 0
+                    top: 50%
+                    transform: translateY(-50%)
+                    width: 1em
+                    height: 1em
+                    border: 1px solid #141414
+                    transition: background .5s ease
+            input:checked + .smart-filter-param-text
+                &::before
+                    background: $text
+
+                
+        
+
+
+        .reset
+            width: 100%
+            border: none
+            color: $text
+            cursor: pointer
+            
+        .btn
+            width: 100%
+            &.btn-link
+                color: $text
+                text-decoration: none
+                margin: 1em auto
+                border: none !important
+            &.btn-outline
+                display: block
+                padding: .8em
+
+    &__list
+
+        &__sort
+            display: flex
+            align-items: flex-start
+            justify-content: space-between
+            margin-bottom: 0 !important
+            &--block
+                position: relative
+                overflow: hidden
+                &-item
+                    opacity: 0
+                    z-index: -1
+                    background: #ffffff
+                    border: 1px solid $text
+                    padding: 10px
+                    margin: 0
+                    text-align: left
+                    position: absolute
+                    left: 0
+                    bottom: 0
+                    width: 100%
+                    transform: translateY(110%)
+                    transition: transform .3s ease
+                &:hover
+                    overflow: visible
+                    .products__list__sort--block-item
+                        z-index: 1
+                        opacity: 1
+                        transform: translateY(100%)
+                        a
+                            display: inline-block
+                            color: $text
+                            margin-bottom: 0.3em
+                            &.active
+                                border-bottom: 1px solid $text
+                                padding-bottom: 0.3em
+                                    
+            &--form
+                position: relative
+                .find
+                    border: none
+                    border-radius: 0
+                    border-bottom: 1px solid $text
+                    padding-top: 0
+                    padding-bottom: .3em
+                    padding-right: 1.6em
+                    width: 100%
+                    max-width: 160px
+                .find_btn
+                    position: absolute
+                    right: 5px
+                    top: 50%
+                    transform: translateY(-50%)
+                    display: block
+                    width: 14px
+                    height: 14px
+                    border: none
+                    background-color: transparent
+                    background-size: 14px
+                    background-position: right
+                    background-repeat: no-repeat
+                    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGcgdHJhbnNmb3JtPSJtYXRyaXgoLTEgMCAwIDEgNTEyIDApIj48Zz4KICAgIDxwYXRoIGQ9Ik00OTUsNDY2LjJMMzc3LjIsMzQ4LjRjMjkuMi0zNS42LDQ2LjgtODEuMiw0Ni44LTEzMC45QzQyNCwxMDMuNSwzMzEuNSwxMSwyMTcuNSwxMUMxMDMuNCwxMSwxMSwxMDMuNSwxMSwyMTcuNSAgIFMxMDMuNCw0MjQsMjE3LjUsNDI0YzQ5LjcsMCw5NS4yLTE3LjUsMTMwLjgtNDYuN0w0NjYuMSw0OTVjOCw4LDIwLjksOCwyOC45LDBDNTAzLDQ4Ny4xLDUwMyw0NzQuMSw0OTUsNDY2LjJ6IE0yMTcuNSwzODIuOSAgIEMxMjYuMiwzODIuOSw1MiwzMDguNyw1MiwyMTcuNVMxMjYuMiw1MiwyMTcuNSw1MkMzMDguNyw1MiwzODMsMTI2LjMsMzgzLDIxNy41UzMwOC43LDM4Mi45LDIxNy41LDM4Mi45eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojNjI2MjYyIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgogIDwvZz48L2c+IDwvc3ZnPg==')
+                    outline: none !important
+                    box-sizing: none !important
+                    cursor: pointer
+
+        [class*="col-"]
+            margin-bottom: 2em
+        a
+            color: $text
+            display: block
+            position: relative
+            overflow: hidden
+            .img_wrap
+                display: flex
+                align-items: center
+                justify-content: center
+                min-height: 150px
+                overflow: hidden
+                position: relative
+                margin-bottom: .5em
+                &.lupa
+                    &::before
+                        content: ''
+                        position: absolute
+                        right: 0
+                        bottom: 0
+                        transform: translateX(100%)
+                        width: 40px
+                        height: 36px
+                        background-color: rgba(255, 255, 255, 0.7)
+                        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGcgdHJhbnNmb3JtPSJtYXRyaXgoLTEgMCAwIDEgNTEyIDApIj48Zz4KICAgIDxwYXRoIGQ9Ik00OTUsNDY2LjJMMzc3LjIsMzQ4LjRjMjkuMi0zNS42LDQ2LjgtODEuMiw0Ni44LTEzMC45QzQyNCwxMDMuNSwzMzEuNSwxMSwyMTcuNSwxMUMxMDMuNCwxMSwxMSwxMDMuNSwxMSwyMTcuNSAgIFMxMDMuNCw0MjQsMjE3LjUsNDI0YzQ5LjcsMCw5NS4yLTE3LjUsMTMwLjgtNDYuN0w0NjYuMSw0OTVjOCw4LDIwLjksOCwyOC45LDBDNTAzLDQ4Ny4xLDUwMyw0NzQuMSw0OTUsNDY2LjJ6IE0yMTcuNSwzODIuOSAgIEMxMjYuMiwzODIuOSw1MiwzMDguNyw1MiwyMTcuNVMxMjYuMiw1MiwyMTcuNSw1MkMzMDguNyw1MiwzODMsMTI2LjMsMzgzLDIxNy41UzMwOC43LDM4Mi45LDIxNy41LDM4Mi45eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojMDAwMDAwIj48L3BhdGg+CiAgPC9nPjwvZz4gPC9zdmc+')
+                        background-size: 18px
+                        background-repeat: no-repeat
+                        background-position: center
+                        z-index: 1
+                        transition: transform 1s ease
+                img
+                    width: 100%
+                    transition: transform 1s ease
+                
+                &.bordered
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    border: 1px solid #000000
+                    min-height: 200px
+                    img
+                        width: auto
+
+            &:hover
+                .img_wrap
+                    &.lupa
+                        &::before
+                            transform: translateX(0)
+                    img
+                        transform: scale(1.1)
+
+        .stones_item
+            b
+                display: block
+                text-align: center
+
+        .hvr-item
+            position: relative
+            overflow: hidden
+            &:hover
+                .hvr-catalog
+                    transform: translateX(-15px)
+
+        .hvr-catalog
+            position: absolute
+            right: 0
+            top: 10px
+            background-color: rgba(255, 255, 255, 0.7)
+            padding: .5em
+            display: inline-block
+            transform: translateX(100%)
+            transition: transform 1s ease
+            img
+                margin-left: 0.5em
+        
+
+    .online-caption
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin: 1em auto
+        color: $text
+    
+    .online-catalog-name
+        display: flex
+        align-items: center
+        justify-content: space-between
+    
+    .butterfly
+        .indented
+            max-width: 700px
+            margin: 1em auto
+            margin-bottom: 170px
+        .href_to_catalog
+            display: flex
+            align-items: center
+            justify-content: flex-end
+            margin-bottom: 1em
+            img
+                margin-left: 0.5em
+                max-width: 50px
+                margin-bottom: 0
+        img
+            display: block
+            width: 100%
+            height: auto
+            margin-bottom: 1em
+    
+    .catalog-section-description
+        table
+            max-width: 100% !important
+
+
+.pagination
+    a
+        color: $text2
+        margin-right: 1em
+        border: 1px solid $text
+        padding: .5em
+        display: inline-block
+        min-width: 30px
+        text-align: center
+        &.active
+            background: $text
+            font-weight: bold
+            color: #ffffff
+
+
+@media screen and (max-width: 1199.98px)
+    .products
+        &.has-filter
+            .caption
+                margin-left: 235px
+
+@media screen and (max-width: 767.98px)
+    .products
+        &.has-filter
+            .caption
+                margin-left: 0
+
+@media screen and (max-width: 576.98px)
+    .products
+        .open__filter
+            display: block
+        &__filter
+            position: relative
+            padding-top: 0
+            margin-bottom: 2em
+            overflow: hidden
+            opacity: 0
+            max-height: 0
+            z-index: -1
+            transition: max-height .5s ease, opacity .5s ease
+            &.active
+                overflow: visible
+                max-height: 700px
+                opacity: 1
+                z-index: 1
+            .form-group
+                &.color
+                    &.color
+                        margin-top: 1.5em
+                        margin-bottom: 1.5em
+                        .color__item
+                            flex: 0 1 auto
+                            margin-left: 2%
+                            margin-bottom: 2%
+                            &:nth-child(1),
+                            &:nth-child(5),
+                            &:nth-child(9)
+                                margin-left: 2%
+                            input[type="radio"]
+                                display: none
+                            label
+                                display: block
+                                width: 40px
+                                height: 40px
+        &__list
+            text-align: center
+            a
+                .img_wrap
+                    img
+                        width: 100%
+            &__sort
+                &--form
+                    position: relative
+                    .find
+                        max-width: 100%
+
+
+
+@media screen and (min-height: 499.98px)
+    .products
+        &__filter
+            position: sticky
+            top: 0

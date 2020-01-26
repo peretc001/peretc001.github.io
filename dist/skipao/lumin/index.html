@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="img/logo.png" type="image/png">
+  <meta name="ROBOTS" content="index, follow">
+  <style>
+      body {opacity: 0;overflow-x: hidden;}
+   </style>
+  <title>Светящаяся плитка, камень, светящиеся элементы интерьера</title>
+  <meta name="Description" content="Заставим вашу плитку светится!" /> 
+</head>
+<body>
+
+   <nav class="navbar navbar-expand-md">
+      <div class="container">
+
+         <a href="/" class="navbar-brand">
+            <img src="/img/logo.svg" alt="">
+            <p>
+              Световые решения <span>для дома</span>
+            </p>
+         </a>
+
+         <button class="navbar-toggler hamburger hamburger--slider" type="button" data-toggle="collapse" data-target="#navbarToggle"
+            aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="hamburger-box">
+               <span class="hamburger-inner"></span>
+            </span>
+         </button>
+         
+         <div class="collapse navbar-collapse" id="navbarToggle">
+            <ul class="navbar-nav">
+               <li class="nav-item">
+                  <a class="nav-link line-hover" href="/#header">Главная</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link line-hover" href="/#about">О нас</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link line-hover" href="/#services">Услуги</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link line-hover" href="/#footer">Контакты</a>
+               </li>
+               <li class="nav-item phone">
+                  <a href="tel:89180982859">8 (918) 098-28-59</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+
+   <section class="header lazy" id="header" style="background-image: url('./img/header.jpg')">
+      <div class="container">
+         <div class="sign">
+            <h1 class="sign__word">Добавим волшебства <span>вашему дому</span></h1>
+            <button class="btn btn-outline-accent" data-toggle="modal" data-target="#callback">Заказать консультацию</button>
+         </div>
+      </div>
+   </section>
+
+   <section class="about" id="about">
+      <canvas id="pretty-bg" width="100%" height="100%"></canvas>
+      <div class="container">
+         <h2>Кто мы?</h2>
+         <div class="row align-items-center">
+            <div class="col-md-4">
+               <img src="./img/about.jpg" alt="">
+            </div>
+            <div class="col-md-8">
+               <p class="grey">
+                  Мы специализируемся на люминисцентной и люминисцетно-флоурисцентной краске (это такая которая светится в темноте или под лучами ультрафиолетового света). 
+               </p>
+               <p class="grey">
+                  Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Ему мир то рукопись он, они приставка! Последний себя текст она, инициал приставка собрал алфавит языком силуэт, языкового власти подзаголовок возвращайся заглавных правилами. Вершину, жизни необходимыми океана вскоре имени за имеет реторический переулка которое текстов рекламных. Пустился ему жизни текстов однажды, не, что даль пояс своих это бросил знаках рыбными вдали безорфографичный жаренные. Языком жизни ipsum они, океана заманивший его безорфографичный переписали рукописи безопасную, грустный последний щеке жаренные рукопись он пояс от всех большой текстов ему рыбными грамматики? Страну путь, по всей пояс необходимыми прямо маленькая, послушавшись одна снова назад все до.
+               </p>
+            </div>
+         </div>
+         <h3>Характеристики краски</h3>
+         <div class="row features">
+            <div class="col-md-3">
+               <img src="./img/about/1.svg" alt="">
+               <p>Заряжается от любого источника света и светится до 18 часов с постепенным затуханием ИЛИ бесконечно долго под ультрафиолетовым светом</p>
+            </div>
+            <div class="col-md-3">
+               <img src="./img/about/2.svg" alt="">
+               <p>Не имеет запаха, не выделяет вредных веществ, абсолютно безопасна для человека и может быть без боязни нанесена на кожный покров человека</p>
+            </div>
+            <div class="col-md-3">
+               <img src="./img/about/3.svg" alt="">
+               <p>Устойчива к агрессивной среде. Не боится трения, воды, температурных перепадов, прямых солнечных лучей. Срок службы более 10 лет</p>
+            </div>
+            <div class="col-md-3">
+               <img src="./img/about/4.svg" alt="">
+               <p>Самая яркая светонакопительная краска на сегодняшний день среди всех конкурентов. Видимое свечение в темноте до 18 часов!</p>
+            </div>
+         </div>
+         <h3>Цветовая гамма</h3>
+         <div class="row">
+            <div class="col-md-6">
+               <p><b>Без использования колера</b></p>
+               <p class="color">
+                  <span class="icon"></span>
+                  <span class="icon salat"></span>
+                  <span class="icon cyan"></span>
+                  <span class="icon blue"></span>
+                  <span class="icon light-blue"></span>
+                  <span class="icon violet"></span>
+               </p>
+            </div>
+            <div class="col-md-6">
+               <p><b>С использованием колера</b></p>
+               <p class="color">
+                  <span class="icon yellow"></span>
+                  <span class="icon green"></span>
+                  <span class="icon orange"></span>
+                  <span class="icon pink"></span>
+                  <span class="icon red"></span>
+                  <span class="icon violet2"></span>
+               </p>
+            </div>
+            <div class="col-12">
+               <a href="" class="btn btn-outline-accent">Купить краску</a>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section class="services" id="services">
+      <div class="container grey">
+         <h2>Наши услуги</h2>
+         <div class="row">
+
+            <div class="col-md-6 col-lg-4">
+               <a href="/img/about/1.jpg" data-fancybox><img src="/img/about/1.jpg" alt=""></a>
+               <p><b>Светящаяся плитка</b></p>
+               <p>Сделаем вашу плитку светящейся в темноте. Плитка заряжается от любого источника света и светится до 18 часов. Вам не нужно менять плитку, мы просто покроем ее специальным светяшимся покрытием.</p>
+               <button class="btn btn-outline-accent" data-toggle="modal" data-target="#callback" data-title="Светящаяся плитка">Заказать</button>
+            </div>
+            <div class="col-md-6 col-lg-4">
+               <a href="/img/about/2.jpg" data-fancybox><img src="/img/about/2.jpg" alt=""></a>
+               <p><b>Светящиеся камни</b></p>
+               <p>Любой тип камня можно покрыть специальным покрытием, светяземся в темноте. Данное покрытие абсолютьно безвредно для человека, не издает запаха, не выделяет вредных вещест и может использоваться как внутри так и снаружи помещения. Устойчиво к агрессивной среде, дождю, снегу, солнечным лучам</p>
+               <button class="btn btn-outline-accent" data-toggle="modal" data-target="#callback" data-title="Светящиеся камни">Заказать</button>
+            </div>
+            <div class="col-md-6 col-lg-4">
+               <a href="/img/about/3.jpg" data-fancybox><img src="/img/about/3.jpg" alt=""></a>
+               <p><b>Светящийся бассейн</b></p>
+               <p>Специальное покрытие наносится на камень, заряжается от любого источника света и устойчиво к агрессивной среде на протяжении более 10 лет.</p>
+               <button class="btn btn-outline-accent" data-toggle="modal" data-target="#callback" data-title="Светящийся бассейн">Заказать</button>
+            </div>
+            <div class="col-md-6 offset-lg-4 col-lg-4">
+               <a href="/img/about/4.jpg" data-fancybox><img src="/img/about/4.jpg" alt=""></a>
+               <p><b>Светящийся интерьер</b></p>
+               <button class="btn btn-outline-accent" data-toggle="modal" data-target="#callback" data-title="Светящийся интерьер">Заказать</button>
+            </div>
+
+         </div>
+      </div>
+   </section>
+
+   <section class="photo">
+      <div class="container">
+         <h4>Фотогалерея</h4>
+         <div class="photo__carousel">
+         
+            <div class="photo__carousel__item">
+               <a href="/img/photo/1.jpg" data-fancybox class="img_wrapper">
+                  <img data-lazy="/img/photo/1.jpg" alt="">
+               </a>
+            </div>
+            <div class="photo__carousel__item">
+               <a href="/img/photo/2.jpg" data-fancybox lass="img_wrapper">
+                   <img data-lazy="/img/photo/2.jpg" alt="">
+               </a>
+            </div>
+            <div class="photo__carousel__item">
+               <a href="/img/photo/3.jpg" data-fancybox class="img_wrapper">
+                  <img data-lazy="/img/photo/3.jpg" alt="">
+               </a>
+            </div>
+            <div class="photo__carousel__item">
+               <a href="/img/photo/4.jpg" data-fancybox lass="img_wrapper">
+                   <img data-lazy="/img/photo/4.jpg" alt="">
+               </a>
+            </div>
+            <div class="photo__carousel__item">
+               <a href="/img/photo/5.jpg" data-fancybox lass="img_wrapper">
+                   <img data-lazy="/img/photo/5.jpg" alt="">
+               </a>
+            </div>
+            <div class="photo__carousel__item">
+               <a href="/img/photo/6.jpg" data-fancybox lass="img_wrapper">
+                   <img data-lazy="/img/photo/6.jpg" alt="">
+               </a>
+            </div>
+            <div class="photo__carousel__item">
+               <a href="/img/photo/7.jpg" data-fancybox lass="img_wrapper">
+                   <img data-lazy="/img/photo/7.jpg" alt="">
+               </a>
+            </div>
+            <div class="photo__carousel__item">
+               <a href="/img/photo/8.jpg" data-fancybox lass="img_wrapper">
+                   <img data-lazy="/img/photo/8.jpg" alt="">
+               </a>
+            </div>
+            <div class="photo__carousel__item">
+               <a href="/img/photo/9.jpg" data-fancybox lass="img_wrapper">
+                   <img data-lazy="/img/photo/9.jpg" alt="">
+               </a>
+            </div>
+            <div class="photo__carousel__item">
+               <a href="/img/photo/10.jpg" data-fancybox lass="img_wrapper">
+                   <img data-lazy="/img/photo/10.jpg" alt="">
+               </a>
+            </div>
+            <div class="photo__carousel__item">
+               <a href="/img/photo/11.jpg" data-fancybox lass="img_wrapper">
+                   <img data-lazy="/img/photo/11.jpg" alt="">
+               </a>
+            </div>
+            <div class="photo__carousel__item">
+               <a href="/img/photo/12.jpg" data-fancybox lass="img_wrapper">
+                   <img data-lazy="/img/photo/12.jpg" alt="">
+               </a>
+            </div>
+            <div class="photo__carousel__item">
+               <a href="/img/photo/13.jpg" data-fancybox lass="img_wrapper">
+                   <img data-lazy="/img/photo/13.jpg" alt="">
+               </a>
+            </div>
+            <div class="photo__carousel__item">
+               <a href="/img/photo/14.jpg" data-fancybox lass="img_wrapper">
+                   <img data-lazy="/img/photo/14.jpg" alt="">
+               </a>
+            </div>
+            <div class="photo__carousel__item">
+               <a href="/img/photo/15.jpg" data-fancybox lass="img_wrapper">
+                   <img data-lazy="/img/photo/15.jpg" alt="">
+               </a>
+            </div>
+            <div class="photo__carousel__item">
+               <a href="/img/photo/16.jpg" data-fancybox lass="img_wrapper">
+                   <img data-lazy="/img/photo/16.jpg" alt="">
+               </a>
+            </div>
+            <div class="photo__carousel__item">
+               <a href="/img/photo/17.jpg" data-fancybox lass="img_wrapper">
+                   <img data-lazy="/img/photo/17.jpg" alt="">
+               </a>
+            </div>
+            <div class="photo__carousel__item">
+               <a href="/img/photo/18.jpg" data-fancybox lass="img_wrapper">
+                   <img data-lazy="/img/photo/18.jpg" alt="">
+               </a>
+            </div>
+
+         </div>
+     </div>
+   </section>
+
+   <section class="how">
+      <div class="container">
+         <h3>Как <span>мы</span> работаем?</h3>
+         <div class="row">
+
+            <a data-toggle="modal" data-target="#callback" class="col-6 col-md-4">
+               <img src="./img/services/call.svg" alt="">
+               <p>Консультация</p>
+            </a>
+
+            <div class="col-6 col-md-4">
+               <img src="./img/services/location.svg" alt="">
+               <p>Выезд к клиенту</p>
+            </div>
+
+            <div class="col-6 col-md-4">
+               <img src="./img/services/calc.svg" alt="">
+               <p>Предварительный расчет</p>
+            </div>
+
+            <div class="col-6 col-md-4">
+               <img src="./img/services/work.svg" alt="">
+               <p>Выполнение заказ</p>
+            </div>
+
+            <div class="offset-3 col-6 offset-md-0 col-md-4">
+               <img src="./img/services/good.svg" alt="">
+               <p>Оплата заказ</p>
+            </div>
+
+            <div class="col-12">
+               <button class="btn btn-outline-accent" data-toggle="modal" data-target="#callback">Заказать консультацию</button>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <div class="footer" id="footer">
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-md-6 col-lg-7"></div>
+            <div class="col-md-6 col-lg-5">
+               <a href="/" class="navbar-brand">
+                  <img src="/img/logo.svg" alt="">
+                  <p>
+                     Световые решения
+                  </p>
+               </a>
+               <div temscope itemtype="http://schema.org/Organization">
+                  <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="icon adres"><span itemprop="addressLocality">Краснодар</span>, <span itemprop="streetAddress">ул. Тургенева, 56</span></p>
+                  <p><a itemprop="telephone" class="icon phone" href="tel:89180982859">8 (918) 098-28-59</a>
+               </div>
+               <a href="https://krasovsky23.ru/" target="_blank" class="author">
+                  Разработка: { КИ }
+               </a>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <section class="copyright">
+      <p><span>© 2020.</span> Световые решения</p>
+   </section>
+
+
+   <!-- Modal -->
+   <div class="modal fade" id="callback" tabindex="-1" role="dialog" aria-labelledby="callbackTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+               <p class="title">Получить консультацию</p>
+               <form action="/" class="callback__form" method="post">
+               <div class="form-row">
+                  <input type="hidden" name="title" value="">
+                  <input type="text" name="name" class="form-control" placeholder="Имя">
+                  <input type="tel" name="phone" class="form-control phone_mask" placeholder="Телефон" required>
+                  
+                  <div class="robot">
+                     <div class="robot__check">
+                        <svg viewBox="0 0 60 60">
+                           <line class="st0 line1" x1="4.5" y1="30.5" x2="29.5" y2="52.5"/>
+                           <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
+                        </svg>
+                     </div>
+                     <span>Согласен с условиями <a href="#" data-toggle="modal" data-target="#policy">Политики конфиденциальности</a></span>
+                  </div>
+
+                  <button type="submit" class="btn callback__form__button" disabled>Отправить</button>
+               </div>
+               </form>
+            </div>
+            <div class="request_callback__footer">Заявка принята!!!</div>
+         </div>
+      </div>
+   </div>
+
+   <!-- Policy -->
+   <div class="modal fade" id="policy" tabindex="-1" role="dialog" aria-labelledby="callbackTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content policy">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+               <h5>Политика конфиденциальности</h5>
+               
+               <p>Предоставляя свои персональные данные Посетитель даёт согласие на обработку, хранение и использование своих персональных данных на основании ФЗ № 152-ФЗ «О персональных данных» от 27.07.2006 г. в следующих целях:</p>
+               <ul>
+                  <li>- Регистрации Пользователя на сайте</li>
+                  <li>- Осуществление клиентской поддержки</li>
+                  <li>- Получения Пользователем информации о маркетинговых событиях</li>
+                  <li>- Выполнение Администрацией сайта обязательств перед Посетителем</li>
+                  <li>- Проведения аудита и прочих внутренних исследований с целью повышения качества предоставляемых услуг.</li>
+               </ul>
+               <p>Под персональными данными подразумевается любая информация личного характера, позволяющая установить личность Посетителя такая как:</p>
+               <ul>
+                  <li>- Фамилия, Имя, Отчество</li>
+                  <li>- Контактный телефон</li>
+                  <li>- Адрес электронной почты</li>
+               </ul>
+               <p>Персональные данные Посетителей хранятся исключительно на электронных носителях и обрабатываются с использованием автоматизированных систем, за исключением случаев, когда неавтоматизированная обработка персональных данных необходима в связи с исполнением требований законодательства.</p>
+               <p>Администрация сайта обязуется не передавать полученные персональные данные третьим лицам, за исключением следующих случаев:</p>
+               <p>По запросам уполномоченных органов государственной власти РФ только по основаниям и в порядке, установленным законодательством РФ</p>
+               <p>Администрация сайта оставляет за собой право вносить изменения в одностороннем порядке в настоящие правила, при условии, что изменения не противоречат действующему законодательству РФ.</p>
+               <p>Изменения условий настоящих правил вступают в силу после их публикации на Сайте</p>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="toTop">
+		<img src="img/caret-square-up.svg" alt="">
+   </div>
+   
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="js/slick/slick.css">
+   <link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
+   <link rel="stylesheet" href="css/main.min.css">
+
+   <script defer src="/js/scripts.min.js"></script>
+   <script defer src="/js/fancybox/jquery.fancybox.min.js"></script>
+   <script defer src="/js/slick/slick.min.js"></script>
+   <script src="js/canvas.js"></script>
+  
+</body>
+</html>
