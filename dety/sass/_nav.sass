@@ -248,7 +248,7 @@
       &--right
          display: flex
          align-items: center
-         &__whishlist
+         &__wishlist
             margin-left: 1.5em
             position: relative
             width: auto
@@ -258,7 +258,9 @@
             background-size: 2.5em
             background-position: left center
             background-repeat: no-repeat
-            background-image: url('../img/nav/whishlist.svg')
+            background-image: url('../img/nav/wishlist.svg')
+            &.active
+               background-image: url('../img/nav/wishlist-active.svg')
             span
                position: absolute
                top: -5px
@@ -504,14 +506,14 @@
             width: 200px
 
          &--right
-            &__whishlist,
+            &__wishlist,
             &__cart
                margin-left: 0
                background-size: 2em
             &__cart
                margin-left: .5em
             
-            &__whishlist
+            &__wishlist
                span
                   right: auto
                   left: 20px

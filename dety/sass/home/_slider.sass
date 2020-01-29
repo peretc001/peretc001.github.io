@@ -188,7 +188,9 @@
     
 @media screen and ( max-width: 576.98px )
     .slider
-        padding: 0 10px
+        padding: 0
+        .container
+            padding: 0
         &-wrapper
             &__item
                 &__caption
@@ -209,13 +211,9 @@
 
         .slick-next,
         .slick-prev
-            width: 30px
-            height: 30px
-            background-size: 15px
-        .slick-next
-            right: -15px
-        .slick-prev
-            left: -15px
+            display: none !important
+            &::before
+                display: none
 
         .slick-dots
             bottom: 20px
