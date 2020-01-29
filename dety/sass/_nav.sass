@@ -93,7 +93,7 @@
             &::before
                background-image: url('../img/nav/user.svg')
          &__login
-            margin-left: 2em
+            margin-left: 2.6em
             &::before
                background-image: url('../img/nav/login.svg')
 
@@ -234,6 +234,16 @@
             padding: 15px 20px
             border: none
             appearance: none
+            outline: none
+            box-shadow: none
+            &::-webkit-input-placeholder
+               color: #9BAFC0
+            &:-moz-placeholder
+               color: #9BAFC0
+            &::-moz-placeholder
+               color: #9BAFC0
+            &:-ms-input-placeholder
+               color: #9BAFC0
 
       &--right
          display: flex
@@ -348,8 +358,8 @@
                transform: translateY(-50%)
                background-color: $yellow
                display: inline-block
-               width: 9px
-               height: 9px
+               width: 6px
+               height: 6px
                border-radius: 50%
             &:first-child
                padding-left: 0
@@ -360,21 +370,23 @@
             &:last-child
                padding-right: 0
          a
-            padding-top: 1em
-            padding-bottom: 1em
+            padding-top: 1.5em
+            padding-bottom: 1.5em
             display: flex
             align-items: center
             justify-content: center
             flex-direction: column
             color: #ffffff
             font-size: 13px
-            line-height: 1.5
+            line-height: 1.3
             position: relative
  
          .sale,
          .interest
+            padding-top: 1.3em
+            padding-bottom: 1.3em
             justify-content: center
-            align-self: flex-end
+            align-self: center
             text-align: center
             img
                margin-bottom: .2em
@@ -408,6 +420,9 @@
             &__location
                &__item
                   display: none
+         &__right
+            &__login
+               margin-left: 2em
       
       &-search
          &__form
@@ -448,6 +463,9 @@
          &__right
             &__user
                display: none
+            &__login
+               margin-left: 1em
+
          &__modal.user
             display: none
 
@@ -461,8 +479,6 @@
                padding-left: 2em
 
          &__right
-            flex: 1 0 auto
-            justify-content: space-between
             a
                padding-left: 0
             &__phone,
@@ -473,6 +489,8 @@
                height: 1.5em
                color: $blue !important
                overflow: hidden
+            &__login
+               margin-left: 3.2em
          
          &__modal
             max-width: 92%
@@ -483,12 +501,23 @@
 
       &-search
          .brand
-            width: 230px
+            width: 200px
 
          &--right
             &__whishlist,
             &__cart
-               margin-left: 1em
+               margin-left: 0
+               background-size: 2em
+            &__cart
+               margin-left: .5em
+            
+            &__whishlist
+               span
+                  right: auto
+                  left: 20px
+            &__cart
+               .qty
+                  left: 20px
 
 @media screen and ( max-width: 374.98px )
    .nav
@@ -501,24 +530,6 @@
                .btn
                   span
                      display: none
-      
-      &-search
-         .brand
-            width: 200px
-
-         &--right
-            &__whishlist,
-            &__cart
-               margin-left: 0 !important
-               background-size: 2em
-            
-            &__whishlist
-               span
-                  right: auto
-                  left: 20px
-            &__cart
-               .qty
-                  left: 20px
 
 
    
