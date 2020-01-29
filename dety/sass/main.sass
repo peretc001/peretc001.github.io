@@ -1,0 +1,85 @@
+@import '_libs/bootstrap_grid'
+@import '_libs/fonts'
+
+$bg: #FFF8F8
+$accent: #AC52BF
+$blue: #EAF6F6
+$grey: #C4C4C4
+$yellow: #FFC100
+$text: #474747
+
+$default-font: 'SFUIText', sans-serif
+
+body
+	font-size: 14px
+	min-width: 320px
+	position: relative
+	line-height: 1.15
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	background: $bg
+	opacity: 0
+	
+	// input, textarea
+	// 	border: #666 1px solid
+	// 	outline: none
+	// 	&:focus:required:invalid
+	// 		border-color: red
+	// 	&:required:valid
+	// 		border-color: green
+
+@import '_libs/hamburger'
+@import 'nav'
+
+@import 'home/slider'
+
+*
+	box-sizing: border-box
+
+.text-center
+	text-align: center !important
+	text-align-last: center !important
+	p
+		text-align: center !important
+		text-align-last: center !important
+a, 
+	&:hover, 
+	&:active, 
+	&:focus
+		text-decoration: none
+		outline: none
+
+b, strong
+	font-weight: bold
+
+img
+	max-width: 100%
+
+.btn
+	outline: none !important
+	box-shadow: none !important
+	cursor: pointer
+	&.btn-accent
+		background: $accent
+		color: #ffffff
+		transition: background .5s ease
+		&:hover
+			background: darken($accent, 8%)
+	&.btn-outline-accent
+		background: transparent
+		border: 1px solid $accent
+		color: $accent
+		transition: background .5s ease, color .5s ease
+		&:hover
+			background: $accent
+			color: #ffffff
+
+
+@media screen and ( min-width: 1200px )
+	.container
+		max-width: 1190px
+	
+
+body
+	opacity: 1

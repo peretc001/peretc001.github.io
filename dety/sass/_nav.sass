@@ -1,0 +1,524 @@
+.nav
+   margin-bottom: 2em
+   &-top
+      width: 100%
+      background-color: $blue
+      .container
+         display: flex
+         align-items: center
+         justify-content: space-between
+         position: relative
+         z-index: 3
+         color: #8199AE
+      .hamburger
+         display: none
+         outline: none
+         box-shadow: none
+         padding: 0
+         .hamburger-box
+            width: 30px
+            height: 16px
+            .hamburger-inner, 
+            .hamburger-inner:after, 
+            .hamburger-inner:before
+               width: 30px
+               height: 2px
+               background-color: #8199AE
+            &.is-active
+               .hamburger-box
+                  .hamburger-inner, 
+                  .hamburger-inner:after, 
+                  .hamburger-inner:before
+                     background-color: #8199AE
+         .hamburger-inner
+            top: 1px
+      a
+         color: #8199AE
+         padding-top: 1em
+         padding-bottom: 1em
+      &__city
+         display: flex
+         align-items: center
+         justify-content: flex-start
+         &__location
+            position: relative
+            padding-left: 2.5em
+            font-weight: bold
+            &::before
+               content: ''
+               position: absolute
+               left: 0
+               top: 50%
+               transform: translateY(-50%)
+               width: 100%
+               height: 100%
+               background-size: 1.5em
+               background-position: left
+               background-repeat: no-repeat
+               background-image: url('../img/nav/location.svg')
+            &__item
+               margin-left: 0.5em
+               a
+                  padding: 0.1em 0 !important
+                  border-bottom: 1px dashed #8199AE
+      
+      &__right
+         display: flex
+         align-items: center
+         justify-content: space-between
+         a
+            position: relative
+            padding-left: 2.2em
+            &::before
+               content: ''
+               position: absolute
+               left: 0
+               top: 50%
+               transform: translateY(-50%)
+               width: 100%
+               height: 100%
+               background-size: 1.5em
+               background-position: left
+               background-repeat: no-repeat
+         &__phone
+            font-size: 1.1em
+            font-weight: bold
+            &::before
+               background-image: url('../img/nav/phone.svg')
+         &__time
+            font-size: 0.9em
+            margin-left: 1em
+         &__user
+            margin-left: 2em
+            &::before
+               background-image: url('../img/nav/user.svg')
+         &__login
+            margin-left: 2em
+            &::before
+               background-image: url('../img/nav/login.svg')
+
+      &__modal
+         position: absolute
+         z-index: 2
+         left: 15px
+         bottom: 0
+         transform: translateY(-50%)
+         padding: 15px
+         width: 100%
+         max-width: 350px
+         background: #ffffff
+         box-shadow: 0 2px 10px rgba(#000, .1)
+         transition: transform .5s ease
+         &.active
+            transform: translateY(100%)
+            z-index: 2
+         &.city
+            padding: 30px
+            .btn
+               font-size: .9em
+         &.user
+            left: auto
+            right: 15px
+            max-width: 220px
+         &.login
+            left: 50%
+            transform: translateX(-50%) translateY(-50%)
+            max-width: 450px
+            padding: 60px
+            &.active
+               transform: translateX(-50%) translateY(100%)
+            p
+               color: $text
+               b
+                  display: block
+                  font-size: 1.8em
+                  padding-bottom: .5em
+                  margin-bottom: 1em
+                  border-bottom: 1px solid $grey
+            label
+               color: $text
+               font-size: 1.2em
+               display: block
+               margin-bottom: 1em
+            input,
+            button
+               display: block
+               width: 100%
+               max-width: 100%
+               padding: 1em
+            input
+               background: #ffffff
+               border: 1px solid $grey
+               border-radius: 4px
+               color: $text
+               outline: none
+               box-shadow: none
+               margin-bottom: 1em
+               font-size: 16px
+
+
+
+         .close
+            position: absolute
+            right: 10px
+            top: 10px
+            width: .5em
+            height: .5em
+            background-size: .5em
+            background-position: right top
+            background-repeat: no-repeat
+            background-image: url('data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMi4wMDEgNTEyLjAwMSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyLjAwMSA1MTIuMDAxOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMjg0LjI4NiwyNTYuMDAyTDUwNi4xNDMsMzQuMTQ0YzcuODExLTcuODExLDcuODExLTIwLjQ3NSwwLTI4LjI4NWMtNy44MTEtNy44MS0yMC40NzUtNy44MTEtMjguMjg1LDBMMjU2LDIyNy43MTcgICAgTDM0LjE0Myw1Ljg1OWMtNy44MTEtNy44MTEtMjAuNDc1LTcuODExLTI4LjI4NSwwYy03LjgxLDcuODExLTcuODExLDIwLjQ3NSwwLDI4LjI4NWwyMjEuODU3LDIyMS44NTdMNS44NTgsNDc3Ljg1OSAgICBjLTcuODExLDcuODExLTcuODExLDIwLjQ3NSwwLDI4LjI4NWMzLjkwNSwzLjkwNSw5LjAyNCw1Ljg1NywxNC4xNDMsNS44NTdjNS4xMTksMCwxMC4yMzctMS45NTIsMTQuMTQzLTUuODU3TDI1NiwyODQuMjg3ICAgIGwyMjEuODU3LDIyMS44NTdjMy45MDUsMy45MDUsOS4wMjQsNS44NTcsMTQuMTQzLDUuODU3czEwLjIzNy0xLjk1MiwxNC4xNDMtNS44NTdjNy44MTEtNy44MTEsNy44MTEtMjAuNDc1LDAtMjguMjg1ICAgIEwyODQuMjg2LDI1Ni4wMDJ6IiBmaWxsPSIjMDAwMDAwIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==')
+         &__head
+            font-size: 0.8em
+            color: $grey
+            margin-bottom: 0.5em
+         &__city
+            color: $text
+            font-weight: bold
+            font-size: 1.1em
+         &__desc
+            color: $text
+         ul
+            margin: 0 auto
+            padding: 0 1em
+            li
+               margin: 1em auto
+               padding: 0
+               list-style: none
+            a
+               color: $text
+
+   &-search
+      width: 100%
+      padding: 30px 0
+      .container
+         display: flex
+         align-items: center
+         justify-content: space-between
+      .brand
+         width: 271px
+         height: auto
+         img
+            width: 100%
+      &__form
+         display: flex
+         justify-content: flex-start
+         border: 2px solid $yellow
+         border-radius: 6px
+         margin-left: 2em
+         flex: 1 1 auto
+         &__category
+            flex: 1 1 25%
+            background: $blue
+            border-radius: 6px 0 0 6px
+            padding: 15px 20px
+            line-height: 1
+            position: relative
+            &::before
+               content: ''
+               position: absolute
+               right: 1em
+               top: 45%
+               transform: translateX(-50%)
+               display: inline-block
+               width: 11px
+               height: 6px
+               background-size: 11px
+               background-repeat: no-repeat
+               background-position: center
+               background-image: url('../img/nav/arrow.svg')
+         input
+            flex: 1 1 75%
+            background: transparent
+            color: $text
+            padding: 15px 20px
+            border: none
+            appearance: none
+
+      &--right
+         display: flex
+         align-items: center
+         &__whishlist
+            margin-left: 1.5em
+            position: relative
+            width: auto
+            min-width: 3em
+            height: 3em
+            display: inline-block
+            background-size: 2.5em
+            background-position: left center
+            background-repeat: no-repeat
+            background-image: url('../img/nav/whishlist.svg')
+            span
+               position: absolute
+               top: -5px
+               right: -10px
+               background: #ffffff
+               border-radius: 50%
+               display: inline-block
+               width: 23px
+               height: 23px
+               font-weight: bold
+               display: flex
+               align-items: center
+               justify-content: center
+               font-size: 12px
+               color: #ff5f5a
+               box-shadow: 0px 4px 13px rgba(25, 36, 45, 0.24)
+
+         &__cart
+            margin-left: 2.5em
+            position: relative
+            width: auto
+            min-width: 3em
+            height: 3em
+            background-size: 2.5em
+            background-position: left center
+            background-repeat: no-repeat
+            background-image: url('../img/nav/cart.svg')
+            display: flex
+            align-items: center
+            justify-content: flex-end
+            font-weight: bold
+            color: $text
+            .qty
+               position: absolute
+               top: -5px
+               left: 25px
+               background: #ffffff
+               border-radius: 50%
+               display: inline-block
+               width: 23px
+               height: 23px
+               font-weight: bold
+               display: flex
+               align-items: center
+               justify-content: center
+               font-size: 12px
+               color: $accent
+               box-shadow: 0px 4px 13px rgba(25, 36, 45, 0.24)
+            .price
+               padding-left: 4em
+               font-size: 1.15em
+            &:hover
+               color: $text
+            
+   &-catalog
+      width: 100%
+      background-color: $accent
+      h2
+         display: none
+         text-align: center
+         padding: .5em 0
+         margin: 0 auto
+         font-size: 1.4em
+         a
+            color: #ffffff
+            font-weight: bold
+            position: relative
+            &::before
+               content: ''
+               position: absolute
+               left: -1.5em
+               top: 50%
+               transform: translateY(-50%)
+               width: 1em
+               height: 1em
+               background-size: 1em
+               background-position: center
+               background-repeat: no-repeat
+               background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cG9seWdvbiBwb2ludHM9IjIwMC4zNDgsMCAzMy4zOTEsMCAwLDAgMCwzMy4zOTEgMCwyMDAuMzQ4IDAsMjMzLjczOSAzMy4zOTEsMjMzLjczOSAyMDAuMzQ4LDIzMy43MzkgMjMzLjczOSwyMzMuNzM5ICAgICAyMzMuNzM5LDIwMC4zNDggMjMzLjczOSwzMy4zOTEgMjMzLjczOSwwICAgIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BvbHlnb24+Cgk8L2c+CjwvZz48Zz4KCTxnPgoJCTxwb2x5Z29uIHBvaW50cz0iNDc4LjYwOSwwIDMxMS42NTIsMCAyNzguMjYxLDAgMjc4LjI2MSwzMy4zOTEgMjc4LjI2MSwyMDAuMzQ4IDI3OC4yNjEsMjMzLjczOSAzMTEuNjUyLDIzMy43MzkgNDc4LjYwOSwyMzMuNzM5ICAgICA1MTIsMjMzLjczOSA1MTIsMjAwLjM0OCA1MTIsMzMuMzkxIDUxMiwwICAgIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BvbHlnb24+Cgk8L2c+CjwvZz48Zz4KCTxnPgoJCTxwb2x5Z29uIHBvaW50cz0iMjAwLjM0OCwyNzguMjYxIDMzLjM5MSwyNzguMjYxIDAsMjc4LjI2MSAwLDMxMS42NTIgMCw0NzguNjA5IDAsNTEyIDMzLjM5MSw1MTIgMjAwLjM0OCw1MTIgMjMzLjczOSw1MTIgICAgIDIzMy43MzksNDc4LjYwOSAyMzMuNzM5LDMxMS42NTIgMjMzLjczOSwyNzguMjYxICAgIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BvbHlnb24+Cgk8L2c+CjwvZz48Zz4KCTxnPgoJCTxwb2x5Z29uIHBvaW50cz0iNDc4LjYwOSwyNzguMjYxIDMxMS42NTIsMjc4LjI2MSAyNzguMjYxLDI3OC4yNjEgMjc4LjI2MSwzMTEuNjUyIDI3OC4yNjEsNDc4LjYwOSAyNzguMjYxLDUxMiAzMTEuNjUyLDUxMiAgICAgNDc4LjYwOSw1MTIgNTEyLDUxMiA1MTIsNDc4LjYwOSA1MTIsMzExLjY1MiA1MTIsMjc4LjI2MSAgICIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojRkZGRkZGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wb2x5Z29uPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+      ul
+         display: flex
+         align-items: center
+         justify-content: center
+         margin: 0
+         padding: 0
+         li
+            margin: 0 
+            padding-left: 25px
+            padding-right: 10px
+            list-style: none
+            position: relative
+            &::before
+               content: ''
+               position: absolute
+               left: 0
+               top: 50%
+               transform: translateY(-50%)
+               background-color: $yellow
+               display: inline-block
+               width: 9px
+               height: 9px
+               border-radius: 50%
+            &:first-child
+               padding-left: 0
+               a
+                  padding-left: 0
+               &::before
+                  display: none
+            &:last-child
+               padding-right: 0
+         a
+            padding-top: 1em
+            padding-bottom: 1em
+            display: flex
+            align-items: center
+            justify-content: center
+            flex-direction: column
+            color: #ffffff
+            font-size: 13px
+            line-height: 1.5
+            position: relative
+ 
+         .sale,
+         .interest
+            justify-content: center
+            align-self: flex-end
+            text-align: center
+            img
+               margin-bottom: .2em
+
+
+@media screen and ( max-width: 1199.98px )
+   .nav
+      &-top
+         &__right
+            &__time
+               display: none
+      &-search
+         &__form
+            &__category
+               flex: 1 1 40%
+            input
+               flex: 1 1 60%
+      &-catalog
+         .container
+            overflow-x: auto
+            ul
+               justify-content: flex-start
+               min-width: 1200px
+
+@media screen and ( max-width: 991.98px )
+   .nav
+      &-top
+         .hamburger
+            display: block
+         &__city
+            &__location
+               &__item
+                  display: none
+      
+      &-search
+         &__form
+            display: none
+         &--right__cart
+            .price
+               display: none
+
+      &-catalog
+         h2
+            display: block
+         ul
+            display: none
+            &.active
+               min-width: auto
+               display: block
+               padding: 30px 0
+               li
+                  padding: 0
+                  &::before
+                     display: none
+                  a
+                     padding-top: 0.5em
+                     padding-bottom: 0.5em
+                  .sale,
+                  .interest
+                     display: flex
+                     flex-direction: row
+                     justify-content: center
+                     align-self: center
+                     img
+                        margin-bottom: 0
+                        margin-right: 0.5em
+
+@media screen and ( max-width: 767.98px )
+   .nav
+      &-top
+         &__right
+            &__user
+               display: none
+         &__modal.user
+            display: none
+
+@media screen and ( max-width: 576.98px )
+   .nav
+      &-top
+         &__city
+            flex: 1 0 auto
+            margin-left: 1em
+            &__location
+               padding-left: 2em
+
+         &__right
+            flex: 1 0 auto
+            justify-content: space-between
+            a
+               padding-left: 0
+            &__phone,
+            &__login
+               margin-left: auto
+               display: inline-block
+               width: 1.5em
+               height: 1.5em
+               color: $blue !important
+               overflow: hidden
+         
+         &__modal
+            max-width: 92%
+            &.login
+               p
+                  b
+                     font-size: 1.5em
+
+      &-search
+         .brand
+            width: 230px
+
+         &--right
+            &__whishlist,
+            &__cart
+               margin-left: 1em
+
+@media screen and ( max-width: 374.98px )
+   .nav
+      &-top
+         &__right
+            &__login
+               display: none
+         &__modal
+            &.city
+               .btn
+                  span
+                     display: none
+      
+      &-search
+         .brand
+            width: 200px
+
+         &--right
+            &__whishlist,
+            &__cart
+               margin-left: 0 !important
+               background-size: 2em
+            
+            &__whishlist
+               span
+                  right: auto
+                  left: 20px
+            &__cart
+               .qty
+                  left: 20px
+
+
+   

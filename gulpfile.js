@@ -9,6 +9,7 @@ var gulp          = require('gulp'),
 		rename        = require('gulp-rename'),
 		autoprefixer  = require('gulp-autoprefixer'),
 		notify        = require('gulp-notify');
+		// lint 		  = require('sass-lint');
 
 // Local Server
 gulp.task('browser-sync', function() {

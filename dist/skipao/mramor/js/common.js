@@ -184,7 +184,25 @@ document.addEventListener('DOMContentLoaded', () => {
                             }
                                 
                         })
-                    }) 
+                    })
+                    let btn2 = item.querySelector('.show_img')
+                    btn2.addEventListener('click', () => {
+                        document.querySelector('.next-' + i).classList.add('active')
+                        btn.classList.add('hidden')
+                        document.querySelector('.separator-' + i).classList.add('active')
+
+                        document.querySelectorAll('.elem-'+ i).forEach((elem,ind) => {
+                            if ( elem.classList.contains('hidden') ) {
+                                document.querySelector('.separator-' + i).classList.add('active')
+                                elem.classList.remove('hidden')
+                            }
+                            else if ( !elem.classList.contains('elem-first') ) {
+                                document.querySelector('.separator-' + i).classList.remove('active')
+                                elem.classList.add('hidden')
+                            }
+                                
+                        })
+                    })  
                     
                     document.querySelector('.separator-' + i).addEventListener('click', () => {
                         document.querySelector('.next-' + i).classList.remove('active')
