@@ -5,31 +5,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const   hideModalCloseBtn = () => {
                 if ( event.target.dataset.close == 'close' ) {
-                    modal.querySelector('.is-active').classList.remove('is-active')
-                    setTimeout(() => {
-                        modal.querySelector('.fade').classList.remove('fade')
-                        modal.classList.remove('is-active')
-                    }, 200);
+                    hModal()
                     document.removeEventListener('click', hideModalEsc())
                 }
             }
             hideModalEsc = () => {
                 if (event.keyCode == 27) {
-                    modal.querySelector('.is-active').classList.remove('is-active')
-                    setTimeout(() => {
-                        modal.querySelector('.fade').classList.remove('fade')
-                        modal.classList.remove('is-active')
-                    }, 200);
+                    hModal()
                     document.removeEventListener('click', hideModalCloseBtn())
                 }
             }
-            hideModal = () => {
-                document.body.classList.remove('no-scroll')
+            hModal = () => {
                 modal.querySelector('.is-active').classList.remove('is-active')
                 setTimeout(() => {
                     modal.querySelector('.fade').classList.remove('fade')
                     modal.classList.remove('is-active')
                 }, 200);
+                document.body.classList.remove('no-scroll')
+            }
+            hideModal = () => {
+                hModal()
                 document.removeEventListener('keydown', hideModalEsc())
                 document.removeEventListener('click', hideModalCloseBtn())
             }
@@ -59,27 +54,31 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     modal.addEventListener('click', (event) => event.target.className == 'modal is-active' ? hideModal() : '')
     
-    
-        
 
-        //Catalog
-        const   catalogBtn = document.querySelector('.nav-catalog h2')
-                catalogMenu = document.querySelector('.nav-catalog ul')
+    //Search
+    const   searchCategory = document.querySelector('.nav-search__form__category')
+            searchCategoryList = document.querySelectorAll('.nav-search__form__category ul li')
 
-        const targetHideCatalog = (e) => (!catalogMenu.contains(e.target) && e.target != catalogMenu) ? hideCatalog() : ''
-        const showCatalog = (e) => {
-            e.preventDefault()
-            catalogMenu.classList.add('active')
-            setTimeout(() => {
-                document.addEventListener('click', targetHideCatalog)
-            }, 100);
-        }
-        const hideCatalog = () => {
-            catalogMenu.classList.remove('active')
-            document.removeEventListener('click', targetHideCatalog)
-        }
+    searchCategoryList.forEach(item => item.addEventListener('click', (e) => searchCategory.children[0].textContent = item.textContent) )
 
-        catalogBtn.addEventListener('click', showCatalog)
+    //Catalog
+    const   catalogBtn = document.querySelector('.nav-catalog h2')
+            catalogMenu = document.querySelector('.nav-catalog ul')
+
+    const targetHideCatalog = (e) => (!catalogMenu.contains(e.target) && e.target != catalogMenu) ? hideCatalog() : ''
+    const showCatalog = (e) => {
+        e.preventDefault()
+        catalogMenu.classList.add('active')
+        setTimeout(() => {
+            document.addEventListener('click', targetHideCatalog)
+        }, 100);
+    }
+    const hideCatalog = () => {
+        catalogMenu.classList.remove('active')
+        document.removeEventListener('click', targetHideCatalog)
+    }
+
+    catalogBtn.addEventListener('click', showCatalog)
 
     
     
