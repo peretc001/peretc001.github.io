@@ -1,0 +1,162 @@
+footer
+
+    .email-form
+        padding: 50px 0 80px 0
+        &-block
+            display: flex
+            align-items: center
+            justify-content: space-between
+            &__title
+                flex: 1 0 40%
+                display: flex
+                align-items: center
+                img
+                    width: 114px
+                    height: auto
+                    margin-right: 1em
+                p
+                    font-size: 1.7em
+                    margin-bottom: 0
+                    font-weight: bold
+            &__form
+                flex: 1 0 60%
+                display: flex
+                padding-left: 2em
+                input
+                    flex: 1 0 70%
+                    border: 2px solid $yellow
+                    border-radius: 6px
+                    background: transparent
+                    color: $text
+                    font-size: 16px !important
+                    padding: 15px 20px
+                    appearance: none
+                    outline: none
+                    box-shadow: none
+                    &::-webkit-input-placeholder
+                        color: #9BAFC0
+                    &:-moz-placeholder
+                        color: #9BAFC0
+                    &::-moz-placeholder
+                        color: #9BAFC0
+                    &:-ms-input-placeholder
+                        color: #9BAFC0
+                .btn
+                    flex: 1 0 30%
+                    &.btn-send
+                        margin-left: 1em
+                        font-size: 1.15em
+
+    .row
+        [class*="col-"]
+            ul
+                margin: 0
+                padding: 0
+                li
+                    list-style: none
+                    padding: 0
+                    margin: 0
+                    a
+                        color: $text
+                        font-weight: 200
+                        line-height: 30px
+                        &:hover
+                            color: $text
+    .copyright
+        margin: 45px auto
+        padding: 20px 0
+        border-top: 1px solid $nav
+        text-align: center
+        color: $nav
+        font-weight: 200
+
+@media screen and ( max-width: 1199.98px )
+    footer
+        .email-form
+            &-block
+                &__title
+                    flex: 1 0 50%
+                    img
+                        width: 100px
+                    p
+                        font-size: 1.5em
+                &__form
+                    flex: 1 0 50%
+                    padding-left: 15px
+
+@media screen and ( max-width: 991.98px )
+    footer
+        .email-form
+            &-block
+                flex-wrap: wrap
+                &__title
+                    flex: 1 0 100%
+                    justify-content: center
+                    margin-bottom: 2em
+                    p
+                        font-size: 1.5em
+                &__form
+                    flex: 1 0 100%
+                    padding-left: 0
+        .row
+            [class*="col-"]
+                margin-bottom: 3em
+                padding-left: 60px
+                &:last-child
+                    margin-bottom: 0
+
+@media screen and ( max-width: 767.98px )
+    footer
+        .email-form
+            &-block
+                &__title
+                    p
+                        font-size: 1.3em
+        .row
+            [class*="col-"]
+                padding-left: 30px
+
+
+@media screen and ( max-width: 576.98px )
+    footer
+        .email-form
+            &-block
+                &__title
+                    p
+                        font-size: 1.2em
+                &__form
+                    input
+                        flex: 1 0 auto
+                        padding: 15px 10px
+                    .btn
+                        flex: 1 0 auto
+                        max-width: 180px
+                        &.btn-send
+                            margin-left: 0.5em
+                            font-size: 1em
+        .row
+            [class*="col-"]
+                padding-left: 15px
+                text-align: center
+
+@media screen and ( max-width: 374.98px )
+    footer
+        .email-form
+            &-block
+                &__title
+                    p
+                        font-size: .9em
+                &__form
+                    flex-wrap: wrap
+                    input
+                        flex: 1 0 100%
+                        margin-bottom: 1em
+                        text-align: center
+                    .btn
+                        flex: 1 0 100%
+                        &.btn-send
+                            max-width: 100%
+                            padding: 15px 10px
+                            margin-left: 0
+                            font-size: 1em
+    

@@ -8,6 +8,7 @@ $grey: #C4C4C4
 $yellow: #FFC100
 $text: #474747
 $nav: #8199AE
+$textblock: #EAF6F6
 
 $default-font: 'SFUIText', sans-serif
 
@@ -31,6 +32,8 @@ body
 @import 'home/bonus'
 @import 'home/notes'
 @import 'home/heroes'
+@import 'text-block'
+@import 'footer'
 
 *
 	box-sizing: border-box
@@ -72,6 +75,10 @@ img
 		&:hover
 			background: $accent
 			color: #ffffff
+	&.btn-send
+		background: $yellow
+		font-weight: bold
+		color: $text
 
 
 .section__title
