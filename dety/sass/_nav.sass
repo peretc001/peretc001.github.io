@@ -9,7 +9,7 @@
          justify-content: space-between
          position: relative
          z-index: 3
-         color: #8199AE
+         color: $nav
       .hamburger
          display: none
          outline: none
@@ -23,17 +23,17 @@
             .hamburger-inner:before
                width: 30px
                height: 2px
-               background-color: #8199AE
+               background-color: $nav
             &.is-active
                .hamburger-box
                   .hamburger-inner, 
                   .hamburger-inner:after, 
                   .hamburger-inner:before
-                     background-color: #8199AE
+                     background-color: $nav
          .hamburger-inner
             top: 1px
       a
-         color: #8199AE
+         color: $nav
          padding-top: 1em
          padding-bottom: 1em
       &__city
@@ -60,7 +60,7 @@
                margin-left: 0.5em
                a
                   padding: 0.1em 0 !important
-                  border-bottom: 1px dashed #8199AE
+                  border-bottom: 1px dashed $nav
       
       &__right
          display: flex

@@ -1,5 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
+
     if ( document.querySelector('.nav') ) {
+
+        // const foo = (a,b,c) => event => console.log(a,b,c)
+        // document.querySelector('button').addEventListener('click', foo(1,2,3))
+
+        // const foo = (a,b,c) => console.log(a,b,c)
+        // document.querySelector('button').addEventListener('click', foo.bind(1,2,3))
+
 
         //City
         const   cityBtn = document.querySelector('.nav-top__city__location')
