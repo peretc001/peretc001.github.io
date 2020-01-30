@@ -1,0 +1,142 @@
+.modal
+    position: fixed
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    background: rgba(#000, .4)
+    z-index: 100
+    display: none
+    &.is-active
+        display: block
+        .container
+            position: relative
+    &-body
+        background: #ffffff
+        display: none
+        position: absolute
+        left: 15px
+        top: 0
+        transform: translateY(-150%)
+        padding: 15px
+        width: 100%
+        max-width: 350px
+        overflow: hidden
+        box-shadow: 0 2px 10px rgba(#000, .1)
+        transition: transform .3s ease
+        &.fade
+            display: block
+        &.city
+            top: 47px
+            padding: 30px
+            &.is-active
+                transform: translateY(0)
+        &.user
+            left: auto
+            right: 15px
+            max-width: 220px
+            &.is-active
+                transform: translateY(0)
+        &.login
+            top: 50%
+            left: 50%
+            transform: translateX(-50%) translateY(-100%)
+            max-width: 450px
+            padding: 60px
+            &.is-active
+                transform: translateX(-50%) translateY(50%)
+        
+        &__button
+            display: flex
+            align-items: center
+            .btn
+                width: auto
+                flex: 1 0 auto
+                font-size: .9em
+                &:last-child
+                    margin-left: 0.5em
+        p
+            color: $text
+            b
+                display: block
+                font-size: 1.8em
+                padding-bottom: .5em
+                margin-bottom: 1em
+                border-bottom: 1px solid $grey
+        label
+            color: $text
+            font-size: 1.2em
+            display: block
+            margin-bottom: 1em
+        input,
+        button
+            display: block
+            width: 100%
+            max-width: 100%
+            padding: 1em
+        input
+            background: #ffffff
+            border: 1px solid $grey
+            border-radius: 4px
+            color: $text
+            outline: none
+            box-shadow: none
+            margin-bottom: 1em
+            font-size: 16px
+
+
+
+        .close
+            position: absolute
+            right: 10px
+            top: 10px
+            width: .5em
+            height: .5em
+            background-size: .5em
+            background-position: right top
+            background-repeat: no-repeat
+            background-image: url('data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMi4wMDEgNTEyLjAwMSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyLjAwMSA1MTIuMDAxOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMjg0LjI4NiwyNTYuMDAyTDUwNi4xNDMsMzQuMTQ0YzcuODExLTcuODExLDcuODExLTIwLjQ3NSwwLTI4LjI4NWMtNy44MTEtNy44MS0yMC40NzUtNy44MTEtMjguMjg1LDBMMjU2LDIyNy43MTcgICAgTDM0LjE0Myw1Ljg1OWMtNy44MTEtNy44MTEtMjAuNDc1LTcuODExLTI4LjI4NSwwYy03LjgxLDcuODExLTcuODExLDIwLjQ3NSwwLDI4LjI4NWwyMjEuODU3LDIyMS44NTdMNS44NTgsNDc3Ljg1OSAgICBjLTcuODExLDcuODExLTcuODExLDIwLjQ3NSwwLDI4LjI4NWMzLjkwNSwzLjkwNSw5LjAyNCw1Ljg1NywxNC4xNDMsNS44NTdjNS4xMTksMCwxMC4yMzctMS45NTIsMTQuMTQzLTUuODU3TDI1NiwyODQuMjg3ICAgIGwyMjEuODU3LDIyMS44NTdjMy45MDUsMy45MDUsOS4wMjQsNS44NTcsMTQuMTQzLDUuODU3czEwLjIzNy0xLjk1MiwxNC4xNDMtNS44NTdjNy44MTEtNy44MTEsNy44MTEtMjAuNDc1LDAtMjguMjg1ICAgIEwyODQuMjg2LDI1Ni4wMDJ6IiBmaWxsPSIjMDAwMDAwIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==')
+        &__head
+            font-size: 0.8em
+            color: $grey
+            margin-bottom: 0.5em
+        &__city
+            color: $text
+            font-weight: bold
+            font-size: 1.1em
+        &__desc
+            color: $text
+        ul
+            margin: 0 auto
+            padding: 0 1em
+        li
+            margin: 1em auto
+            padding: 0
+            list-style: none
+        a
+            color: $text
+
+@media screen and ( max-width: 767.98px )
+    .modal
+        &-body.user
+            display: none
+
+@media screen and ( max-width: 576.98px )
+    .modal
+        &-body
+            max-width: 92%
+            &.login
+                p
+                    b
+                        font-size: 1.5em
+
+@media screen and ( max-width: 374.98px )
+    .modal
+        &-body
+            &.city
+                .btn
+                    span
+                        display: none
+    
+    
+    

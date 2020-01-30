@@ -19,7 +19,7 @@
         </span>
       </button>
       <div class="nav-top__city">
-        <a class="nav-top__city__location" href="#">Санкт-Петербург</a>
+        <a class="nav-top__city__location" data-toggle="modal" data-target="city" href="#">Санкт-Петербург</a>
         <div class="nav-top__city__location__item">
           (<a href="#">пункты выдачи</a>, <a href="">условия доставки</a>)
         </div>
@@ -27,40 +27,8 @@
       <div class="nav-top__right">
         <a class="nav-top__right__phone" href="tel:+79384087777">+7 (938) 408-77-77</a>
         <span class="nav-top__right__time">9:00 - 22:00</span>
-        <a class="nav-top__right__user" href="#">Покупателям</a>
-        <a class="nav-top__right__login" href="#">Войти</a>
-      </div>
-      <!-- Modal City -->
-      <div class="nav-top__modal city">
-        <span class="close"></span>
-        <p class="nav-top__modal__head">Ваш город:</p>
-        <p class="nav-top__modal__city">Санкт-Петербург</p>
-        <p class="nav-top__modal__desc">От выбора города зависит стоимость, наличие и условия доставки</p>
-        <div class="nav-top__modal__button">
-          <button class="btn btn-accent">Да<span>, все верно</span></button>
-          <button class="btn btn-outline-accent">Нет, выбрать другой</button>
-        </div>
-      </div>
-      <!-- Modal User -->
-      <div class="nav-top__modal user">
-        <span class="close"></span>
-        <ul>
-          <li><a href="">Проверка заказа</a></li>
-          <li><a href="">Доставка и оплата</a></li>
-          <li><a href="">Гарантии и возврат</a></li>
-          <li><a href="">Кредит и рассрочка</a></li>
-          <li><a href="">Полезные материалы</a></li>
-          <li><a href="">Бонусная программа</a></li>
-          <li><a href="">Подарочные карты</a></li>
-        </ul>
-      </div>
-      <!-- Modal Login -->
-      <div class="nav-top__modal login">
-        <span class="close"></span>
-        <p><b>Войти в личный кабинет</b></p>
-        <label for="phone">Войти по номеру</label>
-        <input type="tel" id="phone" name="phone" placeholder="+7 (XXX) XXX-XX-XX">
-        <button type="submit" class="btn btn-accent">Получить sms-код</button>
+        <a class="nav-top__right__user" data-toggle="modal" data-target="user" href="#">Покупателям</a>
+        <a class="nav-top__right__login" data-toggle="modal" data-target="login" href="#">Войти</a>
       </div>
     </div>
   </div>
@@ -785,7 +753,46 @@
   </div>
 </footer>
 
-  
+<div class="modal">
+  <div class="container">
+  <!-- Modal City -->
+  <div class="modal-body city" data-modal="nav-top__city__location">
+    <span class="close"></span>
+    <p class="modal-body__head">Ваш город:</p>
+    <p class="modal-body__city">Санкт-Петербург</p>
+    <p class="modal-body__desc">От выбора города зависит стоимость, наличие и условия доставки</p>
+    <div class="modal-body__button">
+      <button class="btn btn-accent">Да</button>
+      <button class="btn btn-outline-accent">Нет, выбрать другой</button>
+    </div>
+  </div>
+  <!-- Modal User -->
+  <div class="modal-body user" data-modal="nav-top__right__user">
+    <span class="close"></span>
+    <ul>
+      <li><a href="">Проверка заказа</a></li>
+      <li><a href="">Доставка и оплата</a></li>
+      <li><a href="">Гарантии и возврат</a></li>
+      <li><a href="">Кредит и рассрочка</a></li>
+      <li><a href="">Полезные материалы</a></li>
+      <li><a href="">Бонусная программа</a></li>
+      <li><a href="">Подарочные карты</a></li>
+    </ul>
+  </div>
+  <!-- Modal Login -->
+  <div class="modal-body login" data-modal="nav-top__right__login">
+    <span class="close"></span>
+    <p><b>Войти в личный кабинет</b></p>
+    <label for="phone">Войти по номеру</label>
+    <input type="tel" id="phone" name="phone" placeholder="+7 (XXX) XXX-XX-XX">
+    <button type="submit" class="btn btn-accent">Получить sms-код</button>
+  </div>
+</div>
+</div>
+
+
+
+
   <script src="./js/scripts.min.js"></script>
   <script src="./js/slick/slick.min.js"></script>
   <link rel="stylesheet" href="./js/slick/slick.css">

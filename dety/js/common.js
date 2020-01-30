@@ -1,99 +1,138 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    if ( document.querySelector('.nav') ) {
+    const   nav = document.querySelector('.nav')
+            modal = document.querySelector('.modal');
 
-        // const foo = (a,b,c) => event => console.log(a,b,c)
-        // document.querySelector('button').addEventListener('click', foo(1,2,3))
+    const   hideModalCloseBtn = () => {
+                if ( event.target.className == 'close' ) {
+                    modal.querySelector('.is-active').classList.remove('is-active')
+                    setTimeout(() => {
+                        modal.querySelector('.fade').classList.remove('fade')
+                        modal.classList.remove('is-active')
+                    }, 200);
+                    document.removeEventListener('click', hideModalEsc())
+                }
+            }
+            hideModalEsc = () => {
+                if (event.keyCode == 27) {
+                    modal.querySelector('.is-active').classList.remove('is-active')
+                    setTimeout(() => {
+                        modal.querySelector('.fade').classList.remove('fade')
+                        modal.classList.remove('is-active')
+                    }, 200);
+                    document.removeEventListener('click', hideModalCloseBtn())
+                }
+            }
+            hideModal = () => {
+                modal.querySelector('.is-active').classList.remove('is-active')
+                setTimeout(() => {
+                    modal.querySelector('.fade').classList.remove('fade')
+                    modal.classList.remove('is-active')
+                }, 200);
+                document.removeEventListener('keydown', hideModalEsc())
+                document.removeEventListener('click', hideModalCloseBtn())
+            }
+            showModal = (event) => {
+                event.preventDefault()
+                const current = document.querySelector('[data-modal="'+ event.target.className +'"]')
 
-        // const foo = (a,b,c) => console.log(a,b,c)
-        // document.querySelector('button').addEventListener('click', foo.bind(1,2,3))
-
-
-        //City
-        const   cityBtn = document.querySelector('.nav-top__city__location')
-                cityModal = document.querySelector('.nav-top__modal.city')
-                cityModalClose = document.querySelector('.nav-top__modal.city .close');
-
-        const escHideCityModal = (e) => {
-            if( (e.key=='Escape'||e.key=='Esc'||e.keyCode==27) && (cityModal.classList.contains('active')) ) {
-                cityModal.classList.remove('active')
+                modal.classList.add('is-active')
+                current.classList.add('fade')
+                setTimeout(() => {
+                    current.classList.add('is-active')
+                }, 1);
+                document.addEventListener('keydown', hideModalEsc)
+                document.addEventListener('click', hideModalCloseBtn)
+            }
+    nav.addEventListener('click', (event) => {
+        if (    
+            event.target.className == 'nav-top__city__location' || 
+            event.target.className == 'nav-top__right__user' ||
+            event.target.className == 'nav-top__right__login' 
+        ) {
+            if ( modal.classList.contains('is-active') ) {
+                hideModal()
+            } else {
+                showModal(event)
             }
         }
-        const targetHideCityModal = (e) => (!cityModal.contains(e.target) && e.target != cityBtn) ? hideCityModal() : ''
+    })
+    modal.addEventListener('click', (event) => event.target.className == 'modal is-active' ? hideModal() : '')
+    
+    // const   modalBtn = document.querySelectorAll('[data-toggle="modal"]')
+    //         hideModalNav = (current) => event => {
+    //             if (document.querySelector('.nav').contains(event.target) && modal.classList.contains('is-active')) {
+    //                 hideModal2()
+    //             }
+    //         }
+    //         hideModalCloseBtn = (current) => event => (event.target == current.querySelector('.close') && modal.classList.contains('is-active')) ? hideModal(current) : ''
+    //         hideModalEsc = (current) => event => (event.keyCode == 27 && modal.classList.contains('is-active')) ? hideModal(current) : ''
+    //         showModal = (current) => {
+    //             if ( modal.classList.contains('is-active') ) {
+    //                 hideModal2()
+    //             } else {
+    //             // modal.querySelector('.is-active') ? hideModal(modal.querySelector('.is-active')) : ''
+    //                 modal.classList.add('is-active')
+    //                 current.classList.add('fade')
+    //                 setTimeout(() => {
+    //                     current.classList.add('is-active')
+    //                     document.addEventListener('keydown', hideModalEsc(current))
+    //                     document.addEventListener('click', hideModalCloseBtn(current))
+    //                     document.addEventListener('click', hideModalNav(current))
+    //                 }, 1);
+    //             }
+    //         }
+    //         hideModal = (current) => {
+    //             current.classList.remove('is-active')
+    //             setTimeout(() => {
+    //                 current.classList.remove('fade')
+    //                 modal.classList.remove('is-active')
+    //             }, 200);
+    //             document.removeEventListener('keydown', hideModalEsc)
+    //             document.removeEventListener('click', hideModalCloseBtn)
+    //             document.removeEventListener('click', hideModalNav)
+    //         }
+    //         hideModal2 = () => {
+    //             if ( modal.classList.contains('is-active') ) {
+    //                 modal.querySelector('.is-active').classList.remove('is-active')
+    //                 setTimeout(() => {
+    //                     modal.querySelector('.fade').classList.remove('fade')
+    //                     modal.classList.remove('is-active')
+    //                 }, 200);
+    //                 document.removeEventListener('keydown', hideModalEsc)
+    //                 document.removeEventListener('click', hideModalCloseBtn)
+    //                 document.removeEventListener('click', hideModalNav)
+    //             }
+    //         }
+
+
+    // modalBtn.forEach(item => {
+    //     const current = item.getAttribute('data-target')
+    //     const currentModal = modal.querySelector('.modal-body.' + current)
+    //     item.addEventListener('click', (e) => {
+    //         e.preventDefault()
+    //         if ( modal.classList.contains('.is-active') ) { 
+                
+    //             modal.querySelectorAll('.is-active').forEach(item => {
+    //                 item.classList.remove('is-active')
+    //                 setTimeout(() => {
+    //                     item.classList.remove('fade')
+    //                     modal.classList.remove('is-active')
+    //                 }, 200);
+    //                 showModal(currentModal)
+    //             })
+                
+                
+    //         } else {
+    //             showModal(currentModal)
+    //         }
+    //     })
+    // });
+    // modal.addEventListener('click', (e) => {
+    //     !modal.querySelector('.is-active').contains(e.target) ? hideModal(modal.querySelector('.is-active')) : ''
+    // })
         
-        const showCityModal = (e) => {
-            e.preventDefault()
-            cityModal.classList.add('active')
-            document.addEventListener('keydown', escHideCityModal)
-            setTimeout(() => {
-                document.addEventListener('click', targetHideCityModal)
-            }, 1);
-        }
-        const hideCityModal = () => {
-            cityModal.classList.contains('active') ? cityModal.classList.remove('active') : ''
-            document.removeEventListener('keydown', escHideCityModal)
-            document.removeEventListener('click', targetHideCityModal)
-        }
         
-        cityBtn.addEventListener('click', showCityModal )
-        cityModalClose.addEventListener('click', hideCityModal )
-
-        //User
-        const   userBtn = document.querySelector('.nav-top__right__user')
-                userModal = document.querySelector('.nav-top__modal.user')
-                userModalClose = document.querySelector('.nav-top__modal.user .close');
-
-        const escHideUserModal = (e) => {
-            if( (e.key=='Escape'||e.key=='Esc'||e.keyCode==27) && (userModal.classList.contains('active')) ) {
-                userModal.classList.remove('active')
-            }
-        }
-        const showUserModal = (e) => {
-            e.preventDefault()
-            userModal.classList.add('active')
-            document.addEventListener('keydown', escHideUserModal)
-            setTimeout(() => {
-                document.addEventListener('click', targetHideUserModal)
-            }, 1);
-        }
-        const targetHideUserModal = (e) => (!userModal.contains(e.target) && e.target != userBtn) ? hideUserModal() : ''
-        const hideUserModal = () => {
-            userModal.classList.contains('active') ? userModal.classList.remove('active') : ''
-            document.removeEventListener('keydown', escHideUserModal)
-            document.removeEventListener('click', targetHideUserModal)
-        }
-        
-        userBtn.addEventListener('click', showUserModal )
-        userModalClose.addEventListener('click', hideUserModal )
-
-        //Login
-        const   loginBtn = document.querySelector('.nav-top__right__login')
-                loginModal = document.querySelector('.nav-top__modal.login')
-                loginModalClose = document.querySelector('.nav-top__modal.login .close');
-
-        const escHideLoginModal = (e) => {
-            if( (e.key=='Escape'||e.key=='Esc'||e.keyCode==27) && (loginModal.classList.contains('active')) ) {
-                loginModal.classList.remove('active')
-            }
-        }
-        const showLoginModal = (e) => {
-            e.preventDefault()
-            loginModal.classList.add('active')
-            document.addEventListener('keydown', escHideLoginModal)
-            setTimeout(() => {
-                document.addEventListener('click', targetHideLoginModal)
-            }, 1);
-        }
-        const targetHideLoginModal = (e) => (!loginModal.contains(e.target) && e.target != loginBtn) ? hideLoginModal() : ''
-        const hideLoginModal = () => {
-            loginModal.classList.contains('active') ? loginModal.classList.remove('active') : ''
-            document.removeEventListener('keydown', escHideLoginModal)
-            document.removeEventListener('click', targetHideLoginModal)
-        }
-
-        loginBtn.addEventListener('click', showLoginModal )
-        loginModalClose.addEventListener('click', hideLoginModal )
-
 
         //Catalog
         const   catalogBtn = document.querySelector('.nav-catalog h2')
@@ -113,8 +152,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         catalogBtn.addEventListener('click', showCatalog)
-
-    }
 
     
     
