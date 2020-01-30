@@ -170,6 +170,7 @@
             background-position: left center
             background-repeat: no-repeat
             background-image: url('../img/nav/wishlist.svg')
+            transition: background-position .3s ease
             &.active
                background-image: url('../img/nav/wishlist-active.svg')
             span
@@ -188,9 +189,11 @@
                font-size: 12px
                color: #ff5f5a
                box-shadow: 0px 4px 13px rgba(25, 36, 45, 0.24)
+            &:hover
+               background-position: 5px center
 
          &__cart
-            margin-left: 2.5em
+            margin-left: 1.5em
             position: relative
             width: auto
             min-width: 3em
@@ -204,6 +207,7 @@
             justify-content: flex-end
             font-weight: bold
             color: $text
+            transition: background-position .3s ease
             .qty
                position: absolute
                top: -5px
@@ -221,8 +225,13 @@
                color: $accent
                box-shadow: 0px 4px 13px rgba(25, 36, 45, 0.24)
             .price
-               padding-left: 4em
+               padding-left: 3.5em
                font-size: 1.15em
+            &:hover
+               background-position: 5px center
+
+
+                  
             &:hover
                color: $text
             
@@ -340,6 +349,10 @@
       &-search
          &__form
             display: none
+         &--right__wishlist,
+         &--right__cart
+            &:hover
+               background-position: left center
          &--right__cart
             .price
                display: none

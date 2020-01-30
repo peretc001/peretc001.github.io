@@ -7,6 +7,7 @@
     background: rgba(#000, .4)
     z-index: 100
     display: none
+    overflow-y: auto
     &.is-active
         display: block
         .container
@@ -16,7 +17,7 @@
         display: none
         position: absolute
         left: 15px
-        top: 0
+        top: 47px
         transform: translateY(-150%)
         padding: 15px
         width: 100%
@@ -27,7 +28,6 @@
         &.fade
             display: block
         &.city
-            top: 47px
             padding: 30px
             &.is-active
                 transform: translateY(0)
@@ -38,13 +38,12 @@
             &.is-active
                 transform: translateY(0)
         &.login
-            top: 50%
-            left: 50%
-            transform: translateX(-50%) translateY(-100%)
+            left: auto
+            right: 15px
             max-width: 450px
             padding: 60px
             &.is-active
-                transform: translateX(-50%) translateY(50%)
+                transform: translateY(0)
         
         &__button
             display: flex
@@ -87,13 +86,16 @@
 
 
         .close
+            background-color: #ebebeb
+            border-radius: 50%
+            cursor: pointer
             position: absolute
             right: 10px
             top: 10px
-            width: .5em
-            height: .5em
-            background-size: .5em
-            background-position: right top
+            width: 1.5em
+            height: 1.5em
+            background-size: .8em
+            background-position: center
             background-repeat: no-repeat
             background-image: url('data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMi4wMDEgNTEyLjAwMSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyLjAwMSA1MTIuMDAxOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMjg0LjI4NiwyNTYuMDAyTDUwNi4xNDMsMzQuMTQ0YzcuODExLTcuODExLDcuODExLTIwLjQ3NSwwLTI4LjI4NWMtNy44MTEtNy44MS0yMC40NzUtNy44MTEtMjguMjg1LDBMMjU2LDIyNy43MTcgICAgTDM0LjE0Myw1Ljg1OWMtNy44MTEtNy44MTEtMjAuNDc1LTcuODExLTI4LjI4NSwwYy03LjgxLDcuODExLTcuODExLDIwLjQ3NSwwLDI4LjI4NWwyMjEuODU3LDIyMS44NTdMNS44NTgsNDc3Ljg1OSAgICBjLTcuODExLDcuODExLTcuODExLDIwLjQ3NSwwLDI4LjI4NWMzLjkwNSwzLjkwNSw5LjAyNCw1Ljg1NywxNC4xNDMsNS44NTdjNS4xMTksMCwxMC4yMzctMS45NTIsMTQuMTQzLTUuODU3TDI1NiwyODQuMjg3ICAgIGwyMjEuODU3LDIyMS44NTdjMy45MDUsMy45MDUsOS4wMjQsNS44NTcsMTQuMTQzLDUuODU3czEwLjIzNy0xLjk1MiwxNC4xNDMtNS44NTdjNy44MTEtNy44MTEsNy44MTEtMjAuNDc1LDAtMjguMjg1ICAgIEwyODQuMjg2LDI1Ni4wMDJ6IiBmaWxsPSIjMDAwMDAwIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==')
         &__head
@@ -124,8 +126,13 @@
 @media screen and ( max-width: 576.98px )
     .modal
         &-body
-            max-width: 92%
+            box-sizing: border-box
+            top: 44px
+            left: auto !important
+            right: auto !important
+            max-width: 93% !important
             &.login
+                padding: 40px 30px
                 p
                     b
                         font-size: 1.5em
@@ -133,10 +140,7 @@
 @media screen and ( max-width: 374.98px )
     .modal
         &-body
-            &.city
-                .btn
-                    span
-                        display: none
-    
+            &.login
+                display: none
     
     
