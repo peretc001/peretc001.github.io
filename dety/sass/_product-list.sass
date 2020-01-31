@@ -53,9 +53,9 @@
                 justify-content: flex-start
                 span
                     display: inline-block
-                    width: 12px
-                    height: 12px
-                    background-size: 12px
+                    width: 1em
+                    height: 1em
+                    background-size: 1em
                     background-position: center
                     background-repeat: no-repeat
                     background-image: url('../img/review/star.svg')
@@ -64,7 +64,7 @@
                         background-image: url('../img/review/star-active.svg')
             .quote
                 position: relative
-                font-size: 11px
+                font-size: .9em
                 color: $text
                 padding-left: 20px
                 margin-left: 1em
@@ -76,7 +76,7 @@
                     transform: translateY(-50%)
                     width: 100%
                     height: 100%
-                    background-size: 16px
+                    background-size: 18px
                     background-position: left
                     background-repeat: no-repeat
                     background-image: url('../img/review/quote.svg')
@@ -119,6 +119,7 @@
                     background-position: center
                     background-repeat: no-repeat
                     background-image: url('../img/nav/cart.svg')
+                    margin-left: 0.5em
                     &.active
                         background-image: url('../img/nav/cart.svg')
 
@@ -135,26 +136,104 @@
         .product-card
             &__head
                 span
-                    font-size: 12px
-                    padding: 10px
+                    padding: 5px 3px
             &__img
                 text-align: center
-
-@media screen and ( max-width: 767.98px )
-    .product-list
-        .product-card
-            &__head
-                span
-                    font-size: 10px
-                    padding: 8px
+            
+            &__bottom
+                &__buy
+                    .wishlist
+                        width: 2em
+                        height: 2em
+                        background-size: 2em
+                    .cart
+                        margin-left: .5em
+                        width: 2em
+                        height: 2em
+                        background-size: 2em
 
 @media screen and ( max-width: 576.98px )
     .product-list
+        .row
+            [class*="col-"]
+                margin-bottom: 1em
+                &:nth-child(odd)
+                    padding-right: 0.25em
+                &:nth-child(even)
+                    padding-left: 0.25em
         .product-card
+            padding: 10px
+            padding-bottom: 20px
             &__head
+                flex-wrap: wrap
+                height: 45px
                 span
-                    font-size: 12px
-                    padding: 10px
-    
-            
-    
+                    font-size: .65em
+                    padding: 5px 3px
+                    margin-bottom: 0.5em
+            &__title
+                font-size: 1em
+                height: 30px
+                margin-bottom: 2em
+            &__review
+                .star
+                    span
+                        width: .8em
+                        height: .8em
+                        background-size: .8em
+                        margin-right: 5px
+                .quote
+                    font-size: .8em
+            &__bottom
+                &__price
+                    .old
+                        font-size: .8em
+                    .price
+                        font-size: 1.2em
+                &__buy
+                    .wishlist
+                        width: 1.6em
+                        height: 1.6em
+                        background-size: 1.6em
+                    .cart
+                        width: 1.6em
+                        height: 1.6em
+                        background-size: 1.6em
+
+@media screen and ( max-width: 374.98px )
+    .product-list
+        .product-card
+            padding-bottom: 10px
+            &__head
+                align-items: flex-start
+                flex-wrap: wrap
+                height: 45px
+                span
+                    font-size: .5em
+            &__title
+                font-size: 1em
+            &__review
+                .star
+                    span
+                        width: .7em
+                        height: .7em
+                        background-size: .7em
+                .quote
+                    font-size: .7em
+                    margin-left: .5em
+            &__bottom
+                &__price
+                    .old
+                        font-size: .7em
+                    .price
+                        font-size: 1em
+                &__buy
+                    .wishlist
+                        width: 1.4em
+                        height: 1.4em
+                        background-size: 1.4em
+                    .cart
+                        margin-left: 0
+                        width: 1.4em
+                        height: 1.4em
+                        background-size: 1.4em
