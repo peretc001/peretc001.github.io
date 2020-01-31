@@ -24,6 +24,9 @@ body
 	opacity: 0
 	&.no-scroll
 		overflow: hidden
+	&.fade
+		background: #000
+		opacity: .5
 
 @import '_libs/hamburger'
 @import 'nav'
@@ -115,7 +118,6 @@ img
 			background-position: right
 			background-repeat: no-repeat
 			background-image: url('../img/arrow.svg')
-
 
 @media screen and ( min-width: 1200px )
 	.container
