@@ -1,7 +1,10 @@
 .product-list
     .row
+        padding: 0 .5em
         [class*="col-"]
-            margin-bottom: 2em
+            margin-bottom: 1em
+            padding-right: 0.5em
+            padding-left: 0.5em
     .product-card
         display: block
         background-color: #ffffff
@@ -85,6 +88,7 @@
             display: flex
             align-items: center
             justify-content: space-between
+            position: relative
             &__price
                 display: flex
                 flex-direction: column
@@ -99,25 +103,29 @@
                     font-weight: bold
                     font-size: 1.5em
             &__buy
-                .wishlist
+                position: absolute
+                top: 50%
+                right: 0
+                transform: translateY(-50%)
+                z-index: 2
+                .wishlist,
+                .cart
                     position: relative
                     display: inline-block
-                    width: 2.5em
-                    height: 2.5em
-                    background-size: 2.5em
+                    width: 2em
+                    height: 2em
+                    background-size: 2em
                     background-position: center
                     background-repeat: no-repeat
+                    transition: transform .3s ease
+                    cursor: pointer
+                    &:hover
+                        transform: scale(1.1)
+                .wishlist  
                     background-image: url('../img/nav/wishlist.svg')
                     &.active
                         background-image: url('../img/nav/wishlist-active.svg')
                 .cart
-                    position: relative
-                    display: inline-block
-                    width: 2.5em
-                    height: 2.5em
-                    background-size: 2.5em
-                    background-position: center
-                    background-repeat: no-repeat
                     background-image: url('../img/nav/cart.svg')
                     margin-left: 0.5em
                     &.active
@@ -139,18 +147,6 @@
                     padding: 5px 3px
             &__img
                 text-align: center
-            
-            &__bottom
-                &__buy
-                    .wishlist
-                        width: 2em
-                        height: 2em
-                        background-size: 2em
-                    .cart
-                        margin-left: .5em
-                        width: 2em
-                        height: 2em
-                        background-size: 2em
 
 @media screen and ( max-width: 576.98px )
     .product-list
@@ -191,10 +187,7 @@
                     .price
                         font-size: 1.2em
                 &__buy
-                    .wishlist
-                        width: 1.6em
-                        height: 1.6em
-                        background-size: 1.6em
+                    .wishlist,
                     .cart
                         width: 1.6em
                         height: 1.6em
@@ -207,11 +200,15 @@
             &__head
                 align-items: flex-start
                 flex-wrap: wrap
-                height: 45px
+                height: auto
+                min-height: 20px
                 span
                     font-size: .5em
+            &__img
+                margin-bottom: 15px
             &__title
                 font-size: 1em
+                margin-bottom: 15px
             &__review
                 .star
                     span
@@ -228,10 +225,7 @@
                     .price
                         font-size: 1em
                 &__buy
-                    .wishlist
-                        width: 1.4em
-                        height: 1.4em
-                        background-size: 1.4em
+                    .wishlist,
                     .cart
                         margin-left: 0
                         width: 1.4em

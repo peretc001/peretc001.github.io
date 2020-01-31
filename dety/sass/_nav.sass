@@ -44,7 +44,7 @@
          justify-content: flex-start
          &__location
             position: relative
-            padding-left: 2.5em
+            padding-left: 2.2em
             font-weight: bold
             &::before
                content: ''
@@ -58,6 +58,10 @@
                background-position: left
                background-repeat: no-repeat
                background-image: url('../img/nav/location.svg')
+               transition: transform .3s ease
+            &:hover
+               &::before
+                  transform: translateY(-50%) translateX(5px)
             &__item
                margin-left: 0.5em
                a
@@ -83,6 +87,10 @@
                background-size: 1.5em
                background-position: left
                background-repeat: no-repeat
+               transition: transform .3s ease
+            &:hover
+               &::before
+                  transform: translateY(-50%) translateX(5px)
          &__phone
             font-size: 1.1em
             font-weight: bold
@@ -427,11 +435,20 @@
 @media screen and ( max-width: 767.98px )
    .nav
       &-top
+         &__city,
+         &__right
+            a
+               &::before
+                  transition: none
+               &:hover
+                  &::before
+                     transform: translateY(-50%) translateX(0)
          &__right
             &__user
                display: none
             &__login
                margin-left: 1em
+               
 
 @media screen and ( max-width: 576.98px )
    .nav
@@ -457,6 +474,7 @@
                margin-left: 3.2em
 
       &-search
+         padding: 20px 0
          .brand
             width: 200px
 
@@ -482,6 +500,25 @@
          &__right
             &__login
                display: none
+      &-search
+         .brand
+            width: 150px
+
+         &--right
+            &__wishlist,
+            &__cart
+               margin-left: 0
+               background-size: 2em
+            &__cart
+               margin-left: .5em
+            
+            &__wishlist
+               span
+                  right: auto
+                  left: 20px
+            &__cart
+               .qty
+                  left: 20px
 
 
    
