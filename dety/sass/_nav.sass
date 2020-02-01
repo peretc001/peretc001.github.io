@@ -168,7 +168,7 @@
                padding: 1em 0 1.5em 0
                z-index: -1
                height: 0
-               transition: transform .3s ease
+               transition: transform .6s ease
                li
                   list-style: none
                   margin: 0
@@ -182,7 +182,7 @@
                   transform: translateX(-50%) rotate(180deg)
                ul
                   height: auto
-                  z-index: 2
+                  z-index: 3
                   transform: translateY(100%)
 
 
@@ -286,7 +286,8 @@
             
    &-catalog
       width: 100%
-      background-color: $accent
+      position: relative
+      z-index: 2
       h2
          display: none
          text-align: center
@@ -309,58 +310,163 @@
                background-position: center
                background-repeat: no-repeat
                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cG9seWdvbiBwb2ludHM9IjIwMC4zNDgsMCAzMy4zOTEsMCAwLDAgMCwzMy4zOTEgMCwyMDAuMzQ4IDAsMjMzLjczOSAzMy4zOTEsMjMzLjczOSAyMDAuMzQ4LDIzMy43MzkgMjMzLjczOSwyMzMuNzM5ICAgICAyMzMuNzM5LDIwMC4zNDggMjMzLjczOSwzMy4zOTEgMjMzLjczOSwwICAgIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BvbHlnb24+Cgk8L2c+CjwvZz48Zz4KCTxnPgoJCTxwb2x5Z29uIHBvaW50cz0iNDc4LjYwOSwwIDMxMS42NTIsMCAyNzguMjYxLDAgMjc4LjI2MSwzMy4zOTEgMjc4LjI2MSwyMDAuMzQ4IDI3OC4yNjEsMjMzLjczOSAzMTEuNjUyLDIzMy43MzkgNDc4LjYwOSwyMzMuNzM5ICAgICA1MTIsMjMzLjczOSA1MTIsMjAwLjM0OCA1MTIsMzMuMzkxIDUxMiwwICAgIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BvbHlnb24+Cgk8L2c+CjwvZz48Zz4KCTxnPgoJCTxwb2x5Z29uIHBvaW50cz0iMjAwLjM0OCwyNzguMjYxIDMzLjM5MSwyNzguMjYxIDAsMjc4LjI2MSAwLDMxMS42NTIgMCw0NzguNjA5IDAsNTEyIDMzLjM5MSw1MTIgMjAwLjM0OCw1MTIgMjMzLjczOSw1MTIgICAgIDIzMy43MzksNDc4LjYwOSAyMzMuNzM5LDMxMS42NTIgMjMzLjczOSwyNzguMjYxICAgIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BvbHlnb24+Cgk8L2c+CjwvZz48Zz4KCTxnPgoJCTxwb2x5Z29uIHBvaW50cz0iNDc4LjYwOSwyNzguMjYxIDMxMS42NTIsMjc4LjI2MSAyNzguMjYxLDI3OC4yNjEgMjc4LjI2MSwzMTEuNjUyIDI3OC4yNjEsNDc4LjYwOSAyNzguMjYxLDUxMiAzMTEuNjUyLDUxMiAgICAgNDc4LjYwOSw1MTIgNTEyLDUxMiA1MTIsNDc4LjYwOSA1MTIsMzExLjY1MiA1MTIsMjc4LjI2MSAgICIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojRkZGRkZGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wb2x5Z29uPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
-      ul
-         display: flex
-         align-items: center
-         justify-content: center
-         margin: 0
-         padding: 0
-         li
-            margin: 0 
-            padding-left: 25px
-            padding-right: 10px
-            list-style: none
-            position: relative
-            &::before
-               content: ''
-               position: absolute
-               left: 0
-               top: 50%
-               transform: translateY(-50%)
-               background-color: $yellow
-               display: inline-block
-               width: 6px
-               height: 6px
-               border-radius: 50%
-            &:first-child
-               padding-left: 0
-               a
-                  padding-left: 0
-               &::before
-                  display: none
-            &:last-child
-               padding-right: 0
-         a
-            padding-top: 1.5em
-            padding-bottom: 1.5em
+      &__menu
+         background-color: $accent
+         padding: 0 60px
+      
+         ul
             display: flex
             align-items: center
             justify-content: center
-            flex-direction: column
-            color: #ffffff
-            font-size: 13px
-            line-height: 1.3
-            position: relative
- 
-         .sale,
-         .interest
-            padding-top: 1.3em
-            padding-bottom: 1.3em
-            justify-content: center
-            align-self: center
-            text-align: center
-            img
-               margin-bottom: .2em
+            margin: 0
+            padding: 0
+            li
+               margin: 0 
+               padding-left: 25px
+               padding-right: 10px
+               list-style: none
+               position: relative
+               &::before
+                  content: ''
+                  position: absolute
+                  left: 0
+                  top: 50%
+                  transform: translateY(-50%)
+                  background-color: $yellow
+                  display: inline-block
+                  width: 6px
+                  height: 6px
+                  border-radius: 50%
+               &:first-child
+                  padding-left: 0
+                  a
+                     padding-left: 0
+                  &::before
+                     display: none
+               &:last-child
+                  padding-right: 0
+               a
+                  padding-top: 1.5em
+                  padding-bottom: 1.5em
+                  display: flex
+                  align-items: center
+                  justify-content: center
+                  flex-direction: column
+                  color: #ffffff
+                  font-size: 13px
+                  line-height: 1.3
+                  position: relative
+                  transition: opacity .1s ease
+               .sale,
+               .interest
+                  padding-top: 1.3em
+                  padding-bottom: 1.3em
+                  justify-content: center
+                  align-self: center
+                  text-align: center
+                  img
+                     margin-bottom: .2em
+               &.active
+                  a
+                     opacity: 1 !important
+
+      &__submenu
+         position: absolute
+         left: 0
+         top: 100%
+         width: 100%
+         display: block
+         // display: block
+         // position: absolute
+         // transform: translateY(100%)
+         // width: 100%
+         background: #ffffff
+         height: 100%
+         max-height: 0
+         padding: 0
+         overflow: hidden
+         transition: max-height .3s ease
+         &__item
+            // background: #ffffff
+            position: absolute
+            left: 0
+            top: 20px
+            // transition: translateY(100%)
+            width: 100%
+            padding: 0 60px
+            display: flex
+            align-items: flex-start
+            justify-content: flex-start
+            flex-wrap: wrap
+            // position: relative
+            background: #ffffff
+            // max-height: 0
+            overflow: hidden
+            transition: opacity 1s ease
+            // height: 0
+            // max-height: 0
+            opacity: 0
+            z-index: -2
+            ul
+               flex: 1 0 16.6666666%
+               min-width: 16.666666%
+               max-width: 16.666666%
+               padding: 1em 0
+               padding-right: 1em
+               li
+                  list-style: none
+                  padding: 0
+                  margin: 0
+                  a
+                     display: block
+                     line-height: 1
+                     margin-bottom: 0.8em
+                     color: $text
+                     font-size: 0.9em
+                     transition: color .1s ease
+                     &:hover
+                        color: $accent
+                  &.first
+                     a
+                        font-weight: bold
+                        margin-bottom: 1em
+                        img
+                           display: block
+                           max-width: 100px
+                           margin-bottom: 1em
+                  &.last
+                     a
+                        margin-top: 0.5em
+                        color: $grey
+            &.is-active
+               opacity: 1
+               z-index: 2
+               // height: auto
+               // max-height: 100%
+               // transition: translateY(100%)
+
+      
+      
+      &.in
+         .nav-catalog__menu
+            ul
+               li
+                  a
+                     opacity: .5
+         .nav-catalog__submenu
+            // opacity: 1
+            // z-index: 2
+            height: 430px
+            max-height: 430px
+            padding: 0 60px
+            // overflow: auto
+            // .nav-catalog__submenu__item ul
+            //    opacity: 1
+            //    z-index: 2
+            .nav-catalog__submenu__item.is-active
+               height: auto
+               max-height: auto
+
 
 
 @media screen and ( max-width: 1199.98px )
