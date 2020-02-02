@@ -312,7 +312,7 @@
                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cG9seWdvbiBwb2ludHM9IjIwMC4zNDgsMCAzMy4zOTEsMCAwLDAgMCwzMy4zOTEgMCwyMDAuMzQ4IDAsMjMzLjczOSAzMy4zOTEsMjMzLjczOSAyMDAuMzQ4LDIzMy43MzkgMjMzLjczOSwyMzMuNzM5ICAgICAyMzMuNzM5LDIwMC4zNDggMjMzLjczOSwzMy4zOTEgMjMzLjczOSwwICAgIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BvbHlnb24+Cgk8L2c+CjwvZz48Zz4KCTxnPgoJCTxwb2x5Z29uIHBvaW50cz0iNDc4LjYwOSwwIDMxMS42NTIsMCAyNzguMjYxLDAgMjc4LjI2MSwzMy4zOTEgMjc4LjI2MSwyMDAuMzQ4IDI3OC4yNjEsMjMzLjczOSAzMTEuNjUyLDIzMy43MzkgNDc4LjYwOSwyMzMuNzM5ICAgICA1MTIsMjMzLjczOSA1MTIsMjAwLjM0OCA1MTIsMzMuMzkxIDUxMiwwICAgIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BvbHlnb24+Cgk8L2c+CjwvZz48Zz4KCTxnPgoJCTxwb2x5Z29uIHBvaW50cz0iMjAwLjM0OCwyNzguMjYxIDMzLjM5MSwyNzguMjYxIDAsMjc4LjI2MSAwLDMxMS42NTIgMCw0NzguNjA5IDAsNTEyIDMzLjM5MSw1MTIgMjAwLjM0OCw1MTIgMjMzLjczOSw1MTIgICAgIDIzMy43MzksNDc4LjYwOSAyMzMuNzM5LDMxMS42NTIgMjMzLjczOSwyNzguMjYxICAgIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BvbHlnb24+Cgk8L2c+CjwvZz48Zz4KCTxnPgoJCTxwb2x5Z29uIHBvaW50cz0iNDc4LjYwOSwyNzguMjYxIDMxMS42NTIsMjc4LjI2MSAyNzguMjYxLDI3OC4yNjEgMjc4LjI2MSwzMTEuNjUyIDI3OC4yNjEsNDc4LjYwOSAyNzguMjYxLDUxMiAzMTEuNjUyLDUxMiAgICAgNDc4LjYwOSw1MTIgNTEyLDUxMiA1MTIsNDc4LjYwOSA1MTIsMzExLjY1MiA1MTIsMjc4LjI2MSAgICIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojRkZGRkZGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wb2x5Z29uPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
       &__menu
          background-color: $accent
-         padding: 0 60px
+         padding: 0 calc(50% - 580px)
       
          ul
             display: flex
@@ -464,8 +464,8 @@
             //    opacity: 1
             //    z-index: 2
             .nav-catalog__submenu__item.is-active
-               height: auto
-               max-height: auto
+               height: 500px
+               max-height: 500px
 
 
 
@@ -482,7 +482,9 @@
             input
                flex: 1 1 60%
       &-catalog
-         .container
+         overflow: hidden
+         &__menu
+            padding: 0 calc(50% - 470px)
             overflow-x: auto
             ul
                justify-content: flex-start
@@ -513,23 +515,44 @@
                display: none
 
       &-catalog
+         position: relative
          h2
             display: block
-         ul
-            display: none
-            &.active
+            background: $accent
+         &__menu
+            z-index: -2
+            position: fixed
+            left: 0
+            top: 175px
+            width: 100%
+            height: auto
+            z-index: 3
+            background: #fff
+            transform: translateX(-100%)
+            transition: transform .5s ease
+            ul
+               max-width: 200px
+               margin: 0 auto
+               display: flex
+               flex-direction: column
                min-width: auto
-               display: block
+               min-width: auto
                padding: 30px 0
+               padding-left: 20px
+               align-items: flex-start
+               justify-content: flex-start
                li
+                  // padding: 0
                   padding: 0
                   &::before
                      display: none
                   a
-                     padding-top: 0.5em
-                     padding-bottom: 0.5em
+                     font-size: 1em
+                     color: $text
+                     padding: .5em 0
                   .sale,
                   .interest
+                     padding: .5em 0
                      display: flex
                      flex-direction: row
                      justify-content: center
@@ -537,6 +560,10 @@
                      img
                         margin-bottom: 0
                         margin-right: 0.5em
+            &.active
+               z-index: 2
+               transform: translateX(0)
+
 
 @media screen and ( max-width: 767.98px )
    .nav
