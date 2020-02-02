@@ -283,33 +283,15 @@
                   
             &:hover
                color: $text
-            
+
+   .mobile
+      display: none
+        
    &-catalog
       width: 100%
       position: relative
       z-index: 2
-      h2
-         display: none
-         text-align: center
-         padding: .5em 0
-         margin: 0 auto
-         font-size: 1.4em
-         a
-            color: #ffffff
-            font-weight: bold
-            position: relative
-            &::before
-               content: ''
-               position: absolute
-               left: -1.5em
-               top: 50%
-               transform: translateY(-50%)
-               width: 1em
-               height: 1em
-               background-size: 1em
-               background-position: center
-               background-repeat: no-repeat
-               background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cG9seWdvbiBwb2ludHM9IjIwMC4zNDgsMCAzMy4zOTEsMCAwLDAgMCwzMy4zOTEgMCwyMDAuMzQ4IDAsMjMzLjczOSAzMy4zOTEsMjMzLjczOSAyMDAuMzQ4LDIzMy43MzkgMjMzLjczOSwyMzMuNzM5ICAgICAyMzMuNzM5LDIwMC4zNDggMjMzLjczOSwzMy4zOTEgMjMzLjczOSwwICAgIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BvbHlnb24+Cgk8L2c+CjwvZz48Zz4KCTxnPgoJCTxwb2x5Z29uIHBvaW50cz0iNDc4LjYwOSwwIDMxMS42NTIsMCAyNzguMjYxLDAgMjc4LjI2MSwzMy4zOTEgMjc4LjI2MSwyMDAuMzQ4IDI3OC4yNjEsMjMzLjczOSAzMTEuNjUyLDIzMy43MzkgNDc4LjYwOSwyMzMuNzM5ICAgICA1MTIsMjMzLjczOSA1MTIsMjAwLjM0OCA1MTIsMzMuMzkxIDUxMiwwICAgIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BvbHlnb24+Cgk8L2c+CjwvZz48Zz4KCTxnPgoJCTxwb2x5Z29uIHBvaW50cz0iMjAwLjM0OCwyNzguMjYxIDMzLjM5MSwyNzguMjYxIDAsMjc4LjI2MSAwLDMxMS42NTIgMCw0NzguNjA5IDAsNTEyIDMzLjM5MSw1MTIgMjAwLjM0OCw1MTIgMjMzLjczOSw1MTIgICAgIDIzMy43MzksNDc4LjYwOSAyMzMuNzM5LDMxMS42NTIgMjMzLjczOSwyNzguMjYxICAgIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BvbHlnb24+Cgk8L2c+CjwvZz48Zz4KCTxnPgoJCTxwb2x5Z29uIHBvaW50cz0iNDc4LjYwOSwyNzguMjYxIDMxMS42NTIsMjc4LjI2MSAyNzguMjYxLDI3OC4yNjEgMjc4LjI2MSwzMTEuNjUyIDI3OC4yNjEsNDc4LjYwOSAyNzguMjYxLDUxMiAzMTEuNjUyLDUxMiAgICAgNDc4LjYwOSw1MTIgNTEyLDUxMiA1MTIsNDc4LjYwOSA1MTIsMzExLjY1MiA1MTIsMjc4LjI2MSAgICIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojRkZGRkZGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wb2x5Z29uPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+      
       &__menu
          background-color: $accent
          padding: 0 calc(50% - 580px)
@@ -445,8 +427,6 @@
                // max-height: 100%
                // transition: translateY(100%)
 
-      
-      
       &.in
          .nav-catalog__menu
             ul
@@ -466,8 +446,6 @@
             .nav-catalog__submenu__item.is-active
                height: 500px
                max-height: 500px
-
-
 
 @media screen and ( max-width: 1199.98px )
    .nav
@@ -514,41 +492,86 @@
             .price
                display: none
 
+      .mobile
+         width: 100%
+         display: flex
+         justify-content: center
+         padding: 0 calc(50% - 345px)
+         margin-bottom: 0.5em
+         .btn
+            padding: .8em
+            display: flex
+            align-items: center
+            justify-content: center
+            position: relative
+            margin: 0
+            &.search
+               flex: 1 1 40%
+               border-radius: 4px 0 0 4px
+               img
+                  width: 20px
+                  margin-right: 0.5em
+            &.catalog-btn
+               flex: 1 1 60%
+               border-radius: 0 4px 4px 0
+               .hamburger
+                  padding: 0
+                  margin-right: 1em
+                  appearance: none
+                  .hamburger-box
+                     width: 30px
+                     height: 16px
+                     .hamburger-inner, 
+                     .hamburger-inner:after, 
+                     .hamburger-inner:before
+                        width: 30px
+                        height: 2px
+                        background-color: #ffffff
+                     .hamburger-inner:before
+                        top: 8px
+                     .hamburger-inner:after,
+                        top: 16px
+                        width: 15px
+                  &.is-active
+                     .hamburger-box
+                        .hamburger-inner, 
+                        .hamburger-inner:after, 
+                        .hamburger-inner:before
+                           background-color: #ffffff
+                        .hamburger-inner
+                           width: 25px
+                        .hamburger-inner:after,
+                           top: 19px
+                           width: 25px
+
       &-catalog
-         position: relative
-         h2
-            display: block
-            background: $accent
+         padding: 0 calc(50% - 360px)
+         position: absolute
+         left: 0
+         z-index: -1
+         opacity: 0
+         transform: translateY(20%)
+         transition: transform .5s ease, opacity .5s ease
          &__menu
-            z-index: -2
-            position: fixed
-            left: 0
-            top: 175px
-            width: 100%
-            height: auto
-            z-index: 3
-            background: #fff
-            transform: translateX(-100%)
-            transition: transform .5s ease
+            // padding: 0 1em
+            margin: 0 1em
+            border-radius: 4px
             ul
-               max-width: 200px
                margin: 0 auto
+               max-width: 200px
                display: flex
                flex-direction: column
                min-width: auto
                min-width: auto
                padding: 30px 0
-               padding-left: 20px
                align-items: flex-start
                justify-content: flex-start
                li
-                  // padding: 0
                   padding: 0
                   &::before
                      display: none
                   a
                      font-size: 1em
-                     color: $text
                      padding: .5em 0
                   .sale,
                   .interest
@@ -560,10 +583,11 @@
                      img
                         margin-bottom: 0
                         margin-right: 0.5em
-            &.active
-               z-index: 2
-               transform: translateX(0)
 
+         &.mob
+            z-index: 2
+            opacity: 1
+            transform: translateY(0%)
 
 @media screen and ( max-width: 767.98px )
    .nav
@@ -581,7 +605,11 @@
                display: none
             &__login
                margin-left: 1em
-               
+
+      .mobile
+         padding: 0 calc(50% - 255px)
+      &-catalog
+         padding: 0 calc(50% - 270px)
 
 @media screen and ( max-width: 576.98px )
    .nav
@@ -627,6 +655,9 @@
                .qty
                   left: 20px
 
+      .mobile
+         padding: 0 1em
+
 @media screen and ( max-width: 374.98px )
    .nav
       &-top
@@ -653,5 +684,6 @@
                .qty
                   left: 20px
 
-
-   
+      .mobile
+         .btn
+            font-size: 0.9em
