@@ -1,5 +1,6 @@
 .nav
    margin-bottom: 2em
+   transition: max-height .5s ease
    &-top
       width: 100%
       background-color: $blue
@@ -291,6 +292,8 @@
       width: 100%
       position: relative
       z-index: 2
+      display: block
+      overflow: visible
       
       &__menu
          background-color: $accent
@@ -352,41 +355,28 @@
                   a
                      opacity: 1 !important
 
+      &.in
+         .nav-catalog__menu
+            ul
+               li
+                  a
+                     opacity: .5
+      
       &__submenu
-         position: absolute
-         left: 0
-         top: 100%
-         width: 100%
-         display: block
-         // display: block
-         // position: absolute
-         // transform: translateY(100%)
-         // width: 100%
-         background: #ffffff
-         height: 100%
-         max-height: 0
-         padding: 0
-         overflow: hidden
-         transition: max-height .3s ease
          &__item
-            // background: #ffffff
+            display: none
+            background: #ffffff
             position: absolute
             left: 0
-            top: 20px
-            // transition: translateY(100%)
+            top: 250px
             width: 100%
-            padding: 0 60px
+            padding: 0 calc(50% - 580px)
             display: flex
             align-items: flex-start
             justify-content: flex-start
             flex-wrap: wrap
-            // position: relative
-            background: #ffffff
-            // max-height: 0
             overflow: hidden
-            transition: opacity 1s ease
-            // height: 0
-            // max-height: 0
+            max-height: 0
             opacity: 0
             z-index: -2
             ul
@@ -423,29 +413,8 @@
             &.is-active
                opacity: 1
                z-index: 2
-               // height: auto
-               // max-height: 100%
-               // transition: translateY(100%)
-
-      &.in
-         .nav-catalog__menu
-            ul
-               li
-                  a
-                     opacity: .5
-         .nav-catalog__submenu
-            // opacity: 1
-            // z-index: 2
-            height: 450px
-            max-height: 450px
-            padding: 0 60px
-            // overflow: auto
-            // .nav-catalog__submenu__item ul
-            //    opacity: 1
-            //    z-index: 2
-            .nav-catalog__submenu__item.is-active
-               height: 500px
-               max-height: 500px
+               overflow: visible
+               max-height: 200%
 
 @media screen and ( max-width: 1199.98px )
    .nav
@@ -545,17 +514,18 @@
                            width: 25px
 
       &-catalog
-         padding: 0 calc(50% - 360px)
+         padding: 0 calc(50% - 345px)
          position: absolute
-         left: 0
+         left: auto
+         right: 0
          z-index: -1
          opacity: 0
          transform: translateY(20%)
          transition: transform .5s ease, opacity .5s ease
          &__menu
-            // padding: 0 1em
-            margin: 0 1em
             border-radius: 4px
+            width: 305px
+            margin-left: auto
             ul
                display: flex
                flex-direction: column
@@ -588,6 +558,57 @@
                         margin-bottom: 0
                         margin-right: 0.5em
 
+         &__submenu
+            position: relative
+            left: auto
+            top: auto
+            width: auto
+            display: block
+            // background: #ffffff
+            height: auto
+            max-height: 100%
+            overflow: visible
+            display: flex
+            flex-direction: column
+            width: 305px
+            border-radius: 4px
+            &__item
+               position: absolute
+               left: 0
+               top: 0
+               flex: 1 0 100%
+               opacity: 0
+               z-index: -2
+               display: flex
+               flex-direction: column
+               padding: 0
+               margin: 0
+               ul
+                  flex: 1 0 100%
+                  max-width: 100%
+                  width: 100%
+                  padding: 0
+                  margin: 0
+                  text-align: left
+                  li
+                     display: none
+                     border-bottom: 1px solid #ebebeb
+                     &:last-child
+                        border-bottom: none
+                     &.first
+                        padding: 0
+                        display: block
+                        a
+                           display: block
+                           margin: 0
+                           font-size: 1.1em
+                           padding: 1em 0
+                           padding-left: 2em
+                           img
+                              display: none
+               &.is-active
+                  opacity: 1
+                  z-index: 5
          &.mob
             z-index: 2
             opacity: 1
@@ -613,7 +634,7 @@
       .mobile
          padding: 0 calc(50% - 255px)
       &-catalog
-         padding: 0 calc(50% - 270px)
+         padding: 0 calc(50% - 255px)
 
 @media screen and ( max-width: 576.98px )
    .nav
@@ -661,6 +682,13 @@
 
       .mobile
          padding: 0 1em
+
+      &-catalog
+         padding: 0 1em
+         display: flex
+         &__menu
+            width: 100%
+
 
 @media screen and ( max-width: 374.98px )
    .nav
