@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             showModal = (event) => {
                 document.body.classList.add('no-scroll')
-                event.preventDefault()
+                if ( event.target !== document.querySelector('#menu__toggle') ) event.preventDefault()
                 const current = document.querySelector('[data-modal="'+ event.target.dataset.target +'"]')
 
                 modal.classList.add('in')
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const catalogBtn = document.querySelector('.catalog-btn')
     catalogBtn.addEventListener('click', (e) => {
         e.preventDefault()
-        catalogBtn.querySelector('.hamburger').classList.toggle('is-active')
+        catalogBtn.querySelector('.hamburger').classList.toggle('open')
         catalog.classList.toggle('mob')
     })
 

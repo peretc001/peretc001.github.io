@@ -13,11 +13,10 @@
 <nav class="nav">
   <div class="nav-top">
     <div class="container">
-      <button class="hamburger hamburger--slider" type="button">
-        <span class="hamburger-box">
-            <span class="hamburger-inner" data-toggle="modal" data-target="menu"></span>
-        </span>
-      </button>
+      <input id="menu__toggle" type="checkbox" data-toggle="modal" data-target="menu" />
+      <label class="menu__btn" for="menu__toggle">
+        <span></span>
+      </label>
       <div class="nav-top__city">
         <a class="nav-top__city__location" data-toggle="modal" data-target="city" href="#">Санкт-Петербург</a>
         <div class="nav-top__city__location__item">
@@ -72,11 +71,11 @@
   <div class="mobile">
     <button class="btn btn-outline-accent search"><img src="./img/nav/search.svg" alt=""> Поиск</button>    
     <button class="btn btn-accent catalog-btn">
-      <spun class="hamburger hamburger--slider" type="button">
-        <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-        </span>
-      </spun>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       Каталог товаров
     </button>
   </div>
@@ -1857,7 +1856,7 @@
 
 <div class="modal">
   <div class="container">
-
+  <!-- Modal Menu -->
   <div class="modal-body menu" data-modal="menu">
     <span class="close" data-close="close"></span>
     <p>
@@ -1950,9 +1949,6 @@
   </div>
 </div>
 </div>
-
-
-
 
   <script src="./js/scripts.min.js"></script>
   <script src="./js/slick/slick.min.js"></script>

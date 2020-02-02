@@ -13,28 +13,49 @@
          position: relative
          z-index: 3
          color: $nav
-      .hamburger
+
+      #menu__toggle
          display: none
-         outline: none
-         box-shadow: none
-         padding: 0
-         .hamburger-box
-            width: 30px
-            height: 16px
-            .hamburger-inner, 
-            .hamburger-inner:after, 
-            .hamburger-inner:before
-               width: 30px
-               height: 2px
-               background-color: $nav
-            &.is-active
-               .hamburger-box
-                  .hamburger-inner, 
-                  .hamburger-inner:after, 
-                  .hamburger-inner:before
-                     background-color: $nav
-         .hamburger-inner
-            top: 1px
+         opacity: 0
+         &:checked ~ .menu__btn > span
+            transform: rotate(45deg)
+         &:checked ~ .menu__btn > span::before
+            top: 0
+            transform: rotate(0)
+         &:checked ~ .menu__btn > span::after
+            top: 0
+            width: 25px
+            transform: rotate(90deg)
+         &:checked ~ .menu__box
+            visibility: visible
+            left: 0
+      .menu__btn
+         align-self: center
+         display: flex
+         align-items: center
+         width: 30px
+         height: 26px
+         border-radius: 4px
+         cursor: pointer
+         z-index: 1
+         margin-bottom: 0
+         & > span,
+         & > span::before,
+         & > span::after
+            display: block
+            position: absolute
+            width: 25px
+            height: 2px
+            background-color: $nav
+            transition-duration: .25s
+         & > span::after
+            width: 20px
+         & > span::before
+            content: ''
+            top: -8px
+         & > span::after
+            content: ''
+            top: 8px
       a
          color: $nav
          padding-top: 1em
@@ -484,34 +505,41 @@
                flex: 1 1 60%
                border-radius: 0 4px 4px 0
                .hamburger
-                  padding: 0
+                  width: 30px
+                  height: 25px
+                  position: relative
+                  transform: rotate(0deg)
+                  transition: .5s ease-in-out
                   margin-right: 1em
-                  appearance: none
-                  .hamburger-box
-                     width: 30px
-                     height: 16px
-                     .hamburger-inner, 
-                     .hamburger-inner:after, 
-                     .hamburger-inner:before
+                  span
+                     display: block
+                     position: absolute
+                     height: 2px
+                     width: 100%
+                     background: #fff
+                     border-radius: 4px
+                     opacity: 1
+                     left: 0
+                     transform: rotate(0deg)
+                     transition: .25s ease-in-out
+                     &:nth-child(1)
+                        top: 0px
+                     &:nth-child(2)
+                        top: 10px
+                     &:nth-child(3)
+                        top: 20px
+                        width: 25px
+                  &.open
+                     span:nth-child(1)
+                        top: 10px
+                        transform: rotate(45deg)
+                     span:nth-child(2)
+                        opacity: 0
+                        // left: -60px
+                     span:nth-child(3)
+                        top: 10px
                         width: 30px
-                        height: 2px
-                        background-color: #ffffff
-                     .hamburger-inner:before
-                        top: 8px
-                     .hamburger-inner:after,
-                        top: 16px
-                        width: 15px
-                  &.is-active
-                     .hamburger-box
-                        .hamburger-inner, 
-                        .hamburger-inner:after, 
-                        .hamburger-inner:before
-                           background-color: #ffffff
-                        .hamburger-inner
-                           width: 25px
-                        .hamburger-inner:after,
-                           top: 19px
-                           width: 25px
+                        transform: rotate(135deg)
 
       &-catalog
          padding: 0 calc(50% - 345px)
