@@ -36,19 +36,62 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             showModal = (event) => {
                 document.body.classList.add('no-scroll')
-                document.querySelector('.hamburger').classList.add('open')
-                if ( event.target !== document.querySelector('#menu__toggle') ) event.preventDefault()
+                event.target.dataset.target == 'menu' ? document.querySelector('.hamburger').classList.add('open') : ''
                 const current = document.querySelector('[data-modal="'+ event.target.dataset.target +'"]')
-
                 modal.classList.add('in')
                 current.classList.add('fade')
                 setTimeout(() => {
                     modal.classList.add('is-active')
                     current.classList.add('is-active')
                 }, 200);
-                document.addEventListener('keydown', hideModalEsc)
+                if (event.target.dataset.target == 'login') modal.querySelector('input[name="phone"]').focus()
+                document.addEventListener('keyup', hideModalEsc)
                 document.addEventListener('click', hideModalCloseBtn)
             }
+
+            const loginForm = document.querySelector('.modal-body .signin')
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault()
+                const phone = loginForm.querySelector('#phone')
+                console.log(phone.value)
+                //////// ЗАПРОС НА API /////////
+                modal.querySelector('.is-active').classList.remove('is-active')
+                setTimeout(() => {
+                    modal.querySelector('.fade').classList.remove('fade')
+                }, 200);
+                modal.querySelector('.modal-body.sms').classList.add('fade')
+                setTimeout(() => {
+                    modal.querySelector('.modal-body.sms').classList.add('is-active')
+                    modal.querySelector('.modal-body.sms .sms-input').focus()
+                }, 200);
+
+                const inputSMS = modal.querySelectorAll('.sms-input')
+                inputSMS[0].addEventListener('keyup', function() {
+                    this.value != '' ? inputSMS[1].focus() : ''
+                })
+                inputSMS[1].addEventListener('keyup', function() {
+                    this.value != '' ? inputSMS[2].focus() : inputSMS[0].focus()
+                })
+                inputSMS[2].addEventListener('keyup', function() {
+                    this.value != '' ? inputSMS[3].focus() : inputSMS[1].focus()
+                })
+                inputSMS[3].addEventListener('keyup', function() {
+                    if (this.value != '') {
+                        modal.querySelector('.modal-body.sms').classList.remove('is-active')
+                        setTimeout(() => {
+                            modal.querySelector('.modal-body.sms').classList.remove('fade') 
+                        }, 200);
+                        setTimeout(() => {
+                            modal.classList.remove('is-active')
+                        }, 200);
+                        setTimeout(() => {
+                            modal.classList.remove('in')
+                        }, 200);
+                        document.body.classList.remove('no-scroll')
+                    } else inputSMS[2].focus()
+                })
+            })
+            
             nav.addEventListener('click', (event) => {
                 if (    
                     event.target.dataset.toggle == 'modal' 

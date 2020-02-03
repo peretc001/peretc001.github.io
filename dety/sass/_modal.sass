@@ -45,7 +45,8 @@
             max-width: 220px
             &.is-active
                 transform: translateY(0)
-        &.login
+        &.login,
+        &.sms
             left: auto
             right: 15px
             max-width: 450px
@@ -58,6 +59,17 @@
                 font-size: 1em
                 text-transform: uppercase
                 font-weight: bold
+            .signin-sms__wrap
+                display: flex
+                flex-wrap: wrap
+                justify-content: center
+                max-width: 250px
+                margin: 0 auto
+                input
+                    flex: 1 0 23%
+                    margin-right: 2%
+                    &:last-child
+                        margin-right: 0
 
             &.is-active
                 transform: translateY(0)

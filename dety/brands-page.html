@@ -1284,98 +1284,113 @@
 
 <div class="modal">
   <div class="container">
-  <!-- Modal Menu -->
-  <div class="modal-body menu" data-modal="menu">
-    <span class="close" data-close="close"></span>
-    <p>
-      <b>ВсёДляДеток.ру</b>
-    </p>
-    <ul>
-      <li><a href="">О компании</a></li>
-      <li><a href="">Пункты выдачи</a></li>
-      <li><a href="">Магазины</a></li>
-      <li><a href="">Контакты</a></li>
-      <li><a href="">Отзывы</a></li>
-    </ul>
-    <div class="user">
+    <!-- Modal Menu -->
+    <div class="modal-body menu" data-modal="menu">
+      <span class="close" data-close="close"></span>
+      <p>
+        <b>ВсёДляДеток.ру</b>
+      </p>
+      <ul>
+        <li><a href="">О компании</a></li>
+        <li><a href="">Пункты выдачи</a></li>
+        <li><a href="">Магазины</a></li>
+        <li><a href="">Контакты</a></li>
+        <li><a href="">Отзывы</a></li>
+      </ul>
+      <div class="user">
+        <p>
+          <b>
+            Покупателям
+          </b>
+        </p>
+        <ul>
+          <li>Проверка заказа</li>
+          <li>Гарантии и возврат</li>
+          <li>Доставка и оплата</li>
+          <li>Кредит и рассрочка</li>
+          <li>Полезные материалы</li>
+          <li>Бонусная программа</li>
+          <li>Подарочные карты</li>
+        </ul>
+      </div>
       <p>
         <b>
-          Покупателям
+          Обратная связь
         </b>
       </p>
       <ul>
-        <li>Проверка заказа</li>
-        <li>Гарантии и возврат</li>
-        <li>Доставка и оплата</li>
-        <li>Кредит и рассрочка</li>
-        <li>Полезные материалы</li>
-        <li>Бонусная программа</li>
-        <li>Подарочные карты</li>
+        <li>Заказать звонок</li>
+        <li>Оставить отзыв</li>
+        <li>Обмен / Возврат</li>
+        <li>Благодарность</li>
+        <li>Жалоба</li>
+      </ul>
+      <p>
+        <b>
+          Сообщество
+        </b>
+      </p>
+      <p>
+        <b>
+          Подпишитесь на обновления
+        </b>
+      </p>
+      <form action="" method="post">
+        <input type="email" name="email" value="" placeholder="E-mail">
+        <button class="btn btn-send">Подписаться</button>
+      </form>
+      <p>
+        <small>© ВсёДляДеток.рy, 2019. Все права защищены.</small>
+      </p>
+    </div>
+    <!-- Modal City -->
+    <div class="modal-body city" data-modal="city">
+      <span class="close" data-close="close"></span>
+      <p class="modal-body__head">Ваш город:</p>
+      <p class="modal-body__city">Санкт-Петербург</p>
+      <p class="modal-body__desc">От выбора города зависит стоимость, наличие и условия доставки</p>
+      <div class="modal-body__button">
+        <button class="btn btn-accent">Да</button>
+        <button class="btn btn-outline-accent">Нет, выбрать другой</button>
+      </div>
+    </div>
+    <!-- Modal User -->
+    <div class="modal-body user" data-modal="user">
+      <span class="close" data-close="close"></span>
+      <ul>
+        <li><a href="">Проверка заказа</a></li>
+        <li><a href="">Доставка и оплата</a></li>
+        <li><a href="">Гарантии и возврат</a></li>
+        <li><a href="">Кредит и рассрочка</a></li>
+        <li><a href="">Полезные материалы</a></li>
+        <li><a href="">Бонусная программа</a></li>
+        <li><a href="">Подарочные карты</a></li>
       </ul>
     </div>
-    <p>
-      <b>
-        Обратная связь
-      </b>
-    </p>
-    <ul>
-      <li>Заказать звонок</li>
-      <li>Оставить отзыв</li>
-      <li>Обмен / Возврат</li>
-      <li>Благодарность</li>
-      <li>Жалоба</li>
-    </ul>
-    <p>
-      <b>
-        Сообщество
-      </b>
-    </p>
-    <p>
-      <b>
-        Подпишитесь на обновления
-      </b>
-    </p>
-    <form action="" method="post">
-      <input type="email" name="email" value="" placeholder="E-mail">
-      <button class="btn btn-send">Подписаться</button>
-    </form>
-    <p>
-      <small>© ВсёДляДеток.рy, 2019. Все права защищены.</small>
-    </p>
-  </div>
-  <!-- Modal City -->
-  <div class="modal-body city" data-modal="city">
-    <span class="close" data-close="close"></span>
-    <p class="modal-body__head">Ваш город:</p>
-    <p class="modal-body__city">Санкт-Петербург</p>
-    <p class="modal-body__desc">От выбора города зависит стоимость, наличие и условия доставки</p>
-    <div class="modal-body__button">
-      <button class="btn btn-accent">Да</button>
-      <button class="btn btn-outline-accent">Нет, выбрать другой</button>
+    <!-- Modal Login -->
+    <div class="modal-body login" data-modal="login">
+      <span class="close" data-close="close"></span>
+      <p><b>Войти в личный кабинет</b></p>
+      <form action="" method="post" class="signin">
+        <label for="phone">Войти по номеру</label>
+        <input type="tel" id="phone" name="phone" placeholder="+7 (XXX) XXX-XX-XX" required>
+        <button type="submit" class="btn btn-accent">Получить sms-код</button>
+      </form>
+    </div>
+    <!-- Modal SMS -->
+    <div class="modal-body sms" data-modal="sms">
+      <span class="close" data-close="close"></span>
+      <p><b>Введите код из смс</b></p>
+      <form action="" method="post" class="signin-sms">
+        <div class="signin-sms__wrap">
+          <input class="sms-input" type="tel" name="sms1" maxlength="1" tabindex="1">
+          <input class="sms-input" type="tel" name="sms2" maxlength="1" tabindex="2">
+          <input class="sms-input" type="tel" name="sms3" maxlength="1" tabindex="3">
+          <input class="sms-input" type="tel" name="sms4" maxlength="1" tabindex="4">
+        </div>
+      </form>
     </div>
   </div>
-  <!-- Modal User -->
-  <div class="modal-body user" data-modal="user">
-    <span class="close" data-close="close"></span>
-    <ul>
-      <li><a href="">Проверка заказа</a></li>
-      <li><a href="">Доставка и оплата</a></li>
-      <li><a href="">Гарантии и возврат</a></li>
-      <li><a href="">Кредит и рассрочка</a></li>
-      <li><a href="">Полезные материалы</a></li>
-      <li><a href="">Бонусная программа</a></li>
-      <li><a href="">Подарочные карты</a></li>
-    </ul>
-  </div>
-  <!-- Modal Login -->
-  <div class="modal-body login" data-modal="login">
-    <span class="close" data-close="close"></span>
-    <p><b>Войти в личный кабинет</b></p>
-    <label for="phone">Войти по номеру</label>
-    <input type="tel" id="phone" name="phone" placeholder="+7 (XXX) XXX-XX-XX">
-    <button type="submit" class="btn btn-accent">Получить sms-код</button>
-  </div>
-</div>
 </div>
 
   <script src="./js/scripts.min.js"></script>
