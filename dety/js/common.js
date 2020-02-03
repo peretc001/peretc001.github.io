@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 setTimeout(() => {
                     modal.classList.remove('in')
                 }, 200);
+                document.querySelector('.hamburger').classList.remove('open')
                 document.body.classList.remove('no-scroll')
             }
             hideModal = () => {
@@ -35,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             showModal = (event) => {
                 document.body.classList.add('no-scroll')
+                document.querySelector('.hamburger').classList.add('open')
                 if ( event.target !== document.querySelector('#menu__toggle') ) event.preventDefault()
                 const current = document.querySelector('[data-modal="'+ event.target.dataset.target +'"]')
 
@@ -48,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.addEventListener('click', hideModalCloseBtn)
             }
             nav.addEventListener('click', (event) => {
+                event.preventDefault()
                 if (    
                     event.target.dataset.toggle == 'modal' 
                 ) {
