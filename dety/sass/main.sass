@@ -1,16 +1,6 @@
 @import '_libs/bootstrap_grid'
 @import '_libs/fonts'
-
-$bg: #FFF8F8
-$accent: #C251C0
-$blue: #EAF6F6
-$grey: #C4C4C4
-$yellow: #FFC100
-$text: #474747
-$nav: #8199AE
-$textblock: #EAF6F6
-
-$default-font: 'SFUIText', sans-serif
+@import '_libs/var'
 
 body
 	font-size: 14px
@@ -121,10 +111,13 @@ img
 @media screen and ( min-width: 1200px )
 	.container
 		max-width: 1190px
+@media screen and ( max-width: 767.98px )
+	.section__title
+		padding-bottom: 20px
 @media screen and ( max-width: 576.98px )
 	.section__title
 		h2
-			font-size: 1.8em
+			font-size: 1.6em
 		
 
 body

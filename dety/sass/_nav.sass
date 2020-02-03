@@ -94,11 +94,11 @@
                &::before
                   transform: translateY(-50%) translateX(5px)
             &__item
-               margin-left: 0.5em
+               margin-left: 0.9em
                a
-                  padding: 0.1em 0 !important
-                  border-bottom: 1px dashed $nav
                   font-weight: 200
+                  &:first-child
+                     margin-right: 1em
       
       &__right
          display: flex
@@ -347,7 +347,7 @@
                   left: 0
                   top: 50%
                   transform: translateY(-50%)
-                  background-color: $yellow
+                  background-color: rgba(243, 214, 236, 0.5)
                   display: inline-block
                   width: 6px
                   height: 6px
@@ -445,6 +445,27 @@
                z-index: 2
                overflow: visible
                max-height: 200%
+
+.breadcrumb
+   padding: 1em 0
+   color: #c4c4c4
+   a
+      color: #c4c4c4
+      position: relative
+      padding-right: 1em
+      margin-right: .2em
+      &::after
+         content: ''
+         position: absolute
+         right: 0
+         top: 60%
+         transform: translateY(-50%)
+         width: .5em
+         height: .5em
+         background-size: cover
+         background-position: right center
+         background-repeat: no-repeat
+         background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojQzRDNEM0IiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
 
 @media screen and ( max-width: 1199.98px )
    .nav
@@ -694,9 +715,13 @@
 @media screen and ( max-width: 374.98px )
    .nav
       &-top
+         &__city
+            margin-left: 0.5em
+            &__location
+               font-size: 0.9em
          &__right
             &__login
-               display: none
+               margin-left: 1em
       &-search
          .brand
             width: 150px
