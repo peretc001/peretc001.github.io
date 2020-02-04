@@ -82,10 +82,10 @@ img
 
 .section__title
 	display: block
-	margin: 0 auto
-	text-align: center
+	margin: 0
+	text-align: left
 	padding: 60px 0 30px 0
-	h2
+	h2, h3
 		font-size: 2.3em
 		font-weight: bold
 	a
@@ -107,6 +107,10 @@ img
 			background-position: right
 			background-repeat: no-repeat
 			background-image: url('../img/arrow.svg')
+			transition: transform .5s ease
+		&:hover
+			&::before
+				transform: translateY(-50%) translateX(5px)
 
 @media screen and ( min-width: 1200px )
 	.container
@@ -116,7 +120,7 @@ img
 		padding-bottom: 20px
 @media screen and ( max-width: 576.98px )
 	.section__title
-		h2
+		h2, h3
 			font-size: 1.6em
 		
 

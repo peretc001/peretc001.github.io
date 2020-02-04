@@ -90,9 +90,10 @@
                background-repeat: no-repeat
                background-image: url('../img/nav/location.svg')
                transition: transform .3s ease
+               transform-origin: 0 50%
             &:hover
                &::before
-                  transform: translateY(-50%) translateX(5px)
+                  transform: translateY(-50%) scale(1.1)
             &__item
                margin-left: 0.9em
                a
@@ -118,9 +119,10 @@
                background-position: left
                background-repeat: no-repeat
                transition: transform .3s ease
+               transform-origin: 0 50%
             &:hover
                &::before
-                  transform: translateY(-50%) translateX(5px)
+                  transform: translateY(-50%) scale(1.1)
          &__phone
             font-size: 1.1em
             font-weight: bold
@@ -158,7 +160,7 @@
          margin-left: 2em
          flex: 1 1 auto
          &__category
-            flex: 1 1 30%
+            flex: 1 1 35%
             background: $blue
             border-radius: 6px 0 0 6px
             line-height: 1
@@ -228,7 +230,7 @@
 
 
          input
-            flex: 1 1 70%
+            flex: 1 1 65%
             background: transparent
             color: $text
             padding: 15px 20px
@@ -245,7 +247,6 @@
             &:-ms-input-placeholder
                color: #9BAFC0
 
-
       &--right
          display: flex
          align-items: center
@@ -260,7 +261,7 @@
             background-position: left center
             background-repeat: no-repeat
             background-image: url('../img/nav/wishlist.svg')
-            transition: background-position .3s ease
+            transition: transform .3s ease
             &.active
                background-image: url('../img/nav/wishlist-active.svg')
             span
@@ -279,8 +280,8 @@
                font-size: 12px
                color: #ff5f5a
                box-shadow: 0px 4px 13px rgba(25, 36, 45, 0.24)
-            &:hover
-               background-position: 5px center
+            &:hover:not(span)
+               transform: scale(1.05)
 
          &__cart
             margin-left: 1.5em
@@ -297,7 +298,7 @@
             justify-content: flex-end
             font-weight: bold
             color: $text
-            transition: background-position .3s ease
+            transition: transform .3s ease
             .qty
                position: absolute
                top: -5px
@@ -317,8 +318,8 @@
             .price
                padding-left: 3.5em
                font-size: 1.15em
-            &:hover
-               background-position: 5px center
+            &:hover:not(.price)
+               transform: scale(1.05)
 
 
                   
@@ -382,8 +383,7 @@
                   line-height: 1.3
                   position: relative
                   transition: opacity .1s ease
-               .sale,
-               .interest
+               .sale
                   padding-top: 1.3em
                   padding-bottom: 1.3em
                   justify-content: center
