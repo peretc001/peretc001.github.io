@@ -96,7 +96,6 @@
             &__item
                margin-left: 0.9em
                a
-                  font-weight: 200
                   &:first-child
                      margin-right: 1em
       
@@ -173,7 +172,17 @@
             &::before
                content: ''
                position: absolute
-               right: 1em
+               right: 0
+               top: 0
+               display: inline-block
+               width: 30px
+               height: 100%
+               background: $blue
+               z-index: 1
+            &::after
+               content: ''
+               position: absolute
+               right: .5em
                top: 45%
                transform: translateX(-50%)
                display: inline-block
@@ -184,8 +193,10 @@
                background-position: center
                background-image: url('../img/nav/arrow.svg')
                transition: transform .3s ease
+               z-index: 2
             span
                padding-left: 2.2em
+               font-weight: bold
             ul
                position: absolute
                left: 0
@@ -203,13 +214,12 @@
                li
                   list-style: none
                   margin: 0
-                  font-weight: 200
                   color: $text
                   font-size: 0.9em
                   padding: .5em .5em .5em 2.2em
             &:hover
                overflow: visible
-               &::before
+               &::after
                   transform: translateX(-50%) rotate(180deg)
                ul
                   height: auto
