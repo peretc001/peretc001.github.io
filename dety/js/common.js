@@ -185,29 +185,19 @@ document.addEventListener("DOMContentLoaded", function() {
     
 
     if (document.querySelector('.brands-header__favorite')) {
-        const   favoriteBrandsBtn = document.querySelector('.brands-header__favorite').children[0]
-                allBrandsBtn = document.querySelector('.brands-header__favorite').children[1]
-
+        const   favorite = document.querySelector('.brands-header__favorite')
+                btn1 = favorite.children[0]
+                btn2 = favorite.children[1]
         
-                favoriteBrandsBtn.addEventListener('click', function() {
-                    if (!this.classList.contains('btn-accent')) {
-                        this.classList.add('btn-accent')
-                        this.classList.remove('btn-outline-accent')
-                        allBrandsBtn.classList.remove('btn-accent')
-                        allBrandsBtn.classList.add('btn-outline-accent')
-                        document.querySelector('.brands-all').classList.remove('active')
-                        document.querySelector('.brands-list').classList.add('active')
-                    }
+                btn1.addEventListener('click', function() {
+                    favorite.classList.add('active')
+                    document.querySelector('.brands-list').classList.add('active')
+                    document.querySelector('.brands-all').classList.remove('active')
                 })
-                allBrandsBtn.addEventListener('click', function() {
-                    if (this.classList.contains('btn-outline-accent')) {
-                        this.classList.add('btn-accent')
-                        this.classList.remove('btn-outline-accent')
-                        favoriteBrandsBtn.classList.remove('btn-accent')
-                        favoriteBrandsBtn.classList.add('btn-outline-accent')
-                        document.querySelector('.brands-all').classList.add('active')
-                        document.querySelector('.brands-list').classList.remove('active')
-                    } 
+                btn2.addEventListener('click', function() {
+                    favorite.classList.remove('active')
+                    document.querySelector('.brands-list').classList.remove('active')
+                    document.querySelector('.brands-all').classList.add('active')
                 })
     }
     

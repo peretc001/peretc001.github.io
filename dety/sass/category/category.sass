@@ -1,5 +1,5 @@
 @import '../_libs/var'
-.catalog-general
+.category
     h1
         display: block
         text-align: center
@@ -15,7 +15,7 @@
                 padding-left: 0.5em
                 
                 
-    &__card
+    &-card
         display: flex
         background: #ffffff
         border-radius: 20px
@@ -84,8 +84,8 @@
                 transform: scale(1.1)
 
 @media screen and ( max-width: 1199.98px )
-    .catalog-general
-        &__card
+    .category
+        &-card
             &__img
                 flex: 1 0 55%
                 border-radius: 20px 0 0 20px
@@ -102,8 +102,8 @@
                             font-size: 0.9em
 
 @media screen and ( max-width: 991.98px )
-    .catalog-general
-        &__card
+    .category
+        &-card
             flex-direction: column
             &__img
                 flex: 1 0 100%
@@ -126,7 +126,7 @@
                             font-size: 1em
 
 @media screen and ( max-width: 767.98px )
-    .catalog-general
+    .category
         .row
             [class*="col-"]
                 &:nth-child(odd)
@@ -134,7 +134,7 @@
                 &:nth-child(even)
                     padding-left: 1em
                 
-        &__card
+        &-card
             flex-direction: row
             &__img
                 flex: 1 0 55%
@@ -153,10 +153,10 @@
                             font-size: 0.9em
 
 @media screen and ( max-width: 576.98px )
-    .catalog-general
+    .category
         h1
             font-size: 1.8em
-        &__card
+        &-card
             flex-direction: column
             &__img
                 flex: 1 0 100%
