@@ -1,11 +1,163 @@
-.product-list
+.products
     .row
         padding: 0 .5em
         [class*="col-"]
             margin-bottom: 1em
             padding-right: 0.5em
             padding-left: 0.5em
-    .product-card
+    &-filter
+        &__open
+            display: block
+            width: 100%
+            max-width: 200px
+            margin: 0 auto
+            margin-bottom: 1em
+            display: flex
+            align-items: center
+            justify-content: center
+            position: relative
+            &::before
+                content: ''
+                width: 1em
+                height: 1em
+                margin-right: 0.5em
+                background-size: 1em
+                background-position: center
+                background-repeat: no-repeat
+                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDk3MS45ODYgOTcxLjk4NiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgOTcxLjk4NiA5NzEuOTg2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PGc+Cgk8cGF0aCBkPSJNMzcwLjIxNiw0NTkuM2MxMC4yLDExLjEsMTUuOCwyNS42LDE1LjgsNDAuNnY0NDJjMCwyNi42MDEsMzIuMSw0MC4xMDEsNTEuMSwyMS40bDEyMy4zLTE0MS4zICAgYzE2LjUtMTkuOCwyNS42LTI5LjYwMSwyNS42LTQ5LjJWNTAwYzAtMTUsNS43LTI5LjUsMTUuOC00MC42MDFMOTU1LjYxNSw3NS41YzI2LjUtMjguOCw2LjEwMS03NS41LTMzLjEtNzUuNWgtODczICAgYy0zOS4yLDAtNTkuNyw0Ni42LTMzLjEsNzUuNUwzNzAuMjE2LDQ1OS4zeiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojRkZGRkZGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgo8L2c+PC9nPiA8L3N2Zz4=')
+            &.btn
+                padding: .8em 1em
+        
+        form.smartfilter
+            .smart-filter-parameters-box
+                padding: 1em 0
+                border-top: 1px solid #C4C4C4
+                &-title
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                    margin-bottom: 0.6em
+                    &-text
+                        font-weight: bold
+                        font-size: 1.2em
+                .smart-filter-angle
+                    .smart-filter-angles
+                        display: inline-block
+                        width: 1.1em
+                        height: 1.1em
+                        background: rgba(194, 81, 192, 0.2)
+                        border-radius: 50%
+                        display: flex
+                        align-items: center
+                        justify-content: center
+                        cursor: pointer
+                        &::before
+                            content: '-'
+                            display: inline-block
+                            width: 100%
+                            height: 100%
+                            text-align: center
+                            color: $accent
+                            font-size: 1em
+                            line-height: 1
+            .form-check
+                input
+                    display: none
+                label
+                    font-weight: 200
+                    padding-left: 17px
+                    position: relative
+                    user-select: none
+                    cursor: pointer
+                    &::before
+                        content: ''
+                        position: absolute
+                        left: 0
+                        top: 50%
+                        transform: translateY(-50%)
+                        width: 10px
+                        height: 10px
+                        border: 1px solid $accent
+                        border-radius: 2px
+                        transition: background .3s ease
+                input:checked + label:before
+                    background: $accent
+                
+            .more
+                font-size: 0.9em
+                color: #C4C4C4
+                cursor: pointer
+                        
+
+    &-tag
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        flex-wrap: wrap
+        padding: 2em 0 1em 0
+        a
+            display: inline-block
+            padding: .5em 1em
+            color: #ffffff
+            font-weight: bold
+            border-radius: 4px
+            margin-right: 1em
+            transition: background .3s ease
+            margin-bottom: 1em
+            &:last-child
+                margin-right: 0
+            &.yellow
+                background: $yellow
+                &:hover
+                    background: darken($yellow, 6%)
+            &.blue
+                background: #00B6C5
+                &:hover
+                    background: darken(#00B6C5, 6%)
+            &.red
+                background: #FF5B56
+                &:hover
+                    background: darken(#FF5B56, 6%)
+            &.accent
+                background: $accent
+                &:hover
+                    background: darken($accent, 6%)
+
+    &-sort
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-bottom: 1.5em
+        max-width: 500px
+        a
+            flex: 1 0 25%
+            color: #B8B8B8
+            font-weight: bold
+            position: relative
+            &.sort
+                padding-right: 1em
+                &::before
+                    content: ''
+                    position: absolute
+                    right: 0
+                    top: 50%
+                    transform: translateY(-50%)
+                    width: .5em
+                    height: 1em
+                    background-size: cover
+                    background-position: center
+                    background-repeat: no-repeat
+                    background-image: url('../img/products/sort.svg')
+                &.asc
+                    color: $accent
+                    &::before
+                        background-image: url('../img/products/sort-asc.svg')
+                &.desc
+                    color: $accent
+                    &::before
+                        background-image: url('../img/products/sort-desc.svg')
+
+    &-card
         display: block
         background-color: #ffffff
         border: 1px solid #faf0f0
@@ -132,16 +284,19 @@
                         background-image: url('../img/nav/cart.svg')
 
 @media screen and ( max-width: 1199.98px )
-    .product-list
-        .product-card
+    .products
+        &-tag
+            a
+                font-size: 0.9em
+        &-card
             &__head
                 span
                     font-size: 10px
                     padding: 8px 3px
 
 @media screen and ( max-width: 991.98px )
-    .product-list
-        .product-card
+    .products
+        &-card
             &__head
                 span
                     padding: 5px 3px
@@ -149,7 +304,7 @@
                 text-align: center
 
 @media screen and ( max-width: 576.98px )
-    .product-list
+    .products
         .row
             [class*="col-"]
                 margin-bottom: 1em
@@ -157,7 +312,14 @@
                     padding-right: 0.25em
                 &:nth-child(even)
                     padding-left: 0.25em
-        .product-card
+        &-tag
+            a
+                font-size: 0.8em
+                padding: .5em
+        &-sort
+            a
+                font-size: 0.9em
+        &-card
             padding: 10px 10px 20px 10px
             &__head
                 flex-wrap: wrap
@@ -193,8 +355,11 @@
                         background-size: 1.6em
 
 @media screen and ( max-width: 374.98px )
-    .product-list
-        .product-card
+    .products
+        &-sort
+            a
+                font-size: 0.8em
+        &-card
             padding-bottom: 10px
             &__head
                 align-items: flex-start
