@@ -65,6 +65,7 @@ footer
                         font-size: 1.1em
                         &:hover
                             color: $text
+    
     .copyright
         margin: 45px auto
         padding: 30px 0 20px 0
@@ -88,84 +89,13 @@ footer
 
 @media screen and ( max-width: 991.98px )
     footer
+        padding: 0
+        margin: 0
         .email-form
             display: none
-            &-block
-                flex-wrap: wrap
-                &__title
-                    flex: 1 0 100%
-                    justify-content: center
-                    margin-bottom: 2em
-                    p
-                        font-size: 1.5em
-                &__form
-                    flex: 1 0 100%
-                    padding-left: 0
         .row
             display: none
-            [class*="col-"]
-                margin-bottom: 3em
-                padding-left: 60px
-                &:last-child
-                    margin-bottom: 0
         .copyright
             border-top: none
             margin: 15px auto
 
-@media screen and ( max-width: 767.98px )
-    footer
-        .email-form
-            &-block
-                &__title
-                    p
-                        font-size: 1.3em
-        .row
-            [class*="col-"]
-                padding-left: 30px
-
-@media screen and ( max-width: 576.98px )
-    footer
-        .email-form
-            &-block
-                &__title
-                    p
-                        font-size: 1.2em
-                    img
-                        width: 80px
-                &__form
-                    input
-                        flex: 1 0 auto
-                        padding: 15px 10px
-                    .btn
-                        flex: 1 0 auto
-                        max-width: 170px
-                        &.btn-send
-                            margin-left: 0.5em
-                            font-size: 1em
-                            padding: auto
-        .row
-            [class*="col-"]
-                padding-left: 15px
-                text-align: center
-
-@media screen and ( max-width: 374.98px )
-    footer
-        .email-form
-            &-block
-                &__title
-                    p
-                        font-size: .9em
-                &__form
-                    flex-wrap: wrap
-                    input
-                        flex: 1 0 100%
-                        margin-bottom: 1em
-                        text-align: center
-                    .btn
-                        flex: 1 0 100%
-                        &.btn-send
-                            max-width: 100%
-                            padding: 15px 10px
-                            margin-left: 0
-                            font-size: 1em
-    

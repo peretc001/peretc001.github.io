@@ -152,7 +152,13 @@ document.addEventListener("DOMContentLoaded", function() {
     //             })
     //         }
             
-
+    //         function sleep(millis) {
+    //             var t = (new Date()).getTime();
+    //             var i = 0;
+    //             while (((new Date()).getTime() - t) < millis) {
+    //                 i++;
+    //             }
+    //         }
     //         document.addEventListener('mouseover', () => {
     //             if (localStorage.getItem('submenu') && catalog.classList.contains('in')) {
     //                 hideCatalogSubMenuItem()
@@ -175,12 +181,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-    const catalogBtn = document.querySelector('.catalog-btn')
-    catalogBtn.addEventListener('click', (e) => {
-        e.preventDefault()
-        catalogBtn.querySelector('.hamburger').classList.toggle('open')
-        catalog.classList.toggle('mob')
-    })
+    // const catalogBtn = document.querySelector('.catalog-btn')
+    // catalogBtn.addEventListener('click', (e) => {
+    //     e.preventDefault()
+    //     catalogBtn.querySelector('.hamburger').classList.toggle('open')
+    //     catalog.classList.toggle('mob')
+    // })
 
     
 
@@ -199,6 +205,16 @@ document.addEventListener("DOMContentLoaded", function() {
                     document.querySelector('.brands-list').classList.remove('active')
                     document.querySelector('.brands-all').classList.add('active')
                 })
+    }
+
+    if ( document.querySelector('.show_description') ) {
+        const   hElem = document.querySelector('.hide_description')
+                sElem = document.querySelector('.show_description')
+
+        sElem.addEventListener('click', () => {
+            !hElem.classList.contains('active') ? hElem.classList.add('active') : hElem.classList.remove('active')
+            hElem.classList.contains('active') ? sElem.textContent = 'скрыть' : sElem.textContent = 'показать еще'
+        })
     }
     
 });

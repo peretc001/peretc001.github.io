@@ -21,12 +21,13 @@
             &::before
                 content: ''
                 position: absolute
-                left: 0
+                left: 2px
                 top: 0
                 width: 50%
                 transform: translateX(100%)
                 height: 100%
                 background: $accent
+                border-radius: 4px 0 0 4px
                 transition: transform .3s ease
             span
                 padding: 1em 2em
@@ -43,6 +44,7 @@
                 &::before
                     left: 0
                     transform: translateX(0)
+                    border-radius: 0 4px 4px 0
                 span
                     &:first-child
                         color: #ffffff
@@ -68,7 +70,7 @@
                 &:hover
                     color: $accent
                 &.none
-                    color: $grey
+                    color: $grey !important
                     cursor: default
                 &.active
                     color: $accent
@@ -134,9 +136,9 @@
             text-align: left
             font-size: 2.5em
             font-weight: bold
-            margin: 0
             padding: 0 calc(50% - 580px)
-            margin-bottom: 1em
+            margin: 0
+            margin-bottom: 0.5em
         &-about
             background: rgba(171, 82, 191, 0.04)
             padding: 30px 0
@@ -155,6 +157,29 @@
                 float: right
                 margin-left: 40px
                 margin-bottom: 20px
+
+    &.heroes
+        .brands-header
+            &__favorite
+                border: 2px solid #FF5F5A
+                &::before
+                    background: #FF5F5A
+        .brands-alphabet
+            .rus,
+            .eng
+                span
+                    &:hover
+                        color: #FF5F5A
+                    &.active
+                        color: #FF5F5A
+        .brands-all
+            &-card
+                &__title
+                    color: #FF5F5A
+                &__list
+                    a
+                        &:hover
+                            color: #FF5F5A
 
 @media screen and ( max-width: 1199.98px )
     .brands
@@ -197,6 +222,10 @@
 
 @media screen and ( max-width: 767.98px )
     .brands
+        &-header
+            flex-wrap: wrap
+            h1
+                margin-bottom: .5em
         &-all
             &-card
                 &__title
@@ -217,12 +246,16 @@
 @media screen and ( max-width: 576.98px )
     .brands
         &-header
-            align-items: flex-start
-            justify-content: flex-start
-            flex-direction: column
+            flex-wrap: wrap
             h1
                 font-size: 1.8em
-                margin-bottom: 1em
+        &-alphabet
+            .rus,
+            .eng
+                font-size: 1.5em
+                span
+                    margin-right: 1em
+                    margin-bottom: 1em
         &-all
             &-card
                 &__title

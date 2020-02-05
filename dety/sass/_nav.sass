@@ -89,11 +89,6 @@
                background-position: left
                background-repeat: no-repeat
                background-image: url('../img/nav/location.svg')
-               transition: transform .3s ease
-               transform-origin: 0 50%
-            &:hover
-               &::before
-                  transform: translateY(-50%) scale(1.1)
             &__item
                margin-left: 0.9em
                a
@@ -118,11 +113,6 @@
                background-size: 1.5em
                background-position: left
                background-repeat: no-repeat
-               transition: transform .3s ease
-               transform-origin: 0 50%
-            &:hover
-               &::before
-                  transform: translateY(-50%) scale(1.1)
          &__phone
             font-size: 1.1em
             font-weight: bold
@@ -142,7 +132,7 @@
 
    &-search
       width: 100%
-      padding: 30px 0
+      padding: 18px 0
       .container
          display: flex
          align-items: center
@@ -254,14 +244,13 @@
             margin-left: 1.5em
             position: relative
             width: auto
-            min-width: 3em
+            min-width: 2.2em
             height: 3em
             display: inline-block
-            background-size: 2.5em
+            background-size: 2em
             background-position: left center
             background-repeat: no-repeat
             background-image: url('../img/nav/wishlist.svg')
-            transition: transform .3s ease
             &.active
                background-image: url('../img/nav/wishlist-active.svg')
             span
@@ -280,16 +269,14 @@
                font-size: 12px
                color: #ff5f5a
                box-shadow: 0px 4px 13px rgba(25, 36, 45, 0.24)
-            &:hover:not(span)
-               transform: scale(1.05)
 
          &__cart
             margin-left: 1.5em
             position: relative
             width: auto
-            min-width: 3em
+            min-width: 2.2em
             height: 3em
-            background-size: 2.5em
+            background-size: 2em
             background-position: left center
             background-repeat: no-repeat
             background-image: url('../img/nav/cart.svg')
@@ -298,11 +285,10 @@
             justify-content: flex-end
             font-weight: bold
             color: $text
-            transition: transform .3s ease
             .qty
                position: absolute
                top: -5px
-               left: 25px
+               left: 20px
                background: #ffffff
                border-radius: 50%
                display: inline-block
@@ -318,8 +304,6 @@
             .price
                padding-left: 3.5em
                font-size: 1.15em
-            &:hover:not(.price)
-               transform: scale(1.05)
 
 
                   
@@ -513,6 +497,7 @@
                margin-left: 2em
       
       &-search
+         padding: 12px 0
          &__form
             display: none
          &--right__wishlist,
@@ -539,6 +524,7 @@
             &.search
                flex: 1 1 40%
                border-radius: 4px 0 0 4px
+               border: 2px solid $accent
                img
                   width: 20px
                   margin-right: 0.5em
@@ -553,8 +539,9 @@
          right: 0
          z-index: -1
          opacity: 0
+         will-change: opacity
          transform: translateY(20%)
-         transition: transform .5s ease, opacity .5s ease
+         transition: transform .5s ease
          &__menu
             border-radius: 4px
             width: 305px
@@ -642,9 +629,12 @@
                &.is-active
                   opacity: 1
                   z-index: 5
+         
          &.mob
+            visibility: visible
             z-index: 2
             opacity: 1
+            transition: opacity .5s ease
             transform: translateY(0%)
 
 @media screen and ( max-width: 767.98px )
@@ -693,7 +683,6 @@
                margin-left: 3.2em
 
       &-search
-         padding: 20px 0
          .brand
             width: 200px
 
@@ -703,7 +692,8 @@
                margin-left: 0
                background-size: 2em
             &__cart
-               margin-left: .5em
+               margin-left: 1.5em
+               margin-right: 0.5em
             
             &__wishlist
                span
@@ -740,10 +730,8 @@
          &--right
             &__wishlist,
             &__cart
-               margin-left: 0
-               background-size: 2em
-            &__cart
-               margin-left: .5em
+               background-size: 1.8em
+               margin-left: 1.5em
             
             &__wishlist
                span
