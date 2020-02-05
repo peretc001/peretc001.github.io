@@ -1,0 +1,422 @@
+@import '_libs/var'
+.products-page
+    h1
+        font-size: 2.5em
+        font-weight: bold
+        margin: 0
+    
+    &-header
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        padding: 1em 0
+        margin-bottom: 1em
+        span
+            color: #C4C4C4
+            font-size: 0.9em
+            b
+                color: $text
+                font-weight: bold
+
+        &__review
+            display: flex
+            align-items: flex-end
+            justify-content: flex-start
+            margin-left: 2em
+            .star
+                display: flex
+                align-items: center
+                justify-content: flex-start
+                span
+                    display: inline-block
+                    width: 1.5em
+                    height: 1.5em
+                    background-size: cover
+                    background-position: center
+                    background-repeat: no-repeat
+                    background-image: url('../img/review/star.svg')
+                    margin-right: 5px
+                    &.active
+                        background-image: url('../img/review/star-active.svg')
+            .quote
+                position: relative
+                font-size: 1em
+                color: $text
+                padding-left: 20px
+                margin-left: 1em
+                &::before
+                    content: ''
+                    position: absolute
+                    left: 0
+                    top: 50%
+                    transform: translateY(-50%)
+                    width: 100%
+                    height: 100%
+                    background-size: 18px
+                    background-position: left
+                    background-repeat: no-repeat
+                    background-image: url('../img/review/quote.svg')
+
+    .container
+        height: 100%
+        position: relative
+        display: table
+        &::before
+            content: ''
+            display: table
+            clear: both
+   
+    &-item
+        float: left
+        width: 770px
+        background: #ffffff
+        border-radius: 20px
+        padding: 1em 2em
+        display: flex
+        align-items: flex-start
+        flex-wrap: wrap
+        position: relative
+        &::before
+            content: ''
+            display: table
+            clear: both
+        &__img
+            flex: 1 0 auto
+        &__photo
+            flex: 1 0 auto
+            &__tag
+                display: flex
+                align-items: center
+                justify-content: flex-start
+                flex-wrap: wrap
+                padding: 0
+                a
+                    display: inline-block
+                    padding: .5em 1em
+                    color: #ffffff
+                    font-weight: bold
+                    border-radius: 4px
+                    margin-right: .5em
+                    transition: background .3s ease
+                    margin-bottom: 1em
+                    font-size: 0.9em
+                    &:hover
+                        color: #fff
+                    &:last-child
+                        margin-right: 0
+                    &.top
+                        background: $yellow
+                        &:hover
+                            background: darken($yellow, 6%)
+                    &.new
+                        background: #00B6C5
+                        &:hover
+                            background: darken(#00B6C5, 6%)
+                    &.sale
+                        background: #FF5B56
+                        &:hover
+                            background: darken(#FF5B56, 6%)
+                .wishlist
+                    margin-left: auto
+                    position: relative
+                    display: inline-block
+                    width: 2em
+                    height: 2em
+                    background-size: 2em
+                    background-position: center
+                    background-repeat: no-repeat
+                    transition: transform .3s ease
+                    cursor: pointer
+                    background-image: url('../img/nav/wishlist.svg')
+                    &.active
+                        background-image: url('../img/nav/wishlist-active.svg')
+                    &:hover
+                        transform: scale(1.1)
+
+    &-buy
+        position: sticky
+        float: right
+        width: 370px
+        top: 1em
+        right: 0
+        background: #ffffff
+        border-radius: 20px
+        padding: 1em 0
+        overflow: hidden
+        &::after
+            content: ''
+            display: table
+            clear: both
+        &::before
+            content: ''
+            display: table
+            clear: both
+
+        &__price
+            display: flex
+            align-items: flex-end
+            padding: 0 1em
+            p
+                font-weight: bold
+                &:not(.old)
+                    font-size: 1.8em
+            .old
+                margin-left: 1em
+                font-size: 1em
+                color: #c4c4c4
+                text-decoration: line-through
+        &__tag
+            display: flex
+            border-bottom: 1px solid #DADADA
+            padding: 0 1em
+            padding-bottom: 1em
+            span
+                padding: .5em 1em
+                font-size: 0.85em
+                font-weight: bold
+                border-radius: 4px
+                text-align: center
+                &:first-child
+                    border: 1px solid #ff5c57
+                    color: #ff5c57
+                    margin-right: 0.5em
+                &:last-child
+                    border: 1px solid $accent
+                    color: $accent
+        &__size
+            padding: 1em
+            padding-bottom: 0
+            p
+                a
+                    font-size: 0.9em
+                    color: #c4c4c4
+                    border-bottom: 1px dashed #c4c4c4
+                    margin-left: 0.5em
+            &__item
+                display: flex
+                align-items: center
+                justify-content: flex-start
+                overflow-x: auto
+                position: relative
+                padding: .2em 0
+                &::before,
+                &::after
+                    content: ''
+                    position: absolute
+                    right: 0
+                    top: 50%
+                    transform: translateY(-50%)
+                    width: 1em
+                    height: 100%
+                &::before
+                    width: 3em
+                    background: linear-gradient(to right, transparent 30%, #FFF 70%)
+                &::after
+                    background-size: 1em
+                    background-position: center
+                    background-repeat: no-repeat
+                    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojQzRDNEM0IiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+                &::-webkit-scrollbar
+                    display: none
+                    width: 2px
+                    height: 2px
+                &::-webkit-scrollbar-track
+                    display: none
+                    background-color: #F6F6F5
+                    border-radius: 1em
+                &::-webkit-scrollbar-thumb
+                    display: none
+                    background-color: $accent
+                    border-radius: 1em
+                a
+                    border: 1px solid #c4c4c4
+                    min-width: 55px
+                    text-align: center
+                    padding: .5em
+                    font-size: 0.8em
+                    color: $text
+                    font-weight: bold
+                    border-radius: 4px
+                    margin-right: 0.5em
+                    &:hover,
+                    &.active
+                        border-color: $accent
+                        color: $accent
+        &__color
+            padding: 1em
+            padding-bottom: 0
+            position: relative
+            p
+                margin-bottom: 0.3em
+            &__item
+                display: flex
+                align-items: center
+                justify-content: flex-start
+                overflow-x: scroll
+                a
+                    flex: 1 0 100px
+                    min-width: 100px
+                    margin-right: 1em
+                    img
+                        border-radius: 4px
+                    &:last-child
+                        margin-right: 0
+        &__button
+            display: flex
+            align-items: center
+            justify-content: space-between
+            padding: 1em
+            .btn
+                flex: 1 0 49%
+                padding: 1em 0
+                font-size: 1.3em
+                font-weight: bold
+                max-width: 166px
+        .count
+            padding: 1em
+            padding-top: 0
+            font-size: 0.9em
+            color: #C4C4C4
+            font-weight: bold
+            margin: 0
+        &__delivery
+            border-top: 1px solid #DADADA
+            border-bottom: 1px solid #DADADA
+            padding: 1em
+            p
+                color: #C4C4C4
+                font-size: 0.9em
+                margin-bottom: 0.3em
+                b
+                    color: $text
+                    font-size: 14px
+            a
+                color: #C4C4C4
+                font-size: 0.8em
+                border-bottom: 1px dashed #c4c4c4
+                &:hover
+                    color: #c4c4c4
+                    border: none
+        &__share
+            padding: 1em
+            display: flex
+            align-items: center
+            justify-content: space-between
+            p
+                margin-bottom: 0
+                color: #c4c4c4
+                font-size: 0.8em
+            a
+                display: inline-block
+                width: 2.5em
+                height: 1.5em
+                background-size: 1.2em
+                background-position: center
+                background-repeat: no-repeat
+                background-color: #EAF6F6
+                border-radius: 4px
+            
+            .facebook
+                background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0i0JjQutC+0L3QutC4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjAwIDIwMCI+ICA8ZGVmcz4gICAgPHN0eWxlPiAgICAgIC5jbHMtMSB7ICAgICAgICBmaWxsOiAjOGU5MTkxOyAgICAgICAgZmlsbC1ydWxlOiBldmVub2RkOyAgICAgIH0gICAgPC9zdHlsZT4gIDwvZGVmcz4gIDxwYXRoIGlkPSJmYiIgY2xhc3M9ImNscy0xIiBkPSJNMTA5LjcsMTkzLjM2MlYxMDcuNWgyOC44MjRsNC4zMTYtMzMuNDYzSDEwOS43VjUyLjY3M2MwLTkuNjg4LDIuNjg5LTE2LjI5MSwxNi41ODQtMTYuMjkxbDE3LjcyMy0uMDA4VjYuNDQ1YTIzNy43MTMsMjM3LjcxMywwLDAsMC0yNS44MjQtMS4zMTdjLTI1LjU1MSwwLTQzLjA0NCwxNS41OTMtNDMuMDQ0LDQ0LjIzMlY3NC4wMzdoLTI4LjlWMTA3LjVoMjguOXY4NS44NjJIMTA5LjdaIi8+PC9zdmc+)
+            .insta
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMTQ1IiB2aWV3Qm94PSIwIDAgMjAwIDE0NSI+ICA8ZGVmcz4gICAgPHN0eWxlPiAgICAgIC5jbHMtMSB7ICAgICAgICBmaWxsOiAjOGU5MjkyOyAgICAgICAgZmlsbC1ydWxlOiBldmVub2RkOyAgICAgIH0gICAgPC9zdHlsZT4gIDwvZGVmcz4gIDxwYXRoIGlkPSJpbnN0YWdyYW0iIGNsYXNzPSJjbHMtMSIgZD0iTTEwMCwxNS43MTNjMTguNSwwLDIwLjY4OC4wNzEsMjcuOTkzLDAuNCw2Ljc1NCwwLjMwOCwxMC40MjIsMS40MzYsMTIuODYzLDIuMzg1YTIxLjQ2NywyMS40NjcsMCwwLDEsNy45NjUsNS4xODFBMjEuNDY3LDIxLjQ2NywwLDAsMSwxNTQsMzEuNjQ3YzAuOTQ5LDIuNDQxLDIuMDc3LDYuMTA4LDIuMzg1LDEyLjg2MSwwLjMzNCw3LjMuNCw5LjQ5NSwwLjQsMjcuOTg5cy0wLjA3LDIwLjY4NS0uNCwyNy45ODljLTAuMzA4LDYuNzUzLTEuNDM2LDEwLjQyMS0yLjM4NSwxMi44NjFhMjIuOTQ0LDIyLjk0NCwwLDAsMS0xMy4xNDcsMTMuMTQ2Yy0yLjQ0MS45NDgtNi4xMDksMi4wNzctMTIuODYzLDIuMzg1LTcuMy4zMzMtOS40OTUsMC40LTI3Ljk5MywwLjRzLTIwLjY4OS0uMDcxLTI3Ljk5Mi0wLjRjLTYuNzU0LS4zMDgtMTAuNDIyLTEuNDM3LTEyLjg2My0yLjM4NUEyMi45NDQsMjIuOTQ0LDAsMCwxLDQ2LDExMy4zNDhjLTAuOTQ5LTIuNDQtMi4wNzctNi4xMDgtMi4zODUtMTIuODYxLTAuMzMzLTcuMy0uNC05LjQ5NS0wLjQtMjcuOTg5czAuMDcxLTIwLjY4NS40LTI3Ljk4OUM0My45MiwzNy43NTYsNDUuMDQ5LDM0LjA4OCw0NiwzMS42NDdhMjEuNDYsMjEuNDYsMCwwLDEsNS4xODItNy45NjRBMjEuNDYzLDIxLjQ2MywwLDAsMSw1OS4xNDUsMTguNWMyLjQ0MS0uOTQ5LDYuMTA5LTIuMDc3LDEyLjg2My0yLjM4NSw3LjMtLjMzMyw5LjUtMC40LDI3Ljk5Mi0wLjRtMC0xMi40OGMtMTguODEzLDAtMjEuMTcyLjA4LTI4LjU2MSwwLjQxN2E1MC44NTUsNTAuODU1LDAsMCwwLTE2LjgxNiwzLjIyLDMzLjk1OCwzMy45NTgsMCwwLDAtMTIuMjcsNy45ODksMzMuOTUzLDMzLjk1MywwLDAsMC03Ljk5LDEyLjI2OCw1MC44MzMsNTAuODMzLDAsMCwwLTMuMjIsMTYuODEzYy0wLjMzNyw3LjM4OC0uNDE3LDkuNzQ2LTAuNDE3LDI4LjU1OHMwLjA4LDIxLjE3LjQxNywyOC41NThhNTAuODMzLDUwLjgzMywwLDAsMCwzLjIyLDE2LjgxMywzNS40MjEsMzUuNDIxLDAsMCwwLDIwLjI2LDIwLjI1Nyw1MC44MjMsNTAuODIzLDAsMCwwLDE2LjgxNiwzLjIyYzcuMzg5LDAuMzM3LDkuNzQ4LjQxNywyOC41NjEsMC40MTdzMjEuMTczLS4wOCwyOC41NjItMC40MTdhNTAuODE4LDUwLjgxOCwwLDAsMCwxNi44MTUtMy4yMiwzNS40MTksMzUuNDE5LDAsMCwwLDIwLjI2LTIwLjI1Nyw1MC44MSw1MC44MSwwLDAsMCwzLjIyLTE2LjgxM2MwLjMzNy03LjM4OC40MTctOS43NDcsMC40MTctMjguNTU4cy0wLjA4LTIxLjE3LS40MTctMjguNTU4YTUwLjgxLDUwLjgxLDAsMCwwLTMuMjItMTYuODEzLDMzLjk1MSwzMy45NTEsMCwwLDAtNy45OS0xMi4yNjgsMzMuOTUsMzMuOTUsMCwwLDAtMTIuMjctNy45ODksNTAuODUsNTAuODUsMCwwLDAtMTYuODE1LTMuMjJjLTcuMzg5LS4zMzctOS43NDgtMC40MTctMjguNTYyLTAuNDE3aDBabTAsMzMuN0EzNS41NjgsMzUuNTY4LDAsMSwwLDEzNS41NzMsNzIuNSwzNS41NzEsMzUuNTcxLDAsMCwwLDEwMCwzNi45MjlabTAsNTguNjU3QTIzLjA4OCwyMy4wODgsMCwxLDEsMTIzLjA5Miw3Mi41LDIzLjA5LDIzLjA5LDAsMCwxLDEwMCw5NS41ODZabTQ1LjI5Mi02MC4wNjJhOC4zMTMsOC4zMTMsMCwxLDEtOC4zMTMtOC4zMTJBOC4zMTIsOC4zMTIsMCwwLDEsMTQ1LjI5MiwzNS41MjRaIi8+PC9zdmc+)
+            .ok
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMTQ1IiB2aWV3Qm94PSIwIDAgMjAwIDE0NSI+ICA8ZGVmcz4gICAgPHN0eWxlPiAgICAgIC5jbHMtMSB7ICAgICAgICBmaWxsOiAjOGU5MjkyOyAgICAgICAgZmlsbC1ydWxlOiBldmVub2RkOyAgICAgIH0gICAgPC9zdHlsZT4gIDwvZGVmcz4gIDxwYXRoIGlkPSJvayIgY2xhc3M9ImNscy0xIiBkPSJNMTAyLjg0MSw3Mi40ODJBNTAuNyw1MC43LDAsMSwwLDUyLjE0OSwxMjMuMiw1MC43NTEsNTAuNzUxLDAsMCwwLDEwMi44NDEsNzIuNDgyWm0tNzEuNjg4LDBhMjAuOTkyLDIwLjk5MiwwLDEsMSwyMSwyMUEyMS4wMTgsMjEuMDE4LDAsMCwxLDMxLjE1Myw3Mi40ODJaTTE0NC4yMDYsNTEuOTY1YTk1LDk1LDAsMCwwLTEyLjE5NS0yOS40NSwxNC44NjIsMTQuODYyLDAsMCwwLTI1LjE1NywxNS44MzEsNjQuNCw2NC40LDAsMCwxLDAsNjguMjgsMTQuODYxLDE0Ljg2MSwwLDAsMCwyNS4xNTcsMTUuODI5LDk1LjEzLDk1LjEzLDAsMCwwLDEyLjE5NS0yOS40NDhsMjguMzQ5LDI4LjM1MmExNC44NTksMTQuODU5LDAsMCwwLDIxLjAwOC0yMS4wMjFMMTY1LjcwNSw3Mi40ODhsMjcuODU4LTI3Ljg3M2ExNC44NTQsMTQuODU0LDAsMCwwLTIxLjAwOC0yMVoiLz48L3N2Zz4=)
+            .vk
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMTQ1IiB2aWV3Qm94PSIwIDAgMjAwIDE0NSI+ICA8ZGVmcz4gICAgPHN0eWxlPiAgICAgIC5jbHMtMSB7ICAgICAgICBmaWxsOiAjOGU5MjkyOyAgICAgICAgZmlsbC1ydWxlOiBldmVub2RkOyAgICAgIH0gICAgPC9zdHlsZT4gIDwvZGVmcz4gIDxwYXRoIGlkPSJ2ayIgY2xhc3M9ImNscy0xIiBkPSJNOTcuOTA2LDEyOS45NDhoMTEuNDVzMy40NTktLjM4MSw1LjIyNy0yLjI4NGMxLjYyNS0xLjc0OCwxLjU3My01LjAyOSwxLjU3My01LjAyOXMtMC4yMjMtMTUuMzYzLDYuOTA2LTE3LjYyN2M3LjAzMi0yLjIyOSwxNi4wNiwxNC44NDgsMjUuNjI3LDIxLjQxNyw3LjIzNiw0Ljk2OCwxMi43MzMsMy44ODEsMTIuNzMzLDMuODgxbDI1LjU4Ni0uMzU4czEzLjM4NC0uODI3LDcuMDM3LTExLjM0NmMtMC41Mi0uODYxLTMuNy03Ljc4My0xOS4wMjQtMjIuMDA5LTE2LjA0NC0xNC44ODgtMTMuODkzLTEyLjQ4LDUuNDMyLTM4LjIzNCwxMS43NjgtMTUuNjg1LDE2LjQ3My0yNS4yNTgsMTUtMjkuMzU4LTEuNC0zLjkwNy0xMC4wNTgtMi44NzYtMTAuMDU4LTIuODc2bC0yOC44MDcuMTc5YTYuNTQ4LDYuNTQ4LDAsMCwwLTMuNzIuNjU2LDguMDQyLDguMDQyLDAsMCwwLTIuNTQxLDMuMDkxLDE2Ny4wNDQsMTY3LjA0NCwwLDAsMS0xMC42NCwyMi40NThjLTEyLjgyNywyMS43NzgtMTcuOTU4LDIyLjkzMi0yMC4wNTQsMjEuNTc4LTQuODc4LTMuMTU0LTMuNjU5LTEyLjY2MS0zLjY1OS0xOS40MTcsMC0yMS4xMDksMy4yLTI5LjkwOS02LjIzNS0zMi4xODctMy4xMzEtLjc1Ni01LjQzOC0xLjI1NC0xMy40NDctMS4zMzctMTAuMjc5LS4xLTE4Ljk3Ny4wMzItMjMuOSwyLjQ0Ni0zLjI3NiwxLjYtNS44MDYsNS4xNzktNC4yNjUsNS4zODYsMS45LDAuMjUyLDYuMjE1LDEuMTYyLDguNSw0LjI3MiwyLjk1Myw0LjAxNiwyLjg0OSwxMy4wMzQsMi44NDksMTMuMDM0czEuNywyNC44NDYtMy45NjIsMjcuOTMyYy0zLjg4MywyLjExNy05LjIwOS0yLjItMjAuNjQ2LTIxLjk2NUExODMuNzE3LDE4My43MTcsMCwwLDEsNDQuNTg3LDMwLjk0MmE4LjU2Niw4LjU2NiwwLDAsMC0yLjM3NS0zLjIxLDExLjksMTEuOSwwLDAsMC00LjQyNS0xLjc4NmwtMjcuMzc2LjE3OHMtNC4xMDguMTE1LTUuNjE3LDEuOUMzLjQ1MSwyOS42MTcsNC42ODcsMzIuOSw0LjY4NywzMi45czIxLjQzLDUwLjEzNCw0NS43LDc1LjRjMjIuMjU1LDIzLjE2Niw0Ny41MjEsMjEuNjQ2LDQ3LjUyMSwyMS42NDZoMFoiLz48L3N2Zz4=)
+            .youtube
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMTQ1IiB2aWV3Qm94PSIwIDAgMjAwIDE0NSI+ICA8ZGVmcz4gICAgPHN0eWxlPiAgICAgIC5jbHMtMSB7ICAgICAgICBmaWxsOiAjOGU5MjkyOyAgICAgICAgZmlsbC1ydWxlOiBldmVub2RkOyAgICAgIH0gICAgPC9zdHlsZT4gIDwvZGVmcz4gIDxwYXRoIGlkPSJ5b3V0dWJlX2FsdCIgY2xhc3M9ImNscy0xIiBkPSJNMTk1LjI5LDI2LjQ2NkEyNC45MDUsMjQuOTA1LDAsMCwwLDE3My45ODEsNy4xQzE0OS41MzYsNC4zNjksMTI0LjgsNC4zNTcsMTAwLjE2Myw0LjM2OWMtMjQuNjM2LS4wMTItNDkuMzgxLDAtNzMuODI0LDIuNzI5YTI0Ljg5MywyNC44OTMsMCwwLDAtMjEuMywxOS4zNjdDMS42LDQxLjQsMS41NjMsNTcuNjg5LDEuNTYzLDczLjA2MnMwLDMxLjY2NSwzLjQzLDQ2LjZBMjQuOSwyNC45LDAsMCwwLDI2LjMsMTM5LjAyNmMyNC40NDIsMi43MjgsNDkuMTg3LDIuNzQzLDczLjgyMSwyLjcyOCwyNC42MzMsMC4wMTUsNDkuMzc2LDAsNzMuODE5LTIuNzNhMjQuOSwyNC45LDAsMCwwLDIxLjMxLTE5LjM2NWMzLjQzMi0xNC45MzIsMy40NTQtMzEuMjI1LDMuNDU0LTQ2LjZTMTk4LjcyMSw0MS40LDE5NS4yOSwyNi40NjZaTTc5LjQ1Nyw5OS45MzNWNDUuMjc4TDEzMS41NzYsNzIuNloiLz48L3N2Zz4=)
+
+    &-about
+        margin-top: 1.5em
+        float: left
+        width: 770px
+        background: #ffffff
+        border-radius: 20px
+        padding: 1em 2em 2em 2em
+        position: relative
+        &::before
+            content: ''
+            display: table
+            clear: both
+        &__title
+            display: flex
+            align-items: flex-end
+            &__img
+                flex: 1 0 auto
+                margin-right: 1em
+                img
+                    max-width: 150px
+            &__brand
+                p
+                    font-size: 0.8em
+                    line-height: 1.5
+                    b
+                        color: $text
+                        font-size: .8rem
+                    &:first-child
+                        color: #c4c4c4
+                        margin-bottom: 0.5em
+        &__text
+            .caption
+                display: flex
+                align-items: center
+                justify-content: space-between
+                padding: 1em 0
+                h3
+                    font-weight: bold
+                    font-size: 2.5em
+                span
+                    display: inline-block
+                    width: 21px
+                    height: 11px
+                    background-size: cover
+                    background-position: center
+                    background-repeat: no-repeat
+                    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjMiIGhlaWdodD0iMTMiIHZpZXdCb3g9IjAgMCAyMyAxMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMSAxMkwyMiAxMkwxMS41IDFMMSAxMloiIGZpbGw9IiMwMEI2QzYiIHN0cm9rZT0iIzAwQjZDNiIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==')
+            p
+                line-height: 1.5
+            table
+                width: 100%
+                margin-bottom: 1.5em
+                tr
+                    td
+                        padding: 8px 10px
+                        font-size: 0.9em
+                        &:first-child
+                            color: rgba(129, 153, 174, 0.47)
+                            width: 200px
+                            border-radius: 4px 0 0 4px
+                        &:last-child
+                            color: #8199AE
+                            border-radius: 0 4px 4px 0
+                    &:nth-child(odd)
+                        background-color: #EAF6F6
+                    &:nth-child(even)
+                        td
+                            padding: 16px 10px
+            .minus
+                position: relative
+                padding: 1em 0 1em 2.5em
+                color: #c4c4c4
+                cursor: pointer
+                &::before,
+                &:after
+                    content: ''
+                    position: absolute
+                    left: 0
+                    top: 50%
+                    transform: translateY(-50%)
+                    width: 1.8em
+                    height: 1.8em
+                    display: inline-block
+                &::before
+                    background: #EAF6F6
+                    border-radius: 50%
+                &::after
+                    background-size: 1em
+                    background-position: center
+                    background-repeat: no-repeat
+                    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMyIgdmlld0JveD0iMCAwIDE2IDMiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAuOTAyMzQ0IDEuNUwxNS43NDczIDEuNSIgc3Ryb2tlPSIjMDBCNkM2IiBzdHJva2Utd2lkdGg9IjEuNSIvPjwvc3ZnPg==')
+
+                    

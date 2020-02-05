@@ -188,4 +188,24 @@
                             font-size: 1em
                             margin-right: 0.5em
 
+        // Удалить
+        [class*="col-"]
+            &:nth-child(2)
+                .category-card
+                    &__text
+                        ul
+                            li
+                                a
+                                    background: $bg
+                                    color: $text
+            &:nth-child(3)
+                .category-card
+                    &__text
+                        ul
+                            li
+                                a
+                                    background: #EAF6F6
+                                    color: $text
+
+
     
