@@ -37,6 +37,11 @@ document.addEventListener("DOMContentLoaded", function() {
             showModal = (event) => {
                 document.body.classList.add('no-scroll')
                 event.target.dataset.target == 'menu' ? document.querySelector('.hamburger').classList.add('open') : ''
+                if (event.target.dataset.target == 'review') {
+                    document.querySelector('.rating-area').addEventListener('mouseover', () => {
+                        document.querySelector('#star-5').checked = false
+                    })
+                }
                 const current = document.querySelector('[data-modal="'+ event.target.dataset.target +'"]')
                 modal.classList.add('in')
                 current.classList.add('fade')
@@ -92,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 })
             })
             
-            nav.addEventListener('click', (event) => {
+            document.addEventListener('click', (event) => {
                 if (    
                     event.target.dataset.toggle == 'modal' 
                 ) {
@@ -189,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // })
 
     
-
+    //Brands page
     if (document.querySelector('.brands-header__favorite')) {
         const   favorite = document.querySelector('.brands-header__favorite')
                 btn1 = favorite.children[0]
@@ -207,6 +212,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 })
     }
 
+    //Show-hide description
     if ( document.querySelector('.show_description') ) {
         const   hElem = document.querySelector('.hide_description')
                 sElem = document.querySelector('.show_description')
@@ -215,6 +221,51 @@ document.addEventListener("DOMContentLoaded", function() {
             !hElem.classList.contains('active') ? hElem.classList.add('active') : hElem.classList.remove('active')
             hElem.classList.contains('active') ? sElem.textContent = 'скрыть' : sElem.textContent = 'показать еще'
         })
+    }
+
+
+    //Products-page Tabs
+    if ( document.querySelector('.products-page-rq') ) {
+        const   tabs = document.querySelectorAll('.products-page-rq__head h3')
+                review = document.querySelector('#review')
+                question = document.querySelector('#question')
+
+                tabs.forEach((item,i) => {
+                    item.addEventListener('click', () => {
+                        if (i == '0') {
+                            tabs[0].classList.add('active')
+                            tabs[1].classList.contains('active') ? tabs[1].classList.remove('active') : ''
+                            review.classList.add('active')
+                            question.classList.remove('active')
+                        } else {
+                            tabs[0].classList.contains('active') ? tabs[0].classList.remove('active') : ''
+                            tabs[1].classList.add('active')
+                            question.classList.add('active')
+                            review.classList.remove('active')
+                        }
+                    })
+                })
+        //Input file
+        let inputs = document.querySelectorAll('.input__file');
+        Array.prototype.forEach.call(inputs, function (input) {
+            let label = input.nextElementSibling,
+            labelVal = label.querySelector('.input__file-button-text').innerText;
+        
+            input.addEventListener('change', function (e) {
+                let countFiles = '';
+                if (this.files && this.files.length >= 1) {
+                    countFiles = this.files.length;
+                    label.classList.add('active')
+                } else {
+                    label.classList.remove('active')
+                }
+            
+                if (countFiles)
+                    label.querySelector('.input__file-button-text').innerText = 'Выбрано файлов: ' + countFiles;
+                else
+                    label.querySelector('.input__file-button-text').innerText = labelVal;
+            });
+        });
     }
     
 });
