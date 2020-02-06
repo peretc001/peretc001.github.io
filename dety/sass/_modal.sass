@@ -327,10 +327,13 @@
     .modal
         &-body
             box-sizing: border-box
-            top: 44px
+            top: 40px !important
             left: auto !important
             right: auto !important
+            transform: translateY(-200%) !important
             max-width: 93% !important
+            &.is-active
+                transform: translateY(0) !important
             &.login
                 padding: 40px 30px
                 p
