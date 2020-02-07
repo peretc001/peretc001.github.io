@@ -1,4 +1,13 @@
 @import '_libs/var'
+.layout
+    position: fixed
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    z-index: 2
+    background: #000
+    opacity: .5
 .products-page
     h1
         font-size: 2.5em
@@ -277,6 +286,7 @@
         
         &__size,
         &__color
+            overflow: auto
             button
                 display: none
                 width: 100%
@@ -298,6 +308,7 @@
                 font-size: 1.3em
                 font-weight: bold
                 max-width: 166px
+
         .count
             padding: 1em
             padding-top: 0
@@ -654,14 +665,19 @@
             right: auto
             padding: 2em 0
             margin: 0
-            margin-bottom: 2em !important
+            margin-bottom: 2em
+            display: flex
+            align-items: flex-start
+            &--left,
+            &--right
+                flex: 1 0 50%
+                max-width: 50%
+                display: flex
             &--left
                 border-right: 1px solid #f5f5f5
-                display: flex
-                align-items: center
+                lign-items: center
                 flex-wrap: wrap
             &--right
-                display: flex
                 flex-direction: column
                 justify-content: space-between
 
@@ -672,13 +688,77 @@
                 span
                     padding: .5em
                     font-size: 0.8em
+            
+            
+            &__button
+                flex-wrap: wrap
+                justify-content: center
+                padding: 1em
+                .btn
+                    flex: 1 0 100%
+                    padding: 1em 0
+                    font-size: 1.3em
+                    font-weight: bold
+                    max-width: 100%
+                    &:first-child
+                        margin-bottom: 0.5em
+
+@media screen and ( max-width: 767.98px )
+    .products-page
+        h1, h2, h3, h4
+            font-size: 1.8em
+        &-item
+            flex-direction: column-reverse
+            &__gallery
+                margin-top: 1em
+                flex-direction: row
+                align-items: center
+                justify-content: center
+                &__img
+                    margin-bottom: 0
+                    margin-right: 0.5em
+        &-buy
+            flex-wrap: wrap
+            &--left,
+            &--right
+                flex: 1 0 100%
+                max-width: 100%
+            &--left
+                border-right: none
+            &--right
+                flex-wrap: wrap
             &__size,
             &__color
-                flex: 1 0 50%
+                flex: 0 0 50%
+                overflow: hidden
                 button
                     display: block
                 &__item
-                    display: none
+                    width: 100%
+                    max-width: 510px
+                    position: fixed
+                    left: 50%
+                    top: 50%
+                    transform: translate(-50%, -50%)
+                    background: #ffffff
+                    border-radius: 20px
+                    padding: 2em
+                    flex-wrap: wrap
+                    opacity: 0
+                    z-index: -1
+                    overflow: hidden
+                    visibility: hidden
+                    &.active
+                        opacity: 1
+                        z-index: 3
+                        overflow: visible
+                        visibility: visible
+
+                    a
+                        flex: 1 0 20%
+                        margin-right: 0
+                        margin: .5em
+                        padding: 1em
                 p
                     padding: 0
                     margin: 0
@@ -694,33 +774,31 @@
             &__color
                 padding: 1em 1em 0 0
                 padding-left: 0.3em
+                &__item
+                    a
+                        padding: 0
+                        text-align: center
+                        flex: 1 0 auto
                 p
                     color: #ffffff
             
             &__button
+                padding-bottom: 0
                 .btn
+                    flex: 1 0 40%
                     padding: 1em
                     font-size: 1.2em
                     max-width: 100%
                     &:first-child
                         margin-right: 0.2em
+                        margin-bottom: 0
                     &:last-child
                         margin-left: 0.2em
-
-@media screen and ( max-width: 767.98px )
-    .products-page
-        h1, h2, h3, h4
-            font-size: 1.8em !important
-        &-item
-            flex-direction: column-reverse
-            &__gallery
-                margin-top: 1em
-                flex-direction: row
-                align-items: center
-                justify-content: center
-                &__img
-                    margin-bottom: 0
-                    margin-right: 0.5em
+        &-about
+            &__text
+                .caption
+                    h3
+                        font-size: 1.8em
         &-rq
             &__head
                 h3
@@ -730,11 +808,21 @@
     .products-page
         h1, h2, h3, h4
             font-size: 1.6em
+        &-buy
+            &__size,
+            &__color
+                &__item
+                    width: 100%
+                    max-width: 94%
+                    padding: 2em 1em
         &-about
             &__title
                 align-items: flex-start
                 flex-direction: column
             &__text
+                .caption
+                    h3
+                        font-size: 1.6em
                 table
                     tr
                         td
@@ -743,23 +831,6 @@
                                 width: 40%
                             &:last-child
                                 width: 60%
-            // &__text
-            //     table
-            //         tr
-            //             display: flex
-            //             flex-direction: column
-            //             td
-            //                 font-size: 0.9em
-            //                 &:first-child
-            //                     padding: 10px 10px 0 10px !important
-            //                     color: rgba(129, 153, 174, 0.47)
-            //                     width: 100%
-            //                     border-radius: 4px 0 0 4px
-            //                 &:last-child
-            //                     padding: 5px 10px 10px 10px !important
-            //                     color: #8199AE
-            //                     border-radius: 0 4px 4px 0
-
         &-rq
             &__head
                 h3
@@ -768,7 +839,7 @@
 @media screen and ( max-width: 374.98px )
     .products-page
         h1, h2, h3, h4
-            font-size: 1.5em
+            font-size: 1.4em
         
         &-buy
             &__tag
@@ -777,9 +848,12 @@
             &__button
                 .btn
                     font-size: 1em
-
-
+        &-about
+            &__text
+                .caption
+                    h3
+                        font-size: 1.4em
         &-rq
             &__head
                 h3
-                    font-size: 1.2em
+                    font-size: 1.1em

@@ -256,20 +256,42 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // if ( document.querySelector('.products-page-buy__size') ) {
-    //     const   container = document.querySelector('.products-page-buy__size__item')
-    //             prev = document.querySelector('.products-page-buy__size__item .prev')
-    //             next = document.querySelector('.products-page-buy__size__item .next')
+    if ( document.querySelector('.products-page-buy__size') ) {
+        const showModal = (elem, container) => {
+            elem = document.querySelector(elem)
+            container = document.querySelector(container)
+            div = document.createElement('div')
+            div.classList.add('layout')
+            document.body.appendChild(div)
+            document.body.classList.add('no-scroll')
+            container.classList.add('active')
+            div.addEventListener('click', () => {
+                container.classList.remove('active')
+                document.body.removeChild(div)
+                document.body.classList.remove('no-scroll')
+            })
+        }
+        const   container = document.querySelector('.products-page-buy__size__item')
+                prev = document.querySelector('.products-page-buy__size__item .prev')
+                next = document.querySelector('.products-page-buy__size__item .next')
 
-    //             prev.addEventListener('click', () => {
-    //                 console.log('123')
-    //                 container.scrollRight += 50
-    //             })
-    //             next.addEventListener('click', () => {
-    //                 console.log('321')
-    //                 container.scrollLeft += 50
-    //             })
-    // }
+                document.querySelector('.btn-size').addEventListener('click', () => {
+                    showModal('.btn-size', '.products-page-buy__size__item')
+                })
+
+                document.querySelector('.btn-color').addEventListener('click', () => {
+                    showModal('.btn-color', '.products-page-buy__color__item')
+                })
+
+                // prev.addEventListener('click', () => {
+                //     console.log('123')
+                //     container.scrollRight += 50
+                // })
+                // next.addEventListener('click', () => {
+                //     console.log('321')
+                //     container.scrollLeft += 50
+                // })
+    }
     
 });
 
