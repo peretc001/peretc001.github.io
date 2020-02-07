@@ -192,12 +192,43 @@
         &__size
             padding: 1em
             padding-bottom: 0
+            position: relative
             p
                 a
                     font-size: 0.9em
                     color: $grey
                     border-bottom: 1px dashed $grey
                     margin-left: 0.5em
+            // &__item__container
+            //     position: relative
+            //     span
+            //         position: absolute
+            //         display: inline-block
+            //         width: 3em
+            //         height: 100%
+            //         cursor: pointer
+            //         &::after
+            //             content: ''
+            //             position: absolute
+            //             top: 0
+            //             width: 1em
+            //             height: 100%
+            //             background-size: 1em
+            //             background-repeat: no-repeat
+            //         &.prev
+            //             left: 0
+            //             background: linear-gradient(to left, transparent 30%, #FFF 70%)
+            //             &::after
+            //                 left: 0
+            //                 background-position: center left
+            //                 background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMTk4LjYwOCwyNDYuMTA0TDM4Mi42NjQsNjIuMDRjNS4wNjgtNS4wNTYsNy44NTYtMTEuODE2LDcuODU2LTE5LjAyNGMwLTcuMjEyLTIuNzg4LTEzLjk2OC03Ljg1Ni0xOS4wMzJsLTE2LjEyOC0xNi4xMiAgICBDMzYxLjQ3NiwyLjc5MiwzNTQuNzEyLDAsMzQ3LjUwNCwwcy0xMy45NjQsMi43OTItMTkuMDI4LDcuODY0TDEwOS4zMjgsMjI3LjAwOGMtNS4wODQsNS4wOC03Ljg2OCwxMS44NjgtNy44NDgsMTkuMDg0ICAgIGMtMC4wMiw3LjI0OCwyLjc2LDE0LjAyOCw3Ljg0OCwxOS4xMTJsMjE4Ljk0NCwyMTguOTMyYzUuMDY0LDUuMDcyLDExLjgyLDcuODY0LDE5LjAzMiw3Ljg2NGM3LjIwOCwwLDEzLjk2NC0yLjc5MiwxOS4wMzItNy44NjQgICAgbDE2LjEyNC0xNi4xMmMxMC40OTItMTAuNDkyLDEwLjQ5Mi0yNy41NzIsMC0zOC4wNkwxOTguNjA4LDI0Ni4xMDR6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBzdHlsZT0iZmlsbDojQzRDNEM0Ij48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==')
+            //         &.next
+            //             right: 0
+            //             background: linear-gradient(to right, transparent 30%, #FFF 70%)
+            //             &::after
+            //                 right: 0
+            //                 background-position: center right
+            //                     background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgc3R5bGU9ImZpbGw6I0M0QzRDNCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
             &__item
                 display: flex
                 align-items: center
@@ -205,35 +236,6 @@
                 overflow-x: auto
                 position: relative
                 padding: .2em 0
-                &::before,
-                &::after
-                    content: ''
-                    position: absolute
-                    right: 0
-                    top: 50%
-                    transform: translateY(-50%)
-                    width: 1em
-                    height: 100%
-                &::before
-                    width: 3em
-                    background: linear-gradient(to right, transparent 30%, #FFF 70%)
-                &::after
-                    background-size: 1em
-                    background-position: center
-                    background-repeat: no-repeat
-                    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojQzRDNEM0IiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
-                &::-webkit-scrollbar
-                    display: none
-                    width: 2px
-                    height: 2px
-                &::-webkit-scrollbar-track
-                    display: none
-                    background-color: #F6F6F5
-                    border-radius: 1em
-                &::-webkit-scrollbar-thumb
-                    display: none
-                    background-color: $accent
-                    border-radius: 1em
                 a
                     border: 1px solid $grey
                     min-width: 55px
@@ -260,13 +262,31 @@
                 justify-content: flex-start
                 overflow-x: scroll
                 a
-                    flex: 1 0 100px
-                    min-width: 100px
+                    display: block
+                    flex: 1 0 auto
+                    min-width: 90px
+                    user-select: none
+                    border-radius: 4px
                     margin-right: 1em
                     img
                         border-radius: 4px
                     &:last-child
                         margin-right: 0
+                    &.active
+                        border: 1px solid $accent
+        
+        &__size,
+        &__color
+            button
+                display: none
+                width: 100%
+                &.btn
+                    padding: 1em
+                    &.btn-size,
+                    &.btn-color
+                        background: none
+                        border: 1px solid $accent
+
         &__button
             display: flex
             align-items: center
@@ -632,39 +652,65 @@
             left: 0
             top: 0
             right: auto
-            display: flex
-            flex-wrap: wrap
             padding: 2em 0
             margin: 0
             margin-bottom: 2em !important
-            &--left,
-            &--right
-                flex: 1 0 50%
-                max-width: 50%
-            
             &--left
                 border-right: 1px solid #f5f5f5
+                display: flex
+                align-items: center
+                flex-wrap: wrap
             &--right
                 display: flex
                 flex-direction: column
                 justify-content: space-between
 
+            &__price
+                flex: 1 0 100%
             &__tag
+                flex: 1 0 100%
                 span
                     padding: .5em
                     font-size: 0.8em
+            &__size,
+            &__color
+                flex: 1 0 50%
+                button
+                    display: block
+                &__item
+                    display: none
+                p
+                    padding: 0
+                    margin: 0
+                    padding-top: .5em
+            &__size
+                padding: 1em 0 0 1em
+                padding-right: 0.3em
+                p
+                    b
+                        display: none
+                    a
+                        margin-left: 0
+            &__color
+                padding: 1em 1em 0 0
+                padding-left: 0.3em
+                p
+                    color: #ffffff
+            
             &__button
-                flex-wrap: wrap
                 .btn
-                    flex: 1 0 100%
                     padding: 1em
                     font-size: 1.2em
                     max-width: 100%
                     &:first-child
-                        margin-bottom: 1em
+                        margin-right: 0.2em
+                    &:last-child
+                        margin-left: 0.2em
 
 @media screen and ( max-width: 767.98px )
     .products-page
+        h1, h2, h3, h4
+            font-size: 1.8em !important
         &-item
             flex-direction: column-reverse
             &__gallery
@@ -675,76 +721,15 @@
                 &__img
                     margin-bottom: 0
                     margin-right: 0.5em
-
-        &-buy
-            &--left
-                flex: 1 0 55%
-                max-width: 55%
-            &--right
-                flex: 1 0 45%
-                max-width: 45%
-
-            &__tag
-                span
-                    font-size: 0.7em
-            
-            &__size
-                &__item
-                    flex-wrap: wrap
-                    &::before
-                        display: none
-                    &::after
-                        display: none
-                    a
-                        flex: 1 0 25%
-                        margin-right: 0.5em
-                        margin-bottom: .5em
-            &__color
-                &__item
-                    display: flex
-                    align-items: center
-                    justify-content: flex-start
-                    overflow-x: scroll
-                    &::-webkit-scrollbar
-                        width: 2px
-                        height: 2px
-                    &::-webkit-scrollbar-track
-                        background-color: #F6F6F5
-                        border-radius: 1em
-                    &::-webkit-scrollbar-thumb
-                        background-color: $accent
-                        border-radius: 1em
-                    a
-                        margin-bottom: .5em
-            &__delivery
-                p
-                    color: $grey
-                    margin-bottom: 1em
-            &__share
-                flex-wrap: wrap
-                p
-                    margin-bottom: 0.5em
+        &-rq
+            &__head
+                h3
+                    min-height: 35px
 
 @media screen and ( max-width: 576.98px )
     .products-page
         h1, h2, h3, h4
             font-size: 1.6em
-        &-buy
-            &--left
-                flex: 1 0 100%
-                width: 100%
-                max-width: 100%
-            &--right
-                flex: 1 0 100%
-                max-width: 100%
-            
-            &__tag
-                span
-                    font-size: 0.75em
-            &__size,
-            &__color
-                width: 100%
-        
         &-about
             &__title
                 align-items: flex-start
@@ -752,19 +737,47 @@
             &__text
                 table
                     tr
-                        display: flex
-                        flex-direction: column
                         td
                             font-size: 0.9em
                             &:first-child
-                                padding: 10px 10px 0 10px !important
-                                color: rgba(129, 153, 174, 0.47)
-                                width: 100%
-                                border-radius: 4px 0 0 4px
+                                width: 40%
                             &:last-child
-                                padding: 5px 10px 10px 10px !important
-                                color: #8199AE
-                                border-radius: 0 4px 4px 0
+                                width: 60%
+            // &__text
+            //     table
+            //         tr
+            //             display: flex
+            //             flex-direction: column
+            //             td
+            //                 font-size: 0.9em
+            //                 &:first-child
+            //                     padding: 10px 10px 0 10px !important
+            //                     color: rgba(129, 153, 174, 0.47)
+            //                     width: 100%
+            //                     border-radius: 4px 0 0 4px
+            //                 &:last-child
+            //                     padding: 5px 10px 10px 10px !important
+            //                     color: #8199AE
+            //                     border-radius: 0 4px 4px 0
+
+        &-rq
+            &__head
+                h3
+                    font-size: 1.2em
+
+@media screen and ( max-width: 374.98px )
+    .products-page
+        h1, h2, h3, h4
+            font-size: 1.5em
+        
+        &-buy
+            &__tag
+                span
+                    font-size: 0.7em
+            &__button
+                .btn
+                    font-size: 1em
+
 
         &-rq
             &__head
