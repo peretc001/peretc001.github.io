@@ -12,7 +12,7 @@
         padding: 1em 0
         margin-bottom: 1em
         span
-            color: #C4C4C4
+            color: $grey
             font-size: 0.9em
             b
                 color: $text
@@ -169,7 +169,7 @@
             .old
                 margin-left: 1em
                 font-size: 1em
-                color: #c4c4c4
+                color: $grey
                 text-decoration: line-through
         &__tag
             display: flex
@@ -195,8 +195,8 @@
             p
                 a
                     font-size: 0.9em
-                    color: #c4c4c4
-                    border-bottom: 1px dashed #c4c4c4
+                    color: $grey
+                    border-bottom: 1px dashed $grey
                     margin-left: 0.5em
             &__item
                 display: flex
@@ -235,7 +235,7 @@
                     background-color: $accent
                     border-radius: 1em
                 a
-                    border: 1px solid #c4c4c4
+                    border: 1px solid $grey
                     min-width: 55px
                     text-align: center
                     padding: .5em
@@ -282,7 +282,7 @@
             padding: 1em
             padding-top: 0
             font-size: 0.9em
-            color: #C4C4C4
+            color: $grey
             font-weight: bold
             margin: 0
         &__delivery
@@ -290,18 +290,18 @@
             border-bottom: 1px solid #DADADA
             padding: 1em
             p
-                color: #C4C4C4
+                color: $grey
                 font-size: 0.9em
                 margin-bottom: 0.3em
                 b
                     color: $text
                     font-size: 14px
             a
-                color: #C4C4C4
+                color: $grey
                 font-size: 0.8em
-                border-bottom: 1px dashed #c4c4c4
+                border-bottom: 1px dashed $grey
                 &:hover
-                    color: #c4c4c4
+                    color: $grey
                     border: none
         &__share
             padding: 1em
@@ -310,7 +310,7 @@
             justify-content: space-between
             p
                 margin-bottom: 0
-                color: #c4c4c4
+                color: $grey
                 font-size: 0.8em
             a
                 display: inline-block
@@ -361,7 +361,7 @@
                         color: $text
                         font-size: .8rem
                     &:first-child
-                        color: #c4c4c4
+                        color: $grey
                         margin-bottom: 0.5em
         &__text
             .caption
@@ -404,7 +404,7 @@
             .minus
                 position: relative
                 padding: 1em 0 1em 2.5em
-                color: #c4c4c4
+                color: $grey
                 cursor: pointer
                 &::before,
                 &:after
@@ -445,7 +445,7 @@
                 flex: 0 0 auto
                 font-size: 2.5em
                 font-weight: bold
-                color: #c4c4c4
+                color: $grey
                 line-height: 1
                 padding-bottom: 0.2em
                 margin-bottom: .5em
@@ -504,7 +504,7 @@
                             width: 40px
                             margin-right: 0.8em
                 .date
-                    color: #c4c4c4
+                    color: $grey
                     font-size: 0.9em
                 &:last-child
                     border: none
@@ -521,7 +521,7 @@
                     font-size: 0.9em
                     font-weight: bold
                 .date
-                    color: #c4c4c4
+                    color: $grey
                     font-size: 0.9em
                     margin-bottom: 1em
                 .text
@@ -531,7 +531,7 @@
         #question   
             .show_description
                 display: inline-block
-                border-bottom: 1px dashed #c4c4c4
+                border-bottom: 1px dashed $grey
                 font-weight: bold
                 margin: 2em 0 0 0
             
@@ -611,6 +611,8 @@
 
 @media screen and ( max-width: 991.98px )
     .products-page
+        .container
+            display: block
         &-item,
         &-about,
         &-rq
@@ -666,21 +668,62 @@
         &-item
             flex-direction: column-reverse
             &__gallery
+                margin-top: 1em
                 flex-direction: row
                 align-items: center
                 justify-content: center
+                &__img
+                    margin-bottom: 0
+                    margin-right: 0.5em
 
         &-buy
             &--left
-                flex: 1 0 52%
-                max-width: 52%
+                flex: 1 0 55%
+                max-width: 55%
             &--right
-                flex: 1 0 47%
-                max-width: 47%
-            
+                flex: 1 0 45%
+                max-width: 45%
+
             &__tag
                 span
-                    font-size: 0.75em
+                    font-size: 0.7em
+            
+            &__size
+                &__item
+                    flex-wrap: wrap
+                    &::before
+                        display: none
+                    &::after
+                        display: none
+                    a
+                        flex: 1 0 25%
+                        margin-right: 0.5em
+                        margin-bottom: .5em
+            &__color
+                &__item
+                    display: flex
+                    align-items: center
+                    justify-content: flex-start
+                    overflow-x: scroll
+                    &::-webkit-scrollbar
+                        width: 2px
+                        height: 2px
+                    &::-webkit-scrollbar-track
+                        background-color: #F6F6F5
+                        border-radius: 1em
+                    &::-webkit-scrollbar-thumb
+                        background-color: $accent
+                        border-radius: 1em
+                    a
+                        margin-bottom: .5em
+            &__delivery
+                p
+                    color: $grey
+                    margin-bottom: 1em
+            &__share
+                flex-wrap: wrap
+                p
+                    margin-bottom: 0.5em
 
 @media screen and ( max-width: 576.98px )
     .products-page
@@ -701,7 +744,6 @@
             &__size,
             &__color
                 width: 100%
-                max-width: 300px
         
         &-about
             &__title
