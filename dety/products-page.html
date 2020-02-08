@@ -1261,42 +1261,45 @@
                         <a href="">Таблица размеров</a>
                     </p>
                     <div class="products-page-buy__size__container">
-                      <div class="products-page-buy__size__item">
-                        <span>Выбирете размер</span>
-                        <a href="" class="active">128</a>
-                        <a href="">140</a>
-                        <a href="">142</a>
-                        <a href="">152</a>
-                        <a href="">164</a>
-                        <a href="">172</a>
-                        <a href="">180</a>
-                        <a href="">190</a>
+                      <div class="products-page-buy__size__wrap">
+                        <div><a href="" class="active">128</a></div>
+                        <div><a href="">140</a></div>
+                        <div><a href="">142</a></div>
+                        <div><a href="">152</a></div>
+                        <div><a href="">164</a></div>
+                        <div><a href="">172</a></div>
+                        <div><a href="">180</a></div>
+                        <div><a href="">190</a></div>
                       </div>
-                      <!-- <span class="prev"></span>
-                      <span class="next"></span> -->
+                      <button class="prev"></button>
+                      <button class="next"></button>
                     </div>
                   </div>
                   <div class="products-page-buy__color">
                     <button class="btn btn-color">Серый</button>
                     <span class="push right">Выбрать цвет</span>
                     <p><b>Цвет</b></p>
-                    <div class="products-page-buy__color__item">
-                        <span>Выбирете цвет</span>
-                        <a href="" class="active">
-                            <img src="./img/products/card/color2.png" alt="">
-                        </a>
-                        <a href="">
-                            <img src="./img/products/card/color2.png" alt="">
-                        </a>
-                        <a href="">
-                            <img src="./img/products/card/color3.png" alt="">
-                        </a>
-                        <a href="">
-                            <img src="./img/products/card/color2.png" alt="">
-                        </a>
-                        <a href="">
-                            <img src="./img/products/card/color2.png" alt="">
-                        </a>
+                    <div class="products-page-buy__color__container">
+                      <div class="products-page-buy__color__wrap">
+                          <span>Выбирете цвет</span>
+                          <a href="" class="active">
+                              <img src="./img/products/card/color2.png" alt="">
+                          </a>
+                          <a href="">
+                              <img src="./img/products/card/color2.png" alt="">
+                          </a>
+                          <a href="">
+                              <img src="./img/products/card/color3.png" alt="">
+                          </a>
+                          <a href="">
+                              <img src="./img/products/card/color2.png" alt="">
+                          </a>
+                          <a href="">
+                              <img src="./img/products/card/color2.png" alt="">
+                          </a>
+                      </div>
+                      <span class="prev"></span>
+                      <span class="next"></span>
                     </div>
                   </div>
 
@@ -1347,9 +1350,9 @@
                         <h3>
                             О товаре
                         </h3>
-                        <span></span>
+                        <span class="hideElem"></span>
                     </div>
-                    <p>
+                    <p class="showElem">
                         Практичная и теплая, выполнена с применением технологии AWS EXTREME из водонепроницаемой и воздухопроницаемой мембранной ткани: 10000мм/5000г/м2 /24 ч. Эффективно защищает от ветра и осадков. Используется 300 гр технологичного, инновационного утеплителя DOWN IMITATION. Комбинированная разнофактурная наружная ткань. Регулируемый, отстегивающийся капюшон. Регулируемые манжеты. Внутренний трикотажный манжет, Снегозащитная юбка с противоскользящей тесьмой, Карман под skipass, Карманы с флисовой подкладкой, Теплая и мягкая внутренняя вставка на воротнике, Два боковых кармана на молниях, Длина изделия по спинке 60 см (на размер 140), езон: зима, обращаем  ваше внимание, что правильное определение размера детской обуви.
                     </p>
                     <table>
@@ -1412,7 +1415,6 @@
                             </tr>
                         </tbody>
                     </table>
-                    <span class="minus">скрыть</span>
                 </div>
             </div>
 
@@ -2007,8 +2009,8 @@
       <form action="" method="post">
         <div class="form-row df">
           <div>
-            <label for="user">Ваше имя</label>
-            <input type="text" id="user" name="user" placeholder="" required>
+            <label for="user-review">Ваше имя</label>
+            <input type="text" id="user-review" name="user" placeholder="" required>
           </div>
           <div class="form-col">
             <p>Оцените товар</p>
@@ -2035,8 +2037,8 @@
           <textarea name="minus" id="minus"></textarea>
         </div>
         <div class="form-row">
-          <label for="msg">Комментарий</label>
-          <textarea name="msg" id="msg"></textarea>
+          <label for="msg-review">Комментарий</label>
+          <textarea name="msg" id="msg-review"></textarea>
         </div>
         <div class="input__wrapper">
           <input name="file" type="file" name="file" id="input__file" class="input input__file" multiple>
@@ -2058,15 +2060,15 @@
       <form action="" method="post">
         <div class="form-row df">
           <div>
-            <label for="user">Ваше имя</label>
-            <input type="text" id="user" name="user" placeholder="" required>
+            <label for="user-question">Ваше имя</label>
+            <input type="text" id="user-question" name="user" placeholder="" required>
           </div>
           <div class="form-col">
           </div>
         </div>
         <div class="form-row">
-          <label for="msg">Ваш вопрос</label>
-          <textarea name="msg" id="msg"></textarea>
+          <label for="msg-question">Ваш вопрос</label>
+          <textarea name="msg" id="msg-question"></textarea>
         </div>
         <div class="submit">
           <button type="submit" class="btn btn-accent">Отправить</button>
@@ -2079,8 +2081,21 @@
 </div>
 
   <script src="./js/scripts.min.js"></script>
-  <script src="./js/slick/slick.min.js"></script>
-  <link rel="stylesheet" href="./js/slick/slick.css">
+  <script src="./js/sliderCarousel.js"></script>
+  <script>
+    const options = {
+        main: '.products-page-buy__size__container',
+        wrap: '.products-page-buy__size__wrap',
+        prev: '.products-page-buy__size__container .prev',
+        next: '.products-page-buy__size__container .next',
+        infinity: false,
+        slideToShow: 4,
+    }
+    const carousel = new SliderCarousel(options)
+    carousel.init()
+</script>
   <link rel="stylesheet" href="./css/main.min.css">
 </body>
 </html>
+
+

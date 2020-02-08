@@ -120,21 +120,51 @@ document.addEventListener("DOMContentLoaded", function() {
             searchCategoryList.forEach(item => item.addEventListener('click', (e) => searchCategory.children[0].textContent = item.textContent) )
 
     //Catalog
-    const   catalog = document.querySelector('.nav-catalog')
-            catalogMenu = document.querySelector('.nav-catalog__menu')
-            // catalogSubMenu = document.querySelector('.nav-catalog__submenu')
-            catalogSubMenuItem = document.querySelectorAll('.nav-catalog__submenu__item')
+    const   catalog             = document.querySelector('.nav-catalog')
+            catalogMenu         = catalog.querySelector('.nav-catalog__menu')
+            catalogMenuLink     = catalogMenu.querySelectorAll('ul li')
+            // catalogSubMenu   = document.querySelector('.nav-catalog__submenu')
+            catalogSubMenuItem  = document.querySelectorAll('.nav-catalog__submenu__item')
 
-            // catalogMenuLink = catalogMenu.querySelectorAll('ul li')
+            showSubMenu = (num) => {
+                catalogSubMenuItem[num].classList.add('is-active')
+            }
+            hideSubMenu = () => {
+                catalogSubMenuItem.forEach(item => {
+                    item.classList.contains('is-active') ? item.classList.remove('is-active') : ''
+                })
+            }
+            setMenuActive = (item, timer) => {
+                console.log(timer)
+                catalog.classList.add('in')
+                localStorage.setItem('submenu', item.getAttribute('data-menu'))
+                item.classList.add('active')
+                showSubMenu(item.getAttribute('data-menu'))
+            }
+            clrMenuActive = item => {
+                catalog.classList.contains('in') ? localStorage.setItem('submenu', '') : ''
+                catalog.classList.contains('in') ? catalog.classList.remove('in') : ''
+                item.classList.contains('active') ? item.classList.remove('active') : ''
+                hideSubMenu()
+            }
+            catalogMenuLink.forEach(item => {
+                let timer;
+                item.addEventListener('mouseover', () => {
+                    timer = setInterval(() => {
+                        setMenuActive(item)
+                    }, 100);
+                })
+                item.addEventListener('mouseout', () => {
+                    if (timer)
+                    {
+                        clearTimeout(timer);
+                        clrMenuActive(item)
+                    }
+                })
+            })
+
             // catalogMenu.addEventListener('mouseover', () => {
             //     catalog.classList.add('in')
-            // })
-            // catalogMenuLink.forEach(item => {
-            //     item.addEventListener('mouseover', () => {
-            //         item.classList.add('active')
-            //         catalog.classList.add('in')
-            //         localStorage.setItem('submenu', item.getAttribute('data-menu'))
-            //     })
             // })
 
             // showCatalogSubMenuItem = () => {
@@ -200,17 +230,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 })
     }
 
-    //Show-hide description
-    if ( document.querySelector('.show_description') ) {
-        const   hElem = document.querySelector('.hide_description')
-                sElem = document.querySelector('.show_description')
+    if ( document.querySelector('.hideElem') ) {
+        const   hElem = document.querySelector('.hideElem')
+                sElem = document.querySelector('.showElem')
 
-        sElem.addEventListener('click', () => {
+        hElem.addEventListener('click', () => {
             !hElem.classList.contains('active') ? hElem.classList.add('active') : hElem.classList.remove('active')
-            hElem.classList.contains('active') ? sElem.textContent = 'скрыть' : sElem.textContent = 'показать еще'
+            !sElem.classList.contains('active') ? sElem.classList.add('active') : sElem.classList.remove('active')
         })
     }
-
 
     //Products-page Tabs
     if ( document.querySelector('.products-page-rq') ) {
@@ -280,35 +308,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.body.classList.remove('no-scroll')
             })
         }
-        const   container = document.querySelector('.products-page-buy__size__item')
-                prev = document.querySelector('.products-page-buy__size__item .prev')
-                next = document.querySelector('.products-page-buy__size__item .next')
+        document.querySelector('.btn-size').addEventListener('click', () => {
+            showModal('.btn-size', '.products-page-buy__size__wrap')
+        })
 
-                document.querySelector('.btn-size').addEventListener('click', () => {
-                    showModal('.btn-size', '.products-page-buy__size__item')
-                })
-
-                document.querySelector('.btn-color').addEventListener('click', () => {
-                    showModal('.btn-color', '.products-page-buy__color__item')
-                })
-
-                // prev.addEventListener('click', () => {
-                //     console.log('123')
-                //     container.scrollRight += 50
-                // })
-                // next.addEventListener('click', () => {
-                //     console.log('321')
-                //     container.scrollLeft += 50
-                // })
+        document.querySelector('.btn-color').addEventListener('click', () => {
+            showModal('.btn-color', '.products-page-buy__color__wrap')
+        })
     }
 
     
-});
-
-
-$( document ).ready(function() {
-
-    $("#phone").mask("+7 (999) 999-99-99");
-
-    $('.lazy').Lazy();
 });

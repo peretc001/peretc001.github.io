@@ -6,22 +6,29 @@
         font-size: 1em
         line-height: 2
     
-    .show_description
+    .hideElem
         display: none
+        width: 21px
+        height: 11px
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjMiIGhlaWdodD0iMTMiIHZpZXdCb3g9IjAgMCAyMyAxMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMSAxMkwyMiAxMkwxMS41IDFMMSAxMloiIGZpbGw9IiMwMEI2QzYiIHN0cm9rZT0iIzAwQjZDNiIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==')
+        transition: transform .2s ease
+        &.active
+            transform: rotate(-180deg)
+
+    .showElem
+        max-height: 500px
+        opacity: 1
+        overflow: hidden
+        transition: max-height .5s ease-in-out, opacity .5s ease-in-out
     
 @media screen and ( max-width: 767.98px )
     .text-block
-        .show_description
+        .hideElem
             display: inline-block
-            border-bottom: 1px dashed $nav
-            cursor: pointer
-        
-        .hide_description
-            visibility: none
-            max-height: 0
-            padding-top: 2em
-            overflow: hidden
-            transition: max-height .5s linear
+        .showElem
             &.active
-                visibility: visible
-                max-height: 500px
+                opacity: 0
+                max-height: 0

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <section id="companies" class="companies">
+        <div class="container">
+            <h2>Герои и интересы</h2>
+            
+            <div class="underline"></div>
+            <div class="companies-wrapper">
+                <div class="companies-hor">
+                    <div class="companies-hor-item"><img src="./img/heroes/1.png" alt=""></div>
+                    <div class="companies-hor-item"><img src="./img/heroes/2.png" alt=""></div>
+                    <div class="companies-hor-item"><img src="./img/heroes/3.png" alt=""></div>
+                    <div class="companies-hor-item"><img src="./img/heroes/4.png" alt=""></div>
+                    <div class="companies-hor-item"><img src="./img/heroes/5.png" alt=""></div>
+                    <div class="companies-hor-item"><img src="./img/heroes/5.png" alt=""></div>
+                    <div class="companies-hor-item"><img src="./img/heroes/5.png" alt=""></div>
+                    <div class="companies-hor-item"><img src="./img/heroes/5.png" alt=""></div>
+                    <div class="companies-hor-item"><img src="./img/heroes/5.png" alt=""></div>
+                </div>
+                <div>
+                    <button class="prev"> < </button>
+                    <button class="next"> > </button>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <script src="./js/sliderCarousel.js"></script>
+      <script>
+          const options = {
+              main: '.companies-wrapper',
+              wrap: '.companies-hor',
+              prev: '.companies-wrapper .prev',
+              next: '.companies-wrapper .next',
+              infinity: true,
+              slideToShow: 4,
+              responsive: [
+                {
+                    breakpoint: 1024,
+                    slideToShow: 3
+                },
+                {
+                    breakpoint: 768,
+                    slideToShow: 2
+                },
+                {
+                    breakpoint: 576,
+                    slideToShow: 1
+                }
+            ]
+          }
+          const carousel = new SliderCarousel(options)
+          carousel.init()
+      </script>
+</body>
+</html>
