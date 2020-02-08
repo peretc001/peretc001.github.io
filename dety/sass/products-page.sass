@@ -1,5 +1,7 @@
 @import '_libs/var'
 .layout
+    display: none
+    pointer-events: none
     position: fixed
     left: 0
     top: 0
@@ -7,7 +9,11 @@
     bottom: 0
     z-index: 6
     background: #000
-    opacity: .5
+    opacity: 0
+    transition: opacity .3s ease
+    &.active
+        display: block
+        pointer-events: all
 .products-page
     h1
         font-size: 2.5em
@@ -156,7 +162,7 @@
         right: 0
         background: #ffffff
         border-radius: 20px
-        padding: 1em 0
+        padding: 1em .5em
         overflow: hidden
         &::after
             content: ''
@@ -201,6 +207,7 @@
         
         &__size,
         &__color
+            width: 100%
             padding: 1em
             padding-bottom: 0
             position: relative
@@ -239,11 +246,15 @@
                     animation: show-left .5s ease
                     &::before
                         left: 10px
+            
             &__container
                 position: relative
-                margin: 0 10px 0 0
+                padding: 0
+                margin: 0
                 span
                     display: none
+            &__block
+                position: relative
                 .prev,
                 .next
                     position: absolute
@@ -257,25 +268,26 @@
                     box-shadow: none
                     cursor: pointer
                     transition: opacity .5s ease
-                    background: rgba(#fff, .8)
+                    background-color: rgba(#fff, .8)
                     &::before
                         content: ''
                         position: absolute
                         z-index: 4
-                        left: 0
-                        top: 0
+                        left: 50%
+                        top: 50%
+                        transform: translate(-50%, -50%)
                         width: 1.5em
                         height: 100%
                         background-size: 1em
                         background-repeat: no-repeat
                         background-position: center
                 .prev
-                    left: 0
+                    left: -1em
                     // background: linear-gradient(to left, transparent 10%, #ffffff 30%)
                     &::before
                         background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMTk4LjYwOCwyNDYuMTA0TDM4Mi42NjQsNjIuMDRjNS4wNjgtNS4wNTYsNy44NTYtMTEuODE2LDcuODU2LTE5LjAyNGMwLTcuMjEyLTIuNzg4LTEzLjk2OC03Ljg1Ni0xOS4wMzJsLTE2LjEyOC0xNi4xMiAgICBDMzYxLjQ3NiwyLjc5MiwzNTQuNzEyLDAsMzQ3LjUwNCwwcy0xMy45NjQsMi43OTItMTkuMDI4LDcuODY0TDEwOS4zMjgsMjI3LjAwOGMtNS4wODQsNS4wOC03Ljg2OCwxMS44NjgtNy44NDgsMTkuMDg0ICAgIGMtMC4wMiw3LjI0OCwyLjc2LDE0LjAyOCw3Ljg0OCwxOS4xMTJsMjE4Ljk0NCwyMTguOTMyYzUuMDY0LDUuMDcyLDExLjgyLDcuODY0LDE5LjAzMiw3Ljg2NGM3LjIwOCwwLDEzLjk2NC0yLjc5MiwxOS4wMzItNy44NjQgICAgbDE2LjEyNC0xNi4xMmMxMC40OTItMTAuNDkyLDEwLjQ5Mi0yNy41NzIsMC0zOC4wNkwxOTguNjA4LDI0Ni4xMDR6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNDNEM0QzQiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==')
                 .next
-                    right: 0
+                    right: -1em
                     // background: linear-gradient(to right, transparent 10%, #ffffff 30%)
                     &::before
                         background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojQzRDNEM0IiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
@@ -284,8 +296,8 @@
                     &.hidden
                         opacity: 0
                         pointer-events: none
-
             &__wrap
+                display: flex
                 padding: 3px 0
                 & > div
                     a
@@ -298,11 +310,12 @@
                         font-weight: bold
                         border-radius: 4px
                         transition: border-color .2s ease
+                        user-select: none
                         &:hover,
                         &.active
                             border-color: $accent
                             color: $accent
-
+        //Custom
         &__size
             p
                 a
@@ -313,31 +326,43 @@
             &__wrap
                 & > div:not(:first-child)
                     padding-left: 5px
-
         &__color
             p
                 margin-bottom: 0.3em
             &__wrap
-                & > div:not(:first-child)
-                    
                 & > div
-                    padding-right: 15px
-                    text-align: center
+                    &:first-child
+                        padding-right: 1em
+                        padding-left: 0
+                    &:last-child
+                        padding-right: 0
+                        padding-left: 1em
+                & > div
+                    padding: .5em
                     a
                         display: block
                         border: none
-                        text-align: center
+                        text-align: right
+                        margin: auto
                         padding: 0
                         font-size: 0.8em
                         color: $text
                         font-weight: bold
                         border-radius: 0
+                        position: relative
+                        min-height: 90px
+                        overflow: hidden
                         &.active
                             border: 2px solid $accent
                             border-radius: 4px
                             color: $accent
                             overflow: hidden
-            
+                        img
+                            position: absolute
+                            left: 0
+                            top: 0
+                            width: 100%
+                            height: auto
 
         &__button
             display: flex
@@ -349,7 +374,10 @@
                 padding: 1em 0
                 font-size: 1.3em
                 font-weight: bold
-                max-width: 166px
+                &:first-child
+                    margin-right: 0.5%
+                &:last-child
+                    margin-left: 0.5%
 
         .count
             padding: 1em
@@ -676,6 +704,11 @@
             width: 600px
         &-buy
             width: 310px
+            &__color
+                &__wrap
+                    & > div
+                        a
+                            min-height: 70px
         
         &-rq
             &__head
@@ -746,6 +779,7 @@
                 border-right: 1px solid #f5f5f5
                 lign-items: center
                 flex-wrap: wrap
+                padding-right: .5em
             &--right
                 flex-direction: column
                 justify-content: space-between
@@ -790,6 +824,7 @@
             &--right
                 flex: 1 0 100%
                 max-width: 100%
+                padding: 0
             &--left
                 border-right: none
             &--right
@@ -807,24 +842,34 @@
                     padding: 0
                     margin: 0
                     padding-top: .5em
+                    b
+                        display: none
+                    a
+                        margin-left: 0
                 &__wrap
+                    display: flex
+                    flex-wrap: wrap !important
+                    padding: 0 calc(50% - 255px)
+                    & > div
+                        flex: 0 0 20% !important
+                        padding: 0 !important
+                        a
+                            margin: .5em !important
+                &__block
                     width: 100%
-                    max-width: 510px
+                    min-height: 300px
                     position: fixed
-                    left: 50%
-                    top: 50%
-                    transform: translate(-50%, -50%)
+                    left: 0
+                    bottom: 0
+                    transform: translateY(100%)
                     background: #ffffff
-                    border-radius: 10px
-                    margin-top: 1em
                     padding: 2em
-                    flex-wrap: wrap
                     opacity: 0
                     z-index: -1
                     overflow: hidden
                     visibility: hidden
                     will-change: transform
-                    transition: opacity .5s ease, margin .5s ease
+                    transition: transform .5s ease
                     &.active
                         opacity: 1
                         z-index: 7
@@ -832,6 +877,7 @@
                         visibility: visible
                         margin-top: 0
                         justify-content: center
+                        // transform: translateY(0)
                         span
                             display: block
                             font-size: 1.4em
@@ -839,30 +885,21 @@
                             flex: 1 0 100%
                             text-align: center
                             margin-bottom: 1em
-
-                    a
-                        flex: 1 0 20%
-                        max-width: 100px
-                        margin-right: 0
-                        margin: .5em
-                        padding: 1em
-
-            &__size
-                padding: 1em 0 0 1em
-                padding-right: 0.3em
-                p
-                    b
+                    
+                    .prev,
+                    .next
                         display: none
-                    a
-                        margin-left: 0
+            &__size
+                padding-right: 0.2em
             &__color
-                padding: 1em 1em 0 0
-                padding-left: 0.3em
+                padding-left: 0.2em
                 &__wrap
-                    a
-                        padding: 0
-                        text-align: center
-                        flex: 1 0 auto
+                    & > div
+                        a
+                            min-height: auto
+                            img
+                                width: 100px
+                                position: relative
                 p
                     color: #ffffff
             
@@ -896,10 +933,17 @@
         &-buy
             &__size,
             &__color
+                &__block
+                    padding: 1em
                 &__wrap
-                    width: 100%
-                    max-width: 94%
-                    padding: 2em 1em
+                    padding: 1em
+                    & > div
+                        flex: 0 0 25% !important
+                        padding: 0 !important
+            &__size
+                padding-right: 0.3em
+            &__color
+                padding-left: 0.3em
         &-about
             &__title
                 align-items: flex-start

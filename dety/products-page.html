@@ -1252,7 +1252,8 @@
                       <span>экономия 2511 руб</span>
                       <span>+4811 бонусных рублей</span>
                   </div>
-
+                  
+                  <!-- if (has_offers) -->
                   <div class="products-page-buy__size">
                     <button class="btn btn-size">128</button>
                     <span class="push left">Выбрать размер</span>
@@ -1260,17 +1261,19 @@
                         <b>Размеры</b>
                         <a href="">Таблица размеров</a>
                     </p>
-                    <div class="products-page-buy__size__container">
-                      <span>Выбирете размер</span>
-                      <div class="products-page-buy__size__wrap">
-                        <div><a href="" class="active">128</a></div>
-                        <div><a href="">140</a></div>
-                        <div><a href="">142</a></div>
-                        <div><a href="">152</a></div>
-                        <div><a href="">164</a></div>
-                        <div><a href="">172</a></div>
-                        <div><a href="">180</a></div>
-                        <div><a href="">190</a></div>
+                    <div class="products-page-buy__size__block">
+                      <div class="products-page-buy__size__container">
+                        <span>Выбирете размер</span>
+                        <div class="products-page-buy__size__wrap">
+                          <div><a href="" class="active">128</a></div>
+                          <div><a href="">140</a></div>
+                          <div><a href="">142</a></div>
+                          <div><a href="">152</a></div>
+                          <div><a href="">164</a></div>
+                          <div><a href="">172</a></div>
+                          <div><a href="">180</a></div>
+                          <div><a href="">190</a></div>
+                        </div>
                       </div>
                       <button class="prev"></button>
                       <button class="next"></button>
@@ -1280,30 +1283,52 @@
                     <button class="btn btn-color">Серый</button>
                     <span class="push right">Выбрать цвет</span>
                     <p><b>Цвет</b></p>
-                    <div class="products-page-buy__color__container">
-                      <span>Выбирете цвет</span>
-                      <div class="products-page-buy__color__wrap">
-                          <div><a href="" class="active">
-                              <img src="./img/products/card/color2.png" alt="">
-                          </a></div>
-                          <div><a href="">
-                              <img src="./img/products/card/color2.png" alt="">
-                          </a></div>
-                          <div><a href="">
-                              <img src="./img/products/card/color3.png" alt="">
-                          </a></div>
-                          <div><a href="">
-                              <img src="./img/products/card/color2.png" alt="">
-                          </a></div>
-                          <div><a href="">
-                              <img src="./img/products/card/color2.png" alt="">
-                          </a></div>
+                    <div class="products-page-buy__color__block">
+                      <div class="products-page-buy__color__container">
+                        <span>Выбирете цвет</span>
+                        <div class="products-page-buy__color__wrap">
+                            <div>
+                              <a href="" class="active">
+                                <img src="./img/products/card/color2.png" alt="">
+                              </a>
+                            </div>
+                            <div>
+                              <a href="">
+                                <img src="./img/products/card/color2.png" alt="">
+                              </a>
+                            </div>
+                            <div>
+                              <a href="">
+                                <img src="./img/products/card/color3.png" alt="">
+                              </a>
+                            </div>
+                            <div>
+                              <a href="">
+                                <img src="./img/products/card/color2.png" alt="">
+                              </a>
+                            </div>
+                            <div>
+                              <a href="">
+                                <img src="./img/products/card/color2.png" alt="">
+                              </a>
+                            </div>
+                            <div>
+                              <a href="">
+                                <img src="./img/products/card/color2.png" alt="">
+                              </a>
+                            </div>
+                            <div>
+                              <a href="">
+                                <img src="./img/products/card/color2.png" alt="">
+                              </a>
+                            </div>
+                        </div>
                       </div>
                       <button class="prev"></button>
                       <button class="next"></button>
                     </div>
                   </div>
-
+                  <!-- endif -->
                 </div>
 
                 <div class="products-page-buy--right">
@@ -2088,8 +2113,8 @@
       id: 'size',
       main: '.products-page-buy__size__container',
       wrap: '.products-page-buy__size__wrap',
-      prev: '.products-page-buy__size__container .prev',
-      next: '.products-page-buy__size__container .next',
+      prev: '.products-page-buy__size__block .prev',
+      next: '.products-page-buy__size__block .next',
       infinity: false,
       slideToShow: 4,
     })
@@ -2099,8 +2124,8 @@
       id: 'color',
       main: '.products-page-buy__color__container',
       wrap: '.products-page-buy__color__wrap',
-      prev: '.products-page-buy__color__container .prev',
-      next: '.products-page-buy__color__container .next',
+      prev: '.products-page-buy__color__block .prev',
+      next: '.products-page-buy__color__block .next',
       infinity: false,
       slideToShow: 3,
     })
