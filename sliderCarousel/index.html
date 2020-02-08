@@ -25,22 +25,19 @@
                     <div class="companies-hor-item"><img src="./img/heroes/5.png" alt=""></div>
                     <div class="companies-hor-item"><img src="./img/heroes/5.png" alt=""></div>
                 </div>
-                <div>
-                    <button class="prev"> < </button>
-                    <button class="next"> > </button>
-                </div>
             </div>
         </div>
       </section>
 
-      <script src="./js/sliderCarousel.js"></script>
+      <script src="./js/scripts.min.js"></script>
       <script>
           const options = {
+              id: 'size',
               main: '.companies-wrapper',
               wrap: '.companies-hor',
-              prev: '.companies-wrapper .prev',
-              next: '.companies-wrapper .next',
-              infinity: true,
+            //   prev: '.companies-wrapper .prev',
+            //   next: '.companies-wrapper .next',
+              infinity: false,
               slideToShow: 4,
               responsive: [
                 {

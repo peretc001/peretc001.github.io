@@ -3,6 +3,7 @@
 
 class SliderCarousel {
     constructor({
+        id,
         main, 
         wrap, 
         next,
@@ -12,6 +13,7 @@ class SliderCarousel {
         slideToShow = 3,
         responsive = [] 
     }) {
+        this.id = id,
         this.main = document.querySelector(main)
         this.wrap = document.querySelector(wrap)
         this.slides = document.querySelector(wrap).children
@@ -19,7 +21,7 @@ class SliderCarousel {
         this.postX2 = 0,
         this.next = document.querySelector(next)
         this.prev = document.querySelector(prev)
-        this.slideToShow = slideToShow
+        this.slideToShow = slideToShow,
         this.options = {
             position,
             maxPosition: this.slides.length - this.slideToShow,
@@ -33,34 +35,33 @@ class SliderCarousel {
         this.addSliderClass()
         this.addStyle(this.options.slideCount)
 
-        // !this.options.infinity && this.options.position == 0 ? this.prev.style.display = 'none' : this.prev.style.display = ''
-
         if (this.prev && this.next) {
             this.controlSlider()
         } else {
             this.addArrow()
             this.controlSlider()
         }
-
+        !this.options.infinity && this.options.position == 0 ? this.prev.classList.add('hidden') : this.prev.classList.remove('hidden')
+        !this.options.infinity && this.options.maxPosition == 0 ? this.next.classList.add('hidden') : this.next.classList.remove('hidden')
         this.responsive ? this.responseInit() : ''
     }
 
     addSliderClass() {
-        this.main.classList.add('main-slider')
-        this.wrap.classList.add('main-slider-wrap')
+        this.main.classList.add(`${this.id}-slider`)
+        this.wrap.classList.add(`${this.id}-slider-wrap`)
         for( const item of this.slides) {
-            item.classList.add('main-slider-wrap--item')
+            item.classList.add(`${this.id}-slider-wrap--item`)
         }
     }
 
     addStyle(count) {
-        const style = document.getElementById('main-slider') || document.createElement('style')
-        style.id = 'main-slider'
+        const style = document.getElementById(`${this.id}-slider`) || document.createElement('style')
+        style.id = this.id + '-slider'
         style.innerHTML = `
-            .main-slider {
+            .${this.id}-slider {
                 overflow: hidden;
             }
-            .main-slider-wrap {
+            .${this.id}-slider-wrap {
                 display:-webkit-box;
                 display:-webkit-flex;
                 display:-ms-flexbox;
@@ -68,7 +69,7 @@ class SliderCarousel {
                 transition: transform .5s ease;
                 will-change: transform;
             }
-            .main-slider-wrap--item {
+            .${this.id}-slider-wrap--item {
                 margin: auto 0;
                 -webkit-box-flex:0;
                 -webkit-flex:0 0 ${count}%;
@@ -98,8 +99,8 @@ class SliderCarousel {
                 this.options.position = this.options.maxPosition
             }
             this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideCount}%)`
-            // !this.options.infinity && this.options.position == this.options.maxPosition ? this.next.style.display = 'none' : this.next.style.display = ''
-            // !this.options.infinity && this.options.position == 0 ? this.prev.style.display = 'none' : this.prev.style.display = ''
+            !this.options.infinity && this.options.position == 0 ? this.prev.classList.add('hidden') : this.prev.classList.remove('hidden')
+            !this.options.infinity && this.options.position == this.options.maxPosition ? this.next.classList.add('hidden') : this.next.classList.remove('hidden')
         }
     }
     nextSlider = () => {
@@ -109,8 +110,8 @@ class SliderCarousel {
                 this.options.position = 0
             }
             this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideCount}%)`
-            // !this.options.infinity && this.options.position == this.options.maxPosition ? this.next.style.display = 'none' : this.next.style.display = ''
-            // !this.options.infinity && this.options.position == 0 ? this.prev.style.display = 'none' : this.prev.style.display = ''
+            !this.options.infinity && this.options.position == 0 ? this.prev.classList.add('hidden') : this.prev.classList.remove('hidden')
+            !this.options.infinity && this.options.position == this.options.maxPosition ? this.next.classList.add('hidden') : this.next.classList.remove('hidden')
         }
     }
     dragStart = (e) => {
@@ -142,29 +143,22 @@ class SliderCarousel {
         this.prev.className = 'prev'
         this.next.className = 'next'
 
+        this.prev.textContent = 'prev'
+        this.next.textContent = 'next'
+
         this.main.appendChild(this.prev)
         this.main.appendChild(this.next)
 
         const style = document.createElement('style')
-        style.id = 'main-slider--button'
+        style.id = this.id+'-slider--button'
         style.textContent = `
-            .main-slider .prev,
-            .main-slider .next {
-                margin: 0 10px;
-                border: 20px solid transparent;
-                background: transparent;
-                outline: none;
-                cursor: pointer;
-            }
-            .main-slider .prev {
-                border-right-color: #19b5fe
-            }
-            .main-slider .next {
-                border-left-color: #19b5fe
+            ${this.id}-slider .prev.hidden,
+            ${this.id}-slider .next.hidden {
+                opacity: 0
             }
         `;
-        document.head.appendChild(style)
-
+        const body = document.body || document.querySelector('body')
+        body.appendChild(style)
     }
 
     responseInit() {

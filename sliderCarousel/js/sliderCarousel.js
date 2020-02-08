@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return !!right[Symbol.hasInstance](left); } else { return left instanceof right; } }
 
@@ -24,7 +24,8 @@ function () {
   function SliderCarousel(_ref) {
     var _this = this;
 
-    var main = _ref.main,
+    var id = _ref.id,
+        main = _ref.main,
         wrap = _ref.wrap,
         next = _ref.next,
         prev = _ref.prev,
@@ -47,8 +48,9 @@ function () {
           _this.options.position = _this.options.maxPosition;
         }
 
-        _this.wrap.style.transform = "translateX(-".concat(_this.options.position * _this.options.slideCount, "%)"); // !this.options.infinity && this.options.position == this.options.maxPosition ? this.next.style.display = 'none' : this.next.style.display = ''
-        // !this.options.infinity && this.options.position == 0 ? this.prev.style.display = 'none' : this.prev.style.display = ''
+        _this.wrap.style.transform = "translateX(-".concat(_this.options.position * _this.options.slideCount, "%)");
+        !_this.options.infinity && _this.options.position == 0 ? _this.prev.classList.add('hidden') : _this.prev.classList.remove('hidden');
+        !_this.options.infinity && _this.options.position == _this.options.maxPosition ? _this.next.classList.add('hidden') : _this.next.classList.remove('hidden');
       }
     });
 
@@ -60,8 +62,9 @@ function () {
           _this.options.position = 0;
         }
 
-        _this.wrap.style.transform = "translateX(-".concat(_this.options.position * _this.options.slideCount, "%)"); // !this.options.infinity && this.options.position == this.options.maxPosition ? this.next.style.display = 'none' : this.next.style.display = ''
-        // !this.options.infinity && this.options.position == 0 ? this.prev.style.display = 'none' : this.prev.style.display = ''
+        _this.wrap.style.transform = "translateX(-".concat(_this.options.position * _this.options.slideCount, "%)");
+        !_this.options.infinity && _this.options.position == 0 ? _this.prev.classList.add('hidden') : _this.prev.classList.remove('hidden');
+        !_this.options.infinity && _this.options.position == _this.options.maxPosition ? _this.next.classList.add('hidden') : _this.next.classList.remove('hidden');
       }
     });
 
@@ -91,13 +94,12 @@ function () {
       _this.postX2 < 0 ? _this.prevSlider() : _this.nextSlider();
     });
 
-    this.main = document.querySelector(main);
+    this.id = id, this.main = document.querySelector(main);
     this.wrap = document.querySelector(wrap);
     this.slides = document.querySelector(wrap).children;
     this.postX1 = 0, this.postX2 = 0, this.next = document.querySelector(next);
     this.prev = document.querySelector(prev);
-    this.slideToShow = slideToShow;
-    this.options = {
+    this.slideToShow = slideToShow, this.options = {
       position: position,
       maxPosition: this.slides.length - this.slideToShow,
       infinity: infinity,
@@ -109,7 +111,7 @@ function () {
     key: "init",
     value: function init() {
       this.addSliderClass();
-      this.addStyle(this.options.slideCount); // !this.options.infinity && this.options.position == 0 ? this.prev.style.display = 'none' : this.prev.style.display = ''
+      this.addStyle(this.options.slideCount);
 
       if (this.prev && this.next) {
         this.controlSlider();
@@ -118,13 +120,15 @@ function () {
         this.controlSlider();
       }
 
+      !this.options.infinity && this.options.position == 0 ? this.prev.classList.add('hidden') : this.prev.classList.remove('hidden');
+      !this.options.infinity && this.options.maxPosition == 0 ? this.next.classList.add('hidden') : this.next.classList.remove('hidden');
       this.responsive ? this.responseInit() : '';
     }
   }, {
     key: "addSliderClass",
     value: function addSliderClass() {
-      this.main.classList.add('main-slider');
-      this.wrap.classList.add('main-slider-wrap');
+      this.main.classList.add("".concat(this.id, "-slider"));
+      this.wrap.classList.add("".concat(this.id, "-slider-wrap"));
       var _iteratorNormalCompletion = true;
       var _didIteratorError = false;
       var _iteratorError = undefined;
@@ -132,7 +136,7 @@ function () {
       try {
         for (var _iterator = this.slides[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
           var item = _step.value;
-          item.classList.add('main-slider-wrap--item');
+          item.classList.add("".concat(this.id, "-slider-wrap--item"));
         }
       } catch (err) {
         _didIteratorError = true;
@@ -152,9 +156,9 @@ function () {
   }, {
     key: "addStyle",
     value: function addStyle(count) {
-      var style = document.getElementById('main-slider') || document.createElement('style');
-      style.id = 'main-slider';
-      style.innerHTML = "\n            .main-slider {\n                overflow: hidden;\n            }\n            .main-slider-wrap {\n                display:-webkit-box;\n                display:-webkit-flex;\n                display:-ms-flexbox;\n                display: flex;\n                transition: transform .5s ease;\n                will-change: transform;\n            }\n            .main-slider-wrap--item {\n                margin: auto 0;\n                -webkit-box-flex:0;\n                -webkit-flex:0 0 ".concat(count, "%;\n                -ms-flex:0 0 ").concat(count, "%;\n                flex:0 0 ").concat(count, "%\n            }\n        ");
+      var style = document.getElementById("".concat(this.id, "-slider")) || document.createElement('style');
+      style.id = this.id + '-slider';
+      style.innerHTML = "\n            .".concat(this.id, "-slider {\n                overflow: hidden;\n            }\n            .").concat(this.id, "-slider-wrap {\n                display:-webkit-box;\n                display:-webkit-flex;\n                display:-ms-flexbox;\n                display: flex;\n                transition: transform .5s ease;\n                will-change: transform;\n            }\n            .").concat(this.id, "-slider-wrap--item {\n                margin: auto 0;\n                -webkit-box-flex:0;\n                -webkit-flex:0 0 ").concat(count, "%;\n                -ms-flex:0 0 ").concat(count, "%;\n                flex:0 0 ").concat(count, "%\n            }\n        ");
       var body = document.body || document.querySelector('body');
       body.appendChild(style);
     }
@@ -196,12 +200,15 @@ function () {
       this.next = document.createElement('button');
       this.prev.className = 'prev';
       this.next.className = 'next';
+      this.prev.textContent = 'prev';
+      this.next.textContent = 'next';
       this.main.appendChild(this.prev);
       this.main.appendChild(this.next);
       var style = document.createElement('style');
-      style.id = 'main-slider--button';
-      style.textContent = "\n            .main-slider .prev,\n            .main-slider .next {\n                margin: 0 10px;\n                border: 20px solid transparent;\n                background: transparent;\n                outline: none;\n                cursor: pointer;\n            }\n            .main-slider .prev {\n                border-right-color: #19b5fe\n            }\n            .main-slider .next {\n                border-left-color: #19b5fe\n            }\n        ";
-      document.head.appendChild(style);
+      style.id = this.id + '-slider--button';
+      style.textContent = "\n            ".concat(this.id, "-slider .prev.hidden,\n            ").concat(this.id, "-slider .next.hidden {\n                opacity: 0\n            }\n        ");
+      var body = document.body || document.querySelector('body');
+      body.appendChild(style);
     }
   }, {
     key: "responseInit",

@@ -1261,6 +1261,7 @@
                         <a href="">Таблица размеров</a>
                     </p>
                     <div class="products-page-buy__size__container">
+                      <span>Выбирете размер</span>
                       <div class="products-page-buy__size__wrap">
                         <div><a href="" class="active">128</a></div>
                         <div><a href="">140</a></div>
@@ -1280,26 +1281,26 @@
                     <span class="push right">Выбрать цвет</span>
                     <p><b>Цвет</b></p>
                     <div class="products-page-buy__color__container">
+                      <span>Выбирете цвет</span>
                       <div class="products-page-buy__color__wrap">
-                          <span>Выбирете цвет</span>
-                          <a href="" class="active">
+                          <div><a href="" class="active">
                               <img src="./img/products/card/color2.png" alt="">
-                          </a>
-                          <a href="">
+                          </a></div>
+                          <div><a href="">
                               <img src="./img/products/card/color2.png" alt="">
-                          </a>
-                          <a href="">
+                          </a></div>
+                          <div><a href="">
                               <img src="./img/products/card/color3.png" alt="">
-                          </a>
-                          <a href="">
+                          </a></div>
+                          <div><a href="">
                               <img src="./img/products/card/color2.png" alt="">
-                          </a>
-                          <a href="">
+                          </a></div>
+                          <div><a href="">
                               <img src="./img/products/card/color2.png" alt="">
-                          </a>
+                          </a></div>
                       </div>
-                      <span class="prev"></span>
-                      <span class="next"></span>
+                      <button class="prev"></button>
+                      <button class="next"></button>
                     </div>
                   </div>
 
@@ -2083,16 +2084,27 @@
   <script src="./js/scripts.min.js"></script>
   <script src="./js/sliderCarousel.js"></script>
   <script>
-    const options = {
-        main: '.products-page-buy__size__container',
-        wrap: '.products-page-buy__size__wrap',
-        prev: '.products-page-buy__size__container .prev',
-        next: '.products-page-buy__size__container .next',
-        infinity: false,
-        slideToShow: 4,
-    }
-    const carousel = new SliderCarousel(options)
-    carousel.init()
+    const carousel_size = new SliderCarousel({
+      id: 'size',
+      main: '.products-page-buy__size__container',
+      wrap: '.products-page-buy__size__wrap',
+      prev: '.products-page-buy__size__container .prev',
+      next: '.products-page-buy__size__container .next',
+      infinity: false,
+      slideToShow: 4,
+    })
+    carousel_size.init()
+    
+    const carousel_color = new SliderCarousel({
+      id: 'color',
+      main: '.products-page-buy__color__container',
+      wrap: '.products-page-buy__color__wrap',
+      prev: '.products-page-buy__color__container .prev',
+      next: '.products-page-buy__color__container .next',
+      infinity: false,
+      slideToShow: 3,
+    })
+    carousel_color.init()
 </script>
   <link rel="stylesheet" href="./css/main.min.css">
 </body>
