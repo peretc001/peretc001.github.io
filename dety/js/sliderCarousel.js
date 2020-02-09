@@ -9,6 +9,7 @@
 //         position = 0,
 //         slideToShow = 3,
 //         padding = 0,
+//         goTo,
 //         responsive = [] 
 //     }) {
 //         this.id = id,
@@ -29,6 +30,7 @@
 //             slideCount : 100 / this.slideToShow
 //         },
 //         this.padding = padding,
+//         this.goTo = goTo,
 //         this.responsive = responsive;
 //     }
 
@@ -43,6 +45,13 @@
 //           this.options.maxPosition == 0 ? this.next.classList.add('hidden') : ''
 //         }
 //         this.responsive ? this.responseInit() : ''
+//     }
+
+//     goto(goTo) {
+//       this.options.position = goTo
+//       this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideCount}%)`
+//       !this.options.infinity && this.options.position == 0 ? this.prev.classList.add('hidden') : this.prev.classList.remove('hidden')
+//       !this.options.infinity && this.options.position == this.options.maxPosition ? this.next.classList.add('hidden') : this.next.classList.remove('hidden')
 //     }
 
 //     addSliderClass() {
@@ -106,9 +115,7 @@
 //             if ( this.options.position < 0 ) {
 //                 this.options.position = this.options.maxPosition
 //             }
-//             this.vertical == true 
-//               ? this.wrap.style.transform = `translateY(-${this.options.position * this.options.slideCount}%)`
-//                 : this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideCount}%)`
+//             this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideCount}%)`
 //             !this.options.infinity && this.options.position == 0 ? this.prev.classList.add('hidden') : this.prev.classList.remove('hidden')
 //             !this.options.infinity && this.options.position == this.options.maxPosition ? this.next.classList.add('hidden') : this.next.classList.remove('hidden')
 //         }
@@ -119,9 +126,7 @@
 //             if ( this.options.position > this.options.maxPosition ) {
 //                 this.options.position = 0
 //             }
-//             this.vertical == true 
-//               ? this.wrap.style.transform = `translateY(-${this.options.position * this.options.slideCount}%)`
-//                 : this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideCount}%)`
+//             this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideCount}%)`
 //             !this.options.infinity && this.options.position == 0 ? this.prev.classList.add('hidden') : this.prev.classList.remove('hidden')
 //             !this.options.infinity && this.options.position == this.options.maxPosition ? this.next.classList.add('hidden') : this.next.classList.remove('hidden')
 //         }
@@ -222,6 +227,7 @@ function () {
         slideToShow = _ref$slideToShow === void 0 ? 3 : _ref$slideToShow,
         _ref$padding = _ref.padding,
         padding = _ref$padding === void 0 ? 0 : _ref$padding,
+        goTo = _ref.goTo,
         _ref$responsive = _ref.responsive,
         responsive = _ref$responsive === void 0 ? [] : _ref$responsive;
 
@@ -235,7 +241,7 @@ function () {
           _this.options.position = _this.options.maxPosition;
         }
 
-        _this.vertical == true ? _this.wrap.style.transform = "translateY(-".concat(_this.options.position * _this.options.slideCount, "%)") : _this.wrap.style.transform = "translateX(-".concat(_this.options.position * _this.options.slideCount, "%)");
+        _this.wrap.style.transform = "translateX(-".concat(_this.options.position * _this.options.slideCount, "%)");
         !_this.options.infinity && _this.options.position == 0 ? _this.prev.classList.add('hidden') : _this.prev.classList.remove('hidden');
         !_this.options.infinity && _this.options.position == _this.options.maxPosition ? _this.next.classList.add('hidden') : _this.next.classList.remove('hidden');
       }
@@ -249,7 +255,7 @@ function () {
           _this.options.position = 0;
         }
 
-        _this.vertical == true ? _this.wrap.style.transform = "translateY(-".concat(_this.options.position * _this.options.slideCount, "%)") : _this.wrap.style.transform = "translateX(-".concat(_this.options.position * _this.options.slideCount, "%)");
+        _this.wrap.style.transform = "translateX(-".concat(_this.options.position * _this.options.slideCount, "%)");
         !_this.options.infinity && _this.options.position == 0 ? _this.prev.classList.add('hidden') : _this.prev.classList.remove('hidden');
         !_this.options.infinity && _this.options.position == _this.options.maxPosition ? _this.next.classList.add('hidden') : _this.next.classList.remove('hidden');
       }
@@ -296,7 +302,7 @@ function () {
       maxPosition: this.slides.length - this.slideToShow,
       infinity: infinity,
       slideCount: 100 / this.slideToShow
-    }, this.padding = padding, this.responsive = responsive;
+    }, this.padding = padding, this.goTo = goTo, this.responsive = responsive;
   }
 
   _createClass(SliderCarousel, [{
@@ -312,6 +318,14 @@ function () {
       }
 
       this.responsive ? this.responseInit() : '';
+    }
+  }, {
+    key: "goto",
+    value: function goto(goTo) {
+      this.options.position = goTo;
+      this.wrap.style.transform = "translateX(-".concat(this.options.position * this.options.slideCount, "%)");
+      !this.options.infinity && this.options.position == 0 ? this.prev.classList.add('hidden') : this.prev.classList.remove('hidden');
+      !this.options.infinity && this.options.position == this.options.maxPosition ? this.next.classList.add('hidden') : this.next.classList.remove('hidden');
     }
   }, {
     key: "addSliderClass",

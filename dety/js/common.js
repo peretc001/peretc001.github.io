@@ -242,12 +242,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if ( document.querySelector('.products-page-item__photo__gallery') ) {
         const   imgContainer = document.querySelector('.products-page-item__photo__gallery')
-                imgList = imgContainer.children
-                console.log(imgList)
-                for (const item of imgList) {
+                imgList = imgContainer.querySelectorAll('img')
+                imgList.forEach((item, i) => {
                     item.addEventListener('click', () => {
+                        imgContainer.querySelector('.active').classList.remove('active')
+                        item.classList.add('active')
+                        carousel_img.goto(i)
                     })
-                }
+                })
+
     }
 
     //Products-page Tabs
