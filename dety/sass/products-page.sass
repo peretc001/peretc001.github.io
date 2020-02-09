@@ -97,16 +97,33 @@
             content: ''
             display: table
             clear: both
-        &__gallery
-            flex: 0 0 auto
-            display: flex
-            flex-direction: column
-            align-items: center
-            justify-content: center
-            &__img
-                margin-bottom: 1em
+
+        // &__gallery
+        //     flex: 0 0 auto
+        //     display: flex
+        //     flex-direction: column
+        //     align-items: center
+        //     justify-content: center
+        //     &__img
+        //         margin-bottom: 1em
         &__photo
-            flex: 1 0 auto
+            display: flex
+            &--left
+                position: relative
+                width: 110px
+                overflow: hidden
+            &__gallery
+                display: flex
+                flex-direction: column
+                position: absolute
+                img
+                    margin-bottom: 1em
+                    cursor: pointer
+                .active
+                    border: 2px solid $accent
+                    border-radius: 4px
+
+            &--right
             &__tag
                 display: flex
                 align-items: center
@@ -155,6 +172,60 @@
                         background-image: url('../img/nav/wishlist-active.svg')
                     &:hover
                         transform: scale(1.1)
+            &__img
+                position: relative
+                width: 600px
+                margin: 0 auto
+                text-align: center
+                &__container
+                    max-width: 500px
+                    margin: 0 auto
+                    transform: translateX(1em)
+                    &__wrapper
+                        & > div
+                            img
+                                outline: none
+                                user-select: none
+
+
+                .prev,
+                .next
+                    position: absolute
+                    display: inline-block
+                    top: 50%
+                    transform: translateY(-50%)
+                    z-index: 3
+                    width: 1.2em
+                    height: 2em
+                    border: none
+                    outline: none
+                    box-shadow: none
+                    cursor: pointer
+                    transition: opacity .5s ease
+                    &::before
+                        content: ''
+                        position: absolute
+                        z-index: 4
+                        left: 0
+                        top: 0
+                        width: 100%
+                        height: 100%
+                        background-size: 1.2em
+                        background-repeat: no-repeat
+                        background-position: center
+                .prev
+                    left: 2em
+                    &::before
+                        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAxNSAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyLjE0NzggMC40NzY4NDRDMTIuNjQ2NiAwLjQ3Njg0NSAxMy4xNDUgMC42NzMzNjMgMTMuNTIzOSAxLjA2NTk0QzE0LjI4NCAxLjg1MDIgMTQuMjg0IDMuMTIzMDggMTMuNTIzOSAzLjkwNzM3TDUuMTQyMzkgMTIuNTY3M0wxMy41MjM5IDIxLjIyNjRDMTQuMjg0IDIyLjAxMTIgMTQuMjg0IDIzLjI4MzYgMTMuNTIzOSAyNC4wNjg4QzEyLjc2NTEgMjQuODUzNSAxMS41MzE5IDI0Ljg1MzUgMTAuNzczMiAyNC4wNjg4TDEuMDE0NjkgMTMuOTg3OUMwLjI1NDY5MSAxMy4yMDM2IDAuMjU0NjkxIDExLjkzMDcgMS4wMTQ2OSAxMS4xNDY0TDEwLjc3MzIgMS4wNjU5NEMxMS4xNTI4IDAuNjczMzYyIDExLjY1MDkgMC40NzY4NDQgMTIuMTQ3OCAwLjQ3Njg0NFoiIGZpbGw9IiNDMjUxQzAiLz48L3N2Zz4=)
+                .next
+                    right: 0
+                    &::before
+                        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAxNSAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTIuMzg5MzQgMjQuNjU1NEMxLjg5MDUzIDI0LjY1NTQgMS4zOTIxIDI0LjQ1ODkgMS4wMTMyMyAyNC4wNjYzQzAuMjUzMDkzIDIzLjI4MjEgMC4yNTMwOTMgMjIuMDA5MiAxLjAxMzIzIDIxLjIyNDlMOS4zOTQ3MiAxMi41NjQ5TDEuMDEzMjMgMy45MDU4MkMwLjI1MzA5MyAzLjEyMTEgMC4yNTMwOTMgMS44NDg2NSAxLjAxMzIzIDEuMDYzNDlDMS43NzIwMiAwLjI3ODc5OSAzLjAwNTIxIDAuMjc4Nzk5IDMuNzYzODcgMS4wNjM0OUwxMy41MjI0IDExLjE0NDRDMTQuMjgyNCAxMS45Mjg3IDE0LjI4MjQgMTMuMjAxNiAxMy41MjI0IDEzLjk4NThMMy43NjM4NyAyNC4wNjYzQzMuMzg0MzQgMjQuNDU4OSAyLjg4NjE3IDI0LjY1NTQgMi4zODkzNCAyNC42NTU0WiIgZmlsbD0iI0MyNTFDMCIvPjwvc3ZnPg==)
+                .prev,
+                .next
+                    &.hidden
+                        opacity: 0
+                        pointer-events: none
 
     &-buy
         position: sticky

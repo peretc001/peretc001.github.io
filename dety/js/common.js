@@ -240,6 +240,16 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     }
 
+    if ( document.querySelector('.products-page-item__photo__gallery') ) {
+        const   imgContainer = document.querySelector('.products-page-item__photo__gallery')
+                imgList = imgContainer.children
+                console.log(imgList)
+                for (const item of imgList) {
+                    item.addEventListener('click', () => {
+                    })
+                }
+    }
+
     //Products-page Tabs
     if ( document.querySelector('.products-page-rq') ) {
         const   tabs = document.querySelectorAll('.products-page-rq__head h3')

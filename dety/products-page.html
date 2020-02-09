@@ -1210,26 +1210,20 @@
         </div>
 
         <div class="container">
-
             <div class="products-page-item">
-                <div class="products-page-item__gallery">
-                    <div class="products-page-item__gallery__img">
-                        <a href=""><img src="./img/products/card/1.png" alt=""></a>
-                    </div>
-                    <div class="products-page-item__gallery__img">
-                        <a href=""><img src="./img/products/card/2.png" alt=""></a>
-                    </div>
-                    <div class="products-page-item__gallery__img">
-                        <a href=""><img src="./img/products/card/3.png" alt=""></a>
-                    </div>
-                    <div class="products-page-item__gallery__img">
-                        <a href=""><img src="./img/products/card/4.png" alt=""></a>
-                    </div>
-                    <div class="products-page-item__gallery__img">
-                        <a href=""><img src="./img/products/card/5.png" alt=""></a>
-                    </div>
-                </div>
                 <div class="products-page-item__photo">
+                  <div class="products-page-item__photo--left">
+                    <div class="products-page-item__photo__gallery">
+                      <img src="./img/products/card/1.png" alt="">
+                      <img src="./img/products/card/2.png" alt="">
+                      <img src="./img/products/card/3.png" alt="" class="active">
+                      <img src="./img/products/card/4.png" alt="">
+                      <img src="./img/products/card/5.png" alt="">
+                      <img src="./img/products/card/4.png" alt="">
+                      <img src="./img/products/card/5.png" alt="">
+                    </div>
+                  </div>
+                  <div class="products-page-item__photo--right">
                     <div class="products-page-item__photo__tag">
                         <a href="" class="top">хит</a>
                         <a href="" class="new">новинка</a>
@@ -1237,8 +1231,22 @@
                         <a href="" class="wishlist"></a>
                     </div>
                     <div class="products-page-item__photo__img">
-                        <img src="./img/products/card/big.png" alt="">
+                        <div class="products-page-item__photo__img__container">
+                          <div class="products-page-item__photo__img__container__wrapper">
+                            <div><img src="./img/products/card/big.png" alt=""></div>
+                            <div><img src="./img/products/card/big.png" alt=""></div>
+                            <div><img src="./img/products/card/big.png" alt=""></div>
+                            <div><img src="./img/products/card/big.png" alt=""></div>
+                            <div><img src="./img/products/card/big.png" alt=""></div>
+                            <div><img src="./img/products/card/big.png" alt=""></div>
+                            <div><img src="./img/products/card/big.png" alt=""></div>
+                            <div><img src="./img/products/card/big.png" alt=""></div>
+                          </div>
+                        </div>
+                        <button class="prev"></button>
+                        <button class="next"></button>
                     </div>
+                  </div>
                 </div>
             </div>
 
@@ -2546,6 +2554,17 @@
   <script src="./js/scripts.min.js"></script>
   <script src="./js/sliderCarousel.js"></script>
   <script>
+    const carousel_img = new SliderCarousel({
+      id: 'img',
+      main: '.products-page-item__photo__img__container',
+      wrap: '.products-page-item__photo__img__container__wrapper',
+      prev: '.products-page-item__photo__img .prev',
+      next: '.products-page-item__photo__img .next',
+      infinity: false,
+      slideToShow: 1,
+    })
+    carousel_img.init()
+
     const carousel_size = new SliderCarousel({
       id: 'size',
       main: '.products-page-buy__size__container',
