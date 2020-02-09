@@ -1,6 +1,3 @@
-'use strict'
-// common.js => BABEL => sliderCarousel.js
-
 // class SliderCarousel {
 //     constructor({
 //         id,
@@ -11,6 +8,7 @@
 //         infinity = false,
 //         position = 0,
 //         slideToShow = 3,
+//         padding = 0,
 //         responsive = [] 
 //     }) {
 //         this.id = id,
@@ -19,6 +17,8 @@
 //         this.slides = document.querySelector(wrap).children
 //         this.postX1 = 0,
 //         this.postX2 = 0,
+//         this.postY1 = 0,
+//         this.postY2 = 0,
 //         this.next = document.querySelector(next)
 //         this.prev = document.querySelector(prev)
 //         this.slideToShow = slideToShow,
@@ -28,6 +28,7 @@
 //             infinity,
 //             slideCount : 100 / this.slideToShow
 //         },
+//         this.padding = padding,
 //         this.responsive = responsive;
 //     }
 
@@ -72,7 +73,14 @@
 //                 -webkit-box-flex:0;
 //                 -webkit-flex:0 0 ${count}%;
 //                 -ms-flex:0 0 ${count}%;
-//                 flex:0 0 ${count}%
+//                 flex:0 0 ${count}%;
+//                 padding: 0 ${this.padding/count}px;
+//             }
+//             .${this.id}-slider-wrap--item:first-child {
+//               padding-left: 0
+//             }
+//             .${this.id}-slider-wrap--item:last-child {
+//               padding-right: 0
 //             }
 //         `;
 //         const body = document.body || document.querySelector('body')
@@ -117,22 +125,27 @@
 //         e = e || window.event
 //         if (e.type == 'touchstart') {
 //             this.postX1 = e.touches[0].clientX
+//             this.postY1 = e.touches[0].clientY
 //         } else {
 //             this.postX1 = e.clientX
+//             this.postY1 = e.clientY
 //         }
 //     }
 //     dragAction = (e) => {
 //         e = e || window.event
 //         if(e.type == 'touchmove') {
-//             this.postX2 = this.postX1 - e.touches[0].clientX
-//             this.postX1 = e.touches[0].clientX
+//           this.postY2 = this.postY1 - e.touches[0].clientY
+//           this.postX2 = this.postX1 - e.touches[0].clientX
+//           this.postX1 = e.touches[0].clientX
 //         } else {
-//             this.postX2 = this.postX1 - e.clientX
-//             this.postX1 = e.clientX
+//           this.postY2 = this.postY1 - e.clientY
+//           this.postX2 = this.postX1 - e.clientX
+//           this.postX1 = e.clientX
 //         }
 //     }
 //     dragEnd = () => {
-//         this.postX2 < 0 ? this.prevSlider() : this.nextSlider()
+//       this.postX2 != 0 && this.postX2 > 0.1 ? this.nextSlider() : ''
+//       this.postX2 != 0 && this.postX2 < 0.1 ? this.prevSlider() : ''
 //     }
 
 //     responseInit() {
@@ -164,7 +177,6 @@
 
 //     }
 // }
-
 
 "use strict";
 
@@ -203,6 +215,8 @@ function () {
         position = _ref$position === void 0 ? 0 : _ref$position,
         _ref$slideToShow = _ref.slideToShow,
         slideToShow = _ref$slideToShow === void 0 ? 3 : _ref$slideToShow,
+        _ref$padding = _ref.padding,
+        padding = _ref$padding === void 0 ? 0 : _ref$padding,
         _ref$responsive = _ref.responsive,
         responsive = _ref$responsive === void 0 ? [] : _ref$responsive;
 
@@ -241,8 +255,10 @@ function () {
 
       if (e.type == 'touchstart') {
         _this.postX1 = e.touches[0].clientX;
+        _this.postY1 = e.touches[0].clientY;
       } else {
         _this.postX1 = e.clientX;
+        _this.postY1 = e.clientY;
       }
     });
 
@@ -250,29 +266,32 @@ function () {
       e = e || window.event;
 
       if (e.type == 'touchmove') {
+        _this.postY2 = _this.postY1 - e.touches[0].clientY;
         _this.postX2 = _this.postX1 - e.touches[0].clientX;
         _this.postX1 = e.touches[0].clientX;
       } else {
+        _this.postY2 = _this.postY1 - e.clientY;
         _this.postX2 = _this.postX1 - e.clientX;
         _this.postX1 = e.clientX;
       }
     });
 
     _defineProperty(this, "dragEnd", function () {
-      _this.postX2 < 0 ? _this.prevSlider() : _this.nextSlider();
+      _this.postX2 != 0 && _this.postX2 > 0.1 ? _this.nextSlider() : '';
+      _this.postX2 != 0 && _this.postX2 < 0.1 ? _this.prevSlider() : '';
     });
 
     this.id = id, this.main = document.querySelector(main);
     this.wrap = document.querySelector(wrap);
     this.slides = document.querySelector(wrap).children;
-    this.postX1 = 0, this.postX2 = 0, this.next = document.querySelector(next);
+    this.postX1 = 0, this.postX2 = 0, this.postY1 = 0, this.postY2 = 0, this.next = document.querySelector(next);
     this.prev = document.querySelector(prev);
     this.slideToShow = slideToShow, this.options = {
       position: position,
       maxPosition: this.slides.length - this.slideToShow,
       infinity: infinity,
       slideCount: 100 / this.slideToShow
-    }, this.responsive = responsive;
+    }, this.padding = padding, this.responsive = responsive;
   }
 
   _createClass(SliderCarousel, [{
@@ -323,7 +342,7 @@ function () {
     value: function addStyle(count) {
       var style = document.getElementById("".concat(this.id, "-slider")) || document.createElement('style');
       style.id = this.id + '-slider';
-      style.innerHTML = "\n            .".concat(this.id, "-slider {\n                overflow: hidden;\n            }\n            .").concat(this.id, "-slider-wrap {\n                display:-webkit-box;\n                display:-webkit-flex;\n                display:-ms-flexbox;\n                display: flex;\n                transition: transform .5s ease;\n                will-change: transform;\n            }\n            .").concat(this.id, "-slider-wrap--item {\n                margin: auto 0;\n                -webkit-box-flex:0;\n                -webkit-flex:0 0 ").concat(count, "%;\n                -ms-flex:0 0 ").concat(count, "%;\n                flex:0 0 ").concat(count, "%\n            }\n        ");
+      style.innerHTML = "\n            .".concat(this.id, "-slider {\n                overflow: hidden;\n            }\n            .").concat(this.id, "-slider-wrap {\n                display:-webkit-box;\n                display:-webkit-flex;\n                display:-ms-flexbox;\n                display: flex;\n                transition: transform .5s ease;\n                will-change: transform;\n            }\n            .").concat(this.id, "-slider-wrap--item {\n                margin: auto 0;\n                -webkit-box-flex:0;\n                -webkit-flex:0 0 ").concat(count, "%;\n                -ms-flex:0 0 ").concat(count, "%;\n                flex:0 0 ").concat(count, "%;\n                padding: 0 ").concat(this.padding / count, "px;\n            }\n            .").concat(this.id, "-slider-wrap--item:first-child {\n              padding-left: 0\n            }\n            .").concat(this.id, "-slider-wrap--item:last-child {\n              padding-right: 0\n            }\n        ");
       var body = document.body || document.querySelector('body');
       body.appendChild(style);
     }
