@@ -98,14 +98,6 @@
             display: table
             clear: both
 
-        // &__gallery
-        //     flex: 0 0 auto
-        //     display: flex
-        //     flex-direction: column
-        //     align-items: center
-        //     justify-content: center
-        //     &__img
-        //         margin-bottom: 1em
         &__photo
             display: flex
             &--left
@@ -125,7 +117,6 @@
                     border: 2px solid $accent
                     border-radius: 4px
 
-            &--right
             &__tag
                 display: flex
                 align-items: center
@@ -777,6 +768,13 @@
         &-about,
         &-rq
             width: 600px
+        
+        &-item
+            &__photo
+                &__img
+                    width: 100%
+                    max-width: 500px
+        
         &-buy
             width: 310px
             &__color
@@ -884,15 +882,10 @@
         h1, h2, h3, h4
             font-size: 1.8em
         &-item
-            flex-direction: column-reverse
-            &__gallery
-                margin-top: 1em
-                flex-direction: row
-                align-items: center
-                justify-content: center
-                &__img
-                    margin-bottom: 0
-                    margin-right: 0.5em
+            &__photo
+                &--right
+                    padding-left: 2em
+
         &-buy
             flex-wrap: wrap
             &--left,
@@ -1005,6 +998,28 @@
     .products-page
         h1, h2, h3, h4
             font-size: 1.6em
+        &-item
+            padding: 1em
+            &__photo
+                flex-direction: column-reverse
+                &--left
+                    width: 100%
+                &__gallery
+                    margin-top: 1em
+                    flex-direction: row
+                    position: relative
+                    img
+                        margin-bottom: 0
+                        margin-right: 1em
+                &--right
+                    padding-left: 0
+                &__img
+                    &__container
+                        max-width: 500px
+                        margin: 0 auto
+                        transform: translateX(0)
+                    .prev
+                        left: 0
         &-buy
             &__size,
             &__color
