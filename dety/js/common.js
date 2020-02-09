@@ -231,18 +231,30 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     if ( document.querySelector('.hideElem') ) {
-        const   hElem = document.querySelector('.hideElem')
-                sElem = document.querySelector('.showElem')
+        const   hElem = document.querySelectorAll('.hideElem')
+                sElem = document.querySelectorAll('.showElem')
 
-        hElem.addEventListener('click', () => {
-            !hElem.classList.contains('active') ? hElem.classList.add('active') : hElem.classList.remove('active')
-            !sElem.classList.contains('active') ? sElem.classList.add('active') : sElem.classList.remove('active')
+        hElem.forEach((item, i) => {
+            item.addEventListener('click', () => {
+                !item.classList.contains('active') ? item.classList.add('active') : item.classList.remove('active')
+                !sElem[i].classList.contains('active') ? sElem[i].classList.add('active') : sElem[i].classList.remove('active')
+            })
         })
     }
 
     if ( document.querySelector('.products-page-item__photo__gallery') ) {
         const   imgContainer = document.querySelector('.products-page-item__photo__gallery')
                 imgList = imgContainer.querySelectorAll('img')
+
+                document.querySelector('.products-page-item__photo__img').addEventListener('click', () => {                       
+                    imgContainer.querySelector('.active').classList.remove('active')
+                    imgList[carousel_img.returnPosition()].classList.add('active')
+                })
+                document.querySelector('.products-page-item__photo__img').addEventListener('touchend', () => {                  
+                    imgContainer.querySelector('.active').classList.remove('active')
+                    imgList[carousel_img.returnPosition()].classList.add('active')
+                })
+
                 imgList.forEach((item, i) => {
                     item.addEventListener('click', () => {
                         imgContainer.querySelector('.active').classList.remove('active')

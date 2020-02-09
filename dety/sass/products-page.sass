@@ -15,6 +15,7 @@
         display: block
         pointer-events: all
 .products-page
+    overflow: hidden
     h1
         font-size: 2.5em
         font-weight: bold
@@ -187,13 +188,14 @@
                     display: inline-block
                     top: 50%
                     transform: translateY(-50%)
-                    z-index: 3
-                    width: 1.2em
+                    z-index: 1
+                    width: 1em
                     height: 2em
                     border: none
                     outline: none
                     box-shadow: none
                     cursor: pointer
+                    background: transparent
                     transition: opacity .5s ease
                     &::before
                         content: ''
@@ -203,17 +205,17 @@
                         top: 0
                         width: 100%
                         height: 100%
-                        background-size: 1.2em
+                        background-size: 1.8em
                         background-repeat: no-repeat
                         background-position: center
                 .prev
                     left: 2em
                     &::before
-                        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAxNSAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyLjE0NzggMC40NzY4NDRDMTIuNjQ2NiAwLjQ3Njg0NSAxMy4xNDUgMC42NzMzNjMgMTMuNTIzOSAxLjA2NTk0QzE0LjI4NCAxLjg1MDIgMTQuMjg0IDMuMTIzMDggMTMuNTIzOSAzLjkwNzM3TDUuMTQyMzkgMTIuNTY3M0wxMy41MjM5IDIxLjIyNjRDMTQuMjg0IDIyLjAxMTIgMTQuMjg0IDIzLjI4MzYgMTMuNTIzOSAyNC4wNjg4QzEyLjc2NTEgMjQuODUzNSAxMS41MzE5IDI0Ljg1MzUgMTAuNzczMiAyNC4wNjg4TDEuMDE0NjkgMTMuOTg3OUMwLjI1NDY5MSAxMy4yMDM2IDAuMjU0NjkxIDExLjkzMDcgMS4wMTQ2OSAxMS4xNDY0TDEwLjc3MzIgMS4wNjU5NEMxMS4xNTI4IDAuNjczMzYyIDExLjY1MDkgMC40NzY4NDQgMTIuMTQ3OCAwLjQ3Njg0NFoiIGZpbGw9IiNDMjUxQzAiLz48L3N2Zz4=)
+                        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMTk4LjYwOCwyNDYuMTA0TDM4Mi42NjQsNjIuMDRjNS4wNjgtNS4wNTYsNy44NTYtMTEuODE2LDcuODU2LTE5LjAyNGMwLTcuMjEyLTIuNzg4LTEzLjk2OC03Ljg1Ni0xOS4wMzJsLTE2LjEyOC0xNi4xMiAgICBDMzYxLjQ3NiwyLjc5MiwzNTQuNzEyLDAsMzQ3LjUwNCwwcy0xMy45NjQsMi43OTItMTkuMDI4LDcuODY0TDEwOS4zMjgsMjI3LjAwOGMtNS4wODQsNS4wOC03Ljg2OCwxMS44NjgtNy44NDgsMTkuMDg0ICAgIGMtMC4wMiw3LjI0OCwyLjc2LDE0LjAyOCw3Ljg0OCwxOS4xMTJsMjE4Ljk0NCwyMTguOTMyYzUuMDY0LDUuMDcyLDExLjgyLDcuODY0LDE5LjAzMiw3Ljg2NGM3LjIwOCwwLDEzLjk2NC0yLjc5MiwxOS4wMzItNy44NjQgICAgbDE2LjEyNC0xNi4xMmMxMC40OTItMTAuNDkyLDEwLjQ5Mi0yNy41NzIsMC0zOC4wNkwxOTguNjA4LDI0Ni4xMDR6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNDMjUxQzAiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==)
                 .next
                     right: 0
                     &::before
-                        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAxNSAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTIuMzg5MzQgMjQuNjU1NEMxLjg5MDUzIDI0LjY1NTQgMS4zOTIxIDI0LjQ1ODkgMS4wMTMyMyAyNC4wNjYzQzAuMjUzMDkzIDIzLjI4MjEgMC4yNTMwOTMgMjIuMDA5MiAxLjAxMzIzIDIxLjIyNDlMOS4zOTQ3MiAxMi41NjQ5TDEuMDEzMjMgMy45MDU4MkMwLjI1MzA5MyAzLjEyMTEgMC4yNTMwOTMgMS44NDg2NSAxLjAxMzIzIDEuMDYzNDlDMS43NzIwMiAwLjI3ODc5OSAzLjAwNTIxIDAuMjc4Nzk5IDMuNzYzODcgMS4wNjM0OUwxMy41MjI0IDExLjE0NDRDMTQuMjgyNCAxMS45Mjg3IDE0LjI4MjQgMTMuMjAxNiAxMy41MjI0IDEzLjk4NThMMy43NjM4NyAyNC4wNjYzQzMuMzg0MzQgMjQuNDU4OSAyLjg4NjE3IDI0LjY1NTQgMi4zODkzNCAyNC42NTU0WiIgZmlsbD0iI0MyNTFDMCIvPjwvc3ZnPg==)
+                        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojQzI1MUMwIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=)
                 .prev,
                 .next
                     &.hidden
@@ -540,6 +542,7 @@
                     font-weight: bold
                     font-size: 2.5em
                 span
+                    cursor: pointer
                     display: inline-block
                     width: 21px
                     height: 11px
@@ -690,9 +693,10 @@
         &-question
             &__card
                 border-bottom: 1px solid rgba(172, 82, 191, 0.5)
-                padding: 1em 0
+                padding: 2em 0 1em 0
                 &.answer
                     margin-left: 4em
+                    border-bottom: 1px solid #8ddda5
                 p
                     margin-bottom: 0
                 .name
@@ -707,21 +711,21 @@
         
 
         #question   
-            .show_description
+            span
                 display: inline-block
-                border-bottom: 1px dashed $grey
                 font-weight: bold
+                border-bottom: 1px dashed $text
+                cursor: pointer
                 margin: 2em 0 0 0
-            
-            .hide_description
-                visibility: none
-                max-height: 0
-                padding-top: 2em
-                overflow: hidden
-                transition: max-height .5s linear
                 &.active
-                    visibility: visible
-                    max-height: 1000px
+            .showElem
+                max-height: 500px
+                opacity: 1
+                overflow: hidden
+                transition: max-height .5s ease-in-out, opacity .5s ease-in-out
+                &.active
+                    opacity: 0
+                    max-height: 0
         
         #review,
         #question
@@ -745,6 +749,49 @@
         font-weight: bold
         line-height: 
         margin: 25px 0
+    
+    .resent-products,
+    .visited-products
+        position: relative
+        .prev,
+        .next
+            position: absolute
+            display: inline-block
+            top: 50%
+            transform: translateY(-50%)
+            z-index: 1
+            width: 1em
+            height: 2em
+            border: none
+            outline: none
+            box-shadow: none
+            cursor: pointer
+            background: transparent
+            transition: opacity .5s ease
+            &::before
+                content: ''
+                position: absolute
+                z-index: 4
+                left: 0
+                top: 0
+                width: 100%
+                height: 100%
+                background-size: 1.8em
+                background-repeat: no-repeat
+                background-position: center
+        .prev
+            left: -1.5em
+            &::before
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMTk4LjYwOCwyNDYuMTA0TDM4Mi42NjQsNjIuMDRjNS4wNjgtNS4wNTYsNy44NTYtMTEuODE2LDcuODU2LTE5LjAyNGMwLTcuMjEyLTIuNzg4LTEzLjk2OC03Ljg1Ni0xOS4wMzJsLTE2LjEyOC0xNi4xMiAgICBDMzYxLjQ3NiwyLjc5MiwzNTQuNzEyLDAsMzQ3LjUwNCwwcy0xMy45NjQsMi43OTItMTkuMDI4LDcuODY0TDEwOS4zMjgsMjI3LjAwOGMtNS4wODQsNS4wOC03Ljg2OCwxMS44NjgtNy44NDgsMTkuMDg0ICAgIGMtMC4wMiw3LjI0OCwyLjc2LDE0LjAyOCw3Ljg0OCwxOS4xMTJsMjE4Ljk0NCwyMTguOTMyYzUuMDY0LDUuMDcyLDExLjgyLDcuODY0LDE5LjAzMiw3Ljg2NGM3LjIwOCwwLDEzLjk2NC0yLjc5MiwxOS4wMzItNy44NjQgICAgbDE2LjEyNC0xNi4xMmMxMC40OTItMTAuNDkyLDEwLjQ5Mi0yNy41NzIsMC0zOC4wNkwxOTguNjA4LDI0Ni4xMDR6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNDMjUxQzAiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==)
+        .next
+            right: -1.5em
+            &::before
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojQzI1MUMwIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=)
+        .prev,
+        .next
+            &.hidden
+                opacity: 0
+                pointer-events: none
 
 @keyframes show-left
     0%
@@ -1054,6 +1101,11 @@
             &__head
                 h3
                     font-size: 1.2em
+        .resent-products,
+        .visited-products
+            .prev,
+            .next
+                display: none
 
 @media screen and ( max-width: 374.98px )
     .products-page

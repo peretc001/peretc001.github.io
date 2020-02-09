@@ -54,6 +54,10 @@
 //       !this.options.infinity && this.options.position == this.options.maxPosition ? this.next.classList.add('hidden') : this.next.classList.remove('hidden')
 //     }
 
+//     returnPosition() {
+//       return this.options.position
+//     }
+
 //     addSliderClass() {
 //         this.main.classList.add(`${this.id}-slider`)
 //         this.wrap.classList.add(`${this.id}-slider-wrap`)
@@ -118,7 +122,9 @@
 //             this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideCount}%)`
 //             !this.options.infinity && this.options.position == 0 ? this.prev.classList.add('hidden') : this.prev.classList.remove('hidden')
 //             !this.options.infinity && this.options.position == this.options.maxPosition ? this.next.classList.add('hidden') : this.next.classList.remove('hidden')
+//             this.returnPosition()
 //         }
+
 //     }
 //     nextSlider = () => {
 //         if ( this.options.infinity || this.options.position < this.options.maxPosition) {
@@ -129,6 +135,7 @@
 //             this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideCount}%)`
 //             !this.options.infinity && this.options.position == 0 ? this.prev.classList.add('hidden') : this.prev.classList.remove('hidden')
 //             !this.options.infinity && this.options.position == this.options.maxPosition ? this.next.classList.add('hidden') : this.next.classList.remove('hidden')
+//             this.returnPosition()
 //         }
 //     }
 //     dragStart = (e) => {
@@ -187,7 +194,6 @@
 
 //     }
 // }
-
 "use strict";
 
 function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return !!right[Symbol.hasInstance](left); } else { return left instanceof right; } }
@@ -244,6 +250,8 @@ function () {
         _this.wrap.style.transform = "translateX(-".concat(_this.options.position * _this.options.slideCount, "%)");
         !_this.options.infinity && _this.options.position == 0 ? _this.prev.classList.add('hidden') : _this.prev.classList.remove('hidden');
         !_this.options.infinity && _this.options.position == _this.options.maxPosition ? _this.next.classList.add('hidden') : _this.next.classList.remove('hidden');
+
+        _this.returnPosition();
       }
     });
 
@@ -258,6 +266,8 @@ function () {
         _this.wrap.style.transform = "translateX(-".concat(_this.options.position * _this.options.slideCount, "%)");
         !_this.options.infinity && _this.options.position == 0 ? _this.prev.classList.add('hidden') : _this.prev.classList.remove('hidden');
         !_this.options.infinity && _this.options.position == _this.options.maxPosition ? _this.next.classList.add('hidden') : _this.next.classList.remove('hidden');
+
+        _this.returnPosition();
       }
     });
 
@@ -326,6 +336,11 @@ function () {
       this.wrap.style.transform = "translateX(-".concat(this.options.position * this.options.slideCount, "%)");
       !this.options.infinity && this.options.position == 0 ? this.prev.classList.add('hidden') : this.prev.classList.remove('hidden');
       !this.options.infinity && this.options.position == this.options.maxPosition ? this.next.classList.add('hidden') : this.next.classList.remove('hidden');
+    }
+  }, {
+    key: "returnPosition",
+    value: function returnPosition() {
+      return this.options.position;
     }
   }, {
     key: "addSliderClass",
