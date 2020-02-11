@@ -1,0 +1,237 @@
+@import '../_libs/var'
+
+.account
+    h1
+        flex: 0 0 100%
+        font-size: 2.5em
+        font-weight: bold
+        margin: 0
+        margin-bottom: 1em
+    input
+        outline: none
+        font-size: 16px
+        &::-webkit-input-placeholder
+            color: $grey
+            font-size: 0.9em
+        &:-moz-placeholder
+            color: $grey
+            font-size: 0.9em
+        &::-moz-placeholder
+            color: $grey
+            font-size: 0.9em
+        &:-ms-input-placeholder
+            color: $grey
+            font-size: 0.9em
+    ul
+        margin: 0
+        padding: 0
+        li
+            list-style: none
+            padding: 0
+            margin: 0
+            margin-bottom: 1em
+            a
+                font-size: 1.8em
+                color: $grey
+                &.active
+                    font-weight: bold
+                    color: $accent
+    
+    &-data
+        background: #ffffff
+        padding: 2em
+        margin: 0
+        margin-bottom: 2em
+        border-radius: 20px
+        h2
+            font-weight: bold
+            font-size: 1.8em
+            margin: 0
+            margin-bottom: 1em
+            padding: 0
+            line-height: 1
+
+        .form-row
+            padding: 0 0 1em 0
+            padding-right: 1em
+            display: flex
+            align-items: flex-start
+            justify-content: flex-start
+            flex-direction: column
+            label
+                color: $grey
+                font-size: 0.9em
+                font-weight: bold
+                padding: 0
+                margin: 0
+                margin-bottom: 0.5em
+                line-height: 1
+            input
+                background: transparent
+                border: 2px solid $accent
+                border-radius: 4px
+                width: 100%
+                font-weight: bold
+                padding: 0.8em
+        
+        &-private
+            display: flex
+            align-items: flex-start
+            justify-content: flex-start
+            flex-wrap: wrap
+            padding-bottom: 1.5em
+            margin-bottom: 2em
+            border-bottom: 1px solid $grey
+            .form-row
+                flex: 0 0 33.333333%
+        &-delivery
+            display: flex
+            align-items: flex-start
+            justify-content: flex-start
+            flex-wrap: wrap
+            padding-bottom: 1em
+            margin-bottom: 2em
+            border-bottom: 1px solid $grey
+            .form-row
+                &:nth-child(1),
+                &:nth-child(2)
+                    flex: 0 0 33.333333%
+                &:nth-child(3),
+                &:nth-child(4)
+                    flex: 0 0 16.666666%
+        
+        .hideElem
+            font-weight: bold
+            border-bottom: 1px dashed $text
+            font-size: 1.1em
+            margin: 1em 0
+
+        .showElem
+            display: flex
+            max-height: 500px
+            opacity: 1
+            overflow: hidden
+            transition: max-height .5s ease-in-out, opacity .5s ease-in-out
+            &.active
+                opacity: 0
+                max-height: 0
+        
+        .btn
+            &.btn-accent
+                font-size: 1.2em
+                font-weight: bold
+                padding: 1em
+                width: 32%
+
+    &-bonus
+        background: #ffffff
+        padding: 2em 0
+        margin: 0
+        border-radius: 20px
+        display: flex
+        align-items: flex-start
+        justify-content: flex-start
+        flex-wrap: wrap
+        h3
+            flex: 0 0 100%
+            font-weight: bold
+            font-size: 1.8em
+            margin: 0
+            margin-bottom: 1em
+            padding: 0 1em
+            line-height: 1
+        &-table
+            flex: 1 0 75%
+            &__col
+                display: flex
+                align-items: flex-start
+                border-bottom: 1px solid $grey
+                &:last-child
+                    border-bottom: none
+                &__left,
+                &__right
+                    display: flex
+                    padding: 1em
+                    padding-right: 0
+                    &:first-child
+                        flex: 1 0 55%
+                        padding-left: 2em
+                        p
+                            margin: 0
+                            font-weight: bold
+                            flex: 1 0 50%
+                    &:last-child
+                        flex: 1 0 45%
+                        p
+                            margin: 0
+                            font-weight: bold
+                            &:first-child
+                                flex: 1 0 60%
+                            &:last-child
+                                flex: 1 0 40%
+                &.head
+                    background: #EAF6F6
+                    border-bottom: none
+                    p
+                        color: $nav
+                    
+        &-total
+            flex: 1 0 25%
+            padding: 0 2em 0 1em
+            &__view
+                display: flex
+                align-items: center
+                justify-content: center
+                flex-direction: column
+                min-height: 150px
+                background: $accent
+                border-radius: 4px
+                p
+                    color: #ffffff
+                    font-weight: bold
+                    margin: 0
+                    line-height: 1
+                    &:first-child
+                        font-size: 2.5em
+                        margin-bottom: 0.5em
+                    &:last-child
+                        font-size: 1.2em
+
+@media screen and ( max-width: 1199.98px )
+    .account
+        &-bonus
+            &-total
+                &__view
+                    p
+                        &:first-child
+                            font-size: 2em
+                        &:last-child
+                            font-size: 1em
+
+@media screen and ( max-width: 991.98px )
+    .account
+        h1
+            margin-bottom: 0
+        ul
+            margin: 2em 0
+            li
+                padding-left: 2em
+                a
+                    font-size: 1.6em
+        &-bonus
+            &-table
+                &__col
+                    &__left,
+                    &__right
+                        p
+                            font-size: 0.9em
+            &-total
+                &__view
+                    p
+                        &:last-child
+                            font-size: .9em
+
+@media screen and ( max-width: 767.98px )
+    .account
+
+

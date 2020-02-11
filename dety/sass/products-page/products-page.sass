@@ -1,4 +1,4 @@
-@import '_libs/var'
+@import '../_libs/var'
 .layout
     display: none
     pointer-events: none
@@ -50,10 +50,10 @@
                     background-size: cover
                     background-position: center
                     background-repeat: no-repeat
-                    background-image: url('../img/review/star.svg')
+                    background-image: url('../../img/review/star.svg')
                     margin-right: 5px
                     &.active
-                        background-image: url('../img/review/star-active.svg')
+                        background-image: url('../../img/review/star-active.svg')
             .quote
                 position: relative
                 font-size: 1em
@@ -71,7 +71,7 @@
                     background-size: 18px
                     background-position: left
                     background-repeat: no-repeat
-                    background-image: url('../img/review/quote.svg')
+                    background-image: url('../../img/review/quote.svg')
 
     .container
         height: 100%
@@ -109,6 +109,7 @@
                 display: flex
                 flex-direction: column
                 position: absolute
+                transition: transform .5s ease
                 img
                     margin-bottom: 1em
                     cursor: pointer
@@ -161,9 +162,9 @@
                     background-repeat: no-repeat
                     transition: transform .3s ease
                     cursor: pointer
-                    background-image: url('../img/nav/wishlist.svg')
+                    background-image: url('../../img/nav/wishlist.svg')
                     &.active
-                        background-image: url('../img/nav/wishlist-active.svg')
+                        background-image: url('../../img/nav/wishlist-active.svg')
                     &:hover
                         transform: scale(1.1)
             &__img
@@ -1006,6 +1007,8 @@
                         display: none
             &__size
                 padding-right: 0.2em
+                &__wrap
+                    font-size: 1.3em
             &__color
                 padding-left: 0.2em
                 &__wrap

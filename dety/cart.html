@@ -8,8 +8,8 @@
      body {opacity: 0; overflow-x: hidden; background: #FFF8F8;}
   </style>
 
-  <!-- CATALOG GENERAL -->
-  <link rel="stylesheet" href="./css/category/category.min.css">
+<!-- Cart css -->
+  <link rel="stylesheet" href="./css/cart.min.css">
 </head>
 <body>
 
@@ -1184,341 +1184,119 @@
 </nav>
 
 <main>
-  <div class="slider">
-    <div class="container">
-        
-        <div class="slider-wrapper__item">
-          <div class="slider-wrapper__item__caption">
-            <p class="title">15% скидка</p>
-            <p class="desc">на детские коляски</p>
-          </div>
-          <img src="./img/slider/1.png" alt="">
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="./">Главная</a> Корзина
         </div>
-
     </div>
-  </div>
 
-  <div class="breadcrumb">
-      <div class="container">
-          <a href="./">Главная</a> <a href="./category.html">Каталог</a> Детская одежда и обувь
-      </div>
-  </div>
-
-  <div class="category">
-      <div class="container">
-          <h1>Детская одежда и обувь</h1>
-
-          <div class="row">
-              <div class="col-md-6 col-lg-6">
-                  <div class="category-card">
-                      <div class="category-card__img">
-                          <a href=""><img src="./img/category/sub1.png" alt="Одежда и обувь"></a>
-                      </div>
-                      <div class="category-card__text">
-                          <p>
-                              <b>
-                                  <a href="">Одежда для девочек</a>
-                              </b>
-                          </p>
-                          <ul>
-                              <li><a href="">Костюмы</a></li>
-                              <li><a href="">Платья</a></li>
-                              <li><a href="">Комбинизоны</a></li>
-                              <li><a href="">Комплекты</a></li>
-                          </ul>
-                          <a class="more" href="#">показать все</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-6 col-lg-6">
-                  <div class="category-card">
-                      <div class="category-card__img">
-                          <a href=""><img src="./img/category/sub2.png" alt="Игрушки и игры"></a>
-                      </div>
-                      <div class="category-card__text">
-                          <p>
-                              <b>
-                                  <a href="">Обувь для девочек</a>
-                              </b>
-                          </p>
-                          <ul>
-                              <li><a href="">Сапоги</a></li>
-                              <li><a href="">Ботинки</a></li>
-                              <li><a href="">Туфли</a></li>
-                              <li><a href="">Кроссовки</a></li>
-                          </ul>
-                          <a class="more" href="#">показать все</a>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="col-md-6 col-lg-6">
-                <div class="category-card">
-                    <div class="category-card__img">
-                        <a href=""><img src="./img/category/sub3.png" alt="Одежда и обувь"></a>
+    <section class="cart">
+        <div class="container">
+            <h1>Мой заказ</h1>
+            
+            <div class="cart-order">
+                <div class="cart-order-item">
+                    <div class="cart-order-item__img">
+                        <img src="./img/cart/1.png" alt="">
                     </div>
-                    <div class="category-card__text">
-                        <p>
-                            <b>
-                                <a href="">Одежда для мальчиков</a>
-                            </b>
-                        </p>
-                        <ul>
-                            <li><a href="">Костюмы</a></li>
-                            <li><a href="">Комбинизоны</a></li>
-                            <li><a href="">Брюки</a></li>
-                            <li><a href="">Комплекты</a></li>
-                        </ul>
-                        <a class="more" href="#">показать все</a>
+                    <div class="cart-order-item__name">
+                        <p>Комбинезоны Lucky Child комплект.</p>
+                    </div>
+                    <div class="cart-order-item__price">
+                        <p></p>
+                        <p class="old"></p>
+                        <span>+48 бонусов</span>
+                    </div>
+                    <div class="cart-order-item__qty">
+                        <button>-</button>
+                        <input type="text" value="2"> шт.
+                        <button>+</button>
+                    </div>
+                    <div class="cart-order-item__total">
+                        <p>сумма</p>
+                        <p><b>13 500 ₽</b></p>
+                    </div>
+                    <div class="cart-order-item__clr">
+                        x
                     </div>
                 </div>
-              </div>
-              <div class="col-md-6 col-lg-6">
-                  <div class="category-card">
-                      <div class="category-card__img">
-                          <a href=""><img src="./img/category/sub4.png" alt="Игрушки и игры"></a>
-                      </div>
-                      <div class="category-card__text">
-                          <p>
-                              <b>
-                                  <a href="">Обувь для мальчиков</a>
-                              </b>
-                          </p>
-                          <ul>
-                              <li><a href="">Ботинки</a></li>
-                              <li><a href="">Сапоги</a></li>
-                              <li><a href="">Кроссовки</a></li>
-                              <li><a href="">Туфли</a></li>
-                          </ul>
-                          <a class="more" href="#">показать все</a>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="col-md-6 col-lg-6">
-                <div class="category-card">
-                    <div class="category-card__img">
-                        <a href=""><img src="./img/category/sub5.png" alt="Одежда и обувь"></a>
+                <div class="cart-order-promo">
+                    <div class="cart-order-promo__code">
+                        <input type="radio" id="promo" name="promo">
+                        <label for="promo">Примените промо-код</label>
+                        <input type="text" name="promo-code" placeholder="Ваш промо-код">
                     </div>
-                    <div class="category-card__text">
-                        <p>
-                            <b>
-                                <a href="">Одежда для новорожденных (малышей)</a>
-                            </b>
-                        </p>
-                        <ul>
-                            <li><a href="">Комбинизоны для младенцев</a></li>
-                            <li><a href="">Одежда для младенцев</a></li>
-                            <li><a href="">Комплекты для малышей</a></li>
-                            <li><a href="">Пинетки</a></li>
-                        </ul>
-                        <a class="more" href="#">показать все</a>
+                    <div class="cart-order-promo__bonus">
+                        <input type="radio" id="bonus" name="promo">
+                        <label for="bonus">Спишите 599 бонусов</label>
+                        <button class="btn btn-outline-accent">Применить</button>
                     </div>
                 </div>
-              </div>
-              <div class="col-md-6 col-lg-6">
-                  <div class="category-card">
-                      <div class="category-card__img">
-                          <a href=""><img src="./img/category/sub6.png" alt="Игрушки и игры"></a>
-                      </div>
-                      <div class="category-card__text">
-                          <p>
-                              <b>
-                                  <a href="">Одежда для беременных</a>
-                              </b>
-                          </p>
-                          <ul>
-                              <li><a href="">Джинсы для беременных</a></li>
-                              <li><a href="">Брюки для беременных</a></li>
-                              <li><a href="">Леггинсы для беременных</a></li>
-                              <li><a href="">Верхняя одежда для беременных</a></li>
-                          </ul>
-                          <a class="more" href="#">показать все</a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+            </div>
 
-  <section class="heroes">
-    <div class="container">
-      <div class="section__title">
-        <h2>Герои и интересы</h2>
-        <a href="">Посмотреть все</a>
-      </div>
+            <h2>Оформление заказа</h2>
 
-      <div class="row">
-        <div class="heroes-item">
-          <a href="" class="heroes-item__img">
-            <img src="./img/heroes/1.png" alt="">
-          </a>
-          <a href="">Фиксики</a>
-        </div>
-        <div class="heroes-item">
-          <a href="" class="heroes-item__img">
-            <img src="./img/heroes/2.png" alt="">
-          </a>
-          <a href="">Трансформеры </a>
-        </div>
-        <div class="heroes-item">
-          <a href="" class="heroes-item__img">
-            <img src="./img/heroes/3.png" alt="">
-          </a>
-          <a href="">Принцессы Disney</a>
-        </div>
-        <div class="heroes-item">
-          <a href="" class="heroes-item__img">
-            <img src="./img/heroes/4.png" alt="">
-          </a>
-          <a href="">Мстители</a>
-        </div>
-        <div class="heroes-item">
-          <a href="" class="heroes-item__img">
-            <img src="./img/heroes/5.png" alt="">
-          </a>
-          <a href="">Человек паук</a>
-        </div>
-        <div class="heroes-item">
-          <a href="" class="heroes-item__img">
-            <img src="./img/heroes/6.png" alt="">
-          </a>
-          <a href="">Тачки</a>
-        </div>
+            <div class="cart-delivery">
+                <h3>Доставка </h3>
+                <p>Ваш город:  <b>Краснодар</b></p>
+                <div class="cart-delivery-type">
+                    <div class="cart-delivery-type__item">
+                        <input type="text" name="pickup" id="pickup">
+                        <label for="pickup">
+                            Самовывоз
+                            <b>5 февраля</b>
+                        </label>
+                    </div>
+                    <div class="cart-delivery-type__item">
+                        <input type="text" name="delivery" id="delivery">
+                        <label for="delivery">
+                            Доставка курьером
+                            <b>8 февраля</b>
+                        </label>
+                    </div>
+                </div>
 
-        <div class="heroes-item">
-          <a href="" class="heroes-item__img">
-            <img src="./img/heroes/7.png" alt="">
-          </a>
-          <a href="">Холодное сердце</a>
-        </div>
-        <div class="heroes-item">
-          <a href="" class="heroes-item__img">
-            <img src="./img/heroes/8.png" alt="">
-          </a>
-          <a href="">Король лев</a>
-        </div>
-        <div class="heroes-item">
-          <a href="" class="heroes-item__img">
-            <img src="./img/heroes/9.png" alt="">
-          </a>
-          <a href="">Как приручить дракона</a>
-        </div>
-        <div class="heroes-item">
-          <a href="" class="heroes-item__img">
-            <img src="./img/heroes/10.png" alt="">
-          </a>
-          <a href="">Бетмен</a>
-        </div>
-        <div class="heroes-item">
-          <a href="" class="heroes-item__img">
-            <img src="./img/heroes/11.png" alt="">
-          </a>
-          <a href="">Свинка Пеппа</a>
-        </div>
-        <div class="heroes-item">
-          <a href="" class="heroes-item__img">
-            <img src="./img/heroes/12.png" alt="">
-          </a>
-          <a href="">LOL</a>
-        </div>
-      </div>
-    </div>
-  </section>
-    
-  <section class="heroes">
-      <div class="container">
-      <div class="section__title">
-          <h2>Популярные бренды</h2>
-          <a href="">Посмотреть все</a>
-      </div>
+                <div class="cart-delivery-point">
+                    <div class="cart-delivery-point__lists">
+                        <div class="cart-delivery-point__lists__item">
+                            <p>Кранодар, ул.Рылеева 152, д.15</p>
+                            <p>Ежедневно 09:00 - 22:00 </p>
+                            <p>В среду, 5 февраля, 149 ₽</p>
+                            <button class="btn btn-outline-accent">Подробнее</button>
+                            <button class="btn btn-accent">Выбрать</button>
+                        </div>
+                        <div class="cart-delivery-point__lists__item">
+                            <p>Кранодар, ул.Рылеева 152, д.15</p>
+                            <p>Ежедневно 09:00 - 22:00 </p>
+                            <p>В среду, 5 февраля, 149 ₽</p>
+                            <button class="btn btn-outline-accent">Подробнее</button>
+                            <button class="btn btn-accent">Выбрать</button>
+                        </div>
+                        <div class="cart-delivery-point__lists__item">
+                            <p>Кранодар, ул.Рылеева 152, д.15</p>
+                            <p>Ежедневно 09:00 - 22:00 </p>
+                            <p>В среду, 5 февраля, 149 ₽</p>
+                            <button class="btn btn-outline-accent">Подробнее</button>
+                            <button class="btn btn-accent">Выбрать</button>
+                        </div>
+                        <div class="cart-delivery-point__lists__item">
+                            <p>Кранодар, ул.Рылеева 152, д.15</p>
+                            <p>Ежедневно 09:00 - 22:00 </p>
+                            <p>В среду, 5 февраля, 149 ₽</p>
+                            <button class="btn btn-outline-accent">Подробнее</button>
+                            <button class="btn btn-accent">Выбрать</button>
+                        </div>
+                    </div>
+                    <div class="cart-delivery-point__lists__map">
+                        Map
+                    </div>
+                </div>
+            </div>
 
-      <div class="row">
-          <div class="heroes-item">
-          <a href="" class="heroes-item__img">
-              <img src="./img/heroes/1.png" alt="">
-          </a>
-          </div>
-          <div class="heroes-item">
-          <a href="" class="heroes-item__img">
-              <img src="./img/heroes/2.png" alt="">
-          </a>
-          </div>
-          <div class="heroes-item">
-          <a href="" class="heroes-item__img">
-              <img src="./img/heroes/3.png" alt="">
-          </a>
-          </div>
-          <div class="heroes-item">
-          <a href="" class="heroes-item__img">
-              <img src="./img/heroes/4.png" alt="">
-          </a>
-          </div>
-          <div class="heroes-item">
-          <a href="" class="heroes-item__img">
-              <img src="./img/heroes/5.png" alt="">
-          </a>
-          </div>
-          <div class="heroes-item">
-          <a href="" class="heroes-item__img">
-              <img src="./img/heroes/6.png" alt="">
-          </a>
-          </div>
 
-          <div class="heroes-item">
-          <a href="" class="heroes-item__img">
-              <img src="./img/heroes/7.png" alt="">
-          </a>
-          </div>
-          <div class="heroes-item">
-          <a href="" class="heroes-item__img">
-              <img src="./img/heroes/8.png" alt="">
-          </a>
-          </div>
-          <div class="heroes-item">
-          <a href="" class="heroes-item__img">
-              <img src="./img/heroes/9.png" alt="">
-          </a>
-          </div>
-          <div class="heroes-item">
-          <a href="" class="heroes-item__img">
-              <img src="./img/heroes/10.png" alt="">
-          </a>
-          </div>
-          <div class="heroes-item">
-          <a href="" class="heroes-item__img">
-              <img src="./img/heroes/11.png" alt="">
-          </a>
-          </div>
-          <div class="heroes-item">
-          <a href="" class="heroes-item__img">
-              <img src="./img/heroes/12.png" alt="">
-          </a>
-          </div>
-      </div>
-      </div>
-  </section>
+        </div>
+    </section>
 
-  <section class="text-block">
-    <div class="container">
-      <div class="section__title">
-        <h2>Интернет-магазин «ВсёДляДеток.ру»</h2>
-      </div>
-      <div class="row">
-        <div class="col-lg-6">
-          <p>
-            Сеть магазинов работает в среднем ценовом сегменте. Целевой аудиторией компании являются семьи со средними доходами, к которым относится большинство посетителей торговых центров.Современный супермаркет ВсеДляДеток.ру включает около 20-30 тыс. наименований товаров детского ассортимента: игрушки, одежда и обувь, товары для новорожденных, канцелярские товары, наборы для творчества, товары для активного отдыха, автокресла, мебель.
-          </p>
-        </div>
-        <div class="col-lg-6">
-          <span class="hideElem active"></span>
-          <p class="showElem active">
-            Группа компаний ВсеДляДеток.ру укрепляет лидирующие позиции на рынке детских товаров, сохраняя высокие темпы развития на протяжении последних лет. Так, в 2018 году распахнули свои двери 100 новых магазина сети ВсеДляДеток.ру. Магазины сети ВсеДляДеток.ру посетили свыше 220 млн человек. Выручка ВсеДляДеток.ру по итогам 2018 года составила 110,9 млрд руб. (+14,3% год к году), при этом доля на рынке детских товаров составила 23%.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer>
@@ -1692,13 +1470,13 @@
           <input class="sms-input" type="tel" name="sms4" maxlength="1" tabindex="4">
         </div>
       </form>
-    </div>
+    </div>  
   </div>
 </div>
 
   <script src="./js/scripts.min.js"></script>
-  <script src="./js/slick/slick.min.js"></script>
-  <link rel="stylesheet" href="./js/slick/slick.css">
   <link rel="stylesheet" href="./css/main.min.css">
 </body>
 </html>
+
+

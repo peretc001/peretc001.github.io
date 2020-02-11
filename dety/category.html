@@ -76,14 +76,14 @@
   
   <div class="mobile">
     <button class="btn btn-outline-accent search"><img src="./img/nav/search.svg" alt=""> Поиск</button>    
-    <button class="btn btn-accent catalog-btn">
+    <div class="btn btn-accent catalog-btn">
       <div class="hamburger">
         <span></span>
         <span></span>
         <span></span>
       </div>
       Каталог товаров
-    </button>
+    </div>
   </div>
 
   <div class="nav-catalog">      
@@ -1719,7 +1719,7 @@
           Подпишитесь на обновления
         </b>
       </p>
-      <form action="" method="post">
+      <form action="/" method="post">
         <input type="email" name="email" value="" placeholder="E-mail">
         <button class="btn btn-send">Подписаться</button>
       </form>
@@ -1755,7 +1755,7 @@
     <div class="modal-body login" data-modal="login">
       <span class="close" data-close="close"></span>
       <p><b>Войти в личный кабинет</b></p>
-      <form action="" method="post" class="signin">
+      <form action="/" method="post" class="signin">
         <label for="phone">Войти по номеру</label>
         <input type="tel" id="phone" name="phone" placeholder="+7 (XXX) XXX-XX-XX" required>
         <button type="submit" class="btn btn-accent">Получить sms-код</button>
@@ -1765,7 +1765,7 @@
     <div class="modal-body sms" data-modal="sms">
       <span class="close" data-close="close"></span>
       <p><b>Введите код из смс</b></p>
-      <form action="" method="post" class="signin-sms">
+      <form action="/" method="post" class="signin-sms">
         <div class="signin-sms__wrap">
           <input class="sms-input" type="tel" name="sms1" maxlength="1" tabindex="1">
           <input class="sms-input" type="tel" name="sms2" maxlength="1" tabindex="2">
