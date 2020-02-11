@@ -13,13 +13,13 @@
         justify-content: flex-start
         flex-wrap: wrap
         .left
-            flex: 0 0 20%
+            flex: 0 0 15%
             padding: 0 15px
         .right
             padding: 0 15px
-            flex: 0 0 80%
+            flex: 0 0 85%
         .right.offset
-            margin-left: 20%
+            margin-left: 25%
     input
         outline: none
         font-size: 16px
@@ -44,7 +44,7 @@
             margin: 0
             margin-bottom: 1em
             a
-                font-size: 1.8em
+                font-size: 1.4em
                 color: $grey
                 &.active
                     font-weight: bold
@@ -235,7 +235,7 @@
             justify-content: flex-start
             h3
                 flex: 0 1 auto
-                font-size: 1.7em
+                font-size: 1.5em
                 font-weight: bold
                 color: $grey
                 line-height: 1
@@ -283,10 +283,13 @@
                         margin-bottom: 1.5em
                     .btn
                         display: block
+                        user-select: none
                         &.btn-grey
                             width: 100%
                             color: $grey
                             border-color: $grey
+                            cursor: default
+                            text-align: center
                         &.btn-accent
                             width: 100%
                             padding: 1em
@@ -305,11 +308,11 @@
     .account
         .row
             .left
-                flex: 0 0 25%
+                flex: 0 0 17%
             .right
-                flex: 0 0 75%
+                flex: 0 0 83%
             .right.offset
-                margin-left: 25%
+                margin-left: 17%
         &-bonus
             &-total
                 &__view
@@ -358,6 +361,12 @@
                 h3
                     font-size: 1.6em
                     min-height: 30px
+            &-items
+                &__card
+                    &__number
+                        flex: 1 0 25%
+                    .cart-order-item
+                        flex: 1 0 75%
 
 @media screen and ( max-width: 767.98px )
     .account
@@ -435,6 +444,10 @@
                             font-size: 1em
         
         &-order-current
+            &-head
+                h3
+                    font-size: 1.3em
+                    min-height: 40px
             &-items
                 &__card
                     display: flex
@@ -549,3 +562,10 @@
                 h3
                     font-size: 1em
                     min-height: 30px
+            &-items
+                &__card
+                    &__number
+                        .btn
+                            &.btn-accent
+                                font-size: 1.2em
+                                padding: 1em 0
