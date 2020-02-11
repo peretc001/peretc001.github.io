@@ -124,7 +124,8 @@
                     flex: 0 0 16.666666%
             
         .btn
-            &.btn-accent
+            &.btn-accent,
+            &.btn-outline-accent
                 font-size: 1.2em
                 font-weight: bold
                 padding: 1em
@@ -290,7 +291,8 @@
                             border-color: $grey
                             cursor: default
                             text-align: center
-                        &.btn-accent
+                        &.btn-accent,
+                        &.btn-outline-accent
                             width: 100%
                             padding: 1em
                             text-align: center
@@ -302,7 +304,13 @@
                         padding-top: 0
                 &:last-child
                     border-bottom: none
-
+                .not
+                    width: 100%
+                    padding: 2em 0
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    color: $grey
 
 @media screen and ( max-width: 1199.98px )
     .account
@@ -476,7 +484,8 @@
                                 padding-left: 0.5em
                         .btn
                             display: block
-                            &.btn-accent
+                            &.btn-accent,
+                            &.btn-outline-accent
                                 width: 100%
                     .cart-order-item
                         flex: 1 0 100%
@@ -588,7 +597,8 @@
                                 text-align: center
                                 padding-left: 0.5em
                         .btn
-                            &.btn-accent
+                            &.btn-accent,
+                            &.btn-outline-accent
                                 font-size: 1.2em
                                 padding: 1em 0
 
