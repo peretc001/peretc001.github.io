@@ -340,6 +340,7 @@
             margin-bottom: 0
         ul
             margin: 2em 0
+            display: flex
             li
                 padding-left: 2em
                 a
@@ -365,6 +366,7 @@
                 &__card
                     &__number
                         flex: 1 0 25%
+                        font-size: .9em
                     .cart-order-item
                         flex: 1 0 75%
 
@@ -457,6 +459,7 @@
                     border-bottom: 1px solid $grey
                     margin-bottom: 1em
                     &__number
+                        font-size: 1em
                         flex: 1 0 100%
                         padding-right: 0
                         padding-bottom: 2em
@@ -464,10 +467,11 @@
                         display: flex
                         border-bottom: 1px solid $grey
                         & > div
-                            flex: 0 0 50%
                             &:nth-child(1)
-                                padding-right: 0.5em
+                                flex: 0 0 60%
+                                padding-right: 1em
                             &:nth-child(2)
+                                flex: 0 0 40%
                                 text-align: center
                                 padding-left: 0.5em
                         .btn
@@ -481,6 +485,16 @@
     .account
         h1, h2, h3, h4
             font-size: 1.6em
+        
+        ul
+            margin-bottom: 0.5em
+            li
+                padding-left: 0
+                padding-right: 1em
+                &:last-child
+                    padding-right: 0 !important
+                a
+                    font-size: 1.1em
         &-data
             padding: 2em 1em
             h2
@@ -565,7 +579,37 @@
             &-items
                 &__card
                     &__number
+                        & > div
+                            &:nth-child(1)
+                                flex: 0 0 50%
+                                padding-right: 1em
+                            &:nth-child(2)
+                                flex: 0 0 50%
+                                text-align: center
+                                padding-left: 0.5em
                         .btn
                             &.btn-accent
                                 font-size: 1.2em
                                 padding: 1em 0
+
+@media screen and ( max-width: 374.98px )
+    .account
+        h1, h2, h3, h4
+            font-size: 1.4em
+        
+        ul
+            li
+                padding-right: 0.5em
+                a
+                    font-size: 1em
+                        
+        &-order-current
+            padding: 2em 1em
+            &-head
+                h3
+                    font-size: .8em
+                    min-height: 20px
+            &-items
+                &__card
+                    &__number
+                        font-size: 0.8em
