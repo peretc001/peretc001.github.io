@@ -86,7 +86,30 @@ img
 		&:hover
 			background: $yellow
 			color: #ffffff
+	&.btn-grey
+		background: transparent
+		border: 1px solid $grey
+		color: $grey
 
+.tabs
+	h3
+		user-select: none
+.tabs-item
+	visibility: none
+	opacity: 0
+	z-index: -1
+	height: 0
+	padding-top: 2em
+	overflow: hidden
+	transition: opacity .5s linear
+	padding: 0
+	margin: 0
+	&.active
+		visibility: visible
+		opacity: 1
+		height: auto
+		min-height: 200px
+		z-index: 1
 
 .section__title
 	display: block

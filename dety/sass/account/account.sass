@@ -7,6 +7,19 @@
         font-weight: bold
         margin: 0
         margin-bottom: 1em
+    .row
+        display: flex
+        align-items: flex-start
+        justify-content: flex-start
+        flex-wrap: wrap
+        .left
+            flex: 0 0 20%
+            padding: 0 15px
+        .right
+            padding: 0 15px
+            flex: 0 0 80%
+        .right.offset
+            margin-left: 20%
     input
         outline: none
         font-size: 16px
@@ -53,11 +66,10 @@
 
         .form-row
             padding: 0 0 1em 0
-            padding-right: 1em
             display: flex
             align-items: flex-start
             justify-content: flex-start
-            flex-direction: column
+            flex-direction: column                
             label
                 color: $grey
                 font-size: 0.9em
@@ -84,6 +96,13 @@
             border-bottom: 1px solid $grey
             .form-row
                 flex: 0 0 33.333333%
+                &:nth-child(1), &:nth-child(4)
+                    padding-right: 0.5em
+                &:nth-child(2), &:nth-child(5)
+                    padding: 0 .5em
+                &:nth-child(3)
+                    padding-left: .5em
+                    
         &-delivery
             display: flex
             align-items: flex-start
@@ -95,10 +114,21 @@
             .form-row
                 &:nth-child(1),
                 &:nth-child(2)
+                    padding-right: 0.5em
                     flex: 0 0 33.333333%
+                &:nth-child(2)
+                    padding-left: 0.5em
                 &:nth-child(3),
                 &:nth-child(4)
+                    padding-left: .5em
                     flex: 0 0 16.666666%
+            
+        .btn
+            &.btn-accent
+                font-size: 1.2em
+                font-weight: bold
+                padding: 1em
+                width: 32%
         
         .hideElem
             font-weight: bold
@@ -116,13 +146,6 @@
             &.active
                 opacity: 0
                 max-height: 0
-        
-        .btn
-            &.btn-accent
-                font-size: 1.2em
-                font-weight: bold
-                padding: 1em
-                width: 32%
 
     &-bonus
         background: #ffffff
@@ -201,8 +224,92 @@
                     &:last-child
                         font-size: 1.2em
 
+    &-order-current
+        background: #ffffff
+        border-radius: 20px
+        padding: 2em
+        position: relative
+        &-head
+            display: flex
+            align-items: center
+            justify-content: flex-start
+            h3
+                flex: 0 1 auto
+                font-size: 1.7em
+                font-weight: bold
+                color: $grey
+                line-height: 1
+                padding: 0
+                padding-bottom: 0.2em
+                margin: 0
+                margin-bottom: .5em
+                min-height: 40px
+                border-bottom: 1px solid rgba(172, 82, 191, 0.5)
+                cursor: pointer
+                &.active
+                    color: $text
+                    border-bottom: 3px solid $accent
+                &:first-child
+                    padding-right: 1em
+                &:last-child
+                    flex: 1 0 auto
+                    padding-left: 1em
+        &-items
+            &__card
+                display: flex
+                align-items: flex-start
+                padding: 1em 0
+                border-bottom: 1px solid $grey
+                margin-bottom: 1em
+                &__number
+                    flex: 1 0 20%
+                    padding-right: 1.5em
+                    .number
+                        font-size: 1.7em
+                        font-weight: bold
+                        padding: 0
+                        margin: 0
+                        margin-bottom: 0.2em
+                        line-height: 1
+                    .date
+                        color: $grey
+                        font-size: 0.9em
+                        margin-bottom: 1.5em
+                    .delivery-type,
+                    .pay
+                        color: #00b6c6
+                        font-weight: bold
+                    .delivery-adress
+                        margin-bottom: 1.5em
+                    .btn
+                        display: block
+                        &.btn-grey
+                            width: 100%
+                            color: $grey
+                            border-color: $grey
+                        &.btn-accent
+                            width: 100%
+                            padding: 1em
+                            text-align: center
+                        &:last-child
+                            margin-top: 0.5em
+                .cart-order-item
+                    flex: 1 0 80%
+                    &:first-child
+                        padding-top: 0
+                &:last-child
+                    border-bottom: none
+
+
 @media screen and ( max-width: 1199.98px )
     .account
+        .row
+            .left
+                flex: 0 0 25%
+            .right
+                flex: 0 0 75%
+            .right.offset
+                margin-left: 25%
         &-bonus
             &-total
                 &__view
@@ -211,9 +318,21 @@
                             font-size: 2em
                         &:last-child
                             font-size: 1em
+        &-order-current
+            &-items
+                &__card
+                    &__number
+                        font-size: 0.8em
 
 @media screen and ( max-width: 991.98px )
     .account
+        .row
+            .left
+                flex: 0 0 100%
+            .right
+                flex: 0 0 100%
+            .right.offset
+                margin-left: 0
         h1
             margin-bottom: 0
         ul
@@ -234,11 +353,16 @@
                     p
                         &:last-child
                             font-size: .9em
+        &-order-current
+            &-head
+                h3
+                    font-size: 1.6em
+                    min-height: 30px
 
 @media screen and ( max-width: 767.98px )
     .account
-        h1
-            font-size: 2em
+        h1, h2, h3, h4
+            font-size: 1.8em
         ul
             li
                 a
@@ -248,7 +372,14 @@
                 font-size: 1.4em
             &-private
                 .form-row
+                    padding: 0
                     flex: 0 0 50%
+                    &:nth-child(odd)
+                        padding: 0.5em
+                        padding-left: 0
+                    &:nth-child(even)
+                        padding: .5em
+                        padding-right: 0
             &-delivery
                 .form-row
                     &:nth-child(1),
@@ -257,10 +388,23 @@
                     &:nth-child(3),
                     &:nth-child(4)
                         flex: 0 0 50%
+                    
+                    padding: 0
+                    flex: 0 0 50%
+                    &:nth-child(odd)
+                        padding: 0.5em
+                        padding-left: 0
+                    &:nth-child(even)
+                        padding: .5em
+                        padding-right: 0
                 
-                .showElem
-                    flex-wrap: wrap
+            .showElem
+                flex-wrap: wrap
             
+            .btn
+                &.btn-accent
+                    width: 49%
+
         &-bonus
             &-head
                 display: flex
@@ -289,13 +433,41 @@
                             margin-bottom: 0
                         &:last-child
                             font-size: 1em
-
-        .btn
-            &.btn-accent
-                width: 47%
+        
+        &-order-current
+            &-items
+                &__card
+                    display: flex
+                    align-items: flex-start
+                    flex-wrap: wrap
+                    padding: 1em 0
+                    border-bottom: 1px solid $grey
+                    margin-bottom: 1em
+                    &__number
+                        flex: 1 0 100%
+                        padding-right: 0
+                        padding-bottom: 2em
+                        margin-bottom: 2em
+                        display: flex
+                        border-bottom: 1px solid $grey
+                        & > div
+                            flex: 0 0 50%
+                            &:nth-child(1)
+                                padding-right: 0.5em
+                            &:nth-child(2)
+                                text-align: center
+                                padding-left: 0.5em
+                        .btn
+                            display: block
+                            &.btn-accent
+                                width: 100%
+                    .cart-order-item
+                        flex: 1 0 100%
 
 @media screen and ( max-width: 576.98px )
     .account
+        h1, h2, h3, h4
+            font-size: 1.6em
         &-data
             padding: 2em 1em
             h2
@@ -304,13 +476,20 @@
             &-private
                 .form-row
                     flex: 0 0 100%
-                    padding-right: 0
+                    &:nth-child(odd)
+                        padding-left: 0
+                        padding-right: 0
+                    &:nth-child(even)
+                        padding-left: 0
+                        padding-right: 0
             &-delivery
                 .form-row
                     padding-right: 0
                     &:nth-child(1),
                     &:nth-child(2)
                         flex: 0 0 100%
+                        padding-left: 0
+                        padding-right: 0
                     &:nth-child(3),
                     &:nth-child(4)
                         flex: 0 0 48%
@@ -323,7 +502,6 @@
 
         &-bonus
             padding-bottom: 0
-            padding: 2em 1em
             &-table
                 &__col
                     flex-wrap: wrap
@@ -365,4 +543,9 @@
                                 padding-top: 0.2em !important
                                 padding-bottom: 1em !important
                         
-
+        &-order-current
+            padding: 2em 1em
+            &-head
+                h3
+                    font-size: 1em
+                    min-height: 30px
