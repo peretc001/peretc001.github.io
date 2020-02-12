@@ -1199,407 +1199,197 @@
               <div class="left">
                 <ul>
                   <li><a href="./account.html">Мои данные</a></li>
-                  <li><a href="./account-order-current.html" class="active">Мои заказы</a></li>
+                  <li><a href="./account-orders.html" class="active">Мои заказы</a></li>
                   <li><a href="./account-favorite.html">Избранное</a></li>
                 </ul>
               </div>
 
               <div class="right">
                 <div class="account-order-current">
-                  <div class="account-order-current-head tabs">
-                    <h3 class="active">Текущие заказы</h3>
-                    <h3>Завершенные заказы</h3>
+
+                <div class="account-order-current__head">
+                  <div class="account-order-current__head__item">
+                    <p>Номер заказа</p>
+                    <p>Дата заказа</p>
+                    <p>Доставка</p>
+                    <p>Оплата</p>
+                    <p>Статус</p>
+                    <p>&nbsp;</p>
                   </div>
-
-                  <div class="account-order-current-items tabs-item active">
-                    <div class="account-order-current-items__card">
-                      <div class="account-order-current-items__card__number">
-                        <div>
-                          <p class="number">№123456</p>
-                          <p class="date">от 12.03.2020</p>
-
-                          <p class="delivery-type">
-                            Доставка курьером
-                          </p>
-                          <p class="delivery-adress">
-                            до Екатеринбург, ул. Учителей, 22, 33
-                          </p>
-                        </div>
-                        <div>
-                          <p class="pay">
-                            Онлайн оплата
-                          </p>
-
-                          <span class="btn btn-grey">ожидает оплаты</span>
-                          <a href="" class="btn btn-accent">Оплатить заказ</a>
-                        </div>
-                      </div>
-                      <div class="cart-order">
-                        <div class="cart-order-item">
-                          <div class="cart-order-item__img">
-                            <a href=""><img src="./img/cart/1.png" alt=""></a>
-                          </div>
-                          <div class="cart-order-item__name">
-                              <a href="">Комбинезоны Lucky Child комплект</a>
-                          </div>
-                          <div class="cart-order-item__price">
-                              <p>91 830 ₽</p>
-                              <p class="old">61 750 ₽</p>
-                              <span class="btn btn-accent">+48 бонусов</span>
-                          </div>
-                          <div class="cart-order-item__qty">
-                              <span class="btn btn-grey">2 шт.</span>
-                          </div>
-                          <div class="cart-order-item__subtotal">
-                              <p>сумма</p>
-                              <p><b>131 500 ₽</b></p>
-                          </div>
-                        </div>
-                        <div class="cart-order-item">
-                          <div class="cart-order-item__img">
-                            <a href=""><img src="./img/cart/2.png" alt=""></a>
-                          </div>
-                          <div class="cart-order-item__name">
-                              <a href="">Комбинезоны Lucky Child комплект</a>
-                          </div>
-                          <div class="cart-order-item__price">
-                              <p>9 830 ₽</p>
-                              <p class="old">6 750 ₽</p>
-                              <span class="btn btn-accent">+48 бонусов</span>
-                          </div>
-                          <div class="cart-order-item__qty">
-                              <span class="btn btn-grey">2 шт.</span>
-                          </div>
-                          <div class="cart-order-item__subtotal">
-                              <p>сумма</p>
-                              <p><b>13 500 ₽</b></p>
-                          </div>
-                        </div>
-                        <div class="cart-order-item">
-                          <div class="cart-order-item__img">
-                            <a href=""><img src="./img/cart/3.png" alt=""></a>
-                          </div>
-                          <div class="cart-order-item__name">
-                              <a href="">Комбинезоны Lucky Child комплект</a>
-                          </div>
-                          <div class="cart-order-item__price">
-                              <p>9 830 ₽</p>
-                              <p class="old">6 750 ₽</p>
-                              <span class="btn btn-accent">+48 бонусов</span>
-                          </div>
-                          <div class="cart-order-item__qty">
-                              <span class="btn btn-grey">2 шт.</span>
-                          </div>
-                          <div class="cart-order-item__subtotal">
-                              <p>сумма</p>
-                              <p><b>13 500 ₽</b></p>
-                          </div>
-                        </div>
-                        <div class="cart-order-item-total">
-                          <div>
-                            <a href="">Смотреть весь заказ</a>
-                          </div>
-                          <div>
-                            <p>сумма заказа:</p>
-                            <p>будет начислено:</p>
-                          </div>
-                          <div>
-                            <p class="total">52 500 ₽</p>
-                            <p class="bonus">1 240 Б</p>
-                          </div>
-                        </p>
-                      </div>
-                      </div>
-                    </div>
-
-                    <div class="account-order-current-items__card">
-                      <div class="account-order-current-items__card__number">
-                        <div>
-                          <p class="number">№12646354</p>
-                          <p class="date">от 11.03.2020</p>
-
-                          <p class="delivery-type">
-                            ТК до пункта выдачи
-                          </p>
-                          <p class="delivery-adress">
-                            ТРК "Галактика", ул. Стасова, 178-182
-                          </p>
-                        </div>
-                        <div>
-                          <p class="pay">
-                            Оплата наличными или картой при получении
-                          </p>
-
-                          <span class="btn btn-grey">передан в доставку</span>
-                        </div>
-                      </div>
-                      <div class="cart-order">
-                        <div class="cart-order-item">
-                          <div class="cart-order-item__img">
-                            <a href=""><img src="./img/cart/1.png" alt=""></a>
-                          </div>
-                          <div class="cart-order-item__name">
-                              <a href="">Комбинезоны Lucky Child комплект</a>
-                          </div>
-                          <div class="cart-order-item__price">
-                              <p>91 830 ₽</p>
-                              <p class="old">61 750 ₽</p>
-                              <span class="btn btn-accent">+48 бонусов</span>
-                          </div>
-                          <div class="cart-order-item__qty">
-                              <span class="btn btn-grey">2 шт.</span>
-                          </div>
-                          <div class="cart-order-item__subtotal">
-                              <p>сумма</p>
-                              <p><b>131 500 ₽</b></p>
-                          </div>
-                        </div>
-                        <div class="cart-order-item-total">
-                          <div>
-                            &nbsp;
-                          </div>
-                          <div>
-                            <p>сумма заказа:</p>
-                            <p>будет начислено:</p>
-                          </div>
-                          <div>
-                            <p class="total">5 500 ₽</p>
-                            <p class="bonus">1 240 Б</p>
-                          </div>
-                        </p>
-                      </div>
-                      </div>
-                    </div>
-
-                    <div class="account-order-current-items__card">
-                      <div class="account-order-current-items__card__number">
-                        <div>
-                          <p class="number">№12646354</p>
-                          <p class="date">от 11.03.2020</p>
-
-                          <p class="delivery-type">
-                            Самовывоз из магазина
-                          </p>
-                          <p class="delivery-adress">
-                            Екатеринбург, ул. Учителей, 22, 33, магазин "Цветочек"
-                          </p>
-                        </div>
-                        <div>
-                          <p class="pay">
-                            Онлайн оплата
-                          </p>
-
-                          <span class="btn btn-grey">Доставлен</span>
-                        </div>
-                      </div>
-                      <div class="cart-order">
-                        <div class="cart-order-item">
-                          <div class="cart-order-item__img">
-                            <a href=""><img src="./img/cart/1.png" alt=""></a>
-                          </div>
-                          <div class="cart-order-item__name">
-                              <a href="">Комбинезоны Lucky Child комплект</a>
-                          </div>
-                          <div class="cart-order-item__price">
-                              <p>91 830 ₽</p>
-                              <p class="old">61 750 ₽</p>
-                              <span class="btn btn-accent">+48 бонусов</span>
-                          </div>
-                          <div class="cart-order-item__qty">
-                              <span class="btn btn-grey">2 шт.</span>
-                          </div>
-                          <div class="cart-order-item__subtotal">
-                              <p>сумма</p>
-                              <p><b>131 500 ₽</b></p>
-                          </div>
-                        </div>
-                        <div class="cart-order-item-total">
-                          <div>
-                            &nbsp;
-                          </div>
-                          <div>
-                            <p>сумма заказа:</p>
-                            <p>будет начислено:</p>
-                          </div>
-                          <div>
-                            <p class="total">5 500 ₽</p>
-                            <p class="bonus">1 240 Б</p>
-                          </div>
-                        </p>
-                      </div>
-                      </div>
-                    </div>
-
-                    <div class="account-order-current-items__card">
-                      <div class="not">
-                        Текущих заказов не найдено
-                      </div>
-                    </div>
+                  <div class="account-order-current__head__item">
+                    <p> № 123456</p>
+                    <p>12.03.2020</p>
+                    <p>Доставка курьером
+                      до Екатеринбург,
+                      ул. Учителей, 22
+                    </p>
+                    <p>Онлайн оплата</p>
+                    <p>Ожидает оплаты</p>
+                    <p><a class="btn btn-accent">Оплатить заказ</a></p>
                   </div>
-
-                  <div class="account-order-current-items tabs-item">
-                    <div class="account-order-current-items__card">
-                      <div class="account-order-current-items__card__number">
-                        <div>
-                          <p class="number">№123456</p>
-                          <p class="date">от 12.03.2020</p>
-
-                          <p class="delivery-type">
-                            Доставка курьером
-                          </p>
-                          <p class="delivery-adress">
-                            до Екатеринбург, ул. Учителей, 22, 33
-                          </p>
-                        </div>
-                        <div>
-                          <p class="pay">
-                            Онлайн оплата
-                          </p>
-
-                          <span class="btn btn-grey">завершен</span>
-                          <a href="" class="btn btn-outline-accent">Повторить заказ</a>
-                        </div>
-                      </div>
-                      <div class="cart-order">
-                        <div class="cart-order-item">
-                          <div class="cart-order-item__img">
-                            <a href=""><img src="./img/cart/1.png" alt=""></a>
-                          </div>
-                          <div class="cart-order-item__name">
-                              <a href="">Комбинезоны Lucky Child комплект</a>
-                          </div>
-                          <div class="cart-order-item__price">
-                              <p>91 830 ₽</p>
-                              <p class="old">61 750 ₽</p>
-                              <span class="btn btn-accent">+48 бонусов</span>
-                          </div>
-                          <div class="cart-order-item__qty">
-                              <span class="btn btn-grey">2 шт.</span>
-                          </div>
-                          <div class="cart-order-item__subtotal">
-                              <p>сумма</p>
-                              <p><b>131 500 ₽</b></p>
-                          </div>
-                        </div>
-                        <div class="cart-order-item">
-                          <div class="cart-order-item__img">
-                            <a href=""><img src="./img/cart/2.png" alt=""></a>
-                          </div>
-                          <div class="cart-order-item__name">
-                              <a href="">Комбинезоны Lucky Child комплект</a>
-                          </div>
-                          <div class="cart-order-item__price">
-                              <p>9 830 ₽</p>
-                              <p class="old">6 750 ₽</p>
-                              <span class="btn btn-accent">+48 бонусов</span>
-                          </div>
-                          <div class="cart-order-item__qty">
-                              <span class="btn btn-grey">2 шт.</span>
-                          </div>
-                          <div class="cart-order-item__subtotal">
-                              <p>сумма</p>
-                              <p><b>13 500 ₽</b></p>
-                          </div>
-                        </div>
-                        <div class="cart-order-item">
-                          <div class="cart-order-item__img">
-                            <a href=""><img src="./img/cart/3.png" alt=""></a>
-                          </div>
-                          <div class="cart-order-item__name">
-                              <a href="">Комбинезоны Lucky Child комплект</a>
-                          </div>
-                          <div class="cart-order-item__price">
-                              <p>9 830 ₽</p>
-                              <p class="old">6 750 ₽</p>
-                              <span class="btn btn-accent">+48 бонусов</span>
-                          </div>
-                          <div class="cart-order-item__qty">
-                              <span class="btn btn-grey">2 шт.</span>
-                          </div>
-                          <div class="cart-order-item__subtotal">
-                              <p>сумма</p>
-                              <p><b>13 500 ₽</b></p>
-                          </div>
-                        </div>
-                        <div class="cart-order-item-total">
-                          <div>
-                            <a href="">Смотреть весь заказ</a>
-                          </div>
-                          <div>
-                            <p>сумма заказа:</p>
-                            <p>будет начислено:</p>
-                          </div>
-                          <div>
-                            <p class="total">52 500 ₽</p>
-                            <p class="bonus">1 240 Б</p>
-                          </div>
-                        </p>
-                      </div>
-                      </div>
-                    </div>
-
-                    <div class="account-order-current-items__card">
-                      <div class="account-order-current-items__card__number">
-                        <div>
-                          <p class="number">№12646354</p>
-                          <p class="date">от 11.03.2020</p>
-
-                          <p class="delivery-type">
-                            Доставка курьером
-                          </p>
-                          <p class="delivery-adress">
-                            до Екатеринбург, ул. Учителей, 22, 33
-                          </p>
-                        </div>
-                        <div>
-                          <p class="pay">
-                            Онлайн оплата
-                          </p>
-
-                          <span class="btn btn-grey">завершен</span>
-                          <a href="" class="btn btn-outline-accent">Повторить заказ</a>
-                        </div>
-                      </div>
-                      <div class="cart-order">
-                        <div class="cart-order-item">
-                          <div class="cart-order-item__img">
-                            <a href=""><img src="./img/cart/1.png" alt=""></a>
-                          </div>
-                          <div class="cart-order-item__name">
-                              <a href="">Комбинезоны Lucky Child комплект</a>
-                          </div>
-                          <div class="cart-order-item__price">
-                              <p>91 830 ₽</p>
-                              <p class="old">61 750 ₽</p>
-                              <span class="btn btn-accent">+48 бонусов</span>
-                          </div>
-                          <div class="cart-order-item__qty">
-                              <span class="btn btn-grey">2 шт.</span>
-                          </div>
-                          <div class="cart-order-item__subtotal">
-                              <p>сумма</p>
-                              <p><b>131 500 ₽</b></p>
-                          </div>
-                        </div>
-                        <div class="cart-order-item-total">
-                          <div>
-                          </div>
-                          <div>
-                            <p>сумма заказа:</p>
-                            <p>будет начислено:</p>
-                          </div>
-                          <div>
-                            <p class="total">5 500 ₽</p>
-                            <p class="bonus">1 240 Б</p>
-                          </div>
-                        </p>
-                      </div>
-                      </div>
-                    </div>
-                  </div>
-
                 </div>
+
+                <div class="account-order-current-cart">
+                  <div class="cart-order">
+                    <div class="cart-order-item">
+                      <div class="cart-order-item__img">
+                        <a href=""><img src="./img/cart/1.png" alt=""></a>
+                      </div>
+                      <div class="cart-order-item__name">
+                          <a href="">Комбинезоны Lucky Child комплект</a>
+                      </div>
+                      <div class="cart-order-item__price">
+                          <p>91 830 ₽</p>
+                          <p class="old">61 750 ₽</p>
+                          <span class="btn btn-accent">+48 бонусов</span>
+                      </div>
+                      <div class="cart-order-item__qty">
+                          <span class="btn btn-grey">2 шт.</span>
+                      </div>
+                      <div class="cart-order-item__subtotal">
+                          <p>сумма</p>
+                          <p><b>131 500 ₽</b></p>
+                      </div>
+                    </div>
+                    <div class="cart-order-item">
+                      <div class="cart-order-item__img">
+                        <a href=""><img src="./img/cart/2.png" alt=""></a>
+                      </div>
+                      <div class="cart-order-item__name">
+                          <a href="">Комбинезоны Lucky Child комплект</a>
+                      </div>
+                      <div class="cart-order-item__price">
+                          <p>9 830 ₽</p>
+                          <p class="old">6 750 ₽</p>
+                          <span class="btn btn-accent">+48 бонусов</span>
+                      </div>
+                      <div class="cart-order-item__qty">
+                          <span class="btn btn-grey">2 шт.</span>
+                      </div>
+                      <div class="cart-order-item__subtotal">
+                          <p>сумма</p>
+                          <p><b>13 500 ₽</b></p>
+                      </div>
+                    </div>
+                    <div class="cart-order-item">
+                      <div class="cart-order-item__img">
+                        <a href=""><img src="./img/cart/3.png" alt=""></a>
+                      </div>
+                      <div class="cart-order-item__name">
+                          <a href="">Комбинезоны Lucky Child комплект</a>
+                      </div>
+                      <div class="cart-order-item__price">
+                          <p>9 830 ₽</p>
+                          <p class="old">6 750 ₽</p>
+                          <span class="btn btn-accent">+48 бонусов</span>
+                      </div>
+                      <div class="cart-order-item__qty">
+                          <span class="btn btn-grey">2 шт.</span>
+                      </div>
+                      <div class="cart-order-item__subtotal">
+                          <p>сумма</p>
+                          <p><b>13 500 ₽</b></p>
+                      </div>
+                    </div>
+                    <div class="cart-order-item">
+                      <div class="cart-order-item__img">
+                        <a href=""><img src="./img/cart/3.png" alt=""></a>
+                      </div>
+                      <div class="cart-order-item__name">
+                          <a href="">Комбинезоны Lucky Child комплект</a>
+                      </div>
+                      <div class="cart-order-item__price">
+                          <p>9 830 ₽</p>
+                          <p class="old">6 750 ₽</p>
+                          <span class="btn btn-accent">+48 бонусов</span>
+                      </div>
+                      <div class="cart-order-item__qty">
+                          <span class="btn btn-grey">2 шт.</span>
+                      </div>
+                      <div class="cart-order-item__subtotal">
+                          <p>сумма</p>
+                          <p><b>13 500 ₽</b></p>
+                      </div>
+                    </div>
+                    <div class="cart-order-item">
+                      <div class="cart-order-item__img">
+                        <a href=""><img src="./img/cart/3.png" alt=""></a>
+                      </div>
+                      <div class="cart-order-item__name">
+                          <a href="">Комбинезоны Lucky Child комплект</a>
+                      </div>
+                      <div class="cart-order-item__price">
+                          <p>9 830 ₽</p>
+                          <p class="old">6 750 ₽</p>
+                          <span class="btn btn-accent">+48 бонусов</span>
+                      </div>
+                      <div class="cart-order-item__qty">
+                          <span class="btn btn-grey">2 шт.</span>
+                      </div>
+                      <div class="cart-order-item__subtotal">
+                          <p>сумма</p>
+                          <p><b>13 500 ₽</b></p>
+                      </div>
+                    </div>
+                    <div class="cart-order-item">
+                      <div class="cart-order-item__img">
+                        <a href=""><img src="./img/cart/3.png" alt=""></a>
+                      </div>
+                      <div class="cart-order-item__name">
+                          <a href="">Комбинезоны Lucky Child комплект</a>
+                      </div>
+                      <div class="cart-order-item__price">
+                          <p>9 830 ₽</p>
+                          <p class="old">6 750 ₽</p>
+                          <span class="btn btn-accent">+48 бонусов</span>
+                      </div>
+                      <div class="cart-order-item__qty">
+                          <span class="btn btn-grey">2 шт.</span>
+                      </div>
+                      <div class="cart-order-item__subtotal">
+                          <p>сумма</p>
+                          <p><b>13 500 ₽</b></p>
+                      </div>
+                    </div>
+                    <div class="cart-order-item">
+                      <div class="cart-order-item__img">
+                        <a href=""><img src="./img/cart/3.png" alt=""></a>
+                      </div>
+                      <div class="cart-order-item__name">
+                          <a href="">Комбинезоны Lucky Child комплект</a>
+                      </div>
+                      <div class="cart-order-item__price">
+                          <p>9 830 ₽</p>
+                          <p class="old">6 750 ₽</p>
+                          <span class="btn btn-accent">+48 бонусов</span>
+                      </div>
+                      <div class="cart-order-item__qty">
+                          <span class="btn btn-grey">2 шт.</span>
+                      </div>
+                      <div class="cart-order-item__subtotal">
+                          <p>сумма</p>
+                          <p><b>13 500 ₽</b></p>
+                      </div>
+                    </div>
+                    <div class="cart-order-item-total">
+                      <div>
+                        &nbsp;
+                      </div>
+                      <div>
+                        <p>сумма заказа:</p>
+                        <p>будет начислено:</p>
+                      </div>
+                      <div>
+                        <p class="total">52 500 ₽</p>
+                        <p class="bonus">1 240 Б</p>
+                      </div>
+                    </p>
+                  </div>
+                  </div>
+                </div>
+
               </div>
+
             </div>
 
         </div>

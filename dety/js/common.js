@@ -356,7 +356,7 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     }
 
-
+{
     function setCursorPosition(pos, elem) {
         elem.focus();
         if (elem.setSelectionRange) elem.setSelectionRange(pos, pos);
@@ -368,7 +368,6 @@ document.addEventListener("DOMContentLoaded", function() {
             range.select()
         }
     }
-    
     function mask(event) {
         var matrix = "+7 (___) ___ ____",
             i = 0,
@@ -382,11 +381,11 @@ document.addEventListener("DOMContentLoaded", function() {
             if (this.value.length == 2) this.value = ""
         } else setCursorPosition(this.value.length, this)
     };
-    var input = document.querySelector("#userphone");
+    var input = document.querySelector("#userphone") || document.querySelector("#phone")
     input.addEventListener("input", mask, false);
     input.addEventListener("focus", mask, false);
     input.addEventListener("blur", mask, false);
-    
+}
     
     
 });

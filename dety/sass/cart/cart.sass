@@ -119,6 +119,7 @@
     .cart-order-item
         font-size: 1em
         flex-wrap: wrap
+        padding: 1em 0
         &__img
             flex: 0 0 10%
         &__name
@@ -128,8 +129,10 @@
         &__price
             flex: 0 0 40%
             padding: .5em
-            padding-top: 1em
+            margin-top: 1em
             padding-left: 0
+            p
+                font-size: 1.2em
         &__qty
             flex: 0 0 30%
             padding: .5em
@@ -138,6 +141,9 @@
             flex: 0 0 30%
             padding: .5em
             padding-top: 1em
+            p
+                b
+                    margin-bottom: 0
         &-total
             display: flex
             flex-wrap: wrap
@@ -154,14 +160,22 @@
 
 @media screen and ( max-width: 424.98px )
     .cart-order-item
-        padding-bottom: 0.5em
         &__price
-            flex: 0 0 50%
-        &__qty
-            flex: 0 0 50%
-        &__subtotal
             flex: 0 0 100%
+            margin-top: 1em
+            p
+                flex: 0 0 29%
+            span
+                flex: 0 0 58%
+        &__qty
+            flex: 0 0 60%
+        &__subtotal
+            flex: 0 0 40%
             text-align: right
+            padding: 0
+            p
+                b
+                    margin-bottom: 0
         &-total
             & > div:nth-child(2)
                 width: 70%

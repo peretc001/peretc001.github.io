@@ -31,8 +31,5 @@ padding:"inner"+a,content:b,"":"outer"+a},function(c,d){n.fn[d]=function(d,e){va
 
 
 $( document ).ready(function() {
-
-  $("#phone").mask("+7 (999) 999-99-99");
-
   $('.lazy').Lazy();
 });
