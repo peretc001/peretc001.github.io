@@ -1,10 +1,56 @@
 
 @import '../_libs/var'
+.cart
+    .container
+        display: flex
+        align-items: flex-start
+        flex-wrap: wrap
+    
+    h1
+        flex: 0 0 100%
+        font-size: 2.5em
+        font-weight: bold
+        margin: 0
+        margin-bottom: .5em
+    
+    &-body
+        flex: 0 0 70%
+        max-width: 70%
+        padding-right: 1em
+        .cart-order
+            background: #ffffff
+            padding: 0
+            border-radius: 20px
+            position: relative
+            &-item
+                padding: 2em
+                border-bottom: none
+        .cart-delivery,
+        .cart-pay
+            margin-top: 1.5em
+            background: #ffffff
+            border-radius: 20px
+            padding: 2em
+        h3
+            font-weight: bold
+            font-size: 2.2em
+            margin: 1em 0
+
+
+.cart-confirm
+    flex: 0 0 30%
+    position: sticky
+    top: 20px
+    background: #ffffff
+    padding: 2em 0
+    border-radius: 20px
+
 .cart-order-item
     display: flex
     align-items: center
     padding: 2em 0
     border-bottom: 1px solid rgba(0, 182, 198, 0.2)
+    position: relative
     &__img
         flex: 0 0 10%
     &__name
@@ -47,6 +93,44 @@
                 color: $text
                 cursor: default
                 user-select: none
+                &.qty-input
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                    margin: 0
+                    padding: 0.4em
+                    .minus,
+                    .plus
+                        display: inline-block
+                        width: 1em
+                        height: 1em
+                        background: rgba(171, 82, 191, 0.1)
+                        border-radius: 50%
+                        line-height: 1
+                        color: $accent
+                        font-size: 1.2em
+                        padding: 0
+                        text-align: center
+                        user-select: none
+                        cursor: pointer
+                    .qty
+                        position: relative
+                        margin-right: .8em
+                        input
+                            width: 2em
+                            text-align: right
+                            font-size: 16px
+                            padding: 0
+                            padding-right: 0.2em
+                            border: none
+                            background: transparent
+                            appearance: none
+                            outline: none
+                            position: relative
+                            color: $text
+                        &::after
+                            content: 'шт.'
+                            display: inline-block
     &__subtotal
         flex: 0 0 19%
         align-self: flex-end
@@ -61,6 +145,25 @@
                 font-weight: bold
                 color: $text
                 font-size: 1.3em
+    .delete,
+    .return
+        position: absolute
+        right: 1.5em
+        top: 63%
+        transform: translateY(-50%)
+        display: inline-block
+        width: 1em
+        height: 1em
+        padding: 0
+        margin: 0
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+    .delete
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzAwLjE4OCwyNDZMNDg0LjE0LDYyLjA0YzUuMDYtNS4wNjQsNy44NTItMTEuODIsNy44Ni0xOS4wMjRjMC03LjIwOC0yLjc5Mi0xMy45NzItNy44Ni0xOS4wMjhMNDY4LjAyLDcuODcyICAgIGMtNS4wNjgtNS4wNzYtMTEuODI0LTcuODU2LTE5LjAzNi03Ljg1NmMtNy4yLDAtMTMuOTU2LDIuNzgtMTkuMDI0LDcuODU2TDI0Ni4wMDgsMTkxLjgyTDYyLjA0OCw3Ljg3MiAgICBjLTUuMDYtNS4wNzYtMTEuODItNy44NTYtMTkuMDI4LTcuODU2Yy03LjIsMC0xMy45NiwyLjc4LTE5LjAyLDcuODU2TDcuODcyLDIzLjk4OGMtMTAuNDk2LDEwLjQ5Ni0xMC40OTYsMjcuNTY4LDAsMzguMDUyICAgIEwxOTEuODI4LDI0Nkw3Ljg3Miw0MjkuOTUyYy01LjA2NCw1LjA3Mi03Ljg1MiwxMS44MjgtNy44NTIsMTkuMDMyYzAsNy4yMDQsMi43ODgsMTMuOTYsNy44NTIsMTkuMDI4bDE2LjEyNCwxNi4xMTYgICAgYzUuMDYsNS4wNzIsMTEuODI0LDcuODU2LDE5LjAyLDcuODU2YzcuMjA4LDAsMTMuOTY4LTIuNzg0LDE5LjAyOC03Ljg1NmwxODMuOTYtMTgzLjk1MmwxODMuOTUyLDE4My45NTIgICAgYzUuMDY4LDUuMDcyLDExLjgyNCw3Ljg1NiwxOS4wMjQsNy44NTZoMC4wMDhjNy4yMDQsMCwxMy45Ni0yLjc4NCwxOS4wMjgtNy44NTZsMTYuMTItMTYuMTE2ICAgIGM1LjA2LTUuMDY0LDcuODUyLTExLjgyNCw3Ljg1Mi0xOS4wMjhjMC03LjIwNC0yLjc5Mi0xMy45Ni03Ljg1Mi0xOS4wMjhMMzAwLjE4OCwyNDZ6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNDMjUxQzAiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==)
+    .return
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGcgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgLTEgMCA1MTIpIj48Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0yOTguNjY3LDBIMjEuMzMzQzkuNTUxLDAsMCw5LjU1MSwwLDIxLjMzM2MwLDExLjc4Miw5LjU1MSwyMS4zMzMsMjEuMzMzLDIxLjMzM2gyNzcuMzMzICAgIGM5NC44NDIsMCwxNzAuNjY3LDc1LjgyNSwxNzAuNjY3LDE3MC42NjdTMzkzLjUwOSwzODQsMjk4LjY2NywzODRINzIuODM3bDQ4LjkxNS00OC45MTVjOC4zMzEtOC4zMzEsOC4zMzEtMjEuODM5LDAtMzAuMTcgICAgYy04LjMzMS04LjMzMS0yMS44MzktOC4zMzEtMzAuMTcsMEw2LjI0OCwzOTAuMjQ4Yy0wLjQ5NywwLjQ5Ny0wLjk2NywxLjAyLTEuNDEzLDEuNTY0Yy0wLjIwMiwwLjI0Ni0wLjM3OCwwLjUwNi0wLjU2NywwLjc1OSAgICBjLTAuMjI4LDAuMzA0LTAuNDYzLDAuNjAxLTAuNjc1LDAuOTE4Yy0wLjIwMywwLjMwMy0wLjM3OSwwLjYxOC0wLjU2NSwwLjkyOWMtMC4xNzEsMC4yODYtMC4zNTEsMC41NjYtMC41MDksMC44NjEgICAgYy0wLjE3LDAuMzE3LTAuMzE0LDAuNjQ0LTAuNDY2LDAuOTY4Yy0wLjE0NSwwLjMwNy0wLjI5OCwwLjYwOS0wLjQyOSwwLjkyNGMtMC4xMywwLjMxNS0wLjIzNiwwLjYzNy0wLjM1LDAuOTU3ICAgIGMtMC4xMjEsMC4zMzctMC4yNSwwLjY2OS0wLjM1NCwxLjAxM2MtMC4wOTcsMC4zMi0wLjE2OCwwLjY0Ni0wLjI0OSwwLjk2OWMtMC4wODksMC4zNTEtMC4xODcsMC42OTgtMC4yNTgsMS4wNTUgICAgYy0wLjA3NCwwLjM3NS0wLjExOSwwLjc1My0wLjE3MywxLjEzYy0wLjA0NCwwLjMxMS0wLjEwNCwwLjYxNy0wLjEzNSwwLjkzMmMtMC4xMzgsMS40LTAuMTM4LDIuODExLDAsNC4yMTEgICAgYzAuMDMxLDAuMzE2LDAuMDksMC42MjIsMC4xMzUsMC45MzNjMC4wNTQsMC4zNzcsMC4wOTgsMC43NTUsMC4xNzIsMS4xM2MwLjA3MSwwLjM1OCwwLjE2OSwwLjcwNSwwLjI1OCwxLjA1NiAgICBjMC4wODEsMC4zMjMsMC4xNTIsMC42NDgsMC4yNDksMC45NjhjMC4xMDQsMC4zNDUsMC4yMzQsMC42NzcsMC4zNTUsMS4wMTRjMC4xMTUsMC4zMiwwLjIyLDAuNjQyLDAuMzUsMC45NTcgICAgYzAuMTMsMC4zMTUsMC4yODQsMC42MTYsMC40MjksMC45MjNjMC4xNTMsMC4zMjQsMC4yOTcsMC42NTEsMC40NjcsMC45NjljMC4xNTgsMC4yOTQsMC4zMzcsMC41NzMsMC41MDgsMC44NTkgICAgYzAuMTg2LDAuMzExLDAuMzYyLDAuNjI3LDAuNTY1LDAuOTMxYzAuMjExLDAuMzE2LDAuNDQ2LDAuNjEyLDAuNjczLDAuOTE2YzAuMTksMC4yNTQsMC4zNjYsMC41MTQsMC41NjksMC43NjEgICAgYzAuNDQzLDAuNTQsMC45MSwxLjA1OSwxLjQwMywxLjU1MmMwLjAwNCwwLjAwNCwwLjAwNiwwLjAwOCwwLjAxLDAuMDExbDg1LjMzMyw4NS4zMzNjOC4zMzEsOC4zMzEsMjEuODM5LDguMzMxLDMwLjE3LDAgICAgYzguMzMxLTguMzMxLDguMzMxLTIxLjgzOSwwLTMwLjE3bC00OC45MTUtNDguOTE1aDIyNS44M0M0MTcuMDczLDQyNi42NjcsNTEyLDMzMS43MzksNTEyLDIxMy4zMzNTNDE3LjA3MywwLDI5OC42NjcsMHoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0MyNTFDMCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+')
+    
     &-total
         display: table
         width: 100%
@@ -96,12 +199,435 @@
             padding: 0
             line-height: 1
             min-height: 40px
+    &.deleted
+        opacity: .5
+        .cart-order-item__subtotal
+            text-align: right
+            padding-right: 2em
+            p
+                font-size: 0.9em
+                font-weight: bold
+                margin-bottom: 0.6em
+                color: $text
+
+.cart-order-promo
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 3em 1em
+    border-top: 1px solid $grey
+    &__code
+        padding-right: 1em
+    &__bonus
+        padding-left: 1em
+    &__code,
+    &__bonus
+        display: flex
+        align-items: flex-start
+        flex-direction: column
+        input[type="radio"]
+            display: none
+        label
+            font-weight: bold
+            position: relative
+            padding-left: 1.5em
+            padding-right: .5em
+            margin-bottom: 1em
+            cursor: pointer
+            user-select: none
+            &::before
+                content: ''
+                position: absolute
+                left: 0
+                top: 50%
+                transform: translateY(-50%)
+                display: inline-block
+                width: 1em
+                height: 1em
+                border: 1px solid $accent
+                border-radius: 2px
+                transition: background .3s ease
+            span
+                font-weight: normal
+                padding-left: 1em
+        input:checked + label:before
+            background: $accent
+        input,
+        button
+            font-size: 16px
+            padding: .5em
+            display: block
+            width: 100%
+            border-radius: 4px
+            box-shadow: none
+            outline: none
+            background: transparent
+            -webkit-appearance: none
+            -moz-appearance: none
+            appearance: none
+            &::-webkit-input-placeholder
+                color: $grey
+            &:-moz-placeholder
+                color: $grey
+            &::-moz-placeholder
+                color: $grey
+            &:-ms-input-placeholder
+                color: $grey
+        input
+            border: 1px solid $grey
+
+.cart-confirm
+    h2
+        font-weight: bold
+        font-size: 1.7em
+        padding: 0 1em
+        margin-bottom: 1em
+    .form-row
+        display: flex
+        flex-wrap: wrap
+        padding: 0 2em
+        label
+            flex: 0 0 100%
+        input
+            flex: 0 0 100%
+        label
+            color: $grey
+            font-size: 0.9em
+            font-weight: bold
+            padding: 0
+            margin: 0
+            margin-bottom: 0.5em
+            line-height: 1
+        input
+            background: transparent
+            border: 2px solid $accent
+            border-radius: 4px
+            width: 100%
+            font-size: 16px
+            font-weight: bold
+            padding: .5em 0.8em
+            margin: 0
+            margin-bottom: 1em
+            outline: none
+            &::-webkit-input-placeholder
+                color: $grey
+                font-weight: normal
+            &:-moz-placeholder
+                color: $grey
+                font-weight: normal
+            &::-moz-placeholder
+                color: $grey
+                font-weight: normal
+            &:-ms-input-placeholder
+                color: $grey
+                font-weight: normal
+        p
+            flex: 0 0 50%
+            margin: 0
+            margin-bottom: 0.4em
+            &:last-child
+                text-align: right
+        &.order-total
+            font-weight: bold
+        &.order-bonus
+            padding-top: 0.5em
+            color: $accent
+            font-weight: bold
+        &.policy
+            border-top: 1px solid $grey
+            margin-top: 2em
+            padding-top: 2em
+            padding-bottom: 1.5em
+            input
+                display: none
+            label
+                color: $grey
+                font-size: 0.8em
+                position: relative
+                padding-left: 2em
+                cursor: pointer
+                user-select: none
+                &::before
+                    content: ''
+                    position: absolute
+                    left: 0
+                    top: 50%
+                    transform: translateY(-50%)
+                    display: inline-block
+                    width: 1em
+                    height: 1em
+                    border: 1px solid $accent
+                    transition: background .3s ease
+                a
+                    color: $grey
+                    border-bottom: 1px dashed $grey
+                    &:hover
+                        color: $grey
+                        border-bottom: none
+            input:checked + label:before
+                background: $accent
+        &.order-submit
+            .btn
+                &.btn-accent
+                    width: 100%
+                    display: block
+                    font-size: 1.3em
+                    font-weight: bold
+                    padding: 1em 0
+                    text-align: center
+
+.cart-delivery
+    h4
+        font-size: 1.8em
+        font-weight: bold
+        margin-bottom: .5em
+    .city
+        color: $grey
+        b
+            color: $text
+    &-type
+        width: 100%
+        margin: 2em 0 1em 0
+        display: flex
+        align-items: flex-start
+        justify-content: flex-start
+        input[type="radio"]
+            display: none
+        label
+            min-width: 270px
+            border-radius: 4px
+            border: 1px solid $grey
+            color: $grey
+            font-weight: normal
+            position: relative
+            padding: 1em 1em 1em 3em
+            margin-right: 2em
+            font-size: 1.1em
+            cursor: pointer
+            user-select: none
+            transition: background .3s ease
+            &::before
+                content: ''
+                position: absolute
+                left: 1em
+                top: 35%
+                transform: translateY(-50%)
+                display: inline-block
+                width: 1em
+                height: 1em
+                border: 1px solid $accent
+                border-radius: 2px
+                transition: background .3s ease
+            b
+                display: block
+                margin-top: 0.3em
+                font-weight: bold
+                color: $text
+        input:checked + label
+            border: 1px solid $accent
+            color: $accent
+            &:before
+                background: $accent
+    &-point
+        display: flex
+        align-items: flex-start
+        border: 1px solid $grey
+        border-radius: 4px
+        &__lists
+            flex: 0 0 40%
+            padding: 1em
+            border-right: 1px solid $grey
+            .container
+                padding: 0 2em 0 0
+                max-height: 280px
+                overflow: auto
+                scrollbar-face-color: #f6f6f6
+                scrollbar-track-color: $accent
+                &::-webkit-scrollbar
+                    width: 3px
+                    height: 3px
+                &::-webkit-scrollbar-track
+                    background-color: #F6F6F5
+                    border-radius: 5px
+                &::-webkit-scrollbar-thumb
+                    background-color: $accent
+                    border-radius: 5px
+
+            &__item
+                padding: 1em
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+                &:last-child
+                    border-bottom: none
+                p
+                    font-size: 0.9em
+                    margin-bottom: 0.8em
+                button
+                    margin-top: 0.5em
+                    width: 100px
+                    text-align: center
+        &__map
+            flex: 0 0 60%
+            img
+                width: 100%
+    &-adress
+        padding: 2em 0
+        label
+            font-weight: bold
+            font-size: 1.2em
+        input
+            display: block
+            width: 100%
+            background: transparent
+            border: 2px solid $accent
+            border-radius: 4px
+            width: 100%
+            font-size: 16px
+            font-weight: bold
+            padding: .5em 0.8em
+            margin: 0
+            margin-bottom: 1em
+            outline: none
+            &::-webkit-input-placeholder
+                color: $grey
+                font-weight: normal
+            &:-moz-placeholder
+                color: $grey
+                font-weight: normal
+            &::-moz-placeholder
+                color: $grey
+                font-weight: normal
+            &:-ms-input-placeholder
+                color: $grey
+                font-weight: normal
+
+.cart-pay
+    h4
+        font-size: 1.8em
+        font-weight: bold
+        margin-bottom: .5em
+    &__items
+        width: 100%
+        margin: 1.5em 0 1em 0
+        padding: 0
+        display: flex
+        align-items: flex-start
+        justify-content: flex-start
+        input[type="radio"]
+            display: none
+        label
+            flex: 32%
+            margin-right: 2%
+            border-radius: 4px
+            border: 1px solid $grey
+            color: $grey
+            font-weight: normal
+            position: relative
+            padding: 2em 1em 2em 3em
+            font-size: 1.2em
+            cursor: pointer
+            user-select: none
+            transition: background .3s ease
+            &:nth-child(2)
+                margin-right: 1%
+            &:nth-child(4)
+                margin-left: 1%
+                margin-right: 1%
+            &:last-child
+                margin-left: 1%
+                margin-right: 0
+            &::before
+                content: ''
+                position: absolute
+                left: 1em
+                top: 50%
+                transform: translateY(-50%)
+                display: inline-block
+                width: 1em
+                height: 1em
+                border: 1px solid $accent
+                border-radius: 2px
+                transition: background .3s ease
+        input:checked + label
+            border: 1px solid $accent
+            color: $accent
+            &:before
+                background: $accent
 
 @media screen and ( max-width: 1199.98px )
+    .cart
+        &-body
+            .cart-order,
+            .cart-delivery,
+            .cart-pay
+                width: 600px
+            
+            .cart-confirm
+                width: 310px
+        
+        h3
+            display: flex
+            padding-top: 1em
+            align-items: center
+            width: 600px
+            &::after
+                content: ''
+                display: block
+                clear: none
+            &::before
+                content: ''
+                display: block
+                clear: none
+
     .cart-order-item
         font-size: 0.8em
+    .cart-confirm
+        .form-row
+            p
+                &:first-child
+                    flex: 0 0 60%
+                &:last-child
+                    flex: 0 0 40% 
+                    text-align: right
+            &.policy
+                label
+                    font-size: 0.65em
+    .cart-delivery
+        &-type
+            label
+                min-width: 200px
+        &-point
+            &__lists
+                flex: 0 0 50%
+                .container
+                    max-height: 200px
+    .cart-pay
+        &__items
+            label
+                padding: 1.3em 0 1.3em 2.5em
+                font-size: 1.1em
 
 @media screen and ( max-width: 991.98px )
+    .cart
+        &-body
+            display: block
+            .cart-order,
+            .cart-delivery,
+            .cart-pay
+                clear: both
+                float: none
+                width: 100%
+                display: block
+                position: relative
+            
+            .cart-confirm
+                clear: both
+                float: none
+                width: 100%
+                display: block
+                margin-top: 2em
+                position: relative
+                top: 0
+
     .cart-order-item
         font-size: 0.8em
         &__price

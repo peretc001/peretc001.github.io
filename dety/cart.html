@@ -1192,38 +1192,114 @@
 
     <section class="cart">
         <div class="container">
-            <h1>Мой заказ</h1>
             
-            <div class="cart-order">
+          <h1>Мой заказ</h1>
+          
+            <div class="cart-body">
+              <div class="cart-order">
                 <div class="cart-order-item">
-                    <div class="cart-order-item__img">
-                        <img src="./img/cart/1.png" alt="">
-                    </div>
-                    <div class="cart-order-item__name">
-                        <p>Комбинезоны Lucky Child комплект.</p>
-                    </div>
-                    <div class="cart-order-item__price">
-                        <p></p>
-                        <p class="old"></p>
-                        <span>+48 бонусов</span>
-                    </div>
-                    <div class="cart-order-item__qty">
-                        <button>-</button>
-                        <input type="text" value="2"> шт.
-                        <button>+</button>
-                    </div>
-                    <div class="cart-order-item__total">
-                        <p>сумма</p>
-                        <p><b>13 500 ₽</b></p>
-                    </div>
-                    <div class="cart-order-item__clr">
-                        x
-                    </div>
+                  <div class="cart-order-item__img">
+                    <a href=""><img src="./img/cart/1.png" alt=""></a>
+                  </div>
+                  <div class="cart-order-item__name">
+                      <a href="">Комбинезоны Lucky Child комплект</a>
+                  </div>
+                  <div class="cart-order-item__price">
+                      <p>91 830 ₽</p>
+                      <p class="old">61 750 ₽</p>
+                      <span class="btn btn-accent">+48 бонусов</span>
+                  </div>
+                  <div class="cart-order-item__qty">
+                      <span class="btn btn-grey qty-input">
+                        <span class="minus">-</span>
+                        <span class="qty"><input type="text" value="2" name="qty"></span>
+                        <span class="plus">+</span>
+                      </span>
+                  </div>
+                  <div class="cart-order-item__subtotal">
+                      <p>сумма</p>
+                      <p><b>131 500 ₽</b></p>
+                  </div>
+                  <a href="" class="delete"></a>
+                </div>
+                <div class="cart-order-item">
+                  <div class="cart-order-item__img">
+                    <a href=""><img src="./img/cart/2.png" alt=""></a>
+                  </div>
+                  <div class="cart-order-item__name">
+                      <a href="">Комбинезоны Lucky Child комплект</a>
+                  </div>
+                  <div class="cart-order-item__price">
+                      <p>9 830 ₽</p>
+                      <p class="old">6 750 ₽</p>
+                      <span class="btn btn-accent">+48 бонусов</span>
+                  </div>
+                  <div class="cart-order-item__qty">
+                    <span class="btn btn-grey qty-input">
+                      <span class="minus">-</span>
+                      <span class="qty"><input type="text" value="2" name="qty"></span>
+                      <span class="plus">+</span>
+                    </span>
+                  </div>
+                  <div class="cart-order-item__subtotal">
+                      <p>сумма</p>
+                      <p><b>13 500 ₽</b></p>
+                  </div>
+                  <a href="" class="delete"></a>
+                </div>
+                <div class="cart-order-item">
+                  <div class="cart-order-item__img">
+                    <a href=""><img src="./img/cart/3.png" alt=""></a>
+                  </div>
+                  <div class="cart-order-item__name">
+                      <a href="">Комбинезоны Lucky Child комплект</a>
+                  </div>
+                  <div class="cart-order-item__price">
+                      <p>9 830 ₽</p>
+                      <p class="old">6 750 ₽</p>
+                      <span class="btn btn-accent">+48 бонусов</span>
+                  </div>
+                  <div class="cart-order-item__qty">
+                    <span class="btn btn-grey qty-input">
+                      <span class="minus">-</span>
+                      <span class="qty"><input type="text" value="2" name="qty"></span>
+                      <span class="plus">+</span>
+                    </span>
+                  </div>
+                  <div class="cart-order-item__subtotal">
+                      <p>сумма</p>
+                      <p><b>13 500 ₽</b></p>
+                  </div>
+                  <a href="" class="delete"></a>
+                </div>
+                <div class="cart-order-item deleted">
+                  <div class="cart-order-item__img">
+                    <a href=""><img src="./img/cart/4.png" alt=""></a>
+                  </div>
+                  <div class="cart-order-item__name">
+                      <a href="">Комбинезоны Lucky Child комплект</a>
+                  </div>
+                  <div class="cart-order-item__price">
+                      <p>9 830 ₽</p>
+                      <p class="old">6 750 ₽</p>
+                      <span class="btn btn-accent">+48 бонусов</span>
+                  </div>
+                  <div class="cart-order-item__qty">
+                    <span class="btn btn-grey qty-input">
+                      <span class="minus">-</span>
+                      <span class="qty"><input type="text" value="2" name="qty"></span>
+                      <span class="plus">+</span>
+                    </span>
+                  </div>
+                  <div class="cart-order-item__subtotal">
+                      <p>Вернуть</p>
+                  </div>
+                  <a href="" class="return"></a>
                 </div>
                 <div class="cart-order-promo">
                     <div class="cart-order-promo__code">
-                        <input type="radio" id="promo" name="promo">
-                        <label for="promo">Примените промо-код</label>
+                        <input type="radio" id="promo" name="promo" checked>
+                        <label for="promo">Примените промо-код <span>или</span></label>
                         <input type="text" name="promo-code" placeholder="Ваш промо-код">
                     </div>
                     <div class="cart-order-promo__bonus">
@@ -1232,67 +1308,146 @@
                         <button class="btn btn-outline-accent">Применить</button>
                     </div>
                 </div>
+              </div>
+
+              <h3>Оформление заказа</h3>
+
+              <div class="cart-delivery">
+                  <h4>Доставка</h4>
+                  <p class="city">Ваш город:  <b>Краснодар</b></p>
+                  <div class="cart-delivery-type tabs">
+                      <div class="cart-delivery-type__item">
+                          <input type="radio" id="pickup" name="delivery" checked>
+                          <label for="pickup">
+                              Самовывоз
+                              <b>5 февраля</b>
+                          </label>
+                      </div>
+                      <div class="cart-delivery-type__item">
+                          <input type="radio" id="delivery" name="delivery">
+                          <label for="delivery">
+                              Доставка курьером
+                              <b>8 февраля</b>
+                          </label>
+                      </div>
+                  </div>
+
+                  <div class="cart-delivery-point tabs-item active">
+                      <div class="cart-delivery-point__lists">
+                        <div class="container">
+                          <div class="cart-delivery-point__lists__item">
+                              <p>Кранодар, ул.Рылеева 152, д.15</p>
+                              <p>Ежедневно 09:00 - 22:00 </p>
+                              <p>В среду, 5 февраля, 149 ₽</p>
+                              <button class="btn btn-accent">Выбрать</button>
+                          </div>
+                          <div class="cart-delivery-point__lists__item">
+                              <p>Кранодар, ул.Рылеева 152, д.15m ул.Рылеева 152, д.15</p>
+                              <p>Ежедневно 09:00 - 22:00 </p>
+                              <p>В среду, 5 февраля, 149 ₽</p>
+                              <button class="btn btn-accent">Выбрать</button>
+                          </div>
+                          <div class="cart-delivery-point__lists__item">
+                              <p>Кранодар, ул.Рылеева 152, д.15 Lorem ipsum dolor sit amet.
+                              </p>
+                              <p>Ежедневно 09:00 - 22:00 </p>
+                              <p>В среду, 5 февраля, 149 ₽</p>
+                              <button class="btn btn-accent">Выбрать</button>
+                          </div>
+                          <div class="cart-delivery-point__lists__item">
+                              <p>Кранодар, ул.Рылеева 152, д.15 Lorem, ipsum.</p>
+                              <p>Ежедневно 09:00 - 22:00 </p>
+                              <p>В среду, 5 февраля, 149 ₽</p>
+                              <button class="btn btn-accent">Выбрать</button>
+                          </div>
+                          <div class="cart-delivery-point__lists__item">
+                            <p>Кранодар, ул.Рылеева 152, д.15</p>
+                            <p>Ежедневно 09:00 - 22:00 </p>
+                            <p>В среду, 5 февраля, 149 ₽</p>
+                            <button class="btn btn-accent">Выбрать</button>
+                        </div>
+                        <div class="cart-delivery-point__lists__item">
+                            <p>Кранодар, ул.Рылеева 152, д.15m ул.Рылеева 152, д.15</p>
+                            <p>Ежедневно 09:00 - 22:00 </p>
+                            <p>В среду, 5 февраля, 149 ₽</p>
+                            <button class="btn btn-accent">Выбрать</button>
+                        </div>
+                        <div class="cart-delivery-point__lists__item">
+                            <p>Кранодар, ул.Рылеева 152, д.15 Lorem ipsum dolor sit amet.
+                            </p>
+                            <p>Ежедневно 09:00 - 22:00 </p>
+                            <p>В среду, 5 февраля, 149 ₽</p>
+                            <button class="btn btn-accent">Выбрать</button>
+                        </div>
+                        <div class="cart-delivery-point__lists__item">
+                            <p>Кранодар, ул.Рылеева 152, д.15 Lorem, ipsum.</p>
+                            <p>Ежедневно 09:00 - 22:00 </p>
+                            <p>В среду, 5 февраля, 149 ₽</p>
+                            <button class="btn btn-accent">Выбрать</button>
+                        </div>
+                        </div>
+                      </div>
+                      <div class="cart-delivery-point__map">
+                          <img src="./img/map.png" alt="">
+                      </div>
+                  </div>
+
+                  <div class="cart-delivery-adress tabs-item">
+                    <label for="calc_delivery">Адрес</label>
+                    <input type="text" id="calc_delivery" name="adress" placeholder="Введите адрес доставки">
+                    <script src="https://api-maps.yandex.ru/2.1/?apikey=401bda4e-08f9-4e39-876e-eaaaf44f6727&lang=ru_RU&mode=debug" type="text/javascript"></script>
+                    <script src="js/calc_delivery.js"></script>
+                  </div>
+              </div>
+
+              <div class="cart-pay">
+                <h4>Оплата заказа </h4>
+                <div class="cart-pay__items">
+                  <input type="radio" id="online" name="payment" checked>
+                  <label for="online">Оплата онлайн</label>
+                  <input type="radio" id="upon" name="payment">
+                  <label for="upon">При получении</label>
+                  <input type="radio" id="credit" name="payment">
+                  <label for="credit">В кредит</label>
+                </div>
+              </div>
             </div>
 
-            <h2>Оформление заказа</h2>
-
-            <div class="cart-delivery">
-                <h3>Доставка </h3>
-                <p>Ваш город:  <b>Краснодар</b></p>
-                <div class="cart-delivery-type">
-                    <div class="cart-delivery-type__item">
-                        <input type="text" name="pickup" id="pickup">
-                        <label for="pickup">
-                            Самовывоз
-                            <b>5 февраля</b>
-                        </label>
-                    </div>
-                    <div class="cart-delivery-type__item">
-                        <input type="text" name="delivery" id="delivery">
-                        <label for="delivery">
-                            Доставка курьером
-                            <b>8 февраля</b>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="cart-delivery-point">
-                    <div class="cart-delivery-point__lists">
-                        <div class="cart-delivery-point__lists__item">
-                            <p>Кранодар, ул.Рылеева 152, д.15</p>
-                            <p>Ежедневно 09:00 - 22:00 </p>
-                            <p>В среду, 5 февраля, 149 ₽</p>
-                            <button class="btn btn-outline-accent">Подробнее</button>
-                            <button class="btn btn-accent">Выбрать</button>
-                        </div>
-                        <div class="cart-delivery-point__lists__item">
-                            <p>Кранодар, ул.Рылеева 152, д.15</p>
-                            <p>Ежедневно 09:00 - 22:00 </p>
-                            <p>В среду, 5 февраля, 149 ₽</p>
-                            <button class="btn btn-outline-accent">Подробнее</button>
-                            <button class="btn btn-accent">Выбрать</button>
-                        </div>
-                        <div class="cart-delivery-point__lists__item">
-                            <p>Кранодар, ул.Рылеева 152, д.15</p>
-                            <p>Ежедневно 09:00 - 22:00 </p>
-                            <p>В среду, 5 февраля, 149 ₽</p>
-                            <button class="btn btn-outline-accent">Подробнее</button>
-                            <button class="btn btn-accent">Выбрать</button>
-                        </div>
-                        <div class="cart-delivery-point__lists__item">
-                            <p>Кранодар, ул.Рылеева 152, д.15</p>
-                            <p>Ежедневно 09:00 - 22:00 </p>
-                            <p>В среду, 5 февраля, 149 ₽</p>
-                            <button class="btn btn-outline-accent">Подробнее</button>
-                            <button class="btn btn-accent">Выбрать</button>
-                        </div>
-                    </div>
-                    <div class="cart-delivery-point__lists__map">
-                        Map
-                    </div>
-                </div>
+            <div class="cart-confirm">
+              <h2>Оформить заказ</h2>
+              <div class="form-row">
+                <label for="username">Имя</label><input type="text" id="username" name="username" placeholder="Имя">
+              </div>
+              <div class="form-row">
+                <label for="userphone">Телефон</label><input type="tel" id="userphone" name="userphone" placeholder="+7 (XXX) XXX-XX-XX" required>
+              </div>
+              <div class="form-row">
+                <label for="email">E-mail</label><input type="text" id="email" name="email" placeholder="E-mail">
+              </div>
+              <div class="form-row">
+                <p>Сумма заказа:</p>
+                <p>5 450 ₽</p>
+              </div>
+              <div class="form-row">
+                <p>Стоимость доставки:</p>
+                <p>450 ₽</p>
+              </div>
+              <div class="form-row order-total">
+                <p>Итого к оплате:</p>
+                <p>6 000 ₽</p>
+              </div>
+              <div class="form-row order-bonus">
+                <p>Будет начислено:</p>
+                <p>250 Б</p>
+              </div>
+              <div class="form-row policy">
+                <input type="checkbox" id="policy" name="policy" required>
+                <label for="policy">Я согласен с <a href="" target="_blank">политикой конфиденциальности</a></label>
+              </div>
+              <div class="form-row order-submit">
+                <button type="submit" class="btn btn-accent">Оформить заказ</button>
+              </div>
             </div>
-
 
         </div>
     </section>
