@@ -154,6 +154,9 @@
         .grid
             .grid-col
                 flex: 0 0 90%
+                &:nth-child(1)
+                    .caption
+                        max-width: 240px
             .caption
                 p
                     margin-bottom: 1em
@@ -180,29 +183,42 @@
                 &:nth-child(4)
                     .caption
                         max-width: 150px
-                &:nth-child(1)
-                    .caption
-                        max-width: 100%
-                        p
-                            b
-                                background: rgba(#ffa400, .5)
-                                line-height: 1.2
+                        
             .caption
+                max-width: 180px
                 p
                     b
-                        font-size: 1.8em
+                        font-size: 1.4em
                 a
                     font-size: 1em
                 &.right
                     margin-right: 20px
 
+@media screen and ( max-width: 449.98px )
+     .home-week
+        .grid
+            .grid-col
+                &:nth-child(1)
+                    .caption
+                        max-width: 180px
+                        p
+                            b
+                                font-size: 1.3em
+
 @media screen and ( max-width: 374.98px )
     .home-week
         .grid
+            .grid-col
+                &:nth-child(1)
+                    .caption
+                        max-width: 150px
+                        p
+                            b
+                                font-size: 1.1em
             .caption
                 p
                     b
-                        font-size: 1em
+                        font-size: 1.3em
                 a
                     font-size: .9em
                 &.right
