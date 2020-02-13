@@ -240,10 +240,36 @@ document.addEventListener("DOMContentLoaded", function() {
                 sElem = document.querySelectorAll('.showElem')
 
         hElem.forEach((item, i) => {
+            function scrollStart() {
+                let x = window.pageYOffset;
+                let timer = null;
+                if ( item.getAttribute('data-scroll') && item.classList.contains('active') ) {
+                    window.scroll(window.pageXOffset, x);
+                    for (let i = 0; i < 20; i++) {
+                        if ( i < 20) {
+                            x = x + i;
+                        }
+                        else {
+                            complete()
+                        }
+                        console.log(i)
+                    }
+                }
+            }
+            function complete(){
+                clearInterval(timer)
+                timer = null
+                console.log('done')
+                window.scroll(false)
+            }
+            item.addEventListener('click', scrollStart)
             item.addEventListener('click', () => {
-                !item.classList.contains('active') ? item.classList.add('active') : item.classList.remove('active')
+                if ( !item.classList.contains('active') ) {
+                    item.classList.add('active') 
+                } else { 
+                    item.classList.remove('active')
+                }
                 !sElem[i].classList.contains('active') ? sElem[i].classList.add('active') : sElem[i].classList.remove('active')
-                item.classList.contains('text') ? sElem[i].scrollIntoView({block: 'center', behavior: "smooth"}) : ''
             })
         })
     }
