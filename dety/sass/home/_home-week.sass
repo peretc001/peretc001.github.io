@@ -154,14 +154,11 @@
         .grid
             .grid-col
                 flex: 0 0 90%
-                &:nth-child(1)
-                    .caption
-                        max-width: 200px
             .caption
                 p
                     margin-bottom: 1em
                     b
-                        font-size: 1.4em
+                        font-size: 1.8em
                     span
                         display: inline
                 a
@@ -183,12 +180,19 @@
                 &:nth-child(4)
                     .caption
                         max-width: 150px
+                &:nth-child(1)
+                    .caption
+                        max-width: 100%
+                        p
+                            b
+                                background: rgba(#ffa400, .5)
+                                line-height: 1.2
             .caption
                 p
                     b
-                        font-size: 1.1em
+                        font-size: 1.8em
                 a
-                    font-size: .9em
+                    font-size: 1em
                 &.right
                     margin-right: 20px
 
