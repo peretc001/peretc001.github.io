@@ -243,6 +243,7 @@ document.addEventListener("DOMContentLoaded", function() {
             item.addEventListener('click', () => {
                 !item.classList.contains('active') ? item.classList.add('active') : item.classList.remove('active')
                 !sElem[i].classList.contains('active') ? sElem[i].classList.add('active') : sElem[i].classList.remove('active')
+                item.classList.contains('text') ? sElem[i].scrollIntoView({block: 'center', behavior: "smooth"}) : ''
             })
         })
     }
