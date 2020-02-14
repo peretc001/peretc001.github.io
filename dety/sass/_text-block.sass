@@ -8,15 +8,9 @@
     
     .hideElem
         display: none
-        width: 21px
-        height: 11px
-        background-size: cover
-        background-position: center
-        background-repeat: no-repeat
-        background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjMiIGhlaWdodD0iMTMiIHZpZXdCb3g9IjAgMCAyMyAxMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMSAxMkwyMiAxMkwxMS41IDFMMSAxMloiIGZpbGw9IiMwMEI2QzYiIHN0cm9rZT0iIzAwQjZDNiIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==')
-        transition: transform .2s ease
-        &.active
-            transform: rotate(-180deg)
+        color: $nav
+        border-bottom: 1px dashed $nav
+        cursor: pointer
 
     .showElem
         max-height: 500px
@@ -29,6 +23,7 @@
         .hideElem
             display: inline-block
         .showElem
+            padding-top: 2em
             &.active
                 opacity: 0
                 max-height: 0

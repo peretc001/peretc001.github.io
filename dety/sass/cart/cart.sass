@@ -90,15 +90,15 @@
                     align-items: center
                     justify-content: space-between
                     margin: 0
-                    padding: 0.4em
+                    padding: 2px 2px
                     .minus,
                     .plus
                         display: inline-block
-                        width: 1em
-                        height: 1em
+                        width: 1.5em
+                        height: 1.5em
                         background: rgba(171, 82, 191, 0.1)
                         border-radius: 50%
-                        line-height: 1
+                        line-height: 1.5
                         color: $accent
                         font-size: 1.2em
                         padding: 0
@@ -673,7 +673,7 @@
             font-size: 1.2em
             padding-left: 1em
         &__price
-            flex: 0 0 40%
+            flex: 0 0 35%
             padding: .5em
             margin-top: 1em
             padding-left: 0
@@ -682,7 +682,6 @@
         &__qty
             flex: 0 0 30%
             padding: .5em
-            padding-top: 1em
         &__subtotal
             flex: 0 0 30%
             padding: .5em
@@ -751,23 +750,35 @@
         .form-row
             padding: 0 1em
  
-@media screen and ( max-width: 449.98px )
+@media screen and ( max-width: 499.98px )
     .cart-order-item
         &__price
-            flex: 0 0 100%
+            flex: 0 0 50%
+            max-width: 160px
             margin-top: 1em
+            margin-bottom: 0
+            margin-right: 50%
+            padding-right: 0
             p
-                flex: 0 0 29%
+                flex: 0 0 50%
                 font-size: 1.2em
             span
-                flex: 0 0 58%
+                flex: 0 0 100%
         &__qty
             flex: 0 0 60%
-            padding-left: 0
+            max-width: 160px !important
+            padding: 0
+            margin: 0
         &__subtotal
             flex: 0 0 40%
             text-align: right
             padding: 0
+            position: relative
+            p
+                &:first-child
+                    position: absolute
+                    top: -10px
+                    right: 0
         &-total
             & > div:nth-child(2)
                 width: 70%
@@ -791,6 +802,12 @@
                         font-size: 1.2em
 
 @media screen and ( max-width: 374.98px )
+    .cart-order-item
+        &__price
+            flex: 0 0 100%
+            max-width: 160px
+            margin-top: 1em
+            margin-bottom: 0
     .cart-order-item
         font-size: .9em
         &-total
