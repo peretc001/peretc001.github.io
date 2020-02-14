@@ -251,28 +251,17 @@ document.addEventListener("DOMContentLoaded", function() {
         hElem.forEach((item, i) => {
             function scrollStart() {
                 let x = window.pageYOffset;
-                // let timer = null;
                 if ( item.getAttribute('data-scroll') && item.classList.contains('active') ) {
-                    for (let i = 50; i < 100; i++) {
-                        if ( i < 100) {
+                    for (let i = 0; i < 200; i++) {
+                        if ( i < 200) {
                             x = x + i;
                         }
                         setTimeout(() => {
                             window.scroll(window.pageXOffset, x);
-                        }, 100);
-                        // else {
-                        //     complete()
-                        // }
-                        console.log(i)
+                        }, 200);
                     }
                 }
             }
-            // function complete(){
-            //     clearInterval(timer)
-            //     timer = null
-            //     console.log('done')
-            //     window.scroll(false)
-            // }
             item.addEventListener('click', scrollStart)
             item.addEventListener('click', () => {
                 !item.classList.contains('active') ? item.classList.add('active') : item.classList.remove('active')
