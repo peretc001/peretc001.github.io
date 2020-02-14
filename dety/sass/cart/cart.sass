@@ -91,6 +91,7 @@
                     justify-content: space-between
                     margin: 0
                     padding: 2px 2px
+                    user-select: none
                     .minus,
                     .plus
                         display: inline-block
@@ -108,6 +109,7 @@
                     .qty
                         position: relative
                         margin-right: .8em
+                        user-select: none
                         input
                             width: 2em
                             text-align: right
@@ -667,9 +669,9 @@
         flex-wrap: wrap
         padding: 1em 0
         &__img
-            flex: 0 0 10%
+            flex: 0 0 35%
         &__name
-            flex: 0 0 90%
+            flex: 0 0 65%
             font-size: 1.2em
             padding-left: 1em
         &__price
@@ -702,6 +704,11 @@
             .total,
             .bonus
                 font-size: 1.4em
+        .delete
+            top: auto
+            bottom: 3em
+            transform: translateY(0)
+
 
 @media screen and ( max-width: 576.98px )
     .cart
@@ -765,19 +772,39 @@
             span
                 flex: 0 0 100%
         &__qty
-            flex: 0 0 60%
+            flex: 0 0 62%
             max-width: 160px !important
             padding: 0
             margin: 0
+            .btn
+                &.btn-grey
+                    &.qty-input
+                        padding: 5px
+                        .minus,
+                        .plus
+                            display: inline-block
+                            width: 1.8em
+                            height: 1.8em
+                            background: rgba(171, 82, 191, 0.1)
+                            border-radius: 50%
+                            line-height: 1.8
+                            color: $accent
+                            font-size: 1.5em
+                            padding: 0
+                            text-align: center
+                            user-select: none
+                            cursor: pointer
+
         &__subtotal
-            flex: 0 0 40%
+            align-self: center
+            flex: 0 0 38%
             text-align: right
             padding: 0
             position: relative
             p
                 &:first-child
                     position: absolute
-                    top: -10px
+                    top: -1em
                     right: 0
         &-total
             & > div:nth-child(2)
@@ -803,13 +830,12 @@
 
 @media screen and ( max-width: 374.98px )
     .cart-order-item
+        font-size: .9em
         &__price
             flex: 0 0 100%
             max-width: 160px
             margin-top: 1em
             margin-bottom: 0
-    .cart-order-item
-        font-size: .9em
         &-total
             & > div:nth-child(2)
                 width: 65%
@@ -818,6 +844,11 @@
             .total,
             .bonus
                 font-size: 1.2em
+        .delete
+            bottom: auto
+            top: 63%
+            transform: translateY(-50%)
+
     .cart-confirm
         .form-row
             &.policy
