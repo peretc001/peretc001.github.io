@@ -108,6 +108,33 @@
                         border: 1px solid $yellow
             small
                 color: $grey
+            .social
+                display: flex
+                flex-wrap: wrap
+                margin-bottom: 2em
+                p
+                    flex: 0 0 100%
+                    margin: 0
+                    b
+                        margin: 0
+                a
+                    display: inline-block
+                    width: 4em
+                    height: 2em
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    background: #EAF6F6
+                    border-radius: 4px
+                    margin-right: 0.5em
+                    &:last-child
+                        margin-right: 0
+                    img
+                        width: 1.5em
+            .email
+                b
+                    font-size: 1.3em
+                    margin-bottom: 0.5em
             &.is-active
                 transform: translateY(0)
 

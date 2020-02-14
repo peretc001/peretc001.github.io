@@ -1851,7 +1851,12 @@
       <div class="col-sm-6 col-md-4 offset-md-4 col-lg-3 offset-lg-0">
         <p><b>Сообщество </b></p>
         <p>Мы в социальных сетях</p>
-
+        <div class="social">
+          <a href=""><img src="./img/social/ok.svg" alt=""></a>
+          <a href=""><img src="./img/social/vk.svg" alt=""></a>
+          <a href=""><img src="./img/social/insta.svg" alt=""></a>
+          <a href=""><img src="./img/social/youtube.svg" alt=""></a>
+        </div>
       </div>
     </div>
 
@@ -1904,18 +1909,24 @@
         <li>Благодарность</li>
         <li>Жалоба</li>
       </ul>
-      <p>
-        <b>
-          Сообщество
-        </b>
-      </p>
-      <p>
+      <div class="social">
+        <p>
+          <b>
+            Сообщество
+          </b>
+        </p>
+        <a href=""><img src="./img/social/ok.svg" alt=""></a>
+        <a href=""><img src="./img/social/vk.svg" alt=""></a>
+        <a href=""><img src="./img/social/insta.svg" alt=""></a>
+        <a href=""><img src="./img/social/youtube.svg" alt=""></a>
+      </div>
+      <p class="email">
         <b>
           Подпишитесь на обновления
         </b>
       </p>
       <form action="/" method="post">
-        <input type="email" name="email" value="" placeholder="E-mail">
+        <input type="email" name="email" value="" placeholder="E-mail" required>
         <button class="btn btn-send">Подписаться</button>
       </form>
       <p>
@@ -1931,16 +1942,6 @@
       <div class="modal-body__button">
         <button class="btn btn-accent" data-close="close">Да</button>
         <button class="btn btn-outline-accent open-city-list">Нет, выбрать другой</button>
-      </div>
-      <br>
-      <p>Введите город</p>
-      <div class="cityList">
-        <input type="text" v-model="search" @input="filterList">
-        <ul>
-          <li v-for="city in cities">
-            {{ city }}
-          </li>
-        </ul>
       </div>
     </div>
     <!-- Modal User -->
@@ -1983,50 +1984,10 @@
 </div>
 
 
+
   <script src="./js/scripts.min.js"></script>
   <script src="./js/slick/slick.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <link rel="stylesheet" href="./js/slick/slick.css">
   <link rel="stylesheet" href="./css/main.min.css">
-
-  <script>
-    let cityList = new Vue({
-    el: '.cityList',
-    data: {
-      search: '',
-      cityList: [
-        "Москва", 
-        "Абрамцево", 
-        "Алабино", 
-        "Апрелевка", 
-        "Архангельское", 
-        "Ашитково", 
-        "Байконур", 
-        "Бакшеево", 
-        "Балашиха", 
-        "Барыбино", 
-        "Белоомут", 
-        "Белые Столбы", 
-        "Бородино", 
-        "Бронницы", 
-      ],
-      cities: []
-    },
-    beforeMount() {
-      this.cities = this.cityList
-    },
-    methods:{
-      filterList: function(event){
-        if (this.search.length > 0) {
-          this.cities = this.cityList.filter(item => {
-            return item.toLowerCase().indexOf(this.search.toLowerCase()) > -1
-          })
-        } else {
-          this.cities = this.cityList
-        }
-      }
-    }
-  })
-  </script>
 </body>
 </html>
