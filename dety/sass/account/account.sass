@@ -170,38 +170,36 @@
             line-height: 1
         &-table
             flex: 1 0 75%
-            &__col
-                display: flex
-                align-items: flex-start
-                border-bottom: 1px solid $grey
-                &:last-child
-                    border-bottom: none
-                &__left,
-                &__right
-                    display: flex
-                    padding: 1em
-                    padding-right: 0
-                    &:first-child
-                        flex: 1 0 55%
-                        padding-left: 2em
-                        p
-                            margin: 0
+            display: flex
+            &__left
+                flex: 0 0 50%
+            &__right
+                flex: 0 0 50%
+            &__left,
+            &__right
+                padding: 0
+                margin: 0
+                border: none
+                table
+                    padding: 0
+                    margin: 0
+                    border: none
+                    width: 100%
+                    tr
+                        &.head
+                            background: #EAF6F6
+                            border-bottom: none
+                            color: $nav
+                            td
+                                border-bottom: none
+                        &:last-child
+                            td
+                                border-bottom: none
+                        td
+                            width: 50%
+                            padding: 1em
                             font-weight: bold
-                            flex: 1 0 50%
-                    &:last-child
-                        flex: 1 0 45%
-                        p
-                            margin: 0
-                            font-weight: bold
-                            &:first-child
-                                flex: 1 0 60%
-                            &:last-child
-                                flex: 1 0 40%
-                &.head
-                    background: #EAF6F6
-                    border-bottom: none
-                    p
-                        color: $nav
+                            border-bottom: 1px solid $grey
                     
         &-total
             flex: 1 0 25%
@@ -430,6 +428,18 @@
             .right.offset
                 margin-left: 17%
         &-bonus
+            &-table
+                &__left
+                    flex: 0 0 55%
+                &__right
+                    flex: 0 0 45%
+                &__left,
+                &__right
+                    table
+                        tr
+                            td
+                                font-size: .9em
+                                padding: 1em
             &-total
                 &__view
                     p
@@ -466,11 +476,13 @@
                     font-size: 1.6em
         &-bonus
             &-table
-                &__col
-                    &__left,
-                    &__right
-                        p
-                            font-size: 0.9em
+                &__left,
+                &__right
+                    table
+                        tr
+                            td
+                                font-size: .9em
+                                padding: 1em .5em
             &-total
                 &__view
                     p
@@ -568,9 +580,7 @@
                 .account-bonus-total__view
                     display: flex
 
-            &-table
-                flex: 1 0 100%
-                margin-bottom: 1em
+
             &-total
                 flex: 1 0 100%
                 &__view
@@ -717,45 +727,17 @@
         &-bonus
             padding-bottom: 0
             &-table
-                &__col
-                    flex-wrap: wrap
-                    &__left,
-                    &__right
-                        display: flex
-                        padding: .5em 1em 1em 1em
-                        padding-right: 0
-                        font-size: 0.9em
-                        &:first-child
-                            flex: 1 0 100%
-                            padding-left: 1em
-                            flex-wrap: wrap
-                            p
-                                margin: 0
-                                margin-bottom: 0.5em
-                                font-weight: bold
-                                flex: 1 0 50%
-                                &:last-child
-                                    padding-left: 1em
-                        &:last-child
-                            flex: 1 0 100%
-                            p
-                                margin: 0
-                                font-weight: bold
-                                text-align: right
-                                padding-right: 1em
-                                &:first-child
-                                    flex: 1 0 50%
-                                &:last-child
-                                    flex: 1 0 50%
-                    &.head
-                        .account-bonus-table__col__left, 
-                        .account-bonus-table__col__right
-                            &:first-child
-                                padding-top: 1em !important
-                                padding-bottom: 0.2em !important
-                            &:last-child
-                                padding-top: 0.2em !important
-                                padding-bottom: 1em !important
+                flex-wrap: wrap
+                &__left,
+                &__right
+                    flex: 0 0 100%
+                    table
+                        tr
+                            td
+                                font-size: .9em
+                                padding: 1em
+                                padding-left: 2em
+                                padding-right: 0
                         
         &-orders
             padding: 2em 1em
@@ -833,6 +815,15 @@
                 padding-right: 0.5em
                 a
                     font-size: 1em
+        
+        &-bonus
+            &-table
+                &__left,
+                &__right
+                    table
+                        tr
+                            td
+                                padding-left: 1em
                         
         &-orders
             padding: 2em 1em
