@@ -244,32 +244,61 @@ document.addEventListener("DOMContentLoaded", function() {
                 })
     }
 
-    if ( document.querySelector('.hideElem') ) {
-        const   hElem = document.querySelectorAll('.hideElem')
-                sElem = document.querySelectorAll('.showElem')
+    // if ( document.querySelector('.hideElem') ) {
+    //     const   hElem = document.querySelectorAll('.hideElem')
+    //             sElem = document.querySelectorAll('.showElem')
 
-        hElem.forEach((item, i) => {
-            function scrollStart() {
-                let x = window.pageYOffset;
-                if ( item.getAttribute('data-scroll') && item.classList.contains('active') ) {
-                    for (let i = 0; i < 200; i++) {
-                        if ( i < 200) {
-                            x = x + i;
-                        }
-                        setTimeout(() => {
-                            window.scroll(window.pageXOffset, x);
-                        }, 200);
-                    }
-                }
-            }
-            item.addEventListener('click', scrollStart)
-            item.addEventListener('click', () => {
-                !item.classList.contains('active') ? item.classList.add('active') : item.classList.remove('active')
-                !sElem[i].classList.contains('active') ? sElem[i].classList.add('active') : sElem[i].classList.remove('active')
-            })
-        })
+    //     hElem.forEach((item, i) => {
+    //         function scrollStart() {
+    //             let x = window.pageYOffset;
+    //             if ( item.getAttribute('data-scroll') && item.classList.contains('active') ) {
+    //                 for (let i = 0; i < 200; i++) {
+    //                     if ( i < 200) {
+    //                         x = x + i;
+    //                     }
+    //                     setTimeout(() => {
+    //                         window.scroll(window.pageXOffset, x);
+    //                     }, 200);
+    //                 }
+    //             }
+    //         }
+    //         item.addEventListener('click', scrollStart)
+    //         item.addEventListener('click', () => {
+    //             !item.classList.contains('active') ? item.classList.add('active') : item.classList.remove('active')
+    //             !sElem[i].classList.contains('active') ? sElem[i].classList.add('active') : sElem[i].classList.remove('active')
+    //         })
+    //     })
+    // }
+
+    "use strict";
+
+if (document.querySelector('.hideElem')) {
+  var hElem = document.querySelectorAll('.hideElem');
+  sElem = document.querySelectorAll('.showElem');
+  hElem.forEach(function (item, i) {
+    function scrollStart() {
+      var x = window.pageYOffset;
+
+      if (item.getAttribute('data-scroll') && item.classList.contains('active')) {
+        for (var _i = 0; _i < 200; _i++) {
+          if (_i < 200) {
+            x = x + _i;
+          }
+
+          setTimeout(function () {
+            window.scroll(window.pageXOffset, x);
+          }, 200);
+        }
+      }
     }
 
+    item.addEventListener('click', scrollStart);
+    item.addEventListener('click', function () {
+      !item.classList.contains('active') ? item.classList.add('active') : item.classList.remove('active');
+      !sElem[i].classList.contains('active') ? sElem[i].classList.add('active') : sElem[i].classList.remove('active');
+    });
+  });
+}
     if ( document.querySelector('.products-page-item__photo__gallery') ) {
         const   imgContainer = document.querySelector('.products-page-item__photo__gallery')
                 imgList = imgContainer.querySelectorAll('img')
