@@ -549,8 +549,7 @@
                border-radius: 0 4px 4px 0
 
       &-catalog
-         &__menu,
-         &__submenu
+         &__menu
             padding: 0
             position: absolute
             top: 0
@@ -560,7 +559,7 @@
             opacity: 0
             will-change: opacity
             transform: translateY(20%)
-            transition: transform .5s ease
+            transition: transform .2s ease
             border-radius: 4px
             width: 305px
             margin-left: auto
@@ -597,16 +596,38 @@
                         margin-right: 0.5em
 
          &__submenu
-            background: #fff
-            flex-wrap: wrap
-            padding: 0
-            margin: 0
-            opacity: 1
-            z-index: 5
-            &::after
-               content: ''
-               display: table
-               clear: both
+            width: 305px
+            border-radius: 4px
+            border: 1px solid $accent
+            opacity: 0
+            left: auto
+            right: calc(50% - 345px)
+            transform: translateX(0) translateY(100%)
+            opacity: 0
+            transition: opacity .3s ease
+            .back
+               display: block
+               width: 100%
+               margin-bottom: 0
+               padding: 1em
+               padding-left: 2em
+               background: $accent
+               color: #ffffff
+               position: relative
+               &::before
+                  content: ''
+                  position: absolute
+                  left: .5em
+                  top: 50%
+                  transform: translateY(-50%)
+                  width: 1em
+                  height: 1em
+                  background-size: cover
+                  background-position: center
+                  background-repeat: no-repeat
+                  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjQwLjgyMyAyNDAuODIzIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNDAuODIzIDI0MC44MjM7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8cGF0aCBpZD0iQ2hldnJvbl9SaWdodCIgZD0iTTU3LjYzMywxMjkuMDA3TDE2NS45MywyMzcuMjY4YzQuNzUyLDQuNzQsMTIuNDUxLDQuNzQsMTcuMjE1LDBjNC43NTItNC43NCw0Ljc1Mi0xMi40MzksMC0xNy4xNzkgICBsLTk5LjcwNy05OS42NzFsOTkuNjk1LTk5LjY3MWM0Ljc1Mi00Ljc0LDQuNzUyLTEyLjQzOSwwLTE3LjE5MWMtNC43NTItNC43NC0xMi40NjMtNC43NC0xNy4yMTUsMEw1Ny42MjEsMTExLjgxNiAgIEM1Mi45NDIsMTE2LjUwNyw1Mi45NDIsMTI0LjMyNyw1Ny42MzMsMTI5LjAwN3oiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0ZGRkZGRiIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+')
+
+            
             ul
                flex: 0 0 100%
                min-width: 100%
@@ -637,6 +658,16 @@
                opacity: 1
                transition: opacity .5s ease
                transform: translateY(0%)
+               ul
+                  li
+                     a
+                        opacity: 1
+               &.moved
+                  opacity: 0
+            .nav-catalog__submenu
+               &.moved
+                  opacity: 1
+
 
 @media screen and ( max-width: 767.98px )
    .nav
@@ -714,7 +745,6 @@
          display: flex
          &__menu,
          &__submenu
-            left: 1em
             right: 1em
 
 @media screen and ( max-width: 374.98px )
@@ -748,3 +778,11 @@
       .mobile
          .btn
             font-size: 0.9em
+      
+      &-catalog
+         padding: 0
+         display: flex
+         &__menu,
+         &__submenu
+            right: 1em
+            max-width: 290px
