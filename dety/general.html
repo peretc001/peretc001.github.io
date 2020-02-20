@@ -1840,9 +1840,11 @@
         hoverOver: function(index) {
           this.timer = setTimeout(() => {
             this.width < 991 ? this.isMoved = true : ''
+            this.width < 991 ? this.isMoved = true : ''
             this.showMenu = this.subMenu[index]
             this.show = true
             this.current = index
+            if (window.pageYOffset > 0) document.querySelector('.nav').scrollIntoView({block: "start", behavior: "smooth"})
             // this.classes = ['animated', 'bounceIn']
           }, 500);
         },

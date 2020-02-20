@@ -555,8 +555,9 @@
             top: 0
             left: auto
             right: calc(50% - 345px)
-            z-index: 1
+            z-index: -1
             opacity: 0
+            pointer-events: none
             will-change: opacity
             transform: translateY(20%)
             transition: transform .2s ease
@@ -599,7 +600,9 @@
             width: 305px
             border-radius: 4px
             border: 1px solid $accent
+            z-index: -1
             opacity: 0
+            pointer-events: none
             left: auto
             right: calc(50% - 345px)
             transform: translateX(0) translateY(100%)
@@ -656,7 +659,8 @@
                visibility: visible
                z-index: 2
                opacity: 1
-               transition: opacity .5s ease
+               pointer-events: all
+               transition: opacity .3s ease
                transform: translateY(0%)
                ul
                   li
@@ -664,9 +668,15 @@
                         opacity: 1
                &.moved
                   opacity: 0
+                  z-index: -1
+                  pointer-events: none
             .nav-catalog__submenu
+               z-index: -1
+               pointer-events: none
                &.moved
                   opacity: 1
+                  z-index: 3
+                  pointer-events: all
 
 
 @media screen and ( max-width: 767.98px )
