@@ -82,1103 +82,37 @@
       Каталог товаров
     </div>
   </div>
-
-  <div class="nav-catalog">      
+ 
+  <!-- VUE -->
+  <div class="nav-catalog" @mouseleave="hoverOut">      
     <div class="nav-catalog__menu">
       <ul>
-        <li class="nav-catalog__menu__item" data-menu="0"><a href="" class="sale"><img src="./img/nav/sale.svg" alt="">Акции</a></li>
-        <li class="nav-catalog__menu__item" data-menu="1"><a href="">Одежда и обувь</a></li>
-        <li class="nav-catalog__menu__item" data-menu="2"><a href="">Игрушки и игры</a></li>
-        <li class="nav-catalog__menu__item" data-menu="3"><a href="">Детская комната</a></li>
-        <li class="nav-catalog__menu__item" data-menu="4"><a href="">Коляски и автокресла</a></li>
-        <li class="nav-catalog__menu__item" data-menu="5"><a href="">Подгузники и гигиена</a></li>
-        <li class="nav-catalog__menu__item" data-menu="6"><a href="">Кормление и питание</a></li>
-        <li class="nav-catalog__menu__item" data-menu="7"><a href="">Развитие и обучение</a></li>
-        <li class="nav-catalog__menu__item" data-menu="8"><a href="">Хобби и творчество</a></li>
-        <li class="nav-catalog__menu__item" data-menu="9"><a href="">Товары для мам</a></li>
-        <li class="nav-catalog__menu__item" data-menu="10"><a href="">Герои и интересы</a></li>
+        <li class="nav-catalog__menu__item" @mouseenter="hoverOut"><a href="" class="sale"><img src="./img/nav/sale.svg" alt="">Акции</a></li>
+        <li class="nav-catalog__menu__item" :class="{ active: current == index }"
+          v-for="(item,index) of menu" :data-menu="index" @mouseenter="hoverOver(index)" @click.prevent="hoverOver(index)">
+          <a :href="item.url">{{item.t}}</a>
+        </li>
       </ul>
     </div>
-
-    <div class="nav-catalog__submenu">
-      <div class="nav-catalog__submenu__item">
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/1.jpg" alt="">
-              Верхняя одежда
-            </a>
-          </li>
-          <li><a href="">Верхняя одежда для мальчиков</a></li>
-          <li><a href="">Верхняя одежда для девочек</a></li>
-          <li><a href="">Верхняя одежда для малышей</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/2.jpg" alt="">
-              Одежда для девочек
-            </a>
-          </li>
-          <li><a href="">Блузки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Блузки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul> 
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/3.jpg" alt="">
-              Одежда для мальчиков
-            </a>
-          </li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Рубашки</a></li>
-          <li><a href="">Толстовки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Рубашки</a></li>
-          <li><a href="">Толстовки</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/4.jpg" alt="">
-              Обувь для девочек
-            </a>
-          </li>
-          <li><a href="">Анатомическая обувь</a></li>
-          <li><a href="">Ботинки</a></li>
-          <li><a href="">Домашняя обувь</a></li>
-          <li><a href="">Кроссовки</a></li>
-          <li><a href="">Резиновые сапоги</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/5.jpg" alt="">
-              Обувь для мальчиков
-            </a>
-          </li>
-          <li><a href="">Анатомическая обувь</a></li>
-          <li><a href="">Ботинки</a></li>
-          <li><a href="">Домашняя обувь</a></li>
-          <li><a href="">Кроссовки</a></li>
-          <li><a href="">Резиновые сапоги</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/6.jpg" alt="">
-              Одежда для малышей
-            </a>
-          </li>
-          <li><a href="">Боди</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Комбинезоны</a></li>
-          <li><a href="">Боди</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Комбинезоны</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/6.jpg" alt="">
-              Одежда для малышей
-            </a>
-          </li>
-          <li><a href="">Боди</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Комбинезоны</a></li>
-          <li><a href="">Боди</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Комбинезоны</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul>
-      </div>
-      <div class="nav-catalog__submenu__item">
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/1.jpg" alt="">
-              Верхняя одежда2
-            </a>
-          </li>
-          <li><a href="">Верхняя одежда для мальчиков</a></li>
-          <li><a href="">Верхняя одежда для девочек</a></li>
-          <li><a href="">Верхняя одежда для малышей</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/2.jpg" alt="">
-              Одежда для девочек2
-            </a>
-          </li>
-          <li><a href="">Блузки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Блузки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul> 
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/3.jpg" alt="">
-              Одежда для мальчиков2
-            </a>
-          </li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Рубашки</a></li>
-          <li><a href="">Толстовки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Рубашки</a></li>
-          <li><a href="">Толстовки</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/4.jpg" alt="">
-              Обувь для девочек2
-            </a>
-          </li>
-          <li><a href="">Анатомическая обувь</a></li>
-          <li><a href="">Ботинки</a></li>
-          <li><a href="">Домашняя обувь</a></li>
-          <li><a href="">Кроссовки</a></li>
-          <li><a href="">Резиновые сапоги</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/5.jpg" alt="">
-              Обувь для мальчиков2
-            </a>
-          </li>
-          <li><a href="">Анатомическая обувь</a></li>
-          <li><a href="">Ботинки</a></li>
-          <li><a href="">Домашняя обувь</a></li>
-          <li><a href="">Кроссовки</a></li>
-          <li><a href="">Резиновые сапоги</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/6.jpg" alt="">
-              Одежда для малышей2
-            </a>
-          </li>
-          <li><a href="">Боди</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Комбинезоны</a></li>
-          <li><a href="">Боди</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Комбинезоны</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul>
-      </div>
-      <div class="nav-catalog__submenu__item">
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/1.jpg" alt="">
-              Верхняя одежда3
-            </a>
-          </li>
-          <li><a href="">Верхняя одежда для мальчиков</a></li>
-          <li><a href="">Верхняя одежда для девочек</a></li>
-          <li><a href="">Верхняя одежда для малышей</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/2.jpg" alt="">
-              Одежда для девочек3
-            </a>
-          </li>
-          <li><a href="">Блузки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Блузки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul> 
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/3.jpg" alt="">
-              Одежда для мальчиков3
-            </a>
-          </li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Рубашки</a></li>
-          <li><a href="">Толстовки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Рубашки</a></li>
-          <li><a href="">Толстовки</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/4.jpg" alt="">
-              Обувь для девочек3
-            </a>
-          </li>
-          <li><a href="">Анатомическая обувь</a></li>
-          <li><a href="">Ботинки</a></li>
-          <li><a href="">Домашняя обувь</a></li>
-          <li><a href="">Кроссовки</a></li>
-          <li><a href="">Резиновые сапоги</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/5.jpg" alt="">
-              Обувь для мальчиков3
-            </a>
-          </li>
-          <li><a href="">Анатомическая обувь</a></li>
-          <li><a href="">Ботинки</a></li>
-          <li><a href="">Домашняя обувь</a></li>
-          <li><a href="">Кроссовки</a></li>
-          <li><a href="">Резиновые сапоги</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/6.jpg" alt="">
-              Одежда для малышей3
-            </a>
-          </li>
-          <li><a href="">Боди</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Комбинезоны</a></li>
-          <li><a href="">Боди</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Комбинезоны</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul>
-      </div>
-      <div class="nav-catalog__submenu__item">
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/1.jpg" alt="">
-              Верхняя одежда4
-            </a>
-          </li>
-          <li><a href="">Верхняя одежда для мальчиков</a></li>
-          <li><a href="">Верхняя одежда для девочек</a></li>
-          <li><a href="">Верхняя одежда для малышей</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/2.jpg" alt="">
-              Одежда для девочек4
-            </a>
-          </li>
-          <li><a href="">Блузки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Блузки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul> 
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/3.jpg" alt="">
-              Одежда для мальчиков4
-            </a>
-          </li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Рубашки</a></li>
-          <li><a href="">Толстовки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Рубашки</a></li>
-          <li><a href="">Толстовки</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/4.jpg" alt="">
-              Обувь для девочек4
-            </a>
-          </li>
-          <li><a href="">Анатомическая обувь</a></li>
-          <li><a href="">Ботинки</a></li>
-          <li><a href="">Домашняя обувь</a></li>
-          <li><a href="">Кроссовки</a></li>
-          <li><a href="">Резиновые сапоги</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/5.jpg" alt="">
-              Обувь для мальчиков4
-            </a>
-          </li>
-          <li><a href="">Анатомическая обувь</a></li>
-          <li><a href="">Ботинки</a></li>
-          <li><a href="">Домашняя обувь</a></li>
-          <li><a href="">Кроссовки</a></li>
-          <li><a href="">Резиновые сапоги</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/6.jpg" alt="">
-              Одежда для малышей4
-            </a>
-          </li>
-          <li><a href="">Боди</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Комбинезоны</a></li>
-          <li><a href="">Боди</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Комбинезоны</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul>
-      </div>
-      <div class="nav-catalog__submenu__item">
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/1.jpg" alt="">
-              Верхняя одежда5
-            </a>
-          </li>
-          <li><a href="">Верхняя одежда для мальчиков</a></li>
-          <li><a href="">Верхняя одежда для девочек</a></li>
-          <li><a href="">Верхняя одежда для малышей</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/2.jpg" alt="">
-              Одежда для девочек5
-            </a>
-          </li>
-          <li><a href="">Блузки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Блузки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul> 
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/3.jpg" alt="">
-              Одежда для мальчиков5
-            </a>
-          </li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Рубашки</a></li>
-          <li><a href="">Толстовки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Рубашки</a></li>
-          <li><a href="">Толстовки</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/4.jpg" alt="">
-              Обувь для девочек5
-            </a>
-          </li>
-          <li><a href="">Анатомическая обувь</a></li>
-          <li><a href="">Ботинки</a></li>
-          <li><a href="">Домашняя обувь</a></li>
-          <li><a href="">Кроссовки</a></li>
-          <li><a href="">Резиновые сапоги</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/5.jpg" alt="">
-              Обувь для мальчиков5
-            </a>
-          </li>
-          <li><a href="">Анатомическая обувь</a></li>
-          <li><a href="">Ботинки</a></li>
-          <li><a href="">Домашняя обувь</a></li>
-          <li><a href="">Кроссовки</a></li>
-          <li><a href="">Резиновые сапоги</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/6.jpg" alt="">
-              Одежда для малышей5
-            </a>
-          </li>
-          <li><a href="">Боди</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Комбинезоны</a></li>
-          <li><a href="">Боди</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Комбинезоны</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul>
-      </div>
-      <div class="nav-catalog__submenu__item">
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/1.jpg" alt="">
-              Верхняя одежда6
-            </a>
-          </li>
-          <li><a href="">Верхняя одежда для мальчиков</a></li>
-          <li><a href="">Верхняя одежда для девочек</a></li>
-          <li><a href="">Верхняя одежда для малышей</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/2.jpg" alt="">
-              Одежда для девочек6
-            </a>
-          </li>
-          <li><a href="">Блузки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Блузки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul> 
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/3.jpg" alt="">
-              Одежда для мальчиков6
-            </a>
-          </li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Рубашки</a></li>
-          <li><a href="">Толстовки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Рубашки</a></li>
-          <li><a href="">Толстовки</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/4.jpg" alt="">
-              Обувь для девочек6
-            </a>
-          </li>
-          <li><a href="">Анатомическая обувь</a></li>
-          <li><a href="">Ботинки</a></li>
-          <li><a href="">Домашняя обувь</a></li>
-          <li><a href="">Кроссовки</a></li>
-          <li><a href="">Резиновые сапоги</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/5.jpg" alt="">
-              Обувь для мальчиков6
-            </a>
-          </li>
-          <li><a href="">Анатомическая обувь</a></li>
-          <li><a href="">Ботинки</a></li>
-          <li><a href="">Домашняя обувь</a></li>
-          <li><a href="">Кроссовки</a></li>
-          <li><a href="">Резиновые сапоги</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/6.jpg" alt="">
-              Одежда для малышей6
-            </a>
-          </li>
-          <li><a href="">Боди</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Комбинезоны</a></li>
-          <li><a href="">Боди</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Комбинезоны</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul>
-      </div>
-      <div class="nav-catalog__submenu__item">
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/1.jpg" alt="">
-              Верхняя одежда7
-            </a>
-          </li>
-          <li><a href="">Верхняя одежда для мальчиков</a></li>
-          <li><a href="">Верхняя одежда для девочек</a></li>
-          <li><a href="">Верхняя одежда для малышей</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/2.jpg" alt="">
-              Одежда для девочек7
-            </a>
-          </li>
-          <li><a href="">Блузки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Блузки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul> 
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/3.jpg" alt="">
-              Одежда для мальчиков7
-            </a>
-          </li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Рубашки</a></li>
-          <li><a href="">Толстовки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Рубашки</a></li>
-          <li><a href="">Толстовки</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/4.jpg" alt="">
-              Обувь для девочек7
-            </a>
-          </li>
-          <li><a href="">Анатомическая обувь</a></li>
-          <li><a href="">Ботинки</a></li>
-          <li><a href="">Домашняя обувь</a></li>
-          <li><a href="">Кроссовки</a></li>
-          <li><a href="">Резиновые сапоги</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/5.jpg" alt="">
-              Обувь для мальчиков7
-            </a>
-          </li>
-          <li><a href="">Анатомическая обувь</a></li>
-          <li><a href="">Ботинки</a></li>
-          <li><a href="">Домашняя обувь</a></li>
-          <li><a href="">Кроссовки</a></li>
-          <li><a href="">Резиновые сапоги</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/6.jpg" alt="">
-              Одежда для малышей7
-            </a>
-          </li>
-          <li><a href="">Боди</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Комбинезоны</a></li>
-          <li><a href="">Боди</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Комбинезоны</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul>
-      </div>
-      <div class="nav-catalog__submenu__item">
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/1.jpg" alt="">
-              Верхняя одежда8
-            </a>
-          </li>
-          <li><a href="">Верхняя одежда для мальчиков</a></li>
-          <li><a href="">Верхняя одежда для девочек</a></li>
-          <li><a href="">Верхняя одежда для малышей</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/2.jpg" alt="">
-              Одежда для девочек8
-            </a>
-          </li>
-          <li><a href="">Блузки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Блузки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul> 
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/3.jpg" alt="">
-              Одежда для мальчиков8
-            </a>
-          </li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Рубашки</a></li>
-          <li><a href="">Толстовки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Рубашки</a></li>
-          <li><a href="">Толстовки</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/4.jpg" alt="">
-              Обувь для девочек8
-            </a>
-          </li>
-          <li><a href="">Анатомическая обувь</a></li>
-          <li><a href="">Ботинки</a></li>
-          <li><a href="">Домашняя обувь</a></li>
-          <li><a href="">Кроссовки</a></li>
-          <li><a href="">Резиновые сапоги</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/5.jpg" alt="">
-              Обувь для мальчиков8
-            </a>
-          </li>
-          <li><a href="">Анатомическая обувь</a></li>
-          <li><a href="">Ботинки</a></li>
-          <li><a href="">Домашняя обувь</a></li>
-          <li><a href="">Кроссовки</a></li>
-          <li><a href="">Резиновые сапоги</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/6.jpg" alt="">
-              Одежда для малышей8
-            </a>
-          </li>
-          <li><a href="">Боди</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Комбинезоны</a></li>
-          <li><a href="">Боди</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Комбинезоны</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul>
-      </div>
-      <div class="nav-catalog__submenu__item">
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/1.jpg" alt="">
-              Верхняя одежда9
-            </a>
-          </li>
-          <li><a href="">Верхняя одежда для мальчиков</a></li>
-          <li><a href="">Верхняя одежда для девочек</a></li>
-          <li><a href="">Верхняя одежда для малышей</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/2.jpg" alt="">
-              Одежда для девочек9
-            </a>
-          </li>
-          <li><a href="">Блузки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Блузки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul> 
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/3.jpg" alt="">
-              Одежда для мальчиков9
-            </a>
-          </li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Рубашки</a></li>
-          <li><a href="">Толстовки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Рубашки</a></li>
-          <li><a href="">Толстовки</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/4.jpg" alt="">
-              Обувь для девочек9
-            </a>
-          </li>
-          <li><a href="">Анатомическая обувь</a></li>
-          <li><a href="">Ботинки</a></li>
-          <li><a href="">Домашняя обувь</a></li>
-          <li><a href="">Кроссовки</a></li>
-          <li><a href="">Резиновые сапоги</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/5.jpg" alt="">
-              Обувь для мальчиков9
-            </a>
-          </li>
-          <li><a href="">Анатомическая обувь</a></li>
-          <li><a href="">Ботинки</a></li>
-          <li><a href="">Домашняя обувь</a></li>
-          <li><a href="">Кроссовки</a></li>
-          <li><a href="">Резиновые сапоги</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/6.jpg" alt="">
-              Одежда для малышей9
-            </a>
-          </li>
-          <li><a href="">Боди</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Комбинезоны</a></li>
-          <li><a href="">Боди</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Комбинезоны</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul>
-      </div>
-      <div class="nav-catalog__submenu__item">
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/1.jpg" alt="">
-              Верхняя одежда10
-            </a>
-          </li>
-          <li><a href="">Верхняя одежда для мальчиков</a></li>
-          <li><a href="">Верхняя одежда для девочек</a></li>
-          <li><a href="">Верхняя одежда для малышей</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/2.jpg" alt="">
-              Одежда для девочек10
-            </a>
-          </li>
-          <li><a href="">Блузки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Блузки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul> 
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/3.jpg" alt="">
-              Одежда для мальчиков10
-            </a>
-          </li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Рубашки</a></li>
-          <li><a href="">Толстовки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Рубашки</a></li>
-          <li><a href="">Толстовки</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/4.jpg" alt="">
-              Обувь для девочек10
-            </a>
-          </li>
-          <li><a href="">Анатомическая обувь</a></li>
-          <li><a href="">Ботинки</a></li>
-          <li><a href="">Домашняя обувь</a></li>
-          <li><a href="">Кроссовки</a></li>
-          <li><a href="">Резиновые сапоги</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/5.jpg" alt="">
-              Обувь для мальчиков10
-            </a>
-          </li>
-          <li><a href="">Анатомическая обувь</a></li>
-          <li><a href="">Ботинки</a></li>
-          <li><a href="">Домашняя обувь</a></li>
-          <li><a href="">Кроссовки</a></li>
-          <li><a href="">Резиновые сапоги</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/6.jpg" alt="">
-              Одежда для малышей10
-            </a>
-          </li>
-          <li><a href="">Боди</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Комбинезоны</a></li>
-          <li><a href="">Боди</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Комбинезоны</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul>
-      </div>
-      <div class="nav-catalog__submenu__item">
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/1.jpg" alt="">
-              Верхняя одежда11
-            </a>
-          </li>
-          <li><a href="">Верхняя одежда для мальчиков</a></li>
-          <li><a href="">Верхняя одежда для девочек</a></li>
-          <li><a href="">Верхняя одежда для малышей</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/2.jpg" alt="">
-              Одежда для девочек11
-            </a>
-          </li>
-          <li><a href="">Блузки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Блузки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul> 
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/3.jpg" alt="">
-              Одежда для мальчиков11
-            </a>
-          </li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Рубашки</a></li>
-          <li><a href="">Толстовки</a></li>
-          <li><a href="">Брюки</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Рубашки</a></li>
-          <li><a href="">Толстовки</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/4.jpg" alt="">
-              Обувь для девочек11
-            </a>
-          </li>
-          <li><a href="">Анатомическая обувь</a></li>
-          <li><a href="">Ботинки</a></li>
-          <li><a href="">Домашняя обувь</a></li>
-          <li><a href="">Кроссовки</a></li>
-          <li><a href="">Резиновые сапоги</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/5.jpg" alt="">
-              Обувь для мальчиков11
-            </a>
-          </li>
-          <li><a href="">Анатомическая обувь</a></li>
-          <li><a href="">Ботинки</a></li>
-          <li><a href="">Домашняя обувь</a></li>
-          <li><a href="">Кроссовки</a></li>
-          <li><a href="">Резиновые сапоги</a></li>
-        </ul>
-        <ul>
-          <li class="first">
-            <a href="">
-              <img src="./img/submenu/6.jpg" alt="">
-              Одежда для малышей11
-            </a>
-          </li>
-          <li><a href="">Боди</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Комбинезоны</a></li>
-          <li><a href="">Боди</a></li>
-          <li><a href="">Джемперы</a></li>
-          <li><a href="">Джинсы</a></li>
-          <li><a href="">Кардиганы</a></li>
-          <li><a href="">Комбинезоны</a></li>
-          <li class="last"><a href="">показать еще 10</a></li>
-        </ul>
-      </div>
+    <transition appear name="fade" mode="out-in">
+    <div v-if="show" class="nav-catalog__submenu">
+      <ul v-for="(item,index) of showMenu">
+        <li class="first">
+          <a :href="item.url">
+            <img :src="item.img" :alt="item.t">
+            {{item.t}}
+          </a>
+        </li>
+        <li v-for="item of item.child">
+          <a :href="item.url">
+            {{item.t}}
+          </a>
+        </li>
+      </ul>
     </div>
+    </transition>
   </div>
-  
+  <!-- VUE -->
 </nav>
 
 <main>
@@ -1989,5 +923,929 @@
   <script src="./js/slick/slick.min.js"></script>
   <link rel="stylesheet" href="./js/slick/slick.css">
   <link rel="stylesheet" href="./css/main.min.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    let subMenu = new Vue({
+      el: '.nav-catalog',
+      data: {
+        show: false,
+        classes: [],
+        timer: null,
+        current: null,
+        menu: {
+          0: { t:'Одежда и обувь',       url: './category.html' },
+          1: { t:'Игрушки и игры',       url: './category.html' },
+          2: { t:'Детская комната',      url: './category.html' },
+          3: { t:'Коляски и автокресла', url: './category.html' },
+          4: { t:'Подгузники и гигиена', url: './category.html' },
+          5: { t:'Кормление и питание',  url: './category.html' },
+          6: { t:'Развитие и обучение',  url: './category.html' },
+          7: { t:'Хобби и творчество',   url: './category.html' },
+          8: { t:'Товары для мам',       url: './category.html' },
+          9: { t:'Герои и интересы',     url: './category.html' },
+        },
+        showMenu: {},
+        subMenu: {
+          0: {
+            0: {
+              img: './img/submenu/1.png',
+              t: 'Верхняя одежда',
+              url: './category.html',
+              child: {
+                0: { t: 'Верхняя одежда для мальчиков', url: './category.html' },
+                1: { t: 'Верхняя одежда для девочек', url: './category.html' },
+                2: { t: 'Верхняя одежда для малышей', url: './category.html' },
+              }
+            },
+            1: {
+              img: './img/submenu/2.png',
+              t: 'Одежда для девочек',
+              url: './category.html',
+              child: {
+                0: { t: 'Блузки', url: './category.html' },
+                1: { t: 'Брюки', url: './category.html' },
+                2: { t: 'Джемперы', url: './category.html' },
+                3: { t: 'Джинсы', url: './category.html' },
+                4: { t: 'Кардиганы', url: './category.html' },
+                5: { t: 'Блузки', url: './category.html' },
+                6: { t: 'Брюки', url: './category.html' },
+                7: { t: 'Джемперы', url: './category.html' },
+                8: { t: 'Джинсы', url: './category.html' },
+                9: { t: 'Кардиганы', url: './category.html' }
+              }
+            },
+            2: {
+              img: './img/submenu/3.png',
+              t: 'Одежда для мальчиков',
+              url: './category.html',
+              child: {
+                0: { t: 'Брюки', url: './category.html' },
+                1: { t: 'Джемперы', url: './category.html' },
+                2: { t: 'Джинсы', url: './category.html' },
+                3: { t: 'Рубашки', url: './category.html' },
+                4: { t: 'Толстовки', url: './category.html' },
+                5: { t: 'Брюки', url: './category.html' },
+                6: { t: 'Джемперы', url: './category.html' },
+                7: { t: 'Джинсы', url: './category.html' },
+                8: { t: 'Рубашки', url: './category.html' },
+                9: { t: 'Толстовки', url: './category.html' }
+              }
+            },
+            3: {
+              img: './img/submenu/4.png',
+              t: 'Обувь для девочек',
+              url: './category.html',
+              child: {
+                0: { t: 'Анатомическая обувь', url: './category.html' },
+                1: { t: 'Ботинки', url: './category.html' },
+                2: { t: 'Домашняя обувь', url: './category.html' },
+                3: { t: 'Кроссовки', url: './category.html' },
+                4: { t: 'Резиновые сапоги', url: './category.html' },
+              }
+            },
+            4: {
+              img: './img/submenu/5.png',
+              t: 'Обувь для мальчиков',
+              url: './category.html',
+              child: {
+                0: { t: 'Анатомическая обувь', url: './category.html' },
+                1: { t: 'Ботинки', url: './category.html' },
+                2: { t: 'Домашняя обувь', url: './category.html' },
+                3: { t: 'Кроссовки', url: './category.html' },
+                4: { t: 'Резиновые сапоги', url: './category.html' },
+              }
+            },
+            5: {
+              img: './img/submenu/6.png',
+              t: 'Одежда для малышей',
+              url: './category.html',
+              child: {
+                0: { t: 'Боди', url: './category.html' },
+                1: { t: 'Джемперы', url: './category.html' },
+                2: { t: 'Джинсы', url: './category.html' },
+                3: { t: 'Кардиганы', url: './category.html' },
+                4: { t: 'Комбинезоны', url: './category.html' },
+                5: { t: 'Боди', url: './category.html' },
+                6: { t: 'Джемперы', url: './category.html' },
+                7: { t: 'Джинсы', url: './category.html' },
+                8: { t: 'Кардиганы', url: './category.html' },
+                9: { t: 'Комбинезоны', url: './category.html' }
+              }
+            },
+          },
+
+          1: {
+            0: {
+              img: './img/submenu/1.png',
+              t: 'Верхняя одежда2',
+              url: './category.html',
+              child: {
+                0: { t: 'Верхняя одежда для мальчиков', url: './category.html' },
+                1: { t: 'Верхняя одежда для девочек', url: './category.html' },
+                2: { t: 'Верхняя одежда для малышей', url: './category.html' },
+              }
+            },
+            1: {
+              img: './img/submenu/2.png',
+              t: 'Одежда для девочек2',
+              url: './category.html',
+              child: {
+                0: { t: 'Блузки', url: './category.html' },
+                1: { t: 'Брюки', url: './category.html' },
+                2: { t: 'Джемперы', url: './category.html' },
+                3: { t: 'Джинсы', url: './category.html' },
+                4: { t: 'Кардиганы', url: './category.html' },
+                5: { t: 'Блузки', url: './category.html' },
+                6: { t: 'Брюки', url: './category.html' },
+                7: { t: 'Джемперы', url: './category.html' },
+                8: { t: 'Джинсы', url: './category.html' },
+                9: { t: 'Кардиганы', url: './category.html' }
+              }
+            },
+            2: {
+              img: './img/submenu/3.png',
+              t: 'Одежда для мальчиков2',
+              url: './category.html',
+              child: {
+                0: { t: 'Брюки', url: './category.html' },
+                1: { t: 'Джемперы', url: './category.html' },
+                2: { t: 'Джинсы', url: './category.html' },
+                3: { t: 'Рубашки', url: './category.html' },
+                4: { t: 'Толстовки', url: './category.html' },
+                5: { t: 'Брюки', url: './category.html' },
+                6: { t: 'Джемперы', url: './category.html' },
+                7: { t: 'Джинсы', url: './category.html' },
+                8: { t: 'Рубашки', url: './category.html' },
+                9: { t: 'Толстовки', url: './category.html' }
+              }
+            },
+            3: {
+              img: './img/submenu/4.png',
+              t: 'Обувь для девочек2',
+              url: './category.html',
+              child: {
+                0: { t: 'Анатомическая обувь', url: './category.html' },
+                1: { t: 'Ботинки', url: './category.html' },
+                2: { t: 'Домашняя обувь', url: './category.html' },
+                3: { t: 'Кроссовки', url: './category.html' },
+                4: { t: 'Резиновые сапоги', url: './category.html' },
+              }
+            },
+            4: {
+              img: './img/submenu/5.png',
+              t: 'Обувь для мальчиков2',
+              url: './category.html',
+              child: {
+                0: { t: 'Анатомическая обувь', url: './category.html' },
+                1: { t: 'Ботинки', url: './category.html' },
+                2: { t: 'Домашняя обувь', url: './category.html' },
+                3: { t: 'Кроссовки', url: './category.html' },
+                4: { t: 'Резиновые сапоги', url: './category.html' },
+              }
+            },
+            5: {
+              img: './img/submenu/6.png',
+              t: 'Одежда для малышей2',
+              url: './category.html',
+              child: {
+                0: { t: 'Боди', url: './category.html' },
+                1: { t: 'Джемперы', url: './category.html' },
+                2: { t: 'Джинсы', url: './category.html' },
+                3: { t: 'Кардиганы', url: './category.html' },
+                4: { t: 'Комбинезоны', url: './category.html' },
+                5: { t: 'Боди', url: './category.html' },
+                6: { t: 'Джемперы', url: './category.html' },
+                7: { t: 'Джинсы', url: './category.html' },
+                8: { t: 'Кардиганы', url: './category.html' },
+                9: { t: 'Комбинезоны', url: './category.html' }
+              }
+            },
+          },
+
+          2: {
+            0: {
+              img: './img/submenu/1.png',
+              t: 'Верхняя одежда',
+              url: './category.html',
+              child: {
+                0: { t: 'Верхняя одежда для мальчиков', url: './category.html' },
+                1: { t: 'Верхняя одежда для девочек', url: './category.html' },
+                2: { t: 'Верхняя одежда для малышей', url: './category.html' },
+              }
+            },
+            1: {
+              img: './img/submenu/2.png',
+              t: 'Одежда для девочек3',
+              url: './category.html',
+              child: {
+                0: { t: 'Блузки', url: './category.html' },
+                1: { t: 'Брюки', url: './category.html' },
+                2: { t: 'Джемперы', url: './category.html' },
+                3: { t: 'Джинсы', url: './category.html' },
+                4: { t: 'Кардиганы', url: './category.html' },
+                5: { t: 'Блузки', url: './category.html' },
+                6: { t: 'Брюки', url: './category.html' },
+                7: { t: 'Джемперы', url: './category.html' },
+                8: { t: 'Джинсы', url: './category.html' },
+                9: { t: 'Кардиганы', url: './category.html' }
+              }
+            },
+            2: {
+              img: './img/submenu/3.png',
+              t: 'Одежда для мальчиков3',
+              url: './category.html',
+              child: {
+                0: { t: 'Брюки', url: './category.html' },
+                1: { t: 'Джемперы', url: './category.html' },
+                2: { t: 'Джинсы', url: './category.html' },
+                3: { t: 'Рубашки', url: './category.html' },
+                4: { t: 'Толстовки', url: './category.html' },
+                5: { t: 'Брюки', url: './category.html' },
+                6: { t: 'Джемперы', url: './category.html' },
+                7: { t: 'Джинсы', url: './category.html' },
+                8: { t: 'Рубашки', url: './category.html' },
+                9: { t: 'Толстовки', url: './category.html' }
+              }
+            },
+            3: {
+              img: './img/submenu/4.png',
+              t: 'Обувь для девочек3',
+              url: './category.html',
+              child: {
+                0: { t: 'Анатомическая обувь', url: './category.html' },
+                1: { t: 'Ботинки', url: './category.html' },
+                2: { t: 'Домашняя обувь', url: './category.html' },
+                3: { t: 'Кроссовки', url: './category.html' },
+                4: { t: 'Резиновые сапоги', url: './category.html' },
+              }
+            },
+            4: {
+              img: './img/submenu/5.png',
+              t: 'Обувь для мальчиков3',
+              url: './category.html',
+              child: {
+                0: { t: 'Анатомическая обувь', url: './category.html' },
+                1: { t: 'Ботинки', url: './category.html' },
+                2: { t: 'Домашняя обувь', url: './category.html' },
+                3: { t: 'Кроссовки', url: './category.html' },
+                4: { t: 'Резиновые сапоги', url: './category.html' },
+              }
+            },
+            5: {
+              img: './img/submenu/6.png',
+              t: 'Одежда для малышей3',
+              url: './category.html',
+              child: {
+                0: { t: 'Боди', url: './category.html' },
+                1: { t: 'Джемперы', url: './category.html' },
+                2: { t: 'Джинсы', url: './category.html' },
+                3: { t: 'Кардиганы', url: './category.html' },
+                4: { t: 'Комбинезоны', url: './category.html' },
+                5: { t: 'Боди', url: './category.html' },
+                6: { t: 'Джемперы', url: './category.html' },
+                7: { t: 'Джинсы', url: './category.html' },
+                8: { t: 'Кардиганы', url: './category.html' },
+                9: { t: 'Комбинезоны', url: './category.html' }
+              }
+            },
+          },
+
+          3: {
+            0: {
+              img: './img/submenu/1.png',
+              t: 'Верхняя одежда4',
+              url: './category.html',
+              child: {
+                0: { t: 'Верхняя одежда для мальчиков', url: './category.html' },
+                1: { t: 'Верхняя одежда для девочек', url: './category.html' },
+                2: { t: 'Верхняя одежда для малышей', url: './category.html' },
+              }
+            },
+            1: {
+              img: './img/submenu/2.png',
+              t: 'Одежда для девочек4',
+              url: './category.html',
+              child: {
+                0: { t: 'Блузки', url: './category.html' },
+                1: { t: 'Брюки', url: './category.html' },
+                2: { t: 'Джемперы', url: './category.html' },
+                3: { t: 'Джинсы', url: './category.html' },
+                4: { t: 'Кардиганы', url: './category.html' },
+                5: { t: 'Блузки', url: './category.html' },
+                6: { t: 'Брюки', url: './category.html' },
+                7: { t: 'Джемперы', url: './category.html' },
+                8: { t: 'Джинсы', url: './category.html' },
+                9: { t: 'Кардиганы', url: './category.html' }
+              }
+            },
+            2: {
+              img: './img/submenu/3.png',
+              t: 'Одежда для мальчиков4',
+              url: './category.html',
+              child: {
+                0: { t: 'Брюки', url: './category.html' },
+                1: { t: 'Джемперы', url: './category.html' },
+                2: { t: 'Джинсы', url: './category.html' },
+                3: { t: 'Рубашки', url: './category.html' },
+                4: { t: 'Толстовки', url: './category.html' },
+                5: { t: 'Брюки', url: './category.html' },
+                6: { t: 'Джемперы', url: './category.html' },
+                7: { t: 'Джинсы', url: './category.html' },
+                8: { t: 'Рубашки', url: './category.html' },
+                9: { t: 'Толстовки', url: './category.html' }
+              }
+            },
+            3: {
+              img: './img/submenu/4.png',
+              t: 'Обувь для девочек4',
+              url: './category.html',
+              child: {
+                0: { t: 'Анатомическая обувь', url: './category.html' },
+                1: { t: 'Ботинки', url: './category.html' },
+                2: { t: 'Домашняя обувь', url: './category.html' },
+                3: { t: 'Кроссовки', url: './category.html' },
+                4: { t: 'Резиновые сапоги', url: './category.html' },
+              }
+            },
+            4: {
+              img: './img/submenu/5.png',
+              t: 'Обувь для мальчиков4',
+              url: './category.html',
+              child: {
+                0: { t: 'Анатомическая обувь', url: './category.html' },
+                1: { t: 'Ботинки', url: './category.html' },
+                2: { t: 'Домашняя обувь', url: './category.html' },
+                3: { t: 'Кроссовки', url: './category.html' },
+                4: { t: 'Резиновые сапоги', url: './category.html' },
+              }
+            },
+            5: {
+              img: './img/submenu/6.png',
+              t: 'Одежда для малышей4',
+              url: './category.html',
+              child: {
+                0: { t: 'Боди', url: './category.html' },
+                1: { t: 'Джемперы', url: './category.html' },
+                2: { t: 'Джинсы', url: './category.html' },
+                3: { t: 'Кардиганы', url: './category.html' },
+                4: { t: 'Комбинезоны', url: './category.html' },
+                5: { t: 'Боди', url: './category.html' },
+                6: { t: 'Джемперы', url: './category.html' },
+                7: { t: 'Джинсы', url: './category.html' },
+                8: { t: 'Кардиганы', url: './category.html' },
+                9: { t: 'Комбинезоны', url: './category.html' }
+              }
+            },
+          },
+
+          4: {
+            0: {
+              img: './img/submenu/1.png',
+              t: 'Верхняя одежда5',
+              url: './category.html',
+              child: {
+                0: { t: 'Верхняя одежда для мальчиков', url: './category.html' },
+                1: { t: 'Верхняя одежда для девочек', url: './category.html' },
+                2: { t: 'Верхняя одежда для малышей', url: './category.html' },
+              }
+            },
+            1: {
+              img: './img/submenu/2.png',
+              t: 'Одежда для девочек5',
+              url: './category.html',
+              child: {
+                0: { t: 'Блузки', url: './category.html' },
+                1: { t: 'Брюки', url: './category.html' },
+                2: { t: 'Джемперы', url: './category.html' },
+                3: { t: 'Джинсы', url: './category.html' },
+                4: { t: 'Кардиганы', url: './category.html' },
+                5: { t: 'Блузки', url: './category.html' },
+                6: { t: 'Брюки', url: './category.html' },
+                7: { t: 'Джемперы', url: './category.html' },
+                8: { t: 'Джинсы', url: './category.html' },
+                9: { t: 'Кардиганы', url: './category.html' }
+              }
+            },
+            2: {
+              img: './img/submenu/3.png',
+              t: 'Одежда для мальчиков5',
+              url: './category.html',
+              child: {
+                0: { t: 'Брюки', url: './category.html' },
+                1: { t: 'Джемперы', url: './category.html' },
+                2: { t: 'Джинсы', url: './category.html' },
+                3: { t: 'Рубашки', url: './category.html' },
+                4: { t: 'Толстовки', url: './category.html' },
+                5: { t: 'Брюки', url: './category.html' },
+                6: { t: 'Джемперы', url: './category.html' },
+                7: { t: 'Джинсы', url: './category.html' },
+                8: { t: 'Рубашки', url: './category.html' },
+                9: { t: 'Толстовки', url: './category.html' }
+              }
+            },
+            3: {
+              img: './img/submenu/4.png',
+              t: 'Обувь для девочек5',
+              url: './category.html',
+              child: {
+                0: { t: 'Анатомическая обувь', url: './category.html' },
+                1: { t: 'Ботинки', url: './category.html' },
+                2: { t: 'Домашняя обувь', url: './category.html' },
+                3: { t: 'Кроссовки', url: './category.html' },
+                4: { t: 'Резиновые сапоги', url: './category.html' },
+              }
+            },
+            4: {
+              img: './img/submenu/5.png',
+              t: 'Обувь для мальчиков5',
+              url: './category.html',
+              child: {
+                0: { t: 'Анатомическая обувь', url: './category.html' },
+                1: { t: 'Ботинки', url: './category.html' },
+                2: { t: 'Домашняя обувь', url: './category.html' },
+                3: { t: 'Кроссовки', url: './category.html' },
+                4: { t: 'Резиновые сапоги', url: './category.html' },
+              }
+            },
+            5: {
+              img: './img/submenu/6.png',
+              t: 'Одежда для малышей5',
+              url: './category.html',
+              child: {
+                0: { t: 'Боди', url: './category.html' },
+                1: { t: 'Джемперы', url: './category.html' },
+                2: { t: 'Джинсы', url: './category.html' },
+                3: { t: 'Кардиганы', url: './category.html' },
+                4: { t: 'Комбинезоны', url: './category.html' },
+                5: { t: 'Боди', url: './category.html' },
+                6: { t: 'Джемперы', url: './category.html' },
+                7: { t: 'Джинсы', url: './category.html' },
+                8: { t: 'Кардиганы', url: './category.html' },
+                9: { t: 'Комбинезоны', url: './category.html' }
+              }
+            },
+          },
+          
+          5: {
+            0: {
+              img: './img/submenu/1.png',
+              t: 'Верхняя одежда6',
+              url: './category.html',
+              child: {
+                0: { t: 'Верхняя одежда для мальчиков', url: './category.html' },
+                1: { t: 'Верхняя одежда для девочек', url: './category.html' },
+                2: { t: 'Верхняя одежда для малышей', url: './category.html' },
+              }
+            },
+            1: {
+              img: './img/submenu/2.png',
+              t: 'Одежда для девочек6',
+              url: './category.html',
+              child: {
+                0: { t: 'Блузки', url: './category.html' },
+                1: { t: 'Брюки', url: './category.html' },
+                2: { t: 'Джемперы', url: './category.html' },
+                3: { t: 'Джинсы', url: './category.html' },
+                4: { t: 'Кардиганы', url: './category.html' },
+                5: { t: 'Блузки', url: './category.html' },
+                6: { t: 'Брюки', url: './category.html' },
+                7: { t: 'Джемперы', url: './category.html' },
+                8: { t: 'Джинсы', url: './category.html' },
+                9: { t: 'Кардиганы', url: './category.html' }
+              }
+            },
+            2: {
+              img: './img/submenu/3.png',
+              t: 'Одежда для мальчиков6',
+              url: './category.html',
+              child: {
+                0: { t: 'Брюки', url: './category.html' },
+                1: { t: 'Джемперы', url: './category.html' },
+                2: { t: 'Джинсы', url: './category.html' },
+                3: { t: 'Рубашки', url: './category.html' },
+                4: { t: 'Толстовки', url: './category.html' },
+                5: { t: 'Брюки', url: './category.html' },
+                6: { t: 'Джемперы', url: './category.html' },
+                7: { t: 'Джинсы', url: './category.html' },
+                8: { t: 'Рубашки', url: './category.html' },
+                9: { t: 'Толстовки', url: './category.html' }
+              }
+            },
+            3: {
+              img: './img/submenu/4.png',
+              t: 'Обувь для девочек6',
+              url: './category.html',
+              child: {
+                0: { t: 'Анатомическая обувь', url: './category.html' },
+                1: { t: 'Ботинки', url: './category.html' },
+                2: { t: 'Домашняя обувь', url: './category.html' },
+                3: { t: 'Кроссовки', url: './category.html' },
+                4: { t: 'Резиновые сапоги', url: './category.html' },
+              }
+            },
+            4: {
+              img: './img/submenu/5.png',
+              t: 'Обувь для мальчиков6',
+              url: './category.html',
+              child: {
+                0: { t: 'Анатомическая обувь', url: './category.html' },
+                1: { t: 'Ботинки', url: './category.html' },
+                2: { t: 'Домашняя обувь', url: './category.html' },
+                3: { t: 'Кроссовки', url: './category.html' },
+                4: { t: 'Резиновые сапоги', url: './category.html' },
+              }
+            },
+            5: {
+              img: './img/submenu/6.png',
+              t: 'Одежда для малышей6',
+              url: './category.html',
+              child: {
+                0: { t: 'Боди', url: './category.html' },
+                1: { t: 'Джемперы', url: './category.html' },
+                2: { t: 'Джинсы', url: './category.html' },
+                3: { t: 'Кардиганы', url: './category.html' },
+                4: { t: 'Комбинезоны', url: './category.html' },
+                5: { t: 'Боди', url: './category.html' },
+                6: { t: 'Джемперы', url: './category.html' },
+                7: { t: 'Джинсы', url: './category.html' },
+                8: { t: 'Кардиганы', url: './category.html' },
+                9: { t: 'Комбинезоны', url: './category.html' }
+              }
+            },
+          },
+          
+          6: {
+            0: {
+              img: './img/submenu/1.png',
+              t: 'Верхняя одежда',
+              url: './category.html',
+              child: {
+                0: { t: 'Верхняя одежда для мальчиков', url: './category.html' },
+                1: { t: 'Верхняя одежда для девочек', url: './category.html' },
+                2: { t: 'Верхняя одежда для малышей', url: './category.html' },
+              }
+            },
+            1: {
+              img: './img/submenu/2.png',
+              t: 'Одежда для девочек3',
+              url: './category.html',
+              child: {
+                0: { t: 'Блузки', url: './category.html' },
+                1: { t: 'Брюки', url: './category.html' },
+                2: { t: 'Джемперы', url: './category.html' },
+                3: { t: 'Джинсы', url: './category.html' },
+                4: { t: 'Кардиганы', url: './category.html' },
+                5: { t: 'Блузки', url: './category.html' },
+                6: { t: 'Брюки', url: './category.html' },
+                7: { t: 'Джемперы', url: './category.html' },
+                8: { t: 'Джинсы', url: './category.html' },
+                9: { t: 'Кардиганы', url: './category.html' }
+              }
+            },
+            2: {
+              img: './img/submenu/3.png',
+              t: 'Одежда для мальчиков3',
+              url: './category.html',
+              child: {
+                0: { t: 'Брюки', url: './category.html' },
+                1: { t: 'Джемперы', url: './category.html' },
+                2: { t: 'Джинсы', url: './category.html' },
+                3: { t: 'Рубашки', url: './category.html' },
+                4: { t: 'Толстовки', url: './category.html' },
+                5: { t: 'Брюки', url: './category.html' },
+                6: { t: 'Джемперы', url: './category.html' },
+                7: { t: 'Джинсы', url: './category.html' },
+                8: { t: 'Рубашки', url: './category.html' },
+                9: { t: 'Толстовки', url: './category.html' }
+              }
+            },
+            3: {
+              img: './img/submenu/4.png',
+              t: 'Обувь для девочек3',
+              url: './category.html',
+              child: {
+                0: { t: 'Анатомическая обувь', url: './category.html' },
+                1: { t: 'Ботинки', url: './category.html' },
+                2: { t: 'Домашняя обувь', url: './category.html' },
+                3: { t: 'Кроссовки', url: './category.html' },
+                4: { t: 'Резиновые сапоги', url: './category.html' },
+              }
+            },
+            4: {
+              img: './img/submenu/5.png',
+              t: 'Обувь для мальчиков3',
+              url: './category.html',
+              child: {
+                0: { t: 'Анатомическая обувь', url: './category.html' },
+                1: { t: 'Ботинки', url: './category.html' },
+                2: { t: 'Домашняя обувь', url: './category.html' },
+                3: { t: 'Кроссовки', url: './category.html' },
+                4: { t: 'Резиновые сапоги', url: './category.html' },
+              }
+            },
+            5: {
+              img: './img/submenu/6.png',
+              t: 'Одежда для малышей3',
+              url: './category.html',
+              child: {
+                0: { t: 'Боди', url: './category.html' },
+                1: { t: 'Джемперы', url: './category.html' },
+                2: { t: 'Джинсы', url: './category.html' },
+                3: { t: 'Кардиганы', url: './category.html' },
+                4: { t: 'Комбинезоны', url: './category.html' },
+                5: { t: 'Боди', url: './category.html' },
+                6: { t: 'Джемперы', url: './category.html' },
+                7: { t: 'Джинсы', url: './category.html' },
+                8: { t: 'Кардиганы', url: './category.html' },
+                9: { t: 'Комбинезоны', url: './category.html' }
+              }
+            },
+          },
+
+          7: {
+            0: {
+              img: './img/submenu/1.png',
+              t: 'Верхняя одежда4',
+              url: './category.html',
+              child: {
+                0: { t: 'Верхняя одежда для мальчиков', url: './category.html' },
+                1: { t: 'Верхняя одежда для девочек', url: './category.html' },
+                2: { t: 'Верхняя одежда для малышей', url: './category.html' },
+              }
+            },
+            1: {
+              img: './img/submenu/2.png',
+              t: 'Одежда для девочек4',
+              url: './category.html',
+              child: {
+                0: { t: 'Блузки', url: './category.html' },
+                1: { t: 'Брюки', url: './category.html' },
+                2: { t: 'Джемперы', url: './category.html' },
+                3: { t: 'Джинсы', url: './category.html' },
+                4: { t: 'Кардиганы', url: './category.html' },
+                5: { t: 'Блузки', url: './category.html' },
+                6: { t: 'Брюки', url: './category.html' },
+                7: { t: 'Джемперы', url: './category.html' },
+                8: { t: 'Джинсы', url: './category.html' },
+                9: { t: 'Кардиганы', url: './category.html' }
+              }
+            },
+            2: {
+              img: './img/submenu/3.png',
+              t: 'Одежда для мальчиков4',
+              url: './category.html',
+              child: {
+                0: { t: 'Брюки', url: './category.html' },
+                1: { t: 'Джемперы', url: './category.html' },
+                2: { t: 'Джинсы', url: './category.html' },
+                3: { t: 'Рубашки', url: './category.html' },
+                4: { t: 'Толстовки', url: './category.html' },
+                5: { t: 'Брюки', url: './category.html' },
+                6: { t: 'Джемперы', url: './category.html' },
+                7: { t: 'Джинсы', url: './category.html' },
+                8: { t: 'Рубашки', url: './category.html' },
+                9: { t: 'Толстовки', url: './category.html' }
+              }
+            },
+            3: {
+              img: './img/submenu/4.png',
+              t: 'Обувь для девочек4',
+              url: './category.html',
+              child: {
+                0: { t: 'Анатомическая обувь', url: './category.html' },
+                1: { t: 'Ботинки', url: './category.html' },
+                2: { t: 'Домашняя обувь', url: './category.html' },
+                3: { t: 'Кроссовки', url: './category.html' },
+                4: { t: 'Резиновые сапоги', url: './category.html' },
+              }
+            },
+            4: {
+              img: './img/submenu/5.png',
+              t: 'Обувь для мальчиков4',
+              url: './category.html',
+              child: {
+                0: { t: 'Анатомическая обувь', url: './category.html' },
+                1: { t: 'Ботинки', url: './category.html' },
+                2: { t: 'Домашняя обувь', url: './category.html' },
+                3: { t: 'Кроссовки', url: './category.html' },
+                4: { t: 'Резиновые сапоги', url: './category.html' },
+              }
+            },
+            5: {
+              img: './img/submenu/6.png',
+              t: 'Одежда для малышей4',
+              url: './category.html',
+              child: {
+                0: { t: 'Боди', url: './category.html' },
+                1: { t: 'Джемперы', url: './category.html' },
+                2: { t: 'Джинсы', url: './category.html' },
+                3: { t: 'Кардиганы', url: './category.html' },
+                4: { t: 'Комбинезоны', url: './category.html' },
+                5: { t: 'Боди', url: './category.html' },
+                6: { t: 'Джемперы', url: './category.html' },
+                7: { t: 'Джинсы', url: './category.html' },
+                8: { t: 'Кардиганы', url: './category.html' },
+                9: { t: 'Комбинезоны', url: './category.html' }
+              }
+            },
+          },
+
+          8: {
+            0: {
+              img: './img/submenu/1.png',
+              t: 'Верхняя одежда5',
+              url: './category.html',
+              child: {
+                0: { t: 'Верхняя одежда для мальчиков', url: './category.html' },
+                1: { t: 'Верхняя одежда для девочек', url: './category.html' },
+                2: { t: 'Верхняя одежда для малышей', url: './category.html' },
+              }
+            },
+            1: {
+              img: './img/submenu/2.png',
+              t: 'Одежда для девочек5',
+              url: './category.html',
+              child: {
+                0: { t: 'Блузки', url: './category.html' },
+                1: { t: 'Брюки', url: './category.html' },
+                2: { t: 'Джемперы', url: './category.html' },
+                3: { t: 'Джинсы', url: './category.html' },
+                4: { t: 'Кардиганы', url: './category.html' },
+                5: { t: 'Блузки', url: './category.html' },
+                6: { t: 'Брюки', url: './category.html' },
+                7: { t: 'Джемперы', url: './category.html' },
+                8: { t: 'Джинсы', url: './category.html' },
+                9: { t: 'Кардиганы', url: './category.html' }
+              }
+            },
+            2: {
+              img: './img/submenu/3.png',
+              t: 'Одежда для мальчиков5',
+              url: './category.html',
+              child: {
+                0: { t: 'Брюки', url: './category.html' },
+                1: { t: 'Джемперы', url: './category.html' },
+                2: { t: 'Джинсы', url: './category.html' },
+                3: { t: 'Рубашки', url: './category.html' },
+                4: { t: 'Толстовки', url: './category.html' },
+                5: { t: 'Брюки', url: './category.html' },
+                6: { t: 'Джемперы', url: './category.html' },
+                7: { t: 'Джинсы', url: './category.html' },
+                8: { t: 'Рубашки', url: './category.html' },
+                9: { t: 'Толстовки', url: './category.html' }
+              }
+            },
+            3: {
+              img: './img/submenu/4.png',
+              t: 'Обувь для девочек5',
+              url: './category.html',
+              child: {
+                0: { t: 'Анатомическая обувь', url: './category.html' },
+                1: { t: 'Ботинки', url: './category.html' },
+                2: { t: 'Домашняя обувь', url: './category.html' },
+                3: { t: 'Кроссовки', url: './category.html' },
+                4: { t: 'Резиновые сапоги', url: './category.html' },
+              }
+            },
+            4: {
+              img: './img/submenu/5.png',
+              t: 'Обувь для мальчиков5',
+              url: './category.html',
+              child: {
+                0: { t: 'Анатомическая обувь', url: './category.html' },
+                1: { t: 'Ботинки', url: './category.html' },
+                2: { t: 'Домашняя обувь', url: './category.html' },
+                3: { t: 'Кроссовки', url: './category.html' },
+                4: { t: 'Резиновые сапоги', url: './category.html' },
+              }
+            },
+            5: {
+              img: './img/submenu/6.png',
+              t: 'Одежда для малышей5',
+              url: './category.html',
+              child: {
+                0: { t: 'Боди', url: './category.html' },
+                1: { t: 'Джемперы', url: './category.html' },
+                2: { t: 'Джинсы', url: './category.html' },
+                3: { t: 'Кардиганы', url: './category.html' },
+                4: { t: 'Комбинезоны', url: './category.html' },
+                5: { t: 'Боди', url: './category.html' },
+                6: { t: 'Джемперы', url: './category.html' },
+                7: { t: 'Джинсы', url: './category.html' },
+                8: { t: 'Кардиганы', url: './category.html' },
+                9: { t: 'Комбинезоны', url: './category.html' }
+              }
+            },
+          },
+          
+          9: {
+            0: {
+              img: './img/submenu/1.png',
+              t: 'Верхняя одежда6',
+              url: './category.html',
+              child: {
+                0: { t: 'Верхняя одежда для мальчиков', url: './category.html' },
+                1: { t: 'Верхняя одежда для девочек', url: './category.html' },
+                2: { t: 'Верхняя одежда для малышей', url: './category.html' },
+              }
+            },
+            1: {
+              img: './img/submenu/2.png',
+              t: 'Одежда для девочек6',
+              url: './category.html',
+              child: {
+                0: { t: 'Блузки', url: './category.html' },
+                1: { t: 'Брюки', url: './category.html' },
+                2: { t: 'Джемперы', url: './category.html' },
+                3: { t: 'Джинсы', url: './category.html' },
+                4: { t: 'Кардиганы', url: './category.html' },
+                5: { t: 'Блузки', url: './category.html' },
+                6: { t: 'Брюки', url: './category.html' },
+                7: { t: 'Джемперы', url: './category.html' },
+                8: { t: 'Джинсы', url: './category.html' },
+                9: { t: 'Кардиганы', url: './category.html' }
+              }
+            },
+            2: {
+              img: './img/submenu/3.png',
+              t: 'Одежда для мальчиков6',
+              url: './category.html',
+              child: {
+                0: { t: 'Брюки', url: './category.html' },
+                1: { t: 'Джемперы', url: './category.html' },
+                2: { t: 'Джинсы', url: './category.html' },
+                3: { t: 'Рубашки', url: './category.html' },
+                4: { t: 'Толстовки', url: './category.html' },
+                5: { t: 'Брюки', url: './category.html' },
+                6: { t: 'Джемперы', url: './category.html' },
+                7: { t: 'Джинсы', url: './category.html' },
+                8: { t: 'Рубашки', url: './category.html' },
+                9: { t: 'Толстовки', url: './category.html' }
+              }
+            },
+            3: {
+              img: './img/submenu/4.png',
+              t: 'Обувь для девочек6',
+              url: './category.html',
+              child: {
+                0: { t: 'Анатомическая обувь', url: './category.html' },
+                1: { t: 'Ботинки', url: './category.html' },
+                2: { t: 'Домашняя обувь', url: './category.html' },
+                3: { t: 'Кроссовки', url: './category.html' },
+                4: { t: 'Резиновые сапоги', url: './category.html' },
+              }
+            },
+            4: {
+              img: './img/submenu/5.png',
+              t: 'Обувь для мальчиков6',
+              url: './category.html',
+              child: {
+                0: { t: 'Анатомическая обувь', url: './category.html' },
+                1: { t: 'Ботинки', url: './category.html' },
+                2: { t: 'Домашняя обувь', url: './category.html' },
+                3: { t: 'Кроссовки', url: './category.html' },
+                4: { t: 'Резиновые сапоги', url: './category.html' },
+              }
+            },
+            5: {
+              img: './img/submenu/6.png',
+              t: 'Одежда для малышей6',
+              url: './category.html',
+              child: {
+                0: { t: 'Боди', url: './category.html' },
+                1: { t: 'Джемперы', url: './category.html' },
+                2: { t: 'Джинсы', url: './category.html' },
+                3: { t: 'Кардиганы', url: './category.html' },
+                4: { t: 'Комбинезоны', url: './category.html' },
+                5: { t: 'Боди', url: './category.html' },
+                6: { t: 'Джемперы', url: './category.html' },
+                7: { t: 'Джинсы', url: './category.html' },
+                8: { t: 'Кардиганы', url: './category.html' },
+                9: { t: 'Комбинезоны', url: './category.html' }
+              }
+            },
+          },
+        
+        }
+      },
+      methods: {
+        hoverOver: function(index) {
+          this.timer = setTimeout(() => {
+            this.showMenu = this.subMenu[index]
+            this.show = true
+            this.current = index
+            // this.classes = ['animated', 'bounceIn']
+          }, 500);
+        },
+        hoverOut: function() {
+          clearTimeout(this.timer)
+          this.show = false
+          this.current = null
+          // this.classes = []
+        }
+      }
+    })
+  </script>
 </body>
 </html>

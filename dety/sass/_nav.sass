@@ -321,7 +321,15 @@
       z-index: 2
       display: block
       overflow: visible
-      
+      &:hover
+         .nav-catalog__menu
+            ul
+               li
+                  a
+                     opacity: .5
+                     &:hover
+                        opacity: 1
+
       &__menu
          background-color: $accent
          padding: 0 calc(50% - 580px)
@@ -367,7 +375,8 @@
                   font-size: 13px
                   line-height: 1.3
                   position: relative
-                  transition: opacity .5s ease
+                  transition: opacity .3s ease
+                  transition-delay: .3s
                .sale
                   padding-top: 1.3em
                   padding-bottom: 1.3em
@@ -376,102 +385,66 @@
                   text-align: center
                   img
                      margin-bottom: .2em
-               &.active
-                  a
-                     opacity: 1 !important
+         &__item
+            &.active
+               a
+                  opacity: 1 !important
 
-      &.in
-         .nav-catalog__menu
-            ul
-               li
-                  a
-                     opacity: .5
 
       &__submenu
-         position: relative
+         background: #ffffff
+         position: absolute
+         left: 0
+         bottom: 0
+         transform: translateY(100%)
          width: 100%
-         &::after
-            content: ''
-            display: table
-            clear: both
-         &__item
-            display: none
-            background: #ffffff
-            position: absolute
-            left: 0
-            top: 0
-            width: 100%
-            padding: 0 calc(50% - 580px)
-            display: flex
-            align-items: flex-start
-            justify-content: flex-start
-            flex-wrap: wrap
-            overflow: hidden
-            max-height: 0
-            opacity: 0
-            z-index: -2
-            &::after
-               content: ''
-               display: table
-               clear: both
-            ul
-               flex: 1 0 16.6666666%
-               min-width: 16.666666%
-               max-width: 16.666666%
-               padding: 1em 0
-               padding-right: 1em
-               opacity: 0
-               transition: opacity 1.5s ease
-               li
-                  list-style: none
-                  padding: 0
-                  margin: 0
+         padding: 0 calc(50% - 580px)
+         display: flex
+         align-items: flex-start
+         justify-content: flex-start
+         flex-wrap: wrap
+         z-index: 3
+         ul
+            flex: 1 0 16.6666666%
+            min-width: 16.666666%
+            max-width: 16.666666%
+            padding: 1em 0
+            padding-right: 1em
+            li
+               list-style: none
+               padding: 0
+               margin: 0
+               a
+                  display: block
+                  line-height: 1
+                  margin-bottom: 0.8em
+                  color: $text
+                  font-size: 0.9em
+                  transition: color .1s ease
+                  &:hover
+                     color: $accent
+               &.first
                   a
-                     display: block
-                     line-height: 1
-                     margin-bottom: 0.8em
-                     color: $text
-                     font-size: 0.9em
-                     transition: color .1s ease
-                     &:hover
-                        color: $accent
-                  &.first
-                     a
-                        font-weight: bold
-                        margin-bottom: 1em
-                        img
-                           display: block
-                           max-width: 100px
-                           margin-bottom: 1em
-                  &.last
-                     a
-                        margin-top: 0.5em
-                        color: $grey
-            &.is-active
-               opacity: 1
-               z-index: 2
-               overflow: visible
-               max-height: 1000px
-               ul
-                  opacity: 1
-         
-         &.in
-            opacity: 1
-            z-index: 2
-            visibility: visible
+                     font-weight: bold
+                     margin-bottom: 1em
+                     img
+                        display: block
+                        max-width: 160px
+                        margin-bottom: 2em
+               &.last
+                  a
+                     margin-top: 0.5em
+                     color: $grey
 
-@keyframes slide
-   0%
-      top: 26px
-      max-height: 0
-      opacity: 0
-      visibility: hidden
-   100%
-      top: 45px
-      max-height: 1000px
-      opacity: 1
-      visibility: visible
-      
+.fade
+   position: relative
+.fade-enter-active,
+.fade-leave-active
+   transition: opacity .5s
+.fade-enter,
+.fade-leave-to
+   opacity: 0
+  
 .breadcrumb
    padding: 1em 0
    color: #c4c4c4
@@ -507,13 +480,23 @@
             input
                flex: 1 1 60%
       &-catalog
-         overflow: hidden
          &__menu
             padding: 0 calc(50% - 470px)
             overflow-x: auto
             ul
                justify-content: flex-start
                min-width: 1200px
+         &__submenu
+            padding: 0 calc(50% - 470px)
+            ul
+               li
+                  a
+                     font-size: 0.8em
+                  &.first
+                     a
+                        img
+                           max-width: 120px
+
 
 @media screen and ( max-width: 991.98px )
    .nav
@@ -566,16 +549,18 @@
                border-radius: 0 4px 4px 0
 
       &-catalog
-         padding: 0 calc(50% - 345px)
-         position: absolute
-         left: auto
-         right: 0
-         z-index: -1
-         opacity: 0
-         will-change: opacity
-         transform: translateY(20%)
-         transition: transform .5s ease
-         &__menu
+         &__menu,
+         &__submenu
+            padding: 0
+            position: absolute
+            top: 0
+            left: auto
+            right: calc(50% - 345px)
+            z-index: 1
+            opacity: 0
+            will-change: opacity
+            transform: translateY(20%)
+            transition: transform .5s ease
             border-radius: 4px
             width: 305px
             margin-left: auto
@@ -612,63 +597,46 @@
                         margin-right: 0.5em
 
          &__submenu
-            position: relative
-            left: auto
-            top: auto
-            width: auto
-            display: block
-            // background: #ffffff
-            height: auto
-            max-height: 100%
-            overflow: visible
-            display: flex
-            flex-direction: column
-            width: 305px
-            border-radius: 4px
-            &__item
-               position: absolute
-               left: 0
-               top: 0
-               flex: 1 0 100%
-               opacity: 0
-               z-index: -2
-               display: flex
-               flex-direction: column
+            background: #fff
+            flex-wrap: wrap
+            padding: 0
+            margin: 0
+            opacity: 1
+            z-index: 5
+            &::after
+               content: ''
+               display: table
+               clear: both
+            ul
+               flex: 0 0 100%
+               min-width: 100%
                padding: 0
                margin: 0
-               ul
-                  flex: 1 0 100%
-                  max-width: 100%
-                  width: 100%
-                  padding: 0
-                  margin: 0
-                  text-align: left
-                  li
-                     display: none
-                     border-bottom: 1px solid #ebebeb
-                     &:last-child
-                        border-bottom: none
-                     &.first
-                        padding: 0
+               text-align: left
+               li
+                  display: none
+                  border-bottom: 1px solid #ebebeb
+                  &:last-child
+                     border-bottom: none
+                  &.first
+                     padding: 0
+                     display: block
+                     a
                         display: block
-                        a
-                           display: block
-                           margin: 0
-                           font-size: 1.1em
-                           padding: 1em 0
-                           padding-left: 2em
-                           img
-                              display: none
-               &.is-active
-                  opacity: 1
-                  z-index: 5
+                        margin: 0
+                        font-size: 1.1em
+                        padding: 1em 0
+                        padding-left: 2em
+                        img
+                           display: none
          
          &.mob
-            visibility: visible
-            z-index: 2
-            opacity: 1
-            transition: opacity .5s ease
-            transform: translateY(0%)
+            .nav-catalog__menu
+               visibility: visible
+               z-index: 2
+               opacity: 1
+               transition: opacity .5s ease
+               transform: translateY(0%)
 
 @media screen and ( max-width: 767.98px )
    .nav
@@ -690,7 +658,9 @@
       .mobile
          padding: 0 calc(50% - 255px)
       &-catalog
-         padding: 0 calc(50% - 255px)
+         &__menu,
+         &__submenu
+            right: calc(50% - 255px)
 
 @media screen and ( max-width: 576.98px )
    .nav
@@ -740,10 +710,12 @@
          padding: 0 1em
 
       &-catalog
-         padding: 0 1em
+         padding: 0
          display: flex
-         &__menu
-            width: 100%
+         &__menu,
+         &__submenu
+            left: 1em
+            right: 1em
 
 @media screen and ( max-width: 374.98px )
    .nav
