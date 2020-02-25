@@ -915,7 +915,6 @@ let subMenu = new Vue({
             this.show = true
             this.current = index
           }, 1000);
-          //   if (window.pageYOffset > 0) document.querySelector('.nav').scrollIntoView({block: "start", behavior: "smooth"})
       },
       closeMenu() {
           clearTimeout(this.timer)
@@ -925,9 +924,9 @@ let subMenu = new Vue({
       },
       showSubMenu(index) {
         this.showMenu = this.subMenu[index]
-        // this.mobile = true
         this.current = index
         this.slide = true
+        if (window.pageYOffset > 20) document.querySelector('.nav').scrollIntoView({block: "start", behavior: "smooth"})
       },
       closeAll() {
         this.slide = false
@@ -935,6 +934,7 @@ let subMenu = new Vue({
       },
       updateWidth() {
           this.width = window.innerWidth 
+          this.height = window.pageYOffset
       },
     },
     computed: {
