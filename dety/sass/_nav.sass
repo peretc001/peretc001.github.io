@@ -333,6 +333,8 @@
       &__menu
          background-color: $accent
          padding: 0 calc(50% - 580px)
+         position: relative
+         z-index: 6
          ul
             display: flex
             align-items: center
@@ -403,7 +405,7 @@
          align-items: flex-start
          justify-content: flex-start
          flex-wrap: wrap
-         z-index: 3
+         z-index: 6
          ul
             flex: 1 0 16.6666666%
             min-width: 16.666666%
@@ -435,6 +437,27 @@
                   a
                      margin-top: 0.5em
                      color: $grey
+      .layout
+         position: fixed
+         left: 0
+         top: 0
+         width: 100%
+         height: 100%
+         background: #000000
+         opacity: .2
+         z-index: 5
+
+@keyframes slide
+   0%
+      top: 26px
+      max-height: 0
+      opacity: 0
+      visibility: hidden
+   100%
+      top: 45px
+      max-height: 1000px
+      opacity: 1
+      visibility: visible
 
 .fade
    position: relative
