@@ -89,7 +89,7 @@
   
     <!-- mobile -->
     <transition name="fade2" mode="out-in">
-    <div v-if="mobile" class="nav-catalog" :class="{ mob: mobile == true, slide: slide == true }">
+    <div v-if="mobile" class="nav-catalog" :class="{ mob: mobile == true, slide: slide == true, slide2: slide2 == true }">
       <div class="nav-catalog__menu">
         <ul>
           <li class="nav-catalog__menu__item sale"><a href="" class="sale"><img src="./img/nav/sale.svg" alt="">Акции</a></li>
@@ -101,15 +101,17 @@
       </div>
       <transition name="fade3" mode="out-in">
         <div v-if="slide" class="nav-catalog__submenu">
-          <p v-if="slide" @click="slide = !slide" class="back">Назад</p>
-          <ul v-for="(item,index) of showMenu">
+          <p v-if="slide && !slide2" @click="slide = !slide" class="back">Назад</p>
+          <ul v-if="!slide2" v-for="(item,index) of showMenu">
             <li class="first">
-              <a :href="item.url">
-                <img :src="item.img" :alt="item.t">
+              <a :href="item.url" @click.prevent="showSubMenu2(index)">
                 {{item.t}}
               </a>
             </li>
-            <li v-for="item of item.child">
+          </ul>
+          <p v-if="slide2" @click="backToSubMenu()" class="back">{{ parrent }}</p>
+          <ul v-if="slide2" v-for="(item,index) of showMenu">
+            <li class="first">
               <a :href="item.url">
                 {{item.t}}
               </a>

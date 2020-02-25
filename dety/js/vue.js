@@ -5,8 +5,10 @@ let subMenu = new Vue({
       mobile: false,
       show: false,
       slide: false,
+      slide2: false,
       timer: 0,
       current: null,
+      parrent: '',
       width: null,
       menu: {
         0: { t:'Одежда и обувь',       url: './category.html' },
@@ -928,7 +930,17 @@ let subMenu = new Vue({
         this.slide = true
         if (window.pageYOffset > 20) document.querySelector('.nav').scrollIntoView({block: "start", behavior: "smooth"})
       },
+      showSubMenu2(index) {
+        this.showMenu = this.subMenu[index][index].child
+        this.parrent = this.subMenu[this.current][index].t
+        this.slide2 = true
+      },
+      backToSubMenu() {
+        this.slide2 = false
+        this.showMenu = this.subMenu[this.current]
+      },
       closeAll() {
+        this.slide2 = false
         this.slide = false
         this.mobile = false
       },
