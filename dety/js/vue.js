@@ -928,7 +928,7 @@ let subMenu = new Vue({
         this.showMenu = this.subMenu[index]
         this.current = index
         this.slide = true
-        if (window.pageYOffset > 20) document.querySelector('.nav').scrollIntoView({block: "start", behavior: "smooth"})
+        if (window.pageYOffset > 20) document.querySelector('.mobile').scrollIntoView({block: "start", behavior: "smooth"})
       },
       showSubMenu2(index) {
         this.showMenu = this.subMenu[index][index].child

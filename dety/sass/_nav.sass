@@ -661,6 +661,7 @@
             right: calc(50% - 345px)
             transform: translateX(0) translateY(100%)
             opacity: 0
+            overflow-x: hidden
             transition: opacity .3s ease
             .back
                display: block
@@ -707,6 +708,8 @@
                         padding-left: 2em
                         img
                            display: none
+                        &:hover
+                           color: $text
          
          &.mob
             padding: 0
