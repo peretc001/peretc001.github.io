@@ -33,12 +33,17 @@
                         background-size: 40px
                         background-repeat: no-repeat
                         background-image: url('../img/slider/minus.svg')
+                    span
+                        font-family: $default-font
+                        font-size: .8em
 
                 .desc
                     font-size: 50px
                     line-height: .9
                     color: #ffffff
-        
+        .mobile
+            display: none
+   
     .slick-slide
         outline: none
         position: relative
@@ -211,15 +216,22 @@
                     top: 30px
                     max-width: 120px
                     .title
-                        font-size: 1.8em
+                        font-size: 4em
                         line-height: .7
                         margin-bottom: .5em
                         &::before
                             left: -20px
-                            top: 7px
+                            top: 17px
                             background-size: 15px
                     .desc
-                        font-size: 1em
+                        font-size: 1.6em
+            .desctop
+                display: none
+            .mobile
+                display: block
+                width: 100%
+                img
+                    width: 100%
 
         .slick-next,
         .slick-prev
@@ -232,3 +244,32 @@
             li
                 width: 1.4em
                 height: 0px
+
+@media screen and ( max-width: 399.98px )
+    .slider
+        &-wrapper
+            &__item
+                &__caption
+                    position: absolute
+                    left: 30px
+                    top: 30px
+                    .title
+                        font-size: 3.2em
+                    .desc
+                        font-size: 1.3em
+
+@media screen and ( max-width: 374.98px )
+    .slider
+        &-wrapper
+            &__item
+                &__caption
+                    position: absolute
+                    left: 20px
+                    top: 30px
+                    .title
+                        font-size: 2.7em
+                        &::before
+                            left: -20px
+                            top: 15px
+                    .desc
+                        font-size: 1.2em
