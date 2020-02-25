@@ -337,8 +337,8 @@
          z-index: 6
          ul
             display: flex
-            align-items: center
-            justify-content: center
+            // align-items: center
+            // justify-content: flex-start
             margin: 0
             padding: 0
             li
@@ -488,7 +488,7 @@
    opacity: 0
   
 .breadcrumb
-   padding: 1em 0
+   padding: 0 0 1em 0
    color: #c4c4c4
    font-size: 0.9em
    a
@@ -539,10 +539,9 @@
                         img
                            max-width: 120px
 
-
 @media screen and ( max-width: 991.98px )
    .nav
-      margin-bottom: 0
+      // margin-bottom: 0
       &-top
          .hamburger
             display: block
@@ -555,7 +554,7 @@
                margin-left: 2em
       
       &-search
-         padding: 12px 0
+         padding: 20px 0
          &__form
             display: none
          &--right__wishlist,
@@ -621,6 +620,7 @@
             ul
                display: flex
                flex-wrap: wrap
+               justify-content: flex-start
                width: 100%
                min-width: 100%
                text-align: left
@@ -636,12 +636,15 @@
                   a
                      font-size: 1.1em
                      padding: 1em 0
+                     padding-left: 2em
+                     align-items: flex-start
                   .sale
                      font-size: 1.1em
                      padding: 1em 0
+                     margin-left: 2em
                      display: flex
                      flex-direction: row
-                     justify-content: center
+                     justify-content: flex-start
                      align-self: center
                      img
                         margin-bottom: 0
@@ -700,6 +703,7 @@
                   &.first
                      padding: 0
                      display: block
+                     border-bottom: 1px solid #ebebeb
                      a
                         display: block
                         margin: 0
@@ -802,7 +806,8 @@
                color: $blue !important
                overflow: hidden
             &__login
-               margin-left: 3.2em
+               margin-left: 2.4em
+               margin-right: .8em
 
       &-search
          .brand
