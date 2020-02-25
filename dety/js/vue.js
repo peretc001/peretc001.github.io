@@ -1,12 +1,13 @@
 let subMenu = new Vue({
-    el: '.nav-catalog',
+    el: '.nav',
     data: {
+      desctop: true,
+      mobile: false,
       show: false,
-      classes: [],
+      slide: false,
       timer: 0,
       current: null,
       width: null,
-      isMoved: false,
       menu: {
         0: { t:'Одежда и обувь',       url: './category.html' },
         1: { t:'Игрушки и игры',       url: './category.html' },
@@ -908,27 +909,39 @@ let subMenu = new Vue({
       window.addEventListener('resize', this.updateWidth)
     },
     methods: {
-        openMenu(index) {
-            this.timer = setTimeout(() => {
-              this.showMenu = this.subMenu[index]
-              this.show = true
-              this.current = index
-            }, 1000);
-            //   if (window.pageYOffset > 0) document.querySelector('.nav').scrollIntoView({block: "start", behavior: "smooth"})
-            // this.classes = ['animated', 'bounceIn']
-        },
-        hoverOut() {
-            clearTimeout(this.timer)
-            this.timer = 0
-            this.show = false
-            this.current = null
-            // this.classes = []
-        },
-        updateWidth() {
-            this.width = window.innerWidth
-        },
+      openMenu(index) {
+          this.timer = setTimeout(() => {
+            this.showMenu = this.subMenu[index]
+            this.show = true
+            this.current = index
+          }, 1000);
+          //   if (window.pageYOffset > 0) document.querySelector('.nav').scrollIntoView({block: "start", behavior: "smooth"})
+      },
+      closeMenu() {
+          clearTimeout(this.timer)
+          this.timer = 0
+          this.show = false
+          this.current = null
+      },
+      showSubMenu(index) {
+        this.showMenu = this.subMenu[index]
+        // this.mobile = true
+        this.current = index
+        this.slide = true
+      },
+      closeAll() {
+        this.slide = false
+        this.mobile = false
+      },
+      updateWidth() {
+          this.width = window.innerWidth 
+      },
     },
-    beforeDestroy () {
-        clearTimeout(this.timer)
-    },
+    computed: {
+      updWindow() {
+        this.width = document.documentElement.clientWidth
+        this.width < 991 ? this.desctop = false : this.desctop = true
+        this.width > 991 ? this.mobile = false : this.mobile = this.mobile
+      }
+    }
   })

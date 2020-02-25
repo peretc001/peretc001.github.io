@@ -73,8 +73,8 @@
   
   <div class="mobile">
     <button class="btn btn-outline-accent search"><img src="./img/nav/search.svg" alt=""> Поиск</button>    
-    <div class="btn btn-accent catalog-btn">
-      <div class="hamburger">
+    <div class="btn btn-accent catalog-btn" @click="mobile = !mobile">
+      <div class="hamburger" :class="{ open: mobile == true }" >
         <span></span>
         <span></span>
         <span></span>
@@ -82,12 +82,12 @@
       Каталог товаров
     </div>
   </div>
- 
+ {{ updWindow }}
   <!-- VUE -->
-  <div class="nav-catalog" @mouseleave="hoverOut">
-    <div class="nav-catalog__menu" :class="{ moved: isMoved }">
+  <div v-if="desctop" class="nav-catalog" @mouseleave="closeMenu">
+    <div class="nav-catalog__menu">
       <ul>
-        <li class="nav-catalog__menu__item" @mouseover="hoverOut"><a href="" class="sale"><img src="./img/nav/sale.svg" alt="">Акции</a></li>
+        <li class="nav-catalog__menu__item" @mouseover="closeMenu"><a href="" class="sale"><img src="./img/nav/sale.svg" alt="">Акции</a></li>
         <li class="nav-catalog__menu__item" :class="{ active: current == index }"
           v-for="(item,index) of menu" :data-menu="index" >
           <a :href="item.url" @mouseenter="openMenu(index)">{{item.t}}</a>
@@ -95,8 +95,8 @@
       </ul>
     </div>
     <transition name="fade" mode="out-in">
-      <div v-if="show" class="nav-catalog__submenu" :class="{ moved: isMoved }">
-        <p v-if="isMoved" @click="hoverOut" class="back">Назад</p>
+      <div v-if="show" class="nav-catalog__submenu">
+        <p v-if="mobile" @click="closeMenu" class="back">Назад</p>
         <ul v-for="(item,index) of showMenu">
           <li class="first">
             <a :href="item.url">
@@ -112,8 +112,40 @@
         </ul>
       </div>
     </transition>
-    <div v-if="show" class="layout" @mouseover="hoverOut"></div>
   </div>
+
+  <transition name="fade2" mode="out-in">
+  <div v-if="mobile" class="nav-catalog" :class="{ mob: mobile == true, slide: slide == true }">
+    <div class="nav-catalog__menu">
+      <ul>
+        <li class="nav-catalog__menu__item"><a href="" class="sale"><img src="./img/nav/sale.svg" alt="">Акции</a></li>
+        <li class="nav-catalog__menu__item" @click.prevent="showSubMenu(index)"
+          v-for="(item,index) of menu" :data-menu="index" >
+          <a :href="item.url">{{item.t}}</a>
+        </li>
+      </ul>
+    </div>
+    <transition name="fade3" mode="out-in">
+      <div v-if="slide" class="nav-catalog__submenu">
+        <p v-if="slide" @click="slide = !slide" class="back">Назад</p>
+        <ul v-for="(item,index) of showMenu">
+          <li class="first">
+            <a :href="item.url">
+              <img :src="item.img" :alt="item.t">
+              {{item.t}}
+            </a>
+          </li>
+          <li v-for="item of item.child">
+            <a :href="item.url">
+              {{item.t}}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </transition>
+    <div v-if="mobile" class="layout" @click="closeAll"></div>
+  </div>
+  </transition>
   <!-- VUE -->
 </nav>
 

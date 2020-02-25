@@ -133,16 +133,16 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 
 // //Catalog
-{
-    const   navCatalog    = document.querySelector('.nav-catalog')
-            navCatalogBtn = document.querySelector('.catalog-btn')
+// {
+//     const   navCatalog    = document.querySelector('.nav-catalog')
+//             navCatalogBtn = document.querySelector('.catalog-btn')
     
-    navCatalogBtn.addEventListener('click', (e) => {
-        e.preventDefault()
-        navCatalogBtn.querySelector('.hamburger').classList.toggle('open')
-        navCatalog.classList.toggle('mob')
-    })
-}    
+//     navCatalogBtn.addEventListener('click', (e) => {
+//         e.preventDefault()
+//         navCatalogBtn.querySelector('.hamburger').classList.toggle('open')
+//         navCatalog.classList.toggle('mob')
+//     })
+// }    
     //Brands page
     if (document.querySelector('.brands-header__favorite')) {
         const   favorite = document.querySelector('.brands-header__favorite')
