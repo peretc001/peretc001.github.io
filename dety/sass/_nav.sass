@@ -589,6 +589,8 @@
                   margin-right: 0.5em
             &.catalog-btn
                border-radius: 0 4px 4px 0
+               &:hover
+                  background: $accent
          .sale
             background: $accent
             display: flex
@@ -612,22 +614,19 @@
             opacity: 0
             pointer-events: none
             will-change: opacity
-            transform: translateY(20%)
             transition: transform .2s ease
             border-radius: 4px
             width: 305px
             margin-left: auto
             ul
                display: flex
-               flex-direction: column
-               min-width: auto
-               min-width: auto
+               flex-wrap: wrap
+               width: 100%
+               min-width: 100%
+               text-align: left
                padding: 0
-               align-items: flex-start
-               justify-content: flex-start
                li
                   width: 100%
-                  display: block
                   padding: 0
                   border-bottom: 1px solid lighten($accent, 10%)
                   &::before
@@ -637,8 +636,7 @@
                   a
                      font-size: 1.1em
                      padding: 1em 0
-                  .sale,
-                  .interest
+                  .sale
                      font-size: 1.1em
                      padding: 1em 0
                      display: flex
@@ -710,19 +708,19 @@
                            display: none
          
          &.mob
+            padding: 0
+            margin: 0
             .nav-catalog__menu
                visibility: visible
                z-index: 2
                opacity: 1
                pointer-events: all
                transition: opacity .5s ease, transform .5s ease
-               transform: translateY(0%)
                ul
                   li
                      a
                         opacity: 1
             .nav-catalog__submenu
-               // transform: translateX(-50px)
                transition: opacity .5s ease, transform .5s ease
                opacity: 0
                z-index: -1
@@ -823,10 +821,10 @@
          padding: 0 1em
 
       &-catalog
-         padding: 0
-         display: flex
          &__menu,
          &__submenu
+            width: auto
+            left: 1em
             right: 1em
 
 @media screen and ( max-width: 374.98px )
@@ -860,11 +858,3 @@
       .mobile
          .btn
             font-size: 0.9em
-      
-      &-catalog
-         padding: 0
-         display: flex
-         &__menu,
-         &__submenu
-            right: 1em
-            max-width: 290px
