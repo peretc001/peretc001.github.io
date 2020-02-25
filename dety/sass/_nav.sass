@@ -572,6 +572,8 @@
          justify-content: center
          padding: 0 calc(50% - 345px)
          margin-bottom: 0.5em
+         & > *
+            flex: 0 0 33.333333%
          .btn
             padding: .8em
             display: flex
@@ -580,15 +582,24 @@
             position: relative
             margin: 0
             &.search
-               flex: 1 1 40%
                border-radius: 4px 0 0 4px
                border: 2px solid $accent
                img
                   width: 20px
                   margin-right: 0.5em
             &.catalog-btn
-               flex: 1 1 60%
                border-radius: 0 4px 4px 0
+         .sale
+            background: $accent
+            display: flex
+            align-items: center
+            justify-content: center
+            a
+               display: flex
+               align-items: center
+               justify-content: center
+               flex-direction: column
+               color: #fff
 
       &-catalog
          &__menu
@@ -637,6 +648,8 @@
                      img
                         margin-bottom: 0
                         margin-right: 0.5em
+            &__item.sale
+               display: none
 
          &__submenu
             width: 305px
@@ -745,10 +758,22 @@
 
       .mobile
          padding: 0 calc(50% - 255px)
+         & > *
+            flex: 0 0 auto
+         .btn
+            &.search
+               flex: 0 0 40%
+            &.catalog-btn
+               flex: 0 0 60%
+         .sale
+            display: none
+
       &-catalog
          &__menu,
          &__submenu
             right: calc(50% - 255px)
+         &__menu__item.sale
+            display: block
 
 @media screen and ( max-width: 576.98px )
    .nav
