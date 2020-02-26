@@ -38,8 +38,9 @@
 }
 
 .btn.btn-outline-accent:hover {
-  background: #C251C0;
-  color: #ffffff;
+  background: transparent;
+  border: 1px solid #C251C0;
+  color: #C251C0;
 }
 
 .hamburger {
@@ -718,6 +719,31 @@
   }
   .nav-catalog__menu__item.sale {
     display: block;
+  }
+  .openSearch {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: #fff;
+    padding: 50px;
+  }
+  .openSearch .close {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background: #f5f5f5;
+    border-radius: 50%;
+    text-align: center;
+  }
+  .openSearch input {
+    margin-top: 1em;
+    width: 100%;
+    padding: .5em;
+    outline: none;
+    -webkit-box-sizing: none;
+            box-sizing: none;
   }
 }
 
