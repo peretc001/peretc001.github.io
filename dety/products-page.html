@@ -130,21 +130,16 @@
                         <a href="" class="wishlist"></a>
                     </div>
                     <div class="products-page-item__photo__img">
-                        <div class="products-page-item__photo__img__container">
-                          <div class="products-page-item__photo__img__container__wrapper">
-                            <div><img src="./img/products/card/big.png" alt=""></div>
-                            <div><img src="./img/products/card/big.png" alt=""></div>
-                            <div><img src="./img/products/card/big.png" alt=""></div>
-                            <div><img src="./img/products/card/big.png" alt=""></div>
-                            <div><img src="./img/products/card/big.png" alt=""></div>
-                            <div><img src="./img/products/card/big.png" alt=""></div>
-                            <div><img src="./img/products/card/big.png" alt=""></div>
-                            <div><img src="./img/products/card/big.png" alt=""></div>
-                          </div>
-                        </div>
-                        <button class="prev"></button>
-                        <button class="next"></button>
-                    </div>
+                        
+                      <a href=""><img src="./img/products/card/big.png" alt=""></a>
+                      <a href=""><img src="./img/products/card/big.png" alt=""></a>
+                      <a href=""><img src="./img/products/card/big.png" alt=""></a>
+                      <a href=""><img src="./img/products/card/big.png" alt=""></a>
+                      <a href=""><img src="./img/products/card/big.png" alt=""></a>
+                      <a href=""><img src="./img/products/card/big.png" alt=""></a>
+                      <a href=""><img src="./img/products/card/big.png" alt=""></a>
+                      <a href=""><img src="./img/products/card/big.png" alt=""></a>
+
                   </div>
                 </div>
             </div>
@@ -172,18 +167,16 @@
                       <div class="products-page-buy__size__container">
                         <span>Выбирете размер</span>
                         <div class="products-page-buy__size__wrap">
-                          <div><a href="" class="active">128</a></div>
-                          <div><a href="">140</a></div>
-                          <div><a href="">142</a></div>
-                          <div><a href="">152</a></div>
-                          <div><a href="">164</a></div>
-                          <div><a href="">172</a></div>
-                          <div><a href="">180</a></div>
-                          <div><a href="">190</a></div>
+                          <a href="" class="active">128</a>
+                          <a href="">140</a>
+                          <a href="">142</a>
+                          <a href="">152</a>
+                          <a href="">164</a>
+                          <a href="">172</a>
+                          <a href="">180</a>
+                          <a href="">190</a>
                         </div>
                       </div>
-                      <button class="prev"></button>
-                      <button class="next"></button>
                     </div>
                   </div>
                   <div class="products-page-buy__color">
@@ -194,45 +187,29 @@
                       <div class="products-page-buy__color__container">
                         <span>Выбирете цвет</span>
                         <div class="products-page-buy__color__wrap">
-                            <div>
-                              <a href="" class="active">
-                                <img src="./img/products/card/color2.png" alt="">
-                              </a>
-                            </div>
-                            <div>
-                              <a href="">
-                                <img src="./img/products/card/color2.png" alt="">
-                              </a>
-                            </div>
-                            <div>
-                              <a href="">
-                                <img src="./img/products/card/color3.png" alt="">
-                              </a>
-                            </div>
-                            <div>
-                              <a href="">
-                                <img src="./img/products/card/color2.png" alt="">
-                              </a>
-                            </div>
-                            <div>
-                              <a href="">
-                                <img src="./img/products/card/color2.png" alt="">
-                              </a>
-                            </div>
-                            <div>
-                              <a href="">
-                                <img src="./img/products/card/color2.png" alt="">
-                              </a>
-                            </div>
-                            <div>
-                              <a href="">
-                                <img src="./img/products/card/color2.png" alt="">
-                              </a>
-                            </div>
+                          <a href="" class="active">
+                            <img src="./img/products/card/color2.png" alt="">
+                          </a>
+                          <a href="">
+                            <img src="./img/products/card/color2.png" alt="">
+                          </a>
+                          <a href="">
+                            <img src="./img/products/card/color3.png" alt="">
+                          </a>
+                          <a href="">
+                            <img src="./img/products/card/color2.png" alt="">
+                          </a>
+                          <a href="">
+                            <img src="./img/products/card/color2.png" alt="">
+                          </a>
+                          <a href="">
+                            <img src="./img/products/card/color2.png" alt="">
+                          </a>
+                          <a href="">
+                            <img src="./img/products/card/color2.png" alt="">
+                          </a>
                         </div>
                       </div>
-                      <button class="prev"></button>
-                      <button class="next"></button>
                     </div>
                   </div>
                   <!-- endif -->
@@ -1461,85 +1438,8 @@
 
 
   <script src="./js/scripts.min.js"></script>
-  <script src="./js/sliderCarousel.js"></script>
-  <script>
-    const carousel_img = new SliderCarousel({
-      id: 'img',
-      main: '.products-page-item__photo__img__container',
-      wrap: '.products-page-item__photo__img__container__wrapper',
-      prev: '.products-page-item__photo__img .prev',
-      next: '.products-page-item__photo__img .next',
-      infinity: false,
-      slideToShow: 1,
-    })
-    carousel_img.init()
-
-    const carousel_size = new SliderCarousel({
-      id: 'size',
-      main: '.products-page-buy__size__container',
-      wrap: '.products-page-buy__size__wrap',
-      prev: '.products-page-buy__size__block .prev',
-      next: '.products-page-buy__size__block .next',
-      infinity: false,
-      slideToShow: 4,
-    })
-    carousel_size.init()
-    
-    const carousel_color = new SliderCarousel({
-      id: 'color',
-      main: '.products-page-buy__color__container',
-      wrap: '.products-page-buy__color__wrap',
-      prev: '.products-page-buy__color__block .prev',
-      next: '.products-page-buy__color__block .next',
-      infinity: false,
-      slideToShow: 3,
-    })
-    carousel_color.init()
-
-    const carousel_resent = new SliderCarousel({
-      id: 'resent',
-      main: '.resent-products__container',
-      wrap: '.resent-products__wrap',
-      prev: '.resent-products .prev',
-      next: '.resent-products .next',
-      infinity: false,
-      slideToShow: 4,
-      padding: 200,
-      responsive: [
-        {
-          breakpoint: 1024,
-          slideToShow: 3
-        },
-        {
-          breakpoint: 767,
-          slideToShow: 2
-        }
-      ]
-    })
-    carousel_resent.init()
-
-    const carousel_visited = new SliderCarousel({
-      id: 'visited',
-      main: '.visited-products__container',
-      wrap: '.visited-products__wrap',
-      prev: '.visited-products .prev',
-      next: '.visited-products .next',
-      infinity: false,
-      slideToShow: 4,
-      padding: 200,
-      responsive: [
-        {
-          breakpoint: 1024,
-          slideToShow: 3
-        },
-        {
-          breakpoint: 767,
-          slideToShow: 2
-        }
-      ]
-    })
-    carousel_visited.init()
-</script>
+  <script src="./js/slick/slick.min.js"></script>
+  <link rel="stylesheet" href="./js/slick/slick.css">
   <link rel="stylesheet" href="./css/main.min.css">
 </body>
 </html>

@@ -88,11 +88,6 @@
         background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMTk4LjYwOCwyNDYuMTA0TDM4Mi42NjQsNjIuMDRjNS4wNjgtNS4wNTYsNy44NTYtMTEuODE2LDcuODU2LTE5LjAyNGMwLTcuMjEyLTIuNzg4LTEzLjk2OC03Ljg1Ni0xOS4wMzJsLTE2LjEyOC0xNi4xMiAgICBDMzYxLjQ3NiwyLjc5MiwzNTQuNzEyLDAsMzQ3LjUwNCwwcy0xMy45NjQsMi43OTItMTkuMDI4LDcuODY0TDEwOS4zMjgsMjI3LjAwOGMtNS4wODQsNS4wOC03Ljg2OCwxMS44NjgtNy44NDgsMTkuMDg0ICAgIGMtMC4wMiw3LjI0OCwyLjc2LDE0LjAyOCw3Ljg0OCwxOS4xMTJsMjE4Ljk0NCwyMTguOTMyYzUuMDY0LDUuMDcyLDExLjgyLDcuODY0LDE5LjAzMiw3Ljg2NGM3LjIwOCwwLDEzLjk2NC0yLjc5MiwxOS4wMzItNy44NjQgICAgbDE2LjEyNC0xNi4xMmMxMC40OTItMTAuNDkyLDEwLjQ5Mi0yNy41NzIsMC0zOC4wNkwxOTguNjA4LDI0Ni4xMDR6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBzdHlsZT0iZmlsbDojQUM1MkJGIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==')
 
     .slick-dots
-        position: absolute
-        z-index: 1
-        left: 50%
-        bottom: 60px
-        transform: translateX(-50%)
         margin: 0 auto
         padding: 0
         display: flex !important
@@ -100,38 +95,31 @@
         li
             list-style: none
             display: inline-block
-            width: 2em
-            height: 10px
+            width: 24px
+            height: 4px
             margin: 0
             padding: 0
-            margin-right: 1em
+            margin-right: 10px
             &:last-child
                 margin-right: 0
             button
+                display: block
+                width: 24px
+                height: 4px
+                border-radius: 4px
                 border: none
                 padding: 0
                 margin: 0
-                line-height: 0
                 position: relative
-                background-color: transparent
+                background-color: #00B6C6
                 cursor: pointer
                 outline: none
                 box-shadow: none
                 appearance: none
-                img
-                    margin: 0
-                    padding: 0
-                    &:first-child
-                        display: none
-                    &:last-child
-                        display: block
+
         .slick-active
             button
-                img
-                    &:first-child
-                        display: block
-                    &:last-child
-                        display: none
+                background: $accent
 
 @media screen and ( max-width: 1199.98px )
     .slider
@@ -174,11 +162,6 @@
         .slick-prev
             left: -24px
 
-        .slick-dots
-            li
-                width: 2em
-                height: 0
-
 @media screen and ( max-width: 767.98px )
     .slider
         &-wrapper
@@ -203,9 +186,6 @@
         .slick-list
             margin: 0 -1em
             
-        .slick-dots
-            bottom: 40px
-    
 @media screen and ( max-width: 576.98px )
     .slider
         padding: 0
@@ -242,36 +222,6 @@
             display: none !important
             &::before
                 display: none
-
-        .slick-dots
-            position: relative
-            left: 0
-            bottom: 0
-            transform: translateX(0)
-            li
-                width: 1.4em
-                height: 10px
-                padding: 0
-                button
-                    border: none
-                    padding: 0
-                    margin: 0
-                    width: 100%
-                    height: 100%
-                    line-height: 1
-                    position: relative
-                    background-color: transparent
-                    cursor: pointer
-                    outline: none
-                    box-shadow: none
-                    appearance: none
-                    img
-                        margin: 0
-                        padding: 0
-                        &:first-child
-                            display: none
-                        &:last-child
-                            display: block
 
 @media screen and ( max-width: 399.98px )
     .slider
