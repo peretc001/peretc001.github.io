@@ -7,6 +7,9 @@
   <style>
      body {opacity: 0; overflow-x: hidden; background: #FFF8F8;}
   </style>
+
+
+
 </head>
 <body>
 
@@ -71,91 +74,10 @@
     </div>
   </div>
   
-  <!-- VUE -->
-    {{ updWindow }}
-
-    <div v-if="!desctop" class="mobile">
-      <button class="btn btn-outline-accent search"><img src="./img/nav/search.svg" alt=""> Поиск</button>    
-      <div class="sale"><a href=""><img src="./img/nav/sale.svg" alt="">Акции</a></div>
-      <div class="btn btn-accent catalog-btn" @click="mobile = !mobile">
-        <div class="hamburger" :class="{ open: mobile == true }" >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        Каталог товаров
-      </div>
-    </div>
-  
-    <!-- mobile -->
-    <transition name="fade2" mode="out-in">
-    <div v-if="mobile" class="nav-catalog" :class="{ mob: mobile == true, slide: slide == true, slide2: slide2 == true }">
-      <div class="nav-catalog__menu">
-        <ul>
-          <li class="nav-catalog__menu__item sale"><a href="" class="sale"><img src="./img/nav/sale.svg" alt="">Акции</a></li>
-          <li class="nav-catalog__menu__item" @click.prevent="showSubMenu(index)"
-            v-for="(item,index) of menu" :data-menu="index" >
-            <a :href="item.url">{{item.t}}</a>
-          </li>
-        </ul>
-      </div>
-      <transition name="fade3" mode="out-in">
-        <div v-if="slide" class="nav-catalog__submenu">
-          <p v-if="slide && !slide2" @click="slide = !slide" class="back">Назад</p>
-          <ul v-if="!slide2" v-for="(item,index) of showMenu">
-            <li class="first">
-              <a :href="item.url" @click.prevent="showSubMenu2(index)">
-                {{item.t}}
-              </a>
-            </li>
-          </ul>
-          <p v-if="slide2" @click="backToSubMenu()" class="back">{{ parrent }}</p>
-          <ul v-if="slide2" v-for="(item,index) of showMenu">
-            <li class="first">
-              <a :href="item.url">
-                {{item.t}}
-              </a>
-            </li>
-          </ul>
-        </div>
-      </transition>
-      <div v-if="mobile" class="layout" @click="closeAll"></div>
-    </div>
-    </transition>
-    <!-- / mobile -->
-
-    <!-- desctop -->
-    <div v-if="desctop" class="nav-catalog" @mouseleave="closeMenu">
-      <div class="nav-catalog__menu">
-        <ul>
-          <li class="nav-catalog__menu__item sale" @mouseover="closeMenu"><a href="" class="sale"><img src="./img/nav/sale.svg" alt="">Акции</a></li>
-          <li class="nav-catalog__menu__item" :class="{ active: current == index }"
-            v-for="(item,index) of menu" :data-menu="index" >
-            <a :href="item.url" @mouseenter="openMenu(index)">{{item.t}}</a>
-          </li>
-        </ul>
-      </div>
-      <transition name="fade" mode="out-in">
-        <div v-if="show" class="nav-catalog__submenu">
-          <p v-if="mobile" @click="closeMenu" class="back">Назад</p>
-          <ul v-for="(item,index) of showMenu">
-            <li class="first">
-              <a :href="item.url">
-                <img :src="item.img" :alt="item.t">
-                {{item.t}}
-              </a>
-            </li>
-            <li v-for="item of item.child">
-              <a :href="item.url">
-                {{item.t}}
-              </a>
-            </li>
-          </ul>
-        </div>
-      </transition>
-    </div>
-    <!-- / desctop -->
-  <!-- VUE -->
+  <div id=app></div>
+  <link href=./css/app.af846a5f.css rel=stylesheet>
+  <script src=./js/chunk-vendors.9804a263.js></script>
+  <script src=./js/app.ad641c0c.js></script>
 </nav>
 
 <main>
@@ -959,8 +881,5 @@
   <script src="./js/slick/slick.min.js"></script>
   <link rel="stylesheet" href="./js/slick/slick.css">
   <link rel="stylesheet" href="./css/main.min.css">
-
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="./js/vue.js"></script>
 </body>
 </html>
