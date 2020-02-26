@@ -2,9 +2,10 @@
   <div id="app">
     <!-- VUE -->
       {{ updWindow }}
-
+      {{ search }}
       <div v-if="!desctop" class="nav-mobile">
-        <button class="btn btn-outline-accent search"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTEzLjI4IDUxMy4yOCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEzLjI4IDUxMy4yODsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+PGc+PGc+PGc+PHBhdGggZD0iTTQ5NS4wNCw0MDQuNDhMNDEwLjU2LDMyMGMxNS4zNi0zMC43MiwyNS42LTY2LjU2LDI1LjYtMTAyLjRDNDM2LjE2LDk3LjI4LDMzOC44OCwwLDIxOC41NiwwUzAuOTYsOTcuMjgsMC45NiwyMTcuNiAgICBzOTcuMjgsMjE3LjYsMjE3LjYsMjE3LjZjMzUuODQsMCw3MS42OC0xMC4yNCwxMDIuNC0yNS42bDg0LjQ4LDg0LjQ4YzI1LjYsMjUuNiw2NCwyNS42LDg5LjYsMCAgICBDNTE4LjA4LDQ2OC40OCw1MTguMDgsNDMwLjA4LDQ5NS4wNCw0MDQuNDh6IE0yMTguNTYsMzg0Yy05Mi4xNiwwLTE2Ni40LTc0LjI0LTE2Ni40LTE2Ni40UzEyNi40LDUxLjIsMjE4LjU2LDUxLjIgICAgczE2Ni40LDc0LjI0LDE2Ni40LDE2Ni40UzMxMC43MiwzODQsMjE4LjU2LDM4NHoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiIGZpbGw9IiNDMjUxQzAiLz48L2c+PC9nPjwvZz4gPC9zdmc" alt=""> Поиск</button>    
+        <button class="btn btn-outline-accent search" @click="search = !search">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTEzLjI4IDUxMy4yOCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEzLjI4IDUxMy4yODsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiBjbGFzcz0iIj48Zz48Zz4KCTxnPgoJCTxwYXRoIGQ9Ik00OTUuMDQsNDA0LjQ4TDQxMC41NiwzMjBjMTUuMzYtMzAuNzIsMjUuNi02Ni41NiwyNS42LTEwMi40QzQzNi4xNiw5Ny4yOCwzMzguODgsMCwyMTguNTYsMFMwLjk2LDk3LjI4LDAuOTYsMjE3LjYgICAgczk3LjI4LDIxNy42LDIxNy42LDIxNy42YzM1Ljg0LDAsNzEuNjgtMTAuMjQsMTAyLjQtMjUuNmw4NC40OCw4NC40OGMyNS42LDI1LjYsNjQsMjUuNiw4OS42LDAgICAgQzUxOC4wOCw0NjguNDgsNTE4LjA4LDQzMC4wOCw0OTUuMDQsNDA0LjQ4eiBNMjE4LjU2LDM4NGMtOTIuMTYsMC0xNjYuNC03NC4yNC0xNjYuNC0xNjYuNFMxMjYuNCw1MS4yLDIxOC41Niw1MS4yICAgIHMxNjYuNCw3NC4yNCwxNjYuNCwxNjYuNFMzMTAuNzIsMzg0LDIxOC41NiwzODR6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNDMjUxQzAiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==" /> Поиск</button>    
         <div class="sale"><a href=""><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEuMzkyMzQgMTEuOTU1M0wxMS43MjUyIDEuNTE1MTNDMTIuNzc2NCAwLjQ1MjgwNSAxNC4yMzczIDAuMjA2NzkgMTQuOTg4MiAwLjk2NTYwMUMxNS43MzkxIDEuNzIzOTcgMTUuNDk1NiAzLjIwMDQ1IDE0LjQ0NDMgNC4yNjIzNUw0LjExMTUxIDE0LjcwM0MzLjA2MDI2IDE1Ljc2NTMgMS41OTkzNyAxNi4wMTEzIDAuODQ4NTEgMTUuMjUyNUMwLjA5NzYzNjYgMTQuNDkzNyAwLjM0MTEwNiAxMy4wMTc3IDEuMzkyMzQgMTEuOTU1M1pNMTIuMzgwNiA5LjcxNjk1QzE0LjA2NTYgOS43MTY5NSAxNS40MzE0IDExLjA1MzYgMTUuNDMxNCAxMi43MDIyQzE1LjQzMTQgMTQuMzUxMiAxNC4wNjU2IDE1LjY4NzkgMTIuMzgwNiAxNS42ODc5QzEwLjY5NTggMTUuNjg3OSA5LjMyOTg5IDE0LjM1MTIgOS4zMjk4OSAxMi43MDIyQzkuMzI5ODkgMTEuMDUzNiAxMC42OTU4IDkuNzE2OTUgMTIuMzgwNiA5LjcxNjk1Wk02LjUxNzUyIDMuNzQ2MDFDNi41MTc1MiAyLjA5NzQxIDUuMTUxNjEgMC43NjA3NTEgMy40NjY3NiAwLjc2MDc1MUMxLjc4MTc4IDAuNzYwNzUxIDAuNDE2MDI0IDIuMDk3NDEgMC40MTYwMjQgMy43NDYwMUMwLjQxNjAyNCA1LjM5NDU5IDEuNzgxNzggNi43MzEyNSAzLjQ2Njc2IDYuNzMxMjVDNS4xNTE2MSA2LjczMTI1IDYuNTE3NTIgNS4zOTQ1OSA2LjUxNzUyIDMuNzQ2MDFaIiBmaWxsPSIjRkZDMTAwIi8+PC9zdmc+" alt="">Акции</a></div>
         <div class="btn btn-accent catalog-btn" @click="mobile = !mobile">
           <div class="hamburger" :class="{ open: mobile == true }" >
@@ -90,7 +91,10 @@
         </transition>
       </div>
       <!-- / desctop -->
-    <!-- VUE -->
+
+      <div v-if="search" class="search" :class="{ openSearch: search == true }">
+        123
+      </div>
   </div>
 </template>
 
@@ -1002,7 +1006,8 @@ export default {
           },
         },
       
-      }
+      },
+      search: false
     }
   },
   created() {

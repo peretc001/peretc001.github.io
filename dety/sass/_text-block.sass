@@ -6,11 +6,15 @@
         font-size: 1em
         line-height: 2
     
+    .column
+        columns: 2
+
     .hideElem
         display: none
         color: $nav
-        border-bottom: 1px dashed $nav
-        cursor: pointer
+        a
+            border-bottom: 1px dashed $nav
+            cursor: pointer
 
     .showElem
         max-height: 500px
@@ -18,12 +22,32 @@
         overflow: hidden
         transition: max-height .5s ease-in-out, opacity .5s ease-in-out
     
+    .showMore
+        display: none
+        &.active
+            display: none
+    
 @media screen and ( max-width: 767.98px )
     .text-block
+        .column
+            columns: 1
+
         .hideElem
-            display: inline-block
+            position: relative
+            display: none
+            &.active
+                display: block
+
         .showElem
             padding-top: 2em
             &.active
                 opacity: 0
                 max-height: 0
+        
+        .showMore
+            display: none
+            &.active
+                display: block
+            a
+                border-bottom: 1px dashed $nav
+                cursor: pointer
