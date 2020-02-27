@@ -43,27 +43,10 @@
         <img src="./img/logo.svg" alt="Все для деток.ру">
       </a>
       <form action="/" method="post" class="nav-search__form">
-        <div class="nav-search__form__category">
-          <span class="title">Все категории</span>
-        <ul>
-          <li>Все категории</li>
-          <li>Акции</li>
-          <li>Одежда и обувь</li>
-          <li>Игрушки и игры</li>
-          <li>Детская комната</li>
-          <li>Коляски и автокресла</li>
-          <li>Подгузники и гигиена</li>
-          <li>Кормление и питание</li>
-          <li>Развитие и обучение</li>
-          <li>Хобби и творчество</li>
-          <li>Товары для мам</li>
-          <li>Герои и интересы</li>
-        </ul>
-      </div>
         <input type="text" name="search" value="" placeholder="Поиск по сайту">
       </form>
       <div class="nav-search--right">
-        <a href="" class="nav-search--right__wishlist">
+        <a href="" class="nav-search--right__wishlist active">
           <!-- <span>2</span> -->
         </a>
         <a href="" class="nav-search--right__cart">
@@ -75,48 +58,18 @@
   </div>
   
   <div id=app></div>
-  <link href='./css/app.1f553f9d.css' rel=stylesheet>
+  <link href='./css/app.7a0a80c4.css' rel=stylesheet>
   <script src='./js/chunk-vendors.d4d1433b.js'></script>
-  <script src='./js/app.dbebd248.js'></script>
+  <script src='./js/app.9a9a334c.js'></script>
 </nav>
 
 <main>
   <div class="slider">
     <div class="container">
       <div class="slider-wrapper">
-        
-        <div class="slider-wrapper__item">
-          <div class="slider-wrapper__item__caption">
-            <p class="title first">15<span>%</span> скидка</p>
-            <p class="desc">на детские коляски</p>
-          </div>
-          <img class="desctop" src="./img/slider/1.png" alt="">
-          <img class="mobile" src="./img/slider/1m.png" alt="">
-        </div>
-
-        <div class="slider-wrapper__item">
-          <div class="slider-wrapper__item__caption second">
-            <p class="title"><b>бонусная программа</b></p>
-            <p class="desc">щедрый кэшбэк постоянным покупателям</p>
-          </div>
-          <img class="desctop" src="./img/slider/2.png" alt="">
-          <img class="mobile" src="./img/slider/2m.png" alt="">
-        </div>
-
-        <div class="slider-wrapper__item">
-          <div class="slider-wrapper__item__caption">
-            <p class="title"><b>подарочные карты</b></p>
-            <p class="desc">если не знаешь, что подарить</p>
-          </div>
-          <img class="desctop" src="./img/slider/3.png" alt="">
-          <img class="mobile" src="./img/slider/3m.png" alt="">
-        </div>
-
-        <div class="slider-wrapper__item">
-          <img class="desctop" src="./img/slider/4.png" alt="">
-          <img class="mobile" src="./img/slider/4m.png" alt="">
-        </div>
-
+        <a class="slider-wrapper--item" href="" data-desctop="./img/slider/1.png" data-mobile="./img/slider/1m.png"></a>
+        <a class="slider-wrapper--item" href="" data-desctop="./img/slider/2.png" data-mobile="./img/slider/2m.png"></a>
+        <a class="slider-wrapper--item" href="" data-desctop="./img/slider/3.png" data-mobile="./img/slider/3m.png"></a>
       </div>
     </div>
   </div>
@@ -127,46 +80,46 @@
         <h2>Подборки недели</h2>
       </div>
       <div class="grid home-week--wrap">
-        <div class="grid-col first" style="background-image: url('./img/home-week/1.png')">
-          <div class="caption">
+        <a href="" class="grid-col first" style="background-image: url('./img/home-week/1.png')">
+          <span class="caption left">
             <p>
               <b>
                 Одежда и обувь для прогулок по лужам
               </b>
             </p>
-            <a href="#">Подробнее</a>
-          </div>
-        </div>
-        <div class="grid-col" style="background-image: url('./img/home-week/2.png')">
-          <div class="caption">
+            <span>Подробнее</span>
+          </span>
+        </a>
+        <a href="" class="grid-col" style="background-image: url('./img/home-week/2.png')">
+          <span class="caption">
             <p>
               <b>
-                Комфортеры Helen <span>Mirelli</span>
+                Комфортеры Helen  Mirelli
               </b>
             </p>
-            <a href="#">Подробнее</a>
-          </div>
-        </div>
-        <div class="grid-col" style="background-image: url('./img/home-week/3.png')">
-          <div class="caption right">
+            <span>Подробнее</span>
+          </span>
+        </a>
+        <a href="" class="grid-col" style="background-image: url('./img/home-week/3.png')">
+          <span class="caption right">
             <p>
               <b>
                 Мобили Zuzu
               </b>
             </p>
-            <a href="#">Подробнее</a>
-          </div>
-        </div>
-        <div class="grid-col last" style="background-image: url('./img/home-week/4.png')">
-          <div class="caption">
+            <span>Подробнее</span>
+          </span>
+        </a>
+        <a href=""  class="grid-col last" style="background-image: url('./img/home-week/4.png')">
+          <span class="caption">
             <p>
               <b>
                 Веселые игры на улице
               </b>
             </p>
-            <a href="#">Подробнее</a>
-          </div>
-        </div>
+            <span>Подробнее</span>
+          </span>
+        </a>
       </div>
     </div>
   </section>
@@ -883,5 +836,45 @@
   <script src="./js/slick/slick.min.js"></script>
   <link rel="stylesheet" href="./js/slick/slick.css">
   <link rel="stylesheet" href="./css/main.min.css">
+  <script>
+    $('.slider-wrapper').slick({
+      draggable: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: true,
+      dots: true,
+      customPaging : function(slider, i) {
+        return '<button></button>';
+      },
+    });
+    function addHomeWeekSlider() {
+      let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      if (width < 767) {
+        $('.home-week--wrap').slick({
+          draggable: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false
+        });
+        $('.home-notes--wrap').slick({
+          draggable: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false
+        });
+      } else {
+        $('.home-week--wrap').slick('unslick');
+        $('.home-notes--wrap').slick('unslick');
+      }
+    }
+    let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    if (width < 767) {
+      addHomeWeekSlider()
+    }
+
+    window.addEventListener('resize', addHomeWeekSlider)
+  </script>
 </body>
 </html>

@@ -110,17 +110,17 @@
             <div class="products-page-item">
                 <div class="products-page-item__photo">
                   <div class="products-page-item__photo--left">
-                    <div class="products-page-item__photo__gallery">
-                      <img src="./img/products/card/1.png" alt="" class="active">
-                      <img src="./img/products/card/2.png" alt="">
-                      <img src="./img/products/card/3.png" alt="">
-                      <img src="./img/products/card/4.png" alt="">
-                      <img src="./img/products/card/5.png" alt="">
-                      <img src="./img/products/card/1.png" alt="">
-                      <img src="./img/products/card/2.png" alt="">
-                      <img src="./img/products/card/3.png" alt="">
-                      <img src="./img/products/card/4.png" alt="">
-                    </div>
+                    <ul class="products-page-item__photo__thumb">
+                      <li><img src="./img/products/card/1.png" alt="" class="active"></li>
+                      <li><img src="./img/products/card/2.png" alt=""></li>
+                      <li><img src="./img/products/card/3.png" alt=""></li>
+                      <li><img src="./img/products/card/4.png" alt=""></li>
+                      <li><img src="./img/products/card/5.png" alt=""></li>
+                      <li><img src="./img/products/card/1.png" alt=""></li>
+                      <li><img src="./img/products/card/2.png" alt=""></li>
+                      <li><img src="./img/products/card/3.png" alt=""></li>
+                      <li><img src="./img/products/card/4.png" alt=""></li>
+                    </ul>
                   </div>
                   <div class="products-page-item__photo--right">
                     <div class="products-page-item__photo__tag">
@@ -129,18 +129,17 @@
                         <a href="" class="sale">-15% скидка</a>
                         <a href="" class="wishlist"></a>
                     </div>
-                    <div class="products-page-item__photo__img">
-                        
-                      <a href=""><img src="./img/products/card/big.png" alt=""></a>
-                      <a href=""><img src="./img/products/card/big.png" alt=""></a>
-                      <a href=""><img src="./img/products/card/big.png" alt=""></a>
-                      <a href=""><img src="./img/products/card/big.png" alt=""></a>
-                      <a href=""><img src="./img/products/card/big.png" alt=""></a>
-                      <a href=""><img src="./img/products/card/big.png" alt=""></a>
-                      <a href=""><img src="./img/products/card/big.png" alt=""></a>
-                      <a href=""><img src="./img/products/card/big.png" alt=""></a>
-
-                  </div>
+                    <ul class="products-page-item__photo__img">
+                      <li><a href=""><img src="./img/products/card/big.png" alt=""></a></li>
+                      <li><a href=""><img src="./img/products/card/big.png" alt=""></a></li>
+                      <li><a href=""><img src="./img/products/card/big.png" alt=""></a></li>
+                      <li><a href=""><img src="./img/products/card/big.png" alt=""></a></li>
+                      <li><a href=""><img src="./img/products/card/big.png" alt=""></a></li>
+                      <li><a href=""><img src="./img/products/card/big.png" alt=""></a></li>
+                      <li><a href=""><img src="./img/products/card/big.png" alt=""></a></li>
+                      <li><a href=""><img src="./img/products/card/big.png" alt=""></a></li>
+                    </div>
+                  </ul>
                 </div>
             </div>
 
@@ -1441,6 +1440,57 @@
   <script src="./js/slick/slick.min.js"></script>
   <link rel="stylesheet" href="./js/slick/slick.css">
   <link rel="stylesheet" href="./css/main.min.css">
+  <script>
+    $('.products-page-item__photo__thumb').slick({
+      autoplay: true,
+      vertical: true,
+      infinite: true,
+      verticalSwiping: true,
+      
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      // asNavFor: '.slider-preview',
+      focusOnSelect: true,
+      prevArrow: '<button type="button" class="slick-prev"><</button>',
+      nextArrow: '<button type="button" class="slick-next">></button>',
+      responsive: [
+        {
+          breakpoint: 767,
+          settings: {
+            vertical: false,
+          }
+        },
+        {
+          breakpoint: 479,
+          settings: {
+            vertical: false,
+            slidesPerRow: 3,
+            slidesToShow: 3,
+          }
+        },
+      ]
+    });
+	$('.products-page-item__photo__img').slick({
+		autoplay: true,
+		vertical: true,
+		infinite: true,
+		slidesPerRow: 1,
+		slidesToShow: 1,
+		asNavFor: '.slider-thumb',
+		arrows: false,
+		draggable: false,
+		responsive: [
+			{
+				breakpoint: 767,
+				settings: {
+					vertical: false,
+					fade: true,
+				}
+			},
+		]
+	});
+    
+  </script>
 </body>
 </html>
 

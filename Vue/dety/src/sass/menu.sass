@@ -276,6 +276,11 @@ $textblock: #EAF6F6
                 flex: 0 0 33.333333%
             .btn
                 padding: .8em
+                outline: none !important
+                box-shadow: none !important
+                cursor: pointer
+                appearance: none !important
+                border-radius: 4px
                 display: flex
                 align-items: center
                 justify-content: center
@@ -292,13 +297,6 @@ $textblock: #EAF6F6
                     border-radius: 0 4px 4px 0
                     &:hover
                         background: $accent
-            .btn
-                outline: none !important
-                box-shadow: none !important
-                cursor: pointer
-                appearance: none !important
-                border-radius: 4px
-                padding: .5em
                 &.btn-accent
                     border: 1px solid $accent
                     background: $accent
@@ -412,7 +410,25 @@ $textblock: #EAF6F6
                         background-position: center
                         background-repeat: no-repeat
                         background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjQwLjgyMyAyNDAuODIzIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNDAuODIzIDI0MC44MjM7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8cGF0aCBpZD0iQ2hldnJvbl9SaWdodCIgZD0iTTU3LjYzMywxMjkuMDA3TDE2NS45MywyMzcuMjY4YzQuNzUyLDQuNzQsMTIuNDUxLDQuNzQsMTcuMjE1LDBjNC43NTItNC43NCw0Ljc1Mi0xMi40MzksMC0xNy4xNzkgICBsLTk5LjcwNy05OS42NzFsOTkuNjk1LTk5LjY3MWM0Ljc1Mi00Ljc0LDQuNzUyLTEyLjQzOSwwLTE3LjE5MWMtNC43NTItNC43NC0xMi40NjMtNC43NC0xNy4yMTUsMEw1Ny42MjEsMTExLjgxNiAgIEM1Mi45NDIsMTE2LjUwNyw1Mi45NDIsMTI0LjMyNyw1Ny42MzMsMTI5LjAwN3oiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0ZGRkZGRiIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+')
-
+                .category
+                    display: block
+                    width: 100%
+                    margin-bottom: 0
+                    padding: 0
+                    background: #fff
+                    color: $text
+                    position: relative
+                    border-bottom: 1px solid #ebebeb
+                    a
+                        display: block
+                        margin: 0
+                        font-size: 1.1em
+                        padding: 1em 0
+                        padding-left: 2em
+                        max-width: 100%
+                        color: $accent
+                        &:hover
+                            color: $accent
                 
                 ul
                     flex: 0 0 100%

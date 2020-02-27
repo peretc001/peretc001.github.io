@@ -31,7 +31,8 @@
         
         <transition name="fade3">
           <div v-if="slide && !slide2" class="nav-catalog__submenu">
-            <p v-if="slide && !slide2" @click="slide = !slide" class="back">Назад</p>
+            <p v-if="slide && !slide2" @click="slide = !slide" class="back">{{menu[current].t}}</p>
+            <p v-if="slide && !slide2" class="category"><a :href="menu[current].url">Перейти в категорию</a></p>
             <ul v-for="(item,index) of showMenu" :key="index">
               <li class="first">
                 <a :href="item.url" @click.prevent="showSubMenu2(index)">
@@ -45,6 +46,7 @@
         <transition name="fade3" mode="out-in">
           <div v-if="slide2" class="nav-catalog__submenu">
             <p v-if="slide2" @click="backToSubMenu()" class="back">{{ parrent }}</p>
+            <p v-if="slide2" class="category"><a :href="parrentUrl">Перейти в категорию</a></p>
             <ul v-for="(item,index) of showMenu" :key="index">
               <li class="first">
                 <a :href="item.url">
@@ -91,16 +93,17 @@
       </div>
       <!-- / desctop -->
 
+      <!-- search -->
       <transition name="fade2" mode="out-in">
-      <div v-if="search" class="search" :class="{ openSearch: search == true }">
-        <p class="close" @click="search = !search"></p>
-        <form action="/" @submit.prevent>
-        <input type="search" placeholder="Найти">
-        <button type="find"><img src="data:image/svg+xml;base64,
-PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDkwLjg4IDQ5MC44OCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkwLjg4IDQ5MC44ODsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48Zz48Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0yNDUuNDQsMEMxMTAuMTAxLDAsMCwxMTAuMTAxLDAsMjQ1LjQ0czExMC4xMDEsMjQ1LjQ0LDI0NS40NCwyNDUuNDRzMjQ1LjQ0LTExMC4xMDEsMjQ1LjQ0LTI0NS40NFMzODAuNzc5LDAsMjQ1LjQ0LDB6ICAgICBNMjQ1LjQ0LDQ2OS41NDdjLTEyMy41NjMsMC0yMjQuMTA3LTEwMC41NDQtMjI0LjEwNy0yMjQuMTA3UzEyMS44NzcsMjEuMzMzLDI0NS40NCwyMS4zMzNTNDY5LjU0NywxMjEuODc3LDQ2OS41NDcsMjQ1LjQ0ICAgIFMzNjkuMDAzLDQ2OS41NDcsMjQ1LjQ0LDQ2OS41NDd6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNDMjUxQzAiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0zMzguNDMyLDIzOC4wMTZsLTEyOC0xMjhjLTQuMTYtNC4xNi0xMC45MjMtNC4xNi0xNS4wODMsMGMtNC4xNiw0LjE2LTQuMTYsMTAuOTIzLDAsMTUuMDgzbDEyMC40MjcsMTIwLjQ2OSAgICBMMTk1LjMyOCwzNjYuMDE2Yy00LjE2LDQuMTYtNC4xNiwxMC45MjMsMCwxNS4wODNjMi4wOTEsMi4wNjksNC44MjEsMy4xMTUsNy41NTIsMy4xMTVzNS40NjEtMS4wMjQsNy41NTItMy4xMTVsMTI4LTEyOCAgICBDMzQyLjU5MiwyNDguOTM5LDM0Mi41OTIsMjQyLjE3NiwzMzguNDMyLDIzOC4wMTZ6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNDMjUxQzAiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==" /></button>
-        </form>
-      </div>
+        <div v-if="search" class="search" :class="{ openSearch: search == true }">
+          <p class="close" @click="search = !search"></p>
+          <form action="/" @submit.prevent>
+            <input type="search" ref="search" name="search" placeholder="Найти">
+            <button type="find"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDkwLjg4IDQ5MC44OCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkwLjg4IDQ5MC44ODsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48Zz48Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0yNDUuNDQsMEMxMTAuMTAxLDAsMCwxMTAuMTAxLDAsMjQ1LjQ0czExMC4xMDEsMjQ1LjQ0LDI0NS40NCwyNDUuNDRzMjQ1LjQ0LTExMC4xMDEsMjQ1LjQ0LTI0NS40NFMzODAuNzc5LDAsMjQ1LjQ0LDB6ICAgICBNMjQ1LjQ0LDQ2OS41NDdjLTEyMy41NjMsMC0yMjQuMTA3LTEwMC41NDQtMjI0LjEwNy0yMjQuMTA3UzEyMS44NzcsMjEuMzMzLDI0NS40NCwyMS4zMzNTNDY5LjU0NywxMjEuODc3LDQ2OS41NDcsMjQ1LjQ0ICAgIFMzNjkuMDAzLDQ2OS41NDcsMjQ1LjQ0LDQ2OS41NDd6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNDMjUxQzAiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0zMzguNDMyLDIzOC4wMTZsLTEyOC0xMjhjLTQuMTYtNC4xNi0xMC45MjMtNC4xNi0xNS4wODMsMGMtNC4xNiw0LjE2LTQuMTYsMTAuOTIzLDAsMTUuMDgzbDEyMC40MjcsMTIwLjQ2OSAgICBMMTk1LjMyOCwzNjYuMDE2Yy00LjE2LDQuMTYtNC4xNiwxMC45MjMsMCwxNS4wODNjMi4wOTEsMi4wNjksNC44MjEsMy4xMTUsNy41NTIsMy4xMTVzNS40NjEtMS4wMjQsNy41NTItMy4xMTVsMTI4LTEyOCAgICBDMzQyLjU5MiwyNDguOTM5LDM0Mi41OTIsMjQyLjE3NiwzMzguNDMyLDIzOC4wMTZ6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNDMjUxQzAiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==" /></button>
+          </form>
+        </div>
       </transition>
+      <!-- / search -->
   </div>
 </template>
 
@@ -117,26 +120,29 @@ export default {
       timer: 0,
       current: null,
       parrent: '',
+      parrentUrl: '',
+      category: '',
       width: null,
-      menu: {
-        0: { t:'Одежда и обувь',       url: './category.html' },
-        1: { t:'Игрушки и игры',       url: './category.html' },
-        2: { t:'Детская комната',      url: './category.html' },
-        3: { t:'Коляски и автокресла', url: './category.html' },
-        4: { t:'Подгузники и гигиена', url: './category.html' },
-        5: { t:'Кормление и питание',  url: './category.html' },
-        6: { t:'Развитие и обучение',  url: './category.html' },
-        7: { t:'Хобби и творчество',   url: './category.html' },
-        8: { t:'Товары для мам',       url: './category.html' },
-        9: { t:'Герои и интересы',     url: './category.html' },
-      },
+      find: '',
       showMenu: {},
+      menu: {
+        0: { t:'Одежда и обувь',       url: './category1.html' },
+        1: { t:'Игрушки и игры',       url: './category2.html' },
+        2: { t:'Детская комната',      url: './category3.html' },
+        3: { t:'Коляски и автокресла', url: './category4.html' },
+        4: { t:'Подгузники и гигиена', url: './category5.html' },
+        5: { t:'Кормление и питание',  url: './category6.html' },
+        6: { t:'Развитие и обучение',  url: './category7.html' },
+        7: { t:'Хобби и творчество',   url: './category8.html' },
+        8: { t:'Товары для мам',       url: './category9.html' },
+        9: { t:'Герои и интересы',     url: './category10.html' },
+      },
       subMenu: {
         0: {
           0: {
             img: require('@/img/submenu/1.png'),
             t: 'Верхняя одежда',
-            url: './category.html',
+            url: './category00.html',
             child: {
               0: { t: 'Верхняя одежда для мальчиков', url: './category.html' },
               1: { t: 'Верхняя одежда для девочек', url: './category.html' },
@@ -146,7 +152,7 @@ export default {
           1: {
             img: require('@/img/submenu/2.png'),
             t: 'Одежда для девочек',
-            url: './category.html',
+            url: './category01.html',
             child: {
               0: { t: 'Блузки', url: './category.html' },
               1: { t: 'Брюки', url: './category.html' },
@@ -163,7 +169,7 @@ export default {
           2: {
             img: require('@/img/submenu/3.png'),
             t: 'Одежда для мальчиков',
-            url: './category.html',
+            url: './category02.html',
             child: {
               0: { t: 'Брюки', url: './category.html' },
               1: { t: 'Джемперы', url: './category.html' },
@@ -180,7 +186,7 @@ export default {
           3: {
             img: require('@/img/submenu/4.png'),
             t: 'Обувь для девочек',
-            url: './category.html',
+            url: './category03.html',
             child: {
               0: { t: 'Анатомическая обувь', url: './category.html' },
               1: { t: 'Ботинки', url: './category.html' },
@@ -192,7 +198,7 @@ export default {
           4: {
             img: require('@/img/submenu/5.png'),
             t: 'Обувь для мальчиков',
-            url: './category.html',
+            url: './category04.html',
             child: {
               0: { t: 'Анатомическая обувь', url: './category.html' },
               1: { t: 'Ботинки', url: './category.html' },
@@ -204,7 +210,7 @@ export default {
           5: {
             img: require('@/img/submenu/6.png'),
             t: 'Одежда для малышей',
-            url: './category.html',
+            url: './category05.html',
             child: {
               0: { t: 'Боди', url: './category.html' },
               1: { t: 'Джемперы', url: './category.html' },
@@ -224,7 +230,7 @@ export default {
           0: {
             img: require('@/img/submenu/1.png'),
             t: 'Верхняя одежда2',
-            url: './category.html',
+            url: './category10.html',
             child: {
               0: { t: 'Верхняя одежда для мальчиков', url: './category.html' },
               1: { t: 'Верхняя одежда для девочек', url: './category.html' },
@@ -234,7 +240,7 @@ export default {
           1: {
             img: require('@/img/submenu/2.png'),
             t: 'Одежда для девочек2',
-            url: './category.html',
+            url: './category11.html',
             child: {
               0: { t: 'Блузки', url: './category.html' },
               1: { t: 'Брюки', url: './category.html' },
@@ -251,7 +257,7 @@ export default {
           2: {
             img: require('@/img/submenu/3.png'),
             t: 'Одежда для мальчиков2',
-            url: './category.html',
+            url: './category12.html',
             child: {
               0: { t: 'Брюки', url: './category.html' },
               1: { t: 'Джемперы', url: './category.html' },
@@ -268,7 +274,7 @@ export default {
           3: {
             img: require('@/img/submenu/4.png'),
             t: 'Обувь для девочек2',
-            url: './category.html',
+            url: './category13.html',
             child: {
               0: { t: 'Анатомическая обувь', url: './category.html' },
               1: { t: 'Ботинки', url: './category.html' },
@@ -1038,12 +1044,14 @@ export default {
       this.showMenu = this.subMenu[index]
       this.current = index
       this.slide = true
-      if (window.pageYOffset > 20) document.querySelector('.mobile').scrollIntoView({block: "start", behavior: "smooth"})
+      if (window.pageYOffset > 20) document.querySelector('.nav-mobile').scrollIntoView({block: "start", behavior: "smooth"})
     },
     showSubMenu2(index) {
       this.showMenu = this.subMenu[index][index].child
       this.parrent = this.subMenu[this.current][index].t
+      this.parrentUrl = this.subMenu[this.current][index].url
       this.slide2 = true
+      if (window.pageYOffset > 20) document.querySelector('.nav-mobile').scrollIntoView({block: "start", behavior: "smooth"})
     },
     backToSubMenu() {
       this.slide2 = false
@@ -1065,6 +1073,7 @@ export default {
       this.width < 991 ? this.desctop = false : this.desctop = true
       this.width > 991 ? this.mobile = false : this.mobile = this.mobile
       this.search == true ? document.querySelector('body').classList.add('no-scroll') : document.querySelector('body').classList.remove('no-scroll')
+      this.search == true ? this.$nextTick(() => this.$refs.search.focus()) : ''
     }
   }
 }

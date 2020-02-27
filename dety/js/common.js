@@ -1,174 +1,181 @@
 document.addEventListener("DOMContentLoaded", function() {
 
 //Modal
-    if (document.querySelector('.nav')) {
-        const   nav = document.querySelector('.nav')
-                modal = document.querySelector('.modal')
-                openCityList = document.querySelector('.open-city-list')
+if (document.querySelector('.nav')) {
+    const   nav = document.querySelector('.nav')
+            modal = document.querySelector('.modal')
+            openCityList = document.querySelector('.open-city-list')
 
-                hideModalCloseBtn = () => {
-                    if ( event.target.dataset.close == 'close' ) {
-                        hModal()
-                        document.removeEventListener('click', hideModalEsc())
-                    }
-                }
-                hideModalEsc = () => {
-                    if (event.keyCode == 27) {
-                        hModal()
-                        document.removeEventListener('click', hideModalCloseBtn())
-                    }
-                }
-                hModal = () => {
-                    modal.querySelector('.is-active').classList.remove('is-active')
-                    setTimeout(() => {
-                        modal.querySelector('.fade').classList.remove('fade')
-                    }, 200);
-                    setTimeout(() => {
-                        modal.classList.remove('is-active')
-                    }, 200);
-                    setTimeout(() => {
-                        modal.classList.remove('in')
-                    }, 200);
-                    document.querySelector('.hamburger').classList.remove('open')
-                    document.body.classList.remove('no-scroll')
-                }
-                hideModal = () => {
+            hideModalCloseBtn = () => {
+                if ( event.target.dataset.close == 'close' ) {
                     hModal()
-                    document.removeEventListener('keydown', hideModalEsc())
+                    document.removeEventListener('click', hideModalEsc())
+                }
+            }
+            hideModalEsc = () => {
+                if (event.keyCode == 27) {
+                    hModal()
                     document.removeEventListener('click', hideModalCloseBtn())
                 }
-                showModal = (event) => {
-                    document.body.classList.add('no-scroll')
-                    event.target.dataset.target == 'menu' ? document.querySelector('.hamburger').classList.add('open') : ''
-                    if (event.target.dataset.target == 'review') {
-                        document.querySelector('.rating-area').addEventListener('mouseover', () => {
-                            document.querySelector('#star-5').checked = false
-                        })
+            }
+            hModal = () => {
+                modal.querySelector('.is-active').classList.remove('is-active')
+                setTimeout(() => {
+                    modal.querySelector('.fade').classList.remove('fade')
+                }, 200);
+                setTimeout(() => {
+                    modal.classList.remove('is-active')
+                }, 200);
+                setTimeout(() => {
+                    modal.classList.remove('in')
+                }, 200);
+                document.querySelector('.hamburger').classList.remove('open')
+                document.body.classList.remove('no-scroll')
+            }
+            hideModal = () => {
+                hModal()
+                document.removeEventListener('keydown', hideModalEsc())
+                document.removeEventListener('click', hideModalCloseBtn())
+            }
+            showModal = (event) => {
+                document.body.classList.add('no-scroll')
+                event.target.dataset.target == 'menu' ? document.querySelector('.hamburger').classList.add('open') : ''
+                if (event.target.dataset.target == 'review') {
+                    document.querySelector('.rating-area').addEventListener('mouseover', () => {
+                        document.querySelector('#star-5').checked = false
+                    })
+                }
+                const current = document.querySelector('[data-modal="'+ event.target.dataset.target +'"]')
+                modal.classList.add('in')
+                current.classList.add('fade')
+                setTimeout(() => {
+                    modal.classList.add('is-active')
+                    current.classList.add('is-active')
+                }, 200);
+                if (event.target.dataset.target == 'login') modal.querySelector('input[name="phone"]').focus()
+                document.addEventListener('keyup', hideModalEsc)
+                document.addEventListener('click', hideModalCloseBtn)
+            }
+            showCityList = () => {
+
+            }
+
+            loginForm = document.querySelector('.modal-body .signin')
+            phone = loginForm.querySelector('#phone')
+            inputSMS = modal.querySelectorAll('.sms-input')
+            
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault()
+                console.log(phone.value)
+                //////// ЗАПРОС НА API /////////
+                modal.querySelector('.is-active').classList.remove('is-active')
+                setTimeout(() => {
+                    modal.querySelector('.fade').classList.remove('fade')
+                }, 200);
+                modal.querySelector('.modal-body.sms').classList.add('fade')
+                setTimeout(() => {
+                    modal.querySelector('.modal-body.sms').classList.add('is-active')
+                }, 200);
+
+                inputSMS[0].focus();
+                inputSMS[0].addEventListener('keyup', function() {
+                    this.value != '' ? inputSMS[1].focus() : ''
+                })
+                inputSMS[1].addEventListener('keyup', function() {
+                    this.value != '' ? inputSMS[2].focus() : inputSMS[0].focus()
+                })
+                inputSMS[2].addEventListener('keyup', function() {
+                    this.value != '' ? inputSMS[3].focus() : inputSMS[1].focus()
+                })
+                inputSMS[3].addEventListener('keyup', function() {
+                    if (this.value != '') {
+                        modal.querySelector('.modal-body.sms').classList.remove('is-active')
+                        setTimeout(() => {
+                            modal.querySelector('.modal-body.sms').classList.remove('fade')
+                            this.blur()
+                        }, 200);
+                        setTimeout(() => {
+                            modal.classList.remove('is-active')
+                        }, 200);
+                        setTimeout(() => {
+                            modal.classList.remove('in')
+                        }, 200);
+                        document.body.classList.remove('no-scroll')
+                    } else inputSMS[2].focus()
+                })
+            })
+
+            openCityList.addEventListener('click', () => {
+                hideModal()
+            })
+            
+            document.addEventListener('click', (event) => {
+                if (    
+                    event.target.dataset.toggle == 'modal' 
+                ) {
+                    event.preventDefault()
+                    if ( modal.classList.contains('is-active') ) {
+                        hideModal()
+                    } else {
+                        showModal(event)
                     }
-                    const current = document.querySelector('[data-modal="'+ event.target.dataset.target +'"]')
+                }
+            })
+            modal.addEventListener('click', (event) => event.target.className == 'modal in is-active' ? hideModal() : '')
+
+            showCityOnLoad = () => {
+                let city = localStorage.getItem('city')
+                if (!city) {
+                    document.body.classList.add('no-scroll')
+                    const current = document.querySelector('[data-modal="city"]')
                     modal.classList.add('in')
                     current.classList.add('fade')
                     setTimeout(() => {
                         modal.classList.add('is-active')
                         current.classList.add('is-active')
                     }, 200);
-                    if (event.target.dataset.target == 'login') modal.querySelector('input[name="phone"]').focus()
                     document.addEventListener('keyup', hideModalEsc)
                     document.addEventListener('click', hideModalCloseBtn)
+                    localStorage.setItem('city', 'Санкт-Петербург')
                 }
-                showCityList = () => {
+            }
 
-                }
+            window.onload = showCityOnLoad()
 
-                loginForm = document.querySelector('.modal-body .signin')
-                phone = loginForm.querySelector('#phone')
-                inputSMS = modal.querySelectorAll('.sms-input')
-                
-                loginForm.addEventListener('submit', (e) => {
-                    e.preventDefault()
-                    console.log(phone.value)
-                    //////// ЗАПРОС НА API /////////
-                    modal.querySelector('.is-active').classList.remove('is-active')
-                    setTimeout(() => {
-                        modal.querySelector('.fade').classList.remove('fade')
-                    }, 200);
-                    modal.querySelector('.modal-body.sms').classList.add('fade')
-                    setTimeout(() => {
-                        modal.querySelector('.modal-body.sms').classList.add('is-active')
-                    }, 200);
-
-                    inputSMS[0].focus();
-                    inputSMS[0].addEventListener('keyup', function() {
-                        this.value != '' ? inputSMS[1].focus() : ''
-                    })
-                    inputSMS[1].addEventListener('keyup', function() {
-                        this.value != '' ? inputSMS[2].focus() : inputSMS[0].focus()
-                    })
-                    inputSMS[2].addEventListener('keyup', function() {
-                        this.value != '' ? inputSMS[3].focus() : inputSMS[1].focus()
-                    })
-                    inputSMS[3].addEventListener('keyup', function() {
-                        if (this.value != '') {
-                            modal.querySelector('.modal-body.sms').classList.remove('is-active')
-                            setTimeout(() => {
-                                modal.querySelector('.modal-body.sms').classList.remove('fade')
-                                this.blur()
-                            }, 200);
-                            setTimeout(() => {
-                                modal.classList.remove('is-active')
-                            }, 200);
-                            setTimeout(() => {
-                                modal.classList.remove('in')
-                            }, 200);
-                            document.body.classList.remove('no-scroll')
-                        } else inputSMS[2].focus()
-                    })
-                })
-
-                openCityList.addEventListener('click', () => {
-                    hideModal()
-                })
-                
-                document.addEventListener('click', (event) => {
-                    if (    
-                        event.target.dataset.toggle == 'modal' 
-                    ) {
-                        event.preventDefault()
-                        if ( modal.classList.contains('is-active') ) {
-                            hideModal()
-                        } else {
-                            showModal(event)
-                        }
-                    }
-                })
-                modal.addEventListener('click', (event) => event.target.className == 'modal in is-active' ? hideModal() : '')
-
-                showCityOnLoad = () => {
-                    let city = localStorage.getItem('city')
-                    if (!city) {
-                        document.body.classList.add('no-scroll')
-                        const current = document.querySelector('[data-modal="city"]')
-                        modal.classList.add('in')
-                        current.classList.add('fade')
-                        setTimeout(() => {
-                            modal.classList.add('is-active')
-                            current.classList.add('is-active')
-                        }, 200);
-                        document.addEventListener('keyup', hideModalEsc)
-                        document.addEventListener('click', hideModalCloseBtn)
-                        localStorage.setItem('city', 'Санкт-Петербург')
-                    }
-                }
-
-                window.onload = showCityOnLoad()
-
-    }
-
-//Search
-{
-    const   searchCategory = document.querySelector('.nav-search__form__category')
-            searchCategoryList = document.querySelectorAll('.nav-search__form__category ul li')
-
-            searchCategoryList.forEach(item => item.addEventListener('click', (e) => searchCategory.children[0].textContent = item.textContent) )
 }
 
-    //Brands page
-    if (document.querySelector('.brands-header__favorite')) {
-        const   favorite = document.querySelector('.brands-header__favorite')
-                btn1 = favorite.children[0]
-                btn2 = favorite.children[1]
-        
-                btn1.addEventListener('click', function() {
-                    favorite.classList.add('active')
-                    document.querySelector('.brands-list').classList.add('active')
-                    document.querySelector('.brands-all').classList.remove('active')
-                })
-                btn2.addEventListener('click', function() {
-                    favorite.classList.remove('active')
-                    document.querySelector('.brands-list').classList.remove('active')
-                    document.querySelector('.brands-all').classList.add('active')
-                })
+//HOME Slider
+if ( document.querySelector('.slider') ) {
+    const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    const sliderList = document.querySelectorAll('.slider-wrapper--item')
+    if (width > 767) {
+        sliderList.forEach(item => {
+            item.innerHTML = `<img src="${item.getAttribute('data-desctop')}" alt="">`
+        })
+    } else {
+        sliderList.forEach(item => {
+            item.innerHTML = `<img src="${item.getAttribute('data-mobile')}" alt="">`
+        })
     }
+}
+
+//Brands page
+if (document.querySelector('.brands-header__favorite')) {
+    const   favorite = document.querySelector('.brands-header__favorite')
+            btn1 = favorite.children[0]
+            btn2 = favorite.children[1]
+    
+            btn1.addEventListener('click', function() {
+                favorite.classList.add('active')
+                document.querySelector('.brands-list').classList.add('active')
+                document.querySelector('.brands-all').classList.remove('active')
+            })
+            btn2.addEventListener('click', function() {
+                favorite.classList.remove('active')
+                document.querySelector('.brands-list').classList.remove('active')
+                document.querySelector('.brands-all').classList.add('active')
+            })
+}
 
     if ( document.querySelector('.text-block') )  {
         const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
