@@ -306,12 +306,12 @@ $textblock: #EAF6F6
                         background: $accent
                 &.btn-outline-accent
                     background: transparent
-                    border: 1px solid $accent
+                    border: 2px solid $accent
                     color: $accent
                     transition: background .5s ease, color .5s ease
                     &:hover
                         background: transparent
-                        border: 1px solid $accent
+                        border: 2px solid $accent
                         color: $accent
             .sale
                 background: $accent
@@ -525,8 +525,9 @@ $textblock: #EAF6F6
             appearance: none
             width: 100%
             background: #ffffff
-            border: 1px solid $grey
-            border-radius: 4px
+            border: none
+            border-bottom: 1px solid $nav
+            border-radius: 0
             color: $text
             outline: none
             box-shadow: none
@@ -534,16 +535,22 @@ $textblock: #EAF6F6
             padding: .5em
             font-size: 16px
             &::-webkit-input-placeholder
-                color: #9BAFC0
+                color: $nav
             &:-moz-placeholder
-                color: #9BAFC0
+                color: $nav
             &::-moz-placeholder
-                color: #9BAFC0
+                color: $nav
             &:-ms-input-placeholder
-                color: #9BAFC0
+                color: $nav
         button
-            background: transparent
+            flex: 0 0 30px
             display: inline-block
+            background-color: $bg
+            background-size: 1em
+            background-position: .7em
+            background-repeat: no-repeat
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojQUM1MkJGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+            border-radius: 50%
             width: 2em
             height: 2em
             border: none
@@ -551,9 +558,6 @@ $textblock: #EAF6F6
             margin: 0
             margin-left: 1em
             outline: none
-            img
-                width: 100%
-                margin: 0
 
 @media screen and ( max-width: 767.98px )
     .nav
