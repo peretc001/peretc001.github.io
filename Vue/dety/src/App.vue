@@ -140,7 +140,7 @@ export default {
       subMenu: {
         0: {
           0: {
-            img: require('@/img/submenu/1.png'),
+            img: require('./img/submenu/1.png'),
             t: 'Верхняя одежда',
             url: './category00.html',
             child: {
@@ -150,7 +150,7 @@ export default {
             }
           },
           1: {
-            img: require('@/img/submenu/2.png'),
+            img: require('./img/submenu/2.png'),
             t: 'Одежда для девочек',
             url: './category01.html',
             child: {
@@ -167,7 +167,7 @@ export default {
             }
           },
           2: {
-            img: require('@/img/submenu/3.png'),
+            img: require('./img/submenu/3.png'),
             t: 'Одежда для мальчиков',
             url: './category02.html',
             child: {
@@ -184,7 +184,7 @@ export default {
             }
           },
           3: {
-            img: require('@/img/submenu/4.png'),
+            img: require('./img/submenu/4.png'),
             t: 'Обувь для девочек',
             url: './category03.html',
             child: {
@@ -196,7 +196,7 @@ export default {
             }
           },
           4: {
-            img: require('@/img/submenu/5.png'),
+            img: require('./img/submenu/5.png'),
             t: 'Обувь для мальчиков',
             url: './category04.html',
             child: {
@@ -208,7 +208,7 @@ export default {
             }
           },
           5: {
-            img: require('@/img/submenu/6.png'),
+            img: require('./img/submenu/6.png'),
             t: 'Одежда для малышей',
             url: './category05.html',
             child: {
@@ -228,7 +228,7 @@ export default {
 
         1: {
           0: {
-            img: require('@/img/submenu/1.png'),
+            img: require('./img/submenu/1.png'),
             t: 'Верхняя одежда2',
             url: './category10.html',
             child: {
@@ -238,7 +238,7 @@ export default {
             }
           },
           1: {
-            img: require('@/img/submenu/2.png'),
+            img: require('./img/submenu/2.png'),
             t: 'Одежда для девочек2',
             url: './category11.html',
             child: {
@@ -255,7 +255,7 @@ export default {
             }
           },
           2: {
-            img: require('@/img/submenu/3.png'),
+            img: require('./img/submenu/3.png'),
             t: 'Одежда для мальчиков2',
             url: './category12.html',
             child: {
@@ -272,7 +272,7 @@ export default {
             }
           },
           3: {
-            img: require('@/img/submenu/4.png'),
+            img: require('./img/submenu/4.png'),
             t: 'Обувь для девочек2',
             url: './category13.html',
             child: {
@@ -284,7 +284,7 @@ export default {
             }
           },
           4: {
-            img: require('@/img/submenu/5.png'),
+            img: require('./img/submenu/5.png'),
             t: 'Обувь для мальчиков2',
             url: './category.html',
             child: {
@@ -296,7 +296,7 @@ export default {
             }
           },
           5: {
-            img: require('@/img/submenu/6.png'),
+            img: require('./img/submenu/6.png'),
             t: 'Одежда для малышей2',
             url: './category.html',
             child: {
@@ -316,7 +316,7 @@ export default {
 
         2: {
           0: {
-            img: require('@/img/submenu/1.png'),
+            img: require('./img/submenu/1.png'),
             t: 'Верхняя одежда',
             url: './category.html',
             child: {
@@ -326,7 +326,7 @@ export default {
             }
           },
           1: {
-            img: require('@/img/submenu/2.png'),
+            img: require('./img/submenu/2.png'),
             t: 'Одежда для девочек3',
             url: './category.html',
             child: {
@@ -343,7 +343,7 @@ export default {
             }
           },
           2: {
-            img: require('@/img/submenu/3.png'),
+            img: require('./img/submenu/3.png'),
             t: 'Одежда для мальчиков3',
             url: './category.html',
             child: {
@@ -360,7 +360,7 @@ export default {
             }
           },
           3: {
-            img: require('@/img/submenu/4.png'),
+            img: require('./img/submenu/4.png'),
             t: 'Обувь для девочек3',
             url: './category.html',
             child: {
@@ -372,7 +372,7 @@ export default {
             }
           },
           4: {
-            img: require('@/img/submenu/5.png'),
+            img: require('./img/submenu/5.png'),
             t: 'Обувь для мальчиков3',
             url: './category.html',
             child: {
@@ -384,7 +384,7 @@ export default {
             }
           },
           5: {
-            img: require('@/img/submenu/6.png'),
+            img: require('./img/submenu/6.png'),
             t: 'Одежда для малышей3',
             url: './category.html',
             child: {
@@ -404,7 +404,7 @@ export default {
 
         3: {
           0: {
-            img: require('@/img/submenu/1.png'),
+            img: require('./img/submenu/1.png'),
             t: 'Верхняя одежда4',
             url: './category.html',
             child: {
@@ -414,7 +414,7 @@ export default {
             }
           },
           1: {
-            img: require('@/img/submenu/2.png'),
+            img: require('./img/submenu/2.png'),
             t: 'Одежда для девочек4',
             url: './category.html',
             child: {
@@ -431,7 +431,7 @@ export default {
             }
           },
           2: {
-            img: require('@/img/submenu/3.png'),
+            img: require('./img/submenu/3.png'),
             t: 'Одежда для мальчиков4',
             url: './category.html',
             child: {
@@ -448,7 +448,7 @@ export default {
             }
           },
           3: {
-            img: require('@/img/submenu/4.png'),
+            img: require('./img/submenu/4.png'),
             t: 'Обувь для девочек4',
             url: './category.html',
             child: {
@@ -460,7 +460,7 @@ export default {
             }
           },
           4: {
-            img: require('@/img/submenu/5.png'),
+            img: require('./img/submenu/5.png'),
             t: 'Обувь для мальчиков4',
             url: './category.html',
             child: {
@@ -472,7 +472,7 @@ export default {
             }
           },
           5: {
-            img: require('@/img/submenu/6.png'),
+            img: require('./img/submenu/6.png'),
             t: 'Одежда для малышей4',
             url: './category.html',
             child: {
@@ -492,7 +492,7 @@ export default {
 
         4: {
           0: {
-            img: require('@/img/submenu/1.png'),
+            img: require('./img/submenu/1.png'),
             t: 'Верхняя одежда5',
             url: './category.html',
             child: {
@@ -502,7 +502,7 @@ export default {
             }
           },
           1: {
-            img: require('@/img/submenu/2.png'),
+            img: require('./img/submenu/2.png'),
             t: 'Одежда для девочек5',
             url: './category.html',
             child: {
@@ -519,7 +519,7 @@ export default {
             }
           },
           2: {
-            img: require('@/img/submenu/3.png'),
+            img: require('./img/submenu/3.png'),
             t: 'Одежда для мальчиков5',
             url: './category.html',
             child: {
@@ -536,7 +536,7 @@ export default {
             }
           },
           3: {
-            img: require('@/img/submenu/4.png'),
+            img: require('./img/submenu/4.png'),
             t: 'Обувь для девочек5',
             url: './category.html',
             child: {
@@ -548,7 +548,7 @@ export default {
             }
           },
           4: {
-            img: require('@/img/submenu/5.png'),
+            img: require('./img/submenu/5.png'),
             t: 'Обувь для мальчиков5',
             url: './category.html',
             child: {
@@ -560,7 +560,7 @@ export default {
             }
           },
           5: {
-            img: require('@/img/submenu/6.png'),
+            img: require('./img/submenu/6.png'),
             t: 'Одежда для малышей5',
             url: './category.html',
             child: {
@@ -580,7 +580,7 @@ export default {
         
         5: {
           0: {
-            img: require('@/img/submenu/1.png'),
+            img: require('./img/submenu/1.png'),
             t: 'Верхняя одежда6',
             url: './category.html',
             child: {
@@ -590,7 +590,7 @@ export default {
             }
           },
           1: {
-            img: require('@/img/submenu/2.png'),
+            img: require('./img/submenu/2.png'),
             t: 'Одежда для девочек6',
             url: './category.html',
             child: {
@@ -607,7 +607,7 @@ export default {
             }
           },
           2: {
-            img: require('@/img/submenu/3.png'),
+            img: require('./img/submenu/3.png'),
             t: 'Одежда для мальчиков6',
             url: './category.html',
             child: {
@@ -624,7 +624,7 @@ export default {
             }
           },
           3: {
-            img: require('@/img/submenu/4.png'),
+            img: require('./img/submenu/4.png'),
             t: 'Обувь для девочек6',
             url: './category.html',
             child: {
@@ -636,7 +636,7 @@ export default {
             }
           },
           4: {
-            img: require('@/img/submenu/5.png'),
+            img: require('./img/submenu/5.png'),
             t: 'Обувь для мальчиков6',
             url: './category.html',
             child: {
@@ -648,7 +648,7 @@ export default {
             }
           },
           5: {
-            img: require('@/img/submenu/6.png'),
+            img: require('./img/submenu/6.png'),
             t: 'Одежда для малышей6',
             url: './category.html',
             child: {
@@ -668,7 +668,7 @@ export default {
         
         6: {
           0: {
-            img: require('@/img/submenu/1.png'),
+            img: require('./img/submenu/1.png'),
             t: 'Верхняя одежда',
             url: './category.html',
             child: {
@@ -678,7 +678,7 @@ export default {
             }
           },
           1: {
-            img: require('@/img/submenu/2.png'),
+            img: require('./img/submenu/2.png'),
             t: 'Одежда для девочек3',
             url: './category.html',
             child: {
@@ -695,7 +695,7 @@ export default {
             }
           },
           2: {
-            img: require('@/img/submenu/3.png'),
+            img: require('./img/submenu/3.png'),
             t: 'Одежда для мальчиков3',
             url: './category.html',
             child: {
@@ -712,7 +712,7 @@ export default {
             }
           },
           3: {
-            img: require('@/img/submenu/4.png'),
+            img: require('./img/submenu/4.png'),
             t: 'Обувь для девочек3',
             url: './category.html',
             child: {
@@ -724,7 +724,7 @@ export default {
             }
           },
           4: {
-            img: require('@/img/submenu/5.png'),
+            img: require('./img/submenu/5.png'),
             t: 'Обувь для мальчиков3',
             url: './category.html',
             child: {
@@ -736,7 +736,7 @@ export default {
             }
           },
           5: {
-            img: require('@/img/submenu/6.png'),
+            img: require('./img/submenu/6.png'),
             t: 'Одежда для малышей3',
             url: './category.html',
             child: {
@@ -756,7 +756,7 @@ export default {
 
         7: {
           0: {
-            img: require('@/img/submenu/1.png'),
+            img: require('./img/submenu/1.png'),
             t: 'Верхняя одежда4',
             url: './category.html',
             child: {
@@ -766,7 +766,7 @@ export default {
             }
           },
           1: {
-            img: require('@/img/submenu/2.png'),
+            img: require('./img/submenu/2.png'),
             t: 'Одежда для девочек4',
             url: './category.html',
             child: {
@@ -783,7 +783,7 @@ export default {
             }
           },
           2: {
-            img: require('@/img/submenu/3.png'),
+            img: require('./img/submenu/3.png'),
             t: 'Одежда для мальчиков4',
             url: './category.html',
             child: {
@@ -800,7 +800,7 @@ export default {
             }
           },
           3: {
-            img: require('@/img/submenu/4.png'),
+            img: require('./img/submenu/4.png'),
             t: 'Обувь для девочек4',
             url: './category.html',
             child: {
@@ -812,7 +812,7 @@ export default {
             }
           },
           4: {
-            img: require('@/img/submenu/5.png'),
+            img: require('./img/submenu/5.png'),
             t: 'Обувь для мальчиков4',
             url: './category.html',
             child: {
@@ -824,7 +824,7 @@ export default {
             }
           },
           5: {
-            img: require('@/img/submenu/6.png'),
+            img: require('./img/submenu/6.png'),
             t: 'Одежда для малышей4',
             url: './category.html',
             child: {
@@ -844,7 +844,7 @@ export default {
 
         8: {
           0: {
-            img: require('@/img/submenu/1.png'),
+            img: require('./img/submenu/1.png'),
             t: 'Верхняя одежда5',
             url: './category.html',
             child: {
@@ -854,7 +854,7 @@ export default {
             }
           },
           1: {
-            img: require('@/img/submenu/2.png'),
+            img: require('./img/submenu/2.png'),
             t: 'Одежда для девочек5',
             url: './category.html',
             child: {
@@ -871,7 +871,7 @@ export default {
             }
           },
           2: {
-            img: require('@/img/submenu/3.png'),
+            img: require('./img/submenu/3.png'),
             t: 'Одежда для мальчиков5',
             url: './category.html',
             child: {
@@ -888,7 +888,7 @@ export default {
             }
           },
           3: {
-            img: require('@/img/submenu/4.png'),
+            img: require('./img/submenu/4.png'),
             t: 'Обувь для девочек5',
             url: './category.html',
             child: {
@@ -900,7 +900,7 @@ export default {
             }
           },
           4: {
-            img: require('@/img/submenu/5.png'),
+            img: require('./img/submenu/5.png'),
             t: 'Обувь для мальчиков5',
             url: './category.html',
             child: {
@@ -912,7 +912,7 @@ export default {
             }
           },
           5: {
-            img: require('@/img/submenu/6.png'),
+            img: require('./img/submenu/6.png'),
             t: 'Одежда для малышей5',
             url: './category.html',
             child: {
@@ -932,7 +932,7 @@ export default {
         
         9: {
           0: {
-            img: require('@/img/submenu/1.png'),
+            img: require('./img/submenu/1.png'),
             t: 'Верхняя одежда6',
             url: './category.html',
             child: {
@@ -942,7 +942,7 @@ export default {
             }
           },
           1: {
-            img: require('@/img/submenu/2.png'),
+            img: require('./img/submenu/2.png'),
             t: 'Одежда для девочек6',
             url: './category.html',
             child: {
@@ -959,7 +959,7 @@ export default {
             }
           },
           2: {
-            img: require('@/img/submenu/3.png'),
+            img: require('./img/submenu/3.png'),
             t: 'Одежда для мальчиков6',
             url: './category.html',
             child: {
@@ -976,7 +976,7 @@ export default {
             }
           },
           3: {
-            img: require('@/img/submenu/4.png'),
+            img: require('./img/submenu/4.png'),
             t: 'Обувь для девочек6',
             url: './category.html',
             child: {
@@ -988,7 +988,7 @@ export default {
             }
           },
           4: {
-            img: require('@/img/submenu/5.png'),
+            img: require('./img/submenu/5.png'),
             t: 'Обувь для мальчиков6',
             url: './category.html',
             child: {
@@ -1000,7 +1000,7 @@ export default {
             }
           },
           5: {
-            img: require('@/img/submenu/6.png'),
+            img: require('./img/submenu/6.png'),
             t: 'Одежда для малышей6',
             url: './category.html',
             child: {

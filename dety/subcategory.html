@@ -13,85 +13,60 @@
 </head>
 <body>
 
-  <nav class="nav">
-    <div class="nav-top">
-      <div class="container">
-        <div class="hamburger" data-toggle="modal" data-target="menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="nav-top__city">
-          <a class="nav-top__city__location" data-toggle="modal" data-target="city" href="#">Санкт-Петербург</a>
-          <div class="nav-top__city__location__item">
-            <a href="#">Пункты выдачи</a>
-            <a href="">Условия доставки</a>
-          </div>
-        </div>
-        <div class="nav-top__right">
-          <a class="nav-top__right__phone" href="tel:+79384087777">+7 (938) 408-77-77</a>
-          <span class="nav-top__right__time">9:00 - 22:00</span>
-          <a class="nav-top__right__user" data-toggle="modal" data-target="user" href="#">Покупателям</a>
-          <a class="nav-top__right__login" data-toggle="modal" data-target="login" href="#">Войти</a>
+<nav class="nav">
+  <div class="nav-top">
+    <div class="container">
+      <div class="hamburger" data-toggle="modal" data-target="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav-top__city">
+        <a class="nav-top__city__location" data-toggle="modal" data-target="city" href="#">Санкт-Петербург</a>
+        <div class="nav-top__city__location__item">
+          <a href="#">Пункты выдачи</a>
+          <a href="">Условия доставки</a>
         </div>
       </div>
+      <div class="nav-top__right">
+        <a class="nav-top__right__phone" href="tel:+79384087777">+7 (938) 408-77-77</a>
+        <span class="nav-top__right__time">9:00 - 22:00</span>
+        <a class="nav-top__right__user" data-toggle="modal" data-target="user" href="#">Покупателям</a>
+        <a class="nav-top__right__login" data-toggle="modal" data-target="login" href="#">Войти</a>
+      </div>
     </div>
-  
-    <div class="nav-search">
-      <div class="container">
-        <a href="./" class="brand">
-          <img src="./img/logo.svg" alt="Все для деток.ру">
+  </div>
+
+  <div class="nav-search">
+    <div class="container">
+      <a href="./" class="brand">
+        <img src="./img/logo.svg" alt="Все для деток.ру">
+      </a>
+      <form action="/" method="post" class="nav-search__form">
+        <input type="text" name="search" value="" placeholder="Поиск по сайту">
+      </form>
+      <div class="nav-search--right">
+        <a href="" class="nav-search--right__wishlist active">
+          <!-- <span>2</span> -->
         </a>
-        <form action="/" method="post" class="nav-search__form">
-          <div class="nav-search__form__category">
-            <span class="title">Все категории</span>
-          <ul>
-            <li>Все категории</li>
-            <li>Акции</li>
-            <li>Одежда и обувь</li>
-            <li>Игрушки и игры</li>
-            <li>Детская комната</li>
-            <li>Коляски и автокресла</li>
-            <li>Подгузники и гигиена</li>
-            <li>Кормление и питание</li>
-            <li>Развитие и обучение</li>
-            <li>Хобби и творчество</li>
-            <li>Товары для мам</li>
-            <li>Герои и интересы</li>
-          </ul>
-        </div>
-          <input type="text" name="search" value="" placeholder="Поиск по сайту">
-        </form>
-        <div class="nav-search--right">
-          <a href="" class="nav-search--right__wishlist">
-            <!-- <span>2</span> -->
-          </a>
-          <a href="" class="nav-search--right__cart">
-            <!-- <span class="qty">3</span>
-            <span class="price">5 750 ₽</span> -->
-          </a>
-        </div>
+        <a href="" class="nav-search--right__cart">
+          <!-- <span class="qty">3</span>
+          <span class="price">5 750 ₽</span> -->
+        </a>
       </div>
     </div>
-    
-    <div id=app></div>
-    <link href='./css/app.1f553f9d.css' rel=stylesheet>
-    <script src='./js/chunk-vendors.d4d1433b.js'></script>
-    <script src='./js/app.dbebd248.js'></script>
-  </nav>
+  </div>
+  
+  <div id=app></div>
+  <link href='./css/app.7a0a80c4.css' rel=stylesheet>
+  <script src='./js/chunk-vendors.d4d1433b.js'></script>
+  <script src='./js/app.fe4e0e60.js'></script>
+</nav>
   
 <main>
   <div class="slider">
     <div class="container">
-        
-        <div class="slider-wrapper__item">
-          <div class="slider-wrapper__item__caption">
-            <p class="title">15% скидка</p>
-            <p class="desc">на детские коляски</p>
-          </div>
-          <img src="./img/slider/1.png" alt="">
-        </div>
-
+      <a class="slider-wrapper--item" href="" data-desctop="./img/slider/1.png" data-mobile="./img/slider/1m.png"></a>
     </div>
   </div>
 
@@ -326,76 +301,76 @@
   </section>
     
   <section class="heroes">
-      <div class="container">
+    <div class="container">
       <div class="section__title">
-          <h2>Популярные бренды</h2>
-          <a href="">Посмотреть все</a>
+        <h2>Популярные бренды</h2>
+        <a href="">Посмотреть все</a>
       </div>
 
       <div class="row">
-          <div class="heroes-item">
+        <div class="heroes-item">
           <a href="" class="heroes-item__img">
-              <img src="./img/heroes/1.png" alt="">
+            <img src="./img/brands/home/1.png" alt="">
           </a>
-          </div>
-          <div class="heroes-item">
+        </div>
+        <div class="heroes-item">
           <a href="" class="heroes-item__img">
-              <img src="./img/heroes/2.png" alt="">
+            <img src="./img/brands/home/2.png" alt="">
           </a>
-          </div>
-          <div class="heroes-item">
+        </div>
+        <div class="heroes-item">
           <a href="" class="heroes-item__img">
-              <img src="./img/heroes/3.png" alt="">
+            <img src="./img/brands/home/3.png" alt="">
           </a>
-          </div>
-          <div class="heroes-item">
+        </div>
+        <div class="heroes-item">
           <a href="" class="heroes-item__img">
-              <img src="./img/heroes/4.png" alt="">
+            <img src="./img/brands/home/4.png" alt="">
           </a>
-          </div>
-          <div class="heroes-item">
+        </div>
+        <div class="heroes-item">
           <a href="" class="heroes-item__img">
-              <img src="./img/heroes/5.png" alt="">
+            <img src="./img/brands/home/5.png" alt="">
           </a>
-          </div>
-          <div class="heroes-item">
+        </div>
+        <div class="heroes-item">
           <a href="" class="heroes-item__img">
-              <img src="./img/heroes/6.png" alt="">
+            <img src="./img/brands/home/6.png" alt="">
           </a>
-          </div>
+        </div>
 
-          <div class="heroes-item">
+        <div class="heroes-item">
           <a href="" class="heroes-item__img">
-              <img src="./img/heroes/7.png" alt="">
+            <img src="./img/brands/home/7.png" alt="">
           </a>
-          </div>
-          <div class="heroes-item">
+        </div>
+        <div class="heroes-item">
           <a href="" class="heroes-item__img">
-              <img src="./img/heroes/8.png" alt="">
+            <img src="./img/brands/home/8.png" alt="">
           </a>
-          </div>
-          <div class="heroes-item">
+        </div>
+        <div class="heroes-item">
           <a href="" class="heroes-item__img">
-              <img src="./img/heroes/9.png" alt="">
+            <img src="./img/brands/home/9.png" alt="">
           </a>
-          </div>
-          <div class="heroes-item">
+        </div>
+        <div class="heroes-item">
           <a href="" class="heroes-item__img">
-              <img src="./img/heroes/10.png" alt="">
+            <img src="./img/brands/home/10.png" alt="">
           </a>
-          </div>
-          <div class="heroes-item">
+        </div>
+        <div class="heroes-item">
           <a href="" class="heroes-item__img">
-              <img src="./img/heroes/11.png" alt="">
+            <img src="./img/brands/home/11.png" alt="">
           </a>
-          </div>
-          <div class="heroes-item">
+        </div>
+        <div class="heroes-item">
           <a href="" class="heroes-item__img">
-              <img src="./img/heroes/12.png" alt="">
+            <img src="./img/brands/home/12.png" alt="">
           </a>
-          </div>
+        </div>
       </div>
-      </div>
+    </div>
   </section>
 
   <section class="text-block">
@@ -403,18 +378,17 @@
       <div class="section__title">
         <h2>Интернет-магазин «ВсёДляДеток.ру»</h2>
       </div>
-      <div class="row">
-        <div class="col-lg-6">
-          <p>
-            Сеть магазинов работает в среднем ценовом сегменте. Целевой аудиторией компании являются семьи со средними доходами, к которым относится большинство посетителей торговых центров.Современный супермаркет ВсеДляДеток.ру включает около 20-30 тыс. наименований товаров детского ассортимента: игрушки, одежда и обувь, товары для новорожденных, канцелярские товары, наборы для творчества, товары для активного отдыха, автокресла, мебель.
-          </p>
-        </div>
-        <div class="col-lg-6">
-          <span class="hideElem active" data-scroll="start">показать еще</span>
-          <p class="showElem active">
-            Группа компаний ВсеДляДеток.ру укрепляет лидирующие позиции на рынке детских товаров, сохраняя высокие темпы развития на протяжении последних лет. Так, в 2018 году распахнули свои двери 100 новых магазина сети ВсеДляДеток.ру. Магазины сети ВсеДляДеток.ру посетили свыше 220 млн человек. Выручка ВсеДляДеток.ру по итогам 2018 года составила 110,9 млрд руб. (+14,3% год к году), при этом доля на рынке детских товаров составила 23%.
-          </p>
-        </div>
+      <div class="column">
+        <p>
+          Сеть магазинов работает в среднем ценовом сегменте. Целевой аудиторией компании являются семьи  со средними доходами, к которым относится большинство посетителей  торговых центров. Современный супермаркет ВсеДляДеток.ру включает около 20-30 тыс. наименований товаров детского ассортимента: игрушки, одежда и обувь, товары для новорожденных, канцелярские товары, наборы для творчества, товары для активного отдыха, автокресла, мебель.
+        </p>
+        <p>
+          Группа компаний ВсеДляДеток.ру укрепляет лидирующие позиции на рынке детских товаров, сохраняя высокие темпы развития на протяжении последних лет. Так, в 2018 году распахнули свои двери 100 новых магазина сети ВсеДляДеток.ру. Магазины сети ВсеДляДеток.ру посетили свыше 220 млн человек. Выручка ВсеДляДеток.ру по итогам 2018 года составила 110,9 млрд руб. (+14,3% год к году), при этом доля на рынке детских товаров составила 23%.
+        </p>
+        <p class="showMore"><a>скрыть</a><p>
+      </div>
+          
+
       </div>
     </div>
   </section>
@@ -607,8 +581,6 @@
 </div>
 
   <script src="./js/scripts.min.js"></script>
-  <script src="./js/slick/slick.min.js"></script>
-  <link rel="stylesheet" href="./js/slick/slick.css">
   <link rel="stylesheet" href="./css/main.min.css">
 </body>
 </html>
