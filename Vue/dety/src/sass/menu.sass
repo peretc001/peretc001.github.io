@@ -498,19 +498,56 @@ $textblock: #EAF6F6
         right: 0
         background: #fff
         padding: 50px
+        form
+            display: flex
+            align-items: center
         .close
-            display: inline-block
-            width: 1em
-            height: 1em
-            background: #f5f5f5
+            background-color: #ebebeb
             border-radius: 50%
-            text-align: center
+            cursor: pointer
+            position: absolute
+            right: 10px
+            top: 10px
+            width: 1.5em
+            height: 1.5em
+            opacity: .7
+            background-size: .7em
+            background-position: center
+            background-repeat: no-repeat
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTEyLjAwMSA1MTIuMDAxIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIuMDAxIDUxMi4wMDE7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMjg0LjI4NiwyNTYuMDAyTDUwNi4xNDMsMzQuMTQ0YzcuODExLTcuODExLDcuODExLTIwLjQ3NSwwLTI4LjI4NWMtNy44MTEtNy44MS0yMC40NzUtNy44MTEtMjguMjg1LDBMMjU2LDIyNy43MTcgICAgTDM0LjE0Myw1Ljg1OWMtNy44MTEtNy44MTEtMjAuNDc1LTcuODExLTI4LjI4NSwwYy03LjgxLDcuODExLTcuODExLDIwLjQ3NSwwLDI4LjI4NWwyMjEuODU3LDIyMS44NTdMNS44NTgsNDc3Ljg1OSAgICBjLTcuODExLDcuODExLTcuODExLDIwLjQ3NSwwLDI4LjI4NWMzLjkwNSwzLjkwNSw5LjAyNCw1Ljg1NywxNC4xNDMsNS44NTdjNS4xMTksMCwxMC4yMzctMS45NTIsMTQuMTQzLTUuODU3TDI1NiwyODQuMjg3ICAgIGwyMjEuODU3LDIyMS44NTdjMy45MDUsMy45MDUsOS4wMjQsNS44NTcsMTQuMTQzLDUuODU3czEwLjIzNy0xLjk1MiwxNC4xNDMtNS44NTdjNy44MTEtNy44MTEsNy44MTEtMjAuNDc1LDAtMjguMjg1ICAgIEwyODQuMjg2LDI1Ni4wMDJ6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiM1OTU5NTkiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==')
+            transition: opacity .3s ease
         input
-            margin-top: 1em
             width: 100%
-            padding: .5em
+            background: #ffffff
+            border: 1px solid $grey
+            border-radius: 4px
+            color: $text
             outline: none
-            box-sizing: none
+            box-shadow: none
+            margin: 0
+            padding: .5em
+            font-size: 16px
+            &::-webkit-input-placeholder
+                color: #9BAFC0
+            &:-moz-placeholder
+                color: #9BAFC0
+            &::-moz-placeholder
+                color: #9BAFC0
+            &:-ms-input-placeholder
+                color: #9BAFC0
+        button
+            background: transparent
+            display: inline-block
+            width: 2em
+            height: 2em
+            border: none
+            padding: 0
+            margin: 0
+            margin-left: 1em
+            outline: none
+            img
+                width: 100%
+                margin: 0
 
 @media screen and ( max-width: 576.98px )
     .nav

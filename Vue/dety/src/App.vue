@@ -23,7 +23,7 @@
           <ul>
             <li class="nav-catalog__menu__item sale"><a href="" class="sale"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEuMzkyMzQgMTEuOTU1M0wxMS43MjUyIDEuNTE1MTNDMTIuNzc2NCAwLjQ1MjgwNSAxNC4yMzczIDAuMjA2NzkgMTQuOTg4MiAwLjk2NTYwMUMxNS43MzkxIDEuNzIzOTcgMTUuNDk1NiAzLjIwMDQ1IDE0LjQ0NDMgNC4yNjIzNUw0LjExMTUxIDE0LjcwM0MzLjA2MDI2IDE1Ljc2NTMgMS41OTkzNyAxNi4wMTEzIDAuODQ4NTEgMTUuMjUyNUMwLjA5NzYzNjYgMTQuNDkzNyAwLjM0MTEwNiAxMy4wMTc3IDEuMzkyMzQgMTEuOTU1M1pNMTIuMzgwNiA5LjcxNjk1QzE0LjA2NTYgOS43MTY5NSAxNS40MzE0IDExLjA1MzYgMTUuNDMxNCAxMi43MDIyQzE1LjQzMTQgMTQuMzUxMiAxNC4wNjU2IDE1LjY4NzkgMTIuMzgwNiAxNS42ODc5QzEwLjY5NTggMTUuNjg3OSA5LjMyOTg5IDE0LjM1MTIgOS4zMjk4OSAxMi43MDIyQzkuMzI5ODkgMTEuMDUzNiAxMC42OTU4IDkuNzE2OTUgMTIuMzgwNiA5LjcxNjk1Wk02LjUxNzUyIDMuNzQ2MDFDNi41MTc1MiAyLjA5NzQxIDUuMTUxNjEgMC43NjA3NTEgMy40NjY3NiAwLjc2MDc1MUMxLjc4MTc4IDAuNzYwNzUxIDAuNDE2MDI0IDIuMDk3NDEgMC40MTYwMjQgMy43NDYwMUMwLjQxNjAyNCA1LjM5NDU5IDEuNzgxNzggNi43MzEyNSAzLjQ2Njc2IDYuNzMxMjVDNS4xNTE2MSA2LjczMTI1IDYuNTE3NTIgNS4zOTQ1OSA2LjUxNzUyIDMuNzQ2MDFaIiBmaWxsPSIjRkZDMTAwIi8+PC9zdmc+" alt="">Акции</a></li>
             <li class="nav-catalog__menu__item" @click.prevent="showSubMenu(index)"
-              v-for="(item,index) of menu" :data-menu="index" >
+              v-for="(item,index) of menu" :data-menu="index" :key="index">
               <a :href="item.url">{{item.t}}</a>
             </li>
           </ul>
@@ -32,7 +32,7 @@
         <transition name="fade3">
           <div v-if="slide && !slide2" class="nav-catalog__submenu">
             <p v-if="slide && !slide2" @click="slide = !slide" class="back">Назад</p>
-            <ul v-if="!slide2" v-for="(item,index) of showMenu">
+            <ul v-for="(item,index) of showMenu" :key="index">
               <li class="first">
                 <a :href="item.url" @click.prevent="showSubMenu2(index)">
                   {{item.t}}
@@ -45,7 +45,7 @@
         <transition name="fade3" mode="out-in">
           <div v-if="slide2" class="nav-catalog__submenu">
             <p v-if="slide2" @click="backToSubMenu()" class="back">{{ parrent }}</p>
-            <ul v-if="slide2" v-for="(item,index) of showMenu">
+            <ul v-for="(item,index) of showMenu" :key="index">
               <li class="first">
                 <a :href="item.url">
                   {{item.t}}
@@ -65,7 +65,7 @@
           <ul>
             <li class="nav-catalog__menu__item sale" @mouseover="closeMenu"><a href="" class="sale"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEuMzkyMzQgMTEuOTU1M0wxMS43MjUyIDEuNTE1MTNDMTIuNzc2NCAwLjQ1MjgwNSAxNC4yMzczIDAuMjA2NzkgMTQuOTg4MiAwLjk2NTYwMUMxNS43MzkxIDEuNzIzOTcgMTUuNDk1NiAzLjIwMDQ1IDE0LjQ0NDMgNC4yNjIzNUw0LjExMTUxIDE0LjcwM0MzLjA2MDI2IDE1Ljc2NTMgMS41OTkzNyAxNi4wMTEzIDAuODQ4NTEgMTUuMjUyNUMwLjA5NzYzNjYgMTQuNDkzNyAwLjM0MTEwNiAxMy4wMTc3IDEuMzkyMzQgMTEuOTU1M1pNMTIuMzgwNiA5LjcxNjk1QzE0LjA2NTYgOS43MTY5NSAxNS40MzE0IDExLjA1MzYgMTUuNDMxNCAxMi43MDIyQzE1LjQzMTQgMTQuMzUxMiAxNC4wNjU2IDE1LjY4NzkgMTIuMzgwNiAxNS42ODc5QzEwLjY5NTggMTUuNjg3OSA5LjMyOTg5IDE0LjM1MTIgOS4zMjk4OSAxMi43MDIyQzkuMzI5ODkgMTEuMDUzNiAxMC42OTU4IDkuNzE2OTUgMTIuMzgwNiA5LjcxNjk1Wk02LjUxNzUyIDMuNzQ2MDFDNi41MTc1MiAyLjA5NzQxIDUuMTUxNjEgMC43NjA3NTEgMy40NjY3NiAwLjc2MDc1MUMxLjc4MTc4IDAuNzYwNzUxIDAuNDE2MDI0IDIuMDk3NDEgMC40MTYwMjQgMy43NDYwMUMwLjQxNjAyNCA1LjM5NDU5IDEuNzgxNzggNi43MzEyNSAzLjQ2Njc2IDYuNzMxMjVDNS4xNTE2MSA2LjczMTI1IDYuNTE3NTIgNS4zOTQ1OSA2LjUxNzUyIDMuNzQ2MDFaIiBmaWxsPSIjRkZDMTAwIi8+PC9zdmc+" alt="">Акции</a></li>
             <li class="nav-catalog__menu__item" :class="{ active: current == index }"
-              v-for="(item,index) of menu" :data-menu="index" >
+              v-for="(item,index) of menu" :data-menu="index"  :key="index">
               <a :href="item.url" @mouseenter="openMenu(index)">{{item.t}}</a>
             </li>
           </ul>
@@ -73,14 +73,14 @@
         <transition name="fade" mode="out-in">
           <div v-if="show" class="nav-catalog__submenu">
             <p v-if="mobile" @click="closeMenu" class="back">Назад</p>
-            <ul v-for="(item,index) of showMenu">
+            <ul v-for="(item,index) of showMenu" :key="index">
               <li class="first">
                 <a :href="item.url">
                   <img :src="item.img" :alt="item.t">
                   {{item.t}}
                 </a>
               </li>
-              <li v-for="item of item.child">
+              <li v-for="(item,index) of item.child"  :key="index">
                 <a :href="item.url">
                   {{item.t}}
                 </a>
@@ -93,8 +93,12 @@
 
       <transition name="fade2" mode="out-in">
       <div v-if="search" class="search" :class="{ openSearch: search == true }">
-        <p class="close" @click="search = !search">x</p>
+        <p class="close" @click="search = !search"></p>
+        <form action="/" @submit.prevent>
         <input type="search" placeholder="Найти">
+        <button type="find"><img src="data:image/svg+xml;base64,
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDkwLjg4IDQ5MC44OCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkwLjg4IDQ5MC44ODsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48Zz48Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0yNDUuNDQsMEMxMTAuMTAxLDAsMCwxMTAuMTAxLDAsMjQ1LjQ0czExMC4xMDEsMjQ1LjQ0LDI0NS40NCwyNDUuNDRzMjQ1LjQ0LTExMC4xMDEsMjQ1LjQ0LTI0NS40NFMzODAuNzc5LDAsMjQ1LjQ0LDB6ICAgICBNMjQ1LjQ0LDQ2OS41NDdjLTEyMy41NjMsMC0yMjQuMTA3LTEwMC41NDQtMjI0LjEwNy0yMjQuMTA3UzEyMS44NzcsMjEuMzMzLDI0NS40NCwyMS4zMzNTNDY5LjU0NywxMjEuODc3LDQ2OS41NDcsMjQ1LjQ0ICAgIFMzNjkuMDAzLDQ2OS41NDcsMjQ1LjQ0LDQ2OS41NDd6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNDMjUxQzAiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0zMzguNDMyLDIzOC4wMTZsLTEyOC0xMjhjLTQuMTYtNC4xNi0xMC45MjMtNC4xNi0xNS4wODMsMGMtNC4xNiw0LjE2LTQuMTYsMTAuOTIzLDAsMTUuMDgzbDEyMC40MjcsMTIwLjQ2OSAgICBMMTk1LjMyOCwzNjYuMDE2Yy00LjE2LDQuMTYtNC4xNiwxMC45MjMsMCwxNS4wODNjMi4wOTEsMi4wNjksNC44MjEsMy4xMTUsNy41NTIsMy4xMTVzNS40NjEtMS4wMjQsNy41NTItMy4xMTVsMTI4LTEyOCAgICBDMzQyLjU5MiwyNDguOTM5LDM0Mi41OTIsMjQyLjE3NiwzMzguNDMyLDIzOC4wMTZ6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNDMjUxQzAiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==" /></button>
+        </form>
       </div>
       </transition>
   </div>
