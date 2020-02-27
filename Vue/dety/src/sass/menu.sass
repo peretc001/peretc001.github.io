@@ -12,30 +12,6 @@ $textblock: #EAF6F6
     padding: 0
     box-sizing: border-box
 
-.btn
-    outline: none !important
-    box-shadow: none !important
-    cursor: pointer
-    appearance: none !important
-    border-radius: 4px
-    padding: .5em
-    &.btn-accent
-        border: 1px solid $accent
-        background: $accent
-        color: #ffffff
-        transition: background .5s ease
-        &:hover
-            background: darken($accent, 8%)
-    &.btn-outline-accent
-        background: transparent
-        border: 1px solid $accent
-        color: $accent
-        transition: background .5s ease, color .5s ease
-        &:hover
-            background: transparent
-            border: 1px solid $accent
-            color: $accent
-
 .hamburger
     display: block
     cursor: pointer
@@ -222,6 +198,9 @@ $textblock: #EAF6F6
             opacity: 1
             z-index: 1
 
+.openSearch
+    display: none
+
 @keyframes slide
     0%
         top: 26px
@@ -235,32 +214,31 @@ $textblock: #EAF6F6
         visibility: visible
 
 .fade
-   position: relative
+    position: relative
 .fade-enter-active,
 .fade-leave-active
-   transition: opacity .5s
+    transition: opacity .5s
 .fade-enter,
 .fade-leave-to
-   opacity: 0
-
+    opacity: 0
 .fade2-enter-active,
 .fade2-leave-active
-   transform: translateY(0)
-   transition: opacity .2s, transform .2s ease
+    transform: translateY(0)
+    transition: opacity .2s, transform .2s ease
 .fade2-enter,
 .fade2-leave-to
-   transform: translateY(30px)
-   opacity: 0
+    transform: translateY(30px)
+    opacity: 0
 .fade3
-   position: absolute
+    position: absolute
 .fade3-enter-active,
 .fade3-leave-active
-   transform: translateX(0) translateY(100%) !important
-   transition: opacity .2s, transform .2s ease
+    transform: translateX(0) translateY(100%) !important
+    transition: opacity .2s, transform .2s ease
 .fade3-enter,
 .fade3-leave-to
-   transform: translateX(50px) translateY(100%) !important
-   opacity: 0 !important
+    transform: translateX(50px) translateY(100%) !important
+    opacity: 0 !important
 
   
 @media screen and ( max-width: 1199.98px )
@@ -284,13 +262,16 @@ $textblock: #EAF6F6
                                 max-width: 120px
 
 @media screen and ( max-width: 991.98px )
-   .nav
+    .nav
         &-mobile
             width: 100%
             display: flex
             justify-content: center
             padding: 0 calc(50% - 345px)
             margin-bottom: 0.5em
+            .hamburger
+                span
+                    background: #fff
             & > *
                 flex: 0 0 33.333333%
             .btn
@@ -311,6 +292,29 @@ $textblock: #EAF6F6
                     border-radius: 0 4px 4px 0
                     &:hover
                         background: $accent
+            .btn
+                outline: none !important
+                box-shadow: none !important
+                cursor: pointer
+                appearance: none !important
+                border-radius: 4px
+                padding: .5em
+                &.btn-accent
+                    border: 1px solid $accent
+                    background: $accent
+                    color: #ffffff
+                    transition: background .5s ease
+                    &:hover
+                        background: $accent
+                &.btn-outline-accent
+                    background: transparent
+                    border: 1px solid $accent
+                    color: $accent
+                    transition: background .5s ease, color .5s ease
+                    &:hover
+                        background: transparent
+                        border: 1px solid $accent
+                        color: $accent
             .sale
                 background: $accent
                 display: flex
@@ -469,28 +473,9 @@ $textblock: #EAF6F6
                         opacity: 1
                         z-index: 3
                         pointer-events: all
-
-@media screen and ( max-width: 767.98px )
-    .nav
-        &-mobile
-            padding: 0 calc(50% - 255px)
-            & > *
-                flex: 0 0 auto
-            .btn
-                &.search
-                    flex: 0 0 40%
-                &.catalog-btn
-                    flex: 0 0 60%
-            .sale
-                display: none
-
-        &-catalog
-            &__menu,
-            &__submenu
-                right: calc(50% - 255px)
-            &__menu__item.sale
-                display: block
+    
     .openSearch
+        display: block
         position: fixed
         left: 0
         top: 0
@@ -553,6 +538,27 @@ $textblock: #EAF6F6
             img
                 width: 100%
                 margin: 0
+
+@media screen and ( max-width: 767.98px )
+    .nav
+        &-mobile
+            padding: 0 calc(50% - 255px)
+            & > *
+                flex: 0 0 auto
+            .btn
+                &.search
+                    flex: 0 0 40%
+                &.catalog-btn
+                    flex: 0 0 60%
+            .sale
+                display: none
+
+        &-catalog
+            &__menu,
+            &__submenu
+                right: calc(50% - 255px)
+            &__menu__item.sale
+                display: block
 
 @media screen and ( max-width: 576.98px )
     .nav
