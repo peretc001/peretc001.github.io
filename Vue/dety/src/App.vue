@@ -1064,6 +1064,7 @@ export default {
       this.width = document.documentElement.clientWidth
       this.width < 991 ? this.desctop = false : this.desctop = true
       this.width > 991 ? this.mobile = false : this.mobile = this.mobile
+      this.search == true ? document.querySelector('body').classList.add('no-scroll') : document.querySelector('body').classList.remove('no-scroll')
     }
   }
 }

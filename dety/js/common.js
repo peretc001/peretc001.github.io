@@ -177,13 +177,13 @@ document.addEventListener("DOMContentLoaded", function() {
             function scrollStart() {
                 let x = window.pageYOffset;
                 if ( item.getAttribute('data-scroll') && item.classList.contains('active') ) {
-                    for (let i = 0; i < 200; i++) {
-                        if ( i < 200) {
+                    for (let i = 0; i < 500; i++) {
+                        if ( i < 500) {
                             x = x + i;
                         }
                         setTimeout(() => {
                             window.scroll(window.pageXOffset, x);
-                        }, 200);
+                        }, 300);
                     }
                 }
             }
