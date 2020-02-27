@@ -2,9 +2,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //Modal
 if (document.querySelector('.nav')) {
-    const   nav = document.querySelector('.nav')
-            modal = document.querySelector('.modal')
+    const   modal = document.querySelector('.modal')
             openCityList = document.querySelector('.open-city-list')
+            // let scrollBar = window.innerWidth - document.documentElement.clientWidth
+            // console.log(scrollBar)
+
+            function preventDefault(e){
+                e.preventDefault();
+            }
+            
+            function disableScroll(){
+                document.body.addEventListener('touchmove', preventDefault, { passive: false });
+                window.addEventListener('DOMMouseScroll', preventDefault, false);
+                document.addEventListener('wheel', preventDefault, {passive: false});
+            }
+            function enableScroll(){
+                document.body.removeEventListener('touchmove', preventDefault, { passive: false });
+                window.removeEventListener('DOMMouseScroll', preventDefault, false);
+                document.removeEventListener('wheel', preventDefault, {passive: false});
+            }
 
             hideModalCloseBtn = () => {
                 if ( event.target.dataset.close == 'close' ) {
@@ -30,7 +46,9 @@ if (document.querySelector('.nav')) {
                     modal.classList.remove('in')
                 }, 200);
                 document.querySelector('.hamburger').classList.remove('open')
-                document.body.classList.remove('no-scroll')
+                enableScroll()
+                // document.body.style.marginRight = ''
+                // document.body.classList.remove('no-scroll')
             }
             hideModal = () => {
                 hModal()
@@ -38,7 +56,9 @@ if (document.querySelector('.nav')) {
                 document.removeEventListener('click', hideModalCloseBtn())
             }
             showModal = (event) => {
-                document.body.classList.add('no-scroll')
+                disableScroll()
+                // document.body.classList.add('no-scroll')
+                // document.body.style.marginRight = scrollBar + 'px'
                 event.target.dataset.target == 'menu' ? document.querySelector('.hamburger').classList.add('open') : ''
                 if (event.target.dataset.target == 'review') {
                     document.querySelector('.rating-area').addEventListener('mouseover', () => {
