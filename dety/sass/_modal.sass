@@ -75,7 +75,8 @@
                 transform: translateY(0)
         &.menu
             padding: 50px 12px 30px 12px
-            max-width: 350px
+            max-width: 370px
+            transform: translateY(50px)
             .button
                 display: block
                 border-radius: 4px
@@ -103,6 +104,8 @@
                 padding: 1em
                 margin: 0
                 border-bottom: 1px solid rgba(0, 182, 198, 0.2)
+                p
+                    padding: 0 1em
                 ul
                     opacity: 0
                     overflow: hidden
@@ -121,7 +124,7 @@
                     &::before
                         content: ''
                         position: absolute
-                        right: 0
+                        right: 1em
                         top: 50%
                         transform: translateY(-50%)
                         display: inline-block
@@ -138,7 +141,7 @@
             .social
                 padding: 1em 0
                 p
-                    padding-left: 1em
+                    padding-left: 2em
                 &-link
                     margin-top: 1em
                     width: 100%
@@ -162,7 +165,7 @@
                         &:not(:first-child)
                             margin-left: 2%
             .menu-email
-                padding: 1em
+                padding: 1em 2em
                 form
                     padding-top: 1em
                     margin-bottom: 2em
