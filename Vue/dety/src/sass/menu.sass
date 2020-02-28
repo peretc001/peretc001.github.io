@@ -12,57 +12,7 @@ $textblock: #EAF6F6
     padding: 0
     box-sizing: border-box
 
-.hamburger
-    display: block
-    cursor: pointer
-    width: 30px
-    height: 25px
-    position: relative
-    transform: rotate(0deg)
-    transition: .5s ease-in-out
-    margin-right: 1em
-    &::after
-        content: ''
-        position: absolute
-        left: 0
-        top: 0
-        width: 100%
-        height: 100%
-        z-index: 2
-    span
-        display: block
-        position: absolute
-        height: 2px
-        width: 100%
-        background: #fff
-        border-radius: 4px
-        opacity: 1
-        left: 0
-        transform: rotate(0deg)
-        transition: .25s ease-in-out
-        &:nth-child(1)
-            top: 0px
-        &:nth-child(2)
-            top: 10px
-        &:nth-child(3)
-            top: 20px
-            width: 25px
-    &.open
-        span:nth-child(1)
-            top: 10px
-            transform: rotate(45deg)
-        span:nth-child(2)
-            opacity: 0
-            left: -60px
-        span:nth-child(3)
-            top: 10px
-            width: 30px
-            transform: rotate(135deg)
-
 .nav
-    margin-bottom: 2em
-    transition: max-height .5s ease
-
     &-mobile
         display: none
             
@@ -269,9 +219,6 @@ $textblock: #EAF6F6
             justify-content: center
             padding: 0 calc(50% - 345px)
             margin-bottom: 0.5em
-            .hamburger
-                span
-                    background: #fff
             & > *
                 flex: 0 0 33.333333%
             .btn
@@ -297,6 +244,32 @@ $textblock: #EAF6F6
                     border-radius: 0 4px 4px 0
                     &:hover
                         background: $accent
+                    .icon
+                        display: flex
+                        align-content: center
+                        justify-content: center
+                        flex-wrap: wrap
+                        width: 30px
+                        margin-right: .5em
+                        span
+                            display: inline-block
+                            width: 10px
+                            height: 10px
+                            background: #ffffff
+                            border-radius: 2px
+                            margin-right: 4px
+                            &:nth-child(1),
+                            &:nth-child(2)
+                                margin-bottom: 4px
+                            &:nth-child(4)
+                                transition: transform .3s ease
+                                transform: rotate(0)
+                        &.active
+                            span
+                                &:nth-child(4)
+                                    transform: rotate(45deg)
+
+
                 &.btn-accent
                     border: 1px solid $accent
                     background: $accent
