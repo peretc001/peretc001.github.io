@@ -1035,6 +1035,7 @@ export default {
     },
     closeMenu() {
         clearTimeout(this.timer)
+        this.showMenu = ''
         this.timer = 0
         this.show = false
         this.current = null

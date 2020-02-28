@@ -52,7 +52,7 @@ if (document.querySelector('.nav')) {
                 document.removeEventListener('click', hideModalCloseBtn())
             }
             showModal = (event) => {
-                event.target.dataset.target == 'menu' ? document.body.classList.add('no-scroll') : disableScroll()
+                event.target.dataset.target == 'menu' || event.target.dataset.target == 'review' ? document.body.classList.add('no-scroll') : disableScroll()
                 event.target.dataset.target == 'menu' ? document.querySelector('.hamburger').classList.add('open') : ''
                 if (event.target.dataset.target == 'review') {
                     document.querySelector('.rating-area').addEventListener('mouseover', () => {
@@ -114,7 +114,7 @@ if (document.querySelector('.nav')) {
                         setTimeout(() => {
                             modal.classList.remove('in')
                         }, 200);
-                        document.body.classList.remove('no-scroll')
+                        enableScroll()
                     } else inputSMS[2].focus()
                 })
             })
