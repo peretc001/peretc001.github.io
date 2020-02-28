@@ -74,51 +74,73 @@
             &.is-active
                 transform: translateY(0)
         &.menu
+            padding: 50px 12px 30px 12px
             max-width: 350px
-            padding: 30px
+            .button
+                display: block
+                border-radius: 4px
+                margin-bottom: .5em
+                padding: 10px 10px 10px 25px
+                font-weight: bold
+                font-size: 1.3em
+                height: 46px
+                img
+                    width: 25px
+                    margin-right: 27px
+                &.login
+                    background: $yellow
+                &.city,
+                &.phone
+                    background: $blue
             p
+                margin: 0
+                padding: 0
                 b
                     font-size: 1.4em
                     border-bottom: none
-            ul
-                margin-bottom: 2em
-            .user
-                display: none
-            form
-                margin-bottom: 2em
-                input
-                    border: 2px solid $yellow
-                    border-radius: 6px
-                    background: transparent
-                    color: $text
-                    font-size: 16px !important
-                    padding: 10px 20px
-                    appearance: none
-                    outline: none
-                    box-shadow: none
-                    &::-webkit-input-placeholder
-                        color: #9BAFC0
-                    &:-moz-placeholder
-                        color: #9BAFC0
-                    &::-moz-placeholder
-                        color: #9BAFC0
-                    &:-ms-input-placeholder
-                        color: #9BAFC0
-                .btn
-                    &:focus
-                        border: 1px solid $yellow
-            small
-                color: $grey
-            .social
-                display: flex
-                flex-wrap: wrap
-                margin-bottom: 2em
-                p
-                    flex: 0 0 100%
+            
+            .menu-item
+                padding: 1em
+                margin: 0
+                border-bottom: 1px solid rgba(0, 182, 198, 0.2)
+                ul
+                    opacity: 0
+                    overflow: hidden
+                    max-height: 0
                     margin: 0
-                    b
-                        margin: 0
+                    padding: 0
+                    transition: max-height .5s ease, opacity .5s ease
+                    li
+                        padding-left: 1em
+                    &.active
+                        opacity: 1
+                        overflow: visible
+                        max-height: 500px
+                .hideElem
+                    position: relative
+                    &::before
+                        content: ''
+                        position: absolute
+                        right: 0
+                        top: 50%
+                        transform: translateY(-50%)
+                        display: inline-block
+                        width: 1em
+                        height: 1em
+                        background-size: cover
+                        background-position: center
+                        background-repeat: no-repeat
+                        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMi4wMTEgNTEyLjAxMSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyLjAxMSA1MTIuMDExOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTUwNS43NTUsMTIzLjU5MmMtOC4zNDEtOC4zNDEtMjEuODI0LTguMzQxLTMwLjE2NSwwTDI1Ni4wMDUsMzQzLjE3NkwzNi40MjEsMTIzLjU5MmMtOC4zNDEtOC4zNDEtMjEuODI0LTguMzQxLTMwLjE2NSwwICAgIHMtOC4zNDEsMjEuODI0LDAsMzAuMTY1bDIzNC42NjcsMjM0LjY2N2M0LjE2LDQuMTYsOS42MjEsNi4yNTEsMTUuMDgzLDYuMjUxYzUuNDYyLDAsMTAuOTIzLTIuMDkxLDE1LjA4My02LjI1MWwyMzQuNjY3LTIzNC42NjcgICAgQzUxNC4wOTYsMTQ1LjQxNiw1MTQuMDk2LDEzMS45MzMsNTA1Ljc1NSwxMjMuNTkyeiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgc3R5bGU9ImZpbGw6I0MyNTFDMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+                        transition: transform .3s ease
+                    &.active
+                        &::before
+                            transform: translateY(-50%) rotate(180deg)
+            .social
+                padding: 1em 0
+                p
+                    padding-left: 1em
                 &-link
+                    margin-top: 1em
                     width: 100%
                     display: flex
                     align-items: center
@@ -134,12 +156,44 @@
                         border-radius: 4px
                         img
                             width: 1.8em
+                        &:first-child
+                            img
+                                width: 1em
                         &:not(:first-child)
                             margin-left: 2%
-            .email
-                b
-                    font-size: 1.3em
-                    margin-bottom: 0.5em
+            .menu-email
+                padding: 1em
+                form
+                    padding-top: 1em
+                    margin-bottom: 2em
+                    input
+                        border: 2px solid $yellow
+                        border-radius: 6px
+                        background: transparent
+                        color: $text
+                        font-size: 16px !important
+                        padding: 10px 20px
+                        appearance: none
+                        outline: none
+                        box-shadow: none
+                        &::-webkit-input-placeholder
+                            color: #9BAFC0
+                        &:-moz-placeholder
+                            color: #9BAFC0
+                        &::-moz-placeholder
+                            color: #9BAFC0
+                        &:-ms-input-placeholder
+                            color: #9BAFC0
+                    .btn
+                        font-size: 16px
+                        &:focus
+                            border: 1px solid $yellow
+            .copyright
+                color: $nav
+                text-align: center
+                font-size: 13px
+                line-height: 1.5
+            
             &.is-active
                 transform: translateY(0)
 
@@ -285,9 +339,6 @@
                 font-weight: bold
                 display: block
                 font-size: 1.8em
-                padding-bottom: .5em
-                margin-bottom: 1em
-                border-bottom: 1px solid #ebebeb
         label
             color: $text
             font-size: 1.2em
@@ -351,15 +402,6 @@
         &-body
             top: 0
 
-@media screen and ( max-width: 767.98px )
-    .modal
-        &-body
-            &.user
-                display: none
-            &.menu
-                .user
-                    display: block
-
 @media screen and ( max-width: 576.98px )
     .modal
         &-body
@@ -392,5 +434,10 @@
                             p
                                 margin-bottom: 1em
 
-    
-    
+@media screen and ( max-width: 374.98px )
+    .modal
+        &-body
+            &.menu
+                .menu-email
+                    p
+                        font-size: 0.85em

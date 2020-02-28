@@ -702,23 +702,34 @@
     <!-- Modal Menu -->
     <div class="modal-body menu" data-modal="menu">
       <span class="close" data-close="close"></span>
-      <p>
-        <b>ВсёДляДеток</b>
-      </p>
-      <ul>
-        <li><a href="">О компании</a></li>
-        <li><a href="">Пункты выдачи</a></li>
-        <li><a href="">Магазины</a></li>
-        <li><a href="">Контакты</a></li>
-        <li><a href="">Отзывы</a></li>
-      </ul>
-      <div class="user">
-        <p>
+      <a href="" class="button login">
+        <img src="./img/nav/mobile/login.svg" alt="">
+        Вход</a>
+      <a href="" class="button city">
+        <img src="./img/nav/mobile/location.svg" alt="">
+        Санкт-Петербург</a>
+      <a href="tel:8-800-600-77-27" class="button phone">
+        <img src="./img/nav/mobile/phone.svg" alt="">
+        8-800-600-77-27</a>
+      <div class="menu-item">
+        <p class="hideElem">
+          <b>ВсёДляДеток</b>
+        </p>
+        <ul class="showElem">
+          <li><a href="">О компании</a></li>
+          <li><a href="">Пункты выдачи</a></li>
+          <li><a href="">Магазины</a></li>
+          <li><a href="">Контакты</a></li>
+          <li><a href="">Отзывы</a></li>
+        </ul>
+      </div>
+      <div class="menu-item">
+        <p class="hideElem">
           <b>
             Покупателям
           </b>
         </p>
-        <ul>
+        <ul class="showElem">
           <li>Проверка заказа</li>
           <li>Гарантии и возврат</li>
           <li>Доставка и оплата</li>
@@ -728,18 +739,20 @@
           <li>Подарочные карты</li>
         </ul>
       </div>
-      <p>
-        <b>
-          Обратная связь
-        </b>
-      </p>
-      <ul>
-        <li>Заказать звонок</li>
-        <li>Оставить отзыв</li>
-        <li>Обмен / Возврат</li>
-        <li>Благодарность</li>
-        <li>Жалоба</li>
-      </ul>
+      <div class="menu-item">
+        <p class="hideElem">
+          <b>
+            Обратная связь
+          </b>
+        </p>
+        <ul class="showElem">
+          <li>Заказать звонок</li>
+          <li>Оставить отзыв</li>
+          <li>Обмен / Возврат</li>
+          <li>Благодарность</li>
+          <li>Жалоба</li>
+        </ul>
+      </div>
       <div class="social">
         <p>
           <b>
@@ -747,23 +760,25 @@
           </b>
         </p>
         <div class="social-link">
-          <a href=""><img src="./img/social/ok.svg" alt=""></a>
-          <a href=""><img src="./img/social/vk.svg" alt=""></a>
-          <a href=""><img src="./img/social/insta.svg" alt=""></a>
-          <a href=""><img src="./img/social/youtube.svg" alt=""></a>
+          <a href=""><img src="./img/social/mobile/ok.svg" alt=""></a>
+          <a href=""><img src="./img/social/mobile/vk.svg" alt=""></a>
+          <a href=""><img src="./img/social/mobile/instagram.svg" alt=""></a>
+          <a href=""><img src="./img/social/mobile/youtube.svg" alt=""></a>
         </div>
       </div>
-      <p class="email">
-        <b>
-          Подпишитесь на обновления
-        </b>
-      </p>
-      <form action="/" method="post">
-        <input type="email" name="email" value="" placeholder="E-mail" required>
-        <button class="btn btn-send">Подписаться</button>
-      </form>
-      <p>
-        <small>© ВсёДляДеток.рy, 2019. Все права защищены.</small>
+      <div class="menu-email">
+        <p>
+          <b>
+            Подпишитесь на обновления
+          </b>
+        </p>
+        <form action="/" method="post">
+          <input type="email" name="email" value="" placeholder="E-mail" required>
+          <button class="btn btn-send">Подписаться</button>
+        </form>
+      </div>
+      <p class="copyright">
+        © 2019-2020. ВсёДляДеток.ру<br>Большой магазин для маленьких
       </p>
     </div>
     <!-- Modal City -->
