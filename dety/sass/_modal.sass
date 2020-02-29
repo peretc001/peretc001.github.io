@@ -26,7 +26,7 @@
         position: absolute
         left: 0
         top: 47px
-        transform: translateY(-200%)
+        // transform: translateY(-200%)
         padding: 15px
         width: 100%
         max-width: 350px
@@ -37,12 +37,14 @@
             display: block
         &.city
             padding: 30px
+            transform: translateY(-200%)
             &.is-active
                 transform: translateY(0)
         &.user
             left: auto
             right: 15px
             max-width: 220px
+            transform: translateY(-200%)
             &.is-active
                 transform: translateY(0)
         &.login,
@@ -51,6 +53,7 @@
             right: 15px
             max-width: 450px
             padding: 30px 60px
+            transform: translateY(-200%)
             input
                 font-size: 20px
                 text-align: center
@@ -74,9 +77,11 @@
             &.is-active
                 transform: translateY(0)
         &.menu
-            padding: 50px 12px 30px 12px
+            padding: 30px 12px 30px 12px
             max-width: 370px
-            transform: translateY(50px)
+            transform: translateY(200px)
+            .close
+                display: none
             .button
                 display: block
                 border-radius: 4px
@@ -166,6 +171,8 @@
                             margin-left: 2%
             .menu-email
                 padding: 1em 2em
+                p
+                    font-size: 0.9em
                 form
                     padding-top: 1em
                     margin-bottom: 2em
@@ -198,7 +205,7 @@
                 line-height: 1.5
             
             &.is-active
-                transform: translateY(0)
+                transform: translateY(150px)
 
         &.review,
         &.question
@@ -402,25 +409,52 @@
 
 @media screen and ( max-width: 991.98px )
     .modal
+        padding: 0 1em
         &-body
             top: 0
+            &.menu
+                left: 2%
+                right: 2%
+                max-width: 96%
+                border-radius: 4px
+
+@media screen and ( max-width: 767.98px )
+    .modal
+        &-body
+            &.menu
+                left: 3%
+                right: 3%
+                max-width: 94%
+                border-radius: 4px
 
 @media screen and ( max-width: 576.98px )
     .modal
+        padding: 0 1em
         &-body
             box-sizing: border-box
-            left: 0 !important
-            right: auto !important
-            transform: translateY(-200%) !important
-            max-width: 100% !important
-            &.is-active
-                transform: translateY(0) !important
-            &.login
+            left: 0
+            right: 0
+            max-width: 100%
+            &.menu
+                left: 0
+                right: 0
+                max-width: 100%
+                border-radius: 4px
+            &.login,
+            &.sms
+                left: 0
+                right: 0
                 padding: 40px 30px
                 p
                     b
                         font-size: 1.5em
+            &.sms
+                p
+                    b
+                        text-align: center
             &.city
+                left: 0
+                right: 0
                 .modal-body__head
                     font-size: 1em
                 .modal-body__city
@@ -448,4 +482,6 @@
             &.menu
                 .menu-email
                     p
-                        font-size: 0.85em
+                        font-size: 0.7em
+                &.is-active
+                    transform: translateY(125px)

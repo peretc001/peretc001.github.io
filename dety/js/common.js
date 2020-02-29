@@ -40,16 +40,18 @@ if (document.querySelector('.nav')) {
                     document.removeEventListener('click', hideModalCloseBtn())
                 }
             }
+            
             hModal = () => {
                 modal.querySelector('.is-active') ? modal.querySelector('.is-active').classList.remove('is-active') : ''
                 setTimeout(() => {
-                    modal.classList.contains('fade') ? modal.querySelector('.fade').classList.remove('fade') : ''
+                    modal.querySelector('.fade') ? modal.querySelector('.fade').classList.remove('fade') : ''
                 }, 200);
                 setTimeout(() => {
                     modal.classList.remove('is-active')
                 }, 200);
                 setTimeout(() => {
                     modal.classList.remove('in')
+                    if (modal.style.background) modal.style.background = ''
                 }, 200);
                 document.querySelector('.hamburger').classList.remove('open')
                 enableScroll()
@@ -69,6 +71,7 @@ if (document.querySelector('.nav')) {
                 }
                 const current = document.querySelector('[data-modal="'+ event.target.dataset.target +'"]')
                 modal.classList.add('in')
+                if (event.target.dataset.target == 'menu') modal.style.background = 'rgba(255, 255, 255, 0)'
                 current.classList.add('fade')
                 setTimeout(() => {
                     modal.classList.add('is-active')
