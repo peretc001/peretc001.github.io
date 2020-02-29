@@ -218,7 +218,7 @@
         &.review,
         &.question
             left: 50% !important
-            right: auto !important
+            right: 0 !important
             top: 0
             transform: translateY(-200%) translateX(-50%)
             max-width: 560px
@@ -247,6 +247,7 @@
                     border-radius: 4px
                     padding: .5em 1em
                     margin: 0
+                    font-size: 16px !important
                 textarea
                     min-height: 100px
                 &.df
@@ -438,7 +439,6 @@
 
 @media screen and ( max-width: 576.98px )
     .modal
-        padding: 0 1em
         &-body
             box-sizing: border-box
             left: 0
@@ -470,12 +470,17 @@
                     font-size: 1.4em
             &.review,
             &.question
-                left: 50%
+                left: 50% !important
+                right: 0 !important
+                max-width: 100% !important
+                width: 100% !important
                 p
                     b
                         font-size: 1.4em
             &.review
                 .form-row
+                    textarea
+                        min-height: 70px
                     &.df
                         align-items: flex-start
                         .form-col
@@ -495,3 +500,15 @@
                         font-size: 0.7em
                 &.is-active
                     transform: translateY(125px)
+            &.review,
+            &.question
+                p
+                    b
+                        font-size: 1.2em
+                .submit
+                    flex-direction: column
+                    .btn
+                        &.btn-accent
+                            margin: 0
+                            max-width: 100%
+                            margin-bottom: 1em

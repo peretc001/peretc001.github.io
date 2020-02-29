@@ -288,7 +288,7 @@ if (document.querySelector('.brands-header__favorite')) {
 }
     
 
-if ( document.querySelector('.products-page-rq') ) {
+if ( document.querySelector('.products-page-body__rq') ) {
     //Input file
     let inputs = document.querySelectorAll('.input__file');
     Array.prototype.forEach.call(inputs, function (input) {
