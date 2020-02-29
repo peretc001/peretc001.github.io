@@ -368,6 +368,23 @@ if ( document.querySelector('.cart-delivery-point__lists') ) {
 });
 
 $( document ).ready(function() {
-    
+    // Back to top button
+	var backToTop = function() {
+		var el = $( '#toTop' );
+		$( window ).scroll(function() {
+			if( $( this ).scrollTop() > $( window ).height() ) {
+				el.show();
+			} else {
+				el.hide();
+			}
+		});
+		el.click( function() {
+			$( 'body,html' ).animate({
+				scrollTop: 0
+			}, 500);
+			return false;
+		});
+    }
+    backToTop()
     $('.lazy').Lazy();
   });
