@@ -11,6 +11,7 @@ if (document.querySelector('.nav')) {
             }
             function disableScroll(){
                 if ( width < 767 ) { 
+                    console.log(123)
                     document.body.classList.add('no-scroll') 
                 } else {
                     document.body.addEventListener('touchmove', preventDefault, { passive: false });
@@ -44,7 +45,7 @@ if (document.querySelector('.nav')) {
             hModal = () => {
                 modal.querySelector('.is-active') ? modal.querySelector('.is-active').classList.remove('is-active') : ''
                 setTimeout(() => {
-                    modal.querySelector('.fade') ? modal.querySelector('.fade').classList.remove('fade') : ''
+                    modal.querySelector('.is-fade') ? modal.querySelector('.is-fade').classList.remove('is-fade') : ''
                 }, 200);
                 setTimeout(() => {
                     modal.classList.remove('is-active')
@@ -63,7 +64,7 @@ if (document.querySelector('.nav')) {
                 document.removeEventListener('click', hideModalCloseBtn())
             }
             showModal = (event) => {
-                // event.target.dataset.target == 'menu' ? '' : disableScroll()
+                event.target.dataset.target == 'menu' ? '' : disableScroll()
                 event.target.dataset.target == 'menu' ? document.querySelector('.hamburger').classList.add('open') : ''
                 if (event.target.dataset.target == 'review') {
                     document.querySelector('.rating-area').addEventListener('mouseover', () => {
@@ -72,7 +73,7 @@ if (document.querySelector('.nav')) {
                 }
                 const current = document.querySelector('[data-modal="'+ event.target.dataset.target +'"]')
                 event.target.dataset.target == 'menu' ? modal.classList.add('in-menu') : modal.classList.add('in')
-                current.classList.add('fade')
+                current.classList.add('is-fade')
                 setTimeout(() => {
                     modal.classList.add('is-active')
                     current.classList.add('is-active')
@@ -95,9 +96,9 @@ if (document.querySelector('.nav')) {
                 //////// ЗАПРОС НА API /////////
                 modal.querySelector('.is-active').classList.remove('is-active')
                 setTimeout(() => {
-                    modal.querySelector('.fade').classList.remove('fade')
+                    modal.querySelector('.is-fade').classList.remove('is-fade')
                 }, 200);
-                modal.querySelector('.modal-body.sms').classList.add('fade')
+                modal.querySelector('.modal-body.sms').classList.add('is-fade')
                 setTimeout(() => {
                     modal.querySelector('.modal-body.sms').classList.add('is-active')
                 }, 200);
@@ -116,7 +117,7 @@ if (document.querySelector('.nav')) {
                     if (this.value != '') {
                         modal.querySelector('.modal-body.sms').classList.remove('is-active')
                         setTimeout(() => {
-                            modal.querySelector('.modal-body.sms').classList.remove('fade')
+                            modal.querySelector('.modal-body.sms').classList.remove('is-fade')
                             this.blur()
                         }, 200);
                         setTimeout(() => {
@@ -154,7 +155,7 @@ if (document.querySelector('.nav')) {
                     disableScroll()
                     const current = document.querySelector('[data-modal="city"]')
                     modal.classList.add('in')
-                    current.classList.add('fade')
+                    current.classList.add('is-fade')
                     setTimeout(() => {
                         modal.classList.add('is-active')
                         current.classList.add('is-active')
