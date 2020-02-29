@@ -218,14 +218,14 @@
 
         &.review,
         &.question
-            left: 50% !important
-            right: 0 !important
+            left: 50%
+            right: 0
             top: 0
-            transform: translateY(-200%) translateX(-50%) !important
+            transform: translateY(-200%) translateX(-50%)
             max-width: 560px
             padding: 30px
             &.is-active
-                transform: translateY(0) translateX(-50%) !important
+                transform: translateY(0) translateX(-50%)
             form
                 margin: 0
                 padding: 0
@@ -436,6 +436,12 @@
                 right: 3%
                 max-width: 94%
                 border-radius: 4px
+            &.question
+                left: 0
+                right: 0
+                transform: translateY(-200%) translateX(0)
+                &.is-active
+                    transform: translateY(0) translateX(0)
 
 @media screen and ( max-width: 576.98px )
     .modal
@@ -470,10 +476,6 @@
                     font-size: 1.4em
             &.review,
             &.question
-                left: 50% !important
-                right: 0 !important
-                max-width: 100% !important
-                width: 100% !important
                 p
                     b
                         font-size: 1.4em
