@@ -89,7 +89,7 @@
         
         <div class="products-page-body">
           <div class="products-page-body__item">
-              
+            <div class="close"></div>
             <div class="products-page-body__item__left">
               <ul class="products-page-body__item__left__thumb">
                 <li><img src="./img/products/card/1.jpg" alt=""></li>
@@ -1455,7 +1455,17 @@
         }
       ]
     });
-
+    // $('.products-page-body__item__right__img__wrapp').on('click', 'a', function(e) {
+    //   e.preventDefault()
+    //   $('.products-page-body__item').addClass('is-active')
+    //   $('.products-page-body__item__left__thumb').slick('unslick')
+    //   $('.products-page-body__item__right__img__wrapp').slick('unslick')
+    //   $('.products-page-body__item__left__thumb').slick('reinit')
+    //   $('.products-page-body__item__right__img__wrapp').slick('reinit')
+    // })
+    // $('.products-page-body__item .close').on('click', function(e) {
+    //   $('.products-page-body__item').removeClass('is-active')
+    // })
     $('.resent-products').slick({
       infinite: true,
       slidesToShow: 4,
