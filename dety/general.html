@@ -849,6 +849,14 @@
       customPaging : function(slider, i) {
         return '<button></button>';
       },
+      responsive: [
+        {
+          breakpoint: 991,
+          settings: {
+            arrows: false,
+          }
+        }
+      ]
     });
     function addHomeWeekSlider() {
       let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
