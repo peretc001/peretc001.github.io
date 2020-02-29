@@ -1,20 +1,26 @@
 .modal
-    position: fixed
     left: 0
     top: 0
     right: 0
     bottom: 0
-    background: rgba(#000, .4)
     z-index: 100
     display: none
     overflow-y: auto
-    transition: opacity .3s ease
+    opacity: 0
     &.in
+        position: fixed
+        background: rgba(#000, .4)
         display: block
         opacity: 0
-    &.in
+        transition: opacity .3s ease
         .modal-body
             opacity: 1
+    &.in-menu
+        position: absolute
+        display: block
+        opacity: 0
+        .modal-body
+            opacity: 0
     &.is-active
         opacity: 1
         .container
@@ -26,13 +32,12 @@
         position: absolute
         left: 0
         top: 47px
-        // transform: translateY(-200%)
         padding: 15px
         width: 100%
         max-width: 350px
         overflow: hidden
         box-shadow: 0 2px 10px rgba(#000, .1)
-        transition: transform .4s ease
+        transition: transform .3s ease,  opacity .3s ease
         &.fade
             display: block
         &.city
@@ -79,7 +84,8 @@
         &.menu
             padding: 30px 12px 30px 12px
             max-width: 370px
-            transform: translateY(200px)
+            transform: translateY(180px)
+            opacity: 0
             .close
                 display: none
             .button
@@ -206,6 +212,8 @@
             
             &.is-active
                 transform: translateY(150px)
+                opacity: 1
+                box-shadow: none
 
         &.review,
         &.question
@@ -461,6 +469,7 @@
                     font-size: 1.4em
             &.review,
             &.question
+                left: 50%
                 p
                     b
                         font-size: 1.4em

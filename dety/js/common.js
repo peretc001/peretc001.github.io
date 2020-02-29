@@ -50,7 +50,8 @@ if (document.querySelector('.nav')) {
                     modal.classList.remove('is-active')
                 }, 200);
                 setTimeout(() => {
-                    modal.classList.remove('in')
+                    modal.classList.contains('in') ? modal.classList.remove('in') : ''
+                    modal.classList.contains('in-menu') ? modal.classList.remove('in-menu') : ''
                     if (modal.style.background) modal.style.background = ''
                 }, 200);
                 document.querySelector('.hamburger').classList.remove('open')
@@ -62,7 +63,7 @@ if (document.querySelector('.nav')) {
                 document.removeEventListener('click', hideModalCloseBtn())
             }
             showModal = (event) => {
-                disableScroll()
+                event.target.dataset.target == 'menu' ? '' : disableScroll()
                 event.target.dataset.target == 'menu' ? document.querySelector('.hamburger').classList.add('open') : ''
                 if (event.target.dataset.target == 'review') {
                     document.querySelector('.rating-area').addEventListener('mouseover', () => {
@@ -70,7 +71,7 @@ if (document.querySelector('.nav')) {
                     })
                 }
                 const current = document.querySelector('[data-modal="'+ event.target.dataset.target +'"]')
-                modal.classList.add('in')
+                event.target.dataset.target == 'menu' ? modal.classList.add('in-menu') : modal.classList.add('in')
                 if (event.target.dataset.target == 'menu') modal.style.background = 'rgba(255, 255, 255, 0)'
                 current.classList.add('fade')
                 setTimeout(() => {
@@ -146,7 +147,7 @@ if (document.querySelector('.nav')) {
                     }
                 }
             })
-            modal.addEventListener('click', (event) => event.target.className == 'modal in is-active' ? hideModal() : '')
+            modal.addEventListener('click', (event) => event.target == modal ? hideModal() : '')
 
             showCityOnLoad = () => {
                 let city = localStorage.getItem('city')
