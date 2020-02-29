@@ -71,7 +71,7 @@
   <section class="products-page">
       <div class="container">
         
-        <h1>Толстовка Blue Seven роровая</h1>
+        <h1>Толстовка Blue Seven розовая</h1>
         
         <div class="products-page-header">
             <span>Артикул: <b>258697</b></span>
@@ -217,11 +217,12 @@
                       <h3>
                           О товаре
                       </h3>
-                      <span class="hideElem"></span>
                   </div>
-                  <p class="showElem">
+                  <p>
                       Практичная и теплая, выполнена с применением технологии AWS EXTREME из водонепроницаемой и воздухопроницаемой мембранной ткани: 10000мм/5000г/м2 /24 ч. Эффективно защищает от ветра и осадков. Используется 300 гр технологичного, инновационного утеплителя DOWN IMITATION. Комбинированная разнофактурная наружная ткань. Регулируемый, отстегивающийся капюшон. Регулируемые манжеты. Внутренний трикотажный манжет, Снегозащитная юбка с противоскользящей тесьмой, Карман под skipass, Карманы с флисовой подкладкой, Теплая и мягкая внутренняя вставка на воротнике, Два боковых кармана на молниях, Длина изделия по спинке 60 см (на размер 140), езон: зима, обращаем  ваше внимание, что правильное определение размера детской обуви.
                   </p>
+                  <span class="hideElem active">характеристики</span>
+                  <div class="showElem active">
                   <table>
                       <tbody>
                           <tr>
@@ -282,6 +283,7 @@
                           </tr>
                       </tbody>
                   </table>
+                  </div>
               </div>
           </div>
 
@@ -1333,7 +1335,7 @@
     <div class="modal-body review" data-modal="review">
       <span class="close" data-close="close"></span>
       <p><b>Добавить отзыв о товаре</b></p>
-      <form action="" method="post">
+      <form action="/" method="post">
         <div class="form-row df">
           <div>
             <label for="user-review">Ваше имя</label>
@@ -1368,7 +1370,7 @@
           <textarea name="msg" id="msg-review"></textarea>
         </div>
         <div class="input__wrapper">
-          <input name="file" type="file" name="file" id="input__file" class="input input__file" multiple>
+          <input type="file" name="file" id="input__file" class="input input__file" multiple>
           <label for="input__file" class="input__file-button">
               <span class="input__file-icon-wrapper">Прикрепить файл</span>
               <span class="input__file-button-text">Файл не выбран</span>
@@ -1384,7 +1386,7 @@
     <div class="modal-body question" data-modal="question">
       <span class="close" data-close="close"></span>
       <p><b>Задать вопрос о товаре</b></p>
-      <form action="" method="post">
+      <form action="/" method="post">
         <div class="form-row df">
           <div>
             <label for="user-question">Ваше имя</label>
@@ -1444,6 +1446,14 @@
       slidesToShow: 1,
       slidesToScroll: 1,
       asNavFor: '.products-page-body__item__left__thumb',
+      responsive: [
+        {
+          breakpoint: 767,
+          settings: {
+            arrows: false,
+          }
+        }
+      ]
     });
 
     $('.resent-products').slick({

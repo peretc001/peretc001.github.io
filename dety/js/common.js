@@ -4,19 +4,28 @@ document.addEventListener("DOMContentLoaded", function() {
 if (document.querySelector('.nav')) {
     const   modal = document.querySelector('.modal')
             openCityList = document.querySelector('.open-city-list')
+            let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
             
             function preventDefault(e){
                 e.preventDefault();
             }
             function disableScroll(){
-                document.body.addEventListener('touchmove', preventDefault, { passive: false });
-                window.addEventListener('DOMMouseScroll', preventDefault, false);
-                document.addEventListener('wheel', preventDefault, {passive: false});
+                if ( width < 767 ) { 
+                    document.body.classList.add('no-scroll') 
+                } else {
+                    document.body.addEventListener('touchmove', preventDefault, { passive: false });
+                    window.addEventListener('DOMMouseScroll', preventDefault, false);
+                    document.addEventListener('wheel', preventDefault, {passive: false});
+                }
             }
             function enableScroll(){
-                document.body.removeEventListener('touchmove', preventDefault, { passive: false });
-                window.removeEventListener('DOMMouseScroll', preventDefault, false);
-                document.removeEventListener('wheel', preventDefault, {passive: false});
+                if ( width < 767 ) { 
+                    document.body.classList.remove('no-scroll') 
+                } else {
+                    document.body.removeEventListener('touchmove', preventDefault, { passive: false });
+                    window.removeEventListener('DOMMouseScroll', preventDefault, false);
+                    document.removeEventListener('wheel', preventDefault, {passive: false});
+                }
             }
 
             hideModalCloseBtn = () => {
@@ -44,7 +53,6 @@ if (document.querySelector('.nav')) {
                 }, 200);
                 document.querySelector('.hamburger').classList.remove('open')
                 enableScroll()
-                document.body.classList.contains('no-scroll') ? document.body.classList.remove('no-scroll') : ''
             }
             hideModal = () => {
                 hModal()
@@ -52,7 +60,7 @@ if (document.querySelector('.nav')) {
                 document.removeEventListener('click', hideModalCloseBtn())
             }
             showModal = (event) => {
-                event.target.dataset.target == 'menu' || event.target.dataset.target == 'review' ? document.body.classList.add('no-scroll') : disableScroll()
+                disableScroll()
                 event.target.dataset.target == 'menu' ? document.querySelector('.hamburger').classList.add('open') : ''
                 if (event.target.dataset.target == 'review') {
                     document.querySelector('.rating-area').addEventListener('mouseover', () => {
@@ -244,7 +252,7 @@ if (document.querySelector('.brands-header__favorite')) {
             item.addEventListener('click', () => {
                 !item.classList.contains('active') ? item.classList.add('active') : item.classList.remove('active')
                 !sElem[i].classList.contains('active') ? sElem[i].classList.add('active') : sElem[i].classList.remove('active')
-                !sMore[i].classList.contains('active') ? sMore[i].classList.add('active') : sMore[i].classList.remove('active')
+                // sMore[i] && !sMore[i].classList.contains('active') ? sMore[i].classList.add('active') : sMore[i].classList.remove('active')
             })
             if (sMore[i]) {
                 sMore[i].addEventListener('click', () => {
@@ -257,133 +265,69 @@ if (document.querySelector('.brands-header__favorite')) {
     }
 
    
-    if ( document.querySelector('.products-page-item__photo__gallery') ) {
-        const   imgContainer = document.querySelector('.products-page-item__photo__gallery')
-                imgList = imgContainer.querySelectorAll('img')
-
-                document.querySelector('.products-page-item__photo__img').addEventListener('click', () => {                       
-                    imgContainer.querySelector('.active').classList.remove('active')
-                    imgList[carousel_img.returnPosition()].classList.add('active')
-                })
-                document.querySelector('.products-page-item__photo__img').addEventListener('touchend', () => {                  
-                    imgContainer.querySelector('.active').classList.remove('active')
-                    imgList[carousel_img.returnPosition()].classList.add('active')
-                })
-
-                imgList.forEach((item, i) => {
-                    item.addEventListener('click', () => {
-                        imgContainer.querySelector('.active').classList.remove('active')
-                        item.classList.add('active')
-                        carousel_img.goto(i)
-                    })
-                })
-
-    }
-
-    {
-        if ( document.querySelector('.tabs') ) {
-            const   tabs = [...document.querySelector('.tabs').children]
-                    tabsItem = document.querySelectorAll('.tabs-item')
-
-                    tabs.forEach((item,i) => {
-                        item.addEventListener('click', () => {
-                            tabs.forEach(item => item.classList.contains('active') ? item.classList.remove('active') : '')
-                            tabsItem.forEach(item => item.classList.contains('active') ? item.classList.remove('active') : '')
-                            item.classList.add('active')
-                            tabsItem[i].classList.add('active')
-                        })
-                    })
-        }
-    }
     
-    //Products-page Tabs
-    if ( document.querySelector('.products-page-rq') ) {
-        //Input file
-        let inputs = document.querySelectorAll('.input__file');
-        Array.prototype.forEach.call(inputs, function (input) {
-            let label = input.nextElementSibling,
-            labelVal = label.querySelector('.input__file-button-text').innerText;
-        
-            input.addEventListener('change', function (e) {
-                let countFiles = '';
-                if (this.files && this.files.length >= 1) {
-                    countFiles = this.files.length;
-                    label.classList.add('active')
-                } else {
-                    label.classList.remove('active')
-                }
-            
-                if (countFiles)
-                    label.querySelector('.input__file-button-text').innerText = 'Выбрано файлов: ' + countFiles;
-                else
-                    label.querySelector('.input__file-button-text').innerText = labelVal;
-            });
-        });
-    }
+//Products-page Tabs
+{
+    if ( document.querySelector('.tabs') ) {
+        const   tabs = [...document.querySelector('.tabs').children]
+                tabsItem = document.querySelectorAll('.tabs-item')
 
-    if ( document.querySelector('.products-page-buy__size') ) {
-        const push = document.querySelectorAll('.products-page-buy .push')
-        if ( localStorage.getItem('push') == 1 ) {
-            push.forEach(item => {
-                item.style.display = 'none'
-            })
-        }
-
-        const showModal = (elem, container) => {
-            elem = document.querySelector(elem)
-            elem.nextElementSibling.style.display = 'none'
-            localStorage.setItem('push', 1)
-            container = document.querySelector(container)
-            div = document.createElement('div')
-            div.classList.add('layout')
-            div.classList.add('active')
-            
-            document.body.appendChild(div)
-            setTimeout(() => {
-                div.style.opacity = '.5'
-                document.body.classList.add('no-scroll')
-                container.classList.add('active')
-                container.style.transform = 'translateY(0%)'
-                div.addEventListener('click', () => {
-                    container.style.transform = 'translateY(100%)'
-                    setTimeout(() => {
-                        container.classList.remove('active')
-                        div.style.opacity = '0'
-                        setTimeout(() => {
-                            document.body.removeChild(div)
-                            document.body.classList.remove('no-scroll')
-                        }, 200);
-                    }, 300);
+                tabs.forEach((item,i) => {
+                    item.addEventListener('click', () => {
+                        tabs.forEach(item => item.classList.contains('active') ? item.classList.remove('active') : '')
+                        tabsItem.forEach(item => item.classList.contains('active') ? item.classList.remove('active') : '')
+                        item.classList.add('active')
+                        tabsItem[i].classList.add('active')
+                    })
                 })
-            }, 200);
-        }
-        document.querySelector('.btn-size').addEventListener('click', () => {
-            showModal('.btn-size', '.products-page-buy__size__block')
-        })
-
-        document.querySelector('.btn-color').addEventListener('click', () => {
-            showModal('.btn-color', '.products-page-buy__color__block')
-        })
     }
+}
+    
 
-    if ( document.querySelector('.qty-input') ) {
-        const input = document.querySelectorAll('.qty-input')
-        input.forEach(item => {
+if ( document.querySelector('.products-page-rq') ) {
+    //Input file
+    let inputs = document.querySelectorAll('.input__file');
+    Array.prototype.forEach.call(inputs, function (input) {
+        let label = input.nextElementSibling,
+        labelVal = label.querySelector('.input__file-button-text').innerText;
+    
+        input.addEventListener('change', function (e) {
+            let countFiles = '';
+            if (this.files && this.files.length >= 1) {
+                countFiles = this.files.length;
+                label.classList.add('active')
+            } else {
+                label.classList.remove('active')
+            }
+        
+            if (countFiles)
+                label.querySelector('.input__file-button-text').innerText = 'Выбрано файлов: ' + countFiles;
+            else
+                label.querySelector('.input__file-button-text').innerText = labelVal;
+        });
+    });
+}
 
-            const   qty = item.querySelector('input[name="qty"]')
-                    minus = item.querySelector('.minus')
-                    plus = item.querySelector('.plus')
-                    minus.addEventListener('click', () => qty.value > 1 ? qty.value-- : '')
-                    plus.addEventListener('click', () => qty.value++)
-        })
-    }
+    
 
-    if ( document.querySelector('.cart-delivery-point__lists') ) {
-        const container = document.querySelector('.cart-delivery-point__lists .container')
-        let timer = null;
-        container.addEventListener('mouseover', (e) => document.body.classList.add('no-scroll'))
-        container.addEventListener('mouseout', (e) => document.body.classList.remove('no-scroll'))
-    }
+if ( document.querySelector('.qty-input') ) {
+    const input = document.querySelectorAll('.qty-input')
+    input.forEach(item => {
+
+        const   qty = item.querySelector('input[name="qty"]')
+                minus = item.querySelector('.minus')
+                plus = item.querySelector('.plus')
+                minus.addEventListener('click', () => qty.value > 1 ? qty.value-- : '')
+                plus.addEventListener('click', () => qty.value++)
+    })
+}
+
+if ( document.querySelector('.cart-delivery-point__lists') ) {
+    const container = document.querySelector('.cart-delivery-point__lists .container')
+    let timer = null;
+    container.addEventListener('mouseover', (e) => document.body.classList.add('no-scroll'))
+    container.addEventListener('mouseout', (e) => document.body.classList.remove('no-scroll'))
+}
 
 {
     function setCursorPosition(pos, elem) {
