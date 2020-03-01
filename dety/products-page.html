@@ -117,6 +117,7 @@
                   <li><img src="./img/products/card/5.jpg" alt=""></li>
                   <li><img src="./img/products/card/6.jpg" alt=""></li>
                 </ul>
+                <span class='zoom'><img src="../img/zoom.svg"></span>
               </div>
             </div>
 
@@ -1456,40 +1457,52 @@
         }
       ]
     });
-    // let currentSlickSlide = 0
-    // $('.products-page-body__item__right__img__wrapp').on('afterChange', function(event, slick, currentSlide, nextSlide){
-    //   currentSlickSlide = currentSlide
-    // });
+
+    let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+            
+    function preventDefault(e){
+        e.preventDefault();
+    }
+    function disableScroll(){
+        if ( width < 767 ) { 
+          document.body.classList.add('no-scroll') 
+        } else {
+            document.body.addEventListener('touchmove', preventDefault, { passive: false });
+            window.addEventListener('DOMMouseScroll', preventDefault, false);
+            document.addEventListener('wheel', preventDefault, {passive: false});
+        }
+    }
+    function enableScroll(){
+        if ( width < 767 ) { 
+            document.body.classList.remove('no-scroll') 
+        } else {
+            document.body.removeEventListener('touchmove', preventDefault, { passive: false });
+            window.removeEventListener('DOMMouseScroll', preventDefault, false);
+            document.removeEventListener('wheel', preventDefault, {passive: false});
+        }
+    }
+    
     let galleryIsOpen = false;
     function openGallery() {
       if ( galleryIsOpen == false) {
-        $('.products-page-body__item__left__thumb').fadeOut()
-        $('.products-page-body__item__right__img__wrapp').fadeOut()
-        setTimeout(() => {
-          $('.products-page-body__item').addClass('is-active')
-          $('.products-page-body__item__left__thumb').slick('resize')
-          $('.products-page-body__item__right__img__wrapp').slick('resize')
-          $('.products-page-body__item__left__thumb').fadeIn()
-          $('.products-page-body__item__right__img__wrapp').fadeIn()
-          galleryIsOpen = true
-        }, 200);
+        disableScroll()
+        $('.products-page-body__item').addClass('is-active')
+        $('.products-page-body__item__right__img__wrapp').slick('setPosition')
+        galleryIsOpen = true
+      } else {
+        closeGallery()
       }
     }
     function closeGallery() {
       if ( galleryIsOpen == true) {
-        $('.products-page-body__item__left__thumb').fadeOut()
-        $('.products-page-body__item__right__img__wrapp').fadeOut()
-        setTimeout(() => {
-          $('.products-page-body__item').removeClass('is-active')
-          $('.products-page-body__item__left__thumb').slick('resize')
-          $('.products-page-body__item__right__img__wrapp').slick('resize')
-          $('.products-page-body__item__left__thumb').fadeIn()
-          $('.products-page-body__item__right__img__wrapp').fadeIn()
-          galleryIsOpen = false
-        }, 200);
+        $('.products-page-body__item').removeClass('is-active')
+        $('.products-page-body__item__right__img__wrapp').slick('setPosition')
+        galleryIsOpen = false
+        enableScroll()
       }
     }
     $('.products-page-body__item__right__img__wrapp').on('click', 'img', openGallery)
+    $('.products-page-body__item .zoom').on('click', openGallery)
     $('.products-page-body__item .close').on('click', closeGallery)
 
 

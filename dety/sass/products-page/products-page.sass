@@ -92,6 +92,8 @@
                 z-index: 105
                 .close
                     display: block
+                .zoom
+                    display: none
                 .products-page-body__item
                     &__left
                         display: flex
@@ -117,8 +119,12 @@
                                 display: flex
                                 align-items: center
                                 justify-content: center
+                                padding: 0
                                 img
-                                    max-width: 700px
+                                    width: auto
+                                    height: auto
+                                    max-height: 100vh
+                                    cursor: pointer
 
             .close
                 display: none
@@ -126,11 +132,12 @@
                 border-radius: 50%
                 cursor: pointer
                 position: absolute
-                right: 10px
+                right: 20px
                 top: 10px
                 width: 2em
                 height: 2em
                 opacity: .7
+                z-index: 50
                 background-size: 1em
                 background-position: center
                 background-repeat: no-repeat
@@ -138,6 +145,12 @@
                 transition: opacity .3s ease
                 &:hover
                     opacity: 1
+            .zoom
+                position: absolute
+                bottom: 0
+                right: 0
+                z-index: 3
+                cursor: pointer
             
             &__left
                 position: relative
@@ -228,10 +241,6 @@
                             list-style: none
                             padding: 0
                             margin: 0
-                        img
-                            margin: 0
-                            padding: 0
-                            width: 100%
                     
                     .slick-slide
                         margin: 0 2em
@@ -240,7 +249,12 @@
                         display: flex
                         align-items: center
                         justify-content: center
-                        outline: none                     
+                        outline: none
+                        img
+                            width: 100%
+                            max-width: 100%
+                            height: auto
+                            cursor: pointer    
                     .slick-list
                         margin: 0 -2em
 
@@ -695,6 +709,8 @@
             &__item
                 &__left
                     &__thumb
+                        max-height: 400px
+                        overflow: hidden
                         img
                             width: 90px
         
@@ -821,6 +837,8 @@
                             padding: 0               
                         .slick-list
                             margin: 0 -1em
+                    .zoom
+                        display: none
 
             &__buy
                 flex-wrap: wrap
