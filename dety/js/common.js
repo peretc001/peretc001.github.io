@@ -197,8 +197,11 @@ if (document.querySelector('.modal')) {
                     hModal()
                     setTimeout(() => {
                         showModal(event)
-                        event.target.dataset.target == 'login' ? modal.querySelector('input[name="phone"]').focus() : ''
-                    }, 300);    
+                        setTimeout(() => {
+                            event.target.dataset.target == 'login' ? modal.querySelector('input[name="phone"]').focus() : ''
+                        }, 500);
+                    }, 300);
+                    
                 })
             });
             
