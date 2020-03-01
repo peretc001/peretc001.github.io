@@ -78,9 +78,9 @@ if (document.querySelector('.modal')) {
                 setTimeout(() => {
                     modal.classList.add('is-active')
                     current.classList.add('is-active')
+                    current.getAttribute('data-modal') == 'login' ? current.querySelector('.phone-mask').focus() : ''
+                    current.getAttribute('data-modal') == 'oneclick' ? current.querySelector('.name').focus() : ''
                 }, 150);
-                current.getAttribute('data-modal') == 'login' ? modal.querySelector('input[name="phone"]').focus() : ''
-                current.getAttribute('data-modal') == 'oneclick' ? modal.querySelector('input[name="user-oneclick"]').focus() : ''
                 document.addEventListener('keyup', hideModalEsc)
                 document.addEventListener('click', hideModalCloseBtn)
             }
@@ -198,29 +198,16 @@ if (document.querySelector('.modal')) {
                     hModal()
                     setTimeout(() => {
                         showModal(event)
-                        event.target.dataset.target == 'login' ? modal.querySelector('input[name="phone"]').blur() : ''
-                        // event.target.dataset.target == 'login' ? modal.querySelector('input[name="phone"]').focus() : ''
+                        setTimeout(() => {
+                            event.target.dataset.target == 'login' ? modal.querySelector('.phone-mask').blur() : ''
+                            event.target.dataset.target == 'login' ? modal.querySelector('.phone-mask').focus() : ''
+                        }, 500);
                     }, 300);
                     
                 })
             });
             
 
-}
-
-//HOME Slider
-if ( document.querySelector('.slider') ) {
-    const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    const sliderList = document.querySelectorAll('.slider-wrapper--item')
-    if (width > 767) {
-        sliderList.forEach(item => {
-            item.innerHTML = `<img src="${item.getAttribute('data-desctop')}" alt="">`
-        })
-    } else {
-        sliderList.forEach(item => {
-            item.innerHTML = `<img src="${item.getAttribute('data-mobile')}" alt="">`
-        })
-    }
 }
 
 //Brands page
