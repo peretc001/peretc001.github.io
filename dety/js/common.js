@@ -199,7 +199,7 @@ if (document.querySelector('.modal')) {
                     setTimeout(() => {
                         showModal(event)
                         event.target.dataset.target == 'login' ? modal.querySelector('input[name="phone"]').blur() : ''
-                        event.target.dataset.target == 'login' ? modal.querySelector('input[name="phone"]').focus() : ''
+                        // event.target.dataset.target == 'login' ? modal.querySelector('input[name="phone"]').focus() : ''
                     }, 300);
                     
                 })
