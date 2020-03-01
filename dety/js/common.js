@@ -4,12 +4,13 @@ document.addEventListener("DOMContentLoaded", function() {
 if (document.querySelector('.nav')) {
     const   modal = document.querySelector('.modal')
             openCityList = document.querySelector('.open-city-list')
-            let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+    
+    let     width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
             
-            function preventDefault(e){
+            const preventDefault = (e) => {
                 e.preventDefault();
             }
-            function disableScroll(){
+            const disableScroll = () => {
                 if ( width < 767 ) {
                     document.body.classList.add('no-scroll') 
                 } else {
@@ -18,7 +19,7 @@ if (document.querySelector('.nav')) {
                     document.addEventListener('wheel', preventDefault, {passive: false});
                 }
             }
-            function enableScroll(){
+            const enableScroll = () => {
                 if ( width < 767 ) { 
                     document.body.classList.remove('no-scroll') 
                 } else {
@@ -28,20 +29,20 @@ if (document.querySelector('.nav')) {
                 }
             }
 
-            hideModalCloseBtn = () => {
+            const hideModalCloseBtn = () => {
                 if ( event.target.dataset.close == 'close' ) {
                     hModal()
                     document.removeEventListener('click', hideModalEsc())
                 }
             }
-            hideModalEsc = () => {
+            const hideModalEsc = () => {
                 if (event.keyCode == 27) {
                     hModal()
                     document.removeEventListener('click', hideModalCloseBtn())
                 }
             }
             
-            hModal = () => {
+            const hModal = () => {
                 modal.querySelector('.is-active') ? modal.querySelector('.is-active').classList.remove('is-active') : ''
                 setTimeout(() => {
                     modal.querySelector('.is-fade') ? modal.querySelector('.is-fade').classList.remove('is-fade') : ''
@@ -57,12 +58,12 @@ if (document.querySelector('.nav')) {
                 document.querySelector('.hamburger').classList.remove('open')
                 enableScroll()
             }
-            hideModal = () => {
+            const hideModal = () => {
                 hModal()
                 document.removeEventListener('keydown', hideModalEsc())
                 document.removeEventListener('click', hideModalCloseBtn())
             }
-            showModal = (event) => {
+            const showModal = (event) => {
                 event.target.dataset.target == 'menu' ? '' : disableScroll()
                 event.target.dataset.target == 'menu' ? document.querySelector('.hamburger').classList.add('open') : ''
                 if (event.target.dataset.target == 'review') {
@@ -77,11 +78,11 @@ if (document.querySelector('.nav')) {
                     modal.classList.add('is-active')
                     current.classList.add('is-active')
                 }, 150);
-                if (event.target.dataset.target == 'login') modal.querySelector('input[name="phone"]').focus()
+                current.getAttribute('data-modal') == 'login' ? modal.querySelector('input[name="phone"]').focus() : ''
                 document.addEventListener('keyup', hideModalEsc)
                 document.addEventListener('click', hideModalCloseBtn)
             }
-            showCityList = () => {
+            const showCityList = () => {
 
             }
 

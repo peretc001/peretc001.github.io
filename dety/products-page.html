@@ -189,12 +189,13 @@
                   <button class="btn btn-outline-yellow oneclick">В один клик</button>
               </div>
 
-              <p class="products-page-body__buy__count">Товар купили 1237 раз</p>
-
               <div class="products-page-body__buy__delivery">
                 <p>
-                    Забрать из магазина —  <b>сегодня, от 0 рублей</b>
+                    Забрать из магазина —  <b>21 августа, от 99 рублей</b>
                 </p>
+                <p>
+                  Забрать из магазина —  <b>сегодня, от 0 рублей</b>
+              </p>
                 <p>
                     Курьером — <b>2 февраля, от 199 рублей</b>
                 </p>
@@ -1458,12 +1459,11 @@
       ]
     });
 
-    let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
-            
-    function preventDefault(e){
+    let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth       
+    const preventDefault = (e) => {
         e.preventDefault();
     }
-    function disableScroll(){
+    const disableScroll = () => {
         if ( width < 767 ) { 
           document.body.classList.add('no-scroll') 
         } else {
@@ -1472,7 +1472,7 @@
             document.addEventListener('wheel', preventDefault, {passive: false});
         }
     }
-    function enableScroll(){
+    const enableScroll = () => {
         if ( width < 767 ) { 
             document.body.classList.remove('no-scroll') 
         } else {
@@ -1483,21 +1483,28 @@
     }
     
     let galleryIsOpen = false;
-    function openGallery() {
+    const closeGalleryEsc = () => {
+      if (event.keyCode == 27) {
+        closeGallery()
+      }
+    }
+    const openGallery = () => {
       if ( galleryIsOpen == false) {
         disableScroll()
         $('.products-page-body__item').addClass('is-active')
         $('.products-page-body__item__right__img__wrapp').slick('setPosition')
         galleryIsOpen = true
+        document.addEventListener('keydown', closeGalleryEsc)
       } else {
         closeGallery()
       }
     }
-    function closeGallery() {
+    const closeGallery = () => {
       if ( galleryIsOpen == true) {
         $('.products-page-body__item').removeClass('is-active')
         $('.products-page-body__item__right__img__wrapp').slick('setPosition')
         galleryIsOpen = false
+        document.removeEventListener('keydown', closeGalleryEsc)
         enableScroll()
       }
     }
