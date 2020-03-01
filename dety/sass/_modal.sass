@@ -44,6 +44,10 @@
         &.city
             padding: 30px
             transform: translateY(-200%)
+            .modal-body__head
+                font-size: 1em
+            .modal-body__city
+                font-size: 1.4em
             &.is-active
                 transform: translateY(0)
         &.user
@@ -345,6 +349,30 @@
                 &.btn-accent
                     margin: 0
                     max-width: 170px
+
+        &.oneclick
+            left: 50%
+            top: 50%
+            transform: translateX(-50%) translateY(-50%)
+            opacity: 0
+            border-radius: 4px
+            &.is-active
+                transform: translateX(-50%) translateY(50%)
+            .form-row
+                margin-bottom: 1em
+                label
+                    font-size: 0.8em
+                    color: $grey
+                    margin-bottom: 0.3em
+                input
+                    width: 100%
+                    border: 2px solid $accent
+                    box-shadow: none
+                    outline: none
+                    border-radius: 4px
+                    padding: .5em 1em
+                    margin: 0
+                    font-size: 16px !important
 
         &__button
             display: flex

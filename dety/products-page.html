@@ -186,7 +186,7 @@
             <div class="products-page-body__buy--right">
               <div class="products-page-body__buy__button">
                   <button class="btn btn-accent buy">В корзину</button>
-                  <button class="btn btn-outline-yellow oneclick">В один клик</button>
+                  <button class="btn btn-outline-yellow oneclick" data-toggle="modal" data-target="oneclick">В один клик</button>
               </div>
 
               <div class="products-page-body__buy__delivery">
@@ -346,10 +346,10 @@
                   <p class="caption">Комментарий</p>
                   <p>Он заинтересовал её с первой минуты) собирала детали, катала вагончики, и не переставая нажимала на музыкальную трубу поезда))) </p>
                   <div class="products-page-body__rq-review__card__text__gallery">
-                    <a href=""><img src="./img/review/1.png" alt=""></a>
-                    <a href=""><img src="./img/review/2.png" alt=""></a>
-                    <a href=""><img src="./img/review/3.png" alt=""></a>
-                    <a href=""><img src="./img/review/4.png" alt=""></a>
+                    <a href="./img/products/card/1.jpg" data-fancybox="gallery"><img src="./img/review/1.png" alt=""></a>
+                    <a href="./img/products/card/2.jpg" data-fancybox="gallery"><img src="./img/review/2.png" alt=""></a>
+                    <a href="./img/products/card/3.jpg" data-fancybox="gallery"><img src="./img/review/3.png" alt=""></a>
+                    <a href="./img/products/card/4.jpg" data-fancybox="gallery"><img src="./img/review/4.png" alt=""></a>
                   </div>
                 </div>
                 <p class="date">сегодня, 12.10.2020</p>
@@ -1288,7 +1288,7 @@
       <span class="close" data-close="close"></span>
       <p class="modal-body__head">Ваш город:</p>
       <p class="modal-body__city">Санкт-Петербург</p>
-      <p class="modal-body__desc">От выбора города зависит стоимость, наличие и условия доставки</p>
+      <p class="modal-body__desc">От города зависят условия доставки</p>
       <div class="modal-body__button">
         <button class="btn btn-accent" data-close="close">Да</button>
         <button class="btn btn-outline-accent open-city-list">Нет, выбрать другой</button>
@@ -1313,7 +1313,7 @@
       <p><b>Войти в личный кабинет</b></p>
       <form action="/" method="post" class="signin">
         <label for="phone">Войти по номеру</label>
-        <input type="tel" id="phone" name="phone" placeholder="+7 (XXX) XXX-XX-XX" required>
+        <input type="tel" id="phone" name="phone" class="phone-mask" placeholder="+7 (XXX) XXX-XX-XX" required>
         <button type="submit" class="btn btn-accent">Получить sms-код</button>
       </form>
     </div>
@@ -1407,6 +1407,24 @@
         </div>
       </form>
     </div>
+    <!-- Modal OneClick -->
+    <div class="modal-body oneclick" data-modal="oneclick">
+      <span class="close" data-close="close"></span>
+      <p><b>Заказ в один клик</b></p>
+      <form action="/" method="post">
+        <div class="form-row">
+          <label for="user-oneclick">Ваш имя</label>
+          <input type="text" name="user-oneclick" id="user-oneclick" placeholder="" pattern="^[А-Яа-яЁё\s]+$" required>
+        </div>
+        <div class="form-row">
+          <label for="userphone">Телефон</label>
+          <input type="tel" id="userphone" name="phone-oneclick" class="phone-mask" placeholder="+7 (XXX) XXX-XX-XX" required>
+        </div>
+        <div class="submit">
+          <button type="submit" class="btn btn-accent">Отправить</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
 
@@ -1420,6 +1438,9 @@
 
 <link rel="stylesheet" href="./js/slick/slick.css">
 <script src="./js/slick/slick.min.js"></script>
+<script src="./js/fancybox/jquery.fancybox.min.js"></script>
+<link rel="stylesheet" href="./js/fancybox/jquery.fancybox.min.css">
+
   <script>
     $('.products-page-body__item__left__thumb').slick({
       vertical: true,
@@ -1553,6 +1574,8 @@
         },
       ]
     });
+    
+    $('[data-fancybox="gallery"]').fancybox();
   </script>
 </body>
 </html>

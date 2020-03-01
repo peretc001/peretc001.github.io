@@ -80,6 +80,7 @@ if (document.querySelector('.modal')) {
                     current.classList.add('is-active')
                 }, 150);
                 current.getAttribute('data-modal') == 'login' ? modal.querySelector('input[name="phone"]').focus() : ''
+                current.getAttribute('data-modal') == 'oneclick' ? modal.querySelector('input[name="user-oneclick"]').focus() : ''
                 document.addEventListener('keyup', hideModalEsc)
                 document.addEventListener('click', hideModalCloseBtn)
             }
@@ -197,6 +198,7 @@ if (document.querySelector('.modal')) {
                     hModal()
                     setTimeout(() => {
                         showModal(event)
+                        event.target.dataset.target == 'login' ? modal.querySelector('input[name="phone"]').blur() : ''
                         setTimeout(() => {
                             event.target.dataset.target == 'login' ? modal.querySelector('input[name="phone"]').focus() : ''
                         }, 500);
@@ -359,6 +361,7 @@ if ( document.querySelector('.cart-delivery-point__lists') ) {
     container.addEventListener('mouseout', (e) => document.body.classList.remove('no-scroll'))
 }
 
+//Phone mask
 {
     function setCursorPosition(pos, elem) {
         elem.focus();
@@ -384,10 +387,12 @@ if ( document.querySelector('.cart-delivery-point__lists') ) {
             if (this.value.length == 2) this.value = ""
         } else setCursorPosition(this.value.length, this)
     };
-    var input = document.querySelector("#userphone") || document.querySelector("#phone")
-    input.addEventListener("input", mask, false);
-    input.addEventListener("focus", mask, false);
-    input.addEventListener("blur", mask, false);
+    var input = document.querySelectorAll(".phone-mask")
+    input.forEach(elem => {
+        elem.addEventListener("input", mask, false);
+        elem.addEventListener("focus", mask, false);
+        elem.addEventListener("blur", mask, false);
+    })
 }
     
     
