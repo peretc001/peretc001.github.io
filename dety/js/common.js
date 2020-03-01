@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
 
 //Modal
-if (document.querySelector('.nav')) {
+if (document.querySelector('.modal')) {
     const   modal = document.querySelector('.modal')
             openCityList = document.querySelector('.open-city-list')
+            userHelp = document.querySelector('.nav-top__right__user')
     
     let     width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
             
@@ -82,10 +83,31 @@ if (document.querySelector('.nav')) {
                 document.addEventListener('keyup', hideModalEsc)
                 document.addEventListener('click', hideModalCloseBtn)
             }
+
+            let userHovered = false
+            const showModalOnHover = (event) => {
+                if (userHovered == false && !modal.classList.contains('is-active')) {
+                    showModal(event)
+                    userHovered = true
+                    modal.addEventListener('mouseover', hideModalOnHover)
+                }
+            }
+            const hideModalOnHover = (event) => {
+                if (userHovered == true && event.target.contains(modal)) {
+                    hideModal()
+                    userHovered = false
+                    modal.removeEventListener('mouseover', hideModalOnHover)
+                }
+            }
+
+            userHelp.addEventListener('mouseenter', showModalOnHover)
+            
+
+
             const showCityList = () => {
 
             }
-
+            
             loginForm = document.querySelector('.modal-body .signin')
             phone = loginForm.querySelector('#phone')
             inputSMS = modal.querySelectorAll('.sms-input')
@@ -149,7 +171,7 @@ if (document.querySelector('.nav')) {
             })
             modal.addEventListener('click', (event) => event.target == modal ? hideModal() : '')
 
-            showCityOnLoad = () => {
+            const showCityOnLoad = () => {
                 let city = localStorage.getItem('city')
                 if (!city) {
                     disableScroll()
@@ -175,6 +197,7 @@ if (document.querySelector('.nav')) {
                     hModal()
                     setTimeout(() => {
                         showModal(event)
+                        event.target.dataset.target == 'login' ? modal.querySelector('input[name="phone"]').focus() : ''
                     }, 300);    
                 })
             });
