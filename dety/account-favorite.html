@@ -13,55 +13,53 @@
 </head>
 <body>
 
-  <nav class="nav">
-    <div class="nav-top">
-      <div class="container">
-        <div class="hamburger" data-toggle="modal" data-target="menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="nav-top__city">
-          <a class="nav-top__city__location" data-toggle="modal" data-target="city" href="#">Санкт-Петербург</a>
-          <div class="nav-top__city__location__item">
-            <a href="#">Пункты выдачи</a>
-            <a href="">Условия доставки</a>
-          </div>
-        </div>
-        <div class="nav-top__right">
-          <a class="nav-top__right__phone" href="tel:+79384087777">+7 (938) 408-77-77</a>
-          <span class="nav-top__right__time">9:00 - 22:00</span>
-          <a class="nav-top__right__user" data-toggle="modal" data-target="user" href="#">Покупателям</a>
-          <a class="nav-top__right__login" data-toggle="modal" data-target="login" href="#">Войти</a>
+<nav class="nav">
+  <div class="nav-top">
+    <div class="container">
+      <div class="nav-top__city">
+        <a class="nav-top__city__location" data-toggle="modal" data-target="city" href="#">Санкт-Петербург</a>
+        <div class="nav-top__city__location__item">
+          <a href="#">Пункты выдачи</a>
+          <a href="">Условия доставки</a>
         </div>
       </div>
+      <div class="nav-top__right">
+        <a class="nav-top__right__phone" href="tel:8-800-600-77-27">8-800-600-77-27</a>
+        <span class="nav-top__right__time">9:00 - 22:00</span>
+        <a class="nav-top__right__user" data-toggle="modal" data-target="user" href="#">Покупателям</a>
+        <a class="nav-top__right__login" data-toggle="modal" data-target="login" href="#">Войти</a>
+      </div>
     </div>
-  
-    <div class="nav-search">
-      <div class="container">
-        <a href="./" class="brand">
-          <img src="./img/logo.svg" alt="Все для деток.ру">
+  </div>
+
+  <div class="nav-search">
+    <div class="container">
+      <div class="hamburger" data-toggle="modal" data-target="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <a href="./" class="brand">
+        <img src="./img/logo.svg" alt="Все для деток.ру">
+        <img src="./img/logo_mobile.svg" alt="Все для деток.ру">
+      </a>
+      <form action="/" method="post" class="nav-search__form">
+        <input type="text" name="search" value="" placeholder="Поиск по сайту">
+      </form>
+      <div class="nav-search--right">
+        <a href="" class="nav-search--right__wishlist active">
+          <span>2</span>
         </a>
-        <form action="/" method="post" class="nav-search__form">
-          <input type="text" name="search" value="" placeholder="Поиск по сайту">
-        </form>
-        <div class="nav-search--right">
-          <a href="" class="nav-search--right__wishlist active">
-            <!-- <span>2</span> -->
-          </a>
-          <a href="" class="nav-search--right__cart">
-            <!-- <span class="qty">3</span>
-            <span class="price">5 750 ₽</span> -->
-          </a>
-        </div>
+        <a href="" class="nav-search--right__cart">
+          <span class="qty">3</span>
+          <!-- <span class="price">5 750 ₽</span> -->
+        </a>
       </div>
     </div>
-    
-    <div id=app></div>
-    <link href='./css/app.edba07a5.css' rel=stylesheet>
-    <script src='./js/chunk-vendors.d4d1433b.js'></script>
-    <script src='./js/app.de14ae5a.js'></script>
-  </nav>
+  </div>
+
+  <div id=app></div>
+</nav>
 
 <main>
     <div class="breadcrumb">

@@ -10,44 +10,49 @@
         columns: 2
 
     .hideElem
-        display: none
-        color: $nav
-        a
-            border-bottom: 1px dashed $nav
-            cursor: pointer
-
+        position: relative
+        display: inline-block
+        cursor: pointer
+        margin-top: 1em
+        padding-left: 3em
+        font-weight: bold
+        text-transform: uppercase
+        &::before
+            content: 'Скрыть '
+        &::after
+            content: ''
+            position: absolute
+            left: 0
+            top: 50%
+            transform: translateY(-50%) rotate(225deg)
+            display: inline-block
+            width: 2em
+            height: 2em
+            background: $nav
+            border-radius: 50%
+            color: #ffffff
+            background-size: 1em
+            background-position: center
+            background-repeat: no-repeat
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNNDY1LjA2NCwyMDcuNTY2bDAuMDI4LDBIMjg0LjQzNlYyNy4yNWMwLTE0Ljg0LTEyLjAxNi0yNy4yNDgtMjYuODU2LTI3LjI0OGgtMjMuMTE2ICAgIGMtMTQuODM2LDAtMjYuOTA0LDEyLjQwOC0yNi45MDQsMjcuMjQ4djE4MC4zMTZIMjYuOTA4Yy0xNC44MzIsMC0yNi45MDgsMTItMjYuOTA4LDI2Ljg0NHYyMy4yNDggICAgYzAsMTQuODMyLDEyLjA3MiwyNi43OCwyNi45MDgsMjYuNzhoMTgwLjY1NnYxODAuOTY4YzAsMTQuODMyLDEyLjA2NCwyNi41OTIsMjYuOTA0LDI2LjU5MmgyMy4xMTYgICAgYzE0Ljg0LDAsMjYuODU2LTExLjc2NCwyNi44NTYtMjYuNTkyVjI4NC40MzhoMTgwLjYyNGMxNC44NCwwLDI2LjkzNi0xMS45NTIsMjYuOTM2LTI2Ljc4VjIzNC40MSAgICBDNDkyLDIxOS41NjYsNDc5LjkwNCwyMDcuNTY2LDQ2NS4wNjQsMjA3LjU2NnoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiIHN0eWxlPSJmaWxsOiNGRkZGRkYiPjwvcGF0aD4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+')
+            transition: transform .5s ease
+        &.active
+            &::before
+                content: 'Показать '
+            &::after
+                transform: translateY(-50%) rotate(0)
     .showElem
+        padding: 2em 0 0 0
         max-height: 500px
         opacity: 1
         overflow: hidden
-        transition: max-height .5s ease-in-out, opacity .5s ease-in-out
-    
-    .showMore
-        display: none
+        transition: max-height .5s ease-in-out, opacity .5s ease-in-out, padding .5s ease-in-out
         &.active
-            display: none
+            padding: 0
+            opacity: 0
+            max-height: 0
     
 @media screen and ( max-width: 767.98px )
     .text-block
         .column
             columns: 1
-
-        .hideElem
-            position: relative
-            display: none
-            &.active
-                display: block
-
-        .showElem
-            padding-top: 2em
-            &.active
-                opacity: 0
-                max-height: 0
-        
-        .showMore
-            display: none
-            &.active
-                display: block
-            a
-                border-bottom: 1px dashed $nav
-                cursor: pointer
