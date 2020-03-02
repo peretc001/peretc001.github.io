@@ -1,35 +1,33 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth    
+const preventDefault = (e) => {
+    e.preventDefault();
+}
+const disableScroll = () => {
+    if ( width < 767 ) {
+        document.body.classList.add('no-scroll') 
+    } else {
+        document.body.addEventListener('touchmove', preventDefault, { passive: false });
+        window.addEventListener('DOMMouseScroll', preventDefault, false);
+        document.addEventListener('wheel', preventDefault, {passive: false});
+    }
+}
+const enableScroll = () => {
+    if ( width < 767 ) { 
+        document.body.classList.remove('no-scroll') 
+    } else {
+        document.body.removeEventListener('touchmove', preventDefault, { passive: false });
+        window.removeEventListener('DOMMouseScroll', preventDefault, false);
+        document.removeEventListener('wheel', preventDefault, {passive: false});
+    }
+}
 //Modal
 if (document.querySelector('.modal')) {
     const   modal = document.querySelector('.modal')
             modalList = document.querySelectorAll('[data-toggle="modal"]')
             openCityList = document.querySelector('.open-city-list')
             userHelp = document.querySelector('.nav-top__right__user')
-    
-    let     width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
-            
-            const preventDefault = (e) => {
-                e.preventDefault();
-            }
-            const disableScroll = () => {
-                if ( width < 767 ) {
-                    document.body.classList.add('no-scroll') 
-                } else {
-                    document.body.addEventListener('touchmove', preventDefault, { passive: false });
-                    window.addEventListener('DOMMouseScroll', preventDefault, false);
-                    document.addEventListener('wheel', preventDefault, {passive: false});
-                }
-            }
-            const enableScroll = () => {
-                if ( width < 767 ) { 
-                    document.body.classList.remove('no-scroll') 
-                } else {
-                    document.body.removeEventListener('touchmove', preventDefault, { passive: false });
-                    window.removeEventListener('DOMMouseScroll', preventDefault, false);
-                    document.removeEventListener('wheel', preventDefault, {passive: false});
-                }
-            }
 
             const hideModalCloseBtn = () => {
                 if ( event.target.dataset.close == 'close' ) {
@@ -323,12 +321,12 @@ if ( document.querySelector('.qty-input') ) {
     })
 }
 
-if ( document.querySelector('.cart-delivery-point__lists') ) {
-    const container = document.querySelector('.cart-delivery-point__lists .container')
-    let timer = null;
-    container.addEventListener('mouseover', (e) => document.body.classList.add('no-scroll'))
-    container.addEventListener('mouseout', (e) => document.body.classList.remove('no-scroll'))
-}
+// if ( document.querySelector('.cart-delivery-point__lists') ) {
+//     const container = document.querySelector('.cart-delivery-point__lists .container')
+//     let timer = null;
+//     container.addEventListener('mouseover', (e) => disableScroll())
+//     container.addEventListener('mouseout', (e) => enableScroll())
+// }
 
 //Phone mask
 {
