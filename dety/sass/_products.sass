@@ -1,5 +1,5 @@
 .products
-    .row
+    .products-list
         padding: 0 .5em
         [class*="col-"]
             margin-bottom: 1em
@@ -382,13 +382,11 @@
 
 @media screen and ( max-width: 576.98px )
     .products
-        .row
+        .products-list
             [class*="col-"]
                 margin-bottom: .5em
-                &:nth-child(odd)
-                    padding-right: 0.25em
-                &:nth-child(even)
-                    padding-left: 0.25em
+                padding-right: 0.25em
+                padding-left: 0.25em
         &-filter
             form.smartfilter
                 .wrapp_change_inputs
