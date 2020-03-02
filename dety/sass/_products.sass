@@ -136,9 +136,6 @@
                         &:last-child
                             margin-left: 0.5em
 
-
-
-
     &-tag
         display: flex
         align-items: center
@@ -346,12 +343,32 @@
 
 @media screen and ( max-width: 991.98px )
     .products
+        &-sort
+            max-width: 400px
         &-card
             &__head
                 span
                     padding: 5px 3px
             &__img
                 text-align: center
+@media screen and ( max-width: 767.98px )
+    .products
+        &-filter
+            padding-right: 0
+            margin-bottom: 2em
+            &__open
+                display: flex
+            form.smartfilter
+                padding: 0
+                max-height: 0
+                opacity: 0
+                overflow: hidden
+                transition: max-height .5s ease-in-out, opacity .5s ease-in-out, padding .5s ease-in-out
+                &.active
+                    max-height: 2000px
+                    opacity: 1
+                    overflow: visible
+                    
 
 @media screen and ( max-width: 576.98px )
     .products
@@ -403,6 +420,12 @@
                         width: 1.6em
                         height: 1.6em
                         background-size: 1.6em
+
+@media screen and ( max-width: 425px )
+    .products
+        &-filter
+            &__open
+                max-width: 100%
 
 @media screen and ( max-width: 374.98px )
     .products
