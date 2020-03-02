@@ -1432,7 +1432,7 @@
 
 <script src="./js/scripts.min.js"></script>
 <script defer src='./js/chunk-vendors.d4d1433b.js'></script>
-<script defer src='./js/app.3319f114.js'></script>
+<script defer src='./js/app.43d39c12.js'></script>
 <link href='./css/app.6e1150c3.css' rel=stylesheet>
 <link rel="stylesheet" href="./css/main.min.css">
 
@@ -1441,7 +1441,7 @@
 <script src="./js/fancybox/jquery.fancybox.min.js"></script>
 <link rel="stylesheet" href="./js/fancybox/jquery.fancybox.min.css">
 
-  <!-- <script>
+  <script>
     $('.products-page-body__item__left__thumb').slick({
       vertical: true,
       infinite: true,
@@ -1480,58 +1480,58 @@
       ]
     });
 
-    let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth       
-    const preventDefault = (e) => {
-        e.preventDefault();
-    }
-    const disableScroll = () => {
-        if ( width < 767 ) { 
-          document.body.classList.add('no-scroll') 
-        } else {
-            document.body.addEventListener('touchmove', preventDefault, { passive: false });
-            window.addEventListener('DOMMouseScroll', preventDefault, false);
-            document.addEventListener('wheel', preventDefault, {passive: false});
-        }
-    }
-    const enableScroll = () => {
-        if ( width < 767 ) { 
-            document.body.classList.remove('no-scroll') 
-        } else {
-            document.body.removeEventListener('touchmove', preventDefault, { passive: false });
-            window.removeEventListener('DOMMouseScroll', preventDefault, false);
-            document.removeEventListener('wheel', preventDefault, {passive: false});
-        }
-    }
+    // let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth       
+    // const preventDefault = (e) => {
+    //     e.preventDefault();
+    // }
+    // const disableScroll = () => {
+    //     if ( width < 767 ) { 
+    //       document.body.classList.add('no-scroll') 
+    //     } else {
+    //         document.body.addEventListener('touchmove', preventDefault, { passive: false });
+    //         window.addEventListener('DOMMouseScroll', preventDefault, false);
+    //         document.addEventListener('wheel', preventDefault, {passive: false});
+    //     }
+    // }
+    // const enableScroll = () => {
+    //     if ( width < 767 ) { 
+    //         document.body.classList.remove('no-scroll') 
+    //     } else {
+    //         document.body.removeEventListener('touchmove', preventDefault, { passive: false });
+    //         window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    //         document.removeEventListener('wheel', preventDefault, {passive: false});
+    //     }
+    // }
     
-    let galleryIsOpen = false;
-    const closeGalleryEsc = () => {
-      if (event.keyCode == 27) {
-        closeGallery()
-      }
-    }
-    const openGallery = () => {
-      if ( galleryIsOpen == false) {
-        disableScroll()
-        $('.products-page-body__item').addClass('is-active')
-        $('.products-page-body__item__right__img__wrapp').slick('setPosition')
-        galleryIsOpen = true
-        document.addEventListener('keydown', closeGalleryEsc)
-      } else {
-        closeGallery()
-      }
-    }
-    const closeGallery = () => {
-      if ( galleryIsOpen == true) {
-        $('.products-page-body__item').removeClass('is-active')
-        $('.products-page-body__item__right__img__wrapp').slick('setPosition')
-        galleryIsOpen = false
-        document.removeEventListener('keydown', closeGalleryEsc)
-        enableScroll()
-      }
-    }
-    $('.products-page-body__item__right__img__wrapp').on('click', 'img', openGallery)
-    $('.products-page-body__item .zoom').on('click', openGallery)
-    $('.products-page-body__item .close').on('click', closeGallery)
+    // let galleryIsOpen = false;
+    // const closeGalleryEsc = () => {
+    //   if (event.keyCode == 27) {
+    //     closeGallery()
+    //   }
+    // }
+    // const openGallery = () => {
+    //   if ( galleryIsOpen == false) {
+    //     disableScroll()
+    //     $('.products-page-body__item').addClass('is-active')
+    //     $('.products-page-body__item__right__img__wrapp').slick('setPosition')
+    //     galleryIsOpen = true
+    //     document.addEventListener('keydown', closeGalleryEsc)
+    //   } else {
+    //     closeGallery()
+    //   }
+    // }
+    // const closeGallery = () => {
+    //   if ( galleryIsOpen == true) {
+    //     $('.products-page-body__item').removeClass('is-active')
+    //     $('.products-page-body__item__right__img__wrapp').slick('setPosition')
+    //     galleryIsOpen = false
+    //     document.removeEventListener('keydown', closeGalleryEsc)
+    //     enableScroll()
+    //   }
+    // }
+    // $('.products-page-body__item__right__img__wrapp').on('click', 'img', openGallery)
+    // $('.products-page-body__item .zoom').on('click', openGallery)
+    // $('.products-page-body__item .close').on('click', closeGallery)
 
 
     $('.resent-products').slick({
@@ -1576,7 +1576,7 @@
     });
     
     $('[data-fancybox="gallery"]').fancybox();
-  </script> -->
+  </script>
 </body>
 </html>
 
