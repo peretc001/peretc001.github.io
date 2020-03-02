@@ -65,7 +65,7 @@
                 input
                     display: none
                 label
-                    padding-left: 17px
+                    padding-left: 1.5em
                     position: relative
                     user-select: none
                     cursor: pointer
@@ -75,8 +75,8 @@
                         left: 0
                         top: 50%
                         transform: translateY(-50%)
-                        width: 10px
-                        height: 10px
+                        width: 1em
+                        height: 1em
                         border: 1px solid $accent
                         border-radius: 2px
                         transition: background .3s ease
@@ -351,6 +351,7 @@
                     padding: 5px 3px
             &__img
                 text-align: center
+
 @media screen and ( max-width: 767.98px )
     .products
         &-filter
@@ -368,7 +369,16 @@
                     max-height: 2000px
                     opacity: 1
                     overflow: visible
-                    
+                .form-check
+                    label
+                        font-size: 1.2em
+                .wrapp_change_inputs
+                    .bx_filter_parameters_box_container_block
+                        width: 200px
+                input
+                    font-size: 16px !important
+        &-sort
+            max-width: 300px
 
 @media screen and ( max-width: 576.98px )
     .products
@@ -379,10 +389,11 @@
                     padding-right: 0.25em
                 &:nth-child(even)
                     padding-left: 0.25em
-        &-tag
-            a
-                font-size: 0.8em
-                padding: .5em
+        &-filter
+            form.smartfilter
+                .wrapp_change_inputs
+                    .bx_filter_parameters_box_container_block
+                        width: 150px
         &-sort
             a
                 font-size: 0.9em
@@ -429,6 +440,11 @@
 
 @media screen and ( max-width: 374.98px )
     .products
+        &-filter
+            form.smartfilter
+                .wrapp_change_inputs
+                    .bx_filter_parameters_box_container_block
+                        width: 120px
         &-sort
             a
                 font-size: 0.8em
