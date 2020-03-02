@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
 //Modal
 if (document.querySelector('.modal')) {
     const   modal = document.querySelector('.modal')
+            modalList = document.querySelectorAll('[data-toggle="modal"]')
             openCityList = document.querySelector('.open-city-list')
             userHelp = document.querySelector('.nav-top__right__user')
     
@@ -158,29 +159,15 @@ if (document.querySelector('.modal')) {
                 hideModal()
             })
             
-            document.addEventListener('click', (event) => {
-                if (    
-                    event.target.dataset.toggle == 'modal' 
-                ) {
+            modalList.forEach(elem => {
+                elem.addEventListener('click', (event) => {
                     event.preventDefault()
                     if ( modal.classList.contains('is-active') ) {
                         hideModal()
                     } else {
                         showModal(event)
                     }
-                }
-            })
-            document.addEventListener('touchstart', (event) => {
-                if (    
-                    event.target.dataset.toggle == 'modal' 
-                ) {
-                    event.preventDefault()
-                    if ( modal.classList.contains('is-active') ) {
-                        hideModal()
-                    } else {
-                        showModal(event)
-                    }
-                }
+                })
             })
             modal.addEventListener('click', (event) => event.target == modal ? hideModal() : '')
 
