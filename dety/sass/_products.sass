@@ -6,13 +6,13 @@
             padding-right: 0.5em
             padding-left: 0.5em
     &-filter
+        padding-right: 3em
         &__open
-            display: block
+            display: none
             width: 100%
             max-width: 200px
             margin: 0 auto
             margin-bottom: 1em
-            display: flex
             align-items: center
             justify-content: center
             position: relative
@@ -40,6 +40,7 @@
                     &-text
                         font-weight: bold
                         font-size: 1.2em
+                        margin-bottom: .5em
                 .smart-filter-angle
                     .smart-filter-angles
                         display: inline-block
@@ -86,6 +87,57 @@
                 font-size: 0.9em
                 color: #C4C4C4
                 cursor: pointer
+            
+            .wrapp_change_inputs
+                display: flex
+                align-items: center
+                justify-content: space-between
+                .bx_filter_parameters_box_container_block
+                    width: 100px
+                    input
+                        width: 100%
+                        background: $bg
+                        border-radius: 4px
+                        border: 1px solid $accent
+                        color: $text
+                        font-weight: bold
+                        padding: 5px 10px
+                .divider
+                    display: inline-block
+                    width: 2em
+                    height: 1px
+                    border-bottom: 1px solid $accent
+            
+            .smart-filter-block
+                .form-input
+                    width: 100%
+                    background: $bg
+                    border-radius: 4px
+                    border: 1px solid $accent
+                    color: $text
+                    font-weight: normal
+                    padding: 8px 10px
+                    margin-bottom: 1em
+            
+            .smart-filter-block-button
+                .form-group
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                    .btn
+                        background: $bg
+                        border-radius: 4px
+                        border: 1px solid $accent
+                        color: $text
+                        font-weight: normal
+                        padding: 8px 10px
+                        &:first-child
+                            margin-right: 0.5em
+                        &:last-child
+                            margin-left: 0.5em
+
+
+
 
     &-tag
         display: flex

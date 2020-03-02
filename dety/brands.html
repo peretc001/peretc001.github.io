@@ -13,384 +13,380 @@
 </head>
 <body>
 
-  <nav class="nav">
-    <div class="nav-top">
-      <div class="container">
-        <div class="hamburger" data-toggle="modal" data-target="menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="nav-top__city">
-          <a class="nav-top__city__location" data-toggle="modal" data-target="city" href="#">Санкт-Петербург</a>
-          <div class="nav-top__city__location__item">
-            <a href="#">Пункты выдачи</a>
-            <a href="">Условия доставки</a>
-          </div>
-        </div>
-        <div class="nav-top__right">
-          <a class="nav-top__right__phone" href="tel:+79384087777">+7 (938) 408-77-77</a>
-          <span class="nav-top__right__time">9:00 - 22:00</span>
-          <a class="nav-top__right__user" data-toggle="modal" data-target="user" href="#">Покупателям</a>
-          <a class="nav-top__right__login" data-toggle="modal" data-target="login" href="#">Войти</a>
+<nav class="nav">
+  <div class="nav-top">
+    <div class="container">
+      <div class="nav-top__city">
+        <a class="nav-top__city__location" data-toggle="modal" data-target="city" href="#">Санкт-Петербург</a>
+        <div class="nav-top__city__location__item">
+          <a href="#">Пункты выдачи</a>
+          <a href="">Условия доставки</a>
         </div>
       </div>
+      <div class="nav-top__right">
+        <a class="nav-top__right__phone" href="tel:8-800-600-77-27">8-800-600-77-27</a>
+        <span class="nav-top__right__time">9:00 - 22:00</span>
+        <a class="nav-top__right__user" data-toggle="modal" data-target="user" href="#">Покупателям</a>
+        <a class="nav-top__right__login" data-toggle="modal" data-target="login" href="#">Войти</a>
+      </div>
     </div>
-  
-    <div class="nav-search">
-      <div class="container">
-        <a href="./" class="brand">
-          <img src="./img/logo.svg" alt="Все для деток.ру">
+  </div>
+
+  <div class="nav-search">
+    <div class="container">
+      <div class="hamburger" data-toggle="modal" data-target="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <a href="./" class="brand">
+        <img src="./img/logo.svg" alt="Все для деток.ру">
+        <img src="./img/logo_mobile.svg" alt="Все для деток.ру">
+      </a>
+      <form action="/" method="post" class="nav-search__form">
+        <input type="text" name="search" value="" placeholder="Поиск по сайту">
+      </form>
+      <div class="nav-search--right">
+        <a href="" class="nav-search--right__wishlist active">
+          <span>2</span>
         </a>
-        <form action="/" method="post" class="nav-search__form">
-          <input type="text" name="search" value="" placeholder="Поиск по сайту">
-        </form>
-        <div class="nav-search--right">
-          <a href="" class="nav-search--right__wishlist active">
-            <!-- <span>2</span> -->
-          </a>
-          <a href="" class="nav-search--right__cart">
-            <!-- <span class="qty">3</span>
-            <span class="price">5 750 ₽</span> -->
-          </a>
-        </div>
+        <a href="" class="nav-search--right__cart">
+          <span class="qty">3</span>
+          <!-- <span class="price">5 750 ₽</span> -->
+        </a>
       </div>
     </div>
-    
-    <div id=app></div>
-    <link href='./css/app.edba07a5.css' rel=stylesheet>
-    <script src='./js/chunk-vendors.d4d1433b.js'></script>
-    <script src='./js/app.de14ae5a.js'></script>
-  </nav>
-  
+  </div>
+
+  <div id=app></div>
+</nav>
+ 
 <main>
-    <div class="breadcrumb">
-        <div class="container">
-            <a href="./">Главная</a> Бренды
-        </div>
-    </div>
-
-    <div class="brands">
-        <div class="container">
-
-            <div class="brands-header">
-                <h1>Бренды</h1>
-                <div class="brands-header__favorite active">
-                    <span>Избранные</span>
-                    <span>Все бренды</span>
-                </div>
-            </div>
-
-            <div class="brands-alphabet">
-                <div class="rus">
-                    <span class="active">А</span>
-                    <span>Б</span>
-                    <span>В</span>
-                    <span class="none">Г</span>
-                    <span class="none">Д</span>
-                    <span class="none">Е</span>
-                    <span class="none">Ж</span>
-                    <span class="none">З</span>
-                    <span class="none">И</span>
-                    <span class="none">К</span>
-                    <span>Л</span>
-                    <span class="none">М</span>
-                    <span>Н</span>
-                    <span>О</span>
-                    <span class="none">П</span>
-                    <span>Р</span>
-                    <span>С</span>
-                    <span class="none">Т</span>
-                    <span>У</span>
-                    <span>Ф</span>
-                    <span class="none">Х</span>
-                    <span class="none">Ц</span>
-                    <span>Ч</span>
-                    <span>Ш</span>
-                    <span>Щ</span>
-                    <span class="none">Э</span>
-                    <span>Ю</span>
-                    <span>Я</span>
-                    <span>0-9</span>
-                </div>
-                <div class="eng">
-                    <span>A</span>
-                    <span class="none">B</span class="none">
-                    <span>C</span>
-                    <span>D</span>
-                    <span>E</span>
-                    <span class="none">F</span>
-                    <span class="none">J</span>
-                    <span>H</span>
-                    <span>I</span>
-                    <span class="none">G</span>
-                    <span>K</span>
-                    <span>L</span>
-                    <span>M</span>
-                    <span class="none">N</span>
-                    <span>O</span>
-                    <span>P</span>
-                    <span>Q</span>
-                    <span>R</span>
-                    <span>S</span>
-                    <span class="none">T</span>
-                    <span class="none">U</span>
-                    <span class="none">V</span>
-                    <span>W</span>
-                    <span>X</span>
-                    <span>Y</span>
-                    <span>Z</span>
-                </div>
-            </div>
-
-            <div class="brands-all">
-                <div class="brands-all-card">
-                    <div class="brands-all-card__title">
-                        0 - 9
-                    </div>
-                    <div class="brands-all-card__list column-1">
-                        <a href="">1toy</a>
-                    </div>
-                </div>
-
-                <div class="brands-all-card">
-                    <div class="brands-all-card__title">
-                        A
-                    </div>
-                    <div class="brands-all-card__list column-3">
-                        <a href="">Aguabeads</a>
-                        <a href="">AirHogs</a>
-                        <a href="">Alatoys</a>
-                        <a href="">Altacto</a>
-                        <a href="">Angry Birds</a>
-                        <a href="">AQA baby</a>
-                        <a href="">Aurora</a>
-                        <a href="">Ausini</a>
-                        <a href="">Avent</a>
-                    </div>
-                </div>
-                <div class="brands-all-card">
-                    <div class="brands-all-card__title">
-                        B
-                    </div>
-                    <div class="brands-all-card__list column-5">
-                        <a href="">Baby born</a>
-                        <a href="">Barbie</a>
-                        <a href="">BestWay</a>
-                        <a href="">Bondibon</a>
-                        <a href="">Bouncin' Babies</a>
-                        <a href="">Bright Starts</a>
-                        <a href="">Bruder</a>
-                        <a href="">Bubchen</a>
-                        <a href="">Bunchems</a>
-                        <a href="">Bruder</a>
-                        <a href="">Bubchen</a>
-                        <a href="">Bunchems</a>
-                        <a href="">Button Blue</a>
-                    </div>
-                </div>
-                <div class="brands-all-card">
-                    <div class="brands-all-card__title">
-                        C
-                    </div>
-                    <div class="brands-all-card__list column-4">
-                        <a href="">Canpol</a>
-                        <a href="">Chi Chi Love</a>
-                        <a href="">Chicco</a>
-                        <a href="">Chuggington</a>
-                        <a href="">Collecta</a>
-                        <a href="">Conte-kids</a>
-                        <a href="">Canpol</a>
-                        <a href="">Chi Chi Love</a>
-                        <a href="">Chicco</a>
-                        <a href="">Chuggington</a>
-                        <a href="">Collecta</a>
-                        <a href="">Conte-kids</a>
-                    </div>
-                </div>
-                <div class="brands-all-card">
-                    <div class="brands-all-card__title">
-                        D
-                    </div>
-                    <div class="brands-all-card__list column-2">
-                        <a href="">Defa</a>
-                        <a href="">Disney</a>
-                        <a href="">Dr. Browns</a>
-                        <a href="">Duracell</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="brands-list active">
-                <a href="">
-                  <div class="brands-list__img">
-                    <img src="./img/brands/1.png" alt="">
-                  </div>
-                  <p>Attivio</p>
-                </a>
-                <a href="">
-                  <div class="brands-list__img">
-                    <img src="./img/brands/2.png" alt="">
-                  </div>
-                  <p>Babyton</p>
-                </a>
-                <a href="">
-                  <div class="brands-list__img">
-                    <img src="./img/brands/3.png" alt="">
-                  </div>
-                  <p>Mobicaro</p>
-                </a>
-                <a href="">
-                  <div class="brands-list__img">
-                    <img src="./img/brands/4.png" alt="">
-                  </div>
-                  <p>BabyGo</p>
-                </a>
-                <a href="">
-                  <div class="brands-list__img">
-                    <img src="./img/brands/5.png" alt="">
-                  </div>
-                  <p>ELC</p>
-                </a>
-                <a href="">
-                  <div class="brands-list__img">
-                    <img src="./img/brands/6.png" alt="">
-                  </div>
-                  <p>Monster High</p>
-                </a>
-                <a href="">
-                  <div class="brands-list__img">
-                    <img src="./img/brands/7.png" alt="">
-                  </div>
-                  <p>Infinity Nado</p>
-                </a>
-                <a href="">
-                  <div class="brands-list__img">
-                    <img src="./img/brands/8.png" alt="">
-                  </div>
-                  <p>КНОПА</p>
-                </a>
-                <a href="">
-                  <div class="brands-list__img">
-                    <img src="./img/brands/9.png" alt="">
-                  </div>
-                  <p>Screechers Wild</p>
-                </a>
-                <a href="">
-                  <div class="brands-list__img">
-                    <img src="./img/brands/10.png" alt="">
-                  </div>
-                  <p>Huggies</p>
-                </a>
-                <a href="">
-                  <div class="brands-list__img">
-                    <img src="./img/brands/11.png" alt="">
-                  </div>
-                  <p>LOL</p>
-                </a>
-                <a href="">
-                  <div class="brands-list__img">
-                    <img src="./img/brands/12.png" alt="">
-                  </div>
-                  <p>Росмэн</p>
-                </a>
-                <a href="">
-                  <div class="brands-list__img">
-                    <img src="./img/brands/13.png" alt="">
-                  </div>
-                  <p>Demi Star</p>
-                </a>
-                <a href="">
-                  <div class="brands-list__img">
-                    <img src="./img/brands/14.png" alt="">
-                  </div>
-                  <p>BabyGo</p>
-                </a>
-                <a href="">
-                  <div class="brands-list__img">
-                    <img src="./img/brands/15.png" alt="">
-                  </div>
-                  <p>Pampers</p>
-                </a>
-                <a href="">
-                  <div class="brands-list__img">
-                    <img src="./img/brands/16.png" alt="">
-                  </div>
-                  <p>Winx</p>
-                </a>
-                <a href="">
-                  <div class="brands-list__img">
-                    <img src="./img/brands/17.png" alt="">
-                  </div>
-                  <p>Lassie</p>
-                </a>
-                <a href="">
-                  <div class="brands-list__img">
-                    <img src="./img/brands/18.png" alt="">
-                  </div>
-                  <p>Jurassic World</p>
-                </a>
-                <a href="">
-                  <div class="brands-list__img">
-                    <img src="./img/brands/19.png" alt="">
-                  </div>
-                  <p>LEGO</p>
-                </a>
-                <a href="">
-                  <div class="brands-list__img">
-                    <img src="./img/brands/20.png" alt="">
-                  </div>
-                  <p>Hot Wheels</p>
-                </a>
-                <a href="">
-                  <div class="brands-list__img">
-                    <img src="./img/brands/21.png" alt="">
-                  </div>
-                  <p>Disney</p>
-                </a>
-                <a href="">
-                  <div class="brands-list__img">
-                    <img src="./img/brands/22.png" alt="">
-                  </div>
-                  <p>SLUBAN</p>
-                </a>
-                <a href="./brands-page.html">
-                  <div class="brands-list__img">
-                    <img src="./img/brands/23.png" alt="">
-                  </div>
-                  <p>Reima </p>
-                </a>
-                <a href="">
-                  <div class="brands-list__img">
-                    <img src="./img/brands/24.png" alt="">
-                  </div>
-                  <p>RETRUS</p>
-                </a>
-            </div>
-
-        </div>
-    </div>
-
-    <section class="text-block">
+  <div class="breadcrumb">
       <div class="container">
-        <div class="section__title">
-          <h2>Интернет-магазин «ВсёДляДеток.ру»</h2>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">
-            <p>
-              Сеть магазинов работает в среднем ценовом сегменте. Целевой аудиторией компании являются семьи со средними доходами, к которым относится большинство посетителей торговых центров.Современный супермаркет ВсеДляДеток.ру включает около 20-30 тыс. наименований товаров детского ассортимента: игрушки, одежда и обувь, товары для новорожденных, канцелярские товары, наборы для творчества, товары для активного отдыха, автокресла, мебель.
-            </p>
+          <a href="./">Главная</a> Бренды
+      </div>
+  </div>
+
+  <div class="brands">
+      <div class="container">
+
+          <div class="brands-header">
+              <h1>Бренды</h1>
+              <div class="brands-header__favorite active">
+                  <span>Избранные</span>
+                  <span>Все бренды</span>
+              </div>
           </div>
-          <div class="col-lg-6">
-            <span class="hideElem active" data-scroll="start">показать еще</span>
-            <p class="showElem active">
-              Группа компаний ВсеДляДеток.ру укрепляет лидирующие позиции на рынке детских товаров, сохраняя высокие темпы развития на протяжении последних лет. Так, в 2018 году распахнули свои двери 100 новых магазина сети ВсеДляДеток.ру. Магазины сети ВсеДляДеток.ру посетили свыше 220 млн человек. Выручка ВсеДляДеток.ру по итогам 2018 года составила 110,9 млрд руб. (+14,3% год к году), при этом доля на рынке детских товаров составила 23%.
-            </p>
+
+          <div class="brands-alphabet">
+              <div class="rus">
+                  <span class="active">А</span>
+                  <span>Б</span>
+                  <span>В</span>
+                  <span class="none">Г</span>
+                  <span class="none">Д</span>
+                  <span class="none">Е</span>
+                  <span class="none">Ж</span>
+                  <span class="none">З</span>
+                  <span class="none">И</span>
+                  <span class="none">К</span>
+                  <span>Л</span>
+                  <span class="none">М</span>
+                  <span>Н</span>
+                  <span>О</span>
+                  <span class="none">П</span>
+                  <span>Р</span>
+                  <span>С</span>
+                  <span class="none">Т</span>
+                  <span>У</span>
+                  <span>Ф</span>
+                  <span class="none">Х</span>
+                  <span class="none">Ц</span>
+                  <span>Ч</span>
+                  <span>Ш</span>
+                  <span>Щ</span>
+                  <span class="none">Э</span>
+                  <span>Ю</span>
+                  <span>Я</span>
+                  <span>0-9</span>
+              </div>
+              <div class="eng">
+                  <span>A</span>
+                  <span class="none">B</span class="none">
+                  <span>C</span>
+                  <span>D</span>
+                  <span>E</span>
+                  <span class="none">F</span>
+                  <span class="none">J</span>
+                  <span>H</span>
+                  <span>I</span>
+                  <span class="none">G</span>
+                  <span>K</span>
+                  <span>L</span>
+                  <span>M</span>
+                  <span class="none">N</span>
+                  <span>O</span>
+                  <span>P</span>
+                  <span>Q</span>
+                  <span>R</span>
+                  <span>S</span>
+                  <span class="none">T</span>
+                  <span class="none">U</span>
+                  <span class="none">V</span>
+                  <span>W</span>
+                  <span>X</span>
+                  <span>Y</span>
+                  <span>Z</span>
+              </div>
           </div>
+
+          <div class="brands-all">
+              <div class="brands-all-card">
+                  <div class="brands-all-card__title">
+                      0 - 9
+                  </div>
+                  <div class="brands-all-card__list column-1">
+                      <a href="">1toy</a>
+                  </div>
+              </div>
+
+              <div class="brands-all-card">
+                  <div class="brands-all-card__title">
+                      A
+                  </div>
+                  <div class="brands-all-card__list column-3">
+                      <a href="">Aguabeads</a>
+                      <a href="">AirHogs</a>
+                      <a href="">Alatoys</a>
+                      <a href="">Altacto</a>
+                      <a href="">Angry Birds</a>
+                      <a href="">AQA baby</a>
+                      <a href="">Aurora</a>
+                      <a href="">Ausini</a>
+                      <a href="">Avent</a>
+                  </div>
+              </div>
+              <div class="brands-all-card">
+                  <div class="brands-all-card__title">
+                      B
+                  </div>
+                  <div class="brands-all-card__list column-5">
+                      <a href="">Baby born</a>
+                      <a href="">Barbie</a>
+                      <a href="">BestWay</a>
+                      <a href="">Bondibon</a>
+                      <a href="">Bouncin' Babies</a>
+                      <a href="">Bright Starts</a>
+                      <a href="">Bruder</a>
+                      <a href="">Bubchen</a>
+                      <a href="">Bunchems</a>
+                      <a href="">Bruder</a>
+                      <a href="">Bubchen</a>
+                      <a href="">Bunchems</a>
+                      <a href="">Button Blue</a>
+                  </div>
+              </div>
+              <div class="brands-all-card">
+                  <div class="brands-all-card__title">
+                      C
+                  </div>
+                  <div class="brands-all-card__list column-4">
+                      <a href="">Canpol</a>
+                      <a href="">Chi Chi Love</a>
+                      <a href="">Chicco</a>
+                      <a href="">Chuggington</a>
+                      <a href="">Collecta</a>
+                      <a href="">Conte-kids</a>
+                      <a href="">Canpol</a>
+                      <a href="">Chi Chi Love</a>
+                      <a href="">Chicco</a>
+                      <a href="">Chuggington</a>
+                      <a href="">Collecta</a>
+                      <a href="">Conte-kids</a>
+                  </div>
+              </div>
+              <div class="brands-all-card">
+                  <div class="brands-all-card__title">
+                      D
+                  </div>
+                  <div class="brands-all-card__list column-2">
+                      <a href="">Defa</a>
+                      <a href="">Disney</a>
+                      <a href="">Dr. Browns</a>
+                      <a href="">Duracell</a>
+                  </div>
+              </div>
+          </div>
+
+          <div class="brands-list active">
+              <a href="">
+                <div class="brands-list__img">
+                  <img src="./img/brands/1.png" alt="">
+                </div>
+                <p>Attivio</p>
+              </a>
+              <a href="">
+                <div class="brands-list__img">
+                  <img src="./img/brands/2.png" alt="">
+                </div>
+                <p>Babyton</p>
+              </a>
+              <a href="">
+                <div class="brands-list__img">
+                  <img src="./img/brands/3.png" alt="">
+                </div>
+                <p>Mobicaro</p>
+              </a>
+              <a href="">
+                <div class="brands-list__img">
+                  <img src="./img/brands/4.png" alt="">
+                </div>
+                <p>BabyGo</p>
+              </a>
+              <a href="">
+                <div class="brands-list__img">
+                  <img src="./img/brands/5.png" alt="">
+                </div>
+                <p>ELC</p>
+              </a>
+              <a href="">
+                <div class="brands-list__img">
+                  <img src="./img/brands/6.png" alt="">
+                </div>
+                <p>Monster High</p>
+              </a>
+              <a href="">
+                <div class="brands-list__img">
+                  <img src="./img/brands/7.png" alt="">
+                </div>
+                <p>Infinity Nado</p>
+              </a>
+              <a href="">
+                <div class="brands-list__img">
+                  <img src="./img/brands/8.png" alt="">
+                </div>
+                <p>КНОПА</p>
+              </a>
+              <a href="">
+                <div class="brands-list__img">
+                  <img src="./img/brands/9.png" alt="">
+                </div>
+                <p>Screechers Wild</p>
+              </a>
+              <a href="">
+                <div class="brands-list__img">
+                  <img src="./img/brands/10.png" alt="">
+                </div>
+                <p>Huggies</p>
+              </a>
+              <a href="">
+                <div class="brands-list__img">
+                  <img src="./img/brands/11.png" alt="">
+                </div>
+                <p>LOL</p>
+              </a>
+              <a href="">
+                <div class="brands-list__img">
+                  <img src="./img/brands/12.png" alt="">
+                </div>
+                <p>Росмэн</p>
+              </a>
+              <a href="">
+                <div class="brands-list__img">
+                  <img src="./img/brands/13.png" alt="">
+                </div>
+                <p>Demi Star</p>
+              </a>
+              <a href="">
+                <div class="brands-list__img">
+                  <img src="./img/brands/14.png" alt="">
+                </div>
+                <p>BabyGo</p>
+              </a>
+              <a href="">
+                <div class="brands-list__img">
+                  <img src="./img/brands/15.png" alt="">
+                </div>
+                <p>Pampers</p>
+              </a>
+              <a href="">
+                <div class="brands-list__img">
+                  <img src="./img/brands/16.png" alt="">
+                </div>
+                <p>Winx</p>
+              </a>
+              <a href="">
+                <div class="brands-list__img">
+                  <img src="./img/brands/17.png" alt="">
+                </div>
+                <p>Lassie</p>
+              </a>
+              <a href="">
+                <div class="brands-list__img">
+                  <img src="./img/brands/18.png" alt="">
+                </div>
+                <p>Jurassic World</p>
+              </a>
+              <a href="">
+                <div class="brands-list__img">
+                  <img src="./img/brands/19.png" alt="">
+                </div>
+                <p>LEGO</p>
+              </a>
+              <a href="">
+                <div class="brands-list__img">
+                  <img src="./img/brands/20.png" alt="">
+                </div>
+                <p>Hot Wheels</p>
+              </a>
+              <a href="">
+                <div class="brands-list__img">
+                  <img src="./img/brands/21.png" alt="">
+                </div>
+                <p>Disney</p>
+              </a>
+              <a href="">
+                <div class="brands-list__img">
+                  <img src="./img/brands/22.png" alt="">
+                </div>
+                <p>SLUBAN</p>
+              </a>
+              <a href="./brands-page.html">
+                <div class="brands-list__img">
+                  <img src="./img/brands/23.png" alt="">
+                </div>
+                <p>Reima </p>
+              </a>
+              <a href="">
+                <div class="brands-list__img">
+                  <img src="./img/brands/24.png" alt="">
+                </div>
+                <p>RETRUS</p>
+              </a>
+          </div>
+
+      </div>
+  </div>
+
+  <section class="text-block">
+    <div class="container">
+      <div class="section__title">
+        <h2>Интернет-магазин «ВсёДляДеток.ру»</h2>
+      </div>
+      <span class="hideElem active" data-scroll="start">описание</span>
+      <div class="showElem active">
+        <div class="column">
+          <p>
+            Сеть магазинов работает в среднем ценовом сегменте. Целевой аудиторией компании являются семьи  со средними доходами, к которым относится большинство посетителей  торговых центров. Современный супермаркет ВсеДляДеток.ру включает около 20-30 тыс. наименований товаров детского ассортимента: игрушки, одежда и обувь, товары для новорожденных, канцелярские товары, наборы для творчества, товары для активного отдыха, автокресла, мебель.
+          </p>
+          <p>
+            Группа компаний ВсеДляДеток.ру укрепляет лидирующие позиции на рынке детских товаров, сохраняя высокие темпы развития на протяжении последних лет. Так, в 2018 году распахнули свои двери 100 новых магазина сети ВсеДляДеток.ру. Магазины сети ВсеДляДеток.ру посетили свыше 220 млн человек. Выручка ВсеДляДеток.ру по итогам 2018 года составила 110,9 млрд руб. (+14,3% год к году), при этом доля на рынке детских товаров составила 23%.
+          </p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 </main>
 
 <footer>
@@ -457,7 +453,7 @@
     </div>
 
     <div class="copyright">
-      © ВсёДляДеток.рy, 2019. Все права защищены
+      © c 2019-2020. ВсёДляДеток.ру <span></span> Большой магазин для маленьких
     </div>
   </div>
 </footer>
@@ -467,23 +463,34 @@
     <!-- Modal Menu -->
     <div class="modal-body menu" data-modal="menu">
       <span class="close" data-close="close"></span>
-      <p>
-        <b>ВсёДляДеток.ру</b>
-      </p>
-      <ul>
-        <li><a href="">О компании</a></li>
-        <li><a href="">Пункты выдачи</a></li>
-        <li><a href="">Магазины</a></li>
-        <li><a href="">Контакты</a></li>
-        <li><a href="">Отзывы</a></li>
-      </ul>
-      <div class="user">
-        <p>
+      <a href="" class="button login" data-mobile="yes" data-toggle="modal" data-target="login">
+        <img src="./img/nav/mobile/login.svg" alt="">
+        Вход</a>
+      <a href="" class="button city" data-mobile="yes" data-toggle="modal" data-target="city">
+        <img src="./img/nav/mobile/location.svg" alt="">
+        Санкт-Петербург</a>
+      <a href="tel:8-800-600-77-27" class="button phone">
+        <img src="./img/nav/mobile/phone.svg" alt="">
+        8-800-600-77-27</a>
+      <div class="menu-item">
+        <p class="hideElem">
+          <b>ВсёДляДеток</b>
+        </p>
+        <ul class="showElem">
+          <li><a href="">О компании</a></li>
+          <li><a href="">Пункты выдачи</a></li>
+          <li><a href="">Магазины</a></li>
+          <li><a href="">Контакты</a></li>
+          <li><a href="">Отзывы</a></li>
+        </ul>
+      </div>
+      <div class="menu-item">
+        <p class="hideElem">
           <b>
             Покупателям
           </b>
         </p>
-        <ul>
+        <ul class="showElem">
           <li>Проверка заказа</li>
           <li>Гарантии и возврат</li>
           <li>Доставка и оплата</li>
@@ -493,40 +500,46 @@
           <li>Подарочные карты</li>
         </ul>
       </div>
-      <p>
-        <b>
-          Обратная связь
-        </b>
-      </p>
-      <ul>
-        <li>Заказать звонок</li>
-        <li>Оставить отзыв</li>
-        <li>Обмен / Возврат</li>
-        <li>Благодарность</li>
-        <li>Жалоба</li>
-      </ul>
+      <div class="menu-item">
+        <p class="hideElem">
+          <b>
+            Обратная связь
+          </b>
+        </p>
+        <ul class="showElem">
+          <li>Заказать звонок</li>
+          <li>Оставить отзыв</li>
+          <li>Обмен / Возврат</li>
+          <li>Благодарность</li>
+          <li>Жалоба</li>
+        </ul>
+      </div>
       <div class="social">
         <p>
           <b>
             Сообщество
           </b>
         </p>
-        <a href=""><img src="./img/social/ok.svg" alt=""></a>
-        <a href=""><img src="./img/social/vk.svg" alt=""></a>
-        <a href=""><img src="./img/social/insta.svg" alt=""></a>
-        <a href=""><img src="./img/social/youtube.svg" alt=""></a>
+        <div class="social-link">
+          <a href=""><img src="./img/social/mobile/ok.svg" alt=""></a>
+          <a href=""><img src="./img/social/mobile/vk.svg" alt=""></a>
+          <a href=""><img src="./img/social/mobile/instagram.svg" alt=""></a>
+          <a href=""><img src="./img/social/mobile/youtube.svg" alt=""></a>
+        </div>
       </div>
-      <p class="email">
-        <b>
-          Подпишитесь на обновления
-        </b>
-      </p>
-      <form action="/" method="post">
-        <input type="email" name="email" value="" placeholder="E-mail" required>
-        <button class="btn btn-send">Подписаться</button>
-      </form>
-      <p>
-        <small>© ВсёДляДеток.рy, 2019. Все права защищены.</small>
+      <div class="menu-email">
+        <p>
+          <b>
+            Подпишись на обновления
+          </b>
+        </p>
+        <form action="/" method="post">
+          <input type="email" name="email" value="" placeholder="E-mail" required>
+          <button class="btn btn-send">Подписаться</button>
+        </form>
+      </div>
+      <p class="copyright">
+        © 2019-2020. ВсёДляДеток.ру<br>Большой магазин для маленьких
       </p>
     </div>
     <!-- Modal City -->
@@ -534,20 +547,10 @@
       <span class="close" data-close="close"></span>
       <p class="modal-body__head">Ваш город:</p>
       <p class="modal-body__city">Санкт-Петербург</p>
-      <p class="modal-body__desc">От выбора города зависит стоимость, наличие и условия доставки</p>
+      <p class="modal-body__desc">От города зависят условия доставки</p>
       <div class="modal-body__button">
         <button class="btn btn-accent" data-close="close">Да</button>
         <button class="btn btn-outline-accent open-city-list">Нет, выбрать другой</button>
-      </div>
-      <br>
-      <p>Введите город</p>
-      <div class="cityList">
-        <input type="text" v-model="search" @input="filterList">
-        <ul>
-          <li v-for="city in cities">
-            {{ city }}
-          </li>
-        </ul>
       </div>
     </div>
     <!-- Modal User -->
@@ -569,7 +572,7 @@
       <p><b>Войти в личный кабинет</b></p>
       <form action="/" method="post" class="signin">
         <label for="phone">Войти по номеру</label>
-        <input type="tel" id="phone" name="phone" placeholder="+7 (XXX) XXX-XX-XX" required>
+        <input type="tel" id="phone" name="phone" class="phone-mask" placeholder="+7 (XXX) XXX-XX-XX" required>
         <button type="submit" class="btn btn-accent">Получить sms-код</button>
       </form>
     </div>
@@ -589,9 +592,12 @@
   </div>
 </div>
 
+<div id="toTop"></div>
+
   <script src="./js/scripts.min.js"></script>
-  <script src="./js/slick/slick.min.js"></script>
-  <link rel="stylesheet" href="./js/slick/slick.css">
+  <script defer src='./js/chunk-vendors.d4d1433b.js'></script>
+  <script defer src='./js/app.394e5ec0.js'></script>
+  <link href='./css/app.6e1150c3.css' rel=stylesheet>
   <link rel="stylesheet" href="./css/main.min.css">
 </body>
 </html>

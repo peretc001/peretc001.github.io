@@ -11,7 +11,7 @@
 
     .hideElem
         position: relative
-        display: inline-block
+        display: none
         cursor: pointer
         margin-top: 1em
         padding-left: 3em
@@ -42,17 +42,26 @@
             &::after
                 transform: translateY(-50%) rotate(0)
     .showElem
-        padding: 2em 0 0 0
+        padding: 0
         max-height: 500px
         opacity: 1
         overflow: hidden
-        transition: max-height .5s ease-in-out, opacity .5s ease-in-out, padding .5s ease-in-out
+        transition: none
         &.active
             padding: 0
-            opacity: 0
-            max-height: 0
+            opacity: 1
+            max-height: 500px
     
 @media screen and ( max-width: 767.98px )
     .text-block
         .column
             columns: 1
+        .hideElem
+            display: inline-block
+        .showElem
+            padding: 2em 0 0 0
+            transition: max-height .5s ease-in-out, opacity .5s ease-in-out, padding .5s ease-in-out
+            &.active
+                padding: 0
+                opacity: 0
+                max-height: 0

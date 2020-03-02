@@ -117,7 +117,7 @@
                   <li><img src="./img/products/card/5.jpg" alt=""></li>
                   <li><img src="./img/products/card/6.jpg" alt=""></li>
                 </ul>
-                <span class='zoom'><img src="../img/zoom.svg"></span>
+                <span class='zoom'><img src="./img/zoom.svg"></span>
               </div>
             </div>
 
@@ -1488,7 +1488,7 @@
         if ( width < 767 ) { 
           document.body.classList.add('no-scroll') 
         } else {
-            // document.body.addEventListener('touchmove', preventDefault, { passive: false });
+            document.body.addEventListener('touchmove', preventDefault, { passive: false });
             window.addEventListener('DOMMouseScroll', preventDefault, false);
             document.addEventListener('wheel', preventDefault, {passive: false});
         }
@@ -1497,7 +1497,7 @@
         if ( width < 767 ) { 
             document.body.classList.remove('no-scroll') 
         } else {
-            // document.body.removeEventListener('touchmove', preventDefault, { passive: false });
+            document.body.removeEventListener('touchmove', preventDefault, { passive: false });
             window.removeEventListener('DOMMouseScroll', preventDefault, false);
             document.removeEventListener('wheel', preventDefault, {passive: false});
         }
@@ -1575,7 +1575,11 @@
       ]
     });
     
-    $('[data-fancybox="gallery"]').fancybox();
+    $('[data-fancybox="gallery"]').fancybox({
+      loop: true,
+      infobar: false,
+      toolbar: false,
+    });
   </script>
 </body>
 </html>
