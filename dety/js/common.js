@@ -161,6 +161,7 @@ if (document.querySelector('.modal')) {
             
             modalList.forEach(elem => {
                 elem.addEventListener('click', (event) => {
+                    console.log(123)
                     event.preventDefault()
                     if ( modal.classList.contains('is-active') ) {
                         hideModal()
