@@ -13,232 +13,230 @@
 </head>
 <body>
 
-  <nav class="nav">
-    <div class="nav-top">
-      <div class="container">
-        <div class="hamburger" data-toggle="modal" data-target="menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="nav-top__city">
-          <a class="nav-top__city__location" data-toggle="modal" data-target="city" href="#">Санкт-Петербург</a>
-          <div class="nav-top__city__location__item">
-            <a href="#">Пункты выдачи</a>
-            <a href="">Условия доставки</a>
-          </div>
-        </div>
-        <div class="nav-top__right">
-          <a class="nav-top__right__phone" href="tel:+79384087777">+7 (938) 408-77-77</a>
-          <span class="nav-top__right__time">9:00 - 22:00</span>
-          <a class="nav-top__right__user" data-toggle="modal" data-target="user" href="#">Покупателям</a>
-          <a class="nav-top__right__login" data-toggle="modal" data-target="login" href="#">Войти</a>
+<nav class="nav">
+  <div class="nav-top">
+    <div class="container">
+      <div class="nav-top__city">
+        <a class="nav-top__city__location" data-toggle="modal" data-target="city" href="#">Санкт-Петербург</a>
+        <div class="nav-top__city__location__item">
+          <a href="#">Пункты выдачи</a>
+          <a href="">Условия доставки</a>
         </div>
       </div>
+      <div class="nav-top__right">
+        <a class="nav-top__right__phone" href="tel:8-800-600-77-27">8-800-600-77-27</a>
+        <span class="nav-top__right__time">9:00 - 22:00</span>
+        <a class="nav-top__right__user" data-toggle="modal" data-target="user" href="#">Покупателям</a>
+        <a class="nav-top__right__login" data-toggle="modal" data-target="login" href="#">Войти</a>
+      </div>
     </div>
-  
-    <div class="nav-search">
-      <div class="container">
-        <a href="./" class="brand">
-          <img src="./img/logo.svg" alt="Все для деток.ру">
+  </div>
+
+  <div class="nav-search">
+    <div class="container">
+      <div class="hamburger" data-toggle="modal" data-target="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <a href="./" class="brand">
+        <img src="./img/logo.svg" alt="Все для деток.ру">
+        <img src="./img/logo_mobile.svg" alt="Все для деток.ру">
+      </a>
+      <form action="/" method="post" class="nav-search__form">
+        <input type="text" name="search" value="" placeholder="Поиск по сайту">
+      </form>
+      <div class="nav-search--right">
+        <a href="" class="nav-search--right__wishlist active">
+          <span>2</span>
         </a>
-        <form action="/" method="post" class="nav-search__form">
-          <input type="text" name="search" value="" placeholder="Поиск по сайту">
-        </form>
-        <div class="nav-search--right">
-          <a href="" class="nav-search--right__wishlist active">
-            <!-- <span>2</span> -->
-          </a>
-          <a href="" class="nav-search--right__cart">
-            <!-- <span class="qty">3</span>
-            <span class="price">5 750 ₽</span> -->
-          </a>
-        </div>
+        <a href="" class="nav-search--right__cart">
+          <span class="qty">3</span>
+          <!-- <span class="price">5 750 ₽</span> -->
+        </a>
       </div>
     </div>
-    
-    <div id=app></div>
-    <link href='./css/app.edba07a5.css' rel=stylesheet>
-    <script src='./js/chunk-vendors.d4d1433b.js'></script>
-    <script src='./js/app.de14ae5a.js'></script>
-  </nav>
+  </div>
+
+  <div id=app></div>
+</nav>
   
 <main>
-    <div class="breadcrumb">
-        <div class="container">
-            <a href="./">Главная</a> Личный кабинет
-        </div>
-    </div>
+  <div class="breadcrumb">
+      <div class="container">
+          <a href="./">Главная</a> Личный кабинет
+      </div>
+  </div>
 
-    <section class="account">
-        <div class="container">
-            <h1>Личный кабинет</h1>
+  <section class="account">
+      <div class="container">
+          <h1>Личный кабинет</h1>
 
-            <div class="row">
-              <div class="left">
-                <ul>
-                    <li><a href="./account.html" class="active">Мои данные</a></li>
-                    <li><a href="./account-orders.html">Мои заказы</a></li>
-                    <li><a href="./account-favorite.html">Избранное</a></li>
-                </ul>
-              </div>
+          <div class="row">
+            <div class="left">
+              <ul>
+                  <li><a href="./account.html" class="active">Мои данные</a></li>
+                  <li><a href="./account-orders.html">Мои заказы</a></li>
+                  <li><a href="./account-favorite.html">Избранное</a></li>
+              </ul>
+            </div>
 
-              <div class="right">
-                <form action="/" class="account-data">
-                  <h2>Личные данные</h2>
-                  <div class="account-data-private">
-                    <div class="form-row">
-                      <label for="lastname">Фамилия</label>
-                      <input type="text" id="lastname" name="lastname" placeholder="Фамилия">
-                    </div>
-                    <div class="form-row">
-                      <label for="firstname">Имя</label>
-                      <input type="text" id="firstname" name="firstname" placeholder="Имя" required>
-                    </div>
-                    <div class="form-row">
-                      <label for="middlename">Отчество</label>
-                      <input type="text" id="middlename" name="middlename" placeholder="Отчество">
-                    </div>
-                    <div class="form-row">
-                      <label for="userphone">Телефон</label>
-                      <input type="tel" id="userphone" name="userphone" placeholder="+7 (XXX) XXX-XX-XX" required>
-                    </div>
-                    <div class="form-row">
-                      <label for="email">E-mail</label>
-                      <input type="text" id="email" name="email" placeholder="E-mail">
-                    </div>
+            <div class="right">
+              <form action="/" class="account-data">
+                <h2>Личные данные</h2>
+                <div class="account-data-private">
+                  <div class="form-row">
+                    <label for="lastname">Фамилия</label>
+                    <input type="text" id="lastname" name="lastname" placeholder="Фамилия">
                   </div>
-                  <h2>Адрес доставки</h2>
-                  <div class="account-data-delivery">
-                    <div class="form-row">
-                      <label for="city">Город</label>
-                      <input type="text" id="city" name="city" placeholder="Город">
-                    </div>
-                    <div class="form-row">
-                      <label for="street">Улица</label>
-                      <input type="text" id="street" name="street" placeholder="Улица">
-                    </div>
-                    <div class="form-row">
-                      <label for="house">Дом</label>
-                      <input type="text" id="house" name="house" placeholder="Дом">
-                    </div>
-                    <div class="form-row">
-                      <label for="flat">Квартира</label>
-                      <input type="text" id="flat" name="flat" placeholder="Квартира">
-                    </div>
-    
-                    <span class="hideElem active">Добавить ещё адрес</span>
-                    
-                    <div class="showElem active">
-                      <div class="form-row">
-                        <label for="city2">Город</label>
-                        <input type="text" id="city2" name="city2" placeholder="Город">
-                      </div>
-                      <div class="form-row">
-                        <label for="street2">Улица</label>
-                        <input type="text" id="street2" name="street2" placeholder="Улица">
-                      </div>
-                      <div class="form-row">
-                        <label for="house2">Дом</label>
-                        <input type="text" id="house2" name="house2" placeholder="Дом">
-                      </div>
-                      <div class="form-row">
-                        <label for="flat2">Квартира</label>
-                        <input type="text" id="flat2" name="flat2" placeholder="Квартира">
-                      </div>
-                    </div>
-                    
+                  <div class="form-row">
+                    <label for="firstname">Имя</label>
+                    <input type="text" id="firstname" name="firstname" placeholder="Имя" required>
                   </div>
-    
-                  <button type="submit" class="btn btn-accent">Сохранить</button>
-                </form>
-              </div>
-
-              <div class="right offset">
-                <div class="account-bonus">
-                  <div class="account-bonus-head">
-                    <h3>Баллы</h3>
-                    <!-- Repeat -->
-                    <div class="account-bonus-total__view">
-                      <p>500</p>
-                      <p>балов доступно</p>
+                  <div class="form-row">
+                    <label for="middlename">Отчество</label>
+                    <input type="text" id="middlename" name="middlename" placeholder="Отчество">
+                  </div>
+                  <div class="form-row">
+                    <label for="userphone">Телефон</label>
+                    <input type="tel" id="userphone" name="userphone" placeholder="+7 (XXX) XXX-XX-XX" required>
+                  </div>
+                  <div class="form-row">
+                    <label for="email">E-mail</label>
+                    <input type="text" id="email" name="email" placeholder="E-mail">
+                  </div>
+                </div>
+                <h2>Адрес доставки</h2>
+                <div class="account-data-delivery">
+                  <div class="form-row">
+                    <label for="city">Город</label>
+                    <input type="text" id="city" name="city" placeholder="Город">
+                  </div>
+                  <div class="form-row">
+                    <label for="street">Улица</label>
+                    <input type="text" id="street" name="street" placeholder="Улица">
+                  </div>
+                  <div class="form-row">
+                    <label for="house">Дом</label>
+                    <input type="text" id="house" name="house" placeholder="Дом">
+                  </div>
+                  <div class="form-row">
+                    <label for="flat">Квартира</label>
+                    <input type="text" id="flat" name="flat" placeholder="Квартира">
+                  </div>
+  
+                  <span class="hideElem active">Добавить ещё адрес</span>
+                  
+                  <div class="showElem active">
+                    <div class="form-row">
+                      <label for="city2">Город</label>
+                      <input type="text" id="city2" name="city2" placeholder="Город">
                     </div>
-                    <!-- Repeat -->
+                    <div class="form-row">
+                      <label for="street2">Улица</label>
+                      <input type="text" id="street2" name="street2" placeholder="Улица">
+                    </div>
+                    <div class="form-row">
+                      <label for="house2">Дом</label>
+                      <input type="text" id="house2" name="house2" placeholder="Дом">
+                    </div>
+                    <div class="form-row">
+                      <label for="flat2">Квартира</label>
+                      <input type="text" id="flat2" name="flat2" placeholder="Квартира">
+                    </div>
                   </div>
                   
-                  <div class="account-bonus-table">
-                    <div class="account-bonus-table__left">
-                      <table>
-                        <tr class="head">
-                          <td>Дата начисления</td>
-                          <td>Начислено баллов</td>
-                        </tr>
-                        <tr>
-                          <td>12.03.2020</td>
-                          <td>2 000</td>
-                        </tr>
-                        <tr>
-                          <td>11.03.2020</td>
-                          <td>2 000</td>
-                        </tr>
-                        <tr>
-                          <td>10.03.2020</td>
-                          <td>2 000</td>
-                        </tr>
-                        <tr>
-                          <td>09.03.2020</td>
-                          <td>2 000</td>
-                        </tr>
-                        <tr>
-                          <td>08.03.2020</td>
-                          <td>2 000</td>
-                        </tr>
-                      </table>
-                    </div>
-                    <div class="account-bonus-table__right">
-                      <table>
-                        <tr  class="head">
-                          <td>Дата списания</td>
-                          <td>Остаток</td>
-                        </tr>
-                        <tr>
-                          <td>25.03.2020</td>
-                          <td>500</td>
-                        </tr>
-                        <tr>
-                          <td>24.03.2020</td>
-                          <td>500</td>
-                        </tr>
-                        <tr>
-                          <td>23.03.2020</td>
-                          <td>500</td>
-                        </tr>
-                        <tr>
-                          <td>22.03.2020</td>
-                          <td>500</td>
-                        </tr>
-                        <tr>
-                          <td>21.03.2020</td>
-                          <td>500</td>
-                        </tr>
-                      </table>
-                    </div>
+                </div>
+  
+                <button type="submit" class="btn btn-accent">Сохранить</button>
+              </form>
+            </div>
+
+            <div class="right offset">
+              <div class="account-bonus">
+                <div class="account-bonus-head">
+                  <h3>Баллы</h3>
+                  <!-- Repeat -->
+                  <div class="account-bonus-total__view">
+                    <p>500</p>
+                    <p>балов доступно</p>
                   </div>
-    
-                  <div class="account-bonus-total">
-                    <!-- Repeat -->
-                    <div class="account-bonus-total__view">
-                      <p>500</p>
-                      <p>балов доступно</p>
-                    </div>
-                    <!-- Repeat -->
+                  <!-- Repeat -->
+                </div>
+                
+                <div class="account-bonus-table">
+                  <div class="account-bonus-table__left">
+                    <table>
+                      <tr class="head">
+                        <td>Дата начисления</td>
+                        <td>Начислено баллов</td>
+                      </tr>
+                      <tr>
+                        <td>12.03.2020</td>
+                        <td>2 000</td>
+                      </tr>
+                      <tr>
+                        <td>11.03.2020</td>
+                        <td>2 000</td>
+                      </tr>
+                      <tr>
+                        <td>10.03.2020</td>
+                        <td>2 000</td>
+                      </tr>
+                      <tr>
+                        <td>09.03.2020</td>
+                        <td>2 000</td>
+                      </tr>
+                      <tr>
+                        <td>08.03.2020</td>
+                        <td>2 000</td>
+                      </tr>
+                    </table>
                   </div>
+                  <div class="account-bonus-table__right">
+                    <table>
+                      <tr  class="head">
+                        <td>Дата списания</td>
+                        <td>Остаток</td>
+                      </tr>
+                      <tr>
+                        <td>25.03.2020</td>
+                        <td>500</td>
+                      </tr>
+                      <tr>
+                        <td>24.03.2020</td>
+                        <td>500</td>
+                      </tr>
+                      <tr>
+                        <td>23.03.2020</td>
+                        <td>500</td>
+                      </tr>
+                      <tr>
+                        <td>22.03.2020</td>
+                        <td>500</td>
+                      </tr>
+                      <tr>
+                        <td>21.03.2020</td>
+                        <td>500</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+  
+                <div class="account-bonus-total">
+                  <!-- Repeat -->
+                  <div class="account-bonus-total__view">
+                    <p>500</p>
+                    <p>балов доступно</p>
+                  </div>
+                  <!-- Repeat -->
                 </div>
               </div>
             </div>
+          </div>
 
-        </div>
-    </section>
+      </div>
+  </section>
 
 </main>
 
@@ -306,7 +304,7 @@
     </div>
 
     <div class="copyright">
-      © ВсёДляДеток.рy, 2019. Все права защищены
+      © c 2019-2020. ВсёДляДеток.ру <span></span> Большой магазин для маленьких
     </div>
   </div>
 </footer>
@@ -316,23 +314,34 @@
     <!-- Modal Menu -->
     <div class="modal-body menu" data-modal="menu">
       <span class="close" data-close="close"></span>
-      <p>
-        <b>ВсёДляДеток.ру</b>
-      </p>
-      <ul>
-        <li><a href="">О компании</a></li>
-        <li><a href="">Пункты выдачи</a></li>
-        <li><a href="">Магазины</a></li>
-        <li><a href="">Контакты</a></li>
-        <li><a href="">Отзывы</a></li>
-      </ul>
-      <div class="user">
-        <p>
+      <a href="" class="button login" data-mobile="yes" data-toggle="modal" data-target="login">
+        <img src="./img/nav/mobile/login.svg" alt="">
+        Вход</a>
+      <a href="" class="button city" data-mobile="yes" data-toggle="modal" data-target="city">
+        <img src="./img/nav/mobile/location.svg" alt="">
+        Санкт-Петербург</a>
+      <a href="tel:8-800-600-77-27" class="button phone">
+        <img src="./img/nav/mobile/phone.svg" alt="">
+        8-800-600-77-27</a>
+      <div class="menu-item">
+        <p class="hideElem">
+          <b>ВсёДляДеток</b>
+        </p>
+        <ul class="showElem">
+          <li><a href="">О компании</a></li>
+          <li><a href="">Пункты выдачи</a></li>
+          <li><a href="">Магазины</a></li>
+          <li><a href="">Контакты</a></li>
+          <li><a href="">Отзывы</a></li>
+        </ul>
+      </div>
+      <div class="menu-item">
+        <p class="hideElem">
           <b>
             Покупателям
           </b>
         </p>
-        <ul>
+        <ul class="showElem">
           <li>Проверка заказа</li>
           <li>Гарантии и возврат</li>
           <li>Доставка и оплата</li>
@@ -342,40 +351,46 @@
           <li>Подарочные карты</li>
         </ul>
       </div>
-      <p>
-        <b>
-          Обратная связь
-        </b>
-      </p>
-      <ul>
-        <li>Заказать звонок</li>
-        <li>Оставить отзыв</li>
-        <li>Обмен / Возврат</li>
-        <li>Благодарность</li>
-        <li>Жалоба</li>
-      </ul>
+      <div class="menu-item">
+        <p class="hideElem">
+          <b>
+            Обратная связь
+          </b>
+        </p>
+        <ul class="showElem">
+          <li>Заказать звонок</li>
+          <li>Оставить отзыв</li>
+          <li>Обмен / Возврат</li>
+          <li>Благодарность</li>
+          <li>Жалоба</li>
+        </ul>
+      </div>
       <div class="social">
         <p>
           <b>
             Сообщество
           </b>
         </p>
-        <a href=""><img src="./img/social/ok.svg" alt=""></a>
-        <a href=""><img src="./img/social/vk.svg" alt=""></a>
-        <a href=""><img src="./img/social/insta.svg" alt=""></a>
-        <a href=""><img src="./img/social/youtube.svg" alt=""></a>
+        <div class="social-link">
+          <a href=""><img src="./img/social/mobile/ok.svg" alt=""></a>
+          <a href=""><img src="./img/social/mobile/vk.svg" alt=""></a>
+          <a href=""><img src="./img/social/mobile/instagram.svg" alt=""></a>
+          <a href=""><img src="./img/social/mobile/youtube.svg" alt=""></a>
+        </div>
       </div>
-      <p class="email">
-        <b>
-          Подпишитесь на обновления
-        </b>
-      </p>
-      <form action="/" method="post">
-        <input type="email" name="email" value="" placeholder="E-mail" required>
-        <button class="btn btn-send">Подписаться</button>
-      </form>
-      <p>
-        <small>© ВсёДляДеток.рy, 2019. Все права защищены.</small>
+      <div class="menu-email">
+        <p>
+          <b>
+            Подпишись на обновления
+          </b>
+        </p>
+        <form action="/" method="post">
+          <input type="email" name="email" value="" placeholder="E-mail" required>
+          <button class="btn btn-send">Подписаться</button>
+        </form>
+      </div>
+      <p class="copyright">
+        © 2019-2020. ВсёДляДеток.ру<br>Большой магазин для маленьких
       </p>
     </div>
     <!-- Modal City -->
@@ -383,7 +398,7 @@
       <span class="close" data-close="close"></span>
       <p class="modal-body__head">Ваш город:</p>
       <p class="modal-body__city">Санкт-Петербург</p>
-      <p class="modal-body__desc">От выбора города зависит стоимость, наличие и условия доставки</p>
+      <p class="modal-body__desc">От города зависят условия доставки</p>
       <div class="modal-body__button">
         <button class="btn btn-accent" data-close="close">Да</button>
         <button class="btn btn-outline-accent open-city-list">Нет, выбрать другой</button>
@@ -408,7 +423,7 @@
       <p><b>Войти в личный кабинет</b></p>
       <form action="/" method="post" class="signin">
         <label for="phone">Войти по номеру</label>
-        <input type="tel" id="phone" name="phone" placeholder="+7 (XXX) XXX-XX-XX" required>
+        <input type="tel" id="phone" name="phone" class="phone-mask" placeholder="+7 (XXX) XXX-XX-XX" required>
         <button type="submit" class="btn btn-accent">Получить sms-код</button>
       </form>
     </div>
@@ -428,7 +443,12 @@
   </div>
 </div>
 
+<div id="toTop"></div>
+
   <script src="./js/scripts.min.js"></script>
+  <script defer src='./js/chunk-vendors.d4d1433b.js'></script>
+  <script defer src='./js/app.394e5ec0.js'></script>
+  <link href='./css/app.6e1150c3.css' rel=stylesheet>
   <link rel="stylesheet" href="./css/main.min.css">
 </body>
 </html>

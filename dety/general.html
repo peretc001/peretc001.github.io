@@ -844,101 +844,103 @@
   <link rel="stylesheet" href="./js/slick/slick.css">
   <script src="./js/slick/slick.min.js"></script>
   <script>
-    let resizeSlider = false
-    let sliderWrapper = false
+    $( document ).ready(function() {
+      let resizeSlider = false
+      let sliderWrapper = false
 
-    const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    const sliderList = document.querySelectorAll('.slider-wrapper--item')
-    if (width > 767) {
-        sliderList.forEach(item => {
-            item.innerHTML = `<img src="${item.getAttribute('data-desctop')}" alt="">`
-        })
-    } else {
-        sliderList.forEach(item => {
-            item.innerHTML = `<img src="${item.getAttribute('data-mobile')}" alt="">`
-        })
-    }
-    
-    const addTopSlider = () => {
-      $('.slider-wrapper').on('init', function(event, slick){
-        sliderWrapper = true      
-      });
-      $('.slider-wrapper').slick({
-        draggable: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true,
-        customPaging : function(slider, i) {
-          return '<button></button>';
-        },
-        responsive: [
-          {
-            breakpoint: 991,
-            settings: {
-              arrows: false,
-            }
-          }
-        ]
-      })
-    }
-    addTopSlider()
-    
-    let homeWeekSlider = false
-    let homeNotesSlider = false
-    const addHomeSlider = () => {
-      if (width < 767) {
-        $('.home-week--wrap').on('init', function(event, slick){
-          homeWeekSlider = true
-        });
-        $('.home-week--wrap').slick({
-          draggable: true,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: false
-        });
-        $('.home-notes--wrap').on('init', function(event, slick){
-          homeNotesSlider = true
-        });
-        $('.home-notes--wrap').slick({
-          draggable: true,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: false
-        });
+      const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      const sliderList = document.querySelectorAll('.slider-wrapper--item')
+      if (width > 767) {
+          sliderList.forEach(item => {
+              item.innerHTML = `<img src="${item.getAttribute('data-desctop')}" alt="">`
+          })
+      } else {
+          sliderList.forEach(item => {
+              item.innerHTML = `<img src="${item.getAttribute('data-mobile')}" alt="">`
+          })
       }
-    }
-    if (width < 767) addHomeSlider()
+      
+      const addTopSlider = () => {
+        $('.slider-wrapper').on('init', function(event, slick){
+          sliderWrapper = true      
+        });
+        $('.slider-wrapper').slick({
+          draggable: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+          customPaging : function(slider, i) {
+            return '<button></button>';
+          },
+          responsive: [
+            {
+              breakpoint: 991,
+              settings: {
+                arrows: false,
+              }
+            }
+          ]
+        })
+      }
+      addTopSlider()
+      
+      let homeWeekSlider = false
+      let homeNotesSlider = false
+      const addHomeSlider = () => {
+        if (width < 767) {
+          $('.home-week--wrap').on('init', function(event, slick){
+            homeWeekSlider = true
+          });
+          $('.home-week--wrap').slick({
+            draggable: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: false
+          });
+          $('.home-notes--wrap').on('init', function(event, slick){
+            homeNotesSlider = true
+          });
+          $('.home-notes--wrap').slick({
+            draggable: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: false
+          });
+        }
+      }
+      if (width < 767) addHomeSlider()
 
-    // window.addEventListener("resize", function(){
-    //   const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    //   console.log(width)
-    //   console.log(homeWeekSlider)
-    //   if (width < 767) {
-    //     if (sliderWrapper == true) {
-    //       sliderList.forEach(item => {
-    //           item.innerHTML = `<img src="${item.getAttribute('data-mobile')}" alt="">`
-    //       })
-    //       $('.slider-wrapper').slick('unslick')
-    //       addTopSlider()
-    //     }
-    //     addHomeSlider()
-    //   }
-    //   else {
-    //     if (sliderWrapper == true) {
-    //       sliderList.forEach(item => {
-    //           item.innerHTML = `<img src="${item.getAttribute('data-desctop')}" alt="">`
-    //       })
-    //         $('.slider-wrapper').slick('unslick')
-    //         addTopSlider()
-    //     }
-    //     homeWeekSlider == true ? $('.home-week--wrap').slick('unslick') : ''
-    //     homeNotesSlider == true ? $('.home-notes--wrap').slick('unslick') : ''
-        
-    //   }
-    // });
+      // window.addEventListener("resize", function(){
+      //   const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      //   console.log(width)
+      //   console.log(homeWeekSlider)
+      //   if (width < 767) {
+      //     if (sliderWrapper == true) {
+      //       sliderList.forEach(item => {
+      //           item.innerHTML = `<img src="${item.getAttribute('data-mobile')}" alt="">`
+      //       })
+      //       $('.slider-wrapper').slick('unslick')
+      //       addTopSlider()
+      //     }
+      //     addHomeSlider()
+      //   }
+      //   else {
+      //     if (sliderWrapper == true) {
+      //       sliderList.forEach(item => {
+      //           item.innerHTML = `<img src="${item.getAttribute('data-desctop')}" alt="">`
+      //       })
+      //         $('.slider-wrapper').slick('unslick')
+      //         addTopSlider()
+      //     }
+      //     homeWeekSlider == true ? $('.home-week--wrap').slick('unslick') : ''
+      //     homeNotesSlider == true ? $('.home-notes--wrap').slick('unslick') : ''
+          
+      //   }
+      // });
+    });
   </script>
 </body>
 </html>
