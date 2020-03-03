@@ -92,8 +92,6 @@
             justify-content: flex-start
             flex-wrap: wrap
             padding-bottom: 1.5em
-            margin-bottom: 2em
-            border-bottom: 1px solid $grey
             .form-row
                 flex: 0 0 33.333333%
                 &:nth-child(1), &:nth-child(4)
@@ -109,8 +107,6 @@
             justify-content: flex-start
             flex-wrap: wrap
             padding-bottom: 1em
-            margin-bottom: 2em
-            border-bottom: 1px solid $grey
             .form-row
                 &:nth-child(1),
                 &:nth-child(2)
@@ -172,9 +168,25 @@
             flex: 1 0 75%
             display: flex
             &__left
-                flex: 0 0 50%
+                flex: 0 0 55%
+                table
+                    tr
+                        td
+                            &:first-child
+                                width: 50%
+                                padding-left: 2em
+                            &:last-child
+                                width: 50%
             &__right
-                flex: 0 0 50%
+                flex: 0 0 45%
+                table
+                    tr
+                        td
+                            &:first-child
+                                width: 65%
+                            &:last-child
+                                width: 35%
+                
             &__left,
             &__right
                 padding: 0
@@ -196,7 +208,6 @@
                             td
                                 border-bottom: none
                         td
-                            width: 50%
                             padding: 1em
                             font-weight: bold
                             border-bottom: 1px solid $grey
@@ -481,7 +492,7 @@
                     table
                         tr
                             td
-                                font-size: .9em
+                                font-size: .8em
                                 padding: 1em .5em
             &-total
                 &__view
@@ -580,7 +591,13 @@
                 .account-bonus-total__view
                     display: flex
 
-
+            &-table
+                &__left,
+                &__right
+                    table
+                        tr
+                            td
+                                font-size: .8em
             &-total
                 flex: 1 0 100%
                 &__view
@@ -738,6 +755,10 @@
                                 padding: 1em
                                 padding-left: 2em
                                 padding-right: 0
+                                &:first-child
+                                    width: 55%
+                                &:last-child
+                                    width: 45%
                         
         &-orders
             padding: 2em 1em
@@ -805,6 +826,20 @@
         .next
             display: none
 
+@media screen and ( max-width: 449.98px )
+    .account
+        &-bonus
+            &-table
+                &__left,
+                &__right
+                    table
+                        tr
+                            td
+                                &:first-child
+                                    width: 50%
+                                &:last-child
+                                    width: 50%
+    
 @media screen and ( max-width: 374.98px )
     .account
         h1, h2, h3, h4
@@ -823,7 +858,7 @@
                     table
                         tr
                             td
-                                padding-left: 1em
+                                padding-left: 1em !important
                         
         &-orders
             padding: 2em 1em

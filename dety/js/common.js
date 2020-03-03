@@ -320,13 +320,6 @@ if ( document.querySelector('.qty-input') ) {
     })
 }
 
-// if ( document.querySelector('.cart-delivery-point__lists') ) {
-//     const container = document.querySelector('.cart-delivery-point__lists .container')
-//     let timer = null;
-//     container.addEventListener('mouseover', (e) => disableScroll())
-//     container.addEventListener('mouseout', (e) => enableScroll())
-// }
-
 //Phone mask
 {
     function setCursorPosition(pos, elem) {
@@ -385,4 +378,4 @@ $( document ).ready(function() {
     }
     backToTop()
     $('.lazy').Lazy();
-  });
+});
