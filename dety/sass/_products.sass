@@ -11,7 +11,8 @@
             padding-right: 0.5em
             padding-left: 0.5em
     &-filter
-        padding-right: 3em        
+        padding-right: 3em
+        transition: none       
         form.smartfilter
             input
                 outline: none
@@ -200,6 +201,7 @@
                     color: $accent
         .open-filter
             display: none
+            cursor: pointer
 
     &-card
         display: block
@@ -368,7 +370,7 @@
                     display: block
                     padding-left: 1em
                     position: relative
-                    z-index: 3
+                    z-index: 1
                     font-weight: bold
                     overflow: hidden
                     white-space: nowrap
@@ -406,7 +408,7 @@
                     width: 200px
                     overflow: hidden
                     opacity: 0
-                    z-index: 2
+                    z-index: 1
                     pointer-events: none
                     transition: none
                     &.in
@@ -435,20 +437,34 @@
 
 @media screen and ( max-width: 767.98px )
     .products
+        position: relative
         h1
             font-size: 2em
+        .row
+            
         &-filter
             padding-right: 0
+            position: absolute
+            left: 1em
+            right: 1em
+            top: 0
+            transform: translateY(-200%)
+            opacity: 0
+            z-index: 5
+            background: #fff
+            border-radius: 4px
+            border: 2px solid $accent
+            padding: 2em
+            width: auto
+            pointer-events: none
+            transition: transform .3s ease, opacity .3s ease
+            &.active
+                left: 10px
+                opacity: 1
+                z-index: 5
+                pointer-events: all
+                transform: translateY(0)
             form.smartfilter
-                padding: 0
-                max-height: 0
-                opacity: 0
-                overflow: hidden
-                transition: max-height .5s ease-in-out, opacity .5s ease-in-out, padding .5s ease-in-out
-                &.active
-                    max-height: 2000px
-                    opacity: 1
-                    overflow: visible
                 .form-check
                     label
                         font-size: 1.2em
@@ -468,6 +484,7 @@
                                 margin-bottom: 0
                             &:last-child
                                 margin-left: 1%
+        
         &-sort
             .open-filter
                 display: flex
@@ -555,6 +572,13 @@
   
 @media screen and ( max-width: 399px )
     .products
+        &-filter
+            form.smartfilter
+                .smart-filter-block-button
+                    .form-group
+                        .btn
+                            font-size: .9em !important
+
         &-sort
             p
                 font-size: 0.9em
@@ -572,14 +596,12 @@
 @media screen and ( max-width: 374.98px )
     .products
         &-filter
+            padding: 2em 1em
             form.smartfilter
                 .wrapp_change_inputs
                     .bx_filter_parameters_box_container_block
                         width: 120px
-                .smart-filter-block-button
-                    .form-group
-                        input
-                            font-size: 1em !important
+
         &-sort
             p
                 b

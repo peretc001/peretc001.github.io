@@ -72,30 +72,11 @@
     <div class="container">
         <h1>Список товаров</h1>
       
-      <!-- <div class="products-tag">
-        <a href="" class="yellow">лето</a>
-        <a href="" class="blue">зима</a>
-        <a href="" class="red">осень</a>
-        <a href="" class="accent">для школы</a>
-        <a href="" class="yellow">спортивная</a>
-        <a href="" class="blue">девочкам</a>
-        <a href="" class="red">мальчикам</a>
-        <a href="" class="yellow">лето</a>
-        <a href="" class="blue">зима</a>
-        <a href="" class="red">осень</a>
-        <a href="" class="accent">для школы</a>
-        <a href="" class="yellow">спортивная</a>
-        <a href="" class="blue">девочкам</a>
-        <a href="" class="red">мальчикам</a>
-      </div> -->
-      
       <div class="row">
         <div class="col-md-4 col-lg-3">
           <!-- SmartFilter -->
 
           <div class="products-filter">
-            <button class="products-filter__open btn btn-accent hideElem">Фильтр</button>
-
             <form name="" action="" method="get" class="smartfilter showElem">
                 
               <div class="smart-filter-parameters-box bx-active">
@@ -427,21 +408,18 @@
 
         <div class="col-md-8 col-lg-9">
           <div class="products-sort">
-            <a href="" class="sort asc active">По популярности</a>
-            <a href="" class="sort asc">Цена по убыванию</a>
-            <a href="" class="sort desc">Цена по возрастанию</a>
-            <a href="">Новинки</a>
-            <a href="">Скидки</a>
-            <p>
-              <b>Сортировка</b>
-              <select name="sort" id="sort">
-                <option value="">По популярности</option>
-                <option value="">Цена по убыванию</option>
-                <option value="">Цена по возрастанию</option>
-                <option value="">Новинки</option>
-                <option value="">Скидки</option>
-              </select>
-            </p>
+            <p>Сортировка:</p>
+            <div class="products-sort-block">
+              <div class="products-sort-block--select">По популярности</div>
+              <div class="products-sort-block--options">
+                <a href="" class="sort asc active">По популярности</a>
+                <a href="" class="sort asc">Цена по убыванию</a>
+                <a href="" class="sort desc">Цена по возрастанию</a>
+                <a href="">Новинки</a>
+                <a href="">Скидки</a>
+              </div>
+            </div>
+            <span class="open-filter">Фильтр</span>
           </div>
         
           <!-- Cards -->
