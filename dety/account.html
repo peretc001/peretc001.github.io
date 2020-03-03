@@ -87,25 +87,28 @@
                 <div class="account-data-private">
                   <div class="form-row">
                     <label for="lastname">Фамилия</label>
-                    <input type="text" id="lastname" name="lastname" placeholder="Фамилия">
+                    <input type="text" id="lastname" name="lastname" placeholder="" pattern="^[А-Яа-яЁё\s]+$">
                   </div>
                   <div class="form-row">
                     <label for="firstname">Имя</label>
-                    <input type="text" id="firstname" name="firstname" placeholder="Имя" required>
+                    <input type="text" id="firstname" name="firstname" placeholder="" pattern="^[А-Яа-яЁё\s]+$" required>
                   </div>
                   <div class="form-row">
                     <label for="middlename">Отчество</label>
-                    <input type="text" id="middlename" name="middlename" placeholder="Отчество">
+                    <input type="text" id="middlename" name="middlename" placeholder="" pattern="^[А-Яа-яЁё\s]+$">
                   </div>
                   <div class="form-row">
                     <label for="userphone">Телефон</label>
-                    <input type="tel" id="userphone" name="userphone" placeholder="+7 (XXX) XXX-XX-XX" required>
+                    <input type="tel" id="userphone" name="userphone" class="phone-mask" placeholder="+7 (XXX) XXX-XX-XX" required>
                   </div>
                   <div class="form-row">
                     <label for="email">E-mail</label>
-                    <input type="text" id="email" name="email" placeholder="E-mail">
+                    <input type="text" id="email" name="email" placeholder="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                   </div>
                 </div>
+                <button type="submit" class="btn btn-accent">Сохранить</button>
+              </form>
+              <form action="/" class="account-data">
                 <h2>Адрес доставки</h2>
                 <div class="account-data-delivery">
                   <div class="form-row">

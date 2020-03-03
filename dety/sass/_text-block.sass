@@ -5,9 +5,12 @@
     p
         font-size: 1em
         line-height: 2
+        text-align: justify
+        text-align-last: left
     
     .column
         columns: 2
+        gap: 30px
 
     .hideElem
         position: relative
@@ -54,6 +57,11 @@
     
 @media screen and ( max-width: 767.98px )
     .text-block
+        padding: 40px 0 40px 0
+        .section__title
+            padding-top: 0
+            h2
+                font-size: 1.8em
         .column
             columns: 1
         .hideElem
@@ -65,3 +73,10 @@
                 padding: 0
                 opacity: 0
                 max-height: 0
+
+@media screen and ( max-width: 576.98px )
+    .text-block
+        text-align: center
+        .section__title
+            h2
+                text-align: center

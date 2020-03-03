@@ -1,4 +1,9 @@
 .products
+    h1
+        font-size: 2.5em
+        font-weight: bold
+        margin: 0
+        margin-bottom: 1em
     .products-list
         padding: 0 .5em
         [class*="col-"]
@@ -127,12 +132,13 @@
                     align-items: center
                     justify-content: space-between
                     .btn
+                        font-size: 0.9em
                         background: $bg
                         border-radius: 4px
                         border: 1px solid $accent
                         color: $text
                         font-weight: normal
-                        padding: 8px 10px
+                        padding: 8px
                         &:first-child
                             margin-right: 0.5em
                         &:last-child
@@ -175,14 +181,18 @@
     &-sort
         display: flex
         align-items: center
-        justify-content: space-between
+        justify-content: flex-start
         margin-bottom: 1.5em
-        max-width: 500px
+        p
+            display: none
         a
-            flex: 1 0 25%
+            display: inline-block
+            flex: 0 0 auto
             color: #B8B8B8
             font-weight: bold
             position: relative
+            &:not(:first-child)
+                margin-left: 2em
             &.sort
                 padding-right: 1em
                 &::before
@@ -198,13 +208,13 @@
                     background-repeat: no-repeat
                     background-image: url('../img/products/sort.svg')
                 &.asc
-                    color: $accent
                     &::before
                         background-image: url('../img/products/sort-asc.svg')
                 &.desc
-                    color: $accent
                     &::before
                         background-image: url('../img/products/sort-desc.svg')
+                &.active
+                    color: $accent
 
     &-card
         display: block
@@ -334,9 +344,26 @@
 
 @media screen and ( max-width: 1199.98px )
     .products
+        &-filter
+            form.smartfilter
+                .smart-filter-block-button
+                    .form-group
+                        flex-wrap: wrap
+                        .btn
+                            flex: 0 0 100%
+                            &:first-child
+                                margin-right: 0
+                                margin-bottom: 0.5em
+                            &:last-child
+                                margin-left: 0
+                    
         &-tag
             a
                 font-size: 0.9em
+        &-sort
+            a
+                &:not(:first-child)
+                    margin-left: 1em
         &-card
             &__head
                 span
@@ -346,7 +373,24 @@
 @media screen and ( max-width: 991.98px )
     .products
         &-sort
-            max-width: 400px
+            display: block
+            a
+                display: none
+            p
+                display: flex
+                align-items: center
+                justify-content: flex-start
+                margin: 0
+                b
+                    flex: 0 0 auto
+                    margin-right: 1em
+            select
+                flex: 0 1 50%
+                max-width: 100%
+                border-radius: 4px
+                border: 1px solid $accent
+                padding: .8em 1em
+                outline: none
         &-card
             &__head
                 span
@@ -356,6 +400,8 @@
 
 @media screen and ( max-width: 767.98px )
     .products
+        h1
+            font-size: 2em
         &-filter
             padding-right: 0
             margin-bottom: 2em
@@ -381,9 +427,22 @@
                         width: 200px
                 input
                     font-size: 16px !important
+                .smart-filter-block-button
+                    .form-group
+                        flex-wrap: no-wrap
+                        .btn
+                            flex: 0 0 49%
+                            font-size: 1em
+                            &:first-child
+                                margin-right: 1%
+                                margin-bottom: 0
+                            &:last-child
+                                margin-left: 1%
 
 @media screen and ( max-width: 576.98px )
     .products
+        h1
+            font-size: 1.8em
         .products-list
             [class*="col-"]
                 margin-bottom: .5em
@@ -435,9 +494,13 @@
             &__open
                 max-width: 100%
         &-sort
-            max-width: 330px
-            a
-                font-size: 0.9em
+            select
+                flex: 1 0 70%
+                display: block
+                border-radius: 4px
+                border: 1px solid $accent
+                padding: .8em 1em
+                outline: none
 
 @media screen and ( max-width: 374.98px )
     .products
@@ -446,10 +509,14 @@
                 .wrapp_change_inputs
                     .bx_filter_parameters_box_container_block
                         width: 120px
+                .smart-filter-block-button
+                    .form-group
+                        input
+                            font-size: 1em !important
         &-sort
-            max-width: 300px
-            a
-                font-size: 0.8em
+            p
+                b
+                    font-size: 0.8em
         &-card
             padding-bottom: 10px
             &__head
