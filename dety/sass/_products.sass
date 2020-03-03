@@ -11,28 +11,7 @@
             padding-right: 0.5em
             padding-left: 0.5em
     &-filter
-        padding-right: 3em
-        &__open
-            display: none
-            width: 100%
-            max-width: 200px
-            margin: 0 auto
-            margin-bottom: 1em
-            align-items: center
-            justify-content: center
-            position: relative
-            &::before
-                content: ''
-                width: 1em
-                height: 1em
-                margin-right: 0.5em
-                background-size: 1em
-                background-position: center
-                background-repeat: no-repeat
-                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDk3MS45ODYgOTcxLjk4NiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgOTcxLjk4NiA5NzEuOTg2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PGc+Cgk8cGF0aCBkPSJNMzcwLjIxNiw0NTkuM2MxMC4yLDExLjEsMTUuOCwyNS42LDE1LjgsNDAuNnY0NDJjMCwyNi42MDEsMzIuMSw0MC4xMDEsNTEuMSwyMS40bDEyMy4zLTE0MS4zICAgYzE2LjUtMTkuOCwyNS42LTI5LjYwMSwyNS42LTQ5LjJWNTAwYzAtMTUsNS43LTI5LjUsMTUuOC00MC42MDFMOTU1LjYxNSw3NS41YzI2LjUtMjguOCw2LjEwMS03NS41LTMzLjEtNzUuNWgtODczICAgYy0zOS4yLDAtNTkuNyw0Ni42LTMzLjEsNzUuNUwzNzAuMjE2LDQ1OS4zeiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojRkZGRkZGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgo8L2c+PC9nPiA8L3N2Zz4=')
-            &.btn
-                padding: .8em 1em
-        
+        padding-right: 3em        
         form.smartfilter
             input
                 outline: none
@@ -185,6 +164,10 @@
         margin-bottom: 1.5em
         p
             display: none
+            margin: 0
+        &-block
+            &--select
+                display: none
         a
             display: inline-block
             flex: 0 0 auto
@@ -215,6 +198,8 @@
                         background-image: url('../img/products/sort-desc.svg')
                 &.active
                     color: $accent
+        .open-filter
+            display: none
 
     &-card
         display: block
@@ -373,25 +358,74 @@
 @media screen and ( max-width: 991.98px )
     .products
         &-sort
-            display: block
-            a
-                display: none
             p
-                display: flex
-                align-items: center
-                justify-content: flex-start
+                display: block
+            &-block
+                position: relative
+                padding: 0
                 margin: 0
-                b
-                    flex: 0 0 auto
-                    margin-right: 1em
-            select
-                flex: 0 1 50%
-                max-width: 100%
-                border-radius: 4px
-                border: 1px solid $accent
-                padding: .8em 1em
-                outline: none
-                font-size: 16px
+                &--select
+                    display: block
+                    padding-left: 1em
+                    position: relative
+                    z-index: 3
+                    font-weight: bold
+                    overflow: hidden
+                    white-space: nowrap
+                    text-overflow: ellipsis
+                    width: 180px
+                    padding-right: 1em
+                    &::before
+                        content: ''
+                        position: absolute
+                        top: 50%
+                        right: 0
+                        transform: translateY(-50%)
+                        display: inline-block
+                        width: 1em
+                        height: 1em
+                        background-size: cover
+                        background-position: center right
+                        background-repeat: no-repeat
+                        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MS45OTYgNDkxLjk5NiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkxLjk5NiA0OTEuOTk2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTQ4NC4xMzIsMTI0Ljk4NmwtMTYuMTE2LTE2LjIyOGMtNS4wNzItNS4wNjgtMTEuODItNy44Ni0xOS4wMzItNy44NmMtNy4yMDgsMC0xMy45NjQsMi43OTItMTkuMDM2LDcuODZsLTE4My44NCwxODMuODQ4ICAgIEw2Mi4wNTYsMTA4LjU1NGMtNS4wNjQtNS4wNjgtMTEuODItNy44NTYtMTkuMDI4LTcuODU2cy0xMy45NjgsMi43ODgtMTkuMDM2LDcuODU2bC0xNi4xMiwxNi4xMjggICAgYy0xMC40OTYsMTAuNDg4LTEwLjQ5NiwyNy41NzIsMCwzOC4wNmwyMTkuMTM2LDIxOS45MjRjNS4wNjQsNS4wNjQsMTEuODEyLDguNjMyLDE5LjA4NCw4LjYzMmgwLjA4NCAgICBjNy4yMTIsMCwxMy45Ni0zLjU3MiwxOS4wMjQtOC42MzJsMjE4LjkzMi0yMTkuMzI4YzUuMDcyLTUuMDY0LDcuODU2LTEyLjAxNiw3Ljg2NC0xOS4yMjQgICAgQzQ5MS45OTYsMTM2LjkwMiw0ODkuMjA0LDEzMC4wNDYsNDg0LjEzMiwxMjQuOTg2eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgc3R5bGU9ImZpbGw6IzQ3NDc0NyI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+                        transition: transform .3s ease
+                    &.active
+                        &::before
+                            transform: translateY(-50%) rotate(180deg)
+
+                &--options
+                    position: absolute
+                    left: 0
+                    bottom: 0
+                    transform: translateY(120%)
+                    display: flex
+                    flex-wrap: wrap
+                    background: #ffffff
+                    border-radius: 4px
+                    padding: 1em
+                    width: 200px
+                    overflow: hidden
+                    opacity: 0
+                    z-index: 2
+                    pointer-events: none
+                    transition: none
+                    &.in
+                        transition: opacity .3s ease-out .1s, transform .3s ease-out .1s
+                    &.active
+                        opacity: 1
+                        pointer-events: all
+                        transform: translateY(105%)
+            a
+                flex: 0 0 100%
+                padding: .5em 0
+                color: $text
+                &:not(:first-child)
+                    margin-left: 0
+                &.sort
+                    padding-right: 0
+                    &::before
+                        display: none
+
         &-card
             &__head
                 span
@@ -405,11 +439,6 @@
             font-size: 2em
         &-filter
             padding-right: 0
-            margin-bottom: 2em
-            &__open
-                display: flex
-                margin: 0
-                margin-bottom: 1em
             form.smartfilter
                 padding: 0
                 max-height: 0
@@ -439,6 +468,28 @@
                                 margin-bottom: 0
                             &:last-child
                                 margin-left: 1%
+        &-sort
+            .open-filter
+                display: flex
+                margin-left: auto
+                align-items: center
+                justify-content: center
+                position: relative
+                background: $accent
+                color: #fff
+                padding: .8em 1em
+                border-radius: 4px
+                width: 150px
+                &::before
+                    content: ''
+                    width: 1em
+                    height: 1em
+                    margin-right: 0.5em
+                    background-size: 1em
+                    background-position: center
+                    background-repeat: no-repeat
+                    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDk3MS45ODYgOTcxLjk4NiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgOTcxLjk4NiA5NzEuOTg2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PGc+Cgk8cGF0aCBkPSJNMzcwLjIxNiw0NTkuM2MxMC4yLDExLjEsMTUuOCwyNS42LDE1LjgsNDAuNnY0NDJjMCwyNi42MDEsMzIuMSw0MC4xMDEsNTEuMSwyMS40bDEyMy4zLTE0MS4zICAgYzE2LjUtMTkuOCwyNS42LTI5LjYwMSwyNS42LTQ5LjJWNTAwYzAtMTUsNS43LTI5LjUsMTUuOC00MC42MDFMOTU1LjYxNSw3NS41YzI2LjUtMjguOCw2LjEwMS03NS41LTMzLjEtNzUuNWgtODczICAgYy0zOS4yLDAtNTkuNyw0Ni42LTMzLjEsNzUuNUwzNzAuMjE2LDQ1OS4zeiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojRkZGRkZGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgo8L2c+PC9nPiA8L3N2Zz4=')
+
 
 @media screen and ( max-width: 576.98px )
     .products
@@ -454,6 +505,19 @@
                 .wrapp_change_inputs
                     .bx_filter_parameters_box_container_block
                         width: 150px
+        &-sort
+            p
+                font-size: 0.9em
+            &-block
+                &--select
+                    width: 160px
+                    font-size: 0.9em
+                &--options
+                    width: 180px
+            a
+                font-size: 0.9em
+            .open-filter
+                width: 120px
         &-card
             padding: 10px 10px 20px 10px
             &__head
@@ -488,20 +552,22 @@
                         width: 1.6em
                         height: 1.6em
                         background-size: 1.6em
-
-@media screen and ( max-width: 450px )
+  
+@media screen and ( max-width: 399px )
     .products
-        &-filter
-            &__open
-                max-width: 100%
         &-sort
-            select
-                flex: 1 0 70%
-                display: block
-                border-radius: 4px
-                border: 1px solid $accent
-                padding: .8em 1em
-                outline: none
+            p
+                font-size: 0.9em
+            &-block
+                &--select
+                    width: 130px
+                    font-size: 0.9em
+                &--options
+                    width: 180px
+            a
+                font-size: 0.9em
+            .open-filter
+                width: 100px
 
 @media screen and ( max-width: 374.98px )
     .products
@@ -518,8 +584,20 @@
             p
                 b
                     font-size: 0.8em
-            select
-                padding-right: 0
+            .open-filter
+                width: 2em
+                height: 2em
+                overflow: hidden
+                padding-left: 2em
+                &::before
+                    position: absolute
+                    left: 50%
+                    top: 50%
+                    transform: translateY(-50%) translateX(-50%)
+                    background-color: $accent
+                    width: 100%
+                    height: 100%
+
         &-card
             padding-bottom: 10px
             &__head
