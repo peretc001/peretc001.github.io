@@ -29,16 +29,18 @@
                 border-radius: 4px 0 0 4px
                 transition: transform .3s ease
             span
+                display: block
                 padding: 1em 2em
                 cursor: pointer
-                position: relative
                 z-index: 1
-                transition: opacity .3s ease
-                transition-delay: 0.3s
+                transition-delay: .3s
+                transition: opacity .3s ease, background .1s ease
                 &:first-child
                     color: $text
+                    background: transparent
                 &:last-child
                     color: #ffffff
+                    background: $accent
             &.active
                 &::before
                     left: 0
@@ -48,8 +50,10 @@
                 span
                     &:first-child
                         color: #ffffff
+                        background: $accent
                     &:last-child
                         color: $text
+                        background: transparent
 
     &-alphabet
         border-top: 1px solid #DADADA
