@@ -22,8 +22,8 @@
                 position: absolute
                 left: 2px
                 top: 0
-                width: 60%
-                transform: translateX(80%)
+                width: 50%
+                transform: translateX(100%)
                 height: 100%
                 background: $accent
                 border-radius: 4px 0 0 4px
@@ -38,9 +38,11 @@
                 &:first-child
                     color: $text
                     background: transparent
+                    border-radius: 0
                 &:last-child
                     color: #ffffff
                     background: $accent
+                    border-radius: 4px 0 0 4px
             &.active
                 &::before
                     left: 0
@@ -51,9 +53,11 @@
                     &:first-child
                         color: #ffffff
                         background: $accent
+                        border-radius: 0 4px 4px 0
                     &:last-child
                         color: $text
                         background: transparent
+                        border-radius: 0
 
     &-alphabet
         border-top: 1px solid #DADADA
@@ -213,6 +217,17 @@
                 border: 2px solid #FF5F5A
                 &::before
                     background: #FF5F5A
+                span
+                    &:first-child
+                        background: transparent
+                    &:last-child
+                        background: #FF5F5A
+                &.active
+                   span
+                        &:first-child
+                            background: #FF5F5A
+                        &:last-child
+                            background: transparent
         .brands-alphabet
             .rus,
             .eng
