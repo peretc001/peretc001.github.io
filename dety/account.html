@@ -87,7 +87,7 @@
                 <div class="account-data-private">
                   <div class="form-row">
                     <label for="lastname">Фамилия <span>*</span></label>
-                    <input type="text" id="lastname" name="lastname" placeholder="" pattern="^[А-Яа-яЁё\s]+$">
+                    <input type="text" id="lastname" name="lastname" placeholder="" pattern="^[А-Яа-яЁё\s]+$" required>
                     <span>Введите Фамилию на русском языке</span>
                   </div>
                   <div class="form-row">
@@ -102,7 +102,7 @@
                   </div>
                   <div class="form-row">
                     <label for="userphone">Телефон <span>*</span></label>
-                    <input type="tel" id="userphone" name="userphone" class="phone-mask" placeholder="" required>
+                    <input type="tel" id="userphone" name="userphone" class="phone-mask" pattern="+7\([0-9]{3}\)[0-9]{3}-[0-9]{4}" placeholder="" required>
                   </div>
                   <div class="form-row">
                     <label for="email">E-mail</label>
@@ -117,8 +117,8 @@
                 <div class="account-data-delivery">
                   <div class="adress adress-0 addAdress">
                     <div class="form-row">
-                      <label for="city">Город</label>
-                      <input type="text" id="city" class="city" name="city" value="Краснодар" pattern="^[А-Яа-яЁё\s]+$" placeholder="">
+                      <label for="city">Город <span>*</span></label>
+                      <input type="text" id="city" class="city" name="city" value="Краснодар" pattern="^[А-Яа-яЁё\s]+$" placeholder="" required>
                       <span>Введите Город на русском языке</span>
                     </div>
                     <div class="form-row">
@@ -453,30 +453,22 @@
         const btn = element.querySelector('button')
         
         btn.disabled = true
-        if (element.querySelector('.account-data-private')) {
-          console.log(123)
-        }
-        if (element.querySelectorAll('input')[0].value == '' || element.querySelectorAll('input')[1].value == '' || element.querySelectorAll('input')[3].value == '') {
-          console.log(element.querySelectorAll('input')[0].value)
-          element.querySelector('.add') ? element.querySelector('.add').classList.add('hidden') : ''
-        }
+        // if (element.querySelectorAll('input')[0].value == '' || element.querySelectorAll('input')[1].value == '' || element.querySelectorAll('input')[3].value == '') {
+        //   console.log(element.querySelectorAll('input')[0].value)
+        //   element.querySelector('.add') ? element.querySelector('.add').classList.add('hidden') : ''
+        // }
         element.addEventListener('change', () => {
-          if (element.querySelector('.account-data-private')) {
-            if (element.querySelectorAll('input')[0].value == '' || element.querySelectorAll('input')[1].value == '' || element.querySelectorAll('input')[3].value == '') {
-              
-            }
+          if ( element.querySelector('.account-data-private') && element.querySelectorAll('input')[0].value != '' && element.querySelectorAll('input')[1].value != '' && element.querySelectorAll('input')[3].value != '' ) {
+            btn.disabled = false
+            element.querySelector('.add.invisible') ? element.querySelector('.add.invisible').classList.remove('invisible') : ''
           }
-          if (element.querySelectorAll('input')[0].value != '') {
-            if (element.querySelector('.account-data-private')) {
-              if (element.querySelectorAll('input')[1].value == '' || element.querySelectorAll('input')[3].value == '') {
-                btn.disabled = false
-              }
-            } else {
-              btn.disabled = false
-            }
-          } else {
+          else if ( element.querySelectorAll('input')[0].value != '' && !element.querySelector('.account-data-private') ) {
+            btn.disabled = false
+            element.querySelector('.add.invisible') ? element.querySelector('.add.invisible').classList.remove('invisible') : ''
+          } 
+          else {
             btn.disabled = true
-            // element.querySelector('.add').classList.add('hidden')
+            element.querySelector('.add.invisible') ? element.querySelector('.add.invisible').classList.add('invisible') : ''
           }
         })
       });
@@ -495,8 +487,8 @@
         div.classList.add('fade')
         div.innerHTML  = `
             <div class="form-row">
-              <label for="city">Город</label>
-              <input type="text" id="city${counter}" class="city" name="city${counter}" pattern="^[А-Яа-яЁё\s]+$" placeholder="">
+              <label for="city">Город <span>*</span></label>
+              <input type="text" id="city${counter}" class="city" name="city${counter}" pattern="^[А-Яа-яЁё\s]+$" placeholder="" required>
               <span>Введите Город на русском языке</span>
             </div>
             <div class="form-row">
@@ -513,7 +505,7 @@
               <input type="text" id="flat${counter}" name="flat${counter}" placeholder="">
             </div>
             <div class="new-adress">
-              <span class="add">Добавить ещё адрес</span>
+              <span class="add invisible">Добавить ещё адрес</span>
             </div>
         `
         document.querySelector('.account-data-delivery').append(div)
