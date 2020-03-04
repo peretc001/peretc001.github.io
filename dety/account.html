@@ -114,7 +114,7 @@
                   <div class="adress adress-0 addAdress">
                     <div class="form-row">
                       <label for="city">Город</label>
-                      <input type="text" id="city" class="city" name="city" placeholder="">
+                      <input type="text" id="city" class="city" name="city" value="12313" placeholder="">
                     </div>
                     <div class="form-row">
                       <label for="street">Улица</label>
@@ -133,9 +133,7 @@
                       <span class="add">Добавить ещё адрес</span>
                     </div>
                     <!--  -->
-                  </div>
-
-                  
+                  </div>                
                 </div>
   
                 <button type="submit" class="btn btn-accent">Сохранить</button>
@@ -445,14 +443,11 @@
     $( document ).ready(function() {
       let getCounter = document.querySelectorAll('.addAdress')
       let counter = getCounter.length - 1
-
       const addBtn = document.querySelector('.adress.adress-'+ counter + ' .new-adress .add')
 
       const showAdress = () => {
         document.querySelector('.adress.adress-'+ counter + ' .new-adress .add').removeEventListener('click', addAdreess)
-        counter++
-        console.log(counter)
-            
+        counter++        
 
         let div = document.createElement('div');
         div.classList.add('adress')
@@ -490,7 +485,6 @@
         document.querySelector('.adress.adress-'+ counter + ' .new-adress .add').addEventListener('click', addAdreess)
       }
       
-      
       const addAdreess = (event) => {        
         if ( document.querySelector('.adress.adress-'+ counter + ' .city').value !== '' ) {
           showAdress()
@@ -499,12 +493,6 @@
       }
 
       addBtn.addEventListener('click', addAdreess)
-      
-      
-      
-      
-      
-      
     })
   </script>
 </body>
