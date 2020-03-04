@@ -111,43 +111,30 @@
               <form action="/" class="account-data">
                 <h2>Адрес доставки</h2>
                 <div class="account-data-delivery">
-                  <div class="form-row">
-                    <label for="city">Город</label>
-                    <input type="text" id="city" name="city" placeholder="Город">
-                  </div>
-                  <div class="form-row">
-                    <label for="street">Улица</label>
-                    <input type="text" id="street" name="street" placeholder="Улица">
-                  </div>
-                  <div class="form-row">
-                    <label for="house">Дом</label>
-                    <input type="text" id="house" name="house" placeholder="Дом">
-                  </div>
-                  <div class="form-row">
-                    <label for="flat">Квартира</label>
-                    <input type="text" id="flat" name="flat" placeholder="Квартира">
-                  </div>
-  
-                  <span class="hideElem active">Добавить ещё адрес</span>
-                  
-                  <div class="showElem active">
+                  <div class="adress adress-0 addAdress">
                     <div class="form-row">
-                      <label for="city2">Город</label>
-                      <input type="text" id="city2" name="city2" placeholder="Город">
+                      <label for="city">Город</label>
+                      <input type="text" id="city" class="city" name="city" placeholder="">
                     </div>
                     <div class="form-row">
-                      <label for="street2">Улица</label>
-                      <input type="text" id="street2" name="street2" placeholder="Улица">
+                      <label for="street">Улица</label>
+                      <input type="text" id="street" name="street" placeholder="">
                     </div>
                     <div class="form-row">
-                      <label for="house2">Дом</label>
-                      <input type="text" id="house2" name="house2" placeholder="Дом">
+                      <label for="house">Дом</label>
+                      <input type="text" id="house" name="house" placeholder="">
                     </div>
                     <div class="form-row">
-                      <label for="flat2">Квартира</label>
-                      <input type="text" id="flat2" name="flat2" placeholder="Квартира">
+                      <label for="flat">Квартира</label>
+                      <input type="text" id="flat" name="flat" placeholder="">
                     </div>
+                    <!-- if ( count == 0 ) -->
+                    <div class="new-adress">
+                      <span class="add">Добавить ещё адрес</span>
+                    </div>
+                    <!--  -->
                   </div>
+
                   
                 </div>
   
@@ -453,6 +440,73 @@
   <script defer src='./js/app.394e5ec0.js'></script>
   <link href='./css/app.6e1150c3.css' rel=stylesheet>
   <link rel="stylesheet" href="./css/main.min.css">
+
+  <script>
+    $( document ).ready(function() {
+      let getCounter = document.querySelectorAll('.addAdress')
+      let counter = getCounter.length - 1
+
+      const addBtn = document.querySelector('.adress.adress-'+ counter + ' .new-adress .add')
+
+      const showAdress = () => {
+        document.querySelector('.adress.adress-'+ counter + ' .new-adress .add').removeEventListener('click', addAdreess)
+        counter++
+        console.log(counter)
+            
+
+        let div = document.createElement('div');
+        div.classList.add('adress')
+        div.classList.add('adress-'+ counter)
+        div.classList.add('fade')
+        div.innerHTML  = `
+            <div class="form-row">
+              <label for="city">Город</label>
+              <input type="text" id="city${counter}" class="city" name="city${counter}" placeholder="">
+            </div>
+            <div class="form-row">
+              <label for="street">Улица</label>
+              <input type="text" id="street${counter}" name="street${counter}" placeholder="">
+            </div>
+            <div class="form-row">
+              <label for="house">Дом</label>
+              <input type="text" id="house${counter}" name="house${counter}" placeholder="">
+            </div>
+            <div class="form-row">
+              <label for="flat">Квартира</label>
+              <input type="text" id="flat${counter}" name="flat${counter}" placeholder="">
+            </div>
+            <div class="new-adress">
+              <span class="add">Добавить ещё адрес</span>
+            </div>
+        `
+        document.querySelector('.account-data-delivery').append(div)
+        setTimeout(() => {
+          div.classList.add('open')
+        }, 100);
+        setTimeout(() => {
+          document.querySelector('.adress.adress-'+ (counter-1) + ' .new-adress .add').classList.add('hidden')
+        }, 200);
+
+        document.querySelector('.adress.adress-'+ counter + ' .new-adress .add').addEventListener('click', addAdreess)
+      }
+      
+      
+      const addAdreess = (event) => {        
+        if ( document.querySelector('.adress.adress-'+ counter + ' .city').value !== '' ) {
+          showAdress()
+        }
+        
+      }
+
+      addBtn.addEventListener('click', addAdreess)
+      
+      
+      
+      
+      
+      
+    })
+  </script>
 </body>
 </html>
 
