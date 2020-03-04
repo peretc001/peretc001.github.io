@@ -88,14 +88,17 @@
                   <div class="form-row">
                     <label for="lastname">Фамилия</label>
                     <input type="text" id="lastname" name="lastname" placeholder="" pattern="^[А-Яа-яЁё\s]+$">
+                    <span>Введите Фамилию на русском языке</span>
                   </div>
                   <div class="form-row">
                     <label for="firstname">Имя</label>
                     <input type="text" id="firstname" name="firstname" placeholder="" pattern="^[А-Яа-яЁё\s]+$" required>
+                    <span>Введите Имя на русском языке</span>
                   </div>
                   <div class="form-row">
                     <label for="middlename">Отчество</label>
                     <input type="text" id="middlename" name="middlename" placeholder="" pattern="^[А-Яа-яЁё\s]+$">
+                    <span>Введите Отчество на русском языке</span>
                   </div>
                   <div class="form-row">
                     <label for="userphone">Телефон</label>
@@ -104,9 +107,10 @@
                   <div class="form-row">
                     <label for="email">E-mail</label>
                     <input type="text" id="email" name="email" placeholder="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                    <span>Введите корректный Email</span>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-accent">Сохранить</button>
+                <button type="submit" class="btn btn-accent" disabled>Сохранить</button>
               </form>
               <form action="/" class="account-data">
                 <h2>Адрес доставки</h2>
@@ -114,11 +118,13 @@
                   <div class="adress adress-0 addAdress">
                     <div class="form-row">
                       <label for="city">Город</label>
-                      <input type="text" id="city" class="city" name="city" value="12313" placeholder="">
+                      <input type="text" id="city" class="city" name="city" value="12313" pattern="^[А-Яа-яЁё\s]+$" placeholder="">
+                      <span>Введите Город на русском языке</span>
                     </div>
                     <div class="form-row">
                       <label for="street">Улица</label>
-                      <input type="text" id="street" name="street" placeholder="">
+                      <input type="text" id="street" name="street" pattern="^[А-Яа-яЁё\s]+$" placeholder="">
+                      <span>Введите Улицу на русском языке</span>
                     </div>
                     <div class="form-row">
                       <label for="house">Дом</label>
@@ -440,7 +446,17 @@
   <link rel="stylesheet" href="./css/main.min.css">
 
   <script>
-    $( document ).ready(function() {
+    document.addEventListener("DOMContentLoaded", function() {
+
+      const form = document.querySelectorAll('.account-data')
+      form.forEach(element => {
+        const btn = element.querySelector('button')
+        btn.disabled = true
+        element.addEventListener('change', () => {
+          btn.disabled = false
+        })
+      });
+
       let getCounter = document.querySelectorAll('.addAdress')
       let counter = getCounter.length - 1
       const addBtn = document.querySelector('.adress.adress-'+ counter + ' .new-adress .add')
@@ -456,11 +472,13 @@
         div.innerHTML  = `
             <div class="form-row">
               <label for="city">Город</label>
-              <input type="text" id="city${counter}" class="city" name="city${counter}" placeholder="">
+              <input type="text" id="city${counter}" class="city" name="city${counter}" pattern="^[А-Яа-яЁё\s]+$" placeholder="">
+              <span>Введите Город на русском языке</span>
             </div>
             <div class="form-row">
               <label for="street">Улица</label>
-              <input type="text" id="street${counter}" name="street${counter}" placeholder="">
+              <input type="text" id="street${counter}" name="street${counter}" pattern="^[А-Яа-яЁё\s]+$" placeholder="">
+              <span>Введите Улицу на русском языке</span>
             </div>
             <div class="form-row">
               <label for="house">Дом</label>
