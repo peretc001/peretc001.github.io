@@ -307,36 +307,62 @@
 
             &__price
                 display: flex
-                align-items: flex-end
+                align-items: center
+                justify-content: flex-start
+                flex-wrap: wrap
                 padding: 0 1em
-                p
-                    font-weight: bold
-                    &:not(.old)
-                        font-size: 1.8em
-                .old
-                    margin-left: 1em
-                    font-size: 1em
-                    color: $grey
-                    text-decoration: line-through
-            &__tag
-                display: flex
                 border-bottom: 1px solid #f5f5f5
-                padding: 0 1em
-                padding-bottom: 1em
-                span
-                    padding: .5em .8em
-                    font-size: 0.85em
-                    font-weight: bold
-                    border-radius: 4px
-                    text-align: center
-                    &:first-child
-                        border: 1px solid #ff5c57
-                        color: #ff5c57
+                &__cost,
+                &__tag
+                    flex: 0 0 50%
+                &__credit
+                    flex: 0 0 100%
+                
+                &__cost
+                    p
+                        font-weight: bold
+                        padding: 0
+                        margin: 0
+                        &:not(.old)
+                            font-size: 2.5em
+                    .old
+                        font-size: 1.4em
+                        color: $grey
+                        position: relative
+                        display: inline-block
+                        &::before
+                            content: ''
+                            position: absolute
+                            left: -2px
+                            top: 50%
+                            width: 105%
+                            height: 1px
+                            background: $grey
+                            transform: rotate(-8deg)
+                &__tag
+                    span
+                        display: block
+                        padding: .8em .5em
+                        font-size: .85em
+                        font-weight: bold
+                        border-radius: 4px
+                        text-align: center
+                        color: #fff
+                        &:first-child
+                            background: #ff5c57
+                            margin-bottom: .5em
+                        &:last-child
+                            background: $accent
+                &__credit
+                    display: flex
+                    padding: 1em 0
+                    p
+                        margin: 0
                         margin-right: 0.5em
-                    &:last-child
-                        border: 1px solid $accent
-                        color: $accent
-                        margin-right: 0
+                    img
+                        display: inline-block
+                        width: 1em
+                        height: 1em
             
             &__size,
             &__color
@@ -715,10 +741,16 @@
         
             &__buy
                 width: 310px
-                &__tag
-                    span
-                        padding: .5em
-                        font-size: 0.75em
+                &__price
+                    font-size: 0.9em
+                    &__cost
+                        p
+                            &:not(.old)
+                                font-size: 2.2em
+                    &__tag
+                        span
+                            padding: .8em .2em
+                            font-size: .75em
                 &__button
                     .btn
                         flex: 1 0 49%
@@ -772,12 +804,15 @@
                 display: flex
                 align-items: flex-start
                 &__price
-                    p
-                        &:not(.old)
-                            font-size: 2.2em
-                    .old
-                        font-size: 1.4em
-                
+                    font-size: 1em
+                    &__cost
+                        p
+                            &:not(.old)
+                                font-size: 2.3em
+                    &__tag
+                        span
+                            font-size: .8em
+
                 &--left,
                 &--right
                     flex: 1 0 50%
@@ -802,7 +837,7 @@
                 &__button
                     flex-wrap: wrap
                     justify-content: center
-                    padding: 1em
+                    padding: 0 1em 1em 1em
                     .btn
                         flex: 1 0 100%
                         padding: 1em 0
@@ -897,7 +932,7 @@
 
             &__about
                 &__title
-                    align-items: center
+                    align-items: flex-start
                     flex-direction: column
                 &__text
                     .caption
@@ -947,9 +982,8 @@
                 font-size: 0.8em
         &-body
             &__buy
-                &__tag
-                    span
-                        font-size: 0.7em
+                &__price
+                    font-size: .9em
                 &__button
                     .btn
                         font-size: 1em

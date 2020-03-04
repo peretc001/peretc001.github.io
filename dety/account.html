@@ -86,12 +86,12 @@
                 <h2>Личные данные</h2>
                 <div class="account-data-private">
                   <div class="form-row">
-                    <label for="lastname">Фамилия</label>
+                    <label for="lastname">Фамилия <span>*</span></label>
                     <input type="text" id="lastname" name="lastname" placeholder="" pattern="^[А-Яа-яЁё\s]+$">
                     <span>Введите Фамилию на русском языке</span>
                   </div>
                   <div class="form-row">
-                    <label for="firstname">Имя</label>
+                    <label for="firstname">Имя <span>*</span></label>
                     <input type="text" id="firstname" name="firstname" placeholder="" pattern="^[А-Яа-яЁё\s]+$" required>
                     <span>Введите Имя на русском языке</span>
                   </div>
@@ -101,8 +101,8 @@
                     <span>Введите Отчество на русском языке</span>
                   </div>
                   <div class="form-row">
-                    <label for="userphone">Телефон</label>
-                    <input type="tel" id="userphone" name="userphone" class="phone-mask" placeholder="+7 (XXX) XXX-XX-XX" required>
+                    <label for="userphone">Телефон <span>*</span></label>
+                    <input type="tel" id="userphone" name="userphone" class="phone-mask" placeholder="" required>
                   </div>
                   <div class="form-row">
                     <label for="email">E-mail</label>
@@ -453,17 +453,30 @@
         const btn = element.querySelector('button')
         
         btn.disabled = true
-        if (element.querySelectorAll('input')[0].value == '') {
+        if (element.querySelector('.account-data-private')) {
+          console.log(123)
+        }
+        if (element.querySelectorAll('input')[0].value == '' || element.querySelectorAll('input')[1].value == '' || element.querySelectorAll('input')[3].value == '') {
           console.log(element.querySelectorAll('input')[0].value)
           element.querySelector('.add') ? element.querySelector('.add').classList.add('hidden') : ''
         }
         element.addEventListener('change', () => {
+          if (element.querySelector('.account-data-private')) {
+            if (element.querySelectorAll('input')[0].value == '' || element.querySelectorAll('input')[1].value == '' || element.querySelectorAll('input')[3].value == '') {
+              
+            }
+          }
           if (element.querySelectorAll('input')[0].value != '') {
-          btn.disabled = false
-          element.querySelector('.add').classList.remove('hidden')
+            if (element.querySelector('.account-data-private')) {
+              if (element.querySelectorAll('input')[1].value == '' || element.querySelectorAll('input')[3].value == '') {
+                btn.disabled = false
+              }
+            } else {
+              btn.disabled = false
+            }
           } else {
             btn.disabled = true
-            element.querySelector('.add').classList.add('hidden')
+            // element.querySelector('.add').classList.add('hidden')
           }
         })
       });
