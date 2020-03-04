@@ -83,7 +83,7 @@
                     width: 85px
                     input
                         width: 100%
-                        background: $bg
+                        background: transparent
                         border-radius: 4px
                         border: 1px solid $accent
                         color: $text
@@ -98,7 +98,7 @@
             .smart-filter-block
                 .form-input
                     width: 100%
-                    background: $bg
+                    background: transparent
                     border-radius: 4px
                     border: 1px solid $accent
                     color: $text
@@ -113,10 +113,6 @@
                     justify-content: space-between
                     .btn
                         font-size: 0.9em
-                        background: $bg
-                        border-radius: 4px
-                        border: 1px solid $accent
-                        color: $text
                         font-weight: normal
                         padding: 8px
                         &:first-child
@@ -305,7 +301,7 @@
                 top: 50%
                 right: 0
                 transform: translateY(-50%)
-                z-index: 2
+                z-index: 1
                 .wishlist,
                 .cart
                     position: relative
@@ -396,11 +392,11 @@
                             transform: translateY(-50%) rotate(180deg)
 
                 &--options
+                    display: none
                     position: absolute
                     left: 0
                     bottom: 0
                     transform: translateY(120%)
-                    display: flex
                     flex-wrap: wrap
                     background: #ffffff
                     border-radius: 4px
@@ -408,10 +404,11 @@
                     width: 200px
                     overflow: hidden
                     opacity: 0
-                    z-index: 1
+                    z-index: 2
                     pointer-events: none
                     transition: none
-                    &.in
+                    &.fade
+                        display: flex
                         transition: opacity .3s ease-out .1s, transform .3s ease-out .1s
                     &.active
                         opacity: 1
@@ -443,27 +440,30 @@
         .row
             
         &-filter
+            display: none
             padding-right: 0
             position: absolute
             left: 1em
             right: 1em
-            top: 0
-            transform: translateY(-200%)
+            top: 60px
+            transform: translateY(10%)
             opacity: 0
-            z-index: 5
+            z-index: -1
             background: #fff
             border-radius: 4px
             border: 2px solid $accent
             padding: 2em
             width: auto
             pointer-events: none
-            transition: transform .3s ease, opacity .3s ease
+            &.fade
+                display: block
+                z-index: 2
+                transition: transform .3s ease, opacity .3s ease
             &.active
-                left: 10px
                 opacity: 1
-                z-index: 5
+                z-index: 2
                 pointer-events: all
-                transform: translateY(0)
+                transform: translateY(0%)
             form.smartfilter
                 .form-check
                     label
@@ -506,6 +506,11 @@
                     background-position: center
                     background-repeat: no-repeat
                     background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDk3MS45ODYgOTcxLjk4NiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgOTcxLjk4NiA5NzEuOTg2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PGc+Cgk8cGF0aCBkPSJNMzcwLjIxNiw0NTkuM2MxMC4yLDExLjEsMTUuOCwyNS42LDE1LjgsNDAuNnY0NDJjMCwyNi42MDEsMzIuMSw0MC4xMDEsNTEuMSwyMS40bDEyMy4zLTE0MS4zICAgYzE2LjUtMTkuOCwyNS42LTI5LjYwMSwyNS42LTQ5LjJWNTAwYzAtMTUsNS43LTI5LjUsMTUuOC00MC42MDFMOTU1LjYxNSw3NS41YzI2LjUtMjguOCw2LjEwMS03NS41LTMzLjEtNzUuNWgtODczICAgYy0zOS4yLDAtNTkuNyw0Ni42LTMzLjEsNzUuNUwzNzAuMjE2LDQ1OS4zeiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojRkZGRkZGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgo8L2c+PC9nPiA8L3N2Zz4=')
+                    transition: background .3s ease, transform .3s ease
+                &.active
+                    &::before
+                        transform: rotate(180deg)
+                        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzAwLjE4OCwyNDZMNDg0LjE0LDYyLjA0YzUuMDYtNS4wNjQsNy44NTItMTEuODIsNy44Ni0xOS4wMjRjMC03LjIwOC0yLjc5Mi0xMy45NzItNy44Ni0xOS4wMjhMNDY4LjAyLDcuODcyICAgIGMtNS4wNjgtNS4wNzYtMTEuODI0LTcuODU2LTE5LjAzNi03Ljg1NmMtNy4yLDAtMTMuOTU2LDIuNzgtMTkuMDI0LDcuODU2TDI0Ni4wMDgsMTkxLjgyTDYyLjA0OCw3Ljg3MiAgICBjLTUuMDYtNS4wNzYtMTEuODItNy44NTYtMTkuMDI4LTcuODU2Yy03LjIsMC0xMy45NiwyLjc4LTE5LjAyLDcuODU2TDcuODcyLDIzLjk4OGMtMTAuNDk2LDEwLjQ5Ni0xMC40OTYsMjcuNTY4LDAsMzguMDUyICAgIEwxOTEuODI4LDI0Nkw3Ljg3Miw0MjkuOTUyYy01LjA2NCw1LjA3Mi03Ljg1MiwxMS44MjgtNy44NTIsMTkuMDMyYzAsNy4yMDQsMi43ODgsMTMuOTYsNy44NTIsMTkuMDI4bDE2LjEyNCwxNi4xMTYgICAgYzUuMDYsNS4wNzIsMTEuODI0LDcuODU2LDE5LjAyLDcuODU2YzcuMjA4LDAsMTMuOTY4LTIuNzg0LDE5LjAyOC03Ljg1NmwxODMuOTYtMTgzLjk1MmwxODMuOTUyLDE4My45NTIgICAgYzUuMDY4LDUuMDcyLDExLjgyNCw3Ljg1NiwxOS4wMjQsNy44NTZoMC4wMDhjNy4yMDQsMCwxMy45Ni0yLjc4NCwxOS4wMjgtNy44NTZsMTYuMTItMTYuMTE2ICAgIGM1LjA2LTUuMDY0LDcuODUyLTExLjgyNCw3Ljg1Mi0xOS4wMjhjMC03LjIwNC0yLjc5Mi0xMy45Ni03Ljg1Mi0xOS4wMjhMMzAwLjE4OCwyNDZ6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==')
 
 
 @media screen and ( max-width: 576.98px )
@@ -596,6 +601,7 @@
 @media screen and ( max-width: 374.98px )
     .products
         &-filter
+            top: 50px
             padding: 2em 1em
             form.smartfilter
                 .wrapp_change_inputs

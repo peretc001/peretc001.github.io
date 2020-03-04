@@ -451,9 +451,20 @@
       const form = document.querySelectorAll('.account-data')
       form.forEach(element => {
         const btn = element.querySelector('button')
+        
         btn.disabled = true
+        if (element.querySelectorAll('input')[0].value == '') {
+          console.log(element.querySelectorAll('input')[0].value)
+          element.querySelector('.add') ? element.querySelector('.add').classList.add('hidden') : ''
+        }
         element.addEventListener('change', () => {
+          if (element.querySelectorAll('input')[0].value != '') {
           btn.disabled = false
+          element.querySelector('.add').classList.remove('hidden')
+          } else {
+            btn.disabled = true
+            element.querySelector('.add').classList.add('hidden')
+          }
         })
       });
 

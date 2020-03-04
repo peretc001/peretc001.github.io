@@ -320,53 +320,6 @@ if ( document.querySelector('.qty-input') ) {
     })
 }
 
-//Sort block
-if ( document.querySelector('.products-sort-block--select') ) {
-    const   dropDown = document.querySelector('.products-sort-block--select')
-            dropDownMenu = document.querySelector('.products-sort-block--options')
-            dropDownMenu ? setTimeout(dropDownMenu.classList.add('in'), 100) : ''
-            
-    function closeDropDownEvent(event) { event.target != dropDown && event.target != dropDownMenu ? closeDropDown() : '' }
-    
-    const   openDropDown = () => {
-                dropDown.classList.toggle('active')
-                dropDownMenu.classList.toggle('active')
-                document.addEventListener('click', closeDropDownEvent)
-            }
-            closeDropDown = () => {
-                dropDown.classList.remove('active')
-                dropDownMenu.classList.remove('active')
-                document.removeEventListener('click', closeDropDownEvent)
-            }
-
-    dropDown.addEventListener('click', openDropDown)
-    
-}
-
-//Show Hide SmartFilter
-if ( document.querySelector('.products-sort .open-filter') ) {
-    const   productsFilter = document.querySelector('.products-filter')
-            openFilter = document.querySelector('.products-sort .open-filter')
-            console.log(openFilter, productsFilter)
-
-    function closeSmartFilterEvent(event) { 
-        event.target != productsFilter && event.target != openFilter ? closeSmartFilter() : '' 
-    }
-
-    const   openSmartFilter = () => {
-                productsFilter.classList.add('active')
-                openFilter.classList.add('active')
-                document.addEventListener('click', closeSmartFilterEvent)
-            }
-            closeSmartFilter = () => {
-                productsFilter.classList.remove('active')
-                openFilter.classList.remove('active')
-                document.removeEventListener('click', closeSmartFilterEvent)
-            }
-        
-            openFilter.addEventListener('click', openSmartFilter)
-}
-
 //Phone mask
 {
     function setCursorPosition(pos, elem) {
