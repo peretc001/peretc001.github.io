@@ -473,6 +473,7 @@
                         width: 200px
                 input
                     font-size: 16px !important
+                    padding: .8em .5em !important
                 .smart-filter-block-button
                     .form-group
                         flex-wrap: no-wrap
@@ -512,7 +513,6 @@
                         transform: rotate(180deg)
                         background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzAwLjE4OCwyNDZMNDg0LjE0LDYyLjA0YzUuMDYtNS4wNjQsNy44NTItMTEuODIsNy44Ni0xOS4wMjRjMC03LjIwOC0yLjc5Mi0xMy45NzItNy44Ni0xOS4wMjhMNDY4LjAyLDcuODcyICAgIGMtNS4wNjgtNS4wNzYtMTEuODI0LTcuODU2LTE5LjAzNi03Ljg1NmMtNy4yLDAtMTMuOTU2LDIuNzgtMTkuMDI0LDcuODU2TDI0Ni4wMDgsMTkxLjgyTDYyLjA0OCw3Ljg3MiAgICBjLTUuMDYtNS4wNzYtMTEuODItNy44NTYtMTkuMDI4LTcuODU2Yy03LjIsMC0xMy45NiwyLjc4LTE5LjAyLDcuODU2TDcuODcyLDIzLjk4OGMtMTAuNDk2LDEwLjQ5Ni0xMC40OTYsMjcuNTY4LDAsMzguMDUyICAgIEwxOTEuODI4LDI0Nkw3Ljg3Miw0MjkuOTUyYy01LjA2NCw1LjA3Mi03Ljg1MiwxMS44MjgtNy44NTIsMTkuMDMyYzAsNy4yMDQsMi43ODgsMTMuOTYsNy44NTIsMTkuMDI4bDE2LjEyNCwxNi4xMTYgICAgYzUuMDYsNS4wNzIsMTEuODI0LDcuODU2LDE5LjAyLDcuODU2YzcuMjA4LDAsMTMuOTY4LTIuNzg0LDE5LjAyOC03Ljg1NmwxODMuOTYtMTgzLjk1MmwxODMuOTUyLDE4My45NTIgICAgYzUuMDY4LDUuMDcyLDExLjgyNCw3Ljg1NiwxOS4wMjQsNy44NTZoMC4wMDhjNy4yMDQsMCwxMy45Ni0yLjc4NCwxOS4wMjgtNy44NTZsMTYuMTItMTYuMTE2ICAgIGM1LjA2LTUuMDY0LDcuODUyLTExLjgyNCw3Ljg1Mi0xOS4wMjhjMC03LjIwNC0yLjc5Mi0xMy45Ni03Ljg1Mi0xOS4wMjhMMzAwLjE4OCwyNDZ6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==')
 
-
 @media screen and ( max-width: 576.98px )
     .products
         h1
@@ -523,7 +523,33 @@
                 padding-right: 0.25em
                 padding-left: 0.25em
         &-filter
+            padding: 2em 1em
             form.smartfilter
+                .box-checkbox
+                    display: flex
+                    align-items: center
+                    justify-content: flex-start
+                    flex-wrap: wrap
+                    .smart-filter-parameters-box-title,
+                    .block-input
+                        flex: 0 0 100%
+                    .form-check
+                        flex: 0 0 auto
+                        label
+                            border: 1px solid $accent
+                            border-radius: 4px
+                            padding: .5em
+                            font-size: 0.9em
+                            margin-right: 0.5em
+                            transition: background .3s ease, color .3s ease
+                            &::before
+                                display: none
+                        input:checked + label
+                            background: $accent
+                            color: #fff
+                    .more
+                        flex: 0 0 100%
+
                 .wrapp_change_inputs
                     .bx_filter_parameters_box_container_block
                         width: 150px
@@ -582,7 +608,14 @@
                 .smart-filter-block-button
                     .form-group
                         .btn
-                            font-size: .9em !important
+                            font-size: 1.1em !important
+                            padding: 1em !important
+                            flex: 0 0 100%
+                            &:first-child
+                                margin-right: 0
+                                margin-bottom: 0.5em
+                            &:last-child
+                                margin-left: 0
 
         &-sort
             p
