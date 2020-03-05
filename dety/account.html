@@ -87,12 +87,12 @@
                 <div class="account-data-private">
                   <div class="form-row">
                     <label for="lastname">Фамилия <span>*</span></label>
-                    <input type="text" id="lastname" name="lastname" placeholder="" pattern="^[А-Яа-яЁё\s]+$" required>
+                    <input type="text" id="lastname" name="lastname" placeholder="" pattern="^[А-Яа-яЁё\s]+$">
                     <span>Введите Фамилию на русском языке</span>
                   </div>
                   <div class="form-row">
                     <label for="firstname">Имя <span>*</span></label>
-                    <input type="text" id="firstname" name="firstname" placeholder="" pattern="^[А-Яа-яЁё\s]+$" required>
+                    <input type="text" id="firstname" name="firstname" placeholder="" pattern="^[А-Яа-яЁё\s]+$">
                     <span>Введите Имя на русском языке</span>
                   </div>
                   <div class="form-row">
@@ -102,7 +102,7 @@
                   </div>
                   <div class="form-row">
                     <label for="userphone">Телефон <span>*</span></label>
-                    <input type="tel" id="userphone" name="userphone" class="phone-mask" pattern="+7\([0-9]{3}\)[0-9]{3}-[0-9]{4}" placeholder="" required>
+                    <input type="tel" id="userphone" name="userphone" class="phone-mask" pattern="+7\([0-9]{3}\)[0-9]{3}-[0-9]{4}" placeholder="">
                   </div>
                   <div class="form-row">
                     <label for="email">E-mail</label>
@@ -118,7 +118,7 @@
                   <div class="adress adress-0 addAdress">
                     <div class="form-row">
                       <label for="city">Город <span>*</span></label>
-                      <input type="text" id="city" class="city" name="city" value="Краснодар" pattern="^[А-Яа-яЁё\s]+$" placeholder="" required>
+                      <input type="text" id="city" class="city" name="city" value="Краснодар" pattern="^[А-Яа-яЁё\s]+$" placeholder="">
                       <span>Введите Город на русском языке</span>
                     </div>
                     <div class="form-row">
@@ -453,10 +453,6 @@
         const btn = element.querySelector('button')
         
         btn.disabled = true
-        // if (element.querySelectorAll('input')[0].value == '' || element.querySelectorAll('input')[1].value == '' || element.querySelectorAll('input')[3].value == '') {
-        //   console.log(element.querySelectorAll('input')[0].value)
-        //   element.querySelector('.add') ? element.querySelector('.add').classList.add('hidden') : ''
-        // }
         element.addEventListener('change', () => {
           if ( element.querySelector('.account-data-private') && element.querySelectorAll('input')[0].value != '' && element.querySelectorAll('input')[1].value != '' && element.querySelectorAll('input')[3].value != '' ) {
             btn.disabled = false
@@ -488,7 +484,7 @@
         div.innerHTML  = `
             <div class="form-row">
               <label for="city">Город <span>*</span></label>
-              <input type="text" id="city${counter}" class="city" name="city${counter}" pattern="^[А-Яа-яЁё\s]+$" placeholder="" required>
+              <input type="text" id="city${counter}" class="city" name="city${counter}" pattern="^[А-Яа-яЁё\s]+$" placeholder="">
               <span>Введите Город на русском языке</span>
             </div>
             <div class="form-row">
