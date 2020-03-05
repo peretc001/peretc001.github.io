@@ -3,23 +3,40 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="yandex-verification" content="a62f723da8c37b5c" />
+	<?php
+	if ( is_front_page() ) {
+	echo '<link rel="canonical" href="https://split-price.ru/"/>';
+	}
+	?>
 	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/img/logo.png" type="image/png" />
 	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/img/logo.png" />
    <title><?php 
    if ( is_tax('brands') ) {
       $term = get_queried_object();
-      echo 'Купить сплит-системы '. $term->name .' - '. get_bloginfo('name');
+      echo 'Сплит-система '. $term->name .': купить в Краснодаре кондиционер '. $term->name .' дешево: Цена, отзывы';
    } else if ( is_category() ) {
       echo single_cat_title() .' - '. get_bloginfo('name');
    } else if ( is_singular('seria') ) {
       $term_list = wp_get_post_terms( $post->ID, 'brands', array('fields' => 'names') );
-      echo 'Сплит система ';
+      echo 'Кондиционер ';
       echo $term_list[0];
       echo ' ';
       echo the_title();
+      echo ' купить в Краснодаре недорого: цена, характеристики';
+   } else if ( is_front_page() ) {
+      echo 'Купить кондиционер в Краснодаре дешево. Недорогие  Сплит-системы';
+   } else if ( is_single(57) ) {
+      echo 'Кондиционер ремонт в краснодаре на дому недорого цена';
+   } else if ( is_single(59) ) {
+      echo 'Чистка сплит систем в краснодаре на дому цена';
+   } else if ( is_single(61) ) {
+      echo 'Установка сплит систем в краснодаре: цена недорого';
+   } else if ( is_page(6016) || is_page(6019) || is_page(6022) || is_page(6025) || is_page(6028) ) {
+      echo the_title() .' купить в краснодаре недорого: цена';
    }
    else {
-      echo get_bloginfo('name') .' - '. get_bloginfo('description'); 
+      echo the_title() .' - '. get_bloginfo('name') .' - '. get_bloginfo('description'); 
    }
       ?></title>
    <?php wp_head(); 

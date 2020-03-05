@@ -123,6 +123,11 @@ $(function() {
         $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut('fast');
     });
 
+    $('.menu--hover.prom').click(function(e) {
+        var url = $('#promDropdownMenu').attr('href')
+        $(location).attr('href',url);
+    })
+    
     //Add to cart
     $('#add').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget);
@@ -140,6 +145,15 @@ $(function() {
         if (modalTitle)     modal.find('input[name="data-title"]').val(modalTitle);
         if (modalModel)     modal.find('input[name="data-model"]').val(modalModel);
         if (modalPrice)     modal.find('input[name="data-price"]').val(modalPrice);
+    });
+
+    $('#credit').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var modalName     = button.data('credit');
+
+        var modal = $(this);
+        if (modalName)      modal.find('.name').html(modalName);
+        if (modalName)      modal.find('input[name="data-credit"]').val(modalName);
     });
 
     if( document.querySelector('.product__carousel.init') || document.querySelector('.our__work') ) {

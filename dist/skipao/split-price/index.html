@@ -250,15 +250,14 @@
                      <h4><span>Предлагаем</span></h4>
                      <div class="credit">
                         <img src="./img/about/discount.svg" alt="">
-                        <a href="/oplata.html"><span>Кредит</span></a>
+                        <a href="" data-toggle="modal" data-target="#credit" 
+                              data-credit="Заявка на кредит" ><span>Кредит</span></a>
                      </div>
                      <div class="credit">
                         <img src="./img/about/calendar.svg" alt="">
-                        <a href="/oplata.html"><span>Рассрочка</span></a>
+                        <a href="" data-toggle="modal" data-target="#credit" 
+                              data-credit="Заявка на рассрочку" ><span>Рассрочка</span></a>
                      </div>
-                     <!-- <div class="repair">
-                        <a href="/oplata.html" class="btn btn-accent">Подробнее</a>
-                     </div> -->
                   </div>
                </div>
             </div>
@@ -1297,6 +1296,39 @@
                   <input type="hidden" name="data-title" value="">
                   <input type="hidden" name="data-model" value="">
                   <input type="hidden" name="data-price" value="">
+                  <input type="text" name="name" class="form-control" placeholder="Имя">
+                  <input type="tel" name="phone" class="form-control tel" placeholder="Телефон" required>
+                  
+                  <div class="robot">
+                     <div class="robot__check">
+                        <svg viewBox="0 0 60 60">
+                           <line class="st0 line1" x1="4.5" y1="30.5" x2="29.5" y2="52.5"/>
+                           <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
+                        </svg>
+                     </div>
+                     <span>Согласен с условиями <a href="#" data-toggle="modal" data-target="#policy">Политики конфиденциальности</a></span>
+                  </div>
+
+                  <button type="submit" class="btn callback__form__button" disabled>Заказать</button>
+               </div>
+               </form>
+            </div>
+            <div class="request_callback__footer">Заявка принята!!!</div>
+         </div>
+      </div>
+   </div>
+
+   <div class="modal fade" id="credit" tabindex="-1" role="dialog" aria-labelledby="callbackTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+               <span class="name"></span>
+               <form action="/" class="callback__form" method="post">
+               <div class="form-row">
+                  <input type="hidden" name="data-credit" value="">
                   <input type="text" name="name" class="form-control" placeholder="Имя">
                   <input type="tel" name="phone" class="form-control tel" placeholder="Телефон" required>
                   

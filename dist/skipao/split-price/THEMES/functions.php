@@ -170,6 +170,13 @@ remove_action( 'wp_head', 'wp_oembed_add_host_js' );
 // 	}
 // } );
 
+//Переадресация для Моделей
+add_action( 'template_redirect', function() {
+	if ( is_singular( 'models' ) ) {
+			wp_redirect( home_url() );
+		exit;
+	}
+} );
 //Получаем первую картинку поста
 function skipao_get_first_img() {
 	global $post, $posts;
@@ -606,3 +613,33 @@ function add_shortcode_skipao_map(){
 	return '<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aaa679d9bead2a71032587d45bde9da34d2bfbb1e04eb7ee5ddc5ef2b473a047c&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>';
 }
 add_shortcode('skipao_map', 'add_shortcode_skipao_map');
+
+
+//Вычисляем модель для мобильной версии
+function add_shortcode_skipao_mobile_model($model_square){
+
+	if ( $model_square == 20) {
+		$model_number = '07';
+	}
+	else if ( $model_square == 25) {
+		$model_number = '09';
+	}
+	else if ( $model_square == 35) {
+		$model_number = '12';
+	}
+	else if ( $model_square >= 50 && $model_square <= 60) {
+		$model_number = '18';
+	}
+	else if ( $model_square >= 70 && $model_square <= 75) {
+		$model_number = '24';
+	}
+	else if ( $model_square == 90) {
+		$model_number = '30';
+	}
+	else if ( $model_square == 110) {
+		$model_number = '36';
+	}
+
+	return $model_number;
+}
+add_shortcode('wp_footer', 'add_shortcode_skipao_mobile_model');
