@@ -1234,9 +1234,9 @@
 
 
       let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth       
-      const preventDefault = (e) => {
-          e.preventDefault();
-      }
+      // const preventDefault = (e) => {
+      //     e.preventDefault();
+      // }
       const disableScroll = () => {
           if ( width < 767 ) { 
             document.body.classList.add('no-scroll') 
@@ -1282,9 +1282,9 @@
           enableScroll()
         }
       }
-      $('.products-page-body__item__right__img__wrapp').on('click', 'img', openGallery)
-      $('.products-page-body__item .zoom').on('click', openGallery)
-      $('.products-page-body__item .close').on('click', closeGallery)
+      // $('.products-page-body__item__right__img__wrapp').on('click', 'img', openGallery)
+      // $('.products-page-body__item .zoom').on('click', openGallery)
+      // $('.products-page-body__item .close').on('click', closeGallery)
 
 
       $('.resent-products').slick({
@@ -1338,10 +1338,10 @@
     });
 
     document.addEventListener("DOMContentLoaded", function() {
-      if ( document.querySelector('.products-page-body__rq') ) {
+      if ( document.querySelector('[data-target="review"]') ) {
           //Input file
           let inputs = document.querySelectorAll('.input__file');
-          Array.prototype.forEach.call(inputs, function (input) {
+          inputs.forEach(input =>{
               let label = input.nextElementSibling,
               labelVal = label.querySelector('.input__file-button-text').innerText;
           
