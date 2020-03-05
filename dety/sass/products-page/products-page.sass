@@ -73,6 +73,7 @@
             padding: 1em 2em
             display: flex
             align-items: flex-start
+            justify-content: flex-start
             flex-wrap: no-wrap
             position: relative
             &::before
@@ -154,7 +155,10 @@
             
             &__left
                 position: relative
-                flex: 0 0 120px
+                flex: 0 0 100px
+                display: flex
+                align-items: center
+                justify-content: center
                 &__thumb
                     margin: 0
                     padding: 0
@@ -163,23 +167,23 @@
                         padding: 0
                         list-style: none
                     img
-                        max-width: 100px
                         cursor: pointer
                         border: 2px solid #fff
                     .slick-slide
                         outline: none
-                        margin: .5em 0
                         &.slick-current
                             img
                                 border: 2px solid $accent
                     .slick-list
-                        margin: -.5em 0
+                        margin: 0
+                    .slick-track
+                        margin: 0
 
             &__right
-                flex: 0 0 calc(100%-120px)
+                padding-left: 2em
+                flex: 0 1 auto
                 overflow: hidden
-                display: flex
-                flex-direction: column
+                
                 &__tag
                     display: flex
                     align-items: center
@@ -232,6 +236,7 @@
                     overflow: hidden
                     position: relative
                     width: 100%
+                    height: 100%
                     margin-top: 2em
                     ul
                         margin: 0
@@ -286,6 +291,43 @@
                         left: 0
                         background-position: 45%
                         background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMTk4LjYwOCwyNDYuMTA0TDM4Mi42NjQsNjIuMDRjNS4wNjgtNS4wNTYsNy44NTYtMTEuODE2LDcuODU2LTE5LjAyNGMwLTcuMjEyLTIuNzg4LTEzLjk2OC03Ljg1Ni0xOS4wMzJsLTE2LjEyOC0xNi4xMiAgICBDMzYxLjQ3NiwyLjc5MiwzNTQuNzEyLDAsMzQ3LjUwNCwwcy0xMy45NjQsMi43OTItMTkuMDI4LDcuODY0TDEwOS4zMjgsMjI3LjAwOGMtNS4wODQsNS4wOC03Ljg2OCwxMS44NjgtNy44NDgsMTkuMDg0ICAgIGMtMC4wMiw3LjI0OCwyLjc2LDE0LjAyOCw3Ljg0OCwxOS4xMTJsMjE4Ljk0NCwyMTguOTMyYzUuMDY0LDUuMDcyLDExLjgyLDcuODY0LDE5LjAzMiw3Ljg2NGM3LjIwOCwwLDEzLjk2NC0yLjc5MiwxOS4wMzItNy44NjQgICAgbDE2LjEyNC0xNi4xMmMxMC40OTItMTAuNDkyLDEwLjQ5Mi0yNy41NzIsMC0zOC4wNkwxOTguNjA4LDI0Ni4xMDR6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBzdHlsZT0iZmlsbDojQUM1MkJGIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==')
+
+                    .slick-dots
+                        margin: 0 auto
+                        margin-top: 1em
+                        padding: 0
+                        display: flex !important
+                        justify-content: center
+                        li
+                            list-style: none
+                            display: inline-block
+                            width: .8em
+                            height: .8em
+                            border-radius: 50%
+                            margin: 0
+                            padding: 0
+                            margin-right: 10px
+                            &:last-child
+                                margin-right: 0
+                            button
+                                display: block
+                                width: 100%
+                                height: 100%
+                                border-radius: 50%
+                                padding: 0
+                                margin: 0
+                                font-size: 0
+                                position: relative
+                                background: transparent
+                                border: 1px solid $accent
+                                cursor: pointer
+                                outline: none
+                                box-shadow: none
+                                appearance: none
+
+                        .slick-active
+                            button
+                                background: $accent
 
         &__buy
             float: right
@@ -883,6 +925,12 @@
                     border-right: none
                 &--right
                     flex-wrap: wrap
+                
+                &__price
+                    &__tag
+                        span
+                            font-size: 1em
+
                 &__size,
                 &__color
                     &__block
@@ -946,6 +994,12 @@
                                     width: 40%
                                 &:last-child
                                     width: 60%
+            &__buy
+                &__price
+                    &__tag
+                        span
+                            font-size: .85em
+
             &__rq
                 padding: 2em 1em 1em 1em
                 &__head
@@ -965,6 +1019,13 @@
             padding: 0 .25em
 
 @media screen and ( max-width: 424.98px )
+    .products-page
+        &__buy
+            &-body
+                &__price
+                    &__tag
+                        span
+                            font-size: .7em
     .resent,
     .visited
         h4
@@ -984,6 +1045,9 @@
             &__buy
                 &__price
                     font-size: .9em
+                    &__tag
+                        span
+                            font-size: .8em
                 &__button
                     .btn
                         font-size: 1em
