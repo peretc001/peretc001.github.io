@@ -1360,16 +1360,22 @@ var SliderCarousel = /*#__PURE__*/function () {
       }
     });
 
+    _defineProperty(this, "dragSlider", function (res) {
+      _this.wrap.style.transform = "translateX(-".concat(_this.options.position * _this.options.slideCount - res, "%)");
+    });
+
     _defineProperty(this, "dragStart", function (e) {
       e = e || window.event;
-      e.preventDefault();
 
       if (e.type == 'touchstart') {
         _this.postX1 = e.touches[0].clientX;
       } else {
         _this.postX1 = e.clientX;
-      } // console.log(this.postX1)
+      }
 
+      document.addEventListener('touchend', _this.dragEnd);
+      document.addEventListener('touchmove', _this.dragAction);
+      _this.dragStartPoint = e.touches[0].clientX;
     });
 
     _defineProperty(this, "dragAction", function (e) {
@@ -1383,12 +1389,17 @@ var SliderCarousel = /*#__PURE__*/function () {
         _this.postX1 = e.clientX;
       }
 
-      var length = Math.abs(e.touches[0].screenX - _this.slides[0].clientWidth);
-      console.log(length); // this.wrap.style.transform = `translateX(${length}px)`
+      _this.dragEndPoint = e.touches[0].clientX;
+      var res = (_this.dragEndPoint - _this.dragStartPoint) / _this.dragStartPoint * 100;
+      console.log('s: ' + _this.dragStartPoint, 'e: ' + _this.dragEndPoint, 'res: ' + res);
+      document.addEventListener('touchmove', _this.dragSlider(res));
     });
 
-    _defineProperty(this, "dragEnd", function () {
-      _this.postX2 < 0 ? _this.prevSlider() : _this.nextSlider();
+    _defineProperty(this, "dragEnd", function (e) {
+      if (_this.postX2 < 0) _this.prevSlider();
+      if (_this.postX2 > 0) _this.nextSlider();
+      document.removeEventListener('touchend', _this.dragEnd);
+      document.removeEventListener('touchmove', _this.dragAction);
     });
 
     this.id = id, this.main = document.querySelector(main);
@@ -1400,7 +1411,9 @@ var SliderCarousel = /*#__PURE__*/function () {
       position: position,
       maxPosition: this.slides.length - this.slideToShow,
       infinity: infinity,
-      slideCount: 100 / this.slideToShow
+      slideCount: 100 / this.slideToShow,
+      dragStartPoint: null,
+      dragEndPoint: null
     }, this.responsive = responsive;
   }
 
@@ -1471,9 +1484,8 @@ var SliderCarousel = /*#__PURE__*/function () {
       try {
         for (var _iterator2 = this.slides[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
           var item = _step2.value;
-          item.addEventListener('touchstart', this.dragStart);
-          item.addEventListener('touchmove', this.dragAction);
-          item.addEventListener('touchend', this.dragEnd);
+          item.addEventListener('touchstart', this.dragStart); // item.addEventListener('touchmove',  this.dragAction)
+          // item.addEventListener('touchend',   this.dragEnd)
         }
       } catch (err) {
         _didIteratorError2 = true;
@@ -1492,34 +1504,6 @@ var SliderCarousel = /*#__PURE__*/function () {
     }
   }, {
     key: "addArrow",
-    // dragMouse = (e) => {
-    //   // console.log(e.touches[0].clientX)
-    //   // this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideCount}%)`
-    // }
-    // shiftSlide = (dir, action) => {
-    //   wrap.classList.add('shifting');
-    //   // if (!action) { posInitial = items.offsetLeft; }
-    //   if (this.options.position == 0) {
-    //     // items.style.left = (posInitial - slideSize) + "px";
-    //     this.options.position++;      
-    //   } else if (this.options.position == -1) {
-    //     // items.style.left = (posInitial + slideSize) + "px";
-    //     this.options.position--;      
-    //   }
-    //   this.allowShift = false;
-    // }
-    // checkIndex = () => {
-    //   wrap.classList.remove('shifting');
-    //   if (this.options.position == -1) {
-    //     // items.style.left = -(slidesLength * slideSize) + "px";
-    //     this.options.position = this.options.maxPosition - 1;
-    //   }
-    //   if (this.options.position == this.options.maxPosition) {
-    //     // items.style.left = -(1 * slideSize) + "px";
-    //     this.options.position = 0;
-    //   }
-    //   this.allowShift = true;
-    // }
     value: function addArrow() {
       this.prev = document.createElement('button');
       this.next = document.createElement('button');
@@ -1575,7 +1559,9 @@ var SliderCarousel = /*#__PURE__*/function () {
 
   return SliderCarousel;
 }();
-//     class SliderCarousel {
+
+
+//   class SliderCarousel {
 //     constructor({
 //         id,
 //         main, 
@@ -1601,7 +1587,9 @@ var SliderCarousel = /*#__PURE__*/function () {
 //             position,
 //             maxPosition: this.slides.length - this.slideToShow,
 //             infinity,
-//             slideCount : 100 / this.slideToShow
+//             slideCount : 100 / this.slideToShow,
+//             dragStartPoint: null,
+//             dragEndPoint: null
 //         },
 //         this.responsive = responsive;
 //     }
@@ -1662,8 +1650,8 @@ var SliderCarousel = /*#__PURE__*/function () {
 
 //         for( const item of this.slides) {
 //             item.addEventListener('touchstart', this.dragStart)
-//             item.addEventListener('touchmove',  this.dragAction)
-//             item.addEventListener('touchend',   this.dragEnd)
+//             // item.addEventListener('touchmove',  this.dragAction)
+//             // item.addEventListener('touchend',   this.dragEnd)
 //         }
 //     }
 
@@ -1678,6 +1666,7 @@ var SliderCarousel = /*#__PURE__*/function () {
 //             !this.options.infinity && this.options.position == this.options.maxPosition ? this.next.classList.add('hidden') : this.next.classList.remove('hidden')
 //         }
 //     }
+    
 //     nextSlider = () => {
 //         if ( this.options.infinity || this.options.position < this.options.maxPosition) {
 //             ++this.options.position
@@ -1689,15 +1678,22 @@ var SliderCarousel = /*#__PURE__*/function () {
 //             !this.options.infinity && this.options.position == this.options.maxPosition ? this.next.classList.add('hidden') : this.next.classList.remove('hidden')
 //         }
 //     }
+
+//     dragSlider = (res) => {
+//       this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideCount - res}%)`
+//     }
+    
 //     dragStart = (e) => {
 //         e = e || window.event
-//         e.preventDefault();
 //         if (e.type == 'touchstart') {
 //             this.postX1 = e.touches[0].clientX
 //         } else {
 //             this.postX1 = e.clientX
 //         }
-//         // console.log(this.postX1)
+//         document.addEventListener('touchend', this.dragEnd)
+//         document.addEventListener('touchmove', this.dragAction)
+//         this.dragStartPoint = e.touches[0].clientX
+        
 //     }
 //     dragAction = (e) => {
 //         e = e || window.event
@@ -1708,48 +1704,18 @@ var SliderCarousel = /*#__PURE__*/function () {
 //             this.postX2 = this.postX1 - e.clientX
 //             this.postX1 = e.clientX
 //         }
-//         let length = Math.abs(e.touches[0].screenX - this.slides[0].clientWidth)
-//         console.log(length)
-//         // this.wrap.style.transform = `translateX(${length}px)`
+//         this.dragEndPoint = e.touches[0].clientX
+//         let res = (this.dragEndPoint - this.dragStartPoint)/this.dragStartPoint*100
+//         console.log('s: ' + this.dragStartPoint, 'e: ' + this.dragEndPoint, 'res: ' + res)
+//         document.addEventListener('touchmove', this.dragSlider(res))
 //     }
-//     dragEnd = () => {
-//         this.postX2 < 0 ? this.prevSlider() : this.nextSlider()
+//     dragEnd = (e) => {
+      
+//       if (this.postX2 < 0) this.prevSlider()
+//       if (this.postX2 > 0) this.nextSlider()
+//       document.removeEventListener('touchend', this.dragEnd)
+//       document.removeEventListener('touchmove', this.dragAction)
 //     }
-
-//     // dragMouse = (e) => {
-//     //   // console.log(e.touches[0].clientX)
-//     //   // this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideCount}%)`
-//     // }
-//     // shiftSlide = (dir, action) => {
-//     //   wrap.classList.add('shifting');
-      
-      
-//     //   // if (!action) { posInitial = items.offsetLeft; }
-
-//     //   if (this.options.position == 0) {
-//     //     // items.style.left = (posInitial - slideSize) + "px";
-//     //     this.options.position++;      
-//     //   } else if (this.options.position == -1) {
-//     //     // items.style.left = (posInitial + slideSize) + "px";
-//     //     this.options.position--;      
-//     //   }
-//     //   this.allowShift = false;
-//     // }
-//     // checkIndex = () => {
-//     //   wrap.classList.remove('shifting');
-
-//     //   if (this.options.position == -1) {
-//     //     // items.style.left = -(slidesLength * slideSize) + "px";
-//     //     this.options.position = this.options.maxPosition - 1;
-//     //   }
-
-//     //   if (this.options.position == this.options.maxPosition) {
-//     //     // items.style.left = -(1 * slideSize) + "px";
-//     //     this.options.position = 0;
-//     //   }
-      
-//     //   this.allowShift = true;
-//     // }
 
 //     addArrow() {
 //         this.prev = document.createElement('button')
