@@ -72,7 +72,7 @@
       <div class="container">
         
         <h1>Толстовка Blue Seven розовая</h1>
-        
+
         <div class="products-page-header">
             <span>Артикул: <b>258697</b></span>
             <div class="products-page-header__review">
@@ -91,12 +91,12 @@
           <div class="products-page-body__item">
             <div class="close"></div>
             <div class="products-page-body__item__left">
-              <ul class="products-page-body__item__left__thumb">
+              <!-- <ul class="products-page-body__item__left__thumb">
                 <li><img src="./img/products/card/1.jpg" alt=""></li>
                 <li><img src="./img/products/card/2.jpg" alt=""></li>
                 <li><img src="./img/products/card/3.jpg" alt=""></li>
                 <li><img src="./img/products/card/4.jpg" alt=""></li>
-              </ul>
+              </ul> -->
             </div>
 
             <div class="products-page-body__item__right">
@@ -112,6 +112,8 @@
                   <li><img src="./img/products/card/2.jpg" alt=""></li>
                   <li><img src="./img/products/card/3.jpg" alt=""></li>
                   <li><img src="./img/products/card/4.jpg" alt=""></li>
+                  <li><img src="./img/products/card/5.jpg" alt=""></li>
+                  <li><img src="./img/products/card/6.jpg" alt=""></li>
                 </ul>
                 <span class='zoom'><img src="./img/zoom.svg"></span>
               </div>
@@ -1137,47 +1139,47 @@
 <script src="./js/fancybox/jquery.fancybox.min.js"></script>
 <link rel="stylesheet" href="./js/fancybox/jquery.fancybox.min.css">
 
+
   <script>
     $( document ).ready(function() {
-      $('.products-page-body__item__left__thumb').slick({
-        vertical: true,
-        infinite: true,
-        slidesToShow: 3,
-        asNavFor: '.products-page-body__item__right__img__wrapp',
-        focusOnSelect: true,
-        arrows: false,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 4,
-            }
-          },
-          {
-            breakpoint: 991,
-            settings: {
-              slidesToShow: 5,
-            }
-          }
-        ]
-      });
+      // $('.products-page-body__item__left__thumb').slick({
+      //   vertical: true,
+      //   infinite: false,
+      //   slidesToShow: 3,
+      //   asNavFor: '.products-page-body__item__right__img__wrapp',
+      //   focusOnSelect: true,
+      //   arrows: false,
+      //   responsive: [
+      //     {
+      //       breakpoint: 1024,
+      //       settings: {
+      //         slidesToShow: 4,
+      //       }
+      //     },
+      //     {
+      //       breakpoint: 991,
+      //       settings: {
+      //         slidesToShow: 5,
+      //       }
+      //     }
+      //   ]
+      // });
 
-      $('.products-page-body__item__right__img__wrapp').slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        focusOnSelect: true,
-        asNavFor: '.products-page-body__item__left__thumb',
-        responsive: [
-          {
-            breakpoint: 767,
-            settings: {
-              arrows: false,
-              dots: true
-            }
-          }
-        ]
-      });
+      // $('.products-page-body__item__right__img__wrapp').slick({
+      //   infinite: false,
+      //   slidesToShow: 1,
+      //   slidesToScroll: 1,
+      //   asNavFor: '.products-page-body__item__left__thumb',
+      //   responsive: [
+      //     {
+      //       breakpoint: 767,
+      //       settings: {
+      //         arrows: false,
+      //         dots: true
+      //       }
+      //     }
+      //   ]
+      // });
 
       
 
@@ -1214,7 +1216,7 @@
         if ( galleryIsOpen == false) {
           disableScroll()
           $('.products-page-body__item').addClass('is-active')
-          $('.products-page-body__item__right__img__wrapp').slick('setPosition')
+          // $('.products-page-body__item__right__img__wrapp').slick('setPosition')
           galleryIsOpen = true
           document.addEventListener('keydown', closeGalleryEsc)
         } else {
@@ -1224,7 +1226,7 @@
       const closeGallery = () => {
         if ( galleryIsOpen == true) {
           $('.products-page-body__item').removeClass('is-active')
-          $('.products-page-body__item__right__img__wrapp').slick('setPosition')
+          // $('.products-page-body__item__right__img__wrapp').slick('setPosition')
           galleryIsOpen = false
           document.removeEventListener('keydown', closeGalleryEsc)
           enableScroll()
@@ -1286,6 +1288,32 @@
     });
 
     document.addEventListener("DOMContentLoaded", function() {
+
+      const options = {
+              id: 'img',
+              main: '.products-page-body__item__right__img',
+              wrap: '.products-page-body__item__right__img__wrapp',
+            //   prev: '.companies-wrapper .prev',
+            //   next: '.companies-wrapper .next',
+              infinity: false,
+              slideToShow: 1,
+              responsive: [
+                {
+                    breakpoint: 1024,
+                    slideToShow: 3
+                },
+                {
+                    breakpoint: 768,
+                    slideToShow: 2
+                },
+                {
+                    breakpoint: 576,
+                    slideToShow: 1
+                }
+            ]
+          }
+          const carousel = new SliderCarousel(options)
+          carousel.init()
       if ( document.querySelector('.products-page-body__rq') ) {
         //Input file
         let inputs = document.querySelectorAll('.input__file');
