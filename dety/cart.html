@@ -542,6 +542,22 @@
   <script defer src='./js/app.394e5ec0.js'></script>
   <link href='./css/app.6e1150c3.css' rel=stylesheet>
   <link rel="stylesheet" href="./css/main.min.css">
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      if ( document.querySelector('.qty-input') ) {
+          const input = document.querySelectorAll('.qty-input')
+          input.forEach(item => {
+
+              const   qty = item.querySelector('input[name="qty"]')
+                      minus = item.querySelector('.minus')
+                      plus = item.querySelector('.plus')
+                      minus.addEventListener('click', () => qty.value > 1 ? qty.value-- : '')
+                      plus.addEventListener('click', () => qty.value++)
+          })
+      }
+    })
+  </script>
 </body>
 </html>
 
