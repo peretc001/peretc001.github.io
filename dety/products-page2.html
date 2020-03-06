@@ -1235,8 +1235,8 @@
         }
       }
       // $('.products-page-body__item__right__img__wrapp').on('click', 'img', openGallery)
-      // $('.products-page-body__item .zoom').on('click', openGallery)
-      // $('.products-page-body__item .close').on('click', closeGallery)
+      $('.products-page-body__item .zoom').on('click', openGallery)
+      $('.products-page-body__item .close').on('click', closeGallery)
 
 
       $('.resent-products').slick({
@@ -1400,7 +1400,7 @@ var SliderCarousel = /*#__PURE__*/function () {
       }
 
       if (Math.abs(_this.postY2 - _this.postY1) < 100) {
-        _this.postY2 = _this.postY1;
+        window.scrollY = _this.postY1;
         _this.dragResult = (_this.dragEndPoint - _this.dragStartPoint) / _this.dragStartPoint * 100;
         if (Math.abs(_this.dragResult) > 10) document.addEventListener('touchmove', _this.dragSlider);
         if (Math.abs(_this.dragResult) > 10 && _this.drageble) document.addEventListener('drag', _this.dragSlider);
@@ -1559,6 +1559,8 @@ var SliderCarousel = /*#__PURE__*/function () {
 
   return SliderCarousel;
 }();
+
+
 // class SliderCarousel {
 //   constructor({
 //       id,
@@ -1651,7 +1653,6 @@ var SliderCarousel = /*#__PURE__*/function () {
 //   controlSlider() {
 //     this.prev.addEventListener('click', this.prevSlider)
 //     this.next.addEventListener('click', this.nextSlider)
-
 //     this.wrap.addEventListener('touchstart', this.dragStart)
 //     this.drageble ? this.wrap.addEventListener('dragstart', this.dragStart) : ''
 //   }
@@ -1708,7 +1709,7 @@ var SliderCarousel = /*#__PURE__*/function () {
 //         this.postY2 = e.clientY
 //       }
 //       if (Math.abs(this.postY2 - this.postY1) < 100) {
-//         this.postY2 = this.postY1
+//         window.scrollY = this.postY1
 //         this.dragResult = (this.dragEndPoint - this.dragStartPoint)/this.dragStartPoint*100
 //         if (Math.abs(this.dragResult) > 10) document.addEventListener('touchmove', this.dragSlider)
 //         if (Math.abs(this.dragResult) > 10 && this.drageble) document.addEventListener('drag', this.dragSlider)
