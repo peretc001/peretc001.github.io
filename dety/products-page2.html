@@ -1234,9 +1234,9 @@
           enableScroll()
         }
       }
-      $('.products-page-body__item__right__img__wrapp').on('click', 'img', openGallery)
-      $('.products-page-body__item .zoom').on('click', openGallery)
-      $('.products-page-body__item .close').on('click', closeGallery)
+      // $('.products-page-body__item__right__img__wrapp').on('click', 'img', openGallery)
+      // $('.products-page-body__item .zoom').on('click', openGallery)
+      // $('.products-page-body__item .close').on('click', closeGallery)
 
 
       $('.resent-products').slick({
@@ -1289,8 +1289,6 @@
       });
     });
 
-
-
     "use strict";
 
 function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return !!right[Symbol.hasInstance](left); } else { return left instanceof right; } }
@@ -1336,8 +1334,8 @@ var SliderCarousel = /*#__PURE__*/function () {
         dragEndPoint = _ref$dragEndPoint === void 0 ? null : _ref$dragEndPoint,
         _ref$dragResult = _ref.dragResult,
         dragResult = _ref$dragResult === void 0 ? null : _ref$dragResult,
-        _ref$mouseMove = _ref.mouseMove,
-        mouseMove = _ref$mouseMove === void 0 ? false : _ref$mouseMove;
+        _ref$drageble = _ref.drageble,
+        drageble = _ref$drageble === void 0 ? false : _ref$drageble;
 
     _classCallCheck(this, SliderCarousel);
 
@@ -1377,44 +1375,68 @@ var SliderCarousel = /*#__PURE__*/function () {
       }
     });
 
-    _defineProperty(this, "dragStart", function (e) {
-      e = e || window.event;
-      _this.dragStartPoint = e.touches[0].clientX;
-
-      _this.wrap.addEventListener('touchmove', _this.dragAction);
-
-      _this.wrap.addEventListener('touchend', _this.dragEnd);
-    });
-
-    _defineProperty(this, "dragAction", function (e) {
-      e = e || window.event;
-      _this.dragEndPoint = e.touches[0].clientX;
-      _this.dragResult = (_this.dragEndPoint - _this.dragStartPoint) / _this.dragStartPoint * 100;
-      if (Math.abs(_this.dragResult) > 8) document.addEventListener('touchmove', _this.dragSlider);
-    });
-
     _defineProperty(this, "dragEnd", function (e) {
       _this.wrap.classList.remove('drag');
-
-      if (_this.dragResult > 20) _this.prevSlider();
-      if (_this.dragResult < -20) _this.nextSlider();else _this.wrap.style.transform = "translateX(-".concat(_this.options.position * _this.options.slideCount, "%)");
 
       _this.wrap.removeEventListener('touchmove', _this.dragAction);
 
       _this.wrap.removeEventListener('touchend', _this.dragEnd);
+
+      _this.drageble ? _this.wrap.removeEventListener('drag', _this.dragAction) : '';
+      _this.drageble ? _this.wrap.removeEventListener('dragend', _this.dragEnd) : '';
+      if (_this.dragResult > 20) _this.prevSlider();
+      if (_this.dragResult < -20) _this.nextSlider();else _this.wrap.style.transform = "translateX(-".concat(_this.options.position * _this.options.slideCount, "%)");
+    });
+
+    _defineProperty(this, "dragAction", function (e) {
+      e = e || window.event;
+
+      if (e.type == 'touchmove') {
+        _this.dragEndPoint = e.touches[0].clientX;
+        _this.postY2 = e.touches[0].clientY;
+      } else {
+        _this.dragEndPoint = e.clientX;
+        _this.postY2 = e.clientY;
+      }
+
+      if (Math.abs(_this.postY2 - _this.postY1) < 100) {
+        _this.postY2 = _this.postY1;
+        _this.dragResult = (_this.dragEndPoint - _this.dragStartPoint) / _this.dragStartPoint * 100;
+        if (Math.abs(_this.dragResult) > 10) document.addEventListener('touchmove', _this.dragSlider);
+        if (Math.abs(_this.dragResult) > 10 && _this.drageble) document.addEventListener('drag', _this.dragSlider);
+      }
+    });
+
+    _defineProperty(this, "dragStart", function (e) {
+      e = e || window.event;
+
+      if (e.type == 'touchstart') {
+        _this.dragStartPoint = e.touches[0].clientX;
+        _this.postY1 = e.touches[0].clientY;
+      } else {
+        _this.dragStartPoint = e.clientX;
+        _this.postY1 = e.clientY;
+      }
+
+      _this.wrap.addEventListener('touchmove', _this.dragAction);
+
+      _this.wrap.addEventListener('touchend', _this.dragEnd);
+
+      _this.drageble ? _this.wrap.addEventListener('drag', _this.dragAction) : '';
+      _this.drageble ? _this.wrap.addEventListener('dragend', _this.dragEnd) : '';
     });
 
     this.id = id, this.main = document.querySelector(main);
     this.wrap = document.querySelector(wrap);
     this.slides = document.querySelector(wrap).children;
-    this.postX1 = 0, this.postX2 = 0, this.next = document.querySelector(next);
+    this.postY1 = 0, this.postY2 = 0, this.next = document.querySelector(next);
     this.prev = document.querySelector(prev);
     this.slideToShow = slideToShow, this.options = {
       position: position,
       maxPosition: this.slides.length - this.slideToShow,
       infinity: infinity,
       slideCount: 100 / this.slideToShow
-    }, this.responsive = responsive, this.mouseMove = mouseMove;
+    }, this.responsive = responsive, this.drageble = drageble;
   }
 
   _createClass(SliderCarousel, [{
@@ -1478,30 +1500,10 @@ var SliderCarousel = /*#__PURE__*/function () {
       this.prev.addEventListener('click', this.prevSlider);
       this.next.addEventListener('click', this.nextSlider);
       this.wrap.addEventListener('touchstart', this.dragStart);
-      this.mouseMove ? this.wrap.addEventListener('mousedown', this.mouseStart) : '';
+      this.drageble ? this.wrap.addEventListener('dragstart', this.dragStart) : '';
     }
   }, {
     key: "addArrow",
-    // mouseStart = (e) => {
-    //     e = e || window.event
-    //     this.dragStartPoint = e.touches[0].clientX
-    //     this.wrap.addEventListener('mousemove',  this.mouseAction)
-    //     this.wrap.addEventListener('mouseup',   this.mouseEnd)
-    // }
-    // mouseAction = (e) => {
-    //     e = e || window.event
-    //     this.dragEndPoint = e.touches[0].clientX
-    //     this.dragResult = (this.dragEndPoint - this.dragStartPoint)/this.dragStartPoint*100
-    //     if (Math.abs(this.dragResult) > 8) document.addEventListener('touchmove', this.dragSlider)
-    // }
-    // mouseEnd = (e) => {
-    //   this.wrap.classList.remove('drag')
-    //   if (this.dragResult > 20 ) this.prevSlider() 
-    //   if (this.dragResult < -20 ) this.nextSlider()
-    //   else this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideCount}%)`
-    //   this.wrap.removeEventListener('mousemove',  this.mouseAction)
-    //   this.wrap.removeEventListener('mouseup',   this.mouseEnd)
-    // }
     value: function addArrow() {
       this.prev = document.createElement('button');
       this.next = document.createElement('button');
@@ -1557,8 +1559,6 @@ var SliderCarousel = /*#__PURE__*/function () {
 
   return SliderCarousel;
 }();
-
-
 // class SliderCarousel {
 //   constructor({
 //       id,
@@ -1574,14 +1574,14 @@ var SliderCarousel = /*#__PURE__*/function () {
 //       dragStartPoint = null,
 //       dragEndPoint = null,
 //       dragResult = null,
-//       mouseMove = false
+//       drageble = false
 //   }) {
 //       this.id = id,
 //       this.main = document.querySelector(main)
 //       this.wrap = document.querySelector(wrap)
 //       this.slides = document.querySelector(wrap).children
-//       this.postX1 = 0,
-//       this.postX2 = 0,
+//       this.postY1 = 0,
+//       this.postY2 = 0,
 //       this.next = document.querySelector(next)
 //       this.prev = document.querySelector(prev)
 //       this.slideToShow = slideToShow,
@@ -1592,7 +1592,7 @@ var SliderCarousel = /*#__PURE__*/function () {
 //           slideCount : 100 / this.slideToShow
 //       },
 //       this.responsive = responsive,
-//       this.mouseMove = mouseMove;
+//       this.drageble = drageble;
 //   }
 
 //   init() {
@@ -1653,7 +1653,7 @@ var SliderCarousel = /*#__PURE__*/function () {
 //     this.next.addEventListener('click', this.nextSlider)
 
 //     this.wrap.addEventListener('touchstart', this.dragStart)
-//     this.mouseMove ? this.wrap.addEventListener('mousedown', this.mouseStart) : ''
+//     this.drageble ? this.wrap.addEventListener('dragstart', this.dragStart) : ''
 //   }
 
 //   prevSlider = () => {
@@ -1686,49 +1686,49 @@ var SliderCarousel = /*#__PURE__*/function () {
 //       this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideCount - this.dragResult}%)`
 //     }
 //   }
-  
-//   dragStart = (e) => {
-//       e = e || window.event
-//       this.dragStartPoint = e.touches[0].clientX
-//       this.wrap.addEventListener('touchmove',  this.dragAction)
-//       this.wrap.addEventListener('touchend',   this.dragEnd)
-//   }
-//   dragAction = (e) => {
-//       e = e || window.event
-//       this.dragEndPoint = e.touches[0].clientX
-//       this.dragResult = (this.dragEndPoint - this.dragStartPoint)/this.dragStartPoint*100
-//       if (Math.abs(this.dragResult) > 8) document.addEventListener('touchmove', this.dragSlider)
-//   }
+
 //   dragEnd = (e) => {
 //     this.wrap.classList.remove('drag')
+//     this.wrap.removeEventListener('touchmove',  this.dragAction)
+//     this.wrap.removeEventListener('touchend',   this.dragEnd)
+//     this.drageble ? this.wrap.removeEventListener('drag',  this.dragAction) : ''
+//     this.drageble ? this.wrap.removeEventListener('dragend',   this.dragEnd) : ''
+
 //     if (this.dragResult > 20 ) this.prevSlider() 
 //     if (this.dragResult < -20 ) this.nextSlider()
 //     else this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideCount}%)`
-//     this.wrap.removeEventListener('touchmove',  this.dragAction)
-//     this.wrap.removeEventListener('touchend',   this.dragEnd)
 //   }
+//   dragAction = (e) => {
+//       e = e || window.event
+//       if(e.type == 'touchmove') {
+//         this.dragEndPoint = e.touches[0].clientX
+//         this.postY2 = e.touches[0].clientY
+//       } else {
+//         this.dragEndPoint = e.clientX
+//         this.postY2 = e.clientY
+//       }
+//       if (Math.abs(this.postY2 - this.postY1) < 100) {
+//         this.postY2 = this.postY1
+//         this.dragResult = (this.dragEndPoint - this.dragStartPoint)/this.dragStartPoint*100
+//         if (Math.abs(this.dragResult) > 10) document.addEventListener('touchmove', this.dragSlider)
+//         if (Math.abs(this.dragResult) > 10 && this.drageble) document.addEventListener('drag', this.dragSlider)
+//       }
+//   }
+//   dragStart = (e) => {
+//       e = e || window.event
+//       if (e.type == 'touchstart') {
+//         this.dragStartPoint = e.touches[0].clientX
+//         this.postY1 = e.touches[0].clientY
+//       } else {
+//         this.dragStartPoint = e.clientX
+//         this.postY1 = e.clientY
+//       }
+//       this.wrap.addEventListener('touchmove',  this.dragAction)
+//       this.wrap.addEventListener('touchend',   this.dragEnd)
 
-//   // mouseStart = (e) => {
-//   //     e = e || window.event
-//   //     this.dragStartPoint = e.touches[0].clientX
-//   //     this.wrap.addEventListener('mousemove',  this.mouseAction)
-//   //     this.wrap.addEventListener('mouseup',   this.mouseEnd)
-//   // }
-//   // mouseAction = (e) => {
-//   //     e = e || window.event
-//   //     this.dragEndPoint = e.touches[0].clientX
-//   //     this.dragResult = (this.dragEndPoint - this.dragStartPoint)/this.dragStartPoint*100
-//   //     if (Math.abs(this.dragResult) > 8) document.addEventListener('touchmove', this.dragSlider)
-//   // }
-//   // mouseEnd = (e) => {
-//   //   this.wrap.classList.remove('drag')
-//   //   if (this.dragResult > 20 ) this.prevSlider() 
-//   //   if (this.dragResult < -20 ) this.nextSlider()
-//   //   else this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideCount}%)`
-//   //   this.wrap.removeEventListener('mousemove',  this.mouseAction)
-//   //   this.wrap.removeEventListener('mouseup',   this.mouseEnd)
-//   // }
-
+//       this.drageble ? this.wrap.addEventListener('drag',  this.dragAction) : ''
+//       this.drageble ? this.wrap.addEventListener('dragend',   this.dragEnd) : ''
+//   }
 
 //   addArrow() {
 //       this.prev = document.createElement('button')
@@ -1795,7 +1795,7 @@ var SliderCarousel = /*#__PURE__*/function () {
               next: '.products-page-body__item__right__img .next',
               infinity: false,
               slideToShow: 1,
-              mouseMove: true
+              drageble: false
           }
           const carousel = new SliderCarousel(options)
           carousel.init()
