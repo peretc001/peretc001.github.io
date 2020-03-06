@@ -1198,34 +1198,35 @@
 
   <script>
     $( document ).ready(function() {
-      $('.products-page-body__item__left__thumb').slick({
-        vertical: true,
-        infinite: true,
-        slidesToShow: 6,
-        asNavFor: '.products-page-body__item__right__img__wrapp',
-        focusOnSelect: true,
-        arrows: false,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 4,
-            }
-          },
-          {
-            breakpoint: 991,
-            settings: {
-              slidesToShow: 5,
-            }
-          }
-        ]
-      });
+    //   $('.products-page-body__item__left__thumb').slick({
+    //     vertical: true,
+    //     infinite: true,
+    //     slidesToShow: 6,
+    //     asNavFor: '.products-page-body__item__right__img__wrapp',
+    //     focusOnSelect: true,
+    //     arrows: false,
+    //     responsive: [
+    //       {
+    //         breakpoint: 1024,
+    //         settings: {
+    //           slidesToShow: 4,
+    //         }
+    //       },
+    //       {
+    //         breakpoint: 991,
+    //         settings: {
+    //           slidesToShow: 5,
+    //         }
+    //       }
+    //     ]
+    //   });
 
-      $('.products-page-body__item__right__img__wrapp').slick({
+      const imgSlider = $('.products-page-body__item__right__img__wrapp').slick({
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        asNavFor: '.products-page-body__item__left__thumb',
+        draggable: false,
+        // asNavFor: '.products-page-body__item__left__thumb',
         responsive: [
           {
             breakpoint: 767,
@@ -1270,8 +1271,8 @@
       const openGallery = () => {
         if ( galleryIsOpen == false) {
           disableScroll()
-          $('.products-page-body__item').addClass('is-active')
-          $('.products-page-body__item__right__img__wrapp').slick('setPosition')
+          document.querySelector('.products-page-body__item').classList.add('is-active')
+          imgSlider.slick('setPosition')
           galleryIsOpen = true
           document.addEventListener('keydown', closeGalleryEsc)
         } else {
@@ -1287,10 +1288,15 @@
           enableScroll()
         }
       }
-      $('.products-page-body__item__right__img__wrapp').on('click', 'img', openGallery)
-      $('.products-page-body__item .zoom').on('click', openGallery)
-      $('.products-page-body__item .close').on('click', closeGallery)
-
+      
+      const openGalleryBtn = document.querySelectorAll('.products-page-body__item__right__img__wrapp img')
+      const zoomBtn = document.querySelector('.products-page-body__item__right__img .zoom')
+      const closeBtn = document.querySelector('.products-page-body__item .close')
+      openGalleryBtn.forEach(item => {
+        item.addEventListener('click', openGallery)
+      })
+      zoomBtn.addEventListener('click', openGallery)
+      closeBtn.addEventListener('click', closeGallery)
 
       $('.resent-products').slick({
         lazyLoad: 'ondemand',
