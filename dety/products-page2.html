@@ -1289,6 +1289,8 @@
       // });
     });
 
+   
+  
     "use strict";
 
 function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return !!right[Symbol.hasInstance](left); } else { return left instanceof right; } }
@@ -1416,14 +1418,11 @@ var SliderCarousel = /*#__PURE__*/function () {
       } else {
         _this.dragStartPoint = e.clientX;
         _this.postY1 = e.clientY;
-      }
+      } // this.wrap.addEventListener('touchmove',  this.dragAction)
+      // this.wrap.addEventListener('touchend',   this.dragEnd)
+      // this.drageble ? this.wrap.addEventListener('drag',  this.dragAction) : ''
+      // this.drageble ? this.wrap.addEventListener('dragend',   this.dragEnd) : ''
 
-      _this.wrap.addEventListener('touchmove', _this.dragAction);
-
-      _this.wrap.addEventListener('touchend', _this.dragEnd);
-
-      _this.drageble ? _this.wrap.addEventListener('drag', _this.dragAction) : '';
-      _this.drageble ? _this.wrap.addEventListener('dragend', _this.dragEnd) : '';
     });
 
     this.id = id, this.main = document.querySelector(main);
@@ -1499,8 +1498,33 @@ var SliderCarousel = /*#__PURE__*/function () {
     value: function controlSlider() {
       this.prev.addEventListener('click', this.prevSlider);
       this.next.addEventListener('click', this.nextSlider);
-      this.wrap.addEventListener('touchstart', this.dragStart);
-      this.drageble ? this.wrap.addEventListener('dragstart', this.dragStart) : '';
+      this.wrap.addEventListener('touchstart', this.dragStart); // this.drageble ? this.wrap.addEventListener('dragstart', this.dragStart) : ''
+
+      var _iteratorNormalCompletion2 = true;
+      var _didIteratorError2 = false;
+      var _iteratorError2 = undefined;
+
+      try {
+        for (var _iterator2 = this.slides[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+          var item = _step2.value;
+          item.addEventListener('touchstart', this.dragStart);
+          item.addEventListener('touchmove', this.dragAction);
+          item.addEventListener('touchend', this.dragEnd);
+        }
+      } catch (err) {
+        _didIteratorError2 = true;
+        _iteratorError2 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion2 && _iterator2.return != null) {
+            _iterator2.return();
+          }
+        } finally {
+          if (_didIteratorError2) {
+            throw _iteratorError2;
+          }
+        }
+      }
     }
   }, {
     key: "addArrow",
@@ -1654,7 +1678,12 @@ var SliderCarousel = /*#__PURE__*/function () {
 //     this.prev.addEventListener('click', this.prevSlider)
 //     this.next.addEventListener('click', this.nextSlider)
 //     this.wrap.addEventListener('touchstart', this.dragStart)
-//     this.drageble ? this.wrap.addEventListener('dragstart', this.dragStart) : ''
+//     // this.drageble ? this.wrap.addEventListener('dragstart', this.dragStart) : ''
+//     for( const item of this.slides) {
+//         item.addEventListener('touchstart', this.dragStart)
+//         item.addEventListener('touchmove',  this.dragAction)
+//         item.addEventListener('touchend',   this.dragEnd)
+//     }
 //   }
 
 //   prevSlider = () => {
@@ -1724,11 +1753,11 @@ var SliderCarousel = /*#__PURE__*/function () {
 //         this.dragStartPoint = e.clientX
 //         this.postY1 = e.clientY
 //       }
-//       this.wrap.addEventListener('touchmove',  this.dragAction)
-//       this.wrap.addEventListener('touchend',   this.dragEnd)
+//       // this.wrap.addEventListener('touchmove',  this.dragAction)
+//       // this.wrap.addEventListener('touchend',   this.dragEnd)
 
-//       this.drageble ? this.wrap.addEventListener('drag',  this.dragAction) : ''
-//       this.drageble ? this.wrap.addEventListener('dragend',   this.dragEnd) : ''
+//       // this.drageble ? this.wrap.addEventListener('drag',  this.dragAction) : ''
+//       // this.drageble ? this.wrap.addEventListener('dragend',   this.dragEnd) : ''
 //   }
 
 //   addArrow() {
@@ -1796,7 +1825,7 @@ var SliderCarousel = /*#__PURE__*/function () {
               next: '.products-page-body__item__right__img .next',
               infinity: false,
               slideToShow: 1,
-              drageble: false
+              drageble: true
           }
           const carousel = new SliderCarousel(options)
           carousel.init()
