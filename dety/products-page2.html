@@ -1583,235 +1583,235 @@ var SliderCarousel = /*#__PURE__*/function () {
   return SliderCarousel;
 }();    
 
-class SliderCarousel {
-  constructor({
-      id,
-      main, 
-      wrap, 
-      next,
-      prev,
-      infinity = false,
-      position = 0,
-      slideToShow = 3,
-      responsive = [],
-      allowShift = false,
-      dragStartPoint = null,
-      dragEndPoint = null,
-      dragResult = null,
-      drageble = false
-  }) {
-      this.id = id,
-      this.main = document.querySelector(main)
-      this.wrap = document.querySelector(wrap)
-      this.slides = document.querySelector(wrap).children
-      this.postY1 = 0,
-      this.postY2 = 0,
-      this.next = document.querySelector(next)
-      this.prev = document.querySelector(prev)
-      this.slideToShow = slideToShow,
-      this.options = {
-          position,
-          maxPosition: this.slides.length - this.slideToShow,
-          infinity,
-          slideCount : 100 / this.slideToShow
-      },
-      this.responsive = responsive,
-      this.drageble = drageble;
-  }
+// class SliderCarousel {
+//   constructor({
+//       id,
+//       main, 
+//       wrap, 
+//       next,
+//       prev,
+//       infinity = false,
+//       position = 0,
+//       slideToShow = 3,
+//       responsive = [],
+//       allowShift = false,
+//       dragStartPoint = null,
+//       dragEndPoint = null,
+//       dragResult = null,
+//       drageble = false
+//   }) {
+//       this.id = id,
+//       this.main = document.querySelector(main)
+//       this.wrap = document.querySelector(wrap)
+//       this.slides = document.querySelector(wrap).children
+//       this.postY1 = 0,
+//       this.postY2 = 0,
+//       this.next = document.querySelector(next)
+//       this.prev = document.querySelector(prev)
+//       this.slideToShow = slideToShow,
+//       this.options = {
+//           position,
+//           maxPosition: this.slides.length - this.slideToShow,
+//           infinity,
+//           slideCount : 100 / this.slideToShow
+//       },
+//       this.responsive = responsive,
+//       this.drageble = drageble;
+//   }
 
-  init() {
-      this.addSliderClass()
-      this.addStyle(this.options.slideCount)
+//   init() {
+//       this.addSliderClass()
+//       this.addStyle(this.options.slideCount)
 
-      if (this.prev && this.next) {
-          this.controlSlider()
-      } else {
-          this.addArrow()
-          this.controlSlider()
-      }
-      !this.options.infinity && this.options.position == 0 ? this.prev.classList.add('hidden') : this.prev.classList.remove('hidden')
-      !this.options.infinity && this.options.maxPosition == 0 ? this.next.classList.add('hidden') : this.next.classList.remove('hidden')
-      this.responsive ? this.responseInit() : ''
-  }
+//       if (this.prev && this.next) {
+//           this.controlSlider()
+//       } else {
+//           this.addArrow()
+//           this.controlSlider()
+//       }
+//       !this.options.infinity && this.options.position == 0 ? this.prev.classList.add('hidden') : this.prev.classList.remove('hidden')
+//       !this.options.infinity && this.options.maxPosition == 0 ? this.next.classList.add('hidden') : this.next.classList.remove('hidden')
+//       this.responsive ? this.responseInit() : ''
+//   }
 
-  addSliderClass() {
-      this.main.classList.add(`${this.id}-slider`)
-      this.wrap.classList.add(`${this.id}-slider-wrap`)
-      for( const item of this.slides) {
-          item.classList.add(`${this.id}-slider-wrap--item`)
-      }
-  }
+//   addSliderClass() {
+//       this.main.classList.add(`${this.id}-slider`)
+//       this.wrap.classList.add(`${this.id}-slider-wrap`)
+//       for( const item of this.slides) {
+//           item.classList.add(`${this.id}-slider-wrap--item`)
+//       }
+//   }
 
-  addStyle(count) {
-      const style = document.getElementById(`${this.id}-slider`) || document.createElement('style')
-      style.id = this.id + '-slider'
-      style.innerHTML = `
-          .${this.id}-slider {
-              overflow: hidden;
-          }
-          .${this.id}-slider-wrap {
-              display:-webkit-box;
-              display:-webkit-flex;
-              display:-ms-flexbox;
-              display: flex;
-              transition: transform .5s ease;
-              will-change: transform;
-          }
-          .${this.id}-slider-wrap--item {
-              margin: auto 0;
-              -webkit-box-flex:0;
-              -webkit-flex:0 0 ${count}%;
-              -ms-flex:0 0 ${count}%;
-              flex:0 0 ${count}%
-          }
-          .${this.id}-slider-wrap.drag {
-            transition: none !important;
-          }
-      `;
-      const body = document.body || document.querySelector('body')
-      body.appendChild(style)
-  }
+//   addStyle(count) {
+//       const style = document.getElementById(`${this.id}-slider`) || document.createElement('style')
+//       style.id = this.id + '-slider'
+//       style.innerHTML = `
+//           .${this.id}-slider {
+//               overflow: hidden;
+//           }
+//           .${this.id}-slider-wrap {
+//               display:-webkit-box;
+//               display:-webkit-flex;
+//               display:-ms-flexbox;
+//               display: flex;
+//               transition: transform .5s ease;
+//               will-change: transform;
+//           }
+//           .${this.id}-slider-wrap--item {
+//               margin: auto 0;
+//               -webkit-box-flex:0;
+//               -webkit-flex:0 0 ${count}%;
+//               -ms-flex:0 0 ${count}%;
+//               flex:0 0 ${count}%
+//           }
+//           .${this.id}-slider-wrap.drag {
+//             transition: none !important;
+//           }
+//       `;
+//       const body = document.body || document.querySelector('body')
+//       body.appendChild(style)
+//   }
 
-  controlSlider() {
-    this.prev.addEventListener('click', this.prevSlider)
-    this.next.addEventListener('click', this.nextSlider)
-    this.wrap.addEventListener('touchstart', this.dragStart)
-    // this.drageble ? this.wrap.addEventListener('dragstart', this.dragStart) : ''
-    for( const item of this.slides) {
-        item.addEventListener('touchstart', this.dragStart)
-        item.addEventListener('touchmove',  this.dragAction)
-        item.addEventListener('touchend',   this.dragEnd)
-    }
-  }
+//   controlSlider() {
+//     this.prev.addEventListener('click', this.prevSlider)
+//     this.next.addEventListener('click', this.nextSlider)
+//     this.wrap.addEventListener('touchstart', this.dragStart)
+//     // this.drageble ? this.wrap.addEventListener('dragstart', this.dragStart) : ''
+//     for( const item of this.slides) {
+//         item.addEventListener('touchstart', this.dragStart)
+//         item.addEventListener('touchmove',  this.dragAction)
+//         item.addEventListener('touchend',   this.dragEnd)
+//     }
+//   }
 
-  prevSlider = () => {
-      if ( this.options.infinity || this.options.position > 0 ) {
-          --this.options.position
-          if ( this.options.position < 0 ) {
-              this.options.position = this.options.maxPosition
-          }
-          this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideCount}%)`
-          !this.options.infinity && this.options.position == 0 ? this.prev.classList.add('hidden') : this.prev.classList.remove('hidden')
-          !this.options.infinity && this.options.position == this.options.maxPosition ? this.next.classList.add('hidden') : this.next.classList.remove('hidden')
-      }
-  }
+//   prevSlider = () => {
+//       if ( this.options.infinity || this.options.position > 0 ) {
+//           --this.options.position
+//           if ( this.options.position < 0 ) {
+//               this.options.position = this.options.maxPosition
+//           }
+//           this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideCount}%)`
+//           !this.options.infinity && this.options.position == 0 ? this.prev.classList.add('hidden') : this.prev.classList.remove('hidden')
+//           !this.options.infinity && this.options.position == this.options.maxPosition ? this.next.classList.add('hidden') : this.next.classList.remove('hidden')
+//       }
+//   }
   
-  nextSlider = () => {
-      if ( this.options.infinity || this.options.position < this.options.maxPosition) {
-          ++this.options.position
-          if ( this.options.position > this.options.maxPosition ) {
-              this.options.position = 0
-          }
-          this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideCount}%)`
-          !this.options.infinity && this.options.position == 0 ? this.prev.classList.add('hidden') : this.prev.classList.remove('hidden')
-          !this.options.infinity && this.options.position == this.options.maxPosition ? this.next.classList.add('hidden') : this.next.classList.remove('hidden')
-      }
-  }
+//   nextSlider = () => {
+//       if ( this.options.infinity || this.options.position < this.options.maxPosition) {
+//           ++this.options.position
+//           if ( this.options.position > this.options.maxPosition ) {
+//               this.options.position = 0
+//           }
+//           this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideCount}%)`
+//           !this.options.infinity && this.options.position == 0 ? this.prev.classList.add('hidden') : this.prev.classList.remove('hidden')
+//           !this.options.infinity && this.options.position == this.options.maxPosition ? this.next.classList.add('hidden') : this.next.classList.remove('hidden')
+//       }
+//   }
 
-  dragSlider = () => {
-    if ((this.options.position * this.options.slideCount) - this.dragResult < this.options.maxPosition * this.options.slideCount || (this.options.position * this.options.slideCount) - this.dragResult < 0) {
-      this.wrap.classList.add('drag')
-      this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideCount - this.dragResult}%)`
-    }
-  }
+//   dragSlider = () => {
+//     if ((this.options.position * this.options.slideCount) - this.dragResult < this.options.maxPosition * this.options.slideCount || (this.options.position * this.options.slideCount) - this.dragResult < 0) {
+//       this.wrap.classList.add('drag')
+//       this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideCount - this.dragResult}%)`
+//     }
+//   }
 
-  dragEnd = (e) => {
-    this.wrap.classList.remove('drag')
-    this.wrap.removeEventListener('touchmove',  this.dragAction)
-    this.wrap.removeEventListener('touchend',   this.dragEnd)
-    this.drageble ? this.wrap.removeEventListener('drag',  this.dragAction) : ''
-    this.drageble ? this.wrap.removeEventListener('dragend',   this.dragEnd) : ''
+//   dragEnd = (e) => {
+//     this.wrap.classList.remove('drag')
+//     this.wrap.removeEventListener('touchmove',  this.dragAction)
+//     this.wrap.removeEventListener('touchend',   this.dragEnd)
+//     this.drageble ? this.wrap.removeEventListener('drag',  this.dragAction) : ''
+//     this.drageble ? this.wrap.removeEventListener('dragend',   this.dragEnd) : ''
 
-    if (this.dragResult > 20 ) this.prevSlider() 
-    if (this.dragResult < -20 ) this.nextSlider()
-    else this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideCount}%)`
-  }
-  dragAction = (e) => {
-      e = e || window.event
-      if(e.type == 'touchmove') {
-        this.dragEndPoint = e.touches[0].clientX
-        this.postY2 = e.touches[0].clientY
-      } else {
-        this.dragEndPoint = e.clientX
-        this.postY2 = e.clientY
-      }
-      if (Math.abs(this.postY2 - this.postY1) < 100) {
-        window.scrollY = this.postY1
-        this.dragResult = (this.dragEndPoint - this.dragStartPoint)/this.dragStartPoint*100
-        if (Math.abs(this.dragResult) > 10) document.addEventListener('touchmove', this.dragSlider)
-        if (Math.abs(this.dragResult) > 10 && this.drageble) document.addEventListener('drag', this.dragSlider)
-      }
-  }
-  dragStart = (e) => {
-      e = e || window.event
-      if (e.type == 'touchstart') {
-        this.dragStartPoint = e.touches[0].clientX
-        this.postY1 = e.touches[0].clientY
-      } else {
-        this.dragStartPoint = e.clientX
-        this.postY1 = e.clientY
-      }
-      // this.wrap.addEventListener('touchmove',  this.dragAction)
-      // this.wrap.addEventListener('touchend',   this.dragEnd)
+//     if (this.dragResult > 20 ) this.prevSlider() 
+//     if (this.dragResult < -20 ) this.nextSlider()
+//     else this.wrap.style.transform = `translateX(-${this.options.position * this.options.slideCount}%)`
+//   }
+//   dragAction = (e) => {
+//       e = e || window.event
+//       if(e.type == 'touchmove') {
+//         this.dragEndPoint = e.touches[0].clientX
+//         this.postY2 = e.touches[0].clientY
+//       } else {
+//         this.dragEndPoint = e.clientX
+//         this.postY2 = e.clientY
+//       }
+//       if (Math.abs(this.postY2 - this.postY1) < 100) {
+//         window.scrollY = this.postY1
+//         this.dragResult = (this.dragEndPoint - this.dragStartPoint)/this.dragStartPoint*100
+//         if (Math.abs(this.dragResult) > 10) document.addEventListener('touchmove', this.dragSlider)
+//         if (Math.abs(this.dragResult) > 10 && this.drageble) document.addEventListener('drag', this.dragSlider)
+//       }
+//   }
+//   dragStart = (e) => {
+//       e = e || window.event
+//       if (e.type == 'touchstart') {
+//         this.dragStartPoint = e.touches[0].clientX
+//         this.postY1 = e.touches[0].clientY
+//       } else {
+//         this.dragStartPoint = e.clientX
+//         this.postY1 = e.clientY
+//       }
+//       // this.wrap.addEventListener('touchmove',  this.dragAction)
+//       // this.wrap.addEventListener('touchend',   this.dragEnd)
 
-      // this.drageble ? this.wrap.addEventListener('drag',  this.dragAction) : ''
-      // this.drageble ? this.wrap.addEventListener('dragend',   this.dragEnd) : ''
-  }
+//       // this.drageble ? this.wrap.addEventListener('drag',  this.dragAction) : ''
+//       // this.drageble ? this.wrap.addEventListener('dragend',   this.dragEnd) : ''
+//   }
 
-  addArrow() {
-      this.prev = document.createElement('button')
-      this.next = document.createElement('button')
+//   addArrow() {
+//       this.prev = document.createElement('button')
+//       this.next = document.createElement('button')
 
-      this.prev.className = 'prev'
-      this.next.className = 'next'
+//       this.prev.className = 'prev'
+//       this.next.className = 'next'
 
-      this.prev.textContent = 'prev'
-      this.next.textContent = 'next'
+//       this.prev.textContent = 'prev'
+//       this.next.textContent = 'next'
 
-      this.main.appendChild(this.prev)
-      this.main.appendChild(this.next)
+//       this.main.appendChild(this.prev)
+//       this.main.appendChild(this.next)
 
-      const style = document.createElement('style')
-      style.id = this.id+'-slider--button'
-      style.textContent = `
-          ${this.id}-slider .prev.hidden,
-          ${this.id}-slider .next.hidden {
-              opacity: 0
-          }
-      `;
-      const body = document.body || document.querySelector('body')
-      body.appendChild(style)
-  }
+//       const style = document.createElement('style')
+//       style.id = this.id+'-slider--button'
+//       style.textContent = `
+//           ${this.id}-slider .prev.hidden,
+//           ${this.id}-slider .next.hidden {
+//               opacity: 0
+//           }
+//       `;
+//       const body = document.body || document.querySelector('body')
+//       body.appendChild(style)
+//   }
 
-  responseInit() {
-        const slidesToShowDefault = this.slideToShow
-        const allBreakpoint = this.responsive.map(item => item.breakpoint)
-        const maxResponse = Math.max(...allBreakpoint)
+//   responseInit() {
+//         const slidesToShowDefault = this.slideToShow
+//         const allBreakpoint = this.responsive.map(item => item.breakpoint)
+//         const maxResponse = Math.max(...allBreakpoint)
         
-        const checkResponse = () => {
-            const widthWindow = window.innerWidth || document.documentElement.clientWidth;
-            if ( widthWindow < maxResponse ) {
-                for (let i = 0; i < allBreakpoint.length; i++ ) {
-                    if ( widthWindow < allBreakpoint[i] ) {
-                        this.slideToShow = this.responsive[i].slideToShow
-                        this.options.slideCount = 100 / this.slideToShow
-                    }
-                } 
-            } else {
-                this.slideToShow = slidesToShowDefault
-                this.options.slideCount = 100 / this.slideToShow
-            }
-            this.addStyle(this.options.slideCount)
-        }
-        document.addEventListener("DOMContentLoaded", function() {
-            checkResponse()
-        })
-        window.addEventListener('resize', () => {
-            checkResponse()
-        })
+//         const checkResponse = () => {
+//             const widthWindow = window.innerWidth || document.documentElement.clientWidth;
+//             if ( widthWindow < maxResponse ) {
+//                 for (let i = 0; i < allBreakpoint.length; i++ ) {
+//                     if ( widthWindow < allBreakpoint[i] ) {
+//                         this.slideToShow = this.responsive[i].slideToShow
+//                         this.options.slideCount = 100 / this.slideToShow
+//                     }
+//                 } 
+//             } else {
+//                 this.slideToShow = slidesToShowDefault
+//                 this.options.slideCount = 100 / this.slideToShow
+//             }
+//             this.addStyle(this.options.slideCount)
+//         }
+//         document.addEventListener("DOMContentLoaded", function() {
+//             checkResponse()
+//         })
+//         window.addEventListener('resize', () => {
+//             checkResponse()
+//         })
 
-    }
-}
+//     }
+// }
 
     document.addEventListener("DOMContentLoaded", function() {
 
