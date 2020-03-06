@@ -98,9 +98,8 @@
                 <li><img src="./img/products/card/4.jpg" alt=""></li>
                 <li><img src="./img/products/card/5.jpg" alt=""></li>
                 <li><img src="./img/products/card/6.jpg" alt=""></li>
-                <li><img src="./img/products/card/3.jpg" alt=""></li>
-                <li><img src="./img/products/card/4.jpg" alt=""></li>
                 <li><img src="./img/products/card/5.jpg" alt=""></li>
+                <li><img src="./img/products/card/6.jpg" alt=""></li>
               </ul>
             </div>
 
@@ -119,9 +118,8 @@
                   <li><img data-lazy="./img/products/card/4.jpg" alt=""></li>
                   <li><img data-lazy="./img/products/card/5.jpg" alt=""></li>
                   <li><img data-lazy="./img/products/card/6.jpg" alt=""></li>
-                  <li><img data-lazy="./img/products/card/3.jpg" alt=""></li>
-                  <li><img data-lazy="./img/products/card/4.jpg" alt=""></li>
                   <li><img data-lazy="./img/products/card/5.jpg" alt=""></li>
+                  <li><img data-lazy="./img/products/card/6.jpg" alt=""></li>
                 </ul>
                 <span class='zoom'><img src="./img/zoom.svg"></span>
               </div>
@@ -1198,35 +1196,46 @@
 
   <script>
     $( document ).ready(function() {
-    //   $('.products-page-body__item__left__thumb').slick({
-    //     vertical: true,
-    //     infinite: true,
-    //     slidesToShow: 6,
-    //     asNavFor: '.products-page-body__item__right__img__wrapp',
-    //     focusOnSelect: true,
-    //     arrows: false,
-    //     responsive: [
-    //       {
-    //         breakpoint: 1024,
-    //         settings: {
-    //           slidesToShow: 4,
-    //         }
-    //       },
-    //       {
-    //         breakpoint: 991,
-    //         settings: {
-    //           slidesToShow: 5,
-    //         }
-    //       }
-    //     ]
-    //   });
+      
+      const thumb = document.querySelectorAll('.products-page-body__item__left__thumb li')
+      thumb.forEach((item,index) => {
+        item.addEventListener('click', () => {
+          document.querySelector('.products-page-body__item__left__thumb li.slick-current').classList.remove('slick-current')
+          item.classList.add('slick-current')
+          imgSlider.slick('slickGoTo', index)
+        })
+      })
+      let slideCount = thumb.length
 
+      $('.products-page-body__item__left__thumb').slick({
+        vertical: true,
+        infinite: false,
+        slidesToShow: 6,
+        // asNavFor: thumb.length >= 6 ? '.products-page-body__item__right__img__wrapp' : false,
+        focusOnSelect: true,
+        arrows: false,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 4,
+            }
+          },
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 5,
+            }
+          }
+        ]
+      });    
+      
       const imgSlider = $('.products-page-body__item__right__img__wrapp').slick({
-        infinite: true,
+        infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         draggable: false,
-        // asNavFor: '.products-page-body__item__left__thumb',
+        asNavFor: '.products-page-body__item__left__thumb',
         responsive: [
           {
             breakpoint: 767,
@@ -1237,6 +1246,9 @@
           }
         ]
       });
+
+      
+
 
 
       let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth       
