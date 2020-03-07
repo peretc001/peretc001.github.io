@@ -239,25 +239,28 @@
         background-color: #ffffff
         border: 1px solid #faf0f0
         border-radius: 14px
-        padding: 20px 17px 25px 17px
+        padding: 10px 17px 25px 17px
         &__head
-            height: 36px
             display: flex
             align-items: center
             justify-content: flex-start
+            height: 40px
             margin-bottom: 1em
             span
-                display: inline-block
-                flex: 0 0 15%
-                font-size: 11px
+                display: flex
+                align-items: center
+                justify-content: center
+                flex: 0 0 38px
+                height: 38px
+                font-size: 1em
                 color: #ffffff
                 text-align: center
                 font-weight: bold
                 margin: 0
-                padding: 8px 0
+                padding: 0
                 border-radius: 4px
                 &:not(:first-child)
-                    margin-left: 2%
+                    margin-left: .5em
                 &.top
                     background-color: $yellow
                 &.new
@@ -435,11 +438,6 @@
             a
                 &:not(:first-child)
                     margin-left: 1em
-        &-card
-            &__head
-                span
-                    font-size: 10px
-                    padding: 6px 0
 
 @media screen and ( max-width: 991.98px )
     .products
@@ -660,11 +658,12 @@
             .open-filter
                 width: 120px
         &-card
-            padding: 0 10px 20px 10px
+            padding: 10px 10px 20px 10px
             &__head
+                justify-content: space-between
                 span
-                    font-size: .7em
-                    
+                    &:not(:first-child)
+                        margin-left: 0     
             &__title
                 font-size: 1em
                 height: 35px
@@ -704,6 +703,13 @@
             padding: 0 .25em
 
 @media screen and ( max-width: 424.98px )
+    .products
+        &-card
+            &__head
+                span
+                    flex: 0 0 35px
+                    height: 35px
+                    font-size: .9em
     .resent,
     .visited
         h4
@@ -742,11 +748,6 @@
             .open-filter
                 width: 100px
 
-        &-card
-            &__head
-                span
-                    font-size: .6em
-
 @media screen and ( max-width: 374.98px )
     .products
         &-filter
@@ -777,6 +778,11 @@
 
         &-card
             padding-bottom: 10px
+            &__head
+                span
+                    flex: 0 0 28px
+                    height: 28px
+                    font-size: .8em
             &__img
                 margin-bottom: 15px
             &__title

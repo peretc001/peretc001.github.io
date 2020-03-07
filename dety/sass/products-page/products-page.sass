@@ -203,40 +203,39 @@
                     display: flex
                     align-items: center
                     justify-content: flex-start
-                    flex-wrap: wrap
-                    padding: 0
-                    a
-                        display: inline-block
-                        padding: .5em 1em
+                    margin-bottom: 1em
+                    span
+                        display: flex
+                        align-items: center
+                        justify-content: center
+                        flex: 0 0 40px
+                        height: 40px
+                        font-size: 1em
                         color: #ffffff
+                        text-align: center
                         font-weight: bold
+                        margin: 0
+                        padding: 0
                         border-radius: 4px
-                        margin-right: .5em
-                        transition: background .3s ease
-                        margin-bottom: 1em
-                        font-size: 0.9em
-                        &:hover
-                            color: #fff
-                        &:last-child
-                            margin-right: 0
+                        &:not(:first-child)
+                            margin-left: .5em
                         &.top
-                            background: $yellow
-                            &:hover
-                                background: darken($yellow, 6%)
+                            background-color: $yellow
                         &.new
-                            background: #00B6C5
-                            &:hover
-                                background: darken(#00B6C5, 6%)
+                            background-color: #00B5C4
                         &.sale
-                            background: #FF5B56
-                            &:hover
-                                background: darken(#FF5B56, 6%)
+                            background-color: #FF5C57
+                        &.bonus
+                            background-color: $accent
+                        &.installments
+                            background-color: #00be64
+                        &.last
+                            background-color: $blue
+                            color: $text
                     .wishlist
-                        margin-left: auto
+                        margin-left: auto !important
                         position: relative
                         display: inline-block
-                        width: 2em
-                        height: 2em
                         background-size: 2em
                         background-position: center
                         background-repeat: no-repeat
@@ -251,7 +250,6 @@
                     position: relative
                     overflow: hidden !important
                     width: 100%
-                    margin-top: 2em
                     ul
                         margin: 0
                         padding: 0
@@ -1036,6 +1034,15 @@
         &-body
             &__item
                 padding: 1em
+                &__right
+                    &__tag
+                        justify-content: space-between
+                        span
+                            &:not(:first-child)
+                                margin-left: 0
+                        .wishlist
+                            margin-left: 0 !important
+
 
             &__about
                 &__title
@@ -1082,6 +1089,14 @@
             span
                 font-size: 0.8em
         &-body
+            &__item
+                padding: 1em
+                &__right
+                    &__tag
+                        span
+                            flex: 0 0 32px
+                            height: 32px
+                            font-size: 0.8em
             &__buy
                 &__price
                     font-size: .9em
