@@ -245,15 +245,18 @@
             justify-content: flex-start
             margin-bottom: 1em
             span
+                display: inline-block
+                flex: 0 1 15%
                 font-size: 12px
                 color: #ffffff
+                text-align: center
                 font-weight: bold
                 margin: 0
                 margin-right: 5px
-                padding: 10px
+                padding: 10px 0
                 border-radius: 4px
-                &:last-child
-                    margin-right: 0
+                &not(:first-child)
+                    margin-left: 1%
                 &.top
                     background-color: $yellow
                 &.new
@@ -261,7 +264,12 @@
                 &.sale
                     background-color: #FF5C57
                 &.bonus
-                    background-color: #AB52BF
+                    background-color: $accent
+                &.installments
+                    background-color: #00be64
+                &.last
+                    background-color: $blue
+                    color: $text
         &__img
             display: block
             margin-bottom: 30px
@@ -384,7 +392,7 @@
             &__head
                 span
                     font-size: 10px
-                    padding: 8px 3px
+                    padding: 6px 0
 
 @media screen and ( max-width: 991.98px )
     .products
@@ -459,9 +467,6 @@
                         display: none
 
         &-card
-            &__head
-                span
-                    padding: 5px 3px
             &__img
                 text-align: center
 
@@ -602,12 +607,9 @@
         &-card
             padding: 10px 10px 20px 10px
             &__head
-                flex-wrap: wrap
-                height: 45px
                 span
-                    font-size: .65em
-                    padding: 5px 3px
-                    margin-bottom: 0.5em
+                    font-size: .7em
+                    
             &__title
                 font-size: 1em
                 height: 30px
@@ -664,6 +666,11 @@
             .open-filter
                 width: 100px
 
+        &-card
+            &__head
+                span
+                    font-size: .6em
+
 @media screen and ( max-width: 374.98px )
     .products
         &-filter
@@ -698,9 +705,11 @@
                 align-items: flex-start
                 flex-wrap: wrap
                 height: auto
-                min-height: 20px
+                min-height: 50px
                 span
+                    flex: 0 0 24%
                     font-size: .5em
+                    margin-bottom: 0.5em
             &__img
                 margin-bottom: 15px
             &__title
