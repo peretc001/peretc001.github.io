@@ -1173,7 +1173,12 @@
   </div>
 </div>
 
-<div id="toTop"></div>
+<div id="toTop">
+  <span>
+    <i></i>
+    Наверх
+  </span>
+</div>
 
 <script src="./js/scripts.min.js"></script>
 <script defer src='./js/chunk-vendors.d4d1433b.js'></script>
@@ -1278,15 +1283,11 @@
         if ( galleryIsOpen == true) {
           const parent = document.querySelector('.products-page-body')
           const nextElem = document.querySelector('.products-page-body__buy')
-          card.classList.add('closed')
-          setTimeout(() => {
-            card.classList.remove('is-active')
-            card.classList.remove('open')
-            card.classList.remove('closed')
-            document.body.removeChild(card)
-            parent.insertBefore(card, nextElem)
-            imgSlider.slick('setPosition')
-          }, 200);
+          card.classList.remove('is-active')
+          card.classList.remove('open')
+          document.body.removeChild(card)
+          parent.insertBefore(card, nextElem)
+          imgSlider.slick('setPosition')
           galleryIsOpen = false
           document.removeEventListener('keydown', closeGalleryEsc)
           enableScroll()
@@ -1350,6 +1351,26 @@
         infobar: false,
         toolbar: false,
       });
+    
+      // Back to top button
+      let backToTop = function() {
+            var el = $( '#toTop' );
+            el.hide()
+        $( window ).scroll(function() {
+          if( $( this ).scrollTop() < 50 ) {
+            el.fadeOut();
+          } else {
+            el.fadeIn();
+          }
+        });
+        el.click( function() {
+          $( 'body,html' ).animate({
+            scrollTop: 0
+          }, 500);
+          return false;
+        });
+        }
+        backToTop()
     });
 
     document.addEventListener("DOMContentLoaded", function() {

@@ -297,35 +297,9 @@ if (document.querySelector('.modal')) {
     })
 }
 
-
-
-
-
-
-
-
-    
+  
 });
 
 $( document ).ready(function() {
-    // Back to top button
-	var backToTop = function() {
-        var el = $( '#toTop' );
-        el.hide()
-		$( window ).scroll(function() {
-			if( $( this ).scrollTop() < 50 ) {
-				el.fadeOut();
-			} else {
-				el.fadeIn();
-			}
-		});
-		el.click( function() {
-			$( 'body,html' ).animate({
-				scrollTop: 0
-			}, 500);
-			return false;
-		});
-    }
-    backToTop()
     $('.lazy').Lazy();
 });
