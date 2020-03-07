@@ -48,23 +48,25 @@
       </form>
       <div class="nav-search--right">
         <a href="" class="nav-search--right__wishlist active">
-          <span>2</span>
+          <!-- <span>2</span> -->
         </a>
         <a href="" class="nav-search--right__cart">
-          <span class="qty">3</span>
+          <!-- <span class="qty">3</span> -->
           <!-- <span class="price">5 750 ₽</span> -->
         </a>
       </div>
     </div>
   </div>
-  
+
   <div id=app></div>
 </nav>
   
 <main>
   <div class="slider">
     <div class="container">
-      <a class="slider-wrapper--item" href="" data-desctop="./img/slider/1.png" data-mobile="./img/slider/1m.png"></a>
+      <div class="slider-wrapper">
+        <a class="slider-wrapper--item" href="" data-desctop="./img/slider/1.png" data-mobile="./img/slider/1m.png"></a>
+      </div>
     </div>
   </div>
 
@@ -428,8 +430,6 @@
             <li><a href="">Кредиты и рассрочка</a></li>
             <li><a href="">Бонусная программа</a></li>
             <li><a href="">Подарочные карты</a></li>
-            <li><a href="">Политика конфеденциальности</a></li>
-            <li><a href="">Пользовательское соглашение</a></li>
           </ul>
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3">
@@ -455,7 +455,8 @@
     </div>
 
     <div class="copyright">
-      © c 2019-2020. ВсёДляДеток.ру <span></span> Большой магазин для маленьких
+      <p><span>© 2019-2020. ВсёДляДеток.ру</span> <span>Большой магазин для маленьких</span></p>
+      <p><a href="">Политика конфеденциальности</a> <a href="">Пользовательское соглашение</a></p>
     </div>
   </div>
 </footer>
@@ -599,5 +600,20 @@
   <script defer src='./js/app.394e5ec0.js'></script>
   <link href='./css/app.6e1150c3.css' rel=stylesheet>
   <link rel="stylesheet" href="./css/main.min.css">
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      const sliderList = document.querySelectorAll('.slider-wrapper--item')
+      if (width > 767) {
+          sliderList.forEach(item => {
+              item.innerHTML = `<img src="${item.getAttribute('data-desctop')}" alt="">`
+          })
+      } else {
+          sliderList.forEach(item => {
+              item.innerHTML = `<img src="${item.getAttribute('data-mobile')}" alt="">`
+          })
+      }
+    })
+  </script>
 </body>
 </html>

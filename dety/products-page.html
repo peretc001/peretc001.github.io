@@ -106,7 +106,7 @@
                 <span class="sale">%</span>
                 <span class="bonus">Б</span>
                 <span class="installments">0%</span>
-                <span class="last">0%</span>
+                <span class="gift">0%</span>
                 <span class="wishlist"></span>
               </div>
               <div class="products-page-body__item__right__img">
@@ -116,7 +116,7 @@
                   <li><img data-lazy="./img/products/card/3.jpg" alt=""></li>
                   <li><img data-lazy="./img/products/card/4.jpg" alt=""></li>
                 </ul>
-                <span class='zoom'><img src="./img/zoom.svg"></span>
+                <span class='zoom'></span>
               </div>
             </div>
 
@@ -130,21 +130,24 @@
                   <p>6 750 ₽</p>
                 </div>
                 <div class="products-page-body__buy__price__tag">
-                  <span>экономия 251 руб</span>
+                  <span>-251 руб экономия</span>
                   <span>+481 бонусных рублей</span>
                 </div>
                 <div class="products-page-body__buy__price__credit">
                   <p>
-                    <b>В кредит:</b> от 266 руб./мес.
+                    <b>В кредит:</b> от 2661 руб./мес.
                   </p>
-                  <img src="./img/products/i.svg" alt="">
+                  <a href="">Подробнее</a>
                 </div>
               </div>
               
                 
               <!-- if (has_offers) -->
               <div class="products-page-body__buy__size">
-                <p class="caption">Размеры</p>
+                <div class="products-page-body__buy__size__head">
+                  <p class="caption">Размер</p>
+                  <a class="table" href="">Таблица размеров</a>
+                </div>
                 <div class="products-page-body__buy__size__block">
                   <a href="" class="active">128</a>
                   <a href="">140</a>
@@ -155,11 +158,13 @@
                   <a href="">180</a>
                   <a href="">190</a>
                 </div>
-                <a class="table" href="">Таблица размеров</a>
+                
               </div>
 
               <div class="products-page-body__buy__color">
-                <p class="caption">Цвет</p>
+                <div class="products-page-body__buy__size__head">
+                  <p class="caption">Цвет</p>
+                </div>
                 <div class="products-page-body__buy__color__block">
                   <a href="" class="active">
                     <img src="./img/products/card/color2.png" alt="">
@@ -198,14 +203,17 @@
               </div>
 
               <div class="products-page-body__buy__delivery">
+                <div class="products-page-body__buy__delivery__head">
+                  <p class="caption">Доставка и оплата</p>
+                  <a class="table" href="">Подробнее</a>
+                </div>
                 <p>
                   Самовывоз —  <b>сегодня, от 99 рублей</b>
                 </p>
                 <p>
                     Курьером — <b>2 февраля, от 199 рублей</b>
                 </p>
-                <a href="" class="more">Подробности о доставке</a>
-              </div>
+               </div>
             </div>
           </aside>
 
@@ -434,6 +442,8 @@
               <span class="new">new</span>
               <span class="sale">%</span>
               <span class="bonus">Б</span>
+              <span class="installments">0%</span>
+              <span class="gift">П</span>
             </div>
             <div class="products-card__img">
               <img class="lazy" data-lazy="./img/products/1.png" alt="">
@@ -712,6 +722,8 @@
               <span class="new">new</span>
               <span class="sale">%</span>
               <span class="bonus">Б</span>
+              <span class="installments">0%</span>
+              <span class="gift">П</span>
             </div>
             <div class="products-card__img">
               <img class="lazy" data-lazy="./img/products/1.png" alt="">
@@ -1016,8 +1028,6 @@
             <li><a href="">Кредиты и рассрочка</a></li>
             <li><a href="">Бонусная программа</a></li>
             <li><a href="">Подарочные карты</a></li>
-            <li><a href="">Политика конфеденциальности</a></li>
-            <li><a href="">Пользовательское соглашение</a></li>
           </ul>
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3">
@@ -1043,7 +1053,8 @@
     </div>
 
     <div class="copyright">
-      © c 2019-2020. ВсёДляДеток.ру <span></span> Большой магазин для маленьких
+      <p><span>© 2019-2020. ВсёДляДеток.ру</span> <span>Большой магазин для маленьких</span></p>
+      <p><a href="">Политика конфеденциальности</a> <a href="">Пользовательское соглашение</a></p>
     </div>
   </div>
 </footer>
@@ -1338,7 +1349,7 @@
         infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
-        draggable: false,
+        draggable: true,
         asNavFor: '.products-page-body__item__left__thumb',
         responsive: [
           {
@@ -1398,12 +1409,8 @@
         }
       }
       
-      const openGalleryBtn = document.querySelectorAll('.products-page-body__item__right__img__wrapp img')
       const zoomBtn = document.querySelector('.products-page-body__item__right__img .zoom')
       const closeBtn = document.querySelector('.products-page-body__item .close')
-      openGalleryBtn.forEach(item => {
-        item.addEventListener('click', openGallery)
-      })
       zoomBtn.addEventListener('click', openGallery)
       closeBtn.addEventListener('click', closeGallery)
 

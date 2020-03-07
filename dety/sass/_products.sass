@@ -20,7 +20,8 @@
                 outline: none
             .smart-filter-parameters-box
                 padding: 1em 0
-                border-top: 1px solid #C4C4C4
+                &:not(:first-child)
+                    border-top: 1px solid #C4C4C4
                 &-title
                     display: flex
                     align-items: center
@@ -122,40 +123,6 @@
                         &:last-child
                             margin-left: 0.5em
 
-    &-tag
-        display: flex
-        align-items: center
-        justify-content: flex-start
-        flex-wrap: wrap
-        padding: 2em 0 1em 0
-        a
-            display: inline-block
-            padding: .5em 1em
-            color: #ffffff
-            font-weight: bold
-            border-radius: 4px
-            margin-right: 1em
-            transition: background .3s ease
-            margin-bottom: 1em
-            &:last-child
-                margin-right: 0
-            &.yellow
-                background: $yellow
-                &:hover
-                    background: darken($yellow, 6%)
-            &.blue
-                background: #00B6C5
-                &:hover
-                    background: darken(#00B6C5, 6%)
-            &.red
-                background: #FF5B56
-                &:hover
-                    background: darken(#FF5B56, 6%)
-            &.accent
-                background: $accent
-                &:hover
-                    background: darken($accent, 6%)
-
     &-sort
         display: flex
         align-items: center
@@ -167,36 +134,19 @@
         &-block
             &--select
                 display: none
+                cursor: pointer
         a
             display: inline-block
             flex: 0 0 auto
             color: #B8B8B8
             font-weight: bold
             position: relative
+            transition: color .2s ease
             &:not(:first-child)
                 margin-left: 2em
-            &.sort
-                padding-right: 1em
-                &::before
-                    content: ''
-                    position: absolute
-                    right: 0
-                    top: 50%
-                    transform: translateY(-50%)
-                    width: .5em
-                    height: 1em
-                    background-size: cover
-                    background-position: center
-                    background-repeat: no-repeat
-                    background-image: url('../img/products/sort.svg')
-                &.asc
-                    &::before
-                        background-image: url('../img/products/sort-asc.svg')
-                &.desc
-                    &::before
-                        background-image: url('../img/products/sort-desc.svg')
-                &.active
-                    color: $accent
+            &.active,
+            &:hover
+                color: $accent
         .open-filter
             display: none
             cursor: pointer
@@ -250,8 +200,8 @@
                 display: flex
                 align-items: center
                 justify-content: center
-                flex: 0 0 38px
-                height: 38px
+                flex: 0 0 35px
+                height: 35px
                 font-size: 1em
                 color: #ffffff
                 text-align: center
@@ -271,9 +221,10 @@
                     background-color: $accent
                 &.installments
                     background-color: #00be64
-                &.last
-                    background-color: $blue
-                    color: $text
+                &.gift
+                    background-color: transparent
+                    color: $accent
+                    border: 1px solid $accent
         &__img
             display: block
             margin-bottom: 30px
@@ -425,6 +376,7 @@
                         flex-wrap: wrap
                         .btn
                             flex: 0 0 100%
+                            font-size: 1em
                             &:first-child
                                 margin-right: 0
                                 margin-bottom: 0.5em
@@ -438,7 +390,13 @@
             a
                 &:not(:first-child)
                     margin-left: 1em
-
+        &-card
+           &__head
+                span
+                    &:nth-child(5),
+                    &:nth-child(6)
+                        display: none
+                        
 @media screen and ( max-width: 991.98px )
     .products
         &-sort
@@ -658,12 +616,7 @@
             .open-filter
                 width: 120px
         &-card
-            padding: 10px 10px 20px 10px
-            &__head
-                justify-content: space-between
-                span
-                    &:not(:first-child)
-                        margin-left: 0     
+            padding: 10px 10px 20px 10px    
             &__title
                 font-size: 1em
                 height: 35px
@@ -706,10 +659,12 @@
     .products
         &-card
             &__head
+                padding-bottom: 10px
                 span
-                    flex: 0 0 35px
-                    height: 35px
-                    font-size: .9em
+                    flex: 0 0 30px
+                    height: 30px
+                    font-size: .8em
+
     .resent,
     .visited
         h4
@@ -767,6 +722,7 @@
                 height: 2em
                 overflow: hidden
                 padding-left: 2em
+                color: $accent
                 &::before
                     position: absolute
                     left: 50%
@@ -775,14 +731,10 @@
                     background-color: $accent
                     width: 100%
                     height: 100%
+                &.active
+                    &::before
+                        transform: translateY(-50%) translateX(-50%) rotate(180deg)
 
-        &-card
-            padding-bottom: 10px
-            &__head
-                span
-                    flex: 0 0 28px
-                    height: 28px
-                    font-size: .8em
             &__img
                 margin-bottom: 15px
             &__title
@@ -810,7 +762,13 @@
                         width: 1.4em
                         height: 1.4em
                         background-size: 1.4em
-    
+        &-card
+            &__head
+                span
+                    flex: 0 0 28px
+                    height: 28px
+                    font-size: .7em
+            
     .resent,
     .visited
         h4

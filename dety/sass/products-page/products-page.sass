@@ -158,10 +158,21 @@
                     opacity: 1
             .zoom
                 position: absolute
-                bottom: 0
-                right: 0
-                z-index: 3
+                bottom: .5em
+                right: .5em
+                z-index: 1
                 cursor: pointer
+                display: inline-block
+                background: rgba(255,255,255, .5)
+                border-radius: 4px
+                padding: .5em
+                width: 3em
+                height: 3em
+                background-size: 2em
+                background-repeat: no-repeat
+                background-position: center
+                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTEzLjI4IDUxMy4yOCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEzLjI4IDUxMy4yODsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiBjbGFzcz0iIj48Zz48Zz4KCTxnPgoJCTxwYXRoIGQ9Ik00OTUuMDQsNDA0LjQ4TDQxMC41NiwzMjBjMTUuMzYtMzAuNzIsMjUuNi02Ni41NiwyNS42LTEwMi40QzQzNi4xNiw5Ny4yOCwzMzguODgsMCwyMTguNTYsMFMwLjk2LDk3LjI4LDAuOTYsMjE3LjYgICAgczk3LjI4LDIxNy42LDIxNy42LDIxNy42YzM1Ljg0LDAsNzEuNjgtMTAuMjQsMTAyLjQtMjUuNmw4NC40OCw4NC40OGMyNS42LDI1LjYsNjQsMjUuNiw4OS42LDAgICAgQzUxOC4wOCw0NjguNDgsNTE4LjA4LDQzMC4wOCw0OTUuMDQsNDA0LjQ4eiBNMjE4LjU2LDM4NGMtOTIuMTYsMC0xNjYuNC03NC4yNC0xNjYuNC0xNjYuNFMxMjYuNCw1MS4yLDIxOC41Niw1MS4yICAgIHMxNjYuNCw3NC4yNCwxNjYuNCwxNjYuNFMzMTAuNzIsMzg0LDIxOC41NiwzODR6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNDMjUxQzAiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==')
+
             
             &__left
                 position: relative
@@ -229,9 +240,11 @@
                             background-color: $accent
                         &.installments
                             background-color: #00be64
-                        &.last
-                            background-color: $blue
-                            color: $text
+                        &.gift
+                            background-color: transparent
+                            color: $accent
+                            border: 1px solid $accent
+
                     .wishlist
                         margin-left: auto !important
                         position: relative
@@ -250,6 +263,7 @@
                     position: relative
                     overflow: hidden !important
                     width: 100%
+                    margin-bottom: 1em
                     ul
                         margin: 0
                         padding: 0
@@ -266,42 +280,9 @@
                                 user-select: none
                                 user-drag: none
 
-                    .next,
-                    .prev
-                        position: absolute
-                        top: 50%
-                        transform: translateY(-50%)
-                        background: transparent
-                        z-index: 1
-                        background-repeat: no-repeat
-                        background-size: 27px
-                        border-radius: 50%
-                        font-size: 0
-                        width: 60px
-                        height: 60px
-                        padding: 0
-                        display: flex
-                        align-items: center
-                        justify-content: center
-                        outline: none
-                        border: none
-                        cursor: pointer
-                        transition: opacity .3s ease
-                        &.hidden
-                            opacity: 0.3
-                    .next
-                        right: 0
-                        background-position: 55%
-                        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojQUM1MkJGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
-                    .prev
-                        left: 0
-                        background-position: 45%
-                        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMTk4LjYwOCwyNDYuMTA0TDM4Mi42NjQsNjIuMDRjNS4wNjgtNS4wNTYsNy44NTYtMTEuODE2LDcuODU2LTE5LjAyNGMwLTcuMjEyLTIuNzg4LTEzLjk2OC03Ljg1Ni0xOS4wMzJsLTE2LjEyOC0xNi4xMiAgICBDMzYxLjQ3NiwyLjc5MiwzNTQuNzEyLDAsMzQ3LjUwNCwwcy0xMy45NjQsMi43OTItMTkuMDI4LDcuODY0TDEwOS4zMjgsMjI3LjAwOGMtNS4wODQsNS4wOC03Ljg2OCwxMS44NjgtNy44NDgsMTkuMDg0ICAgIGMtMC4wMiw3LjI0OCwyLjc2LDE0LjAyOCw3Ljg0OCwxOS4xMTJsMjE4Ljk0NCwyMTguOTMyYzUuMDY0LDUuMDcyLDExLjgyLDcuODY0LDE5LjAzMiw3Ljg2NGM3LjIwOCwwLDEzLjk2NC0yLjc5MiwxOS4wMzItNy44NjQgICAgbDE2LjEyNC0xNi4xMmMxMC40OTItMTAuNDkyLDEwLjQ5Mi0yNy41NzIsMC0zOC4wNkwxOTguNjA4LDI0Ni4xMDR6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBzdHlsZT0iZmlsbDojQUM1MkJGIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==')
-
-                    
                     .slick-slide
-                        margin: 0 2em
-                        padding: 0 3em
+                        margin: 0
+                        padding: 0
                         text-align: center
                         display: flex
                         align-items: center
@@ -313,7 +294,7 @@
                             height: auto
                             cursor: pointer    
                     .slick-list
-                        margin: 0 -2em
+                        margin: 0
 
                     .slick-next,
                     .slick-prev
@@ -335,9 +316,10 @@
                         outline: none
                         border: none
                         cursor: pointer
+                        opacity: 0
                         transition: opacity .5s ease
                         &.slick-disabled
-                            opacity: .3
+                            opacity: 0 !important
                     .slick-next
                         right: 0
                         background-position: 55%
@@ -347,6 +329,11 @@
                         background-position: 45%
                         background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMTk4LjYwOCwyNDYuMTA0TDM4Mi42NjQsNjIuMDRjNS4wNjgtNS4wNTYsNy44NTYtMTEuODE2LDcuODU2LTE5LjAyNGMwLTcuMjEyLTIuNzg4LTEzLjk2OC03Ljg1Ni0xOS4wMzJsLTE2LjEyOC0xNi4xMiAgICBDMzYxLjQ3NiwyLjc5MiwzNTQuNzEyLDAsMzQ3LjUwNCwwcy0xMy45NjQsMi43OTItMTkuMDI4LDcuODY0TDEwOS4zMjgsMjI3LjAwOGMtNS4wODQsNS4wOC03Ljg2OCwxMS44NjgtNy44NDgsMTkuMDg0ICAgIGMtMC4wMiw3LjI0OCwyLjc2LDE0LjAyOCw3Ljg0OCwxOS4xMTJsMjE4Ljk0NCwyMTguOTMyYzUuMDY0LDUuMDcyLDExLjgyLDcuODY0LDE5LjAzMiw3Ljg2NGM3LjIwOCwwLDEzLjk2NC0yLjc5MiwxOS4wMzItNy44NjQgICAgbDE2LjEyNC0xNi4xMmMxMC40OTItMTAuNDkyLDEwLjQ5Mi0yNy41NzIsMC0zOC4wNkwxOTguNjA4LDI0Ni4xMDR6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBzdHlsZT0iZmlsbDojQUM1MkJGIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==')
 
+                    &:hover
+                        .slick-next,
+                        .slick-prev
+                            opacity: 1
+  
                     .slick-dots
                         margin: 0 auto
                         margin-top: 1em
@@ -452,25 +439,46 @@
                             background: $accent
                 &__credit
                     display: flex
+                    align-items: center
+                    justify-content: space-between
                     padding: 1em 0
                     p
                         margin: 0
                         margin-right: 0.5em
-                    img
-                        display: inline-block
-                        width: 1em
-                        height: 1em
-            
+                    a
+                        color: $grey
+                        font-size: 0.9em
+                        border-bottom: 1px dashed $grey
+                        &:hover
+                            color: $grey
+
+                &.no-offers
+                    .products-page-body__buy__price__cost
+                        flex: 0 0 100%
+                        margin-bottom: 0.5em
+                    .products-page-body__buy__price__tag
+                        flex: 0 0 100%
+                        display: flex
+                        span
+                            flex: 0 0 50%
+                            &:first-child
+                                margin-bottom: 0
+                                margin-right: 0.5em
+
             &__size,
             &__color
                 width: 100%
                 padding: 1em
                 padding-bottom: 0
                 position: relative
-                .caption
-                    font-weight: bold
-                    margin-bottom: 0
-                    font-size: 1.1em
+                &__head
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                    .caption
+                        font-weight: bold
+                        margin-bottom: 0
+                        font-size: 1.1em
                 .table
                     color: $grey
                     border-bottom: 1px dashed $grey
@@ -532,23 +540,30 @@
             &__delivery
                 border-top: 1px solid #f5f5f5
                 padding: 1em
+                &__head
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                    margin-bottom: 1em
+                    .caption
+                        font-weight: bold
+                        margin-bottom: 0
+                        font-size: 1.1em
+                        color: $text
+                    a
+                        color: $grey
+                        font-size: 0.9em
+                        border-bottom: 1px dashed $grey
+                        &:hover
+                            color: $grey
                 p
                     color: $grey
-                    font-size: .9em
+                    font-size: 1em
                     margin-bottom: 0.3em
                     b
                         color: $text
                         font-size: 1.1em
-                a
-                    display: inline-block
-                    margin-top: 1em
-                    color: $grey
-                    font-size: 0.9em
-                    border-bottom: 1px dashed $grey
-                    &:hover
-                        color: $grey
-                        border: none
-            
+
         &__about
             margin-top: 1.5em
             float: left
@@ -792,8 +807,6 @@
     span
         display: none
 
-
-
 @media screen and ( max-width: 1199.98px )
     .products-page
         &-body
@@ -822,6 +835,10 @@
                         span
                             padding: .8em .2em
                             font-size: .75em
+                    &__credit
+                        flex-wrap: wrap
+                        a
+                            font-size: .9rem
                 &__button
                     .btn
                         flex: 1 0 49%
@@ -829,6 +846,9 @@
                         font-size: 1em
                         max-width: 130px
                 &__delivery
+                    &__head
+                        a
+                            font-size: 0.9rem
                     p
                         font-size: .85em
                         margin-bottom: 0.3em
@@ -946,7 +966,10 @@
                         .slick-list
                             margin: 0 -1em
                     .zoom
-                        display: none
+                        top: 0
+                        right: 0
+                        bottom: auto
+                        border-radius: 0 0 4px 4px
 
             &__buy
                 flex-wrap: wrap
@@ -1034,15 +1057,6 @@
         &-body
             &__item
                 padding: 1em
-                &__right
-                    &__tag
-                        justify-content: space-between
-                        span
-                            &:not(:first-child)
-                                margin-left: 0
-                        .wishlist
-                            margin-left: 0 !important
-
 
             &__about
                 &__title

@@ -84,26 +84,6 @@ if (document.querySelector('.modal')) {
                 document.addEventListener('click', hideModalCloseBtn)
             }
 
-            let userHovered = false
-            const showModalOnHover = (event) => {
-                if (userHovered == false && !modal.classList.contains('is-active')) {
-                    showModal(event)
-                    userHovered = true
-                    modal.addEventListener('mouseover', hideModalOnHover)
-                }
-            }
-            const hideModalOnHover = (event) => {
-                if (userHovered == true && event.target.contains(modal)) {
-                    hideModal()
-                    userHovered = false
-                    modal.removeEventListener('mouseover', hideModalOnHover)
-                }
-            }
-
-            userHelp.addEventListener('mouseenter', showModalOnHover)
-            
-
-
             const showCityList = () => {
 
             }
@@ -202,9 +182,7 @@ if (document.querySelector('.modal')) {
                     }, 600);
                     
                 })
-            });
-            
-
+            })
 }
 
 //Show Hide Elem
