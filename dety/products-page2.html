@@ -91,12 +91,18 @@
           <div class="products-page-body__item">
             <div class="close"></div>
             <div class="products-page-body__item__left">
-              <!-- <ul class="products-page-body__item__left__thumb">
+              <ul class="products-page-body__item__left__thumb">
                 <li><img src="./img/products/card/1.jpg" alt=""></li>
                 <li><img src="./img/products/card/2.jpg" alt=""></li>
                 <li><img src="./img/products/card/3.jpg" alt=""></li>
                 <li><img src="./img/products/card/4.jpg" alt=""></li>
-              </ul> -->
+                <li><img src="./img/products/card/5.jpg" alt=""></li>
+                <li><img src="./img/products/card/6.jpg" alt=""></li>
+                <li><img src="./img/products/card/1.jpg" alt=""></li>
+                <li><img src="./img/products/card/2.jpg" alt=""></li>
+                <li><img src="./img/products/card/3.jpg" alt=""></li>
+                <li><img src="./img/products/card/4.jpg" alt=""></li>
+              </ul>
             </div>
 
             <div class="products-page-body__item__right">
@@ -108,16 +114,18 @@
               </div>
               <div class="products-page-body__item__right__img">
                 <ul class="products-page-body__item__right__img__wrapp">
-                  <li><img src="./img/products/card/1.jpg" alt=""></li>
-                  <li><img src="./img/products/card/2.jpg" alt=""></li>
-                  <li><img src="./img/products/card/3.jpg" alt=""></li>
-                  <li><img src="./img/products/card/4.jpg" alt=""></li>
-                  <li><img src="./img/products/card/5.jpg" alt=""></li>
-                  <li><img src="./img/products/card/6.jpg" alt=""></li>
+                  <li><img data-lazy="./img/products/card/1.jpg" alt=""></li>
+                  <li><img data-lazy="./img/products/card/2.jpg" alt=""></li>
+                  <li><img data-lazy="./img/products/card/3.jpg" alt=""></li>
+                  <li><img data-lazy="./img/products/card/4.jpg" alt=""></li>
+                  <li><img data-lazy="./img/products/card/5.jpg" alt=""></li>
+                  <li><img data-lazy="./img/products/card/6.jpg" alt=""></li>
+                  <li><img data-lazy="./img/products/card/1.jpg" alt=""></li>
+                  <li><img data-lazy="./img/products/card/2.jpg" alt=""></li>
+                  <li><img data-lazy="./img/products/card/3.jpg" alt=""></li>
+                  <li><img data-lazy="./img/products/card/4.jpg" alt=""></li>
                 </ul>
                 <span class='zoom'><img src="./img/zoom.svg"></span>
-                <button class="prev"></button>
-                <button class="next"></button>
               </div>
             </div>
 
@@ -1141,6 +1149,200 @@
 <script src="./js/fancybox/jquery.fancybox.min.js"></script>
 <link rel="stylesheet" href="./js/fancybox/jquery.fancybox.min.css">
 
+  <script>
+    $( document ).ready(function() {
+      
+      const thumb = document.querySelectorAll('.products-page-body__item__left__thumb li')
+      let slideCount = thumb.length
+      if (thumb.length < 6) {
+        thumb.forEach((item,index) => {
+          item.addEventListener('click', () => {
+            document.querySelector('.products-page-body__item__left__thumb li.slick-current').classList.remove('slick-current')
+            item.classList.add('slick-current')
+            imgSlider.slick('slickGoTo', index)
+          })
+        })
+      }
+      
+
+      $('.products-page-body__item__left__thumb').slick({
+        vertical: true,
+        infinite: false,
+        slidesToShow: 6,
+        asNavFor: thumb.length >= 6 ? '.products-page-body__item__right__img__wrapp' : false,
+        focusOnSelect: true,
+        arrows: false,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 4,
+            }
+          },
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 5,
+            }
+          }
+        ]
+      });    
+      
+      const imgSlider = $('.products-page-body__item__right__img__wrapp').slick({
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        draggable: false,
+        asNavFor: '.products-page-body__item__left__thumb',
+        responsive: [
+          {
+            breakpoint: 767,
+            settings: {
+              arrows: false,
+              dots: true
+            }
+          }
+        ]
+      });
+
+      const disableScroll = () => {
+        document.body.classList.add('no-scroll')
+      }
+      const enableScroll = () => {
+        document.body.classList.remove('no-scroll') 
+      }
+      
+      let galleryIsOpen = false;
+      const card = document.querySelector('.products-page-body__item')
+          
+      const closeGalleryEsc = () => {
+        if (event.keyCode == 27) {
+          closeGallery()
+        }
+      }
+      const openGallery = () => {
+        if ( galleryIsOpen == false) {
+          disableScroll()
+          card.classList.add('open')
+          setTimeout(() => {
+            document.body.append(card)
+            setTimeout(() => {
+              card.classList.add('is-active')
+              imgSlider.slick('setPosition')     
+            }, 1);    
+          }, 1);
+          galleryIsOpen = true
+          document.addEventListener('keydown', closeGalleryEsc)
+        } else {
+          closeGallery()
+        }
+      }
+      const closeGallery = () => {
+        if ( galleryIsOpen == true) {
+          const parent = document.querySelector('.products-page-body')
+          const nextElem = document.querySelector('.products-page-body__buy')
+          card.classList.add('closed')
+          setTimeout(() => {
+            card.classList.remove('is-active')
+            card.classList.remove('open')
+            card.classList.remove('closed')
+            document.body.removeChild(card)
+            parent.insertBefore(card, nextElem)
+            imgSlider.slick('setPosition')
+          }, 200);
+          galleryIsOpen = false
+          document.removeEventListener('keydown', closeGalleryEsc)
+          enableScroll()
+        }
+      }
+      
+      const openGalleryBtn = document.querySelectorAll('.products-page-body__item__right__img__wrapp img')
+      const zoomBtn = document.querySelector('.products-page-body__item__right__img .zoom')
+      const closeBtn = document.querySelector('.products-page-body__item .close')
+      openGalleryBtn.forEach(item => {
+        item.addEventListener('click', openGallery)
+      })
+      zoomBtn.addEventListener('click', openGallery)
+      closeBtn.addEventListener('click', closeGallery)
+
+      $('.resent-products').slick({
+        lazyLoad: 'ondemand',
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        draggable: false,
+        responsive: [
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 2
+            }
+          },
+        ]
+      });
+      $('.visited-products').slick({
+        lazyLoad: 'ondemand',
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        draggable: false,
+        responsive: [
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 2
+            }
+          },
+        ]
+      });
+      
+      $('[data-fancybox="gallery"]').fancybox({
+        loop: true,
+        infobar: false,
+        toolbar: false,
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      if ( document.querySelector('[data-target="review"]') ) {
+          //Input file
+          let inputs = document.querySelectorAll('.input__file');
+          inputs.forEach(input =>{
+              let label = input.nextElementSibling,
+              labelVal = label.querySelector('.input__file-button-text').innerText;
+          
+              input.addEventListener('change', function (e) {
+                  let countFiles = '';
+                  if (this.files && this.files.length >= 1) {
+                      countFiles = this.files.length;
+                      label.classList.add('active')
+                  } else {
+                      label.classList.remove('active')
+                  }
+              
+                  if (countFiles)
+                      label.querySelector('.input__file-button-text').innerText = 'Выбрано файлов: ' + countFiles;
+                  else
+                      label.querySelector('.input__file-button-text').innerText = labelVal;
+              });
+          });
+      }
+    });
+  </script>
+</body>
+</html>
 
   <script>
     // $( document ).ready(function() {
@@ -1290,298 +1492,7 @@
     // });
 
 
-    "use strict";
-
-function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return !!right[Symbol.hasInstance](left); } else { return left instanceof right; } }
-
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
-
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
-
-function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-var SliderCarousel = /*#__PURE__*/function () {
-  function SliderCarousel(_ref) {
-    var _this = this;
-
-    var id = _ref.id,
-        main = _ref.main,
-        wrap = _ref.wrap,
-        next = _ref.next,
-        prev = _ref.prev,
-        _ref$infinity = _ref.infinity,
-        infinity = _ref$infinity === void 0 ? false : _ref$infinity,
-        _ref$position = _ref.position,
-        position = _ref$position === void 0 ? 0 : _ref$position,
-        _ref$slideToShow = _ref.slideToShow,
-        slideToShow = _ref$slideToShow === void 0 ? 3 : _ref$slideToShow,
-        _ref$responsive = _ref.responsive,
-        responsive = _ref$responsive === void 0 ? [] : _ref$responsive,
-        _ref$allowShift = _ref.allowShift,
-        allowShift = _ref$allowShift === void 0 ? false : _ref$allowShift,
-        _ref$dragStartPoint = _ref.dragStartPoint,
-        dragStartPoint = _ref$dragStartPoint === void 0 ? null : _ref$dragStartPoint,
-        _ref$dragEndPoint = _ref.dragEndPoint,
-        dragEndPoint = _ref$dragEndPoint === void 0 ? null : _ref$dragEndPoint,
-        _ref$dragResult = _ref.dragResult,
-        dragResult = _ref$dragResult === void 0 ? null : _ref$dragResult,
-        _ref$drageble = _ref.drageble,
-        drageble = _ref$drageble === void 0 ? false : _ref$drageble;
-
-    _classCallCheck(this, SliderCarousel);
-
-    _defineProperty(this, "prevSlider", function () {
-      if (_this.options.infinity || _this.options.position > 0) {
-        --_this.options.position;
-
-        if (_this.options.position < 0) {
-          _this.options.position = _this.options.maxPosition;
-        }
-
-        _this.wrap.style.transform = "translateX(-".concat(_this.options.position * _this.options.slideCount, "%)");
-        !_this.options.infinity && _this.options.position == 0 ? _this.prev.classList.add('hidden') : _this.prev.classList.remove('hidden');
-        !_this.options.infinity && _this.options.position == _this.options.maxPosition ? _this.next.classList.add('hidden') : _this.next.classList.remove('hidden');
-      }
-    });
-
-    _defineProperty(this, "nextSlider", function () {
-      if (_this.options.infinity || _this.options.position < _this.options.maxPosition) {
-        ++_this.options.position;
-
-        if (_this.options.position > _this.options.maxPosition) {
-          _this.options.position = 0;
-        }
-
-        _this.wrap.style.transform = "translateX(-".concat(_this.options.position * _this.options.slideCount, "%)");
-        !_this.options.infinity && _this.options.position == 0 ? _this.prev.classList.add('hidden') : _this.prev.classList.remove('hidden');
-        !_this.options.infinity && _this.options.position == _this.options.maxPosition ? _this.next.classList.add('hidden') : _this.next.classList.remove('hidden');
-      }
-    });
-
-    _defineProperty(this, "dragSlider", function () {
-      if (_this.options.position * _this.options.slideCount - _this.dragResult < _this.options.maxPosition * _this.options.slideCount || _this.options.position * _this.options.slideCount - _this.dragResult < 0) {
-        _this.wrap.classList.add('drag');
-
-        _this.wrap.style.transform = "translateX(-".concat(_this.options.position * _this.options.slideCount - _this.dragResult, "%)");
-      }
-    });
-
-    _defineProperty(this, "dragEnd", function (e) {
-      _this.wrap.classList.remove('drag');
-
-      _this.wrap.removeEventListener('touchmove', _this.dragAction);
-
-      _this.wrap.removeEventListener('touchend', _this.dragEnd);
-
-      _this.drageble ? _this.wrap.removeEventListener('drag', _this.dragAction) : '';
-      _this.drageble ? _this.wrap.removeEventListener('dragend', _this.dragEnd) : '';
-      if (_this.dragResult > 20) _this.prevSlider();
-      if (_this.dragResult < -20) _this.nextSlider();else _this.wrap.style.transform = "translateX(-".concat(_this.options.position * _this.options.slideCount, "%)");
-    });
-
-    _defineProperty(this, "dragAction", function (e) {
-      e = e || window.event;
-
-      if (e.type == 'touchmove') {
-        _this.dragEndPoint = e.touches[0].clientX;
-        _this.postY2 = e.touches[0].clientY;
-      } else {
-        _this.dragEndPoint = e.clientX;
-        _this.postY2 = e.clientY;
-      }
-
-      if (Math.abs(_this.postY2 - _this.postY1) < 100) {
-        window.scrollY = _this.postY1;
-        _this.dragResult = (_this.dragEndPoint - _this.dragStartPoint) / _this.dragStartPoint * 100;
-        if (Math.abs(_this.dragResult) > 10) document.addEventListener('touchmove', _this.dragSlider);
-        if (Math.abs(_this.dragResult) > 10 && _this.drageble) document.addEventListener('drag', _this.dragSlider);
-      }
-    });
-
-    _defineProperty(this, "dragStart", function (e) {
-      e = e || window.event;
-
-      if (e.type == 'touchstart') {
-        _this.dragStartPoint = e.touches[0].clientX;
-        _this.postY1 = e.touches[0].clientY;
-      } else {
-        _this.dragStartPoint = e.clientX;
-        _this.postY1 = e.clientY;
-      } // this.wrap.addEventListener('touchmove',  this.dragAction)
-      // this.wrap.addEventListener('touchend',   this.dragEnd)
-      // this.drageble ? this.wrap.addEventListener('drag',  this.dragAction) : ''
-      // this.drageble ? this.wrap.addEventListener('dragend',   this.dragEnd) : ''
-
-    });
-
-    this.id = id, this.main = document.querySelector(main);
-    this.wrap = document.querySelector(wrap);
-    this.slides = document.querySelector(wrap).children;
-    this.postY1 = 0, this.postY2 = 0, this.next = document.querySelector(next);
-    this.prev = document.querySelector(prev);
-    this.slideToShow = slideToShow, this.options = {
-      position: position,
-      maxPosition: this.slides.length - this.slideToShow,
-      infinity: infinity,
-      slideCount: 100 / this.slideToShow
-    }, this.responsive = responsive, this.drageble = drageble;
-  }
-
-  _createClass(SliderCarousel, [{
-    key: "init",
-    value: function init() {
-      this.addSliderClass();
-      this.addStyle(this.options.slideCount);
-
-      if (this.prev && this.next) {
-        this.controlSlider();
-      } else {
-        this.addArrow();
-        this.controlSlider();
-      }
-
-      !this.options.infinity && this.options.position == 0 ? this.prev.classList.add('hidden') : this.prev.classList.remove('hidden');
-      !this.options.infinity && this.options.maxPosition == 0 ? this.next.classList.add('hidden') : this.next.classList.remove('hidden');
-      this.responsive ? this.responseInit() : '';
-    }
-  }, {
-    key: "addSliderClass",
-    value: function addSliderClass() {
-      this.main.classList.add("".concat(this.id, "-slider"));
-      this.wrap.classList.add("".concat(this.id, "-slider-wrap"));
-      var _iteratorNormalCompletion = true;
-      var _didIteratorError = false;
-      var _iteratorError = undefined;
-
-      try {
-        for (var _iterator = this.slides[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-          var item = _step.value;
-          item.classList.add("".concat(this.id, "-slider-wrap--item"));
-        }
-      } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-      } finally {
-        try {
-          if (!_iteratorNormalCompletion && _iterator.return != null) {
-            _iterator.return();
-          }
-        } finally {
-          if (_didIteratorError) {
-            throw _iteratorError;
-          }
-        }
-      }
-    }
-  }, {
-    key: "addStyle",
-    value: function addStyle(count) {
-      var style = document.getElementById("".concat(this.id, "-slider")) || document.createElement('style');
-      style.id = this.id + '-slider';
-      style.innerHTML = "\n          .".concat(this.id, "-slider {\n              overflow: hidden;\n          }\n          .").concat(this.id, "-slider-wrap {\n              display:-webkit-box;\n              display:-webkit-flex;\n              display:-ms-flexbox;\n              display: flex;\n              transition: transform .5s ease;\n              will-change: transform;\n          }\n          .").concat(this.id, "-slider-wrap--item {\n              margin: auto 0;\n              -webkit-box-flex:0;\n              -webkit-flex:0 0 ").concat(count, "%;\n              -ms-flex:0 0 ").concat(count, "%;\n              flex:0 0 ").concat(count, "%\n          }\n          .").concat(this.id, "-slider-wrap.drag {\n            transition: none !important;\n          }\n      ");
-      var body = document.body || document.querySelector('body');
-      body.appendChild(style);
-    }
-  }, {
-    key: "controlSlider",
-    value: function controlSlider() {
-      this.prev.addEventListener('click', this.prevSlider);
-      this.next.addEventListener('click', this.nextSlider);
-      this.wrap.addEventListener('touchstart', this.dragStart); // this.drageble ? this.wrap.addEventListener('dragstart', this.dragStart) : ''
-
-      var _iteratorNormalCompletion2 = true;
-      var _didIteratorError2 = false;
-      var _iteratorError2 = undefined;
-
-      try {
-        for (var _iterator2 = this.slides[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-          var item = _step2.value;
-          item.addEventListener('touchstart', this.dragStart);
-          item.addEventListener('touchmove', this.dragAction);
-          item.addEventListener('touchend', this.dragEnd);
-        }
-      } catch (err) {
-        _didIteratorError2 = true;
-        _iteratorError2 = err;
-      } finally {
-        try {
-          if (!_iteratorNormalCompletion2 && _iterator2.return != null) {
-            _iterator2.return();
-          }
-        } finally {
-          if (_didIteratorError2) {
-            throw _iteratorError2;
-          }
-        }
-      }
-    }
-  }, {
-    key: "addArrow",
-    value: function addArrow() {
-      this.prev = document.createElement('button');
-      this.next = document.createElement('button');
-      this.prev.className = 'prev';
-      this.next.className = 'next';
-      this.prev.textContent = 'prev';
-      this.next.textContent = 'next';
-      this.main.appendChild(this.prev);
-      this.main.appendChild(this.next);
-      var style = document.createElement('style');
-      style.id = this.id + '-slider--button';
-      style.textContent = "\n          ".concat(this.id, "-slider .prev.hidden,\n          ").concat(this.id, "-slider .next.hidden {\n              opacity: 0\n          }\n      ");
-      var body = document.body || document.querySelector('body');
-      body.appendChild(style);
-    }
-  }, {
-    key: "responseInit",
-    value: function responseInit() {
-      var _this2 = this;
-
-      var slidesToShowDefault = this.slideToShow;
-      var allBreakpoint = this.responsive.map(function (item) {
-        return item.breakpoint;
-      });
-      var maxResponse = Math.max.apply(Math, _toConsumableArray(allBreakpoint));
-
-      var checkResponse = function checkResponse() {
-        var widthWindow = window.innerWidth || document.documentElement.clientWidth;
-
-        if (widthWindow < maxResponse) {
-          for (var i = 0; i < allBreakpoint.length; i++) {
-            if (widthWindow < allBreakpoint[i]) {
-              _this2.slideToShow = _this2.responsive[i].slideToShow;
-              _this2.options.slideCount = 100 / _this2.slideToShow;
-            }
-          }
-        } else {
-          _this2.slideToShow = slidesToShowDefault;
-          _this2.options.slideCount = 100 / _this2.slideToShow;
-        }
-
-        _this2.addStyle(_this2.options.slideCount);
-      };
-
-      document.addEventListener("DOMContentLoaded", function () {
-        checkResponse();
-      });
-      window.addEventListener('resize', function () {
-        checkResponse();
-      });
-    }
-  }]);
-
-  return SliderCarousel;
-}();    
+    
 
 // class SliderCarousel {
 //   constructor({
@@ -1813,104 +1724,104 @@ var SliderCarousel = /*#__PURE__*/function () {
 //     }
 // }
 
-    document.addEventListener("DOMContentLoaded", function() {
+    // document.addEventListener("DOMContentLoaded", function() {
 
-      let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth       
-      const preventDefault = (e) => {
-          e.preventDefault();
-      }
-      const disableScroll = () => {
-          if ( width < 767 ) { 
-            document.body.classList.add('no-scroll') 
-          } else {
-              document.body.addEventListener('touchmove', preventDefault, { passive: false });
-              window.addEventListener('DOMMouseScroll', preventDefault, false);
-              document.addEventListener('wheel', preventDefault, {passive: false});
-          }
-      }
-      const enableScroll = () => {
-          if ( width < 767 ) { 
-              document.body.classList.remove('no-scroll') 
-          } else {
-              document.body.removeEventListener('touchmove', preventDefault, { passive: false });
-              window.removeEventListener('DOMMouseScroll', preventDefault, false);
-              document.removeEventListener('wheel', preventDefault, {passive: false});
-          }
-      }
+    //   let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth       
+    //   const preventDefault = (e) => {
+    //       e.preventDefault();
+    //   }
+    //   const disableScroll = () => {
+    //       if ( width < 767 ) { 
+    //         document.body.classList.add('no-scroll') 
+    //       } else {
+    //           document.body.addEventListener('touchmove', preventDefault, { passive: false });
+    //           window.addEventListener('DOMMouseScroll', preventDefault, false);
+    //           document.addEventListener('wheel', preventDefault, {passive: false});
+    //       }
+    //   }
+    //   const enableScroll = () => {
+    //       if ( width < 767 ) { 
+    //           document.body.classList.remove('no-scroll') 
+    //       } else {
+    //           document.body.removeEventListener('touchmove', preventDefault, { passive: false });
+    //           window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    //           document.removeEventListener('wheel', preventDefault, {passive: false});
+    //       }
+    //   }
       
-      let galleryIsOpen = false;
-      const closeGalleryEsc = () => {
-        if (event.keyCode == 27) {
-          closeGallery()
-        }
-      }
-      const openGallery = () => {
-        if ( galleryIsOpen == false) {
-          disableScroll()
-          document.querySelector('.products-page-body__item').classList.add('is-active')
-          // imgSlider.slick('setPosition')
-          galleryIsOpen = true
-          document.addEventListener('keydown', closeGalleryEsc)
-        } else {
-          closeGallery()
-        }
-      }
-      const closeGallery = () => {
-        if ( galleryIsOpen == true) {
-          document.querySelector('.products-page-body__item').classList.remove('is-active')
-          // $('.products-page-body__item__right__img__wrapp').slick('setPosition')
-          galleryIsOpen = false
-          document.removeEventListener('keydown', closeGalleryEsc)
-          enableScroll()
-        }
-      }
+    //   let galleryIsOpen = false;
+    //   const closeGalleryEsc = () => {
+    //     if (event.keyCode == 27) {
+    //       closeGallery()
+    //     }
+    //   }
+    //   const openGallery = () => {
+    //     if ( galleryIsOpen == false) {
+    //       disableScroll()
+    //       document.querySelector('.products-page-body__item').classList.add('is-active')
+    //       // imgSlider.slick('setPosition')
+    //       galleryIsOpen = true
+    //       document.addEventListener('keydown', closeGalleryEsc)
+    //     } else {
+    //       closeGallery()
+    //     }
+    //   }
+    //   const closeGallery = () => {
+    //     if ( galleryIsOpen == true) {
+    //       document.querySelector('.products-page-body__item').classList.remove('is-active')
+    //       // $('.products-page-body__item__right__img__wrapp').slick('setPosition')
+    //       galleryIsOpen = false
+    //       document.removeEventListener('keydown', closeGalleryEsc)
+    //       enableScroll()
+    //     }
+    //   }
       
-      const openGalleryBtn = document.querySelectorAll('.products-page-body__item__right__img__wrapp img')
-      const zoomBtn = document.querySelector('.products-page-body__item__right__img .zoom')
-      const closeBtn = document.querySelector('.products-page-body__item .close')
-      openGalleryBtn.forEach(item => {
-        item.addEventListener('click', openGallery)
-      })
-      zoomBtn.addEventListener('click', openGallery)
-      closeBtn.addEventListener('click', closeGallery)
+    //   const openGalleryBtn = document.querySelectorAll('.products-page-body__item__right__img__wrapp img')
+    //   const zoomBtn = document.querySelector('.products-page-body__item__right__img .zoom')
+    //   const closeBtn = document.querySelector('.products-page-body__item .close')
+    //   openGalleryBtn.forEach(item => {
+    //     item.addEventListener('click', openGallery)
+    //   })
+    //   zoomBtn.addEventListener('click', openGallery)
+    //   closeBtn.addEventListener('click', closeGallery)
 
 
-      const options = {
-              id: 'img',
-              main: '.products-page-body__item__right__img',
-              wrap: '.products-page-body__item__right__img__wrapp',
-              prev: '.products-page-body__item__right__img .prev',
-              next: '.products-page-body__item__right__img .next',
-              infinity: false,
-              slideToShow: 1,
-              drageble: false
-          }
-          const carousel = new SliderCarousel(options)
-          carousel.init()
-      if ( document.querySelector('.products-page-body__rq') ) {
-        //Input file
-        let inputs = document.querySelectorAll('.input__file');
-        Array.prototype.forEach.call(inputs, function (input) {
-            let label = input.nextElementSibling,
-            labelVal = label.querySelector('.input__file-button-text').innerText;
+    //   const options = {
+    //           id: 'img',
+    //           main: '.products-page-body__item__right__img',
+    //           wrap: '.products-page-body__item__right__img__wrapp',
+    //           prev: '.products-page-body__item__right__img .prev',
+    //           next: '.products-page-body__item__right__img .next',
+    //           infinity: false,
+    //           slideToShow: 1,
+    //           drageble: false
+    //       }
+    //       const carousel = new SliderCarousel(options)
+    //       carousel.init()
+    //   if ( document.querySelector('.products-page-body__rq') ) {
+    //     //Input file
+    //     let inputs = document.querySelectorAll('.input__file');
+    //     Array.prototype.forEach.call(inputs, function (input) {
+    //         let label = input.nextElementSibling,
+    //         labelVal = label.querySelector('.input__file-button-text').innerText;
         
-            input.addEventListener('change', function (e) {
-                let countFiles = '';
-                if (this.files && this.files.length >= 1) {
-                    countFiles = this.files.length;
-                    label.classList.add('active')
-                } else {
-                    label.classList.remove('active')
-                }
+    //         input.addEventListener('change', function (e) {
+    //             let countFiles = '';
+    //             if (this.files && this.files.length >= 1) {
+    //                 countFiles = this.files.length;
+    //                 label.classList.add('active')
+    //             } else {
+    //                 label.classList.remove('active')
+    //             }
             
-                if (countFiles)
-                    label.querySelector('.input__file-button-text').innerText = 'Выбрано файлов: ' + countFiles;
-                else
-                    label.querySelector('.input__file-button-text').innerText = labelVal;
-            });
-        });
-      }
-    });
+    //             if (countFiles)
+    //                 label.querySelector('.input__file-button-text').innerText = 'Выбрано файлов: ' + countFiles;
+    //             else
+    //                 label.querySelector('.input__file-button-text').innerText = labelVal;
+    //         });
+    //     });
+    //   }
+    // });
   </script>
 </body>
 </html>

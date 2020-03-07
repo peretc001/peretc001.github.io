@@ -96,10 +96,6 @@
                 <li><img src="./img/products/card/2.jpg" alt=""></li>
                 <li><img src="./img/products/card/3.jpg" alt=""></li>
                 <li><img src="./img/products/card/4.jpg" alt=""></li>
-                <li><img src="./img/products/card/5.jpg" alt=""></li>
-                <li><img src="./img/products/card/6.jpg" alt=""></li>
-                <li><img src="./img/products/card/5.jpg" alt=""></li>
-                <li><img src="./img/products/card/6.jpg" alt=""></li>
               </ul>
             </div>
 
@@ -116,10 +112,6 @@
                   <li><img data-lazy="./img/products/card/2.jpg" alt=""></li>
                   <li><img data-lazy="./img/products/card/3.jpg" alt=""></li>
                   <li><img data-lazy="./img/products/card/4.jpg" alt=""></li>
-                  <li><img data-lazy="./img/products/card/5.jpg" alt=""></li>
-                  <li><img data-lazy="./img/products/card/6.jpg" alt=""></li>
-                  <li><img data-lazy="./img/products/card/5.jpg" alt=""></li>
-                  <li><img data-lazy="./img/products/card/6.jpg" alt=""></li>
                 </ul>
                 <span class='zoom'><img src="./img/zoom.svg"></span>
               </div>
@@ -1198,20 +1190,23 @@
     $( document ).ready(function() {
       
       const thumb = document.querySelectorAll('.products-page-body__item__left__thumb li')
-      thumb.forEach((item,index) => {
-        item.addEventListener('click', () => {
-          document.querySelector('.products-page-body__item__left__thumb li.slick-current').classList.remove('slick-current')
-          item.classList.add('slick-current')
-          imgSlider.slick('slickGoTo', index)
-        })
-      })
       let slideCount = thumb.length
+      if (thumb.length < 6) {
+        thumb.forEach((item,index) => {
+          item.addEventListener('click', () => {
+            document.querySelector('.products-page-body__item__left__thumb li.slick-current').classList.remove('slick-current')
+            item.classList.add('slick-current')
+            imgSlider.slick('slickGoTo', index)
+          })
+        })
+      }
+      
 
       $('.products-page-body__item__left__thumb').slick({
         vertical: true,
         infinite: false,
         slidesToShow: 6,
-        // asNavFor: thumb.length >= 6 ? '.products-page-body__item__right__img__wrapp' : false,
+        asNavFor: thumb.length >= 6 ? '.products-page-body__item__right__img__wrapp' : false,
         focusOnSelect: true,
         arrows: false,
         responsive: [
@@ -1247,34 +1242,16 @@
         ]
       });
 
-      
-
-
-
-      let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth       
-      const preventDefault = (e) => {
-          e.preventDefault();
-      }
       const disableScroll = () => {
-          if ( width < 767 ) { 
-            document.body.classList.add('no-scroll') 
-          } else {
-              document.body.addEventListener('touchmove', preventDefault, { passive: false });
-              window.addEventListener('DOMMouseScroll', preventDefault, false);
-              document.addEventListener('wheel', preventDefault, {passive: false});
-          }
+        document.body.classList.add('no-scroll')
       }
       const enableScroll = () => {
-          if ( width < 767 ) { 
-              document.body.classList.remove('no-scroll') 
-          } else {
-              document.body.removeEventListener('touchmove', preventDefault, { passive: false });
-              window.removeEventListener('DOMMouseScroll', preventDefault, false);
-              document.removeEventListener('wheel', preventDefault, {passive: false});
-          }
+        document.body.classList.remove('no-scroll') 
       }
       
       let galleryIsOpen = false;
+      const card = document.querySelector('.products-page-body__item')
+          
       const closeGalleryEsc = () => {
         if (event.keyCode == 27) {
           closeGallery()
@@ -1283,8 +1260,14 @@
       const openGallery = () => {
         if ( galleryIsOpen == false) {
           disableScroll()
-          document.querySelector('.products-page-body__item').classList.add('is-active')
-          imgSlider.slick('setPosition')
+          card.classList.add('open')
+          setTimeout(() => {
+            document.body.append(card)
+            setTimeout(() => {
+              card.classList.add('is-active')
+              imgSlider.slick('setPosition')     
+            }, 1);    
+          }, 1);
           galleryIsOpen = true
           document.addEventListener('keydown', closeGalleryEsc)
         } else {
@@ -1293,8 +1276,17 @@
       }
       const closeGallery = () => {
         if ( galleryIsOpen == true) {
-          $('.products-page-body__item').removeClass('is-active')
-          $('.products-page-body__item__right__img__wrapp').slick('setPosition')
+          const parent = document.querySelector('.products-page-body')
+          const nextElem = document.querySelector('.products-page-body__buy')
+          card.classList.add('closed')
+          setTimeout(() => {
+            card.classList.remove('is-active')
+            card.classList.remove('open')
+            card.classList.remove('closed')
+            document.body.removeChild(card)
+            parent.insertBefore(card, nextElem)
+            imgSlider.slick('setPosition')
+          }, 200);
           galleryIsOpen = false
           document.removeEventListener('keydown', closeGalleryEsc)
           enableScroll()
