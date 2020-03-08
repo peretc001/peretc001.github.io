@@ -882,7 +882,6 @@
           }
         });
         $('.slider-wrapper').slick({
-          lazyLoad: 'ondemand',
           draggable: true,
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -915,7 +914,7 @@
             draggable: true,
             slidesToShow: 1,
             slidesToScroll: 1,
-            infinite: true,
+            infinite: false,
             dots: false
           });
           $('.home-notes--wrap').on('init', function(event, slick){
@@ -925,7 +924,7 @@
             draggable: true,
             slidesToShow: 1,
             slidesToScroll: 1,
-            infinite: true,
+            infinite: false,
             dots: false
           });
         }
