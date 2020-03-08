@@ -867,20 +867,19 @@
       let resizeSlider = false
       let sliderWrapper = false
 
-      const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-      
-      
-      
+      let width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      const sliderList = [...document.querySelector('.slider-wrapper').children]
+      if (width < 767) {
+          sliderList.forEach(item => item.querySelector('img').dataset.lazy ? item.querySelector('img').dataset.lazy = item.querySelector('img').dataset.mobile : '')
+      } 
+
       const addTopSlider = () => {
         $('.slider-wrapper').on('init', function(event, slick){
-          sliderWrapper = true
-
-          for(elem of slick.$slides) {
-            if (width < 767) {
-              elem.children[0].dataset.lazy = elem.children[0].dataset.mobile
-            } 
+          if (width < 767) {
+            setTimeout(() => {
+              slick.$dots[0].style.opacity = '1'
+            }, 500);
           }
-         
         });
         $('.slider-wrapper').slick({
           lazyLoad: 'ondemand',
@@ -902,9 +901,8 @@
           ]
         })
       }
-
-      
       addTopSlider()
+
       
       let homeWeekSlider = false
       let homeNotesSlider = false
