@@ -62,9 +62,9 @@
   <div class="slider">
     <div class="container">
       <div class="slider-wrapper">
-        <a class="slider-wrapper--item" href="" data-desctop="./img/slider/1.png" data-mobile="./img/slider/1m.png"></a>
-        <a class="slider-wrapper--item" href="" data-desctop="./img/slider/2.png" data-mobile="./img/slider/2m.png"></a>
-        <a class="slider-wrapper--item" href="" data-desctop="./img/slider/3.png" data-mobile="./img/slider/3m.png"></a>
+        <a class="slider-wrapper--item" href=""><img data-lazy="./img/slider/1.png" data-mobile="./img/slider/1m.png" alt=""> </a>
+        <a class="slider-wrapper--item" href=""><img data-lazy="./img/slider/2.png" data-mobile="./img/slider/2m.png" alt=""> </a>
+        <a class="slider-wrapper--item" href=""><img data-lazy="./img/slider/3.png" data-mobile="./img/slider/3m.png" alt=""> </a>
       </div>
     </div>
   </div>
@@ -868,22 +868,22 @@
       let sliderWrapper = false
 
       const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-      const sliderList = document.querySelectorAll('.slider-wrapper--item')
-      if (width > 767) {
-          sliderList.forEach(item => {
-              item.innerHTML = `<img src="${item.getAttribute('data-desctop')}" alt="">`
-          })
-      } else {
-          sliderList.forEach(item => {
-              item.innerHTML = `<img src="${item.getAttribute('data-mobile')}" alt="">`
-          })
-      }
+      
+      
       
       const addTopSlider = () => {
         $('.slider-wrapper').on('init', function(event, slick){
-          sliderWrapper = true      
+          sliderWrapper = true
+
+          for(elem of slick.$slides) {
+            if (width < 767) {
+              elem.children[0].dataset.lazy = elem.children[0].dataset.mobile
+            } 
+          }
+         
         });
         $('.slider-wrapper').slick({
+          lazyLoad: 'ondemand',
           draggable: true,
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -902,6 +902,8 @@
           ]
         })
       }
+
+      
       addTopSlider()
       
       let homeWeekSlider = false

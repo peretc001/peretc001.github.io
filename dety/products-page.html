@@ -1485,9 +1485,14 @@
     });
 
     document.addEventListener("DOMContentLoaded", function() {
+      if ( document.querySelector('.products-page-body__item__right__tag .wishlist') ) {
+        const wishlist = document.querySelector('.products-page-body__item__right__tag .wishlist')
+        wishlist.addEventListener('click', () => wishlist.classList.toggle('active'))
+      }
+
       if ( document.querySelector('[data-target="review"]') ) {
           //Input file
-          let inputs = document.querySelectorAll('.input__file');
+          let inputs = document.querySelectorAll('.input__file')
           inputs.forEach(input =>{
               let label = input.nextElementSibling,
               labelVal = label.querySelector('.input__file-button-text').innerText;

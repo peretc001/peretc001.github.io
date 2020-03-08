@@ -275,5 +275,9 @@ if (document.querySelector('.modal')) {
 });
 
 $( document ).ready(function() {
-    $('.lazy').Lazy();
+    $('.lazy').Lazy({
+        effect: "fadeIn",
+        effectTime: 500,
+        threshold: 0
+    });
 });

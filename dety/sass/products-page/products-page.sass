@@ -219,8 +219,8 @@
                         display: flex
                         align-items: center
                         justify-content: center
-                        flex: 0 0 40px
-                        height: 40px
+                        flex: 0 0 35px
+                        height: 35px
                         font-size: 1em
                         color: #ffffff
                         text-align: center
@@ -252,13 +252,11 @@
                         background-size: 2em
                         background-position: center
                         background-repeat: no-repeat
-                        transition: transform .3s ease
+                        transition: background .3s ease
                         cursor: pointer
                         background-image: url('../../img/nav/wishlist.svg')
                         &.active
                             background-image: url('../../img/nav/wishlist-active.svg')
-                        &:hover
-                            transform: scale(1.1)
                 &__img
                     position: relative
                     overflow: hidden !important
@@ -958,6 +956,7 @@
                         .zoom
                             display: block
                             bottom: 2em
+                            right: 20px
                 &__left
                     display: none !important
                 &__right
