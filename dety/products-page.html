@@ -130,8 +130,8 @@
                   <p>6 750 ₽</p>
                 </div>
                 <div class="products-page-body__buy__price__tag">
-                  <span>-251 руб экономия</span>
-                  <span>+481 бонусных рублей</span>
+                  <span>экономия 251 руб</span>
+                  <span>+481 бонус</span>
                 </div>
                 <div class="products-page-body__buy__price__credit">
                   <p>
@@ -204,7 +204,7 @@
 
               <div class="products-page-body__buy__delivery">
                 <div class="products-page-body__buy__delivery__head">
-                  <p class="caption">Доставка и оплата</p>
+                  <p class="caption">Условия доставки</p>
                   <a class="table" href="">Подробнее</a>
                 </div>
                 <p>
@@ -1324,7 +1324,7 @@
 
       $('.products-page-body__item__left__thumb').slick({
         vertical: true,
-        infinite: false,
+        infinite: thumb.length >= 6 ? true : false,
         slidesToShow: 6,
         asNavFor: thumb.length >= 6 ? '.products-page-body__item__right__img__wrapp' : false,
         focusOnSelect: true,
@@ -1346,7 +1346,7 @@
       });    
       
       const imgSlider = $('.products-page-body__item__right__img__wrapp').slick({
-        infinite: false,
+        infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         draggable: true,
