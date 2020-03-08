@@ -950,10 +950,14 @@
             font-size: 1.8em
         &-body
             &__item
-                &.is-active
-                    padding: 0
-                    .slick-dots
-                        padding-top: 1em
+                &.open
+                    &.is-active
+                        padding: 0
+                        .slick-dots
+                            padding-top: 1em
+                        .zoom
+                            display: block
+                            bottom: 2em
                 &__left
                     display: none !important
                 &__right
