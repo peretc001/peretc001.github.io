@@ -1052,6 +1052,13 @@
       </div>
     </div>
 
+    <div class="toTop">
+      <span>
+        <i></i>
+        Наверх
+      </span>
+    </div>
+
     <div class="copyright">
       <p><span>© 2019-2020. ВсёДляДеток.ру</span> <span>Большой магазин для маленьких</span></p>
       <p><a href="">Политика конфеденциальности</a> <a href="">Пользовательское соглашение</a></p>
@@ -1288,12 +1295,7 @@
   </div>
 </div>
 
-<div id="toTop">
-  <span>
-    <i></i>
-    Наверх
-  </span>
-</div>
+
 
 <script src="./js/scripts.min.js"></script>
 <script defer src='./js/chunk-vendors.d4d1433b.js'></script>
@@ -1465,7 +1467,7 @@
     
       // Back to top button
       let backToTop = function() {
-            var el = $( '#toTop' );
+            var el = $( '.toTop' );
             el.hide()
         $( window ).scroll(function() {
           if( $( this ).scrollTop() < 50 ) {
