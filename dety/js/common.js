@@ -84,6 +84,9 @@ if (document.querySelector('.modal')) {
                 }, 150);
                 document.addEventListener('keyup', hideModalEsc)
                 document.addEventListener('click', hideModalCloseBtn)
+
+                current.getAttribute('data-modal') == 'login' ? modal.querySelector('[data-modal="'+ event.target.dataset.target +'"] .phone-mask').focus() : ''
+                        console.log(modal.querySelector('[data-modal="'+ event.target.dataset.target +'"] .phone-mask'))
             }   
 
             const showCityList = () => {
@@ -177,7 +180,7 @@ if (document.querySelector('.modal')) {
                     hModal()
                     setTimeout(() => {
                         showModal(event)
-                        modal.querySelector('[data-modal="'+ event.target.dataset.target +'"] .phone-mask').focus()
+                        
                     }, 300);                    
                 })
             })
