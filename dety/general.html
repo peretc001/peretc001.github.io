@@ -62,9 +62,9 @@
   <div class="slider">
     <div class="container">
       <div class="slider-wrapper">
-        <a class="slider-wrapper--item" href=""><img data-lazy="./img/slider/1.png" data-desctop="./img/slider/1.png" data-mobile="./img/slider/1m.png" alt=""> </a>
-        <a class="slider-wrapper--item" href=""><img data-lazy="./img/slider/2.png" data-desctop="./img/slider/2.png" data-mobile="./img/slider/2m.png" alt=""> </a>
-        <a class="slider-wrapper--item" href=""><img data-lazy="./img/slider/3.png" data-desctop="./img/slider/3.png" data-mobile="./img/slider/3m.png" alt=""> </a>
+        <a class="slider-wrapper--item" href=""><img data-lazy="./img/slider/1.png" data-desctop="./img/slider/1.png" data-mobile="./img/slider/1m.png" alt=""></a>
+        <a class="slider-wrapper--item" href=""><img data-lazy="./img/slider/2.png" data-desctop="./img/slider/2.png" data-mobile="./img/slider/2m.png" alt=""></a>
+        <a class="slider-wrapper--item" href=""><img data-lazy="./img/slider/3.png" data-desctop="./img/slider/3.png" data-mobile="./img/slider/3m.png" alt=""></a>
       </div>
     </div>
   </div>
@@ -400,7 +400,7 @@
 
   <div class="bonus">
     <div class="container">
-      <a class="slider-wrapper--item" href="" data-desctop="./img/bonus/1.png" data-mobile="./img/bonus/1m.png"></a>
+      <a class="bonus-item" href=""><img class="lazy" data-src="" data-desctop="./img/bonus/1.png" data-mobile="./img/bonus/1m.png" alt=""></a>
     </div>
   </div>
 
@@ -451,7 +451,7 @@
 
   <div class="bonus">
     <div class="container">
-      <a class="slider-wrapper--item" href="" data-desctop="./img/bonus/2.png" data-mobile="./img/bonus/2m.png"></a>
+      <a class="bonus-item" href=""><img class="lazy" data-src="" data-desctop="./img/bonus/2.png" data-mobile="./img/bonus/2m.png" alt=""></a>
     </div>
   </div>
 
@@ -542,7 +542,7 @@
 
   <div class="bonus">
     <div class="container">
-      <a class="slider-wrapper--item" href="" data-desctop="./img/bonus/3.png" data-mobile="./img/bonus/3m.png"></a>
+      <a class="bonus-item" href=""><img class="lazy" data-src="" data-desctop="./img/bonus/3.png" data-mobile="./img/bonus/3m.png" alt=""></a>
     </div>
   </div>
 
@@ -674,7 +674,7 @@
           <ul>
               <li><a href="">О компании</a></li>
               <li><a href="">Пункты выдачи</a></li>
-              <li><a href="">Магазины</a></li>
+              <li><a href="">Розничные магазины</a></li>
               <li><a href="">Контакты</a></li>
               <li><a href="">Отзывы</a></li>
           </ul>
@@ -696,9 +696,10 @@
           <ul>
             <li><a href="">Заказать звонок</a></li>
             <li><a href="">Оставить отзыв</a></li>
-            <li><a href="">Обмен / Возврат</a></li>
+            <li><a href="">Заявка на возврат</a></li>
+            <li><a href="">Заявка на обмен</a></li>
             <li><a href="">Благодарность</a></li>
-            <li><a href="">Жалоба</a></li>
+            <li><a href="">Пожаловаться</a></li>
           </ul>
       </div>
       <div class="col-sm-6 col-md-4 offset-md-4 col-lg-3 offset-lg-0">
@@ -741,7 +742,7 @@
         <ul class="showElem">
           <li><a href="">О компании</a></li>
           <li><a href="">Пункты выдачи</a></li>
-          <li><a href="">Магазины</a></li>
+          <li><a href="">Розничные магазины</a></li>
           <li><a href="">Контакты</a></li>
           <li><a href="">Отзывы</a></li>
         </ul>
@@ -753,13 +754,13 @@
           </b>
         </p>
         <ul class="showElem">
-          <li>Проверка заказа</li>
-          <li>Гарантии и возврат</li>
-          <li>Доставка и оплата</li>
-          <li>Кредит и рассрочка</li>
-          <li>Полезные материалы</li>
-          <li>Бонусная программа</li>
-          <li>Подарочные карты</li>
+          <li><a href="">Проверка заказа</a></li>
+          <li><a href="">Гарантии и возврат</a></li>
+          <li><a href="">Доставка и оплата</a></li>
+          <li><a href="">Кредит и рассрочка</a></li>
+          <li><a href="">Полезные материалы</a></li>
+          <li><a href="">Бонусная программа</a></li>
+          <li><a href="">Подарочные карты</a></li>
         </ul>
       </div>
       <div class="menu-item">
@@ -769,11 +770,12 @@
           </b>
         </p>
         <ul class="showElem">
-          <li>Заказать звонок</li>
-          <li>Оставить отзыв</li>
-          <li>Обмен / Возврат</li>
-          <li>Благодарность</li>
-          <li>Жалоба</li>
+          <li><a href="">Заказать звонок</a></li>
+          <li><a href="">Оставить отзыв</a></li>
+          <li><a href="">Заявка на возврат</a></li>
+          <li><a href="">Заявка на обмен</a></li>
+          <li><a href="">Благодарность</a></li>
+          <li><a href="">Пожаловаться</a></li>
         </ul>
       </div>
       <div class="social">
@@ -873,6 +875,27 @@
           item.querySelector('img').dataset.lazy = item.querySelector('img').dataset.desctop        
         } 
       }
+      
+      const bonusImg = () => {
+        const bonus = document.querySelectorAll('.bonus .bonus-item')
+        bonus.forEach(item => {
+          if (document.body.clientWidth < 767) {
+            item.querySelector('img').dataset.lazy = item.querySelector('img').dataset.mobile 
+            item.querySelector('img').src = item.querySelector('img').dataset.mobile 
+          } else if (document.body.clientWidth > 767) {
+            item.querySelector('img').dataset.lazy = item.querySelector('img').dataset.desctop
+            item.querySelector('img').src = item.querySelector('img').dataset.desctop               
+          } 
+        })
+      } 
+      
+      $('.lazy').Lazy({
+        beforeLoad: function(element) {
+          bonusImg()
+        },
+      });
+      
+      
 
       let resizeWindow;
       width < 767 ? resizeWindow = false : resizeWindow = true
@@ -928,6 +951,7 @@
         const week = document.querySelector('.home-week')
           
         if ( document.body.clientWidth < 767 && resizeWindow == true) {
+          bonusImg()
           $('.slider-wrapper').slick('unslick')
           main.removeChild(slider)
           setTimeout(() => {
@@ -943,6 +967,7 @@
           addHomeSlider()
           resizeWindow = false
         } else if ( document.body.clientWidth > 767 && resizeWindow == false) {
+          bonusImg()
           $('.slider-wrapper').slick('unslick')
           main.removeChild(slider)
           setTimeout(() => {
