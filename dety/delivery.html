@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Категория</title>
+  <style>
+     body {opacity: 0; overflow-x: hidden; background: #FFF8F8;}
+  </style>
+  <!-- CATEGORY -->
+  <link rel="stylesheet" href="./css/delivery/delivery.min.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-top">
+    <div class="container">
+      <div class="nav-top__city">
+        <a class="nav-top__city__location" data-toggle="modal" data-target="city" href="#">Санкт-Петербург</a>
+        <div class="nav-top__city__location__item">
+          <a href="#">Пункты выдачи</a>
+          <a href="">Условия доставки</a>
+        </div>
+      </div>
+      <div class="nav-top__right">
+        <a class="nav-top__right__phone" href="tel:8-800-600-77-27">8-800-600-77-27</a>
+        <span class="nav-top__right__time">9:00 - 22:00</span>
+        <a class="nav-top__right__user" data-toggle="modal" data-target="user" href="#">Покупателям</a>
+        <a class="nav-top__right__login" data-toggle="modal" data-target="login" href="#">Войти</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-search">
+    <div class="container">
+      <div class="hamburger" data-toggle="modal" data-target="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <a href="./" class="brand">
+        <img src="./img/logo.svg" alt="Все для деток.ру">
+        <img src="./img/logo_mobile.svg" alt="Все для деток.ру">
+      </a>
+      <form action="/" method="post" class="nav-search__form">
+        <input type="text" name="search" value="" placeholder="Поиск по сайту">
+      </form>
+      <div class="nav-search--right">
+        <a href="" class="nav-search--right__wishlist active">
+          <!-- <span>2</span> -->
+        </a>
+        <a href="" class="nav-search--right__cart">
+          <!-- <span class="qty">3</span> -->
+          <!-- <span class="price">5 750 ₽</span> -->
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id=app></div>
+</nav>
+  
+<main>
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="">Главная</a> Доставка и оплата
+        </div>
+    </div>
+
+    <div class="delivery">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <h1>Доставка и оплата</h1>
+                    <div class="delivery-head">
+                        <p>Доставляем в <a href="#" data-toggle="modal" data-target="city">Краснодар</a> и по всей России</p>
+                        <p>59 пунктов выдачи в <a href="#" data-toggle="modal" data-target="city">Краснодаре</a> - посмотреть на карте</p>
+                    </div>
+                    <div class="delivery-type">
+                        <div class="delivery-type--item">
+                            <img src="./img/delivery/delivery1.svg" alt="Самовывоз из магазина">
+                            <p>Самовывоз из магазина</p>
+                            <p><b>Бесплатно</b></p>
+                        </div>
+                        <div class="delivery-type--item">
+                            <img src="./img/delivery/delivery2.svg" alt="Самовывоз с пункта выдачи">
+                            <p>Самовывоз с пункта выдачи</p>
+                            <p><b>1-3 дня</b></p>
+                        </div>
+                        <div class="delivery-type--item">
+                            <img src="./img/delivery/delivery3.svg" alt="Доставка курьером">
+                            <p>Доставка курьером</p>
+                            <p><b>1-3 дня</b></p>
+                        </div>
+                    </div>
+                    <div class="delivery-free">
+                        <p>Бесплатная доставка от 3 000 ₽</p>
+                        <a href="#">Подробные условия доставки</a>
+                    </div>
+                </div>
+                <div class="col-lg-7 delivery-package">
+                    <img src="./img/delivery/package.png" alt="">
+                </div>
+            </div>
+
+            <h2>Оплата заказа</h2>
+            <div class="delivery-pay">
+                <div class="delivery-pay--caption">
+                    Принимаем к оплате карты:
+                </div>
+                <div class="delivery-pay--cards">
+                    <img src="./img/delivery/visa.png" alt="">
+                    <img src="./img/delivery/mastercrd.png" alt="">
+                    <img src="./img/delivery/mir.png" alt="">
+                    <img src="./img/delivery/jsb.png" alt="">
+                    <img src="./img/delivery/xalva.png" alt="">
+                    <img src="./img/delivery/hcb.png" alt="">
+                    <img src="./img/delivery/sovest.png" alt="">
+                </div>
+            </div>
+
+            <div class="delivery-button">
+                <div class="delivery-button--item red">
+                    <p>Онлайн картой <span>на сайте</span></p>
+                </div>
+                <div class="delivery-button--item accent">
+                    <p>Наличными / картой <span>при получении</span></p>
+                </div>
+                <div class="delivery-button--item blue">
+                   <p>Онлайн кредит <a href="">Подробные условия</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer>
+  <div class="container">
+
+    <div class="email-form">
+      <div class="email-form-block">
+        <div class="email-form-block__title">
+          <img src="./img/email-form/email.svg" alt=" Узнавайте о выгодных  предложениях первыми!">
+          <p>Узнавайте о выгодных предложениях первыми!</p>
+        </div>
+        <form class="email-form-block__form">
+          <input type="email" name="email" value="" placeholder="Ваш e-mail" required>
+          <button class="btn btn-send">Подписаться</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <p><b>ВсёДляДеток.ру</b></p>
+          <ul>
+              <li><a href="">О компании</a></li>
+              <li><a href="">Пункты выдачи</a></li>
+              <li><a href="">Розничные магазины</a></li>
+              <li><a href="">Контакты</a></li>
+              <li><a href="">Отзывы</a></li>
+          </ul>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <p><b>Покупателям</b></p>
+          <ul>
+            <li><a href="">Проверка заказа</a></li>
+            <li><a href="">Гарантии и возврат</a></li>
+            <li><a href="">Доставка и оплата</a></li>
+            <li><a href="">Полезные материалы</a></li>
+            <li><a href="">Кредиты и рассрочка</a></li>
+            <li><a href="">Бонусная программа</a></li>
+            <li><a href="">Подарочные карты</a></li>
+          </ul>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <p><b>Обратная связь</b></p>
+          <ul>
+            <li><a href="">Заказать звонок</a></li>
+            <li><a href="">Оставить отзыв</a></li>
+            <li><a href="">Заявка на возврат</a></li>
+            <li><a href="">Заявка на обмен</a></li>
+            <li><a href="">Благодарность</a></li>
+            <li><a href="">Пожаловаться</a></li>
+          </ul>
+      </div>
+      <div class="col-sm-6 col-md-4 offset-md-4 col-lg-3 offset-lg-0">
+        <p><b>Сообщество </b></p>
+        <p>Мы в социальных сетях</p>
+        <div class="social">
+          <a href=""><img src="./img/social/ok.svg" alt=""></a>
+          <a href=""><img src="./img/social/vk.svg" alt=""></a>
+          <a href=""><img src="./img/social/insta.svg" alt=""></a>
+          <a href=""><img src="./img/social/youtube.svg" alt=""></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p><span>© 2019-2020. ВсёДляДеток.ру</span> <span>Большой магазин для маленьких</span></p>
+      <p><a href="">Политика конфеденциальности</a> <a href="">Пользовательское соглашение</a></p>
+    </div>
+  </div>
+</footer>
+
+<div class="modal">
+  <div class="container">
+    <!-- Modal Menu -->
+    <div class="modal-body menu" data-modal="menu">
+      <span class="close" data-close="close"></span>
+      <a href="" class="button login" data-mobile="yes" data-toggle="modal" data-target="login">
+        <img src="./img/nav/mobile/login.svg" alt="">
+        Вход</a>
+      <a href="" class="button city" data-mobile="yes" data-toggle="modal" data-target="city">
+        <img src="./img/nav/mobile/location.svg" alt="">
+        Санкт-Петербург</a>
+      <a href="tel:8-800-600-77-27" class="button phone">
+        <img src="./img/nav/mobile/phone.svg" alt="">
+        8-800-600-77-27</a>
+      <div class="menu-item">
+        <p class="hideElem">
+          <b>ВсёДляДеток</b>
+        </p>
+        <ul class="showElem">
+          <li><a href="">О компании</a></li>
+          <li><a href="">Пункты выдачи</a></li>
+          <li><a href="">Розничные магазины</a></li>
+          <li><a href="">Контакты</a></li>
+          <li><a href="">Отзывы</a></li>
+        </ul>
+      </div>
+      <div class="menu-item">
+        <p class="hideElem">
+          <b>
+            Покупателям
+          </b>
+        </p>
+        <ul class="showElem">
+          <li><a href="">Проверка заказа</a></li>
+          <li><a href="">Гарантии и возврат</a></li>
+          <li><a href="">Доставка и оплата</a></li>
+          <li><a href="">Кредит и рассрочка</a></li>
+          <li><a href="">Полезные материалы</a></li>
+          <li><a href="">Бонусная программа</a></li>
+          <li><a href="">Подарочные карты</a></li>
+        </ul>
+      </div>
+      <div class="menu-item">
+        <p class="hideElem">
+          <b>
+            Обратная связь
+          </b>
+        </p>
+        <ul class="showElem">
+          <li><a href="">Заказать звонок</a></li>
+          <li><a href="">Оставить отзыв</a></li>
+          <li><a href="">Заявка на возврат</a></li>
+          <li><a href="">Заявка на обмен</a></li>
+          <li><a href="">Благодарность</a></li>
+          <li><a href="">Пожаловаться</a></li>
+        </ul>
+      </div>
+      <div class="social">
+        <p>
+          <b>
+            Сообщество
+          </b>
+        </p>
+        <div class="social-link">
+          <a href=""><img src="./img/social/mobile/ok.svg" alt=""></a>
+          <a href=""><img src="./img/social/mobile/vk.svg" alt=""></a>
+          <a href=""><img src="./img/social/mobile/instagram.svg" alt=""></a>
+          <a href=""><img src="./img/social/mobile/youtube.svg" alt=""></a>
+        </div>
+      </div>
+      <div class="menu-email">
+        <p>
+          <b>
+            Подпишись на обновления
+          </b>
+        </p>
+        <form action="/" method="post">
+          <input type="email" name="email" value="" placeholder="E-mail" required>
+          <button class="btn btn-send">Подписаться</button>
+        </form>
+      </div>
+      <p class="copyright">
+        © 2019-2020. ВсёДляДеток.ру<br>Большой магазин для маленьких
+      </p>
+    </div>
+    <!-- Modal City -->
+    <div class="modal-body city" data-modal="city">
+      <span class="close" data-close="close"></span>
+      <p class="modal-body__head">Ваш город:</p>
+      <p class="modal-body__city">Санкт-Петербург</p>
+      <p class="modal-body__desc">От города зависят условия доставки</p>
+      <div class="modal-body__button">
+        <button class="btn btn-accent" data-close="close">Да</button>
+        <button class="btn btn-outline-accent open-city-list">Нет, выбрать другой</button>
+      </div>
+    </div>
+    <!-- Modal User -->
+    <div class="modal-body user" data-modal="user">
+      <span class="close" data-close="close"></span>
+      <ul>
+        <li><a href="">Проверка заказа</a></li>
+        <li><a href="">Доставка и оплата</a></li>
+        <li><a href="">Гарантии и возврат</a></li>
+        <li><a href="">Кредит и рассрочка</a></li>
+        <li><a href="">Полезные материалы</a></li>
+        <li><a href="">Бонусная программа</a></li>
+        <li><a href="">Подарочные карты</a></li>
+      </ul>
+    </div>
+    <!-- Modal Login -->
+    <div class="modal-body login" data-modal="login">
+      <span class="close" data-close="close"></span>
+      <p><b>Войти в личный кабинет</b></p>
+      <form action="/" method="post" class="signin">
+        <label for="phone">Войти по номеру</label>
+        <input type="tel" id="phone" name="phone" class="phone-mask" placeholder="+7 (XXX) XXX-XX-XX" required>
+        <button type="submit" class="btn btn-accent">Получить sms-код</button>
+      </form>
+    </div>
+    <!-- Modal SMS -->
+    <div class="modal-body sms" data-modal="sms">
+      <span class="close" data-close="close"></span>
+      <p><b>Введите код из смс</b></p>
+      <form action="/" method="post" class="signin-sms">
+        <div class="signin-sms__wrap">
+          <input class="sms-input" type="tel" name="sms1" maxlength="1" tabindex="1">
+          <input class="sms-input" type="tel" name="sms2" maxlength="1" tabindex="2">
+          <input class="sms-input" type="tel" name="sms3" maxlength="1" tabindex="3">
+          <input class="sms-input" type="tel" name="sms4" maxlength="1" tabindex="4">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+  <script src="./js/scripts.min.js"></script>
+  <script defer src='./js/chunk-vendors.d4d1433b.js'></script>
+  <script defer src='./js/app.394e5ec0.js'></script>
+  <link href='./css/app.6e1150c3.css' rel=stylesheet>
+  <link rel="stylesheet" href="./css/main.min.css">
+</body>
+</html>

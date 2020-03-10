@@ -1,0 +1,216 @@
+@import '../_libs/var'
+.delivery
+    h1, h2
+        display: block
+        font-size: 2.5em
+        font-weight: bold
+        margin: 0
+        margin-bottom: 0
+    
+    .row
+        padding-bottom: 1em
+
+    &-head
+        padding: 1em 0
+        font-weight: bold
+        margin-bottom: 2em
+        p
+            margin-bottom: 0.5em
+            a
+                color: $nav
+                border-bottom: 1px dashed $nav
+                &:hover
+                    color: $nav
+                    border-bottom: none
+    
+    &-type
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: space-between
+        img
+            width: 80px
+            height: auto
+            margin-bottom: 2em
+        p
+            font-weight: bold
+            b
+                display: block
+                color: $accent
+                margin-top: 2em
+    
+    &-free
+        margin-top: 2em
+        p
+            color: $blue2
+            font-size: 1.5em
+            font-weight: bold
+            margin-bottom: 0.3em
+        a
+            color: $nav
+            border-bottom: 1px dashed $nav
+            &:hover
+                color: $nav
+                border-bottom: none
+    
+    &-package
+        img
+            width: 100%
+    &-pay
+        padding: 1em 0 0 0
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        &--caption
+            flex: 0 0 35%
+            font-weight: bold
+            font-size: 1.5em
+        &--cards
+            flex: 0 0 65%
+            display: flex
+            align-items: center
+            justify-content: space-between
+            img
+                max-width: 80px
+    
+    &-button
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding: 2em 0
+        &--item
+            flex: 0 0 31%
+            min-height: 135px
+            font-size: 1.8em
+            font-weight: bold
+            color: #fff
+            border-radius: 16px
+            display: flex
+            align-items: center
+            justify-content: flex-start
+            flex-wrap: wrap
+            margin: 0
+            padding: 0 30px
+            p
+                margin-bottom: 0
+            span
+                flex: 0 0 100%
+                display: block
+                margin: 0
+                padding: 0
+            a
+                flex: 0 0 100%
+                display: inline-block
+                color: #ffffff
+                font-size: 1rem
+                font-weight: normal
+                border-bottom: 1px dashed #fff
+                &:hover
+                    color: #ffffff
+            &.red
+                background: #FF5F5A
+            &.accent
+                background: $accent
+            &.blue
+                background: $blue2
+
+@media screen and ( max-width: 1199.98px )
+    .delivery
+        .row
+            padding-bottom: 2em
+        &-button
+            &--item
+                font-size: 1.5em
+
+@media screen and ( max-width: 991.98px )
+    .delivery
+        &-package
+            display: none
+        &-pay
+            margin-top: 1em
+            flex-wrap: wrap
+            &--caption
+                flex: 0 0 100%
+                margin-bottom: 1em
+            &--cards
+                flex: 0 0 100%
+        &-button
+            &--item
+                font-size: 1em
+                min-height: 105px
+                a
+                    font-size: .8rem
+
+@media screen and ( max-width: 767.98px )
+    .delivery
+        &-type
+            &:not(:last-child)
+                p
+                    padding-right: 1em
+        &-pay
+            &--cards
+                img
+                    max-width: 60px
+        &-button
+            flex-wrap: wrap
+            &--item
+                flex: 0 0 48%
+                font-size: 1.2em
+                min-height: 105px
+                margin-bottom: 1em
+                a
+                    font-size: .8rem
+
+@media screen and ( max-width: 576.98px )
+    .delivery
+        h1, h2
+            font-size: 1.8em
+        &-type
+            img
+                width: 70px
+        &-pay
+            &--cards
+                flex-wrap: wrap
+                justify-content: flex-start
+                img
+                    max-width: 90px
+                    margin-bottom: 1em
+        &-button
+            &--item
+                flex: 0 0 100%
+                font-size: 1.5em
+                min-height: 135px
+                margin-bottom: 1em
+                a
+                    font-size: .8rem
+
+@media screen and ( max-width: 424.98px )
+    .delivery
+        &-type
+            img
+                width: 60px
+        &-free
+            p
+                font-size: 1.3em
+
+@media screen and ( max-width: 374.98px )
+    .delivery
+        &-type
+            img
+                width: 50px
+            p
+                font-size: 0.8em
+        &-free
+            p
+                font-size: 1.2em
+        &-pay
+            &--caption
+                font-size: 1.2em
+            &--cards
+                img
+                    max-width: 70px
+
+
+    
+
+    
