@@ -63,6 +63,12 @@ if (document.querySelector('.modal')) {
                 document.removeEventListener('keydown', hideModalEsc())
                 document.removeEventListener('click', hideModalCloseBtn())
             }
+
+            const focusInput = () => {
+
+            }
+            document.body.ontouchend = function() { document.querySelector('.phone-mask').focus(); };
+
             const showModal = (event) => {
                 event.target.dataset.target == 'menu' ? '' : disableScroll()
                 event.target.dataset.target == 'menu' ? document.querySelector('.hamburger').classList.add('open') : ''
@@ -80,13 +86,13 @@ if (document.querySelector('.modal')) {
                     width > 991 && current.getAttribute('data-modal') == 'login' ? current.querySelector('.phone-mask').focus() : ''
                     current.getAttribute('data-modal') == 'review' ? current.querySelector('[name="user"]').focus() : ''
                     current.getAttribute('data-modal') == 'question' ? current.querySelector('[name="user"]').focus() : ''
-                    current.getAttribute('data-modal') == 'oneclick' ? current.querySelector('.name').focus() : ''
+                    current.getAttribute('data-modal') == 'oneclick' ? document.body.ontouchend = function() { current.querySelector('.name').focus(); } : ''
                 }, 150);
                 document.addEventListener('keyup', hideModalEsc)
                 document.addEventListener('click', hideModalCloseBtn)
 
-                current.getAttribute('data-modal') == 'login' ? modal.querySelector('[data-modal="'+ event.target.dataset.target +'"] .phone-mask').focus() : ''
-                        console.log(modal.querySelector('[data-modal="'+ event.target.dataset.target +'"] .phone-mask'))
+                // current.getAttribute('data-modal') == 'login' ? modal.querySelector('[data-modal="'+ event.target.dataset.target +'"] .phone-mask').focus() : ''
+                //         console.log(modal.querySelector('[data-modal="'+ event.target.dataset.target +'"] .phone-mask'))
             }   
 
             const showCityList = () => {
