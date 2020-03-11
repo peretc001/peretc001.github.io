@@ -1,5 +1,4 @@
 .modal
-    padding: 0 1em
     left: 0
     top: 0
     right: 0
@@ -8,62 +7,54 @@
     display: none
     overflow-y: auto
     opacity: 0
+    margin: 0
+    transition: opacity .3s ease
+    .container
+        position: relative
+        height: 100%
     &.in
         position: fixed
-        background: rgba(#000, .4)
         display: block
-        opacity: 0
-        transition: opacity .3s ease
-        .modal-body
-            opacity: 1
     &.in-menu
         position: absolute
         display: block
-        opacity: 0
-        .modal-body
-            opacity: 0
     &.is-active
+        background: rgba($text, .1)
         opacity: 1
-        .container
-            position: relative
     &-body
         background: #ffffff
         border-radius: 4px
         display: none
-        left: 0
-        top: 1px
         padding: 15px
         width: 100%
         max-width: 350px
         overflow: hidden
         box-shadow: 0 2px 10px rgba(#000, .1)
-        transition: transform .2s ease,  opacity .2s ease
         &.is-fade
             display: block
             position: absolute
+            left: 50%
+            top: 50%
+            transform: translateY(-50%) translateX(-50%)
+
         &.city
+            left: 1em
+            top: 0
+            transform: translateY(0) translateX(0)
+            border-radius: 0 0 4px 4px
             padding: 30px
-            transform: translateY(-200%)
             .modal-body__head
                 font-size: 1em
             .modal-body__city
                 font-size: 1.4em
             &.is-active
-                transform: translateY(0)
+        
         &.user
-            left: auto
-            right: 15px
             max-width: 250px
-            transform: translateY(-200%)
-            &.is-active
-                transform: translateY(0)
         &.login,
         &.sms
-            left: auto
-            right: 15px
             max-width: 450px
             padding: 30px 60px
-            transform: translateY(-200%)
             input
                 font-size: 20px
                 text-align: center
@@ -83,15 +74,14 @@
                     margin-right: 2%
                     &:last-child
                         margin-right: 0
-
-            &.is-active
-                transform: translateY(0)
         &.menu
+            left: 1em
+            top: 0
+            transform: translateY(170px) translateX(0)
             padding: 30px 12px 30px 12px
             max-width: 370px
             border: 2px solid $accent
-            transform: translateY(170px)
-            opacity: 0
+            transition: transform .3s ease
             .close
                 display: none
             .button
@@ -223,14 +213,8 @@
 
         &.review,
         &.question
-            left: 50%
-            right: 0
-            top: 0
-            transform: translateY(-200%) translateX(-50%)
             max-width: 560px
             padding: 30px
-            &.is-active
-                transform: translateY(0) translateX(-50%)
             form
                 margin: 0
                 padding: 0
@@ -351,13 +335,6 @@
                     max-width: 170px
 
         &.oneclick
-            left: 50%
-            top: 50%
-            transform: translateX(-50%) translateY(-150%)
-            opacity: 0
-            border-radius: 4px
-            &.is-active
-                transform: translateX(-50%) translateY(50%)
             .form-row
                 margin-bottom: 1em
                 label
@@ -450,45 +427,28 @@
 @media screen and ( max-width: 991.98px )
     .modal
         &-body
-            top: 1px
             &.menu
-                left: 2%
-                right: 2%
-                max-width: 96%
                 border-radius: 4px
 
 @media screen and ( max-width: 767.98px )
     .modal
+        padding: 0 calc(50% - 255px)
         &-body
+            &.city
+                left: 0
             &.menu
-                left: 3%
-                right: 3%
-                max-width: 94%
-                border-radius: 4px
+                left: 0
+                max-width: 100%
             &.review,
             &.question
-                left: 0
-                right: 0
-                transform: translateY(-200%) translateX(0)
-                &.is-active
-                    transform: translateY(0) translateX(0)
+                max-width: 100%
 
 @media screen and ( max-width: 576.98px )
     .modal
+        padding: 0 1em
         &-body
-            box-sizing: border-box
-            left: 0
-            right: 0
-            max-width: 100%
-            &.menu
-                left: 0
-                right: 0
-                max-width: 100%
-                border-radius: 4px
             &.login,
             &.sms
-                left: 0
-                right: 0
                 padding: 40px 30px
                 p
                     b
@@ -498,8 +458,6 @@
                     b
                         text-align: center
             &.city
-                left: 0
-                right: 0
                 .modal-body__head
                     font-size: 1em
                 .modal-body__city
@@ -523,12 +481,7 @@
                             p
                                 margin-bottom: 1em
             &.oneclick
-                left: 0
-                right: 0
-                transform: translateY(-200%) translateX(0)
                 border-radius: 0 0 4px 4px
-                &.is-active
-                    transform: translateY(0) translateX(0)
 
 @media screen and ( max-width: 374.98px )
     .modal
@@ -536,8 +489,6 @@
             &.menu
                 .menu-email
                     padding: 1em .5em
-                &.is-active
-                    transform: translateY(125px)
             &.review,
             &.question
                 p

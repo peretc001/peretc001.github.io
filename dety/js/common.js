@@ -86,13 +86,10 @@ if (document.querySelector('.modal')) {
                     width > 991 && current.getAttribute('data-modal') == 'login' ? current.querySelector('.phone-mask').focus() : ''
                     current.getAttribute('data-modal') == 'review' ? current.querySelector('[name="user"]').focus() : ''
                     current.getAttribute('data-modal') == 'question' ? current.querySelector('[name="user"]').focus() : ''
-                    current.getAttribute('data-modal') == 'oneclick' ? document.body.ontouchend = function() { current.querySelector('.name').focus(); } : ''
+                    current.getAttribute('data-modal') == 'oneclick' ? current.querySelector('.name').focus() : ''
                 }, 150);
                 document.addEventListener('keyup', hideModalEsc)
                 document.addEventListener('click', hideModalCloseBtn)
-
-                // current.getAttribute('data-modal') == 'login' ? modal.querySelector('[data-modal="'+ event.target.dataset.target +'"] .phone-mask').focus() : ''
-                //         console.log(modal.querySelector('[data-modal="'+ event.target.dataset.target +'"] .phone-mask'))
             }   
 
             const showCityList = () => {
@@ -158,7 +155,7 @@ if (document.querySelector('.modal')) {
                     }
                 })
             })
-            modal.addEventListener('click', (event) => event.target == modal ? hideModal() : '')
+            modal.addEventListener('click', (event) => event.target.contains(modal) ? hideModal() : '')
 
             const showCityOnLoad = () => {
                 let city = localStorage.getItem('city')
