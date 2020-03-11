@@ -15,19 +15,19 @@
     &.in
         position: fixed
         display: block
+        background: rgba($text, .4)
     &.in-menu
         position: absolute
         display: block
     &.is-active
-        background: rgba($text, .1)
         opacity: 1
     &-body
         background: #ffffff
         border-radius: 4px
         display: none
-        padding: 15px
+        padding: 2em 4em
         width: 100%
-        max-width: 350px
+        max-width: 450px
         overflow: hidden
         box-shadow: 0 2px 10px rgba(#000, .1)
         &.is-fade
@@ -40,21 +40,20 @@
         &.city
             left: 1em
             top: 0
+            padding: 2em
+            max-width: 350px
             transform: translateY(0) translateX(0)
             border-radius: 0 0 4px 4px
-            padding: 30px
+            box-shadow: 0 2px 10px rgba(#000, .1)
             .modal-body__head
                 font-size: 1em
             .modal-body__city
                 font-size: 1.4em
-            &.is-active
-        
-        &.user
-            max-width: 250px
+
         &.login,
         &.sms
-            max-width: 450px
-            padding: 30px 60px
+            p
+                margin-bottom: 3em
             input
                 font-size: 20px
                 text-align: center
@@ -74,6 +73,7 @@
                     margin-right: 2%
                     &:last-child
                         margin-right: 0
+
         &.menu
             left: 1em
             top: 0
@@ -172,12 +172,11 @@
                         &:not(:first-child)
                             margin-left: 2%
             .menu-email
-                padding: 1em 2em
+                padding: 1em 2em 0 2em
                 p
                     font-size: 0.9em
                 form
                     padding-top: 1em
-                    margin-bottom: 2em
                     input
                         border: 2px solid $yellow
                         border-radius: 6px
@@ -208,13 +207,11 @@
             
             &.is-active
                 transform: translateY(140px)
-                opacity: 1
                 box-shadow: none
 
         &.review,
         &.question
             max-width: 560px
-            padding: 30px
             form
                 margin: 0
                 padding: 0
@@ -347,9 +344,12 @@
                     box-shadow: none
                     outline: none
                     border-radius: 4px
-                    padding: .5em 1em
+                    padding: .8em 1em
                     margin: 0
                     font-size: 16px !important
+            .btn
+                font-weight: bold
+                font-size: 1rem
 
         &__button
             display: flex
@@ -439,22 +439,29 @@
             &.menu
                 left: 0
                 max-width: 100%
+            &.city-list,
+            &.login,
+            &.sms,
             &.review,
-            &.question
+            &.question,
+            &.oneclick
+                padding: 2em
                 max-width: 100%
+            &.sms
+                p
+                    text-align: center
 
 @media screen and ( max-width: 576.98px )
     .modal
         padding: 0 1em
-        &.is-active
-            background: rgba($text, 0)
         &-body
             &.login,
-            &.sms
-                padding: 40px 30px
+            &.sms,
+            &.city-list,
+            &.oneclick
                 p
                     b
-                        font-size: 1.5em
+                        font-size: 1.3em
             &.sms
                 p
                     b
@@ -491,6 +498,8 @@
             &.menu
                 .menu-email
                     padding: 1em .5em
+                &.is-active
+                    transform: translateY(122px)
             &.review,
             &.question
                 p

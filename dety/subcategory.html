@@ -479,8 +479,8 @@
     </div>
 
     <div class="copyright">
+      <p><a href="">Пользовательское соглашение</a> <a href="">Политика конфеденциальности</a></p>
       <p><span>© 2019-2020. ВсёДляДеток.ру</span> <span>Большой магазин для маленьких</span></p>
-      <p><a href="">Политика конфеденциальности</a> <a href="">Пользовательское соглашение</a></p>
     </div>
   </div>
 </footer>
@@ -566,9 +566,6 @@
           <button class="btn btn-send">Подписаться</button>
         </form>
       </div>
-      <p class="copyright">
-        © 2019-2020. ВсёДляДеток.ру<br>Большой магазин для маленьких
-      </p>
     </div>
     <!-- Modal City -->
     <div class="modal-body city" data-modal="city">
@@ -578,15 +575,24 @@
       <p class="modal-body__desc">От города зависят условия доставки</p>
       <div class="modal-body__button">
         <button class="btn btn-accent" data-close="close">Да</button>
-        <button class="btn btn-outline-accent open-city-list">Нет, выбрать другой</button>
+        <button class="btn btn-outline-accent open-city-list" data-toggle="modal" data-target="city-list">Нет, выбрать другой</button>
       </div>
+    </div>
+    <!-- Modal City List -->
+    <div class="modal-body city-list" data-modal="city-list">
+      <span class="close" data-close="close"></span>
+      <p><b>Ваш город</b></p>
+      <form action="/" method="post" class="">
+        <label for="city">Введите название</label>
+        <input id="city" type="text" name="city" class="city" placeholder="Название города">
+      </form>
     </div>
     <!-- Modal Login -->
     <div class="modal-body login" data-modal="login">
       <span class="close" data-close="close"></span>
-      <p><b>Войти в личный кабинет</b></p>
-      <form action="/" method="post" class="signin">
-        <label for="phone">Войти по номеру</label>
+      <p><b>Вход или регистрация</b></p>
+      <form action="/" method="post" class="signin" data-target="sms">
+        <label for="phone">Введите номер телефона</label>
         <input type="tel" id="phone" name="phone" class="phone-mask" placeholder="+7 (XXX) XXX-XX-XX" required>
         <button type="submit" class="btn btn-accent">Получить sms-код</button>
       </form>

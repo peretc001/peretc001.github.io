@@ -75,7 +75,7 @@ if (document.querySelector('.modal')) {
                     })
                 }
                 const current = document.querySelector('[data-modal="'+ event.target.dataset.target +'"]')
-                event.target.dataset.target == 'menu' ? modal.classList.add('in-menu') : modal.classList.add('in')
+                event.target.dataset.target == 'menu' || event.target.dataset.target == 'city' ? modal.classList.add('in-menu') : modal.classList.add('in')
                 current.classList.add('is-fade')
                 setTimeout(() => {
                     modal.classList.add('is-active')
@@ -102,48 +102,50 @@ if (document.querySelector('.modal')) {
             //document.body.ontouchend = function() { document.querySelector('.phone-mask').focus(); };
             const showCityList = () => {}
             
-            loginForm.addEventListener('submit', (e) => {
-                e.preventDefault()
-                //////// ЗАПРОС НА API /////////
-                modal.querySelector('.is-active').classList.remove('is-active')
+            loginForm.addEventListener('submit', (event) => {
+                event.preventDefault()
+                hModal()
                 setTimeout(() => {
-                    modal.querySelector('.is-fade').classList.remove('is-fade')
-                }, 200);
-                modal.querySelector('.modal-body.sms').classList.add('is-fade')
+                    showModal(event)
+                }, 300); 
+                
                 setTimeout(() => {
-                    modal.querySelector('.modal-body.sms').classList.add('is-active')
-                }, 200);
-
-                inputSMS[0].focus();
-                inputSMS[0].addEventListener('keyup', function() {
-                    this.value != '' ? inputSMS[1].focus() : ''
-                })
-                inputSMS[1].addEventListener('keyup', function() {
-                    this.value != '' ? inputSMS[2].focus() : inputSMS[0].focus()
-                })
-                inputSMS[2].addEventListener('keyup', function() {
-                    this.value != '' ? inputSMS[3].focus() : inputSMS[1].focus()
-                })
-                inputSMS[3].addEventListener('keyup', function() {
-                    if (this.value != '') {
-                        modal.querySelector('.modal-body.sms').classList.remove('is-active')
-                        setTimeout(() => {
-                            modal.querySelector('.modal-body.sms').classList.remove('is-fade')
-                            this.blur()
-                        }, 200);
-                        setTimeout(() => {
-                            modal.classList.remove('is-active')
-                        }, 200);
-                        setTimeout(() => {
-                            modal.classList.remove('in')
-                        }, 200);
-                        enableScroll()
-                    } else inputSMS[2].focus()
-                })
+                    inputSMS[0].value = ''; inputSMS[1].value = ''; inputSMS[2].value = ''; inputSMS[3].value = ''
+                    inputSMS[0].focus();
+                    inputSMS[0].addEventListener('keyup', function() {
+                        this.value != '' ? inputSMS[1].focus() : ''
+                    })
+                    inputSMS[1].addEventListener('keyup', function() {
+                        this.value != '' ? inputSMS[2].focus() : inputSMS[0].focus()
+                    })
+                    inputSMS[2].addEventListener('keyup', function() {
+                        this.value != '' ? inputSMS[3].focus() : inputSMS[1].focus()
+                    })
+                    inputSMS[3].addEventListener('keyup', function() {
+                        if (this.value != '') {
+                            modal.querySelector('.modal-body.sms').classList.remove('is-active')
+                            setTimeout(() => {
+                                modal.querySelector('.modal-body.sms').classList.remove('is-fade')
+                                this.blur()
+                            }, 200);
+                            setTimeout(() => {
+                                modal.classList.remove('is-active')
+                            }, 200);
+                            setTimeout(() => {
+                                modal.classList.remove('in')
+                            }, 200);
+                            enableScroll()
+                        } else inputSMS[2].focus()
+                    })
+                }, 500);
+                
             })
 
-            openCityList.addEventListener('click', () => {
-                hideModal()
+            openCityList.addEventListener('click', (event) => {
+                hModal()
+                setTimeout(() => {
+                    showModal(event)
+                }, 300); 
             })
             
             const showCityOnLoad = () => {
@@ -176,59 +178,55 @@ if (document.querySelector('.modal')) {
             modal.addEventListener('click', (event) => event.target == modal || event.target == modal.children[0] ? hideModal() : '')
 }
 
-//Show Hide Elem
-{
-    if ( document.querySelector('.hideElem') ) {
-        const   hElem = document.querySelectorAll('.hideElem')
-                sElem = document.querySelectorAll('.showElem')
-                sMore = document.querySelectorAll('.showMore')
+if ( document.querySelector('.hideElem') ) {
+    const   hElem = document.querySelectorAll('.hideElem')
+            sElem = document.querySelectorAll('.showElem')
+            sMore = document.querySelectorAll('.showMore')
 
-        hElem.forEach((item, i) => {
-            function scrollStart() {
-                let x = window.pageYOffset;
-                if ( item.getAttribute('data-scroll') && item.classList.contains('active') ) {
-                    for (let i = 0; i < 500; i++) {
-                        if ( i < 500) {
-                            x = x + i;
-                        }
-                        setTimeout(() => {
-                            window.scroll(window.pageXOffset, x);
-                        }, 300);
+    hElem.forEach((item, i) => {
+        function scrollStart() {
+            let x = window.pageYOffset;
+            if ( item.getAttribute('data-scroll') && item.classList.contains('active') ) {
+                for (let i = 0; i < 500; i++) {
+                    if ( i < 500) {
+                        x = x + i;
                     }
+                    setTimeout(() => {
+                        window.scroll(window.pageXOffset, x);
+                    }, 300);
                 }
             }
-            item.addEventListener('click', scrollStart)
-            item.addEventListener('click', () => {
+        }
+        item.addEventListener('click', scrollStart)
+        item.addEventListener('click', () => {
+            !item.classList.contains('active') ? item.classList.add('active') : item.classList.remove('active')
+            !sElem[i].classList.contains('active') ? sElem[i].classList.add('active') : sElem[i].classList.remove('active')
+        })
+        if (sMore[i]) {
+            sMore[i].addEventListener('click', () => {
                 !item.classList.contains('active') ? item.classList.add('active') : item.classList.remove('active')
                 !sElem[i].classList.contains('active') ? sElem[i].classList.add('active') : sElem[i].classList.remove('active')
+                !sMore[i].classList.contains('active') ? sMore[i].classList.add('active') : sMore[i].classList.remove('active')  
             })
-            if (sMore[i]) {
-                sMore[i].addEventListener('click', () => {
-                    !item.classList.contains('active') ? item.classList.add('active') : item.classList.remove('active')
-                    !sElem[i].classList.contains('active') ? sElem[i].classList.add('active') : sElem[i].classList.remove('active')
-                    !sMore[i].classList.contains('active') ? sMore[i].classList.add('active') : sMore[i].classList.remove('active')  
-                })
-            }
-        })
-    }
+        }
+    })
 }
+
 
      
 //Products-page Tabs
-{
-    if ( document.querySelector('.tabs') ) {
-        const   tabs = [...document.querySelector('.tabs').children]
-                tabsItem = document.querySelectorAll('.tabs-item')
+if ( document.querySelector('.tabs') ) {
+    const   tabs = [...document.querySelector('.tabs').children]
+            tabsItem = document.querySelectorAll('.tabs-item')
 
-                tabs.forEach((item,i) => {
-                    item.addEventListener('click', () => {
-                        tabs.forEach(item => item.classList.contains('active') ? item.classList.remove('active') : '')
-                        tabsItem.forEach(item => item.classList.contains('active') ? item.classList.remove('active') : '')
-                        item.classList.add('active')
-                        tabsItem[i].classList.add('active')
-                    })
+            tabs.forEach((item,i) => {
+                item.addEventListener('click', () => {
+                    tabs.forEach(item => item.classList.contains('active') ? item.classList.remove('active') : '')
+                    tabsItem.forEach(item => item.classList.contains('active') ? item.classList.remove('active') : '')
+                    item.classList.add('active')
+                    tabsItem[i].classList.add('active')
                 })
-    }
+            })
 }
     
 
