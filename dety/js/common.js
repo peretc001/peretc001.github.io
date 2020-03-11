@@ -151,7 +151,7 @@ if (document.querySelector('.modal')) {
             const showCityOnLoad = () => {
                 disableScroll()
                 const current = document.querySelector('[data-modal="city"]')
-                modal.classList.add('in')
+                modal.classList.add('in-menu')
                 current.classList.add('is-fade')
                 setTimeout(() => {
                     modal.classList.add('is-active')
