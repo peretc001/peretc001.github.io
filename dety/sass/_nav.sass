@@ -91,7 +91,7 @@
          display: flex
          align-items: center
          justify-content: space-between
-         a
+         span, a
             position: relative
             padding-left: 2.2em
             &::before
@@ -120,6 +120,11 @@
             margin-left: 2.6em
             &::before
                background-image: url('../img/nav/login.svg')
+      
+      .has-children
+         // overflow: hidden
+         ul
+            display: none
 
    &-search
       width: 100%
