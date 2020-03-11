@@ -870,6 +870,26 @@
   <script src="./js/slick/slick.min.js"></script>
   <script>
     $( document ).ready(function() {
+
+      const cachImg = new Array();
+      function preloadcachImg(...cachImg) {
+          cachImg.forEach((image, i) => {
+              image = new Image();
+              image.src = preloadcachImg.arguments[i];
+          });
+      };
+
+      // Предварительная загрузка нужных картинок 
+      preloadcachImg(
+          '/img/slider/1.png',
+          '/img/slider/2.png',
+          '/img/slider/3.png',
+          '/img/slider/1m.png',
+          '/img/slider/2m.png',
+          '/img/slider/3m.png'
+      );
+
+
       let width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
       const sliderList = [...document.querySelector('.slider-wrapper').children]
       for (item of sliderList) {
