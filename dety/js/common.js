@@ -99,7 +99,6 @@ if (document.querySelector('.modal')) {
                 })
             })
 
-            //document.body.ontouchend = function() { document.querySelector('.phone-mask').focus(); };
             const showCityList = () => {}
             
             loginForm.addEventListener('submit', (event) => {
@@ -230,41 +229,6 @@ if ( document.querySelector('.tabs') ) {
 }
     
 
-//Phone mask
-{
-    function setCursorPosition(pos, elem) {
-        elem.focus();
-        if (elem.setSelectionRange) elem.setSelectionRange(pos, pos);
-        else if (elem.createTextRange) {
-            var range = elem.createTextRange();
-            range.collapse(true);
-            range.moveEnd("character", pos);
-            range.moveStart("character", pos);
-            range.select()
-        }
-    }
-    function mask(event) {
-        var matrix = "+7 (___) ___ ____",
-            i = 0,
-            def = matrix.replace(/\D/g, ""),
-            val = this.value.replace(/\D/g, "");
-        if (def.length >= val.length) val = def;
-        this.value = matrix.replace(/./g, function(a) {
-            return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
-        });
-        if (event.type == "blur") {
-            if (this.value.length == 2) this.value = ""
-        } else setCursorPosition(this.value.length, this)
-    };
-    var input = document.querySelectorAll(".phone-mask")
-    input.forEach(elem => {
-        elem.addEventListener("input", mask, false);
-        elem.addEventListener("focus", mask, false);
-        elem.addEventListener("blur", mask, false);
-    })
-}
-
-  
 });
 
 $( document ).ready(function() {
@@ -273,4 +237,5 @@ $( document ).ready(function() {
         effectTime: 500,
         threshold: 0
     });
+    $('.phone-mask').mask("+7 (999) 999-99-99");
 });
