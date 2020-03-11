@@ -99,7 +99,7 @@
                     background: $yellow
                 &.city,
                 &.phone
-                    background: $blue
+                    border: 1px solid #DADADA
             p
                 margin: 0
                 padding: 0
@@ -110,7 +110,7 @@
             .menu-item
                 padding: 1em
                 margin: 0
-                border-bottom: 1px solid rgba(0, 182, 198, 0.2)
+                border-bottom: 1px solid #DADADA
                 p
                     padding: 0 1em
                 ul
@@ -146,9 +146,7 @@
                         &::before
                             transform: translateY(-50%) rotate(180deg)
             .social
-                padding: 1em 0
-                p
-                    padding-left: 2em
+                padding: 1em 2em
                 &-link
                     margin-top: 1em
                     width: 100%
@@ -162,13 +160,10 @@
                         display: flex
                         align-items: center
                         justify-content: center
-                        background: #EAF6F6
+                        background: #DADADA
                         border-radius: 4px
                         img
-                            width: 1.8em
-                        &:first-child
-                            img
-                                width: 1em
+                            width: 2em
                         &:not(:first-child)
                             margin-left: 2%
             .menu-email
@@ -491,6 +486,10 @@
             &.menu
                 .menu-email
                     padding: 1em .5em
+                .social
+                    padding: 1em 0.5em
+                    p
+                        padding-left: 1.5em
                 &.is-active
                     transform: translateY(122px)
             &.review,
