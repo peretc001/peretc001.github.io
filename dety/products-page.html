@@ -75,7 +75,7 @@
 <main>
   <div class="breadcrumb">
       <div class="container">
-          <a href="./">Главная</a> <a href="">Одежда и обувь</a> <a href="">Одежда для девочек</a> Толстовки
+        <a href="./">Главная</a> <a href="./category.html">Одежда и обувь</a> <a href="./subcategory.html">Одежда для девочек</a> Толстовки
       </div>
   </div>
 
@@ -1065,7 +1065,7 @@
     </div>
 
     <div class="copyright">
-      <p><a href="">Пользовательское соглашение</a> <a href="">Политика конфеденциальности</a></p>
+      <p class="policy"><a href="">Пользовательское соглашение</a> <a href="">Политика конфеденциальности</a></p>
       <p><span>© 2019-2020. ВсёДляДеток.ру</span> <span>Большой магазин для маленьких</span></p>
     </div>
   </div>
@@ -1135,10 +1135,10 @@
           </b>
         </p>
         <div class="social-link">
-          <a href=""><img src="./img/social/mobile/ok.svg" alt=""></a>
-          <a href=""><img src="./img/social/mobile/vk.svg" alt=""></a>
-          <a href=""><img src="./img/social/mobile/instagram.svg" alt=""></a>
-          <a href=""><img src="./img/social/mobile/youtube.svg" alt=""></a>
+          <a href=""><img src="./img/social/ok.svg" alt=""></a>
+          <a href=""><img src="./img/social/vk.svg" alt=""></a>
+          <a href=""><img src="./img/social/insta.svg" alt=""></a>
+          <a href=""><img src="./img/social/youtube.svg" alt=""></a>
         </div>
       </div>
       <div class="menu-email">
@@ -1179,7 +1179,7 @@
       <p><b>Вход или регистрация</b></p>
       <form action="/" method="post" class="signin" data-target="sms">
         <label for="phone">Введите номер телефона</label>
-        <input type="tel" id="phone" name="phone" class="phone-mask" required>
+        <input type="tel" id="phone" name="phone" class="phone-mask" autocomplete="off" required>
         <button type="submit" class="btn btn-accent">Получить sms-код</button>
       </form>
     </div>
@@ -1196,7 +1196,6 @@
         </div>
       </form>
     </div>
-
 
     <!-- IF PRODUCT-PAGE -->
     <!-- Modal REVIEW -->

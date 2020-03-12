@@ -409,6 +409,25 @@
                .qty
                   left: 20px
 
+   .breadcrumb
+      .container
+         display: flex
+         align-items: center
+      a
+         &:not(:last-child)
+            display: none
+         &:last-child
+            display: inline-flex
+            align-self: center
+            width: 1.5em
+            height: 1.5em
+            color: $bg
+            overflow: hidden
+         &::after
+            transform: translateY(-50%) rotate(180deg)
+            width: 1.5em
+            height: 1.5em
+
 @media screen and ( max-width: 374.98px )
    .nav
       &-search

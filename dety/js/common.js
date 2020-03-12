@@ -186,13 +186,13 @@ if ( document.querySelector('.hideElem') ) {
         function scrollStart() {
             let x = window.pageYOffset;
             if ( item.getAttribute('data-scroll') && item.classList.contains('active') ) {
-                for (let i = 0; i < 500; i++) {
-                    if ( i < 500) {
+                for (let i = 0; i < 1000; i++) {
+                    if ( i < 1000) {
                         x = x + i;
                     }
                     setTimeout(() => {
                         window.scroll(window.pageXOffset, x);
-                    }, 300);
+                    }, 500);
                 }
             }
         }
@@ -210,9 +210,7 @@ if ( document.querySelector('.hideElem') ) {
         }
     })
 }
-
-
-     
+    
 //Products-page Tabs
 if ( document.querySelector('.tabs') ) {
     const   tabs = [...document.querySelector('.tabs').children]
@@ -227,7 +225,6 @@ if ( document.querySelector('.tabs') ) {
                 })
             })
 }
-    
 
 });
 
