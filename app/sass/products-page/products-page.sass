@@ -216,34 +216,39 @@
                     justify-content: flex-start
                     margin-bottom: 1em
                     span
-                        display: flex
-                        align-items: center
-                        justify-content: center
+                        position: relative
                         flex: 0 0 35px
                         height: 35px
-                        font-size: 1em
-                        color: #ffffff
-                        text-align: center
-                        font-weight: bold
                         margin: 0
+                        margin-top: 15px
                         padding: 0
-                        border-radius: 4px
+                        background-size: cover
+                        background-position: center
+                        background-repeat: no-repeat
                         &:not(:first-child)
                             margin-left: .5em
                         &.top
-                            background-color: $yellow
+                            background-image: url('../../img/products/top.svg')
                         &.new
-                            background-color: #00B5C4
+                            background-image: url('../../img/products/new.svg')
                         &.sale
-                            background-color: #FF5C57
+                            background-image: url('../../img/products/sale.svg')
                         &.bonus
-                            background-color: $accent
+                            background-image: url('../../img/products/bonus.svg')
                         &.installments
-                            background-color: #00be64
+                            background-image: url('../../img/products/installment.svg')
                         &.gift
-                            background-color: transparent
-                            color: $accent
-                            border: 1px solid $accent
+                            //background-image: url('../img/products/gift.svg')
+                            margin-top: 0
+                            svg
+                                position: relative
+                                .cap
+                                    transform-origin: 100% 50%
+                                    transition: transform .5s ease
+                            &:hover
+                                svg
+                                    .cap
+                                        transform: rotate(15deg)
 
                     .wishlist
                         margin-left: auto !important
