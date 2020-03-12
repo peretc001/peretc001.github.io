@@ -306,13 +306,13 @@
           <div class="cart-confirm">
             <h2>Оформить заказ</h2>
             <div class="form-row">
-              <label for="username">Имя</label><input type="text" id="username" name="username" placeholder="Имя">
+              <label for="username">Имя</label><input type="text" id="username" name="username" placeholder="" required>
             </div>
             <div class="form-row">
-              <label for="userphone">Телефон</label><input type="tel" id="userphone" name="userphone" placeholder="+7 (XXX) XXX-XX-XX" required>
+              <label for="userphone">Телефон</label><input type="tel" id="userphone" name="userphone" class="phone-mask" placeholder="" required>
             </div>
             <div class="form-row">
-              <label for="email">E-mail</label><input type="text" id="email" name="email" placeholder="E-mail">
+              <label for="email">E-mail</label><input type="text" id="email" name="email" placeholder="">
             </div>
             <div class="form-row">
               <p>Сумма заказа:</p>
@@ -323,12 +323,12 @@
               <p>450 ₽</p>
             </div>
             <div class="form-row order-total">
-              <p>Итого к оплате:</p>
+              <p>К оплате:</p>
               <p>6 000 ₽</p>
             </div>
             <div class="form-row order-bonus">
-              <p>Будет начислено:</p>
-              <p>250 Б</p>
+              <p>Бонусов:</p>
+              <p>+250</p>
             </div>
             <div class="form-row policy">
               <input type="checkbox" id="policy" name="policy" required>
@@ -420,6 +420,9 @@
       <a href="" class="button login" data-mobile="yes" data-toggle="modal" data-target="login">
         <img src="./img/nav/mobile/login.svg" alt="">
         Вход</a>
+      <a href="/" class="button lk hidden">
+          <img src="./img/nav/mobile/lk.svg" alt="">
+          Личный кабинет</a>
       <a href="" class="button city" data-mobile="yes" data-toggle="modal" data-target="city">
         <img src="./img/nav/mobile/location.svg" alt="">
         Санкт-Петербург</a>
@@ -552,8 +555,17 @@
               const   qty = item.querySelector('input[name="qty"]')
                       minus = item.querySelector('.minus')
                       plus = item.querySelector('.plus')
-                      minus.addEventListener('click', () => qty.value > 1 ? qty.value-- : '')
-                      plus.addEventListener('click', () => qty.value++)
+                      minus.addEventListener('click', () => {
+                        qty.value > 1 ? qty.value-- : ''
+                        total = parseInt(item.closest('div').nextElementSibling.querySelector('b').textContent.trim())
+                        console.log(total)
+                      })
+                      plus.addEventListener('click', () => {
+                        qty.value++
+                        total = item.closest('div').nextElementSibling.querySelector('b').textContent.trim()
+                        console.log(total)
+                      })
+                      
           })
       }
     })

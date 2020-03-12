@@ -24,7 +24,6 @@
             position: relative
             &-item
                 padding: 2em
-                border-bottom: none
         .cart-delivery,
         .cart-pay
             margin-top: 1.5em
@@ -41,7 +40,7 @@
     display: flex
     align-items: center
     padding: 2em 0
-    border-bottom: 1px solid rgba(0, 182, 198, 0.2)
+    border-bottom: 1px solid #f5f5f5
     position: relative
     &__img
         flex: 0 0 10%
@@ -212,7 +211,7 @@
     align-items: center
     justify-content: center
     padding: 3em 1em
-    border-top: 1px solid $grey
+    border-top: 1px solid #f5f5f5
     &__code
         padding-right: 1em
     &__bonus
@@ -510,11 +509,10 @@
         &.order-total
             font-weight: bold
         &.order-bonus
-            padding-top: 0.5em
             color: $accent
             font-weight: bold
         &.policy
-            border-top: 1px solid $grey
+            border-top: 1px solid #f5f5f5
             margin-top: 2em
             padding-top: 2em
             padding-bottom: 1.5em
@@ -522,9 +520,9 @@
                 display: none
             label
                 color: $grey
-                font-size: 0.8em
+                font-size: 0.7em
                 position: relative
-                padding-left: 2em
+                padding-left: 3em
                 cursor: pointer
                 user-select: none
                 &::before
@@ -534,8 +532,8 @@
                     top: 50%
                     transform: translateY(-50%)
                     display: inline-block
-                    width: 1em
-                    height: 1em
+                    width: 2em
+                    height: 2em
                     border: 1px solid $accent
                     transition: background .3s ease
                 a
