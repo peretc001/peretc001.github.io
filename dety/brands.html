@@ -504,18 +504,14 @@
     <!-- Modal Login -->
     <div class="modal-body login" data-modal="login">
       <span class="close" data-close="close"></span>
-      <p><b>Вход или регистрация</b></p>
-      <form action="/" method="post" class="signin" data-target="sms">
+      <form action="/" method="post" class="login-form">
+        <p><b>Вход или регистрация</b></p>
         <label for="phone">Введите номер телефона</label>
         <input type="tel" id="phone" name="phone" class="phone-mask" autocomplete="off" required>
         <button type="submit" class="btn btn-accent">Получить sms-код</button>
       </form>
-    </div>
-    <!-- Modal SMS -->
-    <div class="modal-body sms" data-modal="sms">
-      <span class="close" data-close="close"></span>
-      <p><b>Введите код из смс</b></p>
-      <form action="/" method="post" class="signin-sms">
+      <form action="/" method="post" class="sms-form">
+        <p><b>Введите код из смс</b></p>
         <div class="signin-sms__wrap">
           <input class="sms-input" type="tel" name="sms1" maxlength="1" tabindex="1">
           <input class="sms-input" type="tel" name="sms2" maxlength="1" tabindex="2">
@@ -523,6 +519,7 @@
           <input class="sms-input" type="tel" name="sms4" maxlength="1" tabindex="4">
         </div>
       </form>
+      <div class="complete"><p>Готово</p></div>
     </div>
   </div>
 </div>

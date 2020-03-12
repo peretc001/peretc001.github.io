@@ -105,21 +105,24 @@
                     align-items: center
                     justify-content: center
                     flex-direction: column
+                    width: 120px
+                    height: 160px
                     font-size: 1.4em
                     font-weight: bold
                     opacity: 0
                     margin-bottom: 0
                     &::before
                         content: ''
-                        display: inline-flex
+                        display: block
                         width: 6em
                         height: 6em
                         margin-bottom: 1em
-                        background-size: cover
+                        background-size: 6em
                         background-position: center
                         background-repeat: no-repeat
                         background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjUxMiI+PGc+PHBhdGggZD0ibTI1NiA1MTJjLTE0MS4xNjQwNjIgMC0yNTYtMTE0LjgzNTkzOC0yNTYtMjU2czExNC44MzU5MzgtMjU2IDI1Ni0yNTYgMjU2IDExNC44MzU5MzggMjU2IDI1Ni0xMTQuODM1OTM4IDI1Ni0yNTYgMjU2em0wLTQ4MGMtMTIzLjUxOTUzMSAwLTIyNCAxMDAuNDgwNDY5LTIyNCAyMjRzMTAwLjQ4MDQ2OSAyMjQgMjI0IDIyNCAyMjQtMTAwLjQ4MDQ2OSAyMjQtMjI0LTEwMC40ODA0NjktMjI0LTIyNC0yMjR6bTAgMCIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgc3R5bGU9ImZpbGw6I0MyNTFDMCI+PC9wYXRoPjxwYXRoIGQ9Im0yMzIgMzQxLjMzMjAzMWMtNC4wOTc2NTYgMC04LjE5MTQwNi0xLjU1NDY4Ny0xMS4zMDg1OTQtNC42OTE0MDZsLTY5LjMzMjAzMS02OS4zMzIwMzFjLTYuMjUtNi4yNTM5MDYtNi4yNS0xNi4zODY3MTkgMC0yMi42MzY3MTlzMTYuMzgyODEzLTYuMjUgMjIuNjM2NzE5IDBsNTguMDIzNDM3IDU4LjAyNzM0NCAxMjcuMzYzMjgxLTEyNy4zNTkzNzVjNi4yNS02LjI1IDE2LjM4MjgxMy02LjI1IDIyLjYzMjgxMyAwczYuMjUgMTYuMzgyODEyIDAgMjIuNjMyODEybC0xMzguNjY3OTY5IDEzOC42Njc5NjljLTMuMTU2MjUgMy4xMzY3MTktNy4yNSA0LjY5MTQwNi0xMS4zNDc2NTYgNC42OTE0MDZ6bTAgMCIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgc3R5bGU9ImZpbGw6I0MyNTFDMCI+PC9wYXRoPjwvZz4gPC9zdmc+')
                         transform: scale(0)
+                        transform-origin: 50% 50%
                         transition: transform .3s ease
                 &.fade
                     display: block
@@ -129,7 +132,17 @@
                         p
                             opacity: 1
                             &::before
+                                animation: complete .3s ease
                                 transform: scale(1)
+                
+                @keyframes complete
+                    0%
+                        transform: scale(0)
+                    80%
+                        transform: scale(1.2)
+                    100%
+                        transform: scale(1)
+                        
                     
 
         &.menu

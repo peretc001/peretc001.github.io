@@ -111,6 +111,36 @@ if (document.querySelector('.modal')) {
 
             const showCityList = () => {}
             
+            const smsInsert = (event) => {
+                smsInput[0].focus();
+                smsInput[0].addEventListener('keyup', function() {
+                    this.value != '' ? smsInput[1].focus() : ''
+                })
+                smsInput[1].addEventListener('keyup', function() {
+                    this.value != '' ? smsInput[2].focus() : smsInput[0].focus()
+                })
+                smsInput[2].addEventListener('keyup', function() {
+                    this.value != '' ? smsInput[3].focus() : smsInput[1].focus()
+                })
+                smsInput[3].addEventListener('keyup', function() {
+                    if (this.value != '') {
+                        smsInput[3].blur()
+                        smsForm.classList.remove('active')
+                        setTimeout(() => {
+                            setTimeout(() => {
+                                smsComplete.classList.add('fade')
+                            }, 100);
+                            smsForm.classList.remove('fade')
+                            setTimeout(() => {
+                                smsComplete.classList.add('active')
+                            }, 200);
+                            setTimeout(() => {
+                                hModal()
+                            }, 1000);
+                        }, 100);
+                    } else smsInput[2].focus()
+                })
+            }
             loginForm.addEventListener('submit', (event) => {
                 event.preventDefault()
                 loginForm.querySelector('.phone-mask').blur()
@@ -123,39 +153,13 @@ if (document.querySelector('.modal')) {
                     loginForm.classList.remove('fade')
                     setTimeout(() => {
                         smsForm.classList.add('active')
+                        setTimeout(() => {
+                            smsInsert()
+                        }, 300);
                     }, 200);
                 }, 100);
                 
-                setTimeout(() => {
-                    smsInput[0].focus();
-                    smsInput[0].addEventListener('keyup', function() {
-                        this.value != '' ? smsInput[1].focus() : ''
-                    })
-                    smsInput[1].addEventListener('keyup', function() {
-                        this.value != '' ? smsInput[2].focus() : smsInput[0].focus()
-                    })
-                    smsInput[2].addEventListener('keyup', function() {
-                        this.value != '' ? smsInput[3].focus() : smsInput[1].focus()
-                    })
-                    smsInput[3].addEventListener('keyup', function() {
-                        if (this.value != '') {
-                            smsInput[3].blur()
-                            smsForm.classList.remove('active')
-                            setTimeout(() => {
-                                setTimeout(() => {
-                                    smsComplete.classList.add('fade')
-                                }, 100);
-                                smsForm.classList.remove('fade')
-                                setTimeout(() => {
-                                    smsComplete.classList.add('active')
-                                }, 200);
-                                setTimeout(() => {
-                                   hModal()
-                                }, 1000);
-                            }, 100);
-                        } else smsInput[2].focus()
-                    })
-                }, 500);
+                
                 
             })
 
