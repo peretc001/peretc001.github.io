@@ -53,7 +53,7 @@
         &.login,
         &.sms
             p
-                margin-bottom: 3em
+                
             input
                 font-size: 20px
                 text-align: center
@@ -62,15 +62,23 @@
                 font-size: 1em
                 text-transform: uppercase
                 font-weight: bold
+        
+        &.sms
+            min-height: 245px
+            p
+                margin-bottom: 3em
+                text-align: center
             .signin-sms__wrap
                 display: flex
                 flex-wrap: wrap
                 justify-content: center
-                max-width: 250px
+                max-width: 350px
                 margin: 0 auto
                 input
                     flex: 1 0 23%
                     margin-right: 2%
+                    min-height: 80px
+                    font-size: 2em
                     &:last-child
                         margin-right: 0
 
