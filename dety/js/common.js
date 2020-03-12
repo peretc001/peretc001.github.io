@@ -129,17 +129,31 @@ if (document.querySelector('.modal')) {
                         setTimeout(() => {
                             setTimeout(() => {
                                 smsComplete.classList.add('fade')
+                                //Desctop
+                                document.querySelector('.nav-top__right__login').classList.add('hidden')
+                                document.querySelector('.nav-top__right__lk').classList.add('fade')
+                                //Mobile
+                                modal.querySelector('.menu .login').classList.add('hidden')
+                                modal.querySelector('.menu .lk').classList.remove('hidden')
+                                setTimeout(() => {
+                                    document.querySelector('.nav-top__right__lk').classList.add('active')
+                                }, 100);
                             }, 100);
                             smsForm.classList.remove('fade')
                             setTimeout(() => {
                                 smsComplete.classList.add('active')
                             }, 200);
                             setTimeout(() => {
-                                hModal()
+                                smsComplete.classList.add('rotate')
+                                setTimeout(() => {
+                                    hModal()
+                                }, 1000);
                             }, 1000);
                         }, 100);
                     } else smsInput[2].focus()
                 })
+
+                
             }
             loginForm.addEventListener('submit', (event) => {
                 event.preventDefault()

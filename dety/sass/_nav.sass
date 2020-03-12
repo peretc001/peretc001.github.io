@@ -121,8 +121,25 @@
                background-image: url('../img/nav/user.svg')
          &__login
             margin-left: 2.6em
+            transition: transform .5s ease
             &::before
                background-image: url('../img/nav/login.svg')
+            &.hidden
+               transform: scale(0)
+               padding: 0 !important
+               margin: 0 !important
+               width: 0
+         &__lk
+            display: none
+            margin-left: 2em
+            transition: opacity .3s ease
+            &::before
+               background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48Zz48Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0yNTYsMEMxMTQuODQ0LDAsMCwxMTQuODQ0LDAsMjU2czExNC44NDQsMjU2LDI1NiwyNTZzMjU2LTExNC44NDQsMjU2LTI1NlMzOTcuMTU2LDAsMjU2LDB6IE0yNTYsNzQuNjY3ICAgIGM2Ny42MzUsMCwxMjIuNjY3LDU1LjAzMSwxMjIuNjY3LDEyMi42NjdTMzIzLjYzNSwzMjAsMjU2LDMyMHMtMTIyLjY2Ny01NS4wMzEtMTIyLjY2Ny0xMjIuNjY3UzE4OC4zNjUsNzQuNjY3LDI1Niw3NC42Njd6ICAgICBNMjU2LDQ2OS4zMzNjLTY5LjcwNywwLTEzMS41Mi0zMy43NTUtMTcwLjQ3My04NS42MTVjNDIuNjc2LTIwLjUzNCwxMDMuNjIxLTQyLjM4NSwxNzAuNDczLTQyLjM4NSAgICBjNjYuODU3LDAsMTI3LjgwNywyMS44NTQsMTcwLjQ3NCw0Mi4zODNDMzg3LjUyMSw0MzUuNTc3LDMyNS43MDgsNDY5LjMzMywyNTYsNDY5LjMzM3oiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiIHN0eWxlPSJmaWxsOiNENTg0RDEiPjwvcGF0aD4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+')
+            &.fade
+               display: block
+               opacity: 0
+               &.active
+                  opacity: 1
       
       .has-children
          cursor: pointer
