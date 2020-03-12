@@ -113,6 +113,7 @@ if (document.querySelector('.modal')) {
             
             loginForm.addEventListener('submit', (event) => {
                 event.preventDefault()
+                loginForm.querySelector('.phone-mask').blur()
                 loginForm.classList.remove('active')
                 smsInput[0].value = ''; smsInput[1].value = ''; smsInput[2].value = ''; smsInput[3].value = ''
                 setTimeout(() => {
@@ -138,6 +139,7 @@ if (document.querySelector('.modal')) {
                     })
                     smsInput[3].addEventListener('keyup', function() {
                         if (this.value != '') {
+                            smsInput[3].blur()
                             smsForm.classList.remove('active')
                             setTimeout(() => {
                                 setTimeout(() => {
