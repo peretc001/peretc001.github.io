@@ -106,10 +106,31 @@
                     </span>
                 </div>
                 <div class="cart-order-item__subtotal">
-                    <p>131 500 ₽</p>
+                    <p>19 660 ₽</p>
                 </div>
               </div>
-
+              <div class="cart-order-item">
+                <div class="cart-order-item__del">
+                  <a href="" class="delete"></a>
+                </div>
+                <div class="cart-order-item__img">
+                  <a href=""><img src="./img/cart/2.png" alt=""></a>
+                </div>
+                <div class="cart-order-item__name">
+                    <a href="">Комбинезоны Lucky Child комплект</a>
+                    <p class="item-price" data-price="9830">9 830 ₽ за 1 шт.</p>
+                </div>
+                <div class="cart-order-item__qty">
+                    <span class="item-qty" data-instock="12">
+                      <span class="minus">-</span>
+                      <span class="qty"><input type="tel" value="1" name="qty"></span>
+                      <span class="plus">+</span>
+                    </span>
+                </div>
+                <div class="cart-order-item__subtotal">
+                    <p>9 830 ₽</p>
+                </div>
+              </div>
             </div>
 
             <h3>Оформление заказа</h3>
@@ -472,40 +493,38 @@
     document.addEventListener("DOMContentLoaded", function() {
       if ( document.querySelector('.item-qty') ) {
           const input = document.querySelectorAll('.item-qty')
-          input.forEach(item => {
+          input.forEach((item,i) => {
 
-              const   qty = item.querySelector('input[name="qty"]')
-                      minus = item.querySelector('.minus')
-                      plus = item.querySelector('.plus')
-                      priceOne = item.closest('div').previousElementSibling.querySelector('.item-price')
-                      maxQTY = parseInt(item.getAttribute('data-instock'))
-                      qty.value > 1 ? priceOne.style.opacity = 1 : priceOne.style.opacity = 0
+            item.querySelector('input[name="qty"]').value > 1 ? item.closest('div').previousElementSibling.querySelector('.item-price').style.opacity = 1 : item.closest('div').previousElementSibling.querySelector('.item-price').style.opacity = 0
+            item.querySelector('input[name="qty"]').value <= 1 ? item.querySelector('.minus').classList.add('disabled') : ''
+            item.querySelector('input[name="qty"]').value >= parseInt(item.getAttribute('data-instock')) ? item.querySelector('.plus').classList.add('disabled') : ''
 
-                      changeQTY = (param) => {
-                        if (param == 'minus')  qty.value > 1 ? qty.value-- : ''
-                        else if (param == 'plus') qty.value <= maxQTY ? qty.value++ : ''
-                        else {
-                          qty.value = parseInt(param)
-                        }
-                        qty.value <= 1 ? minus.classList.add('disabled') : minus.classList.remove('disabled')
-                        qty.value >= maxQTY ? plus.classList.add('disabled') : plus.classList.remove('disabled')
-                        
-                        qty.value > 1 ? priceOne.style.opacity = 1 : priceOne.style.opacity = 0
-                        price = parseInt(priceOne.getAttribute('data-price'))
-                        total = item.closest('div').nextElementSibling.querySelector('p')
-                        qty.value >= 1 && qty.value <= maxQTY ? total.innerHTML = (price * qty.value).toLocaleString('ru-RU') + ' ₽' : ''
-                      }
-                      minus.addEventListener('click', () => { changeQTY('minus')} )
-                      plus.addEventListener('click', () => { changeQTY('plus')} )
-                      qty.addEventListener('input', (e) => { 
-                        changeQTY(e.target.value) 
-                      })
-                      qty.addEventListener('change', (e) => {
-                        if (parseInt(e.target.value) <= 0) qty.value = 1
-                        if (parseInt(e.target.value) >= maxQTY) qty.value = maxQTY
-                        if (isNaN(e.target.value)) qty.value = 1
-                        changeQTY(qty.value)
-                      })
+            changeQTY = (param) => event => {
+              if (param == 'minus')  {
+                item.querySelector('input[name="qty"]').value > 1 ? item.querySelector('input[name="qty"]').value-- : ''
+              }
+              else if (param == 'plus') {
+                item.querySelector('input[name="qty"]').value <= parseInt(item.getAttribute('data-instock')) ? item.querySelector('input[name="qty"]').value++ : ''
+              }
+              else if (param == 'change') {
+                if (parseInt(event.target.value) <= 0) item.querySelector('input[name="qty"]').value = 1
+                if (parseInt(event.target.value) >= parseInt(item.getAttribute('data-instock'))) item.querySelector('input[name="qty"]').value = parseInt(item.getAttribute('data-instock'))
+                if (isNaN(event.target.value)) item.querySelector('input[name="qty"]').value = 1
+              }
+              else item.querySelector('input[name="qty"]').value = event.target.value
+              
+              item.querySelector('input[name="qty"]').value <= 1 ? item.querySelector('.minus').classList.add('disabled') : item.querySelector('.minus').classList.remove('disabled')
+              item.querySelector('input[name="qty"]').value >= parseInt(item.getAttribute('data-instock')) ? item.querySelector('.plus').classList.add('disabled') : item.querySelector('.plus').classList.remove('disabled')
+              
+              item.querySelector('input[name="qty"]').value > 1 ? item.closest('div').previousElementSibling.querySelector('.item-price').style.opacity = 1 : item.closest('div').previousElementSibling.querySelector('.item-price').style.opacity = 0
+              price = parseInt(item.closest('div').previousElementSibling.querySelector('.item-price').getAttribute('data-price'))
+              total = item.closest('div').nextElementSibling.querySelector('p')
+              item.querySelector('input[name="qty"]').value >= 1 && item.querySelector('input[name="qty"]').value <= parseInt(item.getAttribute('data-instock')) ? total.innerHTML = (price * item.querySelector('input[name="qty"]').value).toLocaleString('ru-RU') + ' ₽' : ''
+            }
+            item.querySelector('.minus').addEventListener('click', changeQTY('minus'))
+            item.querySelector('.plus').addEventListener('click', changeQTY('plus'))
+            item.querySelector('input[name="qty"]').addEventListener('input', changeQTY('input'))
+            item.querySelector('input[name="qty"]').addEventListener('change', changeQTY('change'))
           })
       }
       if ( document.querySelector('.cart-order-promo') ) {
