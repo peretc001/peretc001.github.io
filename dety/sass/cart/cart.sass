@@ -53,14 +53,20 @@
     &__subtotal
         flex: 0 0 20%
         text-align: right
+    &__delete
+        flex: 0 0 30%
+        text-align: right
+        p
+            margin-bottom: 0
     
 
     &__del
         display: flex
         align-items: center
-        justify-content: center
+        justify-content: flex-start
         .delete,
         .return
+            position: relative
             display: inline-block
             width: .8em
             height: .8em
@@ -87,29 +93,8 @@
             left: 1em
             top: 20px
             color: $grey
+            padding-top: 0.3em
             transition: opacity .3s ease
-    // &__price
-    //     flex: 0 0 24%
-    //     display: flex
-    //     flex-wrap: wrap
-    //     align-self: flex-end
-    //     padding: 0 .5em
-    //     p
-    //         flex: 1 0 50%
-    //         font-weight: bold
-    //         font-size: 1.2em
-    //         margin: 0
-    //         margin-bottom: 0.2em
-    //     .old
-    //         text-align: right
-    //         color: $grey
-    //         text-decoration: line-through
-    //     .btn
-    //         width: 100%
-    //         text-align: center
-    //         margin-bottom: 0
-    //         cursor: default
-    //         user-select: none
     &__qty
         .item-qty
             display: flex
@@ -160,6 +145,13 @@
             font-weight: bold
             margin: 0
     
+    &.return
+        div:not(.cart-order-item__del)
+            opacity: .5
+            user-select: none
+        .cart-order-item__name
+            flex: 0 0 52%
+            text-decoration: line-through
     &-total
         display: table
         width: 100%

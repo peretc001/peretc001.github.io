@@ -117,7 +117,7 @@
                   <a href=""><img src="./img/cart/2.png" alt=""></a>
                 </div>
                 <div class="cart-order-item__name">
-                    <a href="">Комбинезоны Lucky Child комплект</a>
+                    <a href="">Комбинезоны Lucky Child комплект синий зеленого цвета с оранжевым</a>
                     <p class="item-price" data-price="9830">9 830 ₽ за 1 шт.</p>
                 </div>
                 <div class="cart-order-item__qty">
@@ -129,6 +129,42 @@
                 </div>
                 <div class="cart-order-item__subtotal">
                     <p>9 830 ₽</p>
+                </div>
+              </div>
+              <div class="cart-order-item">
+                <div class="cart-order-item__del">
+                  <a href="" class="delete"></a>
+                </div>
+                <div class="cart-order-item__img">
+                  <a href=""><img src="./img/cart/3.png" alt=""></a>
+                </div>
+                <div class="cart-order-item__name">
+                    <a href="">Комбинезоны Lucky Child комплект синий зеленого цвета с оранжевым и серым и белым в полоску</a>
+                    <p class="item-price" data-price="11830">11 830 ₽ за 1 шт.</p>
+                </div>
+                <div class="cart-order-item__qty">
+                    <span class="item-qty" data-instock="6">
+                      <span class="minus">-</span>
+                      <span class="qty"><input type="tel" value="5" name="qty"></span>
+                      <span class="plus">+</span>
+                    </span>
+                </div>
+                <div class="cart-order-item__subtotal">
+                    <p>59 159 ₽</p>
+                </div>
+              </div>
+              <div class="cart-order-item return">
+                <div class="cart-order-item__del">
+                  <a href="" class="return"></a>
+                </div>
+                <div class="cart-order-item__img">
+                  <img src="./img/cart/4.png" alt="">
+                </div>
+                <div class="cart-order-item__name">
+                    Комбинезоны Lucky Child комплект синий зеленого цвета с оранжевым и серым и белым в полоску
+                </div>
+                <div class="cart-order-item__delete">
+                  <p>Товар удален из корзины</p>
                 </div>
               </div>
             </div>
@@ -494,7 +530,7 @@
       if ( document.querySelector('.item-qty') ) {
           const input = document.querySelectorAll('.item-qty')
           input.forEach((item,i) => {
-
+            item.closest('div').previousElementSibling.querySelector('.item-price').style.top = item.closest('div').previousElementSibling.querySelector('a').offsetHeight + 'px'
             item.querySelector('input[name="qty"]').value > 1 ? item.closest('div').previousElementSibling.querySelector('.item-price').style.opacity = 1 : item.closest('div').previousElementSibling.querySelector('.item-price').style.opacity = 0
             item.querySelector('input[name="qty"]').value <= 1 ? item.querySelector('.minus').classList.add('disabled') : ''
             item.querySelector('input[name="qty"]').value >= parseInt(item.getAttribute('data-instock')) ? item.querySelector('.plus').classList.add('disabled') : ''
