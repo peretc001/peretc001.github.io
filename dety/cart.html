@@ -99,7 +99,7 @@
                     <p class="item-price" data-price="9830">9 830 ₽ за 1 шт.</p>
                 </div>
                 <div class="cart-order-item__qty">
-                    <span class="btn btn-grey qty-input">
+                    <span class="item-qty" data-instock="5">
                       <span class="minus">-</span>
                       <span class="qty"><input type="tel" value="2" name="qty"></span>
                       <span class="plus">+</span>
@@ -470,26 +470,42 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      if ( document.querySelector('.qty-input') ) {
-          const input = document.querySelectorAll('.qty-input')
+      if ( document.querySelector('.item-qty') ) {
+          const input = document.querySelectorAll('.item-qty')
           input.forEach(item => {
 
               const   qty = item.querySelector('input[name="qty"]')
                       minus = item.querySelector('.minus')
                       plus = item.querySelector('.plus')
-                      minus.addEventListener('click', () => {
-                        qty.value > 1 ? qty.value-- : ''
-                        price = parseInt(item.closest('div').previousElementSibling.querySelector('p').textContent.replace(/\s/g, ''))
-                        total = item.closest('div').nextElementSibling.querySelector('b')
-                        total.innerHTML = (price * qty.value).toLocaleString('ru-RU') + ' ₽'
+                      priceOne = item.closest('div').previousElementSibling.querySelector('.item-price')
+                      maxQTY = parseInt(item.getAttribute('data-instock'))
+                      qty.value > 1 ? priceOne.style.opacity = 1 : priceOne.style.opacity = 0
+
+                      changeQTY = (param) => {
+                        if (param == 'minus')  qty.value > 1 ? qty.value-- : ''
+                        else if (param == 'plus') qty.value <= maxQTY ? qty.value++ : ''
+                        else {
+                          qty.value = parseInt(param)
+                        }
+                        qty.value <= 1 ? minus.classList.add('disabled') : minus.classList.remove('disabled')
+                        qty.value >= maxQTY ? plus.classList.add('disabled') : plus.classList.remove('disabled')
+                        
+                        qty.value > 1 ? priceOne.style.opacity = 1 : priceOne.style.opacity = 0
+                        price = parseInt(priceOne.getAttribute('data-price'))
+                        total = item.closest('div').nextElementSibling.querySelector('p')
+                        qty.value >= 1 && qty.value <= maxQTY ? total.innerHTML = (price * qty.value).toLocaleString('ru-RU') + ' ₽' : ''
+                      }
+                      minus.addEventListener('click', () => { changeQTY('minus')} )
+                      plus.addEventListener('click', () => { changeQTY('plus')} )
+                      qty.addEventListener('input', (e) => { 
+                        changeQTY(e.target.value) 
                       })
-                      plus.addEventListener('click', () => {
-                        qty.value++
-                        price = parseInt(item.closest('div').previousElementSibling.querySelector('p').textContent.replace(/\s/g, ''))
-                        total = item.closest('div').nextElementSibling.querySelector('b')
-                        total.innerHTML = (price * qty.value).toLocaleString('ru-RU') + ' ₽'
+                      qty.addEventListener('change', (e) => {
+                        if (parseInt(e.target.value) <= 0) qty.value = 1
+                        if (parseInt(e.target.value) >= maxQTY) qty.value = maxQTY
+                        if (isNaN(e.target.value)) qty.value = 1
+                        changeQTY(qty.value)
                       })
-                      
           })
       }
       if ( document.querySelector('.cart-order-promo') ) {

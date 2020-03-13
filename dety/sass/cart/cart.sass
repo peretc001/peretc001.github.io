@@ -48,10 +48,8 @@
         flex: 0 0 15%
     &__name
         flex: 0 0 42%
-        // background: yellow
     &__qty
         flex: 0 0 20%
-        // background: grey
     &__subtotal
         flex: 0 0 20%
         text-align: right
@@ -89,6 +87,7 @@
             left: 1em
             top: 20px
             color: $grey
+            transition: opacity .3s ease
     // &__price
     //     flex: 0 0 24%
     //     display: flex
@@ -112,53 +111,48 @@
     //         cursor: default
     //         user-select: none
     &__qty
-        .btn
-            &.btn-grey
-                display: block
+        .item-qty
+            display: flex
+            align-items: center
+            justify-content: center
+            margin: 0
+            user-select: none
+            .minus,
+            .plus
+                display: inline-block
+                width: 1.5em
+                height: 1.5em
+                background: rgba(171, 82, 191, 0.1)
+                border-radius: 50%
+                line-height: 1.5
+                color: $accent
+                font-size: 1.8em
+                padding: 0
                 text-align: center
-                color: $text
-                cursor: default
                 user-select: none
-                &.qty-input
-                    display: flex
-                    align-items: center
-                    justify-content: space-between
-                    margin: 0
-                    padding: 2px 2px
-                    user-select: none
-                    .minus,
-                    .plus
-                        display: inline-block
-                        width: 1.5em
-                        height: 1.5em
-                        background: rgba(171, 82, 191, 0.1)
-                        border-radius: 50%
-                        line-height: 1.5
-                        color: $accent
-                        font-size: 1.2em
-                        padding: 0
-                        text-align: center
-                        user-select: none
-                        cursor: pointer
-                    .qty
-                        position: relative
-                        margin-right: .8em
-                        user-select: none
-                        input
-                            width: 2em
-                            text-align: right
-                            font-size: 16px
-                            padding: 0
-                            padding-right: 0.2em
-                            border: none
-                            background: transparent
-                            appearance: none
-                            outline: none
-                            position: relative
-                            color: $text
-                        &::after
-                            content: 'шт.'
-                            display: inline-block
+                cursor: pointer
+                &.disabled
+                    background: $grey2
+                    color: $text
+                    opacity: .5
+                    cursor: default
+                    pointer-events: none
+            .qty
+                position: relative
+                user-select: none
+                max-width: 3em
+                input
+                    width: 100%
+                    text-align: center
+                    font-size: 16px
+                    padding: 0 .5em
+                    border: none
+                    background: transparent
+                    appearance: none
+                    outline: none
+                    position: relative
+                    color: $text
+
     &__subtotal
         p
             color: $text
