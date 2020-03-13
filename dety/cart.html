@@ -204,7 +204,7 @@
 
             <div class="cart-delivery">
                 <h4>Доставка</h4>
-                <p class="city">Ваш город:  <b>Краснодар</b></p>
+                <p class="city">Ваш город:  <b data-toggle="modal" data-target="city-list">Краснодар</b></p>
                 <div class="cart-delivery-type tabs">
                     <div class="cart-delivery-type__item">
                         <input type="radio" id="pickup" name="delivery" checked>
@@ -557,16 +557,28 @@
                       plus = item.querySelector('.plus')
                       minus.addEventListener('click', () => {
                         qty.value > 1 ? qty.value-- : ''
-                        total = parseInt(item.closest('div').nextElementSibling.querySelector('b').textContent.trim())
-                        console.log(total)
+                        price = parseInt(item.closest('div').previousElementSibling.querySelector('p').textContent.replace(/\s/g, ''))
+                        total = item.closest('div').nextElementSibling.querySelector('b')
+                        total.innerHTML = (price * qty.value).toLocaleString('ru-RU') + ' ₽'
                       })
                       plus.addEventListener('click', () => {
                         qty.value++
-                        total = item.closest('div').nextElementSibling.querySelector('b').textContent.trim()
-                        console.log(total)
+                        price = parseInt(item.closest('div').previousElementSibling.querySelector('p').textContent.replace(/\s/g, ''))
+                        total = item.closest('div').nextElementSibling.querySelector('b')
+                        total.innerHTML = (price * qty.value).toLocaleString('ru-RU') + ' ₽'
                       })
                       
           })
+      }
+      if ( document.querySelector('.cart-order-promo') ) {
+        const variant = document.querySelectorAll('.cart-order-promo input[name="promo"]')
+              variant.forEach(item => {
+                item.addEventListener('click', (e) => {
+                  if (e.target.id != 'promo') {
+                    item.parentElement.previousElementSibling.lastElementChild.value = ''
+                  }
+                })
+              })
       }
     })
   </script>
