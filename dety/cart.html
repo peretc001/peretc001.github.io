@@ -88,16 +88,15 @@
           <div class="cart-body">
             <div class="cart-order">
               <div class="cart-order-item">
+                <div class="cart-order-item__del">
+                  <a href="" class="delete"></a>
+                </div>
                 <div class="cart-order-item__img">
                   <a href=""><img src="./img/cart/1.png" alt=""></a>
                 </div>
                 <div class="cart-order-item__name">
                     <a href="">Комбинезоны Lucky Child комплект</a>
-                </div>
-                <div class="cart-order-item__price">
-                    <p>91 830 ₽</p>
-                    <p class="old">61 750 ₽</p>
-                    <span class="btn btn-accent">+48 бонусов</span>
+                    <p class="item-price" data-price="9830">9 830 ₽ за 1 шт.</p>
                 </div>
                 <div class="cart-order-item__qty">
                     <span class="btn btn-grey qty-input">
@@ -107,97 +106,10 @@
                     </span>
                 </div>
                 <div class="cart-order-item__subtotal">
-                    <p>сумма</p>
-                    <p><b>131 500 ₽</b></p>
+                    <p>131 500 ₽</p>
                 </div>
-                <a href="" class="delete"></a>
               </div>
-              <div class="cart-order-item">
-                <div class="cart-order-item__img">
-                  <a href=""><img src="./img/cart/2.png" alt=""></a>
-                </div>
-                <div class="cart-order-item__name">
-                    <a href="">Комбинезоны Lucky Child комплект</a>
-                </div>
-                <div class="cart-order-item__price">
-                    <p>9 830 ₽</p>
-                    <p class="old">6 750 ₽</p>
-                    <span class="btn btn-accent">+48 бонусов</span>
-                </div>
-                <div class="cart-order-item__qty">
-                  <span class="btn btn-grey qty-input">
-                    <span class="minus">-</span>
-                    <span class="qty"><input type="tel" value="2" name="qty"></span>
-                    <span class="plus">+</span>
-                  </span>
-                </div>
-                <div class="cart-order-item__subtotal">
-                    <p>сумма</p>
-                    <p><b>13 500 ₽</b></p>
-                </div>
-                <a href="" class="delete"></a>
-              </div>
-              <div class="cart-order-item">
-                <div class="cart-order-item__img">
-                  <a href=""><img src="./img/cart/3.png" alt=""></a>
-                </div>
-                <div class="cart-order-item__name">
-                    <a href="">Комбинезоны Lucky Child комплект самый лучший</a>
-                </div>
-                <div class="cart-order-item__price">
-                    <p>9 830 ₽</p>
-                    <p class="old">6 750 ₽</p>
-                    <span class="btn btn-accent">+48 бонусов</span>
-                </div>
-                <div class="cart-order-item__qty">
-                  <span class="btn btn-grey qty-input">
-                    <span class="minus">-</span>
-                    <span class="qty"><input type="tel" value="2" name="qty"></span>
-                    <span class="plus">+</span>
-                  </span>
-                </div>
-                <div class="cart-order-item__subtotal">
-                    <p>сумма</p>
-                    <p><b>13 500 ₽</b></p>
-                </div>
-                <a href="" class="delete"></a>
-              </div>
-              <div class="cart-order-item deleted">
-                <div class="cart-order-item__img">
-                  <a href=""><img src="./img/cart/4.png" alt=""></a>
-                </div>
-                <div class="cart-order-item__name">
-                    <a href="">Комбинезоны Lucky Child комплект</a>
-                </div>
-                <div class="cart-order-item__price">
-                    <p>9 830 ₽</p>
-                    <p class="old">6 750 ₽</p>
-                    <span class="btn btn-accent">+48 бонусов</span>
-                </div>
-                <div class="cart-order-item__qty">
-                  <span class="btn btn-grey qty-input">
-                    <span class="minus">-</span>
-                    <span class="qty"><input type="tel" value="2" name="qty"></span>
-                    <span class="plus">+</span>
-                  </span>
-                </div>
-                <div class="cart-order-item__subtotal">
-                    <p>Вернуть</p>
-                </div>
-                <a href="" class="return"></a>
-              </div>
-              <div class="cart-order-promo">
-                  <div class="cart-order-promo__code">
-                      <input type="radio" id="promo" name="promo" checked>
-                      <label for="promo">Примените промо-код <span>или</span></label>
-                      <input type="text" name="promo-code" placeholder="Ваш промо-код">
-                  </div>
-                  <div class="cart-order-promo__bonus">
-                      <input type="radio" id="bonus" name="promo">
-                      <label for="bonus">Спишите 599 бонусов</label>
-                      <button class="btn btn-outline-accent">Применить</button>
-                  </div>
-              </div>
+
             </div>
 
             <h3>Оформление заказа</h3>
@@ -278,7 +190,7 @@
                       </div>
                     </div>
                     <div class="cart-delivery-point__map">
-                        <img src="./img/map.png" alt="">
+                      <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aaa679d9bead2a71032587d45bde9da34d2bfbb1e04eb7ee5ddc5ef2b473a047c&amp;width=100%25&amp;height=310&amp;lang=ru_RU&amp;scroll=false"></script>
                     </div>
                 </div>
 
@@ -293,12 +205,22 @@
             <div class="cart-pay">
               <h4>Оплата заказа </h4>
               <div class="cart-pay__items">
-                <input type="radio" id="online" name="payment" checked>
-                <label for="online">Оплата онлайн</label>
-                <input type="radio" id="upon" name="payment">
-                <label for="upon">При получении</label>
-                <input type="radio" id="credit" name="payment">
-                <label for="credit">В кредит</label>
+                <div class="form-row">
+                  <input type="radio" id="online" name="payment" checked>
+                  <label for="online">Оплата онлайн</label>
+                </div>
+                <div class="form-row">
+                  <input type="radio" id="upon" name="payment">
+                  <label for="upon">При получении</label>
+                </div>
+                <div class="form-row">
+                  <input type="radio" id="sb" name="payment">
+                  <label for="sb">Покупай со Сбербанком </label>
+                </div>
+                <div class="form-row">
+                  <input type="radio" id="credit" name="payment">
+                  <label for="credit">В кредит</label>
+                </div>
               </div>
             </div>
           </div>
@@ -576,6 +498,9 @@
                 item.addEventListener('click', (e) => {
                   if (e.target.id != 'promo') {
                     item.parentElement.previousElementSibling.lastElementChild.value = ''
+                    item.parentElement.lastElementChild.textContent = 'Списать'
+                  } else {
+                    item.parentElement.nextElementSibling.lastElementChild.textContent = 'Применить'
                   }
                 })
               })
