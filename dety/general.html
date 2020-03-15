@@ -884,6 +884,24 @@
   <link rel="stylesheet" href="./js/slick/slick.css">
   <script src="./js/slick/slick.min.js"></script>
   <script>
+    //Preload
+    const cachImg = new Array();
+    function preloadcachImg(...cachImg) {
+        cachImg.forEach((image, i) => {
+            image = new Image();
+            image.src = preloadcachImg.arguments[i];
+        });
+    };
+    // Предварительная загрузка картинок слайдера
+    preloadcachImg(
+        './img/slider/1.png',
+        './img/slider/2.png',
+        './img/slider/3.png',
+        './img/slider/1m.png',
+        './img/slider/2m.png',
+        './img/slider/3m.png'
+    );
+    
     $( document ).ready(function() {
 
       let width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -895,23 +913,6 @@
           item.querySelector('img').dataset.lazy = item.querySelector('img').dataset.desctop        
         } 
       }
-
-      const cachImg = new Array();
-      function preloadcachImg(...cachImg) {
-          cachImg.forEach((image, i) => {
-              image = new Image();
-              image.src = preloadcachImg.arguments[i];
-          });
-      };
-      // Предварительная загрузка картинок слайдера
-      preloadcachImg(
-          './img/slider/1.png',
-          './img/slider/2.png',
-          './img/slider/3.png',
-          './img/slider/1m.png',
-          './img/slider/2m.png',
-          './img/slider/3m.png'
-      );
       
       const bonusImg = () => {
         const bonus = document.querySelectorAll('.bonus .bonus-item')

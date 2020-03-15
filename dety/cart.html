@@ -225,34 +225,12 @@
                 </div>
 
                 <div class="cart-delivery-point tabs-item active">
-                    <div class="cart-delivery-point__lists">
-                      <div class="container">
-                        <div class="cart-delivery-point__lists__item">
-                            <p>Кранодар, ул.Рылеева 152, д.15</p>
-                            <p>Ежедневно 09:00 - 22:00 </p>
-                            <p>В среду, 5 февраля, 149 ₽</p>
-                            <button class="btn btn-accent">Выбрать</button>
-                        </div>
-                        <div class="cart-delivery-point__lists__item">
-                            <p>Кранодар, ул.Рылеева 152, д.15m ул.Рылеева 152, д.15</p>
-                            <p>Ежедневно 09:00 - 22:00 </p>
-                            <p>В среду, 5 февраля, 149 ₽</p>
-                            <button class="btn btn-accent">Выбрать</button>
-                        </div>
-                        <div class="cart-delivery-point__lists__item">
-                            <p>Кранодар, ул.Рылеева 152, д.15 Lorem ipsum dolor sit amet.
-                            </p>
-                            <p>Ежедневно 09:00 - 22:00 </p>
-                            <p>В среду, 5 февраля, 149 ₽</p>
-                            <button class="btn btn-accent">Выбрать</button>
-                        </div>
-                        <div class="cart-delivery-point__lists__item">
-                            <p>Кранодар, ул.Рылеева 152, д.15 Lorem, ipsum.</p>
-                            <p>Ежедневно 09:00 - 22:00 </p>
-                            <p>В среду, 5 февраля, 149 ₽</p>
-                            <button class="btn btn-accent">Выбрать</button>
-                        </div>
-                        <div class="cart-delivery-point__lists__item">
+                  <div class="cart-delivery-point__map mobile">
+                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aaa679d9bead2a71032587d45bde9da34d2bfbb1e04eb7ee5ddc5ef2b473a047c&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=false"></script>
+                  </div>
+                  <div class="cart-delivery-point__lists">
+                    <div class="container">
+                      <div class="cart-delivery-point__lists__item">
                           <p>Кранодар, ул.Рылеева 152, д.15</p>
                           <p>Ежедневно 09:00 - 22:00 </p>
                           <p>В среду, 5 февраля, 149 ₽</p>
@@ -277,11 +255,36 @@
                           <p>В среду, 5 февраля, 149 ₽</p>
                           <button class="btn btn-accent">Выбрать</button>
                       </div>
-                      </div>
+                      <div class="cart-delivery-point__lists__item">
+                        <p>Кранодар, ул.Рылеева 152, д.15</p>
+                        <p>Ежедневно 09:00 - 22:00 </p>
+                        <p>В среду, 5 февраля, 149 ₽</p>
+                        <button class="btn btn-accent">Выбрать</button>
                     </div>
-                    <div class="cart-delivery-point__map">
-                      <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aaa679d9bead2a71032587d45bde9da34d2bfbb1e04eb7ee5ddc5ef2b473a047c&amp;width=100%25&amp;height=310&amp;lang=ru_RU&amp;scroll=false"></script>
+                    <div class="cart-delivery-point__lists__item">
+                        <p>Кранодар, ул.Рылеева 152, д.15m ул.Рылеева 152, д.15</p>
+                        <p>Ежедневно 09:00 - 22:00 </p>
+                        <p>В среду, 5 февраля, 149 ₽</p>
+                        <button class="btn btn-accent">Выбрать</button>
                     </div>
+                    <div class="cart-delivery-point__lists__item">
+                        <p>Кранодар, ул.Рылеева 152, д.15 Lorem ipsum dolor sit amet.
+                        </p>
+                        <p>Ежедневно 09:00 - 22:00 </p>
+                        <p>В среду, 5 февраля, 149 ₽</p>
+                        <button class="btn btn-accent">Выбрать</button>
+                    </div>
+                    <div class="cart-delivery-point__lists__item">
+                        <p>Кранодар, ул.Рылеева 152, д.15 Lorem, ipsum.</p>
+                        <p>Ежедневно 09:00 - 22:00 </p>
+                        <p>В среду, 5 февраля, 149 ₽</p>
+                        <button class="btn btn-accent">Выбрать</button>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="cart-delivery-point__map">
+                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aaa679d9bead2a71032587d45bde9da34d2bfbb1e04eb7ee5ddc5ef2b473a047c&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=false"></script>
+                  </div>
                 </div>
 
                 <div class="cart-delivery-adress tabs-item">
@@ -578,7 +581,7 @@
       if ( document.querySelector('.item-qty') ) {
           const input = document.querySelectorAll('.item-qty')
           input.forEach((item,i) => {
-            item.closest('div').previousElementSibling.querySelector('.item-price').style.top = item.closest('div').previousElementSibling.querySelector('a').offsetHeight + 'px'
+            document.body.clientWidth < 767 ? '' : item.closest('div').previousElementSibling.querySelector('.item-price').style.top = item.closest('div').previousElementSibling.querySelector('a').offsetHeight + 'px'
             item.querySelector('input[name="qty"]').value > 1 ? item.closest('div').previousElementSibling.querySelector('.item-price').style.opacity = 1 : item.closest('div').previousElementSibling.querySelector('.item-price').style.opacity = 0
             item.querySelector('input[name="qty"]').value <= 1 ? item.querySelector('.minus').classList.add('disabled') : ''
             item.querySelector('input[name="qty"]').value >= parseInt(item.getAttribute('data-instock')) ? item.querySelector('.plus').classList.add('disabled') : ''

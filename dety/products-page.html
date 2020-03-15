@@ -75,7 +75,11 @@
 <main>
   <div class="breadcrumb">
       <div class="container">
-        <a href="./">Главная</a> <a href="./category.html">Одежда и обувь</a> <a href="./subcategory.html">Одежда для девочек</a> <a href="./category-3.html">Одежда для девочек</a> Толстовка Blue Seven розовая Seven розовая
+        <a href="./">Главная</a>
+        <a href="./category.html">Одежда и обувь</a>
+        <a href="./subcategory.html">Одежда для девочек</a>
+        <a href="./category-3.html">Одежда для девочек</a>
+        <span>Толстовка Blue Seven розовая Seven розовая</span>
       </div>
   </div>
 
@@ -1317,6 +1321,22 @@
   <link rel="stylesheet" href="./js/fancybox/jquery.fancybox.min.css">
 
   <script>
+    //Preload
+    const cachImg = new Array();
+    function preloadcachImg(...cachImg) {
+        cachImg.forEach((image, i) => {
+            image = new Image();
+            image.src = preloadcachImg.arguments[i];
+        });
+    };
+    // Предварительная загрузка картинок слайдера
+    preloadcachImg(
+        './img/products/card/1.jpg',
+        './img/products/card/2.jpg',
+        './img/products/card/3.jpg',
+        './img/products/card/4.jpg'
+    );
+
     $( document ).ready(function() {
       
       const thumb = document.querySelectorAll('.products-page-body__item__left__thumb li')
