@@ -8,7 +8,6 @@
 */
 
 get_header(); 
-$options = get_option( 'skipao_settings' );
 
 $categories = get_the_category();
 $category_id = $categories[0]->cat_ID;
@@ -26,14 +25,13 @@ $category_id = $categories[0]->cat_ID;
 	while ( have_posts() ) :
 		the_post(); 
 ?>
-		<section class="single_page">
-			<div class="container">
-				<h1 class="h2__title"><?php echo the_title(); ?></h1>
-				<?php echo the_content(); ?>
-				<? 
-					if ( get_field( 'sale-seria', $post->ID ) ): 
-						var_dump($seria = get_field( 'sale-seria', $post->ID ));
-					endif;
+	<section class="single_page">
+		<div class="container">
+			<h1 class="h2__title"><?php echo the_title(); ?></h1>
+			<?php echo the_content(); ?>
+			<? 
+				if ( get_field( 'sale-seria', $post->ID ) ): 
+					$seria = get_field( 'sale-seria', $post->ID );
 
 					foreach($seria as $s) {
 						$term_list = wp_get_post_terms( $s, 'brands', array('fields' => 'all') );
@@ -45,71 +43,40 @@ $category_id = $categories[0]->cat_ID;
 							}
 						}
 					}
-					var_dump($brand_id);
-				
-				?>
-			</div>
-		</section>
+				endif;
+			?>
+		</div>
+	</section>
 
-	<?php endwhile; ?>
+<?php endwhile; ?>
 
 
-	<? if ($category_id == 110) { ?>
+<? if ($category_id == 110) { 
+	$options = get_option( 'skipao_settings' ); ?>
 	<section class="top__product">
 		<div class="container">
 			<div class="product__carousel">
 		
 			<?php 
-			
-
 				$query = new WP_Query(array (
-					// 'tax_query' => array(
-					// 	// 'relation' => 'AND',
-					// 	// array(
-					// 	// 	'taxonomy' => 'brands',
-					// 	// 	'field'    => 'id',
-					// 	// 	'terms'    => $brand_id
-					// 	// ),
-					// 	array(
-					// 		'post_type' => 'seria',
-					// 		'field'    => 'id',
-					// 		'terms'    => $seria
-					// 	)
-					// ),
-					array(
-						'post_type' => 'seria',
-						'field'    => 'id',
-						'terms'    => $seria
+					'post_type' => 'seria',
+					'post__in'    => $seria,
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'brands',
+							'field'    => 'id',
+							'terms'    => $brand_id
+						),
 					),
-					// 'relation' => 'AND',
-					// [
-					// 	'taxonomy' => 'brands',
-					// 	'field'    => 'id',
-					// 	'terms'    => $brand_id
-					// ],
-					// [
-					// 	'taxonomy' => 'seria',
-					// 	'field'    => 'id',
-					// 	'terms'    => $seria,
-					// 	// 'operator' => 'NOT IN',
-					// ] 
-					// 'tax_query' => array(
-						// 	array(
-						// 		'taxonomy' => 'brands',
-						// 		'field'    => 'id',
-						// 		'terms'    => $brand_id
-						// 	)
-					// )
-					'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => -1));
+					'orderby' => 'name', 'order' => 'ASC', 'posts_per_page' => -1));
 					if ($query->have_posts()):
 					$i = 0;
 					while ( $query->have_posts() ) : $query->the_post();
-
-					// echo '<pre>';
-					// var_dump($query);
-					// echo '</pre>';
 					
 					$post_tumb = get_post_thumbnail_id( $post->ID );
+					
+					$term_list = wp_get_post_terms( $post->ID, 'brands', array('fields' => 'all') );
+					$term_link = get_term_link($term_list[0], 'brands');
 			?>
 			<!-- Card -->
 			<div class="top__card" id="<?php echo $i; ?>">
@@ -122,7 +89,7 @@ $category_id = $categories[0]->cat_ID;
 					<div class="top__card__header__title">
 					<div class="top__card__header__title__wrap">
 						<div class="top__card__header__title__caption">
-							<h3><span><?php echo $term->name; ?></span> <?php echo the_title(); ?></h3>
+							<h3><a href="<? echo $term_link; ?>"><?php echo $term_list[0]->name; ?></a> <?php echo the_title(); ?></h3>
 						</div>
 						<!-- TAB -->
 						<div class="top__card__header__title__caption__tabs">
@@ -355,8 +322,6 @@ $category_id = $categories[0]->cat_ID;
 	</section>
 	<!-- End Callback form -->
 <? } ?>
-
-		
 
 <?php get_footer(); ?>
 		

@@ -1,5 +1,6 @@
 <?php get_header(); 
 $options = get_option( 'skipao_settings' );
+$category = get_queried_object()->term_id;
 ?>
    <div class="breadcrumb">
       <div class="container">
@@ -10,9 +11,9 @@ $options = get_option( 'skipao_settings' );
    <section class="blog">
       <div class="container">
          <h5 class="h2__title liner">
-            <?php single_cat_title(); 
-            $category = get_queried_object()->term_id; ?>
+            <?php single_cat_title(); ?>
          </h5>
+      <?=$category == 110 ? '<a style="display:block; margin-bottom:2em; font-size:1.5em; font-weight:bold; color:#00baf0;" href="/pobediteli-akczij/">Победители акций</a>' : ''?>
 
          <div class="row">
              <?php 

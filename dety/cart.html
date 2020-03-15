@@ -97,6 +97,7 @@
                 <div class="cart-order-item__name">
                     <a href="">Комбинезоны Lucky Child комплект</a>
                     <p class="item-price" data-price="9830">9 830 ₽ за 1 шт.</p>
+                    <p class="item-old" data-old="11830"></p>
                 </div>
                 <div class="cart-order-item__qty">
                     <span class="item-qty" data-instock="5">
@@ -106,7 +107,8 @@
                     </span>
                 </div>
                 <div class="cart-order-item__subtotal">
-                    <p>19 660 ₽</p>
+                  <p class="new">19 660 ₽</p>
+                  <p class="old">23 660 ₽</p>
                 </div>
               </div>
               <div class="cart-order-item">
@@ -163,8 +165,39 @@
                 <div class="cart-order-item__name">
                     Комбинезоны Lucky Child комплект синий зеленого цвета с оранжевым и серым и белым в полоску
                 </div>
-                <div class="cart-order-item__delete">
+                <div class="cart-order-item__subtotal">
                   <p>Товар удален из корзины</p>
+                </div>
+              </div>
+              <div class="cart-order-item-total">
+                <div class="cart-count">3 товара на сумму:</div>
+                <div class="cart-total">
+                  <p>25 000 ₽</p>
+                  <p class="old">15 000 ₽</p>
+                  <p class="bonus">+250 Б</p>
+                </div>
+              </div>
+              <div class="cart-order-promo">
+                <div class="cart-order-promo__code">
+                    <input type="radio" id="promo" name="promo" checked>
+                    <label for="promo">Использовать промо-код</label>
+                </div>
+                <div class="cart-order-promo__bonus">
+                    <input type="radio" id="bonus" name="promo">
+                    <label for="bonus">Списать до 599 бонусов</label>
+                </div>
+                <div class="cart-order-promo__result">
+                  <input type="text" name="promo-code" class="active" placeholder="Ваш промо-код">
+                  <div class="range">
+                    <div class="range-slider">
+                      <span id="rs-bullet" class="rs-label">0</span>
+                      <input id="rs-range-line" class="rs-range" type="range" value="0" min="0" max="599">
+                    </div>
+                    <div class="box-minmax">
+                      <span>0</span><span>599</span>
+                    </div>
+                  </div>
+                  <button class="btn btn-outline-accent">Применить</button>
                 </div>
               </div>
             </div>
@@ -252,10 +285,24 @@
                 </div>
 
                 <div class="cart-delivery-adress tabs-item">
-                  <label for="calc_delivery">Адрес</label>
-                  <input type="text" id="calc_delivery" name="adress" placeholder="Введите адрес доставки">
-                  <script src="https://api-maps.yandex.ru/2.1/?apikey=401bda4e-08f9-4e39-876e-eaaaf44f6727&lang=ru_RU&mode=debug" type="text/javascript"></script>
-                  <script src="js/calc_delivery.js"></script>
+                  <div class="form-row">
+                    <label for="city">Город <span>*</span></label>
+                    <input type="text" id="city" class="city" name="city" value="Краснодар" pattern="^[А-Яа-яЁё\s]+$" placeholder="">
+                    <span>Введите Город на русском языке</span>
+                  </div>
+                  <div class="form-row">
+                    <label for="street">Улица</label>
+                    <input type="text" id="street" name="street" pattern="^[А-Яа-яЁё\s]+$" placeholder="">
+                    <span>Введите Улицу на русском языке</span>
+                  </div>
+                  <div class="form-row">
+                    <label for="house">Дом</label>
+                    <input type="text" id="house" name="house" placeholder="">
+                  </div>
+                  <div class="form-row">
+                    <label for="flat">Квартира</label>
+                    <input type="text" id="flat" name="flat" placeholder="">
+                  </div>        
                 </div>
             </div>
 
@@ -272,7 +319,7 @@
                 </div>
                 <div class="form-row">
                   <input type="radio" id="sb" name="payment">
-                  <label for="sb">Покупай со Сбербанком </label>
+                  <label for="sb">В рассрочку</label>
                 </div>
                 <div class="form-row">
                   <input type="radio" id="credit" name="payment">
@@ -298,16 +345,16 @@
               <p>5 450 ₽</p>
             </div>
             <div class="form-row">
-              <p>Стоимость доставки:</p>
-              <p>450 ₽</p>
+              <p>Доставка:</p>
+              <p>0</p>
             </div>
             <div class="form-row order-total">
-              <p>К оплате:</p>
-              <p>6 000 ₽</p>
+              <p>Сумма к оплате:</p>
+              <p>5 450 ₽</p>
             </div>
             <div class="form-row order-bonus">
               <p>Бонусов:</p>
-              <p>+250</p>
+              <p>+250 Б</p>
             </div>
             <div class="form-row policy">
               <input type="checkbox" id="policy" name="policy" required>
@@ -527,6 +574,7 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
+
       if ( document.querySelector('.item-qty') ) {
           const input = document.querySelectorAll('.item-qty')
           input.forEach((item,i) => {
@@ -555,7 +603,17 @@
               item.querySelector('input[name="qty"]').value > 1 ? item.closest('div').previousElementSibling.querySelector('.item-price').style.opacity = 1 : item.closest('div').previousElementSibling.querySelector('.item-price').style.opacity = 0
               price = parseInt(item.closest('div').previousElementSibling.querySelector('.item-price').getAttribute('data-price'))
               total = item.closest('div').nextElementSibling.querySelector('p')
-              item.querySelector('input[name="qty"]').value >= 1 && item.querySelector('input[name="qty"]').value <= parseInt(item.getAttribute('data-instock')) ? total.innerHTML = (price * item.querySelector('input[name="qty"]').value).toLocaleString('ru-RU') + ' ₽' : ''
+              
+              //old
+              if (item.closest('div').previousElementSibling.querySelector('.item-old')) {
+                oldprice = parseInt(item.closest('div').previousElementSibling.querySelector('.item-old').getAttribute('data-old'))
+                oldtotal = item.closest('div').nextElementSibling.querySelector('p.old')
+              }
+
+              if (item.querySelector('input[name="qty"]').value >= 1 && item.querySelector('input[name="qty"]').value <= parseInt(item.getAttribute('data-instock')) ) {
+                total.innerHTML = (price * item.querySelector('input[name="qty"]').value).toLocaleString('ru-RU') + ' ₽'
+                oldtotal.innerHTML = (oldprice * item.querySelector('input[name="qty"]').value).toLocaleString('ru-RU') + ' ₽'
+              }
             }
             item.querySelector('.minus').addEventListener('click', changeQTY('minus'))
             item.querySelector('.plus').addEventListener('click', changeQTY('plus'))
@@ -563,19 +621,39 @@
             item.querySelector('input[name="qty"]').addEventListener('change', changeQTY('change'))
           })
       }
+      
       if ( document.querySelector('.cart-order-promo') ) {
         const variant = document.querySelectorAll('.cart-order-promo input[name="promo"]')
               variant.forEach(item => {
                 item.addEventListener('click', (e) => {
                   if (e.target.id != 'promo') {
-                    item.parentElement.previousElementSibling.lastElementChild.value = ''
-                    item.parentElement.lastElementChild.textContent = 'Списать'
+                    item.closest('div').nextElementSibling.querySelector('input[name="promo-code"]').value = ''
+                    item.closest('div').nextElementSibling.querySelector('input[name="promo-code"]').classList.remove('active')
+                    item.closest('div').nextElementSibling.querySelector('.range').classList.add('active')
+                    item.closest('div').nextElementSibling.querySelector('button').textContent = 'Списать'
                   } else {
-                    item.parentElement.nextElementSibling.lastElementChild.textContent = 'Применить'
+                    item.closest('div').parentElement.lastElementChild.querySelector('input[name="promo-code"]').classList.add('active')
+                    item.closest('div').parentElement.lastElementChild.querySelector('.range').classList.remove('active')
+                    item.closest('div').parentElement.lastElementChild.querySelector('button').textContent = 'Применить'
                   }
                 })
               })
       }
+
+      var rangeSlider = document.getElementById("rs-range-line");
+      var rangeBullet = document.getElementById("rs-bullet");
+
+      rangeSlider.addEventListener("input", showSliderValue, false);
+      rangeSlider.addEventListener("change", showSliderValue, false);
+
+      function showSliderValue() {
+        rangeBullet.innerHTML = rangeSlider.value;
+        // var bulletPosition = (rangeSlider.value / rangeSlider.max);
+        var bulletPosition = (rangeSlider.value / rangeSlider.max) * 90;
+        console.log(bulletPosition)
+        rangeBullet.style.left = (bulletPosition) + "%";
+      }
+
     })
   </script>
 </body>

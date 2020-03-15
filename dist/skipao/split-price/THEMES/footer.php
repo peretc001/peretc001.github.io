@@ -68,8 +68,8 @@
                      </div>
 
                      <a href="https://skipao.ru/" target="_blank" class="author">
-                        Разработка: СКИ ПАО
-                     </a>
+                С Вами с 1997 года.
+                     </a>
                      <meta name="author" content='Красовский Игорь' href="https://krasovsky23.ru" />
                   </div>
                </div>
@@ -78,7 +78,7 @@
       </div>
    
       <section class="copyright">
-         <p><span>© 2019.</span> <?php echo get_bloginfo('name'); ?> - сплит-системы</p>
+         <p><span>© <? echo date('Y') ?>.</span> <?php echo get_bloginfo('name'); ?> - интернет магазин сплит-системы</p>
       </section>
    
    </main>
@@ -102,9 +102,43 @@
                <form action="/" class="callback__form" method="post">
                <div class="form-row">
                   <input type="hidden" name="data-name" value="">
+                  <input type="hidden" name="data-brand" value="">
                   <input type="hidden" name="data-title" value="">
                   <input type="hidden" name="data-model" value="">
                   <input type="hidden" name="data-price" value="">
+                  <input type="text" name="name" class="form-control" placeholder="Имя">
+                  <input type="tel" name="phone" class="form-control tel" placeholder="Телефон" required>
+                  
+                  <div class="robot">
+                     <div class="robot__check">
+                        <svg viewBox="0 0 60 60">
+                           <line class="st0 line1" x1="4.5" y1="30.5" x2="29.5" y2="52.5"/>
+                           <line class="st0 line2" x1="56.5" y1="4.5" x2="29.5" y2="52.5"/>
+                        </svg>
+                     </div>
+                     <span>Согласен с условиями <a href="#" data-toggle="modal" data-target="#policy">Политики конфиденциальности</a></span>
+                  </div>
+
+                  <button type="submit" class="btn callback__form__button" disabled>Заказать</button>
+               </div>
+               </form>
+            </div>
+            <div class="request_callback__footer">Заявка принята!!!</div>
+         </div>
+      </div>
+   </div>
+   <!-- Modal Credit -->
+   <div class="modal fade" id="credit" tabindex="-1" role="dialog" aria-labelledby="callbackTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+               <span class="name"></span>
+               <form action="/" class="callback__form" method="post">
+               <div class="form-row">
+                  <input type="hidden" name="data-credit" value="">
                   <input type="text" name="name" class="form-control" placeholder="Имя">
                   <input type="tel" name="phone" class="form-control tel" placeholder="Телефон" required>
                   
@@ -132,3 +166,19 @@
    </div>
    
    <?php wp_footer() ?>
+
+   <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(55429087, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/55429087" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->

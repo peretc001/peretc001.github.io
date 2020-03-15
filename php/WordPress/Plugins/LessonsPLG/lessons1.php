@@ -1,38 +1,27 @@
-<?php
-/**
- * Plugin Name: Расписание занятий
- * Description: Плагин добавляет расписание занятий на сайт
- * Author URI:  https://krasovsky23.ru
- * Author:      Красовский Игорь
- *
- * @link https://krasovsky23.ru
- * @author Krasovsky
- * @package WordPress
- */
-
-
+<?
 // Hook for adding admin menus
 add_action('admin_menu', 'lessons_admin_page');
 
 // action function for above hook
 function lessons_admin_page() {
-    add_menu_page('Расписание занятий', 'Расписание занятий', 9, __FILE__, 'lessons_page', 'dashicons-calendar-alt', 46.6);
+    add_menu_page('Расписание занятий1', 'Расписание занятий1', 9, __FILE__, 'lessons_page', 'dashicons-calendar-alt', 46.6);
     register_setting( 'lessonsCustom', 'lessons_option' ); 
 }
 function lessons_page() { 
 	$options = get_option( 'lessons_option' );
+	$url = plugin_dir_url( __FILE__ );
 ?>
-	<link rel='stylesheet' href='<?php echo get_template_directory_uri() .'/css/custom.min.css'; ?>' type='text/css' media='all' />
+	<link rel='stylesheet' href='<?php echo $url .'custom.min.css'; ?>' type='text/css' media='all' />
 	<style>
 	#wpbody {margin-left: -20px !important;}
 	.lesson {padding: 40px; padding-right: 100px}
 	.lesson .textarea { display: block; margin: 0 0 10px 0; width: 100%; min-height: 50px; padding: 10px; border: 1px dashed #fff; color: #fff; background: transparent; font-size: 1em;}
 	.lesson .textarea:focus { background: #fff; color: #383838; }
+	.lesson input, .lesson textarea { outline: none !important; box-shadow: none !important; }
 	</style>
    <form action='options.php' method='post'>
 
 	<section class="lesson">
-    <div class="container">
       <h2 class="h2__title inverse">
         Расписание
       </h2>
@@ -205,9 +194,8 @@ function lessons_page() {
 		</div>
 		
 		
-    </div>
   </section>
-  <script src="<?php echo get_template_directory_uri() .'/js/script.js'; ?>"></script>
+  <script src="<?php echo $url .'script.js'; ?>"></script>
 	
 	   
 	   <?php

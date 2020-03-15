@@ -636,8 +636,17 @@ function add_shortcode_skipao_mobile_model($model_square){
 	else if ( $model_square == 90) {
 		$model_number = '30';
 	}
+	else if ( $model_square == 100) {
+		$model_number = '36';
+	}
 	else if ( $model_square == 110) {
 		$model_number = '36';
+	}
+	else if ( $model_square == 130) {
+		$model_number = '48';
+	}
+	else if ( $model_square == 150) {
+		$model_number = '60';
 	}
 
 	return $model_number;

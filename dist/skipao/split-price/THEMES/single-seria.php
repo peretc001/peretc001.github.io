@@ -25,7 +25,8 @@ $options = get_option( 'skipao_settings' );
 	<div class="breadcrumb">
 		<a href="/">Главная</a> > <a href="/brands/">Бренды</a> > <a href="/brands/<?php echo $brand_slug; ?>/"><?php echo $brand_name; ?></a> > <?php echo the_title(); ?>
 	</div>
-
+	
+	
 	<!-- Top ptoducts -->
 		<section class="top__product">
 			<div class="container">
@@ -132,7 +133,7 @@ $options = get_option( 'skipao_settings' );
 														</span>
 													</li>
 													<li class="tech__list__item">
-														<span>Таймер</span>
+														<span>Марка компрессора</span>
 														<span>
 														<?php
 															if ( get_field( 'tajmer', $post->ID ) ): ?>
@@ -185,46 +186,14 @@ $options = get_option( 'skipao_settings' );
 											foreach( $models as $model ){ ?>
 									<tr>
 										<td class="model"><p><?php echo esc_html($model->post_title); ?></p></td>
-										<td class="square"><p> до<?php
-															if ( get_field( 'square', $model->ID ) ): ?>
-															<?php echo the_field( 'square', $model->ID ); ?>
-														<?php endif; ?></p>
-														<p><?php 
-												if ( get_field( 'square', $model->ID ) <= '20') {
-													echo '07';
-												}
-												if ( get_field( 'square', $model->ID ) == '22') {
-													echo '08';
-												}
-												else if ( get_field( 'square', $model->ID ) <= '27') {
-													echo '09';
-												}
-												else if ( get_field( 'square', $model->ID ) <= '33') {
-													echo '11';
-												}
-												else if ( get_field( 'square', $model->ID ) <= '36') {
-													echo '12';
-												}
-												else if ( get_field( 'square', $model->ID ) <= '40') {
-													echo '13';
-												}
-												else if ( get_field( 'square', $model->ID ) == '40') {
-													echo '14';
-												}
-												else if ( get_field( 'square', $model->ID ) <= '56') {
-													echo '18';
-												}
-												else if ( get_field( 'square', $model->ID ) <= '72') {
-													echo '24';
-												}
-												else if ( get_field( 'square', $model->ID ) <= '90') {
-													echo '30';
-												}
-												else if ( get_field( 'square', $model->ID ) <= '110') {
-													echo '36';
-												}
+										<td class="square"><p> до <?php
+																if ( $model_square = get_field( 'square', $model->ID ) ): ?>
+																<?php echo the_field( 'square', $model->ID ); ?>
+															<?php endif; ?></p>
+												<p><?php 
+													echo add_shortcode_skipao_mobile_model($model_square);
 												?></p>
-										</td>
+											</td>
 										<td class="twin"><p><?php
 															if ( get_field( 'cold', $model->ID ) ): ?>
 															<?php echo the_field( 'cold', $model->ID ); ?>
@@ -244,11 +213,11 @@ $options = get_option( 'skipao_settings' );
 										<td class="note"><p><?php
 															if ( get_field( 'primechanie', $model->ID ) ): ?>
 															<?php echo the_field( 'primechanie', $model->ID ); ?>
-														<?php endif; ?></p></td>
+														<?php else: echo 'В наличии'; endif; ?></p></td>
 										<td class="buy">
 											<a href="#" class="btn btn-accent" data-toggle="modal" data-target="#add" 
 												data-name="Заказать сплит-систему" 
-												data-title="<?php echo esc_html($post->post_title); ?>"
+												data-title="<?php echo esc_html($brand_name .' '. $post->post_title); ?>"
 												data-model="<?php echo esc_html($model->post_title); ?>"
 												data-price="<?php
 															if ( get_field( 'price', $model->ID ) ): ?>

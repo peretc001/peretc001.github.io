@@ -1,0 +1,145 @@
+*
+    box-sizing: border-box
+.lessons-content
+    background-color: #000
+    background-position: right top
+    background-repeat: no-repeat
+    background-image: url(/wp-content/themes/nashestvie/img/shedule_item.png)
+    background-size: cover
+    padding: 4% 0 0% 6%
+    height: 100% !important
+    overflow: auto !important
+.mdl-layout__container
+    height: 100% !important
+.less
+    padding: 0
+    width: 90%
+    margin: 3em auto
+    display: block
+    .less__row
+        display: flex
+        align-items: flex-start
+        justify-content: flex-start
+        &__date
+            flex: 0 0 100%
+            display: none
+            align-items: center
+            justify-content: flex-start
+            margin-bottom: 1em
+            &__item
+                flex: 0 0 13%
+                text-align: center
+                padding: .5em 0
+                border: 1px solid rgba(#fff, .3)
+                border-radius: 8px
+                font-size: 0.8em
+                cursor: pointer
+                &:not(:first-child)
+                    margin-left: 1.5%
+
+    &__card
+        display: block
+        width: 100%
+        min-height: 70px
+        display: flex
+        align-items: center
+        justify-content: center
+        border: 1px solid rgba(#fff, .3)
+        border-radius: 8px
+        margin-bottom: 0.5em
+        transition: background .3s ease
+        &.hidden
+            display: none
+        p
+            padding: 5px
+            margin: 0
+            line-height: 1
+            font-size: 0.8em
+    &__date
+        font-size: 0.8em
+        margin: 0
+        padding: 0.5em
+
+    .col-date
+        flex: 0 0 13%
+        text-align: center
+        transition: background .3s ease
+        .less__date
+            padding: .5em 0
+            border: 1px solid rgba(#fff, .3)
+            border-radius: 8px
+            margin-bottom: 1em
+            p
+                margin: 0
+                padding: 0
+
+        &:hover
+            .less__card
+                background: rgba(#000, .3)
+                &:not(.blank)
+                    &:hover
+                        background: rgba(#000, .7)
+        &:not(:first-child)
+            margin-left: 1%
+        &:first-child
+            .less__card
+                position: relative
+                &::before
+                    content: attr(data-time)
+                    position: absolute
+                    left: -3.5em
+                    font-size: 0.9em
+
+    .js-less-form
+        cursor: pointer
+
+@media screen and ( max-width: 767.98px )
+    .lessons-content
+        padding: 3em 1em
+        background-size: 100%
+    .less
+        width: 100%
+        .less__row
+
+            &__date
+                display: flex
+                &__item
+                    transition: background .3s ease
+                    &.active
+                        background: #ffffff
+                        color: #000
+            
+            .col-date
+                flex: 0 0 auto
+                width: 100%
+                display: none
+                margin-left: 0
+                .less__date
+                    display: none
+                    margin: 0
+                &.active
+                    display: block
+                &:first-child
+                    .less__card
+                        position: relative
+                        &::before
+                            top: .2em
+                            left: .5em
+                .less__card
+                    position: relative
+                    &:not(.blank)
+                        &::before
+                            content: attr(data-time)
+                            position: absolute
+                            top: .2em
+                            left: .5em
+                            font-size: .9em
+        
+        &__card
+            p
+                font-size: 1em
+            &.blank
+                display: none
+
+
+    

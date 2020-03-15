@@ -227,12 +227,18 @@
 
       .mobile--menu
          display: flex
+         flex-direction: column
+         padding-top: 1em
+         a
+            font-size: 1em !important
+            padding: 0.5em 0 !important
+            color: #ffffff
 
       .navbar-collapse
          padding: 0
          padding-right: 1em
          .navbar-nav
-            padding: 1em 0
+            padding: 0 0 1em 0
             .menu--hover
                display: none
             .nav-item
@@ -249,7 +255,15 @@
                &.nav-phone,
                &.nav-whatsapp
                   display: block
-   
+
+      .mobile-phone
+         display: none
+      
+      .navbar-nav
+         .nav-link
+            &.nav-whatsapp
+               margin-top: 1em
+
    .breadcrumb
       max-width: 540px
 
@@ -279,9 +293,6 @@
 
 @media screen and (max-width: 449.98px)
    .navbar
-      .mobile--menu
-         .prom
-            display: none
       .navbar-collapse
          .navbar-nav
             .nav-link

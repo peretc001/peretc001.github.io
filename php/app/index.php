@@ -1,154 +1,612 @@
-<?php 
-include './simplehtmldom/simple_html_dom.php';
-// Create DOM from URL or file
-$html = file_get_html('https://krd.partamag.ru/catalog/party_transformery/party_demi/demi_2019/parta_demi_eco_75_40_iz_naturalnogo_dereva/');
+<link rel="stylesheet" href="./css/style.min.css">
+    <section class="less">
+        <div class="less__row__date">
+            <p class="less__row__date__item" date-link="Mon">Понедельник</p>
+            <p class="less__row__date__item" date-link="Tue">Вторник</p>
+            <p class="less__row__date__item" date-link="Wed">Среда</p>
+            <p class="less__row__date__item" date-link="Thu">Четверг</p>
+            <p class="less__row__date__item" date-link="Fri">Пятница</p>
+            <p class="less__row__date__item active" date-link="Sat">Суббота</p>
+            <p class="less__row__date__item" date-link="Sun">Воскресенье</p>
+        </div>
 
-$menu = [];
-foreach($html->find('.catalog-element-extimages_slider_inner.main_slider-slider_inner.clearfix') as $k => $element) {
-       $i = 1;
-       foreach ($element->find('.around_image offer_img') as $key => $value) {
-              echo $title = $value->attr['href'];
-              echo '<br>';
-       
-              
-              // $menu[$k]['title']     = $href->find('.cat__main__title')[0]->plaintext;
-              // $menu[$k]['about']     = $href->find('.cat__main__desc')[0]->plaintext;
-              // $menu[$k]['img']      = '/img/brands/'. $title .'.png';
-              // $menu[$k]['url']       = $href->attr['href'];
+        <div class="less__row">
 
-              
-              // $name = $href->find('img')[0]->attr['src'];
-              
-              // $dir = @mkdir('./cyt01/');
-              // if($dir) { continue; }
+            <div class="col-date" date-show="Mon">
+                <div class="less__date">
+                    <p>Понедельник</p>
+                </div>
+            
+                                <div class="less__card hidden" data-time="8:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="9:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="9:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="10:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="10:30" style="background: ">
+                        <p>123123123</p>
+                    </div>
+                                <div class="less__card" data-time="11:00" style="background: #0096ff">
+                        <p>Растяжка Набор Куриленко</p>
+                    </div>
+                                <div class="less__card hidden" data-time="11:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="12:00" style="background: #0096ff">
+                        <p>Кольцо Дети Набор Куриленко</p>
+                    </div>
+                                <div class="less__card hidden" data-time="12:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="13:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="13:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="14:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="14:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="15:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="15:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="16:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="16:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="17:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="17:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="18:00" style="background: ">
+                        <p>Pole dance Пермякова</p>
+                    </div>
+                                <div class="less__card hidden" data-time="18:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="19:00" style="background: ">
+                        <p>Pole dance Рудая</p>
+                    </div>
+                                <div class="less__card hidden" data-time="19:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="20:00" style="background: ">
+                        <p>Pole dance Смирнягина</p>
+                    </div>
+                                <div class="less__card hidden" data-time="20:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="21:00" style="background: #0096ff">
+                        <p>Exotic Набор Николаева</p>
+                    </div>
+                        </div>
 
-              // $file = $title;
-              // $newfile = './cyt01/'. $i .'.jpg';
+            <div class="col-date" date-show="Tue">
+                <div class="less__date">
+                    <p>Вторник</p>
+                </div>
+                
+                                <div class="less__card hidden" data-time="8:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="9:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="9:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="10:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="10:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="11:00" style="background: #0096ff">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="11:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="12:00" style="background: #0096ff">
+                        <p>Растяжка Голомолзин</p>
+                    </div>
+                                <div class="less__card hidden" data-time="12:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="13:00" style="background: ">
+                        <p>Pole dance Голомолзин</p>
+                    </div>
+                                <div class="less__card hidden" data-time="13:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="14:00" style="background: ">
+                        <p>Exotic Николаева</p>
+                    </div>
+                                <div class="less__card hidden" data-time="14:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="15:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="15:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="16:00" style="background: ">
+                        <p>Полотна дети Курдова</p>
+                    </div>
+                                <div class="less__card hidden" data-time="16:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="17:00" style="background: ">
+                        <p>Растяжка Эквилибр Курдова</p>
+                    </div>
+                                <div class="less__card hidden" data-time="17:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="18:00" style="background: ">
+                        <p>Exotic Кононенко</p>
+                    </div>
+                                <div class="less__card hidden" data-time="18:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="19:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="19:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="20:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="20:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="21:00" style="background: #0096ff">
+                        <p>Exotic новички Орехова</p>
+                    </div>
+                        </div>
 
-              // copy($file, $newfile);
+            <div class="col-date" date-show="Wed">
+                <div class="less__date">
+                    <p>Среда</p>
+                </div>
+                
+                                <div class="less__card hidden" data-time="8:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="9:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="9:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="10:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="10:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="11:00" style="background: #0096ff">
+                        <p>Exotic новички Орехова</p>
+                    </div>
+                                <div class="less__card hidden" data-time="11:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="12:00" style="background: #0096ff">
+                        <p>Кольцо Дети Набор Куриленко</p>
+                    </div>
+                                <div class="less__card hidden" data-time="12:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="13:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="13:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="14:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="14:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="15:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="15:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="16:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="16:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="17:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="17:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="18:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="18:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="19:00" style="background: ">
+                        <p>Кольцо Дети Набор Куриленко</p>
+                    </div>
+                                <div class="less__card hidden" data-time="19:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="20:00" style="background: ">
+                        <p>Pole dance Смирнягина</p>
+                    </div>
+                                <div class="less__card hidden" data-time="20:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="21:00" style="background: #0096ff">
+                        <p>Exotic Набор Николаева</p>
+                    </div>
+                        </div>
 
-              $i++;
-       }
-       echo 'Done';
-}
+            <div class="col-date" date-show="Thu">
+                <div class="less__date">
+                    <p>Четверг</p>
+                </div>
+                
+                                <div class="less__card hidden" data-time="8:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="9:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="9:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="10:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="10:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="11:00" style="background: #0096ff">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="11:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="12:00" style="background: #0096ff">
+                        <p>Растяжка Голомолзин</p>
+                    </div>
+                                <div class="less__card hidden" data-time="12:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="13:00" style="background: ">
+                        <p>Pole dance Голомолзин</p>
+                    </div>
+                                <div class="less__card hidden" data-time="13:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="14:00" style="background: ">
+                        <p>Exotic Николаева</p>
+                    </div>
+                                <div class="less__card hidden" data-time="14:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="15:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="15:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="16:00" style="background: ">
+                        <p>Растяжка + эквилибр дети Курдова</p>
+                    </div>
+                                <div class="less__card hidden" data-time="16:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="17:00" style="background: ">
+                        <p>Растяжка Эквилибр Курдова</p>
+                    </div>
+                                <div class="less__card hidden" data-time="17:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="18:00" style="background: ">
+                        <p>Exotic Кононенко</p>
+                    </div>
+                                <div class="less__card hidden" data-time="18:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="19:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="19:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="20:00" style="background: ">
+                        <p>Pole dance Новички Орехова</p>
+                    </div>
+                                <div class="less__card hidden" data-time="20:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="21:00" style="background: #0096ff">
+                        <p>Exotic новички Орехова</p>
+                    </div>
+                        </div>
 
+            <div class="col-date" date-show="Fri">
+                <div class="less__date">
+                    <p>Пятница</p>
+                </div>
+                
+                                <div class="less__card hidden" data-time="8:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="9:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="9:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="10:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="10:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="11:00" style="background: #0096ff">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="11:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="12:00" style="background: #0096ff">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="12:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="13:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="13:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="14:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="14:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="15:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="15:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="16:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="16:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="17:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="17:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="18:00" style="background: ">
+                        <p>Pole dance Пермякова</p>
+                    </div>
+                                <div class="less__card hidden" data-time="18:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="19:00" style="background: ">
+                        <p>Растяжка Пермякова</p>
+                    </div>
+                                <div class="less__card hidden" data-time="19:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="20:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="20:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="21:00" style="background: #0096ff">
+                        <p>Pole dance Продвинутые Клыкова</p>
+                    </div>
+                        </div>
 
+            <div class="col-date active" date-show="Sat">
+                <div class="less__date">
+                    <p>Суббота</p>
+                </div>
+                
+                                <div class="less__card hidden" data-time="8:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="9:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="9:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="10:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="10:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="11:00" style="background: #0096ff">
+                        <p>Кольцо Кононенко</p>
+                    </div>
+                                <div class="less__card hidden" data-time="11:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="12:00" style="background: #0096ff">
+                        <p>Растяжка Кононенко</p>
+                    </div>
+                                <div class="less__card hidden" data-time="12:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="13:00" style="background: ">
+                        <p>Exotic Кононенко</p>
+                    </div>
+                                <div class="less__card hidden" data-time="13:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="14:00" style="background: ">
+                        <p>Pole dance Новички Орехова</p>
+                    </div>
+                                <div class="less__card hidden" data-time="14:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="15:00" style="background: ">
+                        <p>Растяжка Орехова</p>
+                    </div>
+                                <div class="less__card hidden" data-time="15:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="16:00" style="background: ">
+                        <p>Exotic Новички Орехова</p>
+                    </div>
+                                <div class="less__card hidden" data-time="16:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="17:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="17:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="18:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="18:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="19:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="19:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="20:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="20:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="21:00" style="background: #0096ff">
+                        <p></p>
+                    </div>
+                        </div>
 
-//$products = [];
-
-//title and desc
-// foreach($html->find('.wrapper__content') as $element) {
-//        $products['brand']['title'] = $element->find('h1')[0]->plaintext;
-//        $products['brand']['about'] = $element->find('.list-item__description-text__hidden__in')[0]->innertext;
-// }
-
-//cards
-// foreach ($menu as $key => $page) {
-//        $html2 = file_get_html('http://splitlife-krasnodar.ru'. $page['url']);
-//        //var_dump('http://splitlife-krasnodar.ru'. $page['url']);
-
-//        foreach($html2->find('.item-block') as $key2 => $element) {
-//               $title2 = $page['title'];
-
-//               $products[$key][$key2]['title'] = $page['title'];
-
-//               $products[$key][$key2]['name'] = $element->find('.h2')[0]->plaintext;
-//               $products[$key][$key2]['img']  = '/img/'. $title2 .'/'. $key2 .'.png';
-//               $products[$key][$key2]['garanty'] = $element->find('.item-block__garant')[0]->innertext;
-//               $products[$key][$key2]['desc'] = $element->find('.text-description__in')[0]->innertext;
-
-//               $products[$key][$key2]['tech']['zavod'] = '';
-//               //Компрессор
-//               $products[$key][$key2]['tech']['compres'] = $element->find('.item-block__chars.row li')[0]->find('span')[1]->innertext;
-//               //Таймер
-//               $products[$key][$key2]['tech']['timer'] = $element->find('.item-block__chars.row li')[3]->find('span')[1]->innertext;
-//               //Класс
-//               $products[$key][$key2]['tech']['class'] = $element->find('.item-block__chars.row li')[4]->find('span')[1]->innertext;
-//               //Шум
-//               $products[$key][$key2]['tech']['shoom'] = $element->find('.item-block__chars.row li')[7]->find('span')[1]->innertext;
-//               //Ионизация
-//               $products[$key][$key2]['tech']['ion'] = $element->find('.item-block__chars.row li')[8]->find('span')[1]->innertext;
-//               //Wifi 
-//               $products[$key][$key2]['tech']['wifi'] = $element->find('.item-block__chars.row li')[9]->find('span')[1]->innertext;
-              
-//               // foreach ($element->find('.col-12.d-md-block.d-none table tr') as $key3 => $t) {
-//               //        if ( $t->find('.text-left')[0]->innertext != 'Модель' && $t->find('.text-left')[0]->innertext != null ) {
-//               //               $products[$key][$key2]['models'][$key3]['name'] = $t->find('.text-left')[0]->innertext;
-//               //               $products[$key][$key2]['models'][$key3]['square'] = preg_replace("/[^0-9]/", '', $t->find('.text-left')[0]->next_sibling(0)->innertext);
-//               //               $products[$key][$key2]['models'][$key3]['cold'] = (int)$t->find('.text-left')[0]->next_sibling(0)->next_sibling(0)->innertext;
-//               //               $products[$key][$key2]['models'][$key3]['hot'] = (int)$t->find('.text-left')[0]->next_sibling(0)->next_sibling(0)->next_sibling(0)->innertext;
-//               //               $products[$key][$key2]['models'][$key3]['size'] = $t->find('.text-left')[0]->next_sibling(0)->next_sibling(0)->next_sibling(0)->next_sibling(0)->innertext;
-//               //               $products[$key][$key2]['models'][$key3]['price'] = (int)$t->find('.text-left')[0]->next_sibling(0)->next_sibling(0)->next_sibling(0)->next_sibling(0)->next_sibling(0)->innertext;
-
-//               //        }
-//               // }
-
-//               //$name = $element->find('a')[0]->attr['href'];
-              
-//               //$dir = @mkdir('./img/'. $title2 .'/');
-//               //if($dir) { continue; } 
-
-//               // $file2 = 'http://splitlife-krasnodar.ru'. $name;
-//               // $newfile2 = './img/'. $title2 .'/'. $key2 .'.png';
-              
-
-//               // copy($file2, $newfile2);
-
-              
-//        }
-// }
-
-// echo '<pre>';
-// var_dump($menu);
-// echo '</pre>';
-// echo '----------------';
-// echo '<pre>';
-// var_dump($products);
-// echo '</pre>';
-
-
-
-// # Подключаем файл конфигурации
-// include $_SERVER['DOCUMENT_ROOT'] .'/inc/safemysql.class.php';
-	
-// $db = new SafeMySQL();
-
-
-
-// foreach($menu as $m) {
-//        $data = array('title' => $m['title'], 'about' => $m['about'], 'img' => $m['img'], 'url' => $m['url']);
-//        $db->query("INSERT INTO `brands` SET ?u", $data);
-// }
-
-// foreach($products as $prod) {
-       
-//        foreach($prod as $p) {
-//               $title = $p['title'];
-//               $row = $db->getRow('SELECT * FROM `brands` WHERE title = ?s', $title);
-//               $brands_id = $row['id'];
-
-//               if ($p['desc'] == null) {
-//                      $p['desc'] = '';
-//               }
-
-//               $data = array('brands_id' => $brands_id, 'name' => $p['name'], 'desc' => $p['desc'], 'img' => $p['img']);
-//               $db->query("INSERT INTO `products` SET ?u", $data);
-
-//               //var_dump($data);
-
-//               $row = $db->getRow('SELECT * FROM `products` WHERE name = ?s', $p['name']);
-//               echo $products_id = $row['id'];
-
-//               foreach($p['models'] as $m) {
-
-//                      $data2= array('brands_id' => $brands_id, 'products_id' => $products_id, 'name' => $m['name'], 'square' => $m['square'], 'cold' => $m['cold'], 'hot' => $m['hot'], 'size' => $m['size'], 'price' => $m['price'] );
-//                      $db->query("INSERT INTO `models` SET ?u", $data2);
-//                      echo '----------------';
-//                      //var_dump($data2);
-//               }
-//        }
-
-
-// }
-
-?>
+            <div class="col-date" date-show="Sun">
+                <div class="less__date">
+                    <p>Воскресенье</p>
+                </div>
+                
+                                <div class="less__card hidden" data-time="8:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="9:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="9:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="10:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="10:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="11:00" style="background: #0096ff">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="11:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="12:00" style="background: #0096ff">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="12:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="13:00" style="background: ">
+                        <p>Pole dance 1,5 часа с 13.00-14.30 Орехова</p>
+                    </div>
+                                <div class="less__card hidden" data-time="13:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="14:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="14:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="15:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="15:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="16:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="16:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="17:00" style="background: ">
+                        <p>Pole dance Продвинутые Клыкова</p>
+                    </div>
+                                <div class="less__card hidden" data-time="17:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="18:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="18:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="19:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="19:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="20:00" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card hidden" data-time="20:30" style="background: ">
+                        <p></p>
+                    </div>
+                                <div class="less__card" data-time="21:00" style="background: #0096ff">
+                        <p></p>
+                    </div>
+                        </div>
+        </div>
+            
+            
+    </section>

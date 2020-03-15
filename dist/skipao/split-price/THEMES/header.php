@@ -81,10 +81,10 @@
       <nav class="navbar navbar-expand-md">
          <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="mobile--menu">
-               <a class="catalog" href="/brands/">
+               <!-- <a class="catalog" href="/brands/">
                   <img src="<?php echo get_template_directory_uri(); ?>/img/menu/menu.svg" alt="">
                   Каталог
-               </a>
+               </a> -->
                <a class="brands" href="/brands/">
                   <img src="<?php echo get_template_directory_uri(); ?>/img/menu/brand.svg" alt="">
                   Бренды
@@ -92,6 +92,12 @@
                <a class="prom" href="/polupromyshlennye/">
                   <img src="<?php echo get_template_directory_uri(); ?>/img/menu/prom.svg" alt="">
                   Полупромышленные
+               </a>
+               <a class="dop" href="/czvetnye-kondiczionery/">
+                  Цветные кондиционеры
+               </a>
+               <a class="dop" href="/ekrany-dlya-kondiczionerov/">
+                  Экраны для кондиционеров
                </a>
                <a class="sale" href="/sale/">
                   <img src="<?php echo get_template_directory_uri(); ?>/img/menu/sale.svg" alt="">
@@ -109,27 +115,21 @@
                            <div class="col-row">
                               <div class="col-x-3">
                                  <a class="dropdown-item" href="/brands/">Сплит-системы для дома</a>
-                                 <?php 
-                                    $query = new WP_Query('post_parent=19&post_type=page&orderby=date&order=ASC');
-                                       if ($query->have_posts()):
-                                       while ( $query->have_posts() ) : $query->the_post();
-                                 ?>
-                                 <a class="dropdown-item" href="<?php echo get_permalink(); ?>"><?php echo the_title(); ?></a>
-                                 <?php
-                                    endwhile; wp_reset_postdata();
-                                    endif;
-                                 ?>
+                                 <a class="dropdown-item" href="/czvetnye-kondiczionery/">Цветные кондиционеры</a>
+                                 <a class="dropdown-item" href="/polupromyshlennye/">Полупромышленные</a>
+                                 <a class="dropdown-item" href="/ekrany-dlya-kondiczionerov/">Экраны для кондиционеров</a>
+                                 <a class="dropdown-item" href="/galereya-rabot/">Галерея работ</a>
                               </div>
                            </div>
                         </div>
                      </div>
                </li>
-               <li class="nav-item menu--hover">
+               <li class="nav-item menu--hover brand">
                   <div class="dropdown">
-                     <button class="nav-link brands dropdown-toggle" type="button" id="brandsDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <a href="/brands/" class="nav-link brands dropdown-toggle" type="button" id="brandsDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/menu/brand.svg" alt="">
                         Бренды
-                     </button>
+                     </a>
                      <div class="dropdown-menu" aria-labelledby="brandsDropdownMenu">
                         <div class="col-row">
                            <div class="col-x-3">
@@ -152,11 +152,29 @@
                      </div>
                   </div>
                </li>
-               <li class="nav-item prom">
-                  <a class="nav-link prom" href="/polupromyshlennye/">
-                     <img src="<?php echo get_template_directory_uri(); ?>/img/menu/prom.svg" alt="">
-                     Полупромышленные
-                  </a>
+               <li class="nav-item menu--hover prom">
+                  <div class="dropdown">
+                     <a href="/polupromyshlennye/" class="nav-link brands dropdown-toggle" type="button" id="promDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/menu/prom.svg" alt="">
+                        Полупромышленные
+                     </a>
+                     <div class="dropdown-menu" aria-labelledby="promDropdownMenu">
+                        <div class="col-row">
+                           <div class="col-x-3">
+                              <?php 
+                                 $query = new WP_Query('post_parent=19&post_type=page&orderby=date&order=ASC');
+                                    if ($query->have_posts()):
+                                    while ( $query->have_posts() ) : $query->the_post();
+                              ?>
+                              <a class="dropdown-item" href="<?php echo get_permalink(); ?>"><?php echo the_title(); ?></a>
+                              <?php
+                                 endwhile; wp_reset_postdata();
+                                 endif;
+                              ?>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
                </li>
                <li class="nav-item sale">
                   <a class="nav-link sale" href="/sale/">
@@ -176,7 +194,7 @@
                <li class="nav-item">
                   <a class="nav-link" href="/contact/">Контакты</a>
                </li>
-               <li class="nav-item">
+               <li class="nav-item mobile-phone">
                   <a class="nav-link nav-phone" href="tel:<?php echo $options['phone']; ?>"><?php echo $options['phone']; ?></a>
                </li>
                <li class="nav-item">

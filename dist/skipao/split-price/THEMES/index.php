@@ -263,7 +263,7 @@ $options = get_option( 'skipao_settings' );
 													if ( get_field( 'garanty', $post->ID ) ): ?>
 													<p><?php the_field( 'garanty' ); ?></p>
 												<?php endif; ?>
-										<div class="url"><a href="/brands/<?php echo $brand_slug; ?>/">Все серии</a> <a class="orange" href="<?php echo get_permalink(); ?>">Видео - характеристики</a></div>
+										<div class="url"><a href="/brands/<?php echo $brand_slug; ?>/">Все серии</a> <a class="orange" href="<?php echo get_permalink(); ?>">Видео  - характеристики</a></div>
 									</div>
 								</div>
 							</div>
