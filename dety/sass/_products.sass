@@ -623,7 +623,7 @@
             .open-filter
                 width: 120px
         &-card
-            padding: 0 10px 20px 10px    
+            padding: 5px 10px 20px 10px    
             &__title
                 font-size: 1em
                 height: 35px
@@ -663,15 +663,6 @@
             padding: 0 .25em
 
 @media screen and ( max-width: 424.98px )
-    .products
-        &-card
-            &__head
-                padding-bottom: 10px
-                span
-                    flex: 0 0 30px
-                    height: 30px
-                    font-size: .8em
-
     .resent,
     .visited
         h4
@@ -709,6 +700,14 @@
                 font-size: 0.9em
             .open-filter
                 width: 100px
+
+        &-card
+            &__head
+                span
+                    &:not(:first-child)
+                        margin-left: .3em
+                    svg
+                        height: 53px
 
 @media screen and ( max-width: 374.98px )
     .products
@@ -769,12 +768,17 @@
                         width: 1.4em
                         height: 1.4em
                         background-size: 1.4em
+        
         &-card
             &__head
                 span
                     flex: 0 0 28px
                     height: 28px
-                    font-size: .7em
+                    &:not(:first-child)
+                        margin-left: .2em
+                    svg
+                        width: 28px
+                        height: 46px
             
     .resent,
     .visited
