@@ -213,7 +213,7 @@
     flex-wrap: wrap
     padding: 1em 2em 2em
     margin: 0 auto
-    margin-left: 18%
+    max-width: 600px
     &__code
         flex: 0 0 49%
         margin-right: 1%
@@ -232,7 +232,7 @@
         label
             width: 100%
             border-radius: 4px
-            border: 1px solid $grey
+            border: 2px solid $grey
             color: $grey
             font-weight: normal
             position: relative
@@ -257,24 +257,21 @@
                 font-weight: normal
                 padding-left: 1em
         input:checked + label
-            border: 1px solid $accent
+            border: 2px solid $accent
             color: $accent
             &:before
                 background: $accent
 
     &__result
         padding-top: 1em
-        input[type="text"],
-        button
+        display: flex
+        input[type="text"]
             font-size: 16px
             padding: .8em .5em
             width: 100%
             border-radius: 4px
-            box-shadow: none
             outline: none
             background: transparent
-            -webkit-appearance: none
-            -moz-appearance: none
             appearance: none
             &::-webkit-input-placeholder
                 color: $grey
@@ -284,26 +281,56 @@
                 color: $grey
             &:-ms-input-placeholder
                 color: $grey
-        input
-            border: 1px solid $grey
-            display: none
-        button
-            margin-top: 1em
-            max-width: 49%
+        
+        .form-row
+            width: 49%
+            justify-content: center
+            input
+                flex: 0 0 85%
+                border: 1px solid $grey
+                border-radius: 4px 0 0 4px
+                border-radius: none
+            button
+                flex: 0 0 15%
+                border-radius: 0 4px 4px 0
+                position: relative
+                &::before
+                    content: ''
+                    position: absolute
+                    left: 50%
+                    top: 50%
+                    transform: translate(-50%, -50%)
+                    display: inline-block
+                    width: 1em
+                    height: 1em
+                    background-size: cover
+                    background-position: center
+                    background-repeat: no-repeat
+                    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojRkZGRkZGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+
         .range
             width: 100%
-            padding: 1em 0
+            padding: 1em 0 0 0
+            align-items: center
+            flex-wrap: wrap
             input
                 display: block
-            .box-minmax
-                margin-top: 1em
-                display: flex
-                justify-content: space-between
-                font-size: 1.2em
+            .box-min,
+            .box-max
+                flex: 0 0 auto
+                user-select: none
+                color: $grey
+            
             .range-slider
+                flex: 1 1 auto
+                user-select: none
+                padding: 0 1em
+                position: relative
                 .rs-range
+                    position: relative
                     width: 100%
                     appearance: none
+                    z-index: 2
                     &:focus
                         outline: none
                     &::-webkit-slider-runnable-track
@@ -311,47 +338,47 @@
                         height: 4px
                         cursor: pointer
                         box-shadow: none
-                        background: $yellow
+                        background: $blue2
                         border-radius: 8px
                         border: none
                     &::-moz-range-track
                         width: 100%
-                        height: 1px
+                        height: 4px
                         cursor: pointer
                         box-shadow: none
-                        background: $yellow
+                        background: $blue2
                         border-radius: 8px
                         border: none
                     &::-webkit-slider-thumb
                         box-shadow: none
-                        border: 1px solid $yellow
+                        border: none
                         box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25)
-                        height: 22px
-                        width: 22px
-                        margin-top: -11px
+                        height: 2em
+                        width: 2em
+                        margin-top: -.9em
                         border-radius: 50%
-                        background: #ffffff
+                        background: $accent
                         cursor: pointer
                         appearance: none
                     &::-moz-range-thumb
                         box-shadow: none
-                        border: 1px solid $yellow
+                        border: none
                         box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25)
-                        height: 22px
-                        width: 22px
-                        margin-top: -11px
+                        height: 2em
+                        width: 2em
+                        margin-top: -.9em
                         border-radius: 50%
-                        background: #fff
+                        background: $accent
                         cursor: pointer
                         appearance: none
                     &::-moz-focus-outer
                         border: 0
                 .rs-label
-                    position: relative
+                    position: absolute
+                    top: -2em
                     transform-origin: center center
                     display: inline-block
                     width: 60px
-                    height: 2em
                     text-align: center
                     font-weight: bold
                     left: attr(value)
@@ -360,12 +387,17 @@
                     &::after
                         content: " Б"
                         font-size: 1em
+            .btn
+                flex: 0 0 10%
+                margin-left: 2em
+                padding: .8em .5em
 
-        input,
+        .form-row,
         .range
+            min-height: 60px
             display: none
             &.active
-                display: block
+                display: flex
 
 .cart-delivery
     h4
@@ -392,12 +424,12 @@
         label
             width: 100%
             border-radius: 4px
-            border: 1px solid $grey
+            border: 2px solid $grey
             color: $grey
             font-weight: normal
             position: relative
             padding: 1em 1em 1em 3em
-            font-size: 1.1em
+            font-size: 1.2em
             cursor: pointer
             user-select: none
             transition: background .3s ease
@@ -419,7 +451,7 @@
                 font-weight: bold
                 color: $text
         input:checked + label
-            border: 1px solid $accent
+            border: 2px solid $accent
             color: $accent
             &:before
                 background: $accent
@@ -432,7 +464,6 @@
         &__lists
             flex: 0 0 40%
             padding: 1em
-            border-right: 1px solid $grey
             .container
                 padding: 1em
                 max-height: calc(400px - 2em)
@@ -467,6 +498,25 @@
             height: 400px
             &.mobile
                 display: none
+        
+        &.twin
+            margin-top: 2em
+            flex-wrap: wrap
+            .cart-delivery-point__map
+                flex: 0 0 100%
+            .cart-delivery-point__lists
+                flex: 0 0 100%
+                .container
+                    display: flex
+                    align-items: flex-start
+                    .cart-delivery-point__lists__item
+                        flex: 0 0 49%
+                        min-height: 160px
+                        &:nth-child(odd)
+                            margin-right: 1%
+                        &:nth-child(even)
+                            margin-left: 1%
+                            
     
     &-adress
         display: flex
@@ -474,14 +524,18 @@
         justify-content: flex-start
         flex-wrap: wrap
         padding-bottom: 1em
+        &.tabs-item.active
+            min-height: auto
         .form-row
             flex: 0 0 32%
             position: relative
             &:not(:first-child)
-                margin-left: 2%
+                margin-left: 1%
             &:nth-child(3),
-            &:nth-child(4)
-                flex: 0 0 15%
+            &:nth-child(4),
+            &:nth-child(5),
+            &:nth-child(6)
+                flex: 0 0 7.5%
             label
                 color: $grey
                 font-size: 0.9em
@@ -588,6 +642,86 @@
                     max-height: 500px
                     overflow: visible
                     pointer-events: all
+
+    .cart-delivery-adress__myadress
+        display: flex
+        align-items: center
+        justify-content: flex-end
+        display: block
+        position: relative
+        padding: 1em 0
+        .cart-delivery-adress--select
+            padding-left: 1em
+            position: relative
+            z-index: 1
+            font-weight: bold
+            overflow: hidden
+            white-space: nowrap
+            text-overflow: ellipsis
+            width: 140px
+            margin-left: auto
+            cursor: pointer
+            padding-right: 1em
+            &::before
+                content: ''
+                position: absolute
+                top: 50%
+                right: .5em
+                transform: translateY(-50%)
+                display: inline-block
+                width: 1em
+                height: 1em
+                background-size: cover
+                background-position: center right
+                background-repeat: no-repeat
+                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MS45OTYgNDkxLjk5NiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkxLjk5NiA0OTEuOTk2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTQ4NC4xMzIsMTI0Ljk4NmwtMTYuMTE2LTE2LjIyOGMtNS4wNzItNS4wNjgtMTEuODItNy44Ni0xOS4wMzItNy44NmMtNy4yMDgsMC0xMy45NjQsMi43OTItMTkuMDM2LDcuODZsLTE4My44NCwxODMuODQ4ICAgIEw2Mi4wNTYsMTA4LjU1NGMtNS4wNjQtNS4wNjgtMTEuODItNy44NTYtMTkuMDI4LTcuODU2cy0xMy45NjgsMi43ODgtMTkuMDM2LDcuODU2bC0xNi4xMiwxNi4xMjggICAgYy0xMC40OTYsMTAuNDg4LTEwLjQ5NiwyNy41NzIsMCwzOC4wNmwyMTkuMTM2LDIxOS45MjRjNS4wNjQsNS4wNjQsMTEuODEyLDguNjMyLDE5LjA4NCw4LjYzMmgwLjA4NCAgICBjNy4yMTIsMCwxMy45Ni0zLjU3MiwxOS4wMjQtOC42MzJsMjE4LjkzMi0yMTkuMzI4YzUuMDcyLTUuMDY0LDcuODU2LTEyLjAxNiw3Ljg2NC0xOS4yMjQgICAgQzQ5MS45OTYsMTM2LjkwMiw0ODkuMjA0LDEzMC4wNDYsNDg0LjEzMiwxMjQuOTg2eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgc3R5bGU9ImZpbGw6IzQ3NDc0NyI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+                transition: transform .3s ease
+            &.active
+                &::before
+                    transform: translateY(-50%) rotate(180deg)
+
+        .cart-delivery-adress--options
+            display: none
+            position: absolute
+            right: 0
+            bottom: 1em
+            transform: translateY(120%)
+            flex-wrap: wrap
+            background: #ffffff
+            border-radius: 4px
+            padding: 1em 0
+            width: 250px
+            overflow: hidden
+            opacity: 0
+            z-index: 2
+            pointer-events: none
+            transition: none
+            box-shadow: 0 2px 10px rgba(#000, .2)
+            &.fade
+                display: flex
+                transition: opacity .3s ease-out .1s, transform .3s ease-out .1s
+            &.active
+                opacity: 1
+                pointer-events: all
+                transform: translateY(105%)
+            a
+                flex: 0 0 100%
+                padding: .5em 0
+                margin-left: 1em
+                color: $text
+                &.sort
+                    padding-right: 0
+                    &::before
+                        display: none
+                &:hover
+                    color: $accent
+            p
+                display: block
+                width: 100%
+                background: #f5f5f5
+                font-weight: bold
+                margin: 0.5em 0
+                padding: .5em 1em
 
 .cart-pay
     h4
@@ -711,7 +845,8 @@
                 display: none
             label
                 color: $grey
-                font-size: 0.7em
+                font-weight: normal
+                font-size: 0.8em
                 position: relative
                 padding-left: 3em
                 cursor: pointer
@@ -726,6 +861,7 @@
                     width: 2em
                     height: 2em
                     border: 1px solid $accent
+                    border-radius: 2px
                     transition: background .3s ease
                 a
                     color: $grey
@@ -735,12 +871,13 @@
                         border-bottom: none
             input:checked + label:before
                 background: $accent
+                border-radius: 2px
         &.order-submit
             .btn
                 &.btn-accent
                     width: 100%
                     display: block
-                    font-size: 1.3em
+                    font-size: 1.1em
                     font-weight: bold
                     padding: 1em 0
                     text-align: center
