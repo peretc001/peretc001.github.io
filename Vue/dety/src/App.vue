@@ -62,31 +62,41 @@
     <!-- / mobile -->
 
     <!-- desctop -->
-    <div v-if="desctop" class="nav-catalog" @mouseleave="closeMenu">
+    <div v-if="desctop" class="nav-catalog"> 
+      <!-- @mouseleave="closeMenu"> -->
       <div class="nav-catalog__menu">
         <ul>
-          <li class="nav-catalog__menu__item sale" @mouseover="closeMenu"><a href="" class="sale"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEuMzkyMzQgMTEuOTU1M0wxMS43MjUyIDEuNTE1MTNDMTIuNzc2NCAwLjQ1MjgwNSAxNC4yMzczIDAuMjA2NzkgMTQuOTg4MiAwLjk2NTYwMUMxNS43MzkxIDEuNzIzOTcgMTUuNDk1NiAzLjIwMDQ1IDE0LjQ0NDMgNC4yNjIzNUw0LjExMTUxIDE0LjcwM0MzLjA2MDI2IDE1Ljc2NTMgMS41OTkzNyAxNi4wMTEzIDAuODQ4NTEgMTUuMjUyNUMwLjA5NzYzNjYgMTQuNDkzNyAwLjM0MTEwNiAxMy4wMTc3IDEuMzkyMzQgMTEuOTU1M1pNMTIuMzgwNiA5LjcxNjk1QzE0LjA2NTYgOS43MTY5NSAxNS40MzE0IDExLjA1MzYgMTUuNDMxNCAxMi43MDIyQzE1LjQzMTQgMTQuMzUxMiAxNC4wNjU2IDE1LjY4NzkgMTIuMzgwNiAxNS42ODc5QzEwLjY5NTggMTUuNjg3OSA5LjMyOTg5IDE0LjM1MTIgOS4zMjk4OSAxMi43MDIyQzkuMzI5ODkgMTEuMDUzNiAxMC42OTU4IDkuNzE2OTUgMTIuMzgwNiA5LjcxNjk1Wk02LjUxNzUyIDMuNzQ2MDFDNi41MTc1MiAyLjA5NzQxIDUuMTUxNjEgMC43NjA3NTEgMy40NjY3NiAwLjc2MDc1MUMxLjc4MTc4IDAuNzYwNzUxIDAuNDE2MDI0IDIuMDk3NDEgMC40MTYwMjQgMy43NDYwMUMwLjQxNjAyNCA1LjM5NDU5IDEuNzgxNzggNi43MzEyNSAzLjQ2Njc2IDYuNzMxMjVDNS4xNTE2MSA2LjczMTI1IDYuNTE3NTIgNS4zOTQ1OSA2LjUxNzUyIDMuNzQ2MDFaIiBmaWxsPSIjRkZDMTAwIi8+PC9zdmc+" alt="">Акции</a></li>
-          <li class="nav-catalog__menu__item" :class="{ active: current == index }"
-            v-for="(item,index) of menu" :key="index">
-            <a :href="item.url" :data-menu="index" @mouseover="openMenu(index, $event)">{{item.t}}</a>
+          <li class="nav-catalog__menu__item" :class="{ active: currentTop == index }"
+            v-for="(item,index) of top" :key="index">
+            <a :data-menu="index" @click="openMenu(index, $event)" :class="item.class">{{item.title}}</a>
           </li>
         </ul>
       </div>
+      
       <transition name="fade" mode="out-in">
         <div v-if="show" class="nav-catalog__submenu">
-          <ul v-for="(item,index) of showMenu" :key="index">
-            <li class="first">
-              <a :href="item.url">
-                <img :src="item.img" :alt="item.t">
-                {{item.t}}
-              </a>
-            </li>
-            <li v-for="(item,index) of item.child"  :key="index">
-              <a :href="item.url">
-                {{item.t}}
-              </a>
-            </li>
-          </ul>
+          <div class="nav-catalog__general">
+            <ul>
+              <li v-for="(item,index) of menu" :key="index" @mouseover="showSubMenu(index, $event)" :class="{ active: current == index }">
+                <a>
+                  {{item.t}}
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="nav-catalog__parent">
+            <p>{{ title }}</p>
+            <ul v-for="(item,index) of showMenu" :key="index">
+              <li>
+                <a href="">{{item.t}}</a>
+              </li>
+              <li v-for="(item,index) of item.child" :key="index">
+                <a :href="item.url">
+                  {{item.t}}
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </transition>
     </div>
@@ -116,25 +126,34 @@ export default {
       show: false,
       slide: false,
       slide2: false,
-      timer: 0,
-      current: null,
+      currentTop: null,
+      current: 0,
       parrent: '',
       parrentUrl: '',
       category: '',
       width: null,
       find: '',
+      // title: menu[0].t,
       showMenu: {},
+      top: {
+        0: { title: 'Каталог товаров',   class: 'catalog'},
+        1: { title: 'Товары по акции',   class: 'sale'},
+        2: { title: 'Герои и интересы',  class: 'hero'},
+        3: { title: 'Популярные бренды', class: 'brand'},
+        4: { title: 'Мальчишкам',        class: 'boy'},
+        5: { title: 'Девчонкам',         class: 'girl'}
+      },
       menu: {
-        0: { t:'Одежда и обувь',       url: './category1.html' },
-        1: { t:'Игрушки и игры',       url: './category2.html' },
-        2: { t:'Детская комната',      url: './category3.html' },
-        3: { t:'Коляски и автокресла', url: './category4.html' },
-        4: { t:'Подгузники и гигиена', url: './category5.html' },
-        5: { t:'Кормление и питание',  url: './category6.html' },
-        6: { t:'Развитие и обучение',  url: './category7.html' },
-        7: { t:'Хобби и творчество',   url: './category8.html' },
-        8: { t:'Товары для мам',       url: './category9.html' },
-        9: { t:'Герои и интересы',     url: './category10.html' },
+        0: { t:'Одежда и обувь',      },
+        1: { t:'Игрушки и игры'       },
+        2: { t:'Детская комната'      },
+        3: { t:'Коляски и автокресла' },
+        4: { t:'Подгузники и гигиена' },
+        5: { t:'Кормление и питание'  },
+        6: { t:'Развитие и обучение'  },
+        7: { t:'Хобби и творчество'   },
+        8: { t:'Товары для мам'       },
+        9: { t:'Герои и интересы'     },
       },
       subMenu: {
         0: {
@@ -1028,12 +1047,12 @@ export default {
   methods: {
     openMenu(index, event) {
       this.showMenu = this.subMenu[index]
+      this.currentTop = index
+      this.show = true
+    },
+    showSubMenu(index) {
+      this.showMenu = this.subMenu[index]
       this.current = index
-      if (this.timer == 0) {
-        this.timer = setTimeout(() => {
-        this.show = true
-      }, 500);
-      }
     },
     closeMenu() {
       clearTimeout(this.timer)
@@ -1076,6 +1095,9 @@ export default {
       this.width > 991 ? this.mobile = false : this.mobile = this.mobile
       this.search == true ? document.querySelector('body').classList.add('no-scroll') : document.querySelector('body').classList.remove('no-scroll')
       this.search == true ? this.$nextTick(() => this.$refs.search.focus()) : ''
+    },
+    title() {
+      return this.menu[this.current].t
     }
   }
 }
