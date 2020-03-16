@@ -87,10 +87,13 @@ img
 		&:hover
 			background: $yellow
 			color: #ffffff
-	&.btn-grey
-		background: transparent
-		border: 1px solid $grey
-		color: $grey
+	&.btn-blue
+		border: 1px solid $blue2
+		background: $blue2
+		color: #ffffff
+		transition: background .5s ease
+		&:hover
+			background: darken($blue2, 8%)
 
 .tabs
 	h3

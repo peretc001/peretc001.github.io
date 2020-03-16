@@ -129,21 +129,20 @@
                     outline: none
                     position: relative
                     color: $text
-
     &__subtotal
+        position: relative
         p
             color: $text
             font-size: 1.2em
             font-weight: bold
             margin: 0
-        .new
-            color: $accent
         .old
-            margin-top: 0.5em
+            position: absolute
+            right: 0
+            top: -1.2em
+            display: inline-block
             font-size: 1em
             color: $grey
-            position: relative
-            display: inline-block
             &::before
                 content: ''
                 position: absolute
@@ -153,6 +152,27 @@
                 height: 1px
                 background: $grey
                 transform: rotate(-8deg)
+        .bonus
+            position: absolute
+            right: 0
+            top: 1.5em
+            display: inline-block
+            font-size: 1em
+            padding-right: 1em
+            color: $accent
+            &::before
+                content: ''
+                position: absolute
+                right: 0
+                top: 55%
+                transform: translateY(-50%)
+                display: inline-block
+                width: .8em
+                height: .8em
+                background-size: .6em
+                background-position: center
+                background-repeat: no-repeat
+                background-image: url('../../img/bonus.svg')
     
     &.return
         div:not(.cart-order-item__del)
@@ -174,24 +194,27 @@
         align-items: flex-start
         justify-content: flex-start
         padding: 2em
+        padding-top: 3em
         .cart-count
-            margin-left: 20%
+            margin-left: 0
             flex: 1 1 60%
             font-weight: bold
             font-size: 1.4em
         .cart-total
             flex: 0 0 20%
             text-align: right
+            position: relative
             p
                 margin: 0
                 font-size: 1.3em
                 font-weight: bold
             .old
-                margin-top: 0.5em
+                position: absolute
+                right: 0
+                top: -1.2em
+                display: inline-block
                 font-size: 1em
                 color: $grey
-                position: relative
-                display: inline-block
                 &::before
                     content: ''
                     position: absolute
@@ -202,9 +225,23 @@
                     background: $grey
                     transform: rotate(-8deg)
             .bonus
-                margin-top: 0.5em
-                color: $accent
+                position: relative
                 font-size: 1em
+                padding-right: 1em
+                color: $accent
+                &::before
+                    content: ''
+                    position: absolute
+                    right: 0
+                    top: 55%
+                    transform: translateY(-50%)
+                    display: inline-block
+                    width: .8em
+                    height: .8em
+                    background-size: .6em
+                    background-position: center
+                    background-repeat: no-repeat
+                    background-image: url('../../img/bonus.svg')
 
 .cart-order-promo
     display: flex
@@ -212,7 +249,7 @@
     justify-content: flex-start
     flex-wrap: wrap
     padding: 1em 2em 2em
-    margin: 0 auto
+    margin: 0
     max-width: 600px
     &__code
         flex: 0 0 49%
@@ -287,9 +324,10 @@
             justify-content: center
             input
                 flex: 0 0 85%
-                border: 1px solid $grey
+                border: 2px solid $blue2
                 border-radius: 4px 0 0 4px
                 border-radius: none
+                color: $blue2
             button
                 flex: 0 0 15%
                 border-radius: 0 4px 4px 0
@@ -320,7 +358,6 @@
                 flex: 0 0 auto
                 user-select: none
                 color: $grey
-            
             .range-slider
                 flex: 1 1 auto
                 user-select: none
@@ -376,21 +413,28 @@
                 .rs-label
                     position: absolute
                     top: -2em
+                    left: 0
                     transform-origin: center center
                     display: inline-block
                     width: 60px
                     text-align: center
                     font-weight: bold
-                    left: attr(value)
                     font-size: 1.2em
                     color: $accent
+
                     &::after
-                        content: " Б"
-                        font-size: 1em
+                        content: ''
+                        display: inline-block
+                        width: .7em
+                        height: .7em
+                        background-size: .5em
+                        background-position: center
+                        background-repeat: no-repeat
+                        background-image: url('../../img/bonus.svg')
             .btn
                 flex: 0 0 10%
                 margin-left: 2em
-                padding: .8em .5em
+                padding: .8em 1em
 
         .form-row,
         .range
@@ -398,6 +442,14 @@
             display: none
             &.active
                 display: flex
+        
+        .login
+            margin-top: 2em
+            p
+                font-weight: bold
+                margin-bottom: 0.5em
+            .btn
+                margin-left: 0
 
 .cart-delivery
     h4
@@ -461,10 +513,17 @@
         align-items: flex-start
         border: 1px solid $grey
         border-radius: 4px
+        flex-wrap: wrap
+        &__map
+            flex: 0 0 100%
+            display: block
+            height: 400px
         &__lists
-            flex: 0 0 40%
+            flex: 0 0 100%
             padding: 1em
             .container
+                display: flex
+                align-items: flex-start
                 padding: 1em
                 max-height: calc(400px - 2em)
                 overflow: auto
@@ -481,61 +540,49 @@
                     border-radius: 5px
 
             &__item
+                flex: 0 0 49%
+                min-height: 160px
                 padding: 1em
                 border-bottom: 1px solid rgba(0, 0, 0, 0.1)
-                &:last-child
-                    border-bottom: none
+                &:nth-child(odd)
+                    margin-right: 1%
+                &:nth-child(even)
+                    margin-left: 1%
                 p
                     font-size: 0.9em
                     margin-bottom: 0.8em
+                    &:first-child
+                        font-weight: bold
                 button
                     margin-top: 0.5em
                     width: 100px
                     text-align: center
-        &__map
-            flex: 0 0 60%
-            display: block
-            height: 400px
-            &.mobile
-                display: none
-        
-        &.twin
-            margin-top: 2em
-            flex-wrap: wrap
-            .cart-delivery-point__map
-                flex: 0 0 100%
-            .cart-delivery-point__lists
-                flex: 0 0 100%
-                .container
-                    display: flex
-                    align-items: flex-start
-                    .cart-delivery-point__lists__item
-                        flex: 0 0 49%
-                        min-height: 160px
-                        &:nth-child(odd)
-                            margin-right: 1%
-                        &:nth-child(even)
-                            margin-left: 1%
-                            
-    
+
     &-adress
         display: flex
         align-items: flex-start
         justify-content: flex-start
         flex-wrap: wrap
         padding-bottom: 1em
+        overflow: visible !important
         &.tabs-item.active
             min-height: auto
         .form-row
-            flex: 0 0 32%
             position: relative
-            &:not(:first-child)
-                margin-left: 1%
+            &:nth-child(1),
+            &:nth-child(2)
+                flex: 0 0 49%
+                margin-bottom: 1em
+            &:nth-child(2)
+                margin-left: 2%
             &:nth-child(3),
             &:nth-child(4),
             &:nth-child(5),
             &:nth-child(6)
-                flex: 0 0 7.5%
+                flex: 0 0 23%
+                margin-left: 2.66%
+            &:nth-child(3)
+                margin-left: 0
             label
                 color: $grey
                 font-size: 0.9em
@@ -643,85 +690,91 @@
                     overflow: visible
                     pointer-events: all
 
-    .cart-delivery-adress__myadress
-        display: flex
-        align-items: center
-        justify-content: flex-end
-        display: block
-        position: relative
-        padding: 1em 0
-        .cart-delivery-adress--select
-            padding-left: 1em
+        .myadress
+            width: 100%
+            display: flex
+            align-items: center
+            justify-content: flex-end
+            display: block
             position: relative
-            z-index: 1
-            font-weight: bold
-            overflow: hidden
-            white-space: nowrap
-            text-overflow: ellipsis
-            width: 140px
-            margin-left: auto
-            cursor: pointer
-            padding-right: 1em
-            &::before
-                content: ''
-                position: absolute
-                top: 50%
-                right: .5em
-                transform: translateY(-50%)
-                display: inline-block
-                width: 1em
-                height: 1em
-                background-size: cover
-                background-position: center right
-                background-repeat: no-repeat
-                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MS45OTYgNDkxLjk5NiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkxLjk5NiA0OTEuOTk2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTQ4NC4xMzIsMTI0Ljk4NmwtMTYuMTE2LTE2LjIyOGMtNS4wNzItNS4wNjgtMTEuODItNy44Ni0xOS4wMzItNy44NmMtNy4yMDgsMC0xMy45NjQsMi43OTItMTkuMDM2LDcuODZsLTE4My44NCwxODMuODQ4ICAgIEw2Mi4wNTYsMTA4LjU1NGMtNS4wNjQtNS4wNjgtMTEuODItNy44NTYtMTkuMDI4LTcuODU2cy0xMy45NjgsMi43ODgtMTkuMDM2LDcuODU2bC0xNi4xMiwxNi4xMjggICAgYy0xMC40OTYsMTAuNDg4LTEwLjQ5NiwyNy41NzIsMCwzOC4wNmwyMTkuMTM2LDIxOS45MjRjNS4wNjQsNS4wNjQsMTEuODEyLDguNjMyLDE5LjA4NCw4LjYzMmgwLjA4NCAgICBjNy4yMTIsMCwxMy45Ni0zLjU3MiwxOS4wMjQtOC42MzJsMjE4LjkzMi0yMTkuMzI4YzUuMDcyLTUuMDY0LDcuODU2LTEyLjAxNiw3Ljg2NC0xOS4yMjQgICAgQzQ5MS45OTYsMTM2LjkwMiw0ODkuMjA0LDEzMC4wNDYsNDg0LjEzMiwxMjQuOTg2eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgc3R5bGU9ImZpbGw6IzQ3NDc0NyI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
-                transition: transform .3s ease
-            &.active
-                &::before
-                    transform: translateY(-50%) rotate(180deg)
-
-        .cart-delivery-adress--options
-            display: none
-            position: absolute
-            right: 0
-            bottom: 1em
-            transform: translateY(120%)
-            flex-wrap: wrap
-            background: #ffffff
-            border-radius: 4px
-            padding: 1em 0
-            width: 250px
-            overflow: hidden
-            opacity: 0
-            z-index: 2
-            pointer-events: none
-            transition: none
-            box-shadow: 0 2px 10px rgba(#000, .2)
-            &.fade
-                display: flex
-                transition: opacity .3s ease-out .1s, transform .3s ease-out .1s
-            &.active
-                opacity: 1
-                pointer-events: all
-                transform: translateY(105%)
-            a
-                flex: 0 0 100%
-                padding: .5em 0
-                margin-left: 1em
-                color: $text
-                &.sort
-                    padding-right: 0
-                    &::before
-                        display: none
-                &:hover
-                    color: $accent
-            p
-                display: block
-                width: 100%
-                background: #f5f5f5
+            padding: 0
+            margin-top: 1em
+            .cart-delivery-adress--select
+                padding-left: 1em
+                position: relative
+                z-index: 1
                 font-weight: bold
-                margin: 0.5em 0
-                padding: .5em 1em
+                overflow: hidden
+                white-space: nowrap
+                text-overflow: ellipsis
+                width: 140px
+                margin-left: auto
+                cursor: pointer
+                padding-right: 1em
+                &::before
+                    content: ''
+                    position: absolute
+                    top: 50%
+                    right: .5em
+                    transform: translateY(-50%)
+                    display: inline-block
+                    width: 1em
+                    height: 1em
+                    background-size: cover
+                    background-position: center right
+                    background-repeat: no-repeat
+                    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MS45OTYgNDkxLjk5NiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkxLjk5NiA0OTEuOTk2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTQ4NC4xMzIsMTI0Ljk4NmwtMTYuMTE2LTE2LjIyOGMtNS4wNzItNS4wNjgtMTEuODItNy44Ni0xOS4wMzItNy44NmMtNy4yMDgsMC0xMy45NjQsMi43OTItMTkuMDM2LDcuODZsLTE4My44NCwxODMuODQ4ICAgIEw2Mi4wNTYsMTA4LjU1NGMtNS4wNjQtNS4wNjgtMTEuODItNy44NTYtMTkuMDI4LTcuODU2cy0xMy45NjgsMi43ODgtMTkuMDM2LDcuODU2bC0xNi4xMiwxNi4xMjggICAgYy0xMC40OTYsMTAuNDg4LTEwLjQ5NiwyNy41NzIsMCwzOC4wNmwyMTkuMTM2LDIxOS45MjRjNS4wNjQsNS4wNjQsMTEuODEyLDguNjMyLDE5LjA4NCw4LjYzMmgwLjA4NCAgICBjNy4yMTIsMCwxMy45Ni0zLjU3MiwxOS4wMjQtOC42MzJsMjE4LjkzMi0yMTkuMzI4YzUuMDcyLTUuMDY0LDcuODU2LTEyLjAxNiw3Ljg2NC0xOS4yMjQgICAgQzQ5MS45OTYsMTM2LjkwMiw0ODkuMjA0LDEzMC4wNDYsNDg0LjEzMiwxMjQuOTg2eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgc3R5bGU9ImZpbGw6IzQ3NDc0NyI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+                    transition: transform .3s ease
+                &.active
+                    &::before
+                        transform: translateY(-50%) rotate(180deg)
+
+            .cart-delivery-adress--options
+                display: none
+                position: absolute
+                right: 0
+                bottom: 0
+                transform: translateY(120%)
+                flex-wrap: wrap
+                background: #ffffff
+                border-radius: 4px
+                padding: 0
+                padding-bottom: .5em
+                width: 250px
+                overflow: hidden
+                opacity: 0
+                z-index: 2
+                pointer-events: none
+                transition: none
+                box-shadow: 0 2px 10px rgba(#000, .2)
+                &.fade
+                    display: flex
+                    transition: opacity .3s ease-out .1s, transform .3s ease-out .1s
+                &.active
+                    opacity: 1
+                    pointer-events: all
+                    transform: translateY(105%)
+                a
+                    flex: 0 0 100%
+                    padding: .5em 0
+                    margin-left: 1em
+                    color: $text
+                    &.sort
+                        padding-right: 0
+                        &::before
+                            display: none
+                    &:hover
+                        color: $accent
+                p
+                    display: block
+                    width: 100%
+                    background: #f5f5f5
+                    font-weight: bold
+                    margin: 0
+                    margin-bottom: 0.5em
+                    padding: .5em 1em
+                    &:not(:first-child)
+                        margin-top: 0.5em
 
 .cart-pay
     h4
@@ -834,8 +887,26 @@
         &.order-total
             font-weight: bold
         &.order-bonus
-            color: $accent
             font-weight: bold
+            color: $accent
+            position: relative
+            p
+                position: relative
+                &:last-child
+                    padding-right: 1em
+                    &::before
+                        content: ''
+                        position: absolute
+                        right: 0
+                        top: 55%
+                        transform: translateY(-50%)
+                        display: inline-block
+                        width: .8em
+                        height: .8em
+                        background-size: .6em
+                        background-position: center
+                        background-repeat: no-repeat
+                        background-image: url('../../img/bonus.svg')
         &.policy
             border-top: 1px solid #f5f5f5
             margin-top: 2em
@@ -905,7 +976,7 @@
                     text-align: right
             &.policy
                 label
-                    font-size: 0.5em
+                    font-size: 0.6em
 
 @media screen and ( max-width: 991.98px )
     .cart
@@ -964,31 +1035,21 @@
                 p
                     font-size: 1.2em
 
-    .cart-order-promo
-        display: flex
-        align-items: flex-start
-        justify-content: flex-start
-        flex-wrap: wrap
-        padding: 1em 2em 2em
-        margin: 0 auto
-        margin-left: 0
-
     .cart-delivery
+        &-type
+            label
+                font-size: 1em
         &-point
             flex-wrap: wrap
             &__lists
                 flex: 0 0 100%
                 border-right: none
                 border-top: 1px solid $grey
-            &__map
-                display: none
-                &.mobile
-                    display: block
-                    flex: 0 0 100%
+                &__item
+                    min-height: 170px
         &-adress
             min-height: auto !important
             .form-row
-                flex: 0 0 49%
                 position: relative
                 margin-bottom: 1em
                 &:not(:first-child)
@@ -1027,49 +1088,79 @@
         &__subtotal
             flex: 0 0 50%
         &-total
-            padding: 2em 1em
+            padding: 3em 1em 2em 1em
 
     .cart-order-promo
-        margin: 0
-        margin-left: 0
         padding: 0 1em 1em
-        &__code
-            flex: 0 0 100%
-            margin-right: 0
-            margin-bottom: .5em
+        &__code,
         &__bonus
-            flex: 0 0 100%
-            margin-left: 0
-        label
-            font-size: 1em
+            display: flex
+            align-items: center
+            label
+                font-size: 1em
+                min-height: 60px
+                line-height: 1
+                padding: 0
+                padding-left: 3em
+                display: flex
+                align-items: center
+        &__result
+            .form-row
+                width: 100%
+            .range
+                input
+                    display: block
+                .range-slider
+                    flex: 1 1 80%
+                .btn
+                    flex: 0 0 49%
+                    margin-left: 0
+                    margin-top: 2em
+                    padding: .8em 1em
+                    font-size: 1em
+            .login
+                flex: 0 0 100%
+                .btn
+                    display: block
+                    margin-top: 0
+                    width: 100%
+                    max-width: 49%
 
     .cart-delivery
         &-type
             flex-wrap: wrap
             &__item
                 flex: 0 0 100%
-                padding: 0
-                margin: 0
-                &:first-child
-                    margin-right: 0
-                    margin-bottom: .5em
                 &:last-child
                     margin-left: 0
+        &-point
+            &__lists
+                &__item
+                    flex: 0 0 100%
+                    min-height: auto
+                    padding: 1em
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+                    &:nth-child(odd)
+                        margin-right: 0
+                    &:nth-child(even)
+                        margin-left: 0
         &-adress
+            justify-content: space-between
             .form-row
                 flex: 0 0 100%
                 position: relative
-                &:not(:first-child)
+                margin-bottom: 1em
+                &:nth-child(1),
+                &:nth-child(2)
+                    flex: 0 0 100%
+                &:nth-child(2)
                     margin-left: 0
-                &:nth-child(3)
-                    flex: 0 0 49%
-                    margin-right: 1%
-                    margin-left: 0
-                    margin-top: 1em
-                &:nth-child(4)
-                    flex: 0 0 49%
-                    margin-left: 1%
-                    margin-top: 1em
+                &:nth-child(3),
+                &:nth-child(4),
+                &:nth-child(5),
+                &:nth-child(6)
+                    flex: 0 0 23%
+                
     
     .cart-pay
         &__items
@@ -1089,12 +1180,26 @@
             padding: 0 1em
             &.policy
                 label
-                    font-size: 0.8em
+                    font-size: 0.9em
 
 @media screen and ( max-width: 374.98px )
     .cart-order-item
         font-size: .9em
-    
+    .cart-order-promo
+        &__code,
+        &__bonus
+            display: flex
+            align-items: center
+            label
+                font-size: .9em
+                padding-left: 2.5em
+        &__result
+            .range,
+            .login
+                .btn
+                    width: 100%
+                    flex: 0 0 100%
+                    max-width: 100%
     .cart-pay
         &__items
             .form-row
@@ -1105,4 +1210,4 @@
         .form-row
             &.policy
                 label
-                    font-size: 0.6em
+                    font-size: 0.7em
