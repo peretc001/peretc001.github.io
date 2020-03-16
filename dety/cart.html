@@ -220,14 +220,14 @@
                 <h4>Доставка</h4>
                 <p class="city">Ваш город:  <b data-toggle="modal" data-target="city-list">Краснодар</b></p>
                 <div class="cart-delivery-type tabs">
-                    <div class="cart-delivery-type__item">
+                    <div class="cart-delivery-type__item left">
                         <input type="radio" id="pickup" name="delivery" checked>
                         <label for="pickup">
                             Самовывоз
                             <b>5 февраля</b>
                         </label>
                     </div>
-                    <div class="cart-delivery-type__item">
+                    <div class="cart-delivery-type__item right">
                         <input type="radio" id="delivery" name="delivery">
                         <label for="delivery">
                             Доставка курьером
@@ -299,29 +299,27 @@
                 <div class="cart-delivery-adress tabs-item">
                   <div class="form-row">
                     <label for="usercity">Город <span>*</span></label>
-                    <input type="text" id="usercity" class="city" name="city" value="Краснодар" pattern="^[А-Яа-яЁё\s]+$" placeholder="">
-                    <span>Введите Город на русском языке</span>
+                    <input type="text" id="usercity" class="city" name="city" value="Краснодар" placeholder="" required>
                   </div>
                   <div class="form-row">
                     <label for="street">Улица</label>
-                    <input type="text" id="street" name="street" pattern="^[А-Яа-яЁё\s]+$" placeholder="">
-                    <span>Введите Улицу на русском языке</span>
+                    <input type="text" id="street" name="street" placeholder="">
                   </div>
                   <div class="form-row">
                     <label for="house">Дом</label>
                     <input type="text" id="house" name="house" placeholder="">
                   </div>
                   <div class="form-row">
-                    <label for="flat">Кв.</label>
-                    <input type="text" id="flat" name="flat" placeholder="">
-                  </div>
-                  <div class="form-row">
-                    <label for="entrance">Под.</label>
+                    <label for="entrance">Подъезд</label>
                     <input type="text" id="entrance" name="entrance" placeholder="">
                   </div>
                   <div class="form-row">
-                    <label for="floor">Эт.</label>
+                    <label for="floor">Этаж</label>
                     <input type="text" id="floor" name="floor" placeholder="">
+                  </div>
+                  <div class="form-row">
+                    <label for="flat">Квартира</label>
+                    <input type="text" id="flat" name="flat" placeholder="">
                   </div>
                   <div class="form-row myadress">
                     <div class="cart-delivery-adress--select">Мои адреса</div>

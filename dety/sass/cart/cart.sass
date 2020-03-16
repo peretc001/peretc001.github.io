@@ -471,6 +471,43 @@
             flex: 0 0 49%
             &:not(:first-child)
                 margin-left: 2%
+
+
+            &.left
+                label
+                    padding-left: 7em
+                    &::before
+                        left: 5.5em
+                    &::after
+                        content: ''
+                        position: absolute
+                        left: 1em
+                        top: 50%
+                        transform: translateY(-50%)
+                        display: inline-block
+                        width: 3em
+                        height: 3em
+                        background-size: 90%
+                        background-position: center
+                        background-repeat: no-repeat
+                        background-image: url('../../img/delivery/delivery1.svg')
+            &.right
+                label
+                    &::after
+                        content: ''
+                        position: absolute
+                        right: 1em
+                        top: 50%
+                        transform: translateY(-50%)
+                        display: inline-block
+                        width: 3em
+                        height: 3em
+                        background-size: 90%
+                        background-position: center
+                        background-repeat: no-repeat
+                        background-image: url('../../img/delivery/delivery3.svg')
+                    
+
         input[type="radio"]
             display: none
         label
@@ -1052,15 +1089,6 @@
             .form-row
                 position: relative
                 margin-bottom: 1em
-                &:not(:first-child)
-                    margin-left: 2%
-                &:nth-child(3)
-                    flex: 0 0 49%
-                    margin-right: 1%
-                    margin-left: 0
-                &:nth-child(4)
-                    flex: 0 0 49%
-                    margin-left: 1%
 
 @media screen and ( max-width: 576.98px )
     .cart
@@ -1200,6 +1228,15 @@
                     width: 100%
                     flex: 0 0 100%
                     max-width: 100%
+    .cart-delivery
+        &-adress
+            .form-row
+                &:nth-child(3),
+                &:nth-child(4),
+                &:nth-child(5),
+                &:nth-child(6)
+                    font-size: .9em
+                    
     .cart-pay
         &__items
             .form-row
