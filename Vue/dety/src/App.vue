@@ -62,23 +62,20 @@
     <!-- / mobile -->
 
     <!-- desctop -->
-    <div v-if="desctop" class="nav-catalog"> 
-      <!-- @mouseleave="closeMenu"> -->
-      <div class="nav-catalog__menu">
-        <ul>
-          <li class="nav-catalog__menu__item" :class="{ active: currentTop == index }"
+    <div v-if="desctop" class="nav-catalog" @mouseleave="closeMenu">
+        <ul class="nav-catalog__menu">
+          <li :class="{ active: currentTop == index }"
             v-for="(item,index) of top" :key="index">
-            <a :data-menu="index" @click="openMenu(index, $event)" :class="item.class">{{item.title}}</a>
+            <a @click="openMenu(index, $event)" :class="item.class">{{item.title}}</a>
           </li>
         </ul>
-      </div>
       
       <transition name="fade" mode="out-in">
         <div v-if="show" class="nav-catalog__submenu">
           <div class="nav-catalog__general">
             <ul>
               <li v-for="(item,index) of menu" :key="index" @mouseover="showSubMenu(index, $event)" :class="{ active: current == index }">
-                <a>
+                <a :href="item.url">
                   {{item.t}}
                 </a>
               </li>
@@ -133,7 +130,6 @@ export default {
       category: '',
       width: null,
       find: '',
-      // title: menu[0].t,
       showMenu: {},
       top: {
         0: { title: 'Каталог товаров',   class: 'catalog'},
@@ -144,16 +140,16 @@ export default {
         5: { title: 'Девчонкам',         class: 'girl'}
       },
       menu: {
-        0: { t:'Одежда и обувь',      },
-        1: { t:'Игрушки и игры'       },
-        2: { t:'Детская комната'      },
-        3: { t:'Коляски и автокресла' },
-        4: { t:'Подгузники и гигиена' },
-        5: { t:'Кормление и питание'  },
-        6: { t:'Развитие и обучение'  },
-        7: { t:'Хобби и творчество'   },
-        8: { t:'Товары для мам'       },
-        9: { t:'Герои и интересы'     },
+        0: { t:'Одежда и обувь',  url: './catalog.html',      },
+        1: { t:'Игрушки и игры',  url: './catalog.html'       },
+        2: { t:'Детская комната',   url: './catalog.html'      },
+        3: { t:'Коляски и автокресла',  url: './catalog.html' },
+        4: { t:'Подгузники и гигиена',  url: './catalog.html' },
+        5: { t:'Кормление и питание',   url: './catalog.html'  },
+        6: { t:'Развитие и обучение',   url: './catalog.html'  },
+        7: { t:'Хобби и творчество',  url: './catalog.html'   },
+        8: { t:'Товары для мам',  url: './catalog.html'       },
+        9: { t:'Герои и интересы',  url: './catalog.html'     },
       },
       subMenu: {
         0: {
@@ -1048,6 +1044,7 @@ export default {
     openMenu(index, event) {
       this.showMenu = this.subMenu[index]
       this.currentTop = index
+      this.current = 0
       this.show = true
     },
     showSubMenu(index) {
@@ -1055,11 +1052,9 @@ export default {
       this.current = index
     },
     closeMenu() {
-      clearTimeout(this.timer)
-      this.timer = 0
       this.showMenu = ''
+      this.currentTop = null
       this.show = false
-      this.current = null
     },
     showMenuMobile(index) {
       this.showMenu = this.subMenu[index]
@@ -1091,7 +1086,7 @@ export default {
   computed: {
     updWindow() {
       this.width = document.documentElement.clientWidth
-      this.width < 991 ? this.desctop = false : this.desctop = true
+      this.width <= 991 ? this.desctop = false : this.desctop = true
       this.width > 991 ? this.mobile = false : this.mobile = this.mobile
       this.search == true ? document.querySelector('body').classList.add('no-scroll') : document.querySelector('body').classList.remove('no-scroll')
       this.search == true ? this.$nextTick(() => this.$refs.search.focus()) : ''

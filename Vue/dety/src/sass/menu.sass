@@ -21,101 +21,115 @@ $textblock: #EAF6F6
         width: 100%
         position: relative
         z-index: 2
-        display: block
-        overflow: visible
         &:hover
             .nav-catalog__menu
-                ul
                     li
                         a
                             opacity: .5
                             &:hover
                                 opacity: 1
+        a
+            text-decoration: none
 
         &__menu
             background-color: $accent
             padding: 0 calc(50% - 580px)
             position: relative
             z-index: 6
-            ul
-                display: flex
-                align-items: center
-                justify-content: space-between
-                margin: 0
-                padding: 0
-                li
-                    flex: 1 1 auto
-                    margin: 0 
-                    padding-left: 25px
-                    padding-right: 10px
-                    list-style: none
-                    position: relative
+            display: flex
+            align-items: center
+            justify-content: space-between
+            margin: 0
+            li
+                flex: 1 1 auto
+                margin: 0 
+                padding-left: 25px
+                padding-right: 10px
+                list-style: none
+                user-select: none
+                position: relative
+                &::before
+                    content: ''
+                    position: absolute
+                    left: -1em
+                    top: 50%
+                    transform: translateY(-50%)
+                    background-color: rgba(243, 214, 236, 0.5)
+                    display: inline-block
+                    width: 6px
+                    height: 6px
+                    border-radius: 50%
+                &:first-child
                     &::before
-                        content: ''
-                        position: absolute
-                        left: -1em
-                        top: 50%
-                        transform: translateY(-50%)
-                        background-color: rgba(243, 214, 236, 0.5)
-                        display: inline-block
-                        width: 6px
-                        height: 6px
-                        border-radius: 50%
-                    &:first-child 
-                        &::before
-                            display: none
-                    &:last-child
-                        padding-right: 0
-                    a
-                        display: inline-block
-                        padding-top: 1.5em
-                        padding-bottom: 1.5em
-                        padding-left: 2.5em
-                        font-size: 1em
-                        color: #ffffff
-                        position: relative
-                        transition-delay: .3s
-                        cursor: pointer
-                        transition: opacity .3s ease
-                        &::before
-                            content: ''
-                            position: absolute
-                            left: 0
-                            top: 50%
-                            transform: translateY(-50%)
-                            display: inline-block
-                            width: 2em
-                            height: 2em
-                            padding: 0
-                            margin: 0
-                            background-size: 75%
-                            background-position: center
-                            background-repeat: no-repeat
-                            
-                        &.catalog
-                            &::before
-                               background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAyNSAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTEiIGhlaWdodD0iMTEiIHJ4PSIyIiBmaWxsPSIjRkZDMTAwIi8+PHJlY3QgeT0iMTQiIHdpZHRoPSIxMSIgaGVpZ2h0PSIxMSIgcng9IjIiIGZpbGw9IiNGRkMxMDAiLz48cmVjdCB4PSIxNCIgd2lkdGg9IjExIiBoZWlnaHQ9IjExIiByeD0iMiIgZmlsbD0iI0ZGQzEwMCIvPjxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjExIiBoZWlnaHQ9IjExIiByeD0iMiIgZmlsbD0iI0ZGQzEwMCIvPjwvc3ZnPg==')
-                        &.sale
-                            &::before
-                                background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAyNiAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNC41NzA4OCIgaGVpZ2h0PSIzMC4xMjg2IiByeD0iMi4yODU0NCIgdHJhbnNmb3JtPSJtYXRyaXgoMC43MzM4NDEgMC42NzkzMjEgLTAuNzAwODk2IDAuNzEzMjY0IDIxLjIxNyAwLjE2NzM1OCkiIGZpbGw9IiNGRkMxMDAiLz48cGF0aCBkPSJNMTAgNC45OTg5NUM5LjYxNjU3IDExLjg4OCAwLjE4MDQ5MiAxMS40NDIzIDAgNC45OTg5NUMwLjM4MjQ5MyAtMS44ODkyIDkuODE5NTEgLTEuNDM5NjUgMTAgNC45OTg5NVoiIGZpbGw9IiNGRkMxMDAiLz48cGF0aCBkPSJNMjYgMjAuMDAwOUMyNS42MTc1IDI2Ljg4NzQgMTYuMTgwNSAyNi40NDE3IDE2IDIwLjAwMDlDMTYuMzgzNCAxMy4xMTM0IDI1LjgxOTUgMTMuNTU2MyAyNiAyMC4wMDA5WiIgZmlsbD0iI0ZGQzEwMCIvPjwvc3ZnPg==')
-                        &.hero
-                            &::before
-                               background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAxOCAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTcuNTM1IDguNTc0MTdDMTcuNDUwMiA4LjQyNzQ5IDE3LjI2NzYgOC4zMzMzNSAxNy4wNjY0IDguMzMzMzVIMTEuOTY3MkMxMS41NDk5IDguMzMzMzUgMTEuMzE2MiA3Ljg1MjM5IDExLjU3NDEgNy41MjQzNEwxNi45ODYyIDAuNjM5NkMxNy4wODcxIDAuNTExMjc5IDE3LjA5MzMgMC4zNDg3NzkgMTcuMDAyMyAwLjIxNTg2OUMxNi45MTEzIDAuMDgyNTE5NSAxNi43Mzc1IDAgMTYuNTQ5MiAwSDguMjc0NzNDOC4wNzg3NCAwIDcuODk5NzcgMC4wODkxNjAyIDcuODExODkgMC4yMzA0MkwwLjA1NDUzMjQgMTIuNzMwNEMtMC4wMjU2NDcyIDEyLjg1OTIgLTAuMDE2ODU5NiAxMy4wMTI1IDAuMDc3MjU5IDEzLjEzNTRDMC4xNzE5MjMgMTMuMjU4MyAwLjMzNzkxOSAxMy4zMzMzIDAuNTE3MzY4IDEzLjMzMzNINS4wMDk4MkM1LjM4NTQ0IDEzLjMzMzMgNS42MjY5MyAxMy43MzIgNS40NTI5NiAxNC4wNjQ5TDAuMDQwNTMyNiAyNC40MjE2Qy0wLjA1ODI1MjYgMjQuNjExMiAwLjAyOTY4NDUgMjQuODMxMiAwLjI0NzM3NSAyNC45Mzg3QzAuMzMxMTMxIDI0Ljk4IDAuNDI0MjE5IDI1IDAuNTE2ODIzIDI1QzAuNjY1MjQzIDI1IDAuODExNjAyIDI0Ljk0ODcgMC45MTI5OTQgMjQuODUyMUwxNy40NjIxIDkuMDE4N0MxNy41OTE4IDguODk0NTggMTcuNjE5NyA4LjcyMTI0IDE3LjUzNSA4LjU3NDE3WiIgZmlsbD0iI0ZGQzEwMCIvPjwvc3ZnPg==')
-                        &.brand
-                            &::before
-                               background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHZpZXdCb3g9IjAgMCAyNiAyNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTEuNjQ2NSAxLjgzNEMxMi4xOSAwLjY5NTk1NSAxMy44MSAwLjY5NTk1NCAxNC4zNTM1IDEuODM0TDE3LjA2NTIgNy41MTE0N0MxNy4yNzk4IDcuOTYwODYgMTcuNzAzNSA4LjI3NDQzIDE4LjE5NiA4LjM0ODM3TDI0LjMzODYgOS4yNzA3QzI1LjU1MzYgOS40NTMxNCAyNi4wNDYgMTAuOTM5IDI1LjE4MDMgMTEuODEwOUwyMC42NzM5IDE2LjM1QzIwLjMzNDIgMTYuNjkyMSAyMC4xNzk3IDE3LjE3NjcgMjAuMjU4NyAxNy42NTI0TDIxLjMxMzkgMjQuMDFDMjEuNTE4NCAyNS4yNDIxIDIwLjIxNTYgMjYuMTY5OSAxOS4xMTgxIDI1LjU3MzdMMTMuNzE2IDIyLjYzOUMxMy4yNjk1IDIyLjM5NjQgMTIuNzMwNSAyMi4zOTY0IDEyLjI4NCAyMi42MzlMNi44ODE5IDI1LjU3MzdDNS43ODQ0MSAyNi4xNjk5IDQuNDgxNTkgMjUuMjQyMSA0LjY4NjEgMjQuMDFMNS43NDEzNCAxNy42NTI0QzUuODIwMjkgMTcuMTc2NyA1LjY2NTc4IDE2LjY5MjEgNS4zMjYwNyAxNi4zNUwwLjgxOTY4NCAxMS44MTA5Qy0wLjA0NTk1ODEgMTAuOTM5IDAuNDQ2NDA5IDkuNDUzMTQgMS42NjE0NCA5LjI3MDdMNy44MDQwMyA4LjM0ODM3QzguMjk2NTMgOC4yNzQ0MyA4LjcyMDIxIDcuOTYwODYgOC45MzQ4NCA3LjUxMTQ3TDExLjY0NjUgMS44MzRaIiBmaWxsPSIjRkZDMTAwIi8+PC9zdmc+')
-                        &.boy
-                            &::before
-                               background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkiIGhlaWdodD0iMjYiIHZpZXdCb3g9IjAgMCAxOSAyNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNC4wNjM5NyAxMS4xNzY1TDE0Ljc5OSAxMS4xNzY1QzE2LjU4OTIgMTEuMTc2NSAxNy42NTMxIDEzLjE3NTkgMTYuNjUyOSAxNC42NjA2TDExLjEyMjcgMjIuODY5OEMxMC4yMjE4IDI0LjIwNzEgOC4yNDQ0MyAyNC4xNzk2IDcuMzgxIDIyLjgxNzhMMi4xNzYxNSAxNC42MDg3QzEuMjMyNTUgMTMuMTIwNCAyLjMwMTggMTEuMTc2NSA0LjA2Mzk3IDExLjE3NjVaIiBmaWxsPSIjRkZDMTAwIi8+PGNpcmNsZSBjeD0iOS40OTk5OSIgY3k9IjUuMDI5NDEiIHI9IjUuMDI5NDEiIGZpbGw9IiNGRkMxMDAiLz48L3N2Zz4=')
-                        &.girl
-                            &::before
-                               background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAxOCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTQuMjQ4NSAyNEgzLjg4MzIyQzIuMjU3MDggMjQgMS4zMTA2OSAyMi4xNjI1IDIuMjU0OTggMjAuODM4Nkw3LjU5NDY1IDEzLjM1MjZDOC40MDYxNSAxMi4yMTQ5IDEwLjEwNDUgMTIuMjM5IDEwLjg4MzQgMTMuMzk5MkwxNS45MDkgMjAuODg1MkMxNi44MDEgMjIuMjEzOSAxNS44NDg4IDI0IDE0LjI0ODUgMjRaIiBmaWxsPSIjRkZDMTAwIi8+PGNpcmNsZSBjeD0iOS41IiBjeT0iNS41IiByPSI1LjUiIGZpbGw9IiNGRkMxMDAiLz48L3N2Zz4=')
-            &__item
+                        display: none
+                &:last-child
+                    padding-right: 0
                 &.active
                     a
                         opacity: 1 !important
+                a
+                    display: inline-block
+                    padding-top: 1.5em
+                    padding-bottom: 1.5em
+                    padding-left: 2.5em
+                    font-size: 1em
+                    color: #ffffff
+                    position: relative
+                    transition-delay: .3s
+                    cursor: pointer
+                    user-select: none
+                    transition: opacity .3s ease
+                    &::before
+                        content: ''
+                        position: absolute
+                        left: 0
+                        top: 50%
+                        transform: translateY(-50%)
+                        display: inline-block
+                        width: 2em
+                        height: 2em
+                        padding: 0
+                        margin: 0
+                        background-size: 75%
+                        background-position: center
+                        background-repeat: no-repeat
+                        
+                    &.catalog
+                        &::before
+                            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAyNSAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTEiIGhlaWdodD0iMTEiIHJ4PSIyIiBmaWxsPSIjRkZDMTAwIi8+PHJlY3QgeT0iMTQiIHdpZHRoPSIxMSIgaGVpZ2h0PSIxMSIgcng9IjIiIGZpbGw9IiNGRkMxMDAiLz48cmVjdCB4PSIxNCIgd2lkdGg9IjExIiBoZWlnaHQ9IjExIiByeD0iMiIgZmlsbD0iI0ZGQzEwMCIvPjxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjExIiBoZWlnaHQ9IjExIiByeD0iMiIgZmlsbD0iI0ZGQzEwMCIvPjwvc3ZnPg==')
+                    &.sale
+                        &::before
+                            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAyNiAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNC41NzA4OCIgaGVpZ2h0PSIzMC4xMjg2IiByeD0iMi4yODU0NCIgdHJhbnNmb3JtPSJtYXRyaXgoMC43MzM4NDEgMC42NzkzMjEgLTAuNzAwODk2IDAuNzEzMjY0IDIxLjIxNyAwLjE2NzM1OCkiIGZpbGw9IiNGRkMxMDAiLz48cGF0aCBkPSJNMTAgNC45OTg5NUM5LjYxNjU3IDExLjg4OCAwLjE4MDQ5MiAxMS40NDIzIDAgNC45OTg5NUMwLjM4MjQ5MyAtMS44ODkyIDkuODE5NTEgLTEuNDM5NjUgMTAgNC45OTg5NVoiIGZpbGw9IiNGRkMxMDAiLz48cGF0aCBkPSJNMjYgMjAuMDAwOUMyNS42MTc1IDI2Ljg4NzQgMTYuMTgwNSAyNi40NDE3IDE2IDIwLjAwMDlDMTYuMzgzNCAxMy4xMTM0IDI1LjgxOTUgMTMuNTU2MyAyNiAyMC4wMDA5WiIgZmlsbD0iI0ZGQzEwMCIvPjwvc3ZnPg==')
+                    &.hero
+                        &::before
+                            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAxOCAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTcuNTM1IDguNTc0MTdDMTcuNDUwMiA4LjQyNzQ5IDE3LjI2NzYgOC4zMzMzNSAxNy4wNjY0IDguMzMzMzVIMTEuOTY3MkMxMS41NDk5IDguMzMzMzUgMTEuMzE2MiA3Ljg1MjM5IDExLjU3NDEgNy41MjQzNEwxNi45ODYyIDAuNjM5NkMxNy4wODcxIDAuNTExMjc5IDE3LjA5MzMgMC4zNDg3NzkgMTcuMDAyMyAwLjIxNTg2OUMxNi45MTEzIDAuMDgyNTE5NSAxNi43Mzc1IDAgMTYuNTQ5MiAwSDguMjc0NzNDOC4wNzg3NCAwIDcuODk5NzcgMC4wODkxNjAyIDcuODExODkgMC4yMzA0MkwwLjA1NDUzMjQgMTIuNzMwNEMtMC4wMjU2NDcyIDEyLjg1OTIgLTAuMDE2ODU5NiAxMy4wMTI1IDAuMDc3MjU5IDEzLjEzNTRDMC4xNzE5MjMgMTMuMjU4MyAwLjMzNzkxOSAxMy4zMzMzIDAuNTE3MzY4IDEzLjMzMzNINS4wMDk4MkM1LjM4NTQ0IDEzLjMzMzMgNS42MjY5MyAxMy43MzIgNS40NTI5NiAxNC4wNjQ5TDAuMDQwNTMyNiAyNC40MjE2Qy0wLjA1ODI1MjYgMjQuNjExMiAwLjAyOTY4NDUgMjQuODMxMiAwLjI0NzM3NSAyNC45Mzg3QzAuMzMxMTMxIDI0Ljk4IDAuNDI0MjE5IDI1IDAuNTE2ODIzIDI1QzAuNjY1MjQzIDI1IDAuODExNjAyIDI0Ljk0ODcgMC45MTI5OTQgMjQuODUyMUwxNy40NjIxIDkuMDE4N0MxNy41OTE4IDguODk0NTggMTcuNjE5NyA4LjcyMTI0IDE3LjUzNSA4LjU3NDE3WiIgZmlsbD0iI0ZGQzEwMCIvPjwvc3ZnPg==')
+                    &.brand
+                        &::before
+                            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHZpZXdCb3g9IjAgMCAyNiAyNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTEuNjQ2NSAxLjgzNEMxMi4xOSAwLjY5NTk1NSAxMy44MSAwLjY5NTk1NCAxNC4zNTM1IDEuODM0TDE3LjA2NTIgNy41MTE0N0MxNy4yNzk4IDcuOTYwODYgMTcuNzAzNSA4LjI3NDQzIDE4LjE5NiA4LjM0ODM3TDI0LjMzODYgOS4yNzA3QzI1LjU1MzYgOS40NTMxNCAyNi4wNDYgMTAuOTM5IDI1LjE4MDMgMTEuODEwOUwyMC42NzM5IDE2LjM1QzIwLjMzNDIgMTYuNjkyMSAyMC4xNzk3IDE3LjE3NjcgMjAuMjU4NyAxNy42NTI0TDIxLjMxMzkgMjQuMDFDMjEuNTE4NCAyNS4yNDIxIDIwLjIxNTYgMjYuMTY5OSAxOS4xMTgxIDI1LjU3MzdMMTMuNzE2IDIyLjYzOUMxMy4yNjk1IDIyLjM5NjQgMTIuNzMwNSAyMi4zOTY0IDEyLjI4NCAyMi42MzlMNi44ODE5IDI1LjU3MzdDNS43ODQ0MSAyNi4xNjk5IDQuNDgxNTkgMjUuMjQyMSA0LjY4NjEgMjQuMDFMNS43NDEzNCAxNy42NTI0QzUuODIwMjkgMTcuMTc2NyA1LjY2NTc4IDE2LjY5MjEgNS4zMjYwNyAxNi4zNUwwLjgxOTY4NCAxMS44MTA5Qy0wLjA0NTk1ODEgMTAuOTM5IDAuNDQ2NDA5IDkuNDUzMTQgMS42NjE0NCA5LjI3MDdMNy44MDQwMyA4LjM0ODM3QzguMjk2NTMgOC4yNzQ0MyA4LjcyMDIxIDcuOTYwODYgOC45MzQ4NCA3LjUxMTQ3TDExLjY0NjUgMS44MzRaIiBmaWxsPSIjRkZDMTAwIi8+PC9zdmc+')
+                    &.boy
+                        &::before
+                            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkiIGhlaWdodD0iMjYiIHZpZXdCb3g9IjAgMCAxOSAyNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNC4wNjM5NyAxMS4xNzY1TDE0Ljc5OSAxMS4xNzY1QzE2LjU4OTIgMTEuMTc2NSAxNy42NTMxIDEzLjE3NTkgMTYuNjUyOSAxNC42NjA2TDExLjEyMjcgMjIuODY5OEMxMC4yMjE4IDI0LjIwNzEgOC4yNDQ0MyAyNC4xNzk2IDcuMzgxIDIyLjgxNzhMMi4xNzYxNSAxNC42MDg3QzEuMjMyNTUgMTMuMTIwNCAyLjMwMTggMTEuMTc2NSA0LjA2Mzk3IDExLjE3NjVaIiBmaWxsPSIjRkZDMTAwIi8+PGNpcmNsZSBjeD0iOS40OTk5OSIgY3k9IjUuMDI5NDEiIHI9IjUuMDI5NDEiIGZpbGw9IiNGRkMxMDAiLz48L3N2Zz4=')
+                    &.girl
+                        &::before
+                            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAxOCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTQuMjQ4NSAyNEgzLjg4MzIyQzIuMjU3MDggMjQgMS4zMTA2OSAyMi4xNjI1IDIuMjU0OTggMjAuODM4Nkw3LjU5NDY1IDEzLjM1MjZDOC40MDYxNSAxMi4yMTQ5IDEwLjEwNDUgMTIuMjM5IDEwLjg4MzQgMTMuMzk5MkwxNS45MDkgMjAuODg1MkMxNi44MDEgMjIuMjEzOSAxNS44NDg4IDI0IDE0LjI0ODUgMjRaIiBmaWxsPSIjRkZDMTAwIi8+PGNpcmNsZSBjeD0iOS41IiBjeT0iNS41IiByPSI1LjUiIGZpbGw9IiNGRkMxMDAiLz48L3N2Zz4=')
+
+        &__submenu
+            position: absolute
+            left: 0
+            bottom: 1px
+            transform: translateY(100%)
+            width: 100%
+            background: #ffffff
+            padding: 0 calc(50% - 580px)
+            display: flex
+            align-items: flex-start
+            justify-content: flex-start
+            flex-wrap: wrap
+            z-index: 3
 
         &__general
+            padding: 0
+            margin: 0
             background: $accent
             border-radius: 0 0 20px 20px
             padding: 0 1.5em .5em 2em
@@ -191,6 +205,7 @@ $textblock: #EAF6F6
                 font-weight: bold
                 font-size: 2em
                 margin-bottom: 1em
+                color: $text
 
             ul
                 flex: 0 0 33.333333%
@@ -210,46 +225,7 @@ $textblock: #EAF6F6
                             font-weight: bold
                             font-size: 1.2em
                             color: $text
-        &__submenu
-            position: absolute
-            left: 0
-            bottom: 0
-            transform: translateY(100%)
-            width: 100%
-            padding: 0 calc(50% - 580px)
-            display: flex
-            align-items: flex-start
-            justify-content: flex-start
-            flex-wrap: wrap
-            z-index: 6
-            // ul
-            //     flex: 1 0 25%
-            //     min-width: 25%
-            //     max-width: 25%
-            //     padding: 1em 0
-            //     padding-right: 1em
-            //     li
-            //         list-style: none
-            //         padding: 0
-            //         margin: 0
-            //         a
-            //             display: block
-            //             line-height: 1
-            //             margin-bottom: 0.8em
-            //             font-size: 0.9em
-            //             transition: color .1s ease
-            //         &.first
-            //             a
-            //                 font-weight: bold
-            //                 margin-bottom: 1em
-            //                 img
-            //                     display: block
-            //                     max-width: 160px
-            //                     margin-bottom: 2em
-            //         &.last
-            //             a
-            //                 margin-top: 0.5em
-            //                 color: $grey
+
         .layout
             position: fixed
             left: 0
@@ -308,20 +284,17 @@ $textblock: #EAF6F6
         &-catalog
             &__menu
                 padding: 0 calc(50% - 470px)
-                overflow-x: auto
-                ul
-                    justify-content: flex-start
-                    min-width: 1200px
+                li
+                    &::before
+                        left: 0
+                    a
+                        font-size: 0.9em
             &__submenu
                 padding: 0 calc(50% - 470px)
                 ul
                     li
                         a
-                            font-size: 0.8em
-                        &.first
-                            a
-                                img
-                                max-width: 120px
+                            font-size: 0.9em
 
 @media screen and ( max-width: 991.98px )
     .nav
