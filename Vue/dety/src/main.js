@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import './sass/menu.min.css'
+import './sass/menu.css'
 
 Vue.config.productionTip = false
 
