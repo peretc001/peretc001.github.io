@@ -53,6 +53,9 @@
         text-align: right
     
     &__del
+        position: absolute
+        top: 1em
+        right: 1em
         display: flex
         align-items: center
         justify-content: flex-start
@@ -60,15 +63,15 @@
         .return
             position: relative
             display: inline-block
-            width: .8em
-            height: .8em
+            width: 1em
+            height: 1em
             padding: 0
             margin: 0
             background-size: cover
             background-position: center
             background-repeat: no-repeat
         .delete
-            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzAwLjE4OCwyNDZMNDg0LjE0LDYyLjA0YzUuMDYtNS4wNjQsNy44NTItMTEuODIsNy44Ni0xOS4wMjRjMC03LjIwOC0yLjc5Mi0xMy45NzItNy44Ni0xOS4wMjhMNDY4LjAyLDcuODcyICAgIGMtNS4wNjgtNS4wNzYtMTEuODI0LTcuODU2LTE5LjAzNi03Ljg1NmMtNy4yLDAtMTMuOTU2LDIuNzgtMTkuMDI0LDcuODU2TDI0Ni4wMDgsMTkxLjgyTDYyLjA0OCw3Ljg3MiAgICBjLTUuMDYtNS4wNzYtMTEuODItNy44NTYtMTkuMDI4LTcuODU2Yy03LjIsMC0xMy45NiwyLjc4LTE5LjAyLDcuODU2TDcuODcyLDIzLjk4OGMtMTAuNDk2LDEwLjQ5Ni0xMC40OTYsMjcuNTY4LDAsMzguMDUyICAgIEwxOTEuODI4LDI0Nkw3Ljg3Miw0MjkuOTUyYy01LjA2NCw1LjA3Mi03Ljg1MiwxMS44MjgtNy44NTIsMTkuMDMyYzAsNy4yMDQsMi43ODgsMTMuOTYsNy44NTIsMTkuMDI4bDE2LjEyNCwxNi4xMTYgICAgYzUuMDYsNS4wNzIsMTEuODI0LDcuODU2LDE5LjAyLDcuODU2YzcuMjA4LDAsMTMuOTY4LTIuNzg0LDE5LjAyOC03Ljg1NmwxODMuOTYtMTgzLjk1MmwxODMuOTUyLDE4My45NTIgICAgYzUuMDY4LDUuMDcyLDExLjgyNCw3Ljg1NiwxOS4wMjQsNy44NTZoMC4wMDhjNy4yMDQsMCwxMy45Ni0yLjc4NCwxOS4wMjgtNy44NTZsMTYuMTItMTYuMTE2ICAgIGM1LjA2LTUuMDY0LDcuODUyLTExLjgyNCw3Ljg1Mi0xOS4wMjhjMC03LjIwNC0yLjc5Mi0xMy45Ni03Ljg1Mi0xOS4wMjhMMzAwLjE4OCwyNDZ6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNDMjUxQzAiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==)
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNTEyIiB2aWV3Qm94PSItNDAgMCA0MjcgNDI3LjAwMTMxIiB3aWR0aD0iNTEyIj48Zz48cGF0aCBkPSJtMjMyLjM5ODQzOCAxNTQuNzAzMTI1Yy01LjUyMzQzOCAwLTEwIDQuNDc2NTYzLTEwIDEwdjE4OWMwIDUuNTE5NTMxIDQuNDc2NTYyIDEwIDEwIDEwIDUuNTIzNDM3IDAgMTAtNC40ODA0NjkgMTAtMTB2LTE4OWMwLTUuNTIzNDM3LTQuNDc2NTYzLTEwLTEwLTEwem0wIDAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0M0QzRDNCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD48cGF0aCBkPSJtMTE0LjM5ODQzOCAxNTQuNzAzMTI1Yy01LjUyMzQzOCAwLTEwIDQuNDc2NTYzLTEwIDEwdjE4OWMwIDUuNTE5NTMxIDQuNDc2NTYyIDEwIDEwIDEwIDUuNTIzNDM3IDAgMTAtNC40ODA0NjkgMTAtMTB2LTE4OWMwLTUuNTIzNDM3LTQuNDc2NTYzLTEwLTEwLTEwem0wIDAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0M0QzRDNCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD48cGF0aCBkPSJtMjguMzk4NDM4IDEyNy4xMjEwOTR2MjQ2LjM3ODkwNmMwIDE0LjU2MjUgNS4zMzk4NDMgMjguMjM4MjgxIDE0LjY2Nzk2OCAzOC4wNTA3ODEgOS4yODUxNTYgOS44Mzk4NDQgMjIuMjA3MDMyIDE1LjQyNTc4MSAzNS43MzA0NjkgMTUuNDQ5MjE5aDE4OS4yMDMxMjVjMTMuNTI3MzQ0LS4wMjM0MzggMjYuNDQ5MjE5LTUuNjA5Mzc1IDM1LjczMDQ2OS0xNS40NDkyMTkgOS4zMjgxMjUtOS44MTI1IDE0LjY2Nzk2OS0yMy40ODgyODEgMTQuNjY3OTY5LTM4LjA1MDc4MXYtMjQ2LjM3ODkwNmMxOC41NDI5NjgtNC45MjE4NzUgMzAuNTU4NTkzLTIyLjgzNTkzOCAyOC4wNzgxMjQtNDEuODYzMjgyLTIuNDg0Mzc0LTE5LjAyMzQzNy0xOC42OTE0MDYtMzMuMjUzOTA2LTM3Ljg3ODkwNi0zMy4yNTc4MTJoLTUxLjE5OTIxOHYtMTIuNWMuMDU4NTkzLTEwLjUxMTcxOS00LjA5NzY1Ny0yMC42MDU0NjktMTEuNTM5MDYzLTI4LjAzMTI1LTcuNDQxNDA2LTcuNDIxODc1LTE3LjU1MDc4MS0xMS41NTQ2ODc1LTI4LjA2MjUtMTEuNDY4NzVoLTg4Ljc5Njg3NWMtMTAuNTExNzE5LS4wODU5Mzc1LTIwLjYyMTA5NCA0LjA0Njg3NS0yOC4wNjI1IDExLjQ2ODc1LTcuNDQxNDA2IDcuNDI1NzgxLTExLjU5NzY1NiAxNy41MTk1MzEtMTEuNTM5MDYyIDI4LjAzMTI1djEyLjVoLTUxLjE5OTIxOWMtMTkuMTg3NS4wMDM5MDYtMzUuMzk0NTMxIDE0LjIzNDM3NS0zNy44Nzg5MDcgMzMuMjU3ODEyLTIuNDgwNDY4IDE5LjAyNzM0NCA5LjUzNTE1NyAzNi45NDE0MDcgMjguMDc4MTI2IDQxLjg2MzI4MnptMjM5LjYwMTU2MiAyNzkuODc4OTA2aC0xODkuMjAzMTI1Yy0xNy4wOTc2NTYgMC0zMC4zOTg0MzctMTQuNjg3NS0zMC4zOTg0MzctMzMuNXYtMjQ1LjVoMjUwdjI0NS41YzAgMTguODEyNS0xMy4zMDA3ODIgMzMuNS0zMC4zOTg0MzggMzMuNXptLTE1OC42MDE1NjItMzY3LjVjLS4wNjY0MDctNS4yMDcwMzEgMS45ODA0NjgtMTAuMjE4NzUgNS42NzU3ODEtMTMuODk0NTMxIDMuNjkxNDA2LTMuNjc1NzgxIDguNzE0ODQzLTUuNjk1MzEzIDEzLjkyNTc4MS01LjYwNTQ2OWg4OC43OTY4NzVjNS4yMTA5MzctLjA4OTg0NCAxMC4yMzQzNzUgMS45Mjk2ODggMTMuOTI1NzgxIDUuNjA1NDY5IDMuNjk1MzEzIDMuNjcxODc1IDUuNzQyMTg4IDguNjg3NSA1LjY3NTc4MiAxMy44OTQ1MzF2MTIuNWgtMTI4em0tNzEuMTk5MjE5IDMyLjVoMjcwLjM5ODQzN2M5Ljk0MTQwNiAwIDE4IDguMDU4NTk0IDE4IDE4cy04LjA1ODU5NCAxOC0xOCAxOGgtMjcwLjM5ODQzN2MtOS45NDE0MDcgMC0xOC04LjA1ODU5NC0xOC0xOHM4LjA1ODU5My0xOCAxOC0xOHptMCAwIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNDNEM0QzQiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+PHBhdGggZD0ibTE3My4zOTg0MzggMTU0LjcwMzEyNWMtNS41MjM0MzggMC0xMCA0LjQ3NjU2My0xMCAxMHYxODljMCA1LjUxOTUzMSA0LjQ3NjU2MiAxMCAxMCAxMCA1LjUyMzQzNyAwIDEwLTQuNDgwNDY5IDEwLTEwdi0xODljMC01LjUyMzQzNy00LjQ3NjU2My0xMC0xMC0xMHptMCAwIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNDNEM0QzQiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+PC9nPiA8L3N2Zz4=')
         .return
             background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGcgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgLTEgMCA1MTIpIj48Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0yOTguNjY3LDBIMjEuMzMzQzkuNTUxLDAsMCw5LjU1MSwwLDIxLjMzM2MwLDExLjc4Miw5LjU1MSwyMS4zMzMsMjEuMzMzLDIxLjMzM2gyNzcuMzMzICAgIGM5NC44NDIsMCwxNzAuNjY3LDc1LjgyNSwxNzAuNjY3LDE3MC42NjdTMzkzLjUwOSwzODQsMjk4LjY2NywzODRINzIuODM3bDQ4LjkxNS00OC45MTVjOC4zMzEtOC4zMzEsOC4zMzEtMjEuODM5LDAtMzAuMTcgICAgYy04LjMzMS04LjMzMS0yMS44MzktOC4zMzEtMzAuMTcsMEw2LjI0OCwzOTAuMjQ4Yy0wLjQ5NywwLjQ5Ny0wLjk2NywxLjAyLTEuNDEzLDEuNTY0Yy0wLjIwMiwwLjI0Ni0wLjM3OCwwLjUwNi0wLjU2NywwLjc1OSAgICBjLTAuMjI4LDAuMzA0LTAuNDYzLDAuNjAxLTAuNjc1LDAuOTE4Yy0wLjIwMywwLjMwMy0wLjM3OSwwLjYxOC0wLjU2NSwwLjkyOWMtMC4xNzEsMC4yODYtMC4zNTEsMC41NjYtMC41MDksMC44NjEgICAgYy0wLjE3LDAuMzE3LTAuMzE0LDAuNjQ0LTAuNDY2LDAuOTY4Yy0wLjE0NSwwLjMwNy0wLjI5OCwwLjYwOS0wLjQyOSwwLjkyNGMtMC4xMywwLjMxNS0wLjIzNiwwLjYzNy0wLjM1LDAuOTU3ICAgIGMtMC4xMjEsMC4zMzctMC4yNSwwLjY2OS0wLjM1NCwxLjAxM2MtMC4wOTcsMC4zMi0wLjE2OCwwLjY0Ni0wLjI0OSwwLjk2OWMtMC4wODksMC4zNTEtMC4xODcsMC42OTgtMC4yNTgsMS4wNTUgICAgYy0wLjA3NCwwLjM3NS0wLjExOSwwLjc1My0wLjE3MywxLjEzYy0wLjA0NCwwLjMxMS0wLjEwNCwwLjYxNy0wLjEzNSwwLjkzMmMtMC4xMzgsMS40LTAuMTM4LDIuODExLDAsNC4yMTEgICAgYzAuMDMxLDAuMzE2LDAuMDksMC42MjIsMC4xMzUsMC45MzNjMC4wNTQsMC4zNzcsMC4wOTgsMC43NTUsMC4xNzIsMS4xM2MwLjA3MSwwLjM1OCwwLjE2OSwwLjcwNSwwLjI1OCwxLjA1NiAgICBjMC4wODEsMC4zMjMsMC4xNTIsMC42NDgsMC4yNDksMC45NjhjMC4xMDQsMC4zNDUsMC4yMzQsMC42NzcsMC4zNTUsMS4wMTRjMC4xMTUsMC4zMiwwLjIyLDAuNjQyLDAuMzUsMC45NTcgICAgYzAuMTMsMC4zMTUsMC4yODQsMC42MTYsMC40MjksMC45MjNjMC4xNTMsMC4zMjQsMC4yOTcsMC42NTEsMC40NjcsMC45NjljMC4xNTgsMC4yOTQsMC4zMzcsMC41NzMsMC41MDgsMC44NTkgICAgYzAuMTg2LDAuMzExLDAuMzYyLDAuNjI3LDAuNTY1LDAuOTMxYzAuMjExLDAuMzE2LDAuNDQ2LDAuNjEyLDAuNjczLDAuOTE2YzAuMTksMC4yNTQsMC4zNjYsMC41MTQsMC41NjksMC43NjEgICAgYzAuNDQzLDAuNTQsMC45MSwxLjA1OSwxLjQwMywxLjU1MmMwLjAwNCwwLjAwNCwwLjAwNiwwLjAwOCwwLjAxLDAuMDExbDg1LjMzMyw4NS4zMzNjOC4zMzEsOC4zMzEsMjEuODM5LDguMzMxLDMwLjE3LDAgICAgYzguMzMxLTguMzMxLDguMzMxLTIxLjgzOSwwLTMwLjE3bC00OC45MTUtNDguOTE1aDIyNS44M0M0MTcuMDczLDQyNi42NjcsNTEyLDMzMS43MzksNTEyLDIxMy4zMzNTNDE3LjA3MywwLDI5OC42NjcsMHoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0MyNTFDMCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+')
 
@@ -181,9 +184,21 @@
         .cart-order-item__name
             flex: 0 0 52%
             text-decoration: line-through
+            p
+                display: none
+        .cart-order-item__qty,
         .cart-order-item__subtotal
+            display: none
+        .cart-order-item__deleted
             flex: 0 0 30%
             text-align: right
+            position: relative
+            &::before
+                content: 'Товар удален из корзины'
+                position: absolute
+                right: 0
+                top: 50%
+                transform: translateY(-50%)
             p
                 margin-bottom: 0
                 font-weight: normal
@@ -471,42 +486,14 @@
             flex: 0 0 49%
             &:not(:first-child)
                 margin-left: 2%
-
-
-            &.left
+            &:first-child
                 label
-                    padding-left: 7em
-                    &::before
-                        left: 5.5em
                     &::after
-                        content: ''
-                        position: absolute
-                        left: 1em
-                        top: 50%
-                        transform: translateY(-50%)
-                        display: inline-block
-                        width: 3em
-                        height: 3em
-                        background-size: 90%
-                        background-position: center
-                        background-repeat: no-repeat
                         background-image: url('../../img/delivery/delivery1.svg')
-            &.right
+            &:last-child
                 label
                     &::after
-                        content: ''
-                        position: absolute
-                        right: 1em
-                        top: 50%
-                        transform: translateY(-50%)
-                        display: inline-block
-                        width: 3em
-                        height: 3em
-                        background-size: 90%
-                        background-position: center
-                        background-repeat: no-repeat
-                        background-image: url('../../img/delivery/delivery3.svg')
-                    
+                        background-image: url('../../img/delivery/delivery2.svg')                 
 
         input[type="radio"]
             display: none
@@ -517,7 +504,8 @@
             color: $grey
             font-weight: normal
             position: relative
-            padding: 1em 1em 1em 3em
+            padding: 1em
+            padding-left: 7em
             font-size: 1.2em
             cursor: pointer
             user-select: none
@@ -525,7 +513,7 @@
             &::before
                 content: ''
                 position: absolute
-                left: 1em
+                left: 5.5em
                 top: 35%
                 transform: translateY(-50%)
                 display: inline-block
@@ -534,11 +522,24 @@
                 border: 1px solid $accent
                 border-radius: 2px
                 transition: background .3s ease
+            &::after
+                content: ''
+                position: absolute
+                left: 1em
+                top: 50%
+                transform: translateY(-50%)
+                display: inline-block
+                width: 3em
+                height: 3em
+                background-size: 100%
+                background-position: center
+                background-repeat: no-repeat
             b
                 display: block
                 margin-top: 0.3em
                 font-weight: bold
                 color: $text
+
         input:checked + label
             border: 2px solid $accent
             color: $accent
@@ -995,6 +996,17 @@
     .cart-order-item
         font-size: 0.8em
 
+    .cart-delivery
+        &-type
+            &__item
+                label
+                    padding-left: 5em
+                    &::before
+                        left: 3.5em
+                    &::after
+                        left: 0.2em
+                        background-size: 70%
+
     .cart-order-promo
         label
             font-size: 0.9em
@@ -1059,7 +1071,10 @@
         &__subtotal
             flex: 0 0 30%
         &.return
-            .cart-order-item__subtotal
+            .cart-order-item__name
+                flex: 0 0 70%
+            .cart-order-item__deleted
+                margin-top: 1em
                 flex: 0 0 100%
         
         &-total
@@ -1075,7 +1090,7 @@
     .cart-delivery
         &-type
             label
-                font-size: 1em
+                font-size: .9em
         &-point
             flex-wrap: wrap
             &__lists
@@ -1159,6 +1174,14 @@
             flex-wrap: wrap
             &__item
                 flex: 0 0 100%
+                label
+                    font-size: 1em
+                    padding-left: 6em
+                    &::before
+                        left: 4.5em
+                    &::after
+                        left: 0.5em
+                        background-size: 100%
                 &:last-child
                     margin-left: 0
         &-point
@@ -1188,8 +1211,7 @@
                 &:nth-child(5),
                 &:nth-child(6)
                     flex: 0 0 23%
-                
-    
+
     .cart-pay
         &__items
             .form-row

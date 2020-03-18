@@ -76,7 +76,10 @@
 <main>
   <div class="breadcrumb">
       <div class="container">
-          <a href="./">Главная</a> Корзина
+        <div class="links">
+          <a href="/">Главная</a>
+        </div>
+        <span>Корзина</span>
       </div>
   </div>
 
@@ -159,20 +162,6 @@
                 <div class="cart-order-item__subtotal">
                     <p class="price">59 159 ₽</p>
                     <p class="bonus">+75</p>
-                </div>
-              </div>
-              <div class="cart-order-item return">
-                <div class="cart-order-item__del">
-                  <a href="" class="return"></a>
-                </div>
-                <div class="cart-order-item__img">
-                  <img src="./img/cart/4.png" alt="">
-                </div>
-                <div class="cart-order-item__name">
-                    Комбинезоны Lucky Child комплект синий зеленого цвета с оранжевым и серым и белым в полоску
-                </div>
-                <div class="cart-order-item__subtotal">
-                  <p>Товар удален из корзины</p>
                 </div>
               </div>
               <div class="cart-order-item-total">
@@ -603,9 +592,9 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
+      //Sort block
       const   div = document.createElement('div');
               div.classList.add('layout')
-      //Sort block
       if ( document.querySelector('.cart-delivery-adress--select') ) {
         const   dropDown = document.querySelector('.cart-delivery-adress--select')
                 dropDownMenu = document.querySelector('.cart-delivery-adress--options')
@@ -634,6 +623,30 @@
         dropDown.addEventListener('click', openDropDown)
       }
 
+      if ( document.querySelector('.cart-order-item__del') ) {
+        const deleteList = document.querySelectorAll('.cart-order-item__del .delete')
+        deleteList.forEach(item => {
+          let   isReturn = false
+          const returned = document.createElement('div')
+                returned.classList.add('cart-order-item__deleted')
+          item.addEventListener('click', (e) => {
+            e.preventDefault()
+            if (!isReturn) {
+              item.closest('div').parentElement.classList.add('return')
+              item.closest('div').parentElement.append(returned)
+              item.classList.remove('delete')
+              item.classList.add('return')
+              isReturn = true
+            } else {
+              item.closest('div').parentElement.classList.remove('return')
+              returned.remove()
+              item.classList.remove('return')
+              item.classList.add('delete')
+              isReturn = false
+            }
+          })
+        })
+      }
 
       if ( document.querySelector('.item-qty') ) {
           const input = document.querySelectorAll('.item-qty')
