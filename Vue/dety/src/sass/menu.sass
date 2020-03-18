@@ -1,3 +1,20 @@
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false )
+	@font-face
+		font-family: $font-family
+		font-weight: $weight
+		font-style: $style
+
+		@if $asset-pipeline == true 
+			src: font-url('#{$file-path}.eot')
+			src: font-url('#{$file-path}.eot?#iefix') format('embedded-opentype'), font-url('#{$file-path}.woff') format('woff'), font-url('#{$file-path}.ttf') format('truetype')
+		@else
+			src: url('#{$file-path}.eot')
+			src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype')
+
++font-face("SFUIText", "../fonts/SFUIText/SFUIText-Light", 200)
++font-face("SFUIText", "../fonts/SFUIText/SFUIText-Regular", normal)
++font-face("SFUIText", "../fonts/SFUIText/SFUIText-Bold", bold)
+
 $bg: #FFF8F8
 $accent: #C251C0
 $blue: #EAF6F6
@@ -12,7 +29,8 @@ $textblock: #EAF6F6
     padding: 0
     box-sizing: border-box
     font-size: 14px
-
+body
+    background: #fff
 .nav
     &-mobile
         display: none
@@ -25,7 +43,7 @@ $textblock: #EAF6F6
             .nav-catalog__menu
                     li
                         a
-                            opacity: .5
+                            opacity: .7
                             &:hover
                                 opacity: 1
         a
@@ -41,9 +59,9 @@ $textblock: #EAF6F6
             justify-content: space-evenly
             margin: 0
             li
-                flex: 1 1 auto
+                flex: 1 0 auto
                 margin: 0
-                padding: 0 15px
+                padding: 0 5px
                 list-style: none
                 user-select: none
                 position: relative
@@ -60,13 +78,14 @@ $textblock: #EAF6F6
                     height: 6px
                     border-radius: 50%
                 &:first-child
-                    flex: 1 1 130px
                     text-align: left
+                    max-width: 180px
+                    padding-left: 15px
                     &::before
                         display: none
                 &:last-child
-                    flex: 1 1 100px
                     text-align: right
+                    max-width: 160px
                 &:nth-child(3),
                 &:nth-child(5),
                 &:nth-child(6)
@@ -143,6 +162,8 @@ $textblock: #EAF6F6
             bottom: 1px
             transform: translateY(100%)
             width: 100%
+            height: 100%
+            min-height: 600px
             background: #ffffff
             padding: 0 calc(50% - 605px)
             display: flex
@@ -168,7 +189,7 @@ $textblock: #EAF6F6
                 margin: 0
                 padding: 0.3em 0
                 list-style: none
-                opacity: .5
+                opacity: .7
                 transition: opacity .3s ease
                 border-bottom: 1px solid rgba(255, 255, 255, 0.5)
                 &:hover
@@ -222,27 +243,35 @@ $textblock: #EAF6F6
                         background-size: 90%
                         background-position: center
                         background-repeat: no-repeat
-                    
-                        
+              
         &__parent
             display: flex
             align-items: flex-start
             justify-content: flex-start
             flex-wrap: wrap
             flex: 0 0 75%
-            padding: 2em 1em 2em 3em
+            padding: 2em 1em 2em 1em
             transition: opacity .3s ease-in
-            p
-                flex: 0 0 100%
-                font-weight: bold
-                font-size: 2em
-                margin-bottom: 1em
-                color: $text
+            &__head
+                flex: 1 1 100%
+                padding-left: 2em
+                display: flex
+                justify-content: space-between
+                p
+                    font-weight: bold
+                    font-size: 2em
+                    margin-bottom: 1em
+                    color: $text
+                span
+                    font-size: 2em
+                    color: rgba(127, 125, 125, 0.7)
+                    text-align: right
+                    font-weight: bold
 
             ul
                 flex: 0 0 33.333333%
                 margin: 0
-                padding: 0
+                padding: 0 0 0 2em
                 margin-bottom: 2em
                 li
                     list-style: none
@@ -251,12 +280,38 @@ $textblock: #EAF6F6
                     a
                         color: #7F7D7D
                         text-decoration: none
+                        font-weight: 200
+                        &:hover
+                            color: $accent
                     &:first-child
                         margin-bottom: 1em
                         a
                             font-weight: bold
                             font-size: 1.2em
                             color: $text
+                    .more
+                        display: inline-block
+                        margin-top: 1em
+                        padding-right: .8em
+                        position: relative
+                        &::after
+                           content: ''
+                           position: absolute
+                           right: 0
+                           top: 55%
+                           transform: translateY(-50%)
+                           display: inline-block
+                           width: .5em
+                           height: .5em
+                           background-size: cover
+                           background-position: cenetr
+                           background-repeat: no-repeat
+                           background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojNDc0NzQ3IiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+                           transition: transform .5s ease
+                        &:hover
+                            color: $text
+                            &::after
+                                transform: translateY(-50%) translateX(5px)
 
         .layout
             position: fixed
@@ -317,127 +372,83 @@ $textblock: #EAF6F6
             &__menu
                 padding: 0 calc(50% - 480px)
                 li
-                    &::before
-                        left: 0
-                    &:first-child
-                        flex: 1 1 auto
+                    &:last-child
+                        max-width: 140px
             &__submenu
                 padding: 0 calc(50% - 485px)
 
 @media screen and ( max-width: 991.98px )
     .nav
-        &-catalog
-            &__menu
-                padding: 0 calc(50% - 350px)
-                li
-                    padding: 0
-                    padding-right: 1em
-                    left: 0
-                    &:first-child
-                        a
-                            padding-left: 2.5em
-                    &:last-child
-                        text-align: center
-                    img
-                        display: none
-
-                    a
-                        font-size: 1em
-                        padding-left: 2em
-            &__submenu
-                padding: 0 calc(50% - 365px)
-            
-            &__general
-                flex: 0 0 35%
-            &__parent
-                flex: 0 0 65%
-                ul
-                    flex: 0 0 50%
-   
-@media screen and ( max-width: 767.98px )
-    .nav
         &-mobile
             width: 100%
             display: flex
             justify-content: center
-            padding: 0 calc(50% - 255px)
+            padding: 0 calc(50% - 350px)
             margin-bottom: 0.5em
-            .btn
+            input,
+            .catalog-btn
+                border: 2px solid $accent
                 padding: .8em
+                margin: 0
                 outline: none !important
                 box-shadow: none !important
-                cursor: pointer
                 appearance: none !important
-                border-radius: 4px
+                position: relative
+
+            input
+                flex: 1 1 auto
+                border-radius: 4px 0 0 4px
+                border-right: 0
+                color: $text
+                font-size: 16px
+            .catalog-btn
+                flex: 0 0 300px
                 display: flex
                 align-items: center
                 justify-content: center
-                position: relative
-                margin: 0
-                &.search
-                    flex: 0 0 30%
-                    border-radius: 4px 0 0 4px
-                    border: 2px solid $accent
-                    background: transparent
-                    img
-                        width: 20px
-                        margin-right: 0.5em
-                &.catalog-btn
-                    flex: 0 0 70%
-                    border-radius: 0 4px 4px 0
-                    &:hover
-                        background: $accent
-                    .icon
-                        display: flex
-                        align-content: center
-                        justify-content: center
-                        flex-wrap: wrap
-                        width: 30px
-                        margin-right: .5em
-                        span
-                            display: inline-block
-                            width: 10px
-                            height: 10px
-                            background: $yellow
-                            border-radius: 2px
-                            margin-right: 4px
-                            &:nth-child(1),
-                            &:nth-child(2)
-                                margin-bottom: 4px
-                            &:nth-child(4)
-                                transition: transform .3s ease
-                                transform: rotate(0)
-                        &.active
-                            span
-                                &:nth-child(4)
-                                    transform: rotate(45deg)
-
-
-                &.btn-accent
-                    border: 1px solid $accent
+                border-radius: 0 4px 4px 0
+                background: $accent
+                color: #ffffff
+                cursor: pointer
+                user-select: none
+                &:hover
                     background: $accent
-                    color: #ffffff
-                    transition: background .5s ease
-                    &:hover
-                        background: $accent
-                &.btn-outline-accent
-                    background: transparent
-                    border: 2px solid $accent
-                    color: $accent
-                    transition: background .5s ease, color .5s ease
-                    &:hover
-                        background: transparent
-                        border: 2px solid $accent
-                        color: $accent
+                .icon
+                    display: flex
+                    align-content: center
+                    justify-content: center
+                    flex-wrap: wrap
+                    width: 30px
+                    margin-right: .5em
+                    span
+                        display: inline-block
+                        width: 10px
+                        height: 10px
+                        background: $yellow
+                        border-radius: 2px
+                        margin-right: 4px
+                        &:nth-child(1),
+                        &:nth-child(2)
+                            margin-bottom: 4px
+                        &:nth-child(4)
+                            transition: transform .3s ease
+                            transform: rotate(0)
+                    &.active
+                        span
+                            &:nth-child(4)
+                                transform: rotate(45deg)
+
+            .search
+                display: none
 
         &-catalog
             &__menu
-                width: 357px
+                width: 300px
                 padding: 0
                 position: absolute
                 top: 0
                 left: auto
-                right: calc(50% - 255px)
+                right: calc(50% - 350px)
                 z-index: -1
                 opacity: 0
                 pointer-events: none
@@ -451,7 +462,6 @@ $textblock: #EAF6F6
                     flex: 0 0 100%
                     text-align: left
                     padding: 0
-                    margin: 0
                     li
                         text-align: left !important
                         padding: 0
@@ -459,7 +469,11 @@ $textblock: #EAF6F6
                         border-bottom: 1px solid lighten($accent, 10%)
                         &::before
                             display: none
+                        &:first-child
+                            max-width: 100%
+                            padding-left: 0
                         &:last-child
+                            max-width: 100%
                             border-bottom: none
                         img
                             display: block
@@ -478,9 +492,10 @@ $textblock: #EAF6F6
                                 color: $accent
                                 font-weight: bold
 
-
             &__submenu
-                width: 357px
+                width: 300px
+                height: auto
+                min-height: 100px
                 border-radius: 4px
                 border: 2px solid $accent
                 z-index: -1
@@ -488,19 +503,17 @@ $textblock: #EAF6F6
                 pointer-events: none
                 left: auto
                 padding: 0
-                right: calc(50% - 255px)
+                right: calc(50% - 350px)
                 transform: translateX(0) translateY(100%)
-                opacity: 0
-                overflow-x: hidden
-                transition: opacity .3s ease
                 .back
                     display: block
                     width: 100%
-                    margin-bottom: 0
+                    margin: 0
                     padding: 1em
                     padding-left: 2em
                     background: $accent
                     color: #ffffff
+                    cursor: pointer
                     position: relative
                     &::before
                         content: ''
@@ -582,7 +595,9 @@ $textblock: #EAF6F6
                     opacity: 0
                     z-index: -1
                     pointer-events: none
-            &.slide
+            &.slide,
+            &.slide1,
+            &.slide2
                 .nav-catalog__menu
                     transform: translateY(50px)
                     opacity: 0
@@ -592,10 +607,21 @@ $textblock: #EAF6F6
                     opacity: 1
                     z-index: 3
                     pointer-events: all
+                    &.slide,
                     &.slide2
                         opacity: 1
                         z-index: 3
                         pointer-events: all
+   
+@media screen and ( max-width: 767.98px )
+    .nav
+        &-mobile
+            padding: 0 calc(50% - 255px)
+
+        &-catalog
+            &__menu,
+            &__submenu
+                right: calc(50% - 255px)
     
     .openSearch
         display: block
@@ -689,6 +715,29 @@ $textblock: #EAF6F6
     .nav
         &-mobile
             padding: 0 1em
+            width: 100%
+            input
+                display: none
+            .catalog-btn
+                flex: 0 0 60%
+            .search
+                flex: 0 0 40%
+                display: flex
+                justify-content: center
+                border-radius: 4px 0 0 4px
+                border: 2px solid $accent
+                border-right: 0
+                background: transparent
+                color: $accent
+                padding: .8em
+                transition: background .5s ease, color .5s ease
+                &:hover
+                    background: transparent
+                    border-color: $accent
+                    color: $accent
+                img
+                    width: 20px
+                    margin-right: 0.5em
 
         &-catalog
             &__menu,
