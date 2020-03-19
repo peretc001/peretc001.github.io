@@ -1,20 +1,3 @@
-@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false )
-	@font-face
-		font-family: $font-family
-		font-weight: $weight
-		font-style: $style
-
-		@if $asset-pipeline == true 
-			src: font-url('#{$file-path}.eot')
-			src: font-url('#{$file-path}.eot?#iefix') format('embedded-opentype'), font-url('#{$file-path}.woff') format('woff'), font-url('#{$file-path}.ttf') format('truetype')
-		@else
-			src: url('#{$file-path}.eot')
-			src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype')
-
-+font-face("SFUIText", "../fonts/SFUIText/SFUIText-Light", 200)
-+font-face("SFUIText", "../fonts/SFUIText/SFUIText-Regular", normal)
-+font-face("SFUIText", "../fonts/SFUIText/SFUIText-Bold", bold)
-
 $bg: #FFF8F8
 $accent: #C251C0
 $blue: #EAF6F6
@@ -51,7 +34,7 @@ body
 
         &__menu
             background-color: $accent
-            padding: 0 calc(50% - 600px)
+            padding: 0 calc(50% - 580px)
             position: relative
             z-index: 6
             display: flex
@@ -80,7 +63,6 @@ body
                 &:first-child
                     text-align: left
                     max-width: 180px
-                    padding-left: 15px
                     &::before
                         display: none
                 &:last-child
@@ -165,7 +147,7 @@ body
             height: 100%
             min-height: 600px
             background: #ffffff
-            padding: 0 calc(50% - 605px)
+            padding: 0 calc(50% - 600px)
             display: flex
             align-items: flex-start
             justify-content: flex-start
@@ -264,7 +246,7 @@ body
                     color: $text
                 span
                     font-size: 2em
-                    color: rgba(127, 125, 125, 0.7)
+                    color: rgba(127, 125, 125, 0.5)
                     text-align: right
                     font-weight: bold
 
@@ -370,7 +352,7 @@ body
     .nav
         &-catalog
             &__menu
-                padding: 0 calc(50% - 480px)
+                padding: 0 calc(50% - 465px)
                 li
                     &:last-child
                         max-width: 140px
@@ -383,7 +365,7 @@ body
             width: 100%
             display: flex
             justify-content: center
-            padding: 0 calc(50% - 350px)
+            padding: 0 calc(50% - 345px)
             margin-bottom: 0.5em
             input,
             .catalog-btn
@@ -448,7 +430,7 @@ body
                 position: absolute
                 top: 0
                 left: auto
-                right: calc(50% - 350px)
+                right: calc(50% - 345px)
                 z-index: -1
                 opacity: 0
                 pointer-events: none
@@ -467,6 +449,24 @@ body
                         padding: 0
                         margin: 0
                         border-bottom: 1px solid lighten($accent, 10%)
+                        position: relative
+                        &::after
+                            content: ''
+                            position: absolute
+                            left: auto
+                            right: 1em
+                            top: 50%
+                            transform: translateY(-50%)
+                            display: inline-block
+                            width: 1em
+                            height: 1em
+                            padding: 0
+                            margin: 0
+                            background-color: transparent
+                            background-size: 100%
+                            background-position: center
+                            background-repeat: no-repeat
+                            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojRkZGRkZGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
                         &::before
                             display: none
                         &:first-child
@@ -488,6 +488,8 @@ body
                                 color: #fff
                         &.top
                             background: #fff
+                            &::after
+                                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojQzI1MUMwIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
                             a
                                 color: $accent
                                 font-weight: bold
@@ -503,7 +505,7 @@ body
                 pointer-events: none
                 left: auto
                 padding: 0
-                right: calc(50% - 350px)
+                right: calc(50% - 345px)
                 transform: translateX(0) translateY(100%)
                 .back
                     display: block
@@ -595,6 +597,7 @@ body
                     opacity: 0
                     z-index: -1
                     pointer-events: none
+
             &.slide,
             &.slide1,
             &.slide2
@@ -607,12 +610,35 @@ body
                     opacity: 1
                     z-index: 3
                     pointer-events: all
-                    &.slide,
+                    &.slide1,
                     &.slide2
                         opacity: 1
                         z-index: 3
                         pointer-events: all
-   
+
+            &:not(.slide2)
+                .nav-catalog__submenu
+                    ul
+                        li
+                            position: relative
+                            &::after
+                                content: ''
+                                position: absolute
+                                left: auto
+                                right: 1em
+                                top: 50%
+                                transform: translateY(-50%)
+                                display: inline-block
+                                width: 1em
+                                height: 1em
+                                padding: 0
+                                margin: 0
+                                background-color: transparent
+                                background-size: 100%
+                                background-position: center
+                                background-repeat: no-repeat
+                                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojNDc0NzQ3IiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+ 
 @media screen and ( max-width: 767.98px )
     .nav
         &-mobile
@@ -622,6 +648,41 @@ body
             &__menu,
             &__submenu
                 right: calc(50% - 255px)
+
+@media screen and ( max-width: 576.98px )
+    .nav
+        &-mobile
+            padding: 0 1em
+            width: 100%
+            input
+                display: none
+            .catalog-btn
+                flex: 0 0 60%
+            .search
+                flex: 0 0 40%
+                display: flex
+                justify-content: center
+                border-radius: 4px 0 0 4px
+                border: 2px solid $accent
+                border-right: 0
+                background: transparent
+                color: $accent
+                padding: .8em
+                transition: background .5s ease, color .5s ease
+                &:hover
+                    background: transparent
+                    border-color: $accent
+                    color: $accent
+                img
+                    width: 20px
+                    margin-right: 0.5em
+
+        &-catalog
+            &__menu,
+            &__submenu
+                width: auto
+                left: 1em
+                right: 1em
     
     .openSearch
         display: block
@@ -692,62 +753,8 @@ body
             margin-left: 1em
             outline: none
 
-        // &-mobile
-        //     padding: 0 calc(50% - 255px)
-        //     & > *
-        //         flex: 0 0 auto
-        //     .btn
-        //         &.search
-        //             flex: 0 0 40%
-        //         &.catalog-btn
-        //             flex: 0 0 60%
-        //     .sale
-        //         display: none
-
-        // &-catalog
-        //     &__menu,
-        //     &__submenu
-        //         right: calc(50% - 255px)
-        //     &__menu__item.sale
-        //         display: block
-
-@media screen and ( max-width: 576.98px )
-    .nav
-        &-mobile
-            padding: 0 1em
-            width: 100%
-            input
-                display: none
-            .catalog-btn
-                flex: 0 0 60%
-            .search
-                flex: 0 0 40%
-                display: flex
-                justify-content: center
-                border-radius: 4px 0 0 4px
-                border: 2px solid $accent
-                border-right: 0
-                background: transparent
-                color: $accent
-                padding: .8em
-                transition: background .5s ease, color .5s ease
-                &:hover
-                    background: transparent
-                    border-color: $accent
-                    color: $accent
-                img
-                    width: 20px
-                    margin-right: 0.5em
-
-        &-catalog
-            &__menu,
-            &__submenu
-                width: auto
-                left: 1em
-                right: 1em
-
 @media screen and ( max-width: 374.98px )
     .nav
         &-mobile
-            .btn
+            .catalog-btn
                 font-size: 0.9em

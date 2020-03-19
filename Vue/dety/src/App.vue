@@ -81,8 +81,7 @@
     <!-- / mobile -->
 
     <!-- desctop -->
-    <div v-if="desctop" class="nav-catalog">
-      <!-- @mouseleave="closeMenu"> -->
+    <div v-if="desctop" class="nav-catalog" @mouseleave="closeMenu">
       <ul class="nav-catalog__menu">
         <li :class="{ active: currentTop == index }"
           v-for="(item,index) of topMenu" :key="index">
