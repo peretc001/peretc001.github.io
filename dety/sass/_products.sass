@@ -477,6 +477,19 @@
         &-card
             &__img
                 text-align: center
+            &__head
+                span
+                    margin-top: 0.5em
+                    flex: 0 0 23px
+                    height: 23px
+                    &:not(:last-child)
+                        margin-left: .3em
+                    &:nth-child(5),
+                    &:nth-child(6)
+                        display: block
+                    svg
+                        width: 23px
+                        height: 33px
 
 @media screen and ( max-width: 767.98px )
     .products
@@ -622,7 +635,8 @@
             .open-filter
                 width: 120px
         &-card
-            padding: 5px 10px 20px 10px    
+            padding: 0 10px 20px 10px
+
             &__title
                 font-size: 1em
                 height: 35px
@@ -662,6 +676,12 @@
             padding: 0 .25em
 
 @media screen and ( max-width: 424.98px )
+    .products
+        &-card
+            &__head
+                span
+                    &:nth-child(6)
+                        display: none
     .resent,
     .visited
         h4
@@ -699,14 +719,6 @@
                 font-size: 0.9em
             .open-filter
                 width: 100px
-
-        &-card
-            &__head
-                span
-                    &:not(:first-child)
-                        margin-left: .3em
-                    svg
-                        height: 53px
 
 @media screen and ( max-width: 374.98px )
     .products
@@ -771,13 +783,9 @@
         &-card
             &__head
                 span
-                    flex: 0 0 28px
-                    height: 28px
-                    &:not(:first-child)
-                        margin-left: .2em
-                    svg
-                        width: 28px
-                        height: 46px
+                    &:nth-child(5)
+                        display: none
+                        
             
     .resent,
     .visited
