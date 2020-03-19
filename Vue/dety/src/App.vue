@@ -3908,13 +3908,15 @@ export default {
       this.currentTop = index
       this.current = 0
       this.show = true
-      this.$nextTick(() => {
-        this.$refs.general.style.height = this.$refs.generalUL.clientHeight + 5 + 'px';
-        this.$refs.generalUL.style.opacity = 0
-        setTimeout(() => {
-          this.$refs.generalUL.style.opacity = 1
-        }, 300);
-      })
+      if (this.width > 991) {
+        this.$nextTick(() => {
+          this.$refs.general.style.height = this.$refs.generalUL.clientHeight + 5 + 'px';
+          this.$refs.generalUL.style.opacity = 0
+          setTimeout(() => {
+            this.$refs.generalUL.style.opacity = 1
+          }, 300);
+        })
+      }
     },
     showSubMenu(index) {
       this.current = index
