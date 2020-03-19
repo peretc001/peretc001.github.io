@@ -3,7 +3,7 @@
     {{ updWindow }}
     <div v-if="!desctop" class="nav-mobile">
       <input type="text" name="search" placeholder="Поиск">
-      <button class="btn btn-outline-accent search" @click="search = !search">
+      <button class="search" @click="search = !search">
         <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTEzLjI4IDUxMy4yOCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEzLjI4IDUxMy4yODsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiBjbGFzcz0iIj48Zz48Zz4KCTxnPgoJCTxwYXRoIGQ9Ik00OTUuMDQsNDA0LjQ4TDQxMC41NiwzMjBjMTUuMzYtMzAuNzIsMjUuNi02Ni41NiwyNS42LTEwMi40QzQzNi4xNiw5Ny4yOCwzMzguODgsMCwyMTguNTYsMFMwLjk2LDk3LjI4LDAuOTYsMjE3LjYgICAgczk3LjI4LDIxNy42LDIxNy42LDIxNy42YzM1Ljg0LDAsNzEuNjgtMTAuMjQsMTAyLjQtMjUuNmw4NC40OCw4NC40OGMyNS42LDI1LjYsNjQsMjUuNiw4OS42LDAgICAgQzUxOC4wOCw0NjguNDgsNTE4LjA4LDQzMC4wOCw0OTUuMDQsNDA0LjQ4eiBNMjE4LjU2LDM4NGMtOTIuMTYsMC0xNjYuNC03NC4yNC0xNjYuNC0xNjYuNFMxMjYuNCw1MS4yLDIxOC41Niw1MS4yICAgIHMxNjYuNCw3NC4yNCwxNjYuNCwxNjYuNFMzMTAuNzIsMzg0LDIxOC41NiwzODR6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNDMjUxQzAiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==" /> Поиск</button>    
       <div class="catalog-btn" @click="mobile = !mobile">
         <div class="icon" :class="{ active: mobile == true }">
@@ -23,7 +23,7 @@
           <ul>
             <li class="nav-catalog__menu__item"
               v-for="(item,index) of mobileMenu" :key="index" :class="{ top: index < 5}" >
-              <a v-if="index < 5" @click.prevent="showMenuMobile(index+1)">
+              <a v-if="index < 5" @click.prevent="showMenuMobile(index+1,true)">
                 <img :src="item.img" alt="">
                 {{item.title}}</a>
               <a v-else @click.prevent="showMenuMobile1(index-5)">
@@ -35,7 +35,7 @@
         
         <transition name="fade3" mode="out-in">
           <div v-if="slide && !slide1 && !slide2" class="nav-catalog__submenu">
-            <p v-if="slide && !slide1 && !slide2" @click="slide = !slide" class="back">{{parrent}}</p>
+            <p v-if="slide && !slide1 && !slide2" @click="backToSubMenu()" class="back">{{parrent}}</p>
             <p v-if="slide && !slide1 && !slide2" class="category"><a :href="parrentURL">Перейти в категорию</a></p>
             <ul v-for="(item,index) of mobileMenuChild" :key="index">
               <li class="first">
@@ -49,7 +49,7 @@
 
         <transition name="fade3" mode="out-in">
           <div v-if="slide1 && !slide2" class="nav-catalog__submenu">
-            <p v-if="slide1 && !slide2" @click="slide1 = !slide1" class="back">{{parrent}}</p>
+            <p v-if="slide1 && !slide2" @click="backToSubMenu2()" class="back">{{parrent}}</p>
             <p v-if="slide1 && !slide2" class="category"><a :href="parrentURL">Перейти в категорию</a></p>
             <ul v-for="(item,index) of mobileMenuChild1" :key="index">
               <li class="first">
@@ -63,7 +63,7 @@
 
         <transition name="fade3" mode="out-in">
           <div v-if="slide2" class="nav-catalog__submenu">
-            <p v-if="slide2" @click="backToSubMenu()" class="back">{{ parrent }}</p>
+            <p v-if="slide2" @click="backToSubMenu3()" class="back">{{ parrent }}</p>
             <p v-if="slide2" class="category"><a :href="parrentURL">Перейти в категорию</a></p>
             <ul v-for="(item,index) of mobileMenuChild2" :key="index">
               <li class="first">
@@ -167,13 +167,14 @@ export default {
       currentTop: 0,
       current: 0,
       currentMobile: 0,
+      group: false,
       parrent: '',
       parrentURL: '',
       width: null,
       find: '',
       catalog: [
         { title: 'Каталог товаров',       class: 'catalog'  },
-        { title: 'Товары по акциям',      title2: 'Акции',        title3: 'Товары по акциям',      url: './catalog.html',  img: require('@/img/sale.svg')  },
+        { title: 'Товары по акциям',      title2: 'Акции',        title3: 'Товары по акциям',      url: './sale.html',  img: require('@/img/sale.svg')  },
         { title: 'Герои и интересы',      title2: 'Герои',        title3: 'Герои и интересы',      url: './catalog.html',  img: require('@/img/hero.svg')  },
         { title: 'Популярные бренды',     title2: 'Бренды',       title3: 'Популярные бренды',     url: './catalog.html',  img: require('@/img/brand.svg') },
         { title: 'Для мальчиков',         title2: 'Мальчикам',    title3: 'Для мальчиков',         url: './catalog.html',  img: require('@/img/boy.svg')   },
@@ -205,9 +206,9 @@ export default {
           },
           //Товары по акциям
           1: {
-            0: { title: 'Игрушки и игры',        url: './catalog.html',  img: require('@/img/cat2.svg')  },
-            1: { title: 'Детская комната',       url: './catalog.html',  img: require('@/img/cat3.svg')  },
-            2: { title: 'Коляски и автокресла',  url: './catalog.html',  img: require('@/img/cat4.svg')  },
+            0: { title: 'Игрушки и игры',        url: './sale2.html',  img: require('@/img/cat2.svg')  },
+            1: { title: 'Детская комната',       url: './sale3.html',  img: require('@/img/cat3.svg')  },
+            2: { title: 'Коляски и автокресла',  url: './sale4.html',  img: require('@/img/cat4.svg')  },
           },
           //Герои и интересы
           2: {
@@ -1063,9 +1064,36 @@ export default {
           },
         },
         1: {
-          0: { 
+          0: {
             0: {
-              title: 'Одежда2',
+              title: 'Игрушки для ванной',
+              url: './sale10.html',
+              child: {
+                0: { title: 'Игрушка1', url: './category.html' },
+                1: { title: 'Игрушка2', url: './category.html' },
+                2: { title: 'Игрушка3', url: './category.html' },
+              }
+            },
+            1: {
+              title: 'Игрушечки',
+              url: './sale11.html',
+              child: {
+                0: { title: 'Игрушечки1', url: './category.html' },
+                1: { title: 'Игрушечки2', url: './category.html' },
+                2: { title: 'Игрушечки3', url: './category.html' },
+                3: { title: 'Игрушечки4', url: './category.html' },
+                4: { title: 'Игрушечки5', url: './category.html' },
+                5: { title: 'Игрушечки6', url: './category.html' },
+                6: { title: 'Игрушечки7', url: './category.html' },
+                7: { title: 'Игрушечки8', url: './category.html' },
+                8: { title: 'Игрушечки9', url: './category.html' },
+                9: { title: 'Игрушечки10', url: './category.html' }
+              }
+            },
+          },
+          1: { 
+            0: {
+              title: 'Игрушки для детей',
               url: './category00.html',
               child: {
                 0: { title: 'Верхняя одежда для мальчиков22', url: './category.html' },
@@ -1100,33 +1128,6 @@ export default {
                 4: { title: 'Резиновые сапоги', url: './category.html' },
               }
             }
-          },
-          1: {
-            0: {
-              title: 'Игрушки для ванной',
-              url: './category10.html',
-              child: {
-                0: { title: 'Верхняя одежда для мальчиков', url: './category.html' },
-                1: { title: 'Верхняя одежда для девочек', url: './category.html' },
-                2: { title: 'Верхняя одежда для малышей', url: './category.html' },
-              }
-            },
-            1: {
-              title: 'Одежда для девочек2',
-              url: './category11.html',
-              child: {
-                0: { title: 'Блузки', url: './category.html' },
-                1: { title: 'Брюки', url: './category.html' },
-                2: { title: 'Джемперы', url: './category.html' },
-                3: { title: 'Джинсы', url: './category.html' },
-                4: { title: 'Кардиганы', url: './category.html' },
-                5: { title: 'Блузки', url: './category.html' },
-                6: { title: 'Брюки', url: './category.html' },
-                7: { title: 'Джемперы', url: './category.html' },
-                8: { title: 'Джинсы', url: './category.html' },
-                9: { title: 'Кардиганы', url: './category.html' }
-              }
-            },
           },
           2: {
             0: {
@@ -3923,38 +3924,47 @@ export default {
       this.current = 0
       this.show = false
     },
-    showMenuMobile(index) {
-      console.log('id: ' + index)
+    showMenuMobile(index,group) {
+      this.group = group
       this.currentMobile = index
       this.slide = true
-      this.parrent = this.catalog[index].title
-      this.parrentURL = this.catalog[index].url
+      this.parrent = this.catalog[this.currentMobile].title
+      this.parrentURL = this.catalog[this.currentMobile].url
       if (window.pageYOffset > 20) document.querySelector('.nav-mobile').scrollIntoView({block: "start", behavior: "smooth"})
     },
     showMenuMobile1(index) {
-      this.currentMobile = 0
+      !this.group ? this.currentMobile = 0 : ''
       this.currentTop = index
       this.slide1 = true
-      this.parrent = this.catalogLeft[0][index].title
-      this.parrentURL = this.catalogLeft[0][index].url
+      this.parrent = this.catalogLeft[this.currentMobile][index].title
+      this.parrentURL = this.catalogLeft[this.currentMobile][index].url
       if (window.pageYOffset > 20) document.querySelector('.nav-mobile').scrollIntoView({block: "start", behavior: "smooth"})
     },
     showMenuMobile2(index) {
       this.current = index
-      this.parrent = this.catalogRight[0][this.currentTop][index].title
-      this.parrentURL = this.catalogRight[0][this.currentTop][index].url
+      this.parrent = this.catalogRight[this.currentMobile][this.currentTop][index].title
+      this.parrentURL = this.catalogRight[this.currentMobile][this.currentTop][index].url
       this.slide2 = true
       if (window.pageYOffset > 20) document.querySelector('.nav-mobile').scrollIntoView({block: "start", behavior: "smooth"})
     },
     backToSubMenu() {
-      this.parrent = this.catalogLeft[0][this.currentTop].title
-      this.parrentURL = this.catalogLeft[0][this.currentTop].url
+      this.slide = false
+      this.group = false
+    },
+    backToSubMenu2() {
+      !this.group ? this.parrent = this.catalog[this.currentMobile].title : this.parrent = this.catalog[this.currentMobile].title
+      this.slide1 = false
+    },
+    backToSubMenu3() {
+      this.parrent = this.catalogLeft[this.currentMobile][this.currentTop].title
+      this.parrentURL = this.catalogLeft[this.currentMobile][this.currentTop].url
       this.slide2 = false
-      this.showMenu = this.catalogRight[this.current]
     },
     closeAll() {
+      this.group = false
       this.slide2 = false
       this.slide1 = false
+      this.slide = false
       this.mobile = false
     },
     updateWidth() {
@@ -3985,7 +3995,8 @@ export default {
     },
     cat() {
       return this.catalog[this.currentTop].title
-    },title() {
+    },
+    title() {
       return this.catalogLeftMenu[this.current].title
     },
     topMenu() {
@@ -4021,11 +4032,10 @@ export default {
       return this.catalogMobile = this.catalogLeft[this.currentMobile]
     },
     mobileMenuChild1() {
-      console.log(this.currentMobile)
       return this.catalogMobile = this.catalogRight[this.currentMobile][this.currentTop]
     },
     mobileMenuChild2() {
-      return this.catalogMobile = this.catalogRight[0][this.currentTop][this.current].child
+      return this.catalogMobile = this.catalogRight[this.currentMobile][this.currentTop][this.current].child
     }
   }
 }

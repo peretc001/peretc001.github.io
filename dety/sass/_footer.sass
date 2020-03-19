@@ -51,6 +51,12 @@ footer
 
     .row
         [class*="col-"]
+            &:last-child
+                display: flex
+                flex-direction: column
+                .policy
+                    margin-top: auto
+                    align-self: flex-end
             p
                 b
                     font-size: 1.2em
@@ -85,6 +91,12 @@ footer
             img
                 width: 1.5em
     
+    .policy
+        a
+            display: inline-block
+            color: $text
+            line-height: 1.5
+    
     .toTop
         display: none
         position: fixed
@@ -113,8 +125,7 @@ footer
             display: flex
             align-items: center
             justify-content: center
-            span,
-            a
+            span
                 flex: 0 0 50%
                 &:first-child
                     text-align: right
@@ -125,8 +136,6 @@ footer
                 &:last-child
                     text-align: left
                     padding-left: .25em
-            a
-                color: $text
 
 @media screen and ( max-width: 1199.98px )
     footer
@@ -141,6 +150,9 @@ footer
                 &__form
                     flex: 1 0 50%
                     padding-left: 15px
+        .policy
+            a
+                font-size: 0.9em
 
 @media screen and ( max-width: 991.98px )
     footer
@@ -157,7 +169,7 @@ footer
 @media screen and ( max-width: 767.98px )
     footer
         .copyright
-            margin: 0px auto 0 auto
+            margin-top: 3em
             padding: 0 0 20px 0
             .policy
                 display: none

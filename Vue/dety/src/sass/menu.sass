@@ -406,7 +406,7 @@ body
                         display: inline-block
                         width: 10px
                         height: 10px
-                        background: $yellow
+                        background: #fff
                         border-radius: 2px
                         margin-right: 4px
                         &:nth-child(1),
@@ -643,6 +643,8 @@ body
     .nav
         &-mobile
             padding: 0 calc(50% - 255px)
+            .catalog-btn
+                flex: 0 0 200px
 
         &-catalog
             &__menu,
@@ -668,6 +670,8 @@ body
                 background: transparent
                 color: $accent
                 padding: .8em
+                outline: none
+                box-shadow: none
                 transition: background .5s ease, color .5s ease
                 &:hover
                     background: transparent
