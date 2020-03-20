@@ -152,8 +152,6 @@ if (document.querySelector('.modal')) {
                         }, 100);
                     } else smsInput[2].focus()
                 })
-
-                
             }
             loginForm.addEventListener('submit', (event) => {
                 event.preventDefault()
@@ -173,9 +171,6 @@ if (document.querySelector('.modal')) {
                         }, 300);
                     }, 200);
                 }, 100);
-                
-                
-                
             })
 
             openCityList.addEventListener('click', (event) => {
@@ -205,7 +200,7 @@ if (document.querySelector('.modal')) {
             btnInModalMenu.forEach(elem => {
                 elem.addEventListener('click', (event) => {
                     event.preventDefault()
-                    hModal()
+                    // hModal()
                     setTimeout(() => {
                         showModal(event)
                     }, 300);                    
@@ -264,7 +259,92 @@ if ( document.querySelector('.tabs') ) {
             })
 }
 
+
+let inputs = document.querySelectorAll('.phone-mask');
+
+Array.prototype.forEach.call(inputs, function(input) {
+    new InputMask({
+        selector: input,
+        layout: input.dataset.mask
+    })
+    input.addEventListener('click', function() {
+        if (this.value == '+7') this.setSelectionRange(2,2);
+    })
+})
+
 });
+
+function InputMask(options) {
+    this.el = this.getElement(options.selector);
+    if (!this.el) return console.log('Что-то не так с селектором');
+    this.layout = options.layout || '+7 (___) ___-__-__';
+    this.maskreg = this.getRegexp();
+
+    this.setListeners();
+}
+
+InputMask.prototype.getRegexp = function() {
+    var str = this.layout.replace(/_/g, '\\d')
+    str = str.replace(/\(/g, '\\(')
+    str = str.replace(/\)/g, '\\)')
+    str = str.replace(/\+/g, '\\+')
+    str = str.replace(/\s/g, '\\s')
+
+    return str;
+}
+
+InputMask.prototype.mask = function(e) {
+    var _this = e.target,
+        matrix = this.layout,
+        i = 0,
+        def = matrix.replace(/\D/g, ""),
+        val = _this.value.replace(/\D/g, "");
+
+    if (def.length >= val.length) val = def;
+
+    _this.value = matrix.replace(/./g, function(a) {
+        return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
+    });
+
+    if (e.type == "blur") {
+        var regexp = new RegExp(this.maskreg);
+        if (!regexp.test(_this.value)) _this.value = "";
+    } else {
+        this.setCursorPosition(_this.value.length, _this);
+    }
+}
+
+InputMask.prototype.setCursorPosition = function(pos, elem) {
+    elem.focus();
+    if (elem.setSelectionRange) elem.setSelectionRange(pos, pos);
+    else if (elem.createTextRange) {
+        var range = elem.createTextRange();
+        range.collapse(true);
+        range.moveEnd("character", pos);
+        range.moveStart("character", pos);
+        range.select()
+    }
+}
+
+InputMask.prototype.setListeners = function() {
+    this.el.addEventListener("input", this.mask.bind(this), false);
+    this.el.addEventListener("focus", this.mask.bind(this), false);
+    this.el.addEventListener("blur", this.mask.bind(this), false);
+}
+
+InputMask.prototype.getElement = function(selector) {
+    if (selector === undefined) return false;
+    if (this.isElement(selector)) return selector;
+    if (typeof selector == 'string') {
+        var el = document.querySelector(selector);
+        if (this.isElement(el)) return el;
+    }
+    return false
+}
+
+InputMask.prototype.isElement = function(element) {
+    return element instanceof Element || element instanceof HTMLDocument;
+}
 
 $( document ).ready(function() {
     $('.lazy').Lazy({
@@ -272,20 +352,4 @@ $( document ).ready(function() {
         effectTime: 500,
         threshold: 0
     });
-
-    $.fn.setCursorPosition = function(pos) {
-        if ($(this).get(0).setSelectionRange) {
-          $(this).get(0).setSelectionRange(pos, pos);
-        } else if ($(this).get(0).createTextRange) {
-          var range = $(this).get(0).createTextRange();
-          range.collapse(true);
-          range.moveEnd('character', pos);
-          range.moveStart('character', pos);
-          range.select();
-        }
-    };
-    $('.phone-mask').on('click', function(){
-        if ($(this).val() == '+7 (___) ___-__-__') $(this).setCursorPosition(4);
-    })
-    $('.phone-mask').mask("+7 (999) 999-99-99");
 });
