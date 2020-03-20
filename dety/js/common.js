@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth    
+let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+let iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)
+
 const preventDefault = (e) => {
     e.preventDefault();
 }
@@ -60,7 +62,6 @@ if (document.querySelector('.modal')) {
                     modal.classList.contains('in-menu') ? modal.classList.remove('in-menu') : ''
                 }, 200);
                 document.querySelector('.hamburger').classList.remove('open')
-                modal.querySelectorAll('input').forEach(item => item.blur())
                 enableScroll()
             }
             const hideModal = () => {
@@ -113,13 +114,14 @@ if (document.querySelector('.modal')) {
             const showCityList = () => {}
             
             const smsInsert = (event) => {
-                smsInput[0].addEventListener('keyup', function() {
+                smsInput[0].focus();
+                smsInput[0].addEventListener('keydown', function() {
                     this.value != '' ? smsInput[1].focus() : ''
                 })
-                smsInput[1].addEventListener('keyup', function() {
+                smsInput[1].addEventListener('keydown', function() {
                     this.value != '' ? smsInput[2].focus() : smsInput[0].focus()
                 })
-                smsInput[2].addEventListener('keyup', function() {
+                smsInput[2].addEventListener('keydown', function() {
                     this.value != '' ? smsInput[3].focus() : smsInput[1].focus()
                 })
                 smsInput[3].addEventListener('keyup', function() {
@@ -155,22 +157,27 @@ if (document.querySelector('.modal')) {
             }
             loginForm.addEventListener('submit', (event) => {
                 event.preventDefault()
-                loginForm.querySelector('.phone-mask').blur()
                 loginForm.classList.remove('active')
                 smsInput[0].value = ''; smsInput[1].value = ''; smsInput[2].value = ''; smsInput[3].value = ''
-                setTimeout(() => {
+                if (!iOS) {
                     setTimeout(() => {
-                        smsForm.classList.add('fade')
-                    }, 100);
-                    loginForm.classList.remove('fade')
-                    setTimeout(() => {
-                        smsForm.classList.add('active')
                         setTimeout(() => {
-                            smsInsert()
-                            smsInput[0].focus();
-                        }, 300);
-                    }, 200);
-                }, 100);
+                            smsForm.classList.add('fade')
+                        }, 100);
+                        loginForm.classList.remove('fade')
+                        setTimeout(() => {
+                            smsForm.classList.add('active')
+                            setTimeout(() => {
+                                smsInsert()
+                            }, 300);
+                        }, 200);
+                    }, 100);
+                } else {
+                    smsForm.classList.add('fade')
+                    loginForm.classList.remove('fade')
+                    smsForm.classList.add('active')
+                    smsInsert()
+                }
             })
 
             openCityList.addEventListener('click', (event) => {
@@ -196,15 +203,44 @@ if (document.querySelector('.modal')) {
 
             !city ? window.onload = showCityOnLoad() : ''
 
-            const btnInModalMenu = document.querySelectorAll('[data-mobile="yes"]')
-            btnInModalMenu.forEach(elem => {
-                elem.addEventListener('click', (event) => {
-                    event.preventDefault()
-                    // hModal()
+            const hFastModal = () => {
+                modal.querySelector('.is-active') ? modal.querySelector('.is-active').classList.remove('is-active') : ''
+                modal.querySelector('.is-fade') ? modal.querySelector('.is-fade').classList.remove('is-fade') : ''
+                modal.classList.remove('is-active')
+                modal.classList.contains('in') ? modal.classList.remove('in') : ''
+                modal.classList.contains('in-menu') ? modal.classList.remove('in-menu') : ''
+                document.querySelector('.hamburger').classList.remove('open')
+            }
+            const btnShowLoginInMenu = modal.querySelector('.button.login')
+            btnShowLoginInMenu.addEventListener('click', (event) => {
+                event.preventDefault()
+                if (iOS) {
+                    hFastModal()
+                    disableScroll()
+                    const current = document.querySelector('.modal-body.login')
+                    modal.classList.add('in')
+                    current.classList.add('is-fade')
+                    loginForm.classList.add('fade')
+                    loginForm.classList.add('active')
+                    modal.classList.add('is-active')
+                    current.classList.add('is-active')
+                    current.querySelector('.phone-mask').setAttribute('autofocus', 'autofocus');
+                    current.querySelector('.phone-mask').focus()
+                } else {
+                    event.target.dataset.target = 'login'
+                    hModal()
                     setTimeout(() => {
                         showModal(event)
-                    }, 300);                    
-                })
+                    }, 300);
+                }
+            })
+
+            const btnShowCityInMenu = modal.querySelector('.button.city')
+            btnShowCityInMenu.addEventListener('click', (event) => {
+                event.preventDefault()
+                setTimeout(() => {
+                    showModal(event)
+                }, 300);
             })
 
             modal.addEventListener('click', (event) => event.target == modal || event.target == modal.children[0] ? hideModal() : '')
