@@ -175,7 +175,7 @@
               <div class="products-page-body__buy__size">
                 <div class="products-page-body__buy__size__head">
                   <p class="caption">Размер</p>
-                  <a class="table" href="">Таблица размеров</a>
+                  <a class="table" data-toggle="modal" data-target="size">Таблица размеров</a>
                 </div>
                 <div class="products-page-body__buy__size__block">
                   <a href="" class="active">128</a>
@@ -1016,12 +1016,11 @@
     </div>
   </section>
 
+  <div class="toTop"><span><i></i>Наверх</span></div>
 </main>
 
 <footer>
-  <div class="container">
-    <div class="toTop"><span><i></i>Наверх</span></div>
-    
+  <div class="container">    
     <div class="email-form">
       <div class="email-form-block">
         <div class="email-form-block__title">
@@ -1073,20 +1072,23 @@
         <p><b>Сообщество </b></p>
         <p>Мы в социальных сетях</p>
         <div class="social">
-          <a href=""><img src="./img/social/ok.svg" alt=""></a>
+          <a href=""><img src="./img/social/instagram.svg" alt=""></a>
           <a href=""><img src="./img/social/vk.svg" alt=""></a>
-          <a href=""><img src="./img/social/insta.svg" alt=""></a>
           <a href=""><img src="./img/social/youtube.svg" alt=""></a>
+          <a href=""><img src="./img/social/ok.svg" alt=""></a>
         </div>
-        <p class="policy">
-          <a href="">Пользовательское соглашение</a>
-          <a href="">Политика конфеденциальности</a>
-        </p>
       </div>
     </div>
 
     <div class="copyright">
-      <p><span>© 2019-2020. ВсёДляДеток.ру</span> <span>Большой магазин для маленьких</span></p>
+      <p>© 2019-2020. ВсёДляДеток.ру</p>
+      <p class="policy">
+        <a href="">Пользовательское соглашение</a>
+        <a href="">Политика конфеденциальности</a>
+      </p>
+      <p class="created">
+        Разработка сайта: <a href="">Смарт Сателлит</a>
+      </p>
     </div>
   </div>
 </footer>
@@ -1217,6 +1219,7 @@
       <div class="complete"><p>Готово</p></div>
     </div>
 
+
     <!-- IF PRODUCT-PAGE -->
     <!-- Modal REVIEW -->
     <div class="modal-body review" data-modal="review">
@@ -1309,6 +1312,238 @@
           <button type="submit" class="btn btn-accent">Отправить</button>
         </div>
       </form>
+    </div>
+     <!-- Modal Size Table -->
+     <div class="modal-body size" data-modal="size">
+      <span class="close" data-close="close"></span>
+      <div class="size-table">
+        <p class="caption">Таблица размеров</p>
+        <p class="desc">Одежда для девочек и мальчиков</p>
+        <div class="size-table--head">
+            <div class="size-table--left">
+              <img src="./img/products/card/size-table.png" alt="">
+            </div>
+            <ul class="size-table--right">
+                <li>Обхват груди: <span>по выступающим точкам груди</span></li>
+                <li>Обхват талии: <span>по самой узкой части талии</span></li>
+                <li>Обхват бедер: <span>по выступающим точкам бедер</span></li>
+            </ul>
+        </div>
+        <div class="size-table--wrap clothes">
+          <table>
+            <thead>
+              <tr>
+                <td>Размер</td>
+                <td>Возраст</td>
+                <td>Рост, см</td>
+                <td>Грудь, см</td>
+                <td>Талия, см</td>
+                <td>Бёдра, см</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>98</td>
+                <td>2-3 года</td>
+                <td>92-98</td>
+                <td>55</td>
+                <td>52</td>
+                <td>57</td>
+              </tr>
+              <tr>
+                <td>104</td>
+                <td>4 года</td>
+                <td>98-104</td>
+                <td>55</td>
+                <td>53</td>
+                <td>58</td>
+              </tr>
+              <tr>
+                <td>110</td>
+                <td>4,5 года</td>
+                <td>104-110</td>
+                <td>57</td>
+                <td>54</td>
+                <td>59</td>
+              </tr>
+              <tr>
+                <td>116</td>
+                <td>5 лет</td>
+                <td>110-116</td>
+                <td>59</td>
+                <td>55</td>
+                <td>61</td>
+              </tr>
+              <tr>
+                <td>122</td>
+                <td>6 лет</td>
+                <td>116-122</td>
+                <td>62</td>
+                <td>57</td>
+                <td>64</td>
+              </tr>
+              <tr>
+                <td>128</td>
+                <td>7 лет</td>
+                <td>122-128</td>
+                <td>65</td>
+                <td>59</td>
+                <td>67</td>
+              </tr>
+              <tr>
+                <td>134</td>
+                <td>8 лет</td>
+                <td>128-134</td>
+                <td>68</td>
+                <td>61</td>
+                <td>70</td>
+              </tr>
+              <tr>
+                <td>140</td>
+                <td>9 лет</td>
+                <td>134-140</td>
+                <td>71</td>
+                <td>63</td>
+                <td>73</td>
+              </tr>
+              <tr>
+                <td>146</td>
+                <td>10 лет</td>
+                <td>140-146</td>
+                <td>74</td>
+                <td>65</td>
+                <td>76</td>
+              </tr>
+              <tr>
+                <td>152</td>
+                <td>11 лет</td>
+                <td>146-152</td>
+                <td>79</td>
+                <td>68</td>
+                <td>81</td>
+              </tr>
+              <tr>
+                <td>158-164</td>
+                <td>12 лет</td>
+                <td>158-164</td>
+                <td>82-84</td>
+                <td>70-72</td>
+                <td>83-86</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- <p class="caption">Таблица размеров</p>
+        <p class="desc">Обувь для девочек и мальчиков</p>
+        <div class="size-table--wrap shoes">
+          <table>
+            <thead>
+              <tr>
+                <td>Размер</td>
+                <td>Возраст</td>
+                <td>Длина стопы, см</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>17</td>
+                <td>0-1</td>
+                <td>10,5</td>
+              </tr>
+              <tr>
+                <td>18</td>
+                <td>0-1</td>
+                <td>11</td>
+              </tr>
+              <tr>
+                <td>19</td>
+                <td>0-1</td>
+                <td>11,5</td>
+              </tr>
+              <tr>
+                <td>20</td>
+                <td>1-2</td>
+                <td>12,5</td>
+              </tr>
+              <tr>
+                <td>21</td>
+                <td>1-2</td>
+                <td>13</td>
+              </tr>
+              <tr>
+                <td>22</td>
+                <td>1-2</td>
+                <td>13,5</td>
+              </tr>
+              <tr>
+                <td>23</td>
+                <td>2-3</td>
+                <td>14,5</td>
+              </tr>
+              <tr>
+                <td>24</td>
+                <td>2-3</td>
+                <td>15</td>
+              </tr>
+              <tr>
+                <td>25</td>
+                <td>3-4</td>
+                <td>15,5</td>
+              </tr>
+              <tr>
+                <td>25,5</td>
+                <td>3-4</td>
+                <td>16</td>
+              </tr>
+              <tr>
+                <td>26</td>
+                <td>3-4</td>
+                <td>16,5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div> -->
+
+        <!-- <p class="caption">Таблица размеров</p>
+        <p class="desc">Перчатки и варежки</p>
+        <div class="size-table--wrap gloves">
+          <table>
+            <thead>
+              <tr>
+                <td>Размер</td>
+                <td>Возраст</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>11</td>
+                <td>0-12 мес.</td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>12-24 мес.</td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td>2-4 года</td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td>4-6 лет</td>
+              </tr>
+              <tr>
+                <td>16</td>
+                <td>7-10 лет</td>
+              </tr>
+              <tr>
+                <td>18</td>
+                <td>10-12 лет</td>
+              </tr>
+            </tbody>
+          </table>
+        </div> -->
+      </div>
     </div>
   </div>
 </div>

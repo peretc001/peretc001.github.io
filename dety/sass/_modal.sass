@@ -490,6 +490,129 @@
             list-style: none
         a
             color: $text
+        
+        &.size
+            max-width: 100%
+            left: 0
+            top: 15px
+            right: 0
+            margin-bottom: 15px
+            transform: translateY(0) translateX(0)
+            .size-table
+                .caption
+                    font-weight: bold
+                    font-size: 2em
+                    margin-bottom: .5em
+                .desc
+                    font-weight: bold
+                    font-size: 1.5em
+                    margin-bottom: 1em
+                &--head
+                    display: flex
+                    align-items: center
+                    margin-bottom: 2em
+                &--left
+                    flex: 0 0 410px
+                &--right
+                    flex: 1 0 auto
+                    margin: 0
+                    padding: 0
+                    padding-left: 6em
+                    counter-reset: myCounter
+                    li
+                        list-style: none
+                        padding: 0
+                        margin: 0
+                        padding: 1em 0
+                        font-weight: bold
+                        font-size: 1.5em
+                        position: relative
+                        border-bottom: 2px solid $red
+                        &::before
+                            counter-increment: myCounter
+                            content: counter(myCounter)
+                            position: absolute
+                            left: -60px
+                            top: 50%
+                            transform: translateY(-50%)
+                            color: $red
+                            font-size: 60px
+                        span
+                            padding-top: 0.5em
+                            display: block
+                            font-size: 1.1rem
+                            font-weight: normal
+
+                &--wrap
+                    width: 100%
+                    overflow-x: auto
+                    padding-bottom: 1em
+                    &.clothes
+                        table
+                            width: 100%
+                            min-width: 600px
+                    &.shoes
+                        table
+                            width: 100%
+                            max-width: 700px
+                            td
+                                width: 33%
+                    &.gloves
+                        table
+                            width: 100%
+                            max-width: 400px
+                            td
+                                width: 50%
+                
+                table
+                    border-top: 2px solid $blue
+                    thead
+                        td
+                            text-align: center
+                            font-size: 1.2em
+                            padding: 1em .5em 2em .5em
+                            &:not(:first-child)
+                                border-left: 2px solid $blue
+                    tbody
+                        padding: 0
+                        margin: 0
+                        tr
+                            &:nth-child(odd)
+                                background: $blue                    
+                        td
+                            text-align: center
+                            padding: .8em
+                            font-size: 1.1em
+                            &:not(:first-child)
+                                border-left: 2px solid $blue
+                            &:first-child
+                                border-radius: 4px 0 0 4px
+                                font-weight: bold
+                                font-size: 1.2em
+                            &:last-child
+                                border-radius: 0 4px 4px 0
+                &.is-active
+                    transform: translateY(0)
+                    box-shadow: none
+
+@media screen and ( max-width: 991.98px )
+    .modal
+        &-body
+            &.size
+                padding: 2em
+                .size-table
+                    &--left
+                        flex: 0 0 300px
+                    table
+                        thead
+                            td
+                                font-size: 1em
+                                padding-bottom: 1em
+                        tbody
+                            td
+                                font-size: 1em
+                                &:first-child
+                                    font-size: 1.1em
 
 @media screen and ( max-width: 767.98px )
     .modal
@@ -511,6 +634,27 @@
             &.sms
                 p
                     text-align: center
+
+            &.size
+                .size-table
+                    .caption
+                        font-size: 1.3em
+                    .desc
+                        font-size: 1.1em
+                    &--left
+                        flex: 0 0 190px
+                    &--right
+                        padding-left: 50px
+                        li
+                            font-size: 1em
+                            &::before
+                                left: -30px
+                                font-size: 30px
+                            span
+                                padding-top: 0.5em
+                                display: block
+                                font-size: .9rem
+                                font-weight: normal
 
 @media screen and ( max-width: 576.98px )
     .modal
@@ -550,6 +694,30 @@
                             margin-bottom: 0
                             p
                                 margin-bottom: 1em
+    
+            &.size
+                .size-table
+                    &--head
+                        flex-wrap: wrap
+                    &--left
+                        flex: 0 0 100%
+                        margin-bottom: 1em
+                    &--right
+                        flex: 0 0 100%
+                        padding-left: 40px
+                        li
+                            &::before
+                                left: -40px
+                    &--wrap
+                        &.clothes
+                            table
+                                min-width: 550px
+                        &.shoes
+                            table
+                                max-width: 400px
+                        &.gloves
+                            table
+                                max-width: 300px
 
 @media screen and ( max-width: 374.98px )
     .modal

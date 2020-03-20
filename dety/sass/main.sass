@@ -14,7 +14,8 @@ body
 	opacity: 0
 	-webkit-text-size-adjust: 100%
 	&.no-scroll
-		overflow: hidden
+		&:not(.modal)
+			overflow: hidden
 	&.fade
 		background: #000
 		opacity: .5

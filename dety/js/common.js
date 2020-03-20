@@ -50,6 +50,7 @@ if (document.querySelector('.modal')) {
                 }
             }
             const hModal = () => {
+                document.body.classList.contains('no-scroll') ? document.body.classList.remove('no-scroll')  : ''
                 modal.querySelector('.is-active') ? modal.querySelector('.is-active').classList.remove('is-active') : ''
                 setTimeout(() => {
                     modal.querySelector('.is-fade') ? modal.querySelector('.is-fade').classList.remove('is-fade') : ''
@@ -70,7 +71,8 @@ if (document.querySelector('.modal')) {
                 document.removeEventListener('click', hideModalCloseBtn())
             }
             const showModal = (event) => {
-                event.target.dataset.target == 'menu' ? '' : disableScroll()
+                event.target.dataset.target == 'menu' || event.target.dataset.target == 'size' ? '' : disableScroll()
+                event.target.dataset.target == 'size' ? document.body.classList.add('no-scroll')  : ''
                 event.target.dataset.target == 'menu' ? document.querySelector('.hamburger').classList.add('open') : ''
                 if (event.target.dataset.target == 'login') {
                     smsForm.classList.remove('active')
@@ -87,6 +89,7 @@ if (document.querySelector('.modal')) {
                 }
                 const current = document.querySelector('[data-modal="'+ event.target.dataset.target +'"]')
                 event.target.dataset.target == 'menu' || event.target.dataset.target == 'city' ? modal.classList.add('in-menu') : modal.classList.add('in')
+
                 current.classList.add('is-fade')
                 setTimeout(() => {
                     modal.classList.add('is-active')
