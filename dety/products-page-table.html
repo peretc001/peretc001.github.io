@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Карточка товара</title>
+  <style>
+     body {opacity: 0; overflow-x: hidden; background: #FFF8F8;}
+  </style>
+
+<!-- Products card css -->
+  <link rel="stylesheet" href="./css/products-page/products-page.min.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-top">
+    <div class="container">
+      <div class="nav-top__city">
+        <a class="nav-top__city__location" data-toggle="modal" data-target="city" href="#">Санкт-Петербург</a>
+        <div class="nav-top__city__location__item">
+          <a href="#">Пункты выдачи</a>
+          <a href="">Условия доставки</a>
+        </div>
+      </div>
+      <div class="nav-top__right">
+        <a class="nav-top__right__phone" href="tel:8-800-600-77-27">8-800-600-77-27</a>
+        <span class="nav-top__right__time">(9:00 - 22:00)</span>
+        <div class="has-children">
+          <a class="nav-top__right__user">Покупателям</a>
+          <ul>
+            <li><a href="">Проверка заказа</a></li>
+            <li><a href="">Доставка и оплата</a></li>
+            <li><a href="">Гарантии и возврат</a></li>
+            <li><a href="">Покупай со Сбербанком</a></li>
+            <li><a href="">Полезные материалы</a></li>
+            <li><a href="">Бонусная программа</a></li>
+            <li><a href="">Подарочные карты</a></li>
+          </ul>
+        </div>
+        <a class="nav-top__right__login" data-toggle="modal" data-target="login" href="#">Войти</a>
+        <a class="nav-top__right__lk" href="/">Гость</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-search">
+    <div class="container">
+      <div class="hamburger" data-toggle="modal" data-target="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <a href="./" class="brand"></a>
+      <form action="/" method="post" class="nav-search__form">
+        <input type="text" name="search" value="" placeholder="Поиск по сайту">
+      </form>
+      <div class="nav-search--right">
+        <a href="" class="nav-search--right__wishlist active">
+          <!-- <span>2</span> -->
+        </a>
+        <a href="" class="nav-search--right__cart">
+          <!-- <span class="qty">3</span>
+          <span class="price">5 750 ₽</span> -->
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id=app></div>
+</nav>
+  
+<main>
+  
+    <div class="size-table">
+        <p class="caption">
+            Таблица размеров
+        </p>
+        <p class="desc">Одежда для девочек и мальчиков</p>
+        <div class="size-table--head">
+            <img src="./img/products/card/size-table.png" alt="">
+                <ul class="size-table--right">
+                    <li>Обхват груди:<span>по выступающим точкам груди</span></li>
+                    <li>Обхват талии::<span>по самой узкой части талии</span></li>
+                    <li>Обхват бедер::<span>по выступающим точкам бедер</span></li>
+                </ul>
+        </div>
+    </div>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="toTop"><span><i></i>Наверх</span></div>
+    
+    <div class="email-form">
+      <div class="email-form-block">
+        <div class="email-form-block__title">
+          <img src="./img/email-form/email.svg" alt=" Узнавайте о выгодных  предложениях первыми!">
+          <p>Узнавайте о выгодных предложениях первыми!</p>
+        </div>
+        <form class="email-form-block__form">
+          <input type="email" name="email" value="" placeholder="Ваш e-mail" required>
+          <button class="btn btn-send">Подписаться</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <p><b>ВсёДляДеток.ру</b></p>
+          <ul>
+              <li><a href="">О компании</a></li>
+              <li><a href="">Пункты выдачи</a></li>
+              <li><a href="">Розничные магазины</a></li>
+              <li><a href="">Контакты</a></li>
+              <li><a href="">Отзывы</a></li>
+          </ul>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <p><b>Покупателям</b></p>
+          <ul>
+            <li><a href="">Проверка заказа</a></li>
+            <li><a href="">Гарантии и возврат</a></li>
+            <li><a href="">Доставка и оплата</a></li>
+            <li><a href="">Полезные материалы</a></li>
+            <li><a href="">Покупай со Сбербанком</a></li>
+            <li><a href="">Бонусная программа</a></li>
+            <li><a href="">Подарочные карты</a></li>
+          </ul>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <p><b>Обратная связь</b></p>
+          <ul>
+            <li><a href="">Заказать звонок</a></li>
+            <li><a href="">Заявка на возврат</a></li>
+            <li><a href="">Заявка на обмен</a></li>
+            <li><a href="">Оставить отзыв</a></li>
+            <li><a href="">Благодарность</a></li>
+            <li><a href="">Пожаловаться</a></li>
+          </ul>
+      </div>
+      <div class="col-sm-6 col-md-4 offset-md-4 col-lg-3 offset-lg-0">
+        <p><b>Сообщество </b></p>
+        <p>Мы в социальных сетях</p>
+        <div class="social">
+          <a href=""><img src="./img/social/ok.svg" alt=""></a>
+          <a href=""><img src="./img/social/vk.svg" alt=""></a>
+          <a href=""><img src="./img/social/insta.svg" alt=""></a>
+          <a href=""><img src="./img/social/youtube.svg" alt=""></a>
+        </div>
+        <p class="policy">
+          <a href="">Пользовательское соглашение</a>
+          <a href="">Политика конфеденциальности</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p><span>© 2019-2020. ВсёДляДеток.ру</span> <span>Большой магазин для маленьких</span></p>
+    </div>
+  </div>
+</footer>
+
+<div class="modal">
+  <div class="container">
+    <!-- Modal Menu -->
+    <div class="modal-body menu" data-modal="menu">
+      <span class="close" data-close="close"></span>
+      <a href="" class="button login">
+        <img src="./img/nav/mobile/login.svg" alt="">
+        Вход</a>
+      <a href="/" class="button lk hidden">
+          <img src="./img/nav/mobile/lk.svg" alt="">
+          Гость</a>
+      <a href="" class="button city" data-mobile="yes" data-toggle="modal" data-target="city">
+        <img src="./img/nav/mobile/location.svg" alt="">
+        Санкт-Петербург</a>
+      <a href="tel:8-800-600-77-27" class="button phone">
+        <img src="./img/nav/mobile/phone.svg" alt="">
+        8-800-600-77-27</a>
+      <div class="menu-item">
+        <p class="hideElem">
+          <b>ВсёДляДеток</b>
+        </p>
+        <ul class="showElem">
+          <li><a href="">О компании</a></li>
+          <li><a href="">Пункты выдачи</a></li>
+          <li><a href="">Розничные магазины</a></li>
+          <li><a href="">Контакты</a></li>
+          <li><a href="">Отзывы</a></li>
+        </ul>
+      </div>
+      <div class="menu-item">
+        <p class="hideElem">
+          <b>
+            Покупателям
+          </b>
+        </p>
+        <ul class="showElem">
+          <li><a href="">Проверка заказа</a></li>
+          <li><a href="">Доставка и оплата</a></li>
+          <li><a href="">Гарантии и возврат</a></li>
+          <li><a href="">Покупай со Сбербанком</a></li>
+          <li><a href="">Полезные материалы</a></li>
+          <li><a href="">Бонусная программа</a></li>
+          <li><a href="">Подарочные карты</a></li>
+        </ul>
+      </div>
+      <div class="menu-item">
+        <p class="hideElem">
+          <b>
+            Обратная связь
+          </b>
+        </p>
+        <ul class="showElem">
+          <li><a href="">Заказать звонок</a></li>
+          <li><a href="">Заявка на возврат</a></li>
+          <li><a href="">Заявка на обмен</a></li>
+          <li><a href="">Оставить отзыв</a></li>
+          <li><a href="">Благодарность</a></li>
+          <li><a href="">Пожаловаться</a></li>
+        </ul>
+      </div>
+      <div class="social">
+        <p>
+          <b>
+            Сообщество
+          </b>
+        </p>
+        <div class="social-link">
+          <a href=""><img src="./img/social/ok.svg" alt=""></a>
+          <a href=""><img src="./img/social/vk.svg" alt=""></a>
+          <a href=""><img src="./img/social/insta.svg" alt=""></a>
+          <a href=""><img src="./img/social/youtube.svg" alt=""></a>
+        </div>
+      </div>
+      <div class="menu-email">
+        <p>
+          <b>
+            Подпишись на обновления
+          </b>
+        </p>
+        <form action="/" method="post">
+          <input type="email" name="email" value="" placeholder="E-mail" required>
+          <button class="btn btn-send">Подписаться</button>
+        </form>
+      </div>
+    </div>
+    <!-- Modal City -->
+    <div class="modal-body city" data-modal="city">
+      <span class="close" data-close="close"></span>
+      <p class="modal-body__head">Ваш город:</p>
+      <p class="modal-body__city">Санкт-Петербург</p>
+      <p class="modal-body__desc">От города зависят условия доставки</p>
+      <div class="modal-body__button">
+        <button class="btn btn-accent" data-close="close">Да</button>
+        <button class="btn btn-outline-accent open-city-list" data-toggle="modal" data-target="city-list">Нет, выбрать другой</button>
+      </div>
+    </div>
+    <!-- Modal City List -->
+    <div class="modal-body city-list" data-modal="city-list">
+      <span class="close" data-close="close"></span>
+      <p><b>Ваш город</b></p>
+      <form action="/" method="post" class="">
+        <label for="city">Введите название</label>
+        <input id="city" type="text" name="city" class="city" placeholder="Название города">
+      </form>
+    </div>
+    <!-- Modal Login -->
+    <div class="modal-body login" data-modal="login">
+      <span class="close" data-close="close"></span>
+      <form action="/" method="post" class="login-form">
+        <p><b>Вход или регистрация</b></p>
+        <label for="phone">Введите номер телефона</label>
+        <input type="tel" id="phone" name="phone" class="phone-mask" autocomplete="off" required>
+        <button type="submit" class="btn btn-accent">Получить sms-код</button>
+      </form>
+      <form action="/" method="post" class="sms-form">
+        <p><b>Введите код из смс</b></p>
+        <div class="signin-sms__wrap">
+          <input class="sms-input" type="tel" name="sms1" maxlength="1" tabindex="1">
+          <input class="sms-input" type="tel" name="sms2" maxlength="1" tabindex="2">
+          <input class="sms-input" type="tel" name="sms3" maxlength="1" tabindex="3">
+          <input class="sms-input" type="tel" name="sms4" maxlength="1" tabindex="4">
+        </div>
+      </form>
+      <div class="complete"><p>Готово</p></div>
+    </div>
+
+    <!-- IF PRODUCT-PAGE -->
+    <!-- Modal REVIEW -->
+    <div class="modal-body review" data-modal="review">
+      <span class="close" data-close="close"></span>
+      <p><b>Добавить отзыв о товаре</b></p>
+      <form action="/" method="post">
+        <div class="form-row df">
+          <div>
+            <label for="user-review">Ваше имя</label>
+            <input type="text" id="user-review" name="user" placeholder="" pattern="^[А-Яа-яЁё\s]+$" required>
+          </div>
+          <div class="form-col">
+            <p>Оцените товар</p>
+            <div class="rating-area">
+              <input type="radio" id="star-5" name="rating" value="5" checked>
+              <label for="star-5" title="Оценка «5»"></label>	
+              <input type="radio" id="star-4" name="rating" value="4">
+              <label for="star-4" title="Оценка «4»"></label>    
+              <input type="radio" id="star-3" name="rating" value="3">
+              <label for="star-3" title="Оценка «3»"></label>  
+              <input type="radio" id="star-2" name="rating" value="2">
+              <label for="star-2" title="Оценка «2»"></label>    
+              <input type="radio" id="star-1" name="rating" value="1">
+              <label for="star-1" title="Оценка «1»"></label>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="plus">Понравилось</label>
+          <textarea name="plus" id="plus"></textarea>
+        </div>
+        <div class="form-row">
+          <label for="minus">Не понравилось</label>
+          <textarea name="minus" id="minus"></textarea>
+        </div>
+        <div class="form-row">
+          <label for="msg-review">Комментарий</label>
+          <textarea name="msg" id="msg-review"></textarea>
+        </div>
+        <div class="input__wrapper">
+          <input type="file" name="file" id="input__file" class="input input__file" multiple>
+          <label for="input__file" class="input__file-button">
+              <span class="input__file-icon-wrapper">Прикрепить файл</span>
+              <span class="input__file-button-text">Файл не выбран</span>
+          </label>
+        </div>
+        <div class="submit">
+          <button type="submit" class="btn btn-accent">Отправить</button>
+          <p>Нажимая кнопку вы даете согласие на обработку ваших персональных данных в соответствии с Условиями</p>
+        </div>
+      </form>
+    </div>
+    <!-- Modal QUESTION -->
+    <div class="modal-body question" data-modal="question">
+      <span class="close" data-close="close"></span>
+      <p><b>Задать вопрос о товаре</b></p>
+      <form action="/" method="post">
+        <div class="form-row df">
+          <div>
+            <label for="user-question">Ваше имя</label>
+            <input type="text" id="user-question" name="user" placeholder="" required>
+          </div>
+          <div class="form-col">
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="msg-question">Ваш вопрос</label>
+          <textarea name="msg" id="msg-question"></textarea>
+        </div>
+        <div class="submit">
+          <button type="submit" class="btn btn-accent">Отправить</button>
+          <p>Нажимая кнопку вы даете согласие на обработку ваших персональных данных в соответствии с Условиями</p>
+        </div>
+      </form>
+    </div>
+    <!-- Modal OneClick -->
+    <div class="modal-body oneclick" data-modal="oneclick">
+      <span class="close" data-close="close"></span>
+      <p><b>Заказ в один клик</b></p>
+      <form action="/" method="post">
+        <div class="form-row">
+          <label for="user-oneclick">Ваш имя</label>
+          <input type="text" name="user-oneclick" id="user-oneclick" class="name" placeholder="" pattern="^[А-Яа-яЁё\s]+$" required>
+        </div>
+        <div class="form-row">
+          <label for="userphone">Телефон</label>
+          <input type="tel" id="userphone" name="phone-oneclick" class="phone-mask" required>
+        </div>
+        <div class="submit">
+          <button type="submit" class="btn btn-accent">Отправить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+  <script src="./js/scripts.min.js"></script>
+  <script defer src='./js/chunk-vendors.2f6d4ee4.js'></script>
+  <script defer src='./js/app.40d3fda9.js'></script>
+  <link href='./css/app.ee582749.css' rel=stylesheet>
+  <link rel="stylesheet" href="./css/main.min.css">
+
+  <link rel="stylesheet" href="./js/slick/slick.css">
+  <script src="./js/slick/slick.min.js"></script>
+  <script src="./js/fancybox/jquery.fancybox.min.js"></script>
+  <link rel="stylesheet" href="./js/fancybox/jquery.fancybox.min.css">
+
+  <script>
+    //Preload
+    const cachImg = new Array();
+    function preloadcachImg(...cachImg) {
+        cachImg.forEach((image, i) => {
+            image = new Image();
+            image.src = preloadcachImg.arguments[i];
+        });
+    };
+    // Предварительная загрузка картинок слайдера
+    preloadcachImg(
+        './img/products/card/1.jpg',
+        './img/products/card/2.jpg',
+        './img/products/card/3.jpg',
+        './img/products/card/4.jpg'
+    );
+
+    $( document ).ready(function() {
+      
+      const thumb = document.querySelectorAll('.products-page-body__item__left__thumb li')
+      let slideCount = thumb.length
+      if (thumb.length < 6) {
+        thumb.forEach((item,index) => {
+          item.addEventListener('click', () => {
+            document.querySelector('.products-page-body__item__left__thumb li.slick-current').classList.remove('slick-current')
+            item.classList.add('slick-current')
+            imgSlider.slick('slickGoTo', index)
+          })
+        })
+      }
+      
+
+      $('.products-page-body__item__left__thumb').slick({
+        vertical: true,
+        infinite: thumb.length >= 6 ? true : false,
+        slidesToShow: 6,
+        asNavFor: thumb.length >= 6 ? '.products-page-body__item__right__img__wrapp' : false,
+        focusOnSelect: true,
+        arrows: false,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 4,
+            }
+          },
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 5,
+            }
+          }
+        ]
+      });    
+      
+      const imgSlider = $('.products-page-body__item__right__img__wrapp').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        draggable: true,
+        asNavFor: '.products-page-body__item__left__thumb',
+        responsive: [
+          {
+            breakpoint: 767,
+            settings: {
+              arrows: false,
+              dots: true
+            }
+          }
+        ]
+      });
+
+      const disableScroll = () => {
+        document.body.classList.add('no-scroll')
+      }
+      const enableScroll = () => {
+        document.body.classList.remove('no-scroll') 
+      }
+      
+      let galleryIsOpen = false;
+      const card = document.querySelector('.products-page-body__item')
+          
+      const closeGalleryEsc = () => {
+        if (event.keyCode == 27) {
+          closeGallery()
+        }
+      }
+      const openGallery = () => {
+        if ( galleryIsOpen == false) {
+          disableScroll()
+          card.classList.add('open')
+          setTimeout(() => {
+            document.body.append(card)
+            setTimeout(() => {
+              card.classList.add('is-active')
+              imgSlider.slick('setPosition')     
+            }, 1);    
+          }, 1);
+          galleryIsOpen = true
+          document.addEventListener('keydown', closeGalleryEsc)
+        } else {
+          closeGallery()
+        }
+      }
+      const closeGallery = () => {
+        if ( galleryIsOpen == true) {
+          const parent = document.querySelector('.products-page-body')
+          const nextElem = document.querySelector('.products-page-body__buy')
+          card.classList.remove('is-active')
+          card.classList.remove('open')
+          document.body.removeChild(card)
+          parent.insertBefore(card, nextElem)
+          imgSlider.slick('setPosition')
+          galleryIsOpen = false
+          document.removeEventListener('keydown', closeGalleryEsc)
+          enableScroll()
+        }
+      }
+
+      if (document.body.clientWidth < 767) {
+        const imgList = document.querySelectorAll('.products-page-body__item__right__img__wrapp img')
+        for(elem of imgList) {
+          elem.addEventListener('click', openGallery)
+        }
+      }
+      const zoomBtn = document.querySelector('.products-page-body__item__right__img .zoom')
+      const closeBtn = document.querySelector('.products-page-body__item .close')
+      zoomBtn.addEventListener('click', openGallery)
+      closeBtn.addEventListener('click', closeGallery)
+
+      $('.resent-products').slick({
+        lazyLoad: 'ondemand',
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        draggable: false,
+        responsive: [
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 2
+            }
+          },
+        ]
+      });
+      $('.visited-products').slick({
+        lazyLoad: 'ondemand',
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        draggable: false,
+        responsive: [
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 2
+            }
+          },
+        ]
+      });
+      
+      $('[data-fancybox="gallery"]').fancybox({
+        loop: true,
+        infobar: false,
+        toolbar: false,
+      });
+    
+      // Back to top button
+      let backToTop = function() {
+            var el = $( '.toTop' );
+            el.hide()
+        $( window ).scroll(function() {
+          if( $( this ).scrollTop() < 50 ) {
+            el.fadeOut();
+          } else {
+            el.fadeIn();
+          }
+        });
+        el.click( function() {
+          $( 'body,html' ).animate({
+            scrollTop: 0
+          }, 500);
+          return false;
+        });
+        }
+        backToTop()
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      if ( document.querySelector('.products-page-body__item__right__tag .wishlist') ) {
+        const wishlist = document.querySelector('.products-page-body__item__right__tag .wishlist')
+        wishlist.addEventListener('click', () => wishlist.classList.toggle('active'))
+      }
+
+      if ( document.querySelector('[data-target="review"]') ) {
+          //Input file
+          let inputs = document.querySelectorAll('.input__file')
+          inputs.forEach(input =>{
+              let label = input.nextElementSibling,
+              labelVal = label.querySelector('.input__file-button-text').innerText;
+          
+              input.addEventListener('change', function (e) {
+                  let countFiles = '';
+                  if (this.files && this.files.length >= 1) {
+                      countFiles = this.files.length;
+                      label.classList.add('active')
+                  } else {
+                      label.classList.remove('active')
+                  }
+              
+                  if (countFiles)
+                      label.querySelector('.input__file-button-text').innerText = 'Выбрано файлов: ' + countFiles;
+                  else
+                      label.querySelector('.input__file-button-text').innerText = labelVal;
+              });
+          });
+      }
+    });
+  </script>
+</body>
+</html>
+
+

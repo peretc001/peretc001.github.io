@@ -161,7 +161,7 @@
             top: 0
             transform: translateY(170px) translateX(0)
             padding: 30px 12px 30px 12px
-            max-width: 370px
+            max-width: 390px
             border: 2px solid $accent
             transition: transform .3s ease
             .close
@@ -239,18 +239,9 @@
                     align-items: center
                     justify-content: space-between
                     a
-                        flex: 0 0 23%
-                        width: 4em
-                        height: 3em
-                        display: flex
-                        align-items: center
-                        justify-content: center
-                        background: $grey2
-                        border-radius: 4px
                         img
                             width: 2em
-                        &:not(:first-child)
-                            margin-left: 2%
+                            height: auto
             .menu-email
                 padding: 1em 2em 0 2em
                 p
@@ -279,11 +270,6 @@
                         font-size: 16px
                         &:focus
                             border: 1px solid $yellow
-            .copyright
-                color: $nav
-                text-align: center
-                font-size: 13px
-                line-height: 1.5
             
             &.is-active
                 transform: translateY(140px)

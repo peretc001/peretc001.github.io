@@ -252,31 +252,10 @@ if ( document.querySelector('.hideElem') ) {
             sMore = document.querySelectorAll('.showMore')
 
     hElem.forEach((item, i) => {
-        function scrollStart() {
-            let x = window.pageYOffset;
-            if ( item.getAttribute('data-scroll') && item.classList.contains('active') ) {
-                for (let i = 0; i < 1000; i++) {
-                    if ( i < 1000) {
-                        x = x + i;
-                    }
-                    setTimeout(() => {
-                        window.scroll(window.pageXOffset, x);
-                    }, 500);
-                }
-            }
-        }
-        item.addEventListener('click', scrollStart)
         item.addEventListener('click', () => {
             !item.classList.contains('active') ? item.classList.add('active') : item.classList.remove('active')
             !sElem[i].classList.contains('active') ? sElem[i].classList.add('active') : sElem[i].classList.remove('active')
         })
-        if (sMore[i]) {
-            sMore[i].addEventListener('click', () => {
-                !item.classList.contains('active') ? item.classList.add('active') : item.classList.remove('active')
-                !sElem[i].classList.contains('active') ? sElem[i].classList.add('active') : sElem[i].classList.remove('active')
-                !sMore[i].classList.contains('active') ? sMore[i].classList.add('active') : sMore[i].classList.remove('active')  
-            })
-        }
     })
 }
     
@@ -308,12 +287,27 @@ Array.prototype.forEach.call(inputs, function(input) {
     })
 })
 
+if ( document.querySelector('input[name="promo-code"]') ) {
+    const promoCode = document.querySelector('input[name="promo-code"]')
+    new InputMask({
+        selector: promoCode,
+        layout: promoCode.dataset.mask
+    })
+}
+
+
 });
 
 function InputMask(options) {
     this.el = this.getElement(options.selector);
     if (!this.el) return console.log('Что-то не так с селектором');
-    this.layout = options.layout || '+7 (___) ___-__-__';
+    if (this.el == document.querySelector('input[name="promo-code"]')) {
+        this.layout = options.layout || '____-____';
+    }
+    else {
+        this.layout = options.layout || '+7 (___) ___-__-__';
+    }
+
     this.maskreg = this.getRegexp();
 
     this.setListeners();
