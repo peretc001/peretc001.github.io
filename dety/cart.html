@@ -208,7 +208,7 @@
                 <p class="city">Ваш город:  <b data-toggle="modal" data-target="city-list">Краснодар</b></p>
                 <div class="cart-delivery-type tabs">
                     <div class="cart-delivery-type__item left">
-                        <input type="radio" id="pickup" name="delivery">
+                        <input type="radio" id="pickup" name="delivery" checked>
                         <label for="pickup">
                             Самовывоз
                             <b>5 февраля</b>
@@ -223,7 +223,7 @@
                     </div>
                 </div>
 
-                <div class="cart-delivery-point tabs-item">
+                <div class="cart-delivery-point tabs-item active">
                   <div class="cart-delivery-point__map">
                     <div id="map" style="width: 100%; height: 400px"></div>
                   </div>
@@ -599,43 +599,54 @@
 
 
       ymaps.ready(function () {  
-        var map = new ymaps.Map("map", {
-          center: [55.76, 37.64], 
-          controls: ['fullscreenControl', 'zoomControl'],
-          zoom: 10
-        });
-
-        var coords = [
-            [55.75, 37.639],
-            [55.74, 37.642],
-            [55.73, 37.647],
-            [55.72, 37.644],
-            [55.71, 37.644]
-        ];
-
         
 
-        var myGeoObjects = [];
+        ymaps.geolocation.get().then(function (res) {
+        var mapContainer = $('#map'),
+            bounds = res.geoObjects.get(0).properties.get('boundedBy'),
+            // Рассчитываем видимую область для текущей положения пользователя.
+            mapState = ymaps.util.bounds.getCenterAndZoom(
+                bounds,
+                [mapContainer.width(), mapContainer.height()]
+            );
+        createMap(mapState);
+        }, function (e) {
+            // Если местоположение невозможно получить, то просто создаем карту.
+            createMap({
+                center: [55.76, 37.64], 
+                controls: ['fullscreenControl', 'zoomControl'],
+                zoom: 10
+            });
+        });
+    
+        function createMap (state) {
+              map = new ymaps.Map('map', state);
+          
+              var coords = [
+                  [45.022,38.976],
+                  [45.022,38.978],
+                  [45.026,38.970],
+                  [45.023,38.975],
+                  [45.024,38.968]
+              ];
 
-        for (var i = 0; i<coords.length; i++) {
-          myGeoObjects[i] = new ymaps.GeoObject({
-            geometry: {
-              type: "Point",
-              coordinates: coords[i]
-            }
-          });
+              var myGeoObjects = [];
+
+              for (var i = 0; i<coords.length; i++) {
+                myGeoObjects[i] = new ymaps.GeoObject({
+                  geometry: {
+                    type: "Point",
+                    coordinates: coords[i]
+                  }
+                });
+              }
+
+              var myClusterer = new ymaps.Clusterer();
+              myClusterer.add(myGeoObjects);
+              map.geoObjects.add(myClusterer);
+
         }
-
-        var myClusterer = new ymaps.Clusterer();
-        myClusterer.add(myGeoObjects);
-        map.geoObjects.add(myClusterer);
-
-        if (map) {
-          ymaps.modules.require(['Placemark', 'Circle'], function (Placemark, Circle) {
-            var placemark = new Placemark([55.37, 35.45]);
-          });
-        }
-      });
+    });
 
       
       //Sort block
