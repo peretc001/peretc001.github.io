@@ -405,12 +405,16 @@
 @media screen and ( max-width: 991.98px )
     .products
         &-sort
-            p
-                display: block
             &-block
+                display: flex
+                align-items: center
+                justify-content: flex-start
                 position: relative
                 padding: 0
                 margin: 0
+                p
+                    display: block
+                    flex: 0 0 auto
                 &--select
                     display: block
                     padding-left: 1em
@@ -620,13 +624,19 @@
                 .wrapp_change_inputs
                     .bx_filter_parameters_box_container_block
                         width: 150px
+        
         &-sort
-            p
-                font-size: 0.9em
             &-block
-                &--select
-                    width: 160px
+                display: flex
+                flex-wrap: wrap
+                p
+                    flex: 0 0 100%
                     font-size: 0.9em
+                    margin-bottom: 0.5em
+                &--select
+                    width: 180px
+                    font-size: 0.9em
+                    margin-left: 0
                 &--options
                     width: 180px
             a

@@ -11,9 +11,10 @@
         justify-content: flex-start
         padding: 1em 0
         margin-bottom: 1em
-        span
+        p
             color: $grey
             font-size: 0.9em
+            margin: 0
             b
                 color: $text
                 font-weight: bold
@@ -56,6 +57,22 @@
                     background-position: left
                     background-repeat: no-repeat
                     background-image: url('../../img/review/quote.svg')
+        
+        .wishlist
+            margin-left: auto
+            margin-right: 1em
+            position: relative
+            display: inline-block
+            width: 2em
+            height: 2em
+            background-size: 2em
+            background-position: center
+            background-repeat: no-repeat
+            transition: background .3s ease
+            cursor: pointer
+            background-image: url('../../img/nav/wishlist.svg')
+            &.active
+                background-image: url('../../img/nav/wishlist-active.svg')
 
     &-body
         position: relative
@@ -238,30 +255,8 @@
                             background-image: url('../../img/products/bonus.svg')
                         &.installments
                             background-image: url('../../img/products/installment.svg')
-                        &.gift
-                            margin-top: 0
-                            svg
-                                position: relative
-                                .cap
-                                    transform-origin: 100% 50%
-                                    transition: transform .5s ease
-                            &:hover
-                                svg
-                                    .cap
-                                        transform: rotate(15deg)
 
-                    .wishlist
-                        margin-left: auto !important
-                        position: relative
-                        display: inline-block
-                        background-size: 2em
-                        background-position: center
-                        background-repeat: no-repeat
-                        transition: background .3s ease
-                        cursor: pointer
-                        background-image: url('../../img/nav/wishlist.svg')
-                        &.active
-                            background-image: url('../../img/nav/wishlist-active.svg')
+                    
                 &__img
                     position: relative
                     overflow: hidden !important
@@ -1101,6 +1096,33 @@
 
 @media screen and ( max-width: 424.98px )
     .products-page
+        &-header
+            &__review
+                .star
+                    span
+                        width: 1em
+                        height: 1em
+                .quote
+                    position: relative
+                    font-size: 1em
+                    color: $text
+                    padding-left: 20px
+                    margin-left: 1em
+                    &::before
+                        content: ''
+                        position: absolute
+                        left: 0
+                        top: 50%
+                        transform: translateY(-50%)
+                        width: 100%
+                        height: 100%
+                        background-size: 18px
+                        background-position: left
+                        background-repeat: no-repeat
+                        background-image: url('../../img/review/quote.svg')
+            
+            .wishlist
+                
         &-body
             &__buy
                 &__price
