@@ -208,7 +208,7 @@
                 <p class="city">Ваш город:  <b data-toggle="modal" data-target="city-list">Краснодар</b></p>
                 <div class="cart-delivery-type tabs">
                     <div class="cart-delivery-type__item left">
-                        <input type="radio" id="pickup" name="delivery" checked>
+                        <input type="radio" id="pickup" name="delivery">
                         <label for="pickup">
                             Самовывоз
                             <b>5 февраля</b>
@@ -223,11 +223,11 @@
                     </div>
                 </div>
 
-                <div class="cart-delivery-point tabs-item active">
+                <div class="cart-delivery-point tabs-item">
                   <div class="cart-delivery-point__map">
-                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aaa679d9bead2a71032587d45bde9da34d2bfbb1e04eb7ee5ddc5ef2b473a047c&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=false"></script>
+                    <div id="map" style="width: 100%; height: 400px"></div>
                   </div>
-                  <div class="cart-delivery-point__lists">
+                  <!-- <div class="cart-delivery-point__lists">
                     <div class="container">
                       <div class="cart-delivery-point__lists__item">
                           <p>Кранодар, ул.Рылеева 152, д.15</p>
@@ -280,7 +280,7 @@
                         <button class="btn btn-accent">Выбрать</button>
                     </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
 
                 <div class="cart-delivery-adress tabs-item">
@@ -327,19 +327,19 @@
               <div class="cart-pay__items">
                 <div class="form-row">
                   <input type="radio" id="online" name="payment" checked>
-                  <label for="online">Оплата онлайн</label>
+                  <label for="online" class="online">Оплата онлайн</label>
                 </div>
                 <div class="form-row">
                   <input type="radio" id="upon" name="payment">
-                  <label for="upon">При получении</label>
+                  <label for="upon" class="upon">При получении</label>
                 </div>
                 <div class="form-row">
                   <input type="radio" id="sb" name="payment">
-                  <label for="sb">В рассрочку</label>
+                  <label for="sb" class="sb">В рассрочку</label>
                 </div>
                 <div class="form-row">
                   <input type="radio" id="credit" name="payment">
-                  <label for="credit">В кредит</label>
+                  <label for="credit" class="credit">В кредит</label>
                 </div>
               </div>
             </div>
@@ -528,7 +528,7 @@
         <div class="social-link">
           <a href=""><img src="./img/social/ok.svg" alt=""></a>
           <a href=""><img src="./img/social/vk.svg" alt=""></a>
-          <a href=""><img src="./img/social/insta.svg" alt=""></a>
+          <a href=""><img src="./img/social/instagram.svg" alt=""></a>
           <a href=""><img src="./img/social/youtube.svg" alt=""></a>
         </div>
       </div>
@@ -587,14 +587,57 @@
   </div>
 </div>
 
-  <script src="./js/scripts.min.js"></script>
-  <script defer src='./js/chunk-vendors.2f6d4ee4.js'></script>
-  <script defer src='./js/app.40d3fda9.js'></script>
-  <link href='./css/app.ee582749.css' rel=stylesheet>
-  <link rel="stylesheet" href="./css/main.min.css">
+<script src="./js/scripts.min.js"></script>
+<script defer src='./js/chunk-vendors.2f6d4ee4.js'></script>
+<script defer src='./js/app.e2d4b23e.js'></script>
+<link href='./css/app.65c3a7df.css' rel=stylesheet>
+<link rel="stylesheet" href="./css/main.min.css">
 
+<script src="https://api-maps.yandex.ru/2.1?apikey=c57f1f7d-1b5e-46b5-8a3c-28866f6be64d&lang=ru_RU"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
+
+
+      ymaps.ready(function () {  
+        var map = new ymaps.Map("map", {
+          center: [55.76, 37.64], 
+          controls: ['fullscreenControl', 'zoomControl'],
+          zoom: 10
+        });
+
+        var coords = [
+            [55.75, 37.639],
+            [55.74, 37.642],
+            [55.73, 37.647],
+            [55.72, 37.644],
+            [55.71, 37.644]
+        ];
+
+        
+
+        var myGeoObjects = [];
+
+        for (var i = 0; i<coords.length; i++) {
+          myGeoObjects[i] = new ymaps.GeoObject({
+            geometry: {
+              type: "Point",
+              coordinates: coords[i]
+            }
+          });
+        }
+
+        var myClusterer = new ymaps.Clusterer();
+        myClusterer.add(myGeoObjects);
+        map.geoObjects.add(myClusterer);
+
+        if (map) {
+          ymaps.modules.require(['Placemark', 'Circle'], function (Placemark, Circle) {
+            var placemark = new Placemark([55.37, 35.45]);
+          });
+        }
+      });
+
+      
       //Sort block
       const   div = document.createElement('div');
               div.classList.add('layout')
