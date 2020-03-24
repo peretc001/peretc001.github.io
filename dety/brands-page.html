@@ -1160,10 +1160,10 @@
           </b>
         </p>
         <div class="social-link">
-          <a href=""><img src="./img/social/ok.svg" alt=""></a>
+          <a href=""><img src="./img/social/instagram.svg" alt=""></a>
           <a href=""><img src="./img/social/vk.svg" alt=""></a>
-          <a href=""><img src="./img/social/insta.svg" alt=""></a>
           <a href=""><img src="./img/social/youtube.svg" alt=""></a>
+          <a href=""><img src="./img/social/ok.svg" alt=""></a>
         </div>
       </div>
       <div class="menu-email">
@@ -1181,21 +1181,18 @@
     <!-- Modal City -->
     <div class="modal-body city" data-modal="city">
       <span class="close" data-close="close"></span>
-      <p class="modal-body__head">Ваш город:</p>
-      <p class="modal-body__city">Санкт-Петербург</p>
-      <p class="modal-body__desc">От города зависят условия доставки</p>
-      <div class="modal-body__button">
-        <button class="btn btn-accent" data-close="close">Да</button>
-        <button class="btn btn-outline-accent open-city-list" data-toggle="modal" data-target="city-list">Нет, выбрать другой</button>
+      <div class="city-wrapper fade active">
+        <p class="modal-body__head">Ваш город:</p>
+        <p class="modal-body__city">Санкт-Петербург</p>
+        <p class="modal-body__desc">От города зависят условия доставки</p>
+        <div class="modal-body__button">
+          <button class="btn btn-accent" data-close="close">Да</button>
+          <button class="btn btn-outline-accent open-city-list">Нет, выбрать другой</button>
+        </div>
       </div>
-    </div>
-    <!-- Modal City List -->
-    <div class="modal-body city-list" data-modal="city-list">
-      <span class="close" data-close="close"></span>
-      <p><b>Ваш город</b></p>
-      <form action="/" method="post" class="">
+      <form action="/" method="post" class="city-list">
         <label for="city">Введите название</label>
-        <input id="city" type="text" name="city" class="city" placeholder="Название города">
+        <input id="city" type="text" name="city" class="city" placeholder="Ваш город">
       </form>
     </div>
     <!-- Modal Login -->
@@ -1204,7 +1201,7 @@
       <form action="/" method="post" class="login-form">
         <p><b>Вход или регистрация</b></p>
         <label for="phone">Введите номер телефона</label>
-        <input type="tel" id="phone" name="phone" class="phone-mask" autocomplete="off" required>
+        <input type="tel" id="phone" name="phone" class="phone-mask" required>
         <button type="submit" class="btn btn-accent">Получить sms-код</button>
       </form>
       <form action="/" method="post" class="sms-form">
@@ -1220,12 +1217,12 @@
     </div>
   </div>
 </div>
-
-<script src="./js/scripts.min.js"></script>
-<script defer src='./js/chunk-vendors.2f6d4ee4.js'></script>
-<script defer src='./js/app.e2d4b23e.js'></script>
-<link href='./css/app.65c3a7df.css' rel=stylesheet>
-<link rel="stylesheet" href="./css/main.min.css">
+  
+  <script src="./js/scripts.min.js"></script>
+  <script defer src='./js/chunk-vendors.2f6d4ee4.js'></script>
+  <script defer src='./js/app.22dcbbb1.js'></script>
+  <link href='./css/app.78c9e97a.css' rel=stylesheet>
+  <link rel="stylesheet" href="./css/main.min.css">
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {

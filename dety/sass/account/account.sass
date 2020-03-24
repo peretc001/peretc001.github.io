@@ -350,7 +350,7 @@
                 border-bottom: 1px solid $grey
                 margin-bottom: 1em
                 &__number
-                    flex: 1 0 20%
+                    flex: 0 0 20%
                     padding-right: 1.5em
                     .number
                         color: $text
@@ -386,10 +386,15 @@
                             text-align: center
                         &:last-child
                             margin-top: 0.5em
+                
+                .cart-order
+                    flex: 1 1 80%
+                    
                 .cart-order-item
-                    flex: 1 0 80%
                     &:first-child
                         padding-top: 0
+                    .item-qty
+                        color: $grey
                 &:last-child
                     border-bottom: none
                 .not
@@ -717,6 +722,8 @@
                                 width: 100%
                     .cart-order-item
                         flex: 1 0 100%
+                        padding: 2em 0
+
         &-order-current
             &__head
                 font-size: 1em

@@ -305,17 +305,17 @@ body
 .openSearch
     display: none
 
-@keyframes slide
-    0%
-        top: 26px
-        max-height: 0
-        opacity: 0
-        visibility: hidden
-    100%
-        top: 45px
-        max-height: 1000px
-        opacity: 1
-        visibility: visible
+// @keyframes slide
+//     0%
+//         top: 26px
+//         max-height: 0
+//         opacity: 0
+//         visibility: hidden
+//     100%
+//         top: 45px
+//         max-height: 1000px
+//         opacity: 1
+//         visibility: visible
 
 .fade
     position: relative
@@ -473,18 +473,22 @@ body
                         &:last-child
                             max-width: 100%
                             border-bottom: none
-                        img
-                            display: block
                         a
                             display: block
                             font-size: 1em
                             padding: 1em 0 !important
-                            padding-left: 2.5em !important
+                            padding-left: 3em !important
                             margin: 0 1.5em
                             align-items: flex-start
                             color: #ffffff
                             &:hover
                                 color: #fff
+                        img
+                            display: inline-block
+                            width: 2.5em
+                            text-align: center
+                            margin-right: 2em
+
                         &.top
                             background: #fff
                             &::after
