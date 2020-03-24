@@ -599,98 +599,82 @@ function init() {
     var myMap;
 
     var geolocation = ymaps.geolocation,
-        myMap = new ymaps.Map('map', {
-          center: [55.022,80.976],
-          zoom: 4,
-          controls: ['fullscreenControl', 'zoomControl', 'geolocationControl'],
-        }, {
-            searchControlProvider: 'yandex#search'
-        });
+      myMap = new ymaps.Map('map', {
+        center: [55.022,80.976],
+        zoom: 4,
+        controls: ['fullscreenControl', 'zoomControl', 'geolocationControl'],
+      }, {
+          searchControlProvider: 'yandex#search'
+      }),
+      objectManager = new ymaps.ObjectManager({
+          // Чтобы метки начали кластеризоваться, выставляем опцию.
+          clusterize: true,
+          // ObjectManager принимает те же опции, что и кластеризатор.
+          gridSize: 32,
+          clusterDisableClickZoom: false
+      });
+
+      objectManager.objects.balloon.events.add('click', function (e) {
+        $('.select-point').bind('click', onCounterClick)
+      });
+
+      function onCounterClick() {
+        console.log(this)
+      };
+
+      // Чтобы задать опции одиночным объектам и кластерам,
+      // обратимся к дочерним коллекциям ObjectManager.
+      objectManager.objects.options.set('preset', 'islands#violetIcon');
+      objectManager.clusters.options.set('preset', 'islands#violetClusterIcons');
+      myMap.geoObjects.add(objectManager);
+
+      $.ajax({
+          url: "./point.json"
+      }).done(function(data) {
+          objectManager.add(data);
+      });
+
+      myMap.events.add('click', function (e) {  
+        myMap.balloon.close();
+      });
       
     
 
-    // Сравним положение, вычисленное по ip пользователя и
-    // положение, вычисленное средствами браузера.
     geolocation.get({
-        provider: 'yandex',
-        // mapStateAutoApply: true,
-        
+      provider: 'yandex',
     }).then(function (result) {
       myMap.setCenter(result.geoObjects.get(0).geometry.getCoordinates(), 4, {duration: 500});
       setTimeout(() => {
-        
-      
-        // Красным цветом пометим положение, вычисленное через ip.
         result.geoObjects.options.set('preset', 'islands#geolocationIcon');
         result.geoObjects.get(0).properties.set({
             balloonContentBody: 'Мое местоположение'
         });
         myMap.geoObjects.add(result.geoObjects);
-
       }, 1000);
     });
 
     geolocation.get({
         provider: 'browser',
-        // mapStateAutoApply: true
       }).then(function (result) {
         setTimeout(() => {
         myMap.setCenter(result.geoObjects.get(0).geometry.getCoordinates(), 4, {duration: 500});
-        // Синим цветом пометим положение, полученное через браузер.
-        // Если браузер не поддерживает эту функциональность, метка не будет добавлена на карту.
         result.geoObjects.options.set('preset', 'islands#blueCircleIcon');
         myMap.geoObjects.add(result.geoObjects);
       }, 1000);
     });
 
+
+    $('.open-map').on('click', function () {
+      $('#map').addClass('maxMap')
+      myMap.container.enterFullscreen()
+      myMap.container.fitToViewport();
+    });
+
     
-      
 
-      $('.open-map').on('click', function () {
-        $('#map').addClass('maxMap')
-        myMap.container.enterFullscreen()
-        myMap.container.fitToViewport();
-
-        var coords = [
-      [45.022,38.976],
-      [45.022,38.978],
-      [45.026,38.970],
-      [45.023,38.975],
-      [45.024,38.968],
-
-      [55.022,48.976],
-      [55.022,48.978],
-      [55.026,48.970],
-      [55.023,48.975],
-      [55.024,48.968],
-      [55.126,48.870],
-      [55.123,48.875],
-      [55.124,48.868]
-    ];
-
-    var myGeoObjects = [];
-
-    for (var i = 0; i<coords.length; i++) {
-      myGeoObjects[i] = new ymaps.GeoObject({
-        geometry: {
-          type: "Point",
-          coordinates: coords[i]
-        }
-      });
-    }
-
-    var myClusterer = new ymaps.Clusterer();
-    myClusterer.add(myGeoObjects);
-    
-    setTimeout(() => {
-      
-      myMap.geoObjects.add(myClusterer);
-    }, 1000);
-      });
-
-      myMap.events.add('boundschange', function (e) {
-        if ( myMap.container.isFullscreen() == false ) $('#map').removeClass('maxMap');
-      });
+    myMap.events.add('boundschange', function (e) {
+      if ( myMap.container.isFullscreen() == false ) $('#map').removeClass('maxMap');
+    });
 }
     //   ymaps.ready(function () {  
 
