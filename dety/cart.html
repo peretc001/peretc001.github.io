@@ -614,13 +614,6 @@ function init() {
           clusterDisableClickZoom: false
       });
 
-      objectManager.objects.balloon.events.add('click', function (e) {
-        $('.select-point').bind('click', onCounterClick)
-      });
-
-      function onCounterClick() {
-        console.log(this)
-      };
 
       // Чтобы задать опции одиночным объектам и кластерам,
       // обратимся к дочерним коллекциям ObjectManager.
@@ -628,11 +621,26 @@ function init() {
       objectManager.clusters.options.set('preset', 'islands#violetClusterIcons');
       myMap.geoObjects.add(objectManager);
 
+      objectManager.objects.events.add('balloonopen', function (e) {
+        var id = e.get('objectId'),
+            geoObject = objectManager.objects.getById(id);
+        setPoint([geoObject], id);
+      });
+
+      function setPoint(geoObject, id) {
+        $('.select-point').on('click', function() {
+          console.log(id)
+          console.log(geoObject)
+        })
+      };
+
       $.ajax({
           url: "./point.json"
       }).done(function(data) {
           objectManager.add(data);
       });
+
+      
 
       myMap.events.add('click', function (e) {  
         myMap.balloon.close();
