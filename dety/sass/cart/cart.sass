@@ -861,7 +861,7 @@
                 content: ''
                 position: absolute
                 left: 5.5em
-                top: 50%
+                top: 41%
                 transform: translateY(-50%)
                 display: inline-block
                 width: 1em
@@ -893,6 +893,12 @@
             &.credit
                 &::after
                     background-image: url('../../img/cart/credit.svg')
+            
+            b
+                display: block
+                margin-top: 0.3em
+                font-weight: bold
+                color: $text
 
         input:checked + label
             border: 1px solid $accent
@@ -1223,12 +1229,12 @@
             &__item
                 flex: 0 0 100%
                 label
-                    font-size: 1em
-                    padding-left: 6em
+                    font-size: 1.2em
+                    padding-left: 7em
                     &::before
-                        left: 4.5em
+                        left: 5.5em
                     &::after
-                        left: 0.5em
+                        left: 1em
                         background-size: 100%
                 &:last-child
                     margin-left: 0
@@ -1286,22 +1292,33 @@
                     width: 100%
                     flex: 0 0 100%
                     max-width: 100%
+    
     .cart-delivery
-        &-adress
-            .form-row
-                &:nth-child(3),
-                &:nth-child(4),
-                &:nth-child(5),
-                &:nth-child(6)
-                    font-size: .9em
+        &-type
+            flex-wrap: wrap
+            &__item
+                flex: 0 0 100%
+                label
+                    font-size: 1.1em
+                    padding-left: 6em
+                    &::before
+                        left: 4.5em
+                    &:after
+                        background-size: 90%
+                b
+                    font-size: 0.9em
                     
     .cart-pay
         &__items
-            .form-row
             label
                 font-size: 1.1em
+                padding-left: 6em
                 &::before
-                    left: 5.2em
+                    left: 4.5em
+                &:after
+                    background-size: 90%
+            b
+                font-size: 0.9em
 
     .cart-confirm
         .form-row

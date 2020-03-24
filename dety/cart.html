@@ -276,15 +276,15 @@
               <div class="cart-pay__items">
                 <div class="form-row">
                   <input type="radio" id="online" name="payment" checked>
-                  <label for="online" class="online">Оплата онлайн</label>
+                  <label for="online" class="online">Оплата онлайн<b>Картой на сайте</b></label>
                 </div>
                 <div class="form-row">
                   <input type="radio" id="upon" name="payment">
-                  <label for="upon" class="upon">При получении</label>
+                  <label for="upon" class="upon">При получении<b>Картой или наличными</b></label>
                 </div>
                 <div class="form-row">
                   <input type="radio" id="credit" name="payment">
-                  <label for="credit" class="credit">В кредит</label>
+                  <label for="credit" class="credit">В кредит<b>Онлайн</b></label>
                 </div>
               </div>
             </div>
@@ -541,33 +541,30 @@
 <link rel="stylesheet" href="./css/main.min.css">
 
 <script src="https://api-maps.yandex.ru/2.1?apikey=c57f1f7d-1b5e-46b5-8a3c-28866f6be64d&lang=ru_RU"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
 
-      ymaps.ready(init);
+    ymaps.ready(init);
       
-function init() {
-    var myMap;
+    function init() {
+      var myMap;
 
-    var geolocation = ymaps.geolocation,
-      myMap = new ymaps.Map('map', {
-        center: [55.022,80.976],
-        zoom: 4,
-        controls: ['fullscreenControl', 'zoomControl', 'geolocationControl'],
-      }, {
-          searchControlProvider: 'yandex#search'
-      }),
-      objectManager = new ymaps.ObjectManager({
-          // Чтобы метки начали кластеризоваться, выставляем опцию.
-          clusterize: true,
-          // ObjectManager принимает те же опции, что и кластеризатор.
-          gridSize: 32,
-          clusterDisableClickZoom: false
+      var geolocation = ymaps.geolocation,
+          myMap = new ymaps.Map('map', {
+            center: [55.022,80.976],
+            zoom: 4,
+            controls: ['fullscreenControl', 'zoomControl', 'geolocationControl'],
+          }, {
+              searchControlProvider: 'yandex#search'
+          }),
+          objectManager = new ymaps.ObjectManager({
+              // Чтобы метки начали кластеризоваться, выставляем опцию.
+              clusterize: true,
+              // ObjectManager принимает те же опции, что и кластеризатор.
+              gridSize: 32,
+              clusterDisableClickZoom: false
       });
 
-
-      // Чтобы задать опции одиночным объектам и кластерам,
-      // обратимся к дочерним коллекциям ObjectManager.
       objectManager.objects.options.set('preset', 'islands#violetIcon');
       objectManager.clusters.options.set('preset', 'islands#violetClusterIcons');
       myMap.geoObjects.add(objectManager);
@@ -601,78 +598,100 @@ function init() {
         myMap.balloon.close();
       });
 
-    geolocation.get({
-      provider: 'yandex',
-    }).then(function (result) {
-      myMap.setCenter(result.geoObjects.get(0).geometry.getCoordinates(), 4, {duration: 500});
-      setTimeout(() => {
-        result.geoObjects.options.set('preset', 'islands#geolocationIcon');
-        result.geoObjects.get(0).properties.set({
-            balloonContentBody: 'Мое местоположение'
-        });
-        myMap.geoObjects.add(result.geoObjects);
-      }, 1000);
-    });
-
-    geolocation.get({
-        provider: 'browser',
+      geolocation.get({
+        provider: 'yandex',
       }).then(function (result) {
-        setTimeout(() => {
         myMap.setCenter(result.geoObjects.get(0).geometry.getCoordinates(), 4, {duration: 500});
-        result.geoObjects.options.set('preset', 'islands#blueCircleIcon');
-        myMap.geoObjects.add(result.geoObjects);
-      }, 1000);
-    });
+        setTimeout(() => {
+          result.geoObjects.options.set('preset', 'islands#geolocationIcon');
+          result.geoObjects.get(0).properties.set({
+              balloonContentBody: 'Мое местоположение'
+          });
+          myMap.geoObjects.add(result.geoObjects);
+        }, 1000);
+      });
 
+      geolocation.get({
+          provider: 'browser',
+        }).then(function (result) {
+          setTimeout(() => {
+          myMap.setCenter(result.geoObjects.get(0).geometry.getCoordinates(), 4, {duration: 500});
+          result.geoObjects.options.set('preset', 'islands#blueCircleIcon');
+          myMap.geoObjects.add(result.geoObjects);
+        }, 1000);
+      });
 
-    $('.open-map').on('click', function () {
-      $('#map').addClass('maxMap')
-      myMap.container.enterFullscreen()
-      myMap.container.fitToViewport();
-    });
+      $('.open-map').on('click', function () {
+        $('#map').addClass('maxMap')
+        myMap.container.enterFullscreen()
+        myMap.container.fitToViewport();
+      });
 
-    $('.change-current-point').on('click', function () {
-      $('#map').addClass('maxMap')
-      myMap.container.enterFullscreen()
-      myMap.container.fitToViewport();
-    });
+      $('.change-current-point').on('click', function () {
+        $('#map').addClass('maxMap')
+        myMap.container.enterFullscreen()
+        myMap.container.fitToViewport();
+      });
 
-    
-
-    myMap.events.add('boundschange', function (e) {
-      if ( myMap.container.isFullscreen() == false ) $('#map').removeClass('maxMap');
-    });
-}
+      myMap.events.add('boundschange', function (e) {
+        if ( myMap.container.isFullscreen() == false ) $('#map').removeClass('maxMap');
+      });
+    }
       
       //Sort block
       const   div = document.createElement('div');
               div.classList.add('layout')
       if ( document.querySelector('.cart-delivery-adress--select') ) {
-        const   dropDown = document.querySelector('.cart-delivery-adress--select')
+        const   parentBlock = document.querySelector('.cart-delivery-adress')
+                dropDown = document.querySelector('.cart-delivery-adress--select')
                 dropDownMenu = document.querySelector('.cart-delivery-adress--options')
+                dropDownMenuList = dropDownMenu.querySelectorAll('a')
+
+                city = parentBlock.querySelector('#usercity')
+                street = parentBlock.querySelector('#street')
+                house = parentBlock.querySelector('#house')
+                entrance = parentBlock.querySelector('#entrance')
+                floor = parentBlock.querySelector('#floor')
+                flat = parentBlock.querySelector('#flat')
                 
         function closeDropDownEvent(event) { event.target = div ? closeDropDown() : '' }
         
-        const   openDropDown = () => {
-                  dropDownMenu.classList.add('fade')
-                  setTimeout(() => {
-                    dropDownMenu.classList.add('active')
-                  }, 100);
-                  dropDown.classList.add('active')
-                  document.body.append(div)
-                  div.addEventListener('click', closeDropDownEvent)
-                }
-                closeDropDown = () => {
-                  dropDownMenu.classList.remove('active')
-                  setTimeout(() => {
-                    dropDownMenu.classList.remove('fade')
-                  }, 100);
-                  dropDown.classList.remove('active')
-                  document.body.removeChild(div)
-                  div.removeEventListener('click', closeDropDownEvent)
-                }
-
+        const openDropDown = () => {
+                parentBlock.style.overflow = 'visible'
+                dropDownMenu.classList.add('fade')
+                setTimeout(() => {
+                  dropDownMenu.classList.add('active')
+                }, 100);
+                dropDown.classList.add('active')
+                document.body.append(div)
+                div.addEventListener('click', closeDropDownEvent)
+              }
+              closeDropDown = () => {
+                dropDownMenu.classList.remove('active')
+                setTimeout(() => {
+                  dropDownMenu.classList.remove('fade')
+                }, 100);
+                dropDown.classList.remove('active')
+                document.body.removeChild(div)
+                div.removeEventListener('click', closeDropDownEvent)
+                parentBlock.style.overflow = 'hidden'
+              }
+              setCity = (e) => {
+                e.preventDefault()
+                //Взять данные и вставить
+                city.value = 'Краснодар'
+                street.value = 'Тургенева'
+                house.value = '56'
+                entrance.value = '1'
+                floor.value = '1'
+                flat.value = '1'
+              }
+        
         dropDown.addEventListener('click', openDropDown)
+
+        dropDownMenuList.forEach(item => {
+          item.addEventListener('click', setCity)
+        })
       }
 
       if ( document.querySelector('.cart-order-item__del') ) {
