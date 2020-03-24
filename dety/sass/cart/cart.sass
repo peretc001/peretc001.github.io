@@ -488,65 +488,6 @@
             flex: 0 0 49%
             &:not(:first-child)
                 margin-left: 2%
-            &:first-child
-                label
-                    &::after
-                        background-image: url('../../img/delivery/delivery1.svg')
-            &:last-child
-                label
-                    &::after
-                        background-image: url('../../img/delivery/delivery3.svg')                 
-
-        input[type="radio"]
-            display: none
-        label
-            width: 100%
-            border-radius: 4px
-            border: 2px solid $grey
-            color: $grey
-            font-weight: normal
-            position: relative
-            padding: 1em
-            padding-left: 7em
-            font-size: 1.2em
-            cursor: pointer
-            user-select: none
-            transition: background .3s ease
-            &::before
-                content: ''
-                position: absolute
-                left: 5.5em
-                top: 35%
-                transform: translateY(-50%)
-                display: inline-block
-                width: 1em
-                height: 1em
-                border: 1px solid $accent
-                border-radius: 2px
-                transition: background .3s ease
-            &::after
-                content: ''
-                position: absolute
-                left: 1em
-                top: 50%
-                transform: translateY(-50%)
-                display: inline-block
-                width: 3em
-                height: 3em
-                background-size: 100%
-                background-position: center
-                background-repeat: no-repeat
-            b
-                display: block
-                margin-top: 0.3em
-                font-weight: bold
-                color: $text
-
-        input:checked + label
-            border: 2px solid $accent
-            color: $accent
-            &:before
-                background: $accent
     
     &-point
         &.tabs-item
@@ -842,69 +783,77 @@
             &:nth-child(2),
             &:nth-child(4)
                 margin-left: 2%
-        input[type="radio"]
-            display: none
-        label
-            width: 100%
-            border-radius: 4px
-            border: 1px solid $grey
-            color: $grey
-            font-weight: normal
-            position: relative
-            padding: 2em 1em 2em 7em
-            margin-bottom: 1em
-            font-size: 1.2em
-            cursor: pointer
-            user-select: none
-            transition: background .3s ease
-            &::before
-                content: ''
-                position: absolute
-                left: 5.5em
-                top: 41%
-                transform: translateY(-50%)
-                display: inline-block
-                width: 1em
-                height: 1em
-                border: 1px solid $accent
-                border-radius: 2px
-                transition: background .3s ease
-            &::after
-                content: ''
-                position: absolute
-                left: 1em
-                top: 50%
-                transform: translateY(-50%)
-                display: inline-block
-                width: 3em
-                height: 3em
-                background-size: 100%
-                background-position: center
-                background-repeat: no-repeat
-            &.online
-                &::after
-                    background-image: url('../../img/cart/monitor.svg')
-            &.upon
-                &::after
-                    background-image: url('../../img/cart/upon.svg')
-            &.sb
-                &::after
-                    background-image: url('../../img/cart/sb.svg')
-            &.credit
-                &::after
-                    background-image: url('../../img/cart/credit.svg')
-            
-            b
-                display: block
-                margin-top: 0.3em
-                font-weight: bold
-                color: $text
-
-        input:checked + label
+        
+.icon-checkbox
+    input[type="radio"]
+        display: none
+    label
+        width: 100%
+        border-radius: 4px
+        border: 2px solid $grey
+        color: $grey
+        font-weight: normal
+        position: relative
+        padding: 1em
+        padding-left: 7em
+        font-size: 1.2em
+        cursor: pointer
+        user-select: none
+        transition: background .3s ease
+        &::before
+            content: ''
+            position: absolute
+            left: 5em
+            top: 35%
+            transform: translateY(-50%)
+            display: inline-block
+            width: 1em
+            height: 1em
             border: 1px solid $accent
-            color: $accent
-            &:before
-                background: $accent
+            border-radius: 2px
+            transition: background .3s ease
+        &::after
+            content: ''
+            position: absolute
+            left: 1em
+            top: 50%
+            transform: translateY(-50%)
+            display: inline-block
+            width: 3em
+            height: 3em
+            background-size: 100%
+            background-position: center
+            background-repeat: no-repeat
+        &.pickup
+            &::after
+                background-image: url('../../img/delivery/delivery1.svg')
+        &.delivery
+            &::after
+                background-image: url('../../img/delivery/delivery3.svg')
+        &.online
+            &::after
+                background-image: url('../../img/cart/monitor.svg')
+        &.upon
+            &::after
+                background-image: url('../../img/cart/upon.svg')
+        &.sb
+            &::after
+                background-image: url('../../img/cart/sb.svg')
+        &.credit
+            &::after
+                background-image: url('../../img/cart/credit.svg')
+        
+        b
+            display: block
+            margin-top: 0.3em
+            font-weight: bold
+            color: $text
+            
+    input:checked + label
+        border: 2px solid $accent
+        color: $accent
+        &:before
+            background: $accent
 
 .cart-confirm
     flex: 0 0 30%
@@ -1046,16 +995,14 @@
     .cart-order-item
         font-size: 0.8em
 
-    .cart-delivery
-        &-type
-            &__item
-                label
-                    padding-left: 5em
-                    &::before
-                        left: 3.5em
-                    &::after
-                        left: 0.2em
-                        background-size: 70%
+    .icon-checkbox
+        label
+            padding-left: 5em
+            &::before
+                left: 3.5em
+            &::after
+                left: 0.2em
+                background-size: 70%
 
     .cart-order-promo
         label
@@ -1135,16 +1082,12 @@
 
     .cart-delivery
         &-type
-            label
-                font-size: .9em
-        &-point
             flex-wrap: wrap
-            &__lists
+            &__item
                 flex: 0 0 100%
-                border-right: none
-                border-top: 1px solid $grey
-                &__item
-                    min-height: 170px
+                &:not(:first-child)
+                    margin-left: 0
+            
         &-adress
             min-height: auto !important
             .form-row
@@ -1158,6 +1101,16 @@
                 &:nth-child(2),
                 &:nth-child(4)
                     margin-left: 0
+
+    .icon-checkbox
+        label
+            padding-left: 7em
+            font-size: 1.2em
+            &::before
+                left: 5em
+            &::after
+                background-size: 100%
+                left: 1em
 
 @media screen and ( max-width: 576.98px )
     .cart
@@ -1224,31 +1177,6 @@
                     max-width: 49%
 
     .cart-delivery
-        &-type
-            flex-wrap: wrap
-            &__item
-                flex: 0 0 100%
-                label
-                    font-size: 1.2em
-                    padding-left: 7em
-                    &::before
-                        left: 5.5em
-                    &::after
-                        left: 1em
-                        background-size: 100%
-                &:last-child
-                    margin-left: 0
-        &-point
-            &__lists
-                &__item
-                    flex: 0 0 100%
-                    min-height: auto
-                    padding: 1em
-                    border-bottom: 1px solid rgba(0, 0, 0, 0.1)
-                    &:nth-child(odd)
-                        margin-right: 0
-                    &:nth-child(even)
-                        margin-left: 0
         &-adress
             justify-content: space-between
             .form-row
@@ -1265,7 +1193,6 @@
                 &:nth-child(5),
                 &:nth-child(6)
                     flex: 0 0 23%
-
 
     .cart-confirm
         .form-row
@@ -1293,32 +1220,17 @@
                     flex: 0 0 100%
                     max-width: 100%
     
-    .cart-delivery
-        &-type
-            flex-wrap: wrap
-            &__item
-                flex: 0 0 100%
-                label
-                    font-size: 1.1em
-                    padding-left: 6em
-                    &::before
-                        left: 4.5em
-                    &:after
-                        background-size: 90%
-                b
-                    font-size: 0.9em
-                    
-    .cart-pay
-        &__items
-            label
-                font-size: 1.1em
-                padding-left: 6em
-                &::before
-                    left: 4.5em
-                &:after
-                    background-size: 90%
+    .icon-checkbox
+        label
+            font-size: 1.1em
+            padding-left: 5.5em
+            &::before
+                left: 4em
+            &:after
+                background-size: 85%
+                left: .5em
             b
-                font-size: 0.9em
+                font-size: 0.8em
 
     .cart-confirm
         .form-row

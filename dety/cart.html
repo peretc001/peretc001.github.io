@@ -207,16 +207,16 @@
                 <h4>Доставка</h4>
                 <p class="city">Ваш город:  <b data-toggle="modal" data-target="city-list">Краснодар</b></p>
                 <div class="cart-delivery-type tabs">
-                    <div class="cart-delivery-type__item left">
+                    <div class="cart-delivery-type__item icon-checkbox">
                         <input type="radio" id="pickup" name="delivery" checked>
-                        <label for="pickup">
+                        <label for="pickup" class="pickup">
                             Самовывоз
                             <b>5 февраля</b>
                         </label>
                     </div>
-                    <div class="cart-delivery-type__item right">
+                    <div class="cart-delivery-type__item icon-checkbox">
                         <input type="radio" id="delivery" name="delivery">
-                        <label for="delivery">
+                        <label for="delivery" class="delivery">
                             Доставка курьером
                             <b>8 февраля</b>
                         </label>
@@ -274,15 +274,15 @@
             <div class="cart-pay">
               <h4>Оплата заказа </h4>
               <div class="cart-pay__items">
-                <div class="form-row">
+                <div class="form-row icon-checkbox">
                   <input type="radio" id="online" name="payment" checked>
                   <label for="online" class="online">Оплата онлайн<b>Картой на сайте</b></label>
                 </div>
-                <div class="form-row">
+                <div class="form-row icon-checkbox">
                   <input type="radio" id="upon" name="payment">
                   <label for="upon" class="upon">При получении<b>Картой или наличными</b></label>
                 </div>
-                <div class="form-row">
+                <div class="form-row icon-checkbox">
                   <input type="radio" id="credit" name="payment">
                   <label for="credit" class="credit">В кредит<b>Онлайн</b></label>
                 </div>
