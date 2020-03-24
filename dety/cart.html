@@ -225,6 +225,10 @@
 
                 <div class="cart-delivery-point tabs-item active">
                   <button class="btn btn-accent open-map">Выбрать магазин или пункт выдачи</button>
+                  <div class="change-point">
+                    <div class="current"></div>
+                    <p><span class="change-current-point">сменить</span></p>
+                  </div>
                   <!-- <div class="cart-delivery-point__lists">
                     <div class="container">
                       <div class="cart-delivery-point__lists__item">
@@ -629,8 +633,14 @@ function init() {
 
       function setPoint(geoObject, id) {
         $('.select-point').on('click', function() {
-          console.log(id)
-          console.log(geoObject)
+          $(this).hide()
+          var currentPoint = geoObject[0].properties.balloonContentHeader + geoObject[0].properties.balloonContentBody
+          $('.change-point .current').html(currentPoint)
+          $('.change-point').addClass('selected')
+          myMap.balloon.close();
+          $('#map').removeClass('maxMap')
+          myMap.container.exitFullscreen()
+          myMap.container.fitToViewport();
         })
       };
 
@@ -640,13 +650,9 @@ function init() {
           objectManager.add(data);
       });
 
-      
-
       myMap.events.add('click', function (e) {  
         myMap.balloon.close();
       });
-      
-    
 
     geolocation.get({
       provider: 'yandex',
@@ -678,77 +684,18 @@ function init() {
       myMap.container.fitToViewport();
     });
 
+    $('.change-current-point').on('click', function () {
+      $('#map').addClass('maxMap')
+      myMap.container.enterFullscreen()
+      myMap.container.fitToViewport();
+    });
+
     
 
     myMap.events.add('boundschange', function (e) {
       if ( myMap.container.isFullscreen() == false ) $('#map').removeClass('maxMap');
     });
 }
-    //   ymaps.ready(function () {  
-
-    //     ymaps.geolocation.get().then(function (res) {
-    //     var mapContainer = $('#map'),
-    //         bounds = res.geoObjects.get(0).properties.get('boundedBy'),
-    //         // Рассчитываем видимую область для текущей положения пользователя.
-    //         mapState = ymaps.util.bounds.getCenterAndZoom(
-    //             bounds,
-    //             [mapContainer.width(), mapContainer.height()]
-    //         );
-
-    //         console.log(bounds)
-
-    //         $('.open-map').on('click', function () {
-    //             $('#map').toggleClass('maxMap');
-    //             map.container.enterFullscreen()
-    //             map.container.fitToViewport();
-
-    //             console.log(map.container.isFullscreen())
-    //           });
-
-    //     createMap(mapState);
-    //     }, function (e) {
-    //         // Если местоположение невозможно получить, то просто создаем карту.
-    //         createMap({
-    //           center: [55.751574, 37.573856],
-    //           zoom: 10,
-    //           controls: ['fullscreenControl', 'zoomControl', 'geolocationControl'],
-
-    //         });
-    //     });
-    
-    //     function createMap (state) {
-    //           map = new ymaps.Map('map', state);
-          
-    //           var coords = [
-    //               [45.022,38.976],
-    //               [45.022,38.978],
-    //               [45.026,38.970],
-    //               [45.023,38.975],
-    //               [45.024,38.968]
-    //           ];
-
-    //           var myGeoObjects = [];
-
-    //           for (var i = 0; i<coords.length; i++) {
-    //             myGeoObjects[i] = new ymaps.GeoObject({
-    //               geometry: {
-    //                 type: "Point",
-    //                 coordinates: coords[i]
-    //               }
-    //             });
-    //           }
-
-    //           var myClusterer = new ymaps.Clusterer();
-    //           myClusterer.add(myGeoObjects);
-    //           map.geoObjects.add(myClusterer);
-    //     }
-    // });
-
-
-    
-    
-
-
       
       //Sort block
       const   div = document.createElement('div');
