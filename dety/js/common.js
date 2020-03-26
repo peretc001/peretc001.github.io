@@ -28,7 +28,8 @@ const enableScroll = () => {
 
 //Menu 
 if ( document.querySelector('nav') ) {
-    const   catalogBtn = document.querySelectorAll('.hover-link')
+    const   catalogBtn = document.querySelectorAll('.nav .hover-link')
+            catalogLink = document.querySelectorAll('.nav .link')
             catalog = document.querySelector('.nav-catalog')
             div = document.createElement('div');
 
@@ -66,7 +67,6 @@ if ( document.querySelector('nav') ) {
             current.querySelector('[data-parent="'+e.target.dataset.id+'"]').classList.add('active')
         }
         const catalogGeneral = current.querySelectorAll('.nav-catalog__general li a')
-        // if ( current.querySelector('.nav-catalog__general a.active') ) current.querySelector('.nav-catalog__general .active').classList.remove('active')
         if ( !current.querySelector('.nav-catalog__general a.active') ) {
             catalogGeneral[0].classList.add('active')
         }
@@ -87,14 +87,20 @@ if ( document.querySelector('nav') ) {
             if (catalog.querySelector('.nav-catalog__submenu.fade')) {
                 catalog.querySelector('.nav-catalog__submenu.fade').classList.remove('fade')
             }
-            document.body.removeChild(div)
+            if (document.contains(div)) document.body.removeChild(div)
             div.removeEventListener('mouseover', closeCatalogEvt)
         }, 100)
     }
     catalogBtn.forEach(item => {
+        item.addEventListener('click', (e) => { e.preventDefault() })
         item.addEventListener('mouseover', (e) => { timer = setTimeout(openCatalog(e), 300) })
         item.addEventListener('mouseout', () => { clearTimeout(timer) }) 
     })
+    catalogLink.forEach(item => {
+        item.addEventListener('mouseover', closeCatalog)
+    })
+
+
     
 }
 
