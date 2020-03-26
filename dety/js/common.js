@@ -28,33 +28,77 @@ const enableScroll = () => {
 
 //Menu 
 if ( document.querySelector('nav') ) {
-    const   catalogBtn = document.querySelector('.catalog-open')
-            catalogDropDown = document.querySelector('.nav-catalog__submenu')
+    const   catalogBtn = document.querySelectorAll('.hover-link')
+            catalog = document.querySelector('.nav-catalog')
             div = document.createElement('div');
 
     div.classList.add('layout')
     function closeCatalogEvt(event) { event.target = div ? closeCatalog() : '' }
 
-    openCatalog = () => {
+    let timer
+    openCatalog = (e)  => event => {
+        e.stopPropagation();
+        if (catalog.querySelector('.nav-catalog__submenu.active')) {
+            catalog.querySelector('.nav-catalog__submenu.active').classList.remove('active')
+        }
+        if (catalog.querySelector('.nav-catalog__submenu.fade')) {
+            catalog.querySelector('.nav-catalog__submenu.fade').classList.remove('fade')
+        }
+        const current = catalog.querySelector('[data-submenu="'+e.target.dataset.menu+'"]')
         document.body.append(div)
-        catalogBtn.classList.add('active')
-        catalogDropDown.classList.add('fade')
+        current.classList.add('fade')
         setTimeout(() => {
-            catalogDropDown.classList.add('active')
+            current.classList.add('active')
         }, 100);
-        div.addEventListener('click', closeCatalogEvt)
+        div.addEventListener('mouseover', closeCatalogEvt)
+
+        showParent = (e) => {
+            if ( current.querySelector('.nav-catalog__general .active') ) current.querySelector('.nav-catalog__general .active').classList.remove('active')
+            if (current.querySelector('.nav-catalog__parent.active')) {
+                current.querySelector('.nav-catalog__parent.active').classList.remove('active')
+            }
+            if (current.querySelector('.nav-catalog__parent.fade')) {
+                current.querySelector('.nav-catalog__parent.fade').classList.remove('fade')
+            }
+            current.querySelector(('[data-id="'+e.target.dataset.id+'"]')).classList.add('active')
+            
+            current.querySelector('[data-parent="'+e.target.dataset.id+'"]').classList.add('fade')
+            current.querySelector('[data-parent="'+e.target.dataset.id+'"]').classList.add('active')
+        }
+        const catalogGeneral = current.querySelectorAll('.nav-catalog__general li a')
+        // if ( current.querySelector('.nav-catalog__general a.active') ) current.querySelector('.nav-catalog__general .active').classList.remove('active')
+        if ( !current.querySelector('.nav-catalog__general a.active') ) {
+            catalogGeneral[0].classList.add('active')
+        }
+        if ( !current.querySelector('.nav-catalog__parent.active') ) {
+            current.querySelector('.nav-catalog__parent').classList.add('fade')
+            current.querySelector('.nav-catalog__parent').classList.add('active')
+        }
+        catalogGeneral.forEach(item => {
+            item.addEventListener('mouseenter', showParent) 
+        })
+        
     }
     closeCatalog = () => {
-        catalogDropDown.classList.remove('active')
+        if (catalog.querySelector('.nav-catalog__submenu.active')) {
+            catalog.querySelector('.nav-catalog__submenu.active').classList.remove('active')
+        }
         setTimeout(() => {
-            catalogDropDown.classList.remove('fade')
-        }, 100);
-        catalogBtn.classList.remove('active')
-        document.body.removeChild(div)
-        div.removeEventListener('click', closeCatalogEvt)
+            if (catalog.querySelector('.nav-catalog__submenu.fade')) {
+                catalog.querySelector('.nav-catalog__submenu.fade').classList.remove('fade')
+            }
+            document.body.removeChild(div)
+            div.removeEventListener('mouseover', closeCatalogEvt)
+        }, 100)
     }
-    catalogBtn.addEventListener('click', openCatalog)
+    catalogBtn.forEach(item => {
+        item.addEventListener('mouseover', (e) => { timer = setTimeout(openCatalog(e), 300) })
+        item.addEventListener('mouseout', () => { clearTimeout(timer) }) 
+    })
+    
 }
+
+
 //Modal
 if (document.querySelector('.modal')) {
     const   modal = document.querySelector('.modal')

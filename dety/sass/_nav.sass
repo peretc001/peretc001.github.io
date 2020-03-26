@@ -196,52 +196,17 @@
          align-items: center
          justify-content: space-between
       .brand
-         flex: 0 0 200px
-         height: 46px
+         flex: 0 0 260px
+         height: 57px
          background-size: contain
          background-repeat: no-repeat
          background-position: center
-         background-image: url('../img/logo.svg')
+         background-image: url('../img/logo_mobile.svg')
          img
             width: 100%
             height: auto
             &:nth-child(2)
                display: none
-      .catalog-open
-         margin-left: 2em
-         padding: 1em
-         position: relative
-         padding-left: 3.5em
-         &:hover
-            background: $accent !important
-         .icon
-            position: absolute
-            left: 1em
-            top: 50%
-            transform: translateY(-50%)
-            display: flex
-            align-content: center
-            justify-content: center
-            flex-wrap: wrap
-            width: 28px
-            span
-               display: inline-block
-               width: 9px
-               height: 9px
-               background: #fff
-               border-radius: 2px
-               margin-right: 4px
-               &:nth-child(1),
-               &:nth-child(2)
-                  margin-bottom: 4px
-               &:nth-child(4)
-                  transition: transform .3s ease
-                  transform: rotate(0)
-         &.active
-            .icon
-               span
-                  &:nth-child(4)
-                        transform: rotate(45deg)
 
       &__form
          flex: 1 1 auto
@@ -270,7 +235,7 @@
                color: $text2
 
       &--right
-         flex: 0 0 auto
+         flex: 0 0 260px
          justify-content: flex-end
          display: flex
          align-items: center
