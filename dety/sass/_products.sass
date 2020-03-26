@@ -189,46 +189,34 @@
         background-color: #ffffff
         border: 1px solid #faf0f0
         border-radius: 14px
-        padding: 0 17px 25px 17px
+        padding: 1em
         &__head
             display: flex
             align-items: center
             justify-content: flex-start
-            height: 40px
             margin-bottom: 1em
             span
                 position: relative
-                flex: 0 0 28px
-                height: 28px
                 margin: 0
-                margin-top: 15px
-                padding: 0
+                padding: .5em
+                color: #ffffff
+                font-size: 1em
+                letter-spacing: -1px
+                font-weight: bold
+                border-radius: 4px
                 background-size: cover
                 background-position: center
                 background-repeat: no-repeat
                 &:not(:first-child)
-                    margin-left: .5em
+                    margin-left: .3em
                 &.top
-                    background-image: url('../img/products/top.svg')
+                    background: $yellow
                 &.new
-                    background-image: url('../img/products/new.svg')
+                    background: $blue2
                 &.sale
-                    background-image: url('../img/products/sale.svg')
+                    background: $red
                 &.bonus
-                    background-image: url('../img/products/bonus.svg')
-                &.installments
-                    background-image: url('../img/products/installment.svg')
-                &.gift
-                    margin-top: 0
-                    svg
-                        position: relative
-                        .cap
-                            transform-origin: 100% 50%
-                            transition: transform .5s ease
-                    &:hover
-                        svg
-                            .cap
-                                transform: rotate(15deg)
+                    background: $accent
 
         &__img
             display: block
@@ -244,7 +232,7 @@
             display: flex
             align-items: center
             justify-content: flex-start
-            margin-bottom: 2em
+            margin-bottom: 1em
             .star
                 display: flex
                 align-items: center
@@ -281,27 +269,37 @@
         
         &__bottom
             display: flex
-            align-items: center
+            align-items: flex-end
             justify-content: space-between
             position: relative
             &__price
                 display: flex
+                align-items: flex-start
+                justify-content: flex-end
                 flex-direction: column
-                justify-content: flex-start
-                .old
-                    color: #93ADC3
-                    font-size: 12px
-                    margin-bottom: 0.3em
-                    text-decoration: line-through
+                height: 56px
+                &.sale
+                    padding: .3em 1em .5em 1em
+                    background: $red
+                    border-radius: 10px
+                    .old
+                        color: $text
+                        font-weight: bold
+                        font-size: 1.1em
+                        margin-bottom: 0
+                        text-decoration: line-through
+                    .price
+                        color: #fff
+
                 .price
                     color: $text
                     font-weight: bold
-                    font-size: 1.5em
+                    font-size: 1.85em
+
             &__buy
                 position: absolute
-                top: 50%
                 right: 0
-                transform: translateY(-50%)
+                bottom: 0
                 z-index: 1
                 .wishlist,
                 .cart
@@ -309,7 +307,9 @@
                     display: inline-block
                     width: 2em
                     height: 2em
-                    background-size: 2em
+                    padding: 0
+                    margin: 0
+                    background-size: 100%
                     background-position: center
                     background-repeat: no-repeat
                     transition: transform .3s ease
@@ -396,11 +396,14 @@
                 &:not(:first-child)
                     margin-left: 1em
         &-card
-           &__head
-                span
-                    &:nth-child(5),
-                    &:nth-child(6)
-                        display: none
+            &__bottom
+                &__price
+                    &.sale
+                        .old
+                            font-size: 1em
+
+                    .price
+                        font-size: 1.3em
                         
 @media screen and ( max-width: 991.98px )
     .products
@@ -481,19 +484,6 @@
         &-card
             &__img
                 text-align: center
-            &__head
-                span
-                    margin-top: 0.5em
-                    flex: 0 0 23px
-                    height: 23px
-                    &:not(:last-child)
-                        margin-left: .3em
-                    &:nth-child(5),
-                    &:nth-child(6)
-                        display: block
-                    svg
-                        width: 23px
-                        height: 33px
 
 @media screen and ( max-width: 767.98px )
     .products
@@ -575,7 +565,15 @@
                     &::before
                         transform: rotate(180deg)
                         background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzAwLjE4OCwyNDZMNDg0LjE0LDYyLjA0YzUuMDYtNS4wNjQsNy44NTItMTEuODIsNy44Ni0xOS4wMjRjMC03LjIwOC0yLjc5Mi0xMy45NzItNy44Ni0xOS4wMjhMNDY4LjAyLDcuODcyICAgIGMtNS4wNjgtNS4wNzYtMTEuODI0LTcuODU2LTE5LjAzNi03Ljg1NmMtNy4yLDAtMTMuOTU2LDIuNzgtMTkuMDI0LDcuODU2TDI0Ni4wMDgsMTkxLjgyTDYyLjA0OCw3Ljg3MiAgICBjLTUuMDYtNS4wNzYtMTEuODItNy44NTYtMTkuMDI4LTcuODU2Yy03LjIsMC0xMy45NiwyLjc4LTE5LjAyLDcuODU2TDcuODcyLDIzLjk4OGMtMTAuNDk2LDEwLjQ5Ni0xMC40OTYsMjcuNTY4LDAsMzguMDUyICAgIEwxOTEuODI4LDI0Nkw3Ljg3Miw0MjkuOTUyYy01LjA2NCw1LjA3Mi03Ljg1MiwxMS44MjgtNy44NTIsMTkuMDMyYzAsNy4yMDQsMi43ODgsMTMuOTYsNy44NTIsMTkuMDI4bDE2LjEyNCwxNi4xMTYgICAgYzUuMDYsNS4wNzIsMTEuODI0LDcuODU2LDE5LjAyLDcuODU2YzcuMjA4LDAsMTMuOTY4LTIuNzg0LDE5LjAyOC03Ljg1NmwxODMuOTYtMTgzLjk1MmwxODMuOTUyLDE4My45NTIgICAgYzUuMDY4LDUuMDcyLDExLjgyNCw3Ljg1NiwxOS4wMjQsNy44NTZoMC4wMDhjNy4yMDQsMCwxMy45Ni0yLjc4NCwxOS4wMjgtNy44NTZsMTYuMTItMTYuMTE2ICAgIGM1LjA2LTUuMDY0LDcuODUyLTExLjgyNCw3Ljg1Mi0xOS4wMjhjMC03LjIwNC0yLjc5Mi0xMy45Ni03Ljg1Mi0xOS4wMjhMMzAwLjE4OCwyNDZ6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==')
-
+        
+        &-card
+            &__bottom
+                &__price
+                    &.sale
+                        .old
+                            font-size: 1.1em
+                    .price
+                        font-size: 1.5em
     .resent,
     .visited
         h4
@@ -645,12 +643,13 @@
                 width: 150px
         
         &-card
-            padding: 0 10px 20px 10px
-
+            &__head
+                span
+                    font-size: 0.85em 
             &__title
                 font-size: 1em
                 height: 35px
-                margin-bottom: 2em
+                margin-bottom: .5em
             &__review
                 .star
                     span
@@ -662,16 +661,25 @@
                     font-size: .8em
             &__bottom
                 &__price
-                    .old
-                        font-size: .8em
+                    height: 48px
+                    &.sale
+                        padding: .5em
+                        .old
+                            font-size: 1em
+                        .price
+                            font-size: 1.1em
+                            padding-bottom: 0
                     .price
-                        font-size: 1.2em
+                        font-size: 1.3em
+                        padding-bottom: 0.2em
                 &__buy
                     .wishlist,
                     .cart
                         width: 1.6em
                         height: 1.6em
                         background-size: 1.6em
+                    .cart
+                        margin-left: .2em
 
     .resent,
     .visited
@@ -686,12 +694,6 @@
             padding: 0 .25em
 
 @media screen and ( max-width: 424.98px )
-    .products
-        &-card
-            &__head
-                span
-                    &:nth-child(6)
-                        display: none
     .resent,
     .visited
         h4
@@ -791,10 +793,21 @@
                         background-size: 1.4em
         
         &-card
-            &__head
-                span
-                    &:nth-child(5)
-                        display: none
+            &__bottom
+                &__price
+                    height: 40px
+                    &.sale
+                        padding: .5em
+                        .old
+                            font-size: .9em
+                    .price
+                        font-size: .8em
+                &__buy
+                    .wishlist,
+                    .cart
+                        width: 1.3em
+                        height: 1.3em
+                        background-size: 1.3em
                         
             
     .resent,

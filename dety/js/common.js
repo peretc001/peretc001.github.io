@@ -24,6 +24,37 @@ const enableScroll = () => {
         document.removeEventListener('wheel', preventDefault, {passive: false});
     }
 }
+
+
+//Menu 
+if ( document.querySelector('nav') ) {
+    const   catalogBtn = document.querySelector('.catalog-open')
+            catalogDropDown = document.querySelector('.nav-catalog__submenu')
+            div = document.createElement('div');
+
+    div.classList.add('layout')
+    function closeCatalogEvt(event) { event.target = div ? closeCatalog() : '' }
+
+    openCatalog = () => {
+        document.body.append(div)
+        catalogBtn.classList.add('active')
+        catalogDropDown.classList.add('fade')
+        setTimeout(() => {
+            catalogDropDown.classList.add('active')
+        }, 100);
+        div.addEventListener('click', closeCatalogEvt)
+    }
+    closeCatalog = () => {
+        catalogDropDown.classList.remove('active')
+        setTimeout(() => {
+            catalogDropDown.classList.remove('fade')
+        }, 100);
+        catalogBtn.classList.remove('active')
+        document.body.removeChild(div)
+        div.removeEventListener('click', closeCatalogEvt)
+    }
+    catalogBtn.addEventListener('click', openCatalog)
+}
 //Modal
 if (document.querySelector('.modal')) {
     const   modal = document.querySelector('.modal')
