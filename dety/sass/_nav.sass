@@ -58,7 +58,7 @@
          z-index: 3
          color: $text2
       a
-         color: $accent2
+         color: $accent
          padding-top: 1em
          padding-bottom: 1em
       &__city
@@ -107,7 +107,7 @@
                background-position: left
                background-repeat: no-repeat
             &:hover
-               color: $accent2
+               color: $accent
          &__phone
             font-weight: bold
             &::before
@@ -196,7 +196,7 @@
          align-items: center
          justify-content: space-between
       .brand
-         flex: 0 0 260px
+         flex: 0 0 200px
          height: 57px
          background-size: contain
          background-repeat: no-repeat
@@ -205,6 +205,7 @@
          img
             width: 100%
             height: auto
+            margin: 0 auto
             &:nth-child(2)
                display: none
 
@@ -214,7 +215,6 @@
          justify-content: flex-start
          border: 2px solid $yellow
          border-radius: 6px
-         margin-left: 2em
          flex: 1 1 auto
          input
             flex: 1 1 65%
@@ -235,7 +235,7 @@
                color: $text2
 
       &--right
-         flex: 0 0 260px
+         // flex: 0 0 260px
          justify-content: flex-end
          display: flex
          align-items: center
@@ -344,11 +344,10 @@
             &__time
                display: none
       &-search
-         &__form
-            &__category
-               flex: 1 1 40%
-            input
-               flex: 1 1 60%
+         .brand,
+         &--right
+            flex: 0 0 220px
+
       &-catalog
          &__menu
             &::-webkit-scrollbar

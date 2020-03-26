@@ -48,9 +48,9 @@ if ( document.querySelector('nav') ) {
         const current = catalog.querySelector('[data-submenu="'+e.target.dataset.menu+'"]')
         document.body.append(div)
         current.classList.add('fade')
-        setTimeout(() => {
+        // setTimeout(() => {
             current.classList.add('active')
-        }, 100);
+        // }, 100);
         div.addEventListener('mouseover', closeCatalogEvt)
 
         showParent = (e) => {
@@ -83,28 +83,39 @@ if ( document.querySelector('nav') ) {
         if (catalog.querySelector('.nav-catalog__submenu.active')) {
             catalog.querySelector('.nav-catalog__submenu.active').classList.remove('active')
         }
-        setTimeout(() => {
+        // setTimeout(() => {
             if (catalog.querySelector('.nav-catalog__submenu.fade')) {
                 catalog.querySelector('.nav-catalog__submenu.fade').classList.remove('fade')
             }
             if (document.contains(div)) document.body.removeChild(div)
             div.removeEventListener('mouseover', closeCatalogEvt)
-        }, 100)
+        // }, 50)
     }
     catalogBtn.forEach(item => {
         item.addEventListener('click', (e) => { e.preventDefault() })
-        item.addEventListener('mouseover', (e) => { timer = setTimeout(openCatalog(e), 300) })
+        item.addEventListener('mouseover', (e) => { timer = setTimeout(openCatalog(e), 200) })
         item.addEventListener('mouseout', () => { clearTimeout(timer) }) 
     })
     catalogLink.forEach(item => {
         item.addEventListener('mouseover', closeCatalog)
     })
-
-
-    
 }
 
+//Mobile menu
+if ( document.querySelector('.nav-mobile') ) {
+    const   mCatalogBtn = document.querySelector('.nav-mobile .catalog-btn')
+            catalog = document.querySelector('.nav-catalog')
+            div = document.createElement('div');
 
+    div.classList.add('layout')
+
+    openMobileMenu = () => {
+        console.log(catalog)
+        catalog.querySelector('.nav-catalog__menu').classList.add('fade')
+        catalog.querySelector('.nav-catalog__menu').classList.add('active')
+    }
+    mCatalogBtn.addEventListener('click', openMobileMenu)
+}
 //Modal
 if (document.querySelector('.modal')) {
     const   modal = document.querySelector('.modal')
