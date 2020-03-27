@@ -33,7 +33,7 @@ if ( document.querySelector('nav') ) {
             catalog = document.querySelector('.nav-catalog')
             
             mCatalogBtn = document.querySelector('.nav-mobile .catalog-btn')
-            catalog = document.querySelector('.nav-catalog')
+            nextLink = document.querySelectorAll('.nav .next-link')
             div = document.createElement('div');
 
     div.classList.add('layout')
@@ -106,22 +106,42 @@ if ( document.querySelector('nav') ) {
         catalog.querySelector('.nav-catalog__menu').classList.remove('active')
         setTimeout(() => {
             catalog.querySelector('.nav-catalog__menu').classList.remove('fade')
-            if (document.contains(div)) document.body.removeChild(div)
             mCatalogBtn.children[0].classList.remove('active')
-        }, 100);
-
-        catalog.querySelector('.nav-catalog__submenu.active').classList.remove('active')
-        setTimeout(() => {
-            catalog.querySelector('.nav-catalog__submenu.fade').classList.remove('fade')
             if (document.contains(div)) document.body.removeChild(div)
-            mCatalogBtn.children[0].classList.remove('active')
-        }, 100);
+        }, 100);   
         
+        if ( catalog.querySelector('.nav-catalog__submenu.active') ) {
+            catalog.querySelector('.nav-catalog__submenu.active').classList.remove('active')
+            setTimeout(() => {
+                catalog.querySelector('.nav-catalog__submenu.fade').classList.remove('fade')
+                if (document.contains(div)) document.body.removeChild(div)
+                mCatalogBtn.children[0].classList.remove('active')
+            }, 100);
+        }
     }
 
-    showNext = (e) => {
+    
+
+
+
+    // showChildren = (e) => {
+    //     e.preventDefault()
+    //     if (e.target.dataset.id) {
+    //         const target = e.target.closest('div')
+    //         target.classList.add('out')
+
+    //         const parrent = catalog.querySelector('.nav-catalog__submenu.fade.active.parrent')
+    //         console.log(parrent)
+    //         parrent.querySelector('[data-parent="'+ e.target.dataset.id +'"]').classList.add('in')
+    //         // setTimeout(() => {  
+    //         //     catalog.querySelector('[data-parent="'+ e.target.dataset.id +'"]').classList.add('active')
+    //         // }, 100);
+    //     }
+    // }
+
+
+    showParent = (e) => {
         e.preventDefault()
-        console.log(catalog)        
         if ( catalog.children[0].classList.contains('active') ) {
             catalog.children[0].classList.remove('active')
             setTimeout(() => {
@@ -130,9 +150,17 @@ if ( document.querySelector('nav') ) {
         }
         if (e.target.dataset.menu) {
             catalog.querySelector('[data-submenu="'+ e.target.dataset.menu +'"]').classList.add('fade')
-            catalog.querySelector('[data-submenu="'+ e.target.dataset.menu +'"]').classList.add('active')
-            catalog.querySelector('[data-submenu="'+ e.target.dataset.menu +'"]').classList.add('parrent')
+            setTimeout(() => {  
+                catalog.querySelector('[data-submenu="'+ e.target.dataset.menu +'"]').classList.add('active')
+            }, 100);
         }
+    }
+
+    showNext = (e) => {
+        e.preventDefault()
+        closeMobileMenu()
+        console.log(e.target.parentNode, e.target.dataset.id)
+        e.target.closest('div').classList.add('out')
     }
     
     catalogBtn.forEach(item => {
@@ -141,9 +169,14 @@ if ( document.querySelector('nav') ) {
             item.addEventListener('mouseover', (e) => { timer = setTimeout(openCatalog(e), 200) })
             item.addEventListener('mouseout', () => { clearTimeout(timer) }) 
         } else {
-            item.addEventListener('click', showNext)
+            item.addEventListener('click', showParent)
+            nextLink.forEach(item => {
+                item.addEventListener('click', showNext)
+            })
         }
     })
+
+
     catalogLink.forEach(item => {
         item.addEventListener('mouseover', closeCatalog)
     })

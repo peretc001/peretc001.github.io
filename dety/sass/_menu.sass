@@ -474,8 +474,10 @@
                 left: auto
                 padding: 0
                 right: calc(50% - 345px)
-                transform: translateX(100%) translateY(100%)
                 flex-wrap: wrap
+                overflow: hidden
+                display: table
+                
                 // .back
                 //     display: block
                 //     width: 100%
@@ -550,20 +552,86 @@
                 &.fade
                     display: flex
                     z-index: 3
+                    transform: translateX(0) translateY(110%)
                     transition: transform .3s ease, opacity .3s ease
                 &.active
                     opacity: 1
                     pointer-events: all
                     transform: translateX(0) translateY(100%)
+                &.parrent
+                    background: #fff
+                    .out
+                        transform: translateX(-100%)
+                        transition: transform .3s ease
             &__general
                 flex: 0 0 100%
                 border-radius: 0
+                transition: transform .3s ease
                 ul
                     display: block
+                    transition: transform .3s ease
                     li
                         display: block
                         a
                             opacity: 1
+            &__parent
+                position: absolute
+                left: 0
+                top: 0
+                flex: 0 0 100%
+                display: flex
+                opacity: 0
+                z-index: -1
+                pointer-events: none
+                transition: transform .3s ease
+                transform: translateX(100%)
+                &.in
+                    opacity: 1
+                    z-index: 3
+                    pointer-events: all
+                    transform: translateY(0)
+                ul
+                    flex: 0 0 100%
+                    padding: 0
+                    margin-bottom: 0
+                    li
+                        &:not(:first-child)
+                            display: none
+                        a
+                            font-weight: normal !important
+                            color: $text
+                            margin: 0
+                            &:hover
+                                color: $text
+                        &:first-child
+                            margin-bottom: 1em
+                            a
+                                font-weight: bold
+                                font-size: 1.2em
+                                color: $text
+                        .more
+                            display: inline-block
+                            margin-top: 1em
+                            padding-right: .8em
+                            position: relative
+                            &::after
+                            content: ''
+                            position: absolute
+                            right: 0
+                            top: 55%
+                            transform: translateY(-50%)
+                            display: inline-block
+                            width: .5em
+                            height: .5em
+                            background-size: cover
+                            background-position: cenetr
+                            background-repeat: no-repeat
+                            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojNDc0NzQ3IiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+                            transition: transform .5s ease
+                            &:hover
+                                color: $text
+                                &::after
+                                    transform: translateY(-50%) translateX(5px)
                 
             // &.mob
             //     padding: 0
