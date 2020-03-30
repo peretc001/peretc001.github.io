@@ -188,20 +188,20 @@
         display: block
         background-color: #ffffff
         border: 1px solid #faf0f0
-        border-radius: 14px
-        padding: 1em
+        border-radius: 1em
+        padding: 0
         &__head
             display: flex
             align-items: center
             justify-content: flex-start
-            margin-bottom: 1em
+            padding: 1em
+            min-height: 60px
             span
                 position: relative
                 margin: 0
                 padding: .5em
                 color: #ffffff
                 font-size: 1em
-                letter-spacing: -1px
                 font-weight: bold
                 border-radius: 4px
                 background-size: cover
@@ -217,22 +217,26 @@
                     background: $red
                 &.bonus
                     background: $accent
+                &.installments
+                    background: $green
 
         &__img
             display: block
-            margin-bottom: 30px
+            padding: 0 1em
+            text-align: center
         &__title
             display: block
-            height: 38px
+            padding: 1em
+            max-height: 53px
             overflow: hidden
-            margin-bottom: 1em
             color: $text
             font-size: 1.15em
+            margin-bottom: .5em
         &__review
             display: flex
             align-items: center
             justify-content: flex-start
-            margin-bottom: 1em
+            padding: 0 1em
             .star
                 display: flex
                 align-items: center
@@ -272,34 +276,40 @@
             align-items: flex-end
             justify-content: space-between
             position: relative
+            padding: 1em 0 0
             &__price
                 display: flex
                 align-items: flex-start
                 justify-content: flex-end
                 flex-direction: column
-                height: 56px
-                &.sale
-                    padding: .3em 1em .5em 1em
-                    background: $red
-                    border-radius: 10px
-                    .old
-                        color: $text
-                        font-weight: bold
-                        font-size: 1.1em
-                        margin-bottom: 0
-                        text-decoration: line-through
-                    .price
-                        color: #fff
-
+                padding: 1em
+                padding-bottom: 1.5em
+                .old
+                    color: rgba(255, 255, 255, 0.6)
+                    font-weight: bold
+                    font-size: 1.2em
+                    margin: 0
+                    margin-bottom: 0.3em
+                .bonus
+                    color: $accent
+                    font-weight: bold
+                    font-size: 1.2em
+                    margin: 0
+                    margin-bottom: 0.3em
                 .price
                     color: $text
                     font-weight: bold
-                    font-size: 1.85em
+                    font-size: 1.8em
+                &.sale
+                    background: $red
+                    border-radius: 1em
+                    .price
+                        color: #ffffff
 
             &__buy
                 position: absolute
-                right: 0
-                bottom: 0
+                right: 1em
+                bottom: 1.5em
                 z-index: 1
                 .wishlist,
                 .cart
@@ -398,12 +408,16 @@
         &-card
             &__bottom
                 &__price
-                    &.sale
-                        .old
-                            font-size: 1em
-
+                    .old,
+                    .bonus
+                        font-size: 1em
                     .price
                         font-size: 1.3em
+                &__buy
+                    .wishlist,
+                    .cart
+                        width: 1.5em
+                        height: 1.5em
                         
 @media screen and ( max-width: 991.98px )
     .products
@@ -569,11 +583,16 @@
         &-card
             &__bottom
                 &__price
-                    &.sale
-                        .old
-                            font-size: 1.1em
+                    .old,
+                    .bonus
+                        font-size: 1.1em
                     .price
                         font-size: 1.5em
+                &__buy
+                    .wishlist,
+                    .cart
+                        width: 2em
+                        height: 2em
     .resent,
     .visited
         h4
@@ -644,11 +663,12 @@
         
         &-card
             &__head
+                min-height: 55px
                 span
-                    font-size: 0.85em 
+                    font-size: 0.8em 
             &__title
                 font-size: 1em
-                height: 35px
+                height: 50px
                 margin-bottom: .5em
             &__review
                 .star
@@ -661,18 +681,14 @@
                     font-size: .8em
             &__bottom
                 &__price
-                    height: 48px
-                    &.sale
-                        padding: .5em
-                        .old
-                            font-size: 1em
-                        .price
-                            font-size: 1.1em
-                            padding-bottom: 0
+                    padding: .5em 1em 1em 1em
+                    .old,
+                    .bonus
+                        font-size: 1em
                     .price
                         font-size: 1.3em
-                        padding-bottom: 0.2em
                 &__buy
+                    bottom: 1em
                     .wishlist,
                     .cart
                         width: 1.6em
@@ -694,6 +710,24 @@
             padding: 0 .25em
 
 @media screen and ( max-width: 424.98px )
+    .products
+        &-card
+           &__bottom
+                &__price
+                    padding: .5em .5em .5em 1em
+                    padding-bottom: 1em
+                    .old,
+                    .bonus
+                        font-size: .9em
+                    .price
+                        font-size: 1.2em
+                &__buy
+                    bottom: 1em
+                    .wishlist,
+                    .cart
+                        width: 1.6em
+                        height: 1.6em
+                        background-size: 1.6em
     .resent,
     .visited
         h4
@@ -717,20 +751,6 @@
                                 margin-bottom: 0.5em
                             &:last-child
                                 margin-left: 0
-
-        &-sort
-            // p
-            //     font-size: 0.9em
-            // &-block
-            //     &--select
-            //         width: 130px
-            //         font-size: 0.9em
-            //     &--options
-            //         width: 180px
-            // a
-            //     font-size: 0.9em
-            // .open-filter
-            //     width: 100px
 
 @media screen and ( max-width: 374.98px )
     .products
@@ -793,16 +813,22 @@
                         background-size: 1.4em
         
         &-card
+            &__head
+                span
+                    &:nth-child(3n+1)
+                        display: none
             &__bottom
                 &__price
-                    height: 40px
+                    padding: .5em 1em
+                    .old,
+                    .bonus
+                        font-size: .9em
+                    .price
+                        font-size: 1em
                     &.sale
                         padding: .5em
-                        .old
-                            font-size: .9em
-                    .price
-                        font-size: .8em
                 &__buy
+                    right: .5em
                     .wishlist,
                     .cart
                         width: 1.3em

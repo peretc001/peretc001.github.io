@@ -21,7 +21,7 @@
 
         &__review
             display: flex
-            align-items: flex-end
+            align-items: center
             justify-content: flex-start
             margin-left: 2em
             .star
@@ -30,8 +30,8 @@
                 justify-content: flex-start
                 span
                     display: inline-block
-                    width: 1.5em
-                    height: 1.5em
+                    width: 1.2em
+                    height: 1.2em
                     background-size: cover
                     background-position: center
                     background-repeat: no-repeat
@@ -57,22 +57,6 @@
                     background-position: left
                     background-repeat: no-repeat
                     background-image: url('../../img/review/quote.svg')
-        
-        .wishlist
-            margin-left: auto
-            margin-right: 1em
-            position: relative
-            display: inline-block
-            width: 2em
-            height: 2em
-            background-size: 2em
-            background-position: center
-            background-repeat: no-repeat
-            transition: background .3s ease
-            cursor: pointer
-            background-image: url('../../img/nav/wishlist.svg')
-            &.active
-                background-image: url('../../img/nav/wishlist-active.svg')
 
     &-body
         position: relative
@@ -232,30 +216,44 @@
                     display: flex
                     align-items: center
                     justify-content: flex-start
-                    margin-bottom: 1em
+                    padding: 1em 0
                     span
                         position: relative
-                        flex: 0 0 28px
-                        height: 28px
                         margin: 0
-                        margin-top: 15px
-                        padding: 0
+                        padding: .5em
+                        color: #ffffff
+                        font-size: 1em
+                        font-weight: bold
+                        border-radius: 4px
                         background-size: cover
                         background-position: center
                         background-repeat: no-repeat
                         &:not(:first-child)
-                            margin-left: .5em
+                            margin-left: .3em
                         &.top
-                            background-image: url('../../img/products/top.svg')
+                            background: $yellow
                         &.new
-                            background-image: url('../../img/products/new.svg')
+                            background: $blue2
                         &.sale
-                            background-image: url('../../img/products/sale.svg')
+                            background: $red
                         &.bonus
-                            background-image: url('../../img/products/bonus.svg')
+                            background: $accent
                         &.installments
-                            background-image: url('../../img/products/installment.svg')
-
+                            background: $green
+                    .wishlist
+                        margin-left: auto !important
+                        position: relative
+                        display: inline-block
+                        width: 2em
+                        height: 2em
+                        background-size: 2em
+                        background-position: center
+                        background-repeat: no-repeat
+                        transition: background .3s ease
+                        cursor: pointer
+                        background-image: url('../../img/nav/wishlist.svg')
+                        &.active
+                            background-image: url('../../img/nav/wishlist-active.svg')
                     
                 &__img
                     position: relative
@@ -1062,10 +1060,18 @@
     .products-page
         h1, h2, h3, h4
             font-size: 1.6em
+        &-header
+            &__review
+                .star
+                    span
+                        width: 1em
+                        height: 1em
         &-body
             &__item
-                padding: 0 1em 1em 1em
-
+                &__right
+                    &__tag
+                        span
+                            font-size: .8em
             &__about
                 &__title
                     align-items: flex-start
@@ -1096,34 +1102,14 @@
 
 @media screen and ( max-width: 424.98px )
     .products-page
-        &-header
-            &__review
-                .star
-                    span
-                        width: 1em
-                        height: 1em
-                .quote
-                    position: relative
-                    font-size: 1em
-                    color: $text
-                    padding-left: 20px
-                    margin-left: 1em
-                    &::before
-                        content: ''
-                        position: absolute
-                        left: 0
-                        top: 50%
-                        transform: translateY(-50%)
-                        width: 100%
-                        height: 100%
-                        background-size: 18px
-                        background-position: left
-                        background-repeat: no-repeat
-                        background-image: url('../../img/review/quote.svg')
-            
-            .wishlist
-                
         &-body
+            &__item
+                &__right
+                    &__tag
+                        span
+                            &:nth-child(5)
+                                display: none
+
             &__buy
                 &__price
                     &__tag
@@ -1134,18 +1120,11 @@
     .products-page
         h1, h2, h3, h4
             font-size: 1.4em
-        &-header
-            span
-                font-size: 0.8em
+        
         &-body
             &__item
                 padding: 1em
-                &__right
-                    &__tag
-                        span
-                            // flex: 0 0 32px
-                            // height: 32px
-                            // font-size: 0.8em
+
             &__buy
                 &__price
                     font-size: .9em

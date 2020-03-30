@@ -198,7 +198,7 @@
                         display: none
                 &.city,
                 &.phone
-                    border: 1px solid $grey2
+                    background: #CCF0F4
             p
                 margin: 0
                 padding: 0
@@ -209,7 +209,7 @@
             .menu-item
                 padding: 1em 0
                 margin: 0 2em
-                border-bottom: 1px solid $grey2
+                border-bottom: 1px solid rgba(0, 182, 198, 0.2)
                 p
                     padding: 0
                 ul
@@ -252,11 +252,19 @@
                     display: flex
                     align-items: center
                     a
+                        background: #CCF0F4
+                        border-radius: 4px
+                        display: inline-block
+                        width: 82px
+                        height: 46px
+                        display: flex
+                        align-items: center
+                        justify-content: center
                         &:not(:first-child)
-                            margin-left: 2em
+                            margin-left: 8px
                         img
-                            width: 2em
-                            height: auto
+                            max-width: 24px
+                            max-height: 24px
             .menu-email
                 padding: 1em 2em 0 2em
                 p

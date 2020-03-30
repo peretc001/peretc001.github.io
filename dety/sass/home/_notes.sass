@@ -28,44 +28,29 @@
         &__desc
             display: block
             margin-bottom: 30px
+            line-height: 1.7
             text-align: justify
             text-align-last: left
             a
                 color: $text2
-        &__bottom
+        &__footer
             margin-top: auto
             display: flex
             align-items: flex-end
             justify-content: flex-start
-            a
+            span
+                display: flex
+                align-items: center
                 color: $text2
-                padding: .2em 0
-                transition: color .3s ease
-                &:hover
-                    color: $text2
-            &__date
-                color: $text2
-                margin-right: 2em
-            &__view
-                position: relative
-                padding-left: 2.3em !important
-                color: $text2
-                &::before
-                    content: ''
-                    position: absolute
-                    left: 0
-                    top: 50%
-                    transform: translateY(-50%)
-                    width: 25px
-                    height: 25px
-                    background-size: 25px
-                    background-position: left center
-                    background-repeat: no-repeat
-                    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDYxLjMxMiA0NjEuMzEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NjEuMzEyIDQ2MS4zMTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMjMwLjY1NiwxNTYuNDE2Yy00MC45NiwwLTc0LjI0LDMzLjI4LTc0LjI0LDc0LjI0czMzLjI4LDc0LjI0LDc0LjI0LDc0LjI0czc0LjI0LTMzLjI4LDc0LjI0LTc0LjI0ICAgIFMyNzEuNjE2LDE1Ni40MTYsMjMwLjY1NiwxNTYuNDE2eiBNMjI1LjAyNCwyMDguNjRjLTkuMjE2LDAtMTYuODk2LDcuNjgtMTYuODk2LDE2Ljg5NmgtMjQuNTc2ICAgIGMwLjUxMi0yMy4wNCwxOC45NDQtNDEuNDcyLDQxLjQ3Mi00MS40NzJWMjA4LjY0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojN0Y3RDdEIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNNDU1LjkzNiwyMTUuMjk2Yy0yNS4wODgtMzEuMjMyLTExNC42ODgtMTMzLjEyLTIyNS4yOC0xMzMuMTJTMzAuNDY0LDE4NC4wNjQsNS4zNzYsMjE1LjI5NiAgICBjLTcuMTY4LDguNzA0LTcuMTY4LDIxLjUwNCwwLDMwLjcyYzI1LjA4OCwzMS4yMzIsMTE0LjY4OCwxMzMuMTIsMjI1LjI4LDEzMy4xMnMyMDAuMTkyLTEwMS44ODgsMjI1LjI4LTEzMy4xMiAgICBDNDYzLjEwNCwyMzcuMzEyLDQ2My4xMDQsMjI0LjUxMiw0NTUuOTM2LDIxNS4yOTZ6IE0yMzAuNjU2LDMzOC4xNzZjLTU5LjM5MiwwLTEwNy41Mi00OC4xMjgtMTA3LjUyLTEwNy41MiAgICBzNDguMTI4LTEwNy41MiwxMDcuNTItMTA3LjUyczEwNy41Miw0OC4xMjgsMTA3LjUyLDEwNy41MlMyOTAuMDQ4LDMzOC4xNzYsMjMwLjY1NiwzMzguMTc2eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojN0Y3RDdEIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
-                    transition: background .3s ease
-                &:hover
-                    &::before
-                        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDYxLjMxMiA0NjEuMzEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NjEuMzEyIDQ2MS4zMTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMjMwLjY1NiwxNTYuNDE2Yy00MC45NiwwLTc0LjI0LDMzLjI4LTc0LjI0LDc0LjI0czMzLjI4LDc0LjI0LDc0LjI0LDc0LjI0czc0LjI0LTMzLjI4LDc0LjI0LTc0LjI0ICAgIFMyNzEuNjE2LDE1Ni40MTYsMjMwLjY1NiwxNTYuNDE2eiBNMjI1LjAyNCwyMDguNjRjLTkuMjE2LDAtMTYuODk2LDcuNjgtMTYuODk2LDE2Ljg5NmgtMjQuNTc2ICAgIGMwLjUxMi0yMy4wNCwxOC45NDQtNDEuNDcyLDQxLjQ3Mi00MS40NzJWMjA4LjY0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojNDc0NzQ3IiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNNDU1LjkzNiwyMTUuMjk2Yy0yNS4wODgtMzEuMjMyLTExNC42ODgtMTMzLjEyLTIyNS4yOC0xMzMuMTJTMzAuNDY0LDE4NC4wNjQsNS4zNzYsMjE1LjI5NiAgICBjLTcuMTY4LDguNzA0LTcuMTY4LDIxLjUwNCwwLDMwLjcyYzI1LjA4OCwzMS4yMzIsMTE0LjY4OCwxMzMuMTIsMjI1LjI4LDEzMy4xMnMyMDAuMTkyLTEwMS44ODgsMjI1LjI4LTEzMy4xMiAgICBDNDYzLjEwNCwyMzcuMzEyLDQ2My4xMDQsMjI0LjUxMiw0NTUuOTM2LDIxNS4yOTZ6IE0yMzAuNjU2LDMzOC4xNzZjLTU5LjM5MiwwLTEwNy41Mi00OC4xMjgtMTA3LjUyLTEwNy41MiAgICBzNDguMTI4LTEwNy41MiwxMDcuNTItMTA3LjUyczEwNy41Miw0OC4xMjgsMTA3LjUyLDEwNy41MlMyOTAuMDQ4LDMzOC4xNzYsMjMwLjY1NiwzMzguMTc2eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojNDc0NzQ3IiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+                padding: 0
+                &:not(:last-child)
+                    margin-right: 1em
+                &:last-child
+                    margin-left: auto
+                img
+                    max-width: 23px
+                    max-height: 16px
+                    margin-right: 0.3em
 
     .slick-slide
         outline: none

@@ -24,7 +24,7 @@ footer
                 display: flex
                 padding-left: 2em
                 input
-                    flex: 1 1 70%
+                    flex: 1 1 65%
                     border: 2px solid $yellow
                     border-radius: 6px
                     background: transparent
@@ -43,7 +43,7 @@ footer
                     &:-ms-input-placeholder
                         color: #9BAFC0
                 .btn
-                    flex: 1 1 30%
+                    flex: 1 1 35%
                     &.btn-send
                         margin-left: 1em
                         padding: 0
@@ -52,11 +52,7 @@ footer
     .row
         [class*="col-"]
             &:last-child
-                display: flex
-                flex-direction: column
-                .policy
-                    margin-top: auto
-                    align-self: flex-end
+                padding-left: 4em
             p
                 b
                     font-size: 1.2em
@@ -77,17 +73,25 @@ footer
     .social
         display: flex
         a
+            background: $blue
+            border-radius: 4px
+            display: inline-block
+            width: 50px
+            height: 30px
+            display: flex
+            align-items: center
+            justify-content: center
             &:not(:first-child)
-                margin-left: 2em
+                margin-left: 8px
             img
-                width: 2em
-                height: auto
+                max-width: 20px
+                max-height: 20px
 
     .copyright
         margin: 45px auto 0 auto
         padding: 30px 0 20px 0
         border-top: 1px solid #ebebeb
-        color: $nav
+        color: $text2
         display: flex
         align-items: center
         justify-content: space-between
@@ -115,6 +119,10 @@ footer
                 &__form
                     flex: 1 0 50%
                     padding-left: 15px
+        .row
+            [class*="col-"]
+                &:last-child
+                    padding-left: 0em
 
 @media screen and ( max-width: 991.98px )
     footer
