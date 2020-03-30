@@ -462,6 +462,95 @@
                                 margin-bottom: 0
                                 margin-right: 0.5em
 
+            &__best
+                padding: 1em
+                display: flex
+                align-items: center
+                justify-content: space-between
+                flex-wrap: wrap
+                border-bottom: 1px solid #f5f5f5
+
+                .icon
+                    flex: 0 0 60px
+                .text
+                    flex: 1 1 auto
+                    p
+                        font-size: 1.1em
+                        font-weight: bold
+                        margin-bottom: 0
+                        &:first-child
+                            font-size: 1em
+                            margin-bottom: 0.1em
+
+                .hideElem
+                    flex: 0 0 auto
+                    position: relative
+                    display: inline-block
+                    width: 2em
+                    height: 2em
+                    cursor: pointer
+                    &::after
+                        content: ''
+                        position: absolute
+                        left: 0
+                        top: 50%
+                        transform: translateY(-50%) rotate(225deg)
+                        display: inline-block
+                        width: 2em
+                        height: 2em
+                        background: $accent
+                        border-radius: 50%
+                        color: #ffffff
+                        background-size: 1em
+                        background-position: center
+                        background-repeat: no-repeat
+                        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNNDY1LjA2NCwyMDcuNTY2bDAuMDI4LDBIMjg0LjQzNlYyNy4yNWMwLTE0Ljg0LTEyLjAxNi0yNy4yNDgtMjYuODU2LTI3LjI0OGgtMjMuMTE2ICAgIGMtMTQuODM2LDAtMjYuOTA0LDEyLjQwOC0yNi45MDQsMjcuMjQ4djE4MC4zMTZIMjYuOTA4Yy0xNC44MzIsMC0yNi45MDgsMTItMjYuOTA4LDI2Ljg0NHYyMy4yNDggICAgYzAsMTQuODMyLDEyLjA3MiwyNi43OCwyNi45MDgsMjYuNzhoMTgwLjY1NnYxODAuOTY4YzAsMTQuODMyLDEyLjA2NCwyNi41OTIsMjYuOTA0LDI2LjU5MmgyMy4xMTYgICAgYzE0Ljg0LDAsMjYuODU2LTExLjc2NCwyNi44NTYtMjYuNTkyVjI4NC40MzhoMTgwLjYyNGMxNC44NCwwLDI2LjkzNi0xMS45NTIsMjYuOTM2LTI2Ljc4VjIzNC40MSAgICBDNDkyLDIxOS41NjYsNDc5LjkwNCwyMDcuNTY2LDQ2NS4wNjQsMjA3LjU2NnoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiIHN0eWxlPSJmaWxsOiNGRkZGRkYiPjwvcGF0aD4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+')
+                        transition: transform .5s ease
+                    &.active
+                        &::before
+                            content: ''
+                        &::after
+                            transform: translateY(-50%) rotate(0)
+                .showElem
+                    flex: 0 0 100%
+                    padding: 1em 0 0 60px
+                    max-height: 500px
+                    opacity: 1
+                    overflow: hidden
+                    transition: max-height .5s ease-in-out, opacity .5s ease-in-out, padding .5s ease-in-out
+                    &.active
+                        padding: 0 0 0 60px
+                        opacity: 0
+                        max-height: 0
+                    
+                    p
+                        color: $grey
+                        font-weight: normal
+                        margin-bottom: 1em
+                        font-size: .8em
+                    .date
+                        color: $red
+                        font-size: 0.7em
+                        color: $red
+                        font-weight: bold
+                    
+                    ul
+                        margin: 0
+                        padding: 0
+                        li
+                            list-style: none
+                            padding: 0.8em 0
+                            margin: 0
+                            display: flex
+                            align-items: center
+                            justify-content: space-between
+                            font-size: 1.1em
+                            font-weight: bold
+                            border-bottom: 1px solid #DADADA
+                            &:last-child
+                                border-bottom: none
+                                padding-bottom: 0
+
             &__size,
             &__color
                 width: 100%
@@ -840,6 +929,11 @@
                         flex-wrap: wrap
                         a
                             font-size: .9rem
+                
+                &__best
+                    .text
+                        p
+                            font-size: 1em
                 &__size
                     .table
                         font-size: 12.6px
@@ -1136,6 +1230,12 @@
                     &__tag
                         span
                             font-size: .75em
+                &__best
+                    .text
+                        p
+                            font-size: .8em
+                            &:first-child
+                                font-size: 0.8em
                 &__button
                     .btn
                         font-size: 1em
