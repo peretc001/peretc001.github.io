@@ -893,7 +893,7 @@
                 left: 0
                 top: 0
                 right: auto
-                padding: 2em 0
+                padding: 2em 1em
                 margin: 0
                 margin-bottom: 2em
                 display: flex
@@ -940,7 +940,10 @@
                         font-weight: bold
                         max-width: 100%
                         &:first-child
+                            margin-right: 0
                             margin-bottom: 0.5em
+                        &:last-child
+                            margin-left: 0
                 &__delivery
                     p
                         font-size: 0.9em
@@ -954,6 +957,7 @@
             font-size: 1.8em
         &-body
             &__item
+                padding: 1em
                 .zoom
                     display: none
                 &.open
@@ -979,6 +983,7 @@
 
             &__buy
                 flex-wrap: wrap
+                padding: 2em 0
                 &--left,
                 &--right
                     flex: 1 0 100%
