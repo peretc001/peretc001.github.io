@@ -370,7 +370,7 @@
                 display: none
 
         &-catalog
-            display: none
+            display: table
             &__menu
                 width: 300px
                 padding: 0
@@ -477,10 +477,9 @@
                 left: auto
                 padding: 0
                 right: calc(50% - 345px)
-                transform: translateX(100%) translateY(100%)
+                transform: translateX(10%) translateY(100%)
                 flex-wrap: wrap
                 overflow: hidden
-                display: block
 
 
 
@@ -488,8 +487,6 @@
                     .nav-catalog__general
                         display: none
                         border: none
-                    // .nav-catalog__parent
-                    //     display: block
 
                 &.fade
                     transition: transform .2s ease, opacity .2s ease
@@ -551,7 +548,7 @@
                 opacity: 0
                 z-index: -1
                 pointer-events: none
-                // transform: translateX(100%)
+                transform: translateX(10%)
                 &.fade
                     // display: block
                     transition: transform .2s ease, opacity .2s ease
