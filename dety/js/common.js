@@ -163,12 +163,12 @@ if ( document.querySelector('nav') ) {
         localStorage.setItem('menu', 'general')
         showMobileMenu()
     }
-    showParrent = (e, prev) => {
+    showParrent = (e) => {
         e.preventDefault()
         let general = localStorage.getItem('menu') || null
         if ( general ) hideMobileMenu()
         
-        let parrent = e.target.dataset.menu || prev
+        let parrent = e.target.dataset.menu
         localStorage.setItem('menu', parrent)
 
         if (parrent) {
@@ -187,24 +187,6 @@ if ( document.querySelector('nav') ) {
             }, 100);
         }
 
-        if (prev) {
-            current = catalog.querySelector('[data-submenu="'+ parrent +'"]')
-            setTimeout(() => {
-                current.classList.add('fade')
-                setTimeout(() => {  
-                    current.classList.add('active')
-                }, 100);
-                
-                let head = current.querySelector('.head')
-                head.innerHTML = `<a class="back" href="#">${e.target.textContent}</a>`
-    
-                setTimeout(() => {
-                    const back = current.querySelector('.back') 
-                    back.addEventListener('click', hideParrent)
-                }, 100);
-            }, 200);
-        }
-
         pageYOffset > 100 ? document.querySelector('.nav-mobile').scrollIntoView({block: "start", behavior: "smooth"}) : ''
     }
 
@@ -219,13 +201,20 @@ if ( document.querySelector('nav') ) {
         currentParrent.classList.remove('active')
         setTimeout(() => {
             currentParrent.classList.remove('fade')
-            current.classList.remove('child')
             current.classList.remove('active')
+            current.classList.remove('child')
             current.classList.remove('fade')
+            if (parrent != 'catalog') {
+                setTimeout(() => {
+                    current.classList.add('fade')
+                    setTimeout(() => {  
+                        current.classList.add('active')
+                    }, 100);
+                }, 100);
+            }
         }, 100);
 
         if (parrent == 'catalog') showMobileMenu()
-        else showParrent(e, parrent)
     }
     showChildren = (e) => {
         e.preventDefault()
