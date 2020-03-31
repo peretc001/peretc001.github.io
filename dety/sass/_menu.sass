@@ -487,6 +487,29 @@
                     .nav-catalog__general
                         display: none
                         border: none
+                &.sub
+                    .nav-catalog__general
+                        display: none
+                        border: none
+                    .nav-catalog__parent
+                        ul
+                            display: none
+                            li
+                                &:first-child
+                                    display: none
+                                &:not(:first-child)
+                                    display: block
+                        
+                                .more
+                                    display: none
+                        ul.current
+                            display: block
+                            li
+                                a
+                                    color: $text
+                                    &::after
+                                        display: none
+
 
                 &.fade
                     transition: transform .2s ease, opacity .2s ease
@@ -540,17 +563,12 @@
                             opacity: 1
             
             &__parent
-                // position: absolute
-                // display: none
-                // right: 0
-                // top: 0
                 flex: 0 0 100%
                 opacity: 0
                 z-index: -1
                 pointer-events: none
                 transform: translateX(10%)
                 &.fade
-                    // display: block
                     transition: transform .2s ease, opacity .2s ease
                 &.active
                     display: flex

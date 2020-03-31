@@ -96,7 +96,6 @@ if ( document.querySelector('nav') ) {
         // }, 50)
     }
 
-    //1
     openMobileMenu = () => {
         catalog.querySelector('.nav-catalog__menu').classList.add('fade')
         catalog.querySelector('.nav-catalog__menu').classList.add('active')
@@ -266,7 +265,58 @@ if ( document.querySelector('nav') ) {
             }, 300);
         }
 
+        const subLink = currentParrent.querySelectorAll('ul li:first-child a')
+        subLink.forEach(elem => {
+            elem.addEventListener('click', showSubMenu)
+        })
+
         pageYOffset > 100 ? document.querySelector('.nav-mobile').scrollIntoView({block: "start", behavior: "smooth"}) : ''
+    }
+
+    hideSubMenu = (e) => {
+        e.preventDefault()
+        const   current = document.querySelector('.nav-catalog__submenu.sub')
+        
+        current.classList.remove('sub')
+        current.classList.remove('active')
+
+        current.querySelector('ul.current').classList.remove('current')
+
+        current.classList.add('child')
+        setTimeout(() => {
+            current.classList.add('active')
+        }, 200);
+
+        current.querySelector('.nav-catalog__parent__head').innerHTML = `<a class="back" href="#">${e.target.textContent}</a>
+        <a class="category" href="${e.target.href}">Перейти в категорию</a>`
+
+        setTimeout(() => {
+            const back = current.querySelector('.back')
+            back.addEventListener('click', hideChildren)
+        }, 300);
+    }
+    showSubMenu = (e) => {
+        e.preventDefault()
+        
+        const   current = document.querySelector('.nav-catalog__submenu.child')
+                id = e.target.closest('ul').getAttribute('data-sub')
+
+        current.classList.remove('child')
+        current.classList.remove('active')
+
+        current.querySelector('[data-sub="'+ id +'"]').classList.add('current')
+        current.classList.add('sub')
+        setTimeout(() => {
+            current.classList.add('active')
+        }, 100);
+
+        current.querySelector('.nav-catalog__parent__head').innerHTML = `<a class="back" href="#">${e.target.textContent}</a>
+        <a class="category" href="${e.target.href}">Перейти в категорию</a>`
+
+        setTimeout(() => {
+            const back = current.querySelector('.back')
+            back.addEventListener('click', hideSubMenu)
+        }, 300);
     }
     
     
