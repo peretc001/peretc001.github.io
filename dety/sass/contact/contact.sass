@@ -115,7 +115,52 @@
             padding: 0
             opacity: 0
             max-height: 0
-        
+
+
+    &.point
+        .contact-head
+            display: block
+            a
+                display: inline-block
+                margin-top: 0.5em
+                color: $nav
+                font-weight: bold
+                border-bottom: 1px dashed $nav
+    
+    .map-point
+        position: absolute
+        left: 5em
+        top: 2em
+        z-index: 1
+        background: #ffffff
+        padding: 2em 1em 2em 2em
+        width: 310px
+        box-shadow: 5px 8px 8px rgba(0, 0, 0, 0.1)
+        border-radius: 20px
+        &--list
+            max-height: 300px
+            overflow-y: scroll
+            padding-right: 1em
+            &::-webkit-scrollbar
+                width: 3px
+                height: 3px
+            &::-webkit-scrollbar-track
+                background-color: #F6F6F5
+                border-radius: 5px
+            &::-webkit-scrollbar-thumb
+                background-color: $accent
+                border-radius: 5px
+        &--item
+            padding-bottom: 1em
+            margin-bottom: 2em
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+            p
+                margin-bottom: 0.3em
+            .btn
+                margin-top: .5em
+            &:last-child
+                border-bottom: none
+
 @media screen and ( max-width: 767.98px )
     .contact
         h1, h2
@@ -140,7 +185,8 @@
             border: none
             margin-bottom: 2em
         
-        .map-info
+        .map-info,
+        .map-point
             position: relative
             left: 0
             top: 0
@@ -158,6 +204,16 @@
                     &:hover
                         background: transparent
                         color: $accent
+        .map-point
+            width: 100%
+            &--list
+                max-height: 100%
+                overflow: visible
+                padding-right: 0
+                &::-webkit-scrollbar,
+                &::-webkit-scrollbar-track,
+                &::-webkit-scrollbar-thumb
+                    display: none
             
         #map
             display: none
