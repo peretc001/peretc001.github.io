@@ -112,18 +112,20 @@ if ( document.querySelector('nav') ) {
         }, 100);   
         
         catalog.querySelectorAll('.nav-catalog__submenu').forEach(item => {
+            item.classList.contains('sub') ? item.classList.remove('sub') : ''
             item.classList.contains('child') ? item.classList.remove('child') : ''
             item.classList.contains('active') ? item.classList.remove('active') : ''
             item.classList.contains('fade') ? item.classList.remove('fade') : ''
         })
 
         catalog.querySelectorAll('.nav-catalog__parent').forEach(item => {
-            item.classList.contains('child') ? item.classList.remove('child') : ''
+            // item.classList.contains('child') ? item.classList.remove('child') : ''
             item.classList.contains('active') ? item.classList.remove('active') : ''
             item.classList.contains('fade') ? item.classList.remove('fade') : ''
         })
 
-        localStorage.setItem('menu', '')
+        localStorage.removeItem('menu')
+        localStorage.removeItem('menu_title')
     }
 
     showMobileMenu = () => {
@@ -136,7 +138,8 @@ if ( document.querySelector('nav') ) {
         catalog.querySelector('.nav-catalog__menu').classList.remove('active')
         setTimeout(() => {
             catalog.querySelector('.nav-catalog__menu').classList.remove('fade')
-        }, 100);   
+        }, 100);
+        localStorage.removeItem('menu_title') 
     }
 
     hideParrent = (e) => {
@@ -150,7 +153,9 @@ if ( document.querySelector('nav') ) {
             }, 100);
         }
         localStorage.setItem('menu', 'general')
+        localStorage.removeItem('menu_title')
         showMobileMenu()
+
     }
     showParrent = (e) => {
         e.preventDefault()
@@ -226,6 +231,13 @@ if ( document.querySelector('nav') ) {
                 currentParrent.classList.add('active')
             }, 100);
 
+            let header = {
+                title: e.target.textContent,
+                href: e.target.href
+            }
+                
+            localStorage.setItem('menu_title', JSON.stringify(header))
+
             currentParrent.children[0].innerHTML = `<a class="back" href="#">${e.target.textContent}</a>
             <a class="category" href="${e.target.href}">Перейти в категорию</a>`
 
@@ -275,7 +287,7 @@ if ( document.querySelector('nav') ) {
 
     hideSubMenu = (e) => {
         e.preventDefault()
-        const   current = document.querySelector('.nav-catalog__submenu.sub')
+        const   current = catalog.querySelector('.sub')
         
         current.classList.remove('sub')
         current.classList.remove('active')
@@ -287,11 +299,14 @@ if ( document.querySelector('nav') ) {
             current.classList.add('active')
         }, 200);
 
-        current.querySelector('.nav-catalog__parent__head').innerHTML = `<a class="back" href="#">${e.target.textContent}</a>
-        <a class="category" href="${e.target.href}">Перейти в категорию</a>`
+        let header = JSON.parse(localStorage.getItem('menu_title'))
+
+        let child = current.querySelector('.nav-catalog__parent.fade.active')
+        child.querySelector('.nav-catalog__parent__head').innerHTML = `<a class="back" href="#">${header.title}</a>
+        <a class="category" href="${header.href}">Перейти в категорию</a>`
 
         setTimeout(() => {
-            const back = current.querySelector('.back')
+            const back = child.querySelector('.back')
             back.addEventListener('click', hideChildren)
         }, 300);
     }
@@ -304,17 +319,19 @@ if ( document.querySelector('nav') ) {
         current.classList.remove('child')
         current.classList.remove('active')
 
-        current.querySelector('[data-sub="'+ id +'"]').classList.add('current')
+
         current.classList.add('sub')
         setTimeout(() => {
             current.classList.add('active')
         }, 100);
-
-        current.querySelector('.nav-catalog__parent__head').innerHTML = `<a class="back" href="#">${e.target.textContent}</a>
-        <a class="category" href="${e.target.href}">Перейти в категорию</a>`
+        
+        let child = catalog.querySelector('.nav-catalog__parent.fade.active')
+            child.querySelector('[data-sub="'+ id +'"]').classList.add('current')
+            child.querySelector('.nav-catalog__parent__head').innerHTML = `<a class="back" href="#">${e.target.textContent}</a>
+            <a class="category" href="${e.target.href}">Перейти в категорию</a>`
 
         setTimeout(() => {
-            const back = current.querySelector('.back')
+            const back = child.querySelector('.back')
             back.addEventListener('click', hideSubMenu)
         }, 300);
     }
@@ -478,7 +495,7 @@ if (document.querySelector('.modal')) {
                 }, 200);
                 document.addEventListener('keyup', hideModalEsc)
                 document.addEventListener('click', hideModalCloseBtn)
-                localStorage.setItem('city', 'Санкт-Петербург')
+                localStorage.setItem('city', document.querySelector('.modal-body__city').textContent)
             }
 
             !city ? window.onload = showCityOnLoad() : ''

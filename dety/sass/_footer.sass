@@ -23,6 +23,17 @@ footer
                 flex: 1 0 60%
                 display: flex
                 padding-left: 2em
+                position: relative
+                .msg
+                    position: absolute
+                    left: 3em
+                    bottom: -2em
+                    font-weight: bold
+                    font-size: 1em
+                    &.error
+                        color: $red
+                    &.good
+                        color: $green
                 input
                     flex: 1 1 65%
                     border: 2px solid $yellow

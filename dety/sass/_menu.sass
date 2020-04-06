@@ -155,21 +155,20 @@
                 &.active
                     opacity: 1
                 img
-                    position: absolute
-                    left: 0
-                    top: 50%
-                    transform: translateY(-50%)
-                    max-width: 2em
-                    height: auto
+                    display: inline-block
+                    text-align: center
+                    width: 40px
+                    max-height: 30px
+                    margin-right: .3em
+
                 a
                     color: #ffffff
                     display: block
-                    padding: 1em
-                    padding-left: 2.5em
+                    padding: 1em 0
                     opacity: .7
                     position: relative
                     cursor: pointer
-                    transition: opacity .1s ease
+                    transition: opacity .2s ease
                     &.active,
                     &:hover
                         opacity: 1
@@ -277,6 +276,12 @@
                             color: $text
                             &::after
                                 transform: translateY(-50%) translateX(5px)
+                    &.cut
+                        a
+                            &:last-child
+                                display: none
+                    &.hidden
+                        display: none
 
         .layout
             position: fixed
@@ -304,6 +309,10 @@
                         right: -20px
             &__submenu
                 padding: 0 calc(50% - 465px)
+            &__general
+                flex: 0 0 30%
+            &__parent
+                flex: 0 0 70%
 
 @media screen and ( max-width: 991.98px )
     .nav
@@ -410,7 +419,7 @@
                             img
                                 display: inline-block
                                 text-align: center
-                                max-width: 30px
+                                width: 40px
                                 max-height: 30px
                                 margin-right: .5em
                     &:not(.catalog)
@@ -445,6 +454,9 @@
                             background-position: center
                             background-repeat: no-repeat
                             background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojRkZGRkZGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+                        &.link
+                            &::after
+                                display: none
 
                     &.top
                         background: #fff
@@ -487,6 +499,12 @@
                     .nav-catalog__general
                         display: none
                         border: none
+                    .nav-catalog__parent
+                        ul
+                            li
+                                &.cut,
+                                &.hidden
+                                    display: none
                 &.sub
                     .nav-catalog__general
                         display: none
@@ -660,66 +678,15 @@
                                 background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojNDc0NzQ3IiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
                         &:not(:first-child)
                             display: none
-                
-            // &.mob
-            //     padding: 0
-            //     margin: 0
-            //     .nav-catalog__menu
-            //         visibility: visible
-            //         z-index: 2
-            //         opacity: 1
-            //         pointer-events: all
-            //         transition: opacity .5s ease, transform .5s ease
-            //         ul
-            //             li
-            //                 a
-            //                     opacity: 1
-            //     .nav-catalog__submenu
-            //         transition: opacity .5s ease, transform .5s ease
-            //         opacity: 0
-            //         z-index: -1
-            //         pointer-events: none
-
-            // &.slide,
-            // &.slide1,
-            // &.slide2
-            //     .nav-catalog__menu
-            //         transform: translateY(50px)
-            //         opacity: 0
-            //         z-index: -1
-            //         pointer-events: none
-            //     .nav-catalog__submenu
-            //         opacity: 1
-            //         z-index: 3
-            //         pointer-events: all
-            //         &.slide1,
-            //         &.slide2
-            //             opacity: 1
-            //             z-index: 3
-            //             pointer-events: all
-
-            // &:not(.slide2)
-            //     .nav-catalog__submenu
-            //         ul
-            //             li
-            //                 position: relative
-            //                 &::after
-            //                     content: ''
-            //                     position: absolute
-            //                     left: auto
-            //                     right: 1em
-            //                     top: 50%
-            //                     transform: translateY(-50%)
-            //                     display: inline-block
-            //                     width: 1em
-            //                     height: 1em
-            //                     padding: 0
-            //                     margin: 0
-            //                     background-color: transparent
-            //                     background-size: 100%
-            //                     background-position: center
-            //                     background-repeat: no-repeat
-            //                     background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojNDc0NzQ3IiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+                        
+                        &.cut
+                            a
+                                &:first-child
+                                    display: none
+                                &:last-child
+                                    display: block
+                        &.hidden
+                            display: block
  
 @media screen and ( max-width: 767.98px )
     .nav

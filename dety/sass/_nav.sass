@@ -191,6 +191,15 @@
             ul
                opacity: 1
 
+   .bx-basket-block
+      position: inherit
+      padding-bottom: inherit
+      padding-left: inherit
+      white-space: inherit
+      font-size: inherit
+      a
+         margin-right: 0
+
    &-search
       width: 100%
       padding: 10px 0 20px
@@ -238,7 +247,6 @@
                color: $text2
 
       &--right
-         // flex: 0 0 260px
          justify-content: flex-end
          display: flex
          align-items: center
@@ -272,7 +280,7 @@
                color: #ff5f5a
                box-shadow: 0px 4px 13px rgba(25, 36, 45, 0.24)
 
-         &__cart
+         .cart
             margin-left: 1.5em
             position: relative
             width: auto
@@ -304,11 +312,9 @@
                color: $accent
                box-shadow: 0px 4px 13px rgba(25, 36, 45, 0.24)
             .price
+               color: $text
                padding-left: 3.5em
                font-size: 1.15em
-
-
-                  
             &:hover
                color: $text
 
@@ -372,16 +378,15 @@
          &__form
             display: none
          &--right
-            flex: 0 0 90px
-         &--right__wishlist,
-         &--right__cart
-            &:hover
-               background-position: left center
-         &--right__wishlist
-            margin-left: 0
-         &--right__cart
-            .price
-               display: none
+            flex: 0 0 auto
+            &__wishlist
+               margin-left: 0
+            .cart
+               margin-left: 1em
+               &:hover
+                  background-position: left center
+               .price
+                  display: none
 
 @media screen and ( max-width: 767.98px )
    .nav
@@ -394,10 +399,14 @@
                   &::before
                      transform: translateY(-50%) translateX(0)
          &__right
+            flex: 0 0 auto
             &__user
                display: none
             &__login
                margin-left: 1em
+            .cart
+               .qty
+                  left: 15px
 
 @media screen and ( max-width: 576.98px )
    .nav
@@ -408,20 +417,10 @@
          .brand
             flex: 1 1 auto
          &--right
-            &__wishlist,
-            &__cart
-               margin-left: 0
-               background-size: 2em
-            &__cart
-               margin-left: 1em
-               margin-right: 0.5em
-            
+            padding-right: .5em
             &__wishlist
                span
                   right: auto
-                  left: 20px
-            &__cart
-               .qty
                   left: 20px
 
    // .breadcrumb
@@ -457,7 +456,4 @@
             &__wishlist
                span
                   right: auto
-                  left: 20px
-            &__cart
-               .qty
                   left: 20px
