@@ -502,17 +502,21 @@ if (document.querySelector('.modal')) {
 
             const smsInsert = (event) => {
                 smsInput[0].focus();
-                smsInput[0].addEventListener('keydown', function() {
-                    this.value != '' ? smsInput[1].focus() : ''
-                })
-                smsInput[1].addEventListener('keydown', function() {
-                    this.value != '' ? smsInput[2].focus() : smsInput[0].focus()
-                })
-                smsInput[2].addEventListener('keydown', function() {
-                    this.value != '' ? smsInput[3].focus() : smsInput[1].focus()
-                })
-                smsInput[3].addEventListener('keyup', function() {
-                    if (this.value != '') {
+                $('.sms-input').on('keydown', function(e) {
+                    let value = $(this).val();
+                    let len = value.length;
+                    let curTabIndex = parseInt($(this).attr('tabindex'));
+                    let nextTabIndex = curTabIndex + 1;
+                    let prevTabIndex = curTabIndex - 1;
+                    if (len > 0) {
+                      $(this).val(value.substr(0, 1));
+                      $('[tabindex=' + nextTabIndex + ']').focus();
+                    } else if (len == 0 && prevTabIndex !== 0) {
+                      $('[tabindex=' + prevTabIndex + ']').focus();
+                    }
+                });
+                smsInput[3].addEventListener('keyup', function(event) {
+                    if (this.value != '' && (event.key != 'Backspace' || event.key != 'Delete')) {
                         smsInput[3].blur()
                         smsForm.classList.remove('active')
                         setTimeout(() => {
@@ -542,10 +546,32 @@ if (document.querySelector('.modal')) {
                     } else smsInput[2].focus()
                 })
             }
+
+            smsTimer = () => {
+                let timerBlock = document.querySelector('.replay-sms');
+                if ( timerBlock.classList.contains('hidden') ) {
+                    timerBlock.classList.remove('hidden')
+                    timerBlock.nextElementSibling.classList.add('hidden')
+                }
+                
+                let index = 12
+                let timerId = setInterval(function() {
+                    let str = --index
+                    timerBlock.querySelector('.timer').textContent = str < 10 ? '0' + str : str;
+                }, 1000);
+    
+                setTimeout(function() {
+                    clearInterval(timerId);
+                    timerBlock.classList.add('hidden')
+                    timerBlock.nextElementSibling.classList.remove('hidden')
+                    document.querySelector('.replay-code').addEventListener('click', smsTimer);
+                }, index * 1000);   
+            }
+            smsTimer()
+
             loginForm.addEventListener('submit', (event) => {
                 event.preventDefault()
                 loginForm.classList.remove('active')
-                smsInput[0].value = ''; smsInput[1].value = ''; smsInput[2].value = ''; smsInput[3].value = ''
                 if (!iOS) {
                     setTimeout(() => {
                         setTimeout(() => {

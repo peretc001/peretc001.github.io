@@ -10,6 +10,29 @@
 </head>
 <body>
 
+
+
+  <div class="replay-sms">Отправить код повторно через 00:<span class="timer">60</span></div>
+  <div class="replay-code hidden">Получить код еще раз</div>
+
+<style>
+  .replay-sms,
+  .replay-code {
+    transition: opacity .2s ease;
+    cursor: pointer;
+  }
+  .replay-sms.hidden,
+  .replay-code.hidden {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+</style>
+
 <nav class="nav">
   <div class="nav-top">
     <div class="container">
@@ -2103,16 +2126,22 @@
         <label for="phone">Введите номер телефона</label>
         <input type="tel" id="phone" name="phone" class="phone-mask" required>
         <button type="submit" class="btn btn-accent">Получить sms-код</button>
-      </form>
-      <form action="/" method="post" class="sms-form">
+    </form>
+    <form action="/" method="post" class="sms-form">
         <p><b>Введите код из смс</b></p>
         <div class="signin-sms__wrap">
-          <input class="sms-input" type="tel" name="sms1" maxlength="1" tabindex="1">
-          <input class="sms-input" type="tel" name="sms2" maxlength="1" tabindex="2">
-          <input class="sms-input" type="tel" name="sms3" maxlength="1" tabindex="3">
-          <input class="sms-input" type="tel" name="sms4" maxlength="1" tabindex="4">
+
+          <input class="sms-input" type="tel" maxlength="1" tabindex="1">
+          <input class="sms-input" type="tel" maxlength="1" tabindex="2">
+          <input class="sms-input" type="tel" maxlength="1" tabindex="3">
+          <input class="sms-input" type="tel" maxlength="1" tabindex="4">
+            <!-- <input class="sms-input" type="tel" name="sms1" maxlength="1" tabindex="1">
+            <input class="sms-input" type="tel" name="sms2" maxlength="1" tabindex="2">
+            <input class="sms-input" type="tel" name="sms3" maxlength="1" tabindex="3">
+            <input class="sms-input" type="tel" name="sms4" maxlength="1" tabindex="4"> -->
         </div>
-      </form>
+        <span class="replay-sms">Не получили смс? <a>Отправить повторно</a></span>
+    </form>
       <div class="complete"><p>Готово</p></div>
     </div>
   </div>
