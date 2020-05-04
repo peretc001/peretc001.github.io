@@ -1,39 +1,68 @@
 @import '_libs/bootstrap_grid'
 @import '_libs/fonts'
-@import '_libs/var'
+
+$accent: #FF0000
+$text: #ffffff
+$gutter: 30px
+
+$default-font: 'Exo2', sans-serif
 
 body
-	font-size: 14px
+	font-size: 16px
 	min-width: 320px
 	position: relative
-	line-height: 1.15
+	line-height: 1.2
 	font-family: $default-font
 	overflow-x: hidden
 	color: $text
-	background: $bg
 	opacity: 0
-	-webkit-text-size-adjust: 100%
-	&.no-scroll
-		&:not(.modal)
-			overflow: hidden
-	&.fade
-		background: #000
-		opacity: .5
 
-@import 'nav'
-@import 'menu'
-@import 'home/slider'
-@import 'home/home-week'
-@import 'products'
-@import 'home/bonus'
-@import 'home/notes'
-@import 'home/heroes'
-@import 'text-block'
-@import 'footer'
-@import 'modal'
+.container-fluid
+	padding: 0 40px 0 30px
 
-*
-	box-sizing: border-box
+button
+	appearance: none
+	background: transparent
+	border: 2px solid $accent
+	border-radius: 10px
+	color: $text
+	padding: .8em  1.5em
+	font-size: 25px
+	line-height: 1
+	cursor: pointer
+	position: relative
+	&:before,
+	&::after
+		content: ''
+		position: absolute
+		left: 0
+		top: 0
+		right: 0
+		bottom: 0
+		display: block
+		width: 100%
+		height: 100%
+		opacity: 0
+		background: transparent
+		transition: opacity .3s ease
+	&:before
+		background: radial-gradient(45.71% 45.71% at 50% 110.71%, rgba(255, 0, 0, 0.54) 2.01%, rgba(255, 0, 0, 0) 100%)
+		transform: rotate(180deg)
+	&::after
+		background: radial-gradient(45.71% 45.71% at 50% 110.71%, rgba(255, 0, 0, 0.54) 2.01%, rgba(255, 0, 0, 0) 100%)
+	&:hover
+		&::before,
+		&::after
+			opacity: 1
+			
+
+input, textarea
+	border: #666 1px solid
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
 
 .text-center
 	text-align: center !important
@@ -47,155 +76,20 @@ a,
 	&:focus
 		text-decoration: none
 		outline: none
-
 b, strong
 	font-weight: bold
-
 img
 	max-width: 100%
 
-.btn
-	outline: none !important
-	box-shadow: none !important
-	cursor: pointer
-	appearance: none !important
-	border-radius: 4px
-	padding: .5em
-	&.btn-accent
-		border: 1px solid $accent
-		background: $accent
-		color: #ffffff
-		transition: background .5s ease
-		&:hover
-			background: darken($accent, 8%)
-	&.btn-outline-accent
-		background: transparent
-		border: 1px solid $accent
-		color: $accent
-		transition: background .5s ease, color .5s ease
-		&:hover
-			background: $accent
-			color: #ffffff
-	&.btn-send
-		background: $yellow
-		border: 1px solid $yellow
-		font-weight: bold
-		color: $text
-	&.btn-outline-yellow
-		background: transparent
-		border: 1px solid $yellow
-		color: $yellow
-		transition: background .5s ease, color .5s ease
-		&:hover
-			background: $yellow
-			color: #ffffff
-	&.btn-blue
-		border: 1px solid $blue2
-		background: $blue2
-		color: #ffffff
-		transition: background .5s ease
-		&:hover
-			background: $blue2
+@import 'navbar'
+@import 'header'
 
-.tabs
-	h3
-		user-select: none
-		box-shadow: none
-
-.tabs-item
-	visibility: none
-	opacity: 0
-	z-index: -1
-	height: 0
-	padding-top: 2em
-	overflow: hidden
-	transition: opacity .5s linear
-	padding: 0
-	margin: 0
-	&.active
-		visibility: visible
-		opacity: 1
-		height: auto
-		min-height: 200px
-		z-index: 1
-
-.section__title
-	display: block
-	margin: 0
-	text-align: left
-	padding: 60px 0 30px 0
-	h2, h3
-		font-size: 2.3em
-		font-weight: bold
-	a
-		font-weight: bold
-		color: $text2
-		position: relative
-		padding-right: 1.5em
-		transition: opacity .3s ease
-		&::before
-			content: ''
-			position: absolute
-			right: 0
-			top: 55%
-			transform: translateY(-50%)
-			width: 100%
-			height: 100%
-			background-size: 1em
-			background-position: right
-			background-repeat: no-repeat
-			background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTQ4NC4xNCwyMjYuODg2TDMwNi40Niw0OS4yMDJjLTUuMDcyLTUuMDcyLTExLjgzMi03Ljg1Ni0xOS4wNC03Ljg1NmMtNy4yMTYsMC0xMy45NzIsMi43ODgtMTkuMDQ0LDcuODU2bC0xNi4xMzIsMTYuMTM2ICAgIGMtNS4wNjgsNS4wNjQtNy44NiwxMS44MjgtNy44NiwxOS4wNGMwLDcuMjA4LDIuNzkyLDE0LjIsNy44NiwxOS4yNjRMMzU1LjksMjA3LjUyNkgyNi41OEMxMS43MzIsMjA3LjUyNiwwLDIxOS4xNSwwLDIzNC4wMDIgICAgdjIyLjgxMmMwLDE0Ljg1MiwxMS43MzIsMjcuNjQ4LDI2LjU4LDI3LjY0OGgzMzAuNDk2TDI1Mi4yNDgsMzg4LjkyNmMtNS4wNjgsNS4wNzItNy44NiwxMS42NTItNy44NiwxOC44NjQgICAgYzAsNy4yMDQsMi43OTIsMTMuODgsNy44NiwxOC45NDhsMTYuMTMyLDE2LjA4NGM1LjA3Miw1LjA3MiwxMS44MjgsNy44MzYsMTkuMDQ0LDcuODM2YzcuMjA4LDAsMTMuOTY4LTIuOCwxOS4wNC03Ljg3MiAgICBsMTc3LjY4LTE3Ny42OGM1LjA4NC01LjA4OCw3Ljg4LTExLjg4LDcuODYtMTkuMUM0OTIuMDIsMjM4Ljc2Miw0ODkuMjI4LDIzMS45NjYsNDg0LjE0LDIyNi44ODZ6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiM3RjdEN0QiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==')
-			transition: transform .5s ease
-		&:hover
-			&::before
-				transform: translateY(-50%) translateX(5px)
-
-@media screen and ( min-width: 1200px )
-	.container
-		max-width: 1190px
 @media screen and ( max-width: 767.98px )
-	.section__title
-		padding-bottom: 20px
-@media screen and ( max-width: 576.98px )
-	.section__title
-		h2, h3
-			font-size: 1.6em
-@media screen and ( max-width: 374.98px )
-	.section__title
-		h2, h3
-			font-size: 1.4em
-
-.error-page
-	margin-bottom: 10em
-	&--block
-		display: flex
-		align-items: flex-start
-		&--left
-			img
-				&:first-child
-					margin-bottom: 2em
-
-@media screen and ( max-width: 991.98px )
-	.error-page
-		&--block
-			justify-content: center
-			&--left
-				text-align: center
-				img
-					max-width: 80%
-			&--right
-				display: none
-
-.layout
-	display: block
-	position: fixed
-	padding: 0 1em
-	left: 0
-	top: 0
-	right: 0
-	bottom: 0
-	z-index: 1
-	opacity: 1
+   .container-fluid
+      padding: 0 20px
+@media screen and ( min-width: 1281px )
+   .container-fluid
+      padding: 0 60px
 
 body
 	opacity: 1

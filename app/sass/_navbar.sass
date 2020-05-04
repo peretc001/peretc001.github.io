@@ -1,0 +1,116 @@
+.navbar
+   position: absolute
+   left: 0
+   top: 0
+   width: 100%
+   display: flex
+   justify-content: space-between
+   padding: 0
+   margin: 0
+   background: linear-gradient(180deg, #000000 18%, rgba(0, 0, 0, 0.75) 67.6%, rgba(0, 0, 0, 0) 94.85%)
+
+   .navbar-brand
+      margin: 0
+      padding: 0
+      img
+         width: 175px
+         height: auto
+   
+   .navbar-nav
+      width: 100%
+      justify-content: center
+      .nav-item
+         padding: 0
+         margin: 0
+         padding-left: 40px
+      .nav-link
+         color: $text
+         color: $text
+         padding: 0
+         font-size: 18px
+
+   .contacts
+      display: flex
+      align-items: flex-end
+      flex-direction: column
+      color: $text
+      .phone
+         color: $accent
+         margin-bottom: 5px
+      .adress
+         color: $text
+   
+   .navbar-toggler
+      transition: none !important
+      background: transparent !important
+
+   .hamburger
+      cursor: pointer
+      width: 45px
+      height: 30px
+      position: relative
+      transform: rotate(0deg)
+      background: transparent
+      outline: none
+      user-select: none
+      transition: .5s ease-in-out
+      span
+         display: block
+         position: absolute
+         height: 1px
+         width: 100%
+         background: $text
+         border-radius: 4px
+         opacity: 1
+         left: 0
+         transform: rotate(0deg)
+         transition: .25s ease-in-out
+         &:nth-child(1)
+            top: 0px
+            max-width: 40px
+         &:nth-child(2)
+            top: 15px
+         &:nth-child(3)
+            top: 30px
+            max-width: 40px
+      &.open
+         span:nth-child(1)
+            top: 10px
+            width: 30px
+            transform: rotate(45deg)
+         span:nth-child(2)
+            opacity: 0
+
+         span:nth-child(3)
+            top: 10px
+            width: 30px
+            transform: rotate(135deg)
+
+@media screen and ( max-width: 1199.98px )
+   .navbar
+      .navbar-collapse
+         position: absolute
+         left: 0
+         top: 100px
+         &.collapsing
+            width: 100%
+            text-align: center
+         &.show
+            width: 100%
+            text-align: center
+         .nav-item
+            padding-left: 0
+            padding: 1em 0
+      .contacts
+         flex: 1 1 auto
+         padding-right: 40px
+
+@media screen and ( max-width: 767.98px )
+   .navbar
+      .contacts
+         display: none
+      .hamburger
+         span
+            left: auto
+            right: 0
+   
