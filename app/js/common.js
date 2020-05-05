@@ -1,3 +1,26 @@
+let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+const preventDefault = (e) => {
+    e.preventDefault();
+}
+const disableScroll = () => {
+    if ( width < 767 ) {
+        document.body.classList.add('no-scroll')
+    } else {
+        document.body.addEventListener('touchmove', preventDefault, { passive: false });
+        window.addEventListener('DOMMouseScroll', preventDefault, false);
+        document.addEventListener('wheel', preventDefault, {passive: false});
+    }
+}
+const enableScroll = () => {
+    if ( width < 767 ){
+        document.body.classList.remove('no-scroll')
+    } else {
+        document.body.removeEventListener('touchmove', preventDefault, { passive: false });
+        window.removeEventListener('DOMMouseScroll', preventDefault, false);
+        document.removeEventListener('wheel', preventDefault, {passive: false});
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function() {
 
     const form = document.querySelectorAll('.callback__form');
@@ -20,6 +43,50 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     })
 
+    const photoGallery = document.querySelectorAll('.photo--item')
+
+    const openGallery = (e) => {
+        e.preventDefault();
+        const div = document.createElement('div')
+        const sliderBlock = document.createElement('div')
+        div.classList.add('js-gallery')
+        sliderBlock.classList.add('js-gallery-block')
+        
+        let currentIndex = e.target.dataset.count
+
+        document.body.appendChild(div)
+        div.appendChild(sliderBlock)
+
+        
+        photoGallery.forEach(item => {
+            sliderBlock.appendChild(item.querySelector('img').cloneNode(true))
+        })
+        
+
+        setTimeout(() => {
+            $('.js-gallery-block').slick({
+                draggable: true,
+                slidesToShow: 3,
+                swipeToSlide: true,
+                infinite: true,
+                dots: false
+            });
+            setTimeout(() => {
+                $('.js-gallery-block').slick('slickGoTo', currentIndex)
+                
+            }, 300);
+        }, 500);
+
+        // disableScroll()
+    }
+
+    photoGallery.forEach((item,i) => {
+        console.log(i, item)
+        item.addEventListener('click', openGallery)
+    })
+
+    
+
 });
 
 
@@ -31,7 +98,6 @@ $( document ).ready(function() {
     $('#navbarToggle').on('hide.bs.collapse', function () {
         $('.hamburger').removeClass('open')
     })
-
 
     $(".phone_mask").mask("8-999-999-99-99");
 
