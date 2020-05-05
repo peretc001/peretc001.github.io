@@ -82,17 +82,100 @@ b, strong
 img
 	max-width: 100%
 
+.general
+	.title-top
+		position: absolute
+		display: block
+		width: 100%
+		height: 170px
+		background: linear-gradient(178.56deg, rgba(0, 0, 0, 0.9) 14.91%, rgba(0, 0, 0, 0) 92.92%)
+		margin: 0
+		left: 0
+		top: 0
+	h2,h3
+		position: absolute
+		left: 60px
+		font-size: 80px
+		border-left: 2px solid $accent
+		padding: 0 60px
+		line-height: 1
+		span
+			color: $accent
+	.text-bottom
+		position: absolute
+		display: block
+		width: 100%
+		height: 160px
+		background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 15.3%, rgba(0, 0, 0, 0.54) 55.22%, rgba(0, 0, 0, 0) 84.98%)
+		padding: 0 0 60px 60px
+		margin: 0
+		left: 0
+		bottom: 0
+		p
+			position: absolute
+			font-size: 30px
+			padding: 0 0 0 50px
+			margin: 0
+			bottom: 40px
+			&::before
+				content: ''
+				position: absolute
+				left: 0
+				top: .6em
+				width: 30px
+				border-bottom: 1px solid $accent
+				display: inline-block
+				width: 1em
+				margin-bottom: .25em
+				margin-right: 20px
+				color: $accent
+			span
+				display: block
+				color: $accent
+				font-size: 18px
 
 @media screen and ( max-width: 1199.98px )
-   .container-fluid
-      padding: 0 40px
+	.container-fluid
+		padding: 0 40px
+	.general
+		h2,
+		h3
+			left: 40px
+			font-size: 60px
+			padding-left: 40px
+		.text-bottom
+			padding: 0 0 40px 40px
+			p
+				font-size: 26px
+				bottom: 20px
+
 @media screen and ( max-width: 767.98px )
-   .container-fluid
-      padding: 0 20px
+	.container-fluid
+      	padding: 0 20px
+	.general
+		h2,
+		h3
+			left: 20px
+			font-size: 40px
+			padding-left: 20px
+		.text-bottom
+			padding: 0 0 20px 20px
+			p
+				font-size: 20px
+				padding: 0 0 0 30px
+
+@media screen and ( max-width: 374.98px )
+	.general
+		h2, h3
+			font-size: 30px
+		p
+			font-size: 18px
+	
 
 @import 'navbar'
 @import 'header'
 @import 'about'
+@import 'photo'
 
 body
 	opacity: 1
