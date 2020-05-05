@@ -36,6 +36,18 @@
         transition: opacity .3s ease
         &:hover
             opacity: 1
+    a
+        position: absolute
+        right: 20px
+        bottom: 20px
+        display: inline-block
+        width: 40px
+        height: 40px
+        border: 1px solid $accent
+        background-size: 60%
+        background-position: center
+        background-repeat: no-repeat
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjUxMiI+PGc+PHBhdGggZD0ibTI1NiAzNjIuNjY3OTY5Yy04LjgzMjAzMSAwLTE2LTcuMTY3OTY5LTE2LTE2di0zMzAuNjY3OTY5YzAtOC44MzIwMzEgNy4xNjc5NjktMTYgMTYtMTZzMTYgNy4xNjc5NjkgMTYgMTZ2MzMwLjY2Nzk2OWMwIDguODMyMDMxLTcuMTY3OTY5IDE2LTE2IDE2em0wIDAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiIHN0eWxlPSJmaWxsOiNGRjAwMDAiPjwvcGF0aD48cGF0aCBkPSJtMjU2IDM2Mi42Njc5NjljLTQuMDk3NjU2IDAtOC4xOTE0MDYtMS41NTg1OTQtMTEuMzA4NTk0LTQuNjk1MzEzbC04NS4zMzIwMzEtODUuMzMyMDMxYy02LjI1LTYuMjUtNi4yNS0xNi4zODI4MTMgMC0yMi42MzY3MTkgNi4yNS02LjI1IDE2LjM4MjgxMy02LjI1IDIyLjYzNjcxOSAwbDc0LjAyMzQzNyA3NC4wMjczNDQgNzQuMDI3MzQ0LTc0LjAyNzM0NGM2LjI1LTYuMjUgMTYuMzg2NzE5LTYuMjUgMjIuNjM2NzE5IDAgNi4yNSA2LjI1MzkwNiA2LjI1IDE2LjM4NjcxOSAwIDIyLjYzNjcxOWwtODUuMzM1OTM4IDg1LjMzMjAzMWMtMy4xNTYyNSAzLjEzNjcxOS03LjI1IDQuNjk1MzEzLTExLjM0NzY1NiA0LjY5NTMxM3ptMCAwIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBzdHlsZT0iZmlsbDojRkYwMDAwIj48L3BhdGg+PHBhdGggZD0ibTQ1My4zMzIwMzEgNTEyaC0zOTQuNjY0MDYyYy0zMi4zNjMyODEgMC01OC42Njc5NjktMjYuMzA0Njg4LTU4LjY2Nzk2OS01OC42Njc5Njl2LTk2YzAtOC44MzIwMzEgNy4xNjc5NjktMTYgMTYtMTZzMTYgNy4xNjc5NjkgMTYgMTZ2OTZjMCAxNC42OTkyMTkgMTEuOTY4NzUgMjYuNjY3OTY5IDI2LjY2Nzk2OSAyNi42Njc5NjloMzk0LjY2NDA2MmMxNC42OTkyMTkgMCAyNi42Njc5NjktMTEuOTY4NzUgMjYuNjY3OTY5LTI2LjY2Nzk2OXYtOTZjMC04LjgzMjAzMSA3LjE2Nzk2OS0xNiAxNi0xNnMxNiA3LjE2Nzk2OSAxNiAxNnY5NmMwIDMyLjM2MzI4MS0yNi4zMDQ2ODggNTguNjY3OTY5LTU4LjY2Nzk2OSA1OC42Njc5Njl6bTAgMCIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgc3R5bGU9ImZpbGw6I0ZGMDAwMCI+PC9wYXRoPjwvZz4gPC9zdmc+')
     &-progress
         position: relative
         display: block
@@ -60,6 +72,7 @@
 .slick-slide
     outline: none !important
     box-shadow: none !important
+    position: relative
 .slick-next,
 .slick-prev
     position: absolute
