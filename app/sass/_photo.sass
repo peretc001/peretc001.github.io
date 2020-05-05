@@ -9,10 +9,47 @@
         flex: 0 0 33.333333%
         min-height: 360px
         background-size: cover
-        background-position: 0 0
+        background-position: center
         position: relative
         padding: 0
         margin: 0
+        overflow: hidden
+        transition: background .5s ease
+        &::before
+            content: ''
+            position: absolute
+            left: 0
+            top: 0
+            right: 0
+            bottom: 0
+            background: #000
+            opacity: 0
+            z-index: 1
+            transition: opacity .5s ease
+        h3,
+        p
+            z-index: 2
+        p
+            transition: color .5s ease
+            span
+                transition: color .5s ease
+        img
+            position: absolute
+            left: 0
+            top: 0
+            width: 100%
+            height: 100%
+            object-fit: cover
+            transition: transform .5s ease
+        &:hover
+            &::before
+                opacity: .5
+            p
+                color: $accent
+                span
+                    color: $text
+            img
+                transform: scale(1.1)
 
 @media screen and ( max-width: 1199.98px )
     .photo
