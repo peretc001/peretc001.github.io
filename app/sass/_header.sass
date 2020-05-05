@@ -5,7 +5,7 @@ header
     background-size: cover
     background-repeat: no-repeat
     background-position: center top
-    background-color: #010101
+    position: relative
     .container-fluid
         display: flex
         align-items: flex-start
@@ -15,29 +15,37 @@ header
         height: 100%
     .header-title
         border-left: 2px solid $accent
-        padding: 40px
+        padding: 20px 60px
     h1
-        font-size: 60px
+        font-size: 70px
         line-height: 1.3
         margin-bottom: 40px
         span
             display: block
     .notes
         position: absolute
-        left: 40px
+        left: 60px
         bottom: 40px
         margin: 0
 
 @media screen and ( max-width: 1199.98px )
     header
-      background-position: center top
+        background-position: center top
+        .header-title
+            padding: 20px 40px
+        .notes
+            left: 40px
 
 @media screen and ( max-width: 991.98px )
     header
+        .header-title
+            padding: 20px 40px
         h1
             font-size: 50px
         button
             font-size: 20px
+        .notes
+            left: 40px
 
 @media screen and ( max-width: 800px )
     header
@@ -55,9 +63,7 @@ header
 
 @media screen and ( max-width: 767.98px )
     header
-        min-height: 660px        
-        .header-title
-            padding: 20px 40px
+        min-height: 660px
         h1
             font-size: 40px
             margin-bottom: 20px
@@ -67,6 +73,7 @@ header
 
 @media screen and ( max-width: 576.98px )
     header
+        min-height: 550px
         background-position: right 80px
         .container-fluid
             padding-top: 110px
@@ -75,23 +82,14 @@ header
         .notes
             font-size: 14px
             left: 20px
-            bottom: 20px
+            bottom: 40px
             padding-right: 80px
 
 @media screen and ( max-width: 374.98px )
     header
-        min-height: 560px
-        background-position: right 90px
         h1
             font-size: 35px
         button
             font-size: 16px
         .notes
             font-size: 12px
-
-@media screen and ( min-width: 1281px )
-    header
-        h1
-            font-size: 80px
-        .notes
-            left: 60px
