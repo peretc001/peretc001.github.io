@@ -49,39 +49,63 @@ document.addEventListener("DOMContentLoaded", function() {
         e.preventDefault();
         const div = document.createElement('div')
         const sliderBlock = document.createElement('div')
+        const sliderProgress = document.createElement('div')
         div.classList.add('js-gallery')
         sliderBlock.classList.add('js-gallery-block')
+        sliderProgress.classList.add('js-gallery-progress')
         
-        let currentIndex = e.target.dataset.count
+        let currentIndex = parseInt(e.target.dataset.count)
+        let maxIndex
+        width > 991 ? maxIndex = photoGallery.length-2 : maxIndex = photoGallery.length-1
 
         document.body.appendChild(div)
+        div.innerHTML = '<div class="close"></div>'
         div.appendChild(sliderBlock)
 
-        
         photoGallery.forEach(item => {
             sliderBlock.appendChild(item.querySelector('img').cloneNode(true))
         })
-        
 
-        setTimeout(() => {
-            $('.js-gallery-block').slick({
-                draggable: true,
-                slidesToShow: 3,
-                swipeToSlide: true,
-                infinite: true,
-                dots: false
-            });
-            setTimeout(() => {
-                $('.js-gallery-block').slick('slickGoTo', currentIndex)
-                
-            }, 300);
-        }, 500);
+        $('.js-gallery-block').slick({
+            draggable: true,
+            slidesToShow: 2,
+            swipeToSlide: true,
+            infinite: false,
+            dots: false,
+            responsive: [
+                {
+                    breakpoint: 991,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+        $('.js-gallery-block').slick('slickGoTo', currentIndex)
 
-        // disableScroll()
+        disableScroll()
+
+        div.appendChild(sliderProgress)
+        sliderProgress.innerHTML = `<div class="js-gallery-thumb"></div><div class="js-gallery-count"><p class="start">0</p><p class="end">${width > 991 ? maxIndex+2 : maxIndex + 1}</p></div>`
+        currentIndex != 0 ? sliderProgress.querySelector('.js-gallery-thumb').style.width = (currentIndex/maxIndex)*100 + '%' : sliderProgress.querySelector('.js-gallery-thumb').style.width = ''
+        console.log(currentIndex)
+
+
+        $('.js-gallery-block').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+            nextSlide != 0 ? sliderProgress.querySelector('.js-gallery-thumb').style.width = (nextSlide/maxIndex)*100 + '%' : sliderProgress.querySelector('.js-gallery-thumb').style.width = ''
+          });
+
+        document.querySelector('.close').addEventListener('click', closeGallery)
+    }
+
+    const closeGallery = (e) => {
+        const jsGallery = document.querySelector('.js-gallery')
+        jsGallery.parentElement.removeChild(jsGallery)
+        $('.js-gallery-block').slick('unslick')
+        enableScroll()
     }
 
     photoGallery.forEach((item,i) => {
-        console.log(i, item)
         item.addEventListener('click', openGallery)
     })
 
