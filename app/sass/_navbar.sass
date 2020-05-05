@@ -13,7 +13,7 @@
    .navbar-brand
       margin: 0
       padding: 0
-      width: 175px
+      width: 150px
       height: 100px
       display: flex
       align-items: center
@@ -22,12 +22,15 @@
          width: 100%
          height: auto
    
-   .navbar-nav
-      width: 100%
+   .navbar-menu
+      flex: 1 1 auto
+      display: flex
+      align-items: center
       justify-content: center
       .nav-item
          padding: 0
          margin: 0
+         list-style: none
          padding-left: 40px
       .nav-link
          color: $text
@@ -98,19 +101,50 @@
    .navbar
       .container-fluid
          padding: 0 40px
-      .navbar-collapse
-         position: absolute
-         left: 0
-         top: 100px
-         &.collapsing
-            width: 100%
-            text-align: center
-         &.show
-            width: 100%
-            text-align: center
+      .navbar-menu
+         display: none
+         position: fixed
+         right: 0
+         top: 0
+         width: 300px
+         height: 100%
+         z-index: 3
+         background: #010101
+         flex-direction: column
+         padding: 100px 40px 40px
+         transition: transform .5s ease
+         &.fade
+            display: block
+            opacity: 0
+            transform: translateX(100%)
+         &.open
+            opacity: 1
+            transform: translateX(0)
          .nav-item
-            padding-left: 0
-            padding: 1em 0
+            margin-bottom: 20px
+            text-align: right
+         .nav-link
+            font-size: 26px
+         .closeMenu
+            background-color: transparent
+            border-radius: 50%
+            border: 2px solid $accent
+            cursor: pointer
+            position: absolute
+            right: 40px
+            top: 40px
+            width: 40px
+            height: 40px
+            opacity: .5
+            z-index: 6
+            background-size: 50%
+            background-position: center
+            background-repeat: no-repeat
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgMzI5LjI2OTMzIDMyOSIgd2lkdGg9IjUxMiI+PGc+PHBhdGggZD0ibTE5NC44MDA3ODEgMTY0Ljc2OTUzMSAxMjguMjEwOTM4LTEyOC4yMTQ4NDNjOC4zNDM3NS04LjMzOTg0NCA4LjM0Mzc1LTIxLjgyNDIxOSAwLTMwLjE2NDA2My04LjMzOTg0NC04LjMzOTg0NC0yMS44MjQyMTktOC4zMzk4NDQtMzAuMTY0MDYzIDBsLTEyOC4yMTQ4NDQgMTI4LjIxNDg0NC0xMjguMjEwOTM3LTEyOC4yMTQ4NDRjLTguMzQzNzUtOC4zMzk4NDQtMjEuODI0MjE5LTguMzM5ODQ0LTMwLjE2NDA2MyAwLTguMzQzNzUgOC4zMzk4NDQtOC4zNDM3NSAyMS44MjQyMTkgMCAzMC4xNjQwNjNsMTI4LjIxMDkzOCAxMjguMjE0ODQzLTEyOC4yMTA5MzggMTI4LjIxNDg0NGMtOC4zNDM3NSA4LjMzOTg0NC04LjM0Mzc1IDIxLjgyNDIxOSAwIDMwLjE2NDA2MyA0LjE1NjI1IDQuMTYwMTU2IDkuNjIxMDk0IDYuMjUgMTUuMDgyMDMyIDYuMjUgNS40NjA5MzcgMCAxMC45MjE4NzUtMi4wODk4NDQgMTUuMDgyMDMxLTYuMjVsMTI4LjIxMDkzNy0xMjguMjE0ODQ0IDEyOC4yMTQ4NDQgMTI4LjIxNDg0NGM0LjE2MDE1NiA0LjE2MDE1NiA5LjYyMTA5NCA2LjI1IDE1LjA4MjAzMiA2LjI1IDUuNDYwOTM3IDAgMTAuOTIxODc0LTIuMDg5ODQ0IDE1LjA4MjAzMS02LjI1IDguMzQzNzUtOC4zMzk4NDQgOC4zNDM3NS0yMS44MjQyMTkgMC0zMC4xNjQwNjN6bTAgMCIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojRkYwMDAwIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPjwvZz4gPC9zdmc+')
+            transition: opacity .3s ease
+            &:hover
+               opacity: 1
+
       .contacts
          flex: 1 1 auto
          padding-right: 40px
