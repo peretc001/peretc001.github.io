@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 100);
         close.addEventListener('click', closeMenu)
         document.addEventListener('click', (e) => { 
-            console.log(e.target.contains(navMenu))
             navMenu.classList.contains('open') && !e.target.contains(navMenu) ? closeMenu() : '' 
         })
     }
@@ -98,8 +97,10 @@ document.addEventListener("DOMContentLoaded", function() {
         e.preventDefault();
         const div = document.createElement('div')
         const sliderBlock = document.createElement('div')
+        const sliderTitle = document.createElement('div')
         const sliderProgress = document.createElement('div')
         div.classList.add('js-gallery')
+        sliderTitle.classList.add('js-gallery-title')
         sliderBlock.classList.add('js-gallery-block')
         sliderProgress.classList.add('js-gallery-progress')
         
@@ -109,6 +110,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         document.body.appendChild(div)
         div.innerHTML = '<div class="close"></div>'
+        div.appendChild(sliderTitle)
         div.appendChild(sliderBlock)
 
         photoGallery.forEach(item => {
@@ -119,6 +121,8 @@ document.addEventListener("DOMContentLoaded", function() {
             wrap.appendChild(link)
             sliderBlock.appendChild(wrap)
         })
+
+        sliderTitle.appendChild(photoGallery[currentIndex].querySelector('.text-bottom').cloneNode(true))
 
         $('.js-gallery-block').slick({
             draggable: true,
@@ -146,7 +150,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
         $('.js-gallery-block').on('beforeChange', function(event, slick, currentSlide, nextSlide){
             nextSlide != 0 ? sliderProgress.querySelector('.js-gallery-thumb').style.width = (nextSlide/maxIndex)*100 + '%' : sliderProgress.querySelector('.js-gallery-thumb').style.width = ''
-          });
+            sliderTitle.innerHTML = ''
+            sliderTitle.appendChild(photoGallery[nextSlide].querySelector('.text-bottom').cloneNode(true))
+        });
 
         document.querySelector('.close').addEventListener('click', closeGallery)
     }
