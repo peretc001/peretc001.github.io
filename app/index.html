@@ -108,7 +108,7 @@
       <div><img src="./img/menu6.jpg"></div>
     </div>
 
-    <button class="prev"></button>
+    <button class="prev disabled"></button>
     <button class="next"></button>
 </section>
 
@@ -210,7 +210,6 @@
   });
   
   
-
   $('.menu .prev').on('click', function() {
     $("#flipbook").turn("previous");
   })
@@ -222,13 +221,19 @@
   })
 
   $("#flipbook").bind("turning", function(event, page, view) {
-  if (page==1) {
-    $('.menu .open-menu').css('z-index', '3');
-  }
-  else {
-    $('.menu .open-menu').css('z-index', '1');
-  }
-});
+    $('.menu .next').removeClass('disabled')
+    if (page==1) {
+      $('.menu .open-menu').css('z-index', '3');
+      $('.menu .prev').addClass('disabled')
+    }
+    else {
+      $('.menu .open-menu').css('z-index', '1');
+      $('.menu .prev').removeClass('disabled')
+    }
+  });
+  $("#flipbook").bind("last", function(event) {
+    $('.menu .next').addClass('disabled')
+  });
   </script>
 </body>
 </html>
