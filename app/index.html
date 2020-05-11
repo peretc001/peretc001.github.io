@@ -92,79 +92,26 @@
   </div>
 </section>
 
-<script src="./js/flip/jquery-1.4.min.js" type="text/javascript"></script>
-<script src="./js/flip/css_page_flip.js" type="text/javascript"></script>
-<link href="./js/flip/css_page_flip.css" media="screen" rel="stylesheet" type="text/css" />
+
+
 
 <section class="menu general" id="menu" style="background-image: url('./img/menu.jpg');">
     <h2>Меню</h2>
-    <div class="container">
-    <ol id="pages">
-      <li>
-          <h1>Look, pure CSS Animations!</h1>
-          <p align="center">
-              <img src="http://farm3.static.flickr.com/2693/4126819117_461c323a24_m.jpg">
-          </p>
-          <p>Mauris porttitor commodo metus, non ultricies enim tristique ac. Maecenas neque neque, ultrices quis mollis ac, volutpat non nibh. Cras tincidunt sollicitudin sapien in sagittis. Mauris lobortis dignissim eleifend. Ut felis nisl, mattis sed convallis in, fermentum commodo nequ</p>
-      </li>
-      <li>
-          <h1>Page 2</h1>
-          
-          <p>at nunc nunc, vel accumsan neque. Etiam facilisis, tellus vel feugiat tristique, nisl tortor pretium velit, et consequat erat est sit amet odio. Nam sed nisi orci. Aenean pulvinar sapien ultrices neque faucibus pellentesque. Donec consectetur malesuada risus, eu aliquam est imperdiet sit amet.</p>
-          
-          <p align="center">
-              <img src="http://farm4.static.flickr.com/3495/4041303223_4b650b839e_m.jpg">
-          </p>
+    <button class="open-menu">Открыть меню</button>
 
-          <p>Mauris porttitor commodo metus, non ultricies enim tristique ac. Maecenas neque neque, ultrices quis mollis ac, volutpat non nibh. Cras tincidunt sollicitudin sapien in sagittis. Mauris lobortis dignissim eleifend. Ut felis nisl, mattis sed convallis in, fermentum commodo nequ</p>
-      </li>
-      <li>
-          <h1>Page 3</h1>
-          <p>at nunc nunc, vel accumsan neque. Etiam facilisis, tellus vel feugiat tristique, nisl tortor pretium velit, et conseqonsectetur malesuada risus, eu aliquam est imperdiet sit amet.</p>
+    <div id="flipbook">
+      <div><img src="./img/menu1.jpg"></div>
+      <div><img src="./img/menu2.jpg"></div>
+      <div><img src="./img/menu3.jpg"></div>
+      <div><img src="./img/menu4.jpg"></div>
+      <div><img src="./img/menu5.jpg"></div>
+      <div><img src="./img/menu6.jpg"></div>
+    </div>
 
-          <p align="center">
-              <img src="http://farm3.static.flickr.com/2663/3967160213_b9b522c0c5_m.jpg">
-          </p>
-
-          <p> non nibh. Cras tincidunt sollicitudin sapien in sagittis. Mauris lobortis dignissim eleifend. Ut felis nisl, mattis sed convallis in, fermentum commodo nequ</p>
-      </li>
-      <li>
-          <h1>Page 4</h1>
-          <p>at nunc nunc, vel accesuada risus, eu aliquam est imperdiet sit amet.</p>
-
-          <p align="center">
-              <img src="http://farm4.static.flickr.com/3430/3967934620_e169001e55_m.jpg">
-          </p>
-          
-          <p>Mauris porttitor commodo metus, non ultricies enim tristique ac. Maecenas neque neque, ultrices quis mollis ac, volutpat noallis in, fermentum commodo nequ</p>
-      </li>
-      <li>
-          <h1>Page 5</h1>
-          <p>at nunc nunc, vel accumsan neque. Etiam facilisis, tellus vel feugiat tristique, nisl tortor pretium velit, et consequat erat est sit amet odio. Nam sed nisi orci. Aenean pulvinar sapien ultrices neque faucibus pellentesque. Donec consectetur malesuada risus, eu aliquam est imperdiet sit amet.</p>
-          
-          <p align="center">
-              <img src="http://farm4.static.flickr.com/3462/3967159681_dc1af49c6d_m.jpg">
-          </p>
-
-          <p>lutpat non nibh. Cras tincidunt sollicitudin sapien in sagittis. Mauris lobortis dignissim eleifend. Ut felis nisl, mattis sed convallis in, fermentum commodo nequ</p>
-      </li>
-      <li>
-          <h1>Page 6</h1>
-          <p>at nunc nunc, vel accumsan neque. Etiam facilisis, tellus vel feugiat tristique, nisl tortor pretium velit, et consequat erat est sit onec consectetur malesuada risus, eu aliquam est imperdiet sit amet.</p>
-          
-          <p align="center">
-              <img src="http://farm4.static.flickr.com/3439/3967159053_b0a28e618e_m.jpg">
-          </p>
-
-          <p>Mauris porttitor Cras tincidunt sollicitudin sapien in sagittis. Mauris lobortis dignissim eleifend. Ut felis nisl, mattis sed convallis in, fermentum commodo nequ</p>
-      </li>
-    </ol>
-  </div>
+    <button class="prev"></button>
+    <button class="next"></button>
 </section>
 
-<script>
-  CSSPageFlip.init('pages');
-</script>
 
 <section class="photo general" id="photo">
   <div class="photo-block">
@@ -253,5 +200,35 @@
 
   <script src="./js/scripts.min.js"></script>
   <link rel="stylesheet" href="./css/main.min.css">
+
+  <script type="text/javascript" src="./js/turn.min.js"></script>
+  <script type="text/javascript">
+    $("#flipbook").turn({
+		width: 800,
+		height: 800,
+		autoCenter: true
+  });
+  
+  
+
+  $('.menu .prev').on('click', function() {
+    $("#flipbook").turn("previous");
+  })
+  $('.menu .next').on('click', function() {
+    $("#flipbook").turn("next");
+  })
+  $('.menu .open-menu').on('click', function() {
+    $("#flipbook").turn("next");
+  })
+
+  $("#flipbook").bind("turning", function(event, page, view) {
+  if (page==1) {
+    $('.menu .open-menu').css('z-index', '3');
+  }
+  else {
+    $('.menu .open-menu').css('z-index', '1');
+  }
+});
+  </script>
 </body>
 </html>
