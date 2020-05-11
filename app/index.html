@@ -99,16 +99,20 @@
     <h2>Меню</h2>
     <button class="open-menu">Открыть меню</button>
 
-    <div id="flipbook">
-      <div><img src="./img/menu1.jpg"></div>
-      <div><img src="./img/menu2.jpg"></div>
-      <div><img src="./img/menu3.jpg"></div>
-      <div><img src="./img/menu4.jpg"></div>
-      <div><img src="./img/menu5.jpg"></div>
-      <div><img src="./img/menu6.jpg"></div>
+    <div class="wrapper">
+      <div id="flipbook">
+        <img src="./img/menu1.jpg">
+        <img src="./img/menu2.jpg">
+        <img src="./img/menu3.jpg">
+        <img src="./img/menu4.jpg">
+        <img src="./img/menu5.jpg">
+        <img src="./img/menu6.jpg">
+        <img src="./img/menu6.jpg">
+      </div>
     </div>
 
-    <button class="prev disabled"></button>
+  
+    <button class="prev"></button>
     <button class="next"></button>
 </section>
 
@@ -201,39 +205,34 @@
   <script src="./js/scripts.min.js"></script>
   <link rel="stylesheet" href="./css/main.min.css">
 
-  <script type="text/javascript" src="./js/turn.min.js"></script>
-  <script type="text/javascript">
-    $("#flipbook").turn({
-		width: 800,
-		height: 600,
-		autoCenter: true
-  });
-  
-  
-  $('.menu .prev').on('click', function() {
-    $("#flipbook").turn("previous");
-  })
-  $('.menu .next').on('click', function() {
-    $("#flipbook").turn("next");
-  })
-  $('.menu .open-menu').on('click', function() {
-    $("#flipbook").turn("next");
-  })
+  <link href="./js/flip/jquery.booklet.latest.css" type="text/css" rel="stylesheet" media="screen, projection, tv" />
+  <script src="./js/flip/jquery-2.1.0.min.js"></script>
+  <script src="./js/flip/jquery-ui-1.10.4.min.js"></script>
+  <script src="./js/flip/jquery.easing.1.3.js"></script>
+  <script src="./js/flip/jquery.booklet.latest.js"></script>
 
-  $("#flipbook").bind("turning", function(event, page, view) {
-    $('.menu .next').removeClass('disabled')
-    if (page==1) {
-      $('.menu .open-menu').css('z-index', '3');
-      $('.menu .prev').addClass('disabled')
-    }
-    else {
-      $('.menu .open-menu').css('z-index', '1');
-      $('.menu .prev').removeClass('disabled')
-    }
-  });
-  $("#flipbook").bind("last", function(event) {
-    $('.menu .next').addClass('disabled')
-  });
-  </script>
+  <script>
+    $(function() {
+        //single book
+        $('#flipbook').booklet({
+          width:  '60%',
+          height: 600,
+          speed: 500
+        });
+
+        $('.next').click(function(e){
+            e.preventDefault();
+            $('#flipbook').booklet("next");
+        });
+        $('.prev').click(function(e){
+            e.preventDefault();
+            $('#flipbook').booklet("prev");
+        });
+    })
+
+</script>
+
+
+
 </body>
 </html>

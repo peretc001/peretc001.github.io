@@ -6,6 +6,7 @@
     background-position: top center
     background-repeat: no-repeat
     position: relative
+    overflow: hidden
     h2
         position: absolute
         left: 60px
@@ -19,19 +20,14 @@
         left: 20%
         top: 45%
         z-index: 3
+    .wrapper
+        margin: 50px auto
     #flipbook
-        position: absolute
-        left: 20%
-        top: 5%
-        z-index: 2
         div
             user-select: none
         img
+            max-width: 100%
             user-select: none
-            overflow: hidden
-        .shadow,
-        &.shadow
-            box-shadow: 0 !important
     .prev,
     .next
         position: absolute
@@ -53,10 +49,10 @@
         &:hover
             opacity: 1
     .next
-        right: 150px
+        right: 10%
         background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGcgdHJhbnNmb3JtPSJtYXRyaXgoLTEgMS4yMjQ2NWUtMTYgLTEuMjI0NjVlLTE2IC0xIDQ5MiA0OTIpIj48Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0xOTguNjA4LDI0Ni4xMDRMMzgyLjY2NCw2Mi4wNGM1LjA2OC01LjA1Niw3Ljg1Ni0xMS44MTYsNy44NTYtMTkuMDI0YzAtNy4yMTItMi43ODgtMTMuOTY4LTcuODU2LTE5LjAzMmwtMTYuMTI4LTE2LjEyICAgIEMzNjEuNDc2LDIuNzkyLDM1NC43MTIsMCwzNDcuNTA0LDBzLTEzLjk2NCwyLjc5Mi0xOS4wMjgsNy44NjRMMTA5LjMyOCwyMjcuMDA4Yy01LjA4NCw1LjA4LTcuODY4LDExLjg2OC03Ljg0OCwxOS4wODQgICAgYy0wLjAyLDcuMjQ4LDIuNzYsMTQuMDI4LDcuODQ4LDE5LjExMmwyMTguOTQ0LDIxOC45MzJjNS4wNjQsNS4wNzIsMTEuODIsNy44NjQsMTkuMDMyLDcuODY0YzcuMjA4LDAsMTMuOTY0LTIuNzkyLDE5LjAzMi03Ljg2NCAgICBsMTYuMTI0LTE2LjEyYzEwLjQ5Mi0xMC40OTIsMTAuNDkyLTI3LjU3MiwwLTM4LjA2TDE5OC42MDgsMjQ2LjEwNHoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0ZGMDAwMCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+")
     .prev
-        left: 150px
+        left: 10%
         background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMTk4LjYwOCwyNDYuMTA0TDM4Mi42NjQsNjIuMDRjNS4wNjgtNS4wNTYsNy44NTYtMTEuODE2LDcuODU2LTE5LjAyNGMwLTcuMjEyLTIuNzg4LTEzLjk2OC03Ljg1Ni0xOS4wMzJsLTE2LjEyOC0xNi4xMiAgICBDMzYxLjQ3NiwyLjc5MiwzNTQuNzEyLDAsMzQ3LjUwNCwwcy0xMy45NjQsMi43OTItMTkuMDI4LDcuODY0TDEwOS4zMjgsMjI3LjAwOGMtNS4wODQsNS4wOC03Ljg2OCwxMS44NjgtNy44NDgsMTkuMDg0ICAgIGMtMC4wMiw3LjI0OCwyLjc2LDE0LjAyOCw3Ljg0OCwxOS4xMTJsMjE4Ljk0NCwyMTguOTMyYzUuMDY0LDUuMDcyLDExLjgyLDcuODY0LDE5LjAzMiw3Ljg2NGM3LjIwOCwwLDEzLjk2NC0yLjc5MiwxOS4wMzItNy44NjQgICAgbDE2LjEyNC0xNi4xMmMxMC40OTItMTAuNDkyLDEwLjQ5Mi0yNy41NzIsMC0zOC4wNkwxOTguNjA4LDI0Ni4xMDR6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRjAwMDAiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==")
     .disabled
         opacity: 0

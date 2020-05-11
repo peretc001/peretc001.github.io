@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./js/flip/jquery.booklet.latest.css" type="text/css" rel="stylesheet" media="screen, projection, tv" />
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="./js/flip/jquery-2.1.0.min.js"></script>
+    <script src="./js/flip/jquery-ui-1.10.4.min.js"></script>
+    <script src="./js/flip/jquery.easing.1.3.js"></script>
+    <script src="./js/flip/jquery.booklet.latest.js"></script>
+    <style>
+        img { width: 100% }
+    </style>
+    
+    
+    
+    <div id="mybook">
+        <div>
+            <img src="./img/menu1.jpg">
+        </div>
+        <div>
+            <img src="./img/menu2.jpg">
+        </div>
+        <div>
+            <img src="./img/menu3.jpg">
+        </div>
+        <div>
+            <img src="./img/menu4.jpg">
+        </div>
+        <div>
+            <img src="./img/menu5.jpg">
+        </div>
+    </div>
+
+    <button class="prev"><</button>
+    <button class="next">></button>
+    <script>
+        $(function() {
+            //single book
+            $('#mybook').booklet({
+                speed: 500
+            });
+
+            $('.next').click(function(e){
+                e.preventDefault();
+                $('#mybook').booklet("next");
+            });
+            $('.prev').click(function(e){
+                e.preventDefault();
+                $('#mybook').booklet("prev");
+            });
+        })
+
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>
