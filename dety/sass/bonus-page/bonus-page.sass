@@ -1,5 +1,6 @@
 @import '../_libs/var'
-.bonus
+.bonus-page
+    margin-top: 3em
     h1, h2
         display: block
         text-align: center
@@ -7,14 +8,16 @@
         font-weight: bold
         margin: 0
         margin-bottom: 2em
-        span
+        i
+            font-style: normal
             color: $accent
     
     h2
         text-align: left
         max-width: 900px
         margin: 0 auto
-        span
+        i
+            font-style: normal
             color: $blue2
 
     &-pazl
@@ -70,8 +73,9 @@
                 font-weight: bold
                 margin: 0 auto
                 font-size: 1.2em
-                span
+                i
                     display: block
+                    font-style: normal
             
             &.red
                 margin: 0 auto
@@ -143,7 +147,7 @@
         bottom: 0
 
 @media screen and ( max-width: 991.98px )
-    .bonus
+    .bonus-page
         &-pazl
             .column
                 &:first-child
@@ -168,7 +172,7 @@
             display: none
 
 @media screen and ( max-width: 767.98px )
-    .bonus
+    .bonus-page
         h1, h2
             font-size: 1.8em
         h2
@@ -190,7 +194,7 @@
                     top: 0
 
 @media screen and ( max-width: 576.98px )
-    .bonus
+    .bonus-page
         h1, h2
             font-size: 1.6em
         
@@ -225,7 +229,7 @@
                     top: -10px
 
 @media screen and ( max-width: 374.98px )
-    .bonus
+    .bonus-page
         &-pazl
             .column
                 &:first-child

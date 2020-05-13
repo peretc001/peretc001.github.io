@@ -1,127 +1,22 @@
+.product-item-image-wrapper
+    margin-bottom: 0
+    padding-top: 100%
+    transition: none
+
 .products
     h1
         font-size: 2.5em
         font-weight: bold
         margin: 0
         margin-bottom: 1em
+
     .products-list
         padding: 0 .5em
-        margin-bottom: 2em
-        [class*="col-"]
+
+        [class*='col-']
             margin-bottom: 1em
-            padding-right: 0.5em
             padding-left: 0.5em
-    
-    &-filter
-        padding-right: 3em
-        transition: none       
-        form.smartfilter
-            input
-                outline: none
-            .smart-filter-parameters-box
-                padding: 1em 0
-                &:not(:first-child)
-                    border-top: 1px solid #C4C4C4
-                &-title
-                    display: flex
-                    align-items: center
-                    justify-content: space-between
-                    margin-bottom: 0.6em
-                    &-text
-                        font-weight: bold
-                        font-size: 1.2em
-                        margin-bottom: .5em
-                .smart-filter-angle
-                    .smart-filter-angles
-                        display: inline-block
-                        width: 1.1em
-                        height: 1.1em
-                        background: rgba(194, 81, 192, 0.2)
-                        border-radius: 50%
-                        display: flex
-                        align-items: center
-                        justify-content: center
-                        cursor: pointer
-                        &::before
-                            content: '-'
-                            display: inline-block
-                            width: 100%
-                            height: 100%
-                            text-align: center
-                            color: $accent
-                            font-size: 1em
-                            line-height: 1
-            .form-check
-                input
-                    display: none
-                label
-                    padding-left: 1.5em
-                    position: relative
-                    user-select: none
-                    cursor: pointer
-                    &::before
-                        content: ''
-                        position: absolute
-                        left: 0
-                        top: 50%
-                        transform: translateY(-50%)
-                        width: 1em
-                        height: 1em
-                        border: 1px solid $accent
-                        border-radius: 2px
-                        transition: background .3s ease
-                input:checked + label:before
-                    background: $accent
-                
-            .more
-                font-size: 0.9em
-                color: #C4C4C4
-                cursor: pointer
-            
-            .wrapp_change_inputs
-                display: flex
-                align-items: center
-                justify-content: space-between
-                .bx_filter_parameters_box_container_block
-                    width: 85px
-                    input
-                        width: 100%
-                        background: transparent
-                        border-radius: 4px
-                        border: 1px solid $accent
-                        color: $text
-                        font-weight: bold
-                        padding: 5px 10px
-                .divider
-                    display: inline-block
-                    width: 2em
-                    height: 1px
-                    border-bottom: 1px solid $accent
-            
-            .smart-filter-block
-                .form-input
-                    width: 100%
-                    background: transparent
-                    border-radius: 4px
-                    border: 1px solid $accent
-                    color: $text
-                    font-weight: normal
-                    padding: 8px 10px
-                    margin-bottom: 1em
-            
-            .smart-filter-block-button
-                .form-group
-                    display: flex
-                    align-items: center
-                    justify-content: space-between
-                    flex-wrap: wrap
-                    .btn
-                        flex: 0 0 100%
-                        font-size: 1em
-                        font-weight: normal
-                        padding: .8em
-                        &:first-child
-                            margin-bottom: 1em
+            padding-right: 0.5em
 
     &-sort
         display: flex
@@ -151,87 +46,101 @@
             display: none
             cursor: pointer
 
-    &-active-filters
-        display: flex
-        align-items: center
-        justify-content: flex-start
-        flex-wrap: wrap
-        padding-top: 0.3em
-        padding-bottom: 1em
-        span,
-        a
-            cursor: pointer
-            background: $accent
-            border-radius: 4px
-            padding: .5em 1em
-            font-size: 0.9em
-            color: #fff
-            margin-right: 0.5em
-            margin-bottom: 0.5em
-            transition: background .3s ease, color .3s ease
-            position: relative
-            &::after
-                content: ''
-                display: inline-block
-                width: .6em
-                height: .6em
-                margin-left: 0.5em
-                background-size: cover
-                background-position: right
-                background-repeat: no-repeat
-                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzAwLjE4OCwyNDZMNDg0LjE0LDYyLjA0YzUuMDYtNS4wNjQsNy44NTItMTEuODIsNy44Ni0xOS4wMjRjMC03LjIwOC0yLjc5Mi0xMy45NzItNy44Ni0xOS4wMjhMNDY4LjAyLDcuODcyICAgIGMtNS4wNjgtNS4wNzYtMTEuODI0LTcuODU2LTE5LjAzNi03Ljg1NmMtNy4yLDAtMTMuOTU2LDIuNzgtMTkuMDI0LDcuODU2TDI0Ni4wMDgsMTkxLjgyTDYyLjA0OCw3Ljg3MiAgICBjLTUuMDYtNS4wNzYtMTEuODItNy44NTYtMTkuMDI4LTcuODU2Yy03LjIsMC0xMy45NiwyLjc4LTE5LjAyLDcuODU2TDcuODcyLDIzLjk4OGMtMTAuNDk2LDEwLjQ5Ni0xMC40OTYsMjcuNTY4LDAsMzguMDUyICAgIEwxOTEuODI4LDI0Nkw3Ljg3Miw0MjkuOTUyYy01LjA2NCw1LjA3Mi03Ljg1MiwxMS44MjgtNy44NTIsMTkuMDMyYzAsNy4yMDQsMi43ODgsMTMuOTYsNy44NTIsMTkuMDI4bDE2LjEyNCwxNi4xMTYgICAgYzUuMDYsNS4wNzIsMTEuODI0LDcuODU2LDE5LjAyLDcuODU2YzcuMjA4LDAsMTMuOTY4LTIuNzg0LDE5LjAyOC03Ljg1NmwxODMuOTYtMTgzLjk1MmwxODMuOTUyLDE4My45NTIgICAgYzUuMDY4LDUuMDcyLDExLjgyNCw3Ljg1NiwxOS4wMjQsNy44NTZoMC4wMDhjNy4yMDQsMCwxMy45Ni0yLjc4NCwxOS4wMjgtNy44NTZsMTYuMTItMTYuMTE2ICAgIGM1LjA2LTUuMDY0LDcuODUyLTExLjgyNCw3Ljg1Mi0xOS4wMjhjMC03LjIwNC0yLjc5Mi0xMy45Ni03Ljg1Mi0xOS4wMjhMMzAwLjE4OCwyNDZ6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==')
-        a
-            background: $text
-            color: #fff
-
     &-card
-        display: block
         background-color: #ffffff
-        border: 1px solid #faf0f0
         border-radius: 1em
         padding: 0
         &__head
-            display: flex
             align-items: center
+            display: flex
             justify-content: flex-start
             padding: 1em
-            min-height: 60px
+            padding-bottom: .5em
+            position: relative
             span
-                position: relative
-                margin: 0
-                padding: .5em
-                color: #ffffff
-                font-size: 1em
+                display: block
+                flex: 0 0 48px
+                height: 25px
+                font-size: .8em
                 font-weight: bold
-                border-radius: 4px
-                background-size: cover
-                background-position: center
-                background-repeat: no-repeat
+                text-transform: uppercase
+                display: flex
+                align-items: center
+                justify-content: center
+                border-radius: 2px
                 &:not(:first-child)
-                    margin-left: .3em
+                    margin-left: .5em
                 &.top
-                    background: $yellow
+                    color: $yellow
+                    border: 1px solid $yellow
                 &.new
-                    background: $blue2
+                    color: $blue2
+                    border: 1px solid $blue2
                 &.sale
-                    background: $red
+                    color: $red
+                    border: 1px solid $red
                 &.bonus
-                    background: $accent
-                &.installments
-                    background: $green
-
+                    color: $accent
+                    border: 1px solid $accent
+                &.installment
+                    color: $green
+                    border: 1px solid $green
+                &.wishlist
+                    flex: 0 0 25px
+                    align-self: flex-end
+                    margin-left: auto
+                    cursor: pointer
+                    background-size: contain
+                    background-position: right
+                    background-repeat: no-repeat
+                    background-image: url('../img/nav/wishlist.svg')
+                    transition: transform .3s ease
+                    &.active
+                        background-image: url('../img/nav/wishlist-active.svg')
+                    &:hover
+                        transform: scale(1.1)
         &__img
             display: block
+            height: 250px
+            overflow: hidden
             padding: 0 1em
-            text-align: center
+            margin-bottom: .5em
+            position: relative
+            span
+                background-repeat: no-repeat
+                background-size: contain
+                height: 100%
+                left: 1em
+                position: absolute
+                right: 1em
+                top: 0
+                width: auto
+            &.hasDetail
+                span
+                    transition: opacity .3s ease
+                    &:first-child
+                        opacity: 1
+                        z-index: 1
+                    &:last-child
+                        opacity: 0
+                        z-index: -1
+                &:hover
+                    span
+                        &:first-child
+                            opacity: 0
+                            z-index: -1
+                        &:last-child
+                            opacity: 1
+                            z-index: 1
         &__title
             display: block
-            padding: 1em
-            max-height: 53px
+            padding: 0 1em
+            height: 32px
             overflow: hidden
-            color: $text
-            font-size: 1.15em
             margin-bottom: .5em
+            a
+                color: $text !important
+                font-size: 1.15em
         &__review
             display: flex
             align-items: center
@@ -243,9 +152,9 @@
                 justify-content: flex-start
                 span
                     display: inline-block
-                    width: 1em
-                    height: 1em
-                    background-size: 1em
+                    width: 1.15em
+                    height: 1.15em
+                    background-size: 1.15em
                     background-position: center
                     background-repeat: no-repeat
                     background-image: url('../img/review/star.svg')
@@ -271,70 +180,174 @@
                     background-repeat: no-repeat
                     background-image: url('../img/review/quote.svg')
         
-        &__bottom
-            display: flex
-            align-items: flex-end
-            justify-content: space-between
-            position: relative
-            padding: 1em 0 0
-            &__price
-                display: flex
-                align-items: flex-start
-                justify-content: flex-end
-                flex-direction: column
-                padding: 1em
-                padding-bottom: 1.5em
-                .old
-                    color: rgba(255, 255, 255, 0.6)
-                    font-weight: bold
-                    font-size: 1.2em
-                    margin: 0
-                    margin-bottom: 0.3em
-                .bonus
-                    color: $accent
-                    font-weight: bold
-                    font-size: 1.2em
-                    margin: 0
-                    margin-bottom: 0.3em
-                .price
-                    color: $text
-                    font-weight: bold
-                    font-size: 1.8em
-                &.sale
-                    background: $red
-                    border-radius: 1em
-                    .price
-                        color: #ffffff
-
-            &__buy
-                position: absolute
-                right: 1em
-                bottom: 1.5em
-                z-index: 1
-                .wishlist,
-                .cart
+        &__price
+            padding: 1em
+            padding-bottom: .5em
+            .old
+                display: inline-block
+                color: $text
+                font-size: 1em
+                font-weight: bold
+                margin: 0
+                span
                     position: relative
-                    display: inline-block
-                    width: 2em
-                    height: 2em
-                    padding: 0
+                    &:before
+                        content: ''
+                        position: absolute
+                        left: 0
+                        top: 50%
+                        width: 100%
+                        height: 1px
+                        background: $text
+                        transform: rotate(-12deg)
+            .bonus
+                display: inline-block
+                color: $accent
+                font-size: 1em
+                font-weight: bold
+                margin: 0
+            .price
+                display: block
+                color: $text
+                font-size: 1.8em
+                font-weight: bold
+                &.new
+                    color: $red
+
+        &__buy
+            padding-bottom: 1em
+            .addToBasket
+                align-items: center
+                display: flex
+                justify-content: flex-start
+                padding: 0 1em 0 1em
+                .btn
                     margin: 0
-                    background-size: 100%
+                    font-weight: bold
+                    height: 40px
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    padding: 0
+                    &:first-child
+                        flex: 1 1 auto
+                        border-radius: 4px 0 0 4px
+                        font-size: 1.3em
+                    &:not(:first-child)
+                        flex: 0 0 90px
+                        border-radius: 0 4px 4px 0
+                        font-size: 1em
+
+            .addToBasket,
+            .inBasket
+                position: relative
+                &:before
+                    content: ''
+                    position: absolute
+                    left: 0
+                    top: 0
+                    width: 100%
+                    height: 100%
                     background-position: center
                     background-repeat: no-repeat
-                    transition: transform .3s ease
-                    cursor: pointer
+                    background-size: 40px
+                    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9ItCh0LvQvtC5XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTIwIDMwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxMjAgMzA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojQzI1MUMwO30uc3Qxe2ZpbGw6I0MyNTFDMDtmaWxsLW9wYWNpdHk6MC4zO308L3N0eWxlPjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjE1IiBjeT0iMTUiIHI9IjE1Ij48YW5pbWF0ZSAgYWNjdW11bGF0ZT0ibm9uZSIgYWRkaXRpdmU9InJlcGxhY2UiIGF0dHJpYnV0ZU5hbWU9InIiIGJlZ2luPSIwcyIgY2FsY01vZGU9ImxpbmVhciIgZHVyPSIwLjhzIiBmaWxsPSJyZW1vdmUiIGZyb209IjE1IiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgcmVzdGFydD0iYWx3YXlzIiB0bz0iMTUiIHZhbHVlcz0iMTU7OTsxNSI+PC9hbmltYXRlPjxhbmltYXRlICBhY2N1bXVsYXRlPSJub25lIiBhZGRpdGl2ZT0icmVwbGFjZSIgYXR0cmlidXRlTmFtZT0iZmlsbC1vcGFjaXR5IiBiZWdpbj0iMHMiIGNhbGNNb2RlPSJsaW5lYXIiIGR1cj0iMC44cyIgZmlsbD0icmVtb3ZlIiBmcm9tPSIxIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgcmVzdGFydD0iYWx3YXlzIiB0bz0iMSIgdmFsdWVzPSIxOy41OzEiPjwvYW5pbWF0ZT48L2NpcmNsZT48Y2lyY2xlIGNsYXNzPSJzdDEiIGN4PSI2MCIgY3k9IjE1IiByPSI5Ij48YW5pbWF0ZSAgYWNjdW11bGF0ZT0ibm9uZSIgYWRkaXRpdmU9InJlcGxhY2UiIGF0dHJpYnV0ZU5hbWU9InIiIGJlZ2luPSIwcyIgY2FsY01vZGU9ImxpbmVhciIgZHVyPSIwLjhzIiBmaWxsPSJyZW1vdmUiIGZyb209IjkiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiByZXN0YXJ0PSJhbHdheXMiIHRvPSI5IiB2YWx1ZXM9Ijk7MTU7OSI+PC9hbmltYXRlPjxhbmltYXRlICBhY2N1bXVsYXRlPSJub25lIiBhZGRpdGl2ZT0icmVwbGFjZSIgYXR0cmlidXRlTmFtZT0iZmlsbC1vcGFjaXR5IiBiZWdpbj0iMHMiIGNhbGNNb2RlPSJsaW5lYXIiIGR1cj0iMC44cyIgZmlsbD0icmVtb3ZlIiBmcm9tPSIwLjUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiByZXN0YXJ0PSJhbHdheXMiIHRvPSIwLjUiIHZhbHVlcz0iLjU7MTsuNSI+PC9hbmltYXRlPjwvY2lyY2xlPjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjEwNSIgY3k9IjE1IiByPSIxNSI+PGFuaW1hdGUgIGFjY3VtdWxhdGU9Im5vbmUiIGFkZGl0aXZlPSJyZXBsYWNlIiBhdHRyaWJ1dGVOYW1lPSJyIiBiZWdpbj0iMHMiIGNhbGNNb2RlPSJsaW5lYXIiIGR1cj0iMC44cyIgZmlsbD0icmVtb3ZlIiBmcm9tPSIxNSIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIHJlc3RhcnQ9ImFsd2F5cyIgdG89IjE1IiB2YWx1ZXM9IjE1Ozk7MTUiPjwvYW5pbWF0ZT48YW5pbWF0ZSAgYWNjdW11bGF0ZT0ibm9uZSIgYWRkaXRpdmU9InJlcGxhY2UiIGF0dHJpYnV0ZU5hbWU9ImZpbGwtb3BhY2l0eSIgYmVnaW49IjBzIiBjYWxjTW9kZT0ibGluZWFyIiBkdXI9IjAuOHMiIGZpbGw9InJlbW92ZSIgZnJvbT0iMSIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIHJlc3RhcnQ9ImFsd2F5cyIgdG89IjEiIHZhbHVlcz0iMTsuNTsxIj48L2FuaW1hdGU+PC9jaXJjbGU+PC9zdmc+')
+                    display: none
+                &.progress
+                    &:before
+                        display: block
+                    .btn
+                        animation: add2basket 1s ease
+
+            .inBasket
+                display: flex
+                justify-content: flex-start
+                padding: 0 1em 0 1em
+
+                .hasBasket
+                    background: $accent
+                    flex: 1 1 auto
+                    border-radius: 4px 0 0 4px
+                    border: none
+                    transition: background .3s ease
+                    height: 40px
+                    position: relative
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    flex-wrap: wrap
+                    &:before
+                        content: ''
+                        position: absolute
+                        left: 0
+                        top: 0
+                        width: 100%
+                        height: 100%
+                        background-position: center
+                        background-repeat: no-repeat
+                        background-size: 40px
+                        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9ItCh0LvQvtC5XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTIwIDMwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxMjAgMzA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojQzI1MUMwO30uc3Qxe2ZpbGw6I0MyNTFDMDtmaWxsLW9wYWNpdHk6MC4zO308L3N0eWxlPjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjE1IiBjeT0iMTUiIHI9IjE1Ij48YW5pbWF0ZSAgYWNjdW11bGF0ZT0ibm9uZSIgYWRkaXRpdmU9InJlcGxhY2UiIGF0dHJpYnV0ZU5hbWU9InIiIGJlZ2luPSIwcyIgY2FsY01vZGU9ImxpbmVhciIgZHVyPSIwLjhzIiBmaWxsPSJyZW1vdmUiIGZyb209IjE1IiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgcmVzdGFydD0iYWx3YXlzIiB0bz0iMTUiIHZhbHVlcz0iMTU7OTsxNSI+PC9hbmltYXRlPjxhbmltYXRlICBhY2N1bXVsYXRlPSJub25lIiBhZGRpdGl2ZT0icmVwbGFjZSIgYXR0cmlidXRlTmFtZT0iZmlsbC1vcGFjaXR5IiBiZWdpbj0iMHMiIGNhbGNNb2RlPSJsaW5lYXIiIGR1cj0iMC44cyIgZmlsbD0icmVtb3ZlIiBmcm9tPSIxIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgcmVzdGFydD0iYWx3YXlzIiB0bz0iMSIgdmFsdWVzPSIxOy41OzEiPjwvYW5pbWF0ZT48L2NpcmNsZT48Y2lyY2xlIGNsYXNzPSJzdDEiIGN4PSI2MCIgY3k9IjE1IiByPSI5Ij48YW5pbWF0ZSAgYWNjdW11bGF0ZT0ibm9uZSIgYWRkaXRpdmU9InJlcGxhY2UiIGF0dHJpYnV0ZU5hbWU9InIiIGJlZ2luPSIwcyIgY2FsY01vZGU9ImxpbmVhciIgZHVyPSIwLjhzIiBmaWxsPSJyZW1vdmUiIGZyb209IjkiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiByZXN0YXJ0PSJhbHdheXMiIHRvPSI5IiB2YWx1ZXM9Ijk7MTU7OSI+PC9hbmltYXRlPjxhbmltYXRlICBhY2N1bXVsYXRlPSJub25lIiBhZGRpdGl2ZT0icmVwbGFjZSIgYXR0cmlidXRlTmFtZT0iZmlsbC1vcGFjaXR5IiBiZWdpbj0iMHMiIGNhbGNNb2RlPSJsaW5lYXIiIGR1cj0iMC44cyIgZmlsbD0icmVtb3ZlIiBmcm9tPSIwLjUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiByZXN0YXJ0PSJhbHdheXMiIHRvPSIwLjUiIHZhbHVlcz0iLjU7MTsuNSI+PC9hbmltYXRlPjwvY2lyY2xlPjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjEwNSIgY3k9IjE1IiByPSIxNSI+PGFuaW1hdGUgIGFjY3VtdWxhdGU9Im5vbmUiIGFkZGl0aXZlPSJyZXBsYWNlIiBhdHRyaWJ1dGVOYW1lPSJyIiBiZWdpbj0iMHMiIGNhbGNNb2RlPSJsaW5lYXIiIGR1cj0iMC44cyIgZmlsbD0icmVtb3ZlIiBmcm9tPSIxNSIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIHJlc3RhcnQ9ImFsd2F5cyIgdG89IjE1IiB2YWx1ZXM9IjE1Ozk7MTUiPjwvYW5pbWF0ZT48YW5pbWF0ZSAgYWNjdW11bGF0ZT0ibm9uZSIgYWRkaXRpdmU9InJlcGxhY2UiIGF0dHJpYnV0ZU5hbWU9ImZpbGwtb3BhY2l0eSIgYmVnaW49IjBzIiBjYWxjTW9kZT0ibGluZWFyIiBkdXI9IjAuOHMiIGZpbGw9InJlbW92ZSIgZnJvbT0iMSIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIHJlc3RhcnQ9ImFsd2F5cyIgdG89IjEiIHZhbHVlcz0iMTsuNTsxIj48L2FuaW1hdGU+PC9jaXJjbGU+PC9zdmc+')
+                        display: none
                     &:hover
-                        transform: scale(1.1)
-                .wishlist  
-                    background-image: url('../img/nav/wishlist.svg')
-                    &.active
-                        background-image: url('../img/nav/wishlist-active.svg')
-                .cart
-                    background-image: url('../img/nav/cart.svg')
-                    margin-left: 0.5em
-                    &.active
-                        background-image: url('../img/nav/cart.svg')
+                        background: darken($accent, 5%)
+                    small
+                        display: block
+                        margin-top: 2px
+                    &.progress
+                        background-color: #ffebff
+                        &:before
+                            display: block
+                            animation: load 1s ease
+
+                    @keyframes load
+                        from
+                            opacity: 0
+                        to
+                            opacity: .8
+
+                    a
+                        display: block
+                        color: #ffffff
+                        margin: 0
+                        text-align: center
+                        text-decoration: none
+                        font-size: .9em
+                        &:first-child
+                            font-weight: bold
+                        small
+                            font-size: .8em
+                            font-weight: normal
+                .addToBasketPlus
+                    flex: 0 0 90px
+                    border-radius: 0 4px 4px 0
+                    border: none
+                    padding: .4em 0
+                    background: transparent
+                    border: 1px solid $yellow
+                    color: $yellow
+                    font-weight: bold
+                    transition: background .3s ease
+                    &:hover
+                        background: transparent
+                        color: $yellow
+                        border: 1px solid $yellow
+                    &:disabled
+                        color: $grey !important
+                        border-color: $grey !important
+                        &:hover
+                            color: $grey
+                            border-color: $grey
+                            background: transparent !important
+            @keyframes add2basket
+                from
+                    opacity: 1
+                to
+                    opacity: 0
+
+.not_find
+    display: block
+    text-align: center
+    padding: 3em 0
 
 .resent,
 .visited
@@ -344,6 +357,8 @@
         font-weight: bold
         line-height: 1
         padding: 2em 0 .5em 0
+    .slick-track
+        margin: 0
     .slick-list
         margin: 0 -1em
     .slick-slide
@@ -384,41 +399,30 @@
 
 @media screen and ( max-width: 1199.98px )
     .products
-        &-filter
-            form.smartfilter
-                .smart-filter-block-button
-                    .form-group
-                        flex-wrap: wrap
-                        .btn
-                            flex: 0 0 100%
-                            font-size: 1em
-                            &:first-child
-                                margin-right: 0
-                                margin-bottom: 0.5em
-                            &:last-child
-                                margin-left: 0
-                    
-        &-tag
-            a
-                font-size: 0.9em
         &-sort
             a
+                font-size: .9em
                 &:not(:first-child)
-                    margin-left: 1em
+                    margin-left: .5em
         &-card
-            &__bottom
-                &__price
-                    .old,
-                    .bonus
-                        font-size: 1em
-                    .price
-                        font-size: 1.3em
-                &__buy
-                    .wishlist,
-                    .cart
-                        width: 1.5em
-                        height: 1.5em
-                        
+            &__head
+                span
+                    &.hidden
+                        display: none
+            &__buy
+                .addToBasket
+                    .btn
+                        &:first-child
+                            font-size: 1.1em
+                        &:not(:first-child)
+                            flex: 0 0 70px
+                            font-size: .9em
+
+                .inBasket
+                    .addToBasketPlus
+                        flex: 0 0 70px
+                        font-size: .9em
+
 @media screen and ( max-width: 991.98px )
     .products
         &-sort
@@ -495,64 +499,12 @@
                     &::before
                         display: none
 
-        &-card
-            &__img
-                text-align: center
-
 @media screen and ( max-width: 767.98px )
     .products
         position: relative
         h1
             font-size: 2em
-        .row
-            
-        &-filter
-            display: none
-            padding-right: 0
-            position: absolute
-            left: 1em
-            right: 1em
-            top: 60px
-            transform: translateY(5%)
-            opacity: 0
-            z-index: -1
-            background: #fff
-            border-radius: 4px
-            border: 2px solid $accent
-            padding: 2em
-            width: auto
-            pointer-events: none
-            &.fade
-                display: block
-                z-index: 2
-                transition: transform .1s ease, opacity .3s ease
-            &.active
-                opacity: 1
-                z-index: 2
-                pointer-events: all
-                transform: translateY(0%)
-            form.smartfilter
-                .form-check
-                    label
-                        font-size: 1.2em
-                .wrapp_change_inputs
-                    .bx_filter_parameters_box_container_block
-                        width: 200px
-                input
-                    font-size: 16px !important
-                    padding: .8em .5em !important
-                .smart-filter-block-button
-                    .form-group
-                        flex-wrap: no-wrap
-                        .btn
-                            flex: 0 0 49%
-                            font-size: 1em
-                            &:first-child
-                                margin-right: 1%
-                                margin-bottom: 0
-                            &:last-child
-                                margin-left: 1%
-        
+
         &-sort
             .open-filter
                 display: flex
@@ -580,19 +532,45 @@
                         transform: rotate(180deg)
                         background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzAwLjE4OCwyNDZMNDg0LjE0LDYyLjA0YzUuMDYtNS4wNjQsNy44NTItMTEuODIsNy44Ni0xOS4wMjRjMC03LjIwOC0yLjc5Mi0xMy45NzItNy44Ni0xOS4wMjhMNDY4LjAyLDcuODcyICAgIGMtNS4wNjgtNS4wNzYtMTEuODI0LTcuODU2LTE5LjAzNi03Ljg1NmMtNy4yLDAtMTMuOTU2LDIuNzgtMTkuMDI0LDcuODU2TDI0Ni4wMDgsMTkxLjgyTDYyLjA0OCw3Ljg3MiAgICBjLTUuMDYtNS4wNzYtMTEuODItNy44NTYtMTkuMDI4LTcuODU2Yy03LjIsMC0xMy45NiwyLjc4LTE5LjAyLDcuODU2TDcuODcyLDIzLjk4OGMtMTAuNDk2LDEwLjQ5Ni0xMC40OTYsMjcuNTY4LDAsMzguMDUyICAgIEwxOTEuODI4LDI0Nkw3Ljg3Miw0MjkuOTUyYy01LjA2NCw1LjA3Mi03Ljg1MiwxMS44MjgtNy44NTIsMTkuMDMyYzAsNy4yMDQsMi43ODgsMTMuOTYsNy44NTIsMTkuMDI4bDE2LjEyNCwxNi4xMTYgICAgYzUuMDYsNS4wNzIsMTEuODI0LDcuODU2LDE5LjAyLDcuODU2YzcuMjA4LDAsMTMuOTY4LTIuNzg0LDE5LjAyOC03Ljg1NmwxODMuOTYtMTgzLjk1MmwxODMuOTUyLDE4My45NTIgICAgYzUuMDY4LDUuMDcyLDExLjgyNCw3Ljg1NiwxOS4wMjQsNy44NTZoMC4wMDhjNy4yMDQsMCwxMy45Ni0yLjc4NCwxOS4wMjgtNy44NTZsMTYuMTItMTYuMTE2ICAgIGM1LjA2LTUuMDY0LDcuODUyLTExLjgyNCw3Ljg1Mi0xOS4wMjhjMC03LjIwNC0yLjc5Mi0xMy45Ni03Ljg1Mi0xOS4wMjhMMzAwLjE4OCwyNDZ6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==')
         
+
         &-card
-            &__bottom
-                &__price
-                    .old,
-                    .bonus
-                        font-size: 1.1em
-                    .price
-                        font-size: 1.5em
-                &__buy
-                    .wishlist,
-                    .cart
-                        width: 2em
-                        height: 2em
+            &__head
+                span
+                    font-size: 11px
+                    width: 40px
+                    &.wishlist
+                        width: 28px
+                    &.hidden
+                        display: none
+
+            &__img
+                height: 220px
+                span
+                    background-position: top center
+                    background-size: cover
+                &.hasDetail
+                    span
+                        transition: none
+                    &:hover
+                        span
+                            &:first-child
+                                opacity: 1
+                                z-index: 1
+                            &:last-child
+                                opacity: 0
+                                z-index: -1
+
+            &__buy
+                .addToBasket
+                    .btn
+                        &:not(:first-child)
+                            flex: 0 0 70px
+                            font-size: .9em
+
+                .inBasket
+                    .addToBasketPlus
+                        flex: 0 0 70px
+                        font-size: .9em
     .resent,
     .visited
         h4
@@ -610,38 +588,7 @@
                 margin-bottom: .5em
                 padding-right: 0.25em
                 padding-left: 0.25em
-        &-filter
-            padding: 2em 1em
-            form.smartfilter
-                .box-checkbox
-                    display: flex
-                    align-items: center
-                    justify-content: flex-start
-                    flex-wrap: wrap
-                    .smart-filter-parameters-box-title,
-                    .block-input
-                        flex: 0 0 100%
-                    .form-check
-                        flex: 0 0 auto
-                        label
-                            border: 1px solid $accent
-                            border-radius: 4px
-                            padding: .5em
-                            font-size: 0.9em
-                            margin-right: 0.5em
-                            transition: background .3s ease, color .3s ease
-                            &::before
-                                display: none
-                        input:checked + label
-                            background: $accent
-                            color: #fff
-                    .more
-                        flex: 0 0 100%
 
-                .wrapp_change_inputs
-                    .bx_filter_parameters_box_container_block
-                        width: 150px
-        
         &-sort
             &-block
                 display: flex
@@ -663,39 +610,37 @@
         
         &-card
             &__head
-                min-height: 55px
                 span
-                    font-size: 0.8em 
+                    font-size: 9px
+                    flex: 0 0 35px
+                    height: 20px
+                    &.wishlist
+                        flex: 0 0 25px
+
+            &__img
+                height: auto
+                padding-top: 100%
+
             &__title
-                font-size: 1em
-                height: 50px
-                margin-bottom: .5em
-            &__review
-                .star
-                    span
-                        width: .8em
-                        height: .8em
-                        background-size: .8em
-                        margin-right: 5px
-                .quote
-                    font-size: .8em
-            &__bottom
-                &__price
-                    padding: .5em 1em 1em 1em
-                    .old,
-                    .bonus
-                        font-size: 1em
-                    .price
-                        font-size: 1.3em
-                &__buy
-                    bottom: 1em
-                    .wishlist,
-                    .cart
-                        width: 1.6em
-                        height: 1.6em
-                        background-size: 1.6em
-                    .cart
-                        margin-left: .2em
+                height: 30px
+                a
+                    font-size: 1em
+
+            &__buy
+                .addToBasket
+                    flex-wrap: wrap
+                    .btn
+                        flex: 0 0 100%
+                        height: 38px
+                        &:first-child
+                            font-size: .9em
+
+
+                .inBasket
+                    .hasBasket
+                        height: 38px
+                        a
+                            font-size: .7em
 
     .resent,
     .visited
@@ -712,22 +657,30 @@
 @media screen and ( max-width: 424.98px )
     .products
         &-card
-           &__bottom
-                &__price
-                    padding: .5em .5em .5em 1em
-                    padding-bottom: 1em
-                    .old,
-                    .bonus
-                        font-size: .9em
-                    .price
-                        font-size: 1.2em
-                &__buy
-                    bottom: 1em
-                    .wishlist,
-                    .cart
-                        width: 1.6em
-                        height: 1.6em
-                        background-size: 1.6em
+            &__review
+                .star
+                    span
+                        background-size: 1em
+                        height: 1em
+                        width: 1em
+                .quote
+                    margin-left: auto
+            &__buy
+                .addToBasket
+                    .btn
+                        height: 35px
+                        &:last-child
+                            flex: 0 0 55px
+                            font-size: .7em
+
+                .inBasket
+                    .hasBasket
+                        height: 35px
+                        a
+                            font-size: .7em
+                    .addToBasketPlus
+                        flex: 0 0 45px
+                        font-size: .8em
     .resent,
     .visited
         h4
@@ -735,33 +688,9 @@
         .slick-next,
         .slick-prev
             top: -25px
-    
-@media screen and ( max-width: 399px )
-    .products
-        &-filter
-            form.smartfilter
-                .smart-filter-block-button
-                    .form-group
-                        .btn
-                            font-size: 1.1em !important
-                            padding: 1em !important
-                            flex: 0 0 100%
-                            &:first-child
-                                margin-right: 0
-                                margin-bottom: 0.5em
-                            &:last-child
-                                margin-left: 0
 
 @media screen and ( max-width: 374.98px )
     .products
-        &-filter
-            top: 50px
-            padding: 2em 1em
-            form.smartfilter
-                .wrapp_change_inputs
-                    .bx_filter_parameters_box_container_block
-                        width: 120px
-
         &-sort
             p
                 b
@@ -815,27 +744,35 @@
         &-card
             &__head
                 span
-                    &:nth-child(3n+1)
-                        display: none
-            &__bottom
-                &__price
-                    padding: .5em 1em
-                    .old,
-                    .bonus
-                        font-size: .9em
-                    .price
-                        font-size: 1em
-                    &.sale
-                        padding: .5em
-                &__buy
-                    right: .5em
-                    .wishlist,
-                    .cart
-                        width: 1.3em
-                        height: 1.3em
-                        background-size: 1.3em
-                        
-            
+                    font-size: 7px
+                    flex: 0 0 25px
+                    &.installment
+                        flex: 0 0 30px
+            &__review
+                .star
+                    span
+                        background-size: .8em
+                        height: .8em
+                        width: .8em
+            &__buy
+                .addToBasket
+                    .btn
+                        height: 30px
+                        &:first-child
+                            font-size: .7em
+                        &:last-child
+                            flex: 0 0 50px
+                            font-size: .7em
+
+                .inBasket
+                    .hasBasket
+                        height: 30px
+                        a
+                            font-size: .6em
+                    .addToBasketPlus
+                        flex: 0 0 30px
+                        font-size: .55em
+
     .resent,
     .visited
         h4

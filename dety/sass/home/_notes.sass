@@ -1,11 +1,10 @@
 .notes
     position: relative
-    margin-bottom: 4em
     &-item
         flex: 0 0 33.333333%
         max-width: 33.333333%
-        padding-right: 15px
-        padding-left: 15px
+        padding-right: 1em
+        padding-left: 1em
         display: flex
         flex-direction: column
         justify-content: flex-start
@@ -13,44 +12,25 @@
         &__img
             display: block
             text-align: center
-            margin-bottom: 50px
+            margin-bottom: 2em
             overflow: hidden
-            border-radius: 12px
-
+            border-radius: 10px
         &__title
             overflow: hidden
             display: block
             min-height: 65px
-            margin-bottom: 30px
+            margin-bottom: 2em
             a
                 color: $text
                 font-size: 2em
+                font-weight: bold
         &__desc
             display: block
-            margin-bottom: 30px
             line-height: 1.7
             text-align: justify
             text-align-last: left
             a
-                color: $text2
-        &__footer
-            margin-top: auto
-            display: flex
-            align-items: flex-end
-            justify-content: flex-start
-            span
-                display: flex
-                align-items: center
-                color: $text2
-                padding: 0
-                &:not(:last-child)
-                    margin-right: 1em
-                &:last-child
-                    margin-left: auto
-                img
-                    max-width: 23px
-                    max-height: 16px
-                    margin-right: 0.3em
+                color: $text
 
     .slick-slide
         outline: none

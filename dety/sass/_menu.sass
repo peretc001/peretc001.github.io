@@ -1,11 +1,8 @@
 .nav
-    &-mobile
-        display: none
-            
     &-catalog
         width: 100%
         position: relative
-        z-index: 2
+        z-index: 5
 
         &__menu
             background-color: $accent
@@ -28,23 +25,11 @@
                 user-select: none
                 position: relative
                 text-align: center
-                &::before
-                    content: ''
-                    position: absolute
-                    right: -45px
-                    top: 50%
-                    transform: translateY(-50%)
-                    background-color: rgba(243, 214, 236, 0.5)
-                    display: inline-block
-                    width: 6px
-                    height: 6px
-                    border-radius: 50%
-                &:nth-child(6)
-                    &::before
-                        display: none
+                padding: 1em 0
                 &:hover
                     a
                         opacity: 1
+
                 &.catalog
                     display: none
                 a
@@ -52,48 +37,39 @@
                     display: inline-block
                     font-size: 1em
                     margin: 0
-                    padding: 1.5em 0
+                    padding: .3em 0
                     color: #ffffff
                     cursor: pointer
                     user-select: none
                     transition-delay: 1s
                     transition: opacity .3s ease
-                    &::before
-                        content: ''
-                        position: absolute
-                        left: 0
-                        top: 50%
-                        transform: translateY(-50%)
-                        display: inline-block
-                        width: 25px
-                        height: 25px
-                        background-size: 25px
-                        background-position: center
-                        background-repeat: no-repeat
                 .catalog
-                    padding: 1em
+                    //padding: 1em
                     position: relative
-                    padding-left: 3.5em
+                    padding-left: 38px
                     .icon
                         position: absolute
-                        left: 1em
+                        left: 0
                         top: 50%
                         transform: translateY(-50%)
                         display: flex
                         align-content: center
                         justify-content: center
                         flex-wrap: wrap
-                        width: 28px
+                        width: 24px
+                        height: 24px
                         span
                             display: inline-block
-                            width: 9px
-                            height: 9px
-                            background: #fff
+                            width: 11px
+                            height: 11px
+                            background: $yellow
                             border-radius: 2px
-                            margin-right: 4px
                             &:nth-child(1),
                             &:nth-child(2)
-                                margin-bottom: 4px
+                                margin-bottom: 2px
+                            &:nth-child(1),
+                            &:nth-child(3)
+                                margin-right: 2px
                             &:nth-child(4)
                                 transition: transform .3s ease
                                 transform: rotate(0)
@@ -101,7 +77,36 @@
                         .icon
                             span
                                 &:nth-child(4)
-                                        transform: rotate(45deg)
+                                    transform: rotate(45deg)
+                .discount,
+                .sale,
+                .heroes,
+                .brands
+                    padding-left: 38px
+                    &:before
+                        content: ''
+                        position: absolute
+                        left: 0
+                        top: 50%
+                        transform: translateY(-50%)
+                        display: inline-block
+                        width: 24px
+                        height: 24px
+                        background-size: 100%
+                        background-repeat: no-repeat
+                        background-position: center
+                .discount
+                    &:before
+                        background-image: url('../img/nav/discount.svg')
+                .sale
+                    &:before
+                        background-image: url('../img/nav/sale.svg')
+                .heroes
+                    &:before
+                        background-image: url('../img/nav/heroes.svg')
+                .brands
+                    &:before
+                        background-image: url('../img/nav/brands.svg')
 
         &__submenu
             position: absolute
@@ -109,10 +114,9 @@
             bottom: 0
             transform: translateY(100%)
             width: 100%
-            min-height: 580px
+            min-height: 100vh
             background: #ffffff
-            padding: 0 calc(50% - 580px)
-            // padding-top: 4px
+            padding: 0 calc(50% - 595px)
             padding-bottom: 0
             display: none
             align-items: flex-start
@@ -157,9 +161,9 @@
                 img
                     display: inline-block
                     text-align: center
-                    width: 40px
-                    max-height: 30px
-                    margin-right: .3em
+                    width: 24px
+                    max-height: 24px
+                    margin-right: 1em
 
                 a
                     color: #ffffff
@@ -308,7 +312,7 @@
                         position: absolute
                         right: -20px
             &__submenu
-                padding: 0 calc(50% - 465px)
+                padding: 0 calc(50% - 480px)
             &__general
                 flex: 0 0 30%
             &__parent
@@ -316,68 +320,6 @@
 
 @media screen and ( max-width: 991.98px )
     .nav
-        &-mobile
-            width: 100%
-            display: flex
-            justify-content: center
-            padding: 0 calc(50% - 345px)
-            margin-bottom: 0.5em
-            input,
-            .catalog-btn
-                border: 2px solid $accent
-                padding: .8em
-                margin: 0
-                outline: none !important
-                box-shadow: none !important
-                appearance: none !important
-                position: relative
-
-            input
-                flex: 1 1 auto
-                border-radius: 4px 0 0 4px
-                border-right: 0
-                color: $text
-                font-size: 16px
-            .catalog-btn
-                flex: 0 0 300px
-                display: flex
-                align-items: center
-                justify-content: center
-                border-radius: 0 4px 4px 0
-                background: $accent
-                color: #ffffff
-                cursor: pointer
-                user-select: none
-                &:hover
-                    background: $accent
-                .icon
-                    display: flex
-                    align-content: center
-                    justify-content: center
-                    flex-wrap: wrap
-                    width: 30px
-                    margin-right: .5em
-                    span
-                        display: inline-block
-                        width: 10px
-                        height: 10px
-                        background: #fff
-                        border-radius: 2px
-                        margin-right: 4px
-                        &:nth-child(1),
-                        &:nth-child(2)
-                            margin-bottom: 4px
-                        &:nth-child(4)
-                            transition: transform .3s ease
-                            transform: rotate(0)
-                    &.active
-                        span
-                            &:nth-child(4)
-                                transform: rotate(45deg)
-
-            .search
-                display: none
-
         &-catalog
             display: table
             &__menu
@@ -418,10 +360,10 @@
                                 color: #ffffff
                             img
                                 display: inline-block
+                                width: 24px
+                                height: 24px
                                 text-align: center
-                                width: 40px
-                                max-height: 30px
-                                margin-right: .5em
+                                margin-right: .95em
                     &:not(.catalog)
                         a
                             &::after
@@ -690,11 +632,6 @@
  
 @media screen and ( max-width: 767.98px )
     .nav
-        &-mobile
-            padding: 0 calc(50% - 255px)
-            .catalog-btn
-                flex: 0 0 200px
-
         &-catalog
             &__menu,
             &__submenu
@@ -702,34 +639,6 @@
 
 @media screen and ( max-width: 576.98px )
     .nav
-        &-mobile
-            padding: 0 1em
-            width: 100%
-            input
-                display: none
-            .catalog-btn
-                flex: 0 0 60%
-            .search
-                flex: 0 0 40%
-                display: flex
-                justify-content: center
-                border-radius: 4px 0 0 4px
-                border: 2px solid $accent
-                border-right: 0
-                background: transparent
-                color: $accent
-                padding: .8em
-                outline: none
-                box-shadow: none
-                transition: background .5s ease, color .5s ease
-                &:hover
-                    background: transparent
-                    border-color: $accent
-                    color: $accent
-                img
-                    width: 20px
-                    margin-right: 0.5em
-
         &-catalog
             &__menu,
             &__submenu
@@ -740,78 +649,3 @@
             &__general,
             &__parent
                 left: 0
-    
-    .openSearch
-        display: block
-        position: fixed
-        left: 0
-        top: 0
-        bottom: 0
-        right: 0
-        width: 100%
-        height: 100%
-        max-height: 100vh
-        background: #fff
-        padding: 60px 1em
-        z-index: 105
-        form
-            display: flex
-            align-items: center
-        .close
-            background-color: #ebebeb
-            border-radius: 50%
-            cursor: pointer
-            position: absolute
-            right: 10px
-            top: 10px
-            width: 2em
-            height: 2em
-            opacity: .7
-            background-size: 1em
-            background-position: center
-            background-repeat: no-repeat
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTEyLjAwMSA1MTIuMDAxIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIuMDAxIDUxMi4wMDE7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMjg0LjI4NiwyNTYuMDAyTDUwNi4xNDMsMzQuMTQ0YzcuODExLTcuODExLDcuODExLTIwLjQ3NSwwLTI4LjI4NWMtNy44MTEtNy44MS0yMC40NzUtNy44MTEtMjguMjg1LDBMMjU2LDIyNy43MTcgICAgTDM0LjE0Myw1Ljg1OWMtNy44MTEtNy44MTEtMjAuNDc1LTcuODExLTI4LjI4NSwwYy03LjgxLDcuODExLTcuODExLDIwLjQ3NSwwLDI4LjI4NWwyMjEuODU3LDIyMS44NTdMNS44NTgsNDc3Ljg1OSAgICBjLTcuODExLDcuODExLTcuODExLDIwLjQ3NSwwLDI4LjI4NWMzLjkwNSwzLjkwNSw5LjAyNCw1Ljg1NywxNC4xNDMsNS44NTdjNS4xMTksMCwxMC4yMzctMS45NTIsMTQuMTQzLTUuODU3TDI1NiwyODQuMjg3ICAgIGwyMjEuODU3LDIyMS44NTdjMy45MDUsMy45MDUsOS4wMjQsNS44NTcsMTQuMTQzLDUuODU3czEwLjIzNy0xLjk1MiwxNC4xNDMtNS44NTdjNy44MTEtNy44MTEsNy44MTEtMjAuNDc1LDAtMjguMjg1ICAgIEwyODQuMjg2LDI1Ni4wMDJ6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiM1OTU5NTkiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==')
-            transition: opacity .3s ease
-        input
-            appearance: none
-            width: 100%
-            background: #ffffff
-            border: none
-            border-bottom: 1px solid $nav
-            border-radius: 0
-            color: $text
-            outline: none
-            box-shadow: none
-            margin: 0
-            padding: .5em
-            font-size: 16px
-            &::-webkit-input-placeholder
-                color: $nav
-            &:-moz-placeholder
-                color: $nav
-            &::-moz-placeholder
-                color: $nav
-            &:-ms-input-placeholder
-                color: $nav
-        button
-            flex: 0 0 30px
-            display: inline-block
-            background-color: $bg
-            background-size: 1em
-            background-position: .7em
-            background-repeat: no-repeat
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojQUM1MkJGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
-            border-radius: 50%
-            width: 2em
-            height: 2em
-            border: none
-            padding: 0
-            margin: 0
-            margin-left: 1em
-            outline: none
-
-@media screen and ( max-width: 374.98px )
-    .nav
-        &-mobile
-            .catalog-btn
-                font-size: 0.9em

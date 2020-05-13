@@ -69,6 +69,7 @@
         &__item
             float: left
             width: 770px
+            min-height: 500px
             background: #ffffff
             border-radius: 20px
             padding: 0 2em
@@ -77,10 +78,21 @@
             justify-content: flex-start
             flex-wrap: no-wrap
             position: relative
-            &::before
+            &:before
                 content: ''
-                display: table
-                clear: both
+                position: absolute
+                left: 0
+                top: 0
+                width: 100%
+                height: 100%
+                background-position: center
+                background-repeat: no-repeat
+                background-size: 40px
+                background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9ItCh0LvQvtC5XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTIwIDMwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxMjAgMzA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojQzI1MUMwO30uc3Qxe2ZpbGw6I0MyNTFDMDtmaWxsLW9wYWNpdHk6MC4zO308L3N0eWxlPjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjE1IiBjeT0iMTUiIHI9IjE1Ij48YW5pbWF0ZSAgYWNjdW11bGF0ZT0ibm9uZSIgYWRkaXRpdmU9InJlcGxhY2UiIGF0dHJpYnV0ZU5hbWU9InIiIGJlZ2luPSIwcyIgY2FsY01vZGU9ImxpbmVhciIgZHVyPSIwLjhzIiBmaWxsPSJyZW1vdmUiIGZyb209IjE1IiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgcmVzdGFydD0iYWx3YXlzIiB0bz0iMTUiIHZhbHVlcz0iMTU7OTsxNSI+PC9hbmltYXRlPjxhbmltYXRlICBhY2N1bXVsYXRlPSJub25lIiBhZGRpdGl2ZT0icmVwbGFjZSIgYXR0cmlidXRlTmFtZT0iZmlsbC1vcGFjaXR5IiBiZWdpbj0iMHMiIGNhbGNNb2RlPSJsaW5lYXIiIGR1cj0iMC44cyIgZmlsbD0icmVtb3ZlIiBmcm9tPSIxIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgcmVzdGFydD0iYWx3YXlzIiB0bz0iMSIgdmFsdWVzPSIxOy41OzEiPjwvYW5pbWF0ZT48L2NpcmNsZT48Y2lyY2xlIGNsYXNzPSJzdDEiIGN4PSI2MCIgY3k9IjE1IiByPSI5Ij48YW5pbWF0ZSAgYWNjdW11bGF0ZT0ibm9uZSIgYWRkaXRpdmU9InJlcGxhY2UiIGF0dHJpYnV0ZU5hbWU9InIiIGJlZ2luPSIwcyIgY2FsY01vZGU9ImxpbmVhciIgZHVyPSIwLjhzIiBmaWxsPSJyZW1vdmUiIGZyb209IjkiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiByZXN0YXJ0PSJhbHdheXMiIHRvPSI5IiB2YWx1ZXM9Ijk7MTU7OSI+PC9hbmltYXRlPjxhbmltYXRlICBhY2N1bXVsYXRlPSJub25lIiBhZGRpdGl2ZT0icmVwbGFjZSIgYXR0cmlidXRlTmFtZT0iZmlsbC1vcGFjaXR5IiBiZWdpbj0iMHMiIGNhbGNNb2RlPSJsaW5lYXIiIGR1cj0iMC44cyIgZmlsbD0icmVtb3ZlIiBmcm9tPSIwLjUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiByZXN0YXJ0PSJhbHdheXMiIHRvPSIwLjUiIHZhbHVlcz0iLjU7MTsuNSI+PC9hbmltYXRlPjwvY2lyY2xlPjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjEwNSIgY3k9IjE1IiByPSIxNSI+PGFuaW1hdGUgIGFjY3VtdWxhdGU9Im5vbmUiIGFkZGl0aXZlPSJyZXBsYWNlIiBhdHRyaWJ1dGVOYW1lPSJyIiBiZWdpbj0iMHMiIGNhbGNNb2RlPSJsaW5lYXIiIGR1cj0iMC44cyIgZmlsbD0icmVtb3ZlIiBmcm9tPSIxNSIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIHJlc3RhcnQ9ImFsd2F5cyIgdG89IjE1IiB2YWx1ZXM9IjE1Ozk7MTUiPjwvYW5pbWF0ZT48YW5pbWF0ZSAgYWNjdW11bGF0ZT0ibm9uZSIgYWRkaXRpdmU9InJlcGxhY2UiIGF0dHJpYnV0ZU5hbWU9ImZpbGwtb3BhY2l0eSIgYmVnaW49IjBzIiBjYWxjTW9kZT0ibGluZWFyIiBkdXI9IjAuOHMiIGZpbGw9InJlbW92ZSIgZnJvbT0iMSIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIHJlc3RhcnQ9ImFsd2F5cyIgdG89IjEiIHZhbHVlcz0iMTsuNTsxIj48L2FuaW1hdGU+PC9jaXJjbGU+PC9zdmc+')
+                display: none
+            &.progress
+                &:before
+                    display: block
             &.open
                 float: none
                 opacity: 0
@@ -194,14 +206,23 @@
                         margin: 0
                         padding: 0
                         list-style: none
-                    img
-                        cursor: pointer
+                        overflow: hidden
                         border: 2px solid #fff
+                        &:first-child
+                            border: 2px solid $accent
+                    img
+                        width: 100px
+                        height: 100px
+                        cursor: pointer
+
                     .slick-slide
                         outline: none
+                        border-right: 4px
+                        border: 2px solid #fff !important
+                        transition: border .3s ease
                         &.slick-current
-                            img
-                                border: 2px solid $accent
+                            border: 2px solid $accent !important
+
                     .slick-list
                         margin: 0
                     .slick-track
@@ -213,23 +234,23 @@
                 overflow: hidden
                 
                 &__tag
-                    display: flex
                     align-items: center
+                    display: flex
                     justify-content: flex-start
-                    padding: 1em 0
+                    padding: 1em 1em 10px 1em
                     span
-                        position: relative
-                        margin: 0
-                        padding: .5em
+                        display: block
+                        width: 40px
+                        height: 25px
                         color: #ffffff
-                        font-size: 1em
+                        font-size: 11px
                         font-weight: bold
-                        border-radius: 4px
-                        background-size: cover
-                        background-position: center
-                        background-repeat: no-repeat
+                        text-align: center
+                        text-transform: uppercase
+                        line-height: 25px
+                        border-radius: 2px
                         &:not(:first-child)
-                            margin-left: .3em
+                            margin-left: 5px
                         &.top
                             background: $yellow
                         &.new
@@ -238,22 +259,22 @@
                             background: $red
                         &.bonus
                             background: $accent
-                        &.installments
+                        &.installment
                             background: $green
-                    .wishlist
-                        margin-left: auto !important
-                        position: relative
-                        display: inline-block
-                        width: 2em
-                        height: 2em
-                        background-size: 2em
-                        background-position: center
-                        background-repeat: no-repeat
-                        transition: background .3s ease
-                        cursor: pointer
-                        background-image: url('../../img/nav/wishlist.svg')
-                        &.active
-                            background-image: url('../../img/nav/wishlist-active.svg')
+                        &.wishlist
+                            display: inline-block
+                            position: relative
+                            cursor: pointer
+                            margin-left: auto !important
+                            background-size: contain
+                            background-position: right
+                            background-repeat: no-repeat
+                            background-image: url('../../img/nav/wishlist.svg')
+                            transition: transform .3s ease
+                            &.active
+                                background-image: url('../../img/nav/wishlist-active.svg')
+                            &:hover
+                                transform: scale(1.1)
                     
                 &__img
                     position: relative
@@ -367,6 +388,7 @@
                             button
                                 background: $accent
 
+
         &__buy
             float: right
             width: 370px
@@ -392,6 +414,26 @@
                 flex-wrap: wrap
                 padding: 0 1em
                 border-bottom: 1px solid #f5f5f5
+                position: relative
+                &:before
+                    content: ''
+                    position: absolute
+                    left: 0
+                    top: 0
+                    width: 100%
+                    height: 100%
+                    background-color: rgba(255,255,255,.5)
+                    background-position: center
+                    background-repeat: no-repeat
+                    background-size: 40px
+                    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9ItCh0LvQvtC5XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTIwIDMwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxMjAgMzA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojQzI1MUMwO30uc3Qxe2ZpbGw6I0MyNTFDMDtmaWxsLW9wYWNpdHk6MC4zO308L3N0eWxlPjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjE1IiBjeT0iMTUiIHI9IjE1Ij48YW5pbWF0ZSAgYWNjdW11bGF0ZT0ibm9uZSIgYWRkaXRpdmU9InJlcGxhY2UiIGF0dHJpYnV0ZU5hbWU9InIiIGJlZ2luPSIwcyIgY2FsY01vZGU9ImxpbmVhciIgZHVyPSIwLjhzIiBmaWxsPSJyZW1vdmUiIGZyb209IjE1IiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgcmVzdGFydD0iYWx3YXlzIiB0bz0iMTUiIHZhbHVlcz0iMTU7OTsxNSI+PC9hbmltYXRlPjxhbmltYXRlICBhY2N1bXVsYXRlPSJub25lIiBhZGRpdGl2ZT0icmVwbGFjZSIgYXR0cmlidXRlTmFtZT0iZmlsbC1vcGFjaXR5IiBiZWdpbj0iMHMiIGNhbGNNb2RlPSJsaW5lYXIiIGR1cj0iMC44cyIgZmlsbD0icmVtb3ZlIiBmcm9tPSIxIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgcmVzdGFydD0iYWx3YXlzIiB0bz0iMSIgdmFsdWVzPSIxOy41OzEiPjwvYW5pbWF0ZT48L2NpcmNsZT48Y2lyY2xlIGNsYXNzPSJzdDEiIGN4PSI2MCIgY3k9IjE1IiByPSI5Ij48YW5pbWF0ZSAgYWNjdW11bGF0ZT0ibm9uZSIgYWRkaXRpdmU9InJlcGxhY2UiIGF0dHJpYnV0ZU5hbWU9InIiIGJlZ2luPSIwcyIgY2FsY01vZGU9ImxpbmVhciIgZHVyPSIwLjhzIiBmaWxsPSJyZW1vdmUiIGZyb209IjkiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiByZXN0YXJ0PSJhbHdheXMiIHRvPSI5IiB2YWx1ZXM9Ijk7MTU7OSI+PC9hbmltYXRlPjxhbmltYXRlICBhY2N1bXVsYXRlPSJub25lIiBhZGRpdGl2ZT0icmVwbGFjZSIgYXR0cmlidXRlTmFtZT0iZmlsbC1vcGFjaXR5IiBiZWdpbj0iMHMiIGNhbGNNb2RlPSJsaW5lYXIiIGR1cj0iMC44cyIgZmlsbD0icmVtb3ZlIiBmcm9tPSIwLjUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiByZXN0YXJ0PSJhbHdheXMiIHRvPSIwLjUiIHZhbHVlcz0iLjU7MTsuNSI+PC9hbmltYXRlPjwvY2lyY2xlPjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjEwNSIgY3k9IjE1IiByPSIxNSI+PGFuaW1hdGUgIGFjY3VtdWxhdGU9Im5vbmUiIGFkZGl0aXZlPSJyZXBsYWNlIiBhdHRyaWJ1dGVOYW1lPSJyIiBiZWdpbj0iMHMiIGNhbGNNb2RlPSJsaW5lYXIiIGR1cj0iMC44cyIgZmlsbD0icmVtb3ZlIiBmcm9tPSIxNSIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIHJlc3RhcnQ9ImFsd2F5cyIgdG89IjE1IiB2YWx1ZXM9IjE1Ozk7MTUiPjwvYW5pbWF0ZT48YW5pbWF0ZSAgYWNjdW11bGF0ZT0ibm9uZSIgYWRkaXRpdmU9InJlcGxhY2UiIGF0dHJpYnV0ZU5hbWU9ImZpbGwtb3BhY2l0eSIgYmVnaW49IjBzIiBjYWxjTW9kZT0ibGluZWFyIiBkdXI9IjAuOHMiIGZpbGw9InJlbW92ZSIgZnJvbT0iMSIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIHJlc3RhcnQ9ImFsd2F5cyIgdG89IjEiIHZhbHVlcz0iMTsuNTsxIj48L2FuaW1hdGU+PC9jaXJjbGU+PC9zdmc+')
+                    transition: background .3s ease
+                    display: none
+
+                &.progress
+                    &:before
+                        display: block
+
                 &__cost,
                 &__tag
                     flex: 0 0 50%
@@ -449,19 +491,6 @@
                         &:hover
                             color: $grey
 
-                &.no-offers
-                    .products-page-body__buy__price__cost
-                        flex: 0 0 100%
-                        margin-bottom: 0.5em
-                    .products-page-body__buy__price__tag
-                        flex: 0 0 100%
-                        display: flex
-                        span
-                            flex: 0 0 50%
-                            &:first-child
-                                margin-bottom: 0
-                                margin-right: 0.5em
-
             &__best
                 padding: 1em
                 display: flex
@@ -472,45 +501,19 @@
 
                 .icon
                     flex: 0 0 60px
-                .text
+                .hideElem
                     flex: 1 1 auto
+                    position: relative
+                    user-select: none
+                    cursor: pointer
                     p
                         font-size: 1.1em
                         font-weight: bold
-                        margin-bottom: 0
+                        margin: 0
+                        line-height: 1
                         &:first-child
                             font-size: 1em
-                            margin-bottom: 0.1em
 
-                .hideElem
-                    flex: 0 0 auto
-                    position: relative
-                    display: inline-block
-                    width: 2em
-                    height: 2em
-                    cursor: pointer
-                    &::after
-                        content: ''
-                        position: absolute
-                        left: 0
-                        top: 50%
-                        transform: translateY(-50%) rotate(225deg)
-                        display: inline-block
-                        width: 2em
-                        height: 2em
-                        background: $accent
-                        border-radius: 50%
-                        color: #ffffff
-                        background-size: 1em
-                        background-position: center
-                        background-repeat: no-repeat
-                        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNNDY1LjA2NCwyMDcuNTY2bDAuMDI4LDBIMjg0LjQzNlYyNy4yNWMwLTE0Ljg0LTEyLjAxNi0yNy4yNDgtMjYuODU2LTI3LjI0OGgtMjMuMTE2ICAgIGMtMTQuODM2LDAtMjYuOTA0LDEyLjQwOC0yNi45MDQsMjcuMjQ4djE4MC4zMTZIMjYuOTA4Yy0xNC44MzIsMC0yNi45MDgsMTItMjYuOTA4LDI2Ljg0NHYyMy4yNDggICAgYzAsMTQuODMyLDEyLjA3MiwyNi43OCwyNi45MDgsMjYuNzhoMTgwLjY1NnYxODAuOTY4YzAsMTQuODMyLDEyLjA2NCwyNi41OTIsMjYuOTA0LDI2LjU5MmgyMy4xMTYgICAgYzE0Ljg0LDAsMjYuODU2LTExLjc2NCwyNi44NTYtMjYuNTkyVjI4NC40MzhoMTgwLjYyNGMxNC44NCwwLDI2LjkzNi0xMS45NTIsMjYuOTM2LTI2Ljc4VjIzNC40MSAgICBDNDkyLDIxOS41NjYsNDc5LjkwNCwyMDcuNTY2LDQ2NS4wNjQsMjA3LjU2NnoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiIHN0eWxlPSJmaWxsOiNGRkZGRkYiPjwvcGF0aD4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+')
-                        transition: transform .5s ease
-                    &.active
-                        &::before
-                            content: ''
-                        &::after
-                            transform: translateY(-50%) rotate(0)
                 .showElem
                     flex: 0 0 100%
                     padding: 1em 0 0 60px
@@ -581,50 +584,45 @@
                     a
                         flex: 0 0 23.5%
                         display: block
-                        border: 1px solid $grey
                         text-align: center
                         padding: 0.5em 0
                         font-size: .9em
                         color: $text
                         font-weight: bold
-                        border-radius: 4px
-                        transition: border-color .2s ease
                         user-select: none
                         margin-bottom: 10px
                         img
                             width: 100%
-                        &:hover,
-                        &.active
-                            border-color: $accent
-                            color: $accent
                         &:not(:first-child)
                             margin-left: 2%
                         &:nth-child(4n+1)
                             margin-left: 0
 
-            &__color
-                &__block
-                    a
-                        padding: 0
-                        border: 2px solid $grey
-                            
-        
-            &__button
-                display: flex
-                align-items: center
-                justify-content: space-between
-                padding: 1em
-                .btn
-                    display: block
-                    flex: 1 0 49%
-                    padding: 1em 0
-                    font-size: 1.3em
-                    font-weight: bold
-                    &:first-child
-                        margin-right: 1%
-                    &:last-child
-                        margin-left: 1%
-                        text-align: center
+                    .js-offer
+                        border: 1px solid $grey
+                        border-radius: 4px
+                        transition: border-color .2s ease
+                        &:hover,
+                        &.active
+                            border-color: $accent
+                            color: $accent
+
+            .products-card__buy
+                .addToBasket,
+                .inBasket
+                    padding: 1em
+                    .btn,
+                    .hasBasket
+                        font-size: 1.1em
+                        height: 50px
+                .inBasket
+                    .hasBasket
+                        display: flex
+                        align-items: center
+                        justify-content: center
+                        a
+                            margin: auto
+
 
             &__delivery
                 border-top: 1px solid #f5f5f5
@@ -653,6 +651,21 @@
                         color: $text
                         font-size: 1.1em
 
+            .no-available
+                text-align: center
+                padding: 50px 1em
+                p
+                    font-weight: bold
+                .btn
+                    display: block
+                    width: 100%
+                    padding: 1em
+                    cursor: default
+                    user-select: none
+                    &:hover
+                        background: transparent
+                        color: $accent
+
         &__about
             margin-top: 1.5em
             float: left
@@ -667,13 +680,14 @@
                 clear: both
             &__title
                 display: flex
-                align-items: flex-end
+                align-items: flex-start
                 &__img
-                    flex: 1 0 auto
+                    flex: 0 0 150px
                     margin-right: 1em
                     img
                         max-width: 150px
                 &__brand
+                    flex: 1 1 auto
                     p
                         font-size: 0.8em
                         line-height: 1.5
@@ -692,6 +706,7 @@
                     h3
                         font-weight: bold
                         font-size: 2.5em
+
                 p
                     line-height: 1.5
                 
@@ -868,7 +883,7 @@
                     border-bottom: 1px dashed $text
                     cursor: pointer
                     margin: 2em 0 0 0
-                    &.active
+
                 .showElem
                     max-height: 500px
                     opacity: 1
@@ -931,9 +946,9 @@
                             font-size: .9rem
                 
                 &__best
-                    .text
+                    .hideElem
                         p
-                            font-size: 1em
+                            font-size: .9em
                 &__size
                     .table
                         font-size: 12.6px
@@ -1001,6 +1016,10 @@
                     &__tag
                         span
                             font-size: .8em
+                &__best
+                    .hideElem
+                        p
+                            font-size: 1em
 
                 &--left,
                 &--right
@@ -1167,6 +1186,7 @@
                         height: 1em
         &-body
             &__item
+                min-height: 400px
                 &__right
                     &__tag
                         span
@@ -1202,13 +1222,6 @@
 @media screen and ( max-width: 424.98px )
     .products-page
         &-body
-            &__item
-                &__right
-                    &__tag
-                        span
-                            &:nth-child(5)
-                                display: none
-
             &__buy
                 &__price
                     &__tag
@@ -1231,11 +1244,12 @@
                         span
                             font-size: .75em
                 &__best
-                    .text
+                    .icon
+                        flex: 0 0 50px
+                    .hideElem
                         p
                             font-size: .8em
-                            &:first-child
-                                font-size: 0.8em
+
                 &__button
                     .btn
                         font-size: 1em

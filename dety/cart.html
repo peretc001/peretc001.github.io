@@ -1313,253 +1313,219 @@
   </div>
 
   <section class="cart">
-      <div class="container">
-          
-        <h1>Мой заказ</h1>
+    <form class="container">
         
-          <div class="cart-body">
-            <div class="cart-order">
-              <div class="cart-order-item">
-                <div class="cart-order-item__del">
-                  <a href="" class="delete"></a>
-                </div>
-                <div class="cart-order-item__img">
-                  <a href=""><img src="./img/cart/1.png" alt=""></a>
-                </div>
-                <div class="cart-order-item__name">
-                    <a href="">Комбинезоны Lucky Child комплект</a>
-                    <p class="item-price" data-price="9830">9 830 ₽ за 1 шт.</p>
-                    <p class="item-old" data-old="11830"></p>
-                    <p class="item-bonus" data-old="15"></p>
-                </div>
-                <div class="cart-order-item__qty">
-                    <span class="item-qty" data-instock="5">
-                      <span class="minus">-</span>
-                      <span class="qty"><input type="tel" value="2" name="qty"></span>
-                      <span class="plus">+</span>
-                    </span>
-                </div>
-                <div class="cart-order-item__subtotal">
-                  <p class="old">23 660 ₽</p>
-                  <p class="price">19 660 ₽</p>
-                  <p class="bonus">+30</p>
-                </div>
-              </div>
-              <div class="cart-order-item">
-                <div class="cart-order-item__del">
-                  <a href="" class="delete"></a>
-                </div>
-                <div class="cart-order-item__img">
-                  <a href=""><img src="./img/cart/2.png" alt=""></a>
-                </div>
-                <div class="cart-order-item__name">
-                    <a href="">Комбинезоны Lucky Child комплект синий зеленого цвета с оранжевым</a>
-                    <p class="item-price" data-price="9830">9 830 ₽ за 1 шт.</p>
-                    <p class="item-bonus" data-old="15"></p>
-                </div>
-                <div class="cart-order-item__qty">
-                    <span class="item-qty" data-instock="12">
-                      <span class="minus">-</span>
-                      <span class="qty"><input type="tel" value="1" name="qty"></span>
-                      <span class="plus">+</span>
-                    </span>
-                </div>
-                <div class="cart-order-item__subtotal">
-                    <p class="price">9 830 ₽</p>
-                    <p class="bonus">+15</p>
-                </div>
-              </div>
-              <div class="cart-order-item">
-                <div class="cart-order-item__del">
-                  <a href="" class="delete"></a>
-                </div>
-                <div class="cart-order-item__img">
-                  <a href=""><img src="./img/cart/3.png" alt=""></a>
-                </div>
-                <div class="cart-order-item__name">
-                    <a href="">Комбинезоны Lucky Child комплект синий зеленого цвета с оранжевым и серым и белым в полоску</a>
-                    <p class="item-price" data-price="11830">11 830 ₽ за 1 шт.</p>
-                    <p class="item-bonus" data-old="15"></p>
-                </div>
-                <div class="cart-order-item__qty">
-                    <span class="item-qty" data-instock="6">
-                      <span class="minus">-</span>
-                      <span class="qty"><input type="tel" value="5" name="qty"></span>
-                      <span class="plus">+</span>
-                    </span>
-                </div>
-                <div class="cart-order-item__subtotal">
-                    <p class="price">59 159 ₽</p>
-                    <p class="bonus">+75</p>
-                </div>
-              </div>
+      <h1>Корзина товаров</h1>
 
-              <div class="cart-order-item-total">
-                <div class="cart-count">3 товара на сумму:</div>
-                <div class="cart-total">
-                  <p class="old">15 000 ₽</p>
-                  <p>25 000 ₽</p>
-                  <p class="bonus">+250</p>
-                </div>
-              </div>
-              
-              <div class="cart-order-promo">
-                <div class="cart-order-promo__code">
-                    <input type="radio" id="promo" name="promo" checked>
-                    <label for="promo">Использовать промо-код</label>
-                </div>
-                <div class="cart-order-promo__bonus">
-                    <input type="radio" id="bonus" name="promo">
-                    <label for="bonus">Списать бонусы</label>
-                </div>
-                <div class="cart-order-promo__result">
-                  <div class="form-row active">
-                    <input type="text" name="promo-code" class="active" placeholder="Ваш промо-код">
-                    <button class="btn btn-blue"></button>
-                  </div>
-                  <div class="range">
-                    <span class="box-min">0</span>
-                    <div class="range-slider">
-                      <span id="rs-bullet" class="rs-label">0</span>
-                      <input id="rs-range-line" class="rs-range" type="range" value="0" min="0" max="599">
-                    </div>
-                    <span class="box-max">599</span>
-                    <button class="btn btn-accent">Списать</button>
-                    <div class="login">
-                      <p>Авторизуйтесь, чтобы списать бонусы</p>
-                      <button class="btn btn-accent" data-toggle="modal" data-target="login">Авторизоваться</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      <div class="cart-body">
+
+        <div class="cart-head">
+          <span class="check-all">Выбрать все</span>
+          <span class="clear-all">Очистить корзину</span>
+        </div>
+
+        <!-- Если разные отправления // Начало отправления -->
+        <div class="cart-warehouse">
+          Товары находятся на разных складах, доставка будет состоять из <span>2</span> отправлений
+        </div>
+        <div class="cart-package">
+          <p><b>Отправление 1</b></p>
+          <span class="check-pack">Выбрать отправление</span>
+          <p><span class="qty">3</span> товара на сумму <span class="total">143 040</span> рублей</p>
+        </div>
+        <div class="pack-children">
+        <!-- незакрытый div здесь не просто так, в конце отправления закрывается -->
+
+          <div class="cart-item">
+            <div class="cart-item__check">
+              <input type="checkbox" id="p1">
+              <label for="p1"></label>
             </div>
-
-            <h3>Оформление заказа</h3>
-
-            <div class="cart-delivery">
-                <h4>Доставка</h4>
-                <p class="city">Ваш город:  <b data-toggle="modal" data-target="city-list">Краснодар</b></p>
-                <div class="cart-delivery-type tabs">
-                    <div class="cart-delivery-type__item icon-checkbox">
-                        <input type="radio" id="pickup" name="delivery" checked>
-                        <label for="pickup" class="pickup">
-                            Самовывоз
-                            <b>5 февраля</b>
-                        </label>
-                    </div>
-                    <div class="cart-delivery-type__item icon-checkbox">
-                        <input type="radio" id="delivery" name="delivery">
-                        <label for="delivery" class="delivery">
-                            Доставка курьером
-                            <b>8 февраля</b>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="cart-delivery-point tabs-item active">
-                  <div class="change-point">
-                    <div class="current">
-                      <button class="btn btn-accent open-map">Выбрать магазин или пункт выдачи</button>
-                    </div>
-                    <p><span class="change-current-point">сменить</span></p>
-                  </div>
-                </div>
-
-                <div class="cart-delivery-adress tabs-item">
-                  <div class="form-row">
-                    <label for="usercity">Город <span>*</span></label>
-                    <input type="text" id="usercity" class="city" name="city" value="Краснодар" placeholder="" required>
-                  </div>
-                  <div class="form-row">
-                    <label for="street">Улица</label>
-                    <input type="text" id="street" name="street" placeholder="">
-                  </div>
-                  <div class="form-row">
-                    <label for="house">Дом</label>
-                    <input type="text" id="house" name="house" placeholder="">
-                  </div>
-                  <div class="form-row">
-                    <label for="entrance">Подъезд</label>
-                    <input type="text" id="entrance" name="entrance" placeholder="">
-                  </div>
-                  <div class="form-row">
-                    <label for="floor">Этаж</label>
-                    <input type="text" id="floor" name="floor" placeholder="">
-                  </div>
-                  <div class="form-row">
-                    <label for="flat">Квартира</label>
-                    <input type="text" id="flat" name="flat" placeholder="">
-                  </div>
-                  <div class="form-row myadress">
-                    <div class="cart-delivery-adress--select">Мои адреса</div>
-                    <div class="cart-delivery-adress--options">
-                      <p>Краснодар</p>
-                      <a href="" class="active">Тургенева, 56</a>
-                      <a href="">Восточно-Кругликовская, 90</a>
-                      <a href="">Красная, 122</a>
-                      <p>Майкоп</p>
-                      <a href="">Орджоникидзе, 12</a>
-                    </div>
-                  </div>     
+            <div class="cart-item__img">
+              <a href=""><img src="./img/cart/222.png" alt=""></a>
+            </div>
+            <div class="cart-item__name">
+                <a href="">Коляска 4 в 1 Inglesina Quad System 4 в 1 на шасси Quad Titanium Black Cognac</a>
+                <p class="credit">В кредит: от <span>1 910</span> руб/мес</p>
+                <p class="bottom"><span>В избранное</span> <span>Удалить</span></p>
+            </div>
+            <div class="cart-item__qty">
+                <input type="tel" value="1" name="qty"> шт.
+                <div class="plus-minus">
+                  <span class="minus">-</span>
+                  <span class="plus">+</span>
                 </div>
             </div>
-
-            <div class="cart-pay">
-              <h4>Оплата заказа </h4>
-              <div class="cart-pay__items">
-                <div class="form-row icon-checkbox">
-                  <input type="radio" id="online" name="payment" checked>
-                  <label for="online" class="online">Оплата онлайн<b>Картой на сайте</b></label>
-                </div>
-                <div class="form-row icon-checkbox">
-                  <input type="radio" id="upon" name="payment">
-                  <label for="upon" class="upon">При получении<b>Картой или наличными</b></label>
-                </div>
-                <div class="form-row icon-checkbox">
-                  <input type="radio" id="credit" name="payment">
-                  <label for="credit" class="credit">В кредит<b>Онлайн</b></label>
-                </div>
-              </div>
+            <div class="cart-item__subtotal">
+              <p class="old"><span>49 990</span> ₽</p>
+              <p class="subtotal">35 760 ₽</p>
+              <p class="economy">Экономия <span>14 230 ₽</span></p>
             </div>
           </div>
 
-          <div class="cart-confirm">
-            <h2>Оформить заказ</h2>
-            <div class="form-row">
-              <label for="username">Имя</label><input type="text" id="username" name="username" placeholder="" required>
+          <div class="cart-item">
+            <div class="cart-item__check">
+              <input type="checkbox" id="p2">
+              <label for="p2"></label>
             </div>
-            <div class="form-row">
-              <label for="userphone">Телефон</label><input type="tel" id="userphone" name="userphone" class="phone-mask" placeholder="" required>
+            <div class="cart-item__img">
+              <a href=""><img src="./img/cart/222.png" alt=""></a>
             </div>
-            <div class="form-row">
-              <label for="email">E-mail</label><input type="text" id="email" name="email" placeholder="">
+            <div class="cart-item__name">
+                <a href="">Коляска 4 в 1 Inglesina Quad System 4 в 1 на шасси Quad Titanium Black Cognac</a>
+                <p class="bottom"><span>В избранное</span> <span>Удалить</span></p>
             </div>
-            <div class="form-row">
-              <p>Сумма заказа:</p>
-              <p>5 450 ₽</p>
+            <div class="cart-item__qty">
+                <input type="tel" value="2" name="qty"> шт.
+                <div class="plus-minus">
+                  <span class="minus">-</span>
+                  <span class="plus">+</span>
+                </div>
             </div>
-            <div class="form-row">
-              <p>Доставка:</p>
-              <p>0</p>
-            </div>
-            <div class="form-row order-total">
-              <p>Сумма к оплате:</p>
-              <p>5 450 ₽</p>
-            </div>
-            <div class="form-row order-bonus">
-              <p>Бонусов:</p>
-              <p>+250</p>
-            </div>
-            <div class="form-row policy">
-              <input type="checkbox" id="policy" name="policy" required>
-              <label for="policy">Согласен с <a href="" target="_blank">политикой конфиденциальности</a></label>
-            </div>
-            <div class="form-row order-submit">
-              <button type="submit" class="btn btn-accent">Оформить заказ</button>
+            <div class="cart-item__subtotal">
+              <p class="old"><span>99 980</span> ₽</p>
+              <p class="subtotal">71 520 ₽</p>
+              <p class="economy">Экономия <span>28 460 ₽</span></p>
             </div>
           </div>
 
+          <div class="cart-item">
+            <div class="cart-item__check">
+              <input type="checkbox" id="p3">
+              <label for="p3"></label>
+            </div>
+            <div class="cart-item__img">
+              <a href=""><img src="./img/cart/222.png" alt=""></a>
+            </div>
+            <div class="cart-item__name">
+                <a href="">Коляска 4 в 1 Inglesina Quad System 4 в 1 на шасси Quad Titanium Black Cognac</a>
+                <p class="credit">В рассрочку: <span>5 960</span> руб/мес</p>
+                <p class="bottom"><span>В избранное</span> <span>Удалить</span></p>
+            </div>
+            <div class="cart-item__qty">
+                <input type="tel" value="1" name="qty"> шт.
+                <div class="plus-minus">
+                  <span class="minus">-</span>
+                  <span class="plus">+</span>
+                </div>
+            </div>
+            <div class="cart-item__subtotal">
+              <p class="subtotal">35 760 ₽</p>
+            </div>
+          </div>
+        
+        <!-- А вот и он -->
+        </div>
+        <!-- Конец отправления -->
+
+        <!-- Начало отправления -->
+        <!-- Класс next если НЕ первое -->
+        <div class="cart-package next">
+          <p><b>Отправление 2</b></p>
+          <span class="check-pack">Выбрать отправление</span>
+          <p><span class="qty">2</span> товара на сумму <span class="total">33 040</span> рублей</p>
+        </div>
+        <div class="pack-children">
+        <!--  -->
+
+          <div class="cart-item">
+            <div class="cart-item__check">
+              <input type="checkbox" id="p4">
+              <label for="p4"></label>
+            </div>
+            <div class="cart-item__img">
+              <a href=""><img src="./img/cart/222.png" alt=""></a>
+            </div>
+            <div class="cart-item__name">
+                <a href="">Коляска 4 в 1 Inglesina Quad System 4 в 1 на шасси Quad Titanium Black Cognac</a>
+                <p class="credit">В кредит: от <span>1 910</span> руб/мес</p>
+                <p class="bottom"><span>В избранное</span> <span>Удалить</span></p>
+            </div>
+            <div class="cart-item__qty">
+                <input type="tel" value="1" name="qty"> шт.
+                <div class="plus-minus">
+                  <span class="minus">-</span>
+                  <span class="plus">+</span>
+                </div>
+            </div>
+            <div class="cart-item__subtotal">
+              <p class="old"><span>49 990</span> ₽</p>
+              <p class="subtotal">35 760 ₽</p>
+              <p class="economy">Экономия <span>14 230 ₽</span></p>
+            </div>
+          </div>
+
+          <div class="cart-item">
+            <div class="cart-item__check">
+              <input type="checkbox" id="p5">
+              <label for="p5"></label>
+            </div>
+            <div class="cart-item__img">
+              <a href=""><img src="./img/cart/222.png" alt=""></a>
+            </div>
+            <div class="cart-item__name">
+                <a href="">Коляска 4 в 1 Inglesina Quad System 4 в 1 на шасси Quad Titanium Black Cognac</a>
+                <p class="bottom"><span>В избранное</span> <span>Удалить</span></p>
+            </div>
+            <div class="cart-item__qty">
+                <input type="tel" value="2" name="qty"> шт.
+                <div class="plus-minus">
+                  <span class="minus">-</span>
+                  <span class="plus">+</span>
+                </div>
+            </div>
+            <div class="cart-item__subtotal">
+              <p class="old"><span>99 980</span> ₽</p>
+              <p class="subtotal">71 520 ₽</p>
+              <p class="economy">Экономия <span>28 460 ₽</span></p>
+            </div>
+          </div>
+        
+        <!--  -->
+        </div>
+        <!-- Конец отправления -->
       </div>
+
+      <div class="cart-right">
+        <div class="cart-total">
+          <div class="cart-total__head">
+            <p>Итого</p>
+            <p>143 040 ₽</p>
+          </div>
+
+          <div class="cart-total__item">
+            <p>Сумма:</p>
+            <p>185 730 ₽</p>
+          </div>
+          <div class="cart-total__item">
+            <p>Экономия:</p>
+            <p>42 690 ₽</p>
+          </div>
+          <div class="cart-total__item bonus">
+            <img src="./img/cart/bonus.svg" alt="">
+            <p>4 290 Б</p>
+          </div>
+
+          <button class="checkout" type="submit">Оформить заказ</button>
+          <button class="credit" type="submit">Купить в кредит</button>
+          <button class="installment" type="submit">Купить в рассрочку</button>
+        </div>
+
+        <div class="cart-total code">
+          <input type="checkbox" id="promo">
+          <label for="promo" class="promo">
+            <img src="./img/cart/coupon.svg" alt="">
+            <p>Использовать <span>промокод</span></p>
+          </label>
+          <input type="checkbox" id="bonus">
+          <label for="bonus" class="bonus">
+            <img src="./img/cart/star.svg" alt="">
+            <p>Списать <span>бонусы</span></p>
+          </label>
+
+        </div>
+      </div>
+    </form>
   </section>
 </main>
 
@@ -1636,8 +1602,6 @@
     </div>
   </div>
 </footer>
-
-<div id="map" style="width: 100%; height: 400px"></div>
 
 
 <div class="modal">
@@ -1781,99 +1745,89 @@
 <script>
   document.addEventListener("DOMContentLoaded", function() {
 
-    ymaps.ready(init);
-      
-    function init() {
-      var myMap;
+    let count = 0;
+    document.querySelector('.check-all').addEventListener('click', checkAll) 
+    function checkAll() { 
 
-      var geolocation = ymaps.geolocation,
-          myMap = new ymaps.Map('map', {
-            center: [55.022,80.976],
-            zoom: 4,
-            controls: ['fullscreenControl', 'zoomControl', 'geolocationControl'],
-          }, {
-              searchControlProvider: 'yandex#search'
-          }),
-          objectManager = new ymaps.ObjectManager({
-              // Чтобы метки начали кластеризоваться, выставляем опцию.
-              clusterize: true,
-              // ObjectManager принимает те же опции, что и кластеризатор.
-              gridSize: 32,
-              clusterDisableClickZoom: false
-      });
+      this.classList.toggle('active')
+      const allItem = document.querySelectorAll('.cart-item__check')
+      allItem.forEach(item => {
+        if (this.classList.contains('active')) {
+          item.querySelector('input').checked = true;
+          count = allItem.length
+          if (document.querySelector('.check-pack'))
+            document.querySelectorAll('.check-pack').forEach(item => { item.classList.add('active') })
+        } else {
+          item.querySelector('input').checked = false;
+          count = 0
+          if (document.querySelector('.check-pack'))
+            document.querySelectorAll('.check-pack').forEach(item => { item.classList.remove('active') })
+        }
+      })
 
-      objectManager.objects.options.set('preset', 'islands#violetIcon');
-      objectManager.clusters.options.set('preset', 'islands#violetClusterIcons');
-      myMap.geoObjects.add(objectManager);
-
-      objectManager.objects.events.add('balloonopen', function (e) {
-        var id = e.get('objectId'),
-            geoObject = objectManager.objects.getById(id);
-        setPoint([geoObject], id);
-      });
-
-      function setPoint(geoObject, id) {
-        $('.select-point').on('click', function() {
-          $(this).hide()
-          var currentPoint = geoObject[0].properties.balloonContentHeader + geoObject[0].properties.balloonContentBody
-          $('.change-point .current').html(currentPoint)
-          $('.change-point').addClass('selected')
-          myMap.balloon.close();
-          $('#map').removeClass('maxMap')
-          myMap.container.exitFullscreen()
-          myMap.container.fitToViewport();
-        })
-      };
-
-      $.ajax({
-          url: "./point.json"
-      }).done(function(data) {
-          objectManager.add(data);
-      });
-
-      myMap.events.add('click', function (e) {  
-        myMap.balloon.close();
-      });
-
-      geolocation.get({
-        provider: 'yandex',
-      }).then(function (result) {
-        myMap.setCenter(result.geoObjects.get(0).geometry.getCoordinates(), 4, {duration: 500});
-        setTimeout(() => {
-          result.geoObjects.options.set('preset', 'islands#geolocationIcon');
-          result.geoObjects.get(0).properties.set({
-              balloonContentBody: 'Мое местоположение'
-          });
-          myMap.geoObjects.add(result.geoObjects);
-        }, 1000);
-      });
-
-      geolocation.get({
-          provider: 'browser',
-        }).then(function (result) {
-          setTimeout(() => {
-          myMap.setCenter(result.geoObjects.get(0).geometry.getCoordinates(), 4, {duration: 500});
-          result.geoObjects.options.set('preset', 'islands#blueCircleIcon');
-          myMap.geoObjects.add(result.geoObjects);
-        }, 1000);
-      });
-
-      $('.open-map').on('click', function () {
-        $('#map').addClass('maxMap')
-        myMap.container.enterFullscreen()
-        myMap.container.fitToViewport();
-      });
-
-      $('.change-current-point').on('click', function () {
-        $('#map').addClass('maxMap')
-        myMap.container.enterFullscreen()
-        myMap.container.fitToViewport();
-      });
-
-      myMap.events.add('boundschange', function (e) {
-        if ( myMap.container.isFullscreen() == false ) $('#map').removeClass('maxMap');
-      });
     }
+
+    if( document.querySelector('.check-pack') ) {
+      document.querySelectorAll('.check-pack').forEach(item => { item.addEventListener('click', checkPack) })
+      function checkPack() {   
+
+        const pack = this.closest('.cart-package').nextElementSibling
+        const allItem = pack.querySelectorAll('.cart-item__check')
+
+        if ( !this.classList.contains('active') ) {
+          this.classList.add('active')
+          allItem.forEach(item => {
+            item.querySelector('input').checked = true
+          })
+          count = document.querySelectorAll('.cart-item__check input:checked').length
+          checkAllCheckbox()
+        } else {
+          this.classList.remove('active')
+          allItem.forEach(item => {
+            item.querySelector('input').checked = false
+          })
+          count = document.querySelectorAll('.cart-item__check input:checked').length
+          checkAllCheckbox()
+        }
+        
+      }
+    }
+
+    
+    document.querySelectorAll('.cart-item__check input').forEach(item => {
+      item.addEventListener('change', function() {
+        this.checked !== true && count > 0 ? count-- : count++
+        document.querySelector('.check-pack') 
+          ? checkAllCheckbox(item.closest('.pack-children'))
+          : checkAllCheckbox()
+      })
+    })
+    
+    function checkAllCheckbox(elem) {
+      allCheckbox = document.querySelectorAll('.cart-item__check input').length
+      count == allCheckbox
+        ? document.querySelector('.check-all').classList.add('active')
+        : document.querySelector('.check-all').classList.remove('active')
+
+      if( elem ) {
+
+        let checked = elem.querySelectorAll('.cart-item__check input:checked').length
+        let all = elem.querySelectorAll('.cart-item__check input').length
+        if (checked == all ) {
+          elem.previousElementSibling.querySelector('.check-pack').classList.add('active')
+        } else {
+          elem.previousElementSibling.querySelector('.check-pack').classList.contains('active')
+            ? elem.previousElementSibling.querySelector('.check-pack').classList.remove('active')
+            : ''
+        }
+      }
+    }
+
+    
+
+
+
+    
       
       //Sort block
       const   div = document.createElement('div');
