@@ -2075,8 +2075,8 @@
     // define default options
     $.fn.booklet.defaults = {
         name: null,                            // name of the booklet to display in the document title bar
-        width: 800,                             // container width
-        height: 600,                             // container height
+        width: 600,                             // container width
+        height: 400,                             // container height
         speed: 1000,                            // speed of the transition between pages
         direction: 'LTR',                           // direction of the overall content organization, default LTR, left to right, can be RTL for languages which read right to left
         startingPage: 0,                               // index of the first page to be displayed
@@ -2092,7 +2092,7 @@
         covers: false,                           // used with "closed", makes first and last pages into covers, without page numbers (if enabled)
         autoCenter: false,                           // used with "closed", makes book position in center of container when closed
 
-        pagePadding: 0,                              // padding for each page wrapper
+        pagePadding: 10,                              // padding for each page wrapper
         pageNumbers: true,                            // display page numbers on each page
         pageBorder: 0,                               // size of the border around each page
 

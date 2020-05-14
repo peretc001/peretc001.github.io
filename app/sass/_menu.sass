@@ -1,15 +1,14 @@
 .menu
-    width: 100%
-    height: 100vh
-    min-height: 600px
     background-size: cover
     background-position: top center
     background-repeat: no-repeat
     position: relative
     overflow: hidden
+    padding: 80px 0
     h2
         position: absolute
         left: 60px
+        top: 0
         font-size: 80px
         border-left: 2px solid $accent
         padding: 0 60px
@@ -18,16 +17,32 @@
     .open-menu
         position: absolute
         left: 20%
-        top: 45%
-        z-index: 3
-    .wrapper
-        margin: 50px auto
+        top: 50%
+        transform: translateY(-50%)
+        z-index: 5
     #flipbook
-        div
-            user-select: none
+        position: relative
+        width: 70vw
+        height: calc(48vw)
+        margin: 0 auto
+        perspective: 2300px
+        backface-visibility: hidden
         img
-            max-width: 100%
-            user-select: none
+            position: absolute
+            right: 0
+            top: 0
+            width: 50%
+            height: 100%
+            z-index: -1
+            object-fit: fill
+            transform-style: preserve-3d
+            transform-origin: left center
+            transition: transform .5s ease
+
+        .current
+            z-index: 99
+        .last
+            transform: rotateY(-180deg)
     .prev,
     .next
         position: absolute
@@ -54,14 +69,55 @@
     .prev
         left: 10%
         background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMTk4LjYwOCwyNDYuMTA0TDM4Mi42NjQsNjIuMDRjNS4wNjgtNS4wNTYsNy44NTYtMTEuODE2LDcuODU2LTE5LjAyNGMwLTcuMjEyLTIuNzg4LTEzLjk2OC03Ljg1Ni0xOS4wMzJsLTE2LjEyOC0xNi4xMiAgICBDMzYxLjQ3NiwyLjc5MiwzNTQuNzEyLDAsMzQ3LjUwNCwwcy0xMy45NjQsMi43OTItMTkuMDI4LDcuODY0TDEwOS4zMjgsMjI3LjAwOGMtNS4wODQsNS4wOC03Ljg2OCwxMS44NjgtNy44NDgsMTkuMDg0ICAgIGMtMC4wMiw3LjI0OCwyLjc2LDE0LjAyOCw3Ljg0OCwxOS4xMTJsMjE4Ljk0NCwyMTguOTMyYzUuMDY0LDUuMDcyLDExLjgyLDcuODY0LDE5LjAzMiw3Ljg2NGM3LjIwOCwwLDEzLjk2NC0yLjc5MiwxOS4wMzItNy44NjQgICAgbDE2LjEyNC0xNi4xMmMxMC40OTItMTAuNDkyLDEwLjQ5Mi0yNy41NzIsMC0zOC4wNkwxOTguNjA4LDI0Ni4xMDR6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRjAwMDAiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==")
-    .disabled
-        opacity: 0
-        pointer-events: none
-        &:hover
+    .prev,
+    .next
+        &.disabled
             opacity: 0
+            pointer-events: none
+            &:hover
+                opacity: 0
 
 
 @media screen and ( max-width: 1439.98px )
     .menu
         h2
             font-size: 60px
+
+@media screen and ( max-width: 991.98px )
+    .menu
+        h2
+            font-size: 40px
+            padding-left: 40px
+            left: 40px
+        #flipbook
+            margin-top: 50px
+        .open-menu
+            font-size: 20px
+        .next,
+        .prev
+            width: 40px
+            height: 40px
+        .next
+            right: 40px
+        .prev
+            left: 40px
+
+@media screen and ( max-width: 767.98px )
+    .menu
+        h2
+            font-size: 40px
+            padding-left: 20px
+            left: 20px
+        .open-menu
+            font-size: 18px
+
+@media screen and ( max-width: 374.98px )
+    .menu
+        h1
+            font-size: 35px
+        .open-menu
+            font-size: 16px
+        .next
+            right: 20px
+        .prev
+            left: 20px
