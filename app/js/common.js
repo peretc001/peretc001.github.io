@@ -38,44 +38,51 @@ class Flipbook {
     init() {
         this.prev.addEventListener('click', this.prevPage)
         this.next.addEventListener('click', this.nextPage)
-        this.children[0].style.zIndex = this.children.length
-        // for(let index = 0; index < this.children.length; index++) {
-        //     if(index % 2 === 1) {
-        //         this.children[index].style.transform = 'rotateY(-180deg) translateX(-100%)'
-        //     }
-        // }
+        // this.children[0].style.zIndex = this.children.length
+        for(let index = 0; index < this.children.length; index++) {
+            this.children[index].style.zIndex = 1
+        }
     }
 
     prevPage = () => {
         if ( this.position > 0 ) {
             this.position = --this.position
         }
-        let prev = this.position
-        let current = this.position + 1
-        let next
-        this.position > 1 ? next = this.position - 1 : ''
-        this.children[prev].style.transform = 'scale(1)'
-        this.children[current].style.transform = 'scale(1)'
-        this.position > 1 ? this.children[next].style.transform = 'scale(1)' : ''
-        this.children[prev].style.zIndex = parseInt(this.children[prev].style.zIndex) + 1
-        this.children[current].style.zIndex = parseInt(this.children[current].style.zIndex) - 1
-        this.children[next].style.zIndex = parseInt(this.children[next].style.zIndex) + 2
         
     }
     nextPage = () => {
         if ( this.position < this.maxPosition) {
             this.position = ++this.position
         }
-        let prev = this.position - 1
-        let current = this.position
-        let next = this.position + 1
-        this.children[prev].style.transform = 'scale(-1,1)'
-        this.children[current].style.transform = 'scale(-1,1)'
-        this.position > 1 ? this.children[next].style.transform = 'scale(-1,1)' : ''
-        this.children[prev].style.zIndex = 1
-        this.children[current].style.zIndex = parseInt(this.children[prev].style.zIndex) + 1
-        this.children[next].style.zIndex = parseInt(this.children[prev].style.zIndex) + 2
-        console.log(this.position)
+        let prev = this.position - 1 //0 //1
+        let current = this.position //1 //2
+        let next = this.position + 1 //2 //3
+        // this.children[prev].style.transform = 'scale(-1,1)'
+        // this.children[current].style.transform = 'scale(-1,1)'
+        // this.position > 1 ? this.children[next].style.transform = 'scale(-1,1)' : ''
+        // this.children[prev].style.zIndex = 1
+        // this.children[current].style.zIndex = parseInt(this.children[prev].style.zIndex) + 1
+        // this.children[next].style.zIndex = parseInt(this.children[prev].style.zIndex) + 2
+        // console.log(this.position)
+
+        if (this.position == 1) {
+            this.children[prev].style.transform = 'rotateY(-180deg)'
+            this.children[current].style.transform = 'rotateY(-180deg)'
+            this.children[prev].style.zIndex = parseInt(this.children[prev].dataset.count) + 1
+            this.children[current].style.zIndex = parseInt(this.children[current].dataset.count) + 1
+            this.children[next].style.zIndex = parseInt(this.children[next].dataset.count) + 1
+            this.children[current].style.opacity = 1
+            this.children[next].style.opacity = 1
+        } else {
+            this.children[current].style.transform = 'rotateY(-180deg)'
+            this.children[next].style.transform = 'rotateY(-180deg)'
+            this.children[current].style.zIndex = parseInt(this.children[current].dataset.count) + 1
+            this.children[next].style.zIndex = parseInt(this.children[next].dataset.count) + 1
+            this.children[current].style.opacity = 1
+            this.children[next].style.opacity = 1
+
+            this.children[next+1].style.opacity = 1
+        }
 
     }
 }

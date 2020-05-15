@@ -19,7 +19,7 @@
         left: 20%
         top: 50%
         transform: translateY(-50%)
-        z-index: 5
+        z-index: -5
     #flipbook
         position: relative
         width: 70vw
@@ -34,10 +34,13 @@
             width: 50%
             height: 100%
             z-index: 1
+            opacity: 0
             object-fit: fill
             transform-style: preserve-3d
             transform-origin: left center
             transition: transform .5s ease
+            &:first-child
+                opacity: 1
 
         // .last
         //     z-index: 1
