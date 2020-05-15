@@ -48,39 +48,28 @@ class Flipbook {
 
     prevPage = () => {
         if ( this.position > 0 ) {
-            this.position -= 2
+            this.position = --this.position
         }
-        let current = this.position
-        let prev = this.position - 2
-        let next = this.position + 1
-        this.children[prev].style.zIndex = prev
-        this.children[current].style.transform = 'rotateY(0)'
-        this.children[next].style.transform = 'rotateY(0)'
-        this.children[current].style.zIndex = current
-        this.children[next].style.zIndex = next
+        let prev = this.position
+        let current = this.position + 1
+        this.children[prev].style.transform = 'scale(1)'
+        this.children[current].style.transform = 'scale(1)'
+        this.children[prev].style.zIndex = parseInt(this.children[prev].style.zIndex) + 1
+        this.children[current].style.zIndex = parseInt(this.children[current].style.zIndex) - 1
         
     }
     nextPage = () => {
         if ( this.position < this.maxPosition) {
-            this.position += 2
+            this.position = ++this.position
         }
-        let prev = this.position - 2
-        let current = this.position -1
-        let next = this.position
-        this.children[prev].style.transform = 'rotateY(-180deg)'
-        this.children[current].style.transform = 'rotateY(-180deg)'
+        let prev = this.position - 1
+        let current = this.position
+        this.children[prev].style.transform = 'scale(-1,1)'
+        this.children[current].style.transform = 'scale(-1,1)'
         this.children[prev].style.zIndex = 1
         this.children[current].style.zIndex = 2
-        this.children[next].style.zIndex = 3
-    }
-    animatePage = (index) => {
-        let current = this.position
-        let prev = this.position - 1
-        let next = this.position + 1
-        
+        console.log(this.position)
 
-        // this.children[current].style.zIndex = current
-        // this.children[prev].style.zIndex = prev
     }
 }
 
