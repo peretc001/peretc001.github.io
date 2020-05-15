@@ -38,27 +38,49 @@ class Flipbook {
     init() {
         this.prev.addEventListener('click', this.prevPage)
         this.next.addEventListener('click', this.nextPage)
+        this.children[0].style.zIndex = this.children.length
+        // for(let index = 0; index < this.children.length; index++) {
+        //     if(index % 2 === 1) {
+        //         this.children[index].style.transform = 'rotateY(-180deg) translateX(-100%)'
+        //     }
+        // }
     }
 
     prevPage = () => {
         if ( this.position > 0 ) {
-            this.position = --this.position
+            this.position -= 2
         }
-        this.animatePage(this.position)
+        let current = this.position
+        let prev = this.position - 2
+        let next = this.position + 1
+        this.children[prev].style.zIndex = prev
+        this.children[current].style.transform = 'rotateY(0)'
+        this.children[next].style.transform = 'rotateY(0)'
+        this.children[current].style.zIndex = current
+        this.children[next].style.zIndex = next
+        
     }
     nextPage = () => {
         if ( this.position < this.maxPosition) {
-            this.position = ++this.position
+            this.position += 2
         }
-        this.animatePage(this.position)
+        let prev = this.position - 2
+        let current = this.position -1
+        let next = this.position
+        this.children[prev].style.transform = 'rotateY(-180deg)'
+        this.children[current].style.transform = 'rotateY(-180deg)'
+        this.children[prev].style.zIndex = 1
+        this.children[current].style.zIndex = 2
+        this.children[next].style.zIndex = 3
     }
     animatePage = (index) => {
         let current = this.position
         let prev = this.position - 1
-        this.children[current].classList.add('last')
-        this.children[prev].classList.remove('last')
-        this.children[current].style.zIndex = current
-        this.children[prev].style.zIndex = prev
+        let next = this.position + 1
+        
+
+        // this.children[current].style.zIndex = current
+        // this.children[prev].style.zIndex = prev
     }
 }
 
