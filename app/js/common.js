@@ -25,7 +25,9 @@ class Flipbook {
     constructor({
         wrap, 
         next,
-        prev
+        prev,
+        delay = 500,
+        startBtn
     }) {
         this.wrap = document.querySelector(wrap)
         this.children = document.querySelector(wrap).children
@@ -33,12 +35,14 @@ class Flipbook {
         this.prev = document.querySelector(prev)
         this.position = null
         this.maxPosition = this.children.length
+        this.delay = delay
+        this.startBtn = startBtn ? document.querySelector(startBtn) : ''
     }
 
     init() {
         this.prev.addEventListener('click', this.prevPage)
         this.next.addEventListener('click', this.nextPage)
-        // this.children[0].style.zIndex = this.children.length
+
 
         if (this.position == null) {
             this.prev.classList.add('disabled')
@@ -46,6 +50,7 @@ class Flipbook {
         }
         for(let index = 0; index < this.children.length; index++) {
             this.children[index].style.zIndex = 1
+            this.delay ? this.children[index].style.transition = 'transform ' + this.delay/1000 + 's ease, opacity ' + this.delay/2000 + 's ease' : ''
         }
     }
 
@@ -92,8 +97,6 @@ class Flipbook {
     }
 
     controls = () => {
-
-        console.log(this.position, this.maxPosition)
         
         if (this.position == 0) {
             this.prev.classList.add('disabled')
@@ -107,10 +110,10 @@ class Flipbook {
             this.next.classList.add('disabled')
         } 
 
-        if (this.position > 0) {
-            document.querySelector('.open-menu').classList.add('disabled')
-        } else if (this.position == 0) {
-            document.querySelector('.open-menu').classList.remove('disabled')
+        if (this.startBtn && this.position > 0) {
+            this.startBtn.classList.add('disabled')
+        } else if (this.startBtn && this.position == 0) {
+            this.startBtn.classList.remove('disabled')
         }
     }
 }
@@ -265,11 +268,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const myFlipbook = new Flipbook({
         wrap: '#flipbook',
         prev: 'button.prev',
-        next: 'button.next'
+        next: 'button.next',
+        delay: 500,
+        startBtn: '.open-menu'
     });
     myFlipbook.init()
 
     document.querySelector('.open-menu').addEventListener('click', function() {
+        document.querySelector('.open-menu').classList.add('disabled')        
         myFlipbook.nextPage()
     })
 
