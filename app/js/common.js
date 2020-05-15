@@ -32,58 +32,86 @@ class Flipbook {
         this.next = document.querySelector(next)
         this.prev = document.querySelector(prev)
         this.position = null
-        this.maxPosition = this.children.length - 1
+        this.maxPosition = this.children.length
     }
 
     init() {
         this.prev.addEventListener('click', this.prevPage)
         this.next.addEventListener('click', this.nextPage)
         // this.children[0].style.zIndex = this.children.length
+
+        if (this.position == null) {
+            this.prev.classList.add('disabled')
+            this.next.classList.add('disabled')
+        }
         for(let index = 0; index < this.children.length; index++) {
             this.children[index].style.zIndex = 1
         }
     }
 
     prevPage = () => {
-        if ( this.position > 0 ) {
-            this.position = --this.position
+        if ( this.position >= 2) {
+            this.position -= 2
         }
+        let prev = this.position
+        let current = this.position + 1
+        let next = this.position + 2
+        
+        this.children[prev].style.transform = 'rotateY(0)'
+        this.children[current].style.transform = 'rotateY(0)'
+
+        this.children[prev].style.zIndex = parseInt(this.children[prev].dataset.count) - 1
+        this.children[current].style.zIndex = parseInt(this.children[current].dataset.count) - 1
+        this.children[next].style.zIndex = parseInt(this.children[next].dataset.count) - 1
+
+        this.children[current].style.opacity = 0
+        this.children[next].style.opacity = 0
+
+        this.controls()
         
     }
     nextPage = () => {
-        if ( this.position < this.maxPosition) {
-            this.position = ++this.position
+        if ( this.position < this.maxPosition - 2) {
+            this.position += 2
         }
-        let prev = this.position - 1 //0 //1
-        let current = this.position //1 //2
-        let next = this.position + 1 //2 //3
-        // this.children[prev].style.transform = 'scale(-1,1)'
-        // this.children[current].style.transform = 'scale(-1,1)'
-        // this.position > 1 ? this.children[next].style.transform = 'scale(-1,1)' : ''
-        // this.children[prev].style.zIndex = 1
-        // this.children[current].style.zIndex = parseInt(this.children[prev].style.zIndex) + 1
-        // this.children[next].style.zIndex = parseInt(this.children[prev].style.zIndex) + 2
-        // console.log(this.position)
+        let prev = this.position - 2
+        let current = this.position - 1
+        let next = this.position
+        
+        this.children[prev].style.transform = 'rotateY(-180deg)'
+        this.children[current].style.transform = 'rotateY(-180deg)'
 
-        if (this.position == 1) {
-            this.children[prev].style.transform = 'rotateY(-180deg)'
-            this.children[current].style.transform = 'rotateY(-180deg)'
-            this.children[prev].style.zIndex = parseInt(this.children[prev].dataset.count) + 1
-            this.children[current].style.zIndex = parseInt(this.children[current].dataset.count) + 1
-            this.children[next].style.zIndex = parseInt(this.children[next].dataset.count) + 1
-            this.children[current].style.opacity = 1
-            this.children[next].style.opacity = 1
+        this.children[prev].style.zIndex = parseInt(this.children[prev].dataset.count) + 1
+        this.children[current].style.zIndex = parseInt(this.children[current].dataset.count) + 1
+        this.children[next].style.zIndex = parseInt(this.children[next].dataset.count) + 1
+
+        this.children[current].style.opacity = 1
+        this.children[next].style.opacity = 1
+
+        this.controls()
+    }
+
+    controls = () => {
+
+        console.log(this.position, this.maxPosition)
+        
+        if (this.position == 0) {
+            this.prev.classList.add('disabled')
+            this.next.classList.add('disabled')
         } else {
-            this.children[current].style.transform = 'rotateY(-180deg)'
-            this.children[next].style.transform = 'rotateY(-180deg)'
-            this.children[current].style.zIndex = parseInt(this.children[current].dataset.count) + 1
-            this.children[next].style.zIndex = parseInt(this.children[next].dataset.count) + 1
-            this.children[current].style.opacity = 1
-            this.children[next].style.opacity = 1
-
-            this.children[next+1].style.opacity = 1
+            this.prev.classList.contains('disabled') ? this.prev.classList.remove('disabled') : ''
+            this.next.classList.contains('disabled') ? this.next.classList.remove('disabled') : ''
         }
 
+        if (this.position >= this.maxPosition - 2) {
+            this.next.classList.add('disabled')
+        } 
+
+        if (this.position > 0) {
+            document.querySelector('.open-menu').classList.add('disabled')
+        } else if (this.position == 0) {
+            document.querySelector('.open-menu').classList.remove('disabled')
+        }
     }
 }
 
@@ -240,6 +268,10 @@ document.addEventListener("DOMContentLoaded", function() {
         next: 'button.next'
     });
     myFlipbook.init()
+
+    document.querySelector('.open-menu').addEventListener('click', function() {
+        myFlipbook.nextPage()
+    })
 
 
 

@@ -18,8 +18,14 @@
         position: absolute
         left: 20%
         top: 50%
+        opacity: 1
+        z-index: 2
+        pointer-events: all
         transform: translateY(-50%)
-        z-index: -5
+        transition: opacity .25s ease
+        &.disabled
+            opacity: 0
+            pointer-events: none
     #flipbook
         position: relative
         width: 70vw
@@ -38,7 +44,7 @@
             object-fit: fill
             transform-style: preserve-3d
             transform-origin: left center
-            transition: transform .5s ease
+            transition: transform .5s ease, opacity .25s ease
             &:first-child
                 opacity: 1
 
