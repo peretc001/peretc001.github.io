@@ -52,10 +52,14 @@ class Flipbook {
         }
         let prev = this.position
         let current = this.position + 1
+        let next
+        this.position > 1 ? next = this.position - 1 : ''
         this.children[prev].style.transform = 'scale(1)'
         this.children[current].style.transform = 'scale(1)'
+        this.position > 1 ? this.children[next].style.transform = 'scale(1)' : ''
         this.children[prev].style.zIndex = parseInt(this.children[prev].style.zIndex) + 1
         this.children[current].style.zIndex = parseInt(this.children[current].style.zIndex) - 1
+        this.children[next].style.zIndex = parseInt(this.children[next].style.zIndex) + 2
         
     }
     nextPage = () => {
@@ -64,10 +68,13 @@ class Flipbook {
         }
         let prev = this.position - 1
         let current = this.position
+        let next = this.position + 1
         this.children[prev].style.transform = 'scale(-1,1)'
         this.children[current].style.transform = 'scale(-1,1)'
+        this.position > 1 ? this.children[next].style.transform = 'scale(-1,1)' : ''
         this.children[prev].style.zIndex = 1
-        this.children[current].style.zIndex = 2
+        this.children[current].style.zIndex = parseInt(this.children[prev].style.zIndex) + 1
+        this.children[next].style.zIndex = parseInt(this.children[prev].style.zIndex) + 2
         console.log(this.position)
 
     }
