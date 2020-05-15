@@ -81,6 +81,19 @@
             pointer-events: none
             &:hover
                 opacity: 0
+    
+    .rotate
+        display: none
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translateY(-50%) translateX(-50%)
+        width: 100px
+        height: 100px
+        background-size: 100%
+        background-position: center
+        background-repeat: no-repeat
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJib2xkIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAyNCAyNCIgaGVpZ2h0PSI1MTIiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjUxMiI+PGc+PHBhdGggZD0ibTIxLjI1IDloLTUuMjV2Mmg0Ljc1Yy42ODkgMCAxLjI1LjU2MSAxLjI1IDEuMjV2OC41YzAgLjY4OS0uNTYxIDEuMjUtMS4yNSAxLjI1aC00LjgyNmMtLjE2Ljc4Ny0uNTc1IDEuNDc2LTEuMTQ0IDJoNi40N2MxLjUxNyAwIDIuNzUtMS4yMzMgMi43NS0yLjc1di05LjVjMC0xLjUxNy0xLjIzMy0yLjc1LTIuNzUtMi43NXoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiIHN0eWxlPSJmaWxsOiNGRjAwMDAiPjwvcGF0aD48cGF0aCBkPSJtMTIuMjUgMGgtOS41Yy0xLjUxNyAwLTIuNzUgMS4yMzMtMi43NSAyLjc1djE4LjVjMCAxLjUxOSAxLjIzMSAyLjc1IDIuNzUgMi43NWg5LjVjMS41MTkgMCAyLjc1LTEuMjMxIDIuNzUtMi43NSAwLTYuODgzIDAtMTEuNjE5IDAtMTguNSAwLTEuNTE3LTEuMjMzLTIuNzUtMi43NS0yLjc1em0uNzUgMjBoLTExdi0xNi43NWMwLS42ODkuNTYxLTEuMjUgMS4yNS0xLjI1aDguNWMuNjg5IDAgMS4yNS41NjEgMS4yNSAxLjI1eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgc3R5bGU9ImZpbGw6I0ZGMDAwMCI+PC9wYXRoPjxwYXRoIGQ9Im0yMi41IDMuNWgtLjc0M2MtLjU2LTEuNzc4LTIuMDg5LTMtNC4wMDctMy0uNTUzIDAtMSAuNDQ4LTEgMXMuNDQ3IDEgMSAxYy44NDQgMCAxLjQ0OS40MTcgMS44MjEgMWgtLjA3MWMtLjM5MSAwLS43NDUuMjI4LS45MDguNTgyLS4xNjMuMzU1LS4xMDUuNzcyLjE0OSAxLjA2OWwxLjUgMS43NWMuMDA4LjAwOS4wMi4wMTIuMDI4LjAyMS40MzUuNDczIDEuMDk0LjQwMSAxLjQ2MiAwIC4wMDgtLjAwOS4wMi0uMDEyLjAyOC0uMDIxbDEuNS0xLjc1Yy4yNTUtLjI5Ni4zMTMtLjcxNC4xNDktMS4wNjktLjE2My0uMzU0LS41MTctLjU4Mi0uOTA4LS41ODJ6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBzdHlsZT0iZmlsbDojRkYwMDAwIj48L3BhdGg+PC9nPiA8L3N2Zz4=')
 
 
 @media screen and ( max-width: 1439.98px )
@@ -113,8 +126,37 @@
             font-size: 40px
             padding-left: 20px
             left: 20px
+        
+        .open-menu,
+        #flipbook,
+        button
+            transition: opacity .3s ease
+
         .open-menu
-            font-size: 18px
+            font-size: 16px
+            left: 10%
+        
+        #flipbook
+            margin-top: 10px
+        .next,
+        .prev
+            width: 30px
+            height: 30px
+        .next
+            right: 20px
+        .prev
+            left: 20px
+
+@media screen and ( max-width: 549.98px )
+    .menu
+        .open-menu,
+        #flipbook,
+        button
+            opacity: 0
+        
+        .rotate
+            display: block
+
 
 @media screen and ( max-width: 374.98px )
     .menu
