@@ -21,102 +21,217 @@ const enableScroll = () => {
     }
 }
 
-class Flipbook {
-    constructor({
-        wrap, 
-        next,
-        prev,
-        delay = 500,
-        startBtn
-    }) {
-        this.wrap = document.querySelector(wrap)
-        this.children = document.querySelector(wrap).children
-        this.next = document.querySelector(next)
-        this.prev = document.querySelector(prev)
-        this.position = null
-        this.maxPosition = this.children.length
-        this.delay = delay
-        this.startBtn = startBtn ? document.querySelector(startBtn) : ''
+"use strict";
+
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return !!right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var Flipbook = /*#__PURE__*/function () {
+  function Flipbook(_ref) {
+    var _this = this;
+
+    var wrap = _ref.wrap,
+        _next = _ref.next,
+        _prev = _ref.prev,
+        _ref$delay = _ref.delay,
+        delay = _ref$delay === void 0 ? 500 : _ref$delay,
+        startBtn = _ref.startBtn;
+
+    _classCallCheck(this, Flipbook);
+
+    _defineProperty(this, "prevPage", function () {
+      if (_this.position >= 2) {
+        _this.position -= 2;
+      }
+
+      var prev = _this.position;
+      var current = _this.position + 1;
+      var next = _this.position + 2;
+      _this.children[prev].style.transform = 'rotateY(0)';
+      _this.children[current].style.transform = 'rotateY(0)';
+      _this.children[prev].style.zIndex = parseInt(_this.children[prev].dataset.count) - 1;
+      _this.children[current].style.zIndex = parseInt(_this.children[current].dataset.count) - 1;
+      _this.children[next].style.zIndex = parseInt(_this.children[next].dataset.count) - 1;
+      _this.children[current].style.opacity = 0;
+      _this.children[next].style.opacity = 0;
+
+      _this.controls();
+    });
+
+    _defineProperty(this, "nextPage", function () {
+      if (_this.position < _this.maxPosition - 2) {
+        _this.position += 2;
+      }
+
+      var prev = _this.position - 2;
+      var current = _this.position - 1;
+      var next = _this.position;
+      _this.children[prev].style.transform = 'rotateY(-180deg)';
+      _this.children[current].style.transform = 'rotateY(-180deg)';
+      _this.children[prev].style.zIndex = parseInt(_this.children[prev].dataset.count) + 1;
+      _this.children[current].style.zIndex = parseInt(_this.children[current].dataset.count) + 1;
+      _this.children[next].style.zIndex = parseInt(_this.children[next].dataset.count) + 1;
+      _this.children[current].style.opacity = 1;
+      _this.children[next].style.opacity = 1;
+
+      _this.controls();
+    });
+
+    _defineProperty(this, "controls", function () {
+      if (_this.position == 0) {
+        _this.prev.classList.add('disabled');
+
+        _this.next.classList.add('disabled');
+      } else {
+        _this.prev.classList.contains('disabled') ? _this.prev.classList.remove('disabled') : '';
+        _this.next.classList.contains('disabled') ? _this.next.classList.remove('disabled') : '';
+      }
+
+      if (_this.position >= _this.maxPosition - 2) {
+        _this.next.classList.add('disabled');
+      }
+
+      if (_this.startBtn && _this.position > 0) {
+        _this.startBtn.classList.add('disabled');
+      } else if (_this.startBtn && _this.position == 0) {
+        _this.startBtn.classList.remove('disabled');
+      }
+    });
+
+    this.wrap = document.querySelector(wrap);
+    this.children = document.querySelector(wrap).children;
+    this.next = document.querySelector(_next);
+    this.prev = document.querySelector(_prev);
+    this.position = null;
+    this.maxPosition = this.children.length;
+    this.delay = delay;
+    this.startBtn = startBtn ? document.querySelector(startBtn) : '';
+  }
+
+  _createClass(Flipbook, [{
+    key: "init",
+    value: function init() {
+      this.prev.addEventListener('click', this.prevPage);
+      this.next.addEventListener('click', this.nextPage);
+
+      if (this.position == null) {
+        this.prev.classList.add('disabled');
+        this.next.classList.add('disabled');
+      }
+
+      for (var index = 0; index < this.children.length; index++) {
+        this.children[index].style.zIndex = 1;
+        this.delay ? this.children[index].style.transition = 'transform ' + this.delay / 1000 + 's ease, opacity ' + this.delay / 2000 + 's ease' : '';
+      }
     }
+  }]);
 
-    init() {
-        this.prev.addEventListener('click', this.prevPage)
-        this.next.addEventListener('click', this.nextPage)
+  return Flipbook;
+}();
+
+// class Flipbook {
+//     constructor({
+//         wrap, 
+//         next,
+//         prev,
+//         delay = 500,
+//         startBtn
+//     }) {
+//         this.wrap = document.querySelector(wrap)
+//         this.children = document.querySelector(wrap).children
+//         this.next = document.querySelector(next)
+//         this.prev = document.querySelector(prev)
+//         this.position = null
+//         this.maxPosition = this.children.length
+//         this.delay = delay
+//         this.startBtn = startBtn ? document.querySelector(startBtn) : ''
+//     }
+
+//     init() {
+//         this.prev.addEventListener('click', this.prevPage)
+//         this.next.addEventListener('click', this.nextPage)
 
 
-        if (this.position == null) {
-            this.prev.classList.add('disabled')
-            this.next.classList.add('disabled')
-        }
-        for(let index = 0; index < this.children.length; index++) {
-            this.children[index].style.zIndex = 1
-            this.delay ? this.children[index].style.transition = 'transform ' + this.delay/1000 + 's ease, opacity ' + this.delay/2000 + 's ease' : ''
-        }
-    }
+//         if (this.position == null) {
+//             this.prev.classList.add('disabled')
+//             this.next.classList.add('disabled')
+//         }
+//         for(let index = 0; index < this.children.length; index++) {
+//             this.children[index].style.zIndex = 1
+//             this.delay ? this.children[index].style.transition = 'transform ' + this.delay/1000 + 's ease, opacity ' + this.delay/2000 + 's ease' : ''
+//         }
+//     }
 
-    prevPage = () => {
-        if ( this.position >= 2) {
-            this.position -= 2
-        }
-        let prev = this.position
-        let current = this.position + 1
-        let next = this.position + 2
+//     prevPage = () => {
+//         if ( this.position >= 2) {
+//             this.position -= 2
+//         }
+//         let prev = this.position
+//         let current = this.position + 1
+//         let next = this.position + 2
         
-        this.children[prev].style.transform = 'rotateY(0)'
-        this.children[current].style.transform = 'rotateY(0)'
+//         this.children[prev].style.transform = 'rotateY(0)'
+//         this.children[current].style.transform = 'rotateY(0)'
 
-        this.children[prev].style.zIndex = parseInt(this.children[prev].dataset.count) - 1
-        this.children[current].style.zIndex = parseInt(this.children[current].dataset.count) - 1
-        this.children[next].style.zIndex = parseInt(this.children[next].dataset.count) - 1
+//         this.children[prev].style.zIndex = parseInt(this.children[prev].dataset.count) - 1
+//         this.children[current].style.zIndex = parseInt(this.children[current].dataset.count) - 1
+//         this.children[next].style.zIndex = parseInt(this.children[next].dataset.count) - 1
 
-        this.children[current].style.opacity = 0
-        this.children[next].style.opacity = 0
+//         this.children[current].style.opacity = 0
+//         this.children[next].style.opacity = 0
 
-        this.controls()
+//         this.controls()
         
-    }
-    nextPage = () => {
-        if ( this.position < this.maxPosition - 2) {
-            this.position += 2
-        }
-        let prev = this.position - 2
-        let current = this.position - 1
-        let next = this.position
+//     }
+//     nextPage = () => {
+//         if ( this.position < this.maxPosition - 2) {
+//             this.position += 2
+//         }
+//         let prev = this.position - 2
+//         let current = this.position - 1
+//         let next = this.position
         
-        this.children[prev].style.transform = 'rotateY(-180deg)'
-        this.children[current].style.transform = 'rotateY(-180deg)'
+//         this.children[prev].style.transform = 'rotateY(-180deg)'
+//         this.children[current].style.transform = 'rotateY(-180deg)'
 
-        this.children[prev].style.zIndex = parseInt(this.children[prev].dataset.count) + 1
-        this.children[current].style.zIndex = parseInt(this.children[current].dataset.count) + 1
-        this.children[next].style.zIndex = parseInt(this.children[next].dataset.count) + 1
+//         this.children[prev].style.zIndex = parseInt(this.children[prev].dataset.count) + 1
+//         this.children[current].style.zIndex = parseInt(this.children[current].dataset.count) + 1
+//         this.children[next].style.zIndex = parseInt(this.children[next].dataset.count) + 1
 
-        this.children[current].style.opacity = 1
-        this.children[next].style.opacity = 1
+//         this.children[current].style.opacity = 1
+//         this.children[next].style.opacity = 1
 
-        this.controls()
-    }
+//         this.controls()
+//     }
 
-    controls = () => {
+//     controls = () => {
         
-        if (this.position == 0) {
-            this.prev.classList.add('disabled')
-            this.next.classList.add('disabled')
-        } else {
-            this.prev.classList.contains('disabled') ? this.prev.classList.remove('disabled') : ''
-            this.next.classList.contains('disabled') ? this.next.classList.remove('disabled') : ''
-        }
+//         if (this.position == 0) {
+//             this.prev.classList.add('disabled')
+//             this.next.classList.add('disabled')
+//         } else {
+//             this.prev.classList.contains('disabled') ? this.prev.classList.remove('disabled') : ''
+//             this.next.classList.contains('disabled') ? this.next.classList.remove('disabled') : ''
+//         }
 
-        if (this.position >= this.maxPosition - 2) {
-            this.next.classList.add('disabled')
-        } 
+//         if (this.position >= this.maxPosition - 2) {
+//             this.next.classList.add('disabled')
+//         } 
 
-        if (this.startBtn && this.position > 0) {
-            this.startBtn.classList.add('disabled')
-        } else if (this.startBtn && this.position == 0) {
-            this.startBtn.classList.remove('disabled')
-        }
-    }
-}
+//         if (this.startBtn && this.position > 0) {
+//             this.startBtn.classList.add('disabled')
+//         } else if (this.startBtn && this.position == 0) {
+//             this.startBtn.classList.remove('disabled')
+//         }
+//     }
+// }
 
 document.addEventListener("DOMContentLoaded", function() {
 
