@@ -1,24 +1,13 @@
-let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
-const preventDefault = (e) => {
-    e.preventDefault();
-}
+const preventDefault = (e) => {e.preventDefault();}
 const disableScroll = () => {
-    if ( width < 767 ) {
-        document.body.classList.add('no-scroll')
-    } else {
-        document.body.addEventListener('touchmove', preventDefault, { passive: false });
-        window.addEventListener('DOMMouseScroll', preventDefault, false);
-        document.addEventListener('wheel', preventDefault, {passive: false});
-    }
+  document.body.addEventListener('touchmove', preventDefault, { passive: false });
+  window.addEventListener('DOMMouseScroll', preventDefault, false);
+  document.addEventListener('wheel', preventDefault, {passive: false});
 }
 const enableScroll = () => {
-    if ( width < 767 ){
-        document.body.classList.remove('no-scroll')
-    } else {
-        document.body.removeEventListener('touchmove', preventDefault, { passive: false });
-        window.removeEventListener('DOMMouseScroll', preventDefault, false);
-        document.removeEventListener('wheel', preventDefault, {passive: false});
-    }
+  document.body.removeEventListener('touchmove', preventDefault, { passive: false });
+  window.removeEventListener('DOMMouseScroll', preventDefault, false);
+  document.removeEventListener('wheel', preventDefault, {passive: false});
 }
 
 function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return !!right[Symbol.hasInstance](left); } else { return left instanceof right; } }
@@ -144,30 +133,31 @@ document.addEventListener("DOMContentLoaded", function() {
     const hamburger = document.querySelector('.hamburger')
 
     const openMenu = () => {
-        const close = document.createElement('span')
-        close.classList.add('closeMenu')
+      document.body.style.overflow = 'hidden'
+      const close = document.createElement('span')
+      close.classList.add('closeMenu')
 
-        navMenu.classList.add('fade')
-        hamburger.classList.add('open')
-        setTimeout(() => {
-            navMenu.classList.add('open')
-            navMenu.appendChild(close)
-        }, 100);
-        close.addEventListener('click', closeMenu)
-        document.addEventListener('click', (e) => { 
-            navMenu.classList.contains('open') && !e.target.contains(navMenu) ? closeMenu() : '' 
-        })
+      navMenu.classList.add('fade')
+      hamburger.classList.add('open')
+      setTimeout(() => {
+          navMenu.classList.add('open')
+          navMenu.appendChild(close)
+      }, 100);
+      close.addEventListener('click', closeMenu)
+      document.addEventListener('click', (e) => { 
+          navMenu.classList.contains('open') && !e.target.contains(navMenu) ? closeMenu() : '' 
+      })
     }
 
     const closeMenu = () => {
-        const close = document.querySelector('.navbar-menu .closeMenu')
-        navMenu.classList.remove('open')
-        hamburger.classList.remove('open')
-        setTimeout(() => {
-            navMenu.classList.remove('fade')
-            close.parentNode.removeChild(close)
-        }, 100);
-        // close.removeEventListener('click', closeMenu)
+      document.body.style.overflow = ''
+      const close = document.querySelector('.navbar-menu .closeMenu')
+      navMenu.classList.remove('open')
+      hamburger.classList.remove('open')
+      setTimeout(() => {
+          navMenu.classList.remove('fade')
+          close.parentNode.removeChild(close)
+      }, 100);
     }
     
     hamburger.addEventListener('click', openMenu)
