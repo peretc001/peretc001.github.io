@@ -1,0 +1,232 @@
+.navbar
+   position: absolute
+   left: 0
+   top: 0
+   width: 100%
+   z-index: 3
+   display: flex
+   justify-content: space-between
+   padding: 0
+   margin: 0
+   background: linear-gradient(180deg, #000000 18%, rgba(0, 0, 0, 0.75) 67.6%, rgba(0, 0, 0, 0) 94.85%)
+
+   .navbar-brand
+      margin: 0
+      padding: 0
+      width: 150px
+      height: 100px
+      margin-right: 115px
+      display: flex
+      align-items: center
+      justify-content: center
+      img
+         width: 100%
+         height: auto
+   
+   .navbar-menu
+      flex: 1 1 auto
+      display: flex
+      align-items: center
+      justify-content: center
+      .nav-item
+         padding: 0
+         margin: 0
+         list-style: none
+         padding-left: 40px
+      .nav-link
+         color: $text
+         color: $text
+         padding: 0
+         font-size: 18px
+      .mobile
+         display: none
+
+   .contacts
+      display: flex
+      align-items: flex-end
+      flex-direction: column
+      color: $text
+      .phone
+         color: $accent
+         margin-bottom: 5px
+      .adress
+         color: $text
+   
+   .navbar-toggler
+      transition: none !important
+      background: transparent !important
+
+   .hamburger
+      cursor: pointer
+      width: 45px
+      height: 30px
+      position: relative
+      transform: rotate(0deg)
+      background: transparent
+      outline: none
+      user-select: none
+      transition: .5s ease-in-out
+      &:before,
+      &::after
+         display: none
+      span
+         display: block
+         position: absolute
+         height: 1px
+         width: 100%
+         background: $text
+         border-radius: 4px
+         opacity: 1
+         left: 0
+         transform: rotate(0deg)
+         transition: .25s ease-in-out
+         &:nth-child(1)
+            top: 0px
+            max-width: 40px
+         &:nth-child(2)
+            top: 15px
+         &:nth-child(3)
+            top: 30px
+            max-width: 40px
+      &.open
+         span:nth-child(1)
+            top: 15px
+            width: 30px
+            transform: rotate(45deg)
+         span:nth-child(2)
+            opacity: 0
+         span:nth-child(3)
+            top: 15px
+            width: 30px
+            transform: rotate(135deg)
+
+@media screen and ( max-width: 1439.98px )
+   .navbar
+      .navbar-brand
+         margin-right: 0
+
+@media screen and ( max-width: 1199.98px )
+   .navbar
+      .container-fluid
+         padding: 0 40px
+      .navbar-menu
+         display: none
+         position: fixed
+         overflow-y: auto
+         right: 0
+         top: 0
+         width: 500px
+         height: 100%
+         z-index: 3
+         background: #010101
+         flex-direction: column
+         padding: 100px 40px 40px
+         transition: transform .5s ease
+         &.fade
+            display: block
+            opacity: 0
+            transform: translateX(100%)
+         &.open
+            opacity: 1
+            transform: translateX(0)
+         .nav-item
+            margin-bottom: 20px
+            text-align: right
+         .nav-link
+            font-size: 26px
+         .mobile
+            display: block
+            margin: 0
+            .phone
+               margin-top: 40px
+            .adress
+               margin-top: 20px
+            .phone,
+            .adress
+               display: inline-block
+               appearance: none
+               background: transparent
+               border: 2px solid $accent
+               border-radius: 10px
+               color: $text
+               padding: 15px 30px
+               line-height: 1
+               cursor: pointer
+               position: relative
+               outline: none !important
+               box-shadow: none !important
+               &:before,
+               &::after
+                  content: ''
+                  position: absolute
+                  left: 0
+                  top: 0
+                  right: 0
+                  bottom: 0
+                  display: block
+                  width: 100%
+                  height: 100%
+                  opacity: 0
+                  background: transparent
+                  transition: opacity .3s ease
+               &:before
+                  background: radial-gradient(45.71% 45.71% at 50% 110.71%, rgba(255, 0, 0, 0.54) 2.01%, rgba(255, 0, 0, 0) 100%)
+                  transform: rotate(180deg)
+               &::after
+                  background: radial-gradient(45.71% 45.71% at 50% 110.71%, rgba(255, 0, 0, 0.54) 2.01%, rgba(255, 0, 0, 0) 100%)
+               &:hover
+                  &::before,
+                  &::after
+                     opacity: 1
+         .closeMenu
+            background-color: transparent
+            border-radius: 50%
+            border: 2px solid $accent
+            cursor: pointer
+            position: absolute
+            right: 40px
+            top: 15px
+            width: 40px
+            height: 40px
+            opacity: .5
+            z-index: 6
+            background-size: 50%
+            background-position: center
+            background-repeat: no-repeat
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgMzI5LjI2OTMzIDMyOSIgd2lkdGg9IjUxMiI+PGc+PHBhdGggZD0ibTE5NC44MDA3ODEgMTY0Ljc2OTUzMSAxMjguMjEwOTM4LTEyOC4yMTQ4NDNjOC4zNDM3NS04LjMzOTg0NCA4LjM0Mzc1LTIxLjgyNDIxOSAwLTMwLjE2NDA2My04LjMzOTg0NC04LjMzOTg0NC0yMS44MjQyMTktOC4zMzk4NDQtMzAuMTY0MDYzIDBsLTEyOC4yMTQ4NDQgMTI4LjIxNDg0NC0xMjguMjEwOTM3LTEyOC4yMTQ4NDRjLTguMzQzNzUtOC4zMzk4NDQtMjEuODI0MjE5LTguMzM5ODQ0LTMwLjE2NDA2MyAwLTguMzQzNzUgOC4zMzk4NDQtOC4zNDM3NSAyMS44MjQyMTkgMCAzMC4xNjQwNjNsMTI4LjIxMDkzOCAxMjguMjE0ODQzLTEyOC4yMTA5MzggMTI4LjIxNDg0NGMtOC4zNDM3NSA4LjMzOTg0NC04LjM0Mzc1IDIxLjgyNDIxOSAwIDMwLjE2NDA2MyA0LjE1NjI1IDQuMTYwMTU2IDkuNjIxMDk0IDYuMjUgMTUuMDgyMDMyIDYuMjUgNS40NjA5MzcgMCAxMC45MjE4NzUtMi4wODk4NDQgMTUuMDgyMDMxLTYuMjVsMTI4LjIxMDkzNy0xMjguMjE0ODQ0IDEyOC4yMTQ4NDQgMTI4LjIxNDg0NGM0LjE2MDE1NiA0LjE2MDE1NiA5LjYyMTA5NCA2LjI1IDE1LjA4MjAzMiA2LjI1IDUuNDYwOTM3IDAgMTAuOTIxODc0LTIuMDg5ODQ0IDE1LjA4MjAzMS02LjI1IDguMzQzNzUtOC4zMzk4NDQgOC4zNDM3NS0yMS44MjQyMTkgMC0zMC4xNjQwNjN6bTAgMCIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojRkYwMDAwIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPjwvZz4gPC9zdmc+')
+            transition: opacity .3s ease
+            &:hover
+               opacity: 1
+
+      .contacts
+         flex: 1 1 auto
+         padding-right: 40px
+
+@media screen and ( max-width: 767.98px )
+   .navbar
+      .container-fluid
+         padding: 0 20px
+      .contacts
+         display: none
+      .hamburger
+         span
+            left: auto
+            right: 0
+
+@media screen and ( max-width: 576.98px )
+   .navbar
+      .navbar-brand
+         width: 140px
+         height: 80px
+      .navbar-menu
+         width: 100%
+         padding-right: 20px
+         .nav-link
+            font-size: 20px
+         .closeMenu
+            right: 20px
+            top: 20px
+            width: 30px
+            height: 30px
+
+   

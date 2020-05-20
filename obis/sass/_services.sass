@@ -1,0 +1,59 @@
+.services
+    &-item
+        margin-top: 30px
+        p
+            margin: 0
+        &__img
+            position: relative
+            padding-bottom: 56.25%
+            overflow: hidden
+            margin-bottom: 2em
+            border: 1px solid $border-color
+            img
+                position: absolute
+                left: 0
+                top: 0
+                width: 100%
+                height: 100%
+                object-fit: fill
+        &__title
+            font-weight: bold
+            font-size: 32px
+            line-height: 1.15
+            margin-bottom: 20px
+        &__text
+            display: block
+            height: 106px
+            overflow: hidden
+            margin-bottom: 20px
+            p
+                line-height: 1.4
+                font-size: 1em
+        
+@media screen and ( max-width: 991.98px )
+    .services
+        &-item
+            &__title
+                font-size: 25px
+                min-height: 56px
+
+@media screen and ( max-width: 767.98px )
+    .services
+        .row
+            padding: 0
+            margin: 0 -.5em
+        [class*="col-"]
+            padding: 0 0.5em
+        &-item
+            margin-top: 1em
+            &__img
+                margin-bottom: 1em
+            &__title
+                font-size: 1em
+                min-height: 34px
+                margin-bottom: 5px
+            &__text
+                font-size: 10px
+                height: 56px
+                margin-bottom: 15px
+    

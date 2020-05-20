@@ -1,0 +1,108 @@
+header
+    width: 100%
+    height: 100vh
+    min-height: 600px
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center top
+    position: relative
+    .container-fluid
+        display: flex
+        align-items: flex-start
+        justify-content: center
+        flex-direction: column
+        width: 100%
+        height: 100%
+        z-index: 2
+        position: relative
+    img
+        position: absolute
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        z-index: 1
+        object-fit: cover
+    .mobile
+        display: none
+    .header-title
+        border-left: 2px solid $accent
+        padding: 20px 0 20px 60px
+    h1
+        font-size: 80px
+        line-height: 1.125
+        margin-bottom: 30px
+        span
+            display: block
+    .notes
+        position: absolute
+        left: 60px
+        bottom: 40px
+        margin: 0
+
+@media screen and ( max-width: 1439.98px )
+    header
+        h1
+            font-size: 50px
+        .header-title
+            padding: 20px 0 20px 40px
+
+@media screen and ( max-width: 1199.98px )
+    header
+        img
+            object-position: center
+        .notes
+            left: 40px
+
+@media screen and ( max-width: 991.98px )
+    header
+        min-height: 1024px
+        img
+            object-position: center
+        .desctop
+            display: none
+        .mobile
+            display: block
+
+        .container-fluid
+            padding-top: 150px
+            justify-content: flex-start
+        h1
+            font-size: 40px
+        button
+            font-size: 20px
+
+@media screen and ( max-width: 767.98px )
+    header
+        min-height: 660px
+        .header-title
+            padding: 20px 0 20px 20px
+        h1
+            margin-bottom: 20px
+        button
+            font-size: 18px
+        
+
+@media screen and ( max-width: 576.98px )
+    header
+        min-height: 550px
+        img
+            object-position: right 70px
+        .container-fluid
+            padding-top: 110px
+        .header-title
+            padding: 10px 20px
+        .notes
+            font-size: 14px
+            left: 20px
+            bottom: 40px
+            padding-right: 80px
+
+@media screen and ( max-width: 374.98px )
+    header
+        h1
+            font-size: 35px
+        button
+            font-size: 16px
+        .notes
+            font-size: 12px

@@ -1,0 +1,99 @@
+footer
+    padding: 70px 0 0 0
+    .row
+        margin-bottom: 50px
+    p
+        b
+            display: inline-block
+            color: $accent
+            font-size: 25px
+            font-weight: bold
+    a
+        color: $text
+        font-size: 1em
+        line-height: 1.6667
+        &:hover
+            color: $text
+    ul
+        margin: 0
+        padding: 0
+        li
+            list-style: none
+            padding: 0
+            margin: 0
+    .menu-group
+        display: flex
+        align-items: flex-start
+        justify-content: flex-start
+        ul
+            &:first-child
+                margin-right: 35px
+    
+    .phone
+        font-weight: bold
+        display: inline-block
+    .email
+        display: inline-block
+    
+    .social
+        width: 127px
+        display: flex
+        align-items: center
+        justify-content: space-between
+        img
+            max-width: 26px
+            max-height: 20px
+    
+    .copyright
+        border-top: 1px solid #f5f5f5
+        padding: 1em 0
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: space-between
+        p
+            margin: 0
+    .author
+        a
+            color: #81BD59
+            font-weight: bold
+
+@media screen and ( max-width: 991.98px )
+    footer
+        [class*="col-"]
+            margin-bottom: 30px
+            &:nth-child(2)
+                margin-bottom: 0
+        .menu-group
+            ul
+                &:first-child
+                    margin-right: 75px
+
+@media screen and ( max-width: 767.98px )
+    footer
+        .menu-group
+            flex-wrap: wrap
+            ul
+                flex: 0 0 100%        
+                &:first-child
+                    margin-right: 0
+        .copyright
+            flex-wrap: wrap
+            justify-content: center
+            .author
+                flex: 0 0 100%
+                text-align: center
+                margin-top: 1em
+
+@media screen and ( max-width: 576.98px )
+    footer
+        padding: 20px 0 0 0
+        .row
+            margin-bottom: 20px
+        p
+            margin-bottom: 12px
+            b
+                font-size: 20px
+        
+
+    

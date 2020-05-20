@@ -1,0 +1,124 @@
+.review
+    &-slider
+        max-width: 790px
+        margin: 0 auto
+        margin-top: 30px
+        border: 1px solid $border-color
+    &-item
+        text-align: center
+        padding: 22px 50px 27px
+        p
+            margin: 0
+        .name
+            font-size: 2em
+            font-weight: bold
+            margin-bottom: 3px
+        .position
+            font-size: 17px
+            margin-bottom: 0
+        .separator
+            display: inline-block
+            width: 70px
+            height: 5px
+            background: $accent
+            margin: 17px auto
+            padding: 0
+            line-height: 1
+        .msg
+            height: 85px
+            line-height: 1.6
+            font-size: 17px
+            overflow: hidden
+            margin-bottom: 0
+
+    .slick-slide
+        outline: none
+        box-shadow: none
+        position: relative
+    .slick-next,
+    .slick-prev
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        width: 25px
+        z-index: 1
+        background-color: transparent
+        background-position: center
+        background-repeat: no-repeat
+        background-size: 100%
+        border: none
+        appearance: none
+        box-shadow: none
+        outline: none
+        font-size: 0
+        width: 30px
+        height: 30px
+        transition: opacity .2s ease
+        cursor: pointer
+        &:hover
+            opacity: 1
+    .slick-next
+        right: -50px
+        background-image: url('data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI1NiAyNTYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI1NiAyNTY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiPgo8Zz4KCTxnPgoJCTxwb2x5Z29uIHBvaW50cz0iNzkuMDkzLDAgNDguOTA3LDMwLjE4NyAxNDYuNzIsMTI4IDQ4LjkwNywyMjUuODEzIDc5LjA5MywyNTYgMjA3LjA5MywxMjggICAiIGZpbGw9IiMwMDAwMDAiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K')
+    .slick-prev
+        left: -50px
+        background-image: url('data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI1NiAyNTYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI1NiAyNTY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiPgo8Zz4KCTxnPgoJCTxwb2x5Z29uIHBvaW50cz0iMjA3LjA5MywzMC4xODcgMTc2LjkwNywwIDQ4LjkwNywxMjggMTc2LjkwNywyNTYgMjA3LjA5MywyMjUuODEzIDEwOS4yOCwxMjggICAiIGZpbGw9IiMwMDAwMDAiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K')
+    .slick-disabled
+        opacity: 0
+        pointer-events: none
+        &:hover
+            opacity: 0
+
+@media screen and ( max-width: 991.98px )
+    .review
+        &-slider
+            max-width: 630px
+
+@media screen and ( max-width: 767.98px )
+    .review
+        &-slider
+            max-width: 450px
+        &-item
+            padding: 11px 20px
+            .name
+                font-size: 1.3em
+            .position
+                font-size: 1em
+            .separator
+                width: 25px
+                height: 2px
+                background: $accent
+                margin: 10px auto
+            .msg
+                height: 45px
+                font-size: 10px
+
+@media screen and ( max-width: 576.98px )
+    .review
+        overflow: hidden
+        &-slider
+            max-width: 90%
+            margin-top: 15px
+        &-item
+            padding: 11px 20px
+            .name
+                font-size: 12px
+            .position
+                font-size: 10px
+            .separator
+                width: 25px
+                height: 2px
+                background: $accent
+                margin: 10px auto
+            .msg
+                height: 45px
+                font-size: 10px
+        .slick-next,
+        .slick-prev
+            width: 11px
+            height: 18px
+        .slick-next
+            right: -25px
+        .slick-prev
+            left: -25px
+    

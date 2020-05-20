@@ -1,0 +1,173 @@
+.menu
+    background-size: cover
+    background-position: top center
+    background-repeat: no-repeat
+    position: relative
+    overflow: hidden
+    padding: 80px 0
+    h2
+        position: absolute
+        left: 60px
+        top: 0
+        font-size: 80px
+        border-left: 2px solid $accent
+        padding: 0 60px
+        line-height: 1
+        color: $text
+    .open-menu
+        position: absolute
+        left: 20%
+        top: 50%
+        opacity: 1
+        z-index: 2
+        pointer-events: all
+        transform: translateY(-50%)
+        transition: opacity .5s ease
+        &.disabled
+            opacity: 0
+            pointer-events: none
+    #flipbook
+        position: relative
+        width: 70vw
+        height: calc(48vw)
+        margin: 0 auto
+        perspective: 2300px
+        backface-visibility: hidden
+        img
+            position: absolute
+            right: 0
+            top: 0
+            width: 50%
+            height: 100%
+            z-index: 1
+            opacity: 0
+            object-fit: fill
+            transform-style: preserve-3d
+            transform-origin: left center
+            transition: transform .5s ease, opacity .25s ease
+            &:first-child
+                opacity: 1
+
+    .prev,
+    .next
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        width: 25px
+        z-index: 1
+        background-position: center
+        background-repeat: no-repeat
+        background-size: 40%
+        border-radius: 50%
+        font-size: 0
+        width: 60px
+        height: 60px
+        opacity: .5
+        transition: opacity .2s ease
+        border: 2px solid $accent
+        cursor: pointer
+        &:hover
+            opacity: 1
+    .next
+        right: 10%
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGcgdHJhbnNmb3JtPSJtYXRyaXgoLTEgMS4yMjQ2NWUtMTYgLTEuMjI0NjVlLTE2IC0xIDQ5MiA0OTIpIj48Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0xOTguNjA4LDI0Ni4xMDRMMzgyLjY2NCw2Mi4wNGM1LjA2OC01LjA1Niw3Ljg1Ni0xMS44MTYsNy44NTYtMTkuMDI0YzAtNy4yMTItMi43ODgtMTMuOTY4LTcuODU2LTE5LjAzMmwtMTYuMTI4LTE2LjEyICAgIEMzNjEuNDc2LDIuNzkyLDM1NC43MTIsMCwzNDcuNTA0LDBzLTEzLjk2NCwyLjc5Mi0xOS4wMjgsNy44NjRMMTA5LjMyOCwyMjcuMDA4Yy01LjA4NCw1LjA4LTcuODY4LDExLjg2OC03Ljg0OCwxOS4wODQgICAgYy0wLjAyLDcuMjQ4LDIuNzYsMTQuMDI4LDcuODQ4LDE5LjExMmwyMTguOTQ0LDIxOC45MzJjNS4wNjQsNS4wNzIsMTEuODIsNy44NjQsMTkuMDMyLDcuODY0YzcuMjA4LDAsMTMuOTY0LTIuNzkyLDE5LjAzMi03Ljg2NCAgICBsMTYuMTI0LTE2LjEyYzEwLjQ5Mi0xMC40OTIsMTAuNDkyLTI3LjU3MiwwLTM4LjA2TDE5OC42MDgsMjQ2LjEwNHoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0ZGMDAwMCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+")
+    .prev
+        left: 10%
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMTk4LjYwOCwyNDYuMTA0TDM4Mi42NjQsNjIuMDRjNS4wNjgtNS4wNTYsNy44NTYtMTEuODE2LDcuODU2LTE5LjAyNGMwLTcuMjEyLTIuNzg4LTEzLjk2OC03Ljg1Ni0xOS4wMzJsLTE2LjEyOC0xNi4xMiAgICBDMzYxLjQ3NiwyLjc5MiwzNTQuNzEyLDAsMzQ3LjUwNCwwcy0xMy45NjQsMi43OTItMTkuMDI4LDcuODY0TDEwOS4zMjgsMjI3LjAwOGMtNS4wODQsNS4wOC03Ljg2OCwxMS44NjgtNy44NDgsMTkuMDg0ICAgIGMtMC4wMiw3LjI0OCwyLjc2LDE0LjAyOCw3Ljg0OCwxOS4xMTJsMjE4Ljk0NCwyMTguOTMyYzUuMDY0LDUuMDcyLDExLjgyLDcuODY0LDE5LjAzMiw3Ljg2NGM3LjIwOCwwLDEzLjk2NC0yLjc5MiwxOS4wMzItNy44NjQgICAgbDE2LjEyNC0xNi4xMmMxMC40OTItMTAuNDkyLDEwLjQ5Mi0yNy41NzIsMC0zOC4wNkwxOTguNjA4LDI0Ni4xMDR6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRjAwMDAiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==")
+    .prev,
+    .next
+        &.disabled
+            opacity: 0
+            pointer-events: none
+            &:hover
+                opacity: 0
+    
+    .rotate
+        display: none
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translateY(-50%) translateX(-50%)
+        width: 100px
+        height: 100px
+        background-size: 100%
+        background-position: center
+        background-repeat: no-repeat
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJfeDMxX194MkNfNSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjQgMjQiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSI1MTIiPjxnPjxwYXRoIGQ9Im05LjUgMy41aC00Yy0uOTY1IDAtMS43NS0uNzg1LTEuNzUtMS43NSAwLS4xMzgtLjExMi0uMjUtLjI1LS4yNWgtMWMtLjQxNCAwLS43NS0uMzM2LS43NS0uNzVzLjMzNi0uNzUuNzUtLjc1aDFjLjk2NSAwIDEuNzUuNzg1IDEuNzUgMS43NSAwIC4xMzguMTEyLjI1LjI1LjI1aDRjLjEzOCAwIC4yNS0uMTEyLjI1LS4yNSAwLS45NjUuNzg1LTEuNzUgMS43NS0xLjc1aDFjLjQxNCAwIC43NS4zMzYuNzUuNzVzLS4zMzYuNzUtLjc1Ljc1aC0xYy0uMTM4IDAtLjI1LjExMi0uMjUuMjUgMCAuOTY1LS43ODUgMS43NS0xLjc1IDEuNzV6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRjAwMDAiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+PHBhdGggZD0ibTIzLjI1IDIyLjI1Yy0uNDE0IDAtLjc1LS4zMzYtLjc1LS43NXYtMWMwLS4xMzgtLjExMi0uMjUtLjI1LS4yNS0uOTY1IDAtMS43NS0uNzg1LTEuNzUtMS43NXYtNGMwLS45NjUuNzg1LTEuNzUgMS43NS0xLjc1LjEzOCAwIC4yNS0uMTEyLjI1LS4yNXYtMWMwLS40MTQuMzM2LS43NS43NS0uNzVzLjc1LjMzNi43NS43NXYxYzAgLjk2NS0uNzg1IDEuNzUtMS43NSAxLjc1LS4xMzggMC0uMjUuMTEyLS4yNS4yNXY0YzAgLjEzOC4xMTIuMjUuMjUuMjUuOTY1IDAgMS43NS43ODUgMS43NSAxLjc1djFjMCAuNDE0LS4zMzYuNzUtLjc1Ljc1eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojRkYwMDAwIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPjxwYXRoIGQ9Im0xMi4yNSAyNGgtOS41Yy0xLjUxNyAwLTIuNzUtMS4yMzMtMi43NS0yLjc1di0xOC41YzAtMS41MTcgMS4yMzMtMi43NSAyLjc1LTIuNzVoOS41YzEuNTE3IDAgMi43NSAxLjIzMyAyLjc1IDIuNzV2MTguNWMwIDEuNTE3LTEuMjMzIDIuNzUtMi43NSAyLjc1em0tOS41LTIyLjVjLS42ODkgMC0xLjI1LjU2MS0xLjI1IDEuMjV2MTguNWMwIC42ODkuNTYxIDEuMjUgMS4yNSAxLjI1aDkuNWMuNjg5IDAgMS4yNS0uNTYxIDEuMjUtMS4yNXYtMTguNWMwLS42ODktLjU2MS0xLjI1LTEuMjUtMS4yNXoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0ZGMDAwMCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD48cGF0aCBkPSJtMjEuMjUgMjRoLTQuNWMtLjQxNCAwLS43NS0uMzM2LS43NS0uNzVzLjMzNi0uNzUuNzUtLjc1aDQuNWMuNjg5IDAgMS4yNS0uNTYxIDEuMjUtMS4yNXYtOS41YzAtLjY4OS0uNTYxLTEuMjUtMS4yNS0xLjI1aC00LjVjLS40MTQgMC0uNzUtLjMzNi0uNzUtLjc1cy4zMzYtLjc1Ljc1LS43NWg0LjVjMS41MTcgMCAyLjc1IDEuMjMzIDIuNzUgMi43NXY5LjVjMCAxLjUxNy0xLjIzMyAyLjc1LTIuNzUgMi43NXoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0ZGMDAwMCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD48cGF0aCBkPSJtMjEgN2MtLjIxOSAwLS40MjctLjA5Ni0uNTY5LS4yNjJsLTEuNS0xLjc1Yy0uMjctLjMxNC0uMjMzLS43ODguMDgxLTEuMDU4LjMxNi0uMjcuNzg5LS4yMzMgMS4wNTguMDgxbC45MyAxLjA4Ny45MzEtMS4wODZjLjI2OS0uMzE0Ljc0Mi0uMzUyIDEuMDU4LS4wODEuMzE0LjI3LjM1MS43NDMuMDgxIDEuMDU4bC0xLjUgMS43NWMtLjE0My4xNjUtLjM1MS4yNjEtLjU3LjI2MXoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0ZGMDAwMCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD48cGF0aCBkPSJtMjEgN2MtLjQxNCAwLS43NS0uMzM2LS43NS0uNzV2LTEuMjVjMC0xLjU5My0xLjA1MS0yLjc1LTIuNS0yLjc1LS40MTQgMC0uNzUtLjMzNi0uNzUtLjc1cy4zMzYtLjc1Ljc1LS43NWMyLjI4IDAgNCAxLjgyNyA0IDQuMjV2MS4yNWMwIC40MTQtLjMzNi43NS0uNzUuNzV6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRjAwMDAiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+PC9nPiA8L3N2Zz4=')
+
+
+@media screen and ( max-width: 1439.98px )
+    .menu
+        h2
+            font-size: 50px
+            padding-left: 40px
+        #flipbook
+            margin-top: 50px
+        .open-menu
+            font-size: 20px
+        .next,
+        .prev
+            width: 40px
+            height: 40px
+        .next
+            right: 40px
+        .prev
+            left: 40px
+
+@media screen and ( max-width: 1199.98px )
+    .menu
+        h2
+            font-size: 40px
+            padding-left: 40px
+            left: 40px
+
+@media screen and ( max-width: 767.98px )
+    .menu
+        h2
+            font-size: 40px
+            padding-left: 20px
+            left: 20px
+        
+        .open-menu,
+        #flipbook,
+        .button
+            transition: opacity .3s ease
+            pointer-events: all
+
+        .open-menu
+            font-size: 16px
+            left: 10%
+        
+        #flipbook
+            margin-top: 10px
+        .next,
+        .prev
+            width: 30px
+            height: 30px
+        .next
+            right: 20px
+        .prev
+            left: 20px
+
+@media screen and ( max-width: 549.98px )
+    .menu
+        .open-menu,
+        #flipbook,
+        .button
+            opacity: 0 !important
+            pointer-events: none
+        
+        .rotate
+            display: block
+
+
+@media screen and ( max-width: 374.98px )
+    .menu
+        h1
+            font-size: 35px
+        .open-menu
+            font-size: 16px
+        .next
+            right: 20px
+        .prev
+            left: 20px
