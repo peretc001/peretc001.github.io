@@ -30,8 +30,8 @@ gulp.task('browser-sync', function() {
 
 // Sass|Scss Styles
 gulp.task('styles', function() {
-	return gulp.src('app/'+syntax+'/**/*.'+syntax+'')
-	.pipe(sass({ outputStyle: 'expanded' }).on("error", notify.onError()))
+	return gulp.src(['app/scss/**/*.scss', 'app/sass/**/*.sass'])
+	.pipe(sass({ outputStyle: 'compressed' }).on("error", notify.onError()))
 	.pipe(rename({ suffix: '.min', prefix : '' }))
 	.pipe(autoprefixer({
 		grid: true,
@@ -61,7 +61,8 @@ gulp.task('code', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch('app/'+syntax+'/**/*.'+syntax+'', gulp.parallel('styles'));
+	gulp.watch('app/sass/**/*.sass', gulp.parallel('styles'));
+	gulp.watch('app/scss/**/*.scss', gulp.parallel('styles'));
 	gulp.watch(['app/js/common.js'], gulp.parallel('scripts'));
 	gulp.watch(['app/js/vue.js'], gulp.parallel('scripts'));
 	gulp.watch('app/*.html', gulp.parallel('code'));
