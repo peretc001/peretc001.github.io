@@ -7,6 +7,8 @@
         margin: 2rem auto 1rem auto;
         font-size: 1.5em;
         text-align: center;
+        color: $text !important;
+        font-style: normal !important;
     }
 
     &--container {
@@ -17,13 +19,12 @@
     }
 
     &--item {
-        flex: 0 0 33.333%;
+        flex: 0 0 50%;
         list-style: none;
         padding: .5em;
         margin: 0;
         margin-top: 2em;
         height: auto;
-        max-height: 300px;
         opacity: 1;
         overflow: visible;
         transition: max-height .3s ease, opacity .3s ease;
@@ -43,12 +44,18 @@
         text-align: center;
         color: $text;
         font-size: 1.2em;
+        line-height: 1.2 !important;
+        margin-bottom: 0.5em !important;
+
+        &:before {
+            display: none !important;
+        }
     }
 
     img {
         display: block;
         max-width: 100%;
-        margin: 0 auto;
+        margin: 0 auto !important;
         margin-bottom: 1em;
     }
 
@@ -61,6 +68,8 @@
         position: relative;
         text-align: center;
         font-size: 1.3em;
+        cursor: pointer;
+        
         &:before {
             content: 'Показать '
         }
@@ -72,12 +81,6 @@
         }
 
 
-    }
-
-    @media screen and (max-width: 767.98px) {
-        &--item {
-            flex: 0 0 50%;
-        }
     }
       
 }

@@ -31,9 +31,15 @@ body {
 
 
 @import 'nav';
+@import 'nav-menu';
 @import 'slider';
 @import 'rest-menu';
 @import 'footer';
+
+.art-post {
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
 
 @media screen and (max-width: 374.98px) {
   body {

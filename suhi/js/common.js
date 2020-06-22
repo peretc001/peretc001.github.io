@@ -90,13 +90,9 @@ document.addEventListener("DOMContentLoaded", function() {
             showItems.forEach(item => item.classList.toggle('hidden'))
             showMore.classList.toggle('active')
         })
-
     }
 
 
-});
-
-jQuery(document).ready(function () {
 
     jQuery('.slider-container').slick({
         lazy: 'ondemand',
@@ -111,7 +107,5 @@ jQuery(document).ready(function () {
         autoplay: true,
         autoplaySpeed: 2000
     });
-
-    jQuery('.lazy').Lazy();
 
 });
