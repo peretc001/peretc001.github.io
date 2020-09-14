@@ -1,0 +1,74 @@
+$monarch: #7E0C21;
+$alabaster: #FAFAFA;
+$concrete: #F2F2F2;
+$frenchGray: #C6C6C7;
+$mercury: #E5E5E5;
+$vermilion: #F93C00;
+$japaneseLaurel: #00A200;
+$grayNickel: #C2C2C1;
+$black: #000000;
+$white: #fff;
+$gray: #888888;
+
+$path: '/img/';
+
+@mixin icon($color, $img, $size, $position) {
+  background-color: $color;
+  background-image: url($path + $img);
+  background-size: $size;
+  background-position: $position;
+  background-repeat: no-repeat;
+}
+
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    src: url('#{$file-path}.eot');
+    src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype');
+  }
+}
+@include font-face(GothamPro, '../fonts/GothamPro')
+@include font-face(GothamPro, '../fonts/GothamPro-Bold', bold)
+@include font-face(Roboto, '../fonts/Roboto/Roboto-Bold', bold)
+@include font-face(Roboto, '../fonts/Roboto/Roboto-Regular')
+
+$font: 'GothamPro', sans-serif;
+
+
+@mixin mobile-s {
+  @media screen and (max-width: 374.98px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 576.98px) {
+    @content;
+  }
+}
+
+@mixin mobile-xl {
+  @media screen and (max-width: 767.98px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 991.98px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (max-width: 1199.98px) {
+    @content;
+  }
+}
+
+@mixin notebook {
+  @media screen and (max-width: 1299.98px) {
+    @content;
+  }
+}

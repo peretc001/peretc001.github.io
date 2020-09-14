@@ -1,0 +1,36 @@
+@import 'vars';
+@import 'bootstrap_grid';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-size: 16px;
+  font-family: $font !important;
+  min-width: 320px;
+  position: relative;
+  line-height: 1.2;
+  overflow-x: hidden;
+  color: $black;
+
+  &.no-scroll:not(.modal) {
+    overflow: hidden;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1140px;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+@import 'header';
+@import 'footer';
+@import 'product';
