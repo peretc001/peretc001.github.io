@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./js/slick/slick.css">
     <link rel="stylesheet" href="./css/style.min.css">
 </head>
 <body>
@@ -136,12 +137,10 @@
                 </ul>
                 </div>
                 <div class="gallery-column">
-                    <ul class="gallery">
-                    <li><img src="https://paradoxdev.ru/image/cache/catalog/product/03_Confection/Dresses/20-03-20/2648/h/1-8Lr-228x2281.jpg" title="Платья New Color" alt="Платья New Color" /></li>
-                    <li><img src="https://paradoxdev.ru/image/cache/catalog/product/03_Confection/Dresses/20-03-20/2648/h/1-7Lr-493x6841.jpg" title="Платья New Color" alt="Платья New Color" /></li>
-                    <li><img src="https://paradoxdev.ru/image/cache/catalog/product/03_Confection/Dresses/20-03-20/2648/h/1-2Lr-493x6841.jpg" title="Платья New Color" alt="Платья New Color" /></li>
-                    <li><img src="https://paradoxdev.ru/image/cache/catalog/product/03_Confection/Dresses/20-03-20/2648/h/1-10Lr-493x6841.jpg" title="Платья New Color" alt="Платья New Color" /></li>
-                </ul>
+                    <img src="https://paradoxdev.ru/image/cache/catalog/product/03_Confection/Dresses/20-03-20/2648/h/1-2Lr-493x6841.jpg" title="Платья New Color" alt="Платья New Color" />
+                    <img src="https://paradoxdev.ru/image/cache/catalog/product/03_Confection/Dresses/20-03-20/2648/h/1-7Lr-493x6841.jpg" title="Платья New Color" alt="Платья New Color" />
+                    <img src="https://paradoxdev.ru/image/cache/catalog/product/03_Confection/Dresses/20-03-20/2648/h/1-2Lr-493x6841.jpg" title="Платья New Color" alt="Платья New Color" />
+                    <img src="https://paradoxdev.ru/image/cache/catalog/product/03_Confection/Dresses/20-03-20/2648/h/1-10Lr-493x6841.jpg" title="Платья New Color" alt="Платья New Color" />
                 </div>
             </div>
 
@@ -153,7 +152,7 @@
                     <div class="color-block">
                         <p>Цвет:</p>
                         <div class="colors">
-                            <span class="green active"></span>
+                            <a><span class="green active"></span></a>
                             <a href=""><span class="red"></span></a>
                             <a href=""><span class="black"></span></a>
                         </div>
@@ -167,542 +166,743 @@
                 </div>
 
                 <div class="product-item--size">
-
-                </div>
-
-
-                <div>
-                    <h3>Доступные опции</h3>
-                    <div class="form-group required">
-                        <label class="control-label">Доступные размеры</label>
-                        <div id="input-option6917">
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="option[6917]" value="212684" />
-
-                                    50                                      </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="option[6917]" value="212685" />
-
-                                    52                                      </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="option[6917]" value="212686" />
-
-                                    54                                      </label>
-                            </div>
+                    <div class="size-header">
+                        <p>Размер:</p>
+                        <p class="sizes-modal-caption" data-toggle="modal" data-target="#size">Таблица размеров</p>
+                    </div>
+                    <div class="size-items">
+                        <div class="radio">
+                            <input id="option1" type="radio" name="option[6917]" value="212684" />
+                            <label for="option1" data-size="50">50</label>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label" for="input-quantity">Кол-во</label>
-                        <input type="text" name="quantity" value="1" size="2" id="input-quantity" class="form-control" />
-                        <input type="hidden" name="product_id" value="1434" />
-                        <br />
-                        <button type="button" id="button-cart" data-loading-text="Загрузка..." class="btn btn-primary btn-lg btn-block">В корзину</button>
-                    </div>
-
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a href="#tab-description" data-toggle="tab">Описание</a></li>
-                        <li><a href="#tab-review" data-toggle="tab">Отзывы (0)</a></li>
-                    </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="tab-description">
-
-
-                            <table class="table table-bordered">
-                                <thead>
-                                <tr>
-                                    <td colspan="2"><strong>Размер</strong></td>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>Цвет</td>
-                                    <td>хаки</td>
-                                </tr>
-                                </tbody>
-                            </table>
-
-
+                        <div class="radio">
+                            <input id="option2" type="radio" name="option[6917]" value="212685" />
+                            <label for="option2" data-size="52">52</label>
+                        </div>
+                        <div class="radio">
+                            <input id="option3" type="radio" name="option[6917]" value="212686" />
+                            <label for="option3" data-size="54">54</label>
                         </div>
 
-                        <div class="tab-pane" id="tab-review">
-                            <form class="form-horizontal" id="form-review">
-                                <div id="review"></div>
-                                <h2>Написать отзыв</h2>
-                                <div class="form-group required">
-                                    <div class="col-sm-12">
-                                        <label class="control-label" for="input-name">Ваше имя:</label>
-                                        <input type="text" name="name" value="" id="input-name" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="form-group required">
-                                    <div class="col-sm-12">
-                                        <label class="control-label" for="input-review">Ваш отзыв</label>
-                                        <textarea name="text" rows="5" id="input-review" class="form-control"></textarea>
-                                        <div class="help-block"><span class="text-danger">Внимание:</span> HTML не поддерживается! Используйте обычный текст!</div>
-                                    </div>
-                                </div>
-                                <div class="form-group required">
-                                    <div class="col-sm-12">
-                                        <label class="control-label">Рейтинг</label>
-                                        &nbsp;&nbsp;&nbsp; Плохо&nbsp;
-                                        <input type="radio" name="rating" value="1" />
-                                        &nbsp;
-                                        <input type="radio" name="rating" value="2" />
-                                        &nbsp;
-                                        <input type="radio" name="rating" value="3" />
-                                        &nbsp;
-                                        <input type="radio" name="rating" value="4" />
-                                        &nbsp;
-                                        <input type="radio" name="rating" value="5" />
-                                        &nbsp;Хорошо</div>
-                                </div>
-                                <div class="buttons clearfix">
-                                    <div class="pull-right">
-                                        <button type="button" id="button-review" data-loading-text="Загрузка..." class="btn btn-primary">Продолжить</button>
-                                    </div>
-                                </div>
-                            </form>
+                        <div class="sizes-hover">
+                            <div class="sizes-param">
+                                <p>A - обхват груди <span class="js-size a-size">75-76</span> см</p>
+                                <p>B - обхват талии <span class="js-size b-size">60-62</span> см</p>
+                                <p>C - обхват бедер <span class="js-size c-size">84-86</span> см</p>
+                            </div>
+                            <div class="sizes-img"><img src="./img/sizes-dress.svg" alt=""></div>
                         </div>
                     </div>
                 </div>
-                <div class="rating">
-                        <p>
-                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-                            <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;">0 отзывов</a> / <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;">Написать отзыв</a></p>
-                        <hr>
-                        <!-- AddThis Button BEGIN -->
-                        <div class="addthis_toolbox addthis_default_style" data-url="https://paradoxdev.ru/jenskaya-odejda/platya/plat-ya-new-color-haki-30"><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a> <a class="addthis_button_tweet"></a> <a class="addthis_button_pinterest_pinit"></a> <a class="addthis_counter addthis_pill_style"></a></div>
-                        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-515eeaf54693130e"></script>
-                        <!-- AddThis Button END -->
+
+                <div class="product-item--buy">
+                    <button class="btn btn-buy">Добавить в корзину</button>
+                    <button class="btn-fast" data-toggle="modal" data-target="#fast">Купить в 1 клик</button>
+                </div>
+
+                <div class="product-item--tabs">
+                    <span class="active">Детали</span>
+                    <span data-tab="review">Доставка и оплата</span>
+                </div>
+
+                <div class="product-item--tabs-content">
+                    <div class="tabs-item active">
+                        <p>Состав: 100% хлопок</p>
+                        <p>Страна-производитель: КИТАЙ</p>
+                        <p>Уход: Бережная стирка при максимальной температуре 30ºС, Не отбеливать, Машинная сушка запрещена, Глажение при 150ºС, Профессиональная сухая чистка. Мягкий режим.</p>
+                        <p>Арт. 15869562852</p>
                     </div>
+
+                    <div class="tabs-item">
+                        <p>Подробно про доставку и оплату</p>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <h3>Рекомендуемые товары</h3>
-        <div class="row">
-            <div class="col-xs-6 col-md-4">
-                    <div class="product-thumb transition">
-                        <div class="image"><a href="https://paradoxdev.ru/jenskaya-odejda/platya/plat-ya-new-color-kirpichnyy-16"><img src="https://paradoxdev.ru/image/cache/catalog/product/03_Confection/Dresses/20-03-20/2648/k/1-2Lr-80x80.jpg" alt="Платья New Color кирпичный" title="Платья New Color кирпичный" class="img-responsive" /></a></div>
-                        <div class="caption">
-                            <h4><a href="https://paradoxdev.ru/jenskaya-odejda/platya/plat-ya-new-color-kirpichnyy-16">Платья New Color кирпичный</a></h4>
-                            <p>Платья New Color кирпичный..</p>
-                            <p class="price">
-                                <span class="price-new">2 847 р.</span> <span class="price-old">4 150 р.</span>
-                                <span class="price-tax">Без НДС: 2 847 р.</span>
-                            </p>
-                        </div>
-                        <div class="button-group">
-                            <button type="button" onclick="cart.add('1429', '1');"><span class="hidden-xs hidden-sm hidden-md">В корзину</span> <i class="fa fa-shopping-cart"></i></button>
-                            <button type="button" data-toggle="tooltip" title="В закладки" onclick="wishlist.add('1429');"><i class="fa fa-heart"></i></button>
-                            <button type="button" data-toggle="tooltip" title="В сравнение" onclick="compare.add('1429');"><i class="fa fa-exchange"></i></button>
+        <div class="recent">
+            <h4>Сопутствующие товары</h4>
+
+            <div class="recent-products">
+
+                <div class="catalog-product">
+
+                    <div class="catalog-product__img">
+                        <div class="additional-image">
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
                         </div>
                     </div>
+
+                    <div class="catalog-product__info">
+
+                        <div class="catalog-product__image">
+                            <a href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">
+                                <img src="https://paradoxdev.ru/image/cache/catalog/product/03_Confection/Dresses/20-03-20/2692/r/1-2Lr-493x6841.jpg" alt="" />
+                            </a>
+                            <div class="badge">
+                                <div class="catalog-product__new">NEW</div>
+                            </div>
+                        </div>
+
+
+                        <h3 class="catalog-product__name">
+                            <a href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">Женские Плащи </a>
+                        </h3>
+
+
+                        <div class="catalog-product__price">
+                            6 190 р.                                                                    </div>
+
+                        <div class="catalog-product__bottom">
+                            <div class="catalog-product__size">
+                                <div class="catalog-product__size-label">Размеры:</div>
+
+                                <div class="catalog-product__size-item">48</div>
+                                <div class="catalog-product__size-item">55</div>
+                                <div class="catalog-product__size-item">49</div>
+                                <div class="catalog-product__size-item">50</div>
+                                <div class="catalog-product__size-item">52</div>
+                                <div class="catalog-product__size-item">53</div>
+                                <div class="catalog-product__size-item">56</div>
+                            </div>
+                            <a class="catalog-product__btn" href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">Подробнее</a>
+                        </div>
+
+                    </div>
+
                 </div>
+
+                <div class="catalog-product">
+
+                    <div class="catalog-product__img">
+                        <div class="additional-image">
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                        </div>
+                    </div>
+
+                    <div class="catalog-product__info">
+
+                        <div class="catalog-product__image">
+                            <a href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">
+                                <img src="https://paradoxdev.ru/image/cache/catalog/product/03_Confection/Dresses/20-03-20/2642/k/1Lr-493x6841.jpg" alt="" />
+                            </a>
+                            <div class="badge">
+                                <div class="catalog-product__new">NEW</div>
+                            </div>
+                        </div>
+
+
+                        <h3 class="catalog-product__name">
+                            <a href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">Женские Плащи </a>
+                        </h3>
+
+
+                        <div class="catalog-product__price">
+                            6 190 р.                                                                    </div>
+
+                        <div class="catalog-product__bottom">
+                            <div class="catalog-product__size">
+                                <div class="catalog-product__size-label">Размеры:</div>
+
+                                <div class="catalog-product__size-item">48</div>
+                                <div class="catalog-product__size-item">55</div>
+                                <div class="catalog-product__size-item">49</div>
+                                <div class="catalog-product__size-item">50</div>
+                                <div class="catalog-product__size-item">52</div>
+                                <div class="catalog-product__size-item">53</div>
+                                <div class="catalog-product__size-item">56</div>
+                            </div>
+                            <a class="catalog-product__btn" href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">Подробнее</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="catalog-product">
+
+                    <div class="catalog-product__img">
+                        <div class="additional-image">
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                        </div>
+                    </div>
+
+                    <div class="catalog-product__info">
+
+                        <div class="catalog-product__image">
+                            <a href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">
+                                <img src="https://paradoxdev.ru/image/cache/catalog/product/03_Confection/Dresses/20-03-20/2648/k/1-2Lr-493x6841.jpg" alt="" />
+                            </a>
+                            <div class="badge">
+                                <div class="catalog-product__new">NEW</div>
+                            </div>
+                        </div>
+
+
+                        <h3 class="catalog-product__name">
+                            <a href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">Женские Плащи </a>
+                        </h3>
+
+
+                        <div class="catalog-product__price">
+                            6 190 р.                                                                    </div>
+
+                        <div class="catalog-product__bottom">
+                            <div class="catalog-product__size">
+                                <div class="catalog-product__size-label">Размеры:</div>
+
+                                <div class="catalog-product__size-item">48</div>
+                                <div class="catalog-product__size-item">55</div>
+                                <div class="catalog-product__size-item">49</div>
+                                <div class="catalog-product__size-item">50</div>
+                                <div class="catalog-product__size-item">52</div>
+                                <div class="catalog-product__size-item">53</div>
+                                <div class="catalog-product__size-item">56</div>
+                            </div>
+                            <a class="catalog-product__btn" href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">Подробнее</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="catalog-product">
+
+                    <div class="catalog-product__img">
+                        <div class="additional-image">
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                        </div>
+                    </div>
+
+                    <div class="catalog-product__info">
+
+                        <div class="catalog-product__image">
+                            <a href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">
+                                <img src="https://paradoxdev.ru/image/cache/catalog/product/02_Kurtki/20-02-20_City/637/myt/1-2Lr-493x6841.jpg" alt="Женские Плащи " title="Женские Плащи " class="img-responsive">
+                            </a>
+                            <div class="badge">
+                                <div class="catalog-product__new">NEW</div>
+                            </div>
+                        </div>
+
+
+                        <h3 class="catalog-product__name">
+                            <a href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">Женские Плащи </a>
+                        </h3>
+
+
+                        <div class="catalog-product__price">
+                            6 190 р.                                                                    </div>
+
+                        <div class="catalog-product__bottom">
+                            <div class="catalog-product__size">
+                                <div class="catalog-product__size-label">Размеры:</div>
+
+                                <div class="catalog-product__size-item">48</div>
+                                <div class="catalog-product__size-item">55</div>
+                                <div class="catalog-product__size-item">49</div>
+                                <div class="catalog-product__size-item">50</div>
+                                <div class="catalog-product__size-item">52</div>
+                                <div class="catalog-product__size-item">53</div>
+                                <div class="catalog-product__size-item">56</div>
+                            </div>
+                            <a class="catalog-product__btn" href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">Подробнее</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="catalog-product">
+
+                    <div class="catalog-product__img">
+                        <div class="additional-image">
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                        </div>
+                    </div>
+
+                    <div class="catalog-product__info">
+
+                        <div class="catalog-product__image">
+                            <a href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">
+                                <img src="https://paradoxdev.ru/image/cache/catalog/product/02_Kurtki/20-02-20_City/637/myt/1-2Lr-493x6841.jpg" alt="Женские Плащи " title="Женские Плащи " class="img-responsive">
+                            </a>
+                            <div class="badge">
+                                <div class="catalog-product__new">NEW</div>
+                            </div>
+                        </div>
+
+
+                        <h3 class="catalog-product__name">
+                            <a href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">Женские Плащи </a>
+                        </h3>
+
+
+                        <div class="catalog-product__price">
+                            6 190 р.                                                                    </div>
+
+                        <div class="catalog-product__bottom">
+                            <div class="catalog-product__size">
+                                <div class="catalog-product__size-label">Размеры:</div>
+
+                                <div class="catalog-product__size-item">48</div>
+                                <div class="catalog-product__size-item">55</div>
+                                <div class="catalog-product__size-item">49</div>
+                                <div class="catalog-product__size-item">50</div>
+                                <div class="catalog-product__size-item">52</div>
+                                <div class="catalog-product__size-item">53</div>
+                                <div class="catalog-product__size-item">56</div>
+                            </div>
+                            <a class="catalog-product__btn" href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">Подробнее</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="recent">
+            <h4>вы недавно просматривали</h4>
+
+            <div class="recent-products">
+
+                <div class="catalog-product">
+
+                    <div class="catalog-product__img">
+                        <div class="additional-image">
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                        </div>
+                    </div>
+
+                    <div class="catalog-product__info">
+
+                        <div class="catalog-product__image">
+                            <a href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">
+                                <img src="https://paradoxdev.ru/image/cache/catalog/product/03_Confection/Dresses/20-03-20/2692/r/1-2Lr-493x6841.jpg" alt="" />
+                            </a>
+                            <div class="badge">
+                                <div class="catalog-product__new">NEW</div>
+                                <div class="catalog-product__sale">SALE</div>
+                            </div>
+                        </div>
+
+
+                        <h3 class="catalog-product__name">
+                            <a href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">Женские Плащи </a>
+                        </h3>
+
+
+                        <div class="catalog-product__price">
+                            6 190 р.                                                                    </div>
+
+                        <div class="catalog-product__bottom">
+                            <div class="catalog-product__size">
+                                <div class="catalog-product__size-label">Размеры:</div>
+
+                                <div class="catalog-product__size-item">48</div>
+                                <div class="catalog-product__size-item">55</div>
+                                <div class="catalog-product__size-item">49</div>
+                                <div class="catalog-product__size-item">50</div>
+                                <div class="catalog-product__size-item">52</div>
+                                <div class="catalog-product__size-item">53</div>
+                                <div class="catalog-product__size-item">56</div>
+                            </div>
+                            <a class="catalog-product__btn" href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">Подробнее</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="catalog-product">
+
+                    <div class="catalog-product__img">
+                        <div class="additional-image">
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                        </div>
+                    </div>
+
+                    <div class="catalog-product__info">
+
+                        <div class="catalog-product__image">
+                            <a href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">
+                                <img src="https://paradoxdev.ru/image/cache/catalog/product/03_Confection/Dresses/20-03-20/2642/k/1Lr-493x6841.jpg" alt="" />
+                            </a>
+                            <div class="badge">
+                                <div class="catalog-product__new">NEW</div>
+                                <div class="catalog-product__sale">SALE</div>
+                            </div>
+                        </div>
+
+
+                        <h3 class="catalog-product__name">
+                            <a href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">Женские Плащи </a>
+                        </h3>
+
+
+                        <div class="catalog-product__price">
+                            6 190 р.                                                                    </div>
+
+                        <div class="catalog-product__bottom">
+                            <div class="catalog-product__size">
+                                <div class="catalog-product__size-label">Размеры:</div>
+
+                                <div class="catalog-product__size-item">48</div>
+                                <div class="catalog-product__size-item">55</div>
+                                <div class="catalog-product__size-item">49</div>
+                                <div class="catalog-product__size-item">50</div>
+                                <div class="catalog-product__size-item">52</div>
+                                <div class="catalog-product__size-item">53</div>
+                                <div class="catalog-product__size-item">56</div>
+                            </div>
+                            <a class="catalog-product__btn" href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">Подробнее</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="catalog-product">
+
+                    <div class="catalog-product__img">
+                        <div class="additional-image">
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                        </div>
+                    </div>
+
+                    <div class="catalog-product__info">
+
+                        <div class="catalog-product__image">
+                            <a href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">
+                                <img src="https://paradoxdev.ru/image/cache/catalog/product/03_Confection/Dresses/20-03-20/2648/k/1-2Lr-493x6841.jpg" alt="" />
+                            </a>
+                            <div class="badge">
+                                <div class="catalog-product__new">NEW</div>
+                                <div class="catalog-product__sale">SALE</div>
+                            </div>
+                        </div>
+
+
+                        <h3 class="catalog-product__name">
+                            <a href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">Женские Плащи </a>
+                        </h3>
+
+
+                        <div class="catalog-product__price">
+                            6 190 р.                                                                    </div>
+
+                        <div class="catalog-product__bottom">
+                            <div class="catalog-product__size">
+                                <div class="catalog-product__size-label">Размеры:</div>
+
+                                <div class="catalog-product__size-item">48</div>
+                                <div class="catalog-product__size-item">55</div>
+                                <div class="catalog-product__size-item">49</div>
+                                <div class="catalog-product__size-item">50</div>
+                                <div class="catalog-product__size-item">52</div>
+                                <div class="catalog-product__size-item">53</div>
+                                <div class="catalog-product__size-item">56</div>
+                            </div>
+                            <a class="catalog-product__btn" href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">Подробнее</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="catalog-product">
+
+                    <div class="catalog-product__img">
+                        <div class="additional-image">
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                        </div>
+                    </div>
+
+                    <div class="catalog-product__info">
+
+                        <div class="catalog-product__image">
+                            <a href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">
+                                <img src="https://paradoxdev.ru/image/cache/catalog/product/02_Kurtki/20-02-20_City/637/myt/1-2Lr-493x6841.jpg" alt="Женские Плащи " title="Женские Плащи " class="img-responsive">
+                            </a>
+                            <div class="badge">
+                                <div class="catalog-product__new">NEW</div>
+                                <div class="catalog-product__sale">SALE</div>
+                            </div>
+                        </div>
+
+
+                        <h3 class="catalog-product__name">
+                            <a href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">Женские Плащи </a>
+                        </h3>
+
+
+                        <div class="catalog-product__price">
+                            6 190 р.                                                                    </div>
+
+                        <div class="catalog-product__bottom">
+                            <div class="catalog-product__size">
+                                <div class="catalog-product__size-label">Размеры:</div>
+
+                                <div class="catalog-product__size-item">48</div>
+                                <div class="catalog-product__size-item">55</div>
+                                <div class="catalog-product__size-item">49</div>
+                                <div class="catalog-product__size-item">50</div>
+                                <div class="catalog-product__size-item">52</div>
+                                <div class="catalog-product__size-item">53</div>
+                                <div class="catalog-product__size-item">56</div>
+                            </div>
+                            <a class="catalog-product__btn" href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">Подробнее</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="catalog-product">
+
+                    <div class="catalog-product__img">
+                        <div class="additional-image">
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="additional_image-item --><!--"-->
+                            <!--                                 data-href="--><!--">-->
+                            <!--                                <img src="--><!--" alt="--><!--"-->
+                            <!--                                     title="--><!--"/>-->
+                            <!--                            </div>-->
+                        </div>
+                    </div>
+
+                    <div class="catalog-product__info">
+
+                        <div class="catalog-product__image">
+                            <a href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">
+                                <img src="https://paradoxdev.ru/image/cache/catalog/product/02_Kurtki/20-02-20_City/637/myt/1-2Lr-493x6841.jpg" alt="Женские Плащи " title="Женские Плащи " class="img-responsive">
+                            </a>
+                            <div class="badge">
+                                <div class="catalog-product__new">NEW</div>
+                                <div class="catalog-product__sale">SALE</div>
+                            </div>
+                        </div>
+
+
+                        <h3 class="catalog-product__name">
+                            <a href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">Женские Плащи </a>
+                        </h3>
+
+
+                        <div class="catalog-product__price">
+                            6 190 р.                                                                    </div>
+
+                        <div class="catalog-product__bottom">
+                            <div class="catalog-product__size">
+                                <div class="catalog-product__size-label">Размеры:</div>
+
+                                <div class="catalog-product__size-item">48</div>
+                                <div class="catalog-product__size-item">55</div>
+                                <div class="catalog-product__size-item">49</div>
+                                <div class="catalog-product__size-item">50</div>
+                                <div class="catalog-product__size-item">52</div>
+                                <div class="catalog-product__size-item">53</div>
+                                <div class="catalog-product__size-item">56</div>
+                            </div>
+                            <a class="catalog-product__btn" href="https://paradoxdev.ru/jenskaya-odejda/verkhnyaya-odezhda/kurtki/plaschi-myata-60">Подробнее</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
     </div>
-    <aside id="column-right" class="col-sm-3 hidden-xs">
-        <div>
-            <ul class="nav nav-tabs">
-                <li class="active"><a href="#tab-woman" data-toggle="tab">Женский размеры</a></li>
-                <li><a href="#tab-man" data-toggle="tab">Мужские размеры</a></li>
-            </ul>
-            <div class="tab-content">
-                <div class="tab-pane active" id="tab-woman">
-                    <table>
-                        <tbody><tr>
-                            <td>Размер</td>
-                            <td>A (обхват груди, см)</td>
-                            <td>В (обхват талии, см)</td>
-                            <td>С (обхват бедер, см)</td>
-                            <td>D (рост, см)</td>
-                            <td>E (длина рукава, см)</td>
-                        </tr>
-                        <tr>
-                            <td>38</td>
-                            <td>75-76</td>
-                            <td>60-62</td>
-                            <td>84-86</td>
-                            <td>164</td>
-                            <td>61</td>
-                        </tr>
-                        <tr>
-                            <td>40</td>
-                            <td>79-80</td>
-                            <td>63-65</td>
-                            <td>88-90</td>
-                            <td>164</td>
-                            <td>62</td>
-                        </tr>
-                        <tr>
-                            <td>42</td>
-                            <td>83-84</td>
-                            <td>66-69</td>
-                            <td>92-94</td>
-                            <td>164</td>
-                            <td>63</td>
-                        </tr>
-                        <tr>
-                            <td>44</td>
-                            <td>87-88</td>
-                            <td>70-73</td>
-                            <td>96-98</td>
-                            <td>164-170</td>
-                            <td>63</td>
-                        </tr>
-                        <tr>
-                            <td>46</td>
-                            <td>91-92</td>
-                            <td>74-77</td>
-                            <td>99-102</td>
-                            <td>164-170</td>
-                            <td>63</td>
-                        </tr>
-                        <tr>
-                            <td>48</td>
-                            <td>95-96</td>
-                            <td>78-81</td>
-                            <td>103-106</td>
-                            <td>164-170</td>
-                            <td>63</td>
-                        </tr>
-                        <tr>
-                            <td>50</td>
-                            <td>99-100</td>
-                            <td>82-86</td>
-                            <td>107-110</td>
-                            <td>164-170</td>
-                            <td>63</td>
-                        </tr>
-                        <tr>
-                            <td>52</td>
-                            <td>103-105</td>
-                            <td>87-91</td>
-                            <td>111-115</td>
-                            <td>164-170</td>
-                            <td>63</td>
-                        </tr>
-                        <tr>
-                            <td>54</td>
-                            <td>107-109</td>
-                            <td>92-96</td>
-                            <td>116-120</td>
-                            <td>164-170</td>
-                            <td>63</td>
-                        </tr>
-                        <tr>
-                            <td>56</td>
-                            <td>112</td>
-                            <td>97-100</td>
-                            <td>121-123</td>
-                            <td><br></td>
-                            <td>64</td>
-                        </tr>
-                        <tr>
-                            <td>58</td>
-                            <td>116</td>
-                            <td>100-102</td>
-                            <td>123-125</td>
-                            <td><br></td>
-                            <td>64</td>
-                        </tr>
-                        <tr>
-                            <td>60</td>
-                            <td>120</td>
-                            <td>103-108</td>
-                            <td>126-130</td>
-                            <td><br></td>
-                            <td>64</td>
-                        </tr>
-                        <tr>
-                            <td>62</td>
-                            <td>124</td>
-                            <td>109-111</td>
-                            <td>131-133</td>
-                            <td><br></td>
-                            <td>64</td>
-                        </tr>
-                        <tr>
-                            <td>64</td>
-                            <td>128</td>
-                            <td>111-114</td>
-                            <td>133-135</td>
-                            <td><br></td>
-                            <td>64</td>
-                        </tr>
-                        <tr>
-                            <td>66</td>
-                            <td>132</td>
-                            <td>115-117</td>
-                            <td>136-138</td>
-                            <td><br></td>
-                            <td>64</td>
-                        </tr>
-                        <tr>
-                            <td>68</td>
-                            <td>136</td>
-                            <td>117-120</td>
-                            <td>138-141</td>
-                            <td><br></td>
-                            <td>64</td>
-                        </tr>
-                        <tr>
-                            <td>70</td>
-                            <td>140</td>
-                            <td>121-126</td>
-                            <td>142-147</td>
-                            <td><br></td>
-                            <td><br></td>
-                        </tr>
-                        <tr>
-                            <td>72/74</td>
-                            <td>144-149</td>
-                            <td><br></td>
-                            <td><br></td>
-                            <td><br></td>
-                            <td><br></td>
-                        </tr>
-                        <tr>
-                            <td>76</td>
-                            <td>150-155</td>
-                            <td><br></td>
-                            <td><br></td>
-                            <td><br></td>
-                            <td><br></td>
-                        </tr>
-                        </tbody></table>
-                    <div class="icon_tables">
-
-                        <svg width="100%" height="100%" viewBox="0 0 202 395" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
-    <g id="w" transform="matrix(0.471113,0,0,0.471113,-234.004,-41.831)">
-    <g id="девушка" transform="matrix(2.12263,0,0,2.12263,496.703,88.7917)">
-    <path d="M98.938,11.617L99.137,11.617C99.956,11.618 102.974,11.62 103.114,11.625C106.531,11.734 110.748,13.014 112.726,16.271C114.894,19.843 111.73,24.427 111.73,24.427C115.581,25.412 118.938,28.149 120.392,31.786C122.591,37.29 122.182,43.571 119.951,48.964C119.389,50.323 118.293,52.017 118.293,52.017C118.384,53.553 118.302,55.155 117.611,56.529C117.242,57.263 116.342,57.88 116.342,57.88C115.324,61.924 114.316,66.613 111.257,68.474C110.996,73.452 110.848,79.776 114.25,84.307C116.898,87.833 121.378,88.712 125.668,88.718C128.183,88.715 130.727,89.1 132.877,90.321C135.849,92.008 136.946,95.379 137.402,98.68C139.568,114.372 139.238,130.362 141.007,146.188C141.629,151.753 143.558,156.627 144.728,161.88C146.409,169.587 147.837,177.327 149.361,185.045L150.809,191.153C151.658,195.028 152.819,198.986 154.942,202.361C156.874,205.376 157.13,209.188 157.33,212.79C157.421,214.44 157.593,216.098 156.852,217.371C154.948,220.642 152.25,223.438 149.311,225.865C147.98,226.964 146.637,228.197 145.112,228.294C143.748,228.38 148.389,221.307 149.847,218.625C150.748,216.968 149.979,212.004 148.043,212.031C143.813,212.089 145.379,214.638 144.654,217.295C143.743,220.632 142.004,221.346 141.887,220.238C141.59,217.42 141.69,217.348 141.693,214.456C141.706,211.317 142.455,208.676 143.088,205.649C144.14,200.623 143.161,194.235 141.335,189.143C141.243,188.888 141.225,188.822 141.015,188.348C138.023,181.707 134.975,175.094 132.266,168.339C130.999,165.159 129.135,162.275 128.554,158.976C127.013,150.222 127.25,141.189 125.593,132.574L125.554,132.703C124.019,137.695 122.408,142.666 120.262,147.463C118.386,151.655 119.521,156.051 121.841,159.495C125.652,165.15 128.962,170.201 131.356,176.016C133.432,181.056 135.528,186.099 136.645,191.343C138.731,201.136 137.663,211.25 135.891,221.092C132.832,238.077 128.286,254.925 123.875,271.824C123.125,274.696 123.135,277.368 123.471,280.13C124.658,289.694 125.971,299.386 125.011,308.918C123.638,322.561 120.258,335.877 117.667,349.276C117.228,351.541 116.601,353.813 116.713,356.01C116.935,359.306 116.852,365.139 116.852,365.139C117.323,367.118 118.14,369.025 119.373,370.634C121.476,373.339 121.27,376.959 123.079,379.203C124.209,380.553 125.017,383.584 123.501,385.02C123.23,385.277 122.812,385.422 122.812,385.422C122.098,385.842 121.441,386.394 120.638,386.593C120.36,386.662 120.228,386.692 119.788,386.732C119.788,386.732 119.156,386.827 118.713,387.015C117.32,387.63 116.157,387.451 114.81,387.368C114.81,387.368 113.771,387.838 113.02,387.837C110.255,387.804 106.433,388.09 104.976,385.674C103.011,382.415 102.421,378.469 103.333,372.923C103.974,369.029 102.833,365.28 102.647,361.511C102.555,359.661 102.946,356.939 102.946,356.939C103.544,355.638 104.163,354.314 104.235,352.933C104.532,347.222 104.292,341.688 104.189,336.012L103.306,323.162L102.811,315.548L102.801,315.322C102.595,309.395 103.312,303.53 104.233,297.7C105.178,291.725 103.158,285.903 102.631,280.071C102.024,273.359 102.038,266.622 102.082,259.883C102.136,251.424 102.875,242.276 103.004,233.222C103.131,224.246 103.56,215.367 102.385,206.724C102.385,206.724 102.007,206.655 100.922,206.629C100.006,206.665 99.392,206.724 99.392,206.724C98.218,215.367 98.646,224.246 98.774,233.222C98.902,242.276 99.642,251.424 99.696,259.883C99.739,266.622 99.754,273.359 99.147,280.071C98.619,285.903 96.6,291.725 97.544,297.7C98.466,303.53 99.182,309.395 98.976,315.322L98.967,315.548L98.471,323.162L97.588,336.012C97.486,341.688 97.245,347.222 97.542,352.933C97.614,354.314 98.234,355.638 98.831,356.939C98.831,356.939 99.222,359.661 99.13,361.511C98.944,365.28 97.803,369.029 98.444,372.923C99.357,378.469 98.766,382.415 96.801,385.674C95.345,388.09 91.522,387.804 88.758,387.837C88.006,387.838 86.967,387.368 86.967,387.368C85.62,387.451 84.457,387.63 83.065,387.015C82.621,386.827 81.989,386.732 81.989,386.732C81.549,386.692 81.417,386.662 81.139,386.593C80.336,386.394 79.68,385.842 78.966,385.422C78.966,385.422 78.548,385.277 78.276,385.02C76.76,383.584 77.569,380.553 78.699,379.203C80.507,376.959 80.301,373.339 82.404,370.634C83.637,369.025 84.455,367.118 84.926,365.139C84.926,365.139 84.842,359.306 85.065,356.01C85.176,353.813 84.549,351.541 84.111,349.276C81.52,335.877 78.139,322.561 76.766,308.918C75.807,299.386 77.119,289.694 78.307,280.13C78.643,277.368 78.652,274.696 77.903,271.824C73.491,254.925 68.945,238.077 65.887,221.092C64.114,211.25 63.047,201.136 65.132,191.343C66.249,186.099 68.346,181.056 70.421,176.016C72.816,170.201 76.125,165.15 79.936,159.495C82.257,156.051 83.391,151.655 81.515,147.463C79.369,142.666 77.759,137.695 76.224,132.703L76.184,132.574C74.528,141.189 74.764,150.222 73.223,158.976C72.642,162.275 70.778,165.159 69.512,168.339C66.802,175.094 63.755,181.707 60.762,188.348C60.552,188.822 60.534,188.888 60.443,189.143C58.616,194.235 57.638,200.623 58.689,205.649C59.322,208.676 60.071,211.317 60.084,214.456C60.087,217.348 60.187,217.42 59.89,220.238C59.773,221.346 58.034,220.632 57.124,217.295C56.399,214.638 57.964,212.089 53.734,212.031C51.798,212.004 51.029,216.968 51.93,218.625C53.389,221.307 58.029,228.38 56.665,228.294C55.141,228.197 53.798,226.964 52.467,225.865C49.527,223.438 46.829,220.642 44.925,217.371C44.184,216.098 44.356,214.44 44.447,212.79C44.647,209.188 44.904,205.376 46.835,202.361C48.958,198.986 50.12,195.028 50.969,191.153L52.416,185.045C53.941,177.327 55.368,169.587 57.05,161.88C58.219,156.627 60.148,151.753 60.77,146.188C62.539,130.362 62.209,114.372 64.375,98.68C64.831,95.379 65.928,92.008 68.9,90.321C71.05,89.1 73.594,88.715 76.11,88.718C80.399,88.712 84.879,87.833 87.527,84.307C90.93,79.776 90.781,73.452 90.52,68.474C87.461,66.613 86.454,61.924 85.435,57.88C85.435,57.88 84.535,57.263 84.167,56.529C83.475,55.155 83.394,53.553 83.485,52.017C83.485,52.017 82.388,50.323 81.826,48.964C79.596,43.571 79.186,37.29 81.385,31.786C82.839,28.149 86.196,25.412 90.048,24.427C90.048,24.427 86.883,19.843 89.051,16.271C91.082,12.927 95.473,11.667 98.934,11.619C98.935,11.618 98.936,11.617 98.938,11.617Z" style="fill:rgb(209,178,185);fill-rule:nonzero;"></path>
-    </g>
-    <g id="разметка">
-    <g transform="matrix(2.72756,0,0,2.81473,-1546.04,-297.772)">
-        <path d="M880.341,146.094C881.049,146.268 881.077,147.437 880.221,147.505L859.468,147.505C858.701,147.444 858.381,146.171 859.468,146.084L880.221,146.084C880.261,146.087 880.301,146.091 880.341,146.094Z" style="fill:rgb(181,76,98);fill-rule:nonzero;"></path>
-    </g>
-    <g transform="matrix(2.72756,0,0,2.81473,-1545.81,497.171)">
-        <path d="M880.341,146.094C881.049,146.268 881.077,147.437 880.221,147.505L859.381,147.505C858.613,147.444 858.293,146.171 859.381,146.084L880.221,146.084C880.261,146.087 880.301,146.091 880.341,146.094Z" style="fill:rgb(181,76,98);fill-rule:nonzero;"></path>
-    </g>
-    <g transform="matrix(1,0,0,0.995239,-25.4088,-30.6808)">
-        <path d="M880.19,144.785C881.853,144.777 882.221,146.795 882.221,146.795L882.221,945.598C882.069,946.362 881.576,947.569 880.259,947.55C878.613,947.526 878.221,945.598 878.221,945.598L878.221,146.795C878.372,146.031 878.834,144.792 880.19,144.785Z" style="fill:rgb(181,76,98);fill-rule:nonzero;"></path>
-    </g>
-    <g transform="matrix(-0.949332,0,0,0.968595,1402.99,429.23)">
-        <path d="M861.222,144.74C859.051,145.055 858.733,148.73 861.428,148.86L880.221,148.86C882.435,148.753 883.176,144.872 880.221,144.73L861.428,144.73C861.359,144.733 861.29,144.736 861.222,144.74Z" style="fill:rgb(181,76,98);fill-rule:nonzero;"></path>
-    </g>
-    <g transform="matrix(-0.949332,0,0,0.968595,1402.99,136.104)">
-        <path d="M861.222,144.74C859.051,145.055 858.733,148.73 861.428,148.86L880.221,148.86C882.435,148.753 883.176,144.872 880.221,144.73L861.428,144.73C861.359,144.733 861.29,144.736 861.222,144.74Z" style="fill:rgb(181,76,98);fill-rule:nonzero;"></path>
-    </g>
-    <g transform="matrix(-0.370872,0,0,0.366677,893.816,224.391)">
-        <path d="M878.157,141.756C876.419,142.93 876.4,142.95 875.238,144.707L874.828,146.795L874.828,945.598L875.238,947.685C876.399,949.443 876.419,949.463 878.157,950.637C878.157,950.637 884.358,951.981 885.613,945.598L885.613,146.795C885.335,145.378 885.258,143.765 882.284,141.756C882.284,141.756 880.442,141.296 878.157,141.756Z" style="fill:rgb(181,76,98);fill-rule:nonzero;"></path>
-    </g>
-    </g>
-    <g transform="matrix(1.76136,0,0,1.75244,510.72,162.155)">
-    <path d="M71.423,186.318C66.808,188.153 64.393,190.251 64.393,192.396C64.393,198.875 86.224,204.135 113.114,204.135C140.003,204.135 161.834,198.875 161.834,192.396C161.834,190.45 159.826,188.534 155.991,186.821C155.991,186.821 156.38,188.395 156.644,189.571C157.727,190.126 158.522,191.003 158.522,191.623C158.522,197.195 136.475,201.574 113.35,201.574C90.225,201.574 68.24,197.968 68.24,192.396C68.24,191.61 69.249,190.355 70.611,189.598C70.764,188.698 71.423,186.318 71.423,186.318Z" style="fill:rgb(181,76,98);"></path>
-    </g>
-    <g transform="matrix(1.93184,0,0,1.98949,513.179,95.5437)">
-    <path d="M77.817,168.928C72.513,170.235 69.584,171.922 69.584,173.669C69.584,177.61 84.21,180.809 102.226,180.809C120.242,180.809 134.868,177.61 134.868,173.669C134.868,171.949 132.031,170.287 126.879,168.989C126.879,168.989 127.713,170.248 128.622,171.575C130.279,172.077 131.673,172.919 131.673,173.477C131.673,176.506 116.073,179.157 102.226,179.157C88.379,179.157 72.842,176.438 73.086,173.418C73.174,172.315 75.018,171.872 76.037,171.564C77.022,170.101 77.817,168.928 77.817,168.928Z" style="fill:rgb(181,76,98);"></path>
-    </g>
-    <g transform="matrix(2.12263,0,0,2.12263,495.283,72.3422)">
-    <path d="M78.407,145.228C78.264,144.798 78.093,144.275 77.984,143.933C76.746,144.517 76.098,145.146 76.098,145.783C76.098,148.483 87.466,150.674 101.469,150.674C115.471,150.674 126.84,148.483 126.84,145.783C126.84,145.174 126.244,144.572 125.109,144.01C124.96,144.457 124.836,144.846 124.736,145.148C125.034,145.281 125.222,145.43 125.222,145.599C125.222,147.624 111.971,149.055 101.469,149.055C90.967,149.055 77.983,147.579 77.983,145.554C77.983,145.461 78.14,145.348 78.407,145.228Z" style="fill:rgb(181,76,98);"></path>
-    </g>
-    </g>
-                            <g>
-    <g transform="matrix(1,0,0,1,2.37471,12.1657)">
-    <path d="M100.551,124.764L96.651,124.764L95.907,126.564L93.915,126.564L97.659,118.164L99.579,118.164L103.335,126.564L101.295,126.564L100.551,124.764ZM99.939,123.288L98.607,120.072L97.275,123.288L99.939,123.288Z" style="fill:rgb(181,76,98);fill-rule:nonzero;"></path>
-    </g>
-                                <g transform="matrix(1,0,0,1,84.8798,34.4656)">
-    <path d="M94.815,118.164L98.631,118.164C99.543,118.164 100.349,118.338 101.049,118.686C101.749,119.034 102.293,119.524 102.681,120.156C103.069,120.788 103.263,121.524 103.263,122.364C103.263,123.204 103.069,123.94 102.681,124.572C102.293,125.204 101.749,125.694 101.049,126.042C100.349,126.39 99.543,126.564 98.631,126.564L94.815,126.564L94.815,118.164ZM98.535,124.968C99.375,124.968 100.045,124.734 100.545,124.266C101.045,123.798 101.295,123.164 101.295,122.364C101.295,121.564 101.045,120.93 100.545,120.462C100.045,119.994 99.375,119.76 98.535,119.76L96.759,119.76L96.759,124.968L98.535,124.968Z" style="fill:rgb(181,76,98);fill-rule:nonzero;"></path>
-    </g>
-                                <g transform="matrix(1,0,0,1,-80.9584,34.4656)">
-    <path d="M101.319,125.004L101.319,126.564L94.815,126.564L94.815,118.164L101.163,118.164L101.163,119.724L96.747,119.724L96.747,121.548L100.647,121.548L100.647,123.06L96.747,123.06L96.747,125.004L101.319,125.004Z" style="fill:rgb(181,76,98);fill-rule:nonzero;"></path>
-    </g>
-                                <g transform="matrix(1,0,0,1,2.37471,41.8656)">
-    <path d="M100.683,122.184C101.195,122.336 101.587,122.584 101.859,122.928C102.131,123.272 102.267,123.696 102.267,124.2C102.267,124.944 101.985,125.524 101.421,125.94C100.857,126.356 100.051,126.564 99.003,126.564L94.863,126.564L94.863,118.164L98.775,118.164C99.751,118.164 100.511,118.352 101.055,118.728C101.599,119.104 101.871,119.64 101.871,120.336C101.871,120.752 101.767,121.118 101.559,121.434C101.351,121.75 101.059,122 100.683,122.184ZM96.795,121.644L98.607,121.644C99.031,121.644 99.351,121.558 99.567,121.386C99.783,121.214 99.891,120.96 99.891,120.624C99.891,120.296 99.781,120.044 99.561,119.868C99.341,119.692 99.023,119.604 98.607,119.604L96.795,119.604L96.795,121.644ZM98.931,125.124C99.843,125.124 100.299,124.764 100.299,124.044C100.299,123.348 99.843,123 98.931,123L96.795,123L96.795,125.124L98.931,125.124Z" style="fill:rgb(181,76,98);fill-rule:nonzero;"></path>
-    </g>
-                                <g transform="matrix(1,0,0,1,2.37471,70.9447)">
-    <path d="M98.835,126.708C97.979,126.708 97.205,126.522 96.513,126.15C95.821,125.778 95.277,125.262 94.881,124.602C94.485,123.942 94.287,123.196 94.287,122.364C94.287,121.532 94.485,120.786 94.881,120.126C95.277,119.466 95.821,118.95 96.513,118.578C97.205,118.206 97.983,118.02 98.847,118.02C99.575,118.02 100.233,118.148 100.821,118.404C101.409,118.66 101.903,119.028 102.303,119.508L101.055,120.66C100.487,120.004 99.783,119.676 98.943,119.676C98.423,119.676 97.959,119.79 97.551,120.018C97.143,120.246 96.825,120.564 96.597,120.972C96.369,121.38 96.255,121.844 96.255,122.364C96.255,122.884 96.369,123.348 96.597,123.756C96.825,124.164 97.143,124.482 97.551,124.71C97.959,124.938 98.423,125.052 98.943,125.052C99.783,125.052 100.487,124.72 101.055,124.056L102.303,125.208C101.903,125.696 101.407,126.068 100.815,126.324C100.223,126.58 99.563,126.708 98.835,126.708Z" style="fill:rgb(181,76,98);fill-rule:nonzero;"></path>
-    </g>
-    </g>
-    </svg>
-                    </div>
-                </div>
-                <div class="tab-pane" id="tab-man">
-                    <table>
-                        <tbody><tr>
-                            <td>Размер</td>
-                            <td>A (обхват груди, см)</td>
-                            <td>В (обхват талии, см)</td>
-                            <td>С (обхват бедер, см)</td>
-                            <td>E (длина рукава, см)</td>
-                        </tr>
-                        <tr>
-                            <td>44</td>
-                            <td>88</td>
-                            <td>70</td>
-                            <td>92</td>
-                            <td>59</td>
-                        </tr>
-                        <tr>
-                            <td>46</td>
-                            <td>92</td>
-                            <td>76</td>
-                            <td>96</td>
-                            <td>60</td>
-                        </tr>
-                        <tr>
-                            <td>48</td>
-                            <td>96</td>
-                            <td>82</td>
-                            <td>100</td>
-                            <td>61</td>
-                        </tr>
-                        <tr>
-                            <td>50</td>
-                            <td>100</td>
-                            <td>88</td>
-                            <td>104</td>
-                            <td>62</td>
-                        </tr>
-                        <tr>
-                            <td>52</td>
-                            <td>104</td>
-                            <td>94</td>
-                            <td>108</td>
-                            <td>63</td>
-                        </tr>
-                        <tr>
-                            <td>54</td>
-                            <td>108</td>
-                            <td>100</td>
-                            <td>112</td>
-                            <td>63</td>
-                        </tr>
-                        <tr>
-                            <td>56</td>
-                            <td>112</td>
-                            <td>106</td>
-                            <td>116</td>
-                            <td>64</td>
-                        </tr>
-                        <tr>
-                            <td>58</td>
-                            <td>116</td>
-                            <td>112</td>
-                            <td>120</td>
-                            <td>64</td>
-                        </tr>
-                        <tr>
-                            <td>60</td>
-                            <td>120</td>
-                            <td>118</td>
-                            <td>124</td>
-                            <td>65</td>
-                        </tr>
-                        <tr>
-                            <td>62</td>
-                            <td>124</td>
-                            <td>120</td>
-                            <td>128</td>
-                            <td>65</td>
-                        </tr>
-                        <tr>
-                            <td>64</td>
-                            <td>128</td>
-                            <td>124</td>
-                            <td>132</td>
-                            <td>66</td>
-                        </tr>
-                        <tr>
-                            <td>66</td>
-                            <td>132</td>
-                            <td>128</td>
-                            <td>134</td>
-                            <td>66</td>
-                        </tr>
-                        <tr>
-                            <td>68</td>
-                            <td>136</td>
-                            <td>132</td>
-                            <td>136</td>
-                            <td>66</td>
-                        </tr>
-                        <tr>
-                            <td>70</td>
-                            <td>140</td>
-                            <td>136</td>
-                            <td>138</td>
-                            <td>66</td>
-                        </tr>
-                        </tbody></table>
-                    <div class="icon_tables">
-                        <svg width="100%" height="100%" viewBox="0 0 202 395" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
-    <g id="m" transform="matrix(0.470124,0,0,0.470124,-12.7737,-40.4989)">
-    <g id="разметка" transform="matrix(1,2.77556e-17,-2.77556e-17,1,-459,-5.68434e-14)">
-    <g transform="matrix(2.90149,2.46519e-32,-1.2326e-32,2.81473,-1699.14,-309.92)">
-        <path d="M880.334,146.094C880.993,146.266 881.061,147.433 880.221,147.505L857.295,147.505C856.564,147.443 856.349,146.165 857.295,146.084L880.221,146.084C880.258,146.087 880.296,146.091 880.334,146.094Z" style="fill:rgb(65,169,165);fill-rule:nonzero;"></path>
-    </g>
-    <g transform="matrix(2.10714,-1.2326e-32,-2.46519e-32,2.81473,-999.935,495.228)">
-        <path d="M880.356,146.091C881.251,146.237 881.471,147.438 880.221,147.505L848.682,147.505C847.71,147.453 847.357,146.155 848.682,146.084L880.221,146.084C880.266,146.087 880.311,146.089 880.356,146.091Z" style="fill:rgb(65,169,165);fill-rule:nonzero;"></path>
-    </g>
-    <g transform="matrix(1,0,0,1.00794,-25.4088,-44.6942)">
-        <path d="M880.986,144.962C881.63,145.389 881.638,145.396 882.068,146.035L882.221,146.795L882.221,945.598L881.635,947.001L880.221,947.582L878.806,947.001L878.221,945.598L878.221,146.795L878.806,145.392L880.221,144.81C880.476,144.861 880.731,144.911 880.986,144.962Z" style="fill:rgb(65,169,165);fill-rule:nonzero;"></path>
-    </g>
-    <g transform="matrix(-1.72323,1.84889e-32,6.16298e-33,1.70394,2064.19,-8.71456)">
-        <path d="M864.283,145.631C863.164,145.856 862.713,147.854 864.434,147.968L880.221,147.968C881.418,147.889 882.035,145.741 880.221,145.621L864.434,145.621C864.384,145.624 864.333,145.628 864.283,145.631Z" style="fill:rgb(65,169,165);fill-rule:nonzero;"></path>
-    </g>
-    <g transform="matrix(-1.24909,-6.16298e-33,0,0.968595,1646.84,439.011)">
-        <path d="M858.286,144.743C857.202,144.98 857.103,145.56 856.954,146.113C856.617,147.354 857.398,148.782 858.465,148.86L880.221,148.86C881.318,148.78 881.466,148.218 881.663,147.691C882.128,146.445 881.37,144.813 880.221,144.73L858.465,144.73C858.405,144.734 858.345,144.739 858.286,144.743Z" style="fill:rgb(65,169,165);fill-rule:nonzero;"></path>
-    </g>
-    <g transform="matrix(-0.370872,-4.62223e-33,3.08149e-33,0.425362,873.816,178.974)">
-        <path d="M878.157,142.451C876.969,143.143 875.526,143.736 874.828,146.795L874.828,945.598L876.407,948.923C878.145,949.935 878.171,949.944 880.221,950.3L882.284,949.942C884.022,948.929 884.042,948.912 885.203,947.397L885.613,945.598L885.613,146.795L885.203,144.995C884.042,143.48 884.022,143.463 882.284,142.451C882.284,142.451 880.442,142.054 878.157,142.451Z" style="fill:rgb(65,169,165);fill-rule:nonzero;"></path>
-    </g>
-    </g>
-    <g id="парень" transform="matrix(-153.737,-775.676,-775.676,153.737,321.622,894.608)">
-    <path d="M0.819,-0.133C0.814,-0.154 0.8,-0.175 0.778,-0.181C0.763,-0.186 0.745,-0.183 0.729,-0.181C0.72,-0.18 0.711,-0.182 0.701,-0.181C0.68,-0.179 0.658,-0.175 0.638,-0.168C0.628,-0.164 0.616,-0.163 0.605,-0.165C0.601,-0.166 0.598,-0.165 0.595,-0.164C0.556,-0.156 0.519,-0.144 0.48,-0.135C0.461,-0.131 0.44,-0.132 0.419,-0.128C0.412,-0.127 0.407,-0.121 0.403,-0.115C0.395,-0.106 0.389,-0.096 0.392,-0.087C0.393,-0.084 0.401,-0.088 0.404,-0.092C0.412,-0.1 0.413,-0.1 0.422,-0.106C0.424,-0.108 0.429,-0.107 0.431,-0.107C0.431,-0.107 0.436,-0.102 0.433,-0.099C0.431,-0.096 0.422,-0.096 0.418,-0.092C0.416,-0.089 0.411,-0.08 0.419,-0.082C0.42,-0.083 0.432,-0.087 0.433,-0.087C0.436,-0.088 0.439,-0.087 0.439,-0.087C0.448,-0.087 0.458,-0.087 0.464,-0.093C0.469,-0.097 0.473,-0.102 0.481,-0.102C0.508,-0.103 0.535,-0.097 0.563,-0.102C0.58,-0.105 0.596,-0.111 0.613,-0.114C0.619,-0.115 0.624,-0.114 0.63,-0.113C0.642,-0.112 0.655,-0.113 0.668,-0.115C0.676,-0.116 0.685,-0.117 0.694,-0.116L0.694,-0.116C0.681,-0.114 0.669,-0.105 0.657,-0.098C0.637,-0.086 0.61,-0.085 0.589,-0.086C0.553,-0.087 0.516,-0.089 0.481,-0.086C0.421,-0.081 0.363,-0.06 0.304,-0.046C0.285,-0.042 0.265,-0.044 0.245,-0.042C0.222,-0.04 0.199,-0.036 0.177,-0.029C0.16,-0.023 0.145,-0.01 0.13,-0.003C0.109,0.006 0.088,0.014 0.066,0.019C0.065,0.02 0.063,0.02 0.063,0.02C0.063,0.02 0.063,0.02 0.062,0.02C0.056,0.018 0.051,0.019 0.043,0.019C0.037,0.02 0.03,0.018 0.024,0.017C0.014,0.016 0.004,0.014 -0.005,0.015C-0.008,0.016 -0.01,0.017 -0.011,0.019C-0.014,0.026 -0.013,0.034 -0.012,0.041C-0.012,0.046 -0.01,0.051 -0.009,0.057C-0.009,0.057 -0.01,0.064 -0.009,0.068C-0.007,0.075 0,0.075 0.005,0.075C0.018,0.074 0.031,0.071 0.043,0.066C0.043,0.066 0.043,0.066 0.044,0.066C0.054,0.063 0.066,0.067 0.075,0.062C0.079,0.06 0.083,0.056 0.088,0.053C0.091,0.051 0.095,0.051 0.098,0.05C0.121,0.044 0.144,0.038 0.168,0.039C0.192,0.039 0.217,0.035 0.24,0.027C0.247,0.024 0.254,0.019 0.261,0.018C0.274,0.017 0.286,0.022 0.298,0.023C0.329,0.024 0.359,0.019 0.389,0.014C0.406,0.01 0.425,0.015 0.442,0.015C0.451,0.015 0.459,0.014 0.468,0.012L0.468,0.013C0.468,0.013 0.467,0.013 0.467,0.013C0.453,0.016 0.44,0.021 0.428,0.028C0.416,0.035 0.403,0.04 0.389,0.042C0.363,0.048 0.338,0.055 0.314,0.065C0.304,0.069 0.296,0.074 0.287,0.08C0.28,0.085 0.271,0.088 0.261,0.087C0.251,0.086 0.24,0.087 0.229,0.088C0.213,0.091 0.196,0.095 0.181,0.102C0.157,0.113 0.131,0.116 0.105,0.119C0.095,0.121 0.085,0.113 0.074,0.118C0.067,0.121 0.061,0.124 0.053,0.125C0.038,0.125 0.023,0.126 0.011,0.134C0.011,0.134 0.01,0.134 0.01,0.134C0.007,0.136 0.005,0.14 0.006,0.146C0.007,0.149 0.008,0.151 0.01,0.153C0.01,0.153 0.011,0.159 0.012,0.163C0.014,0.172 0.016,0.181 0.021,0.187C0.025,0.192 0.032,0.19 0.038,0.187C0.048,0.182 0.057,0.175 0.067,0.17C0.073,0.167 0.08,0.167 0.085,0.164C0.087,0.163 0.089,0.161 0.091,0.16C0.091,0.16 0.097,0.158 0.104,0.158C0.129,0.155 0.155,0.153 0.179,0.158C0.187,0.159 0.195,0.161 0.203,0.162C0.216,0.162 0.229,0.16 0.241,0.158C0.267,0.153 0.292,0.145 0.317,0.135C0.332,0.13 0.348,0.128 0.363,0.125C0.404,0.12 0.444,0.115 0.484,0.107C0.521,0.1 0.556,0.082 0.592,0.069C0.618,0.06 0.642,0.047 0.669,0.044C0.68,0.043 0.692,0.045 0.703,0.045C0.711,0.044 0.719,0.046 0.726,0.045C0.71,0.053 0.692,0.055 0.677,0.062C0.67,0.064 0.663,0.067 0.658,0.071C0.654,0.074 0.65,0.074 0.645,0.075C0.624,0.079 0.602,0.079 0.581,0.088C0.561,0.096 0.543,0.106 0.523,0.113C0.518,0.115 0.514,0.114 0.509,0.112C0.499,0.108 0.489,0.111 0.479,0.115C0.479,0.115 0.467,0.118 0.462,0.119C0.46,0.12 0.456,0.12 0.456,0.123C0.456,0.127 0.461,0.128 0.466,0.13C0.47,0.131 0.478,0.125 0.48,0.13C0.481,0.132 0.48,0.136 0.48,0.136C0.474,0.14 0.465,0.14 0.459,0.137C0.451,0.134 0.452,0.133 0.443,0.132C0.438,0.131 0.424,0.129 0.43,0.137C0.435,0.145 0.445,0.15 0.454,0.155C0.459,0.157 0.465,0.16 0.47,0.162C0.471,0.162 0.471,0.162 0.471,0.162C0.475,0.162 0.479,0.16 0.484,0.159C0.499,0.155 0.514,0.15 0.53,0.146C0.536,0.144 0.543,0.143 0.549,0.142C0.583,0.137 0.617,0.133 0.651,0.127C0.655,0.126 0.66,0.126 0.663,0.124C0.672,0.118 0.683,0.115 0.694,0.114C0.715,0.113 0.736,0.109 0.757,0.102C0.764,0.1 0.771,0.095 0.778,0.093C0.792,0.089 0.806,0.086 0.818,0.08C0.83,0.073 0.841,0.062 0.845,0.049C0.849,0.037 0.85,0.024 0.847,0.012C0.847,0.012 0.847,0.011 0.847,0.011C0.849,-0.001 0.85,-0.013 0.854,-0.023C0.857,-0.03 0.867,-0.032 0.876,-0.034C0.88,-0.035 0.885,-0.035 0.889,-0.036C0.889,-0.036 0.895,-0.033 0.9,-0.032C0.904,-0.031 0.909,-0.031 0.914,-0.031C0.914,-0.031 0.915,-0.028 0.917,-0.027C0.92,-0.025 0.926,-0.026 0.93,-0.026C0.936,-0.026 0.941,-0.027 0.946,-0.028C0.948,-0.029 0.95,-0.031 0.95,-0.034C0.969,-0.035 0.99,-0.039 1,-0.055C1.008,-0.07 1.007,-0.089 1.002,-0.104C1.001,-0.107 0.999,-0.11 0.997,-0.114C0.991,-0.124 0.981,-0.133 0.968,-0.135C0.956,-0.136 0.943,-0.133 0.931,-0.129C0.931,-0.129 0.93,-0.133 0.924,-0.132C0.915,-0.131 0.907,-0.129 0.901,-0.125C0.898,-0.123 0.896,-0.121 0.897,-0.118C0.889,-0.115 0.88,-0.111 0.876,-0.104L0.876,-0.104C0.866,-0.101 0.855,-0.098 0.845,-0.099C0.84,-0.099 0.837,-0.105 0.833,-0.11C0.828,-0.117 0.823,-0.124 0.819,-0.132C0.819,-0.132 0.819,-0.132 0.819,-0.133Z" style="fill:rgb(170,206,205);fill-rule:nonzero;"></path>
-    </g>
-    </g>
-                            <g transform="matrix(1.0161,0,0,1.0161,-3.31977,-3.04825)">
-    <path d="M68.151,193.649C65.548,194.807 64.194,196.081 64.194,197.372C64.194,202.023 81.433,205.799 102.667,205.799C123.901,205.799 141.141,202.023 141.141,197.372C141.141,195.827 139.203,194.312 135.538,192.992C135.538,192.992 135.665,193.939 135.817,194.976C137.381,195.5 138.728,196.992 138.728,197.543C138.728,201.344 120.018,204.258 102.667,204.258C85.316,204.258 66.343,201.046 66.343,197.246C66.343,196.941 67.057,196.202 67.803,195.902C67.971,194.736 68.151,193.649 68.151,193.649Z" style="fill:rgb(65,169,165);"></path>
-    </g>
-                            <g transform="matrix(0.98216,0,0,0.96099,0.568959,0.784618)">
-    <path d="M73.003,164.874C68.978,165.932 66.836,167.191 66.836,168.48C66.836,171.965 82.301,174.794 101.349,174.794C120.398,174.794 135.863,171.965 135.863,168.48C135.863,167.104 133.405,165.766 128.864,164.669C128.864,164.669 128.943,165.018 129.256,166.366C131.215,166.74 132.855,167.734 132.855,168.196C132.855,170.809 115.636,173.215 101.349,173.215C87.063,173.215 70.143,170.874 70.143,168.26C70.143,167.893 71.242,167.125 72.651,166.811C72.863,165.642 73.003,164.874 73.003,164.874Z" style="fill:rgb(65,169,165);"></path>
-    </g>
-                            <g transform="matrix(0.985566,0,0,0.894075,2.95573,14.4861)">
-    <path d="M70.132,129.65C67.56,130.355 66.212,131.146 66.212,131.949C66.212,134.603 80.64,136.758 98.41,136.758C116.181,136.758 130.609,134.603 130.609,131.949C130.609,131.126 129.194,130.317 126.499,129.598C126.499,129.598 126.376,129.94 126.1,130.745C127.527,130.979 128.419,131.689 128.419,131.932C128.419,133.923 111.738,135.556 98.41,135.556C85.082,135.556 68.939,133.859 68.939,131.869C68.939,131.677 69.471,131.047 70.409,130.87C70.272,130.253 70.132,129.65 70.132,129.65Z" style="fill:rgb(65,169,165);"></path>
-    </g>
-                            <g transform="matrix(1,0,0,1,2.37471,6.99347)">
-    <path d="M100.551,124.764L96.651,124.764L95.907,126.564L93.915,126.564L97.659,118.164L99.579,118.164L103.335,126.564L101.295,126.564L100.551,124.764ZM99.939,123.288L98.607,120.072L97.275,123.288L99.939,123.288Z" style="fill:rgb(65,169,165);fill-rule:nonzero;"></path>
-    </g>
-                            <g transform="matrix(1,0,0,1,84.8798,34.4656)">
-    <path d="M94.815,118.164L98.631,118.164C99.543,118.164 100.349,118.338 101.049,118.686C101.749,119.034 102.293,119.524 102.681,120.156C103.069,120.788 103.263,121.524 103.263,122.364C103.263,123.204 103.069,123.94 102.681,124.572C102.293,125.204 101.749,125.694 101.049,126.042C100.349,126.39 99.543,126.564 98.631,126.564L94.815,126.564L94.815,118.164ZM98.535,124.968C99.375,124.968 100.045,124.734 100.545,124.266C101.045,123.798 101.295,123.164 101.295,122.364C101.295,121.564 101.045,120.93 100.545,120.462C100.045,119.994 99.375,119.76 98.535,119.76L96.759,119.76L96.759,124.968L98.535,124.968Z" style="fill:rgb(65,169,165);fill-rule:nonzero;"></path>
-    </g>
-                            <g transform="matrix(1,0,0,1,-80.9584,34.4656)">
-    <path d="M101.319,125.004L101.319,126.564L94.815,126.564L94.815,118.164L101.163,118.164L101.163,119.724L96.747,119.724L96.747,121.548L100.647,121.548L100.647,123.06L96.747,123.06L96.747,125.004L101.319,125.004Z" style="fill:rgb(65,169,165);fill-rule:nonzero;"></path>
-    </g>
-                            <g transform="matrix(1,0,0,1,2.37471,38.6656)">
-    <path d="M100.683,122.184C101.195,122.336 101.587,122.584 101.859,122.928C102.131,123.272 102.267,123.696 102.267,124.2C102.267,124.944 101.985,125.524 101.421,125.94C100.857,126.356 100.051,126.564 99.003,126.564L94.863,126.564L94.863,118.164L98.775,118.164C99.751,118.164 100.511,118.352 101.055,118.728C101.599,119.104 101.871,119.64 101.871,120.336C101.871,120.752 101.767,121.118 101.559,121.434C101.351,121.75 101.059,122 100.683,122.184ZM96.795,121.644L98.607,121.644C99.031,121.644 99.351,121.558 99.567,121.386C99.783,121.214 99.891,120.96 99.891,120.624C99.891,120.296 99.781,120.044 99.561,119.868C99.341,119.692 99.023,119.604 98.607,119.604L96.795,119.604L96.795,121.644ZM98.931,125.124C99.843,125.124 100.299,124.764 100.299,124.044C100.299,123.348 99.843,123 98.931,123L96.795,123L96.795,125.124L98.931,125.124Z" style="fill:rgb(65,169,165);fill-rule:nonzero;"></path>
-    </g>
-                            <g transform="matrix(1,0,0,1,2.37471,74.9447)">
-    <path d="M98.835,126.708C97.979,126.708 97.205,126.522 96.513,126.15C95.821,125.778 95.277,125.262 94.881,124.602C94.485,123.942 94.287,123.196 94.287,122.364C94.287,121.532 94.485,120.786 94.881,120.126C95.277,119.466 95.821,118.95 96.513,118.578C97.205,118.206 97.983,118.02 98.847,118.02C99.575,118.02 100.233,118.148 100.821,118.404C101.409,118.66 101.903,119.028 102.303,119.508L101.055,120.66C100.487,120.004 99.783,119.676 98.943,119.676C98.423,119.676 97.959,119.79 97.551,120.018C97.143,120.246 96.825,120.564 96.597,120.972C96.369,121.38 96.255,121.844 96.255,122.364C96.255,122.884 96.369,123.348 96.597,123.756C96.825,124.164 97.143,124.482 97.551,124.71C97.959,124.938 98.423,125.052 98.943,125.052C99.783,125.052 100.487,124.72 101.055,124.056L102.303,125.208C101.903,125.696 101.407,126.068 100.815,126.324C100.223,126.58 99.563,126.708 98.835,126.708Z" style="fill:rgb(65,169,165);fill-rule:nonzero;"></path>
-    </g>
-    </svg>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </aside>
 </div>
 
 
@@ -790,7 +990,7 @@
 </footer>
 
 <!-- Modal -->
-<div class="modal fade" id="city" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="city" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -811,7 +1011,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="callback" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="callback" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -838,10 +1038,197 @@
     </div>
 </div>
 
+<div class="modal fade" id="size" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-size">
+            <div class="close" data-dismiss="modal"></div>
+            <h3>Таблица размеров</h3>
+            <p class="description">Единицы измерения: <b>сантиметры</b></p>
+            <div class="sizes-wapper">
+                <table class="table-size">
+                    <tbody>
+                    <tr data-sizes="38">
+                        <td data-size="38" class="active">38</td>
+                        <td>75-76</td>
+                        <td>60-62</td>
+                        <td>84-86</td>
+                    </tr>
+                    <tr data-sizes="40">
+                        <td data-size="40">40</td>
+                        <td>79-80</td>
+                        <td>63-65</td>
+                        <td>88-90</td>
+                    </tr>
+                    <tr data-sizes="42">
+                        <td data-size="42">42</td>
+                        <td>83-84</td>
+                        <td>66-69</td>
+                        <td>92-94</td>
+                    </tr>
+                    <tr data-sizes="44">
+                        <td data-size="44">44</td>
+                        <td>87-88</td>
+                        <td>70-73</td>
+                        <td>96-98</td>
+                    </tr>
+                    <tr data-sizes="46">
+                        <td data-size="46">46</td>
+                        <td>91-92</td>
+                        <td>74-77</td>
+                        <td>99-102</td>
+                    </tr>
+                    <tr data-sizes="48">
+                        <td data-size="48">48</td>
+                        <td>95-96</td>
+                        <td>78-81</td>
+                        <td>103-106</td>
+                    </tr>
+                    <tr data-sizes="50">
+                        <td data-size="50">50</td>
+                        <td>99-100</td>
+                        <td>82-86</td>
+                        <td>107-110</td>
+                    </tr>
+                    <tr data-sizes="52">
+                        <td data-size="52">52</td>
+                        <td>103-105</td>
+                        <td>87-91</td>
+                        <td>111-115</td>
+                    </tr>
+                    <tr data-sizes="54">
+                        <td data-size="54">54</td>
+                        <td>107-109</td>
+                        <td>92-96</td>
+                        <td>116-120</td>
+                    </tr>
+                    <tr data-sizes="56">
+                        <td data-size="56">56</td>
+                        <td>112</td>
+                        <td>97-100</td>
+                        <td>121-123</td>
+                    </tr>
+                    <tr data-sizes="58">
+                        <td data-size="58">58</td>
+                        <td>116</td>
+                        <td>100-102</td>
+                        <td>123-125</td>
+                    </tr>
+                    <tr data-sizes="60">
+                        <td data-size="60">60</td>
+                        <td>120</td>
+                        <td>103-108</td>
+                        <td>126-130</td>
+                    </tr>
+                    <tr data-sizes="62">
+                        <td data-size="62">62</td>
+                        <td>124</td>
+                        <td>109-111</td>
+                        <td>131-133</td>
+                    </tr>
+                    <tr data-sizes="64">
+                        <td data-size="64">64</td>
+                        <td>128</td>
+                        <td>111-114</td>
+                        <td>133-135</td>
+                    </tr>
+                    <tr data-sizes="66">
+                        <td data-size="66">66</td>
+                        <td>132</td>
+                        <td>115-117</td>
+                        <td>136-138</td>
+                    </tr>
+                    <tr data-sizes="68">
+                        <td data-size="68">68</td>
+                        <td>136</td>
+                        <td>117-120</td>
+                        <td>138-141</td>
+                    </tr>
+                    <tr data-sizes="70">
+                        <td data-size="70">70</td>
+                        <td>140</td>
+                        <td>121-126</td>
+                        <td>142-147</td>
+                    </tr>
+                    <tr data-sizes="72">
+                        <td data-size="72">72</td>
+                        <td>144-149</td>
+                        <td><br></td>
+                        <td><br></td>
+                    </tr>
+                    <tr data-sizes="76">
+                        <td data-size="76">76</td>
+                        <td>150-155</td>
+                        <td><br></td>
+                        <td><br></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="table-size-info">
+                    <div class="sizes-param">
+                        <p>A - обхват груди <span class="js-size a-size">75-76</span> см</p>
+                        <p>B - обхват талии <span class="js-size b-size">60-62</span> см</p>
+                        <p>C - обхват бедер <span class="js-size c-size">84-86</span> см</p>
+                    </div>
+                    <div class="sizes-img"><img src="./img/sizes-dress.svg" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="fast" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-fast">
+            <div class="close" data-dismiss="modal"></div>
+            <h3>Быстрый заказ</h3>
+            <form action="" method="post">
+                <div class="fast-products">
+                    <div class="fast-img">
+                        <img src="https://paradoxdev.ru/image/cache/catalog/product/03_Confection/Dresses/20-03-20/2648/h/1-10Lr-493x6841.jpg" title="Платья New Color" alt="Платья New Color" />
+                    </div>
+                    <div class="fast-data">
+                        <h2>Платье  New Color</h2>
+                        <div class="price-block">
+                            <div class="price">2 847 <span class="currency">P</span></div>
+                            <div class="discount">-56%</div>
+                            <div class="old">4 150 <span class="currency">P</span></div>
+                        </div>
+                        <p>Доступные размеры:</p>
+                        <div class="size-items">
+                            <div class="radio">
+                                <input id="fast1" type="radio" name="size" value="50" />
+                                <label for="fast1" data-size="50">50</label>
+                            </div>
+                            <div class="radio">
+                                <input id="fast2" type="radio" name="size" value="52" />
+                                <label for="fast2" data-size="52">52</label>
+                            </div>
+                            <div class="radio">
+                                <input id="fast3" type="radio" name="size" value="54" />
+                                <label for="fast3" data-size="54">54</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fast-user">
+                    <div class="form-group">
+                        <label for="name">Имя: <span>*</span></label>
+                        <input id="name" type="text" name="name" placeholder="Имя" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone2">Телефон: <span>*</span></label>
+                        <input id="phone2" type="tel" name="phone" class="phone_mask" placeholder="+7 (9__) ___ - __ - __" required>
+                    </div>
+                </div>
+                <div class="btn">Заказать</div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<link rel="stylesheet" href="./js/slick/slick.css">
 <script src="./js/slick/slick.min.js"></script>
 <script src="./js/script.js"></script>
 
