@@ -1,10 +1,10 @@
 <?php 
-$admin_email = 'vla2076@yandex.ru';
+$admin_email = 'i.krasovsky@yandex.ru';
 
 if ($_POST['phone'] != '' and $_POST['human'] == 'human') {
 
 	$to  = $admin_email; 
-	$subject = 'Системы безопасности: Заявка с сайта'; 
+	$subject = 'Системы безопасности: Заявка с моего сайта'; 
 	$headers .= "Content-type: text/html; charset=utf-8 \r\n"; 
 	$headers .= "From: Системы безопасности <". $admin_email .">\r\n";
 	if($_POST['method'] != '') {
