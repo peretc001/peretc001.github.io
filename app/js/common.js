@@ -41,19 +41,28 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburger.classList.contains('opened') ? openMenu() : closeMenu()
         })
     }
+});
 
 
-    //
-    // if (document.querySelector('.slider')) {
-    //     $('.slider').slick({
-    //         draggable: true,
-    //         slidesToShow: 1,
-    //         swipeToSlide: true,
-    //         infinite: true,
-    //         arrows: false,
-    //         dots: true,
-    //         autoplay: true,
-    //         autoplaySpeed: 3000
-    //     });
-    // }
+$( document ).ready(function() {
+    if (document.querySelector('.slider')) {
+        $('.slider-wrapper').slick({
+            draggable: true,
+            slidesToShow: 1,
+            swipeToSlide: true,
+            infinite: true,
+            arrows: false,
+            dots: true,
+            autoplay: true,
+            autoplaySpeed: 3000
+        });
+
+        $('.slick-prev').on('click', function() {
+            $('.slider-wrapper').slick('slickPrev');
+        })
+
+        $('.slick-next').on('click', function() {
+            $('.slider-wrapper').slick('slickNext');
+        })
+    }
 });
