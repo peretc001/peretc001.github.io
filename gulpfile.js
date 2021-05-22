@@ -1,4 +1,4 @@
-var syntax        = 'sass'; // Syntax: sass or scss;
+var syntax        = 'scss'; // Syntax: sass or scss;
 
 var gulp          = require('gulp'),
 		sass          = require('gulp-sass'),
@@ -45,11 +45,11 @@ gulp.task('styles', function() {
 // JS
 gulp.task('scripts', function() {
 	return gulp.src([
-		'app/js/jquery.js', // Always at the end
+		// 'app/js/jquery.js', // Always at the end
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
-	// .pipe(uglify()) // Minify js (opt.)
+	.pipe(uglify()) // Minify js (opt.)
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({ stream: true }))
 });

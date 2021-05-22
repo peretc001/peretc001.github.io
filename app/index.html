@@ -1,42 +1,97 @@
-<!doctype html>
-<html dir="ltr" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.min.css">
+    <style>body { overflow-x: hidden; opacity: 0; }</style>
 </head>
-<body class="common-home">
+<body>
 
+    <header class="header">
+        <div class="top-line">
+            <div class="container">
+                <a href="">Режим работы</a>
+                <a href="">Правила посещения</a>
+            </div>
+        </div>
 
-    <script>
-        // const foo = {
-        //     param: 1,
-        //     foo() {
-        //         return this.param
-        //     }
-        // }
+        <nav class="menu">
+            <div class="container">
+                <a href="/" class="logo">LOGOTYPE</a>
 
-        // const bar = {
-        //     param: 2,
-        //     bar() {
-        //         return this.param
-        //     }
-        // }
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
 
-        // console.log(foo.foo())
+                <div class="menu-wrapper">
 
-        // const _foo = foo.foo()
+                    <ul class="catalog">
+                        <li><a href="">Меню</a></li>
+                        <li><a href="">Меню</a></li>
+                        <li class="has-children">
+                            <a href="">Меню</a>
 
-        // _foo.call(bar)
+                            <div class="sub-menu">
+                                <div class="container offset-left-fix">
+                                    <ul class="menu-item">
+                                        <li><a href="">Меню</a></li>
+                                        <li><a href="">Меню</a></li>
+                                        <li><a href="">Меню</a></li>
+                                        <li><a href="">Меню</a></li>
+                                        <li><a href="">Меню</a></li>
+                                    </ul>
+                                    <ul class="menu-item">
+                                        <li><a href="">Меню</a></li>
+                                        <li><a href="">Меню</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="">Меню</a></li>
+                        <li><a href="">Меню</a></li>
+                        <li><a href="">Меню</a></li>
+                    </ul>
 
-        const user = {
-            firstName: "Вася",
-            sayHi() {
-                return this.firstName;
-            }
-        };
+                    <div class="auth">
+                    <a href="" class="signup">Регистрация</a>
+                    <a href="" class="signin">Вход</a>
+                </div>
 
-        const f = user.sayHi();
-        f()
-        
-    </script>
+                    <div class="mobile-line">
+                        <a href="">Режим работы</a>
+                        <a href="">Правила посещения</a>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+    
+        <div class="slider">
+            <img src="./img/slider/slide_1.jpg" alt="">
+            <img src="./img/slider/slide_1.jpg" alt="">
+            <img src="./img/slider/slide_1.jpg" alt="">
+            <img src="./img/slider/slide_1.jpg" alt="">
+            <img src="./img/slider/slide_1.jpg" alt="">
+            <img src="./img/slider/slide_1.jpg" alt="">
+            <img src="./img/slider/slide_1.jpg" alt="">
+            <img src="./img/slider/slide_1.jpg" alt="">
+            <img src="./img/slider/slide_1.jpg" alt="">
+            <img src="./img/slider/slide_1.jpg" alt="">
+            <img src="./img/slider/slide_1.jpg" alt="">
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        §123123
+    </footer>
+
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/scripts.min.js"></script>
+</body>
+</html>

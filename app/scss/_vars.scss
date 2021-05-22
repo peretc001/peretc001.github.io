@@ -1,15 +1,26 @@
-$monarch: #7E0C21;
-$alabaster: #FAFAFA;
-$concrete: #F2F2F2;
-$frenchGray: #C6C6C7;
-$mercury: #E5E5E5;
-$vermilion: #F93C00;
-$japaneseLaurel: #00A200;
-$grayNickel: #C2C2C1;
+$accent: #7E0C21;
+$white: #FFFFFF;
 $black: #000000;
-$white: #fff;
-$gray: #888888;
 
+//Fonts
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    src: url('#{$file-path}.eot');
+    src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype');
+  }
+}
+
+@include font-face(Montserrat, '../fonts/Montserrat/Montserrat-Regular')
+@include font-face(Montserrat, '../fonts/Montserrat/Montserrat-Bold', bold)
+
+
+$font: 'Montserrat', sans-serif;
+
+
+//Img
 $path: '/img/';
 
 @mixin icon($color, $img, $size, $position) {
@@ -20,23 +31,7 @@ $path: '/img/';
   background-repeat: no-repeat;
 }
 
-@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
-  @font-face {
-    font-family: $font-family;
-    font-weight: $weight;
-    font-style: $style;
-    src: url('#{$file-path}.eot');
-    src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype');
-  }
-}
-@include font-face(GothamPro, '../fonts/GothamPro')
-@include font-face(GothamPro, '../fonts/GothamPro-Bold', bold)
-@include font-face(Roboto, '../fonts/Roboto/Roboto-Bold', bold)
-@include font-face(Roboto, '../fonts/Roboto/Roboto-Regular')
-
-$font: 'GothamPro', sans-serif;
-
-
+//Breakpoints
 @mixin mobile-s {
   @media screen and (max-width: 374.98px) {
     @content;
@@ -69,6 +64,12 @@ $font: 'GothamPro', sans-serif;
 
 @mixin notebook {
   @media screen and (max-width: 1299.98px) {
+    @content;
+  }
+}
+
+@mixin imac {
+  @media screen and (max-width: 1919.98px) {
     @content;
   }
 }

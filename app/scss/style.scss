@@ -1,34 +1,42 @@
 @import 'vars';
-@import 'bootstrap_grid';
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  text-decoration: none;
 }
 
 body {
   font-size: 16px;
-  font-family: $font !important;
+  font-family: $font;
   min-width: 320px;
   position: relative;
   line-height: 1.2;
   overflow-x: hidden;
   color: $black;
+  transition: opacity .5s ease;
 
   &.no-scroll:not(.modal) {
     overflow: hidden;
+    height: 100%;
+    touch-action: none;
   }
 }
 
+
 .container {
   width: 100%;
-  max-width: 1140px;
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
 }
 
 a, a:hover {
   text-decoration: none;
+}
+
+img {
+  max-width: 100%;
 }
 
 .btn, .btn:focus, .btn:active {
@@ -39,4 +47,8 @@ a, a:hover {
 
 @import 'header';
 @import 'footer';
-@import 'product';
+
+
+body {
+  opacity: 1;
+}
