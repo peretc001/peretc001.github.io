@@ -169,7 +169,7 @@
                         <div class="form-group">
                             <div class="group-item half">
                                 <div v-if="!notNumber" class="error-msg">Цифры в имени не допустимы</div>
-                                <div v-if="!validName && !isCompleteName" class="error-msg">Заполните поле</div>
+                                <div v-if="!validName && !isCompleteName && notNumber" class="error-msg">Заполните поле</div>
                                 <input type="text" v-model.trim="form.username" placeholder="Имя" :class="{ 'error': !isValidName || !validName || !notNumber, 'complete': isCompleteName && notNumber }">
                             </div>
                             <div class="group-item half">
