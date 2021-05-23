@@ -23,7 +23,6 @@ body {
   }
 }
 
-
 .container {
   width: 100%;
   max-width: 1200px;
@@ -39,6 +38,47 @@ img {
   max-width: 100%;
 }
 
+h2, h3 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+
+  @include tablet {
+    font-size: 28px;
+  }
+
+  @include mobile-xl {
+    font-size: 24px;
+  }
+
+  @include mobile {
+    font-size: 20px;
+  }
+}
+
+
+.flex-container {
+  display: flex;
+
+  @include tablet {
+    flex-direction: column;
+  }
+
+  .col-left {
+    flex: 0 0 34%;
+
+    @include tablet {
+      flex: 0 0 100%;
+    }
+  }
+
+  .col-right {
+    flex: 1;
+  }
+}
+
 .btn, .btn:focus, .btn:active {
   user-select: none !important;
   outline: none !important;
@@ -47,6 +87,7 @@ img {
 
 @import 'header';
 @import 'slider';
+@import 'about';
 @import 'footer';
 
 
