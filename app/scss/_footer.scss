@@ -1,6 +1,6 @@
 .footer {
   background: #DCE5E9;
-  padding: 30px 0;
+  padding: 30px 0 0;
 
   .logo {
     display: inline-block;
@@ -184,7 +184,6 @@
 
           @include mobile {
             justify-content: center;
-            margin-bottom: 40px;
           }
 
           input {
@@ -195,29 +194,18 @@
             font-size: 14px;
             color: $black;
             font-family: $font;
-            border-radius: 0;
             outline: none;
             margin-right: 11px;
+            border-radius: 2px;
 
             @include tablet {
               font-size: 16px;
             }
 
-            &::-webkit-input-placeholder {
-              color: #8c8c8c;
-            }
-
-            &:-ms-input-placeholder {
-              color: #8c8c8c;
-            }
-
-            &::-ms-input-placeholder {
-              color: #8c8c8c;
-            }
-
-            &::placeholder {
-              color: #8c8c8c;
-            }
+            &::-webkit-input-placeholder { font-size: 14px; color: #8c8c8c; }
+            &:-ms-input-placeholder { font-size: 14px; color: #8c8c8c; }
+            &::-ms-input-placeholder { font-size: 14px; color: #8c8c8c; }
+            &::placeholder { font-size: 14px; color: #8c8c8c; }
           }
 
           button {
@@ -226,7 +214,6 @@
             margin: 0;
             font-size: 14px;
             background: $accent;
-            border-radius: 0;
             color: $white;
             text-transform: uppercase;
             padding: 11px;
@@ -234,8 +221,41 @@
             text-align: center;
             cursor: pointer;
             outline: none;
+            border-radius: 2px;
           }
         }
+      }
+    }
+  }
+
+  .copyright {
+    background: #001F2B;
+    padding: 23px 0;
+    margin-top: 30px;
+
+    .container {
+      display: flex;
+      align-items: center;
+    }
+
+    a {
+      font-size: 12px;
+      color: $white;
+    }
+
+    .company {
+      @include mobile {
+        display: none;
+      }
+    }
+
+    .policy {
+      margin-left: auto;
+      margin-right: 30px;
+
+      @include mobile {
+        margin-left: 0;
+        margin-right: auto;
       }
     }
   }

@@ -19,8 +19,12 @@ var app = new Vue({
     },
 
     computed: {
+        notNumber() {
+            return !this.form.username.match(/\d/);
+        },
+
         isValidName () {
-            return this.form.username.length < 1 || this.form.username.length > 2
+            return this.form.username.length < 1 || this.form.username.length > 2 && this.notNumber
         },
 
         isValidEmail () {
@@ -54,7 +58,7 @@ var app = new Vue({
 
     methods: {
         validate() {
-            return this.form.username.length > 2 && this.form.msg.length >= 10 && emailCheckRegex.test(this.form.email)
+            return this.form.username.length > 2 && this.form.msg.length >= 10 && emailCheckRegex.test(this.form.email) && this.notNumber
         },
 
         resetForm() {

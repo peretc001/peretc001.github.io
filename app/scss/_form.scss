@@ -127,21 +127,10 @@
           font-size: 16px;
         }
 
-        &::-webkit-input-placeholder { color: #8c8c8c; }
-        &:-ms-input-placeholder { color: #8c8c8c; }
-        &::-ms-input-placeholder { color: #8c8c8c; }
-        &::placeholder { color: #8c8c8c; }
-
-        @include mobile {
-          &::-webkit-input-placeholder {
-            font-size: 14px; }
-          &:-ms-input-placeholder {
-            font-size: 14px; }
-          &::-ms-input-placeholder {
-            font-size: 14px; }
-          &::placeholder {
-            font-size: 14px; }
-        }
+        &::-webkit-input-placeholder { font-size: 14px; color: #8c8c8c; }
+        &:-ms-input-placeholder { font-size: 14px; color: #8c8c8c; }
+        &::-ms-input-placeholder { font-size: 14px; color: #8c8c8c; }
+        &::placeholder { font-size: 14px; color: #8c8c8c; }
 
         &.error {
           border-color: #E76400;
