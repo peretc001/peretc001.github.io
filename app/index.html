@@ -161,6 +161,40 @@
             </div>
         </section>
 
+        <section class="form">
+            <div class="container">
+                <div id="app">
+                    <form class="callback" :class="{ 'loading': !loading || this.sendForm }" @submit.prevent="send">
+                        <h4>Подпишитесь на рассылку</h4>
+
+                        <div class="form-group">
+                            <div class="group-item half">
+                                <div v-if="!validName && !isCompleteName" class="error-msg">Заполните поле</div>
+                                <input type="text" v-model="form.username" placeholder="Имя" :class="{ 'error': !isValidName || !validName, 'complete': isCompleteName }">
+                            </div>
+                            <div class="group-item half">
+                                <div v-if="!validEmail && !isCompleteEmail" class="error-msg">Заполните поле</div>
+                                <input type="email" v-model="form.email" placeholder="example@mail.com" :class="{ 'error': !isValidEmail || !validEmail, 'complete': isCompleteEmail }">
+                            </div>
+
+                            <div class="group-item">
+                                <div v-if="!validMsg && !isCompleteMsg" class="error-msg">Заполните поле</div>
+                                <textarea v-model="form.msg" placeholder="Комментарии" :class="{ 'error': !isValidMsg || !validMsg, 'complete': isCompleteMsg }"></textarea>
+                                <div v-if="msgLength > 0" class="msg-len">Осталось: {{ msgLength }}</div>
+                            </div>
+                        </div>
+
+                        <button type="submit">Подписаться</button>
+                    </form>
+
+                    <div v-if="loading" :class="[ { 'hidden': !sendForm }, 'success' ]">
+                        <div class="icon"></div>
+                        <p>Благодарим за подписку!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
     </main>
 
@@ -175,6 +209,8 @@
     <!--  Only for front-page  -->
     <script src="./js/slick/slick.min.js"></script>
     <link rel="stylesheet" href="./js/slick/slick.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./js/form.js"></script>
     <!--    -->
 
 </body>
