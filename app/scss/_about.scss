@@ -25,36 +25,4 @@
       text-align: center;
     }
   }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    color: $black;
-    font-weight: bold;
-    font-size: 14px;
-    text-transform: uppercase;
-
-    @include mobile {
-      font-size: 14px;
-    }
-
-    &:after {
-      content: '';
-      display: block;
-      flex: none;
-      width: 18px;
-      height: 12px;
-      margin-left: 16px;
-      mask: url('../img/slider/left-arrow.svg') no-repeat 50% 50% / 100% 100%;
-      -webkit-mask: url('../img/slider/left-arrow.svg') no-repeat 50% 50% / 100% 100%;
-      background: $black;
-      transition: transform .3s ease;
-    }
-
-    &:hover {
-      &:after {
-        transform: translateX(-10px);
-      }
-    }
-  }
 }

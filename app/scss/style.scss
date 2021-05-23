@@ -31,6 +31,7 @@ body {
 }
 
 a, a:hover {
+  color: $black;
   text-decoration: none;
 }
 
@@ -79,6 +80,42 @@ h2, h3 {
   }
 }
 
+.btn {
+  display: inline-flex;
+  align-items: center;
+  color: $black;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  @include mobile {
+    font-size: 14px;
+  }
+
+  &.arrow {
+
+    &:after {
+      content: '';
+      display: block;
+      flex: none;
+      width: 18px;
+      height: 12px;
+      margin-left: 16px;
+      mask: url('../img/slider/left-arrow.svg') no-repeat 50% 50% / 100% 100%;
+      -webkit-mask: url('../img/slider/left-arrow.svg') no-repeat 50% 50% / 100% 100%;
+      background: $black;
+      transition: transform .3s ease;
+    }
+
+    &:hover {
+      &:after {
+        transform: translateX(-10px);
+      }
+    }
+  }
+}
+
 .btn, .btn:focus, .btn:active {
   user-select: none !important;
   outline: none !important;
@@ -88,6 +125,7 @@ h2, h3 {
 @import 'header';
 @import 'slider';
 @import 'about';
+@import 'news';
 @import 'footer';
 
 

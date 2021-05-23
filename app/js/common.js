@@ -41,4 +41,17 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburger.classList.contains('opened') ? openMenu() : closeMenu()
         })
     }
+
+    if (document.querySelector('.news-list')) {
+        const newsList = document.querySelector('.news-list')
+        const showMore = document.querySelector('.btn.show-more')
+
+        const cloneNews = () => {
+            const cloneList = document.querySelector('.clone-list')
+            const news = newsList.cloneNode(true)
+            cloneList.appendChild(news)
+        }
+
+        showMore.addEventListener('click', cloneNews)
+    }
 });
